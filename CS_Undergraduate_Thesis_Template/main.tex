@@ -1,0 +1,99 @@
+\documentclass[10pt,11pt,12pt,oneside]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[left=1.2in,right=1in,top=1in,bottom=.8in]{geometry}
+\usepackage{parskip}
+\setlength{\parindent}{0.5in}
+\usepackage{emptypage}
+\usepackage{graphicx}
+\usepackage{chngcntr}
+\usepackage{amsmath}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage[english]{babel} % To obtain English text with the blindtext package
+\usepackage{blindtext}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{ragged2e} % For better text alignment in columns
+\usepackage{url}
+% Keep hyperref near the end of package loading
+\usepackage[hidelinks]{hyperref}
+
+
+% This tells LaTeX to always print the URL if it exists
+\newcommand{\URL}[1]{\url{#1}}
+\usepackage[hidelinks]{hyperref} % Clickable table of contents
+\renewcommand{\contentsname}{Table of Contents}
+\counterwithout{table}{chapter}
+\counterwithout{figure}{chapter}
+
+\usepackage{titlesec}
+
+% 1. Set the depth limits (Essential for Level 4)
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% 2. Create the command and link it to the paragraph level
+\newcommand{\subsubsubsection}{\paragraph}
+
+% 3. Force the style to match sections (Prevents text from staying on the same line)
+\titleformat{\paragraph}
+  {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+  {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\begin{document}
+
+
+
+\cleardoublepage
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=1.5in]{figs/addu.pdf}\\
+        \vspace{1cm}
+        \huge{A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference
+}\\
+        \vspace{1.5in}
+        \large{Ralph Paolo Dulce}\\
+        \large{Yahyah Odin}\\
+        \vspace{1.5in}
+        \large{ATENEO DE DAVAO UNIVERSITY\\SCHOOL OF ARTS AND SCIENCES\\DAVAO CITY}\\
+        \vspace{1in}
+        April 2026
+    \end{center}
+\end{titlepage}
+\frontmatter
+\chapter{Acknowledgement}
+Writing the first half of this thesis was a massive undertaking, and we could not have crossed the finish line without the people who backed us up along the way.
+
+To our professor, Ma'am Grace Tacadao, thank you for believing in us from day one. You took a chance by letting us be the only pair in the class, and you understood our vision immediately with our topic. Thank you for being so supportive and for being the exact kind of constructive critic we needed to actually make this paper work.
+
+To our adviser, Sir Adrian "Ogs" Ablazo, thank you for saying yes the second we pitched this idea to you. Your chill energy was exactly what we needed to keep our sanity intact. Thank you for being incredibly receptive, for showing us exactly what was missing, and for being a safe space where we could share both our exciting progress and our random frustrations.
+
+To the staff at the Davao City Sangguniang Panlungsod, especially Mr. Kevin B. Alfoja and Ms. Ma. Theresa A. Reyes, thank you for patiently answering our emails, catering to our concerns, and ultimately trusting us with the LISSP dataset. This system literally would not exist without your help.
+
+To our defense panelists, thank you for your sharp, kind critiques and for pushing us to bring this vision to life. (And an advance thank you for hopefully not bombarding us with too many hard questions during the actual defense!)
+
+To our families, friends, and classmates—thank you for the constant support, the patience when we were busy making this paper happen, and for believing we could survive our academics and this thesis. A special shoutout to Vince Demeer Valmores for the extra patience and encouragement behind the scenes.
+
+Above all, to the Almighty God/Allah SWT, the ultimate source of strength, wisdom, and grace. Thank you for making all of this possible and for seeing us through to a successful end.
+
+\tableofcontents
+
+\listoffigures
+ 
+\listoftables
+
+\mainmatter
+%\chapter*{Abstract}
+
+\include{chapters/introduction}
+\include{chapters/literature_review}
+%\include{chapters/theoretical-framework}
+\include{chapters/methodology}
+
+
+\bibliographystyle{acm}
+\bibliography{references}
+
+\end{document}
+

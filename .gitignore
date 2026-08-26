@@ -1,0 +1,37 @@
+# ====================================================================
+# Git Ignore Configuration for Legal NLP Thesis Repository
+# ====================================================================
+
+# Python Environment & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Large Corpus Data & Scanned PDFs (Kept locally / on Google Drive)
+corpus/
+output/*.jsonl
+output/*.pkl
+
+# LaTeX Auxiliary Build Files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+
+# IDE & OS Artifacts
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

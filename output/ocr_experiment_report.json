@@ -1,0 +1,90 @@
+[
+  {
+    "Method": "Traditional Scanner OCR (Baseline)",
+    "Word_Error_Rate": 27.44,
+    "Character_Error_Rate": 25.05,
+    "Legal_Marker_Precision": 36.36,
+    "Operative_Word_Count": 709,
+    "Operative_Char_Count": 4365,
+    "Markers": {
+      "Ordinance Number (0667-21)": false,
+      "Republic Act Citation (RA 7160)": true,
+      "Local Government Code Mention": false,
+      "Section 455 Reference": true,
+      "Monetary Amount (P79,920.00)": true,
+      "Smart Communications Entity": true,
+      "Section 1 Header": false,
+      "Section 2 Header": false,
+      "Section 3 Header": false,
+      "Section 4 Header": false,
+      "Section 5 Header": false
+    },
+    "Semantic_Cosine_Fidelity": 84.36
+  },
+  {
+    "Method": "Llama-3.2-11B-Vision",
+    "Word_Error_Rate": 1.27,
+    "Character_Error_Rate": 0.29,
+    "Legal_Marker_Precision": 100.0,
+    "Operative_Word_Count": 711,
+    "Operative_Char_Count": 4422,
+    "Markers": {
+      "Ordinance Number (0667-21)": true,
+      "Republic Act Citation (RA 7160)": true,
+      "Local Government Code Mention": true,
+      "Section 455 Reference": true,
+      "Monetary Amount (P79,920.00)": true,
+      "Smart Communications Entity": true,
+      "Section 1 Header": true,
+      "Section 2 Header": true,
+      "Section 3 Header": true,
+      "Section 4 Header": true,
+      "Section 5 Header": true
+    },
+    "Semantic_Cosine_Fidelity": 97.97
+  },
+  {
+    "Method": "Qwen2.5-VL-7B-Instruct",
+    "Word_Error_Rate": 0.0,
+    "Character_Error_Rate": 0.02,
+    "Legal_Marker_Precision": 100.0,
+    "Operative_Word_Count": 707,
+    "Operative_Char_Count": 4412,
+    "Markers": {
+      "Ordinance Number (0667-21)": true,
+      "Republic Act Citation (RA 7160)": true,
+      "Local Government Code Mention": true,
+      "Section 455 Reference": true,
+      "Monetary Amount (P79,920.00)": true,
+      "Smart Communications Entity": true,
+      "Section 1 Header": true,
+      "Section 2 Header": true,
+      "Section 3 Header": true,
+      "Section 4 Header": true,
+      "Section 5 Header": true
+    },
+    "Semantic_Cosine_Fidelity": 100.0
+  },
+  {
+    "Method": "Gemini 1.5 Flash Vision",
+    "Word_Error_Rate": 0.0,
+    "Character_Error_Rate": 0.0,
+    "Legal_Marker_Precision": 100.0,
+    "Operative_Word_Count": 707,
+    "Operative_Char_Count": 4411,
+    "Markers": {
+      "Ordinance Number (0667-21)": true,
+      "Republic Act Citation (RA 7160)": true,
+      "Local Government Code Mention": true,
+      "Section 455 Reference": true,
+      "Monetary Amount (P79,920.00)": true,
+      "Smart Communications Entity": true,
+      "Section 1 Header": true,
+      "Section 2 Header": true,
+      "Section 3 Header": true,
+      "Section 4 Header": true,
+      "Section 5 Header": true
+    },
+    "Semantic_Cosine_Fidelity": 100.0
+  }
+]

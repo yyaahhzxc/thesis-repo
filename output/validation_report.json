@@ -1,0 +1,50 @@
+{
+  "train_samples": 20345,
+  "test_samples": 5087,
+  "discovered_macro_domains": 10,
+  "mean_test_cosine_confidence": 0.5508,
+  "median_test_confidence": 0.5489,
+  "high_confidence_pct": 56.97,
+  "holdout_silhouette_score": 0.1602,
+  "holdout_davies_bouldin_score": 2.4496,
+  "supervised_benchmark_accuracy": 0.9737,
+  "supervised_benchmark_macro_f1": 0.9626,
+  "explicit_pattern_precision": [
+    {
+      "Pattern": "School / Education",
+      "Sample_Count": 645,
+      "Expected_Domain": "Education & Academic Institutions",
+      "Precision": "92.2%"
+    },
+    {
+      "Pattern": "Franchise / Telecom",
+      "Sample_Count": 360,
+      "Expected_Domain": "Public Utilities & Telecommunications Franchises",
+      "Precision": "97.8%"
+    },
+    {
+      "Pattern": "Hospital / Bed Capacity",
+      "Sample_Count": 203,
+      "Expected_Domain": "Public Health, Hospitals & Medical Services",
+      "Precision": "96.6%"
+    },
+    {
+      "Pattern": "Barangay / Municipality",
+      "Sample_Count": 1352,
+      "Expected_Domain": "Local Government & Territorial Boundaries",
+      "Precision": "22.2%"
+    },
+    {
+      "Pattern": "Court / Trial",
+      "Sample_Count": 51,
+      "Expected_Domain": "Judiciary, Courts & Administration of Justice",
+      "Precision": "72.5%"
+    },
+    {
+      "Pattern": "Tax / Customs",
+      "Sample_Count": 175,
+      "Expected_Domain": "Taxation, Tariffs & Revenue Administration",
+      "Precision": "0.0%"
+    }
+  ]
+}

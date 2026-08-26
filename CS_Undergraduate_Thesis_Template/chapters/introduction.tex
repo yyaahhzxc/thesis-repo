@@ -1,0 +1,85 @@
+% !TeX root = ../main.tex
+\chapter{Introduction}
+\section{Background of the Study}
+A functional legal system requires strict consistency so that citizens can clearly understand their rights and obligations \cite{fuller1964the}. However, the sheer volume of modern legislation has grown so rapidly that human practitioners can no longer track every active rule \cite{ruhl2015measuring}. As governing bodies continuously pass new regulations to address emerging issues, they frequently enact laws that inadvertently contradict older ones \cite{katz2024gpt4}. Because the total number of documents is overwhelming, identifying these hidden conflicts through manual review is computationally impossible for legal staff. This issue is particularly severe in local government units, where historical ordinances are often scattered across fragmented files rather than maintained in a structured digital database \cite{dias2022state}.
+
+Within the Philippine legal framework, local governments like Davao City operate under delegated authority and can only enact laws permitted by the national government \cite{philgov1991ra7160}. Due to this structural limitation, the Magtajas v. Pryce Doctrine strictly prohibits any local municipal ordinance from contradicting established national statutes \cite{scp1994magtajasvpryce}. Consequently, in the local context, city councils must rigorously audit every newly proposed draft ordinance to ensure it logically aligns with existing laws before final approval. If reviewers overlook a normative conflict, such as a local ordinance prohibiting an activity that a national law explicitly permits, the resulting local legislation is legally void. Passing invalid laws creates severe jurisdictional disputes, wastes administrative resources, and ultimately compromises the constitutional rights of the public.
+
+To address these legal risks, the legislative process must utilize an ex-ante evaluation: a term derived from Latin meaning 'before the event.' Unlike an 'ex-post' review, which happens after a law is already in effect and often after legal damage has occurred, an ex-ante audit acts as a first line of defense. By checking a proposed ordinance for conflicts while it is still in the drafting phase, the Sangguniang Panlungsod can proactively align local rules with national statutes. This preventative approach is consistent with modern Philippine standards like Republic Act No. 11032 or the Ease of Doing Business and Efficient Government Service Delivery Act of 2018, which encourages government agencies to perform regulatory assessments to ensure that new rules do not create unnecessary or conflicting burdens on the public.
+
+The decentralized drafting process of local ordinances further complicates manual review because the resulting texts are often highly unstructured \cite{spdc2022ra00122}. City councils frequently splice and amend different drafts, producing verbose documents that blend formal legal English with regional dialects like Cebuano and administrative "Taglish" \cite{dreisbach2021language}. Furthermore, because municipal archives heavily rely on digitized PDF scans, the text suffers from severe Optical Character Recognition (OCR) errors. While OCR is typically 99 percent accurate for clean English text, studies show accuracy can drop to 78 percent for low-resource languages, with Cebuano specifically seeing word error rates around 6.9 percent \cite{oard2003desperately}. These errors cause an ``error cascade'' that shatters standard vocabulary, making it difficult for traditional search engines to semantically differentiate between a statutory obligation and a strict prohibition.
+
+In light of these challenges, the proponents seek to develop a specialized application capable of retrieving relevant legal documents and comparing them against proposed ordinances to detect potential conflicts.
+
+
+\section{Problem Statement}
+This study is conducted to investigate the use of a multi-stage architecture to automate the manual auditing of proposed local legislation in Davao City. 
+
+Specifically, the study aims to answer the following research questions:
+
+\begin{itemize}
+    \item What are the specific linguistic parameters and structural markers that define a "semantic conflict" between a proposed local ordinance and existing local or national laws?
+    \item How can a Coarse-to-Fine system be designed to efficiently retrieve relevant national and local statutes before performing deep logical inference on constrained LGU hardware?
+    \item Which combination of a hybrid Information Retrieval (IR) algorithms and Natural Language Inference (NLI) models provides the highest accuracy when processing the specific hierarchy of Philippine legal texts?
+    \item What is the empirical performance of the proposed pipeline when evaluated against a manually curated Ground Truth dataset of local and national conflict pairs?
+    \item How usable and viable is the final system interface for key stakeholders within the Davao City Sangguniang Panlungsod?
+\end{itemize}
+
+\section{Objectives of the Study}
+The primary goal of this research is to develop a computationally efficient, two-stage semantic conflict detection system for proposed Davao City ordinances. 
+
+Specifically, this study aims to:
+\begin{itemize}
+    \item Identify the specific linguistic characteristics and structural constraints of Davao City’s legislative archive that contribute to semantic ambiguity and retrieval failure;
+    \item Design a Coarse-to-Fine computational pipeline that decouples document retrieval from logical inference to optimize resource usage for local deployment;
+    \item Implement a hybrid Information Retrieval (IR) retrieval algorithm and Natural Language Inference (NLI) system specifically calibrated for the Philippine legal hierarchy;
+    \item Evaluate the system’s reliability by comparing its automated detections against a verified set of known legal conflicts to measure how accurately it identifies contradictions; and
+    \item Develop a user-friendly web interface for the Davao City Sangguniang Panlungsod that primarily functions as accepting uploading drafts and providing real-time conflict alerts.
+\end{itemize}
+
+
+\section{Significance of the Study}
+The Davao City Sangguniang Panlungsod stands as the primary beneficiary of this automated consistency checking system. By transitioning from manual review to computational auditing, the tool saves legislative staff hundreds of hours of reading time. This technological intervention actively prevents the city from enacting logically flawed laws that invite future litigation or administrative deadlocks. It empowers the local government to draft regulatory measures with a significantly higher degree of legal certainty and operational speed. Ultimately, the system modernizes the legislative lifecycle by embedding rigorous logical checks directly into the initial drafting phase.
+
+This study also provides substantial value to legal researchers and the local Natural Language Processing community. It establishes an empirical baseline for processing messy, localized Philippine legal corpora that frequently contain "Taglish" and archaic Spanish loanwords. The research demonstrates that efficient, edge-deployable encoder models can successfully parse OCR-degraded documents without relying on expensive, cloud-based supercomputers. Beyond academic and governmental applications, the general public benefits directly through the consistent implementation of coherent public policy. The tool acts as a procedural safety net, protecting citizens from the legal traps and frustrations of contradictory municipal obligations.
+
+\section{Scope and Limitations}
+The scope of this study focuses on the development of a semantic conflict detection system designed to compare local ordinances from Davao City against a static database of over 10,000 national statutes, specifically Republic Acts, Acts, Batas Pambansa, and Commonwealth Acts. To keep the research manageable, other legal documents such as executive issuances (Presidential Decrees) and judicial decisions are excluded. 
+
+A significant limitation is the incompleteness of the municipal archive. For ordinances enacted earlier than 2021, the collection consists primarily of ``Landmark Ordinances'' rather than the full set of laws for those years. While the proponents utilized full access to post-2021 records via the LISSP database, gaps still exist in the numerical sequence of the documents, resulting in a final knowledge base of approximately 1,660 ordinances. These records represent the most complete dataset currently available after exhausting all retrieval efforts through public repositories and direct coordination with the Sangguniang Panlungsod; consequently, the system's ability to detect conflicts is limited to the records present in this compiled database \cite{spdavao2026}. 
+
+Furthermore, the system is restricted to English-language texts to avoid the complexities of translation and regional dialects. This choice is necessary because local municipal records are currently under-represented in legal AI research; while national laws are well-studied in central databases, local ordinances remain neglected because they are unorganized and often ``messy'' \cite{spdavao2026, andaya2025towards, maxilom2008semantic}. This has led to a lack of a computational footprint, meaning there are no high-quality, standardized datasets for local ordinances that an AI can follow to learn legal reasoning \cite{bowman2015large}. Additionally, focusing only on English avoids ``semantic drift,'' where the specific legal meaning of a rule may get lost or accidentally changed when moved into a local dialect \cite{kim2024legal}. The database is compiled from existing public government repositories, meaning the tool will not perform live web scraping during its operation.
+
+Operationally, the system uses a Natural Language Inference (NLI) framework to perform a single-premise comparison, evaluating a draft ordinance against a single national provision at a time. While the system uses Asymmetric Span-Level Pairing to compare a multi-sentence block from a local draft against a specific national rule, it does not perform ``multi-hop'' reasoning. This means it cannot identify conflicts that only appear when combining two or more separate national laws, as such complex processing would exceed the hardware limits of a standard office computer. The system classifies these relationships as Entailment, Neutral, or Contradiction, with a specific optimization for flagging contradictions.
+
+To ensure transparency, the study uses a ``white box'' approach to Explainable AI (XAI), providing mathematical data like confidence scores and attention weights instead of generated text summaries. To conserve resources and ensure practical deployment, the framework deliberately excludes generative Large Language Models (LLMs); it cannot write, rewrite, or automatically correct legal text. Finally, all development and testing are strictly limited to a single consumer-grade device. This ensures the final product is a practical diagnostic tool that can be deployed by a standard Local Government Unit (LGU) without the need for expensive, enterprise-grade cloud computing resources.
+
+\section{Definition of Terms}
+\begin{description}
+    \item[Coarse-to-Fine Architecture.] A two-step computer process. First, the system quickly searches through thousands of documents to find "candidates" (coarse), then it carefully analyzes those specific candidates for logical conflicts (fine).
+
+    \item[Contradiction.] A relationship in NLI where the second sentence is false if the first sentence is true, indicating a logical conflict.
+    
+    \item[Davao City Ordinances.] These are written local laws created by the Davao City government that are intended to be permanent and enforceable.
+    
+    \item[Entailment.] A relationship in NLI where the first sentence (premise) proves that the second sentence (hypothesis) is true.
+    
+    \item[Ex-Ante.] Derived from Latin meaning "before the event". Operationally, this refers to the evaluation or checking of a proposed city ordinance before it is officially signed into law.
+    
+    \item[Information Retrieval (IR).] The process of searching for and finding relevant documents (like specific laws) within a massive collection of text.
+    
+    \item[Local Government Code of 1991 (RA 7160).] The national law that gives local governments the power to create their own ordinances for the "General Welfare" of their citizens.
+    
+    \item[Magtajas v. Pryce Doctrine.] A legal rule from the Supreme Court stating that local ordinances are inferior to national laws and cannot go against any Act of Congress.
+    
+    \item[Natural Language Inference (NLI).] A task where the computer compares two sentences—a "premise" and a "hypothesis"—to see if they agree or disagree with each other.
+    
+    \item[Neutral.] A relationship in NLI where the two sentences are unrelated and do not affect each other's truth.
+    
+    \item[OCR Noise.] Text errors (like misspellings or broken words) that happen when physical paper documents are scanned into digital files.
+    
+    \item[Sangguniang Panlungsod (SP).] The local legislative body or "City Council" of Davao City, responsible for creating and approving local laws.
+    
+    \item[Semantic Conflict.] A logical clash where two different laws give opposite instructions. For example, a conflict occurs if one law permits an activity while another strictly prohibits it.
+    
+\end{description}

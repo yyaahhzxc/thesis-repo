@@ -1,0 +1,207 @@
+\section{Theoretical Framework}
+The evolution of legal information processing has necessitated a transition from traditional keyword-based retrieval toward sophisticated, multi-stage frameworks that are capable of handling the logical nuances and the so-called "legalese" of legislative text.
+
+In the context of the Philippine unitary state, preserving the legal hierarchy requires a robust mechanism to ensure that local ordinances do not contravene national statutes. As research specifically targeting automated consistency checking in Philippine local archives remains scarce, the proposed theoretical framework establishes its foundation by adapting the empirical methodologies of the Competition on Legal Information Extraction and Entailment (COLIEE). 
+
+While COLIEE traditionally focuses on retrieving statutes to answer bar exam questions, this study repurposes its "Retrieve-Then-Entail" paradigm to operationalize jurisprudential doctrine within an automated system. This framework is structured around three primary pillars: (1) The Jurisprudential Constraint, (2) The Operational Framework, and (3) The Interpretive Mechanism. By integrating the multi-stage strategies demonstrated in the COLIEE paradigm, the system provides a specialized foundation for the novel task of automated semantic conflict detection between Republic Acts and local ordinances. \cite{nguyen2025nowjcoliee2025multistageframework}.
+
+This framework is structured around three primary pillars: (1) The Jurisprudential Constraint, (2) The Operational Framework, and (3) The Interpretive Mechanism. By integrating the multi-stage paradigms and large language model (LLM) reasoning strategies demonstrated in recent COLIEE competitions, the system provides a comprehensive foundation for automated semantic conflict detection.\cite{nguyen2025nowjcoliee2025multistageframework}.
+
+\subsection{The COLIEE Paradigm as a Methodological Foundation}
+The Competition on Legal Information Extraction (COLIEE) provides the empirical and methodological foundation for the proposed system. As an annual evaluation contest, COLIEE benchmarks the state-of-the-art in legal case retrieval, statute law entailment, and legal question answering. By adopting the COLIEE framework, the system moves beyond simple keyword matching and integrates advanced techniques, which include domain-adapted pre-training, transformer-based neural methods, and hybrid ensemble architectures.
+
+    \subsubsection{Task Taxonomy and Legislative Relevance}
+    The COLIEE competition includes specific tasks targeting statute law processing. These tasks align with the requirements of the Philippine legislative environment, particularly when it comes to handling the transition from broad retrieval of the Republic Acts to fine-grained logical analysis of local ordinances. From the COLIEE competition, the following tasks were found relevant to this study:
+
+    \begin{description}
+        \item[Task 3: Statutory Law Retrieval:] This task requires retrieving relevant articles from a statutory corpus (such as the Japanese Civil Code or, in this context, the collection of Philippine Republic Acts) that support or relate to a given legal query. This is the direct equivalent of finding the specific national laws that a local ordinance might be attempting to modify or contradict.
+        
+        \item[Task 4: Statute Law Entailment:] This involves determining if a retrieved set of statutes semantically entails a specific legal conclusion, usually framed as a "Yes" or "No" answer to a query. In this framework, Task 4 is the computational realization of the "No Contravention" test from the Magtajas Doctrine, determining whether the local ordinance (Hypothesis) is logically consistent with the retrieved national law (Premise).
+    \end{description}
+    
+    The "Retrieve-Then-Entail" paradigm, where Task 3 serves as a preliminary stage for Task 4, is essential for managing the extremely long document contexts inherent in legislative data. This sequential approach ensures that the more computationally expensive entailment models are only applied to a refined set of relevant statutes, balancing efficiency and accuracy.
+
+\subsection{Pillar 1: The Jurisprudential Constraint (Magtajas-NLI Mapping)}
+
+The foundational logic of this study rests on the Unitary Principle of the State, which dictates that local government units (LGUs) exercise only delegated legislative powers \cite{philgov1991ra7160}. In the Philippine legal hierarchy, the 1987 Constitution is the supreme law, followed by national statutes, while local ordinances occupy the lowest rung \cite{philgov1991ra7160} Consequently, no local ordinance may validly ignore, contradict, or refuse to implement an Act of Congress.
+To operationalize this hierarchy for an automated system, the framework utilizes the Magtajas Doctrine, which establishes six substantive requirements for the validity of a municipal ordinance (source) \cite{scp1994magtajasvpryce}. This study maps these legal requirements directly onto the task of Natural Language Inference (NLI), where the national law serves as the Premise $P$ and the proposed ordinance serves as the Hypothesis $H$.
+
+%NLI-Mapping Table
+\noindent
+\begin{tabularx}{1\textwidth} { 
+    @{}
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X | 
+  @{}}
+ \hline
+ \textbf{Magtajas Requirement}
+ & \textbf{Legal Constraint}
+ & \textbf{NLI Task Mapping} \\
+ \hline
+ \textbf{No Contravention}  
+ & Must not contradict national statutes.  
+ &\textbf{Contradiction Detection: }Determining if $P$ and $H$ are logically incompatible.  \\
+\hline
+\textbf{Non-Discriminatory}
+&Must not be partial or discriminatory.
+&\textbf{Bias and Entity Recognition:} Identifying protected groups or classes.\\
+\hline
+\textbf{Trade Regulation}
+& Must not prohibit, but may regulate trade.
+&\textbf{Deontic Logic Analysis:} Distinguishing between absolute prohibitions and conditional permissions. \\
+\hline
+\textbf{Public Policy Alignment}
+& Must be consistent with public policy.
+&\textbf{Semantic Entailment:} Assessing if the ordinance aligns with the broader intent of the law. \\
+\hline
+\end{tabularx}
+
+The requirement that an ordinance must not contravene a statute is the most critical for automated systems. As noted in the Magtajas ruling, local councils exercise only delegated powers; thus, the delegate cannot be superior to the principal \cite{scp1994magtajasvpryce}. This necessitates a system that can effectively perform "Statute Law Retrieval" (finding the relevant national law) and "Statute Law Entailment" (verifying the logical compatibility), which are the core focuses of Tasks 3 and 4 in the COLIEE competition.
+
+
+
+\subsection{Pillar 2: The Operational Framework (Coarse-to-Fine Pipeline)}
+To handle the legislative data in this study, the framework adapts the multi-stage architecture proven successful in the COLIEE paradigm for processing large-scale statutory corpora. This decoupled pipeline is influenced by top-performing methodologies such as ViDRILL (2025) and NOWJ (2025), tailored to bridge the "Semantic Gap" between literal keywords and normative intent within the Philippine LGU context.
+
+\begin{enumerate}
+    \item \textbf{Stage 1: Data Pre-processing and Context Compression:} Statutory documents typically exceed the input limits of standard pre-trained language models. Furthermore, these documents often contain noise such as procedural metadata and formatting errors.
+    \begin{description}
+            \item[Noise Reduction:] The system performs pre-processing by filtering out metadata, such as procedural details, locations, and irrelevant language fragments, ensuring that only the legally relevant content remains.
+
+            \item[Abstractive Summarization:] To enhance the representation of long legislative documents, the framework employs LLM-based summarization. Following the ViDRILL (2025) multi-stage framework, the system utilizes a dual-level chunking strategy optimized for retrieval and re-ranking to ensure semantic robustness in long and structured texts. \cite{goebeletal2026coliee2025}
+    \end{description}
+    
+    \item \textbf{Stage 2: Coarse Phase (Long-Context Retrieval):} The retrieval phase utilizes a dual approach of lexical and semantic matching to ensure high recall of relevant national statutes.
+    \begin{description}
+        \item[Pre-ranking Model:] The system employs a pre-trained bi-encoder, such as BGE-m3, to calculate initial relevance scores between the ordinance and candidate statutes. BGE-m3 is selected for its ability to process sequences of up to 8,192 tokens without destroying the structural integrity of the text.
+
+        \item[Re-ranking with Cross-Encoders:] Once candidates are isolated, the system applies more granular ranking models. Following the NOWJ methodology, the system utilizes LLM2Vec, which enables bi-directional attention and unsupervised contrastive learning for text encoding.
+
+        \item[LLM2Vec Integration:] Following the NOWJ methodology, the system utilizes LLM2Vec, which enables bi-directional attention and unsupervised contrastive learning for text encoding. 
+    \end{description}
+    
+    \item \textbf{Stage 3: Fine Phase (Natural Language Inference and Reasoned Entailment):} In the final stage, the system performs the logical check for conflict. While the COLIEE paradigm traditionally utilizes NLI to verify if statutes support a legal conclusion, this framework repurposes that NLI logic to identify conflicting relations (contradictions).
+
+    \begin{description}
+        \item[Dual-Encoder Inference:] Adopting the TSRCDF-SS (2024) framework for legal conflict detection, the system employs independent encoders (e.g., SBERT and SimCSE) to vectorize and concatenate requirement sentence pairs \cite{wang2025transferlearningapproachautomatic}. Unlike retrieval, which measures topical similarity, this adapted NLI detects the logical incompatibility (e.g., a "prohibition" in an ordinance contradicting a "permission" in a Republic Act) that exists beneath shared syntax. \cite{kimetal2024legalinformationretrieval}
+        
+        \item[LLM-Based Analysis]:  The system prompts state-of-the-art LLMs such as DeepSeek-V3 or QwQ-32B for the final entailment judgment.  To improve reliability, the framework employs majority voting across multiple LLMs. A conflict is only confirmed if there is a consensus among distinct models, significantly boosting precision in the final detection results. \cite{goebeletal2026coliee2025}
+
+        \item[Explainability:] To provide a verifiable ratio decidendi, the system extracts Attention Weights from the transformer layers to generate heatmaps that highlight the specific conflicting phrases—such as where an ordinance's "absolute ban" contradicts a statute's "conditional permit."
+    \end{description}
+\end{enumerate}
+
+\subsection{Pillar 3: The Interpretive Mechanism (Computational Hermeneutics)}
+The framework mathematically operationalizes the Hermeneutic Circle—the principle that a part of a text is understood in relation to the whole, and the whole in relation to its parts \cite{Kommers2026Hermeneutics}. This mechanism is realized through the Transformer’s self-attention mechanism, which allows every word in a provision to be weighted against every other word in the context window\cite{Guenmayor2018CaseStudyHermeneutics}. 
+
+In legal interpretation, the canon of noscitur a sociis dictates that a word is known by the company it keeps. In Magtajas v. Pryce, the Supreme Court applied this rule to determine that the phrase "gambling and other prohibited games of chance" referred only to illegal gambling because of its surrounding context. The self-attention mechanism computationally replicates this by calculating the interaction of Query ($Q$), Key ($K$), and Value ($V$) matrices:
+
+$$Attention(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+
+This allows the model to resolve Contextual Polysemy—where common words like "party" or "consideration" assume specialized meanings based on surrounding "legalese"—by dynamically adjusting vector representations based on the local syntactic context.
+
+\subsection{Synthesis of Empirical Performance from COLIEE 2025}
+
+\subsubsection{Performance Metrics for Statute Law Retrieval (Task 3)}
+For Task 3, ensemble strategies centered on linear combinations of scores from top-performing base models (such as NV-Embed and e5-large) provided the most reliable results.
+
+\noindent
+\begin{tabularx}{1\textwidth} { 
+    @{}
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedright\arraybackslash}X | 
+  @{}}
+ \hline
+ \textbf{Team Strategy}
+ & \textbf{F2 Score}
+ & \textbf{Precision}
+ & \textbf{Recall} \\
+ \hline
+ \textbf{NOWJ.H2 (Grid Search)}  
+ & 0.7702  
+ & 0.7572
+ & 0.8086 \\
+\hline
+\textbf{NOWJ.H1 (LightGBM)}
+&0.7311
+&0.7352
+&0.7511\\
+\hline
+\textbf{NOWJ.H3 (Similarity Voting)}
+&0.7069
+&0.7534
+&0.7100\\
+\hline
+\end{tabularx}
+
+The efficacy of the Grid Search weighted ensemble suggests that meticulous optimization of high-quality input signals is pivotal for success, particularly in achieving high recall—a critical requirement for ensuring no relevant national statute is missed.
+
+\subsubsection{Performance Metrics for Statute Law Entailment (Task 4)}
+In the entailment task, state-of-the-art results were achieved using LLMs coupled with advanced prompt engineering.
+
+\noindent
+\begin{tabularx}{1\textwidth} { 
+    @{}
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X | 
+  @{}}
+ \hline
+ \textbf{Team}
+ & \textbf{Accuracy} \\
+ \hline
+ \textbf{KIS3}  
+ & 0.9041 \\
+\hline
+\textbf{CAPTAIN2}
+&0.8219\\
+\hline
+\textbf{JNLP002}
+&0.8082\\
+\hline
+\textbf{NOWJ (Various Runs)}
+&0.7397\\
+\hline
+\end{tabularx}
+
+
+The high accuracy scores (up to 0.9041) validate the potential of LLMs to handle complex legal reasoning and provide reliable "Yes/No" answers regarding whether a given statute entails the query. For the Philippine system, this demonstrates that a similar architecture can reliably detect whether an ordinance's provisions are semantically consistent with a Republic Act.
+
+\subsection{Theoretical Integration: Bridging Doctrine with Pipeline}
+\noindent
+\begin{tabularx}{1\textwidth} { 
+    @{}
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X | 
+  @{}}
+ \hline
+ \textbf{Legal Pillar}
+ & \textbf{Mechanism}
+ & \textbf{Computational Realization} \\
+ \hline
+ \textbf{Jurisprudential}  
+ & Magtajas Doctrine
+ & NLI Task Mapping ($P$ as Statute, $H$ as Ordinance).\\
+\hline
+\textbf{Operational}
+& Coarse-to-Fine Pipeline
+& Task 3 (Retrieval) and Task 4 (Entailment) using LLMs and Ensembles.\\
+\hline
+\textbf{Interpretive}
+& Context Machine
+& Transformer Self-Attention ($Q, K, V$) and the Hermeneutic Circle.\\
+\hline
+\end{tabularx}
+
+By grounding the system in the COLIEE statutory tasks, the framework addresses the "long text problem" through abstractive summarization and ensures that the system remains explainable and calibrated. This approach equips the system to handle the complexities of legal language in a unitary state, ensuring that the delegate (the LGU) remains consistent with the principal (the National Legislature).
+\begin{figure}[htbp]
+    \centering
+    % Adjust width=1\textwidth
+    \includegraphics[width=1\textwidth]{CS_Undergraduate_Thesis_Template/figs/[UPDATED] Theoretical Framework (Thesis).png}
+    \caption{Integrated Theoretical Framework for Semantic Conflict Detection in Philippine Local Legislation.}
+    \label{fig:theoretical_framework}
+\end{figure}
+
