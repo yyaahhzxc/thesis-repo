@@ -89,7 +89,11 @@ def evaluate_legal_markers(text: str) -> Dict[str, bool]:
 def run_experiment():
     print("=== Running Empirical OCR & Document LLM Evaluation ===")
     
-    pdf_path = "City Ordinances (2025-2021)/2021/Ordinance No. 000667-21.pdf"
+    candidate_pdf_paths = [
+        "corpus/city_ordinances/City Ordinances (2025-2021)/2021/Ordinance No. 000667-21.pdf",
+        "City Ordinances (2025-2021)/2021/Ordinance No. 000667-21.pdf"
+    ]
+    pdf_path = next((p for p in candidate_pdf_paths if os.path.exists(p)), candidate_pdf_paths[0])
     ground_truth_path = "ordinance no 000667.txt"
     
     if not os.path.exists(ground_truth_path):
@@ -159,6 +163,23 @@ def run_experiment():
     with open(report_json_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
     print(f"\n[Export] Detailed JSON report written to {report_json_path}")
+
+    # Export individual model transcriptions to .txt files
+    transcripts_dir = "output/ocr_experiment_transcripts"
+    os.makedirs(transcripts_dir, exist_ok=True)
+    
+    file_map = {
+        "Traditional Scanner OCR (Baseline)": "01_traditional_scanner_ocr.txt",
+        "Llama-3.2-11B-Vision": "02_llama_3.2_11b_vision.txt",
+        "Qwen2.5-VL-7B-Instruct": "03_qwen_2.5_vl_7b.txt",
+        "Gemini 1.5 Flash Vision": "04_gemini_1.5_flash_vision_ground_truth.txt"
+    }
+    
+    for method_name, filename in file_map.items():
+        out_path = os.path.join(transcripts_dir, filename)
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(methods[method_name])
+        print(f"  -> Saved {method_name} transcript to {out_path}")
 
     # Generate Visualizations
     os.makedirs("output/visualizations", exist_ok=True)
