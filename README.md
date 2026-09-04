@@ -206,9 +206,29 @@ When you add new citations in `references.bib` or add new sections:
 
 If setting up this repo on another machine or asking an AI assistant (such as Gemini or Antigravity) on another device to replicate this exact environment:
 
-### 1. Prerequisites (LaTeX & Python)
-* **Install TeX Live 2026** (Windows installer: `install-tl-windows.exe`). Ensure `pdflatex` is available in your PATH (`pdflatex --version`).
-* **Install VS Code Extension**: `LaTeX Workshop` (`James-Yu.latex-workshop`).
+### Option A: One-Click Automated Setup (Recommended)
+You or the AI agent can run the included automated setup script in PowerShell:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\setup_environment.ps1
+```
+This script automatically:
+1. Detects if `pdflatex` is installed; if not, automatically invokes `winget` to install **MiKTeX**.
+2. Checks and installs the **LaTeX Workshop** VS Code extension via `code --install-extension James-Yu.latex-workshop`.
+3. Initializes the Python virtual environment (`venv`) and installs `requirements.txt`.
+4. Runs `python scripts/build_paper.py` to verify the end-to-end 4-pass build.
+
+*(Note: If Windows prompts for administrator/UAC approval during the MiKTeX install, simply click **Yes**.)*
+
+### Option B: Manual Setup Steps
+* **Install LaTeX Compiler**: If not installed, run in terminal:
+  ```powershell
+  winget install --id MiKTeX.MiKTeX -e --accept-package-agreements --accept-source-agreements
+  ```
+  *(Or install TeX Live via `install-tl-windows.exe`). Ensure `pdflatex --version` works.*
+* **Install VS Code Extension**:
+  ```powershell
+  code --install-extension James-Yu.latex-workshop
+  ```
 * **Python Environment**:
   ```powershell
   python -m venv venv
@@ -216,7 +236,7 @@ If setting up this repo on another machine or asking an AI assistant (such as Ge
   pip install -r requirements.txt
   ```
 
-### 2. Turnkey Setup (Included Out-of-the-Box)
+### Turnkey Project Settings (Pre-configured Out-of-the-Box)
 * **Pre-configured `.vscode/settings.json`**:
   * The repository includes tuned settings for root document auto-linking, instant 1-second single-pass `pdflatex-fast` builds on save, SyncTeX forward/inverse search, and format-on-save overrides.
   * No Perl / `latexmk` setup is needed.
