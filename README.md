@@ -4,7 +4,7 @@
 [![Department: Computer Science](https://img.shields.io/badge/Department-Computer%20Science-blue.svg)]()
 [![Degree: BS Computer Science Thesis](https://img.shields.io/badge/Thesis-Undergraduate%20Research-green.svg)]()
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)]()
-[![LaTeX: MiKTeX / TeX Live](https://img.shields.io/badge/LaTeX-MiKTeX%20%7C%20TeX%20Live-orange.svg)]()
+[![LaTeX: TeX Live 2026](https://img.shields.io/badge/LaTeX-TeX%20Live%202026-blue.svg)]()
 
 **Undergraduate Thesis Project (April 2026)**  
 **Authors**: Ralph Paolo Dulce & Yahyah Odin  
@@ -13,7 +13,7 @@
 
 ---
 
-## 📌 Executive Summary
+## Overview
 
 This repository houses the end-to-end research codebase, empirical evaluation suites, statutory datasets, and LaTeX manuscript for the thesis titled:  
 **"A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference."**
@@ -33,7 +33,7 @@ flowchart LR
 
 ---
 
-## 📂 Repository Layout
+## Repository Layout
 
 ```
 thesis-repo/
@@ -60,7 +60,7 @@ thesis-repo/
 │   └── visualize_and_validate.py      <-- 80/20 train/test holdout validation & plotting
 │
 ├── scripts/                           <-- Automated Helper & Execution Scripts
-│   ├── build_paper.py                 <-- One-click LaTeX PDF compiler (MiKTeX/TeX Live)
+│   ├── build_paper.py                 <-- One-click LaTeX PDF compiler (TeX Live / pdflatex)
 │   ├── compare_ocr_experiments.py     <-- Empirical OCR vs. VLM benchmark suite
 │   └── build_notebook.py              <-- Colab notebook generator
 │
@@ -80,13 +80,15 @@ thesis-repo/
 
 ---
 
-## 🛠️ Environment Setup & Installation
+## Environment Setup & Installation
 
-### 1. Prerequisites
+### 1. Prerequisites (Matching Local Machine Setup)
 * **Python**: Version `3.10` or higher (tested on Python 3.10 – 3.14).
-* **LaTeX Distribution**: [MiKTeX](https://miktex.org/) (Windows) or [TeX Live](https://www.tug.org/texlive/) (Windows/Linux/macOS).
+* **LaTeX Distribution**: [TeX Live 2026](https://www.tug.org/texlive/) (Windows default install at `C:\texlive\2026\bin\windows`).
+  * Verify in terminal: `pdflatex --version` (Ensure `pdflatex` is added to system `PATH`).
+  * *Note*: We specifically avoid default `latexmk` on Windows because it requires a separate Perl interpreter; our configuration directly calls native `pdflatex` and `bibtex`.
 * **VS Code Extensions**:
-  * `LaTeX Workshop` (`James-Yu.latex-workshop`) — For side-by-side editing and live compilation.
+  * `LaTeX Workshop` (`James-Yu.latex-workshop`) — Configured for side-by-side Overleaf-like live compilation.
   * `Python` (`ms-python.python`) — For script execution and virtual environments.
 
 ### 2. Python Virtual Environment Setup
@@ -113,29 +115,128 @@ pip install -r requirements.txt
 
 ---
 
-## 📄 Thesis Paper Drafting & Live PDF Preview
+## Thesis Paper Drafting (Overleaf-Style Local Setup)
 
-The LaTeX source code for the 82-page thesis manuscript is located in `CS_Undergraduate_Thesis_Template/`.
+The LaTeX source code for the 82-page thesis manuscript is located in `CS_Undergraduate_Thesis_Template/`. The setup was migrated from Overleaf to run completely offline in VS Code with identical live-preview ergonomics.
 
-### Live Side-by-Side PDF Preview (VS Code)
-1. Open any `.tex` file in `CS_Undergraduate_Thesis_Template/chapters/`.
-2. Press **`Ctrl + Alt + V`** (or click the **TeX** sidebar icon $\rightarrow$ **"View LaTeX PDF"** $\rightarrow$ **"View in VSCode tab"**).
-3. **Instant Live Updates**: Whenever you edit and press **`Ctrl + S`**, the PDF updates within $\sim 1\text{ second}$.
-4. **SyncTeX Navigation**:
-   * *Code $\rightarrow$ PDF*: Hold `Ctrl + Alt` and click any sentence in the `.tex` file to jump to that page in the PDF.
-   * *PDF $\rightarrow$ Code*: Hold `Ctrl` and click any sentence in the PDF preview to jump to that exact line in the editor.
+### How We Replicate the Overleaf Experience Locally
 
-### One-Click Command Line Compilation
-To perform a complete multi-pass build (resolving all BibTeX citations, cross-references, table of contents, and figures):
+| Action | Shortcut / Command | What Happens |
+| :--- | :--- | :--- |
+| **Open Side-by-Side PDF** | **`Ctrl + Alt + V`** | Opens the compiled PDF directly in a tab. Drag it to the right half of your screen for the classic Overleaf split-screen view. |
+| **Instant Recompile** | **`Ctrl + S`** (Save) | Triggers the fast 1-second single-pass `pdflatex` build and reloads the preview tab automatically. |
+| **Jump from Code $\rightarrow$ PDF** | **`Ctrl + Alt + J`** <br>*(or `Ctrl + Alt + Click`)* | Jumps the PDF preview directly to the paragraph your cursor is on and highlights it. |
+| **Jump from PDF $\rightarrow$ Code** | **`Ctrl + Left Click`** on PDF | Clicks any text in the PDF tab to jump straight to that line in your `.tex` source code. |
+| **Full Reference / Citation Build** | `python scripts/build_paper.py` | Runs all 4 passes (`pdflatex -> bibtex -> pdflatex*2`) to resolve bibliography and TOC changes. |
 
-```powershell
-python scripts/build_paper.py
+1. **Multi-File Root Document Linking**:
+   * All subfiles inside `chapters/` have `% !TeX root = ../main.tex` at line 1. You never need to switch back to `main.tex` to compile; editing and saving inside any chapter automatically updates the master document.
+2. **Formatter Bypass (`editor.formatOnSave: false`)**:
+   * To prevent the common VS Code warning (*"Please set your LaTeX formatter in latex-workshop.formatting.latex"*), formatting on save is explicitly disabled for LaTeX so only the fast compilation runs on `Ctrl + S`.
+
+### The Live Configuration (`.vscode/settings.json`)
+The pre-tuned live-preview settings are tracked in `.vscode/settings.json` (and `CS_Undergraduate_Thesis_Template/.vscode/settings.json`):
+
+```json
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex-fast",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "fast-pdflatex (instant preview)",
+            "tools": [
+                "pdflatex-fast"
+            ]
+        },
+        {
+            "name": "full-build (pdflatex -> bibtex -> pdflatex*2)",
+            "tools": [
+                "pdflatex-fast",
+                "bibtex",
+                "pdflatex-fast",
+                "pdflatex-fast"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "first",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoBuild.interval": 500,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.refreshes": "onBuild",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.latex.rootFile.useWorkspace": true,
+    "[latex]": {
+        "editor.formatOnSave": false
+    },
+    "[tex]": {
+        "editor.formatOnSave": false
+    }
+}
 ```
-*Output PDF is compiled to:* `CS_Undergraduate_Thesis_Template/main.pdf`.
+
+### Full Multi-Pass Compilation (Citations & TOC Refresh)
+When you add new citations in `references.bib` or add new sections:
+* **Option A (VS Code Recipe)**: Click the **TeX** sidebar icon $\rightarrow$ **"Build LaTeX project"** $\rightarrow$ select **`full-build (pdflatex -> bibtex -> pdflatex*2)`**.
+* **Option B (One-Click Python Script)**:
+  ```powershell
+  python scripts/build_paper.py
+  ```
+  *Output PDF is compiled to:* `CS_Undergraduate_Thesis_Template/main.pdf`.
 
 ---
 
-## 🔬 Core Pipelines & Execution Guide
+## Replication Instructions for Another Device / AI Agent
+
+If setting up this repo on another machine or asking an AI assistant (such as Gemini or Antigravity) on another device to replicate this exact environment:
+
+### 1. Prerequisites (LaTeX & Python)
+* **Install TeX Live 2026** (Windows installer: `install-tl-windows.exe`). Ensure `pdflatex` is available in your PATH (`pdflatex --version`).
+* **Install VS Code Extension**: `LaTeX Workshop` (`James-Yu.latex-workshop`).
+* **Python Environment**:
+  ```powershell
+  python -m venv venv
+  .\venv\Scripts\activate
+  pip install -r requirements.txt
+  ```
+
+### 2. Turnkey Setup (Included Out-of-the-Box)
+* **Pre-configured `.vscode/settings.json`**:
+  * The repository includes tuned settings for root document auto-linking, instant 1-second single-pass `pdflatex-fast` builds on save, SyncTeX forward/inverse search, and format-on-save overrides.
+  * No Perl / `latexmk` setup is needed.
+* **Paper Writing & Agent Rules (`.agents/rules/paper-writing-instructions.md`)**:
+  * Contains the full domain context (Magtajas v. Pryce doctrine, Philippine statutory hierarchy, Stage 1/Stage 2 pipeline), strict anti-AI tone rules, paragraph anatomy requirements, and peer-reviewed DOI citation verification protocols.
+  * Any agent (Gemini, Antigravity, etc.) operating in this workspace automatically adheres to these rules when drafting, citing, or revising chapters.
+
+### 3. Immediate Writing & Live Preview Workflow
+1. Open any chapter file (e.g., `CS_Undergraduate_Thesis_Template/chapters/methodology.tex`).
+2. Press **`Ctrl + Alt + V`** to open the live PDF viewer tab. Snap it to the right half of your screen.
+3. Edit anywhere and press **`Ctrl + S`** — the PDF updates in ~1 second.
+4. When adding new citations to `references.bib` or modifying section hierarchies, run the turnkey compiler:
+   ```powershell
+   python scripts/build_paper.py
+   ```
+   This compiles all 4 passes (`pdflatex -> bibtex -> pdflatex -> pdflatex`) cleanly to `CS_Undergraduate_Thesis_Template/main.pdf`.
+
+---
+
+## Core Pipelines & Execution Guide
 
 ### 1. Statutory Topic Modeling & Corpus Consolidation
 Processes the 25,432 national laws, normalizes legislative templates, and categorizes them into **11 Consolidated Macro Legal Domains** ($\ge 1.0\%$ corpus threshold):
@@ -169,7 +270,7 @@ python src/categorize_query.py --text "AN ORDINANCE BANNING ELECTRONIC CIGARETTE
 
 ---
 
-## 🖨️ Municipal Ordinance Ingestion: OCR vs. Vision-Language Models
+## Municipal Ordinance Ingestion: OCR vs. Vision-Language Models
 
 Local government archives (such as the Davao City Sangguniang Panlungsod records in `corpus/city_ordinances/`) consist of physical paper scans with stamps, councilor attendance rosters, and low-contrast signatures.
 
@@ -198,7 +299,7 @@ To parse 1,000+ scanned PDFs offline with **zero API costs and zero token limits
 
 ---
 
-## ☁️ Google Colab Workflows
+## Google Colab Workflows
 
 For GPU-accelerated training, dense vector index construction, and transformer cross-encoding:
 1. Open [`notebooks/01_corpus_preparation_and_topic_modeling.ipynb`](file:///c:/Users/SHRIMP/Documents/thesis-repo/notebooks/01_corpus_preparation_and_topic_modeling.ipynb) in Google Colab.
@@ -207,7 +308,7 @@ For GPU-accelerated training, dense vector index construction, and transformer c
 
 ---
 
-## 🔒 Git & Large File Management
+## Git & Large File Management
 
 To comply with GitHub repository size limits ($<100\text{ MB}$ per file), the [`.gitignore`](file:///c:/Users/SHRIMP/Documents/thesis-repo/.gitignore) is pre-configured to exclude:
 * `corpus/` (Raw JSONLs and heavy scanned PDF folders).
@@ -218,18 +319,3 @@ To comply with GitHub repository size limits ($<100\text{ MB}$ per file), the [`
 
 ---
 
-## 📜 Citation & Academic Use
-
-If utilizing this codebase, statutory datasets, or conflict detection architecture in academic work, please cite:
-
-```bibtex
-@thesis{dulce_odin_2026_conflict,
-  author    = {Dulce, Ralph Paolo and Odin, Yahyah},
-  title     = {A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference},
-  school    = {Ateneo de Davao University},
-  department= {Department of Computer Science},
-  year      = {2026},
-  month     = {April},
-  address   = {Davao City, Philippines}
-}
-```

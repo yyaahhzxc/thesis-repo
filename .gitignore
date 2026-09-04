@@ -31,7 +31,10 @@ output/*.pkl
 *.synctex(busy)
 
 # IDE & OS Artifacts
-.vscode/
+.vscode/*
+!.vscode/settings.json
+CS_Undergraduate_Thesis_Template/.vscode/*
+!CS_Undergraduate_Thesis_Template/.vscode/settings.json
 .idea/
 .DS_Store
 Thumbs.db

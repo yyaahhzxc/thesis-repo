@@ -1,0 +1,51 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex-fast",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "fast-pdflatex (instant preview)",
+            "tools": [
+                "pdflatex-fast"
+            ]
+        },
+        {
+            "name": "full-build (pdflatex -> bibtex -> pdflatex*2)",
+            "tools": [
+                "pdflatex-fast",
+                "bibtex",
+                "pdflatex-fast",
+                "pdflatex-fast"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "first",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoBuild.interval": 500,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.refreshes": "onBuild",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.latex.rootFile.useWorkspace": true,
+    "[latex]": {
+        "editor.formatOnSave": false
+    },
+    "[tex]": {
+        "editor.formatOnSave": false
+    }
+}
