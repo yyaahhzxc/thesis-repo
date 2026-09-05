@@ -7,7 +7,7 @@
 [![LaTeX: TeX Live / MiKTeX](https://img.shields.io/badge/LaTeX-97%20Pages%20%7C%200%20Errors-blue.svg)]()
 [![Benchmark: 350 Pairs](https://img.shields.io/badge/Benchmark-350%20Pairs%20%7C%208%20Domains-orange.svg)]()
 
-**Undergraduate Thesis Project (Academic Year 2025–2026)**  
+**Undergraduate Thesis Project**  
 **Authors**: Ralph Paolo Dulce and Yahyah Odin  
 **Adviser**: Mr. Adrian "Ogs" Ablazo  
 **Institution**: Department of Computer Science, School of Arts and Sciences, Ateneo de Davao University, Davao City, Philippines  
@@ -27,11 +27,11 @@ The system operationalizes the legal doctrine articulated in *Magtajas v. Pryce 
 
 ```mermaid
 flowchart LR
-    A[Proposed Draft Ordinance] --> B[Stage 1: Coarse IR\nBM25 + Dense Bi-Encoder]
-    B --> C[Top-k Candidate Statutes\nFiltered Statutory Space]
-    C --> D[Stage 2: Fine NLI Cross-Encoder\nAsymmetric Span Pairing]
-    D --> E[Calibrated Conflict Probabilities\nEntailment | Neutral | Contradiction]
-    E --> F[Self-Attention XAI Attribution\nSpan-Level Interpretability]
+    A["Proposed Draft Ordinance"] --> B["Stage 1: Coarse Retrieval<br>(BM25 + Dense Bi-Encoder)"]
+    B --> C["Top-k Candidate Statutes<br>(Filtered Statutory Space)"]
+    C --> D["Stage 2: Fine NLI Cross-Encoder<br>(Asymmetric Span Pairing)"]
+    D --> E["Calibrated Conflict Probabilities<br>(Entailment, Neutral, Contradiction)"]
+    E --> F["Self-Attention XAI Attribution<br>(Span-Level Interpretability)"]
 ```
 
 ---
@@ -127,7 +127,7 @@ thesis-repo/
 ├── corpus/                            <-- Statutory Data (Excluded from Git tracking)
 │   ├── categorized_national_laws.jsonl <-- Consolidated cleaned national laws (194 MB)
 │   ├── national_laws/                 <-- Granular statutory collections (RA, BP, CA, EO, PD)
-│   └── city_ordinances/               <-- Scanned municipal PDF ordinances (2021–2025)
+│   └── city_ordinances/               <-- Scanned municipal Sangguniang Panlungsod archives
 │
 ├── src/                               <-- Core Python Engine
 │   ├── preprocess.py                  <-- Statutory text normalization and segmentation

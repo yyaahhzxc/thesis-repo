@@ -7,7 +7,7 @@ Tel. No.: +63 (82) 221-2411 | Website: www.addu.edu.ph
 
 ---
 
-**Date:** September 05, 2026  
+**Date:** [Date of Submission]  
 
 **ATTY. CHARISSE PAULA MARIE A. GUINTO** *(or Incumbent SP Secretary)*  
 Secretary to the Sangguniang Panlungsod  
