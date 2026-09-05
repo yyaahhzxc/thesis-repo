@@ -1,0 +1,8 @@
+{
+  "Republic Acts": "republic_acts.jsonl",
+  "Acts": "acts.jsonl",
+  "Commonwealth Acts": "commonwealth_acts.jsonl",
+  "Presidential Decrees": "presidential_decrees.jsonl",
+  "Executive Orders": "executive_orders.jsonl",
+  "Batas Pambansa": "batas_pambansa.jsonl"
+}

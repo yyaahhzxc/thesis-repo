@@ -4,12 +4,39 @@
 [![Department: Computer Science](https://img.shields.io/badge/Department-Computer%20Science-blue.svg)]()
 [![Degree: BS Computer Science Thesis](https://img.shields.io/badge/Thesis-Undergraduate%20Research-green.svg)]()
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)]()
-[![LaTeX: TeX Live 2026](https://img.shields.io/badge/LaTeX-TeX%20Live%202026-blue.svg)]()
+[![LaTeX: TeX Live / MiKTeX](https://img.shields.io/badge/LaTeX-97%20Pages%20%7C%200%20Errors-blue.svg)]()
+[![Benchmark: 350 Pairs](https://img.shields.io/badge/Benchmark-350%20Pairs%20%7C%208%20Domains-orange.svg)]()
 
 **Undergraduate Thesis Project (April 2026)**  
 **Authors**: Ralph Paolo Dulce & Yahyah Odin  
 **Adviser**: Mr. Adrian "Ogs" Ablazo  
 **Institution**: School of Arts and Sciences, Ateneo de Davao University, Davao City, Philippines  
+
+---
+
+## ⚡ Quick Start: One-Click Automated Setup
+
+If you are cloning this repository on a new machine, setting up for review, or testing in VS Code / Cursor:
+
+### Step 1: Run the Automated Setup Script
+Run the turnkey PowerShell setup script in the repository root:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\setup_environment.ps1
+```
+This script automatically:
+1. Detects your LaTeX compiler (`pdflatex`); if missing, initiates automated installation of **MiKTeX** via `winget`.
+2. Creates and activates the Python virtual environment (`venv`).
+3. Installs all required Python dependencies from [`requirements.txt`](file:///c:/Users/SHRIMP/Documents/thesis-repo/requirements.txt).
+4. Verifies the end-to-end multi-pass LaTeX thesis build.
+
+> [!IMPORTANT]
+> **Manual VS Code Extension Requirement (`James-Yu.latex-workshop`)**:  
+> The setup script attempts to install the LaTeX Workshop extension via `code --install-extension James-Yu.latex-workshop`. However, if the `code` CLI is not in your system `PATH` (common default Windows VS Code installs) or if you are using **Cursor** / **VSCodium**, the extension cannot be installed from the command line.  
+> **You must install it manually:**
+> 1. Open VS Code or Cursor and press **`Ctrl + Shift + X`** (Extensions Marketplace).
+> 2. Search for **`LaTeX Workshop`** (by **James Yu** / ID: `James-Yu.latex-workshop`).
+> 3. Click **Install**.
+> 4. Restart VS Code/Cursor if prompted to ensure the `pdflatex` path is loaded.
 
 ---
 
@@ -37,16 +64,37 @@ flowchart LR
 
 ```
 thesis-repo/
-├── CS_Undergraduate_Thesis_Template/  <-- Full LaTeX Thesis Manuscript Source
+├── CS_Undergraduate_Thesis_Template/  <-- Full LaTeX Thesis Manuscript Source (97 pages)
 │   ├── main.tex                       <-- Root LaTeX document
 │   ├── references.bib                 <-- BibTeX literature database
-│   ├── chapters/                      <-- Individual thesis chapters
+│   ├── chapters/                      <-- Thesis chapters
 │   │   ├── introduction.tex           <-- Chapter 1
 │   │   ├── literature_review.tex      <-- Chapter 2
 │   │   ├── theoretical-framework.tex  <-- Theoretical Framework
-│   │   └── methodology.tex            <-- Chapter 3
-│   ├── figs/                          <-- Publication diagrams and architectural figures
+│   │   └── methodology.tex            <-- Chapter 3 (Refined, simplified headers)
+│   ├── figs/                          <-- Publication diagrams, charts, and figures
+│   │   ├── statute_type_composition.png
+│   │   ├── historical_temporal_evolution.png
+│   │   └── macro_domain_distribution.png
 │   └── .vscode/settings.json          <-- Instant live-preview configuration
+│
+├── data/                              <-- Evaluation Benchmark & Partitioning
+│   ├── ground_truth_350_review.xlsx   <-- Master 4-sheet evaluation & review workbook
+│   ├── ground_truth_350.jsonl         <-- Complete 350-pair benchmark dataset (JSONL)
+│   ├── ground_truth_350.csv           <-- Complete 350-pair benchmark dataset (CSV)
+│   ├── blocks/                        <-- Pre-split blocks for annotator panels
+│   │   ├── block_1.csv                <-- Set A (70 pairs)
+│   │   ├── block_2.csv                <-- Set B (70 pairs)
+│   │   ├── block_3.csv                <-- Set C (70 pairs)
+│   │   ├── block_4.csv                <-- Set D (70 pairs)
+│   │   └── block_5.csv                <-- Set E (70 pairs)
+│   ├── verbatim_statutory_sections.json <-- Extracted Lawphil statute texts
+│   └── corpus_statute_premises.json   <-- Exact statutory premises from corpus
+│
+├── docs/                              <-- Institutional Documentation & Instruments
+│   └── annotation/
+│       ├── sp_annotation_cheat_sheet.md           <-- Quick-reference rubric for SP evaluators
+│       └── adviser_endorsement_letter_template.md <-- Formal endorsement request letter
 │
 ├── corpus/                            <-- Statutory Data (Git-Ignored / Local Storage)
 │   ├── categorized_national_laws.jsonl <-- Master 25,432 cleaned national laws (194 MB)
@@ -57,15 +105,18 @@ thesis-repo/
 │   ├── preprocess.py                  <-- Text normalization, HTML unescaping & parsing
 │   ├── topic_modeler.py               <-- Unsupervised SVD + KMeans topic discovery engine
 │   ├── categorize_query.py            <-- Interactive CLI statute & draft query tool
-│   └── visualize_and_validate.py      <-- 80/20 train/test holdout validation & plotting
+│   ├── visualize_and_validate.py      <-- 80/20 train/test holdout validation & plotting
+│   └── scraper/                       <-- Lawphil statutory scraper suite
+│       ├── lawphil_scraper.py         <-- Resilient scraper with rate-limiting
+│       └── file_map_config.json       <-- Statute URL index mappings
 │
-├── scripts/                           <-- Automated Helper & Execution Scripts
-│   ├── build_paper.py                 <-- One-click LaTeX PDF compiler (TeX Live / pdflatex)
-│   ├── compare_ocr_experiments.py     <-- Empirical OCR vs. VLM benchmark suite
-│   └── build_notebook.py              <-- Colab notebook generator
-│
-├── notebooks/                         <-- GPU-Accelerated Google Colab Notebooks
-│   └── 01_corpus_preparation_and_topic_modeling.ipynb
+├── scripts/                           <-- Automated Helper & Benchmark Scripts
+│   ├── setup_environment.ps1          <-- One-click automated setup for Windows
+│   ├── build_paper.py                 <-- LaTeX PDF compiler (supports --fast flag)
+│   ├── export_ground_truth_excel.py   <-- Builds the master 4-sheet review workbook
+│   ├── generate_ground_truth_dataset.py <-- Compiles the 350-pair stratified benchmark
+│   ├── validate_ground_truth.py       <-- Validates citation integrity and balance
+│   └── compare_ocr_experiments.py     <-- Empirical OCR vs. VLM benchmark suite
 │
 ├── output/                            <-- Generated Summaries & Evaluation Artifacts
 │   ├── topic_summary.csv              <-- 11 Macro Legal Domains summary
@@ -75,192 +126,73 @@ thesis-repo/
 │
 ├── OCR_EXPERIMENT_DRAFT.md            <-- Research draft on OCR vs VLM municipal parsing
 ├── requirements.txt                   <-- Python dependency specifications
-└── .gitignore                         <-- Ignores heavy corpus and LaTeX cache files
+└── .gitignore                         <-- Excludes heavy corpus and LaTeX cache files
 ```
 
 ---
 
-## Environment Setup & Installation
+## 📊 Ground Truth Benchmark Dataset (350 Pairs)
 
-### 1. Prerequisites (Matching Local Machine Setup)
-* **Python**: Version `3.10` or higher (tested on Python 3.10 – 3.14).
-* **LaTeX Distribution**: [TeX Live 2026](https://www.tug.org/texlive/) (Windows default install at `C:\texlive\2026\bin\windows`).
-  * Verify in terminal: `pdflatex --version` (Ensure `pdflatex` is added to system `PATH`).
-  * *Note*: We specifically avoid default `latexmk` on Windows because it requires a separate Perl interpreter; our configuration directly calls native `pdflatex` and `bibtex`.
-* **VS Code Extensions**:
-  * `LaTeX Workshop` (`James-Yu.latex-workshop`) — Configured for side-by-side Overleaf-like live compilation.
-  * `Python` (`ms-python.python`) — For script execution and virtual environments.
+To evaluate the coarse-to-fine pipeline, we constructed a representative, stratified ground truth benchmark of **350 premise-hypothesis pairs** based on actual Philippine national statutes and realistic Davao City legislative draft ordinances.
 
-### 2. Python Virtual Environment Setup
+### 1. Difficulty Tier Stratification
+The benchmark exercises Stage 1 and Stage 2 across three distinct operational challenges:
+* **Tier 1: Lexical-Syntactic Surface Direct (30%)**: Direct lexical overlap and explicit statutory thresholds (e.g., penalty ceilings under RA 7160 Section 458, verbatim mandatory structural elements).
+* **Tier 2: Definitional & Structural Operational (40%)**: Conflicting administrative jurisdictions, operational standards, definitions, and zoning/franchising criteria without direct word-for-word phrasing.
+* **Tier 3: Asymmetric Domain Nuance & Qualitative Overreach (30%)**: Substantive legal conflicts involving *ultra vires* regulatory overreach, constitutional preemption doctrines, field preemption (e.g., national energy/telecom regulation), and implicit statutory exemptions.
 
-Clone the repository and initialize a virtual environment:
+### 2. Macro Domain Coverage
+The 350 pairs are balanced across 8 core local government functional domains:
+1. **Public Order, Safety, & Police Powers** (e.g., curfew, traffic penalties, surveillance)
+2. **Local Taxation, Revenue, & Fiscal Measures** (e.g., local business taxes, franchise fees)
+3. **Zoning, Land Use, & Real Property** (e.g., comprehensive land use, building heights, easements)
+4. **Environmental Management & Sanitation** (e.g., solid waste management, single-use plastics)
+5. **Trade, Commerce, & Economic Enterprises** (e.g., market stall leasing, price freeze compliance)
+6. **Public Health, Sanitation, & Regulated Substances** (e.g., anti-smoking, vaping, health permits)
+7. **Social Welfare & Protected Demographics** (e.g., senior citizen discounts, PWD accessibility)
+8. **Administrative & Civil Service** (e.g., LGU personnel discipline, local appointments)
 
-```powershell
-# 1. Clone the repository
-git clone https://github.com/<your-username>/thesis-repo.git
-cd thesis-repo
-
-# 2. Create an isolated Python virtual environment
-python -m venv venv
-
-# 3. Activate the virtual environment
-# On Windows (PowerShell):
-.\venv\Scripts\activate
-# On Linux / macOS:
-source venv/bin/activate
-
-# 4. Install all required dependencies
-pip install -r requirements.txt
-```
+### 3. Master Review Workbook (`data/ground_truth_350_review.xlsx`)
+A master Excel workbook formatted with professional headers, auto-filter, and column widths is available for adviser review:
+* **Sheet 1 (`Codebook & Instructions`)**: Complete NLI classification rubric (Entailment, Contradiction, Neutral) and evaluator guidelines.
+* **Sheet 2 (`All 350 Benchmark Pairs`)**: Full benchmark dataset featuring verbatim national law premises extracted directly from corpus text, realistic Davao City ordinance hypotheses, verified citations, and consolidated evaluation set designations (`Set A` to `Set E`).
+* **Sheet 3 (`Domain Summaries`)**: High-level statistical summaries across all 8 domains and 3 difficulty tiers.
+* **Sheet 4 (`Panel & Annotator Assignments`)**:
+  * **Table 1: Evaluation Set & Sub-Panel Allocation**: Clean 5-set division (`Set A` to `Set E`, 70 pairs each).
+  * **Table 2: Annotator Directory**: 15 Sangguniang Panlungsod legal researchers divided into 5 independent trios (Panels A–E). Each panel contains **1 Senior Lead Annotator ($\ge 5$ years legislative tenure)** and **2 Associate Annotators**, selected via purposive availability sampling across the 48-member pool (no artificial district quotas, reflecting city-wide ordinance scope).
+  * **Table 3: Google Forms Conditional Branching Blueprint**: Step-by-step implementation guide for deploying a single master Google Form using Section 1 dropdown branching (`Go to section based on answer`) with direct form submissions, collecting 1,050 total judgment data points across 15 submissions.
 
 ---
 
-## Thesis Paper Drafting (Overleaf-Style Local Setup)
+## 📝 Thesis Paper Drafting (Overleaf-Style Local Setup)
 
-The LaTeX source code for the 82-page thesis manuscript is located in `CS_Undergraduate_Thesis_Template/`. The setup was migrated from Overleaf to run completely offline in VS Code with identical live-preview ergonomics.
+The LaTeX source code for the 97-page thesis manuscript is located in `CS_Undergraduate_Thesis_Template/`. The setup runs completely offline in VS Code / Cursor with identical live-preview ergonomics.
 
 ### How We Replicate the Overleaf Experience Locally
 
 | Action | Shortcut / Command | What Happens |
 | :--- | :--- | :--- |
-| **Open Side-by-Side PDF** | **`Ctrl + Alt + V`** | Opens the compiled PDF directly in a tab. Drag it to the right half of your screen for the classic Overleaf split-screen view. |
+| **Open Side-by-Side PDF** | **`Ctrl + Alt + V`** | Opens the compiled PDF directly in an editor tab. Snap it to the right half for split-screen view. |
 | **Instant Recompile** | **`Ctrl + S`** (Save) | Triggers the fast 1-second single-pass `pdflatex` build and reloads the preview tab automatically. |
-| **Jump from Code $\rightarrow$ PDF** | **`Ctrl + Alt + J`** <br>*(or `Ctrl + Alt + Click`)* | Jumps the PDF preview directly to the paragraph your cursor is on and highlights it. |
-| **Jump from PDF $\rightarrow$ Code** | **`Ctrl + Left Click`** on PDF | Clicks any text in the PDF tab to jump straight to that line in your `.tex` source code. |
-| **Full Reference / Citation Build** | `python scripts/build_paper.py` | Runs all 4 passes (`pdflatex -> bibtex -> pdflatex*2`) to resolve bibliography and TOC changes. |
+| **Jump Code $\rightarrow$ PDF** | **`Ctrl + Alt + J`** <br>*(or `Ctrl + Alt + Click`)* | Jumps the PDF preview directly to the paragraph your cursor is currently on. |
+| **Jump PDF $\rightarrow$ Code** | **`Ctrl + Left Click`** on PDF | Clicks any text in the PDF tab to jump straight to that line in your `.tex` source code. |
+| **Fast CLI Build** | `python scripts/build_paper.py --fast` | Fast single-pass build for quick proofreading. |
+| **Full 4-Pass Build** | `python scripts/build_paper.py` | Complete build (`pdflatex -> bibtex -> pdflatex*2`) to refresh citations, TOC, and references. |
 
-1. **Multi-File Root Document Linking**:
-   * All subfiles inside `chapters/` have `% !TeX root = ../main.tex` at line 1. You never need to switch back to `main.tex` to compile; editing and saving inside any chapter automatically updates the master document.
-2. **Formatter Bypass (`editor.formatOnSave: false`)**:
-   * To prevent the common VS Code warning (*"Please set your LaTeX formatter in latex-workshop.formatting.latex"*), formatting on save is explicitly disabled for LaTeX so only the fast compilation runs on `Ctrl + S`.
-
-### The Live Configuration (`.vscode/settings.json`)
-The pre-tuned live-preview settings are tracked in `.vscode/settings.json` (and `CS_Undergraduate_Thesis_Template/.vscode/settings.json`):
-
-```json
-{
-    "latex-workshop.latex.tools": [
-        {
-            "name": "pdflatex-fast",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"
-            ]
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ]
-        }
-    ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "fast-pdflatex (instant preview)",
-            "tools": [
-                "pdflatex-fast"
-            ]
-        },
-        {
-            "name": "full-build (pdflatex -> bibtex -> pdflatex*2)",
-            "tools": [
-                "pdflatex-fast",
-                "bibtex",
-                "pdflatex-fast",
-                "pdflatex-fast"
-            ]
-        }
-    ],
-    "latex-workshop.latex.recipe.default": "first",
-    "latex-workshop.latex.autoBuild.run": "onSave",
-    "latex-workshop.latex.autoBuild.interval": 500,
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.view.pdf.refreshes": "onBuild",
-    "latex-workshop.synctex.afterBuild.enabled": true,
-    "latex-workshop.latex.rootFile.useWorkspace": true,
-    "[latex]": {
-        "editor.formatOnSave": false
-    },
-    "[tex]": {
-        "editor.formatOnSave": false
-    }
-}
-```
-
-### Full Multi-Pass Compilation (Citations & TOC Refresh)
-When you add new citations in `references.bib` or add new sections:
-* **Option A (VS Code Recipe)**: Click the **TeX** sidebar icon $\rightarrow$ **"Build LaTeX project"** $\rightarrow$ select **`full-build (pdflatex -> bibtex -> pdflatex*2)`**.
-* **Option B (One-Click Python Script)**:
-  ```powershell
-  python scripts/build_paper.py
-  ```
-  *Output PDF is compiled to:* `CS_Undergraduate_Thesis_Template/main.pdf`.
+### Chapter 3 Methodology Updates
+The methodology chapter ([`CS_Undergraduate_Thesis_Template/chapters/methodology.tex`](file:///c:/Users/SHRIMP/Documents/thesis-repo/CS_Undergraduate_Thesis_Template/chapters/methodology.tex)) has been extensively updated:
+1. **Simplified Section Headers**: Replaced verbose headings with concise 2–3 word titles matching the style of Chapters 1 and 2 (e.g., *Benchmark Construction*, *Workload Allocation*, *Annotator Selection*, *Inter-Rater Reliability*).
+2. **Workload Mathematics**: Formalized the evaluation partition ($N=350$ pairs, $K=3$ independent raters per item, $R=70$ items per annotator, $A=15$ total legal annotators, yielding 1,050 total judgment data points).
+3. **Statistical Power Analysis**: Added Cohen's statistical power analysis ($w=0.30$, $\alpha=0.05$, $df=28$, $N=1,050$, power $> 0.999$) establishing statistical rigor.
+4. **Annotator Qualifications & Purposive Sampling**: Formalized the Senior Lead Annotator qualification metric ($\ge 5$ years legislative tenure) and purposive availability sampling across the 48-member pool without artificial district quotas.
+5. **Compilation Status**: **97 pages, 0 LaTeX errors**, compiled directly to [`CS_Undergraduate_Thesis_Template/main.pdf`](file:///c:/Users/SHRIMP/Documents/thesis-repo/CS_Undergraduate_Thesis_Template/main.pdf).
 
 ---
 
-## Replication Instructions for Another Device / AI Agent
-
-If setting up this repo on another machine or asking an AI assistant (such as Gemini or Antigravity) on another device to replicate this exact environment:
-
-### Option A: One-Click Automated Setup (Recommended)
-You or the AI agent can run the included automated setup script in PowerShell:
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\setup_environment.ps1
-```
-This script automatically:
-1. Detects if `pdflatex` is installed; if not, automatically invokes `winget` to install **MiKTeX**.
-2. Checks and installs the **LaTeX Workshop** VS Code extension via `code --install-extension James-Yu.latex-workshop`.
-3. Initializes the Python virtual environment (`venv`) and installs `requirements.txt`.
-4. Runs `python scripts/build_paper.py` to verify the end-to-end 4-pass build.
-
-*(Note: If Windows prompts for administrator/UAC approval during the MiKTeX install, simply click **Yes**.)*
-
-### Option B: Manual Setup Steps
-* **Install LaTeX Compiler**: If not installed, run in terminal:
-  ```powershell
-  winget install --id MiKTeX.MiKTeX -e --accept-package-agreements --accept-source-agreements
-  ```
-  *(Or install TeX Live via `install-tl-windows.exe`). Ensure `pdflatex --version` works.*
-* **Install VS Code Extension**:
-  ```powershell
-  code --install-extension James-Yu.latex-workshop
-  ```
-* **Python Environment**:
-  ```powershell
-  python -m venv venv
-  .\venv\Scripts\activate
-  pip install -r requirements.txt
-  ```
-
-### Turnkey Project Settings (Pre-configured Out-of-the-Box)
-* **Pre-configured `.vscode/settings.json`**:
-  * The repository includes tuned settings for root document auto-linking, instant 1-second single-pass `pdflatex-fast` builds on save, SyncTeX forward/inverse search, and format-on-save overrides.
-  * No Perl / `latexmk` setup is needed.
-* **Paper Writing & Agent Rules (`.agents/rules/paper-writing-instructions.md`)**:
-  * Contains the full domain context (Magtajas v. Pryce doctrine, Philippine statutory hierarchy, Stage 1/Stage 2 pipeline), strict anti-AI tone rules, paragraph anatomy requirements, and peer-reviewed DOI citation verification protocols.
-  * Any agent (Gemini, Antigravity, etc.) operating in this workspace automatically adheres to these rules when drafting, citing, or revising chapters.
-
-### 3. Immediate Writing & Live Preview Workflow
-1. Open any chapter file (e.g., `CS_Undergraduate_Thesis_Template/chapters/methodology.tex`).
-2. Press **`Ctrl + Alt + V`** to open the live PDF viewer tab. Snap it to the right half of your screen.
-3. Edit anywhere and press **`Ctrl + S`** — the PDF updates in ~1 second.
-4. When adding new citations to `references.bib` or modifying section hierarchies, run the turnkey compiler:
-   ```powershell
-   python scripts/build_paper.py
-   ```
-   This compiles all 4 passes (`pdflatex -> bibtex -> pdflatex -> pdflatex`) cleanly to `CS_Undergraduate_Thesis_Template/main.pdf`.
-
----
-
-## Core Pipelines & Execution Guide
+## 🛠️ Core Pipelines & Execution Guide
 
 ### 1. Statutory Topic Modeling & Corpus Consolidation
 Processes the 25,432 national laws, normalizes legislative templates, and categorizes them into **11 Consolidated Macro Legal Domains** ($\ge 1.0\%$ corpus threshold):
-
 ```powershell
 python src/topic_modeler.py
 ```
@@ -268,7 +200,6 @@ python src/topic_modeler.py
 
 ### 2. Empirical Holdout Validation (80/20 Train/Test Split) & Visualizations
 Runs out-of-sample topic projection, measures cosine confidence, computes the supervised classification benchmark, and exports 12 interactive HTML and 300 DPI publication PNGs:
-
 ```powershell
 python src/visualize_and_validate.py
 ```
@@ -279,7 +210,6 @@ python src/visualize_and_validate.py
 
 ### 3. Interactive Category Query & Traceability Engine
 Query any national statute by ID or predict the macro-domain for a newly drafted local ordinance:
-
 ```powershell
 # Query an existing statute by ID:
 python src/categorize_query.py --id ra_7160_1991
@@ -288,9 +218,22 @@ python src/categorize_query.py --id ra_7160_1991
 python src/categorize_query.py --text "AN ORDINANCE BANNING ELECTRONIC CIGARETTES AND VAPING IN ALL ENCLOSED PUBLIC SPACES IN DAVAO CITY."
 ```
 
+### 4. Ground Truth Dataset & Excel Generation
+To re-generate the ground truth benchmark or re-export the master review Excel workbook:
+```powershell
+# Generate the stratified 350-pair benchmark:
+python scripts/generate_ground_truth_dataset.py
+
+# Export the master 4-sheet review Excel workbook:
+python scripts/export_ground_truth_excel.py
+
+# Validate benchmark balance and citations:
+python scripts/validate_ground_truth.py
+```
+
 ---
 
-## Municipal Ordinance Ingestion: OCR vs. Vision-Language Models
+## 📑 Municipal Ordinance Ingestion: OCR vs. Vision-Language Models
 
 Local government archives (such as the Davao City Sangguniang Panlungsod records in `corpus/city_ordinances/`) consist of physical paper scans with stamps, councilor attendance rosters, and low-contrast signatures.
 
@@ -309,17 +252,9 @@ To re-run this comparative benchmark:
 python scripts/compare_ocr_experiments.py
 ```
 
-### Running Batch Ordinance Transcription Locally (Unattended / Overnight)
-To parse 1,000+ scanned PDFs offline with **zero API costs and zero token limits**:
-1. Install **Ollama** or **vLLM** and pull the vision model:
-   ```bash
-   ollama run qwen2.5-vl:7b
-   ```
-2. The batch pipeline iterates through `corpus/city_ordinances/`, extracts high-resolution page images via `PyMuPDF`, prompts the local VLM to output structured Markdown/JSON, and automatically appends clean records to `output/davao_ordinances.jsonl`.
-
 ---
 
-## Google Colab Workflows
+## 🌐 Google Colab Workflows
 
 For GPU-accelerated training, dense vector index construction, and transformer cross-encoding:
 1. Open [`notebooks/01_corpus_preparation_and_topic_modeling.ipynb`](file:///c:/Users/SHRIMP/Documents/thesis-repo/notebooks/01_corpus_preparation_and_topic_modeling.ipynb) in Google Colab.
@@ -328,7 +263,7 @@ For GPU-accelerated training, dense vector index construction, and transformer c
 
 ---
 
-## Git & Large File Management
+## 🔒 Git & Large File Management
 
 To comply with GitHub repository size limits ($<100\text{ MB}$ per file), the [`.gitignore`](file:///c:/Users/SHRIMP/Documents/thesis-repo/.gitignore) is pre-configured to exclude:
 * `corpus/` (Raw JSONLs and heavy scanned PDF folders).
@@ -336,6 +271,3 @@ To comply with GitHub repository size limits ($<100\text{ MB}$ per file), the [`
 * LaTeX auxiliary compilation caches (`*.aux`, `*.log`, `*.toc`, `*.bbl`, etc.).
 
 *All dataset binaries and serialized vector models are reproduced automatically by running the setup scripts.*
-
----
-

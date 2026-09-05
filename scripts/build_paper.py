@@ -10,30 +10,35 @@ import os
 import subprocess
 import sys
 
-def compile_thesis(template_dir="CS_Undergraduate_Thesis_Template", main_file="main.tex"):
+def compile_thesis(template_dir="CS_Undergraduate_Thesis_Template", main_file="main.tex", fast=False):
     if not os.path.exists(template_dir):
         print(f"Error: Directory '{template_dir}' not found.")
         return False
         
-    print(f"=== Compiling Thesis LaTeX Document ({main_file}) ===")
+    print(f"=== Compiling Thesis LaTeX Document ({main_file}) {'[FAST MODE]' if fast else '[FULL 4-PASS MODE]'} ===")
     
-    # Step 1: First pdflatex pass
-    print("\n[Pass 1/4] Running initial pdflatex...")
-    cmd1 = ["pdflatex", "-interaction=nonstopmode", main_file]
-    res1 = subprocess.run(cmd1, cwd=template_dir, capture_output=True, text=True)
+    cmd_pdf = ["pdflatex", "-interaction=nonstopmode", main_file]
     
-    # Step 2: BibTeX for citations
-    print("[Pass 2/4] Running bibtex for references...")
-    cmd_bib = ["bibtex", main_file.replace(".tex", "")]
-    res_bib = subprocess.run(cmd_bib, cwd=template_dir, capture_output=True, text=True)
-    
-    # Step 3: Second pdflatex pass
-    print("[Pass 3/4] Running second pdflatex pass...")
-    subprocess.run(cmd1, cwd=template_dir, capture_output=True, text=True)
-    
-    # Step 4: Final pdflatex pass for cross-references
-    print("[Pass 4/4] Running final pdflatex pass for TOC/Figures...")
-    res_final = subprocess.run(cmd1, cwd=template_dir, capture_output=True, text=True)
+    if fast:
+        print("\n[Fast Pass] Running single-pass pdflatex for quick update...")
+        res = subprocess.run(cmd_pdf, cwd=template_dir, capture_output=True, text=True)
+    else:
+        # Step 1: First pdflatex pass
+        print("\n[Pass 1/4] Running initial pdflatex...")
+        res1 = subprocess.run(cmd_pdf, cwd=template_dir, capture_output=True, text=True)
+        
+        # Step 2: BibTeX for citations
+        print("[Pass 2/4] Running bibtex for references...")
+        cmd_bib = ["bibtex", main_file.replace(".tex", "")]
+        res_bib = subprocess.run(cmd_bib, cwd=template_dir, capture_output=True, text=True)
+        
+        # Step 3: Second pdflatex pass
+        print("[Pass 3/4] Running second pdflatex pass...")
+        subprocess.run(cmd_pdf, cwd=template_dir, capture_output=True, text=True)
+        
+        # Step 4: Final pdflatex pass for cross-references
+        print("[Pass 4/4] Running final pdflatex pass for TOC/Figures...")
+        res_final = subprocess.run(cmd_pdf, cwd=template_dir, capture_output=True, text=True)
     
     pdf_path = os.path.join(template_dir, main_file.replace(".tex", ".pdf"))
     if os.path.exists(pdf_path):
@@ -47,4 +52,5 @@ def compile_thesis(template_dir="CS_Undergraduate_Thesis_Template", main_file="m
         return False
 
 if __name__ == "__main__":
-    compile_thesis()
+    is_fast = "--fast" in sys.argv or "-f" in sys.argv
+    compile_thesis(fast=is_fast)
