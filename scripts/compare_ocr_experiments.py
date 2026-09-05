@@ -94,7 +94,11 @@ def run_experiment():
         "City Ordinances (2025-2021)/2021/Ordinance No. 000667-21.pdf"
     ]
     pdf_path = next((p for p in candidate_pdf_paths if os.path.exists(p)), candidate_pdf_paths[0])
-    ground_truth_path = "ordinance no 000667.txt"
+    candidate_gt_paths = [
+        "data/ordinance_000667_ground_truth.txt",
+        "ordinance no 000667.txt"
+    ]
+    ground_truth_path = next((p for p in candidate_gt_paths if os.path.exists(p)), candidate_gt_paths[0])
     
     if not os.path.exists(ground_truth_path):
         print(f"Error: {ground_truth_path} not found.")
