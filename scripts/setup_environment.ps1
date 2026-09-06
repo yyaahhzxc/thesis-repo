@@ -40,20 +40,24 @@ if (-not (Test-Path "venv")) {
     Write-Host "  -> Existing venv found." -ForegroundColor Green
 }
 
-if (Test-Path "venv\Scripts\Activate.ps1") {
-    Write-Host "  -> Activating venv and installing requirements..." -ForegroundColor Cyan
-    .\venv\Scripts\activate
-    pip install -r requirements.txt
-    Write-Host "  -> [OK] Python dependencies installed." -ForegroundColor Green
+if (Test-Path "venv\Scripts\python.exe") {
+    Write-Host "  -> Installing requirements into virtual environment..." -ForegroundColor Cyan
+    .\venv\Scripts\python.exe -m pip install --upgrade pip
+    .\venv\Scripts\python.exe -m pip install -r requirements.txt
+    Write-Host "  -> [OK] Python dependencies installed in venv." -ForegroundColor Green
 } else {
-    Write-Host "  -> [!] venv activation script not found. Installing via global python..." -ForegroundColor Magenta
+    Write-Host "  -> [!] venv python not found. Installing via global python..." -ForegroundColor Magenta
     pip install -r requirements.txt
 }
 
 # 4. Verify Paper Build
 Write-Host "`n[4/4] Verifying paper compilation..." -ForegroundColor Yellow
 if (Get-Command pdflatex -ErrorAction SilentlyContinue) {
-    python scripts/build_paper.py
+    if (Test-Path "venv\Scripts\python.exe") {
+        .\venv\Scripts\python.exe scripts/build_paper.py
+    } else {
+        python scripts/build_paper.py
+    }
     Write-Host "`n===============================================" -ForegroundColor Green
     Write-Host "   Setup complete! All systems operational.    " -ForegroundColor Green
     Write-Host "===============================================`n" -ForegroundColor Green

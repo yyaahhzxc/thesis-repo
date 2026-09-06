@@ -6,6 +6,7 @@
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
+                "-enable-installer",
                 "-file-line-error",
                 "%DOC%"
             ]

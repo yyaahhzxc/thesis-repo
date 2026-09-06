@@ -38,3 +38,5 @@ CS_Undergraduate_Thesis_Template/.vscode/*
 .idea/
 .DS_Store
 Thumbs.db
+~$*
+*.tmp

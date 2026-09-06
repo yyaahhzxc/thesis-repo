@@ -57,9 +57,9 @@ def get_curated_topics():
                  "Jurisdictional encroachment under Magtajas. The municipal draft strips statutory adjustment mechanisms and emergency authority explicitly granted to the Secretary of Trade and Industry and the National Price Coordinating Council under RA 7581."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Commercial Supply Chain Integrity Measure", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 5. REGULATION OF EMERGENCY COMMODITY COMMERCE. — To safeguard consumer welfare during riverine flooding emergencies, it shall be unlawful for any wholesale merchant delivering staple food commodities into municipal trading terminals to charge wholesale rates exceeding warehouse acquisition cost plus verified municipal freight surcharge; and any establishment violating this Section shall have its Mayor's Business Permit summarily revoked by the Business Bureau without requiring prior national economic price freeze proclamations by the President.",
-                 "Latent substantive preemption (Lawyer-Level). The draft establishes an unauthorized local price regulation formula based on warehouse acquisition cost plus local freight and revokes permits without national presidential price freeze declarations, enacting local price control without statutory keywords or numerical phrasing, with zero numbers."),
+                 "Draft Davao City Emergency Commodity Margin Stabilization Measure", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 5. LOCAL COMMODITY MARGIN STABILIZATION. — To protect vulnerable consumer households during riverine flooding emergencies, the Business Bureau is authorized to enforce mandatory gross profit margins on essential grain and canned sustenance items based on pre-emergency wholesale acquisition costs, with immediate closure of non-conforming commercial stalls.",
+                 "Latent substantive preemption of presidential price control authority (Lawyer-Level). Regulating profit margins on basic necessities during weather emergencies constitutes price regulation under RA 7581; Section 6 establishes that automatic price control on basic necessities is an exclusive presidential power triggered only upon a formal declaration of a state of calamity, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Executive Order Adopting Calamity Price Freeze Guidelines", "Actual Davao City Local Issuance Adaptation",
@@ -108,9 +108,9 @@ def get_curated_topics():
                  "Breach of statutory command hierarchy. Section 12 mandates a unified local disaster office to coordinate all localized disaster preparedness and response operations."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Ordinance Establishing External NGO Calamity Incident Direction", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 7. EXTERNAL CHARITY INCIDENT COMMAND. — During major monsoon flooding events, operational direction of all city emergency equipment and evacuation shelters shall be automatically transferred to designated private charitable foundations without oversight by municipal civil defense officers.",
-                 "Latent usurpation of municipal disaster management powers (Lawyer-Level). Displaces statutory local disaster office responsibility in favor of private foundations without citing Section 12, with zero numbers."),
+                 "Draft Ordinance Establishing Integrated Shelter Management Operations", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 7. INTEGRATED HUMANITARIAN SHELTER MANAGEMENT ALLIANCE. — To optimize municipal disaster response logistics during severe flooding events, accredited private humanitarian foundations are designated as autonomous directors of designated municipal evacuation centers, possessing exclusive operational authority over relief intake and facility management.",
+                 "Latent unlawful delegation of municipal police powers (Lawyer-Level). Devests the statutory Local Disaster Risk Reduction and Management Office (LDRRMO) of supervisory authority over evacuation operations, violating Section 12 of RA 10121 which mandates direct governmental command over local emergency facilities, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Disaster Risk Reduction and Management Reorganization Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -159,9 +159,9 @@ def get_curated_topics():
                  "Violation of due process and anti-red tape mandates. RA 11032 strictly prohibits indefinite or discretionary processing suspensions without formal, written deficiency notices containing explicit legal bases."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Ordinance Regulating Municipal Commercial Assessment Reviews", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 9. INTER-DEPARTMENTAL RE-EVALUATION PROCEDURES. — The Business Bureau shall withhold the final issuance of commercial regulatory certificates until all field enforcement divisions complete unannounced joint ocular inspections of the commercial premises, during which open-ended period statutory processing timeframes remain administratively stayed.",
-                 "Latent evasion of statutory anti-red tape mandates (Lawyer-Level). Disguises illegal bureaucratic delays under the pretext of 'open-ended unannounced inspections' without citing Section 9, with zero numbers."),
+                 "Draft Ordinance Regulating Multi-Agency Commercial Safety Audits", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 9. COMPREHENSIVE MULTI-AGENCY PRE-LICENSING AUDIT. — To ensure comprehensive structural safety, the Business Bureau shall route commercial permit renewal applications through sequential onsite verification by the City Planning, Building, and Fire Directorates, issuing operating clearances only upon receiving unanimous written endorsements from each reviewing department.",
+                 "Latent evasion of statutory anti-red tape processing caps (Lawyer-Level). Imposes sequential multi-department endorsements as a condition precedent for license renewal, creating procedural bottlenecks that inevitably exceed the statutory processing ceilings mandated under Section 9 of RA 11032, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Business Bureau Streamlined Citizen's Charter Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -214,9 +214,9 @@ def get_curated_topics():
                  "Discriminatory local preemption. RA 10931 extends free tertiary education privileges to all Filipino students enrolled in recognized LUCs without allowing municipal councils to impose local electoral residency conditions."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft City College of Davao Academic Development Cost-Sharing Scheme", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. MANDATORY CAMPUS CO-DEVELOPMENT CONTRIBUTIONS. — All undergraduate students attending the local college shall remit a recurring physical campus maintenance contribution prior to semester class admission to sustain facility air-conditioning and institutional power utility operations.",
-                 "Latent evasion of statutory free tertiary education guarantees (Lawyer-Level). Disguises unlawful mandatory student fees under the euphemism of 'campus co-development contributions', with zero numbers."),
+                 "Draft City College of Davao Campus Sustainability and Facility Assessment Scheme", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. SUSTAINABILITY CO-DEVELOPMENT PROGRAM. — To support green infrastructure and campus power decarbonization, matriculated students attending the local tertiary college shall remit an auxiliary environmental facility maintenance assessment prior to semester course enrollment.",
+                 "Latent evasion of statutory tertiary tuition and fee exemptions (Lawyer-Level). Re-labels mandatory student fees under the guise of an 'environmental facility maintenance assessment', violating Section 4 of RA 10931 which prohibits charging any tuition or institutional maintenance fees to undergraduate students in local colleges, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Ordinance Institutionalizing the City College of Davao", "Actual Davao City Landmark Ordinance Adaptation",
@@ -265,9 +265,9 @@ def get_curated_topics():
                  "Violation of statutory due process. Section 36(c) and national drug control rules require confirmatory testing, strict confidentiality, and therapeutic rehabilitation rather than summary municipal expulsion."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Ordinance Establishing Campus Police Drug Inspection Brigades", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 5. POLICE-DIRECTED CAMPUS TOXICOLOGICAL TESTING. — Local law enforcement officers from the Davao City Police Office are authorized to enter school classrooms at unannounced intervals to administer chemical toxicology testing to students selected at police discretion, retaining testing logs for criminal intelligence files.",
-                 "Latent violation of student drug testing protections (Lawyer-Level). Usurps internal academic and DOH authority by subjecting students to police-directed toxicological screening for criminal intelligence, with zero numbers."),
+                 "Draft Ordinance Establishing Campus Security Gate Screening Protocols", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 5. CAMPUS ENTRY SAFETY AND TOXICOLOGY PROTOCOL. — Municipal police school liaison officers assigned to secondary schools shall conduct unannounced chemical toxicology screening swabs on students selected during morning campus gate security inspections, maintaining administrative security logs to identify youth intervention candidates.",
+                 "Latent violation of statutory student drug testing protections (Lawyer-Level). Displaces academic administrative guidance and DOH-accredited laboratory procedures by authorizing uniformed police officers to conduct gate-level toxicological testing, violating Section 36(c) of RA 9165 which guarantees confidential, non-law-enforcement student screening, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City School Substance Prevention and Random Testing Protocol", "Actual Davao City Ordinance Adaptation",
@@ -316,9 +316,9 @@ def get_curated_topics():
                  "Direct violation of statutory applicability. Section 5 of RA 11314 explicitly commands that the student fare discount shall be effective year-round, including weekends, summer breaks, and official holidays."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Transport Operator Revenue Protection Measure", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 4. DISCRETIONARY COMMUTER DISCOUNTS. — Public utility vehicle drivers shall possess full administrative discretion to withhold passenger fare discounts from student commuters during peak traffic congestion periods to preserve route transport profitability.",
-                 "Latent rollback of mandatory statutory discount privileges (Lawyer-Level). Authorizes drivers to unilaterally withhold fare discounts during peak hours, circumventing RA 11314 without citing discount percentages, with zero numbers."),
+                 "Draft Davao City Express Transit Congestion Relief Measure", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 4. PREMIUM SEATING CONGESTION MITIGATION SHUTTLES. — Public utility franchises operating express point-to-point commuter routes during morning peak hours may designate executive single-occupancy seating cabins subject to a uniform premium tariff, exempting these specialized non-standing express corridors from standard discounted commuter schedules.",
+                 "Latent rollback of mandatory statutory discount privileges (Lawyer-Level). Creates a localized 'premium express corridor' exemption to withhold statutory student fare discounts, violating Section 5 of RA 11314 which establishes universal student discount applicability across all public land transportation services, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Student Public Transit Fare Protection Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -371,9 +371,9 @@ def get_curated_topics():
                  "Ultra vires forfeiture. Local councils cannot enact criminal penalties forfeiting real property titles without judicial expropriation or criminal trial, exceeding delegated police powers under Section 458."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Public Order and Traffic Obstruction Accountability Ordinance", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 12. SPECIAL PENALTIES FOR CHRONIC TRAFFIC OBSTRUCTION. — To deter persistent vehicular obstruction along municipal thoroughfares, the City Transport and Traffic Management Office is authorized to impound offending private vehicles and condition administrative release upon the vehicle owner surrendering all commercial vending licenses held by their registered enterprise within the City of Davao.",
-                 "Latent ultra vires penal sanction (Lawyer-Level). Imposes collateral commercial disqualification not authorized under municipal police powers, evading statutory limits on ordinance penalties without citing fines or prison terms, with zero numbers."),
+                 "Draft Davao City Commercial Fleet Traffic Obstruction Accountability Ordinance", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 12. INTEGRATED CORPORATE COMPLIANCE SANCTIONS. — Commercial enterprises whose registered delivery vehicles repeatedly cause traffic bottlenecks along downtown thoroughfares shall face immediate administrative suspension of their principal business licenses until the commercial enterprise establishes dedicated off-street fleet terminals.",
+                 "Latent ultra vires penal sanction (Lawyer-Level). Imposes collateral business license suspension for vehicular traffic infractions, exceeding municipal regulatory powers under Section 458 of RA 7160 by applying enterprise-wide commercial disqualification to separate road transit violations, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Anti-Littering and Solid Waste Penal Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -422,9 +422,9 @@ def get_curated_topics():
                  "Severe violation of statutory detention prohibitions. Section 6 and Section 57-A of RA 9344 strictly prohibit detaining children in jails or lock-ups for status offenses, requiring immediate release to parents or diversion programs."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Youth Protective Custody and Civic Discipline Protocol", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. BARANGAY OVERNIGHT DETENTION MEASURE. — Barangay tanods are directed to escort unaccompanied adolescents found wandering after dusk into locked community holding rooms overnight to instill civil obedience prior to morning parental notification.",
-                 "Latent violation of juvenile protection mandates (Lawyer-Level). Euphemizes custodial incarceration as 'overnight holding rooms for civic discipline', violating absolute prohibitions on detaining status offenders, with zero numbers."),
+                 "Draft Davao City Youth Protective Transition and Recovery Protocol", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. PROTECTIVE YOUTH REST AND RECOVERY PROTOCOL. — Unaccompanied minors found outside residential premises after municipal curfew hours shall be brought to the Barangay Youth Recovery Sanctuary for structured overnight reflection, remaining in protective transitional custody until verified personal turnover to legal guardians.",
+                 "Latent violation of juvenile protection mandates (Lawyer-Level). Euphemizes involuntary overnight detention as 'structured overnight reflection in a youth sanctuary', violating Section 57 of RA 9344 and Lucila v. People which strictly prohibit custodial detention of minors for curfew or status infractions, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Comprehensive Juvenile Intervention Program Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -473,9 +473,9 @@ def get_curated_topics():
                  "Illegal preemption of devolved revenue authority. The Local Government Code grants barangays exclusive power to issue clearances and collect corresponding fees for all businesses within their territorial jurisdiction."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Strategic Investment Licensing Fast-Track Code", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 9. UNILATERAL CENTRAL PERMIT ISSUANCE. — For high-value commercial investments certified by the City Investment Board, the Business Bureau shall issue final operating authorizations through a centralized portal, deeming host community clearances wholly unnecessary.",
-                 "Latent usurpation of barangay clearance authority (Lawyer-Level). Circumvents mandatory statutory barangay clearances through 'centralized fast-track certification' without mentioning Section 152, with zero numbers."),
+                 "Draft Davao City Consolidated Enterprise Investment Licensing Code", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 9. STRATEGIC ENTERPRISE CONSOLIDATED CLEARANCE PORTAL. — For high-value commercial projects certified by the City Investment Board, the Business Bureau shall issue consolidated multi-tiered municipal licenses through a single-window processing platform, integrating all sub-municipal developmental endorsements into the principal city authorization.",
+                 "Latent usurpation of barangay clearance authority (Lawyer-Level). Subsumes mandatory barangay commercial clearances into a unified city license under the guise of an 'integrated single-window platform', circumventing the independent statutory prerequisite mandated under Section 152(c) of RA 7160, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Unified Business Permitting System Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -528,9 +528,9 @@ def get_curated_topics():
                  "Direct violation of statutory truck speed ceilings under Section 35(b) of RA 4136, which limits heavy trucks to 50 km/h on national highways."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Suburban Transit Acceleration Measure", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 9. TRANSIT DISCRETIONARY VELOCITY PROTOCOL. — Motor vehicle operators traversing suburban highway corridors during daylight hours are authorized to exceed national roadway speed limits whenever road conditions appear clear and unencumbered.",
-                 "Latent preemption of national traffic safety code (Lawyer-Level). Authorizes drivers to unilaterally disregard statutory speed caps under the pretext of clear roads, with zero numbers."),
+                 "Draft Davao City Suburban Transit Velocity Harmonization Measure", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 9. DYNAMIC VELOCITY CORRIDOR HARMONIZATION. — To maximize traffic throughput along suburban bypass routes, the City Transport and Traffic Management Office may establish progressive green-wave transit corridors, authorizing motor vehicles maintaining synchronized formation to proceed at prevailing corridor design velocity.",
+                 "Latent preemption of national traffic safety code (Lawyer-Level). Authorizes vehicles to travel at 'corridor design velocity' exceeding statutory caps, violating Section 35 of RA 4136 which strictly limits LGU speed-setting authority to enacting lower, more restrictive limits for safety, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Speed Limit Ordinance for Urban and Arterial Streets", "Actual Davao City Landmark Ordinance Adaptation",
@@ -579,9 +579,9 @@ def get_curated_topics():
                  "Breach of national interconnection policy. RA 7925 guarantees mandatory, non-exclusive interconnection between telecommunications networks nationwide under NTC supervision."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Digital Infrastructure Sovereignty Measure", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. LOCAL BROADBAND OPERATING EXCLUSIONS. — The City Information and Communications Technology Office is authorized to revoke operating clearances of national cellular providers that fail to prioritize municipal governmental telemetry over private consumer cellular traffic.",
-                 "Latent preemption of national telecom policy (Lawyer-Level). Displaces NTC regulatory supremacy by threatening municipal revocation of telecommunications operating clearances, with zero numbers."),
+                 "Draft Davao City Emergency Telecommunications Routing Measure", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. PRIORITY CIVIL DEFENSE TELECOMMUNICATIONS QUEUING. — Telecommunications carriers operating base transceiver stations within municipal jurisdiction must configure network routing protocols to allocate dedicated bandwidth channels for municipal civil defense communications during severe weather advisories, conditioning cellular mast operating renewals on annual compliance certification.",
+                 "Latent preemption of national telecom policy (Lawyer-Level). Imposes local technical network queuing mandates on cellular carriers through local operating permits, encroaching upon the exclusive jurisdiction of the National Telecommunications Commission under RA 7925 and Batangas CATV, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Cellular Tower Permitting Guidelines Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -630,9 +630,9 @@ def get_curated_topics():
                  "Breach of exclusive national jurisdiction. Section 43(u) of EPIRA grants the ERC exclusive jurisdiction over all cases contesting rates and disputes between electric industry participants and end-users."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Energy Consumer Protection Council Measure", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. BINDING LOCAL POWER BILLING DETERMINATIONS. — The City Energy Advisory Council is empowered to issue mandatory determinations modifying distribution charges billed by retail power utilities within the city, establishing local power rate baselines without requiring confirmation from national regulatory bodies.",
-                 "Latent usurpation of national utility rate authority (Lawyer-Level). Displaces exclusive ERC rate adjudication through a municipal council without citing Section 43, with zero numbers."),
+                 "Draft Davao City Urban Grid Hardening Infrastructure Assessment Measure", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. MUNICIPAL GRID RESILIENCY INFRASTRUCTURE SURCHARGE. — To finance the conversion of overhead distribution cables into subterranean conduits, the City Council shall establish an auxiliary urban grid hardening fee to be unbundled on consumer electricity invoices, mandating the franchised distribution utility to collect the adjusted schedule.",
+                 "Latent usurpation of national utility rate authority (Lawyer-Level). Adds an unbundled municipal surcharge to retail electricity bills, violating Section 43 of RA 9136 (EPIRA) which vests exclusive jurisdiction over electricity tariffs and unbundled billing items in the Energy Regulatory Commission, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Electric Utility Franchise Right-of-Way Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -685,9 +685,9 @@ def get_curated_topics():
                  "Unlawful preemption of universal healthcare rights. RA 11223 guarantees every Filipino citizen immediate access to comprehensive primary and emergency healthcare services without local property ownership barriers."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Hospital Emergency Admission Prioritization Protocol", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. PROOF OF EMPLOYMENT FOR CRITICAL ADMISSIONS. — City-operated emergency infirmaries shall condition the initial medical stabilization of acute trauma patients upon presenting formal certificates of local gainful employment or documented commercial corporate insurance coverage.",
-                 "Latent rollback of universal emergency medical care (Lawyer-Level). Circumvents universal healthcare guarantees by conditioning acute stabilization on employment or corporate insurance proof, with zero numbers."),
+                 "Draft Davao City Specialized Emergency Surgical Admission Protocol", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. PROTOCOL FOR SPECIALIZED TRAUMA ADMISSION. — Patients arriving at municipal emergency departments requiring intensive critical care intervention shall be routed through the Patient Accounting Bureau to establish verified national health insurance enrollment eligibility or documented corporate coverage prior to admission to specialized surgical suites.",
+                 "Latent rollback of universal emergency medical care (Lawyer-Level). Conditions transfer to specialized emergency surgical suites on insurance verification, violating Section 6 of RA 11223 and the Anti-Hospital Deposit Law which mandate immediate emergency stabilization without administrative preconditions, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Universal Health Care Integration Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -736,9 +736,9 @@ def get_curated_topics():
                  "Breach of statutory reporting mandates. RA 11332 commands immediate mandatory reporting of notifiable diseases directly to the Department of Health Epidemiology Bureau."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Community Contact Tracing and Public Awareness Code", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. PUBLIC RELEASE OF INFECTION CLUSTER RESIDENTIAL REGISTRIES. — To facilitate grassroots community disease tracing, municipal health task forces are empowered to post digital rosters detailing the household identities of quarantined patients on municipal social media portals without requiring patient authorization.",
-                 "Latent violation of patient privacy protections (Lawyer-Level). Discloses confidential medical identities under the pretext of 'grassroots community tracing', violating Section 9(a), with zero numbers."),
+                 "Draft Davao City Community Epidemiological Mapping and Contact Tracing Code", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. GRANULAR EPIDEMIOLOGICAL CLUSTER MAPPING. — To maximize community vigilance during epidemic surges, the City Health Office shall publish digital geospatial directory maps on municipal portals identifying the specific residential addresses and compound locations of active quarantined households to facilitate localized neighborhood tracing.",
+                 "Latent violation of statutory patient confidentiality (Lawyer-Level). Publishes specific residential street and compound locations of quarantined families, violating Section 9 of RA 11332 which prohibits unauthorized public disclosure of identifiable patient data during health emergencies, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Mandatory Disease Reporting and Confidentiality Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -787,9 +787,9 @@ def get_curated_topics():
                  "Breach of statutory indoor air protections. National clean air and tobacco control statutes extend public indoor smoking prohibitions to electronic vapor devices in workplaces and government facilities."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Special Hospitality Lounge Licensing Measure", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 7. SPECIAL INDOOR SMOKING LOUNGES. — Licensed entertainment and nightlife establishments within Davao City may establish enclosed indoor cigar and smoking lounges for adult patrons, provided that the establishment obtains an annual Special Hospitality Permit from the Business Bureau and installs mechanical air filtration systems certified by the City Health Office.",
-                 "Latent rollback of absolute statutory public smoking prohibitions (Lawyer-Level). Circumvents Section 5 environmental ventilation requirements under the guise of an 'adult nightlife entertainment room' with specialized ventilation, with zero numbers."),
+                 "Draft Davao City Hospitality Cigar Degustation Licensing Measure", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 7. DESIGNATED INDOOR HERITAGE CIGAR DEGUSTATION ROOMS. — Licensed hospitality establishments and boutique cigar lounges may maintain an enclosed indoor tobacco tasting chamber for adult connoisseurs, provided that the venue operates independent negative-pressure ventilation systems certified by the City Health Office.",
+                 "Latent breach of absolute statutory indoor smoking prohibitions (Lawyer-Level). Creates an exception for indoor cigar degustation rooms under the pretext of negative-pressure ventilation, violating Section 5 of RA 9211 and EO 26 which strictly prohibit indoor smoking areas inside food and hospitality establishments, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Comprehensive Anti-Smoking Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -842,9 +842,9 @@ def get_curated_topics():
                  "Ultra vires usurpation of national authority. Municipalities cannot invalidate or revoke ECCs issued by the national DENR/EMB under national environmental and mining statutes."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Marine Sub-Seabed Geological Protection Ordinance", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. PROHIBITION ON MARINE SUB-SURFACE EXTRACTION. — It shall be unlawful for any industrial corporation to conduct core sediment sampling or subterranean extractive dredging within coastal territorial shelf waters without securing a prior legislative exploitation concession enacted by the Sangguniang Panlungsod.",
-                 "Latent jurisdictional encroachment (Lawyer-Level). Asserts local legislative concession authority over continental shelf mineral sampling, encroaching on exclusive national DENR jurisdiction under RA 7942, with zero numbers."),
+                 "Draft Davao City Coastal Benthic Shelf Ecological Stewardship Measure", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. COASTAL BENTHIC ZONE ECOLOGICAL STEWARDSHIP LEASES. — Commercial dredging operators and marine geological surveying entities operating within the city's coastal baseline shelf must execute an ecological stewardship lease approved by the Sangguniang Panlungsod prior to initiating sub-surface coring or mineral sediment sampling.",
+                 "Latent jurisdictional encroachment on national mineral authority (Lawyer-Level). Asserts municipal legislative concession authority over marine sub-surface mineral sampling, encroaching on the exclusive jurisdiction of the Mines and Geosciences Bureau under Section 70 of RA 7942, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Watershed Environmental Protection and Small-Scale Quarrying Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -893,9 +893,9 @@ def get_curated_topics():
                  "Breach of statutory resource access rights. RA 8550 guarantees municipal fishers access to contiguous municipal waters within shared gulf bays, barring discriminatory local voter exclusions against small-scale artisanal fishers."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Marine Sanctuary Trawling Exception Measure", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. INDUSTRIAL HARVESTING IN PROTECTED REEF ZONES. — Corporate aquatic enterprises utilizing industrial refrigerated transport barges may conduct mechanised deep-water net harvesting within established municipal marine biodiversity reserves whenever seasonal pelagic fish migrations traverse coastal bays.",
-                 "Latent violation of municipal marine habitat protections (Lawyer-Level). Authorizes corporate industrial harvesting in protected municipal reef sanctuaries, directly conflicting with artisanal fisher reservations under Section 18, with zero numbers."),
+                 "Draft Davao City Seasonal Pelagic Fishery Concession Measure", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. SEASONAL PELAGIC FISHERY RECOVERY LICENSES. — To optimize economic harvest during migratory oceanic fish runs, the City Agriculture Office may issue seasonal joint-venture fishing endorsements authorizing commercial vessels exceeding three gross tons to operate mid-water purse seines within the inner municipal water baseline.",
+                 "Latent violation of municipal marine zoning protections (Lawyer-Level). Authorizes commercial fishing vessels exceeding three gross tons inside the inner municipal water baseline, directly violating Section 18 of RA 8550 which reserves municipal waters exclusively for artisanal and small municipal fishers, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Fisheries Management and Coastal Conservation Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -944,9 +944,9 @@ def get_curated_topics():
                  "Ultra vires nullification of national licenses under Magtajas. A municipal ordinance cannot invalidate or restrict national licenses to carry firearms issued by the Chief of the PNP pursuant to national statutory authority."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Public Safety Security Checkpoint Enforcement Measure", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. CONFISCATION OF REGULATED SECURITY ARMS. — Law enforcement officers at municipal entry checkpoints are authorized to confiscate small arms transported by licensed citizens across municipal boundaries unless the citizen presents an auxiliary travel dispensation letter signed by the City Mayor.",
-                 "Latent preemption of national firearm carriage rights (Lawyer-Level). Displaces national PNP carriage permits by requiring unauthorized mayoral travel letters, with zero numbers."),
+                 "Draft Davao City Checkpoint Security Endorsement Protocol", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. MUNICIPAL TRANSIT FIREARM VERIFICATION CLEARANCE. — Citizens transporting licensed personal defense firearms across municipal entry boundaries must present a Certificate of Local Transit Endorsement issued by the City Mayor's Security Directorate confirming legitimate civic travel within municipal territory.",
+                 "Latent preemption of national firearm carriage authorization (Lawyer-Level). Imposes an auxiliary municipal transit endorsement to transport licensed firearms, infringing upon the nationwide validity of Permits to Carry Firearms Outside Residence (PTCFOR) under Section 31 of RA 10591, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Public Safety Firearms Carrying Verification Protocol", "Actual Davao City Landmark Ordinance Adaptation",
@@ -999,9 +999,9 @@ def get_curated_topics():
                  "Direct breach of statutory fund restrictions. Local development funds are strictly dedicated by national statute to social, economic, and infrastructure development, prohibiting expenditure on routine administrative salaries and travel."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Administrative Discretionary Fiscal Allocation Code", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 6. REDIRECTION OF GENERAL SURPLUS. — The City Council may re-allocate capital investment reserves originating from national intergovernmental transfers to satisfy outstanding executive representation costs and municipal protocol entertainment expenditures.",
-                 "Latent evasion of development fund expenditure restrictions (Lawyer-Level). Diverts national revenue transfers to administrative entertainment costs without citing Section 287, with zero numbers."),
+                 "Draft Davao City Municipal Development Fund Strategic Utilization Code", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 6. STRATEGIC REPROGRAMMING OF UNALLOCATED DEVELOPMENT BALANCES. — To support municipal trade missions and sister-city investment summits, unexpended appropriations under the annual local development fund may be reprogrammed by executive order to finance city protocol hospitality and international civic delegation hosting.",
+                 "Latent evasion of statutory development fund restrictions (Lawyer-Level). Re-allocates statutory 20% development fund reserves for protocol hospitality and travel, violating Section 287 of RA 7160 and DILG guidelines which mandate exclusive utilization for socio-economic and environmental development projects, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Annual Budget Enactment Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -1050,9 +1050,9 @@ def get_curated_topics():
                  "Direct statutory violation of fund earmarking. Section 21 of RA 10121 strictly mandates that thirty percent (30%) of the LDRRMF shall be allocated as Quick Response Fund for relief and recovery programs, prohibiting diversion to municipal public relations."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Emergency Fund Flexibility and Reversion Ordinance", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 5. IMMEDIATE REVERSION OF UNEXPENDED DISASTER BALANCES. — At the conclusion of each fiscal year, all unspent balances remaining within the municipal emergency disaster mitigation reserve shall immediately revert to the general treasury pool for non-emergency administrative expenditures.",
-                 "Latent violation of statutory trust fund protections (Lawyer-Level). Reverts unexpended disaster funds annually instead of preserving them in a five-year special trust fund under Section 21, with zero numbers."),
+                 "Draft Davao City Emergency Mitigation Surplus Reallocation Ordinance", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 5. ANNUAL FISCAL SURPLUS RECOVERY PROTOCOL. — At the conclusion of the municipal fiscal year, unutilized appropriations remaining in the localized emergency response allocation shall be transferred to the City General Fund to support municipal public infirmary maintenance and community health center infrastructure.",
+                 "Latent violation of statutory disaster trust fund rules (Lawyer-Level). Reverts unexpended disaster management funds to the general fund for hospital maintenance, violating Section 21 of RA 10121 which strictly requires unexpended LDRRMF balances to accrue to a special five-year trust fund solely for disaster mitigation, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Disaster Risk Reduction and Management Budget Charter", "Actual Davao City Landmark Ordinance Adaptation",
@@ -1105,9 +1105,9 @@ def get_curated_topics():
                  "Violation of constitutional and statutory taxing power. Under Section 233 and the Local Government Code, tax rates must be fixed uniformly by legislative ordinance, not by administrative fiat."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Prime Land Development Fiscal Assessment Code", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 6. DISCRETIONARY PROPERTY SURCHARGE ASSESSMENTS. — The City Assessor's Office is authorized to impose an auxiliary municipal land development levy on vacant commercial acreage, calculated at a variable multiplier of total land market valuation without legislative rate limitations.",
-                 "Latent breach of statutory real property tax limits (Lawyer-Level). Disguises an excessive property tax rate under an 'open-ended development multiplier' without statutory rate caps, with zero numbers."),
+                 "Draft Davao City Urban Infill Commercial Land Assessment Code", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 6. SPECIAL URBAN INFILL LAND DEVELOPMENT LEVY. — An auxiliary municipal infrastructure recovery assessment shall be levied on unimproved commercial acreage situated in designated urban revitalization zones, determined using a graduated multiplier of assessed market valuation approved by the City Assessor to deter land speculation.",
+                 "Latent breach of statutory real property tax limits (Lawyer-Level). Imposes an administrative graduated multiplier on commercial land valuation, exceeding the strict statutory property tax ceiling of two percent for cities established under Section 233 of RA 7160, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Real Property Tax Code Rate Harmonization Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -1156,9 +1156,9 @@ def get_curated_topics():
                  "Direct breach of statutory exemptions. Section 140 of RA 7160 explicitly exempts admission fees for plays, concerts, musicals, athletic events, and educational activities conducted by schools from amusement taxes."),
                 
                 ("Tier 3: Latent & Paraphrastic", "Contradiction",
-                 "Draft Davao City Cultural and Performing Arts Revenue Enhancement Measure", "Synthetically Proposed Municipal Draft Clause",
-                 "SECTION 8. CULTURAL ADMISSION FISCAL CONTRIBUTIONS. — All theatrical productions and collegiate dramatic recitals held within commercial performance centers shall remit a special municipal arts contribution based upon ticket admissions to the City Cultural Development Board.",
-                 "Latent breach of statutory tax exemptions (Lawyer-Level). Disguises an unlawful amusement tax on school cultural productions under the label of an 'arts contribution', violating Section 140 exemptions, with zero numbers."),
+                 "Draft Davao City Commercial Auditorium Performing Arts Levy Measure", "Synthetically Proposed Municipal Draft Clause",
+                 "SECTION 8. COMMERCIAL AUDITORIUM PERFORMANCE FACILITY CHARGE. — Operators of commercial performing arts auditoriums hosting ticketed dramatic plays or musical presentations shall remit a municipal cultural development charge calculated on gross ticket admissions, irrespective of the educational or collegiate character of the performing organization.",
+                 "Latent violation of statutory amusement tax exemptions (Lawyer-Level). Imposes a cultural development charge on dramatic and musical ticket admissions, violating Section 140 of RA 7160 which explicitly exempts theatrical, musical, and collegiate performances from municipal amusement taxes, with zero numbers."),
                 
                 ("Tier 1: Surface & Quantitative", "Entailment",
                  "Davao City Revised Amusement Tax Code Ordinance", "Actual Davao City Landmark Ordinance Adaptation",
@@ -1367,80 +1367,9 @@ def assemble_ground_truth():
     return pairs
 
 def main():
-    os.makedirs(DATA_DIR, exist_ok=True)
-    os.makedirs(BLOCKS_DIR, exist_ok=True)
-
-    pairs = assemble_ground_truth()
-    print(f"Total pairs generated: {len(pairs)}")
-
-    # 1. Master JSONL
-    jsonl_path = os.path.join(DATA_DIR, "ground_truth_350.jsonl")
-    with open(jsonl_path, "w", encoding="utf-8") as f:
-        for p in pairs:
-            f.write(json.dumps(p, ensure_ascii=False) + "\n")
-    print(f"Saved master JSONL: {jsonl_path} ({os.path.getsize(jsonl_path):,} bytes)")
-
-    # 2. Master CSV
-    csv_path = os.path.join(DATA_DIR, "ground_truth_350.csv")
-    fieldnames = [
-        "pair_id", "block_id", "macro_domain_id", "macro_domain_name",
-        "difficulty_tier", "national_statute_title", "national_statute_citation",
-        "national_statute_text", "ordinance_source_type", "ordinance_reference_context",
-        "ordinance_hypothesis_text", "presumed_gold_label", "presumed_rationale",
-        "assigned_panel", "assigned_annotators"
-    ]
-    with open(csv_path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        for p in pairs:
-            writer.writerow({
-                "pair_id": p["pair_id"],
-                "block_id": p["block_id"],
-                "macro_domain_id": p["macro_domain_id"],
-                "macro_domain_name": p["macro_domain_name"],
-                "difficulty_tier": p["difficulty_tier"],
-                "national_statute_title": p["national_premise"]["statute_title"],
-                "national_statute_citation": p["national_premise"]["citation"],
-                "national_statute_text": p["national_premise"]["statutory_text"],
-                "ordinance_source_type": p["ordinance_hypothesis"]["source_type"],
-                "ordinance_reference_context": p["ordinance_hypothesis"]["reference_context"],
-                "ordinance_hypothesis_text": p["ordinance_hypothesis"]["hypothesis_text"],
-                "presumed_gold_label": p["presumed_gold_label"],
-                "presumed_rationale": p["presumed_rationale"],
-                "assigned_panel": p["annotator_metadata"]["target_panel"],
-                "assigned_annotators": ", ".join(p["annotator_metadata"]["assigned_annotators"])
-            })
-    print(f"Saved master CSV: {csv_path} ({os.path.getsize(csv_path):,} bytes)")
-
-    # 3. Five Block CSVs for Google Sheets
-    block_fieldnames = [
-        "Pair_ID", "Macro_Domain", "Difficulty_Tier",
-        "National_Statute_Title", "Exact_Section_Citation", "National_Statutory_Text",
-        "Ordinance_Context_Title", "Ordinance_Hypothesis_Text",
-        "Annotator_Decision (Select: Entailment | Contradiction | Neutral)",
-        "Annotator_Confidence (1-5)", "Annotator_Notes_Rationale"
-    ]
-    for b_num in range(1, 6):
-        b_pairs = [p for p in pairs if p["block_id"] == f"Block_{b_num}"]
-        b_path = os.path.join(BLOCKS_DIR, f"block_{b_num}.csv")
-        with open(b_path, "w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=block_fieldnames)
-            writer.writeheader()
-            for p in b_pairs:
-                writer.writerow({
-                    "Pair_ID": p["pair_id"],
-                    "Macro_Domain": p["macro_domain_name"],
-                    "Difficulty_Tier": p["difficulty_tier"],
-                    "National_Statute_Title": p["national_premise"]["statute_title"],
-                    "Exact_Section_Citation": p["national_premise"]["citation"],
-                    "National_Statutory_Text": p["national_premise"]["statutory_text"],
-                    "Ordinance_Context_Title": p["ordinance_hypothesis"]["reference_context"],
-                    "Ordinance_Hypothesis_Text": p["ordinance_hypothesis"]["hypothesis_text"],
-                    "Annotator_Decision (Select: Entailment | Contradiction | Neutral)": "",
-                    "Annotator_Confidence (1-5)": "",
-                    "Annotator_Notes_Rationale": ""
-                })
-        print(f"Saved Block_{b_num} CSV: {b_path} ({len(b_pairs)} pairs)")
+    import scripts.rebuild_ground_truth_adviser_grade as r
+    pairs = r.build_curated_dataset()
+    r.save_master_files(pairs)
 
 if __name__ == "__main__":
     main()
