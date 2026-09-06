@@ -81,6 +81,29 @@ Write in the authentic voice of a methodical, observant computer science researc
 * Refer to the authors as **"the proponents"** or **"the researchers"**, or structure sentences in an objective passive/analytical voice (e.g., *"The system evaluates..."*, *"This study investigates..."*).
 * Avoid first-person singular pronouns (*"I"*, *"my"*). Use first-person plural (*"we"*) very sparingly, reserving it primarily for collaborative method framing.
 
+### **Vocabulary Calibration & Readability Standard (Accessible Academic Voice)**
+
+* **Calibrate to Chapters 1 and 2 (0.5 Level Lower than Hyper-Academic Prose):**
+  * The baseline tone across the thesis is defined by **Chapter 1 (Introduction)** and **Chapter 2 (Literature Review)**: clear, direct, grounded, and accessible to general computer science and legal readers.
+  * Calibrate the vocabulary level to approximately **0.5 level lower** than standard dense, Latinate, or hyper-elevated academic prose.
+  * Write with the authentic, articulate voice of a methodical undergraduate computer science researcher rather than an over-the-top academic thesaurus.
+* **Prefer Direct, Plain Phrasing Over Stilted Formulations:**
+  * Use straightforward, natural words whenever they convey the exact same meaning as dense academic jargon.
+  * *Instead of:* "systematic compilation of text from disparate public repositories to ensure comprehensive statutory recall" $\rightarrow$ *Use:* "gathering text from different public repositories to ensure the system collects as many relevant laws as possible"
+  * *Instead of:* "an empirical examination reveals pronounced thematic imbalance" $\rightarrow$ *Use:* "looking closely at the collected laws reveals a large imbalance across legal topics"
+  * *Instead of:* "the section functions as the fundamental self-contained normative envelope defining an operative legal mandate together with its immediate provisos" $\rightarrow$ *Use:* "each section acts as a self-contained rule, stating a main legal command along with its specific conditions and exceptions"
+  * *Instead of:* "syntactically headless and lose their governing institutional actors" $\rightarrow$ *Use:* "separated from their context, making it unclear who must follow or enforce the rule"
+  * *Instead of:* "deontic modality clashes" $\rightarrow$ *Use:* "clashes in mandatory words (such as 'shall' versus 'may')"
+  * *Instead of:* "mitigate cognitive fatigue through a multi-stage cognitive support protocol" $\rightarrow$ *Use:* "reduce reviewer fatigue by providing structured reference guides"
+* **Strict Preservation of Technical, Mathematical & Legal Precision:**
+  * Simplifying vocabulary **never** compromises technical, legal, or mathematical correctness.
+  * Always retain formal computer science, machine learning, and legal terminology where mathematically or legally required:
+    * **Exact Model & Algorithmic Names:** `Cross-Encoder`, `Bi-Encoder`, `BM25`, `ModernBERT`, `DeBERTa-v3`, `TF-IDF`, `SVD`, `c-TF-IDF`, `MiniBatch K-Means`, `AdamW`, `dropout`, `cosine similarity`.
+    * **Exact Legal Doctrines & Terms of Art:** `Magtajas v. Pryce Doctrine`, `ultra vires`, `in pari materia`, `ex-ante`, `Republic Act No. 7160`, `Sangguniang Panlungsod`.
+    * **Exact Metrics & Formulations:** `Recall@k`, `MRR@k`, `Fleiss' Kappa` ($\kappa$), `Precision`, `Recall`, `F1-Score`, `Cohen's power analysis ($w = 0.30$)`, `Ablazo batched allocation`.
+    * **Exact Benchmark Parameters:** $N = 350$, $k = 3$, $R = 70$, $P = 15$, static 70/15/15 split.
+  * Clarify technical processes through direct, intuitive explanation of mechanisms rather than burying them under abstract jargon.
+
 ---
 
 ## **4. Structural Rhythm & Paragraph Standards**

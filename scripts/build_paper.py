@@ -17,7 +17,7 @@ def compile_thesis(template_dir="CS_Undergraduate_Thesis_Template", main_file="m
         
     print(f"=== Compiling Thesis LaTeX Document ({main_file}) {'[FAST MODE]' if fast else '[FULL 4-PASS MODE]'} ===")
     
-    cmd_pdf = ["pdflatex", "-interaction=nonstopmode", main_file]
+    cmd_pdf = ["pdflatex", "-synctex=1", "-interaction=nonstopmode", main_file]
     
     if fast:
         print("\n[Fast Pass] Running single-pass pdflatex for quick update...")

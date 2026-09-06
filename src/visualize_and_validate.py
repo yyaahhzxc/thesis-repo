@@ -175,13 +175,22 @@ def generate_all_visualizations(
     
     # 1. Macro-Domain Distribution Bar Chart
     print(f"[Chart 1/5] Generating Macro-Domain Distribution Bar Chart...")
-    topic_counts = []
+    raw_topics = []
     for mid in range(len(modeler.macro_metadata)):
         meta = modeler.macro_metadata[mid]
+        raw_topics.append({
+            "domain_name": meta['domain_name'],
+            "doc_count": meta["doc_count"],
+            "corpus_percentage": meta["corpus_percentage"]
+        })
+    # Sort descending by count to assign sequential IDs matching Table 3.2
+    raw_topics_sorted = sorted(raw_topics, key=lambda x: x["doc_count"], reverse=True)
+    topic_counts = []
+    for rank, item in enumerate(raw_topics_sorted):
         topic_counts.append({
-            "Topic_ID": f"[{mid:02d}] {meta['domain_name']}",
-            "Count": meta["doc_count"],
-            "Percentage": meta["corpus_percentage"]
+            "Topic_ID": f"[{rank:02d}] {item['domain_name']}",
+            "Count": item["doc_count"],
+            "Percentage": item["corpus_percentage"]
         })
     df_dist = pd.DataFrame(topic_counts).sort_values(by="Count", ascending=True)
     
@@ -201,14 +210,24 @@ def generate_all_visualizations(
     fig1.write_html(os.path.join(output_dir, "01_macro_domain_distribution.html"))
     
     # Matplotlib static
-    plt.figure(figsize=(10, 6))
-    bars = plt.barh(df_dist["Topic_ID"], df_dist["Count"], color="#1f77b4", edgecolor="black", alpha=0.85)
-    for bar, pct in zip(bars, df_dist["Percentage"]):
-        plt.text(bar.get_width() + 100, bar.get_y() + bar.get_height()/2, f"{pct:.1f}%", va="center", fontsize=9)
-    plt.title("Philippine Statutory Corpus: Discovered Legal Domains (>= 1% Threshold)", fontsize=12, fontweight="bold")
-    plt.xlabel("Number of Statutes", fontsize=10)
+    plt.figure(figsize=(10.5, 5.5), dpi=300)
+    bars = plt.barh(df_dist["Topic_ID"], df_dist["Count"], color="#2b7bba", edgecolor="#1a4c73", height=0.68, alpha=0.9)
+    max_count = df_dist["Count"].max()
+    plt.xlim(0, max_count * 1.2)
+    for bar, count, pct in zip(bars, df_dist["Count"], df_dist["Percentage"]):
+        plt.text(bar.get_width() + 180, bar.get_y() + bar.get_height()/2, f"{pct:.1f}% ({count:,})", va="center", fontsize=9, color="#222222")
+    plt.title("Philippine Statutory Corpus: Discovered Legal Domains (≥ 1.0% Threshold)", fontsize=12, fontweight="bold", pad=12)
+    plt.xlabel("Number of Enacted Statutes", fontsize=10.5, fontweight="bold", labelpad=8)
+    plt.grid(axis='x', linestyle='--', alpha=0.5, color='#cccccc')
+    plt.gca().set_axisbelow(True)
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, "01_macro_domain_distribution.png"), dpi=300)
+    out_png = os.path.join(output_dir, "01_macro_domain_distribution.png")
+    plt.savefig(out_png, dpi=300, bbox_inches="tight")
+    # Also sync to thesis template figs directory if available
+    thesis_fig = os.path.join("CS_Undergraduate_Thesis_Template", "figs", "macro_domain_distribution.png")
+    if os.path.exists(os.path.dirname(thesis_fig)):
+        import shutil
+        shutil.copyfile(out_png, thesis_fig)
     plt.close()
 
     # 2. Historical Temporal Evolution (Era by Era)
