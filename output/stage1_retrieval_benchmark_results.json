@@ -1,0 +1,161 @@
+[
+  {
+    "configuration": "1. Baseline BM25 (Unconstrained)",
+    "filter_primary_statutes": false,
+    "use_domain_filter": false,
+    "latency": {
+      "mean_ms": 329.62,
+      "median_ms": 307.85,
+      "p95_ms": 507.82,
+      "throughput_qps": 3.0
+    },
+    "metrics": {
+      "Overall": {
+        "Count": 350,
+        "Recall@5": 21.43,
+        "Recall@10": 29.71,
+        "Recall@20": 35.71,
+        "Recall@30": 39.71,
+        "Recall@50": 43.14,
+        "MRR@50": 0.1521,
+        "MRR_Global": 0.153
+      },
+      "Tier 1: Surface & Quantitative": {
+        "Count": 104,
+        "Recall@5": 28.85,
+        "Recall@10": 33.65,
+        "Recall@20": 37.5,
+        "Recall@30": 38.46,
+        "Recall@50": 43.27,
+        "MRR@50": 0.1736,
+        "MRR_Global": 0.1745
+      },
+      "Tier 2: Preemption & Carve-Outs": {
+        "Count": 142,
+        "Recall@5": 19.72,
+        "Recall@10": 28.17,
+        "Recall@20": 38.73,
+        "Recall@30": 45.07,
+        "Recall@50": 47.89,
+        "MRR@50": 0.1427,
+        "MRR_Global": 0.1433
+      },
+      "Tier 3: Latent & Paraphrastic": {
+        "Count": 104,
+        "Recall@5": 16.35,
+        "Recall@10": 27.88,
+        "Recall@20": 29.81,
+        "Recall@30": 33.65,
+        "Recall@50": 36.54,
+        "MRR@50": 0.1434,
+        "MRR_Global": 0.1449
+      }
+    }
+  },
+  {
+    "configuration": "2. BM25 + Hierarchy Priority",
+    "filter_primary_statutes": true,
+    "use_domain_filter": false,
+    "latency": {
+      "mean_ms": 300.07,
+      "median_ms": 281.33,
+      "p95_ms": 450.32,
+      "throughput_qps": 3.3
+    },
+    "metrics": {
+      "Overall": {
+        "Count": 350,
+        "Recall@5": 29.14,
+        "Recall@10": 34.86,
+        "Recall@20": 39.43,
+        "Recall@30": 42.29,
+        "Recall@50": 43.14,
+        "MRR@50": 0.2217,
+        "MRR_Global": 0.2231
+      },
+      "Tier 1: Surface & Quantitative": {
+        "Count": 104,
+        "Recall@5": 33.65,
+        "Recall@10": 39.42,
+        "Recall@20": 39.42,
+        "Recall@30": 42.31,
+        "Recall@50": 43.27,
+        "MRR@50": 0.2633,
+        "MRR_Global": 0.2646
+      },
+      "Tier 2: Preemption & Carve-Outs": {
+        "Count": 142,
+        "Recall@5": 28.17,
+        "Recall@10": 33.8,
+        "Recall@20": 43.66,
+        "Recall@30": 46.48,
+        "Recall@50": 47.89,
+        "MRR@50": 0.2294,
+        "MRR_Global": 0.2304
+      },
+      "Tier 3: Latent & Paraphrastic": {
+        "Count": 104,
+        "Recall@5": 25.96,
+        "Recall@10": 31.73,
+        "Recall@20": 33.65,
+        "Recall@30": 36.54,
+        "Recall@50": 36.54,
+        "MRR@50": 0.1695,
+        "MRR_Global": 0.1716
+      }
+    }
+  },
+  {
+    "configuration": "3. BM25 + Hierarchy + Domain Filter",
+    "filter_primary_statutes": true,
+    "use_domain_filter": true,
+    "latency": {
+      "mean_ms": 297.45,
+      "median_ms": 283.72,
+      "p95_ms": 422.44,
+      "throughput_qps": 3.4
+    },
+    "metrics": {
+      "Overall": {
+        "Count": 350,
+        "Recall@5": 4.86,
+        "Recall@10": 7.71,
+        "Recall@20": 10.29,
+        "Recall@30": 12.0,
+        "Recall@50": 13.43,
+        "MRR@50": 0.0467,
+        "MRR_Global": 0.0481
+      },
+      "Tier 1: Surface & Quantitative": {
+        "Count": 104,
+        "Recall@5": 3.85,
+        "Recall@10": 5.77,
+        "Recall@20": 6.73,
+        "Recall@30": 9.62,
+        "Recall@50": 11.54,
+        "MRR@50": 0.0436,
+        "MRR_Global": 0.0445
+      },
+      "Tier 2: Preemption & Carve-Outs": {
+        "Count": 142,
+        "Recall@5": 4.93,
+        "Recall@10": 7.75,
+        "Recall@20": 13.38,
+        "Recall@30": 14.79,
+        "Recall@50": 16.2,
+        "MRR@50": 0.058,
+        "MRR_Global": 0.0591
+      },
+      "Tier 3: Latent & Paraphrastic": {
+        "Count": 104,
+        "Recall@5": 5.77,
+        "Recall@10": 9.62,
+        "Recall@20": 9.62,
+        "Recall@30": 10.58,
+        "Recall@50": 11.54,
+        "MRR@50": 0.0344,
+        "MRR_Global": 0.0364
+      }
+    }
+  }
+]
