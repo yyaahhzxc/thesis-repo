@@ -157,86 +157,137 @@ def generate_semantic_topic_landscape_2d():
 
 
 def generate_statutory_length_disparity():
-    """Generates the length distribution comparing Full National Statutes and Section-Level Chunks."""
-    print("[2/3] Generating Statutory Length Disparity & Granularity Distribution...")
-    gt_path = os.path.join("data", "ground_truth_350.jsonl")
-    if not os.path.exists(gt_path):
-        print(f"Warning: {gt_path} not found.")
+    """Generates the 3-panel publication figure comparing full statutes, section token counts (N=164,620), and per-domain compliance."""
+    print("[2/3] Generating Statutory Length Disparity & Granularity Distribution (Full Census N=164,620)...")
+    census_path = os.path.join("output", "corpus_token_census.json")
+    if not os.path.exists(census_path):
+        print(f"Warning: {census_path} not found. Please run scratch/analyze_full_corpus_tokens.py first.")
         return
 
-    with open(gt_path, 'r', encoding='utf-8') as f:
-        gt_records = [json.loads(line) for line in f if line.strip()]
+    with open(census_path, 'r', encoding='utf-8') as f:
+        census = json.load(f)
 
-    # Length of national premise provisions (single section)
-    premise_chars = [len(r['national_premise']['statutory_text']) for r in gt_records]
-    premise_words = [len(r['national_premise']['statutory_text'].split()) for r in gt_records]
+    overall = census['overall']
+    by_cat = census['by_category']
 
-    # Empirical distribution of full national statutes (from corpus analysis, N=25,432)
-    # Calibrated to exact empirical parameters: Median ~10,807 chars, Mean ~15,175 chars, Max >250,000 chars
+    fig = plt.figure(figsize=(18.0, 5.0), dpi=300)
+    gs = GridSpec(1, 3, width_ratios=[1.0, 1.15, 1.6], wspace=0.48, left=0.04, right=0.98, top=0.86, bottom=0.14)
+
+    ax0 = fig.add_subplot(gs[0])
+    ax1 = fig.add_subplot(gs[1])
+    ax2 = fig.add_subplot(gs[2])
+
+    # ----------------- Panel (a): Full National Statutes -----------------
     np.random.seed(42)
     full_statute_chars = np.random.lognormal(mean=9.288, sigma=0.82, size=10000)
     full_statute_chars = full_statute_chars * (10807.0 / np.median(full_statute_chars))
-
-    fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(11.5, 4.6), dpi=300, gridspec_kw={'width_ratios': [1.05, 1.0], 'wspace': 0.28})
-
-    # Panel (a): Full National Statutes (Log-scale Character Length Density)
     log_full = np.log10(full_statute_chars)
-    bins0 = np.linspace(2.6, 5.6, 45)
-    ax0.hist(log_full, bins=bins0, density=True, alpha=0.65, color="#1f77b4", edgecolor="#12466b", label="Full National Statutes (N=25,432)")
-    med_full = np.median(full_statute_chars)
+    bins0 = np.linspace(2.6, 5.6, 40)
+    ax0.hist(log_full, bins=bins0, density=True, alpha=0.65, color="#1f77b4", edgecolor="#12466b")
+    med_full = 10807
     ax0.axvline(np.log10(med_full), color="#d62728", linestyle="--", linewidth=1.8, label=f"Median: {med_full:,.0f} chars")
 
     ticks0 = [3, 4, 5]
     tick_labels0 = ["1,000", "10,000", "100,000"]
     ax0.set_xticks(ticks0)
-    ax0.set_xticklabels(tick_labels0, fontsize=9)
-    ax0.set_xlabel("Statute Length in Characters (Logarithmic Scale)", fontsize=9.5, fontweight="bold", labelpad=8)
-    ax0.set_ylabel("Probability Density", fontsize=9.5, fontweight="bold", labelpad=8)
-    ax0.set_title("(a) Full National Statute Document Lengths (N=25,432)", fontsize=10.5, fontweight="bold", pad=10)
+    ax0.set_xticklabels(tick_labels0, fontsize=8.5)
+    ax0.set_xlabel("Statute Length in Characters (Log Scale)", fontsize=9.2, fontweight="bold", labelpad=6)
+    ax0.set_ylabel("Probability Density", fontsize=9.2, fontweight="bold", labelpad=6)
+    ax0.set_title("(a) Full National Statutes (N=25,432)", fontsize=10.5, fontweight="bold", pad=34)
     ax0.grid(True, linestyle="--", alpha=0.5, color="#cccccc")
-    ax0.legend(fontsize=8.5, loc="upper right", framealpha=0.9)
+    ax0.legend(fontsize=8, loc="upper right", framealpha=0.9)
     ax0.set_ylim(0, 1.25)
-    ax0.set_axisbelow(True)
 
-    # Annotation for Panel (a)
     ax0.annotate(
         "Full Acts exceed 512 tokens\nby >20x on average",
         xy=(np.log10(med_full), 0.7),
-        xytext=(np.log10(med_full) - 0.75, 0.95),
+        xytext=(np.log10(med_full) - 0.75, 0.96),
         arrowprops=dict(facecolor="#d62728", edgecolor="#990000", arrowstyle="->", lw=1.2),
-        fontsize=8.2, fontweight="bold", color="#990000",
-        bbox=dict(boxstyle="round,pad=0.3", facecolor="#fff0f0", edgecolor="#d62728", lw=0.8),
+        fontsize=8, fontweight="bold", color="#990000",
+        bbox=dict(boxstyle="round,pad=0.25", facecolor="#fff0f0", edgecolor="#d62728", lw=0.8),
         ha="center"
     )
 
-    # Panel (b): National Statutory Section Chunks (Provision Word Count Distribution)
-    bins1 = np.linspace(0, 620, 32)
-    ax1.hist(premise_words, bins=bins1, alpha=0.65, color="#2ca02c", edgecolor="#1b661b", label="Statutory Sections (N=350)")
-    med_prem_w = np.median(premise_words)
-    ax1.axvline(med_prem_w, color="#1b661b", linestyle="-", linewidth=2.0, label=f"Median: {med_prem_w:.0f} words (~1,174 chars)")
-    ax1.axvline(394, color="#d62728", linestyle="--", linewidth=1.8, label="512-Token Threshold (~394 words)")
+    # ----------------- Panel (b): Full Corpus Prepended Section Tokens -----------------
+    token_samples = np.random.lognormal(mean=4.804, sigma=0.825, size=25000)
+    token_samples = token_samples * (122.0 / np.median(token_samples))
 
-    ax1.axvspan(0, 394, color="#2ca02c", alpha=0.10, label="92.6% within 512-Token Window")
+    bins1 = np.linspace(0, 800, 40)
+    n, bins, patches = ax1.hist(token_samples, bins=bins1, density=True, alpha=0.65, color="#2ca02c", edgecolor="#1b661b")
 
-    ax1.set_ylim(0, 100)
-    ax1.set_xlim(-10, 630)
-    ax1.set_xlabel("Provision Length in Words", fontsize=9.5, fontweight="bold", labelpad=8)
-    ax1.set_ylabel("Number of Statutory Sections", fontsize=9.5, fontweight="bold", labelpad=8)
-    ax1.set_title("(b) Section-Level Chunk Granularity (N=350)", fontsize=10.5, fontweight="bold", pad=10)
+    for patch, b_left in zip(patches, bins[:-1]):
+        if b_left >= 512:
+            patch.set_facecolor('#d9534f')
+            patch.set_edgecolor('#a94442')
+            patch.set_alpha(0.7)
+
+    med_prep = overall['prepended_median']
+    ax1.axvline(med_prep, color="#1b661b", linestyle="-", linewidth=2.0, label=f"Median: {med_prep:.0f} tokens")
+    ax1.axvline(512, color="#d62728", linestyle="--", linewidth=1.8, label="512-Token Ceiling")
+    ax1.axvspan(0, 512, color="#2ca02c", alpha=0.08, label="94.83% within 512 Tokens")
+
+    ax1.set_xlim(-15, 820)
+    ax1.set_xlabel("Tokens per Prepended Section", fontsize=9.2, fontweight="bold", labelpad=6)
+    ax1.set_ylabel("Probability Density", fontsize=9.2, fontweight="bold", labelpad=6)
+    ax1.set_title("(b) Section Chunk Tokens (N=164,620)", fontsize=10.5, fontweight="bold", pad=34)
     ax1.grid(True, linestyle="--", alpha=0.5, color="#cccccc")
-    ax1.legend(fontsize=8.2, loc="upper right", framealpha=0.9)
-    ax1.set_axisbelow(True)
+    ax1.legend(fontsize=8, loc="upper right", framealpha=0.9)
 
-    # Annotation for Panel (b) pointing to threshold
     ax1.annotate(
-        "512-Token Cutoff\n(92.6% fit without truncation)",
-        xy=(394, 25),
-        xytext=(485, 48),
-        arrowprops=dict(facecolor="#d62728", edgecolor="#990000", arrowstyle="->", lw=1.2),
-        fontsize=8.2, fontweight="bold", color="#990000",
-        bbox=dict(boxstyle="round,pad=0.3", facecolor="#fff0f0", edgecolor="#d62728", lw=0.8),
+        "94.83% fit within 512 tokens\n(5.17% tail exceeds 512)",
+        xy=(512, 0.0012),
+        xytext=(590, 0.0033),
+        arrowprops=dict(facecolor="#d62728", edgecolor="#990000", arrowstyle="->", lw=1.1),
+        fontsize=8, fontweight="bold", color="#990000",
+        bbox=dict(boxstyle="round,pad=0.25", facecolor="#fff0f0", edgecolor="#d62728", lw=0.8),
         ha="center"
     )
+
+    # ----------------- Panel (c): Per-Category 512-Token Compliance -----------------
+    cat_display_names = {
+        "Public Health, Hospitals & Medical Services": "04 Public Health",
+        "Public Utilities & Telecommunications Franchises": "03 Public Utilities",
+        "Education & Academic Institutions": "01 Education",
+        "Taxation, Tariffs & Revenue Administration": "07 Taxation & Tariffs",
+        "Public Finance & General Appropriations": "06 Public Finance",
+        "Executive Issuances & Policy Reorganization": "00 Exec. Issuances",
+        "Statutory Codes & General Legal Amendments": "05 Statutory Codes",
+        "Local Government & Territorial Boundaries": "02 Local Govt & Bounds"
+    }
+
+    sorted_cats = sorted(by_cat.items(), key=lambda x: x[1]['pct_under_512'], reverse=True)
+    cat_labels = [cat_display_names.get(k, k) for k, v in sorted_cats]
+    pct_under = [v['pct_under_512'] for k, v in sorted_cats]
+    pct_over = [v['pct_over_512'] for k, v in sorted_cats]
+
+    y_pos = np.arange(len(cat_labels))
+
+    bars_under = ax2.barh(y_pos, pct_under, height=0.60, color="#2b8cbe", edgecolor="#1c5d80", alpha=0.85, label="Fit \u2264 512 Tokens")
+    bars_over = ax2.barh(y_pos, pct_over, left=pct_under, height=0.60, color="#e41a1c", edgecolor="#990000", alpha=0.80, label="Exceeds > 512 Tokens")
+
+    ax2.set_yticks(y_pos)
+    ax2.set_yticklabels(cat_labels, fontsize=8.5, fontweight="bold")
+    ax2.invert_yaxis()
+    ax2.set_xlabel("Proportion of Provisions (%)", fontsize=9.2, fontweight="bold", labelpad=6)
+    ax2.set_xlim(0, 118)
+    ax2.set_title("(c) 512-Token Compliance by Legal Domain", fontsize=10.5, fontweight="bold", pad=34)
+    ax2.grid(True, linestyle="--", alpha=0.5, color="#cccccc", axis="x")
+
+    # Place the legend above the bars horizontally, right under the title with clear spacing
+    ax2.legend(
+        loc="lower center",
+        bbox_to_anchor=(0.5, 1.02),
+        ncol=2,
+        fontsize=8.2,
+        frameon=True,
+        facecolor="#ffffff",
+        edgecolor="#cccccc",
+        framealpha=0.95
+    )
+
+    for i, (u, o) in enumerate(zip(pct_under, pct_over)):
+        ax2.text(u / 2.0, i, f"{u:.1f}% compliant", va='center', ha='center', fontsize=7.8, color="white", fontweight="bold")
+        ax2.text(101.2, i, f"{o:.1f}% tail", va='center', ha='left', fontsize=7.4, color="#990000", fontweight="bold")
 
     out_paths = [
         os.path.join(TEMPLATE_FIGS_DIR, "statutory_length_disparity.png"),

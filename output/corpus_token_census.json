@@ -1,0 +1,116 @@
+{
+  "total_statutes": 25432,
+  "total_sections": 164620,
+  "overall": {
+    "raw_mean": 179.49912525817032,
+    "raw_median": 98.0,
+    "prepended_mean": 202.19668327056252,
+    "prepended_median": 122.0,
+    "p75": 206.0,
+    "p90": 363.0,
+    "p95": 522.0,
+    "pct_under_256": 82.29741222208723,
+    "pct_under_384": 90.95735633580368,
+    "pct_under_512": 94.82991131089783,
+    "pct_over_512": 5.170088689102174,
+    "count_over_512": 8511
+  },
+  "by_category": {
+    "Executive Issuances & Policy Reorganization": {
+      "statutes": 12210,
+      "sections": 94356,
+      "mean_tokens": 208.0095277459833,
+      "median_tokens": 126.0,
+      "p75_tokens": 221.0,
+      "p90_tokens": 386.0,
+      "p95_tokens": 562.0,
+      "pct_under_512": 94.0448938064352,
+      "pct_over_512": 5.955106193564797,
+      "count_over_512": 5619
+    },
+    "Education & Academic Institutions": {
+      "statutes": 3492,
+      "sections": 14304,
+      "mean_tokens": 127.42652404921701,
+      "median_tokens": 95.0,
+      "p75_tokens": 146.0,
+      "p90_tokens": 200.0,
+      "p95_tokens": 256.0,
+      "pct_under_512": 98.63674496644296,
+      "pct_over_512": 1.363255033557047,
+      "count_over_512": 195
+    },
+    "Local Government & Territorial Boundaries": {
+      "statutes": 2134,
+      "sections": 10847,
+      "mean_tokens": 305.32617313542914,
+      "median_tokens": 188.0,
+      "p75_tokens": 378.0,
+      "p90_tokens": 555.0,
+      "p95_tokens": 665.0,
+      "pct_under_512": 87.46197105190376,
+      "pct_over_512": 12.538028948096247,
+      "count_over_512": 1360
+    },
+    "Public Utilities & Telecommunications Franchises": {
+      "statutes": 2041,
+      "sections": 19943,
+      "mean_tokens": 157.61013889585317,
+      "median_tokens": 135.0,
+      "p75_tokens": 188.0,
+      "p90_tokens": 265.0,
+      "p95_tokens": 327.0,
+      "pct_under_512": 98.78152735295592,
+      "pct_over_512": 1.2184726470440757,
+      "count_over_512": 243
+    },
+    "Public Health, Hospitals & Medical Services": {
+      "statutes": 1890,
+      "sections": 6058,
+      "mean_tokens": 126.47358864311654,
+      "median_tokens": 98.0,
+      "p75_tokens": 148.75,
+      "p90_tokens": 207.0,
+      "p95_tokens": 231.0,
+      "pct_under_512": 99.15813799933971,
+      "pct_over_512": 0.8418620006602839,
+      "count_over_512": 51
+    },
+    "Statutory Codes & General Legal Amendments": {
+      "statutes": 1873,
+      "sections": 11258,
+      "mean_tokens": 189.6425652869071,
+      "median_tokens": 111.0,
+      "p75_tokens": 211.0,
+      "p90_tokens": 388.3000000000011,
+      "p95_tokens": 567.1499999999996,
+      "pct_under_512": 93.92432048321194,
+      "pct_over_512": 6.075679516788062,
+      "count_over_512": 684
+    },
+    "Public Finance & General Appropriations": {
+      "statutes": 1335,
+      "sections": 5219,
+      "mean_tokens": 341.545123586894,
+      "median_tokens": 110.0,
+      "p75_tokens": 177.0,
+      "p90_tokens": 304.0,
+      "p95_tokens": 482.6999999999962,
+      "pct_under_512": 95.20981030848822,
+      "pct_over_512": 4.7901896915117845,
+      "count_over_512": 250
+    },
+    "Taxation, Tariffs & Revenue Administration": {
+      "statutes": 457,
+      "sections": 2635,
+      "mean_tokens": 264.5817836812144,
+      "median_tokens": 110.0,
+      "p75_tokens": 151.0,
+      "p90_tokens": 253.5999999999999,
+      "p95_tokens": 452.79999999999836,
+      "pct_under_512": 95.86337760910816,
+      "pct_over_512": 4.136622390891841,
+      "count_over_512": 109
+    }
+  }
+}
