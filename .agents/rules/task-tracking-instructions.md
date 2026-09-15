@@ -35,7 +35,17 @@ description: This rule mandates that the agent must always inspect, maintain, an
 
 ---
 
-## **2. Core Principle & Agent Operational Mandate**
+## **2. Standing Operational Context & External Dependencies**
+
+The agent must maintain awareness of the following operational realities without requiring repeated user updates:
+1. **Local Ordinances Digitization (Ralph in Progress):** Ralph is actively scanning the ~1,500 Davao City local ordinances from the Sangguniang Panlungsod archives and will provide the raw `.jsonl` extraction file (even if it retains optical scan noise or formatting errors).
+2. **Local Ordinances Experiments (Ralph Lead):** Ralph is assigned to lead the empirical experiments on the digitized ordinances (e.g., comparative OCR vs. local LLM/VLM text extraction fidelity), while Yah leads machine learning modeling, retrieval pipelines, and manuscript integration. (Exploratory Data Analysis / EDA remains in Chapter 3).
+3. **Adviser Consultation Pending (Sir Ogs):** The proponents are preparing to schedule a consultation with their thesis adviser, Mr. Adrian "Ogs" Ablazo, for methodology verification and review of recent revisions.
+4. **Sangguniang Panlungsod (City Council) Administrative Latency:** Official email correspondence with the Davao City Sangguniang Panlungsod (SP) typically requires a **one-week turnaround** (responses usually arrive the following Monday). Consequently, administrative communication (such as the official request for 15 legal researchers and the endorsement letter) must be drafted and dispatched as early as possible to prevent scheduling bottlenecks.
+
+---
+
+## **3. Core Principle & Agent Operational Mandate**
 
 To ensure seamless progress across multiple conversations and prevent repetitive context re-prompting:
 1. **Living Source of Truth:** The file [`docs/THESIS_MASTER_TASKS.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/THESIS_MASTER_TASKS.md) serves as the persistent, centralized record of all completed, active, and pending tasks across the thesis manuscript, codebase, empirical benchmarks, and milestone submissions.
@@ -45,7 +55,7 @@ To ensure seamless progress across multiple conversations and prevent repetitive
 
 ---
 
-## **2. Master Tracking Document Structure (`docs/THESIS_MASTER_TASKS.md`)**
+## **4. Master Tracking Document Structure (`docs/THESIS_MASTER_TASKS.md`)**
 
 The master tracking document must maintain the following core sections:
 1. **Executive Status & Active Milestone Banner:** High-level summary of active focus, deadlines, and current system status.
@@ -66,7 +76,7 @@ The master tracking document must maintain the following core sections:
 
 ---
 
-## **3. Agent Updating Protocol**
+## **5. Agent Updating Protocol**
 
 * **Keep It Synchronized with Git:** All updates to `docs/THESIS_MASTER_TASKS.md` must be committed and pushed alongside the associated code or manuscript edits.
 * **Never Delete Completed History:** When tasks are finished, mark them as `[x]` with a brief note or link to the corresponding file/section. Do not purge completed milestones, as they provide critical traceability and defense review records.

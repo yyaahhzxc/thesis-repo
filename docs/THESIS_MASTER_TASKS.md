@@ -27,6 +27,12 @@
 
 > *Note for Assistant Execution:* When Yah is present, execute technical tasks directly and update this tracker. When Ralph is present, greet Ralph with a briefing of recent progress and highlight Ralph's assigned action items.
 
+### **Standing Operational Context & Dependencies**
+* **Local Ordinances Digitization (Ralph in Progress):** Ralph is actively scanning the ~1,500 Davao City local ordinances from the Sangguniang Panlungsod archives and will provide the raw `.jsonl` extraction file (even if it retains scan/OCR noise).
+* **Local Ordinances Experiments (Ralph Lead):** Ralph is assigned to lead the empirical experiments on the digitized ordinances (e.g., comparative traditional scanner OCR vs. local LLM/VLM ingestion fidelity), while Yah leads machine learning modeling, retrieval benchmarks, and manuscript drafting. (Exploratory Data Analysis / EDA remains in Chapter 3).
+* **Adviser Consultation Pending (Sir Ogs):** The proponents are currently preparing to schedule a consultation with their thesis adviser, Mr. Adrian "Ogs" Ablazo, for review and feedback on the latest additions.
+* **Sangguniang Panlungsod (City Council) Administrative Turnaround:** Official email correspondence with the Davao City Sangguniang Panlungsod takes approximately **one full week** (replies typically arrive the following Monday). Therefore, the official email requesting 15 legal researchers must be drafted and sent early to avoid project delays.
+
 ---
 
 ## **2. Canonical System Environment Reference Card**
@@ -118,10 +124,15 @@
 - [ ] **Web Prototype Design**: Begin UI/UX design and implementation of the single-page prototype web interface for LGU First Reading review. `(Yah)`
 
 ### **B. Ralph's Core Action Items**
-- [ ] **Google Forms Deployment**: Construct Google Forms for the Ground Truth evaluation based on the master review workbook (Set A to Set E, 70 pairs each, Section 1 branching). `(Ralph)`
-- [ ] **Draft Sangguniang Panlungsod Email**: Draft formal correspondence to the Davao City Sangguniang Panlungsod requesting the 15 legal researcher annotators and explaining their role. `(Ralph)`
+- [ ] **Digitize 1,500 Local Ordinances**: Complete physical/PDF scanning of the ~1,500 Davao City local ordinances and export the consolidated `.jsonl` extraction file (raw text, formatting/scan noise accepted). `(Ralph)`
+- [ ] **Lead Local Ordinances Experiments**: Execute the empirical evaluations on digitized municipal ordinances (e.g., traditional scanner OCR vs. local LLM/VLM extraction precision and character error rate). *(Note: Corpus EDA remains in Chapter 3 under Yah/Ralph).* `(Ralph)`
+- [ ] **Draft Early Sangguniang Panlungsod Email**: Draft formal correspondence to the Davao City Sangguniang Panlungsod requesting the 15 legal researchers and explaining their role. *(⚠️ High Priority: SP administrative replies take ~1 week, usually arriving the following Monday; send early!)* `(Ralph)`
 - [ ] **Annotator Guidebook PDF**: Compile a clean, accessible PDF reference guide for legal researchers based on `docs/annotation/sp_annotation_cheat_sheet.md`. `(Ralph)`
-- [ ] **Local Ordinances EDA (Shared with Yah)**: Expand Chapter 3 with exploratory data analysis of the ~1,660 scanned local ordinances, including digitization quality, year distribution, and word count statistics. `(Ralph / Yah)`
+- [ ] **Google Forms Deployment**: Construct Google Forms for Ground Truth evaluation based on the master review workbook (Set A to Set E, 70 pairs each, Section 1 branching). `(Ralph)`
+
+### **C. Shared / Collaborative Action Items**
+- [ ] **Schedule Consultation with Sir Ogs**: Coordinate with thesis adviser Mr. Adrian "Ogs" Ablazo to review current Chapter 3 revisions, Milestone 2/3 progress, and legal framing. `(Yah / Ralph)`
+- [ ] **Local Ordinances EDA in Chapter 3**: Expand Chapter 3 with exploratory data analysis of the scanned municipal collection (digitization quality, year distribution, word count statistics). `(Yah / Ralph)`
 
 ---
 
