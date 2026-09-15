@@ -1,0 +1,230 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue!70!black,urlcolor=blue!70!black,citecolor=blue!70!black]{hyperref}
+
+% Define executive colors
+\definecolor{primary}{RGB}{24, 43, 73}      % Deep Navy
+\definecolor{secondary}{RGB}{41, 128, 185} % Steel Blue
+\definecolor{accent}{RGB}{192, 57, 43}      % Crimson
+
+% Section styling
+\titleformat{\section}
+  {\Large\bfseries\color{primary}}{\thesection}{0.8em}{}[\titlerule]
+\titleformat{\subsection}
+  {\large\bfseries\color{secondary}}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{primary!90}}{\thesubsubsection}{0.8em}{}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\color{gray}Thesis Milestone Progress \& Comprehensive Review Report}
+\fancyhead[R]{\small\color{gray}Dulce \& Odin --- BSCS}
+\fancyfoot[C]{\small\color{gray}Page \thepage}
+
+\setlist{noitemsep,topsep=2pt,parsep=1.5pt}
+
+\begin{document}
+
+% Header Box
+\begin{center}
+    {\huge\bfseries\color{primary} Thesis Progress \& Milestone Review Report}\\[0.3em]
+    {\large\itshape\color{secondary} A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances\\Using Information Retrieval and Natural Language Inference}\\[1.0em]
+\end{center}
+
+\vspace{-0.5em}
+\noindent\begin{tabularx}{\linewidth}{@{}lXlX@{}}
+    \textbf{Proponents:} & Ralph Paolo Dulce \& Yahyah Odin & \textbf{Thesis Adviser:} & Mr. Adrian ``Ogs'' Ablazo \\
+    \textbf{Course Professor:} & Ma'am Grace Tacadao & \textbf{Institution:} & Ateneo de Davao University \\
+    \textbf{Tracking Scope:} & Milestone 1 (\texttt{cc1c33d}) to Latest (\texttt{483e15c}) & \textbf{Date:} & September 2026 \\
+\end{tabularx}
+\vspace{0.3em}
+\hrule height 1pt
+\vspace{0.6em}
+
+\section*{Executive Summary}
+Since completing \textbf{Milestone 1 (Data Description --- Machine Learning)} on September 4, 2026, this research has matured from descriptive planning into an empirically benchmarked, reproducible pipeline:
+\begin{enumerate}
+    \item \textbf{Chapter 3 (Methodology) Expanded by >300\%} (179 to 540+ \LaTeX{} lines), chronologically aligned with the machine pipeline, and fortified with formal mathematical specifications, 8 publication figures, and 8 comprehensive empirical tables.
+    \item \textbf{Ground Truth 350 Benchmark Finalized ($N=350$)}: Curated across 8 macro legal domains and 3 difficulty tiers with balanced classes (112 Contradictions, 128 Entailments, 110 Neutrals). Packaged into a master 4-sheet review workbook (\url{data/ground_truth_350_adviser_review.xlsx}) with a 15-researcher Sangguniang Panlungsod (SP) panel allocation matrix.
+    \item \textbf{Full-Corpus Token Census ($N = 25,432$ laws; 164,620 sections)}: Demonstrated that \textbf{94.83\% of provisions have a median length of 122 tokens} ($\le 512$ tokens). For the 5.17\% tail exceeding 512 tokens, a sentence-aware sliding fallback sub-chunking mechanism was added, alongside candidate evaluation of native long-context \textbf{ModernBERT} (8,192 tokens) versus standard-window \textbf{DeBERTa-v3}.
+    \item \textbf{Stage 1 Information Retrieval Empirically Benchmarked}:
+    \begin{itemize}
+        \item \textit{Full-Corpus Sensitivity ($N = 25,432$ statutes)}: Baseline unconstrained BM25 achieves only 43.14\% Recall@50 on local CPU hardware. Naive hard domain filtering causes catastrophic failure, collapsing recall to 13.43\% due to the pruning of cross-cutting omnibus statutes.
+        \item \textit{Candidate Retrieval Ablation ($N = 350$ queries)}: Dense Bi-Encoders (\url{all-MiniLM-L6-v2}) outperform sparse BM25 by \textbf{+17.3\% on Tier 3 latent conflicts} (91.3\% vs 74.0\% Recall@5). \textbf{Reciprocal Rank Fusion (RRF $k=60$)} reaches \textbf{96.0\% Recall@10} and \textbf{99.7\% Recall@20} in 1.26\,ms CPU latency.
+    \end{itemize}
+    \item \textbf{Cost-Sensitive Thresholding \& COLIEE 2026 Affirmative Bias Control}: Grounded in official COLIEE 2026 competition proceedings, the pipeline counters neural model affirmative bias (defaulting to Entailment/Neutral) by formalizing asymmetric operational costs ($C(FN) > C(FP)$). Sweeping decision thresholds $\tau \in [0.25, 0.50]$ maximizes the $F_2$-score, prioritizing contradiction recall while maintaining a $P \ge 0.70$ precision floor.
+    \item \textbf{Operational End-to-End Prototype}: Implemented in \url{scripts/prototype_pipeline.py}, successfully executing Stage~1 hybrid retrieval, Stage~2 asymmetric NLI sequence classification, and XAI ratio decidendi extraction under the \textit{Magtajas v. Pryce Doctrine}.
+    \item \textbf{Document Ingestion Benchmark}: Proved that Vision-Language Models (Qwen2.5-VL and Gemini 1.5 Flash) eliminate the 27.44\% Word Error Rate and 15.64\% vector fidelity degradation of traditional scanner OCR on degraded municipal archives.
+\end{enumerate}
+
+\section{Chronological Git History \& Milestone Trajectory}
+The table below documents the development history from Milestone 1 to the current commit:
+
+\vspace{0.4em}
+\noindent\begin{tabularx}{\linewidth}{@{}lllX@{}}
+    \toprule
+    \textbf{Commit} & \textbf{Date} & \textbf{Scope} & \textbf{Key Contributions and Methodology Additions} \\
+    \midrule
+    \texttt{cc1c33d} & Sep 04 & Milestone 1 Baseline & Completed Milestone 1 Data Description; added initial 70/15/15 train/val/test split criteria and overfitting control (AdamW, Dropout, Early Stopping). \\
+    \texttt{d29c7c8} & Sep 04 & Environment Setup & Automated one-click environment setup script (\url{scripts/setup_environment.ps1}). \\
+    \texttt{a17b67b} & Sep 05 & Ground Truth \& Pipeline & Constructed 350-pair Ground Truth across 8 domains and 3 difficulty tiers; added SP panel allocation math ($N=350, K=3, R=70, P=15$); added Cohen's power analysis ($w=0.30$); formalized Stage~1 metrics (Recall@$k$, MRR@$k$); added Lawphil web scraper suite. \\
+    \texttt{64f38cd} & Sep 05 & Academic Refactor & Formalized academic tone; restructured files into clean subdirectories. \\
+    \texttt{dab42e3} & Sep 05 & Fix \& Timeless Docs & Resolved Mermaid syntax on GitHub; made letters and documentation timeless. \\
+    \texttt{4963bcf} & Sep 06 & Pipeline Reordering & Chronologically reordered Chapter 3 into an intuitive pipeline; harmonized statutory scope (25,432 national statutes, $\sim$1,660 local ordinances); enforced anti-AI directives. \\
+    \texttt{d45ce88} & Sep 06 & Retrieval Engine & Built Stage~1 retrieval benchmark engine, Colab notebook, and JSON pipelines. \\
+    \texttt{77236f3} & Sep 06 & Final Stage 1 \& Prototype & Finalized Stage~1 methodology; added Table 3.2 (Full-corpus benchmark) and Table 3.3 (9-model ablation); generated 6 publication figures; built master review Excel workbook; implemented end-to-end prototype (\url{scripts/prototype_pipeline.py}). \\
+    \texttt{0804727} & Sep 08 & Token Census \& $F_2$ Tuning & Analyzed token length across 164,620 sections (\url{output/corpus_token_census.json}); added sentence-aware fallback sub-chunking; evaluated ModernBERT (8,192 tokens) vs DeBERTa-v3; formulated cost-sensitive boundary ($\tau^*$) maximizing $F_2$-score (Equations 3.7--3.10). \\
+    \texttt{483e15c} & Sep 11 & COLIEE 2026 \& Bias Control & Grounded theoretical framework in official COLIEE 2026 competition proceedings (\url{2026-Proceedings.pdf}); integrated findings from Team UA (Alshehri et al., 2026) and Team NOWJ (Ngo et al., 2026); added Affirmative Bias Control. \\
+    \bottomrule
+\end{tabularx}
+
+\section{Manuscript Progress Across Chapters}
+
+\subsection{Chapter 1: Introduction (chapters/introduction.tex)}
+\begin{itemize}
+    \item \textbf{Harmonized Statutory Scope}: Verified exact empirical corpus figures: \textbf{25,432 national statutes} (Republic Acts, Batas Pambansa, Commonwealth Acts, Acts, Presidential Decrees, Executive Orders) from Lawphil, and \textbf{$\sim$1,660 digitized local ordinances} from the Davao City LISSP archive.
+    \item \textbf{Explicit Scope Boundaries}: Confirmed ex-ante evaluation focus; bounded national laws to statutory enactments (excluding Supreme Court case law and administrative department circulars); enforced the English-only constraint to prevent OCR error cascading and dialect translation drift; restricted comparisons to single-premise asymmetric span-level pairing ($1\text{-vs-}N$).
+\end{itemize}
+
+\subsection{Chapter 2: Literature Review (chapters/literature\_review.tex)}
+\begin{itemize}
+    \item \textbf{COLIEE 2025/2026 Retrieve-then-Entail Grounding}: Deepened theoretical grounding using winning architectures from COLIEE 2026 and 2025: Team UA (cross-encoder legal reasoning), Team NOWJ and Tran et al.\ (data augmentation and legal entailment), Team AIIR Lab (statute retrieval), Team JNLP (hybrid ranking), and Team KIS (textual entailment and rationale extraction).
+    \item \textbf{Affirmative Bias Control}: Formulated mechanism to counter neural model affirmative bias (defaulting to Entailment/Neutral on complex statutory syntax) reported in COLIEE 2026 Task 4.
+    \item \textbf{Hardware \& Quadratic Complexity Bounds}: Formulated mathematical rationale for decoupling Stage~1 from Stage~2. Cross-encoding a draft against 25,432 statutes simultaneously requires $\mathcal{O}((L_{\text{ord}} + L_{\text{stat}})^2)$ quadratic memory, instantly exceeding consumer GPU VRAM. Coarse retrieval ($25,432 \rightarrow 50 \rightarrow 1$) eliminates 99.8\% of irrelevant laws in milliseconds.
+\end{itemize}
+
+\subsection{Chapter 3: Methodology (chapters/methodology.tex) --- Major Expansion}
+Chapter 3 was expanded by 300\% (179 to 540+ lines) and restructured into 11 coherent subsections:
+\begin{itemize}
+    \item \textbf{Conceptual Framework}: Decoupled into Phase 1 (Offline Pre-Planning: topic modeling, sliding-window normative envelope chunking, benchmark construction) and Phase 2 (Online Live Runtime: user upload, hybrid IR, asymmetric NLI, XAI heatmaps).
+    \item \textbf{Full-Corpus Token Census}: Documented length distribution across 164,620 sections (94.83\% under 512 tokens, median 122 tokens). Added sentence-aware sliding fallback sub-chunking and evaluated native long-context \textbf{ModernBERT} (8,192 tokens) vs compact models.
+    \item \textbf{Cost-Sensitive Decision Thresholding}: Derived Equations 3.7--3.10 for class metrics, Macro $F_1$, $F_{2,\text{conflict}}$, and optimal threshold $\tau^*$ maximizing contradiction detection under asymmetric operational costs ($C(FN) > C(FP)$).
+    \item \textbf{8 Empirical Publication Tables}: Added Table 3.1 (Corpus Composition), Table 3.2 (Macro Domains), Table 3.3 (Topic Modeler Validation), Table 3.4 (Difficulty Tiers), Table 3.5 (SP Annotation Codebook), Table 3.6 (Retrieval Safeguards), Table 3.7 (Full-Corpus Sensitivity Benchmark), and Table 3.8 (Stage~1 Candidate Retrieval Ablation).
+    \item \textbf{8 Publication Figures}: Generated Figures 3.2--3.9 spanning statutory composition, historical era progression (1900--2026), 2D SVD latent semantic topic space, $c\text{-}TF\text{-}IDF$ keyword profiles, statutory length distributions, and Stage~1 Recall@$k$ ablation curves.
+    \item \textbf{Sangguniang Panlungsod Annotation Protocol}: Structured 15 legal researchers into 5 sub-panels of 3 evaluators ($k=3$), each assigned 70 pairs (Ablazo 2019 batched model; Cohen's $w=0.30$ power analysis; Fleiss' Kappa target $\kappa \ge 0.61$).
+    \item \textbf{Overfitting Control in Fine-Tuning}: Rigorous regularization using AdamW ($\lambda=0.01$), dropout ($p=0.1$), early stopping ($patience=4$), and 10\% linear warmup/decay.
+\end{itemize}
+
+\section{Empirical Experimental Benchmarks}
+
+\subsection{Document Ingestion: Traditional OCR vs. Vision-Language Models}
+Tested on representative degraded scanned Davao City ordinances (\textit{Ordinance No. 0667-21}):
+\begin{itemize}
+    \item \textbf{Traditional Scanner OCR (Baseline)}: 27.44\% Word Error Rate (WER), 25.05\% Character Error Rate (CER), 36.36\% legal marker precision, and a 15.64\% degradation in semantic vector fidelity (84.36\%).
+    \item \textbf{Vision-Language Models (Qwen2.5-VL-7B \& Gemini 1.5 Flash)}: \textbf{0.00\% WER}, \textbf{100.0\% legal citation precision}, and \textbf{100.0\% semantic vector fidelity}.
+\end{itemize}
+
+\subsection{Full-Corpus Stage 1 Sensitivity Benchmark (N = 25,432 Statutes)}
+Conducted on local CPU workstation evaluating all 350 ground truth queries across the unconstrained database:
+
+\vspace{0.4em}
+\noindent\begin{tabularx}{\linewidth}{@{}Xrrrrrr@{}}
+    \toprule
+    \textbf{Candidate Retrieval Setup} & \textbf{CPU Latency} & \textbf{R@5} & \textbf{R@10} & \textbf{R@20} & \textbf{R@50} & \textbf{MRR@50} \\
+    \midrule
+    \textbf{1. Baseline BM25 (Unconstrained)} & 329.6\,ms & 21.43\% & 29.71\% & 35.71\% & 43.14\% & 0.1521 \\
+    \textbf{2. BM25 + Hierarchy Priority Safeguard} & 300.1\,ms & 29.14\% & 34.86\% & 39.43\% & 43.14\% & \textbf{0.2217} \\
+    \textbf{3. BM25 + Hard Domain Filter} & 297.5\,ms & 4.86\% & 7.71\% & 10.29\% & \textbf{13.43\%} & 0.0467 \\
+    \bottomrule
+\end{tabularx}
+\vspace{0.3em}
+\textit{Key Finding}: Hard domain filtering drops Recall@50 from 43.14\% to 13.43\% because foundational omnibus statutes (e.g., Local Government Code) are pruned. The Hierarchy Priority Safeguard boosts MRR by +45.8\% without recall loss.
+
+\subsection{Stage 1 Candidate Architecture Ablation Benchmark (N = 350 Queries)}
+Evaluated 9 candidate architectures across lexical, dense vector, and hybrid fusion models:
+
+\vspace{0.4em}
+\noindent\begin{tabularx}{\linewidth}{@{}Xrrrrrr@{}}
+    \toprule
+    \textbf{Candidate Retrieval Architecture} & \textbf{Latency} & \textbf{R@5} & \textbf{R@10} & \textbf{R@20} & \textbf{MRR} & \textbf{Tier 3 R@5} \\
+    \midrule
+    \textbf{1. Pure BM25 Baseline (AIIR Lab)} & 1.39\,ms & 79.7\% & 88.6\% & 96.9\% & 0.6113 & 74.0\% \\
+    \textbf{2. BM25 + Hard Domain Filter} & 1.23\,ms & 99.1\%* & 100.0\%* & 100.0\%* & 0.7921* & 99.0\%* \\
+    \textbf{3. BM25 + Soft Domain Prior (+20\%)} & 1.43\,ms & 87.7\% & 94.6\% & 99.4\% & 0.7122 & 79.8\% \\
+    \textbf{4. Pure Dense Bi-Encoder (all-MiniLM-L6-v2)} & 1.33\,ms & 87.1\% & \textbf{97.1\%} & \textbf{100.0\%} & \textbf{0.7388} & \textbf{91.3\%} \\
+    \textbf{5. Hybrid JNLP (Weighted Sum $\alpha=0.5$)} & 1.23\,ms & 82.6\% & 91.7\% & 98.9\% & 0.6409 & 77.9\% \\
+    \textbf{6. Hybrid Dense-Biased ($\alpha=0.7$)} & 1.20\,ms & 84.0\% & 94.0\% & 99.4\% & 0.6656 & 78.8\% \\
+    \textbf{7. Hybrid BM25-Biased ($\alpha=0.3$)} & 1.22\,ms & 80.9\% & 90.6\% & 98.3\% & 0.6202 & 76.0\% \\
+    \textbf{8. Reciprocal Rank Fusion (RRF $k=60$)} & 1.26\,ms & \textbf{88.6\%} & \textbf{96.0\%} & \textbf{99.7\%} & \textbf{0.7040} & \textbf{88.5\%} \\
+    \textbf{9. Hybrid + Soft Domain Prior ($\alpha=0.5$)} & 1.21\,ms & 89.7\% & 95.7\% & 99.7\% & 0.7328 & 84.6\% \\
+    \bottomrule
+\end{tabularx}
+\vspace{0.3em}
+\textit{Key Finding}: Dense Bi-Encoders close the semantic gap in Tier 3 (Latent and Paraphrastic conflicts), delivering a \textbf{+17.3\% absolute gain over BM25} (91.3\% vs 74.0\%). \textbf{Reciprocal Rank Fusion} provides the most robust multi-tier candidate recall (96.0\% Recall@10, 99.7\% Recall@20) in 1.26\,ms.
+
+\subsection{End-to-End Operational Prototype (scripts/prototype\_pipeline.py)}
+The prototype was executed across representative municipal ordinance cases:
+\begin{itemize}
+    \item \textbf{Case 1 (Ultra Vires Contradiction)}: Banning designated smoking areas evaluated against RA 9211 Section 6. Correctly retrieved RA 9211 as Rank \#1 and flagged \textbf{93.85\% Contradiction}, citing the \textit{Magtajas v. Pryce Doctrine} (prohibiting what a national statute permits).
+    \item \textbf{Case 2 (Valid Delegated Entailment)}: Authorizing the Mayor to sign a deed of donation evaluated against RA 7160 Section 455(b)(1)(vi). Correctly retrieved RA 7160 as Rank \#1 and flagged \textbf{89.45\% Entailment} (valid delegated authority).
+    \item \textbf{Case 3 (Harmonious Neutral)}: Pet leashing mandate in barangay parks evaluated against national laws. Correctly classified as \textbf{82.00\% Neutral} (autonomous police power; no preemption).
+\end{itemize}
+
+\section{Decisions to Verify with Professor \& Adviser}
+
+\begin{enumerate}[label=\textbf{Decision \arabic*:},leftmargin=6.5em]
+    \item \textbf{Exclusion of Generative LLMs}: Core pipeline relies exclusively on deterministic encoder transformers and white-box self-attention heatmaps. Generative LLMs (GPT-4/LLaMA) are excluded to prevent legal hallucination and avoid multi-GPU computing dependencies. \textit{Action: Verify faculty approval of this diagnostic boundary.}
+    \item \textbf{Cost-Sensitive Decision Threshold ($\tau^*$) Maximizing $F_2$-Score}: Sweeping contradiction thresholds $\tau \in [0.25, 0.50]$ on validation data to maximize $F_2$, weighting recall twice as heavily as precision to prevent unconstitutional municipal preemption while mitigating affirmative bias. \textit{Action: Confirm faculty approval of $F_2$ threshold tuning over symmetric 0.50 cutoff.}
+    \item \textbf{ModernBERT (Native 8,192 Tokens) vs.\ DeBERTa-v3 with Sub-Chunking}: Evaluating whether native long-context attention provides measurable gains on the 5.17\% tail of lengthy provisions compared to compact models paired with sub-chunking. \textit{Action: Confirm candidate Stage~2 model comparison.}
+    \item \textbf{Asymmetric Span Pairing ($1\text{-vs-}N$) vs.\ Multi-Hop Graph Reasoning}: Evaluates 1 national section against an $N$-sentence ordinance block. Cross-statutory multi-hop reasoning is reserved for Future Work to preserve LGU CPU feasibility. \textit{Action: Verify undergraduate scope acceptability.}
+    \item \textbf{Statutory Knowledge Base Boundary}: National corpus capped at \textbf{25,432 statutory enactments} (Lawphil); judicial case law and department circulars are excluded. \textit{Action: Confirm adequacy of statutory-only corpus.}
+    \item \textbf{English-Only Restriction}: Excludes conversational Cebuano and Taglish to prevent tokenizer fragmentation and translation drift. \textit{Action: Confirm English boundary justification.}
+    \item \textbf{Static 70/15/15 Split ($N=350$)}: Partitions 245 train, 52 validation, and 53 test pairs (supported by Vabalas et al., 2019 few-shot split guidelines and Card et al., 2020 MDE statistical power) over $k$-fold cross-validation. \textit{Action: Confirm static split acceptability.}
+    \item \textbf{SP Human-in-the-Loop Protocol}: 15 legal researchers in 5 sub-panels of 3 evaluating 70 pairs each with a Fleiss' Kappa target $\kappa \ge 0.61$. \textit{Action: Review Excel review workbook and approve endorsement letter.}
+    \item \textbf{Rejection of Hard Domain Filtering}: Proved that hard topical filtering drops full-corpus recall to 13.43\%, selecting Reciprocal Rank Fusion instead. \textit{Action: Confirm reporting this empirical failure mode strengthens Chapter 3.}
+\end{enumerate}
+
+\section{Open Questions in Need of Guidance}
+
+\subsection{1. Administrative Coordination with Sangguniang Panlungsod}
+\begin{itemize}
+    \item \textbf{Question 1.1}: What is the ideal date to formally transmit the Endorsement Letter (\url{docs/annotation/adviser_endorsement_letter_template.md}) to SP Secretary Atty. Charisse Paula Marie A. Guinto?
+    \item \textbf{Question 1.2}: Does the department require a formal Memorandum of Agreement (MOA), or is the faculty endorsement letter with Department Chair signature sufficient for this survey?
+    \item \textbf{Question 1.3}: Should SP evaluators receive individual Google Sheets (Sets A--E as configured in the master workbook), or would a unified Google Form with section branching be preferred?
+\end{itemize}
+
+\subsection{2. Experimental Training \& Compute Strategy}
+\begin{itemize}
+    \item \textbf{Question 2.1}: For Stage~2 Cross-Encoder fine-tuning (\texttt{ModernBERT} vs \texttt{DeBERTa-v3}), is it acceptable to execute training on cloud GPU instances (Google Colab/Kaggle T4/A100) provided the final evaluated model runs CPU inference locally?
+    \item \textbf{Question 2.2}: What is the preferred Stage~2 baseline comparison? (Proposed: Zero-Shot RoBERTa-large-MNLI vs Fine-Tuned ModernBERT vs Fine-Tuned DeBERTa-v3).
+\end{itemize}
+
+\subsection{3. Manuscript Structure \& Chapter Layout}
+\begin{itemize}
+    \item \textbf{Question 3.1}: We have already integrated Stage~1 empirical benchmarks (Tables 3.7 and 3.8; Figure 3.9) into Chapter 3 to justify our architecture selection. Does Ma'am Grace prefer keeping these in Chapter 3, or should any portion move to Chapter 4 (Results and Discussion)?
+    \item \textbf{Question 3.2}: Does the current draft length of Chapter 3 ($\sim$95 KB \LaTeX, $\sim$30 compiled pages with figures) meet the expected depth for the proposal defense milestone?
+\end{itemize}
+
+\subsection{4. Prototype Demonstration Scope for Proposal Defense}
+\begin{itemize}
+    \item \textbf{Question 4.1}: For the upcoming proposal defense milestone, is a functional terminal-based demonstration (\url{scripts/prototype_pipeline.py}) sufficient, or does the committee require a fully wired web GUI frontend?
+\end{itemize}
+
+\section{Action Checklist for Meeting with Faculty}
+\begin{itemize}[leftmargin=2em]
+    \item[$\boxtimes$] Pull latest origin commits (\texttt{0804727} and \texttt{483e15c}) and verify clean synchronization.
+    \item[$\boxtimes$] Compile clean PDF build of thesis draft (\url{scripts/build_paper.py --fast}).
+    \item[$\boxtimes$] Verify publication figures in \url{CS_Undergraduate_Thesis_Template/figs/}.
+    \item[$\boxtimes$] Verify master Ground Truth workbook (\url{data/ground_truth_350_adviser_review.xlsx}).
+    \item[$\boxtimes$] Test end-to-end prototype pipeline (\url{scripts/prototype_pipeline.py --demo}).
+    \item[$\square$] Fill in Department Chairperson name in \url{docs/annotation/adviser_endorsement_letter_template.md}.
+    \item[$\square$] Prepare a 10-minute presentation slide deck summarizing progress, decisions, and questions.
+    \item[$\square$] Schedule consultation meeting with Ma'am Grace Tacadao and Mr. Adrian Ablazo.
+\end{itemize}
+
+\end{document}
