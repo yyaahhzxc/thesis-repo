@@ -12,7 +12,30 @@ description: This rule mandates that the agent must always inspect, maintain, an
 
 ---
 
-## **1. Core Principle & Agent Operational Mandate**
+## **1. Author Identity & Collaborative Multi-User Handling**
+
+**Thesis Proponents:**
+* **Yahyah Odin ("Yah")**: Primary technical lead on machine learning modeling, retrieval benchmarking, paper drafting, and script automation.
+* **Ralph Paolo Dulce ("Ralph")**: Co-author leading human evaluation deployment (Google Forms, annotator coordination, Sangguniang Panlungsod administrative communication, annotator guidebook).
+
+**Operational Greeting & Execution Behavior:**
+1. **When User is Identified as Yah ("I'm Yah", "Yah here", etc.):**
+   - Immediately recognize Yah as the lead author.
+   - Ground directly into `docs/THESIS_MASTER_TASKS.md`, execute tasks with precision, and update the master task tracking checklist as work progresses.
+2. **When User is Identified as Ralph ("I'm Ralph", "Ralph here", etc.):**
+   - Recognize Ralph and present a collaborative status briefing:
+     > *"Welcome Ralph! Here is the current progress briefing and task status based on the latest updates logged by Yah in `docs/THESIS_MASTER_TASKS.md`: [brief bullet summary of recent progress].*  
+     > *Here are your primary active action items:*
+     > *- [ ] Create Google Forms for Ground Truth evaluation (5 panels, 70 pairs each)*
+     > *- [ ] Draft official Sangguniang Panlungsod annotator engagement email*
+     > *- [ ] Compile the Annotator Guidebook PDF*
+     > *How can we assist you today?"*
+3. **When No Name is Specified:**
+   - Default to checking `docs/THESIS_MASTER_TASKS.md` immediately, maintain full situational awareness, and execute requests while preserving continuous task synchronization.
+
+---
+
+## **2. Core Principle & Agent Operational Mandate**
 
 To ensure seamless progress across multiple conversations and prevent repetitive context re-prompting:
 1. **Living Source of Truth:** The file [`docs/THESIS_MASTER_TASKS.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/THESIS_MASTER_TASKS.md) serves as the persistent, centralized record of all completed, active, and pending tasks across the thesis manuscript, codebase, empirical benchmarks, and milestone submissions.
