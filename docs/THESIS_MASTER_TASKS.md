@@ -127,7 +127,7 @@
 - [ ] **Digitize 1,500 Local Ordinances**: Complete physical/PDF scanning of the ~1,500 Davao City local ordinances and export the consolidated `.jsonl` extraction file (raw text, formatting/scan noise accepted). `(Ralph)`
 - [ ] **Lead Local Ordinances Experiments**: Execute the empirical evaluations on digitized municipal ordinances (e.g., traditional scanner OCR vs. local LLM/VLM extraction precision and character error rate). *(Note: Corpus EDA remains in Chapter 3 under Yah/Ralph).* `(Ralph)`
 - [ ] **Draft Early Sangguniang Panlungsod Email**: Draft formal correspondence to the Davao City Sangguniang Panlungsod requesting the 15 legal researchers and explaining their role. *(⚠️ High Priority: SP administrative replies take ~1 week, usually arriving the following Monday; send early!)* `(Ralph)`
-- [ ] **Annotator Guidebook PDF**: Compile a clean, accessible PDF reference guide for legal researchers based on `docs/annotation/sp_annotation_cheat_sheet.md`. `(Ralph)`
+- [ ] **Annotator Guidebook PDF**: Ralph prepared initial draft `Legal Annotation Guide.docx`. Yah reviewed and generated comprehensive publication-grade version `Legal Annotation Guide (Enhanced).docx`, `docs/annotation/Legal_Annotation_Guide_Comprehensive.docx`, and `docs/annotation/legal_annotation_guide_v2.md` with full thesis title, intro context, RA 10173 data privacy, Magtajas doctrine guidance, 3-tier calibration, confidence ratings, and Google Forms submission workflow. Ralph to review and compile to final PDF. `(Ralph / Yah)`
 - [ ] **Google Forms Deployment**: Construct Google Forms for Ground Truth evaluation based on the master review workbook (Set A to Set E, 70 pairs each, Section 1 branching). `(Ralph)`
 
 ### **C. Shared / Collaborative Action Items**
@@ -182,4 +182,5 @@
 | **2026-09-08** | Yah | Token Census | Completed token length census across 164,620 sections; formulated cost-sensitive threshold $\tau^*$ via $F_2$-score. | Commit `0804727` |
 | **2026-09-11** | Yah | Literature | Integrated COLIEE 2026 proceedings; analyzed affirmative bias phenomenon; contrasted edge vs cloud models. | Commit `483e15c` |
 | **2026-09-15** | Yah | Milestone 2 | Audited thesis against Milestone 2 instructions; established master task tracker and agent continuity rule. | Commit `a3f592c` |
-| **2026-09-15** | Yah | Milestone 3 | Archived Milestone 3 prompt; logged Yah and Ralph task distributions; updated agent rules for author identification. | Current Turn |
+| **2026-09-15** | Yah | Milestone 3 | Archived Milestone 3 prompt; logged Yah and Ralph task distributions; updated agent rules for author identification. | Commit `b8a6e7d` |
+| **2026-09-16** | Yah & Ralph | Annotator Guide | Enhanced SP legal annotation guide into publication-grade `.docx` & `.md` with full thesis title, AI context, RA 10173 data privacy, Magtajas doctrine, and Google Forms submission workflow. | `Legal Annotation Guide (Enhanced).docx`, `docs/annotation/` |
