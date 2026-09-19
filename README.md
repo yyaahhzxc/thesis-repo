@@ -77,7 +77,22 @@ python scripts/build_paper.py
 python scripts/build_paper.py --fast
 ```
 
-*Target output:* `CS_Undergraduate_Thesis_Template/main.pdf` (97 pages, 0 compilation errors).
+*Target output:* `CS_Undergraduate_Thesis_Template/main.pdf` (0 compilation errors).
+
+### Step 4: Minimal Working Example (MWE)
+
+To verify that the statutory retrieval and asymmetric natural language inference pipeline functions properly, execute the self-contained interactive prototype demonstration in a single command:
+
+```powershell
+# Run the end-to-end prototype demo (<2 seconds execution)
+.\venv\Scripts\python.exe scripts/prototype_pipeline.py --demo
+```
+
+The demonstration evaluates four real-world municipal policy scenarios against Philippine national statutes without requiring cloud access:
+1. **Total Firecracker Ban (Historical Landmark Clash):** Audits Davao City's absolute ban against Republic Act No. 7183 (which permits sparklers/pyrotechnics), correctly identifying statutory divergence.
+2. **Designated Smoking Areas Prohibition (Real Clash):** Audits a 100% smoke-free commercial spaces draft against Republic Act No. 9211 Section 6, triggering an ultra vires **Contradiction** (93.85% probability) under the *Magtajas* doctrine.
+3. **Delegated Donation Authority (Harmonious Execution):** Audits mayoral authority to sign deeds of donation against Republic Act No. 7160 Section 455(b)(1)(vi), yielding **Entailment** (89.45% probability).
+4. **Mandatory Pet Dog Leashing (Complementary Regulation):** Audits a municipal park leashing draft against national public health laws, confirming a harmonious **Neutral** classification (82.00% probability).
 
 ---
 
@@ -93,32 +108,37 @@ thesis-repo/
 │   ├── chapters/                      <-- Chapter source files
 │   │   ├── introduction.tex           <-- Chapter 1: Introduction
 │   │   ├── literature_review.tex      <-- Chapter 2: Literature Review
-│   │   ├── theoretical-framework.tex  <-- Theoretical and Conceptual Framework
-│   │   └── methodology.tex            <-- Chapter 3: Methodology (Standardized titles)
+│   │   ├── methodology.tex            <-- Chapter 3: Methodology (Standardized titles)
+│   │   └── results_and_discussion.tex <-- Chapter 4: Results and Discussion
 │   ├── figs/                          <-- Publication figures and architectural schematics
 │   │   ├── statute_type_composition.png
 │   │   ├── historical_temporal_evolution.png
-│   │   └── macro_domain_distribution.png
+│   │   ├── macro_domain_distribution.png
+│   │   └── stage1_retrieval_ablation_performance.png
 │   └── .vscode/settings.json          <-- Editor-specific build and SyncTeX settings
 │
 ├── data/                              <-- Evaluation Datasets and Benchmarks
 │   ├── ground_truth_350_review.xlsx   <-- Master 4-sheet evaluation and review workbook
+│   ├── ground_truth_350_adviser_review.xlsx <-- Adviser-grade review workbook
 │   ├── ground_truth_350.jsonl         <-- Master 350-pair benchmark dataset (JSONL)
 │   ├── ground_truth_350.csv           <-- Master 350-pair benchmark dataset (CSV)
-│   ├── blocks/                        <-- Partitioned evaluation sets for raters
-│   │   ├── block_1.csv                <-- Evaluation Set A (70 pairs)
-│   │   ├── block_2.csv                <-- Evaluation Set B (70 pairs)
-│   │   ├── block_3.csv                <-- Evaluation Set C (70 pairs)
-│   │   ├── block_4.csv                <-- Evaluation Set D (70 pairs)
-│   │   └── block_5.csv                <-- Evaluation Set E (70 pairs)
+│   ├── blocks/                        <-- Partitioned evaluation sets for raters (Sets A–E, 70 pairs each)
 │   ├── verbatim_statutory_sections.json <-- Verified statutory provisions
 │   ├── corpus_statute_premises.json   <-- Corpus premise extractions
 │   └── ordinance_000667_ground_truth.txt <-- Transcription baseline for OCR evaluation
 │
-├── docs/                              <-- Documentation, Instrument Drafts, and Notes
+├── docs/                              <-- Documentation, Instrument Drafts, and Living References
+│   ├── GLOSSARY.md                    <-- Plain-language conceptual and mathematical glossary
+│   ├── THESIS_MASTER_TASKS.md         <-- Master task tracking and cross-session continuity log
 │   ├── annotation/                    <-- Human evaluation instruments and guidelines
+│   │   ├── Legal Annotation Guide - Updated.pdf <-- Official SP annotator guidebook
+│   │   ├── Legal_Annotation_Guide_Comprehensive.docx <-- Formatted Word reference guide
 │   │   ├── sp_annotation_cheat_sheet.md           <-- Quick-reference rubric for evaluators
 │   │   └── adviser_endorsement_letter_template.md <-- Official institutional request letter
+│   ├── hardware/                      <-- Hardware environment audit and system reports
+│   │   └── system_report.txt          <-- Full LGU/workstation hardware diagnostic report
+│   ├── references/                    <-- Foundational academic proceedings and literature
+│   │   └── 2026-Proceedings.pdf       <-- COLIEE 2026 competition proceedings
 │   ├── drafts/                        <-- Archive of manuscript drafts
 │   │   └── Dulce_Odin_CS_Thesis_Draft.pdf         <-- Initial thesis manuscript draft
 │   └── experiments/                   <-- Empirical research reports and benchmark notes
@@ -133,16 +153,21 @@ thesis-repo/
 │   ├── preprocess.py                  <-- Statutory text normalization and segmentation
 │   ├── topic_modeler.py               <-- Unsupervised SVD and KMeans domain discovery
 │   ├── categorize_query.py            <-- Interactive CLI classification tool
+│   ├── stage1_retrieval_benchmark.py  <-- Stage 1 coarse retrieval benchmark engine
 │   ├── visualize_and_validate.py      <-- Holdout validation and publication plotting
 │   └── scraper/                       <-- Statutory Web Scraper Suite
 │       ├── lawphil_scraper.py         <-- Scraper with rate-limiting and resume support
 │       └── file_map_config.json       <-- Statute URL index mappings
 │
-├── scripts/                           <-- Automated Utilities and Build Tools
+├── scripts/                           <-- Automated Utilities, Benchmarking, and Build Tools
 │   ├── setup_environment.ps1          <-- One-click environment setup script
 │   ├── build_paper.py                 <-- LaTeX PDF compiler with --fast option
+│   ├── prototype_pipeline.py          <-- Minimal Working Example (MWE) pipeline runner
 │   ├── export_ground_truth_excel.py   <-- Master 4-sheet evaluation workbook generator
 │   ├── generate_ground_truth_dataset.py <-- Stratified benchmark generation pipeline
+│   ├── build_verified_corpus_premises.py <-- Verified corpus premise builder
+│   ├── compare_ocr_experiments.py     <-- Comparative OCR fidelity evaluator
+│   └── generate_stage1_retrieval_visualizations.py <-- Retrieval curve plotter
 │   ├── validate_ground_truth.py       <-- Verification script for citation integrity
 │   └── compare_ocr_experiments.py     <-- Comparative OCR and VLM evaluation script
 │

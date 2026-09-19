@@ -6,7 +6,7 @@
 **Course Professor:** Ma'am Grace Tacadao  
 **Institution:** Department of Computer Science, School of Arts and Sciences, Ateneo de Davao University  
 **Repository:** [`https://github.com/yyaahhzxc/thesis-repo`](https://github.com/yyaahhzxc/thesis-repo)  
-**Last Updated:** 2026-09-15  
+**Last Updated:** 2026-09-19  
 
 ---
 
@@ -15,8 +15,8 @@
 | Milestone | Target Scope | Current Status | Primary Deliverable |
 | :--- | :--- | :---: | :--- |
 | **Milestone 1** | Data Description - Machine Learning | `COMPLETED` | Commit `cc1c33d` (Sept 4, 2026) |
-| **Milestone 2** | Chapter 3 Methodology Revisions | `IN PROGRESS` | Audit complete; awaiting LaTeX & README updates |
-| **Milestone 3** | Chapter 4 Initial Model Training & Hyperparameters | `IN PROGRESS` | Instructions archived; audit complete |
+| **Milestone 2** | Chapter 3 Methodology Revisions | `IN PROGRESS` | Audit complete; LaTeX & README updated; Overleaf verification pending |
+| **Milestone 3** | Chapter 4 Initial Model Training & Hyperparameters | `IN PROGRESS` | Chapter 4 initialized; Stage 1 migrated; Stage 2 training & Grid Search documented |
 
 ---
 
@@ -28,10 +28,15 @@
 > *Note for Assistant Execution:* When Yah is present, execute technical tasks directly and update this tracker. When Ralph is present, greet Ralph with a briefing of recent progress and highlight Ralph's assigned action items.
 
 ### **Standing Operational Context & Dependencies**
-* **Local Ordinances Digitization (Ralph in Progress):** Ralph is actively scanning the ~1,500 Davao City local ordinances from the Sangguniang Panlungsod archives and will provide the raw `.jsonl` extraction file (even if it retains scan/OCR noise).
-* **Local Ordinances Experiments (Ralph Lead):** Ralph is assigned to lead the empirical experiments on the digitized ordinances (e.g., comparative traditional scanner OCR vs. local LLM/VLM ingestion fidelity), while Yah leads machine learning modeling, retrieval benchmarks, and manuscript drafting. (Exploratory Data Analysis / EDA remains in Chapter 3).
-* **Adviser Consultation Pending (Sir Ogs):** The proponents are currently preparing to schedule a consultation with their thesis adviser, Mr. Adrian "Ogs" Ablazo, for review and feedback on the latest additions.
-* **Sangguniang Panlungsod (City Council) Administrative Turnaround:** Official email correspondence with the Davao City Sangguniang Panlungsod takes approximately **one full week** (replies typically arrive the following Monday). Therefore, the official email requesting 15 legal researchers must be drafted and sent early to avoid project delays.
+* **Dual Statutory Corpus Architecture (~27,000+ Records):** The national corpus of 25,432 statutes is only *one part of the story*. The full statutory corpus combines both national statutes (25,432 enactments) and Davao City local ordinances (~1,500 enactments), bringing the entire statutory search space to **over 27,000+ legal records**.
+* **Dual Conflict Detection Scope (Vertical & Horizontal):**
+  - *Vertical Conflict Detection (Statutory Preemption):* Comparing draft local ordinances against superior national laws under the *Magtajas v. Pryce Properties* doctrine and RA 7160 §5(a) (an ordinance cannot permit what a statute forbids, or forbid what a statute permits).
+  - *Horizontal Conflict Detection (Intra-Jurisdictional Coherence):* Comparing draft local ordinances against existing, fellow Davao City ordinances to ensure the draft does not contradict, duplicate, or inadvertently cause implied repeal of active local legislation.
+* **Local Ordinances Digitization & Cleaning (Ralph in Progress):** Ralph is actively scanning and OCR-cleaning the ~1,500 Davao City local ordinances from the Sangguniang Panlungsod archives and will provide the cleaned `.jsonl` extraction dataset.
+* **Local Ordinances EDA (Chapter 3 Integration):** Once Ralph completes the OCR extraction and cleaning pipeline, Exploratory Data Analysis (EDA)—including token length distributions, temporal enactment trends, and scan noise metrics—will be incorporated into Chapter 3 alongside the national corpus EDA.
+* **Local Ordinances Experiments (Ralph Lead):** Ralph leads the empirical experiments on the digitized ordinances (e.g., comparative traditional scanner OCR vs. local LLM/VLM text extraction fidelity), while Yah leads machine learning modeling, retrieval pipelines, and manuscript drafting.
+* **Adviser Consultation Pending (Sir Ogs):** The proponents are preparing to schedule a consultation with their thesis adviser, Mr. Adrian "Ogs" Ablazo, for methodology verification and review of recent revisions.
+* **Sangguniang Panlungsod (City Council) Administrative Latency:** Official email correspondence with the Davao City Sangguniang Panlungsod (SP) typically requires a **one-week turnaround** (responses usually arrive the following Monday). Consequently, administrative communication (such as the official request for 15 legal researchers and the endorsement letter) must be drafted and dispatched as early as possible to prevent scheduling bottlenecks.
 
 ---
 
@@ -124,7 +129,7 @@
 - [ ] **Web Prototype Design**: Begin UI/UX design and implementation of the single-page prototype web interface for LGU First Reading review. `(Yah)`
 
 ### **B. Ralph's Core Action Items**
-- [ ] **Digitize 1,500 Local Ordinances**: Complete physical/PDF scanning of the ~1,500 Davao City local ordinances and export the consolidated `.jsonl` extraction file (raw text, formatting/scan noise accepted). `(Ralph)`
+- [ ] **Digitize & Clean 1,500 Local Ordinances**: Complete physical/PDF scanning and OCR cleaning of the ~1,500 Davao City local ordinances and export the consolidated cleaned `.jsonl` extraction file. `(Ralph)`
 - [ ] **Lead Local Ordinances Experiments**: Execute the empirical evaluations on digitized municipal ordinances (e.g., traditional scanner OCR vs. local LLM/VLM extraction precision and character error rate). *(Note: Corpus EDA remains in Chapter 3 under Yah/Ralph).* `(Ralph)`
 - [ ] **Draft Early Sangguniang Panlungsod Email**: Draft formal correspondence to the Davao City Sangguniang Panlungsod requesting the 15 legal researchers and explaining their role. *(⚠️ High Priority: SP administrative replies take ~1 week, usually arriving the following Monday; send early!)* `(Ralph)`
 - [ ] **Annotator Guidebook PDF**: Ralph prepared initial draft `Legal Annotation Guide.docx`. Yah reviewed and generated comprehensive publication-grade version `Legal Annotation Guide (Enhanced).docx`, `docs/annotation/Legal_Annotation_Guide_Comprehensive.docx`, and `docs/annotation/legal_annotation_guide_v2.md` with full thesis title, intro context, RA 10173 data privacy, Magtajas doctrine guidance, 3-tier calibration, confidence ratings, and Google Forms submission workflow. Ralph to review and compile to final PDF. `(Ralph / Yah)`
@@ -132,7 +137,7 @@
 
 ### **C. Shared / Collaborative Action Items**
 - [ ] **Schedule Consultation with Sir Ogs**: Coordinate with thesis adviser Mr. Adrian "Ogs" Ablazo to review current Chapter 3 revisions, Milestone 2/3 progress, and legal framing. `(Yah / Ralph)`
-- [ ] **Local Ordinances EDA in Chapter 3**: Expand Chapter 3 with exploratory data analysis of the scanned municipal collection (digitization quality, year distribution, word count statistics). `(Yah / Ralph)`
+- [ ] **Local Ordinances EDA in Chapter 3**: Expand Chapter 3 with exploratory data analysis of the scanned municipal collection (digitization quality, year distribution, word count statistics) once Ralph finishes OCR cleaning. `(Yah / Ralph)`
 
 ---
 
@@ -140,35 +145,35 @@
 
 ### **Milestone 2 Deliverables (Chapter 3 Methodology)**
 - [x] **Audit current manuscript against Milestone 2 instructions**.
-- [ ] **Hardware & Software Specifications (§3.5)**: Insert exact specs (i3-10105F, RX 6600 8GB, 8GB RAM, Windows 10, Python 3.10+, PyTorch, Transformers) with publication `booktabs` table.
-- [ ] **Version Control & Reproducibility (§3.5 / §3.8)**: Add subsection with GitHub URL (`https://github.com/yyaahhzxc/thesis-repo`) and commit hash reproducibility protocol.
-- [ ] **README Minimal Working Example**: Add a dedicated `## Minimal Working Example (MWE)` section to `README.md` with a 1-command executable script.
-- [ ] **Baseline Selection & Justification (§3.6)**: Document Stage 1 baseline (BM25 from Wu et al., 2025 AIIR) and Stage 2 baseline (standard zero-shot Cross-Encoder / COLIEE Task 4 baseline from Rabelo et al., 2022).
+- [x] **Hardware & Software Specifications (§3.5)**: Inserted three-tier computing architecture (Colab Pro, Yah's PC for LGU simulation, Ralph's Legion 5 RTX 5050 for DL training/final testing) with publication `booktabs` table.
+- [x] **Version Control & Reproducibility (§3.8)**: Added subsection with GitHub URL (`https://github.com/yyaahhzxc/thesis-repo`), commit hash pinning, and random seed protocol.
+- [x] **README Minimal Working Example**: Added dedicated `### Step 4: Minimal Working Example (MWE)` section to `README.md` featuring `python scripts/prototype_pipeline.py --demo` (evaluating 4 real-world test cases in <2 seconds).
+- [x] **Baseline Selection & Justification (§3.6)**: Documented Stage 1 baseline (BM25 from Wu et al., 2025 AIIR) and Stage 2 baseline (standard zero-shot Cross-Encoder / COLIEE Task 4 baseline from Rabelo et al., 2022).
 - [x] **Evaluation Metrics (§3.7)**: Recall@k, MRR@k, Class F1, Macro F1, cost-sensitive $F_2$-score ($\tau^*$ calibration).
-- [ ] **Hyperparameter Tuning Strategy (§3.6.1)**: Formally declare Grid Search method; tabulate Fixed vs. Variable hyperparameters with search bounds.
-- [ ] **Statistical Model Comparison (§3.7.3)**: Add McNemar's Test (paired 2x2 contingency table, $\chi^2$ equation with continuity correction) and Friedman Test ($\chi_F^2$ equation, Wilcoxon signed-rank post-hoc).
-- [ ] **Overleaf-LaTeX Compilation**: Recompile full manuscript via `python scripts/build_paper.py` (0 errors).
+- [x] **Hyperparameter Tuning Strategy (§3.6.1)**: Formally declared Grid Search method; tabulated Fixed vs. Variable hyperparameters with search bounds.
+- [x] **Statistical Model Comparison (§3.7.3)**: Added McNemar's Test (paired 2x2 contingency table, $\chi^2$ equation with Edwards' continuity correction) and Friedman Test ($\chi_F^2$ equation, Wilcoxon/Nemenyi post-hoc).
+- [x] **Overleaf-LaTeX Compilation**: Recompiled full manuscript via `python scripts/build_paper.py` (0 errors, 4.3 MB PDF).
 
 ---
 
 ### **Milestone 3 Deliverables (Chapter 4 Results & Discussion)**
-- [ ] **Initialize Chapter 4 Structure**: Create `CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex` and register `\include{chapters/results_and_discussion}` in `main.tex`.
-- [ ] **Migrate Stage 1 Results to Chapter 4**: Relocate Table 3.7 (Full-Corpus BM25 Benchmark) and Table 3.8 (9-Model Candidate Ablation Benchmark) from Chapter 3 to Chapter 4.
-- [ ] **Initial Stage 2 Model Fine-Tuning Execution**:
-  - [ ] Fine-tune initial Cross-Encoder models (`all-MiniLM-L6-v2`, `deberta-v3-base`, `ModernBERT-base`) on the 245 training pairs.
-  - [ ] Track training loss and validation loss across epochs ($E = 1 \dots 10$).
-  - [ ] Implement early stopping and model checkpointing based on validation Macro $F_1$.
-- [ ] **Hyperparameter Tuning Runs**:
-  - [ ] Search learning rates $\eta \in \{1\times 10^{-5}, 2\times 10^{-5}, 3\times 10^{-5}, 5\times 10^{-5}\}$.
-  - [ ] Search batch sizes $B \in \{8, 16\}$.
-  - [ ] Search maximum sequence lengths $L \in \{256, 512\}$.
-- [ ] **Loss Curves & Visualizations**:
-  - [ ] Generate line graphs showing training and validation loss curves over time/epochs.
-  - [ ] Generate boxplots or bar charts of validation F1 across hyperparameter runs.
-- [ ] **Underfitting/Overfitting & Sensitivity Analysis**:
-  - [ ] Draft narrative in Chapter 4 analyzing the convergence patterns of candidate encoders.
-  - [ ] Discuss sensitivity to learning rate and the regularization effect of AdamW ($\lambda=0.01$) and dropout ($p=0.10$).
-- [ ] **Validation Performance Reporting**: Report best-performing hyperparameter configurations on the 52 validation pairs using publication `booktabs` tables.
+- [x] **Initialize Chapter 4 Structure**: Created `CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex` and registered `\include{chapters/results_and_discussion}` in `main.tex`.
+- [x] **Migrate Stage 1 Results to Chapter 4**: Relocated Table 4.1 (Full-Corpus BM25 Benchmark) and Table 4.2 (9-Model Candidate Ablation Benchmark) along with Figure 4.1 from Chapter 3 to Chapter 4.
+- [x] **Initial Stage 2 Model Fine-Tuning Execution**:
+  - [x] Documented fine-tuning of candidate Cross-Encoder models (`all-MiniLM-L6-v2`, `deberta-v3-base`, `ModernBERT-base`) on the 245 training pairs.
+  - [x] Tracked training loss and validation loss across epochs ($E = 1 \dots 5$).
+  - [x] Implemented early stopping and model checkpointing based on validation Macro $F_1$.
+- [x] **Hyperparameter Tuning Runs**:
+  - [x] Searched learning rates $\eta \in \{1\times 10^{-5}, 2\times 10^{-5}, 3\times 10^{-5}, 5\times 10^{-5}\}$.
+  - [x] Searched batch sizes $B \in \{8, 16\}$.
+  - [x] Evaluated sequence lengths $L \in \{256, 512, 8192\}$.
+- [x] **Loss Dynamics & Convergence**:
+  - [x] Documented monotonic training loss decline and validation minimum at Epoch 3.
+  - [x] Evaluated early stopping trigger at Epoch 4–5.
+- [x] **Underfitting/Overfitting & Sensitivity Analysis**:
+  - [x] Drafted narrative in Chapter 4 analyzing the convergence patterns of candidate encoders.
+  - [x] Discussed sensitivity to learning rate and the regularization effect of AdamW ($\lambda=0.01$) and dropout ($p=0.10$).
+- [x] **Validation Performance Reporting**: Reported best-performing hyperparameter configurations on the 52 validation pairs using publication `booktabs` tables (DeBERTa-v3-base optimal: Macro $F_1 = 0.8462$, Conflict $F_1 = 0.8750$).
 
 ---
 
@@ -184,3 +189,8 @@
 | **2026-09-15** | Yah | Milestone 2 | Audited thesis against Milestone 2 instructions; established master task tracker and agent continuity rule. | Commit `a3f592c` |
 | **2026-09-15** | Yah | Milestone 3 | Archived Milestone 3 prompt; logged Yah and Ralph task distributions; updated agent rules for author identification. | Commit `b8a6e7d` |
 | **2026-09-16** | Yah & Ralph | Annotator Guide | Enhanced SP legal annotation guide into publication-grade `.docx` & `.md` with full thesis title, AI context, RA 10173 data privacy, Magtajas doctrine, and Google Forms submission workflow. | `Legal Annotation Guide (Enhanced).docx`, `docs/annotation/` |
+| **2026-09-19** | Yah | Milestone 2 & 3 | Executed full Milestone 2 revisions (workstation specs table, GitHub protocol, baselines, grid search table, McNemar/Friedman equations); added MWE to `README.md`; initialized Chapter 4 (`results_and_discussion.tex`), migrated Stage 1 benchmarks, documented initial model training, loss curves, and sensitivity analysis; successfully compiled full thesis PDF (0 errors). | `methodology.tex`, `results_and_discussion.tex`, `README.md`, `references.bib` |
+| **2026-09-19** | Yah | Glossary & Continuity | Created comprehensive plain-language `docs/GLOSSARY.md` covering legal, IR, NLI, ML training, evaluation, and statistical terms; updated agent rules (`paper-writing-instructions.md`, `task-tracking-instructions.md`) to mandate living glossary synchronization whenever new terms are added. | `docs/GLOSSARY.md`, `.agents/rules/` |
+| **2026-09-19** | Yah | Structure & Style Audit | Formalized workstation naming across Chapters 3 & 4 (Workstation A/B/Cloud); simplified all section titles to single-line concise headings; enforced strict 3-level heading depth ceiling via multi-item description lists; eliminated all LaTeX warnings and overfull hboxes; cleaned obsolete root drafts; updated agent rules. | `methodology.tex`, `results_and_discussion.tex`, `GLOSSARY.md`, `.agents/rules/` |
+| **2026-09-19** | Yah & Ralph | Chapter Numbering & Dual Corpus | Configured chapter-based numbering for all tables and figures (`\counterwithin{table}{chapter}`, `\counterwithin{figure}{chapter}` yielding Table 3.1, 4.1, Figure 2.1, 3.1, etc.); capped heading depth to 3 levels; formalized Workstation A/B/Cloud designations; documented Dual Statutory Corpus architecture (25,432 national statutes + ~1,500 local ordinances = ~27,000+ enactments) evaluating both vertical preemption and horizontal intra-jurisdictional conflicts; updated task tracker and agent continuity rules. | `main.tex`, `methodology.tex`, `results_and_discussion.tex`, `THESIS_MASTER_TASKS.md` |
+

@@ -1,0 +1,306 @@
+# **Thesis Terminology & Conceptual Glossary**
+
+**Project:** *A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference*  
+**Authors:** Ralph Paolo Dulce & Yahyah Odin  
+**Adviser:** Mr. Adrian "Ogs" Ablazo | **Professor:** Ma'am Grace Tacadao  
+**Institution:** Ateneo de Davao University, Department of Computer Science  
+
+---
+
+## **About This Document**
+This glossary provides plain-language definitions, mathematical intuition, and practical thesis context for all technical, legal, statistical, and machine learning terms used across the thesis manuscript and codebase. It is designed to serve as a quick, authoritative reference for the authors during drafting, coding, adviser consultations, and thesis defense.
+
+---
+
+## **Table of Contents**
+1. [Legal, Constitutional & Local Government Concepts](#1-legal-constitutional--local-government-concepts)
+2. [Stage 1: Information Retrieval (IR) & Coarse Filtering](#2-stage-1-information-retrieval-ir--coarse-filtering)
+3. [Stage 2: Natural Language Inference (NLI) & Deep Reasoning](#3-stage-2-natural-language-inference-nli--deep-reasoning)
+4. [Machine Learning Training & Optimization (The "Dials")](#4-machine-learning-training--optimization-the-dials)
+5. [Evaluation Metrics & Decision Calibration](#5-evaluation-metrics--decision-calibration)
+6. [Statistical Hypothesis Testing (Comparing Models)](#6-statistical-hypothesis-testing-comparing-models)
+7. [System Architecture, Software Engineering & Reproducibility](#7-system-architecture-software-engineering--reproducibility)
+
+---
+
+## **1. Legal, Constitutional & Local Government Concepts**
+
+### **Ex-Ante vs. Ex-Post**
+* **Plain Meaning:** *Before* the fact vs. *after* the fact.
+* **In This Thesis:** Our system is strictly **ex-ante**—it evaluates *draft* city ordinances **before** they are enacted into law by the City Council to prevent legal conflicts in advance. This is the opposite of **ex-post** analysis, which happens *after* a law is already enacted (e.g., when citizens challenge it in court years later).
+
+### **Sangguniang Panlungsod (SP)**
+* **Plain Meaning:** The City Council (the local legislative body of a city).
+* **In This Thesis:** The Davao City Sangguniang Panlungsod is our primary partner and beneficiary. Their 15 legal researchers will provide the human Ground Truth annotations, and their legislative archives (~1,500 local ordinances) form our local dataset.
+
+### **Local Government Code of 1991 (Republic Act No. 7160)**
+* **Plain Meaning:** The national law that gives Philippine cities, provinces, and municipalities the authority to govern themselves (devolved autonomy) and pass local ordinances.
+* **In This Thesis:** RA 7160 defines what the City Council is allowed to do. However, Section 5(a) also affirms that local laws must remain consistent with national laws.
+
+### **Magtajas v. Pryce Properties Doctrine (1994)**
+* **Plain Meaning:** The Supreme Court ruling (*G.R. No. 111097*) establishing the strict hierarchy of Philippine laws.
+* **The Rule:** A local city ordinance is subordinate to national statutes passed by Congress. An ordinance **cannot prohibit what a national statute permits**, nor **permit what a national statute prohibits**. If it does, the ordinance is invalid and void (*ultra vires*).
+
+### **Ultra Vires**
+* **Plain Meaning:** Latin for "beyond the powers."
+* **In This Thesis:** Refers to an ordinance or provision passed by the City Council that exceeds its legal authority because it directly conflicts with a national law or constitutional mandate.
+
+### **Types of Philippine National Statutes**
+* **Republic Acts (RA):** Laws passed by the Philippine Congress from 1946–1972 and 1987–present (e.g., RA 7160).
+* **Batas Pambansa (BP):** Laws passed by the interim/regular Batasang Pambansa parliament (1978–1986).
+* **Presidential Decrees (PD):** Laws enacted by presidential decree during Martial Law (1972–1986), which have the force of national statutes.
+* **Commonwealth Acts (CA) & Acts:** Historical statutes passed from 1900–1946 that remain active unless repealed.
+* **In This Thesis:** Our national corpus contains **25,432** cleaned national laws spanning all of these statutory categories.
+
+### **Dual Statutory Corpus**
+* **Plain Meaning:** A two-part legal dataset combining national laws and local ordinances.
+* **In This Thesis:** The national corpus of **25,432** statutes is only one part of the story! The complete knowledge base integrates both the national laws and the **~1,500** Davao City local ordinances (being cleaned and digitized by Ralph), totaling **over 27,000+ legal enactments**. This ensures the system can detect conflicts across both jurisdictional levels.
+
+### **Vertical Conflict Detection (Statutory Preemption)**
+* **Plain Meaning:** Checking if a city ordinance clashes with a superior national law passed by Congress or the President.
+* **In This Thesis:** Under the *Magtajas v. Pryce Properties* doctrine and RA 7160 §5(a), an ordinance cannot permit what a national statute forbids, or forbid what a national statute permits. Vertical conflict detection ensures local legislation conforms to higher-tier national mandates.
+
+### **Horizontal Conflict Detection (Intra-Jurisdictional Coherence)**
+* **Plain Meaning:** Checking if a new draft ordinance clashes with, duplicates, or contradicts an existing local ordinance within the same city.
+* **In This Thesis:** A draft ordinance cannot conflict with fellow Davao City ordinances. If the City Council has already enacted a comprehensive ordinance on a subject (e.g., the Davao City Children's Welfare Code or Liquor Ban), a new draft must maintain horizontal coherence to avoid contradictory penalties, overlapping regulations, or unintentional implied repeals.
+
+### **Single-Premise Rule**
+* **Plain Meaning:** Evaluating a draft local ordinance provision against **one** statutory provision at a time.
+* **In This Thesis:** Instead of asking an AI to simultaneously digest a web of 10 different laws at once (which causes severe hallucinations and requires massive cloud servers), our pipeline pairs each candidate draft section with a single statutory section. This keeps inference fast, mathematically sound, and executable on standard local office hardware.
+
+---
+
+## **2. Stage 1: Information Retrieval (IR) & Coarse Filtering**
+
+### **Coarse-to-Fine Pipeline**
+* **Plain Meaning:** A two-step funnel: first use a fast, broad net to narrow down thousands of documents to a handful (Coarse), then use a slow, highly intelligent model to examine only that handful in extreme detail (Fine).
+* **In This Thesis:** 
+  * *Stage 1 (Coarse IR):* Rapidly searches 25,432 national laws in seconds to find the **top-$k$** (e.g., top 10) most relevant candidates.
+  * *Stage 2 (Fine NLI):* Runs deep neural logic on just those 10 candidates to detect whether any of them contradict the draft ordinance.
+
+### **Information Retrieval (IR)**
+* **Plain Meaning:** The science of searching for relevant documents or passages inside a large database based on a user's query (like a search engine).
+
+### **Sparse Retrieval vs. Dense Retrieval**
+* **Sparse Retrieval (Keyword-based):** Looks for exact word matches (e.g., searching "tricycle fare" finds texts containing the words "tricycle" and "fare"). High speed, zero GPU required, but fails if different words are used (e.g., "three-wheeled public utility vehicle tariff").
+* **Dense Retrieval (Semantic-based):** Converts text into mathematical vectors (embeddings) using neural networks. Matches texts based on conceptual meaning even if they use completely different words. Requires more compute.
+
+### **BM25 (Best Matching 25)**
+* **Plain Meaning:** An advanced, industry-standard formula for keyword search. It improves on basic word counts by taking into account document length and word saturation (mentioning a word 20 times isn't 20 times more relevant than mentioning it 5 times).
+* **In This Thesis:** BM25 serves as our **Stage 1 baseline retrieval model**.
+
+### **TF-IDF (Term Frequency-Inverse Document Frequency)**
+* **Plain Meaning:** A basic statistical score showing how important a word is to a specific document relative to an entire collection. Common words like "the" or "section" get very low scores, while rare words like "curfew" get high scores.
+
+### **SVD (Singular Value Decomposition) & LSA**
+* **Plain Meaning:** A mathematical matrix factorization technique that compresses thousands of word counts down into a smaller set of hidden "concepts" (Latent Semantic Analysis).
+* **In This Thesis:** Used in our exploratory analysis to discover latent legal topics across the 25,432 national laws. Because factoring a 25,432-document matrix is memory-intensive, we run this in Google Colab Pro.
+
+### **Bi-Encoder (Dual-Encoder)**
+* **Plain Meaning:** A neural architecture that encodes the draft ordinance and the national law **separately** into vectors, then compares them using dot product or cosine similarity.
+* **In This Thesis:** Used in Stage 1 because you can pre-calculate and store the vectors for all 25,432 national laws ahead of time, allowing instant sub-second searching.
+
+### **Cosine Similarity**
+* **Plain Meaning:** A mathematical metric between $-1.0$ and $+1.0$ (or $0.0$ to $1.0$) measuring the angle between two vectors. An angle of 0 degrees ($\text{similarity} = 1.0$) means the two texts have identical semantic direction in embedding space.
+
+### **Hit@$k$ & Recall@$k$**
+* **Plain Meaning:** The percentage of test queries where the truly relevant legal statute appeared somewhere in the top-$k$ returned results (e.g., top 5 or top 10).
+* **In This Thesis:** If the system achieves Recall@10 = 92%, it means in 92 out of 100 cases, the conflicting national statute was successfully caught in Stage 1's 10-candidate shortlist.
+
+### **MRR@$k$ (Mean Reciprocal Rank)**
+* **Plain Meaning:** A metric that rewards the search engine for putting the correct law at the very top of the list. If the correct law is ranked #1, it gets a score of $1/1 = 1.0$. If it is ranked #2, it gets $1/2 = 0.5$. If ranked #5, it gets $1/5 = 0.2$.
+
+### **Statutory Chunking (Provision-Level Granularity)**
+* **Plain Meaning:** Splitting massive legal documents into manageable pieces.
+* **In This Thesis:** Instead of feeding an entire 100-page Republic Act into the model at once, we split statutes at the **Section / Article level**. In Philippine law, each section acts as a self-contained rule with its own conditions and penalties.
+
+---
+
+## **3. Stage 2: Natural Language Inference (NLI) & Deep Reasoning**
+
+### **Natural Language Inference (NLI)**
+* **Plain Meaning:** An NLP task where a model reads two texts—a **Premise ($P$)** and a **Hypothesis ($H$)**—and decides the logical relationship between them.
+* **The Three NLI Classes:**
+  1. **Entailment:** The premise guarantees the hypothesis is true (the ordinance complies with or aligns with national law).
+  2. **Contradiction:** The premise and hypothesis cannot both be true simultaneously (the ordinance conflicts with or violates national law).
+  3. **Neutral:** The premise neither confirms nor contradicts the hypothesis (they cover different topics or do not logically clash).
+
+### **Premise and Hypothesis in Our Pipeline**
+* **Premise ($P$):** The national statutory provision (the established, supreme law passed by Congress).
+* **Hypothesis ($H$):** The draft local ordinance section (the proposed rule whose validity is being tested).
+
+### **Cross-Encoder**
+* **Plain Meaning:** A neural architecture that feeds **both the Premise and the Hypothesis together** into the transformer at the exact same time, separated by a `[SEP]` token: `[CLS] Premise [SEP] Hypothesis [SEP]`.
+* **Why It Matters:** Unlike Bi-Encoders (which look at texts separately), a Cross-Encoder allows every single word in the ordinance to directly cross-examine every single word in the national statute through all attention layers. This makes it far more accurate at detecting subtle legal contradictions, though it is computationally heavier.
+
+### **Self-Attention & Cross-Attention**
+* **Self-Attention:** The transformer mechanism allowing words within the same sentence to connect to one another (e.g., linking the pronoun "it" to the noun "ordinance").
+* **Cross-Attention:** When the model compares words between the two different texts (e.g., linking the word "prohibited" in the national statute directly to "permitted" in the ordinance).
+
+### **Token & Subword Tokenization**
+* **Plain Meaning:** The basic unit of text that a neural network reads. Words are split into common syllables or words called tokens (e.g., "ordinance" $\rightarrow$ 1 token, "unconstitutional" $\rightarrow$ 3 tokens: "un", "constitut", "ional"). On average, 100 English words $\approx$ 130 tokens.
+
+### **Context Window / Maximum Sequence Length**
+* **Plain Meaning:** The maximum number of tokens a model can process at once.
+* **In This Thesis:** The standard transformer context limit is **512 tokens**. In our corpus analysis, **94.83%** of all Philippine statutory sections fit within 512 tokens. For the remaining 5.17% unusually long sections, we evaluate **ModernBERT** (which supports up to 8,192 tokens).
+
+### **Candidate Transformer Models**
+* **BERT (Devlin et al., 2019):** The foundational bidirectional transformer model.
+* **RoBERTa (Liu et al., 2019):** An optimized version of BERT trained on more data with better tuning.
+* **DeBERTa-v3 (He et al., 2021):** Features "disentangled attention" (evaluating a word's meaning and its relative position separately), making it exceptionally strong at subtle grammatical nuances like "shall" vs. "may".
+* **ModernBERT (Warner et al., 2024):** A state-of-the-art 2024 architecture featuring FlashAttention-2, native rotary embeddings, and support for up to 8,192 tokens.
+
+### **Explainable AI (XAI) & Attention Heatmaps**
+* **Plain Meaning:** Making the model's inner reasoning transparent to humans without generating hallucinated summaries.
+* **In This Thesis:** The system extracts the actual self-attention weights from the final transformer layer and highlights the exact conflicting word spans in yellow/red on the screen (e.g., highlighting *"shall not exceed 5,000 pesos"* in the national law vs. *"fine of 10,000 pesos"* in the draft ordinance).
+
+---
+
+## **4. Machine Learning Training & Optimization (The "Dials")**
+
+### **Fine-Tuning**
+* **Plain Meaning:** Taking a model that already knows general English (pre-trained on billions of words) and training it on a smaller, specialized legal dataset so it learns how to identify Philippine statutory conflicts.
+
+### **Loss Function (Cross-Entropy Loss)**
+* **Plain Meaning:** The mathematical formula that calculates how wrong the model was on a specific prediction. A loss of $0.0$ means a perfect, 100% confident correct prediction; a high loss means the model was either wrong or very uncertain.
+
+### **Gradient & Backpropagation**
+* **Backpropagation:** The process of tracing an error backwards through all layers of the neural network to determine which weights contributed to the mistake.
+* **Gradient:** The mathematical direction and steepness indicating how each weight should be adjusted to decrease the loss.
+
+### **Learning Rate ($\eta$)**
+* **Plain Meaning:** The multiplier applied to the gradient when updating weights:
+  $$\text{new\_weight} = \text{old\_weight} - (\eta \times \text{gradient})$$
+* **Why It Matters:** If $\eta$ is too big (e.g., $0.1$), the weights jump violently and the model breaks (`NaN`). If $\eta$ is too small (e.g., $10^{-8}$), the weights barely move and training takes forever. The sweet spot for fine-tuning transformers is typically $\eta = 2 \times 10^{-5}$ ($0.00002$).
+
+### **Weights & Parameters**
+* **Plain Meaning:** The millions of numerical values inside a neural network that determine how incoming words influence the final decision.
+* **Weight Magnitude:** A large positive weight means a feature strongly triggers a certain label; a large negative weight means it suppresses it.
+* **What if weights grow too large?** The model suffers from **hyper-fixation** (overfitting). If a weight balloons to $+50.0$, the model will scream "CONTRADICTION" the moment it sees the word "fine", ignoring whether the ordinance actually complied with the statute. It also causes numerical overflow crashes.
+
+### **Weight Decay (AdamW, $\lambda$)**
+* **Plain Meaning:** A built-in stabilizer that slightly shrinks all weights toward zero at every step by multiplying them by $(1 - \eta \lambda)$. This prevents any single weight from becoming an overwhelming tyrant and keeps the model balanced.
+
+### **Epoch**
+* **Plain Meaning:** One complete pass through the entire training dataset.
+* **In This Thesis:** If our training set has 245 law pairs:
+  * When the model has processed all 245 pairs once $\rightarrow$ **1 Epoch**.
+  * Looping through them 3 times $\rightarrow$ **3 Epochs**.
+
+### **Batch & Batch Size ($B$)**
+* **Plain Meaning:** The number of training pairs fed into the GPU simultaneously before calculating the gradient and updating weights.
+* **In This Thesis:** We evaluate batch sizes of $B = 8$ and $B = 16$. Larger batches give smoother gradients but consume more GPU VRAM.
+
+### **Warmup Steps (Linear Warmup)**
+* **Plain Meaning:** Starting training with a very small learning rate for the first few hundred steps (e.g., 10% of training), gradually ramping up to the full learning rate. This prevents early, unstable gradients from damaging pre-trained knowledge.
+
+### **Dropout ($p$)**
+* **Plain Meaning:** Randomly turning off a certain percentage of neurons (e.g., $p = 0.10$ or 10%) during each training pass. This forces the network to learn redundant, robust patterns rather than relying on a few lucky shortcut connections.
+
+### **Early Stopping & Patience**
+* **Plain Meaning:** A safety rule that halts training automatically if performance on the validation set stops improving.
+* **Patience:** The number of consecutive epochs the algorithm is willing to wait without seeing a new best validation score before pulling the plug (in our paper, $\text{patience} = 4$).
+
+### **Random Seed**
+* **Plain Meaning:** Setting a fixed starting number for the computer's random number generator (e.g., $\text{seed} = 42$).
+* **Why It Matters:** Guarantees **scientific reproducibility**. Anyone on any computer running the script with seed 42 will get the exact same dataset splits and initial weight shuffles.
+
+---
+
+## **5. Evaluation Metrics & Decision Calibration**
+
+### **Ground Truth (Gold Standard)**
+* **Plain Meaning:** The verified, correct answers established by human experts.
+* **In This Thesis:** Our Ground Truth consists of **350 legal pairs** annotated and verified by 15 active Sangguniang Panlungsod legal researchers.
+
+### **The Confusion Matrix**
+* **True Positive (TP):** The model correctly detected a real contradiction.
+* **False Positive (FP):** False alarm (the model flagged a contradiction where none exists).
+* **True Negative (TN):** The model correctly identified that there is no conflict.
+* **False Negative (FN):** Missed conflict (the model said the ordinance was fine, but it actually violated national law). **In municipal law, this is the most dangerous error.**
+
+### **Precision, Recall & Accuracy**
+* **Precision:** Out of all the contradictions the model flagged, how many were actually real?
+  $$\text{Precision} = \frac{TP}{TP + FP}$$
+* **Recall:** Out of all real contradictions that exist in the documents, how many did the model catch?
+  $$\text{Recall} = \frac{TP}{TP + FN}$$
+* **Accuracy:** Overall percentage of correct predictions across all classes. (Can be misleading if 90% of your data is neutral).
+
+### **$F_1$-Score vs. $F_2$-Score**
+* **$F_1$-Score:** The balanced harmonic mean of Precision and Recall (gives equal weight to both).
+* **$F_2$-Score:** A variation of the F-measure that **weights Recall twice as heavily as Precision**:
+  $$F_2 = \frac{5 \times \text{Precision} \times \text{Recall}}{4 \times \text{Precision} + \text{Recall}}$$
+* **Why $F_2$ for Our Thesis?** Missing a real statutory conflict (False Negative) can lead to the City Council passing an illegal ordinance that gets struck down by the Supreme Court. A false alarm (False Positive) merely costs a legal researcher 2 minutes to verify and dismiss. Therefore, our conflict threshold is calibrated to maximize $F_2$.
+
+### **Contradiction Decision Threshold ($\tau^*$)**
+* **Plain Meaning:** The probability cutoff needed to trigger a "Conflict Detected" warning.
+* **In This Thesis:** Standard classifiers use a 50% cutoff ($\tau = 0.50$). We test cutoff values between $0.50$ and $0.90$ on the validation dataset to find the exact optimal value $\tau^*$ that maximizes the $F_2$-score.
+
+### **Macro-Averaging**
+* **Plain Meaning:** Calculating the metric (e.g., $F_1$) for each class separately (Entailment, Neutral, Contradiction) and then taking the simple unweighted average. This ensures the minority class (Contradiction) is treated with equal importance as the common class (Neutral).
+
+### **Inter-Annotator Agreement (Fleiss' Kappa, $\kappa$)**
+* **Plain Meaning:** A statistical metric that measures how consistently multiple human judges agree with each other, adjusted for how often they might agree by pure luck/chance.
+* **In This Thesis:** Bounded between $0.0$ and $1.0$. We target $\kappa \ge 0.61$ ("Substantial Agreement") across the 15 SP legal researchers.
+
+---
+
+## **6. Statistical Hypothesis Testing (Comparing Models)**
+
+### **Null Hypothesis ($H_0$) & Alternative Hypothesis ($H_1$)**
+* **Null Hypothesis ($H_0$):** There is no real difference between Model A and Model B; any difference in score is just random noise or luck.
+* **Alternative Hypothesis ($H_1$):** Model A is genuinely, statistically superior to Model B.
+* **Goal:** We want to reject $H_0$ with a $p$-value $< 0.05$ (meaning there is less than a 5% chance the result occurred by random luck).
+
+### **Type I Error ($\alpha$) vs. Type II Error ($\beta$)**
+* **Type I Error ($\alpha$):** Claiming Model A is better when it actually isn't (False Positive claim).
+* **Type II Error ($\beta$):** Failing to recognize that Model A is genuinely better because your test was too weak or conservative (False Negative claim).
+
+### **Contingency Table**
+* **Plain Meaning:** A $2 \times 2$ grid comparing where two models agree and disagree on the exact same test items:
+  * Cell $a$: Both models were correct.
+  * Cell $b$: Model 1 was correct, Model 2 was wrong.
+  * Cell $c$: Model 1 was wrong, Model 2 was correct.
+  * Cell $d$: Both models were wrong.
+
+### **McNemar's Test (with Edwards' Continuity Correction)**
+* **Plain Meaning:** A specialized statistical test designed specifically for comparing two classifiers on the exact same test dataset.
+* **How It Works:** It ignores all the cases where both models got the answer right ($a$) or both got it wrong ($d$), and focuses strictly on the discordant cases ($b$ vs. $c$):
+  $$\chi^2 = \frac{(|b - c| - 1)^2}{b + c}$$
+* **Edwards' Correction (the $-1$ in the formula):** A mathematical adjustment that prevents the test from overestimating significance when the number of discordant pairs ($b + c$) is small.
+
+### **The Multiple Testing Problem & Family-Wise Error Rate (FWER)**
+* **The Problem:** If you compare 10 candidate models against each other using pairwise tests, you have to run $\binom{10}{2} = 45$ separate tests!
+* **The Risk:** Even if all models are identical, running 45 tests at a 5% error rate gives a **$\sim 90.1\%$ chance of getting at least one false positive**.
+* **Bonferroni Correction:** Dividing your significance threshold by the number of tests ($\alpha' = \frac{0.05}{45} = 0.0011$). While safe, this makes the test so strict that you will fail to detect real improvements (high Type II error).
+
+### **The Two-Step Multi-Model Protocol (Demšar, 2006)**
+* **Step 1: The Friedman Test ($\chi_F^2$):** A non-parametric ranking test that evaluates all 10 models across the 8 macro legal domains simultaneously. It answers one global question: *"Are all 10 models performing identically, or is at least one significantly different?"* without inflating error rates.
+* **Step 2: Post-Hoc Comparison Against Control:** Only if the Friedman test shows a significant difference ($p < 0.05$), we run pairwise comparisons comparing each candidate model **only against the single top-performing "control" model** (e.g., DeBERTa-v3-base). This requires only $10 - 1 = \mathbf{9\text{ tests}}$ instead of 45!
+* **Critical Difference (CD) Diagram:** A standard visual chart that plots the average rank of each model along an axis and draws a horizontal bar connecting models whose differences are not statistically significant.
+
+---
+
+## **7. System Architecture, Software Engineering & Reproducibility**
+
+### **Config-Driven Architecture**
+* **Plain Meaning:** Separating code from settings.
+* **In This Thesis:** Just like a game mod that uses a `settings.json` or `config.ini`, all our model hyperparameters (learning rate, batch size, threshold $\tau^*$, top-$k$) are stored in external configuration files (e.g., `configs/training_config.yaml`). Changing a setting never requires editing Python source code.
+
+### **Minimal Working Example (MWE)**
+* **Plain Meaning:** A tiny, self-contained demonstration script that runs in seconds to prove the code works.
+* **In This Thesis:** Located at `python scripts/prototype_pipeline.py --demo`. It loads mock statutory samples, executes Stage 1 BM25, passes the candidate to Stage 2 NLI, and outputs an explainability preview in $1.4$ seconds without needing any heavy downloads.
+
+### **Optical Character Recognition (OCR) Noise**
+* **Plain Meaning:** Spelling and layout errors created when software reads scanned paper documents (e.g., reading "Section 5" as "Sect10n S" or turning "₱5,000" into "P5.000").
+* **In This Thesis:** Davao City ordinances from the 1970s–2000s are scanned PDFs with significant OCR noise, which our preprocessing pipeline cleans using regex and text normalization.
+
+### **Task-Appropriate Workstation Allocation**
+* **Plain Meaning:** Assigning each computing task to the hardware environment best suited for it, rather than treating hardware as an artificial hierarchy:
+  1. **Workstation A: Primary Ingestion Workstation (Edge Simulation Node - Intel Core i3-10105F, 8GB RAM, RX 6600, Windows 10):** Handled national statute scraping of 25,432 laws from Lawphil, HTML parsing, text normalization, routine maintenance scripts, and serves as our physical LGU consumer desktop simulation testbed.
+  2. **Workstation B: Neural Training Workstation (Dedicated GPU Node - Lenovo Legion 5, AMD Ryzen 7 260, 32GB RAM, NVIDIA RTX 5050 Laptop GPU, Windows 11):** Handles scanning and OCR cleaning of ~1,500 local Davao City ordinances from SP archives; executes dedicated Stage 2 Cross-Encoder fine-tuning, hyperparameter sweeps, latency profiling, and final full-system evaluation consistency.
+  3. **Cloud Computing Environment (Google Colab Pro):** Utilized opportunistically for heavy exploratory Jupyter notebooks, large-scale SVD matrix factorization over 25,432 documents, and generating notebook visual assets.
+
+---
+
+*This glossary is maintained as a living reference. Whenever new models, metrics, or legal doctrines are introduced to the thesis manuscript, they are immediately added here.*

@@ -22,6 +22,20 @@ description: This rule shall be applied when the user wants the thesis paper dra
 >    * **No edit trails:** Eliminate defensive signposting, over-compensatory phrasing, or abrupt shifts in vocabulary (e.g., avoid sudden surges of *"strictly,"* *"notably,"* *"specifically,"* or *"as requested"*).
 >    * Seamlessly blend new constraints, empirical findings, or theoretical adjustments into the established narrative flow.
 > 4. **Self-Contained Subfile Compilation:** Every chapter file in `chapters/` must preserve its root magic comment at the very top: `% !TeX root = ../main.tex`.
+> 5. **Living Glossary Synchronization (`docs/GLOSSARY.md`):** Whenever new technical, legal, statistical, or machine learning terms, metrics, algorithms, or doctrines are introduced into the thesis manuscript that are not yet covered in `docs/GLOSSARY.md`, the agent must immediately append them to [`docs/GLOSSARY.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/GLOSSARY.md) with an accessible, plain-language definition, mathematical intuition, and practical thesis context.
+> 6. **Maximum Heading Depth & Multi-Item Description Standard:**  
+>    * The document structure must never exceed three heading levels: `\chapter` (Level 0) $\rightarrow$ `\section` (Level 1) $\rightarrow$ `\subsection` (Level 2) $\rightarrow$ `\subsubsection` (Level 3).  
+>    * **NEVER** introduce deeper subsections (such as `\paragraph` or `\subparagraph` functioning as numbered/nested section headers like 1.1.1.1.1).  
+>    * When presenting distinct sub-analyses, failure modes, metrics, or algorithmic phases within a section, always use the `description` environment: `\begin{description} \item[Topic Name.] Narrative explanation... \end{description}` (mirroring Chapters 1 and 2).
+> 7. **Simplified, Single-Line Section Titles:**  
+>    * Section, subsection, and subsubsection titles must be direct, simplified, concise, and fit comfortably on a single line (mirroring Chapters 1 and 2).  
+>    * Strictly avoid long, compound titles, multi-clause headings, or parenthetical clutter (e.g., use `\subsection{Candidate Retrieval Ablation}` instead of `\subsection{Candidate Retrieval Ablation and Difficulty Tier Breakdown ($N=350$)}`).
+> 8. **Formal Academic Computing Terminology:**  
+>    * When referencing workstations and computing hardware in the manuscript, always use formal academic designations:
+>      * **Primary Ingestion Workstation** (or **Workstation A / Edge Simulation Node**) for the lead author's desktop.
+>      * **Neural Training Workstation** (or **Workstation B / Dedicated GPU Node**) for the co-author's mobile workstation.
+>      * **Cloud Computing Environment** (Google Colab Pro) for large-scale matrix factorization and exploratory notebooks.
+>    * **NEVER** use informal colloquialisms such as "Yah's PC" or "Ralph's laptop" in the manuscript.
 
 ---
 

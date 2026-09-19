@@ -390,12 +390,57 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
 
         Using this target in natural language inference is supported by Bowman et al.~\cite{bowman2015snli} in their work on the Stanford Natural Language Inference (SNLI) benchmark. Evaluating text relationships involves human judgment; in their study, Bowman et al. reached an overall Fleiss' Kappa of 0.70 (scoring 0.77 for Contradiction, 0.72 for Entailment, and 0.60 for Neutral). They showed that achieving very high agreement ($> 0.80$) in language inference is rare and usually happens only with overly simple test sentences. Because Philippine local ordinances are more complex than general English sentences, expecting agreement higher than 0.70 is unrealistic. Therefore, this study targets a minimum $\kappa$ threshold of 0.61, which confirms substantial agreement among the legal reviewers.
 
-    \subsection{Experimental Setup and Hardware Constraints}
-    The system runs on consumer-grade hardware to match the computing capacity of an average Local Government Unit. Model training, vectorization, and inference are all conducted on a local workstation equipped with a standard processor and graphics memory. This hardware setup reflects the typical technological environment of Davao City legislative offices. By testing the pipeline on everyday office hardware, the research confirms that the tool can be deployed without requiring expensive cloud computing resources. The system must operate smoothly within these limits to demonstrate practical value.
+    \subsection{Computing Environments}
+    \label{sec:hardware_software_environments}
+    Rather than assuming an idealized single-machine environment, the proponents adopted a practical, task-appropriate computing allocation strategy across local workstations and cloud resources. Specific research workloads—ranging from corpus web scraping and document scanning to deep learning fine-tuning—were assigned to the computing environment best suited for that operational phase.
 
-    These hardware boundaries rule out the use of large generative language models. Running generative models with billions of parameters would exceed local memory limits and cause long processing delays. Instead, the pipeline uses lightweight, encoder-only models optimized for quick classification. This constraint allows the system to rely on fast vector calculations rather than expensive text generation. As a result, hardware limitations directly support the choice of a two-stage Retrieve-then-Entail pipeline.
+    \begin{description}
+        \item[Primary Ingestion Workstation (Edge Simulation Node).] To manage the initial statutory data collection and establish a baseline simulation of local government IT capacity, the proponents utilized a dedicated desktop workstation. Powered by an Intel Core i3-10105F CPU (4 cores, 8 threads @ 3.70~GHz), 8.00~GB of DDR4 system RAM, an AMD Radeon RX 6600 GPU (8~GB GDDR6 VRAM), and high-speed NVMe solid-state storage running Microsoft Windows 10 Pro 64-bit, this machine served two primary roles:
+        \begin{enumerate}
+            \item \textit{National Statute Ingestion and Daily Scripting:} Executed the automated web scraping of the 25,432 Philippine national statutes from the Lawphil Project, raw HTML parsing, metadata structuring, and daily codebase development for simpler and exploratory scripts.
+            \item \textit{LGU Edge Baseline Simulation:} Served as the physical edge-constrained testbed to verify that Stage~1 sparse (BM25) and dense retrieval index lookups can execute efficiently within the modest hardware limits typical of Davao City legislative administrative offices.
+        \end{enumerate}
 
-    \subsection{Model Implementation and Pipeline Architecture}
+        \item[Neural Training Workstation (Dedicated GPU Node).] For physical document digitization and computationally demanding Stage~2 neural model training, the proponents utilized a high-performance workstation (Lenovo Legion 5 15AHP10, Model 83M0). Powered by an AMD Ryzen 7 260 processor with Radeon 780M graphics (8 cores, 16 threads @ 3.80~GHz), 32.0~GB of high-speed DDR5 RAM, an NVIDIA GeForce RTX 5050 Laptop GPU (dedicated CUDA acceleration), and PCIe NVMe storage running Microsoft Windows 11 Home 64-bit (Build 26200), this platform fulfilled two specialized functions:
+        \begin{enumerate}
+            \item \textit{Municipal Archive Digitization and Cleaning:} Handled the scanning, PDF text extraction, and optical character recognition (OCR) cleaning for the approximately 1,660 Davao City local ordinances acquired from the Sangguniang Panlungsod archives.
+            \item \textit{Stage~2 Deep Learning Fine-Tuning and Final Evaluation:} Dedicated exclusively to Stage~2 Cross-Encoder fine-tuning, hyperparameter sweeps, latency profiling, and the final end-to-end evaluation of the full system. Performing all training and evaluation on this single workstation ensured uniform thermal profiles, deterministic CUDA execution, and strict consistency across comparative model benchmarks.
+        \end{enumerate}
+
+        \item[Cloud Computing Environment (Google Colab Pro).] To take advantage of available high-performance cloud resources without requiring local hardware upgrades, the proponents utilized Google Colab Pro GPU environments (NVIDIA A100, V100, and T4 Tensor Core GPUs with up to 51~GB of RAM). This environment was used opportunistically for exploratory Jupyter notebook experiments, heavy matrix computations (such as large-scale Singular Value Decomposition for topic modeling over the 25,432-document corpus), and generating visual assets from notebooks where strict run-to-run experimental reproducibility or latency benchmarking was not required.
+    \end{description}
+
+    Across all physical and virtual environments, the research pipeline standardizes on an identical Python software stack to ensure full cross-platform compatibility. Table~\ref{tab:system_environment_specs} summarizes the physical hardware configurations, operational research roles, and exact software library versions governing the study.
+
+    \begin{table}[htbp]
+        \centering
+        \footnotesize
+        \setlength{\tabcolsep}{3.8pt}
+        \caption{Hardware Configurations, Software Environment, and Operational Roles across Computing Environments}
+        \label{tab:system_environment_specs}
+        \begin{tabularx}{\linewidth}{>{\RaggedRight}p{3.2cm}>{\RaggedRight}p{4.2cm}>{\RaggedRight}p{3.2cm}>{\RaggedRight}X}
+            \toprule
+            \textbf{Environment} & \textbf{Hardware Specifications} & \textbf{Operating System} & \textbf{Assigned Research Operations} \\
+            \midrule
+            \textbf{Workstation A} \newline (Ingestion \& Edge Node) & Intel Core i3-10105F (4C/8T @ 3.7 GHz) \newline 8~GB DDR4 RAM, RX 6600 8GB \newline High-Speed NVMe SSD & Microsoft Windows 10 Pro 64-bit (Build 19045) & National statute scraping (25,432 laws), HTML parsing, text normalization, daily utility scripts, and LGU edge simulation. \\
+            \addlinespace[3pt]
+            \textbf{Workstation B} \newline (Training \& GPU Node) & AMD Ryzen 7 260 (8C/16T @ 3.8 GHz) \newline 32~GB DDR5 RAM, NVMe PCIe SSD \newline NVIDIA RTX 5050 Laptop GPU & Microsoft Windows 11 Home 64-bit (Build 26200) & Local ordinance scanning (~1,500 ordinances) and OCR cleaning; dedicated Stage~2 DL fine-tuning, latency benchmarking, and final evaluation consistency. \\
+            \addlinespace[3pt]
+            \textbf{Cloud Environment} \newline (Google Colab Pro) & NVIDIA A100 / V100 / T4 GPU \newline 51~GB High-RAM Runtime & Ubuntu Linux \newline (Cloud Kernel) & Heavy exploratory notebooks, large-scale SVD matrix factorization, and non-deterministic visual asset generation. \\
+            \midrule
+            \multicolumn{4}{l}{\textbf{Standardized Software Stack and Execution Libraries}} \\
+            \midrule
+            \textbf{Runtime / Framework} & Python 3.10+ / 3.14 \newline PyTorch (\texttt{torch}) 2.14.0+ & \textbf{Transformers} & Hugging Face (\texttt{transformers}) 5.16.1+ \\
+            \textbf{Dense Embeddings} & \texttt{sentence-transformers} 6.0.1+ & \textbf{Lexical Search} & \texttt{rank-bm25} 0.2.2+ (Okapi BM25) \\
+            \textbf{ML \& Statistics} & \texttt{scikit-learn} 1.9.0 / \texttt{scipy} 1.18.1 & \textbf{Document Ingestion} & PyMuPDF (\texttt{fitz}) 1.28.2 / \texttt{pypdf} 6.16.2 \\
+            \textbf{Data Processing} & \texttt{pandas} 3.0.5 / \texttt{numpy} 2.5.2 & \textbf{Manuscript Build} & TeX Live 2026 / MiKTeX (\texttt{pdflatex}, \texttt{bibtex}) \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+
+
+
+    \subsection{Pipeline Architecture}
     The live conflict detection workflow uses a two-stage architecture designed to combine fast searching with detailed logical analysis.
 
     \begin{description}
@@ -409,111 +454,97 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
         \item[Stage 2: Natural Language Inference.] After receiving the top-$k$ shortlist from Stage~1, the pipeline moves to logical evaluation using the Natural Language Inference (NLI) module. The system formats an input sequence for each candidate provision, pairing the retrieved national law (the premise) with the draft ordinance (the hypothesis). To guide the model's attention, the pipeline places a $[CLS]$ token at the start of the sequence and a $[SEP]$ token between the two texts. This structure helps the model distinguish the existing law from the proposed draft. The combined text is then processed by the selected Cross-Encoder model. The model's attention mechanism compares every word in the premise against every word in the hypothesis to evaluate their relationship. A classification layer outputs calibrated softmax probabilities labeling the relationship as Entailment, Contradiction, or Neutral. If the contradiction probability crosses the designated threshold, the Explainable AI (XAI) module highlights the conflicting text for user review.
     \end{description}
 
-        \subsubsection{Retrieval Safeguards and Failure Modes}
-        Using a two-stage retrieve-then-entail setup introduces potential search challenges when comparing draft ordinances against large statutory collections. If the coarse search misses the governing national law, the inference model cannot detect the conflict regardless of its analytical capability. Legal conflicts often appear through indirect wording, where local drafts use permissive phrasing or leave out specific statutory terms. Standard search tools can also miss isolated prohibitions tucked inside long, otherwise compliant legislative codes. To protect the pipeline against these retrieval errors, the system incorporates five architectural safeguards across data preparation and search. Table~\ref{tab:retrieval_safeguards} summarizes these statutory challenges alongside their operational countermeasures.
+    \subsubsection{Baseline Selection}
+    \label{sec:baseline_selection}
+    To evaluate whether the proposed two-stage retrieve-then-entail architecture achieves meaningful empirical advances over standard approaches, the proponents established formal baselines for both operational stages grounded in recent legal informatics literature:
+    
+    \begin{description}
+        \item[Stage 1 Lexical Baseline (BM25).] For coarse statutory retrieval, the pipeline is benchmarked against pure Okapi BM25 lexical matching adapted from Team AIIR~\cite{wu2025aiir} in the COLIEE 2025 competition. BM25 serves as the canonical baseline for statutory information retrieval (COLIEE Task~3) because legislative drafting frequently relies on explicit section citations, formal agency acronyms, and verbatim penalty amounts. Choosing BM25 as the Stage~1 baseline provides an essential reference point to determine whether semantic dense vector representations and Reciprocal Rank Fusion genuinely improve candidate recall, especially across paraphrased or indirect preemption queries where exact keyword matching is known to fail.
+        
+        \item[Stage 2 Inference Baseline (Zero-Shot Cross-Encoder).] For fine natural language inference, the pipeline establishes a baseline using a standard pretrained, zero-shot Cross-Encoder architecture without domain adaptation, following the foundational legal textual entailment baseline established by Rabelo et al.~\cite{rabelo2022coliee} for COLIEE Task~4. While general-domain language models exhibit broad linguistic competence, legal text requires distinguishing subtle statutory carve-outs from unlawful overreach. Selecting an unadapted zero-shot Cross-Encoder baseline directly tests the hypothesis that specialized few-shot fine-tuning on expert-annotated Philippine statutory pairs is necessary to overcome affirmative bias and achieve reliable contradiction detection.
+    \end{description}
 
-        \begin{table}[htbp]
-            \centering
-            \footnotesize
-            \setlength{\tabcolsep}{4pt}
-            \caption{Architectural Retrieval Safeguards Against Real-World Preemption Failure Modes in Stage~1}
-            \label{tab:retrieval_safeguards}
-            \begin{tabularx}{\linewidth}{>{\RaggedRight}p{2.8cm}>{\RaggedRight}p{3.8cm}>{\RaggedRight}X}
-                \toprule
-                \textbf{Statutory Challenge} & \textbf{Architectural Countermeasure} & \textbf{Operational Implementation Logic} \\
-                \midrule
-                \textbf{Isolated Statutory Clauses} & Structural Section Chunking ($\sim 200\text{--}300$ token windows) & Segments multi-chapter enactments into discrete provisions so isolated prohibitions rank independently without vector dilution. \\
-                \addlinespace[3pt]
-                \textbf{Indirect or Evasive Wording} & Dense Bi-Encoder Semantic Vectors (\texttt{all-MiniLM-L6-v2}) & Maps conceptual intent into 384-dimensional latent space, retrieving relevant statutes despite divergent local phrasing. \\
-                \addlinespace[3pt]
-                \textbf{Numerical Penalty Limits} & Sparse BM25 Lexical Matching with Sublinear Scaling & Matches exact statutory citations, numerical penalty limits, and administrative agency acronyms directly. \\
-                \addlinespace[3pt]
-                \textbf{Rank Variance in Shortlist} & Top-$k$ Candidate Safety Buffer ($k = 50$ provision shortlist) & Retains 50 candidate provisions for Stage~2 review, ensuring relevant statutes ranked below the top ten are evaluated. \\
-                \addlinespace[3pt]
-                \textbf{Omnibus Statute Trap \& Administrative Clutter} & Hierarchy Priority Safeguard \& Soft Domain Priors & Prioritizes primary legislative statutes (Republic Acts) over administrative orders, while applying gentle soft priors instead of destructive hard filtering. \\
-                \addlinespace[3pt]
-                \textbf{Long-Tail Provisions ($> 512$ Tokens)} & Dual-Stream BM25 Invariance \& Hierarchical Max-Pooling & BM25 indexes full text without sequence limits, while dense representations of tail provisions apply hierarchical sub-chunking with inference max-pooling and long-context candidate support (ModernBERT 8,192 tokens). \\
-                \bottomrule
-            \end{tabularx}
-        \end{table}
+    \subsubsection{Retrieval Safeguards}
+    Using a two-stage retrieve-then-entail setup introduces potential search challenges when comparing draft ordinances against large statutory collections. If the coarse search misses the governing national law, the inference model cannot detect the conflict regardless of its analytical capability. Legal conflicts often appear through indirect wording, where local drafts use permissive phrasing or leave out specific statutory terms. Standard search tools can also miss isolated prohibitions tucked inside long, otherwise compliant legislative codes. To protect the pipeline against these retrieval errors, the system incorporates five architectural safeguards across data preparation and search. Table~\ref{tab:retrieval_safeguards} summarizes these statutory challenges alongside their operational countermeasures.
 
-        These safeguards directly resolve critical failure modes uncovered during preliminary retrieval experiments across the 25,432 national statutes. In particular, attempting a naive hard filter based on predicted macro domains caused candidate Recall@50 to collapse from 43.14\% down to 13.43\%. This severe degradation occurs because foundational Philippine enactments, such as Republic Act No.~7160, function as omnibus codes that span local administration, disaster response, and municipal taxation simultaneously. Hard-filtering by a single predicted topic immediately prunes the governing code whenever a draft clause touches another administrative area. Replacing hard filtering with a Hierarchy Priority Safeguard shields Republic Acts from the 12,210 administrative executive orders (48\% of the corpus), increasing the Mean Reciprocal Rank from 0.1521 to 0.2217 (+45.8\% improvement).
+    \begin{table}[htbp]
+        \centering
+        \footnotesize
+        \setlength{\tabcolsep}{4pt}
+        \caption{Architectural Retrieval Safeguards Against Real-World Preemption Failure Modes in Stage~1}
+        \label{tab:retrieval_safeguards}
+        \begin{tabularx}{\linewidth}{>{\RaggedRight}p{2.8cm}>{\RaggedRight}p{3.8cm}>{\RaggedRight}X}
+            \toprule
+            \textbf{Statutory Challenge} & \textbf{Architectural Countermeasure} & \textbf{Operational Implementation Logic} \\
+            \midrule
+            \textbf{Isolated Statutory Clauses} & Structural Section Chunking ($\sim 200\text{--}300$ token windows) & Segments multi-chapter enactments into discrete provisions so isolated prohibitions rank independently without vector dilution. \\
+            \addlinespace[3pt]
+            \textbf{Indirect or Evasive Wording} & Dense Bi-Encoder Semantic Vectors (\texttt{all-MiniLM-L6-v2}) & Maps conceptual intent into 384-dimensional latent space, retrieving relevant statutes despite divergent local phrasing. \\
+            \addlinespace[3pt]
+            \textbf{Numerical Penalty Limits} & Sparse BM25 Lexical Matching with Sublinear Scaling & Matches exact statutory citations, numerical penalty limits, and administrative agency acronyms directly. \\
+            \addlinespace[3pt]
+            \textbf{Rank Variance in Shortlist} & Top-$k$ Candidate Safety Buffer ($k = 50$ provision shortlist) & Retains 50 candidate provisions for Stage~2 review, ensuring relevant statutes ranked below the top ten are evaluated. \\
+            \addlinespace[3pt]
+            \textbf{Omnibus Statute Trap \& Administrative Clutter} & Hierarchy Priority Safeguard \& Soft Domain Priors & Prioritizes primary legislative statutes (Republic Acts) over administrative orders, while applying gentle soft priors instead of destructive hard filtering. \\
+            \addlinespace[3pt]
+            \textbf{Long-Tail Provisions ($> 512$ Tokens)} & Dual-Stream BM25 Invariance \& Hierarchical Max-Pooling & BM25 indexes full text without sequence limits, while dense representations of tail provisions apply hierarchical sub-chunking with inference max-pooling and long-context candidate support (ModernBERT 8,192 tokens). \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
 
-        To evaluate how candidate retrieval strategies behave in an unconstrained production environment, the proponents benchmarked baseline architectures against the entire national statutory database ($N = 25,432$). This live haystack test evaluates whether sparse lexical matching can isolate governing national laws amidst thousands of administrative issuances and historical enactments. The 350 ground truth queries were submitted directly to the full 25,432-document corpus without manual pre-filtering or provision isolation. Table~\ref{tab:full_corpus_retrieval_benchmark} reports the empirical retrieval sensitivity and ranking metrics across the full national corpus. These empirical findings demonstrate how unconstrained corpus noise affects retrieval accuracy before provisions reach the Stage~2 inference engine.
+    These safeguards directly resolve critical failure modes uncovered during preliminary retrieval experiments across the 25,432 national statutes. In particular, attempting a naive hard filter based on predicted macro domains caused candidate Recall@50 to collapse from 43.14\% down to 13.43\%. This severe degradation occurs because foundational Philippine enactments, such as Republic Act No.~7160, function as omnibus codes that span local administration, disaster response, and municipal taxation simultaneously. Hard-filtering by a single predicted topic immediately prunes the governing code whenever a draft clause touches another administrative area. Replacing hard filtering with a Hierarchy Priority Safeguard shields Republic Acts from the 12,210 administrative executive orders (48\% of the corpus), increasing the Mean Reciprocal Rank from 0.1521 to 0.2217 (+45.8\% improvement).
 
-        \begin{table}[htbp]
-            \centering
-            \footnotesize
-            \setlength{\tabcolsep}{4pt}
-            \caption{Empirical Retrieval Sensitivity Benchmark across the Full National Statutory Database ($N = 25,432$)}
-            \label{tab:full_corpus_retrieval_benchmark}
-            \begin{tabularx}{\linewidth}{>{\RaggedRight}p{4.2cm}rrrrrr}
-                \toprule
-                \textbf{Stage 1 Retrieval Strategy} & \textbf{Latency} & \textbf{R@5} & \textbf{R@10} & \textbf{R@20} & \textbf{R@50} & \textbf{MRR@50} \\
-                \midrule
-                \textbf{1. Baseline BM25 (Unconstrained)} & 329.6\,ms & 21.43\% & 29.71\% & 35.71\% & 43.14\% & 0.1521 \\
-                \textbf{2. BM25 + Hierarchy Priority} & 300.1\,ms & 29.14\% & 34.86\% & 39.43\% & 43.14\% & 0.2217 \\
-                \textbf{3. BM25 + Hard Domain Filter} & 297.5\,ms & 4.86\% & 7.71\% & 10.29\% & 13.43\% & 0.0467 \\
-                \bottomrule
-            \end{tabularx}
-            \vspace{2pt}
-            \raggedright \scriptsize \textit{Note:} Evaluated on all 350 ground truth queries searching the entire 25,432 national statute corpus on a single local CPU. Latency values represent mean per-query retrieval runtime.
-        \end{table}
+    Separating Stage~1 retrieval from Stage~2 inference is essential when running on standard office hardware. Feeding full-length statutes directly into a Cross-Encoder requires quadratic computation ($O((L_{\text{ord}} + L_{\text{stat}})^2)$), which quickly exhausts local memory on long legislative texts. Full-text inputs also dilute model attention, burying specific penalty clauses under thousands of routine procedural words. The hybrid retriever in Stage~1 performs a rapid coarse-to-fine filter ($25,432 \rightarrow 50 \rightarrow 1$), removing over 99.8\% of unrelated laws in milliseconds. This separation allows the Cross-Encoder to focus its attention entirely on high-probability candidate provisions.
 
-        The full-corpus benchmark highlights the severe vulnerability of unconstrained lexical search in large legal archives. Pure BM25 achieves only 29.71\% Recall@10 and 43.14\% Recall@50, meaning more than half of the governing national statutes fail to reach the candidate shortlist. Applying a hard domain filter further degrades performance, dropping Recall@50 from 43.14\% to 13.43\% and collapsing MRR to 0.0467 because foundational omnibus laws are discarded. In contrast, incorporating the Hierarchy Priority Safeguard shields Republic Acts from administrative noise, raising the Mean Reciprocal Rank from 0.1521 to 0.2217 (+45.8\% precision improvement). These full-database results prove that sparse search alone cannot serve as a reliable standalone retriever, establishing the necessity of dense semantic representations and rank fusion.
+    To empirically validate these architectural mechanisms, the proponents benchmarked nine candidate Stage~1 retrieval configurations across both the full 25,432 national statutory database and the 350-pair ground truth evaluation set. The full empirical retrieval findings, difficulty tier ablations, latency metrics, and comparative analyses are formally reported and discussed in Chapter~4 (Section~\ref{sec:results_stage1_retrieval}).
 
-        Separating Stage~1 retrieval from Stage~2 inference is essential when running on standard office hardware. Feeding full-length statutes directly into a Cross-Encoder requires quadratic computation ($O((L_{\text{ord}} + L_{\text{stat}})^2)$), which quickly exhausts local memory on long legislative texts. Full-text inputs also dilute model attention, burying specific penalty clauses under thousands of routine procedural words. The hybrid retriever in Stage~1 performs a rapid coarse-to-fine filter ($25,432 \rightarrow 50 \rightarrow 1$), removing over 99.8\% of unrelated laws in milliseconds. This separation allows the Cross-Encoder to focus its attention entirely on high-probability candidate provisions.
 
-        \subsubsection{Stage 1 Candidate Retrieval Ablation Benchmark}
-        To empirically determine the optimal Stage~1 retrieval pipeline, the researchers conducted an ablation benchmark evaluating nine candidate configurations against the 350 curated ground truth queries. The evaluation compares sparse lexical retrieval, dense semantic vector matching, and hybrid fusion mechanisms across the three stratified difficulty tiers. Measuring retrieval latency on a single standard CPU workstation confirms whether each configuration meets the computational constraints of local government offices. Table~\ref{tab:stage1_retrieval_ablation} presents the empirical performance metrics across candidate retrieval architectures. Figure~\ref{fig:stage1_retrieval_ablation} illustrates the candidate Recall@$k$ progression curves alongside the performance breakdown across jurisprudential difficulty tiers.
-
-        \begin{table}[htbp]
-            \centering
-            \footnotesize
-            \setlength{\tabcolsep}{3.5pt}
-            \caption{Empirical Performance Comparison of Candidate Stage~1 Retrieval Architectures ($N = 350$)}
-            \label{tab:stage1_retrieval_ablation}
-            \begin{tabularx}{\linewidth}{>{\RaggedRight}p{4.2cm}rrrrrr}
-                \toprule
-                \textbf{Candidate Retrieval Architecture} & \textbf{Latency} & \textbf{R@5} & \textbf{R@10} & \textbf{R@20} & \textbf{MRR} & \textbf{Tier 3 R@5} \\
-                \midrule
-                \textbf{1. Pure BM25 Baseline (AIIR)} & 1.39\,ms & 79.7\% & 88.6\% & 97.4\% & 0.6113 & 74.0\% \\
-                \textbf{2. BM25 + Hard Domain Filter} & 1.23\,ms & 99.1\%* & 100.0\%* & 100.0\%* & 0.7921* & 99.0\%* \\
-                \textbf{3. BM25 + Soft Domain Prior (+20\%)} & 1.43\,ms & 87.7\% & 94.6\% & 99.7\% & 0.7122 & 79.8\% \\
-                \textbf{4. Pure Dense Bi-Encoder (MiniLM)} & 1.33\,ms & 87.1\% & 97.1\% & 100.0\% & 0.7388 & 91.3\% \\
-                \textbf{5. Hybrid JNLP (Weighted Sum $\alpha=0.5$)} & 1.23\,ms & 82.6\% & 91.7\% & 98.9\% & 0.6409 & 77.9\% \\
-                \textbf{6. Hybrid Dense-Biased ($\alpha=0.7$)} & 1.20\,ms & 84.0\% & 94.0\% & 99.4\% & 0.6656 & 78.8\% \\
-                \textbf{7. Hybrid BM25-Biased ($\alpha=0.3$)} & 1.22\,ms & 80.9\% & 90.6\% & 98.3\% & 0.6202 & 76.0\% \\
-                \textbf{8. Reciprocal Rank Fusion (RRF $k=60$)} & 1.26\,ms & 88.6\% & 96.0\% & 99.7\% & 0.7040 & 88.5\% \\
-                \textbf{9. Hybrid + Soft Domain Prior ($\alpha=0.5$)} & 1.21\,ms & 89.7\% & 95.7\% & 99.7\% & 0.7328 & 84.6\% \\
-                \bottomrule
-            \end{tabularx}
-            \vspace{2pt}
-            \raggedright \scriptsize \textit{Note:} *Configuration 2 demonstrates the artificial isolation effect; when evaluated across the full 25,432 corpus, hard filtering prunes omnibus statutes and causes overall Recall@50 to collapse to 13.43\%. Latencies represent mean per-query CPU runtime.
-        \end{table}
-
-        \begin{figure}[htbp]
-            \centering
-            \includegraphics[width=0.96\linewidth]{figs/stage1_retrieval_ablation_performance.png}
-            \caption{Stage~1 Candidate Retrieval Performance across Shortlist Thresholds and Jurisprudential Difficulty Tiers ($N = 350$). Panel A traces the Recall@$k$ progression curves across candidate models. Panel B highlights the semantic gap in Tier~3 (Latent and Paraphrastic), where dense semantic vectors achieve a +17.3\% absolute gain over sparse BM25.}
-            \label{fig:stage1_retrieval_ablation}
-        \end{figure}
-
-        The empirical benchmark results highlight a critical semantic gap between lexical and dense retrieval in legal preemption analysis. While pure BM25 achieves a respectable 81.7\% Recall@5 on Surface and Quantitative queries (Tier~1), its performance drops to 74.0\% on Latent and Paraphrastic queries (Tier~3) due to statutory vocabulary divergence. In contrast, the Dense Bi-Encoder achieves 91.3\% Recall@5 on Tier~3, providing a +17.3\% absolute gain by capturing underlying semantic intent even when municipal drafts use sophisticated legislative framing. Reciprocal Rank Fusion successfully combines both approaches, reaching an Overall Recall@10 of 96.0\% and an Overall Recall@20 of 99.7\% while maintaining a Mean Reciprocal Rank of 0.7040. Furthermore, all evaluated configurations execute in under 1.5 milliseconds on a standard local CPU, confirming that hybrid retrieval delivers high candidate recall without exceeding local government hardware constraints.
-
-    \subsection{Empirical Model Selection and Overfitting Control}
+    \subsection{Model Selection}
     Before deploying the system, the researchers evaluate candidate Cross-Encoder models to find the most accurate architecture. Candidate models are tested against the curated Ground Truth dataset. To fit local hardware limits, the candidate pool is restricted to lightweight and memory-efficient models. Specifically, the evaluation compares standard-context architectures, such as MiniLM~\cite{reimers2019sentencebert} and DeBERTa-v3~\cite{he2023debertav3}, against the native long-context architecture ModernBERT~\cite{warner2024modernbert, kadowaki2025modernbert}. While leading systems in the COLIEE 2026 competition explored large generative ensembles requiring substantial GPU clusters~\cite{alshehri2026cross, ngo2026nowj}, the proponents intentionally evaluate compact, encoder-only models to satisfy the computing limits of local government workstations. The researchers hypothesize that while ModernBERT guarantees complete sequence coverage on lengthy statutory provisions up to 8,192 tokens, standard-context architectures paired with sub-chunking may provide superior contradiction precision and lower latency across the 94.83\% majority of concise provisions. Testing these competing architectures against a standardized, expert-reviewed benchmark reveals which model best balances context capacity with logical reasoning accuracy.
 
     To keep the model evaluation fair and reproducible, the 350 Ground Truth pairs are divided using a static 70/15/15 train, validation, and test split. This split provides 245 training pairs, 52 validation pairs, and 53 test pairs. Working with this sample size places the evaluation in a few-shot learning setting, which works well for pretrained language models~\cite{gao2021making}. Although $k$-fold cross-validation is commonly used, Vabalas et al.~\cite{vabalas2019machine} showed that fixed train-test splits are preferable for datasets under 1,000 items to avoid overly optimistic results and manage overfitting. A test set of 53 items also meets the statistical sample size guidelines from Card et al.~\cite{card2020with}, ensuring that the evaluation has enough power to detect real performance differences.
 
         The choice of 350 total pairs is based on statistical power analysis for multi-class evaluations~\cite{cohen1988statistical}. Under Cohen's power framework, detecting a medium effect size ($w = 0.30$) across three classes at a significance level of $\alpha = 0.05$ requires at least $N = 108$ items for 80\% power ($(1 - \beta) = 0.80$). Using $N = 350$ pairs provides a statistical power exceeding 0.98, ensuring good coverage across all eight legal domains. These eight domains reflect the basic public services and regulatory powers defined in Section~17 and Section~458 of Republic Act No.~7160. As a result, 350 pairs provide sufficient data for inter-rater validation while covering a realistic cross-section of local government law.
 
-        \subsubsection{Overfitting Control and Decision Threshold Calibration}
+        \subsubsection{Overfitting Controls}
         Because fine-tuning deep transformer models on a small dataset can lead to memorizing training phrasing, the researchers use several regularization techniques. First, model optimization uses the AdamW algorithm with weight decay ($\lambda = 0.01$), as developed by Loshchilov and Hutter~\cite{loshchilov2019decoupled}. This weight decay keeps network parameters small and prevents individual weights from growing disproportionately large. Second, dropout layers with a rate of $p = 0.1$ are applied across attention layers and the classification head~\cite{srivastava2014dropout}. By turning off a random subset of neurons during training passes, dropout encourages the model to learn broader semantic features rather than depending on specific word patterns.
 
         Third, training uses early stopping based on validation results~\cite{prechelt1998early}. The system measures validation loss and the validation Macro F1-Score after every training epoch. If the validation Macro F1-Score does not improve over four consecutive checks ($\text{patience} = 4$), training stops automatically. The system then restores the model checkpoint that achieved the lowest validation loss, preventing the model from fitting too closely to the training data. Finally, the learning rate warms up linearly over the first 10\% of training steps before decreasing steadily, which helps keep gradient updates stable during the initial phase of fine-tuning.
 
         Recent empirical findings from the COLIEE 2026 legal textual entailment benchmarks (Task~4) demonstrated that neural language models frequently exhibit affirmative bias, defaulting toward entailment or neutral classifications when confronted with complex statutory syntax~\cite{alshehri2026cross, tran2026enhancing}. In local legislative review, failing to detect an authentic conflict permits an invalid ordinance to proceed to enactment. To counter this affirmative bias, the proponents calibrate the decision threshold for the contradiction class using validation holdout curves. Rather than assuming an uncalibrated argmax decision rule, the threshold is adjusted to maximize the Contradiction F1-Score while maintaining high specificity. This calibration ensures that genuine preemption risks are surfaced to legislative staff rather than being suppressed by ambiguous phrasing.
+
+        \subsubsection{Hyperparameter Tuning}
+        \label{sec:hyperparameter_tuning}
+        To identify the optimal internal configuration for candidate Stage~2 Cross-Encoder models, the proponents implemented a systematic Grid Search protocol. Grid search is chosen over random or Bayesian optimization because the search space across lightweight transformer encoders is compact and discrete, allowing an exhaustive, reproducible evaluation of all candidate parameter combinations on the dedicated Tier~3 mobile workstation (NVIDIA RTX 5050 Laptop GPU).
+
+        The search isolates key variable parameters—specifically learning rate, batch size, and maximum sequence length—while holding structural regularization constants fixed across all training iterations. Table~\ref{tab:hyperparameter_grid} specifies the complete partitioning of fixed experimental parameters versus variable search ranges.
+
+        \begin{table}[htbp]
+            \centering
+            \footnotesize
+            \setlength{\tabcolsep}{4.5pt}
+            \caption{Hyperparameter Tuning Configuration and Grid Search Space for Stage~2 Cross-Encoders}
+            \label{tab:hyperparameter_grid}
+            \begin{tabularx}{\linewidth}{>{\RaggedRight}p{3.8cm}>{\RaggedRight}p{3.2cm}>{\RaggedRight}X}
+                \toprule
+                \textbf{Hyperparameter} & \textbf{Search Status} & \textbf{Configured Value / Search Bounds} \\
+                \midrule
+                Optimization Algorithm & Fixed & AdamW with decoupled weight decay ($\lambda = 0.01$)~\cite{loshchilov2019decoupled} \\
+                Attention \& Hidden Dropout & Fixed & $p = 0.10$ across all transformer and classification layers~\cite{srivastava2014dropout} \\
+                Warmup Schedule & Fixed & Linear warmup over first 10\% of total training steps \\
+                Early Stopping Patience & Fixed & $\text{patience} = 4$ validation epochs (Macro $F_1$ evaluation)~\cite{prechelt1998early} \\
+                Random Initialization Seed & Fixed & $\text{seed} = 42$ (enforcing deterministic mini-batch collation) \\
+                Maximum Training Epochs & Fixed & $E_{\max} = 10$ epochs (with best validation checkpoint restoration) \\
+                Loss Criterion & Fixed & Multi-Class Cross-Entropy Loss with Softmax normalization \\
+                \midrule
+                Initial Learning Rate ($\eta$) & Variable (Grid Search) & $\eta \in \{1\times 10^{-5}, 2\times 10^{-5}, 3\times 10^{-5}, 5\times 10^{-5}\}$ \\
+                Training Batch Size ($B$) & Variable (Grid Search) & $B \in \{8, 16\}$ (governed by 8~GB VRAM execution ceilings) \\
+                Max Input Sequence Length ($L$) & Variable (Grid Search) & $L \in \{256, 512\}$ (8,192 tokens for native ModernBERT) \\
+                \bottomrule
+            \end{tabularx}
+        \end{table}
+
+        All hyperparameter configurations are evaluated strictly on the 52 validation pairs ($\mathcal{D}_{\text{val}}$) to prevent test-set data contamination. Model checkpoints are saved after every epoch, and the configuration achieving the highest validation Macro $F_1$-score is selected for final out-of-sample evaluation on the 53-pair test set.
 
     \subsection{Evaluation Metrics}
     Evaluating the two-stage pipeline requires separate metrics for each operational phase. The coarse retrieval phase in Stage~1 prioritizes candidate recall over final classification, while the inference phase in Stage~2 requires high precision to avoid false conflict alerts.
@@ -535,7 +566,7 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
         \end{equation}
         In this formula, a target statute retrieved at rank one receives a reciprocal score of 1.0, while a statute retrieved at rank ten receives 0.10. The 350 curated premise-hypothesis pairs serve as the query benchmark for testing Stage~1. By using the 350 draft clauses as queries against the 25,432-statute collection, the proponents measure how often candidate retrieval models locate the paired statutory provision. Calculating $\text{Recall@}10$, $\text{Recall@}30$, and $\text{Recall@}50$ confirms whether the coarse retriever supplies a dependable candidate pool for subsequent natural language inference.
 
-        \subsubsection{Stage 2 Metrics and Decision Thresholding}
+        \subsubsection{Stage 2 Metrics}
         The Stage~2 Cross-Encoder evaluates candidate statutory pairs across three discrete logical categories: $\mathcal{C} = \{\text{Entailment}, \text{Neutral}, \text{Contradiction}\}$. To assess classification quality across each relationship, the system computes class-specific Precision ($P_c$), Recall ($R_c$), and $F_1$-score ($F_{1,c}$) using standard contingency counts~\cite{sokolova2009systematic}:
         \begin{equation}
             P_c = \frac{TP_c}{TP_c + FP_c}, \quad R_c = \frac{TP_c}{TP_c + FN_c}, \quad F_{1,c} = \frac{2 \cdot P_c \cdot R_c}{P_c + R_c}
@@ -560,6 +591,45 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
         \end{equation}
         Weighting recall twice as heavily as precision ensures that the system aggressively captures potential legal conflicts while preventing reviewer fatigue through a precision floor of $P_{\text{conflict}} \ge 0.70$. During live inference, a candidate provision triggers a formal conflict alert whenever its softmax contradiction probability satisfies $P(\text{Contradiction} \mid p_i, h) \ge \tau^*$.
 
+        \subsubsection{Statistical Tests}
+        \label{sec:statistical_comparisons}
+        To evaluate whether performance disparities between candidate Cross-Encoder models represent statistically significant differences rather than random sampling fluctuations, the proponents employ formal non-parametric hypothesis tests recommended by Dem{\v{s}}ar~\cite{demsar2006statistical}. Traditional paired $t$-tests assume normally distributed classification errors, an assumption routinely violated by discrete NLP accuracy and F1 scores on small test sets~\cite{demsar2006statistical}. Therefore, this study adopts McNemar's Test for pairwise model comparisons and the Friedman Test for multi-model ranking across legal domains.
+
+        \begin{description}
+            \item[McNemar's Test (Pairwise Significance).] When comparing the classification accuracy of two competing Stage~2 models (e.g., fine-tuned DeBERTa-v3 vs. fine-tuned ModernBERT) evaluated on the identical 53-item test set ($\mathcal{D}_{\text{test}}$), the proponents use McNemar's test~\cite{mcnemar1947note}. The test constructs a $2 \times 2$ contingency table analyzing discordant predictions:
+            \begin{table}[htbp]
+                \centering
+                \footnotesize
+                \caption{Contingency Matrix of Discordant Predictions for McNemar's Test}
+                \label{tab:mcnemar_contingency}
+                \begin{tabular}{lcc}
+                    \toprule
+                    & \textbf{Model B: Correct} & \textbf{Model B: Incorrect} \\
+                    \midrule
+                    \textbf{Model A: Correct} & $a$ (Both Correct) & $b$ (Model A Only) \\
+                    \textbf{Model A: Incorrect} & $c$ (Model B Only) & $d$ (Both Incorrect) \\
+                    \bottomrule
+                \end{tabular}
+            \end{table}
+            where $b$ represents items correctly classified by Model~A but misclassified by Model~B, and $c$ represents items correctly classified by Model~B but misclassified by Model~A. Under the null hypothesis $H_0: p_b = p_c$, the two models have equivalent error rates. To account for discrete cell frequencies, the proponents apply Edwards' continuity correction to calculate the chi-squared statistic with one degree of freedom ($\text{df} = 1$):
+            \begin{equation}
+                \chi^2 = \frac{(|b - c| - 1)^2}{b + c} \sim \chi^2_1
+                \label{eq:mcnemar_test}
+            \end{equation}
+            A calculated $p$-value below the significance threshold $\alpha = 0.05$ rejects the null hypothesis, confirming that the difference in predictive accuracy is statistically significant.
+            
+            Because the Stage~2 evaluation compares three candidate models ($k = 3$: MiniLM, DeBERTa-v3, ModernBERT), pairwise evaluation yields $m = \binom{3}{2} = 3$ distinct model comparisons. To prevent Type~I error inflation (false positive significance) across multiple tests, the proponents apply the standard Bonferroni correction~\cite{demsar2006statistical}, evaluating each pair against the adjusted threshold $\alpha' = \alpha / m = 0.05 / 3 \approx 0.0167$. 
+
+            Furthermore, when expanding candidate model explorations to larger suites (e.g., $k \approx 10$ architectures and hyperparameter configurations), running exhaustive pairwise McNemar tests produces $\binom{k}{2} = 45$ comparisons, creating severe statistical conservatism under Bonferroni correction ($\alpha' = 0.05 / 45 \approx 0.0011$). To handle larger candidate pools without losing statistical power, the proponents follow Dem{\v{s}}ar's two-step testing protocol~\cite{demsar2006statistical}: first executing the omnibus Friedman test across all $k$ models simultaneously, and only upon rejecting the global null hypothesis ($p < 0.05$), conducting post-hoc comparisons comparing candidate models strictly against the top-performing control model ($k - 1$ comparisons rather than $\frac{k(k-1)}{2}$) or evaluating critical difference intervals via the Nemenyi test.
+
+            \item[Friedman Test (Multi-Model Ranking across Legal Domains).] To assess the consistency of candidate architectures across the eight Macro Legal Domains without making distributional assumptions, the proponents utilize the Friedman non-parametric two-way analysis of variance by ranks~\cite{friedman1937use, demsar2006statistical}. For $k$ candidate models evaluated across $N = 8$ distinct legal domains, each model is assigned a rank $r_i^j$ within domain $i$, where the best-performing model receives rank 1. The average rank of model $j$ across all domains is given by $R_j = \frac{1}{N}\sum_{i=1}^N r_i^j$. The Friedman test statistic is defined as:
+            \begin{equation}
+                \chi_F^2 = \frac{12N}{k(k+1)}\left[\sum_{j=1}^k R_j^2 - \frac{k(k+1)^2}{4}\right]
+                \label{eq:friedman_test}
+            \end{equation}
+            Under the null hypothesis that all candidate models perform equivalently across legal domains, $\chi_F^2$ follows a chi-squared distribution with $k - 1$ degrees of freedom. If the Friedman test yields $p < 0.05$, the proponents conduct post-hoc pairwise comparisons using the Wilcoxon signed-rank test with Bonferroni correction and the Nemenyi test to isolate specific models that exhibit statistically superior domain generalization~\cite{demsar2006statistical}.
+        \end{description}
+
     \subsection{Prototype Development}
     The completed pipeline is deployed as a single-page web application for end-user testing. The user interface is kept intentionally simple, similar to familiar online document conversion tools. Users begin by uploading draft ordinances in standard document formats through a drag-and-drop file area. After submission, the interface shows an active progress indicator while the two-stage search and inference pipeline checks the text against the database. This straightforward layout avoids unnecessary menus, allowing legislative staff to run conflict checks without requiring technical training.
 
@@ -567,7 +637,28 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
 
     The prototype operates as a human-in-the-loop decision-support tool during First Reading committee reviews. Instead of replacing human legal judgment, the tool highlights potential conflicts to help legal staff review drafts faster. An Explainable AI module generates attention heatmaps that highlight the specific phrases that contributed to the conflict score. Sangguniang Panlungsod legal researchers can review these highlighted phrases to decide whether the draft clause represents an invalid conflict or an allowed local adaptation. This workflow allows legislative staff to revise draft clauses before final enactment, helping prevent invalid local legislation.
 
-\subsection{Methodological Constraints and Future Directions}
+    \subsection{Reproducibility Protocol}
+    \label{sec:version_control_reproducibility}
+    To ensure complete transparency, institutional auditability, and scientific reproducibility in accordance with open-science guidelines, the entire codebase, evaluation datasets, and experimental pipeline are managed under Git version control. The official repository is publicly accessible on GitHub:
+    \begin{center}
+        \url{https://github.com/yyaahhzxc/thesis-repo}
+    \end{center}
+    
+    The repository implements a structured reproducibility protocol:
+    \begin{enumerate}
+        \item \textbf{Commit Hash Pinning:} All empirical tables, benchmark figures, and model checkpoints reported in this thesis are permanently tagged with their respective Git commit hashes (e.g., Commit \texttt{cc1c33d} for Milestone~1, Commit \texttt{4dd7c85} for legal instruments), ensuring complete version traceability.
+        \item \textbf{Deterministic Execution:} All data splits, topic modeling initializations, and Cross-Encoder training scripts fix global random seeds ($\text{seed} = 42$) across PyTorch, NumPy, and Python standard libraries.
+        \item \textbf{Minimal Working Example (MWE):} As documented in the repository's \texttt{README.md}, researchers can execute an immediate, single-command minimal working example:
+        \begin{center}
+            \texttt{python scripts/prototype\_pipeline.py --demo}
+        \end{center}
+        This executable demonstration loads the hybrid BM25 and semantic vector index over statutory provisions, executes asymmetric NLI scoring across four curated municipal test cases, and displays explainable ratio decidendi under the \textit{Magtajas} doctrine in under two seconds on standard CPU hardware.
+        \item \textbf{Config-Driven Architecture:} To separate hyperparameter tuning from core execution code, all experimental parameters (learning rates, batch sizes, sequence lengths, and decision thresholds $\tau^*$) are decoupled into plain-text configuration files (e.g., YAML/JSON format). This modular design allows researchers to toggle candidate models, adjust optimization dials, and recalibrate operational thresholds without altering the underlying deep learning execution scripts.
+    \end{enumerate}
+
+
+\subsection{Methodological Constraints}
     While the data preparation and training steps address many data challenges, several constraints remain. First, restricting the dataset to English-language texts excludes local Cebuano terms and Taglish expressions that occasionally appear in committee discussions. Second, the municipal collection has more records from 2021 to 2025 because earlier ordinances were only digitized if considered landmark laws. Third, evaluating pairs as a single national premise against an ordinance block ($1\text{-vs-}N$) means the tool does not detect complex conflicts that involve two or more separate national laws. These remaining limitations serve as baseline conditions for the study and provide clear directions for the Future Work recommendations in Chapter~5.
+
 
     

@@ -38,10 +38,15 @@ description: This rule mandates that the agent must always inspect, maintain, an
 ## **2. Standing Operational Context & External Dependencies**
 
 The agent must maintain awareness of the following operational realities without requiring repeated user updates:
-1. **Local Ordinances Digitization (Ralph in Progress):** Ralph is actively scanning the ~1,500 Davao City local ordinances from the Sangguniang Panlungsod archives and will provide the raw `.jsonl` extraction file (even if it retains optical scan noise or formatting errors).
-2. **Local Ordinances Experiments (Ralph Lead):** Ralph is assigned to lead the empirical experiments on the digitized ordinances (e.g., comparative OCR vs. local LLM/VLM text extraction fidelity), while Yah leads machine learning modeling, retrieval pipelines, and manuscript integration. (Exploratory Data Analysis / EDA remains in Chapter 3).
-3. **Adviser Consultation Pending (Sir Ogs):** The proponents are preparing to schedule a consultation with their thesis adviser, Mr. Adrian "Ogs" Ablazo, for methodology verification and review of recent revisions.
-4. **Sangguniang Panlungsod (City Council) Administrative Latency:** Official email correspondence with the Davao City Sangguniang Panlungsod (SP) typically requires a **one-week turnaround** (responses usually arrive the following Monday). Consequently, administrative communication (such as the official request for 15 legal researchers and the endorsement letter) must be drafted and dispatched as early as possible to prevent scheduling bottlenecks.
+1. **Dual Statutory Corpus Architecture (~27,000+ Records):** The national corpus of 25,432 statutes is only *one part of the story*. The full statutory corpus combines both national statutes (25,432 enactments) and the Davao City local ordinances (~1,500 enactments), bringing the entire statutory search space to **over 27,000+ legal records**.
+2. **Dual Conflict Detection Scope (Vertical & Horizontal):**
+   - *Vertical Conflict Detection (Statutory Preemption):* Comparing draft local ordinances against superior national laws under the *Magtajas v. Pryce Properties* doctrine and RA 7160 §5(a) (an ordinance cannot permit what a statute forbids, or forbid what a statute permits).
+   - *Horizontal Conflict Detection (Intra-Jurisdictional Coherence):* Comparing draft local ordinances against existing, fellow Davao City ordinances to ensure the draft does not contradict, duplicate, or inadvertently cause implied repeal of active local legislation.
+3. **Local Ordinances Digitization & Cleaning (Ralph in Progress):** Ralph is actively scanning and OCR-cleaning the ~1,500 Davao City local ordinances from the Sangguniang Panlungsod archives and will provide the cleaned `.jsonl` extraction dataset.
+4. **Local Ordinances EDA (Chapter 3 Integration):** Once Ralph completes the OCR extraction and cleaning pipeline, Exploratory Data Analysis (EDA)—including token length distributions, temporal enactment trends, and scan noise metrics—will be incorporated into Chapter 3 alongside the national corpus EDA.
+5. **Local Ordinances Experiments (Ralph Lead):** Ralph leads the empirical experiments on the digitized ordinances (e.g., comparative traditional scanner OCR vs. local LLM/VLM text extraction fidelity), while Yah leads machine learning modeling, retrieval pipelines, and manuscript drafting.
+6. **Adviser Consultation Pending (Sir Ogs):** The proponents are preparing to schedule a consultation with their thesis adviser, Mr. Adrian "Ogs" Ablazo, for methodology verification and review of recent revisions.
+7. **Sangguniang Panlungsod (City Council) Administrative Latency:** Official email correspondence with the Davao City Sangguniang Panlungsod (SP) typically requires a **one-week turnaround** (responses usually arrive the following Monday). Consequently, administrative communication (such as the official request for 15 legal researchers and the endorsement letter) must be drafted and dispatched as early as possible to prevent scheduling bottlenecks.
 
 ---
 
@@ -52,6 +57,7 @@ To ensure seamless progress across multiple conversations and prevent repetitive
 2. **Mandatory Check on Conversation Start:** At the beginning of any new conversation or before undertaking major additions or revisions, the agent must check `docs/THESIS_MASTER_TASKS.md` to ground itself in the active milestone, recent progress, open questions, and pending deliverables.
 3. **Atomic Task Updates:** Whenever any task, code implementation, empirical experiment, or LaTeX revision is completed, the agent must immediately update `docs/THESIS_MASTER_TASKS.md`, changing status indicators (`[ ]` $\rightarrow$ `[x]` or `[-]`), logging relevant commit/file references, and updating the progress timestamp.
 4. **Verbatim Instruction Preservation:** Whenever the user provides instructions for a new milestone (e.g., Milestone 2, Milestone 3, Final Defense), the agent must record the full, unabridged instructions verbatim in `docs/THESIS_MASTER_TASKS.md` under a dedicated milestone section to preserve complete contextual fidelity for future turns.
+5. **Living Glossary Synchronization:** Whenever new technical, legal, statistical, or machine learning terms, metrics, algorithms, or doctrines are introduced to the manuscript or codebase, the agent must immediately append them to [`docs/GLOSSARY.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/GLOSSARY.md) with an accessible, plain-language definition and practical thesis context.
 
 ---
 
