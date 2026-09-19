@@ -36,6 +36,9 @@ description: This rule shall be applied when the user wants the thesis paper dra
 >      * **Neural Training Workstation** (or **Workstation B / Dedicated GPU Node**) for the co-author's mobile workstation.
 >      * **Cloud Computing Environment** (Google Colab Pro) for large-scale matrix factorization and exploratory notebooks.
 >    * **NEVER** use informal colloquialisms such as "Yah's PC" or "Ralph's laptop" in the manuscript.
+> 9. **Mandatory Literature Grounding & Methodological Justification:**  
+>    * Every empirical threshold, design choice, hyperparameter setting, sample size allocation, split ratio, mathematical formula, difficulty tier, or authoritative legal/technical assertion MUST be firmly grounded with backing citations (`\cite{...}`) and a concise explanation of *why* it was selected based on established literature (legal doctrines, NLP benchmarks, or statistical guidelines).  
+>    * **NEVER** introduce an unbacked claim, arbitrary parameter, or unsupported design decision that could leave holes in the paper or invite defense panel criticism. When introducing any experimental or methodological decision, always state the specific literature rationale (e.g., citing benchmark engineering standards, statistical power constraints, or hardware execution boundaries).
 
 ---
 
@@ -156,6 +159,10 @@ All entries added to [`references.bib`](file:///c:/Users/SHRIMP/Documents/thesis
 * Include all relevant fields: `author`, `title`, `journal` or `booktitle`, `year`, `volume`, `number`, `pages`, `publisher`, `doi`, and `url`.
 * **Title Capitalization Protection:** Enclose acronyms, model names, and proper nouns in braces so BibTeX does not lowercase them in the bibliography (e.g., `{P}hilippine`, `{BERT}`, `{NLI}`, `{COLIEE}`, `{BM25}`, `{Davao City}`).
 * **Citation Keys:** Follow clean, lowercase conventions: `surnameYearKeyword` (e.g., `ablazo2019designing`, `koreeda2021contract`, `wu2025aiir`).
+
+### **D. Continuous Literature Grounding & Regular Sweeps**
+* **No Unbacked Decisions or Assertions:** Conduct regular sweeps across all drafted and revised sections to ensure that every methodological decision, empirical threshold, sample allocation, split ratio, and legal claim is supported by authoritative literature or statutory references.
+* **Defense-Proofing Rationale:** Every design choice must clearly state *why* it was adopted based on benchmark engineering standards (e.g., SQuAD, FEVER, ANLI), statistical power constraints (e.g., Cohen, G*Power, Card et al. MDE), legal jurisprudence (e.g., *Magtajas*, EO 292, DILG manuals), or hardware limits. Never leave a claim or parameter vulnerable to defense panel scrutiny as an arbitrary choice.
 
 ---
 

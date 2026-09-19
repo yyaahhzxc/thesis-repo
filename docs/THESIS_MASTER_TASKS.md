@@ -15,7 +15,7 @@
 | Milestone | Target Scope | Current Status | Primary Deliverable |
 | :--- | :--- | :---: | :--- |
 | **Milestone 1** | Data Description - Machine Learning | `COMPLETED` | Commit `cc1c33d` (Sept 4, 2026) |
-| **Milestone 2** | Chapter 3 Methodology Revisions | `IN PROGRESS` | Audit complete; LaTeX & README updated; Overleaf verification pending |
+| **Milestone 2** | Chapter 3 Methodology Revisions | `READY FOR INITIAL SUBMISSION` | Chapter 3 ~90%+ complete with all methodology, baselines, MWE, power analysis, and citation sweep done; ready for initial submission pending local ordinances EDA once Ralph completes OCR cleaning |
 | **Milestone 3** | Chapter 4 Initial Model Training & Hyperparameters | `IN PROGRESS` | Chapter 4 initialized; Stage 1 migrated; Stage 2 training & Grid Search documented |
 
 ---
@@ -118,7 +118,7 @@
 - [ ] **Migrate Experiments from Chapter 3 to Chapter 4**: Move actual experimental evaluations and results (e.g., Stage 1 full-corpus and ablation benchmarks) from `methodology.tex` to `results_and_discussion.tex`, while retaining Exploratory Data Analysis (EDA) and corpus distributions in Chapter 3. `(Yah)`
 - [ ] **Conceptual Framework Recheck**: Recheck and update Section 3.1 Conceptual Framework (Input-Process-Output and Phase 1 vs. Phase 2 live architecture). `(Yah)`
 - [ ] **Executive Orders (EO) Policy Debate**: Debate whether to continue including Executive Orders given their subordinate legal power compared to Republic Acts; decide whether to exclude EOs from the corpus and recalculate statistics/figures accordingly. `(Yah)`
-- [ ] **Execute Milestone 2 Revisions**: Integrate Hardware/Software specs, GitHub URL, Stage 2 baseline, Hyperparameter Grid table, and McNemar/Friedman equations into Chapter 3; add Minimal Working Example (MWE) to `README.md`. `(Yah)`
+- [x] **Execute Milestone 2 Revisions**: Integrate Hardware/Software specs, GitHub URL, Stage 2 baseline, Hyperparameter Grid table, McNemar/Friedman equations, and comprehensive literature grounding into Chapter 3; add Minimal Working Example (MWE) to `README.md`. Chapter 3 is ~90%+ complete and ready for initial Milestone 2 submission (remaining ~10% is local ordinances EDA upon Ralph's OCR completion). `(Yah)`
 - [ ] **Execute Milestone 3 ML Training & Chapter 4**: Train initial Cross-Encoder models, record loss curves, optimize hyperparameters, generate plots/tables, and draft Chapter 4. `(Yah)`
 - [ ] **Polish Visuals**: Update and enhance publication tables and figures for aesthetic and structural consistency. `(Yah)`
 - [ ] **Search Candidate Models for Stage 2**: Identify additional ideal open-weight candidate models suitable for edge Cross-Encoder fine-tuning on 8GB VRAM. `(Yah)`
@@ -153,6 +153,7 @@
 - [x] **Hyperparameter Tuning Strategy (§3.6.1)**: Formally declared Grid Search method; tabulated Fixed vs. Variable hyperparameters with search bounds.
 - [x] **Statistical Model Comparison (§3.7.3)**: Added McNemar's Test (paired 2x2 contingency table, $\chi^2$ equation with Edwards' continuity correction) and Friedman Test ($\chi_F^2$ equation, Wilcoxon/Nemenyi post-hoc).
 - [x] **Overleaf-LaTeX Compilation**: Recompiled full manuscript via `python scripts/build_paper.py` (0 errors, 4.3 MB PDF).
+- [x] **Initial Milestone 2 Submission Readiness**: Chapter 3 is ~90%+ complete and fully satisfies all Milestone 2 prompt requirements (Hardware/Software, Version control/MWE, Baseline selection, Evaluation metrics, Hyperparameter tuning, Statistical tests). Ready for initial Milestone 2 submission; remaining ~10% is local ordinances EDA to be integrated once Ralph finishes OCR cleaning.
 
 ---
 
@@ -194,4 +195,5 @@
 | **2026-09-19** | Yah | Structure & Style Audit | Formalized workstation naming across Chapters 3 & 4 (Workstation A/B/Cloud); simplified all section titles to single-line concise headings; enforced strict 3-level heading depth ceiling via multi-item description lists; eliminated all LaTeX warnings and overfull hboxes; cleaned obsolete root drafts; updated agent rules. | `methodology.tex`, `results_and_discussion.tex`, `GLOSSARY.md`, `.agents/rules/` |
 | **2026-09-19** | Yah & Ralph | Chapter Numbering & Dual Corpus | Configured chapter-based numbering for all tables and figures (`\counterwithin{table}{chapter}`, `\counterwithin{figure}{chapter}` yielding Table 3.1, 4.1, Figure 2.1, 3.1, etc.); capped heading depth to 3 levels; formalized Workstation A/B/Cloud designations; documented Dual Statutory Corpus architecture (25,432 national statutes + ~1,500 local ordinances = ~27,000+ enactments) evaluating both vertical preemption and horizontal intra-jurisdictional conflicts; updated task tracker and agent continuity rules. | `main.tex`, `methodology.tex`, `results_and_discussion.tex`, `THESIS_MASTER_TASKS.md` |
 | **2026-09-19** | Yah | Chapter 3 Citation & Justification Sweep | Grounded all Chapter 3 methodological choices, thresholds, sample sizes, and split ratios in authoritative literature: English text supremacy (EO 292 §20), 64-dim SVD (Landauer LSA), K=28 clustering (BERTopic), tau=6.0 temperature scaling (Guo), 448-token buffer (Devlin BERT), author-curated hypotheses & DILG manual (Gururangan & Poliak artifacts), difficulty tiers 30/40/30 (SQuAD 2.0, FEVER, ANLI, Sartor, Bench-Capon), 350-pair power analysis & 70/15/15 split (Cohen & G*Power, Card MDE, Vabalas, SARA/COLIEE scale), and soft domain priors (Robertson & Cormack). Verified 0 errors and 0 warnings on full 4-pass build. | `methodology.tex`, `references.bib`, `main.pdf`, `THESIS_MASTER_TASKS.md` |
+| **2026-09-19** | Yah | Rule Codification & Milestone 2 Readiness | Codified Rule 9 (Mandatory Literature Grounding & Methodological Justification) and Subsection 5.D (Continuous Literature Grounding & Regular Sweeps) in `.agents/rules/paper-writing-instructions.md`; audited Milestone 2 completeness (~90%+ complete, ready for initial Milestone 2 submission pending local ordinances EDA once Ralph finishes OCR cleaning); committed and pushed clean repository state to `origin/main`. | `.agents/rules/paper-writing-instructions.md`, `docs/THESIS_MASTER_TASKS.md` |
 
