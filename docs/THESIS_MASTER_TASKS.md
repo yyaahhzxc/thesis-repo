@@ -124,8 +124,8 @@
 - [ ] **Search Candidate Models for Stage 2**: Identify additional ideal open-weight candidate models suitable for edge Cross-Encoder fine-tuning on 8GB VRAM. `(Yah)`
 - [ ] **Pseudocode & Appendix Preparation**: Add formal algorithms/pseudocode and source listings into the manuscript Appendix once each pipeline module is fully polished. `(Yah)`
 - [ ] **Front Matter & General Updates**: Update thesis date, acknowledgments, approval sheets, and general front matter. `(Yah)`
-- [ ] **Reference Re-confirmation & Verification**: Recheck and reconfirm all bibliography keys for DOI, volume, page, and venue accuracy. `(Yah)`
-- [ ] **Download Reference PDFs**: Attempt to download PDFs of all cited references to assemble a complete local reference library for full context. `(Yah)`
+- [ ] **Reference Re-confirmation & Hallucination Audit (`docs/ref_auditor.html` & `scripts/audit_refs.py`)**: Build a dual automated scanner and interactive local HTML dashboard to audit `references.bib` (191 cited keys out of 220 total). Cross-reference titles and authors against Crossref, arXiv, and Semantic Scholar APIs to flag LLM-hallucinated authors/outlets (e.g., verifying `zuasola2025leadership` vs. Davao Today report), sanitize entries with proper `note = {\url{...}}` syntax for Overleaf compatibility, and eliminate panelist defense traps. `(Yah)`
+- [ ] **Local PDF Reference Library Collection**: Systematically download and archive full-text PDFs of all 191 cited references into `docs/references/<citekey>.pdf` (auto-fetching open-access CS/NLP papers via API and manually logging paywalled/legal records via the HTML auditor) to verify empirical baseline numbers and ground all textual claims. `(Yah)`
 - [ ] **Web Prototype Design**: Begin UI/UX design and implementation of the single-page prototype web interface for LGU First Reading review. `(Yah)`
 
 ### **B. Ralph's Core Action Items**
