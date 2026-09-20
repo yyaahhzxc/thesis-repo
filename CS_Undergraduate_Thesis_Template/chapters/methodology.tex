@@ -71,7 +71,7 @@ This section outlines the methodology for data collection, system engineering, a
         \subsubsection{Corpus Analysis}
         Across the five main types of legislation with sequential numbers, the collected corpus includes 19,683 statutes out of an estimated 20,246 historical laws, achieving a coverage rate of 97.22\%. When combined with the 5,749 Executive Orders from fifteen presidential administrations, the compiled archive holds 25,432 out of about 26,451 total historical legal documents, reaching a national recall rate of 96.15\%. Table~\ref{tab:statute_type_composition} provides a breakdown of the national corpus, comparing the collected documents with official legislative totals for each statutory type. Figure~\ref{fig:statute_type_composition} shows the share of each legal instrument in the archive, illustrating the large volume of executive orders alongside congressional acts.
 
-        \begin{table}[htbp]
+        \begin{table}[!htbp]
             \centering
             \footnotesize
             \setlength{\tabcolsep}{3.8pt}
@@ -95,9 +95,9 @@ This section outlines the methodology for data collection, system engineering, a
             \end{tabularx}
         \end{table}
 
-        \begin{figure}[htbp]
+        \begin{figure}[!htbp]
             \centering
-            \includegraphics[width=0.88\linewidth]{figs/statute_type_composition.png}
+            \includegraphics[width=0.78\linewidth]{figs/statute_type_composition.png}
             \caption{Composition of the Philippine National Statutory Corpus by Legislative Instrument ($N = 25,432$).}
             \label{fig:statute_type_composition}
         \end{figure}
@@ -193,9 +193,9 @@ This section outlines the methodology for data collection, system engineering, a
 
         To confirm that the mathematical clusters reflect substantive legal categories rather than shared administrative boilerplate, the proponents examined the most salient vocabulary terms discovered by the model. Words that appear frequently across all documents fail to differentiate legal topics, requiring class-based weightings to isolate subject matter. Figure~\ref{fig:top_keywords_per_domain} displays the top class-based TF-IDF ($c\text{-}TF\text{-}IDF$) keywords across all eight consolidated macro domains.
 
-        \begin{figure}[htbp]
+        \begin{figure}[!htbp]
             \centering
-            \includegraphics[width=0.96\linewidth]{figs/top_keywords_per_domain.png}
+            \includegraphics[width=0.78\linewidth]{figs/top_keywords_per_domain.png}
             \caption{Top Salient $c\text{-}TF\text{-}IDF$ Keyword Profiles across the Eight Consolidated Macro Legal Domains ($N = 25,432$).}
             \label{fig:top_keywords_per_domain}
         \end{figure}
@@ -204,9 +204,9 @@ This section outlines the methodology for data collection, system engineering, a
 
         To examine how individual lawmaking authorities contribute to these eight subject areas, the proponents mapped the six statutory instruments across the consolidated macro domains. In Philippine legislative history, different legal instruments serve distinct constitutional functions, ranging from broad congressional acts to presidential executive directives. Figure~\ref{fig:statute_source_domain_cross_allocation} presents this cross-allocation matrix, detailing both absolute enactment counts and percentage distributions for each statutory source. This cross-tabulation reveals an explicit division of legal responsibility across Philippine statutory instruments. Analyzing this allocation confirms that regulatory subjects concentrate within specific legislative formats rather than distributing evenly across the archive.
 
-        \begin{figure}[htbp]
+        \begin{figure}[!htbp]
             \centering
-            \includegraphics[width=0.96\linewidth]{figs/statute_source_domain_cross_allocation.png}
+            \includegraphics[width=0.80\linewidth]{figs/statute_source_domain_cross_allocation.png}
             \caption{Cross-Allocation Matrix of the Six National Statutory Instruments across the Eight Consolidated Macro Legal Domains ($N = 25,432$).}
             \label{fig:statute_source_domain_cross_allocation}
         \end{figure}
@@ -215,10 +215,11 @@ This section outlines the methodology for data collection, system engineering, a
 
         To confirm that the topic pipeline discovered authentic legal boundaries rather than grouping surface vocabulary, the proponents evaluated the model using a stratified 80/20 train/test split. The 80/20 proportion follows the standard Pareto partition for large-scale legal collections exceeding 20,000 documents~\cite{aggarwal2012mining}, withholding 20\% of the corpus (5,087 statutes) to test generalizability on unseen enactments while training the model on the remaining 80\% (20,345 statutes). In statistical testing, an out-of-sample holdout of 5,087 legal texts provides high statistical power with a margin of error below $\pm 1.4\%$, making repetitive cross-validation computationally redundant as vocabulary frequencies and SVD components stabilize asymptotically at this volume. Stratified sampling preserves the natural historical proportions of the eight macro domains, ensuring that smaller regulatory categories like taxation (1.80\%, $N=457$) maintain adequate representation in the test set ($N_{\text{test}} \approx 91$) without class starvation. Table~\ref{tab:topic_holdout_validation} presents the out-of-sample performance scores, default random baselines, literature targets, and empirical verdicts across all evaluation criteria.
 
-        \begin{table}[htbp]
+        \begin{table}[!htbp]
             \centering
             \footnotesize
-            \setlength{\tabcolsep}{4pt}
+            \renewcommand{\arraystretch}{0.95}
+            \setlength{\tabcolsep}{3.5pt}
             \caption{Empirical Holdout Validation Metrics, Baseline Comparisons, and Literature Targets for the Topic Modeler ($N_{\text{train}} = 20,345, N_{\text{test}} = 5,087$)}
             \label{tab:topic_holdout_validation}
             \begin{tabularx}{\linewidth}{>{\RaggedRight}p{4.5cm}cc>{\Centering}p{2.3cm}>{\RaggedRight}X}
@@ -420,9 +421,10 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
 
     Across all physical and virtual environments, the research pipeline standardizes on an identical Python software stack to ensure full cross-platform compatibility. Table~\ref{tab:system_environment_specs} summarizes the physical hardware configurations, operational research roles, and exact software library versions governing the study.
 
-    \begin{table}[htbp]
+    \begin{table}[!htbp]
         \centering
         \footnotesize
+        \renewcommand{\arraystretch}{0.95}
         \setlength{\tabcolsep}{3.8pt}
         \caption{Hardware Configurations, Software Environment, and Operational Roles across Computing Environments}
         \label{tab:system_environment_specs}
@@ -431,9 +433,9 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
             \textbf{Environment} & \textbf{Hardware Specifications} & \textbf{Operating System} & \textbf{Assigned Research Operations} \\
             \midrule
             \textbf{Workstation A} \newline (Ingestion \& Edge Node) & Intel Core i3-10105F (4C/8T @ 3.7 GHz) \newline 8~GB DDR4 RAM, RX 6600 8GB \newline High-Speed NVMe SSD & Microsoft Windows 10 Pro 64-bit (Build 19045) & National statute scraping (25,432 laws), HTML parsing, text normalization, daily utility scripts, and LGU edge simulation. \\
-            \addlinespace[3pt]
+            \addlinespace[2pt]
             \textbf{Workstation B} \newline (Training \& GPU Node) & AMD Ryzen 7 260 (8C/16T @ 3.8 GHz) \newline 32~GB DDR5 RAM, NVMe PCIe SSD \newline NVIDIA RTX 5050 Laptop GPU & Microsoft Windows 11 Home 64-bit (Build 26200) & Local ordinance scanning (~1,500 ordinances) and OCR cleaning; dedicated Stage~2 DL fine-tuning, latency benchmarking, and final evaluation consistency. \\
-            \addlinespace[3pt]
+            \addlinespace[2pt]
             \textbf{Cloud Environment} \newline (Google Colab Pro) & NVIDIA A100 / V100 / T4 GPU \newline 51~GB High-RAM Runtime & Ubuntu Linux \newline (Cloud Kernel) & Heavy exploratory notebooks, large-scale SVD matrix factorization, and non-deterministic visual asset generation. \\
             \midrule
             \multicolumn{4}{l}{\textbf{Standardized Software Stack and Execution Libraries}} \\
@@ -476,9 +478,10 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
     \subsubsection{Retrieval Safeguards}
     Using a two-stage retrieve-then-entail setup introduces potential search challenges when comparing draft ordinances against large statutory collections. If the coarse search misses the governing national law, the inference model cannot detect the conflict regardless of its analytical capability. Legal conflicts often appear through indirect wording, where local drafts use permissive phrasing or leave out specific statutory terms. Standard search tools can also miss isolated prohibitions tucked inside long, otherwise compliant legislative codes. To protect the pipeline against these retrieval errors, the system incorporates five architectural safeguards across data preparation and search. Table~\ref{tab:retrieval_safeguards} summarizes these statutory challenges alongside their operational countermeasures.
 
-    \begin{table}[htbp]
+    \begin{table}[!htbp]
         \centering
         \footnotesize
+        \renewcommand{\arraystretch}{0.95}
         \setlength{\tabcolsep}{4pt}
         \caption{Architectural Retrieval Safeguards Against Real-World Preemption Failure Modes in Stage~1}
         \label{tab:retrieval_safeguards}
@@ -487,15 +490,15 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
             \textbf{Statutory Challenge} & \textbf{Architectural Countermeasure} & \textbf{Operational Implementation Logic} \\
             \midrule
             \textbf{Isolated Statutory Clauses} & Structural Section Chunking ($\sim 200\text{--}300$ token windows) & Segments multi-chapter enactments into discrete provisions so isolated prohibitions rank independently without vector dilution. \\
-            \addlinespace[3pt]
+            \addlinespace[2pt]
             \textbf{Indirect or Evasive Wording} & Dense Bi-Encoder Semantic Vectors (\texttt{all-MiniLM-L6-v2}) & Maps conceptual intent into 384-dimensional latent space, retrieving relevant statutes despite divergent local phrasing. \\
-            \addlinespace[3pt]
+            \addlinespace[2pt]
             \textbf{Numerical Penalty Limits} & Sparse BM25 Lexical Matching with Sublinear Scaling & Matches exact statutory citations, numerical penalty limits, and administrative agency acronyms directly. \\
-            \addlinespace[3pt]
+            \addlinespace[2pt]
             \textbf{Rank Variance in Shortlist} & Top-$k$ Candidate Safety Buffer ($k = 50$ provision shortlist) & Retains 50 candidate provisions for Stage~2 review, ensuring relevant statutes ranked below the top ten are evaluated. \\
-            \addlinespace[3pt]
+            \addlinespace[2pt]
             \textbf{Omnibus Statute Trap \& Administrative Clutter} & Hierarchy Priority Safeguard \& Soft Domain Priors & Prioritizes primary legislative statutes (Republic Acts) over administrative orders, while applying gentle soft priors instead of destructive hard filtering. \\
-            \addlinespace[3pt]
+            \addlinespace[2pt]
             \textbf{Long-Tail Provisions ($> 512$ Tokens)} & Dual-Stream BM25 Invariance \& Hierarchical Max-Pooling & BM25 indexes full text without sequence limits, while dense representations of tail provisions apply hierarchical sub-chunking with inference max-pooling and long-context candidate support (ModernBERT 8,192 tokens). \\
             \bottomrule
         \end{tabularx}

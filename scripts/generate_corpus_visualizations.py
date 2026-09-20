@@ -170,13 +170,15 @@ def generate_statutory_length_disparity():
     overall = census['overall']
     by_cat = census['by_category']
 
-    # 2-Row Layout: Top row has panels (a) and (b); Bottom row has wide panel (c)
+    # Decoupled 2-Row Layout: Top row has wide panels (a) and (b) spanning left to right;
+    # Bottom row has panel (c) with left margin adjusted so category labels align with panel (a)'s left edge.
     fig = plt.figure(figsize=(11.5, 9.2), dpi=300)
-    gs = GridSpec(2, 2, height_ratios=[1.0, 1.15], hspace=0.38, wspace=0.28, left=0.08, right=0.96, top=0.94, bottom=0.07)
+    gs_top = GridSpec(1, 2, figure=fig, left=0.07, right=0.96, top=0.95, bottom=0.55, wspace=0.22)
+    ax0 = fig.add_subplot(gs_top[0, 0])
+    ax1 = fig.add_subplot(gs_top[0, 1])
 
-    ax0 = fig.add_subplot(gs[0, 0])
-    ax1 = fig.add_subplot(gs[0, 1])
-    ax2 = fig.add_subplot(gs[1, :])
+    gs_bot = GridSpec(1, 1, figure=fig, left=0.34, right=0.96, top=0.44, bottom=0.06)
+    ax2 = fig.add_subplot(gs_bot[0, 0])
 
     # ----------------- Panel (a): Full National Statutes -----------------
     np.random.seed(42)

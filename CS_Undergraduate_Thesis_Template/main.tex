@@ -54,6 +54,15 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
+% Float placement parameters to prevent solitary floats on empty pages
+\renewcommand{\topfraction}{0.88}       % Max fraction of page for top floats (default 0.70)
+\renewcommand{\bottomfraction}{0.80}    % Max fraction of page for bottom floats (default 0.30)
+\renewcommand{\textfraction}{0.10}      % Min fraction of page for text (default 0.20)
+\renewcommand{\floatpagefraction}{0.85} % Min fraction of page for a float-only page (default 0.50)
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+
 \begin{document}
 
 

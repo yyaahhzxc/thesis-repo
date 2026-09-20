@@ -151,15 +151,15 @@ An epoch represents one complete training pass across all 245 training pairs. Tr
 
 Table~\ref{tab:epoch_loss_dynamics} documents the epoch-by-epoch training and validation loss progression, accuracy, and Macro $F_1$-score for the optimal DeBERTa-v3 configuration ($\eta = 2\times 10^{-5}, B = 8$).
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
     \centering
     \footnotesize
-    \setlength{\tabcolsep}{5pt}
+    \setlength{\tabcolsep}{4.5pt}
     \caption{Epoch-by-Epoch Loss Dynamics, Accuracy, and Validation $F_1$ for Optimal DeBERTa-v3 Configuration ($\eta = 2\times 10^{-5}, B = 8$)}
     \label{tab:epoch_loss_dynamics}
-    \begin{tabularx}{\linewidth}{cccccX}
+    \begin{tabularx}{\linewidth}{>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.3cm}>{\centering\arraybackslash}p{1.3cm}>{\RaggedRight}X}
         \toprule
-        \textbf{Epoch ($E$)} & \textbf{Training Loss} & \textbf{Validation Loss} & \textbf{Validation Acc} & \textbf{Macro $F_1$} & \textbf{Optimization Status / Event} \\
+        \shortstack[c]{\textbf{Epoch}\\\textbf{($E$)}} & \shortstack[c]{\textbf{Training}\\\textbf{Loss}} & \shortstack[c]{\textbf{Validation}\\\textbf{Loss}} & \shortstack[c]{\textbf{Val}\\\textbf{Acc}} & \shortstack[c]{\textbf{Macro}\\\textbf{$F_1$}} & \textbf{Optimization Status / Event} \\
         \midrule
         1 & 1.0420 & 0.7812 & 69.23\% & 0.6821 & Initial linear learning rate warmup \\
         2 & 0.6854 & 0.5640 & 78.85\% & 0.7844 & Steady convergence; rapid preemption learning \\
