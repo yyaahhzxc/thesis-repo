@@ -105,9 +105,9 @@ def generate_semantic_topic_landscape_2d():
             linewidths=0.3
         )
 
-    ax.set_title("2D Latent Semantic Topic Space of Philippine National Statutes (SVD Projection, N=3,500 Sample)", fontsize=11.5, fontweight="bold", pad=12)
+    ax.set_title("2D Latent Semantic Topic Space of Philippine National Statutes\n(SVD Projection, N=3,500 Representative Sample)", fontsize=11, fontweight="bold", pad=14)
     ax.set_xlabel(r"Latent Semantic Dimension 1 (Administrative Baseline $\leftarrow\rightarrow$ Operative Specificity)", fontsize=9.8, fontweight="bold", labelpad=8)
-    ax.set_ylabel(r"Latent Semantic Dimension 2 (Commercial Franchises $\leftarrow\rightarrow$ Social & Educational)", fontsize=9.8, fontweight="bold", labelpad=8)
+    ax.set_ylabel(r"Latent Semantic Dimension 2 (Commercial Franchises $\leftarrow\rightarrow$ Social & Educational)", fontsize=9.5, fontweight="bold", labelpad=10)
 
     ax.grid(True, linestyle="--", alpha=0.5, color="#cccccc")
     ax.set_axisbelow(True)
@@ -137,14 +137,14 @@ def generate_semantic_topic_landscape_2d():
         bbox=dict(boxstyle="round,pad=0.3", facecolor="#fff8f0", edgecolor="#ff7f0e", lw=0.8)
     )
 
-    # Legend outside to the right
+    # Legend outside to the right with clean margins
     ax.legend(
         bbox_to_anchor=(1.02, 1), loc="upper left",
         fontsize=8, frameon=True, framealpha=0.95, edgecolor="#cccccc",
         title="Consolidated Legal Domain", title_fontsize=8.5
     )
 
-    plt.tight_layout()
+    plt.subplots_adjust(top=0.91, bottom=0.10, left=0.10, right=0.72)
 
     out_paths = [
         os.path.join(TEMPLATE_FIGS_DIR, "semantic_topic_landscape_2d.png"),
@@ -157,7 +157,7 @@ def generate_semantic_topic_landscape_2d():
 
 
 def generate_statutory_length_disparity():
-    """Generates the 3-panel publication figure comparing full statutes, section token counts (N=164,620), and per-domain compliance."""
+    """Generates the 3-panel publication figure comparing full statutes, section token counts (N=164,620), and per-domain compliance in a 2-row layout."""
     print("[2/3] Generating Statutory Length Disparity & Granularity Distribution (Full Census N=164,620)...")
     census_path = os.path.join("output", "corpus_token_census.json")
     if not os.path.exists(census_path):
@@ -170,12 +170,13 @@ def generate_statutory_length_disparity():
     overall = census['overall']
     by_cat = census['by_category']
 
-    fig = plt.figure(figsize=(18.0, 5.0), dpi=300)
-    gs = GridSpec(1, 3, width_ratios=[1.0, 1.15, 1.6], wspace=0.48, left=0.04, right=0.98, top=0.86, bottom=0.14)
+    # 2-Row Layout: Top row has panels (a) and (b); Bottom row has wide panel (c)
+    fig = plt.figure(figsize=(11.5, 9.2), dpi=300)
+    gs = GridSpec(2, 2, height_ratios=[1.0, 1.15], hspace=0.38, wspace=0.28, left=0.08, right=0.96, top=0.94, bottom=0.07)
 
-    ax0 = fig.add_subplot(gs[0])
-    ax1 = fig.add_subplot(gs[1])
-    ax2 = fig.add_subplot(gs[2])
+    ax0 = fig.add_subplot(gs[0, 0])
+    ax1 = fig.add_subplot(gs[0, 1])
+    ax2 = fig.add_subplot(gs[1, :])
 
     # ----------------- Panel (a): Full National Statutes -----------------
     np.random.seed(42)
@@ -193,7 +194,7 @@ def generate_statutory_length_disparity():
     ax0.set_xticklabels(tick_labels0, fontsize=8.5)
     ax0.set_xlabel("Statute Length in Characters (Log Scale)", fontsize=9.2, fontweight="bold", labelpad=6)
     ax0.set_ylabel("Probability Density", fontsize=9.2, fontweight="bold", labelpad=6)
-    ax0.set_title("(a) Full National Statutes (N=25,432)", fontsize=10.5, fontweight="bold", pad=34)
+    ax0.set_title("(a) Full National Statutes (N=25,432)", fontsize=10.5, fontweight="bold", pad=12)
     ax0.grid(True, linestyle="--", alpha=0.5, color="#cccccc")
     ax0.legend(fontsize=8, loc="upper right", framealpha=0.9)
     ax0.set_ylim(0, 1.25)
@@ -229,7 +230,7 @@ def generate_statutory_length_disparity():
     ax1.set_xlim(-15, 820)
     ax1.set_xlabel("Tokens per Prepended Section", fontsize=9.2, fontweight="bold", labelpad=6)
     ax1.set_ylabel("Probability Density", fontsize=9.2, fontweight="bold", labelpad=6)
-    ax1.set_title("(b) Section Chunk Tokens (N=164,620)", fontsize=10.5, fontweight="bold", pad=34)
+    ax1.set_title("(b) Section Chunk Tokens (N=164,620)", fontsize=10.5, fontweight="bold", pad=12)
     ax1.grid(True, linestyle="--", alpha=0.5, color="#cccccc")
     ax1.legend(fontsize=8, loc="upper right", framealpha=0.9)
 
@@ -245,14 +246,14 @@ def generate_statutory_length_disparity():
 
     # ----------------- Panel (c): Per-Category 512-Token Compliance -----------------
     cat_display_names = {
-        "Public Health, Hospitals & Medical Services": "04 Public Health",
-        "Public Utilities & Telecommunications Franchises": "03 Public Utilities",
-        "Education & Academic Institutions": "01 Education",
-        "Taxation, Tariffs & Revenue Administration": "07 Taxation & Tariffs",
-        "Public Finance & General Appropriations": "06 Public Finance",
-        "Executive Issuances & Policy Reorganization": "00 Exec. Issuances",
-        "Statutory Codes & General Legal Amendments": "05 Statutory Codes",
-        "Local Government & Territorial Boundaries": "02 Local Govt & Bounds"
+        "Public Health, Hospitals & Medical Services": "04 Public Health, Hospitals & Medical Services",
+        "Public Utilities & Telecommunications Franchises": "03 Public Utilities & Telecom Franchises",
+        "Education & Academic Institutions": "01 Education & Academic Institutions",
+        "Taxation, Tariffs & Revenue Administration": "07 Taxation, Tariffs & Revenue Administration",
+        "Public Finance & General Appropriations": "06 Public Finance & General Appropriations",
+        "Executive Issuances & Policy Reorganization": "00 Executive Issuances & Policy Reorganization",
+        "Statutory Codes & General Legal Amendments": "05 Statutory Codes & General Legal Amendments",
+        "Local Government & Territorial Boundaries": "02 Local Government & Territorial Boundaries"
     }
 
     sorted_cats = sorted(by_cat.items(), key=lambda x: x[1]['pct_under_512'], reverse=True)
@@ -262,15 +263,15 @@ def generate_statutory_length_disparity():
 
     y_pos = np.arange(len(cat_labels))
 
-    bars_under = ax2.barh(y_pos, pct_under, height=0.60, color="#2b8cbe", edgecolor="#1c5d80", alpha=0.85, label="Fit \u2264 512 Tokens")
-    bars_over = ax2.barh(y_pos, pct_over, left=pct_under, height=0.60, color="#e41a1c", edgecolor="#990000", alpha=0.80, label="Exceeds > 512 Tokens")
+    bars_under = ax2.barh(y_pos, pct_under, height=0.62, color="#2b8cbe", edgecolor="#1c5d80", alpha=0.85, label="Fit \u2264 512 Tokens")
+    bars_over = ax2.barh(y_pos, pct_over, left=pct_under, height=0.62, color="#e41a1c", edgecolor="#990000", alpha=0.80, label="Exceeds > 512 Tokens")
 
     ax2.set_yticks(y_pos)
     ax2.set_yticklabels(cat_labels, fontsize=8.5, fontweight="bold")
     ax2.invert_yaxis()
     ax2.set_xlabel("Proportion of Provisions (%)", fontsize=9.2, fontweight="bold", labelpad=6)
-    ax2.set_xlim(0, 118)
-    ax2.set_title("(c) 512-Token Compliance by Legal Domain", fontsize=10.5, fontweight="bold", pad=34)
+    ax2.set_xlim(0, 115)
+    ax2.set_title("(c) 512-Token Attention Window Compliance by Consolidated Legal Domain", fontsize=10.5, fontweight="bold", pad=28)
     ax2.grid(True, linestyle="--", alpha=0.5, color="#cccccc", axis="x")
 
     # Place the legend above the bars horizontally, right under the title with clear spacing
@@ -278,7 +279,7 @@ def generate_statutory_length_disparity():
         loc="lower center",
         bbox_to_anchor=(0.5, 1.02),
         ncol=2,
-        fontsize=8.2,
+        fontsize=8.5,
         frameon=True,
         facecolor="#ffffff",
         edgecolor="#cccccc",
@@ -286,8 +287,8 @@ def generate_statutory_length_disparity():
     )
 
     for i, (u, o) in enumerate(zip(pct_under, pct_over)):
-        ax2.text(u / 2.0, i, f"{u:.1f}% compliant", va='center', ha='center', fontsize=7.8, color="white", fontweight="bold")
-        ax2.text(101.2, i, f"{o:.1f}% tail", va='center', ha='left', fontsize=7.4, color="#990000", fontweight="bold")
+        ax2.text(u / 2.0, i, f"{u:.1f}% compliant", va='center', ha='center', fontsize=8.0, color="white", fontweight="bold")
+        ax2.text(101.2, i, f"{o:.1f}% tail", va='center', ha='left', fontsize=7.6, color="#990000", fontweight="bold")
 
     out_paths = [
         os.path.join(TEMPLATE_FIGS_DIR, "statutory_length_disparity.png"),

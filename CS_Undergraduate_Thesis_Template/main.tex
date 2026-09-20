@@ -28,6 +28,28 @@
 
 \usepackage{titlesec}
 
+% List of Equations definition (styled consistently with \listoffigures and \listoftables)
+\makeatletter
+\newcommand\listofequations{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\listequationname}%
+      \@mkboth{\MakeUppercase\listequationname}%
+              {\MakeUppercase\listequationname}%
+    \@starttoc{equ}%
+    \if@restonecol\twocolumn\fi
+}
+\newcommand\listequationname{List of Equations}
+\newcommand*\l@equation{\@dottedtocline{1}{1.5em}{2.3em}}
+\makeatother
+
+\newcommand{\eqcaption}[1]{%
+    \addcontentsline{equ}{equation}{\protect\numberline{\theequation}#1}%
+}
+
 % 1. Set the depth limits (Strictly capped to 3 levels: Chapter -> Section -> Subsection -> Subsubsection)
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
@@ -73,6 +95,8 @@ Above all, to the Almighty God/Allah SWT, the ultimate source of strength, wisdo
 \listoffigures
  
 \listoftables
+
+\listofequations
 
 \mainmatter
 %\chapter*{Abstract}

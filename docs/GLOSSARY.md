@@ -201,6 +201,23 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** A safety rule that halts training automatically if performance on the validation set stops improving.
 * **Patience:** The number of consecutive epochs the algorithm is willing to wait without seeing a new best validation score before pulling the plug (in our paper, $\text{patience} = 4$).
 
+### **Underfitting vs. Overfitting**
+* **Underfitting:** Occurs when the model has not learned enough to capture authentic patterns (both training and validation error remain high). In our paper, this happens when the learning rate is too low ($\eta = 1\times 10^{-5}$) or training is stopped too early.
+* **Overfitting:** Occurs when a high-capacity model memorizes the noise, phrasing quirks, or specific wording of the training sample ($N_{\text{train}} = 245$) rather than learning general legal principles. Training loss continues falling, but validation loss starts rising.
+* **In This Thesis:** Controlled using the tripartite regularization strategy: AdamW weight decay ($\lambda = 0.01$), dropout ($p = 0.10$), and early stopping validation checkpoints.
+
+### **Loss Dynamics & Inflection Point**
+* **Loss Dynamics:** The chronological trajectory of training loss and validation loss across successive training epochs.
+* **Inflection Point:** The exact epoch where validation loss reaches its lowest point (minimum) and begins to reverse upward. In our paper, DeBERTa-v3 reaches its inflection point at **Epoch 3** ($\text{Val Loss} = 0.4812$), signaling optimal generalization.
+
+### **Ablation Study**
+* **Plain Meaning:** An experimental design where individual features, modules, or filters are systematically removed or swapped to measure their isolated impact on overall system accuracy.
+* **In This Thesis:** In Chapter 4 (Section 4.1.2), we conduct an ablation benchmark across 9 candidate Stage 1 retrieval configurations (BM25, Dense Bi-Encoder, Soft Priors, RRF) to prove that Reciprocal Rank Fusion ($k=60$) is optimal.
+
+### **Catastrophic Forgetting**
+* **Plain Meaning:** When fine-tuning a neural network on a small specialized dataset causes it to overwrite and "forget" the broad linguistic and grammatical knowledge it acquired during pretraining.
+* **In This Thesis:** Prevented by using conservative learning rates ($\eta = 2\times 10^{-5}$), linear warmup, and weight decay so only the necessary classification and cross-attention weights adapt to Philippine statutory preemption.
+
 ### **Random Seed**
 * **Plain Meaning:** Setting a fixed starting number for the computer's random number generator (e.g., $\text{seed} = 42$).
 * **Why It Matters:** Guarantees **scientific reproducibility**. Anyone on any computer running the script with seed 42 will get the exact same dataset splits and initial weight shuffles.

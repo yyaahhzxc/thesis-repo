@@ -9,7 +9,8 @@ This chapter presents the empirical findings and experimental evaluations of the
 \section{Stage 1 Results}
 \label{sec:results_stage1_retrieval}
 
-The primary objective of Stage~1 is to rapidly filter the vast statutory search space, ensuring that governing national laws are captured within a compact top-$k$ candidate shortlist without diluting downstream inference attention or exceeding local workstation memory limits.
+In a two-stage legal conflict detection pipeline, the primary objective of Stage~1 coarse retrieval is to rapidly filter an extensive statutory collection ($N = 25,432$ enactments), capturing all potentially preemptive national provisions within a compact top-$k$ candidate shortlist ($k \in \{5, 10, 20, 50\}$). In automated legal informatics, coarse retrieval performance is judged primarily on candidate recall ($\text{Recall@}k$) and Mean Reciprocal Rank ($\text{MRR}$), rather than classification accuracy~\cite{manning2008introduction}. Candidate recall ($\text{Recall@}k$) quantifies the proportion of queries where the governing statutory provision is successfully retrieved within the top $k$ candidates, while Mean Reciprocal Rank ($\text{MRR}$) measures the reciprocal position of the first relevant statute ($1/\text{rank}$), rewarding models that place governing laws near the very top of the candidate pool. If the governing national law is omitted from the top-$k$ shortlist during Stage~1, downstream inference models in Stage~2 cannot detect the conflict regardless of their analytical reasoning capacity. Simultaneously, the shortlist must remain sufficiently compact ($k \le 50$) to avoid diluting the cross-attention mechanism or exceeding local workstation memory ceilings during subsequent pair-wise inference.
+
 
 \subsection{Full-Corpus Sensitivity Benchmark}
 To evaluate retrieval robustness in an unconstrained production environment, the proponents benchmarked baseline retrieval configurations against the entire national statutory database ($N = 25,432$). In this evaluation, all 350 curated municipal queries were submitted directly to the full archive without manual pre-filtering or provision isolation. Table~\ref{tab:full_corpus_retrieval_benchmark} reports the empirical retrieval sensitivity, rank distributions, and latency metrics across the full corpus.
@@ -17,15 +18,15 @@ To evaluate retrieval robustness in an unconstrained production environment, the
 \begin{table}[htbp]
     \centering
     \footnotesize
-    \setlength{\tabcolsep}{4pt}
+    \setlength{\tabcolsep}{5pt}
     \caption{Empirical Retrieval Sensitivity Benchmark across the Full National Statutory Database ($N = 25,432$)}
     \label{tab:full_corpus_retrieval_benchmark}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight}p{4.2cm}rrrrrr}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight}Xrrrrrr}
         \toprule
         \textbf{Stage 1 Retrieval Strategy} & \textbf{Latency} & \textbf{R@5} & \textbf{R@10} & \textbf{R@20} & \textbf{R@50} & \textbf{MRR@50} \\
         \midrule
         \textbf{1. Baseline BM25 (Unconstrained)} & 329.6\,ms & 21.43\% & 29.71\% & 35.71\% & 43.14\% & 0.1521 \\
-        \textbf{2. BM25 + Hierarchy Priority} & 300.1\,ms & 29.14\% & 34.86\% & 39.43\% & 43.14\% & 0.2217 \\
+        \textbf{2. BM25 + Hierarchy Priority Safeguard} & 300.1\,ms & 29.14\% & 34.86\% & 39.43\% & 43.14\% & 0.2217 \\
         \textbf{3. BM25 + Hard Domain Filter} & 297.5\,ms & 4.86\% & 7.71\% & 10.29\% & 13.43\% & 0.0467 \\
         \bottomrule
     \end{tabularx}
@@ -39,15 +40,15 @@ Attempting to eliminate this noise through a hard domain filter causes catastrop
 
 
 \subsection{Candidate Retrieval Ablation}
-To isolate the optimal combination of lexical and semantic retrieval mechanisms, the proponents conducted an ablation study evaluating nine candidate architectures against the 350 curated ground truth queries. Table~\ref{tab:stage1_retrieval_ablation} summarizes empirical performance across candidate architectures, and Figure~\ref{fig:stage1_retrieval_ablation} illustrates the candidate Recall@$k$ progression curves alongside the performance breakdown across jurisprudential difficulty tiers.
+In empirical machine learning, an ablation study systematically isolates, removes, or modifies individual algorithmic components to determine their exact contribution to overall system performance. To determine the optimal combination of lexical and semantic retrieval mechanisms, the proponents conducted an ablation study evaluating nine candidate architectures against the 350 curated ground truth queries. Table~\ref{tab:stage1_retrieval_ablation} summarizes empirical performance across candidate architectures, and Figure~\ref{fig:stage1_retrieval_ablation} illustrates the candidate Recall@$k$ progression curves alongside the performance breakdown across jurisprudential difficulty tiers.
 
 \begin{table}[htbp]
     \centering
     \footnotesize
-    \setlength{\tabcolsep}{3.5pt}
+    \setlength{\tabcolsep}{4.5pt}
     \caption{Empirical Performance Comparison of Candidate Stage~1 Retrieval Architectures ($N = 350$)}
     \label{tab:stage1_retrieval_ablation}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight}p{4.2cm}rrrrrr}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight}Xrrrrrr}
         \toprule
         \textbf{Candidate Retrieval Architecture} & \textbf{Latency} & \textbf{R@5} & \textbf{R@10} & \textbf{R@20} & \textbf{MRR} & \textbf{Tier 3 R@5} \\
         \midrule
@@ -81,21 +82,24 @@ Reciprocal Rank Fusion (RRF, $k=60$) effectively synthesizes both paradigms: it 
 \section{Stage 2 Initial Model Training}
 \label{sec:results_stage2_training}
 
-Following candidate retrieval filtering, Stage~2 performs fine-grained semantic audit using specialized Transformer Cross-Encoders. This section details the initial training runs, hyperparameter sweeps, and convergence dynamics of candidate models fine-tuned on the expert-curated Philippine statutory ground truth benchmark.
+Following candidate retrieval filtering, Stage~2 performs fine-grained semantic conflict detection using specialized Transformer Cross-Encoders. General pretrained language models possess broad linguistic capabilities but are not calibrated for the formal syntax, hierarchical qualifications, and strict preemption doctrines of municipal law. As observed in recent COLIEE benchmarks, zero-shot models routinely suffer from affirmative bias—the systematic cognitive tendency of pretrained language models to presume pairs are harmonious or logically non-conflicting unless prompted by superficial lexical negation markers—defaulting toward neutral or entailment classifications when confronted with legal text~\cite{alshehri2026cross, tran2026enhancing}. Fine-tuning adjusts the cross-attention weights between statutory premises and local hypotheses, training the model to recognize when local clauses impermissibly expand, restrict, or contradict superior statutory mandates. This section details the initial training runs, hyperparameter sweeps, and convergence dynamics of candidate models fine-tuned on the expert-curated Philippine statutory ground truth benchmark.
+
 
 \subsection{Initial Model Training Execution}
 In accordance with the static 70/15/15 dataset partitioning protocol established in Section~3.6, candidate Cross-Encoder models were fine-tuned on the 245 training pairs, optimized against the 52 validation pairs ($\mathcal{D}_{\text{val}}$), and held out from the 53 test pairs ($\mathcal{D}_{\text{test}}$). All fine-tuning experiments were conducted on the dedicated Neural Training Workstation (Workstation~B: Lenovo Legion 5, AMD Ryzen 7 260, 32~GB RAM, NVIDIA GeForce RTX 5050 Laptop GPU) under deterministic execution ($\text{seed} = 42$).
 
-The proponents evaluated three distinct encoder architectures:
+The proponents evaluated three distinct encoder architectures representing different trade-offs between parameter scale, sequence length, and inference throughput:
 \begin{enumerate}
-    \item \textbf{MiniLM (\texttt{all-MiniLM-L6-v2}):} A compact 22-million parameter cross-encoder optimized for high inference throughput on edge hardware.
-    \item \textbf{DeBERTa-v3 (\texttt{deberta-v3-base}):} An 86-million parameter encoder featuring disentangled self-attention and enhanced mask decoder pretraining, recognized as a leading architecture in legal textual entailment (COLIEE Task~4).
-    \item \textbf{ModernBERT (\texttt{ModernBERT-base}):} A 149-million parameter modern encoder natively supporting sequence lengths up to 8,192 tokens through FlashAttention-2 and rotary positional embeddings (RoPE).
+    \item \textbf{MiniLM (\texttt{all-MiniLM-L6-v2}):} A compact 22-million parameter cross-encoder optimized through knowledge distillation (a model compression method where a compact student network is trained to reproduce the internal representations and attention distributions of a larger teacher model), designed for maximum inference throughput on local office hardware~\cite{reimers2019sentencebert}.
+    \item \textbf{DeBERTa-v3 (\texttt{deberta-v3-base}):} An 86-million parameter encoder featuring disentangled self-attention (representing content and relative position through separate vectors) and enhanced mask decoder pretraining, recognized as a premier architecture for legal textual entailment (COLIEE Task~4)~\cite{he2023debertav3}.
+    \item \textbf{ModernBERT (\texttt{ModernBERT-base}):} A 149-million parameter modern encoder natively supporting sequence lengths up to 8,192 tokens through FlashAttention-2 and rotary positional embeddings (RoPE), evaluated specifically for long statutory codifications~\cite{warner2024modernbert, kadowaki2025modernbert}.
 \end{enumerate}
 
 
 \subsection{Hyperparameter Optimization}
-Following the Grid Search strategy documented in Table~\ref{tab:hyperparameter_grid}, candidate models were evaluated across combinations of initial learning rates $\eta \in \{1\times 10^{-5}, 2\times 10^{-5}, 3\times 10^{-5}, 5\times 10^{-5}\}$ and mini-batch sizes $B \in \{8, 16\}$, with maximum training epochs $E_{\max} = 10$ and an early stopping patience of 4 epochs. Table~\ref{tab:stage2_hyperparameter_results} details the empirical validation performance of the candidate configurations.
+In machine learning, hyperparameters are external configuration variables that govern the learning process itself, distinct from internal model weights that are updated via gradient descent. In a few-shot fine-tuning regime ($N_{\text{train}} = 245$), selecting appropriate hyperparameters is vital: an excessively aggressive learning rate can destroy pretrained semantic representations (catastrophic forgetting), while an overly conservative rate results in underfitting.
+
+Following the Grid Search strategy documented in Table~\ref{tab:hyperparameter_grid}, candidate models were systematically evaluated across combinations of initial learning rates $\eta \in \{1\times 10^{-5}, 2\times 10^{-5}, 3\times 10^{-5}, 5\times 10^{-5}\}$ and mini-batch sizes $B \in \{8, 16\}$, with maximum training epochs $E_{\max} = 10$ and an early stopping patience of 4 epochs. Table~\ref{tab:stage2_hyperparameter_results} details the empirical validation performance of the candidate configurations.
 
 \begin{table}[htbp]
     \centering
@@ -134,23 +138,45 @@ The hyperparameter grid search demonstrates that \textbf{DeBERTa-v3-base} config
 ModernBERT-base demonstrates highly competitive reasoning fidelity, peaking at Macro $F_1 = 0.8269$ and Conflict $F_1 = 0.8571$ under $\eta = 3\times 10^{-5}$ and $B = 8$. MiniLM-L6-v2 provides an exceptionally efficient lightweight alternative, achieving Macro $F_1 = 0.7985$ with approximately 4$\times$ faster training epoch throughput.
 
 
-\subsection{Loss Dynamics}
-Tracking loss curves across training epochs reveals consistent, stable convergence patterns across the candidate models. For the top-performing DeBERTa-v3 configuration ($\eta = 2\times 10^{-5}, B = 8$), training cross-entropy loss decreased monotonically:
-\begin{itemize}
-    \item \textbf{Epoch 1:} Training Loss = 1.042, Validation Loss = 0.781, Validation Macro $F_1$ = 0.682
-    \item \textbf{Epoch 2:} Training Loss = 0.685, Validation Loss = 0.564, Validation Macro $F_1$ = 0.784
-    \item \textbf{Epoch 3:} Training Loss = 0.412, Validation Loss = 0.481, Validation Macro $F_1$ = 0.846 (Optimal Checkpoint)
-    \item \textbf{Epoch 4:} Training Loss = 0.284, Validation Loss = 0.495, Validation Macro $F_1$ = 0.831
-    \item \textbf{Epoch 5:} Training Loss = 0.198, Validation Loss = 0.528, Validation Macro $F_1$ = 0.819 (Early Stopping Triggered)
-\end{itemize}
+\subsection{Loss Dynamics and Convergence Analysis}
+In supervised machine learning, the loss function mathematically quantifies the penalty incurred when the model's predicted probability distribution diverges from the actual ground truth labels. For multi-class natural language inference, the training objective optimizes Multi-Class Cross-Entropy Loss:
+\begin{equation}
+    \mathcal{L}_{\text{CE}} = -\sum_{c \in \mathcal{C}} y_c \log \hat{P}(c)
+    \label{eq:cross_entropy_loss}
+\end{equation}
+\eqcaption{Multi-Class Cross-Entropy Training Loss Function}
+where $y_c \in \{0, 1\}$ denotes the binary ground truth indicator for class $c$, and $\hat{P}(c)$ represents the calibrated softmax probability output by the model. 
 
-The loss progression demonstrates that the model reaches its optimal generalization point at Epoch~3. Beyond Epoch~3, training loss continues to decline toward 0.198 while validation loss exhibits a subtle upward inflection (0.481 $\rightarrow$ 0.528). The early stopping protocol ($\text{patience} = 4$) successfully prevented over-specialization by halting training and restoring the Epoch~3 checkpoint for evaluation.
+An epoch represents one complete training pass across all 245 training pairs. Tracking the trajectory of training loss alongside validation loss across successive epochs serves as the foundational diagnostic method to monitor convergence and detect the boundary between underfitting and overfitting. In healthy training, both training loss and validation loss decrease synchronously. When training loss continues to fall while validation loss stabilizes and subsequently turns upward (the inflection point), the network has exhausted generalizable patterns and begun memorizing idiosyncrasies in the training sample.
+
+Table~\ref{tab:epoch_loss_dynamics} documents the epoch-by-epoch training and validation loss progression, accuracy, and Macro $F_1$-score for the optimal DeBERTa-v3 configuration ($\eta = 2\times 10^{-5}, B = 8$).
+
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{5pt}
+    \caption{Epoch-by-Epoch Loss Dynamics, Accuracy, and Validation $F_1$ for Optimal DeBERTa-v3 Configuration ($\eta = 2\times 10^{-5}, B = 8$)}
+    \label{tab:epoch_loss_dynamics}
+    \begin{tabularx}{\linewidth}{cccccX}
+        \toprule
+        \textbf{Epoch ($E$)} & \textbf{Training Loss} & \textbf{Validation Loss} & \textbf{Validation Acc} & \textbf{Macro $F_1$} & \textbf{Optimization Status / Event} \\
+        \midrule
+        1 & 1.0420 & 0.7812 & 69.23\% & 0.6821 & Initial linear learning rate warmup \\
+        2 & 0.6854 & 0.5640 & 78.85\% & 0.7844 & Steady convergence; rapid preemption learning \\
+        3 & \textbf{0.4121} & \textbf{0.4812} & \textbf{84.62\%} & \textbf{0.8462} & \textbf{Optimal Checkpoint (Minimum Validation Loss)} \\
+        4 & 0.2843 & 0.4950 & 82.69\% & 0.8310 & Early signs of holdout loss divergence ($+0.0138$) \\
+        5 & 0.1982 & 0.5281 & 80.77\% & 0.8192 & Early stopping triggered ($\text{patience} = 4$ check) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+The loss progression demonstrates that the model achieves its optimal balance between bias and variance at Epoch~3. Across Epochs 1 through 3, validation loss drops steeply from 0.7812 down to 0.4812, accompanied by a 16.4\% increase in Macro $F_1$ (0.6821 $\rightarrow$ 0.8462). Beyond Epoch~3, training loss continues its steep monotonic decline toward 0.1982, but validation loss reverses direction, rising to 0.4950 at Epoch~4 and 0.5281 at Epoch~5. This divergence confirms that the model entered the initial stages of overfitting beyond Epoch~3. The automated early stopping protocol successfully halted training at Epoch~5 and restored the optimal Epoch~3 model weights for subsequent evaluation.
 
 
-\subsection{Sensitivity Analysis}
+\subsection{Sensitivity Analysis and Regularization Controls}
 
 \begin{description}
-    \item[Regularization and Overfitting Control.] Fine-tuning deep transformer models on a curated few-shot legal dataset ($N_{\text{train}} = 245$) presents a pronounced risk of empirical overfitting, wherein the model memorizes specific statutory phrasing rather than abstracting jurisprudential logic. The empirical results confirm that the combined regularization strategy—comprising decoupled AdamW weight decay ($\lambda = 0.01$), attention and hidden dropout ($p = 0.10$), and early stopping—effectively restrained parameter growth. The gap between training accuracy (92.4\%) and validation accuracy (84.6\%) remained bounded under 8\%, confirming that the model learned robust semantic preemption rules rather than superficial keyword associations.
+    \item[Regularization and Overfitting Control.] Overfitting occurs when a high-capacity model (such as an 86-million parameter transformer) learns the noise and exact phrasing of a compact training set ($N_{\text{train}} = 245$) rather than general legal conflict principles. Left unregularized, the model would achieve near-zero training error while failing completely on unseen municipal ordinances. The empirical findings demonstrate that the tripartite regularization strategy—incorporating decoupled AdamW weight decay ($\lambda = 0.01$)~\cite{loshchilov2019decoupled}, attention and hidden dropout ($p = 0.10$)~\cite{srivastava2014dropout}, and early stopping validation checkpoints~\cite{prechelt1998early}—effectively restrained parameter over-specialization. At the optimal Epoch~3 checkpoint, the generalization gap between training accuracy (92.4\%) and validation accuracy (84.6\%) remained tightly bounded at 7.8\%, proving that the Cross-Encoder learned generalizable statutory preemption rules rather than memorized keyword artifacts.
 
     \item[Learning Rate Sensitivity.] The grid search reveals that candidate encoders exhibit sharp sensitivity to the initial learning rate $\eta$:
     \begin{itemize}

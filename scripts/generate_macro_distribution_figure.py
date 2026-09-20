@@ -31,7 +31,7 @@ bars = ax.barh(df["label"], df["count"], color="#2b7bba", edgecolor="#1a4c73", h
 # Set x-axis limits with ample headroom so text never touches or crosses the right border
 ax.set_xlim(0, 14500)
 ax.set_xlabel("Number of Enacted Statutes", fontsize=10.5, fontweight="bold", labelpad=8)
-ax.set_title("Philippine Statutory Corpus: Discovered Legal Domains (≥ 1.0% Threshold)", fontsize=12, fontweight="bold", pad=12)
+ax.set_title("Philippine Statutory Corpus: Discovered Legal Domains", fontsize=12, fontweight="bold", pad=12)
 
 # Grid lines
 ax.xaxis.grid(True, linestyle="--", alpha=0.5, color="#cccccc")
