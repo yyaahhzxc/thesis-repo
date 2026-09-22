@@ -20,6 +20,7 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 5. [Evaluation Metrics & Decision Calibration](#5-evaluation-metrics--decision-calibration)
 6. [Statistical Hypothesis Testing (Comparing Models)](#6-statistical-hypothesis-testing-comparing-models)
 7. [System Architecture, Software Engineering & Reproducibility](#7-system-architecture-software-engineering--reproducibility)
+8. [Ground Truth Benchmark & Human Annotation Protocol](#8-ground-truth-benchmark--human-annotation-protocol)
 
 ---
 
@@ -317,6 +318,29 @@ This glossary provides plain-language definitions, mathematical intuition, and p
   1. **Workstation A: Primary Ingestion Workstation (Edge Simulation Node - Intel Core i3-10105F, 8GB RAM, RX 6600, Windows 10):** Handled national statute scraping of 25,432 laws from Lawphil, HTML parsing, text normalization, routine maintenance scripts, and serves as our physical LGU consumer desktop simulation testbed.
   2. **Workstation B: Neural Training Workstation (Dedicated GPU Node - Lenovo Legion 5, AMD Ryzen 7 260, 32GB RAM, NVIDIA RTX 5050 Laptop GPU, Windows 11):** Handles scanning and OCR cleaning of ~1,500 local Davao City ordinances from SP archives; executes dedicated Stage 2 Cross-Encoder fine-tuning, hyperparameter sweeps, latency profiling, and final full-system evaluation consistency.
   3. **Cloud Computing Environment (Google Colab Pro):** Utilized opportunistically for heavy exploratory Jupyter notebooks, large-scale SVD matrix factorization over 25,432 documents, and generating notebook visual assets.
+---
+
+## **8. Ground Truth Benchmark & Human Annotation Protocol**
+
+### **Ground Truth (Gold Standard) Dataset**
+* **Plain Meaning:** The verified, human-authored answer key used to train and test supervised machine learning models.
+* **In This Thesis:** A curated benchmark of **350 statutory premise–hypothesis pairs** evaluated against the Davao City legislative context. It is partitioned into a static **70/15/15 split** (245 training, 52 validation, 53 test pairs).
+
+### **Senior Annotator (Hierarchical Adjudicator)**
+* **Plain Meaning:** An expert evaluator designated within each annotation sub-panel who acts as panel lead and tie-breaker for ambiguous or disputed items.
+* **In This Thesis:** Within each of the five 3-member sub-panels ($k = 3$), the evaluator with the highest educational attainment and longest legislative drafting tenure is designated as the Senior Annotator. When all three panel raters choose different categories (a three-way split of 1 Contradiction, 1 Entailment, 1 Neutral), the item is referred to the Senior Annotator for binding qualitative adjudication against the statutory codebook (Gao et al., 2022; Artstein & Poesio, 2008).
+
+### **Intake Credential Profiling**
+* **Plain Meaning:** Systematically collecting objective professional qualifications from domain experts during recruitment before assigning tasks.
+* **In This Thesis:** In the initial administrative correspondence transmitting the Guidebook to the Sangguniang Panlungsod Secretariat, the proponents request 15 volunteers and collect two objective metrics: (1) **Highest Educational Attainment** (J.D., LL.B., LL.M., Bar admission); and (2) **Years of Experience** in legislative drafting and statutory review. These metrics are used to stratify panels and objectively select Senior Annotators (Snow et al., 2008; Zheng et al., 2021).
+
+### **Batched Consensus Allocation (Ablazo Framework)**
+* **Plain Meaning:** A workload distribution model that achieves multi-rater voting overlap without overloading individual experts.
+* **In This Thesis:** Adapted from Ablazo (2019), the 350 pairs $\times$ 3 independent votes ($1,050$ total annotations) are divided among 15 legal researchers organized into five 3-member panels ($P = 15, k = 3$). Each researcher reviews exactly **70 pairs**, taking approximately 60–90 minutes.
+
+### **Fleiss' Kappa ($\kappa$)**
+* **Plain Meaning:** A statistical measure of agreement between three or more raters that accounts for the possibility of agreement occurring by chance.
+* **In This Thesis:** Calculated across the initial independent votes of the 15 SP legal researchers. The study targets a threshold of $\kappa \ge 0.61$ ("Substantial Agreement"), bounded by the NLI human agreement ceiling established by Bowman et al. (SNLI, $\sim 0.70$).
 
 ---
 

@@ -171,7 +171,7 @@ For each text pair in your evaluation form, you will provide three inputs:
 
 ## 10. Submission Mechanics & Google Forms Allocation
 
-To ensure balanced evaluator workload and prevent cognitive fatigue, the 350-pair ground truth benchmark is partitioned into five distinct evaluation sets of exactly 70 pairs each. Evaluators are organized into five panels with three independent raters per panel ($k=3$), ensuring statistically rigorous multi-rater consensus:
+To ensure balanced evaluator workload and prevent cognitive fatigue, the 350-pair ground truth benchmark is partitioned into five distinct evaluation sets of exactly 70 pairs each. Evaluators are organized into five panels with three independent raters per panel ($k=3$), ensuring statistically rigorous multi-rater consensus (with one member per panel designated as Senior Annotator based on credentials collected during intake):
 
 | Panel | Assigned Set | Evaluator ID Allocation | Evaluation Pair IDs |
 | :--- | :--- | :--- | :--- |
@@ -192,11 +192,20 @@ To ensure balanced evaluator workload and prevent cognitive fatigue, the 350-pai
 
 ## 11. Multi-Rater Consensus & Adjudication Protocol
 
-To alleviate decision fatigue and assure evaluators that individual borderline decisions will not skew the benchmark, our research implements a rigorous statistical consensus protocol:
-* **Independent Raters:** Each pair is evaluated independently by all three legal researchers in the assigned panel without mutual consultation.
-* **Majority Rule Acceptance:** If at least 2 out of 3 evaluators agree on the label (e.g., Contradiction - Contradiction - Neutral), the majority judgment is accepted as the final Ground Truth.
-* **Senior Legal Adjudication:** In rare instances of a three-way split (1 Contradiction, 1 Entailment, 1 Neutral), the pair is referred to a Senior Legal Researcher / Legislative Counsel for binding qualitative adjudication.
-* **Statistical Validation:** Inter-annotator reliability will be formally reported in the thesis using Fleiss' Kappa ($\kappa$) and percent agreement.
+To alleviate decision fatigue and assure evaluators that individual borderline decisions will not skew the benchmark, our research implements a rigorous statistical consensus protocol adapted from established natural language inference benchmarks (Ablazo, 2019; Bowman et al., 2015):
+
+* **Independent Initial Ratings:** Each pair is evaluated independently by all three legal researchers in the assigned panel without mutual consultation, preserving authentic inter-rater variance.
+* **Majority Rule Acceptance:** If at least 2 out of 3 evaluators agree on the label (e.g., Contradiction–Contradiction–Neutral), the majority judgment is accepted directly as the final Ground Truth label.
+* **Senior Annotator Role & Purpose:** Within each three-member panel (Panels A through E), one evaluator is designated as the **Senior Annotator** (Panel Lead / Adjudicator). Their core responsibilities include:
+  * **Binding Qualitative Adjudication (Tie-Breaking):** In rare instances of a three-way split (1 Contradiction, 1 Entailment, 1 Neutral) where no 2-out-of-3 majority consensus exists, the pair is referred to the Senior Annotator of that specific panel to perform an authoritative qualitative review against the statutory codebook and determine the final Ground Truth label (following hierarchical annotation frameworks; Gao et al., 2022; Artstein & Poesio, 2008).
+  * **Resolving Edge Cases & Ambiguities:** When subtle statutory phrasing or administrative euphemisms create uncertainty, the Senior Annotator reviews the pair against the standardized codebook to reconcile whether the discrepancy arose from differing interpretations or an overlooked provisos clause.
+  * **Panel Point of Contact & Quality Assurance:** Serving as the primary panel contact for procedural questions regarding the annotation guidelines, while ensuring that all initial round ratings remain completely independent.
+* **Senior Annotator Selection & Designation Methodology:** To ensure an objective, transparent, and credential-backed designation process, Senior Annotators are chosen through a four-step intake protocol established during the initial administrative engagement with the Sangguniang Panlungsod:
+  * **Initial Administrative Outreach (15 Volunteers):** In the proponents' initial official communication to the Sangguniang Panlungsod transmitting this Legal Annotation Guidebook, the proponents formally request a cohort of 15 volunteer legal researchers and legislative staff across the council offices.
+  * **Intake Credential Profiling:** Alongside the volunteer roster, the proponents systematically collect two objective profiling metrics from each participant: (1) **Highest Educational Attainment** (e.g., Juris Doctor [J.D.], Bachelor of Laws [LL.B.], Master of Laws [LL.M.], Philippine Bar admission, or relevant postgraduate legal degrees); and (2) **Years of Professional Experience** in legislative drafting, statutory research, ordinance codification, or legal committee review at the Sangguniang Panlungsod.
+  * **Objective Panel Stratification & Designation:** Upon receiving the roster and credentials from the SP Secretariat, the proponents organize the 15 volunteers into the 5 balanced panels (3 members per panel) and objectively designate the evaluator within each panel possessing the highest educational attainment and longest legislative drafting tenure as that panel's Senior Annotator (Snow et al., 2008; Zheng et al., 2021; Chalkidis et al., 2022).
+  * **Confirmation & Procedural Readiness:** In the follow-up confirmation email to the SP and the panels, the proponents confirm panel assignments and explicitly communicate who the designated Senior Annotator is for each panel, establishing clear procedural readiness "just in case" qualitative tie-breaking or adjudication is required.
+* **Statistical Validation:** Inter-annotator reliability will be formally reported in the thesis using Fleiss' Kappa ($\kappa$) and percent agreement across all initial independent ratings prior to adjudication.
 
 ---
 

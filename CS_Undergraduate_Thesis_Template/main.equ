@@ -2,13 +2,13 @@
 \contentsline {equation}{\numberline {3.2}Macro Legal Domain Centroid and Softmax Probability}{60}{equation.3.2}%
 \contentsline {equation}{\numberline {3.3}Max-Pooled Sub-Chunk Contradiction Probability}{68}{equation.3.3}%
 \contentsline {equation}{\numberline {3.4}Hierarchical Metadata-Prepended Statutory Chunk Representation}{68}{equation.3.4}%
-\contentsline {equation}{\numberline {3.5}Reciprocal Rank Fusion (RRF) Ranking Score}{78}{equation.3.5}%
+\contentsline {equation}{\numberline {3.5}Reciprocal Rank Fusion (RRF) Ranking Score}{79}{equation.3.5}%
 \contentsline {equation}{\numberline {3.6}Information Retrieval Recall at Rank $k$ ($\text {Recall@}k$)}{84}{equation.3.6}%
 \contentsline {equation}{\numberline {3.7}Mean Reciprocal Rank at Rank $k$ ($\text {MRR@}k$)}{84}{equation.3.7}%
-\contentsline {equation}{\numberline {3.8}Class-Specific Precision, Recall, and $F_1$-Score}{84}{equation.3.8}%
-\contentsline {equation}{\numberline {3.9}Macro-Averaged $F_1$-Score Across Logical Classes}{84}{equation.3.9}%
+\contentsline {equation}{\numberline {3.8}Class-Specific Precision, Recall, and $F_1$-Score}{85}{equation.3.8}%
+\contentsline {equation}{\numberline {3.9}Macro-Averaged $F_1$-Score Across Logical Classes}{85}{equation.3.9}%
 \contentsline {equation}{\numberline {3.10}Cost-Sensitive Contradiction $F_2$-Score}{85}{equation.3.10}%
 \contentsline {equation}{\numberline {3.11}Optimal Contradiction Decision Threshold Calibration ($\tau ^*$)}{85}{equation.3.11}%
 \contentsline {equation}{\numberline {3.12}McNemar's Chi-Squared Test with Edwards' Continuity Correction}{86}{equation.3.12}%
-\contentsline {equation}{\numberline {3.13}Friedman Two-Way Analysis of Variance by Ranks ($\chi _F^2$)}{86}{equation.3.13}%
+\contentsline {equation}{\numberline {3.13}Friedman Two-Way Analysis of Variance by Ranks ($\chi _F^2$)}{87}{equation.3.13}%
 \contentsline {equation}{\numberline {4.1}Multi-Class Cross-Entropy Training Loss Function}{94}{equation.4.1}%
