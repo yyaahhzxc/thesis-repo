@@ -261,6 +261,44 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** A statistical metric that measures how consistently multiple human judges agree with each other, adjusted for how often they might agree by pure luck/chance.
 * **In This Thesis:** Bounded between $0.0$ and $1.0$. We target $\kappa \ge 0.61$ ("Substantial Agreement") across the 15 SP legal researchers.
 
+### **Three-Tier System Evaluation Framework**
+* **Plain Meaning:** A comprehensive evaluation methodology that validates the system at three complementary operational levels: component/algorithmic, full-document simulation, and real-world judicial/expert application.
+* **In This Thesis:** Connects (1) Tier 1: Cascaded End-to-End Benchmark (algorithmic testing on 53 held-out test pairs); (2) Tier 2: Injected-Fault Full-Document Stress Testing (behavioral perturbation testing on full drafts); and (3) Tier 3: Historical Jurisprudential Validation (Supreme Court cases like *Mosqueda v. PBGEA*) and Sangguniang Panlungsod Human Evaluation.
+
+### **Cascaded End-to-End Evaluation (Joint Hit Indicator)**
+* **Plain Meaning:** Testing a multi-stage AI pipeline as a unified chain without spoon-feeding intermediate answers.
+* **In This Thesis:** Rather than giving Stage 2 the correct national statute, the local draft clause is fed blindly into Stage 1, which searches all 27,000+ laws. A prediction is scored as a true hit ($\text{Hit}_{\text{casc}} = 1$) if and only if Stage 1 retrieved the correct statute in its top-$k$ shortlist AND Stage 2 correctly classified the conflict. Adapting the FEVER benchmark protocol (Thorne et al., 2018), this prevents high Stage 2 accuracy from masking retrieval failures.
+
+### **Injected-Fault Testing (Behavioral Perturbation Testing)**
+* **Plain Meaning:** Stress-testing software by deliberately inserting specific bugs or traps into an otherwise clean document to see if the system catches them while ignoring the innocent parts.
+* **In This Thesis:** Adapting the CheckList framework (Ribeiro et al., 2020), we take full 8-to-12 section draft ordinances where 80–90% of clauses are standard legal text, and inject deliberate preemption violations into 1 or 2 target sections (e.g., penalty caps under RA 7160 §458). We measure Section-Level Sensitivity (did it catch the trap?) and Section-Level Specificity (did it avoid raising false alarms on compliant sections?).
+
+### **System Usability Scale (SUS)**
+* **Plain Meaning:** A standardized 10-item Likert survey used in human-computer interaction to evaluate how easy, intuitive, and usable a software tool is.
+* **In This Thesis:** Administered to the 15 Sangguniang Panlungsod legal researchers after using the single-page prototype dashboard during First Reading committee review simulations (Brooke, 1996). A SUS score above 68 represents above-average usability.
+
+### **Digital-Born Document Ingestion**
+* **Plain Meaning:** Ingesting newly drafted electronic files exported directly from word processors or digital PDFs, rather than legacy scanned paper images.
+* **In This Thesis:** Live ex-ante draft ordinances submitted to the system are digital-born files with clean Unicode text, bypassing the OCR error correction pipeline required for legacy scanned ordinances from the 1970s–2000s.
+
+### **Procedural Boilerplate Filtering**
+* **Plain Meaning:** Automatically ignoring formulaic administrative sections of an ordinance that do not contain actual substantive legal rules or prohibitions.
+* **In This Thesis:** The regex preprocessor automatically skips Title, Separability, Repealing, and Effectivity clauses during Stage 1 candidate retrieval to prevent search drift and avoid matching irrelevant national administrative statutes.
+
+### **Section-Level Max-Pooling Aggregation**
+* **Plain Meaning:** Consolidating multiple candidate prediction scores for a single section into one overall conflict verdict.
+* **In This Thesis:** For a section $S_i$, Stage 2 evaluates all $k = 50$ candidate statutory provisions. The section's final conflict probability is the maximum contradiction score across all candidates: $P(\text{Conflict} \mid S_i) = \max_j P(\text{Contradiction} \mid P_j, S_i)$. If this maximum exceeds $\tau^*$, the section is flagged and linked directly to the specific statute that caused the highest contradiction score.
+
+### **Two-Tiered Conflict Categorization (Red vs. Amber)**
+* **Plain Meaning:** Distinguishing fatal legal violations against national law from routine municipal updates against older local laws.
+* **In This Thesis:**
+  1. **Critical Vertical Preemption Alert (Red):** Conflict with a superior Philippine National Statute under the *Magtajas* doctrine (fatal legal defect; *ultra vires*).
+  2. **Informational Horizontal Modification Notice (Amber):** Inconsistency with an older Davao City Ordinance (signals an intended legislative amendment or implied repeal, alerting the drafter to verify their repealing clause).
+
+### **Intrinsic Structural Explainability**
+* **Plain Meaning:** Explaining an AI decision by directly displaying the exact source texts side-by-side with matched keywords, rather than generating black-box approximations.
+* **In This Thesis:** The web dashboard displays the exact draft section side-by-side with the governing national statute, shows the calibrated contradiction probability ($P(\text{Contradiction})$), and highlights overlapping regulated entities and conflicting command words (*shall* vs. *may*, *prohibited* vs. *allowed*).
+
 ---
 
 ## **6. Statistical Hypothesis Testing (Comparing Models)**
