@@ -147,9 +147,23 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 
 ### **Candidate Transformer Models**
 * **BERT (Devlin et al., 2019):** The foundational bidirectional transformer model.
-* **RoBERTa (Liu et al., 2019):** An optimized version of BERT trained on more data with better tuning.
+* **RoBERTa (Liu et al., 2019):** An optimized version of BERT trained on more data with dynamic masking. `roberta-large-mnli` serves as our canonical unadapted zero-shot baseline from COLIEE Task 4 literature (Rabelo et al., 2022).
 * **DeBERTa-v3 (He et al., 2021):** Features "disentangled attention" (evaluating a word's meaning and its relative position separately), making it exceptionally strong at subtle grammatical nuances like "shall" vs. "may".
-* **ModernBERT (Warner et al., 2024):** A state-of-the-art 2024 architecture featuring FlashAttention-2, native rotary embeddings, and support for up to 8,192 tokens.
+* **ModernBERT (Warner et al., 2024):** A state-of-the-art 2024 architecture featuring FlashAttention-2, native rotary embeddings (RoPE), and support for up to 8,192 tokens.
+* **LEGAL-BERT (Chalkidis et al., 2020):** A domain-specific encoder pretrained from scratch on 12GB of European and US legal and statutory corpora with a specialized legal vocabulary.
+* **Pile-of-Law BERT (Henderson et al., 2022):** A 340M-parameter model pretrained on a 256GB corpus of administrative codes, statutory enactments, and municipal regulations.
+* **BGE-Reranker-v2-m3 (Xiao et al., 2024):** A multilingual cross-encoder supporting 8,192 tokens, pretrained on hard-negative pairs and evaluated in COLIEE 2025/2026.
+
+### **LexGLUE Benchmark (Legal General Language Understanding Evaluation)**
+* **Plain Meaning:** The gold-standard collection of legal NLP benchmark datasets (CaseHOLD, SCOTUS, EUR-LEX, ECtHR, etc.) used to evaluate whether language models understand specialized legal and statutory syntax (Chalkidis et al., 2022).
+
+### **NLI Pre-Alignment (Warm Logical Initialization)**
+* **Plain Meaning:** Starting fine-tuning from a model checkpoint that was already fine-tuned on large general NLI datasets (MNLI, FEVER, ANLI) rather than starting from raw Masked Language Model (MLM) weights.
+* **In This Thesis:** Models like `MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli` already possess pre-trained sensitivity to logical negation and contradiction. Fine-tuning them on our 245-pair Philippine ground truth dataset adapts their logic to statutory vocabulary without requiring the classification head to learn the definition of "contradiction" from scratch.
+
+### **Replaced Token Detection (RTD)**
+* **Plain Meaning:** A pretraining objective used by ELECTRA where a generator replaces some words and a discriminator must predict whether each word in the sequence is original or replaced.
+* **In This Thesis:** Unlike standard BERT which only learns from 15% masked words per sentence, RTD trains across 100% of tokens in every input, resulting in exceptionally high sample efficiency when fine-tuning on small datasets ($N_{\text{train}} = 245$).
 
 ### **Explainable AI (XAI) & Attention Heatmaps**
 * **Plain Meaning:** Making the model's inner reasoning transparent to humans without generating hallucinated summaries.
