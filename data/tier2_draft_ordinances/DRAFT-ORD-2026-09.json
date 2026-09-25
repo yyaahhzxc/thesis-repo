@@ -1,0 +1,126 @@
+{
+  "doc_id": "DRAFT-ORD-2026-09",
+  "title": "AN ORDINANCE REGULATING TELECOMMUNICATIONS CABLE INSTALLATIONS, UNDERGROUND UTILITY DUCTS, AND RESTORATION OF PUBLIC ROADS IN DAVAO CITY",
+  "proposed_ordinance_no": "Proposed Ordinance No. 2026-09, Series of 2026",
+  "committee": "Committee on Public Works and Telecommunications, Sangguniang Panlungsod",
+  "physical_specs": {
+    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
+    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
+    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
+    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
+  },
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be cited as the 'Davao City Telecommunications Infrastructure and Underground Cabling Ordinance of 2026'.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard title provision."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "DECLARATION OF INFRASTRUCTURE POLICY",
+      "text": "The City Government ensures public road safety, prevents aerial cable clutter, and coordinates telecommunications infrastructure pursuant to Republic Act No. 7925 and Republic Act No. 7160.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7925 §4; Republic Act No. 7160 §458(a)(5)(vi)",
+      "legal_rationale": "Valid municipal police power over city roads and utilities."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "'Public Telecommunications Entity' refers to any entity authorized to provide public telecommunications services. 'Excavation Permit' refers to an authorization to dig public streets.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard definitions."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "EXCAVATION PERMITS AND RESTORATION BONDS",
+      "text": "All telecommunications utilities undertaking street excavation for fiber optic installation must obtain an Excavation Permit from the City Engineer and post a performance restoration bond.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(5)(vi)",
+      "legal_rationale": "Direct municipal authority to regulate street digging and ensure road repair."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "UNDERGROUND CABLING MANDATE IN HERITAGE ZONES",
+      "text": "All overhead aerial power and telecommunications cables within the designated downtown historical and commercial zones must be placed underground within three (3) years.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
+      "legal_rationale": "Valid local zoning and public safety measure."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "LOCAL LEGISLATIVE FRANCHISE REQUIREMENT FOR WIRELESS CARRIERS",
+      "text": "No public telecommunications entity holding a national legislative franchise from the Congress of the Philippines shall transmit wireless cellular signals or operate frequency transmitters within Davao City without first obtaining a separate secondary legislative franchise approved by the Sangguniang Panlungsod.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7925 §5; Republic Act No. 7925 §21; Presidential Decree No. 576-A §1",
+      "legal_rationale": "Directly contradicts Republic Act No. 7925 which vests exclusive regulatory authority over wireless frequencies and national telecommunications carriers in the National Telecommunications Commission (NTC). Confirmed in Batangas CATV v. CA (2004) under the preemption doctrine."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "UNILATERAL RATE REGULATION OF INTERNET SERVICES",
+      "text": "The Sangguniang Panlungsod shall fix the maximum retail subscription tariffs that mobile telephone carriers may charge individual subscribers residing within Davao City.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7925 §17; 1987 Constitution Art. XII §19",
+      "legal_rationale": "Directly violates Section 17 of Republic Act No. 7925, which reserves the regulation and deregulation of telecommunication tariffs exclusively to the NTC."
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "SHARED TELECOMMUNICATION TOWER INFRASTRUCTURE",
+      "text": "Cellular operators are encouraged to utilize shared passive infrastructure and co-locate on authorized common cellular towers.",
+      "label": "Neutral",
+      "target_statute": "DICT Department Circular No. 008-2020",
+      "legal_rationale": "Parallels national DICT common tower policy."
+    },
+    {
+      "sec_num": 9,
+      "sec_title": "RESTORATION QUALITY STANDARDS",
+      "text": "Excavated road trenches must be restored to original asphalt or concrete specifications within forty-eight (48) hours of cable laying.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard municipal engineering requirement."
+    },
+    {
+      "sec_num": 10,
+      "sec_title": "COORDINATING INFRASTRUCTURE COMMITTEE",
+      "text": "The City Telecommunications Infrastructure Coordinating Committee shall coordinate all scheduled road works to prevent duplicate street diggings.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Municipal inter-agency administrative tasking."
+    },
+    {
+      "sec_num": 11,
+      "sec_title": "PENALTIES AND FINES",
+      "text": "Unauthorized excavation or failure to restore roads shall be penalized by a fine of P5,000.00 and forfeiture of the restoration bond.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Statutory fine within municipal limits."
+    },
+    {
+      "sec_num": 12,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "Invalidity of any section shall not affect the remaining portions.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard separability clause."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "All prior conflicting municipal measures are repealed.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard repealing clause."
+    },
+    {
+      "sec_num": 14,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Ordinance takes effect thirty (30) days from publication.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard effectivity clause."
+    }
+  ]
+}

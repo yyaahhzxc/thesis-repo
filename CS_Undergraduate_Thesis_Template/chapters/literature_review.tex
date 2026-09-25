@@ -93,6 +93,20 @@ The Philippine legal system is a unitary state. This means that Local Government
         A fundamental design decision in legal informatics is delineating which positive legal instruments establish binding preemption standards. Under Article~VII, Section~17 of the 1987 Philippine Constitution and Book~III, Title~I, Chapter~2, Section~2 of the Administrative Code of 1987 (Executive Order No.~292)~\cite{philgov1987eo292}, Executive Orders (EOs) are acts of the President providing rules of a general or permanent character in implementation or execution of constitutional or statutory mandates. Unlike Supreme Court decisions—which function as \textit{ex-post} judicial dispute resolutions settling adversarial controversies under the doctrine of \textit{stare decisis} (Article~8, Civil Code)—Executive Orders operate as \textit{ex-ante}, forward-looking statutory instruments possessing the full force and effect of law. Furthermore, during both the Martial Law period (1972--1986) and the Revolutionary Government under the Freedom Constitution (Proclamation No.~3, 1986--1987), the President exercised direct legislative powers through Executive Orders and Presidential Decrees, creating substantive national enactments that remain operative law today. Modern Executive Orders frequently establish binding nationwide regulatory standards—such as Executive Order No.~26 (s.~2017) establishing nationwide public smoking prohibitions, or Executive Order No.~168 (s.~2014) creating the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF)—that legally preempt conflicting municipal legislation. Excluding Executive Orders would therefore omit critical nationwide regulatory mandates that local ordinances are legally bound to respect.
     \end{description}
 
+    \subsection{Historical Evolution and Dual Stylistic Heritage}
+    The structural complexity of Philippine legislative text stems directly from the nation's historical experience as a mixed legal jurisdiction~\cite{agpalo2009statutory, cruz2007political}. Philippine jurisprudence combines continental civil law traditions with Anglo-American statutory common law conventions. Understanding why Philippine statutes and local ordinances are drafted in their characteristic syntax requires examining how these colonial and post-colonial traditions fused over more than a century of codification.
+
+    \begin{description}
+        \item[The Continental Civil Law Heritage.]
+        During more than three centuries of Spanish rule, the Philippine legal system was rooted firmly in the Roman-Germanic civil law tradition~\cite{agpalo2009statutory}. This continental tradition emphasized systematic codification, deductive legal reasoning, and broad normative principles organized into structured books, titles, and chapters. Foundational enactments, such as the Spanish Civil Code of 1889 and the Penal Code of 1870, relied on generalized legal mandates rather than granular factual definitions. Furthermore, this civilian heritage embedded a rich vocabulary of Latin doctrinal maxims into Philippine jurisprudence, including \textit{in pari materia} (construing related laws together), \textit{generalia specialibus non derogant} (a general law does not override a specific one), and \textit{ultra vires} (acts beyond legal authority)~\cite{agpalo2009statutory}. Modern Philippine codes retain this civilian structure, expecting adjudicators to derive specific legal duties from overarching normative commands.
+
+        \item[The Anglo-American Statutory Drafting Overlay.]
+        Following the Treaty of Paris and the establishment of the American Insular Government (1900--1935), American legal administrators introduced common law statutory drafting habits without fully displacing the civilian codification base~\cite{cruz2007political}. Enacted by the Philippine Commission and later the Philippine Legislature, early statutes introduced formal drafting conventions borrowed directly from United States federal and state legislation. These conventions included explicit statutory title preambles, exhaustive definitions sections, severability clauses, and general repealing provisions~\cite{agpalo2009statutory}. Crucially, American administrators introduced the practice of drafting extensive conditional provisos (introduced by the traditional formula ``\textit{Provided, that...}'' and ``\textit{Provided, further, that...}''), designed to restrict, qualify, or create exceptions to preceding operative clauses within the same section. The Revised Administrative Code of 1917 (Act No.~2711) and the contemporary Administrative Code of 1987 (Executive Order No.~292) solidified this mixed tradition, confirming English as the controlling statutory language while maintaining civil law institutional categories~\cite{philgov1987eo292}.
+
+        \item[Structural and Linguistic Implications.]
+        This dual heritage produces a legislative drafting style marked by high syntactic density and multi-clause complexity. Unlike standard conversational English, a single statutory provision frequently spans one hundred to two hundred words contained within a solitary grammatical sentence~\cite{bernardo2023demystify}. These sentences embed multiple dependent clauses, qualifying prepositional phrases, and recursive proviso exceptions. At the municipal level, local legislative staff adopt this formal national drafting template while adding procedural boilerplate, resulting in verbose ordinances where the operative regulatory command is separated from its governing subject by dozens of intervening words~\cite{dilg2022drafting, spdc2022ra00122}. From an analytical and document processing perspective, this hybrid syntax presents substantial structural hurdles: archaic legal terms resist straightforward vocabulary normalization, long-distance dependencies obscure the core legal directive, and qualifying provisos invert the practical meaning of preceding clauses unless the text is examined in its full structural context.
+    \end{description}
+
     \subsection{Procedural and Linguistic Friction}
     Besides the hierarchy of laws, the actual way local laws are written and passed creates a lot of inconsistencies in language and format. National laws are usually written by specialized committees using standard legal terms. However, local ordinances go through a localized process that often breaks up formal language. To detect conflicts accurately, the computer system must be adjusted to handle the "noise" and confusion caused by using two languages in the Davao City Council (Sangguniang Panlungsod).
     
@@ -387,18 +401,16 @@ Information Retrieval (IR) is the process of extracting relevant documents from 
     \begin{description}
         \item[Probabilistic Lexical Retrieval (Okapi BM25).]
         The foundational baseline for document retrieval in computational law is the Okapi BM25 model, formulated by Robertson and Zaragoza~\cite{robertson2009probabilistic} within the probabilistic relevance framework. BM25 scores the relevance of a statutory document $D$ to a query $Q$ by evaluating non-linear term frequency saturation and document length normalization:
-        \begin{equation}
+        \[
             S_{\text{BM25}}(D, Q) = \sum_{q \in Q} \text{IDF}(q) \cdot \frac{f(q, D) \cdot (k_1 + 1)}{f(q, D) + k_1 \cdot \left(1 - b + b \cdot \frac{|D|}{\text{avgdl}}\right)}
-            \label{eq:rrl_bm25_formulation}
-        \end{equation}
+        \]
         where $f(q, D)$ denotes term frequency, $|D|/\text{avgdl}$ normalizes for provision length, and parameters $k_1 = 1.5$ and $b = 0.75$ govern term saturation and length penalization. In statutory retrieval (such as COLIEE Task~3), BM25 serves as an indispensable baseline (as demonstrated by Team AIIR~\cite{wu2025aiir}) because legislative drafting routinely depends on exact statutory section citations, formal administrative acronyms, and verbatim penal monetary amounts. However, as established by Blair and Maron~\cite{blair1985an} and Manning et al.~\cite{manning2008introduction}, exact lexical matching suffers from the vocabulary mismatch problem: when local ordinances paraphrase statutory commands or enact indirect prohibitions using alternative civic vocabulary, BM25 fails to retrieve governing laws.
 
         \item[Dense Vector Semantic Retrieval.]
         To overcome the lexical bottleneck, dense retrieval maps provisions into continuous vector spaces using Siamese Bi-Encoder architectures~\cite{reimers2019sentencebert}. Rather than evaluating token overlap, dense retrievers score relevance via cosine proximity in latent semantic space:
-        \begin{equation}
+        \[
             S_{\text{dense}}(D, Q) = \frac{\mathbf{e}_Q \cdot \mathbf{e}_D}{\|\mathbf{e}_Q\| \|\mathbf{e}_D\|}
-            \label{eq:rrl_dense_cosine}
-        \end{equation}
+        \]
         where $\mathbf{e}_Q$ and $\mathbf{e}_D$ represent pooled contextual embeddings generated by models such as \texttt{all-MiniLM-L6-v2}. In statutory preemption analysis, dense representations capture conceptual legal intent, successfully retrieving governing statutes even when local drafts employ entirely disparate phrasing.
 
         \item[The Domain Filtering Dilemma: Hard Pruning vs. Soft Priors.]
@@ -408,16 +420,14 @@ Information Retrieval (IR) is the process of extracting relevant documents from 
         Because lexical and semantic retrievers exhibit orthogonal failure modes, leading computational law frameworks combine both streams. In the literature, two primary fusion paradigms predominate:
         \begin{itemize}
             \item \textit{Score-Level Linear Combination (The JNLP Paradigm):} Championed by Team JNLP in the COLIEE competitions~\cite{goebel2026an}, weighted linear interpolation combines normalized sparse and dense scores:
-            \begin{equation}
+            \[
                 S_{\text{hybrid}}(D, Q) = \alpha \cdot \hat{S}_{\text{dense}}(D, Q) + (1 - \alpha) \cdot \hat{S}_{\text{BM25}}(D, Q)
-                \label{eq:rrl_hybrid_jnlp}
-            \end{equation}
+            \]
             where $\alpha \in [0, 1]$ balances semantic and lexical bias. However, because BM25 scores are unbounded while cosine similarities span $[-1, 1]$, linear combination requires min-max normalization, which can introduce instability across heterogeneous query lengths.
             \item \textit{Rank-Level Reciprocal Rank Fusion (RRF):} To eliminate score normalization artifacts, Cormack, Clarke, and Buettcher~\cite{cormack2009reciprocal} formulated Reciprocal Rank Fusion:
-            \begin{equation}
+            \[
                 \text{RRF}(D) = \sum_{m \in \mathcal{M}} \frac{1}{k_{\text{rrf}} + \text{rank}_m(D)}
-                \label{eq:rrl_rrf_formulation}
-            \end{equation}
+            \]
             where $\mathcal{M} = \{\text{BM25}, \text{Dense}\}$ and $k_{\text{rrf}} = 60$. Because RRF operates strictly on ordinal ranking positions, it provides scale invariance, eliminates distribution sensitivity, and ensures that provisions performing well across both lexical and semantic modalities are prioritized.
         \end{itemize}
 

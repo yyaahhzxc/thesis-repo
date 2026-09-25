@@ -69,6 +69,10 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** Evaluating a draft local ordinance provision against **one** statutory provision at a time.
 * **In This Thesis:** Instead of asking an AI to simultaneously digest a web of 10 different laws at once (which causes severe hallucinations and requires massive cloud servers), our pipeline pairs each candidate draft section with a single statutory section. This keeps inference fast, mathematically sound, and executable on standard local office hardware.
 
+### **Dual Legislative Heritage (Civil Law Codification & Anglo-American Drafting)**
+* **Plain Meaning:** The unique historical blend of Spanish Continental civil law structure (systematic, abstract codification) and American common law legislative drafting (highly technical, verbose, enumerative administrative provisions).
+* **In This Thesis:** Philippine statutes inherit both styles. Foundational codes (Civil Code, Local Government Code) use dense, high-level abstract principles, while modern regulatory Republic Acts and municipal ordinances use granular, clause-heavy sentences with multi-condition qualifiers ("Provided, that...", "Notwithstanding..."). Our tokenization, structural section chunking, and cross-attention models are specifically tailored to parse this complex syntactic blend.
+
 ---
 
 ## **2. Stage 1: Information Retrieval (IR) & Coarse Filtering**
@@ -115,6 +119,14 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** Splitting massive legal documents into manageable pieces.
 * **In This Thesis:** Instead of feeding an entire 100-page Republic Act into the model at once, we split statutes at the **Section / Article level**. In Philippine law, each section acts as a self-contained rule with its own conditions and penalties.
 
+### **Reciprocal Rank Fusion (RRF)**
+* **Plain Meaning:** A ranking formula that merges results from multiple search systems (like BM25 keyword search and Bi-Encoder vector search) using only their rank positions rather than arbitrary raw scores: $\text{RRF}(d) = \sum \frac{1}{k_{\text{rrf}} + \text{rank}(d)}$.
+* **In This Thesis:** RRF with smoothing constant $k_{\text{rrf}} = 60$ fuses the top-100 BM25 list and the top-100 MiniLM dense vector list into a single unified top-50 shortlist, achieving 100.0% candidate Recall@50 without requiring fragile score normalization.
+
+### **Hierarchy Priority Safeguard ($\beta$ Multiplier)**
+* **Plain Meaning:** An algorithmic safeguard that boosts the search rank of primary congressional legislation over subordinate administrative clutter.
+* **In This Thesis:** In our 25,432 national corpus, 48% of documents are administrative executive orders that share generic administrative vocabulary. A multiplicative boost factor ($\beta = 1.15$) is applied to primary enactments (Republic Acts), preventing administrative issuances from pushing critical governing codes out of the top-$k$ candidate pool and elevating MRR by +45.8%.
+
 ---
 
 ## **3. Stage 2: Natural Language Inference (NLI) & Deep Reasoning**
@@ -153,6 +165,14 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **LEGAL-BERT (Chalkidis et al., 2020):** A domain-specific encoder pretrained from scratch on 12GB of European and US legal and statutory corpora with a specialized legal vocabulary.
 * **Pile-of-Law BERT (Henderson et al., 2022):** A 340M-parameter model pretrained on a 256GB corpus of administrative codes, statutory enactments, and municipal regulations.
 * **BGE-Reranker-v2-m3 (Xiao et al., 2024):** A multilingual cross-encoder supporting 8,192 tokens, pretrained on hard-negative pairs and evaluated in COLIEE 2025/2026.
+
+### **Disentangled Attention (DeBERTa-v3)**
+* **Plain Meaning:** Representing each word using two separate vectors: one vector for its semantic content, and a separate vector for its relative position in the sentence.
+* **In This Thesis:** Unlike standard BERT which sums word and position vectors into a single vector, DeBERTa-v3 calculates attention using disentangled matrices (content-to-content, content-to-position, and position-to-content). This enables precise sensitivity to legal qualifiers ("provided that", "shall not", "unless otherwise specified") where the relative syntactic position of conditions alters deontic meaning.
+
+### **Unpadded Sequence Packing & FlashAttention-2 (ModernBERT)**
+* **Plain Meaning:** Eliminating wasteful padding tokens by concatenating variable-length sentences into a single continuous tensor, and accelerating exact attention computation directly inside GPU SRAM.
+* **In This Thesis:** Standard transformers pad shorter statutory sections with dummy `[PAD]` tokens up to the maximum batch length, wasting compute. ModernBERT uses unpadded sequence packing with FlashAttention-2, allowing efficient 8,192-token context windows without quadratic memory spikes.
 
 ### **LexGLUE Benchmark (Legal General Language Understanding Evaluation)**
 * **Plain Meaning:** The gold-standard collection of legal NLP benchmark datasets (CaseHOLD, SCOTUS, EUR-LEX, ECtHR, etc.) used to evaluate whether language models understand specialized legal and statutory syntax (Chalkidis et al., 2022).
@@ -396,4 +416,43 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 
 ---
 
+## **9. System-Level Multi-Tier Evaluation & Landmark Jurisprudence**
+
+### **Cascaded Joint Hit Metric ($\text{Hit}_{\text{casc}}$ - Tier 1)**
+* **Plain Meaning:** A strict success indicator that credits the system only if Stage 1 successfully retrieves the relevant governing statute into the top-$k$ shortlist AND Stage 2 correctly classifies the relationship (e.g., Contradiction).
+* **Why It Matters:** Adapted from the FEVER fact verification benchmark (Thorne et al., 2018), this prevents Stage 2 from falsely taking credit when Stage 1 fails to find the right law, and isolates exactly which processing stage caused a pipeline failure.
+
+### **Injected-Fault Full-Document Stress Testing (Tier 2)**
+* **Plain Meaning:** Testing the pipeline on complete, multi-page draft ordinances containing 10–18 sections rather than isolated sentence pairs, where 85–90% of the sections are benign procedural boilerplate and only 1–2 sections contain deliberate legal violations.
+* **In This Thesis:** Comprises 10 full synthetic/semi-synthetic draft ordinances ($N_{\text{sec}} = 140$ total provisions) evaluated against national statutes. It tests whether the system can spot the "needle in the haystack" (Section-Level Sensitivity) without raising annoying false alarms on standard procedural clauses (Section-Level Specificity).
+
+### **Section-Level Specificity ($\text{Specificity}_{\text{sec}}$) & False Alarm Rate ($\text{FAR}$)**
+* **Plain Meaning:** The mathematical measure of how well the system resists crying wolf on harmless legislative text:
+  $$\text{Specificity}_{\text{sec}} = \frac{TN_{\text{sec}}}{TN_{\text{sec}} + FP_{\text{sec}}}, \quad \text{FAR}_{\text{sec}} = 1 - \text{Specificity}_{\text{sec}}$$
+* **Why It Matters:** High specificity protects city council researchers from "alert fatigue." If an AI flags every standard repealing clause or definitions section as a violation, users will quickly turn the system off.
+
+### **Efficient Use of Paper Rule (SC A.M. No. 11-9-4-SC) & LGU Folio Standards**
+* **Plain Meaning:** The formal document and typography standards mandated across Philippine legal and governmental drafting.
+* **In This Thesis:** Draft ordinances in our Tier 2 benchmark adhere strictly to Philippine Government Legal/Folio size ($8.5 \times 13.0$ inches), 1.5-inch left binding margins (for Sangguniang Panlungsod LISSP archival ring-binders), 1.0-inch top/bottom/right margins, 12pt Arial/Times New Roman font, 1.5 line spacing, and the mandatory Section 54 RA 7160 enacting clause (*"BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"*).
+
+### **Behavioral Perturbation Testing (CheckList)**
+* **Plain Meaning:** A software engineering testing paradigm for AI (Ribeiro et al., 2020) that evaluates models by deliberately introducing specific, targeted linguistic or structural faults to see if the model reliably breaks or succeeds.
+
+### **Historical Judicial Validation Suite (Tier 3)**
+* **Plain Meaning:** Testing the system against authentic historical municipal ordinances that were actually litigated and resolved by the Supreme Court of the Philippines or tested under official administrative regulatory preemption boundaries.
+* **In This Thesis:** Compiled in `data/tier3_jurisprudential_cases.jsonl` and stored in `corpus/davao_city_tier3_ordinances/`, spanning 10 landmark Davao City municipal enactments:
+  1. ***Mosqueda v. PBGEA* (2016):** Davao City Ordinance No. 0309-07 banning aerial pesticide spraying was invalidated for conflicting with the Fertilizer and Pesticide Authority's national regulatory powers under PD 1144 and violating Equal Protection (`Contradiction`).
+  2. ***Evasco, Jr. v. Montañez* (2018):** Davao City Ordinance No. 092-2000 regulating outdoor billboards was upheld as a valid police power measure under RA 7160 Section 458 coexisting harmoniously with the National Building Code (`Entailment`).
+  3. ***City of Davao and Tanjili v. ARC Investors, Inc.* (2022):** Cancelled Davao City's local business tax assessment on a corporate holding company, ruling that an LGU cannot unilaterally classify a passive dividend-earning company as a financial intermediary without a BSP license (`Contradiction`).
+  4. ***Smart Communications, Inc. v. City of Davao* (2008) / *PLDT v. City of Davao* (2001):** Upheld Davao City Ordinance No. 230 / 519 imposing local franchise tax on telecom carriers, ruling that "in lieu of all taxes" franchise clauses must be strictly construed and do not abrogate municipal taxing autonomy under RA 7160 Section 137 (`Entailment`).
+  5. ***Mindanao Shopping Destination Corp. v. Duterte* (2017):** Held that Davao City Ordinance No. 158-05 graduated business tax schedules cannot exceed the statutory tax rate ceilings established in RA 7160 Section 143 (`Contradiction`).
+  6. ***City of Davao v. GSIS* (2005):** Invalidated real property tax assessments on GSIS facilities under RA 7160 Section 133(o), which strictly prohibits LGUs from taxing national government instrumentalities (`Contradiction`).
+  7. ***Davao City Mining Ban Dispute* (2015):** The territorial mining prohibition under Ordinance No. 0310-07 operates in direct vertical tension with State mineral ownership and concessions under RA 7942 (`Contradiction` / Vertical Tension).
+  8. ***Davao Anti-Smoking Ordinance* (2012):** Stricter local smoking setbacks under Ordinance No. 0367-12 are valid police power measures because national tobacco law (RA 9211) establishes minimum health baselines, not maximum ceilings (`Entailment`).
+  9. ***Davao City Speed Limit Ordinance* (2023):** Davao City Ordinance No. 0270-23 establishing road speed classifications is valid pursuant to delegated authority under RA 4136 §38 and Joint DOTr-DPWH-DILG JAO 2018-01 (`Entailment`).
+  10. ***Davao City Firecracker Ban Ordinance* (2002):** Davao City Ordinance No. 060-02 imposing a total ban on pyrotechnics is a valid municipal exercise of general welfare police power to protect life and safety under RA 7160 §16 and §458(a)(1)(vi) (`Entailment`).
+
+---
+
 *This glossary is maintained as a living reference. Whenever new models, metrics, or legal doctrines are introduced to the thesis manuscript, they are immediately added here.*
+

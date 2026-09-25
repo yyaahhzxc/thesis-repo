@@ -1,0 +1,118 @@
+{
+  "doc_id": "DRAFT-ORD-2026-04",
+  "title": "AN ORDINANCE STRENGTHENING THE LOCAL PRICE COORDINATING COUNCIL, REGULATING COMMODITY PRICE MONITORING, AND PREVENTING HOARDING DURING CALAMITIES IN DAVAO CITY",
+  "proposed_ordinance_no": "Proposed Ordinance No. 2026-04, Series of 2026",
+  "committee": "Committee on Trade, Commerce and Industry, Sangguniang Panlungsod",
+  "physical_specs": {
+    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
+    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
+    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
+    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
+  },
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be known as the 'Davao City Fair Price and Calamity Consumer Protection Ordinance of 2026'.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard title provision."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "DECLARATION OF CONSUMER PROTECTION POLICY",
+      "text": "The City Government ensures the availability of basic necessities and prime commodities at reasonable prices, protecting consumers from trade malpractices pursuant to Republic Act No. 7581.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7581 §2",
+      "legal_rationale": "Directly implements the national Price Act policy."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "LOCAL PRICE COORDINATING COUNCIL",
+      "text": "The Davao City Local Price Coordinating Council (LPCC) is hereby revitalized, with the City Mayor as Chairman and the DTI Provincial Director as Vice Chairman.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7581 §12; DILG-DTI-DA-DOH JAO 2013-01",
+      "legal_rationale": "Directly implements national institutional architecture for local price coordination."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "AUTOMATIC PRICE FREEZE UPON CALAMITY",
+      "text": "Upon declaration of a state of calamity by the Sangguniang Panlungsod, prices of basic necessities shall be automatically frozen at their prevailing market rates.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7581 §6; Republic Act No. 10121 §16",
+      "legal_rationale": "Echoes mandatory statutory price freeze triggered by LGU state of calamity declaration."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "DEFINITION OF BASIC NECESSITIES",
+      "text": "'Basic Necessities' shall include rice, corn, bread, fresh fish, pork, beef, poultry, vegetables, root crops, fresh milk, cooking oil, salt, laundry soap, and medicines.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard statutory categorization from RA 7581."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "MUNICIPAL UNILATERAL PRICE MANDATE",
+      "text": "The City Mayor, by executive order, is hereby authorized to unilaterally fix and mandate price ceilings on all manufactured consumer goods at fifty percent (50%) below the Suggested Retail Price (SRP) issued by the Department of Trade and Industry, without presidential approval or emergency proclamation.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7581 §7",
+      "legal_rationale": "Directly contradicts Republic Act No. 7581 Section 7, which reserves the power to mandate price ceilings strictly to the President of the Philippines upon recommendation of the implementing agency."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "INSPECTION OF WAREHOUSES AND RETAIL OUTLETS",
+      "text": "Authorized joint inspection teams of the LPCC and DTI may conduct periodic inspections of commercial storage facilities to verify inventory logs.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard joint regulatory inspection powers."
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "PROHIBITION OF PROFITEERING AND HOARDING",
+      "text": "No retail or wholesale merchant shall accumulate goods in excess of normal inventory to corner the market or sell above prevailing price freezes.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7581 §5",
+      "legal_rationale": "Parallels national anti-hoarding provisions."
+    },
+    {
+      "sec_num": 9,
+      "sec_title": "LOCAL BUSINESS LICENSE REVOCATION",
+      "text": "Merchants proven to engage in illegal hoarding during a declared state of calamity shall face immediate cancellation of their Mayor's Business Permit.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §458(a)(4)(ii)",
+      "legal_rationale": "Valid municipal licensing authority."
+    },
+    {
+      "sec_num": 10,
+      "sec_title": "PENAL SANCTIONS",
+      "text": "Violators shall be subject to an administrative fine of P5,000.00 and suspension of business operations for not more than six (6) months.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Compliant with municipal penalty ceiling."
+    },
+    {
+      "sec_num": 11,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "The invalidity of any provision shall not invalidate the other portions hereof.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard separability clause."
+    },
+    {
+      "sec_num": 12,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "All ordinances in conflict with this enactment are hereby repealed.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard repealing clause."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Ordinance shall take effect immediately upon its approval.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard effectivity clause."
+    }
+  ]
+}

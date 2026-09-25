@@ -1,0 +1,126 @@
+{
+  "doc_id": "DRAFT-ORD-2026-07",
+  "title": "AN ORDINANCE REGULATING THE ERECTION, INSTALLATION, AND MAINTENANCE OF OUTDOOR BILLBOARDS AND SIGNAGE IN DAVAO CITY",
+  "proposed_ordinance_no": "Proposed Ordinance No. 2026-07, Series of 2026",
+  "committee": "Committee on Housing and Urban Development, Sangguniang Panlungsod",
+  "physical_specs": {
+    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
+    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
+    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
+    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
+  },
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be cited as the 'Davao City Signage and Outdoor Advertising Safety Ordinance of 2026'.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard title provision."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "DECLARATION OF URBAN SAFETY POLICY",
+      "text": "The City Government exercises its police power to preserve structural safety, traffic sightlines, and aesthetic order from hazardously situated outdoor signage under Section 458(a)(4)(iv) of Republic Act No. 7160.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
+      "legal_rationale": "Directly invokes explicit city council authority to regulate outdoor advertising signs (affirmed in Evasco v. Montañez, 2018)."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "'Billboard' refers to any off-premise advertising sign. 'Signage' refers to any identification banner or emblem visible from a public street.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard definitions."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "SETBACK AND CLEARANCE REQUIREMENTS",
+      "text": "All free-standing billboards must maintain a minimum setback of five (5) meters from road right-of-way boundaries and must not obstruct street traffic lights.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
+      "legal_rationale": "Valid local safety setback regulation."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "MAXIMUM HEIGHT LIMITATIONS",
+      "text": "No billboard structure along the scenic coastal and mountain corridors shall exceed eighteen (18) meters in total height measured from ground elevation.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
+      "legal_rationale": "Valid local police power zoning limitation preserving sightlines."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "SEISMIC AND STRUCTURAL EXEMPTION",
+      "text": "Billboards erected by registered local municipal businesses are hereby declared exempt from the structural design computations, wind load testing, and building permit requirements of the National Building Code of the Philippines (Presidential Decree No. 1096), requiring only a Barangay Clearance.",
+      "label": "Contradiction",
+      "target_statute": "Presidential Decree No. 1096 §301; Presidential Decree No. 1096 §302",
+      "legal_rationale": "Directly contradicts Presidential Decree No. 1096 (National Building Code) Section 301; a municipal ordinance cannot exempt physical commercial structures from national structural safety permits."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "ELECTRICAL AND ILLUMINATION STANDARDS",
+      "text": "Digital LED billboards must incorporate auto-dimming mechanisms to reduce glaring illumination during nighttime hours between 10:00 PM and 5:00 AM.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §16",
+      "legal_rationale": "Valid traffic safety regulation under general welfare police power."
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "INSPECTION AND INVENTORY",
+      "text": "The City Building Official shall maintain an updated geo-referenced inventory of all permitted outdoor signs in Davao City.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Administrative municipal database maintenance."
+    },
+    {
+      "sec_num": 9,
+      "sec_title": "DISMANTLING OF DILAPIDATED STRUCTURES",
+      "text": "Signage abandoned for more than six (6) months or posing imminent danger of collapse shall be dismantled after due notice.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard municipal abatement of nuisance."
+    },
+    {
+      "sec_num": 10,
+      "sec_title": "ANNUAL SIGNAGE FEES",
+      "text": "Annual regulatory inspection fees shall be collected based on total display square meterage.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §147",
+      "legal_rationale": "Valid municipal regulatory fee under RA 7160 Section 147."
+    },
+    {
+      "sec_num": 11,
+      "sec_title": "PENALTIES FOR NON-COMPLIANCE",
+      "text": "Violators shall be fined P5,000.00 and ordered to dismantle unauthorized structures within ten (10) calendar days.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Statutorily compliant fine."
+    },
+    {
+      "sec_num": 12,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "The declaration of unconstitutionality of any provision shall not impair other sections.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard separability clause."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "Conflicting local measures are hereby repealed.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard repealing clause."
+    },
+    {
+      "sec_num": 14,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Ordinance shall take effect fifteen (15) days after publication.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard effectivity clause."
+    }
+  ]
+}

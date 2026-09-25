@@ -1,0 +1,126 @@
+{
+  "doc_id": "DRAFT-ORD-2026-01",
+  "title": "AN ORDINANCE PROMOTING ORGANIC AGRICULTURE, REGULATING AGRICULTURAL CHEMICAL APPLICATION, AND PRESCRIBING LOCAL BUFFER ZONES IN THE CITY OF DAVAO",
+  "proposed_ordinance_no": "Proposed Ordinance No. 2026-01, Series of 2026",
+  "committee": "Committee on Agriculture and Food, Sangguniang Panlungsod",
+  "physical_specs": {
+    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
+    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in (Binding Perforation), Right 1.0 in",
+    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
+    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
+  },
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be known and cited as the 'Davao City Organic Farming and Agricultural Buffer Zone Ordinance of 2026'.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard short title provision containing no operative commands or prohibitions."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "DECLARATION OF POLICY",
+      "text": "It is hereby declared the policy of the City of Davao to promote sustainable agriculture, protect ecological balance, and safeguard public health from harmful agrochemicals pursuant to Section 16 of Republic Act No. 7160 and Republic Act No. 10068.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §16; Republic Act No. 10068 §2",
+      "legal_rationale": "Directly invokes and aligns with the statutory general welfare clause and national organic agriculture policy."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "RULES OF INTERPRETATION",
+      "text": "The provisions of this Ordinance shall be liberally construed in favor of environmental conservation and the general welfare of the inhabitants of Davao City.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard interpretive canon reflecting Section 5(a) of RA 7160."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "For purposes of this Ordinance, 'Organic Agriculture' shall refer to all agricultural systems that promote the environmentally, socially, and economically sound production of food and fibers. 'Buffer Zone' shall refer to an identified strip of land separating agricultural plantations from residential communities.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard definitional section adapting national statutory definitions without contradiction."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "LOCAL INCENTIVES FOR ORGANIC CONVERSION",
+      "text": "Agricultural landholders who transition at least twenty percent (20%) of their cultivable land to certified organic farming practices shall be eligible for a fifteen percent (15%) local real property tax rebate for three (3) consecutive years, subject to verification by the City Agriculturist Office.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 10068 §24; Republic Act No. 7160 §192",
+      "legal_rationale": "Valid exercise of municipal taxing power to grant local tax exemptions and incentives to promote national organic agriculture policy."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "ESTABLISHMENT OF RESIDENTIAL BUFFER ZONES",
+      "text": "All commercial agricultural landholdings adjacent to established residential subdivisions, public schools, or inland water bodies shall maintain a vegetated buffer zone of not less than thirty (30) meters from the plantation boundary, planted with multi-layered canopy trees.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
+      "legal_rationale": "Valid municipal zoning and police power regulation establishing physical safety setbacks within local jurisdiction."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "PROHIBITION OF AERIAL PESTICIDE APPLICATION",
+      "text": "No agricultural entity, corporation, or individual shall apply, disseminate, or spray any chemical pesticide, fungicide, or herbicide by means of aircraft, drones, or any aerial dispersal apparatus anywhere within the territorial boundaries of Davao City, regardless of national licenses or permits issued by the Fertilizer and Pesticide Authority.",
+      "label": "Contradiction",
+      "target_statute": "Presidential Decree No. 1144 §6; Presidential Decree No. 1144 §9",
+      "legal_rationale": "Directly contradicts Presidential Decree No. 1144 which vests exclusive regulatory authority over pesticide licensing, dispersal methods, and chemical approval in the national Fertilizer and Pesticide Authority (FPA). Struck down in Mosqueda v. PBGEA (2016) under the Magtajas doctrine."
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "GROUND APPLICATION SAFETY GUIDELINES",
+      "text": "Ground application of registered agricultural chemicals must comply strictly with manufacturer dilution ratios and wind-speed thresholds prescribed by national agricultural standards.",
+      "label": "Entailment",
+      "target_statute": "Presidential Decree No. 1144 §8",
+      "legal_rationale": "Harmonious local enforcement requiring compliance with national chemical safety standards."
+    },
+    {
+      "sec_num": 9,
+      "sec_title": "ADMINISTRATIVE MONITORING TASK FORCE",
+      "text": "There is hereby created the Davao City Agrochemical Monitoring Task Force headed by the City Agriculturist with representatives from the City Health Office and accredited farmer cooperatives.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Internal municipal administrative tasking authorized under Section 454 of RA 7160."
+    },
+    {
+      "sec_num": 10,
+      "sec_title": "PENALTIES AND FINES",
+      "text": "Any person or corporate officer found guilty of violating Section 6 or Section 8 shall be punished by a fine of Five Thousand Pesos (P5,000.00) or imprisonment for not more than one (1) year, or both, at the discretion of the court.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Statutorily compliant penalty within the exact maximum penalty ceiling of P5,000 fine and 1-year imprisonment for cities."
+    },
+    {
+      "sec_num": 11,
+      "sec_title": "APPROPRIATIONS",
+      "text": "The amount necessary for the initial implementation of this Ordinance shall be charged against the unappropriated surplus of the General Fund.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard municipal budgetary appropriation clause."
+    },
+    {
+      "sec_num": 12,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "If any provision of this Ordinance or the application thereof to any person or circumstance is held invalid, the remainder of this Ordinance shall not be affected thereby.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard legislative boilerplate preserving non-offending provisions."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "All prior city ordinances, executive orders, and administrative regulations inconsistent with this Ordinance are hereby modified or repealed accordingly.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard general repealing clause."
+    },
+    {
+      "sec_num": 14,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Ordinance shall take effect thirty (30) days after its publication in two (2) newspapers of general circulation within the City of Davao and posting in prominent public places.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §59",
+      "legal_rationale": "Standard publication and effectivity clause complying with Section 59 of RA 7160."
+    }
+  ]
+}

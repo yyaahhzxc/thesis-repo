@@ -1,0 +1,23 @@
+=== Ordinance No. 158-05 (2005) ===
+Title: THE 2005 REVENUE CODE OF THE CITY OF DAVAO
+Enacting LGU: City of Davao
+Enacting Clause: BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:
+Date Approved: November 16, 2005
+Judicial Reference: City of Davao and Tanjili v. ARC Investors, Inc., G.R. No. 249668 (July 13, 2022); Mindanao Shopping Destination Corp. v. Duterte, G.R. No. 211093 (June 6, 2017)
+Judicial Ruling: Partially Ultra Vires (Holding Company Taxes Struck Down; Statutory Tax Rate Caps Enforced)
+Gold NLI Label: Contradiction
+Superior National Law: Republic Act No. 7160 §133(a), §143(a), §143(f); Republic Act No. 8791 §3
+
+--- OPERATIVE SECTIONS ---
+SECTION 1. TITLE:
+This Ordinance shall be known and cited as the '2005 Revenue Code of the City of Davao'.
+
+SECTION 69. GRADUATED TAX ON BUSINESSES:
+Imposes graduated local business tax rates upon retailers, wholesalers, and commercial service establishments operating within Davao City, structured according to gross annual sales brackets.
+
+SECTION 135. TAX ON FINANCIAL INSTITUTIONS AND HOLDING CORPORATIONS:
+Imposes local business taxes on banks, banking institutions, and holding entities receiving dividend income and investment interest, categorizing corporate holding firms as non-bank financial intermediaries.
+
+SECTION 423. PAYMENT UNDER PROTEST:
+No protest against an assessment shall be entertained unless the taxpayer first pays under protest the tax assessed, stating the legal grounds within thirty (30) days from payment.
+

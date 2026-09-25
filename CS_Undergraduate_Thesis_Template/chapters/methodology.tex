@@ -34,9 +34,9 @@ This section maps how data flows through the proposed system. The architecture f
                 \item[Stage 1: Dual-Stream Hybrid Information Retrieval.] The system narrows the comprehensive statutory search space down to a focused candidate pool. Stream~A executes lexical sparse search via BM25 to match exact statutory citations, numerical penalty amounts, and administrative agency terms. Stream~B executes dense semantic search via the selected bi-encoder, measuring cosine similarity between the draft provision and statutory embeddings to capture abstract regulatory intent. The ranked outputs are combined using Reciprocal Rank Fusion (RRF) integrated with a Statutory Hierarchy Safeguard (prioritizing higher-ranking national statutes over municipal provisions). This hybrid coarse filter extracts the Top-$k$ candidate provisions without overburdening local LGU compute resources.
 
                 \item[Stage 2: Natural Language Inference.] Each retrieved statutory candidate is paired with the draft ordinance provision into a single cross-encoder sequence:
-                \begin{equation}
+                \[
                     \mathbf{x} = [\text{CLS}] \; \text{Retrieved Statutory Premise} \; [\text{SEP}] \; \text{Proposed Ordinance Clause} \; [\text{SEP}]
-                \end{equation}
+                \]
                 The unified sequence is processed by the selected fine-tuned cross-encoder NLI engine, which performs full inter-token cross-attention to classify the directional logical relationship (entailment, neutral, or contradiction) and produce a calibrated contradiction probability $P(\text{Contradiction})$.
             \end{description}
 
@@ -63,10 +63,53 @@ This section outlines the methodology for data collection, system engineering, a
     The experimental setup tests the retrieval and classification modules separately to measure search speed and accuracy independently. Building the system step-by-step allows the researchers to adjust the information retrieval and natural language inference stages using local legal texts. This engineering process ensures that the finished tool accounts for the writing styles found in both city ordinances and national statutes. In this way, applied research methods help turn modern NLP concepts into a usable tool for the Davao City Sangguniang Panlungsod. As a result, the findings establish a clear benchmark for automating pre-enactment legal checks on local legislation.
 
     \subsection{Corpus Acquisition}
+    \label{sec:corpus_acquisition}
     Building the legal database requires collecting text from different public repositories so that the system includes as many relevant laws as possible. These sources provide the national statutes and city ordinances needed to check draft legislation for consistency. To keep the language consistent and make vector processing simpler, the system gathers only the English-language versions of all legal texts. This choice matches Philippine statutory rules under Section~20, Chapter~5, Book~I of Executive Order No.~292 (Administrative Code of 1987)~\cite{philgov1987eo292}, which explicitly mandates that in the interpretation of laws promulgated in official languages, the English text shall control unless otherwise specifically provided. National statutes and local ordinances are gathered using separate automated scripts designed for the format of each source.
 
         \subsubsection{Corpus Composition}
-        The Lawphil Project (Arellano Law Foundation) serves as the primary digitized extraction source for national statutory text because its documents are provided in clean HTML, follow a consistent layout, and offer broad historical coverage~\cite{lawphil2000}. Automated scraping scripts browse through chronological and alphabetical indexes to collect Republic Acts, Batas Pambansa, Commonwealth Acts, Acts, Executive Orders, and Presidential Decrees. Using a custom web extraction pipeline built by the proponents, statutory extraction was conducted as of \textbf{March 2026}, collecting 25,432 unique legal records enacted between 1900 and 2026. The Official Gazette of the Republic of the Philippines~\cite{officialgazette} and the Chan Robles Virtual Law Library were used as authoritative secondary cross-references to verify enactment dates, chronological numbering, and historical amendment status. All collected national laws are converted into standardized JSON records with metadata, such as dates of approval, titles, and section numbers.
+        The Lawphil Project (Arellano Law Foundation) serves as the primary digitized extraction source for national statutory text because its documents are provided in clean HTML, follow a consistent layout, and offer broad historical coverage~\cite{lawphil2000}. Automated scraping scripts browse through chronological and alphabetical indexes to collect Republic Acts, Batas Pambansa, Commonwealth Acts, Acts, Executive Orders, and Presidential Decrees. Using a custom web extraction pipeline built by the proponents, statutory extraction was conducted as of \textbf{March 2026}, collecting 25,432 unique legal records enacted between 1900 and 2026. The Official Gazette of the Republic of the Philippines~\cite{officialgazette} and the Chan Robles Virtual Law Library were used as authoritative secondary cross-references to verify enactment dates, chronological numbering, and historical amendment status. All collected national laws are converted into standardized JSON records with metadata, such as dates of approval, titles, and section numbers. Listing~\ref{lst:corpus_extraction} illustrates the web scraping and provision extraction logic implemented to retrieve and structure the statutory archive. As illustrated in Figure~\ref{fig:lawphil_web_interface}, the Lawphil repository presents statutory text in clean, unstyled HTML typography with a predictable hierarchical URL schema (e.g., \texttt{/statutes/repacts/ra2018/ra\_11035\_2018.html} for Republic Act No.~11035). This standardized structure separates introductory legislative headers from operative provisions and eliminates the need for dynamic JavaScript browser rendering, facilitating rapid, fault-tolerant web scraping.
+
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[width=0.92\linewidth]{figs/lawphil_republic_act_sample.png}
+            \caption{Sample Statutory Enactment Webpage from the Lawphil Project Repository (Republic Act No.~11035, \textit{Balik Scientist Act}). The repository features a streamlined, clean HTML document layout without intrusive styling or dynamic client-side rendering. Furthermore, its transparent and predictable URL hierarchy (\texttt{/statutes/repacts/ra2018/ra\_11035\_2018.html}) systematically organizes enactments by instrument type, legislative year, and statutory numbering, enabling automated, fault-tolerant corpus harvesting.}
+            \label{fig:lawphil_web_interface}
+        \end{figure}
+
+        \begin{lstlisting}[language=Python, caption={Code Snippet of the Statutory Corpus Acquisition and Provision Extraction Pipeline}, label={lst:corpus_extraction}]
+def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
+    """
+    Extracts, sanitizes, and structures national statutes from the online archive.
+    """
+    statute_records = []
+    
+    for year in range(start_year, end_year + 1):
+        year_index = fetch_page(f"{base_url}/year/{year}")
+        statute_links = parse_index_links(year_index)
+        
+        for link in statute_links:
+            # Fetch raw web page and parse HTML DOM tree
+            html_content = fetch_page_with_retry(link, delay_seconds=1.0)
+            soup = BeautifulSoup(html_content, "html.parser")
+            
+            # Extract statutory metadata and clean document body
+            metadata = extract_header_metadata(soup)
+            body_text = clean_document_body(soup)
+            
+            # Segment statute into discrete section-level provisions
+            sections = segment_into_sections(body_text)
+            
+            record = {
+                "statute_id": metadata.id,
+                "title": metadata.title,
+                "instrument": metadata.type,
+                "date_enacted": metadata.date,
+                "sections": sections
+            }
+            statute_records.append(record)
+            
+    return statute_records
+        \end{lstlisting}
 
         Collecting national laws from Lawphil helps avoid the disorganization common to public legal websites. Although the Official Gazette and congressional websites also host statutory records, their web pages frequently change layout and often provide older laws only as image-only PDF scans. In contrast, Lawphil keeps a standard HTML structure across all historical eras, clearly separating introductory preambles from operative legal sections. Scraping from this repository ensured uniform text formatting across the national collection (over 25,000 enactments), preventing formatting differences from skewing vector embeddings during Stage~1 retrieval. The resulting collection provides a clean, consistent text foundation for semantic analysis and conflict detection.
 
@@ -82,7 +125,14 @@ This section outlines the methodology for data collection, system engineering, a
 
         The municipal archive also shows an uneven time distribution and gaps in older records. For ordinances passed before 2021, city record-keeping mainly focused on digitizing major ``Landmark Ordinances,'' leaving ordinary regulations from earlier decades in physical paper storage~\cite{spdavao2026}. As a result, the pre-2021 local records represent a selective collection of prominent laws rather than a complete legislative record. While post-2021 records from the digital LISSP database are much more complete, some numerical gaps remain due to missing committee drafts and unindexed attachments. These gaps mean that the available municipal archive contains more recent ordinances than older ones.
 
-        The physical state of the scanned city ordinances adds both visual and linguistic noise. Older ordinances scanned at low resolution suffer from faded print, ink smudges, and crooked pages. The paper copies also contain non-text items such as government stamps, official signatures, and handwritten notes that confuse sentence splitting tools. At the language level, local ordinances sometimes include regional terms and administrative Taglish in their introductory sections~\cite{dreisbach2021language}. These informal drafting habits differ noticeably from the formal, standardized English found in national laws.
+        The physical state of the scanned city ordinances adds both visual and linguistic noise. Older ordinances scanned at low resolution suffer from faded print, ink smudges, and crooked pages, as illustrated in Figure~\ref{fig:davao_ordinance_scan}. The paper copies also contain non-text items such as government stamps, official signatures, and handwritten notes that confuse sentence splitting tools. At the language level, local ordinances sometimes include regional terms and administrative Taglish in their introductory sections~\cite{dreisbach2021language}. These informal drafting habits differ noticeably from the formal, standardized English found in national laws.
+
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[width=0.96\linewidth]{figs/davao_ordinance_scan_sample.png}
+            \caption{Sample Archival Document from the Davao City Sangguniang Panlungsod Corpus Illustrating Physical Scanning Artifacts and Optical Character Recognition (OCR) Noise. Panel (a) illustrates the official municipal session heading, seal, and city council metadata. Panel (b) shows the enacted substantive provisions exhibiting real OCR scanner noise, character substitutions (e.g., ``0667-2L'' for 2021, ``TITTE'' for Title), and document skew.}
+            \label{fig:davao_ordinance_scan}
+        \end{figure}
 
         In real-world legislation, direct contradictions between laws are very rare. Lawmakers generally try to write rules that work alongside existing higher laws rather than directly opposing them~\cite{fuller1964the}. As a result, actual legal conflicts make up less than 1\% of random pairs formed between municipal ordinances and national statutes. Taking random pairs of text from the unedited collections would lead to an overwhelming majority of unrelated pairs. A machine learning model trained on such unbalanced data could score 99\% nominal accuracy simply by guessing ``Neutral'' every time, while remaining unable to detect real legal conflicts.
 
@@ -138,12 +188,124 @@ This section outlines the methodology for data collection, system engineering, a
         The temporal breakdown reveals that Philippine lawmaking expanded during periods of national administrative reorganization. Early colonial governance relied entirely on 4,199 foundational Acts during the Insular period (1900--1934). Centralized presidential lawmaking predominated during the Martial Law period through 1,844 Presidential Decrees and 886 Batas Pambansa parliamentary enactments (1972--1985). In the modern era governed by Republic Act No.~7160 (1991--2026), statutory production stabilized into a dual stream of 4,900 congressional Republic Acts and 2,421 executive policy orders. Because vocabulary standards shifted markedly across these legislative transitions, search models require chronological awareness to avoid misinterpreting historical statutory phrasing.
 
     \subsection{Preprocessing and Filtering}
+    \label{sec:preprocessing_filtering}
     Because the raw downloaded files vary widely in formatting, they require thorough cleaning, grouping, and text normalization. While national statutes are already available as clean digital text, the scanned Davao City ordinances contain most of the OCR errors in the dataset. Since these local records come from image-based PDFs, extracting the text often produces misread characters and broken lines. The pipeline uses rule-based filters to find and correct these errors specifically within the local ordinance files. This targeted cleaning ensures that the subsequent vector conversion process is not disrupted by broken words or garbled text.
 
         \subsubsection{Digital-Born Draft Ingestion and Section Segmentation}
+        \label{sec:draft_ingestion_segmentation}
         A critical operational distinction in this research separates the historical training archive from live ex-ante draft submissions. While the historical Davao City collection (~1,660 enactments from 1946 to 2025) consists of scanned physical PDFs requiring intensive optical character recognition (OCR) and text normalization, newly drafted ordinances submitted for ex-ante review are digital-born documents. Legislative staff create these proposed measures using standard word processing software, generating clean electronic text or searchable PDF files. Because digital-born drafts contain authentic character encodings without scanning artifacts, the live pipeline bypasses OCR error correction entirely. This structural decoupling allows the preprocessor to focus immediately on automated section boundary parsing and clause segmentation.
 
-        To evaluate legislative commands without semantic distortion, an automated regular expression parser splits the submitted draft at formal section boundaries into discrete operative blocks. In Philippine local legislative practice, proposed measures follow standardized structural templates established by the Department of the Interior and Local Government~\cite{dilg2022drafting}. However, real-world legislative drafts contain substantial procedural boilerplate that does not express substantive legal commands. If routine clauses such as title declarations, repealing clauses, and effectivity dates are fed into Stage~1 retrieval, they match thousands of administrative national statutes containing similar formulaic phrases. To prevent search drift and computational waste, the preprocessor automatically filters out non-operative sections—specifically Title, Separability, Repealing, and Effectivity clauses—directing candidate retrieval exclusively toward substantive regulatory and penal provisions.
+        To evaluate legislative commands without semantic distortion, an automated regular expression parser splits the submitted draft at formal section boundaries into discrete operative blocks. In Philippine local legislative practice, proposed measures follow standardized structural templates established by the Department of the Interior and Local Government~\cite{dilg2022drafting}. However, real-world legislative drafts contain substantial procedural boilerplate that does not express substantive legal commands. If routine clauses such as title declarations, repealing clauses, and effectivity dates are fed into Stage~1 retrieval, they match thousands of administrative national statutes containing similar formulaic phrases. To prevent search drift and computational waste, the preprocessor automatically filters out non-operative sections---specifically Title, Separability, Repealing, and Effectivity clauses---directing candidate retrieval exclusively toward substantive regulatory and penal provisions.
+
+        Listing~\ref{lst:jsonl_sample} displays an authentic raw ingestion record from the scraped national statutory collection (\texttt{corpus/national\_laws/republic\_acts.jsonl}), capturing the raw unparsed text, enactment year, and source URL for Republic Act No.~11035 (\textit{Balik Scientist Act}, matching the Lawphil page illustrated in Figure~\ref{fig:lawphil_web_interface}). Listing~\ref{lst:provision_extractor} details the regular expression parser that segments live draft measures into discrete operative sections while filtering out procedural boilerplate.
+
+        \begin{lstlisting}[language=Python, caption={Sample Raw JSONL Ingestion Record from the National Statutory Archive (Republic Act No. 11035)}, label={lst:jsonl_sample}]
+# Raw Ingestion Record from corpus/national_laws/republic_acts.jsonl (ra_11035_2018)
+raw_statute_record = {
+    "law_id": "ra_11035_2018",
+    "year": 2018,
+    "url": "https://lawphil.net/statutes/repacts/ra2018/ra_11035_2018.html",
+    "scraped_at": "2026-02-17T18:44:04.745654",
+    "text": (
+        "Seventeenth Congress\nSecond Regular Session\nBegun and held in Metro Manila, "
+        "on Monday, the twenty-fourth day of July, two thousand seventeen.\n"
+        "REPUBLIC ACT No. 11035\n"
+        "An Act Institutionalizing the Balik Scientist Program, Appropriating Funds "
+        "Therefor, and for Other Purpose\n"
+        "Be it enacted by the Senate and House of Representatives of the Philippines "
+        "in Congress assembled:\n"
+        "Section 1. Title. - This Act shall be known as the \"Balik Scientist Act.\"\n"
+        "Section 2. Declaration of Policy. - The State recognizes that the utilization "
+        "of the expertise of science, technology or innovation experts of Filipino descent "
+        "is a vital component of the national political, economic, and social development "
+        "efforts...\n"
+        "Section 3. Balik Scientist Program. - There is hereby created a Balik Scientist "
+        "Program, hereinafter referred to as the \"Program\", to be administered by the "
+        "Department of Science and Technology (DOST)...\n"
+        "[Raw statutory text continues across 2,493 total words]"
+    )
+}
+        \end{lstlisting}
+
+        \begin{lstlisting}[language=Python, caption={Code Snippet of the Operative Provision Extractor and Boilerplate Filter}, label={lst:provision_extractor}]
+import re
+
+def extract_operative_provisions(draft_text):
+    """
+    Parses digital-born draft ordinance into discrete sections,
+    filtering out non-operative procedural boilerplate clauses.
+    """
+    # Regex pattern to segment text at formal section boundaries
+    pattern = r'(SECTION\s+\d+\.?[^\n]*\n.*?)(?=(?:SECTION\s+\d+|CERTIFIED|ENACTED|\Z))'
+    matches = re.findall(pattern, draft_text, re.DOTALL | re.IGNORECASE)
+    
+    # Procedural clauses that do not carry substantive regulatory commands
+    boilerplate_keywords = ["TITLE", "SEPARABILITY", "REPEALING", "EFFECTIVITY"]
+    operative_sections = []
+    
+    for match in matches:
+        clean_chunk = ' '.join(match.strip().split())
+        header = clean_chunk.split('.')[0] if '.' in clean_chunk else clean_chunk[:30]
+        
+        # Exclude non-operative procedural boilerplate
+        if any(kw in header.upper() for kw in boilerplate_keywords):
+            continue
+            
+        operative_sections.append({
+            "section_header": header,
+            "operative_text": clean_chunk
+        })
+        
+    return operative_sections
+        \end{lstlisting}
+
+        Once operative sections are isolated, evaluating granular statutory provisions requires preserving their governing legislative identity. An isolated sub-clause (such as a standalone penalty statement) stripped of its parent enactment number and title suffers from severe semantic vector dilution, causing retrieval models to confuse municipal regulatory penalties with unrelated national tax or criminal codes. To maintain semantic precision and hierarchy across both stages, the pipeline applies structural context prepending. Listing~\ref{lst:context_prepending} details the context prepending protocol, while Listing~\ref{lst:model_ready_chunk} demonstrates the concrete transformation from an isolated provision into a Stage~1 indexed chunk and the resulting Stage~2 asymmetric input sequence.
+
+        \begin{lstlisting}[language=Python, caption={Pseudocode of the Section Context Prepending Protocol for Granular Provision Chunking}, label={lst:context_prepending}]
+def prepend_statutory_context(statute_record, section):
+    """
+    Prepends governing legislative identity to isolated section text
+    to prevent semantic vector dilution and preserve hierarchical rank.
+    """
+    prefix = (
+        f"[{statute_record['instrument_type']} No. {statute_record['enactment_number']}: "
+        f"{statute_record['title']} | {section['section_number']}: {section['section_title']}] "
+    )
+    model_ready_text = prefix + section['raw_text']
+    return model_ready_text
+        \end{lstlisting}
+
+        \begin{lstlisting}[language=Python, caption={Sample Model-Ready Statutory Chunk and Stage 2 Input Sequence with Context Prepending}, label={lst:model_ready_chunk}]
+# 1. Isolated Statutory Provision (Without Context Prepending)
+# Lacks parent statutory identity; dense embeddings match ambiguous administrative powers.
+isolated_section = (
+    "Section 458. (a) The sangguniang panlungsod, as the legislative body of the city, "
+    "shall enact ordinances... (v) Approve ordinances which shall impose a fine not "
+    "exceeding Five thousand pesos (P5,000.00) or an imprisonment not exceeding one (1) "
+    "year, or both."
+)
+
+# 2. Model-Ready Contextualized Provision Chunk (Indexed by Stage 1 BM25 & Dense Bi-Encoders)
+# Prepends statutory title and citation to establish legal hierarchy and topical specificity.
+stage1_indexed_chunk = (
+    "[Republic Act No. 7160: Local Government Code of 1991 | Section 458: Powers, Duties, "
+    "and Functions of the Sangguniang Panlungsod] Section 458. (a) The sangguniang panlungsod, "
+    "as the legislative body of the city, shall enact ordinances... (v) Approve ordinances which "
+    "shall impose a fine not exceeding Five thousand pesos (P5,000.00) or an imprisonment not "
+    "exceeding one (1) year, or both."
+)
+
+# 3. Assembled Asymmetric Input Sequence Passed to Stage 2 Cross-Encoder
+# Formatted with [CLS] and [SEP] tokens pairing governing premise with proposed draft hypothesis.
+stage2_input_sequence = (
+    "[CLS] Premise: [Republic Act No. 7160: Local Government Code of 1991 | Section 458: "
+    "Powers of the Sangguniang Panlungsod] Section 458. (a)... Approve ordinances which shall "
+    "impose a fine not exceeding Five thousand pesos (P5,000.00)... "
+    "[SEP] Hypothesis: [Proposed Davao City Ordinance No. 2024-012 | Section 6: Penalties] "
+    "SECTION 6. PENALTY CLAUSE. Any person violating this Ordinance shall be penalized with "
+    "a fine of Fifteen Thousand Pesos (PHP 15,000.00) or two years imprisonment. [SEP]"
+)
+        \end{lstlisting}
 
         \subsubsection{Domain Categorization}
         \label{sec:domain_categorization}
@@ -153,20 +315,16 @@ This section outlines the methodology for data collection, system engineering, a
 
         Grouping legal texts directly into a small number of broad topics risks mixing very different types of laws together. To avoid this problem, the normalized 64-dimensional vectors are first divided into $K = 28$ smaller micro-clusters using MiniBatch $K$-Means clustering~\cite{sculley2010webscale}. Following the over-clustering strategy recommended by Grootendorst~\cite{grootendorst2022bertopic} and Aggarwal~\cite{aggarwal2012mining}, setting an over-complete cluster space ($K \approx 20\text{--}30$) isolates repetitive narrow enactments, such as school conversions or telecom franchises, into tight individual clusters before macro consolidation. Next, the pipeline adapts the class-based TF-IDF ($c\text{-}TF\text{-}IDF$) method from Grootendorst~\cite{grootendorst2022bertopic} to find the most representative keywords for each group. By treating all text within a micro-cluster as a single combined document, $c\text{-}TF\text{-}IDF$ measures how important a word is to that specific cluster compared to the rest of the collection:
 
-        \begin{equation}
+        \[
             c\text{-}TF\text{-}IDF_{i, c} = \frac{|t_{i, c}|}{|c|} \times \log\left(1 + \frac{A}{\sum_{k} |t_{i, k}|}\right)
-            \label{eq:c_tfidf}
-        \end{equation}
-        \eqcaption{Class-based Term Frequency-Inverse Document Frequency ($c\text{-}TF\text{-}IDF$)}
+        \]
         where $|t_{i, c}|$ represents the absolute frequency of word $i$ within cluster $c$, $|c|$ denotes the total word count of cluster $c$, and $A$ indicates the mean word count per cluster across the full collection.
 
         In order to connect these mathematical clusters to real legal subjects, the extracted $c\text{-}TF\text{-}IDF$ keywords are matched against a curated Philippine legal taxonomy. This taxonomy reflects the main local government duties and regulatory powers outlined in the Local Government Code of 1991~\cite{philgov1991ra7160}. Micro-clusters that share the same general legal topic are merged into consolidated macro domains. To remove minor edge cases, the pipeline requires each macro domain to contain at least 1.0\% of the corpus ($N \ge 254$ statutes). Micro-clusters that fall below this cutoff are reassigned to their nearest semantic center, ensuring each macro domain has enough documents for reliable search indexing:
 
-        \begin{equation}
+        \[
             \mathbf{C}_m = \frac{\sum_{i \in \mathcal{D}_m} \mathbf{z}_i}{\left\|\sum_{i \in \mathcal{D}_m} \mathbf{z}_i\right\|_2}, \quad P(m \mid \mathbf{z}_i) = \frac{\exp(\tau \cdot \cos(\mathbf{z}_i, \mathbf{C}_m))}{\sum_{j} \exp(\tau \cdot \cos(\mathbf{z}_i, \mathbf{C}_j))}
-            \label{eq:macro_centroid}
-        \end{equation}
-        \eqcaption{Macro Legal Domain Centroid and Softmax Probability}
+        \]
         where $\mathbf{z}_i$ represents the normalized 64-dimensional SVD vector of document $i$, $\mathbf{C}_m$ denotes the normalized centroid of macro domain $m$, and $\tau = 6.0$ functions as the inverse temperature scaling parameter governing prediction confidence. Adapting temperature scaling principles from Guo et al.~\cite{guo2017calibration}, this scaling factor prevents uncalibrated softmax dispersion across high-dimensional cosine distances, ensuring that dominant domain probabilities are sharply delineated without over-confident saturation.
 
         Running this topic grouping workflow across all 25,432 national statutes organizes the historical collection into eight Consolidated Macro Legal Domains. Table~\ref{tab:national_macro_domains} lists the final distribution, showing document counts, percentages, and the most descriptive keywords for each domain. Figure~\ref{fig:macro_domain_distribution} illustrates the relative size of each discovered macro domain.
@@ -289,11 +447,9 @@ This section outlines the methodology for data collection, system engineering, a
         Examining token lengths across the eight macro legal domains explains how drafting styles differ between statutory subjects. Regulatory categories interact closely with municipal powers and demonstrate high compliance rates, led by Public Health (99.16\%), Public Utilities (98.78\%), Education (98.64\%), and Taxation (95.86\%). The only category with a noticeable exceedance tail is Local Government and Territorial Boundaries, where 12.54\% of sections exceed 512 tokens due to lengthy metes-and-bounds surveying descriptions. Across the entire national corpus, only 5.17\% of provisions exceed the 512-token threshold.
 
         To handle provisions in this 5.17\% tail without information loss under standard-context models, the pipeline implements a hierarchical overlapping sub-chunking fallback. Adapting the sliding window strategy formulated by Devlin et al.~\cite{devlin2019bert} for transformer sequence constraints, when an extracted statutory section exceeds a safety threshold of 448 tokens, the preprocessing module divides the section into overlapping sub-chunks using a window of $w = 384$ tokens and a stride of $s = 256$ tokens (128-token overlap). Capping the sub-chunk window at 384 tokens reserves a 64-token structural buffer within the 512-token ceiling to accommodate the prepended metadata header along with mandatory special tokens ($[CLS]$, $[SEP]$)~\cite{devlin2019bert}. Each sub-chunk preserves the prepended structural metadata header $\left[ \text{Statute Title}, \text{ Section } S_i\text{: Catchline} \right]$ to maintain institutional context. In Stage~1 retrieval, the parent provision embedding is computed by mean-pooling the sub-chunk vectors, capturing semantic concepts across all paragraphs. In Stage~2 inference, the Cross-Encoder evaluates each sub-chunk independently against the local ordinance hypothesis $h$, determining the provision-level conflict through max-pooling across sub-chunk contradiction probabilities:
-        \begin{equation}
+        \[
             \hat{P}(\text{Contradiction} \mid p_i, h) = \max_{j} P\left(\text{Contradiction} \mid p_{i,j}, h\right)
-            \label{eq:max_pooled_subchunk}
-        \end{equation}
-        \eqcaption{Max-Pooled Sub-Chunk Contradiction Probability}
+        \]
         where $p_{i,j}$ denotes the $j$-th sub-chunk of statutory section $p_i$. This max-pooling aggregation ensures that an isolated prohibition or restrictive condition buried deep in a multi-paragraph section triggers the contradiction alert without being diluted by surrounding agreeable text.
 
         Alongside the sub-chunking fallback, the proponents evaluate ModernBERT as a long-context candidate architecture~\cite{warner2024modernbert, kadowaki2025modernbert}. By combining FlashAttention-2 with rotary positional embeddings, ModernBERT natively processes input sequences up to 8,192 tokens, completely bypassing the need for text segmentation. The researchers hypothesize that ModernBERT is uniquely valuable for this 5.17\% tail of lengthy codifications and boundary descriptions where sequence truncation could otherwise occur. However, for the 94.83\% majority of concise provisions with a median length of only 122 tokens, standard-context architectures such as DeBERTa-v3~\cite{he2023debertav3} and MiniLM~\cite{reimers2019sentencebert} may achieve sharper semantic discrimination and faster inference on local office workstations. Evaluating both model families directly tests whether native long-context support outperforms compact, standard-window models across Philippine statutory texts.
@@ -301,11 +457,9 @@ This section outlines the methodology for data collection, system engineering, a
         After establishing the need for granular text units, the preprocessing pipeline cleans local ordinance texts and national statutory provisions. Custom regular expressions find and remove repetitive introductory preamble paragraphs and official signature blocks from city ordinances. Unlike ordinary documents, legal acts follow an organized structure divided into numbered chapters and sections. The researchers divide statutes at the section level rather than using fixed word-count windows~\cite{wu2025aiir}. In Philippine legal drafting, each section acts as a complete rule, stating a main legal command along with its specific conditions and exceptions.
 
         Splitting text by an arbitrary word count can easily cut a legal rule in half, separating exceptions from the main requirement. When sub-clauses are separated this way, they lose the context of who must follow or enforce the rule. To preserve complete legal meaning, the preprocessing pipeline adds a structural metadata header to each chunk before saving it in the vector database. Every extracted statutory section begins with a header containing the statute title, section number, and section title:
-        \begin{equation}
+        \[
             \mathbf{x}_{\text{chunk}} = \left[ \text{Statute Title}, \text{ Section } S_i\text{: Catchline} \right] \mathbin{\Vert} \mathbf{t}_{\text{verbatim}}
-            \label{eq:hierarchical_chunk}
-        \end{equation}
-        \eqcaption{Hierarchical Metadata-Prepended Statutory Chunk Representation}
+        \]
         where $\mathbf{t}_{\text{verbatim}}$ denotes the exact text extracted from Lawphil, and $\mathbin{\Vert}$ represents text joining. This prefix helps the Stage~2 Cross-Encoder immediately recognize the governing authority and official context of the provision.
 
         The practical need for these headers is shown by sections within composite legal codes. In Republic Act No.~7160, Section~447 sets penalty limits for municipalities, while Section~458 sets distinct penalty limits for city councils. Without adding the section title and number, downstream Cross-Encoders can confuse different levels of local government and misjudge municipal powers. Adding the structural metadata ensures that the model evaluates each legal clause under its correct administrative level. As a result, the vector embeddings retain both the exact wording of the clause and its broader statutory context.
@@ -396,6 +550,55 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
 
         The guidelines follow a structured consensus process to resolve disagreements among the three panel reviewers. When two or three reviewers agree, the majority label is accepted directly into the benchmark. In cases where all three reviewers select different categories, the item is referred to the sub-panel's designated Senior Annotator for final qualitative review~\cite{gao2022hierarchical}. The Senior Annotator reviews the evaluators' optional notes against the codebook to determine whether the difference came from subtle statutory phrasing or an overlooked exception. This review step ensures that every item in the 350-pair Ground Truth reaches an authoritative label while preserving the original votes to calculate Fleiss' Kappa.
 
+        To illustrate the structure of the evaluated instances, Listing~\ref{lst:ground_truth_pair} presents an authentic sample record (Pair ID: \texttt{GT-001}) from the 350-pair Ground Truth benchmark dataset, showcasing the paired national statutory premise, proposed municipal hypothesis, gold conflict label, and expert legal rationale.
+
+        \begin{lstlisting}[language=Python, caption={Sample Evaluation Pair from the Ground Truth Benchmark Dataset}, label={lst:ground_truth_pair}]
+# Authentic Evaluation Pair GT-001 from data/ground_truth_350.jsonl
+benchmark_pair = {
+    "pair_id": "GT-001",
+    "macro_domain": "Executive Issuances & Policy Reorganization",
+    "difficulty_tier": "Tier 1: Surface & Quantitative",
+    "national_premise": {
+        "statute_title": "Republic Act No. 7581 (The Price Act)",
+        "citation": "Section 6",
+        "statutory_text": (
+            "Section 6. Automatic Price Control. - Unless otherwise declared by the "
+            "President, prices of basic necessities in an area shall automatically be "
+            "frozen at their prevailing prices or placed under automatic price control "
+            "whenever that area is proclaimed or declared a disaster area or under a "
+            "state of calamity... price control of basic necessities under this section "
+            "shall remain effective for the duration of the condition that brought it about, "
+            "but not for more than sixty (60) days."
+        )
+    },
+    "ordinance_hypothesis": {
+        "ordinance_title": (
+            "Proposed City Ordinance No. 2024-082 (The Davao City Calamity Price "
+            "Stabilization and Consumer Welfare Protection Measure)"
+        ),
+        "section_citation": "Section 4",
+        "hypothesis_text": (
+            "SECTION 4. MANDATORY LOCAL PRICE CEILINGS UPON CALAMITY. - In accordance "
+            "with local civil defense standards... upon official declaration of a state "
+            "of local calamity by the Sangguniang Panlungsod, the City Mayor... shall "
+            "enforce mandatory price ceilings across all grocery and commercial retail "
+            "establishments within Davao City, which price freeze shall remain in continuous "
+            "legal effect for a mandatory period of one hundred eighty (180) calendar days..."
+        )
+    },
+    "gold_label": "Contradiction",
+    "legal_rationale": (
+        "Direct breach of statutory temporal ceiling. Section 6 of RA 7581 explicitly limits "
+        "automatic calamity price control to not more than sixty (60) days. The draft ordinance "
+        "mandates a 180-day freeze, exceeding delegated police power limits."
+    ),
+    "annotator_metadata": {
+        "assigned_panel": "Panel_A",
+        "evaluators": ["SP-ANN-01", "SP-ANN-02", "SP-ANN-03"]
+    }
+}
+        \end{lstlisting}
+
         \subsubsection{Batched Annotation Allocation}
         To prevent reviewer fatigue while keeping the results statistically sound, this study adapts the batched review framework developed by Ablazo~\cite{ablazo2019designing}. In that earlier study, each item required three independent evaluations to determine a majority label. Managing a collection of 12,054 short texts required over 36,000 individual reviews. By dividing this work among 250 students, the workload was reduced to about 145 items per person. This demonstrated how batched distribution can maintain a three-vote overlap without placing an unrealistic burden on reviewers.
         
@@ -478,18 +681,53 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
 
 
     \subsection{Pipeline Architecture}
+    \label{sec:pipeline_architecture}
     The live conflict detection workflow uses a two-stage architecture designed to combine fast searching with detailed logical analysis.
 
     \begin{description}
         \item[Stage 1: Information Retrieval.] The live pipeline begins when a user uploads a draft municipal ordinance. The system first runs the BM25 algorithm to quickly search the statutory database for exact lexical matches. This sparse search captures specific statutory citations, agency acronyms, and numerical penalty limits. At the same time, a dense Bi-Encoder maps the draft provision and the statutes into a continuous semantic space, measuring cosine distance to capture legal meaning that keyword matching overlooks~\cite{reimers2019sentencebert}. Rather than relying on fragile score normalization, the pipeline combines the two retrievers using Reciprocal Rank Fusion (RRF) to generate an ordered shortlist of the top-$k$ candidate provisions~\cite{cormack2009reciprocal}:
-        \begin{equation}
+        \[
             \text{RRF}(d) = \sum_{m \in \mathcal{M}} \frac{1}{k_{\text{rrf}} + \text{rank}_m(d)}
-            \label{eq:reciprocal_rank_fusion}
-        \end{equation}
-        \eqcaption{Reciprocal Rank Fusion (RRF) Ranking Score}
-        where $\mathcal{M} = \{\text{BM25}, \text{Dense}\}$ represents the candidate retrieval models, and $\text{rank}_m(d)$ denotes the ordinal position of document $d$ produced by model $m$. The smoothing constant $k_{\text{rrf}} = 60$ follows the standard calibration formulated by Cormack et al.~\cite{cormack2009reciprocal} to prevent high-ranking outliers from dominating the fused score. Standard linear score interpolation ($\alpha S_{\text{BM25}} + (1-\alpha) S_{\text{Dense}}$) requires min-max normalization across unbounded BM25 distributions, which fluctuates wildly across diverse queries. In contrast, Reciprocal Rank Fusion operates entirely on ordinal rankings, making the combination robust against differences in score scales. The resulting fused score ranks provisions that demonstrate both lexical precision and semantic relevance at the top of the candidate pool.
+        \]
+        where $\mathcal{M} = \{\text{BM25}, \text{Dense}\}$ represents the candidate retrieval models, and $\text{rank}_m(d)$ denotes the ordinal position of document $d$ produced by model $m$. The smoothing constant $k_{\text{rrf}} = 60$ follows the standard calibration formulated by Cormack et al.~\cite{cormack2009reciprocal} to prevent high-ranking outliers from dominating the fused score. Standard linear score interpolation ($\alpha S_{\text{BM25}} + (1-\alpha) S_{\text{Dense}}$) requires min-max normalization across unbounded BM25 distributions, which fluctuates wildly across diverse queries. In contrast, Reciprocal Rank Fusion operates entirely on ordinal rankings, making the combination robust against differences in score scales. The resulting fused score ranks provisions that demonstrate both lexical precision and semantic relevance at the top of the candidate pool. Listing~\ref{lst:stage1_hybrid_retrieval} presents the procedural logic of the dual-stream hybrid retrieval and rank fusion pipeline.
 
-        \item[Stage 1 Dense Bi-Encoder Candidate Pool.] To identify the optimal neural retriever for the coarse search stage, the proponents evaluate eight candidate open-weight bi-encoders representing the four inductive categories reviewed in Section~\ref{sec:ir_candidate_models}:
+        \begin{lstlisting}[language=Python, caption={Pseudocode of the Stage 1 Reciprocal Rank Fusion Hybrid Provision Retrieval Pipeline}, label={lst:stage1_hybrid_retrieval}]
+def retrieve_top_k_candidates(draft_section, statutory_corpus, k=50, k_rrf=60, beta=1.20):
+    """
+    Stage 1 Hybrid Retrieval: Combines keyword search (BM25) and 
+    semantic search (Bi-Encoder) using Reciprocal Rank Fusion (RRF).
+    """
+    # 1. Retrieve top-100 candidates from both sparse and dense streams
+    bm25_results = search_bm25(corpus=statutory_corpus, query=draft_section, top_n=100)
+    dense_results = search_dense(corpus=statutory_corpus, query=draft_section, top_n=100)
+
+    # 2. Combine unique candidate provisions from both result lists
+    candidate_pool = set(bm25_results.keys()) | set(dense_results.keys())
+    fused_scores = {}
+
+    # 3. Calculate Reciprocal Rank Fusion (RRF) score for each candidate
+    for provision_id in candidate_pool:
+        # Find 1-based rank position in each retriever (default to 101 if not found)
+        rank_bm25 = bm25_results.get_rank(provision_id, default=101)
+        rank_dense = dense_results.get_rank(provision_id, default=101)
+        
+        # Compute reciprocal rank score
+        rrf_score = (1.0 / (k_rrf + rank_bm25)) + (1.0 / (k_rrf + rank_dense))
+        
+        # Apply hierarchy safeguard boost to Republic Acts
+        if provision_id.startswith("RA_") or is_primary_act(provision_id):
+            rrf_score *= beta  # Boost primary national acts by 20%
+            
+        fused_scores[provision_id] = rrf_score
+
+    # 4. Sort candidates by fused score and return top-k shortlist
+    sorted_shortlist = sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
+    return sorted_shortlist[:k]
+        \end{lstlisting}
+
+        \item[Stage 1 Dense Bi-Encoder Candidate Pool.]
+        \label{sec:stage1_dense_pool}
+        To identify the optimal neural retriever for the coarse search stage, the proponents evaluate eight candidate open-weight bi-encoders representing the four inductive categories reviewed in Section~\ref{sec:ir_candidate_models}:
         \begin{enumerate}
             \item \textbf{Distilled Edge Baselines:} \texttt{all-MiniLM-L6-v2} (22.7M, 384 dimensions) and \texttt{bge-small-en-v1.5} (33.4M, 384 dimensions).
             \item \textbf{General MTEB Leaders:} \texttt{bge-base-en-v1.5} (109M, 768 dimensions), \texttt{e5-base-v2} (109M, 768 dimensions), and \texttt{all-mpnet-base-v2} (109M, 768 dimensions).
@@ -552,9 +790,11 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
 
 
     \subsection{Model Selection}
+    \label{sec:model_selection}
     Before deploying the system, the researchers evaluate candidate Cross-Encoder models to identify the most accurate architecture for semantic conflict detection. Rather than selecting an arbitrary architecture or relying on enterprise cloud APIs, the candidate pool is bounded by the computational capacity of standard Local Government Unit (LGU) workstations. Specifically, candidate models must satisfy an upper ceiling of 600M parameters, an fp16 inference memory footprint under 2~GB VRAM, and deterministic sequence classification over $\{\text{Entailment}, \text{Contradiction}, \text{Neutral}\}$. While leading systems in the COLIEE 2026 competition explored large generative ensembles requiring substantial GPU clusters~\cite{alshehri2026cross, ngo2026nowj}, the proponents intentionally evaluate compact, encoder-only models that can execute locally on consumer hardware. Once the optimal architecture is identified and calibrated, its model weights and tokenizer configurations are permanently pinned for offline execution (\texttt{local\_files\_only = True}), ensuring that the production pipeline runs securely within air-gapped municipal IT networks without external cloud dependencies.
 
     \subsubsection{Candidate Model Pool and Architectural Families}
+    \label{sec:stage2_candidate_pool}
     To evaluate a broad spectrum of inductive biases, the candidate search space comprises 28 open-weight sequence encoders organized across the six architectural families reviewed in Chapter~2 (Section~\ref{sec:nli_candidate_models}):
     \begin{enumerate}
         \item \textbf{Legal-Domain Pretrained Encoders (5 models):} \texttt{legal-bert-base-uncased} (110M), \texttt{PoL-BERT-Large} (340M), \texttt{InLegalBERT} (110M), \texttt{CaseLaw-BERT} (110M), and \texttt{Lawformer} (110M).
@@ -566,6 +806,7 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
     \end{enumerate}
 
     \subsubsection{Two-Step Model Screening Protocol}
+    \label{sec:two_step_screening_protocol}
     Evaluating all 28 models through exhaustive multi-epoch hyperparameter sweeps on local hardware would require prohibitive GPU compute. Therefore, the proponents implement a Two-Step Model Screening Protocol:
     \begin{description}
         \item[Step 1: Rapid Zero-Shot Screening.] In the initial screening step, all 28 candidate architectures from each of the six families are evaluated directly out-of-the-box on the held-out test dataset ($\mathcal{D}_{\text{test}}$, $N = 53$) without prior fine-tuning. This rapid test measures the intrinsic deontic sensitivity of each model and quantifies baseline affirmative bias---the known failure mode where unadapted language models default toward Entailment or Neutral when reading complex legal text~\cite{alshehri2026cross, tran2026enhancing}. Models that exhibit severe affirmative bias or unmanageable inference latency are filtered out before supervised training.
@@ -574,6 +815,7 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
     \end{description}
 
     \subsubsection{Shortlisting Criteria and Candidate Ablation Design}
+    \label{sec:shortlisting_criteria}
     Candidate admission from the 28-model zero-shot screening pool into the supervised fine-tuning shortlist is governed by three operational criteria:
     \begin{description}
         \item[Deontic Conflict Sensitivity.] The candidate must demonstrate non-trivial zero-shot conflict detection capabilities ($R_{\text{contra}} \ge 0.50$ or Macro $F_1 \ge 0.50$) or specialized legal domain pretraining. Models that collapse entirely into affirmative classifications are excluded to avoid spending training resources on architectures with fatal inductive bias.
@@ -636,58 +878,79 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
         \subsubsection{Stage 1 Metrics}
         Measuring search performance in Stage~1 requires ranking metrics rather than standard classification accuracy~\cite{manning2008introduction}. Because the purpose of the coarse retriever is to find candidate laws rather than make the final decision, standard accuracy does not reflect search quality. If the relevant national statute is left out of the top-$k$ shortlist, the downstream Cross-Encoder cannot detect the conflict. For this reason, the retrieval stage is evaluated primarily using Recall at rank $k$ ($\text{Recall@}k$) at thresholds of $k \in \{10, 30, 50\}$. This metric measures the percentage of test queries where the correct national law appears within the candidate shortlist:
 
-        \begin{equation}
+        \[
             \text{Recall@}k = \frac{1}{|Q|} \sum_{q=1}^{|Q|} \mathbf{1}\left(\text{rank}(d_q^*) \le k\right)
-            \label{eq:recall_at_k}
-        \end{equation}
-        \eqcaption{Information Retrieval Recall at Rank $k$ ($\text{Recall@}k$)}
+        \]
         where $|Q|$ is the total number of test queries, $d_q^*$ is the correct national statute paired with query $q$, and $\mathbf{1}(\cdot)$ is an indicator function that equals one when the target law ranks within the top $k$ candidates.
 
         To measure how high the target law ranks within the candidate list, the researchers use Mean Reciprocal Rank ($\text{MRR@}k$)~\cite{manning2008introduction, robertson2009probabilistic}. While $\text{Recall@}k$ treats all positions within the top-$k$ list the same, $\text{MRR@}k$ gives higher scores to systems that place the governing statute near the top of the list:
 
-        \begin{equation}
+        \[
             \text{MRR@}k = \frac{1}{|Q|} \sum_{q=1}^{|Q|} \frac{1}{\text{rank}(d_q^*)} \cdot \mathbf{1}\left(\text{rank}(d_q^*) \le k\right)
-            \label{eq:mrr_at_k}
-        \end{equation}
-        \eqcaption{Mean Reciprocal Rank at Rank $k$ ($\text{MRR@}k$)}
+        \]
         In this formula, a target statute retrieved at rank one receives a reciprocal score of 1.0, while a statute retrieved at rank ten receives 0.10. The 350 curated premise-hypothesis pairs serve as the query benchmark for testing Stage~1. By using the 350 draft clauses as queries against the 25,432-statute collection, the proponents measure how often candidate retrieval models locate the paired statutory provision. Calculating $\text{Recall@}10$, $\text{Recall@}30$, and $\text{Recall@}50$ confirms whether the coarse retriever supplies a dependable candidate pool for subsequent natural language inference.
 
         \subsubsection{Stage 2 Metrics}
         The Stage~2 Cross-Encoder evaluates candidate statutory pairs across three discrete logical categories: $\mathcal{C} = \{\text{Entailment}, \text{Neutral}, \text{Contradiction}\}$. To assess classification quality across each relationship, the system computes class-specific Precision ($P_c$), Recall ($R_c$), and $F_1$-score ($F_{1,c}$) using standard contingency counts~\cite{sokolova2009systematic}:
-        \begin{equation}
+        \[
             P_c = \frac{TP_c}{TP_c + FP_c}, \quad R_c = \frac{TP_c}{TP_c + FN_c}, \quad F_{1,c} = \frac{2 \cdot P_c \cdot R_c}{P_c + R_c}
-            \label{eq:class_metrics}
-        \end{equation}
-        \eqcaption{Class-Specific Precision, Recall, and $F_1$-Score}
+        \]
         where $TP_c$, $FP_c$, and $FN_c$ represent the true positive, false positive, and false negative classifications for category $c$, respectively. Precision reflects how reliably the model avoids false alarms, while Recall measures the proportion of genuine legal relationships successfully detected. To ensure that performance across all three categories is evaluated equally without allowing dominant neutral pairs to skew the outcome, the system calculates the Macro-averaged $F_1$-score ($\text{Macro } F_1$)~\cite{manning2008introduction, sokolova2009systematic}:
-        \begin{equation}
+        \[
             \text{Macro } F_1 = \frac{1}{|\mathcal{C}|} \sum_{c \in \mathcal{C}} F_{1,c}
-            \label{eq:macro_f1}
-        \end{equation}
-        \eqcaption{Macro-Averaged $F_1$-Score Across Logical Classes}
+        \]
 
         In statutory conflict detection, classification errors carry fundamentally unequal operational costs~\cite{elkan2001foundations, fawcett2006roc}. A false negative, where the system fails to flag an unconstitutional local clause, permits an invalid ordinance to be enacted. This failure triggers costly litigation and statutory invalidation under the \textit{Magtajas} doctrine~\cite{scp1994magtajasvpryce}. In contrast, a false positive, where the system flags a compliant draft clause, merely directs a human legislative researcher to examine the flagged text on the review dashboard, requiring only seconds of reviewer time. Standard classifiers default to a symmetric decision threshold of $P(\text{Contradiction}) \ge 0.50$, which assumes that false alarms and missed conflicts cause identical harm. In foundational cost-sensitive learning theory, Elkan~\cite{elkan2001foundations} proved that when false negative costs exceed false positive costs ($C(FN) > C(FP)$), setting the decision boundary at 0.50 is mathematically suboptimal and produces an unsafe number of missed conflicts~\cite{fawcett2006roc, koreeda2021contract}.
 
         To address this cost asymmetry, the proponents implement a validation-tuned decision boundary $\tau_{\text{conflict}}$ for contradiction alerts. Rather than using a fixed 0.50 cutoff, the pipeline sweeps candidate thresholds across $\tau \in [0.25, 0.50]$ in increments of $\Delta \tau = 0.01$ exclusively on the validation set ($\mathcal{D}_{\text{val}}$, $N = 52$). The optimal threshold $\tau^*$ is selected by maximizing the $F_2$-score on the Contradiction class~\cite{chinchor1992muc4, koreeda2021contract}:
-        \begin{equation}
+        \[
             F_{2, \text{conflict}} = \frac{5 \cdot P_{\text{conflict}} \cdot R_{\text{conflict}}}{4 \cdot P_{\text{conflict}} + R_{\text{conflict}}}
-            \label{eq:f2_score}
-        \end{equation}
-        \eqcaption{Cost-Sensitive Contradiction $F_2$-Score}
-        \begin{equation}
+        \]
+        \[
             \tau^* = \arg\max_{\tau \in [0.25, 0.50]} F_{2, \text{conflict}}(\tau; \mathcal{D}_{\text{val}})
-            \label{eq:threshold_tuning}
-        \end{equation}
-        \eqcaption{Optimal Contradiction Decision Threshold Calibration ($\tau^*$)}
+        \]
         Weighting recall twice as heavily as precision ensures that the system aggressively captures potential legal conflicts while preventing reviewer fatigue through a precision floor of $P_{\text{conflict}} \ge 0.70$. During live inference, a candidate provision triggers a formal conflict alert whenever its softmax contradiction probability satisfies $P(\text{Contradiction} \mid p_i, h) \ge \tau^*$.
 
         When evaluating complete multi-section ordinances during live system execution, Stage~1 retains its full safety buffer of $k = 50$ candidates for each substantive section ($S_i$). To prevent computational latency bottlenecks when scoring up to 500 total candidate pairs per document, the Stage~2 inference engine employs vectorized mini-batch collation ($B = 16$). Batching evaluates candidate provisions in parallel tensor forward passes rather than sequential single-item loops, keeping inference runtime under five seconds on GPU workstations and under thirty seconds on basic LGU processors. To consolidate the resulting candidate scores into a single decision for each section, the pipeline applies max-pooling aggregation across the candidate pool:
-        \begin{equation}
+        \[
             P(\text{Conflict} \mid S_i) = \max_{j \in [1, k]} P(\text{Contradiction} \mid P_j, S_i)
-            \label{eq:max_pool_conflict}
-        \end{equation}
-        \eqcaption{Section-Level Max-Pooled Contradiction Probability}
-        A section triggers an operative conflict warning if and only if $P(\text{Conflict} \mid S_i) \ge \tau^*$, with the system highlighting the specific governing candidate provision $P_j^* = \arg\max_{j} P(\text{Contradiction} \mid P_j, S_i)$ that produced the highest conflict probability. This max-pooling aggregation ensures that an authentic statutory clash ranked lower in the candidate shortlist is not obscured by neutral or harmonious provisions appearing at higher retrieval ranks.
+        \]
+        A section triggers an operative conflict warning if and only if $P(\text{Conflict} \mid S_i) \ge \tau^*$, with the system highlighting the specific governing candidate provision $P_j^* = \arg\max_{j} P(\text{Contradiction} \mid P_j, S_i)$ that produced the highest conflict probability. This max-pooling aggregation ensures that an authentic statutory clash ranked lower in the candidate shortlist is not obscured by neutral or harmonious provisions appearing at higher retrieval ranks. Listing~\ref{lst:stage2_inference_aggregation} outlines the operational inference and conflict aggregation procedure.
+
+        \begin{lstlisting}[language=Python, caption={Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}, label={lst:stage2_inference_aggregation}]
+def detect_section_conflicts(draft_section, candidate_provisions, model, threshold=0.35, batch_size=16):
+    """
+    Stage 2 Cost-Sensitive Cross-Encoder Inference:
+    Scores candidate law pairs and flags conflicts using max-pooling.
+    """
+    # 1. Pair each candidate statutory provision (premise) with the draft section (hypothesis)
+    pairs = [(provision.text, draft_section.text) for provision in candidate_provisions]
+
+    # 2. Run mini-batch inference through the fine-tuned Cross-Encoder
+    contradiction_scores = []
+    for i in range(0, len(pairs), batch_size):
+        batch = pairs[i : i + batch_size]
+        # Get softmax probabilities across [Entailment, Neutral, Contradiction]
+        probabilities = model.predict_probabilities(batch)
+        # Extract contradiction class probability (index 2)
+        batch_contradictions = [p["contradiction"] for p in probabilities]
+        contradiction_scores.extend(batch_contradictions)
+
+    # 3. Find candidate provision with highest contradiction score (Max-Pooling)
+    peak_score = max(contradiction_scores)
+    peak_index = contradiction_scores.index(peak_score)
+    governing_provision = candidate_provisions[peak_index]
+
+    # 4. Apply cost-sensitive decision threshold
+    has_conflict = peak_score >= threshold
+
+    return {
+        "alert": has_conflict,
+        "conflict_probability": peak_score,
+        "conflicting_law": governing_provision.citation,
+        "conflicting_text": governing_provision.text
+    }
+        \end{lstlisting}
 
         \subsubsection{Statistical Tests}
         \label{sec:statistical_comparisons}
@@ -710,11 +973,9 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
                 \end{tabular}
             \end{table}
             where $b$ represents items correctly classified by Model~A but misclassified by Model~B, and $c$ represents items correctly classified by Model~B but misclassified by Model~A. Under the null hypothesis $H_0: p_b = p_c$, the two models have equivalent error rates. To account for discrete cell frequencies, the proponents apply Edwards' continuity correction to calculate the chi-squared statistic with one degree of freedom ($\text{df} = 1$):
-            \begin{equation}
+            \[
                 \chi^2 = \frac{(|b - c| - 1)^2}{b + c} \sim \chi^2_1
-                \label{eq:mcnemar_test}
-            \end{equation}
-            \eqcaption{McNemar's Chi-Squared Test with Edwards' Continuity Correction}
+            \]
             A calculated $p$-value below the significance threshold $\alpha = 0.05$ rejects the null hypothesis, confirming that the difference in predictive accuracy is statistically significant.
             
             Because the Stage~2 evaluation compares three candidate models ($k = 3$: MiniLM, DeBERTa-v3, ModernBERT), pairwise evaluation yields $m = \binom{3}{2} = 3$ distinct model comparisons. To prevent Type~I error inflation (false positive significance) across multiple tests, the proponents apply the standard Bonferroni correction~\cite{demsar2006statistical}, evaluating each pair against the adjusted threshold $\alpha' = \alpha / m = 0.05 / 3 \approx 0.0167$. 
@@ -722,39 +983,79 @@ Evaluating candidate Cross-Encoder models in Stage~2 requires a high-quality gro
             Furthermore, when expanding candidate model explorations to larger suites (e.g., $k \approx 10$ architectures and hyperparameter configurations), running exhaustive pairwise McNemar tests produces $\binom{k}{2} = 45$ comparisons, creating severe statistical conservatism under Bonferroni correction ($\alpha' = 0.05 / 45 \approx 0.0011$). To handle larger candidate pools without losing statistical power, the proponents follow Dem{\v{s}}ar's two-step testing protocol~\cite{demsar2006statistical}: first executing the omnibus Friedman test across all $k$ models simultaneously, and only upon rejecting the global null hypothesis ($p < 0.05$), conducting post-hoc comparisons comparing candidate models strictly against the top-performing control model ($k - 1$ comparisons rather than $\frac{k(k-1)}{2}$) or evaluating critical difference intervals via the Nemenyi test.
 
             \item[Friedman Test (Multi-Model Ranking across Legal Domains).] To assess the consistency of candidate architectures across the eight Macro Legal Domains without making distributional assumptions, the proponents utilize the Friedman non-parametric two-way analysis of variance by ranks~\cite{friedman1937use, demsar2006statistical}. For $k$ candidate models evaluated across $N = 8$ distinct legal domains, each model is assigned a rank $r_i^j$ within domain $i$, where the best-performing model receives rank 1. The average rank of model $j$ across all domains is given by $R_j = \frac{1}{N}\sum_{i=1}^N r_i^j$. The Friedman test statistic is defined as:
-            \begin{equation}
+            \[
                 \chi_F^2 = \frac{12N}{k(k+1)}\left[\sum_{j=1}^k R_j^2 - \frac{k(k+1)^2}{4}\right]
-                \label{eq:friedman_test}
-            \end{equation}
-            \eqcaption{Friedman Two-Way Analysis of Variance by Ranks ($\chi_F^2$)}
+            \]
             Under the null hypothesis that all candidate models perform equivalently across legal domains, $\chi_F^2$ follows a chi-squared distribution with $k - 1$ degrees of freedom. If the Friedman test yields $p < 0.05$, the proponents conduct post-hoc pairwise comparisons using the Wilcoxon signed-rank test with Bonferroni correction and the Nemenyi test to isolate specific models that exhibit statistically superior domain generalization~\cite{demsar2006statistical}.
         \end{description}
 
     \subsection{System-Level Evaluation Framework}
+    \label{sec:system_evaluation_framework}
     While isolated benchmarks measure retrieval recall and natural language inference accuracy separately, evaluating the live utility of the system requires testing both stages as an integrated pipeline. In real legislative drafting, an inference engine cannot detect a contradiction if the retrieval engine fails to supply the governing statute, and a retrieval engine is useless if the inference engine misclassifies the pair. Following the multi-stage system evaluation standards established in legal information extraction competitions~\cite{rabelo2022coliee, alshehri2026cross} and fact verification benchmarks~\cite{thorne2018fever}, the proponents implement a structured Three-Tier Evaluation Framework. This multi-tier protocol connects controlled statistical benchmarking with full-document stress testing. Together, these three evaluation tiers systematically assess whether the complete pipeline can operate reliably within the Davao City Sangguniang Panlungsod.
 
     \begin{description}
         \item[Tier 1: Cascaded End-to-End Benchmark.] The first evaluation tier measures the combined algorithmic performance of Stage~1 and Stage~2 when executed in sequence without human guidance. Unlike isolated model testing where the Cross-Encoder receives the exact gold statutory provision, the cascaded benchmark feeds only the local draft hypothesis clause $h_q$ from the 53 held-out test pairs into Stage~1. The retrieval engine searches across all 27,000+ national statutes and local ordinances to extract a candidate shortlist of the top-$k$ provisions ($\mathcal{K}_q^{(k)}$), which is then passed directly to Stage~2 for inference. A test item is scored as a Cascaded True Positive if and only if Stage~1 retrieves the correct governing statute $p_q^*$ within the top-$k$ shortlist and Stage~2 correctly classifies the pair $(p_q^*, h_q)$ as a Contradiction:
-        \begin{equation}
+        \[
             \text{Hit}_{\text{casc}}(q) = \mathbf{1}\left(p_q^* \in \mathcal{K}_q^{(k)}\right) \cdot \mathbf{1}\left(\hat{y}(p_q^*, h_q) = y_q^*\right)
-            \label{eq:cascaded_hit}
-        \end{equation}
-        \eqcaption{Cascaded End-to-End Joint Conflict Detection Hit Indicator}
+        \]
         Adapting this joint metric from the FEVER fact verification framework~\cite{thorne2018fever} isolates whether an operational error stems from retrieval omissions ($p_q^* \notin \mathcal{K}_q^{(k)}$) or classification errors ($\hat{y} \neq y_q^*$), preventing either stage from masking pipeline failures.
 
-        \item[Tier 2: Injected-Fault Full-Document Stress Testing.] The second evaluation tier tests how the complete pipeline processes full, multi-section legislative drafts rather than isolated sentence pairs. In municipal practice, proposed ordinances contain extensive procedural text, including administrative definitions and standard effectivity clauses, which should not trigger conflict warnings. Adapting the behavioral perturbation and fault-injection principles formulated by Ribeiro et al.~\cite{ribeiro2020beyond} and Koreeda and Manning~\cite{koreeda2021contract}, the proponents construct full synthetic ordinance drafts containing controlled legal faults. In each synthetic document, 80\% to 90\% of the sections remain compliant with national law, while one or two targeted sections contain deliberate statutory violations, such as excessive penalty amounts or unlicensed commercial permissions. The automated preprocessor chunks the submitted document into operative sections, auditing every section independently against the statutory corpus.
+        \item[Tier 2: Injected-Fault Full-Document Stress Testing.] The second evaluation tier tests how the complete coarse-to-fine pipeline processes full, multi-section legislative drafts rather than isolated sentence pairs. In municipal practice, proposed ordinances contain extensive procedural text, including administrative definitions and standard effectivity clauses, which should not trigger conflict warnings. Adapting the behavioral perturbation and fault-injection principles formulated by Ribeiro et al.~\cite{ribeiro2020beyond} and Koreeda and Manning~\cite{koreeda2021contract}, the proponents construct synthetic and semi-synthetic ordinance drafts containing controlled legal faults. In each test document, the majority of sections remain compliant with superior law, while targeted operative provisions contain deliberate statutory violations, such as unauthorized regulatory mandates or excessive penalty amounts. The automated preprocessor chunks the submitted document into operative sections, auditing every section independently against the statutory archive.
 
         Evaluating full documents measures both the sensitivity of the pipeline to authentic legal defects and its ability to avoid false alarms on compliant text. For every audited section, the system records whether a conflict alert is triggered and identifies the retrieved governing statute. The proponents calculate Section-Level Sensitivity to measure the percentage of injected conflicts successfully flagged, paired with Section-Level Specificity to assess false-alarm resistance:
-        \begin{equation}
+        \[
             \text{Specificity}_{\text{sec}} = \frac{TN_{\text{sec}}}{TN_{\text{sec}} + FP_{\text{sec}}}
-            \label{eq:section_specificity}
-        \end{equation}
-        \eqcaption{Section-Level Specificity for Full-Document Stress Testing}
+        \]
         Maintaining high specificity protects legislative researchers from alert fatigue, ensuring that the system does not produce spurious warnings on standard boilerplate clauses. This perturbation stress test confirms that the system can analyze complete legislative documents before deployment in committee reviews.
 
-        \item[Tier 3: Historical Validation and Expert Evaluation.] The third evaluation tier validates the practical utility and legal soundness of the system using documented historical legal disputes and active expert review. Rather than relying solely on synthetic tests, the proponents evaluate the pipeline against historical municipal ordinances that were formally contested in Philippine courts. Specifically, the system audits historical draft records from landmark preemption rulings, including Davao City Ordinance No.~0309-07, which was invalidated by the Supreme Court in \textit{Mosqueda v. Pilipino Banana Growers \& Exporters Association, Inc.}~\cite{scp2016mosqueda} for conflicting with national administrative authority under the \textit{Magtajas} doctrine~\cite{scp1994magtajasvpryce}. By comparing automated alerts against published court decisions and mayoral veto messages from the Davao City archives, the evaluation verifies whether the pipeline surfaces the exact statutory provisions cited by judicial authorities. This historical validation proves that the system identifies authentic statutory preemption points that previously led to municipal litigation.
+        \item[Tier 3: Historical Validation and Expert Evaluation.] The third evaluation tier validates the practical utility and legal soundness of the system using documented historical legal disputes and active expert review. Rather than relying solely on synthetic tests, the proponents systematically assembled an authentic judicial validation suite of 10 landmark legal controversies and municipal enactments originating strictly within Davao City. These historical cases encompass both judicial invalidations where local enactments were struck down for exceeding statutory boundaries, and landmark rulings where the Supreme Court affirmed the validity of Davao City ordinances under local police power:
+        \begin{itemize}
+            \item \textbf{Agrochemical and Environmental Regulation:} In \textit{Mosqueda v. Pilipino Banana Growers \& Exporters Association, Inc.}~\cite{scp2016mosqueda}, the Supreme Court invalidated Davao City Ordinance No.~0309-07 (imposing a total ban on aerial pesticide spraying in agricultural banana plantations) for violating the Equal Protection clause and invading the exclusive regulatory jurisdiction over agricultural chemicals vested in the Fertilizer and Pesticide Authority under Presidential Decree No.~1144. Conversely, in the ongoing Davao City Mining Ban dispute under Ordinance No.~0310-07~\cite{spdavao2007ord0310} (Watershed Protection Ordinance), the city's total prohibition on mineral extraction operates in direct vertical tension with State mineral ownership and concessions granted under Republic Act No.~7942.
+            \item \textbf{Urban Structures and Outdoor Signage:} In \textit{Hon. Leoncio Evasco, Jr. v. Alex P. Monta{\~n}ez}~\cite{scp2018evascovmontanez}, the Supreme Court reversed the Court of Appeals and explicitly upheld Davao City Ordinance No.~092-2000 regulating outdoor billboards. The Court affirmed that under Section~458(a)(4)(iv) of Republic Act No.~7160, city councils possess express statutory police power to regulate advertising structures, operating harmoniously alongside the National Building Code (Presidential Decree No.~1096).
+            \item \textbf{Local Taxation and Revenue Ceilings:} In \textit{City of Davao and Tanjili v. ARC Investors, Inc.}~\cite{scp2022davaovarc}, the Supreme Court voided Davao City's local business tax assessment under Ordinance No.~158-05, ruling that an LGU cannot unilaterally reclassify a passive holding company as a non-bank financial intermediary without Bangko Sentral ng Pilipinas authorization. In \textit{Mindanao Shopping Destination Corp. v. Duterte}~\cite{scp2017mindanaoshopping}, the Court scrutinized the graduated business tax schedules of Ordinance No.~158-05, enforcing statutory rate ceilings under Section~143 of Republic Act No.~7160. In \textit{City of Davao v. Court of Appeals and GSIS}~\cite{scp2005davaovgsis}, the Court nullified real property tax levies on GSIS properties pursuant to the absolute statutory exemption of national government instrumentalities under Section~133(o) of Republic Act No.~7160.
+            \item \textbf{Public Utilities and Municipal Franchise Powers:} In \textit{Smart Communications, Inc. v. City of Davao}~\cite{scp2008smartvdavao} and \textit{PLDT v. City of Davao}~\cite{scp2001pldtvdavao}, the Supreme Court upheld Davao City Ordinance No.~230 (as amended by Ordinance No.~519), ruling that tax exemptions in legislative franchises must be strictly construed and that generic ``in lieu of all taxes'' clauses do not defeat an LGU's autonomous franchise taxing power under Section~137 of Republic Act No.~7160.
+            \item \textbf{Public Health, Order, and Safety Ordinances:} Under the General Welfare Clause (Section~16 of Republic Act No.~7160), Davao City enacted several landmark regulatory ordinances that established stricter local standards than national baselines without statutory invalidation, including the Comprehensive Anti-Smoking Ordinance (Ordinance No.~0367-12)~\cite{spdavao2012ord0367} establishing stricter setbacks than Republic Act No.~9211, the Firecracker Ban Ordinance (Ordinance No.~060-02)~\cite{spdavao2002ord060} prohibiting pyrotechnics to protect public safety against Republic Act No.~7183, and the Comprehensive Speed Limit Ordinance (Ordinance No.~0270-23)~\cite{spdavao2023ord0270} classifying local road speed ceilings pursuant to delegated authority under Republic Act No.~4136 and Joint JAO 2018-01.
+        \end{itemize}
 
-        To measure user acceptance in daily legislative workflows, the system is deployed to the 15 active Sangguniang Panlungsod legal researchers. Evaluators audit sample draft ordinances using the single-page prototype dashboard during First Reading committee preparation. The researchers assess whether the retrieved statutory context and highlighted attention heatmaps clarify potential preemption risks under Section~458 of Republic Act No.~7160~\cite{philgov1991ra7160}. Human agreement across evaluator judgments is measured using Fleiss' Kappa ($\kappa$)~\cite{fleiss1971measuring}, while subjective software usability is evaluated using the standardized System Usability Scale (SUS)~\cite{brooke1996sus}. Combining historical court rulings with direct feedback from city council staff confirms that the finished pipeline provides practical decision support for local governance.
+        Table~\ref{tab:tier3_cases} presents the complete Davao City municipal validation suite, detailing the local measures, governing national statutes, legal ratios decidendi, and gold NLI labels. To ensure long-term reproducibility and immediate system availability, complete archival copies of these 10 Davao City ordinances and tax measures have been assembled and stored locally within the repository's municipal corpus (\texttt{corpus/davao\_city\_tier3\_ordinances/}). Standardized diagnostic problem-solution pairs are indexed in \texttt{data/tier3\_jurisprudential\_cases.jsonl}, pairing operative draft excerpts with corresponding statutory provisions and judicial holdings.
+
+        \begin{table}[!htbp]
+            \centering
+            \footnotesize
+            \setlength{\tabcolsep}{2.5pt}
+            \renewcommand{\arraystretch}{0.92}
+            \caption{Landmark Davao City Municipal Jurisprudential Suite for Tier~3 System Evaluation ($N = 10$ Local Ordinances and Preemption Disputes)}
+            \label{tab:tier3_cases}
+            \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{2.3cm}>{\centering\arraybackslash}p{1.6cm}>{\RaggedRight\arraybackslash}p{3.0cm}>{\RaggedRight\arraybackslash}X>{\centering\arraybackslash}p{2.1cm}}
+                \toprule
+                \textbf{Case Title} & \textbf{Docket / Year} & \textbf{Challenged Local Ordinance} & \textbf{Governing Statute \& Rationale} & \textbf{Gold NLI Label} \\
+                \midrule
+                \textit{Mosqueda v. PBGEA}~\cite{scp2016mosqueda} & G.R. 189185 \newline (2016) & Davao City Ord.~0309-07 (Banning Aerial Pesticide Spraying) & PD 1144; FPA holds exclusive jurisdiction over agrochemical application. & Contradiction \\
+                \addlinespace[2pt]
+                \textit{Evasco v. Monta{\~n}ez}~\cite{scp2018evascovmontanez} & G.R. 199172 \newline (2018) & Davao City Ord.~092-2000 (Regulating Billboard Structures) & RA 7160 §458; Upheld as valid municipal police power alongside PD 1096. & Entailment \\
+                \addlinespace[2pt]
+                \textit{Davao v. ARC Investors}~\cite{scp2022davaovarc} & G.R. 249668 \newline (2022) & Davao City Ord.~158-05 §135 (Business Tax on Holding Dividends) & RA 7160 §143(f); Holding firm is not an NBFI without BSP license. & Contradiction \\
+                \addlinespace[2pt]
+                \textit{Smart v. City of Davao}~\cite{scp2008smartvdavao} & G.R. 155491 \newline (2008) & Davao City Ord.~230 / 519 (0.5\% Local Telecom Franchise Tax) & RA 7160 §137; Tax exemptions strictly construed; franchise clause ineffective. & Entailment \\
+                \addlinespace[2pt]
+                \textit{Mindanao Shopping v. Duterte}~\cite{scp2017mindanaoshopping} & G.R. 211093 \newline (2017) & Davao City Ord.~158-05 §69 (Graduated Business Tax Schedules) & RA 7160 §143; City taxing power cannot exceed statutory bracket caps. & Contradiction \\
+                \addlinespace[2pt]
+                \textit{City of Davao v. GSIS}~\cite{scp2005davaovgsis} & G.R. 127383 \newline (2005) & Real Property Tax Levies on GSIS Government Properties & RA 7160 §133(o); Absolute statutory exemption of national instrumentalities. & Contradiction \\
+                \addlinespace[2pt]
+                \textit{Davao Mining Ban Dispute}~\cite{spdavao2007ord0310} & Ord.~0310-07 \newline (2015) & Citywide Total Ban on Commercial Mining Operations & RA 7942 §4, §27; Regalian doctrine and national mineral concession supremacy. & Contradiction \\
+                \addlinespace[2pt]
+                \textit{Davao Anti-Smoking Dispute}~\cite{spdavao2012ord0367} & Ord.~0367-12 \newline (2012) & Stricter Outdoor/Indoor Smoking Distance Setbacks & RA 7160 §16; Stricter local public health standards valid under police power. & Entailment \\
+                \addlinespace[2pt]
+                \textit{Davao Speed Limit Dispute}~\cite{spdavao2023ord0270} & Ord.~0270-23 \newline (2023) & Comprehensive Speed Limits on City Thoroughfares & RA 4136 §35; Joint JAO 2018-01 expressly delegates road speed setting to LGUs. & Entailment \\
+                \addlinespace[2pt]
+                \textit{Davao Firecracker Ban Dispute}~\cite{spdavao2002ord060} & Ord.~060-02 \newline (2002) & Total Prohibition on Firecrackers and Pyrotechnics & RA 7160 §16, §458; Upheld under general welfare police power to protect life. & Entailment \\
+                \bottomrule
+            \end{tabularx}
+        \end{table}
+
+        By feeding authentic legal questions and challenged provisions directly into Stage~1 retrieval and Stage~2 inference, the evaluation confirms whether the automated pipeline surfaces the exact statutory citations and preemption rationales formulated by judicial authorities.
+
+        Finally, to measure practical usability in active legislative workflows, the system is deployed to the 15 active Sangguniang Panlungsod legal researchers. Evaluators audit sample draft ordinances using the single-page prototype dashboard during First Reading committee preparation. The researchers assess whether the retrieved statutory context and highlighted attention heatmaps clarify potential preemption risks under Section~458 of Republic Act No.~7160~\cite{philgov1991ra7160}. Inter-annotator consensus is measured using Fleiss' Kappa ($\kappa$)~\cite{fleiss1971measuring}, while subjective software usability is evaluated using the standardized System Usability Scale (SUS)~\cite{brooke1996sus}. Combining historical court rulings with direct feedback from city council staff confirms that the finished pipeline provides practical decision support for local governance.
     \end{description}
 
     \subsection{Prototype Development}

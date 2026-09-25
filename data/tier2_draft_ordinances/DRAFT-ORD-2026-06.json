@@ -1,0 +1,134 @@
+{
+  "doc_id": "DRAFT-ORD-2026-06",
+  "title": "AN ORDINANCE REGULATING SINGLE-USE PLASTICS, ENFORCING SOURCE SEGREGATION, AND ADVANCING CIRCULAR WASTE MANAGEMENT IN DAVAO CITY",
+  "proposed_ordinance_no": "Proposed Ordinance No. 2026-06, Series of 2026",
+  "committee": "Committee on Environment and Natural Resources, Sangguniang Panlungsod",
+  "physical_specs": {
+    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
+    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
+    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
+    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
+  },
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be known as the 'Davao City Ecological Solid Waste Management and Plastic Regulation Ordinance of 2026'.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard title clause."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "DECLARATION OF SOLID WASTE POLICY",
+      "text": "The City Government commits to systemic ecological solid waste management, waste minimization, and resource recovery pursuant to Republic Act No. 9003 and Republic Act No. 11898.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 9003 §2; Republic Act No. 11898 §2",
+      "legal_rationale": "Harmonious adoption of national solid waste management and extended producer responsibility policies."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "'Single-Use Plastics' refers to disposable plastic items designed for one-time use before disposal. 'Source Segregation' refers to the sorting of solid waste at the household level.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard definitional terms."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "MANDATORY SEGREGATION AT SOURCE",
+      "text": "All households, commercial establishments, and public institutions must segregate solid waste into biodegradable, recyclable, non-recyclable, and special hazardous waste categories prior to collection.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 9003 §21",
+      "legal_rationale": "Directly implements the mandatory source segregation requirement of RA 9003."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "BARANGAY MATERIALS RECOVERY FACILITIES",
+      "text": "Each of the 182 barangays of Davao City shall establish and operate a dedicated Materials Recovery Facility (MRF) or cluster MRF for recyclable and biodegradable composting.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 9003 §32",
+      "legal_rationale": "Directly enforces the statutory mandate under Section 32 of RA 9003 requiring barangay-level MRFs."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "PHASE-OUT OF PLASTIC BAGS IN COMMERCE",
+      "text": "Commercial groceries and department stores are prohibited from distributing non-biodegradable single-use checkout plastic bags, encouraging reusable shopping bags.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(vi); Republic Act No. 9003 §48",
+      "legal_rationale": "Valid municipal police power regulating commercial packaging for environmental sanitation."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "MUNICIPAL IMPORT BARRICADE AND CARGO FORFEITURE",
+      "text": "The City Government shall establish checkpoints at the Port of Davao to inspect, intercept, confiscate, and destroy all international cargo shipments of plastic polymers imported under national customs clearance.",
+      "label": "Contradiction",
+      "target_statute": "1987 Constitution Art. XII §1; Republic Act No. 10863 §200; Republic Act No. 10863 §300",
+      "legal_rationale": "Contradicts the exclusive jurisdiction of the Bureau of Customs under Republic Act No. 10863 (Customs Modernization and Tariff Act); municipal councils have no constitutional power over international trade and customs clearance."
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "EXORBITANT CONSUMER FINES",
+      "text": "Any individual resident found possessing a single-use plastic straw or fork shall be assessed an administrative fine of Fifty Thousand Pesos (P50,000.00) and three (3) years imprisonment.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Blatantly violates Section 458(a)(1)(iii) of RA 7160 which limits city sanggunian penalties to a maximum of P5,000 fine and 1-year imprisonment."
+    },
+    {
+      "sec_num": 9,
+      "sec_title": "COLLECTION SCHEDULE COMPLIANCE",
+      "text": "Waste collection trucks shall strictly collect segregated biodegradables on designated days and non-biodegradables on alternate days.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard municipal operational scheduling."
+    },
+    {
+      "sec_num": 10,
+      "sec_title": "PUBLIC AWARENESS AND EDUCATION",
+      "text": "The City Environment and Natural Resources Office (CENRO) shall conduct information campaigns in all public schools regarding waste reduction.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Municipal educational mandate."
+    },
+    {
+      "sec_num": 11,
+      "sec_title": "ECO-ENTERPRISE ACCREDITATION",
+      "text": "Private recycling firms may register with CENRO for preferred participation in municipal resource-recovery programs.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard municipal partner registration."
+    },
+    {
+      "sec_num": 12,
+      "sec_title": "APPROPRIATIONS",
+      "text": "Funds for the support of barangay MRFs shall be incorporated into the annual statutory ecological fund.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard appropriation clause."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "If any clause is held unconstitutional, other clauses remain valid.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard separability clause."
+    },
+    {
+      "sec_num": 14,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "Inconsistent local enactments are repealed.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard repealing clause."
+    },
+    {
+      "sec_num": 15,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Ordinance takes effect thirty (30) days from publication.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard effectivity clause."
+    }
+  ]
+}

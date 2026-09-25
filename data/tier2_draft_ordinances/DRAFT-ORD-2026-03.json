@@ -1,0 +1,126 @@
+{
+  "doc_id": "DRAFT-ORD-2026-03",
+  "title": "AN ORDINANCE REGULATING SPEED LIMITS, DESIGNATING ACTIVE MOBILITY CORRIDORS, AND ESTABLISHING TRAFFIC SAFETY STANDARDS IN DAVAO CITY",
+  "proposed_ordinance_no": "Proposed Ordinance No. 2026-03, Series of 2026",
+  "committee": "Committee on Transportation and Communications, Sangguniang Panlungsod",
+  "physical_specs": {
+    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
+    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
+    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
+    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
+  },
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be cited as the 'Davao City Speed Limit and Active Mobility Ordinance of 2026'.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard title clause."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "DECLARATION OF TRAFFIC SAFETY POLICY",
+      "text": "The City Government adopts a Safe Systems approach to urban mobility, prioritizing pedestrian safety and accident reduction across all thoroughfares.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard policy statement."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "'Urban Road' refers to municipal streets within the poblacion. 'National Highway' refers to primary arterial thoroughfares connecting Davao City to neighboring provinces. 'Active Mobility' refers to cycling and pedestrian transport.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard definitions."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "URBAN ROAD SPEED CEILINGS",
+      "text": "Vehicles traversing local municipal roads and crowded school zones shall observe a maximum speed of thirty (30) kilometers per hour.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 4136 §35(b); Joint DILG-DOTr-DPWH JAO 2018-01",
+      "legal_rationale": "Valid local speed setting on municipal streets expressly delegated to LGUs under national traffic guidelines."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "DEDICATED BICYCLE AND ACTIVE MOBILITY LANES",
+      "text": "The City Transport and Traffic Management Office (CTTMO) shall delineate protected bicycle lanes along major municipal avenues.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(3)(vi)",
+      "legal_rationale": "Valid municipal authority to regulate traffic and provide public street lanes."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "SPEED LIMIT ON NATIONAL ARTERIAL HIGHWAYS",
+      "text": "All motor vehicles, including provincial buses and inter-regional freight trucks traversing national primary highways passing through Davao City, shall not exceed fifteen (15) kilometers per hour at any time.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 4136 §35; Republic Act No. 4136 §38",
+      "legal_rationale": "Contradicts Republic Act No. 4136 Section 35 and DPWH arterial speed regulations; local governments cannot impose unreasonable or obstructive speed ceilings on national highways that paralyze national trade."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "PEDESTRIAN WALKWAYS AND CROSSWALKS",
+      "text": "Motorists must yield complete right-of-way to pedestrians crossing marked street intersections and zebra crossings.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 4136 §42(c)",
+      "legal_rationale": "Reinforces national statutory pedestrian right-of-way rules."
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "SPEED MONITORING DEVICES",
+      "text": "The CTTMO is authorized to deploy calibrated radar speed guns and automated optical speed sensors to document traffic infractions.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Municipal enforcement tool authorization."
+    },
+    {
+      "sec_num": 9,
+      "sec_title": "TRAFFIC CITATION TICKET SYSTEM",
+      "text": "Infractions under this Ordinance shall be penalized by administrative citation tickets issued by accredited CTTMO enforcers.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard municipal administrative ticketing procedure."
+    },
+    {
+      "sec_num": 10,
+      "sec_title": "GRADUATED FINES",
+      "text": "Violators shall pay a fine of P1,000 for the first offense, P2,000 for the second offense, and P5,000 for the third offense.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Fines remain within the statutory limit of P5,000 for cities."
+    },
+    {
+      "sec_num": 11,
+      "sec_title": "SPEED CALIBRATION AUDITING",
+      "text": "All speed detection devices must undergo semi-annual calibration certification by the Department of Science and Technology (DOST).",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Procedural verification standard."
+    },
+    {
+      "sec_num": 12,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "Should any provision of this Ordinance be declared void by a competent court, all remaining provisions shall remain valid.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard separability clause."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "All municipal speed ordinances or executive directives inconsistent herewith are amended or revoked.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard repealing clause."
+    },
+    {
+      "sec_num": 14,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Ordinance shall take effect thirty (30) days following publication in two newspapers of general circulation in Region XI.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §59",
+      "legal_rationale": "Standard effectivity clause."
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "doc_id": "DRAFT-ORD-2026-08",
+  "title": "AN ORDINANCE REGULATING COMMERCIAL SAND AND GRAVEL EXTRACTION, SAFEGUARDING RIVERBANKS, AND ESTABLISHING QUARRY PERMITTING IN DAVAO CITY",
+  "proposed_ordinance_no": "Proposed Ordinance No. 2026-08, Series of 2026",
+  "committee": "Committee on Environment and Natural Resources, Sangguniang Panlungsod",
+  "physical_specs": {
+    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
+    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
+    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
+    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
+  },
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be cited as the 'Davao City Sustainable Quarrying and River Protection Ordinance of 2026'.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard title provision."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "POLICY STATEMENT",
+      "text": "The City Government balances local construction material needs with ecological preservation of vital river ecosystems under Republic Act No. 7942 and Section 16 of Republic Act No. 7160.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7942 §43; Republic Act No. 7160 §16",
+      "legal_rationale": "Harmonious balance of quarrying regulation with national mining statute."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "'Quarry Resources' refers to common rocks, sand, gravel, and earth materials. 'Commercial Sand and Gravel Permit' refers to a license granted for extraction not exceeding five (5) hectares.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Adapts national definitions from RA 7942 Section 43."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "RIVER EMBANKMENT BUFFER ZONE",
+      "text": "Extraction of sand and gravel is strictly prohibited within one hundred (100) meters upstream and downstream of any bridge, water intake, or public flood control structure.",
+      "label": "Entailment",
+      "target_statute": "Presidential Decree No. 1067 §51; Republic Act No. 7942 §43",
+      "legal_rationale": "Implements national Water Code river protection setbacks."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "CITY MINING REGULATORY BOARD PERMITTING",
+      "text": "Commercial quarry permits within five (5) hectares shall be evaluated by the City Mining Regulatory Board (CMRB) and approved by the City Mayor.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7076 §24; Republic Act No. 7942 §43",
+      "legal_rationale": "Follows the exact statutory delegation under Section 43 of RA 7942."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "UNILATERAL MINERAL EXPORT AUTHORIZATION",
+      "text": "The Sangguniang Panlungsod is hereby empowered to issue local extraction permits for heavy metallic minerals (including nickel, copper, and gold) across ancestral domain lands, authorizing direct commercial export overseas without securing a Mineral Production Sharing Agreement (MPSA) from the DENR or clearance from the NCIP.",
+      "label": "Contradiction",
+      "target_statute": "1987 Constitution Art. XII §2; Republic Act No. 7942 §27; Republic Act No. 8371 §59",
+      "legal_rationale": "Directly violates the Regalian Doctrine (State ownership of metallic mineral resources), Republic Act No. 7942 which reserves mineral agreements strictly to national DENR authority, and Republic Act No. 8371 (IPRA) Free Prior Informed Consent mandates."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "DELIVERY RECEIPT TRACKING",
+      "text": "All trucks transporting quarried aggregates within Davao City must carry a valid Delivery Receipt issued by the City Environment Office indicating the volume and extraction site.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Valid municipal transport tracking requirement."
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "REHABILITATION BOND",
+      "text": "Permittees shall post an environmental rehabilitation deposit prior to the commencement of extraction operations.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard municipal environmental safeguard."
+    },
+    {
+      "sec_num": 9,
+      "sec_title": "PROHIBITION OF NIGHT EXTRACTION",
+      "text": "No quarrying operations shall be conducted between 6:00 PM and 6:00 AM.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Local police power operating hours regulation."
+    },
+    {
+      "sec_num": 10,
+      "sec_title": "PENALTIES AND CONFISCATION",
+      "text": "Illegal extraction shall result in a fine of P5,000.00 and impoundment of transport vehicles.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Statutory fine within municipal limits."
+    },
+    {
+      "sec_num": 11,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "Invalidity of any section shall not affect other portions.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard separability clause."
+    },
+    {
+      "sec_num": 12,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "All inconsistent local rules are repealed.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard repealing clause."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Ordinance takes effect thirty (30) days from publication.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard effectivity clause."
+    }
+  ]
+}

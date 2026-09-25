@@ -1,0 +1,20 @@
+=== Ordinance No. 0270-23 (2023) ===
+Title: THE COMPREHENSIVE SPEED LIMIT ORDINANCE OF DAVAO CITY
+Enacting LGU: City of Davao
+Enacting Clause: BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:
+Date Approved: September 26, 2023
+Judicial Reference: Davao City Speed Limit Enforcement under Joint DOTr-DPWH-DILG JAO 2018-01
+Judicial Ruling: Valid Delegated Local Speed Setting under National Transport Guidelines (Upheld)
+Gold NLI Label: Entailment
+Superior National Law: Republic Act No. 4136 §35, §38; Joint DILG-DOTr-DPWH JAO 2018-01
+
+--- OPERATIVE SECTIONS ---
+SECTION 1. TITLE:
+This Ordinance shall be known as the 'Comprehensive Speed Limit Ordinance of Davao City'.
+
+SECTION 4. SPEED LIMIT CLASSIFICATION:
+Classifies city roads into Open Roads (80 kph private / 50 kph trucks and buses), Through Streets (40 kph / 30 kph), City Streets (30 kph), and Crowded Residential/School Streets (20 kph).
+
+SECTION 6. SPEED DETECTION MACHINERY:
+Authorizes CTTMO to utilize DOST-calibrated radar speed cameras and automated speed enforcement tools.
+

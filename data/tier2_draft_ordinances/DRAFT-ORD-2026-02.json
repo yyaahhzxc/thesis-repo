@@ -1,0 +1,134 @@
+{
+  "doc_id": "DRAFT-ORD-2026-02",
+  "title": "AN ORDINANCE PROHIBITING SMOKING AND VAPING IN ENCLOSED PUBLIC SPACES, REQUIRING HEALTH WARNINGS, AND PRESCRIBING LOCAL ENFORCEMENT PROTOCOLS IN DAVAO CITY",
+  "proposed_ordinance_no": "Proposed Ordinance No. 2026-02, Series of 2026",
+  "committee": "Committee on Health, Sangguniang Panlungsod",
+  "physical_specs": {
+    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
+    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
+    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
+    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
+  },
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be known as the 'Davao City Comprehensive Clean Air and Anti-Smoking Ordinance of 2026'.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard title clause."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "PURPOSE AND POLICY",
+      "text": "It is the policy of Davao City to guarantee the right of all citizens to breathe clean air and to reduce exposure to second-hand tobacco smoke and vapor aerosols pursuant to Republic Act No. 8749 and Republic Act No. 9211.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 8749 §2; Republic Act No. 9211 §2",
+      "legal_rationale": "Valid alignment with Clean Air Act and Tobacco Regulation Act."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "'Public Conveyance' refers to any vehicle available to the public for transportation. 'Enclosed Area' refers to an area covered by a roof or enclosed by two or more walls. 'Electronic Nicotine Delivery Systems (ENDS)' refers to vapor products.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard definitions adapting national terms."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "PROHIBITION IN ENCLOSED PUBLIC PLACES",
+      "text": "Smoking and vaping are strictly prohibited in all enclosed public places, government buildings, healthcare institutions, and educational facilities throughout the City.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 9211 §5; Republic Act No. 11900 §12",
+      "legal_rationale": "Directly implements national statutory indoor smoking ban."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "DESIGNATED OUTDOOR SMOKING AREAS",
+      "text": "Designated smoking and vaping areas must be located in outdoor open spaces at least ten (10) meters away from building entrances, exits, and air intake ducts.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 9211 §6",
+      "legal_rationale": "Valid municipal police power adaptation specifying local physical setbacks for DSAs."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "MANDATORY POINT-OF-SALE WARNINGS",
+      "text": "All retail establishments licensed to sell tobacco or vapor products shall display conspicuous signage stating that sales to persons below twenty-one (21) years of age are unlawful.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 11900 §7",
+      "legal_rationale": "Echoes mandatory minimum age warning requirements under RA 11900."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "SEARCH AND CONFISCATION IN PRIVATE CONVEYANCES",
+      "text": "Authorized local traffic enforcers and police officers are hereby empowered to stop, enter, search, and seize without judicial warrant any private motor vehicle operating on city streets to inspect for smoking passengers.",
+      "label": "Contradiction",
+      "target_statute": "1987 Constitution Art. III §2; Republic Act No. 4136 §5",
+      "legal_rationale": "Violates constitutional search and seizure protections and national land transportation limits; local police cannot conduct warrantless searches of private vehicles without probable cause."
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "EXCESSIVE PENAL SANCTIONS",
+      "text": "Any person caught smoking within any prohibited zone shall suffer imprisonment for a fixed term of two (2) years and six (6) months, with no option for bail or probation.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Directly contradicts the express statutory ceiling of Section 458(a)(1)(iii) of RA 7160, which limits the penal power of city sanggunians to a maximum imprisonment of one (1) year."
+    },
+    {
+      "sec_num": 9,
+      "sec_title": "ANTI-SMOKING TASK FORCE",
+      "text": "The Davao City Anti-Smoking Task Force shall oversee enforcement, maintain statistical records, and conduct public awareness drives in all barangays.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Municipal enforcement structure."
+    },
+    {
+      "sec_num": 10,
+      "sec_title": "COMMUNITY SERVICE OPTION",
+      "text": "First-time individual offenders unable to pay administrative fines may perform eight (8) hours of community environmental service under the supervision of the City Environment and Natural Resources Office.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard local administrative penalty alternative."
+    },
+    {
+      "sec_num": 11,
+      "sec_title": "DUTIES OF ESTABLISHMENT OWNERS",
+      "text": "Proprietors and building managers must post standard 'No Smoking' notices and ensure compliance within their premises.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard establishment owner obligations."
+    },
+    {
+      "sec_num": 12,
+      "sec_title": "APPROPRIATIONS",
+      "text": "The sum of Two Million Pesos (P2,000,000.00) is hereby allocated from the City Annual Budget for operational expenses and educational campaigns.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard municipal budgetary appropriation."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "If any section or part of this Ordinance is declared unconstitutional or invalid, other sections shall remain in effect.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard separability clause."
+    },
+    {
+      "sec_num": 14,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "All prior city ordinances inconsistent with this Ordinance are hereby repealed.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard repealing clause."
+    },
+    {
+      "sec_num": 15,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Ordinance shall take effect fifteen (15) days after complete publication in a local newspaper of general circulation.",
+      "label": "Neutral",
+      "target_statute": "Republic Act No. 7160 §59",
+      "legal_rationale": "Standard effectivity clause."
+    }
+  ]
+}

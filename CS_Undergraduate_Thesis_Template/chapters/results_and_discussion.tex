@@ -41,7 +41,7 @@ Attempting to eliminate this noise through a hard domain filter causes catastrop
 
 \subsection{Candidate Dense Bi-Encoder Retrieval Benchmark}
 \label{sec:candidate_dense_biencoder_benchmark}
-To identify the most accurate and computationally efficient dense semantic retriever for Stage~1 coarse filtering, the proponents benchmarked the eight candidate bi-encoders defined in Section~\ref{sec:ir_candidate_models} and Section~3.2.3 across all 350 curated ground truth municipal queries. In this evaluation, each bi-encoder generates continuous provision embeddings (384 to 1,024 dimensions), and candidate provisions are ranked strictly by cosine similarity against the draft query vector without sparse keyword assistance. Table~\ref{tab:stage1_dense_model_benchmark} summarizes the empirical retrieval sensitivity, latency, and difficulty tier performance across candidate bi-encoders.
+To identify the most accurate and computationally efficient dense semantic retriever for Stage~1 coarse filtering, the proponents benchmarked the eight candidate bi-encoders defined in Section~\ref{sec:ir_candidate_models} and Section~\ref{sec:stage1_dense_pool} across all 350 curated ground truth municipal queries. In this evaluation, each bi-encoder generates continuous provision embeddings (384 to 1,024 dimensions), and candidate provisions are ranked strictly by cosine similarity against the draft query vector without sparse keyword assistance. Table~\ref{tab:stage1_dense_model_benchmark} summarizes the empirical retrieval sensitivity, latency, and difficulty tier performance across candidate bi-encoders.
 
 \begin{table}[htbp]
     \centering
@@ -73,7 +73,7 @@ To identify the most accurate and computationally efficient dense semantic retri
 
 The candidate dense benchmark demonstrates that all eight bi-encoders successfully capture the latent semantic meaning of statutory provisions, with every model achieving at least 96.6\% Recall@10 and 100.0\% Recall@50 across the curated benchmark. High-capacity models such as \texttt{bge-m3} (88.9\% Recall@5, MRR = 0.7621) and \texttt{ModernBERT-base} (88.6\% Recall@5, MRR = 0.7584) establish the highest standalone semantic sensitivity, excelling particularly on Tier~3 (Latent and Paraphrastic) where they reach 93.3\% Recall@5. Furthermore, both models feature an expansive native context window of 8,192 tokens, permitting the ingestion of long multi-section legislative chapters without truncation. 
 
-However, because the system's structural chunking protocol (Section~3.2.3.1) segments national legislation into discrete section-level provisions averaging only 200 to 300 tokens, the 8,192-token context capacity remains largely unutilized during coarse provision retrieval. Meanwhile, this architectural complexity incurs a severe computational penalty: \texttt{ModernBERT-base} requires 4.7$\times$ higher per-query CPU latency (6.20\,ms vs. 1.33\,ms), while \texttt{bge-m3} requires 18.4$\times$ higher latency (24.50\,ms) and consumes over 2.2~GB of operational RAM. In contrast, \texttt{all-MiniLM-L6-v2} operates within a 512-token context window that comfortably bounds section provisions, achieving 87.1\% Recall@5, 97.1\% Recall@10, and 100.0\% Recall@20 while executing in only 1.33~milliseconds with an ultra-compact 22.7M parameter footprint. Because subsequent hybrid fusion with BM25 bridges the remaining semantic gap, \texttt{all-MiniLM-L6-v2} was selected as the optimal production workhorse for edge municipal deployment.
+However, because the system's structural chunking protocol (Section~\ref{sec:draft_ingestion_segmentation}) segments national legislation into discrete section-level provisions averaging only 200 to 300 tokens, the 8,192-token context capacity remains largely unutilized during coarse provision retrieval. Meanwhile, this architectural complexity incurs a severe computational penalty: \texttt{ModernBERT-base} requires 4.7$\times$ higher per-query CPU latency (6.20\,ms vs. 1.33\,ms), while \texttt{bge-m3} requires 18.4$\times$ higher latency (24.50\,ms) and consumes over 2.2~GB of operational RAM. In contrast, \texttt{all-MiniLM-L6-v2} operates within a 512-token context window that comfortably bounds section provisions, achieving 87.1\% Recall@5, 97.1\% Recall@10, and 100.0\% Recall@20 while executing in only 1.33~milliseconds with an ultra-compact 22.7M parameter footprint. Because subsequent hybrid fusion with BM25 bridges the remaining semantic gap, \texttt{all-MiniLM-L6-v2} was selected as the optimal production workhorse for edge municipal deployment.
 
 
 \subsection{Retrieval Paradigm and Hybrid Fusion Ablation}
@@ -125,7 +125,7 @@ It is important to emphasize that the evaluations reported in this section repre
 
 
 \subsection{Rapid Zero-Shot Screening and Candidate Shortlisting}
-In accordance with Step~1 of the Two-Step Model Screening Protocol formulated in Section~3.2.7.2, the proponents conducted a rapid zero-shot screening evaluation across 28 candidate models representing the six architectural families defined in Section~2.9.4. In this evaluation, all 28 models were tested out-of-the-box on the 53 held-out test pairs ($\mathcal{D}_{\text{test}}$) without prior task-specific fine-tuning. This screening tests the intrinsic deontic sensitivity of each architecture and exposes the severity of baseline affirmative bias before investing substantial GPU training hours. Furthermore, it establishes the empirical \textit{Zero-Shot Baseline} specified in Section~3.2.6.1, quantifying the lower-bound performance of unadapted language models. Table~\ref{tab:stage2_zero_shot_screening} summarizes the empirical zero-shot accuracy, macro $F_1$, and conflict $F_1$ scores across all 28 candidate architectures, indicating with an asterisk (*) the thirteen models that satisfied the admission criteria and advanced to the supervised fine-tuning and ablation suite.
+In accordance with Step~1 of the Two-Step Model Screening Protocol formulated in Section~\ref{sec:two_step_screening_protocol}, the proponents conducted a rapid zero-shot screening evaluation across 28 candidate models representing the six architectural families defined in Section~\ref{sec:nli_candidate_models}. In this evaluation, all 28 models were tested out-of-the-box on the 53 held-out test pairs ($\mathcal{D}_{\text{test}}$) without prior task-specific fine-tuning. This screening tests the intrinsic deontic sensitivity of each architecture and exposes the severity of baseline affirmative bias before investing substantial GPU training hours. Furthermore, it establishes the empirical \textit{Zero-Shot Baseline} specified in Section~\ref{sec:baseline_selection}, quantifying the lower-bound performance of unadapted language models. Table~\ref{tab:stage2_zero_shot_screening} summarizes the empirical zero-shot accuracy, macro $F_1$, and conflict $F_1$ scores across all 28 candidate architectures, indicating with an asterisk (*) the thirteen models that satisfied the admission criteria and advanced to the supervised fine-tuning and ablation suite.
 
 \begin{table}[htbp]
     \centering
@@ -181,7 +181,7 @@ The zero-shot screening results across the 28 candidates reveal clear performanc
 
 In contrast, unadapted general-domain encoders and unaligned distillation baselines suffered from severe affirmative bias. Compact edge models, such as all-MiniLM-L6-v2 (Conflict $F_1 = 0.3846$), DistilBERT-base (Conflict $F_1 = 0.3478$), and ALBERT-base-v2 (Conflict $F_1 = 0.3182$), systematically collapsed into predicting Entailment or Neutral across more than 50\% of genuine statutory contradiction clauses. When evaluated on complex statutory pairs containing both permissive and restrictive clauses, these unadapted compact models lacked the capacity to detect directional qualification shifts, defaulting toward neutral classifications.
 
-The shortlisting decisions followed the operational admission criteria specified in Section~3.2.7.3:
+The shortlisting decisions followed the operational admission criteria specified in Section~\ref{sec:shortlisting_criteria}:
 \begin{enumerate}
     \item \textbf{Admitted Architectures (13 Models):} Exactly thirteen models marked with an asterisk (*) qualified for supervised fine-tuning. These encompass the leading pre-aligned reasoners and general baselines (DeBERTa-v3-base-NLI, DeBERTa-v3-large-NLI, cold deberta-v3-base, bert-base-uncased), modern long-context scalers (ModernBERT-base, ModernBERT-large), domain-adapted legal models (Legal-BERT, PoL-BERT-Large, InLegalBERT), high-efficiency rerankers and multilingual models (BGE-Reranker-v2-m3, mDeBERTa-v3-base), and edge baselines (all-MiniLM-L6-v2, nli-distilroberta-base). Admitting the canonical \texttt{bert-base-uncased} provides the foundational reference baseline, while retaining multiple variants within leading families directly enables the four candidate ablation axes.
     
@@ -260,16 +260,21 @@ To evaluate statistical significance across the candidate models, the proponents
 
 \subsection{Loss Dynamics and Convergence Analysis}
 In supervised machine learning, the loss function mathematically quantifies the penalty incurred when the model's predicted probability distribution diverges from the actual ground truth labels. For multi-class natural language inference, the training objective optimizes Multi-Class Cross-Entropy Loss:
-\begin{equation}
+\[
     \mathcal{L}_{\text{CE}} = -\sum_{c \in \mathcal{C}} y_c \log \hat{P}(c)
-    \label{eq:cross_entropy_loss}
-\end{equation}
-\eqcaption{Multi-Class Cross-Entropy Training Loss Function}
+\]
 where $y_c \in \{0, 1\}$ denotes the binary ground truth indicator for class $c$, and $\hat{P}(c)$ represents the calibrated softmax probability output by the model. 
 
 An epoch represents one complete training pass across all 245 training pairs. Tracking the trajectory of training loss alongside validation loss across successive epochs serves as the foundational diagnostic method to monitor convergence and detect the boundary between underfitting and overfitting. In healthy training, both training loss and validation loss decrease synchronously. When training loss continues to fall while validation loss stabilizes and subsequently turns upward (the inflection point), the network has exhausted generalizable patterns and begun memorizing idiosyncrasies in the training sample.
 
-Table~\ref{tab:epoch_loss_dynamics} documents the epoch-by-epoch training and validation loss progression, accuracy, and Macro $F_1$-score for the optimal DeBERTa-v3 configuration ($\eta = 2\times 10^{-5}, B = 8$).
+Figure~\ref{fig:stage2_loss_curves} and Table~\ref{tab:epoch_loss_dynamics} document the epoch-by-epoch training and validation loss progression, accuracy, and Macro $F_1$-score for the optimal DeBERTa-v3 configuration ($\eta = 2\times 10^{-5}, B = 8$).
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.96\linewidth]{figs/stage2_loss_dynamics_and_convergence.png}
+    \caption{Stage~2 Cross-Encoder Loss Dynamics and Convergence Trajectory across Fine-Tuning Epochs ($\eta = 2\times 10^{-5}, B = 8$). Panel A traces the training loss against validation holdout loss, illustrating the optimal bias-variance inflection point at Epoch~3 and the subsequent early stopping divergence. Panel B tracks the corresponding validation accuracy and Macro $F_1$-score progression.}
+    \label{fig:stage2_loss_curves}
+\end{figure}
 
 \begin{table}[!htbp]
     \centering
@@ -308,3 +313,20 @@ The loss progression demonstrates that the model achieves its optimal balance be
 
     \item[Batch Size Dynamics.] Comparing batch size $B = 8$ versus $B = 16$ indicates that smaller mini-batches provide a valuable implicit regularization effect. On few-shot legal data, mini-batches of size 8 introduce beneficial stochastic gradient noise that prevents the optimizer from settling into sharp local minima, consistently yielding 2.5\% to 4.0\% higher validation Macro $F_1$ than batch size 16 across all three candidate model families.
 \end{description}
+
+
+\section{Summary and System-Level Roadmap}
+\label{sec:results_summary_roadmap}
+
+The empirical evaluations conducted in this chapter validate the operational viability of the coarse-to-fine architecture while mapping out clear performance bounds across both processing stages. In Stage~1, the hybrid retrieval pipeline resolves the candidate retrieval challenge across the national statutory corpus. By combining sparse lexical indexing with dense semantic representations under Reciprocal Rank Fusion ($k=60$) alongside the Hierarchy Priority Safeguard, Stage~1 achieves 100.0\% candidate Recall@50 with a mean CPU latency of 1.26~milliseconds. This guarantees zero provision attrition when handing shortlisted statutory provisions forward to downstream inference.
+
+In Stage~2, the initial screening evaluation across 28 scouted encoder architectures exposed the widespread presence of affirmative bias in unadapted language models, while confirming that pre-aligned NLI reasoners (DeBERTa-v3) and modern long-context encoders (ModernBERT) establish the strongest inductive foundations for legal preemption detection. Controlled supervised fine-tuning across the four candidate ablation axes demonstrated that task-specific adaptation and multi-task NLI initialization yield substantial empirical gains over canonical BERT baselines, with regularized training converging smoothly at Epoch~3 before encountering early-stopping boundaries.
+
+In accordance with the phased research protocol, these Stage~2 machine learning findings reflect initial screening, ablation, and hyperparameter optimization sweeps on the curated 350-pair ground truth benchmark. The complete end-to-end evaluation of Stage~2 inference accuracy, calibrated decision thresholds ($\tau^*$), and XAI token saliency maps will be finalized upon the conclusion of the independent five-panel human evaluation currently deployed with the fifteen Sangguniang Panlungsod legal researchers. Once these expert annotations are received and inter-annotator agreement metrics are verified, the shortlisted DeBERTa-v3 Cross-Encoder will undergo final out-of-sample testing to complete the system-level integration.
+
+Following model finalization, the complete coarse-to-fine pipeline will be executed across the Three-Tier Evaluation Framework established in Section~\ref{sec:system_evaluation_framework}:
+\begin{enumerate}
+    \item \textbf{Tier~1 (Cascaded End-to-End Benchmark):} Evaluating the unassisted pipeline across the held-out test split, calculating the joint hit metric ($\text{Hit}_{\text{casc}}$) across the Top-50 shortlist ($k=50$) to measure cascaded retrieval-inference fidelity without manual statutory priming.
+    \item \textbf{Tier~2 (Injected-Fault Full-Document Stress Testing):} Ingesting full-length draft municipal ordinances evaluated against the national statutory archive, assessing Section-Level Sensitivity across injected preemption defects and measuring Section-Level Specificity ($\text{Specificity}_{\text{sec}}$) across compliant operative and procedural sections to quantify system resistance against false alarms and alert fatigue.
+    \item \textbf{Tier~3 (Historical Jurisprudential Validation and LGU User Study):} Auditing the 10 landmark Davao City municipal ordinances and preemption controversies (\texttt{data/tier3\_jurisprudential\_cases.jsonl}) to benchmark automated citations and preemption rationales against authentic judicial holdings, followed by the formal usability evaluation with the 15 Sangguniang Panlungsod legal researchers using the single-page prototype dashboard to record System Usability Scale (SUS) scores and Fleiss' Kappa inter-annotator consensus.
+\end{enumerate}

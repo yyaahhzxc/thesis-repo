@@ -17,40 +17,51 @@
 \usepackage{microtype} % Subtle font expansion and protrusion to prevent margin overflow
 \emergencystretch=1.5em % Emergency stretch to prevent overfull hboxes
 \usepackage{url}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.55,0}
+\definecolor{codegray}{rgb}{0.45,0.45,0.45}
+\definecolor{codepurple}{rgb}{0.55,0,0.75}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.98}
+\definecolor{codeblue}{rgb}{0.1,0.2,0.7}
+
+\lstdefinestyle{thesislisting}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen}\itshape,
+    keywordstyle=\color{codeblue}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=6pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{black!15},
+    xleftmargin=12pt,
+    framexleftmargin=8pt
+}
+\lstset{style=thesislisting}
+\renewcommand{\lstlistlistingname}{List of Listings}
+
 % Keep hyperref near the end of package loading
 \usepackage[hidelinks]{hyperref}
 
-
 % This tells LaTeX to always print the URL if it exists
 \newcommand{\URL}[1]{\url{#1}}
-\usepackage[hidelinks]{hyperref} % Clickable table of contents
 \renewcommand{\contentsname}{Table of Contents}
 \counterwithin{table}{chapter}
 \counterwithin{figure}{chapter}
+\counterwithin{lstlisting}{chapter}
 
 \usepackage{titlesec}
-
-% List of Equations definition (styled consistently with \listoffigures and \listoftables)
-\makeatletter
-\newcommand\listofequations{%
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapter*{\listequationname}%
-      \@mkboth{\MakeUppercase\listequationname}%
-              {\MakeUppercase\listequationname}%
-    \@starttoc{equ}%
-    \if@restonecol\twocolumn\fi
-}
-\newcommand\listequationname{List of Equations}
-\newcommand*\l@equation{\@dottedtocline{1}{1.5em}{2.3em}}
-\makeatother
-
-\newcommand{\eqcaption}[1]{%
-    \addcontentsline{equ}{equation}{\protect\numberline{\theequation}#1}%
-}
 
 % 1. Set the depth limits (Strictly capped to 3 levels: Chapter -> Section -> Subsection -> Subsubsection)
 \setcounter{secnumdepth}{3}
@@ -82,7 +93,7 @@
         \vspace{1.5in}
         \large{ATENEO DE DAVAO UNIVERSITY\\SCHOOL OF ARTS AND SCIENCES\\DAVAO CITY}\\
         \vspace{1in}
-        April 2026
+        November 2026
     \end{center}
 \end{titlepage}
 \frontmatter
@@ -107,7 +118,7 @@ Above all, to the Almighty God/Allah SWT, the ultimate source of strength, wisdo
  
 \listoftables
 
-\listofequations
+\lstlistoflistings
 
 \mainmatter
 %\chapter*{Abstract}
