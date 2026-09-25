@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thesis Reference Auditor & Verification Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0B0F19;
+      --bg-surface: #111827;
+      --bg-card: #182235;
+      --bg-card-hover: #1F2E47;
+      --border-color: #24344D;
+      --border-focus: #4F46E5;
+      --text-main: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --text-dim: #64748B;
+      
+      --accent-indigo: #6366F1;
+      --accent-cyan: #06B6D4;
+      --accent-emerald: #10B981;
+      --accent-amber: #F59E0B;
+      --accent-rose: #F43F5E;
+      --accent-purple: #8B5CF6;
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 24px 32px 64px 32px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Navigation / Header */
+    header {
+      max-width: 1400px;
+      margin: 0 auto 28px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-title-box h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #EEF2FF 0%, #C7D2FE 50%, #818CF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+      color: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(79, 70, 229, 0.3);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #4338CA 0%, #4F46E5 100%);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+    .btn-secondary:hover {
+      background-color: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+
+    .btn-success {
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+      color: white;
+    }
+    .btn-success:hover {
+      filter: brightness(1.1);
+    }
+
+    .btn-xs {
+      padding: 5px 10px;
+      font-size: 11px;
+      border-radius: 4px;
+    }
+
+    /* Stat Cards Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      max-width: 1400px;
+      margin: 0 auto 28px auto;
+    }
+
+    .stat-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--stat-accent, var(--accent-indigo));
+    }
+
+    .stat-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-dim);
+    }
+
+    .stat-number {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .stat-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+    }
+
+    /* Verification Progress Bar */
+    .progress-section {
+      max-width: 1400px;
+      margin: 0 auto 24px auto;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 10px;
+      background: #1F2937;
+      border-radius: 9999px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #6366F1, #06B6D4, #10B981);
+      transition: width 0.4s ease;
+    }
+
+    /* Search & Filter Bar */
+    .controls-container {
+      max-width: 1400px;
+      margin: 0 auto 24px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px 10px 38px;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus {
+      border-color: var(--accent-indigo);
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+
+    .sort-select {
+      background-color: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Filter Pills */
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-pill {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .filter-pill:hover {
+      background-color: var(--bg-card-hover);
+      color: var(--text-main);
+    }
+    .filter-pill.active {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: var(--accent-indigo);
+      color: #A5B4FC;
+      font-weight: 600;
+    }
+
+    /* Reference Cards Container */
+    .reference-list {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Single Reference Card */
+    .ref-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .ref-card:hover {
+      border-color: #3B82F6;
+      box-shadow: var(--shadow-card);
+      transform: translateY(-1px);
+    }
+
+    .ref-card.is-uncited {
+      opacity: 0.75;
+      border-style: dashed;
+    }
+    .ref-card.is-uncited:hover {
+      opacity: 1;
+    }
+
+    .ref-card.is-verified {
+      border-left: 4px solid var(--accent-emerald);
+    }
+
+    /* Card Top Header */
+    .ref-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ref-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .citekey-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: #93C5FD;
+      background: rgba(59, 130, 246, 0.15);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .citekey-badge:hover {
+      background: rgba(59, 130, 246, 0.3);
+    }
+
+    .type-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3px 7px;
+      border-radius: 4px;
+    }
+
+    .cited-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #6EE7B7;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .uncited-badge {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(100, 116, 139, 0.2);
+      color: #94A3B8;
+    }
+
+    .category-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .cat-law { background: rgba(16, 185, 129, 0.15); color: #34D399; }
+    .cat-cs { background: rgba(6, 182, 212, 0.15); color: #38BDF8; }
+    .cat-lgu { background: rgba(245, 158, 11, 0.15); color: #FBBF24; }
+    .cat-stat { background: rgba(139, 92, 246, 0.15); color: #C084FC; }
+
+    /* Card Title and Authors */
+    .ref-title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #FFFFFF;
+    }
+
+    .ref-authors {
+      font-size: 13px;
+      color: #CBD5E1;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .ref-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .ref-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Actions Bar */
+    .ref-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .action-btn:hover {
+      background-color: var(--bg-card-hover);
+      border-color: #60A5FA;
+      color: #93C5FD;
+      transform: translateY(-1px);
+    }
+
+    .action-btn.btn-google {
+      border-color: rgba(66, 133, 244, 0.4);
+      background: rgba(66, 133, 244, 0.1);
+      color: #93C5FD;
+    }
+    .action-btn.btn-google:hover {
+      background: rgba(66, 133, 244, 0.2);
+    }
+
+    .action-btn.btn-scholar {
+      border-color: rgba(16, 185, 129, 0.4);
+      background: rgba(16, 185, 129, 0.1);
+      color: #6EE7B7;
+    }
+    .action-btn.btn-scholar:hover {
+      background: rgba(16, 185, 129, 0.2);
+    }
+
+    .action-btn.btn-download {
+      border-color: rgba(245, 158, 11, 0.4);
+      background: rgba(245, 158, 11, 0.1);
+      color: #FCD34D;
+    }
+    .action-btn.btn-download:hover {
+      background: rgba(245, 158, 11, 0.2);
+    }
+
+    /* Inline Link Updater */
+    .link-editor-box {
+      margin-top: 4px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .link-editor-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .link-editor-input {
+      flex: 1;
+      min-width: 240px;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 6px 10px;
+      color: #E2E8F0;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      outline: none;
+    }
+    .link-editor-input:focus {
+      border-color: var(--accent-indigo);
+    }
+
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1E293B;
+      border: 1px solid var(--accent-indigo);
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-dim);
+    }
+    .empty-state h3 {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast">Copied to clipboard!</div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-bar">
+      <div class="header-title-box">
+        <h1>
+          <span>📚 Thesis Reference Auditor & Verifier</span>
+        </h1>
+        <p class="header-subtitle">
+          Interactive citation validation, automated web/scholar queries, direct PDF downloading, and BibTeX enrichment.
+        </p>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary" onclick="exportUpdatedBibtex()" title="Download updated references.bib with added URLs">
+          💾 Export Updated BibTeX
+        </button>
+        <button class="btn btn-primary" onclick="exportDownloadScript()" title="Generate Python batch download script">
+          ⚡ Batch PDF Download Script
+        </button>
+        <label class="btn btn-secondary" style="cursor: pointer;" title="Load a custom BibTeX or JSON file">
+          📂 Import .bib / .json
+          <input type="file" id="fileImporter" accept=".bib,.json" style="display: none;" onchange="handleFileImport(event)">
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Key Statistics Row -->
+  <section class="stats-grid">
+    <div class="stat-card" style="--stat-accent: #6366F1;">
+      <span class="stat-title">Total In Bibliography</span>
+      <div class="stat-number">
+        <span id="statTotal">267</span>
+        <span class="stat-badge">references.bib</span>
+      </div>
+    </div>
+
+    <div class="stat-card" style="--stat-accent: #10B981;">
+      <span class="stat-title">Actively Cited in Paper</span>
+      <div class="stat-number">
+        <span id="statCited">229</span>
+        <span class="stat-badge" id="statCitedPct">85.8%</span>
+      </div>
+    </div>
+
+    <div class="stat-card" style="--stat-accent: #06B6D4;">
+      <span class="stat-title">Has Verified Link / URL</span>
+      <div class="stat-number">
+        <span id="statHasUrl">208</span>
+        <span class="stat-badge" id="statHasUrlPct">77.9%</span>
+      </div>
+    </div>
+
+    <div class="stat-card" style="--stat-accent: #F59E0B;">
+      <span class="stat-title">Direct PDF Resolvable</span>
+      <div class="stat-number">
+        <span id="statDirectPdf">88</span>
+        <span class="stat-badge">arXiv / Open Access</span>
+      </div>
+    </div>
+
+    <div class="stat-card" style="--stat-accent: #EC4899;">
+      <span class="stat-title">Locally Downloaded</span>
+      <div class="stat-number">
+        <span id="statLocalDownloaded">0</span>
+        <span class="stat-badge">docs/references/</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Bar Section -->
+  <section class="progress-section">
+    <div class="progress-header">
+      <span>Bibliography Verification & Local Archival Progress</span>
+      <span id="progressText">0 / 229 Cited References Archived Locally (0.0%)</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressBar" style="width: 0%;"></div>
+    </div>
+  </section>
+
+  <!-- Search & Filter Controls -->
+  <section class="controls-container">
+    <div class="search-row">
+      <div class="search-input-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by title, author, citekey, year, or venue..." oninput="applyFilters()">
+      </div>
+
+      <select id="sortSelect" class="sort-select" onchange="applyFilters()">
+        <option value="cite_desc">Sort: Citation Count (High to Low)</option>
+        <option value="year_desc">Sort: Year (Newest First)</option>
+        <option value="year_asc">Sort: Year (Oldest First)</option>
+        <option value="key_asc">Sort: Citekey (A to Z)</option>
+        <option value="title_asc">Sort: Title (A to Z)</option>
+      </select>
+    </div>
+
+    <div class="filter-pills">
+      <span class="filter-pill active" data-filter="all" onclick="setFilter('all')">All Entries (<span id="countAll">267</span>)</span>
+      <span class="filter-pill" data-filter="cited" onclick="setFilter('cited')">Cited in Thesis (<span id="countCited">229</span>)</span>
+      <span class="filter-pill" data-filter="needs_url" onclick="setFilter('needs_url')">Needs URL / Unverified (<span id="countNeedsUrl">59</span>)</span>
+      <span class="filter-pill" data-filter="has_pdf" onclick="setFilter('has_pdf')">Direct PDF Ready (<span id="countHasPdf">88</span>)</span>
+      <span class="filter-pill" data-filter="downloaded" onclick="setFilter('downloaded')">Downloaded Locally (<span id="countDownloaded">0</span>)</span>
+      <span class="filter-pill" data-filter="cs" onclick="setFilter('cs')">Computer Science & NLP</span>
+      <span class="filter-pill" data-filter="law" onclick="setFilter('law')">Philippine Law & Jurisprudence</span>
+      <span class="filter-pill" data-filter="lgu" onclick="setFilter('lgu')">Local Governance</span>
+    </div>
+  </section>
+
+  <!-- Dynamic Reference Cards List -->
+  <main class="reference-list" id="referenceList">
+    <!-- Populated by JavaScript -->
+  </main>
+
+  <!-- References Dataset (Fallback to JS variable for direct file:// browser opening) -->
+  <script src="references_data.js"></script>
+
+  <script>
+    // State management
+    let references = [];
+    let currentFilter = 'all';
+    let localSavedLinks = JSON.parse(localStorage.getItem('thesis_ref_links') || '{}');
+    let localDownloadedKeys = JSON.parse(localStorage.getItem('thesis_ref_downloaded') || '{}');
+
+    // Initialize application
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.REFERENCES_DATA && Array.isArray(window.REFERENCES_DATA)) {
+        references = window.REFERENCES_DATA;
+        syncLocalStorageWithRecords();
+        updateStatistics();
+        applyFilters();
+      } else {
+        // Fallback fetch if opened via local HTTP server
+        fetch('references_data.json')
+          .then(res => res.json())
+          .then(data => {
+            references = data;
+            syncLocalStorageWithRecords();
+            updateStatistics();
+            applyFilters();
+          })
+          .catch(err => {
+            console.error("Failed to load references_data.json automatically:", err);
+            document.getElementById('referenceList').innerHTML = `
+              <div class="empty-state">
+                <h3>References data not detected</h3>
+                <p>Please click 'Import .bib / .json' at the top to load your bibliography file, or run <code>python scripts/audit_refs.py</code>.</p>
+              </div>`;
+          });
+      }
+    });
+
+    function syncLocalStorageWithRecords() {
+      references.forEach(r => {
+        if (localSavedLinks[r.citekey]) {
+          r.url = localSavedLinks[r.citekey];
+        }
+        if (localDownloadedKeys[r.citekey]) {
+          r.has_local_pdf = true;
+        }
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2400);
+    }
+
+    function copyToClipboard(text, msg = 'Copied to clipboard!') {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(msg);
+      }).catch(err => {
+        console.error('Clipboard copy failed:', err);
+      });
+    }
+
+    function updateStatistics() {
+      const total = references.length;
+      const cited = references.filter(r => r.is_cited).length;
+      const hasUrl = references.filter(r => r.url || r.doi || r.direct_pdf_url).length;
+      const directPdf = references.filter(r => r.direct_pdf_url).length;
+      const downloaded = references.filter(r => r.has_local_pdf).length;
+
+      document.getElementById('statTotal').textContent = total;
+      document.getElementById('statCited').textContent = cited;
+      document.getElementById('statCitedPct').textContent = `${(cited / total * 100).toFixed(1)}%`;
+      document.getElementById('statHasUrl').textContent = hasUrl;
+      document.getElementById('statHasUrlPct').textContent = `${(hasUrl / total * 100).toFixed(1)}%`;
+      document.getElementById('statDirectPdf').textContent = directPdf;
+      document.getElementById('statLocalDownloaded').textContent = downloaded;
+
+      // Pills counts
+      document.getElementById('countAll').textContent = total;
+      document.getElementById('countCited').textContent = cited;
+      document.getElementById('countNeedsUrl').textContent = total - hasUrl;
+      document.getElementById('countHasPdf').textContent = directPdf;
+      document.getElementById('countDownloaded').textContent = downloaded;
+
+      // Progress bar
+      const pct = cited > 0 ? ((downloaded / cited) * 100).toFixed(1) : 0;
+      document.getElementById('progressBar').style.width = `${Math.min(100, pct)}%`;
+      document.getElementById('progressText').textContent = `${downloaded} / ${cited} Cited References Archived Locally (${pct}%)`;
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-pill').forEach(pill => {
+        pill.classList.toggle('active', pill.dataset.filter === filter);
+      });
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const sortVal = document.getElementById('sortSelect').value;
+
+      let filtered = references.filter(r => {
+        // Category / status filter
+        if (currentFilter === 'cited' && !r.is_cited) return false;
+        if (currentFilter === 'needs_url' && (r.url || r.doi || r.direct_pdf_url)) return false;
+        if (currentFilter === 'has_pdf' && !r.direct_pdf_url) return false;
+        if (currentFilter === 'downloaded' && !r.has_local_pdf) return false;
+        if (currentFilter === 'cs' && r.category !== 'Computer Science & NLP') return false;
+        if (currentFilter === 'law' && r.category !== 'Philippine Law & Jurisprudence') return false;
+        if (currentFilter === 'lgu' && r.category !== 'Local Governance & Field Study') return false;
+
+        // Text query
+        if (query) {
+          const matchTitle = (r.title || '').toLowerCase().includes(query);
+          const matchAuthor = (r.author || '').toLowerCase().includes(query);
+          const matchKey = (r.citekey || '').toLowerCase().includes(query);
+          const matchYear = (r.year || '').toString().includes(query);
+          const matchVenue = (r.venue || '').toLowerCase().includes(query);
+          return matchTitle || matchAuthor || matchKey || matchYear || matchVenue;
+        }
+
+        return true;
+      });
+
+      // Sorting
+      filtered.sort((a, b) => {
+        if (sortVal === 'cite_desc') return (b.citation_count || 0) - (a.citation_count || 0);
+        if (sortVal === 'year_desc') return (parseInt(b.year) || 0) - (parseInt(a.year) || 0);
+        if (sortVal === 'year_asc') return (parseInt(a.year) || 9999) - (parseInt(b.year) || 9999);
+        if (sortVal === 'key_asc') return a.citekey.localeCompare(b.citekey);
+        if (sortVal === 'title_asc') return (a.title || '').localeCompare(b.title || '');
+        return 0;
+      });
+
+      renderReferenceCards(filtered);
+    }
+
+    function renderReferenceCards(records) {
+      const container = document.getElementById('referenceList');
+      if (records.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <h3>No matching references found</h3>
+            <p>Try adjusting your search terms or filter selection.</p>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = records.map(r => {
+        const catClass = r.category === 'Philippine Law & Jurisprudence' ? 'cat-law' :
+                         r.category === 'Local Governance & Field Study' ? 'cat-lgu' :
+                         r.category === 'Statistical & Evaluation Methods' ? 'cat-stat' : 'cat-cs';
+
+        const hasUrl = Boolean(r.url || r.doi || r.direct_pdf_url);
+        const activeUrl = r.url || (r.doi ? `https://doi.org/${r.doi}` : '') || r.direct_pdf_url || '';
+        const isDownloaded = Boolean(r.has_local_pdf);
+
+        return `
+          <article class="ref-card ${!r.is_cited ? 'is-uncited' : ''} ${hasUrl ? 'is-verified' : ''}" id="card-${r.citekey}">
+            <div class="ref-card-header">
+              <div class="ref-badges">
+                <span class="citekey-badge" onclick="copyToClipboard('\\\\cite{${r.citekey}}', 'Copied \\\\cite{${r.citekey}}')" title="Click to copy \\cite tag">
+                  📌 ${r.citekey}
+                </span>
+                <span class="type-badge">${r.entry_type}</span>
+                <span class="category-badge ${catClass}">${r.category}</span>
+                ${r.is_cited ? 
+                  `<span class="cited-badge" title="Cited in: ${r.cited_in_files ? r.cited_in_files.join(', ') : 'Thesis'}">
+                    ✓ Cited ${r.citation_count}x
+                   </span>` : 
+                  `<span class="uncited-badge">Uncited in draft</span>`}
+                ${isDownloaded ? 
+                  `<span class="cited-badge" style="background: rgba(16, 185, 129, 0.2); color: #A7F3D0;">📥 PDF Saved</span>` : ''}
+              </div>
+
+              <div>
+                <button class="btn btn-secondary btn-xs" onclick="copyBibtex('${r.citekey}')">
+                  📋 Copy BibTeX
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="ref-title">${r.title || 'Untitled Reference'}</h2>
+              <div class="ref-authors">
+                <span>👤 ${r.author || 'Author not recorded'}</span>
+              </div>
+            </div>
+
+            <div class="ref-meta-row">
+              ${r.year ? `<span class="ref-meta-item">📅 <strong>${r.year}</strong></span>` : ''}
+              ${r.venue ? `<span class="ref-meta-item">🏛️ <em>${r.venue}</em></span>` : ''}
+              ${r.eprint ? `<span class="ref-meta-item" style="color: #60A5FA;">⚡ arXiv: ${r.eprint}</span>` : ''}
+            </div>
+
+            <!-- Action Buttons: Auto Google, Scholar, Direct PDF, Lawphil -->
+            <div class="ref-actions-row">
+              <a href="${r.google_search_url}" target="_blank" rel="noopener noreferrer" class="action-btn btn-google" title="Google search exact title and author">
+                🔍 Auto Google
+              </a>
+
+              <a href="${r.google_scholar_url}" target="_blank" rel="noopener noreferrer" class="action-btn btn-scholar" title="Search Google Scholar for papers and citations">
+                🎓 Google Scholar
+              </a>
+
+              <a href="${r.semantic_scholar_url}" target="_blank" rel="noopener noreferrer" class="action-btn" title="Search Semantic Scholar">
+                🧠 Semantic Scholar
+              </a>
+
+              ${r.category === 'Philippine Law & Jurisprudence' ? `
+                <a href="${r.lawphil_url}" target="_blank" rel="noopener noreferrer" class="action-btn" style="border-color: rgba(16, 185, 129, 0.4); color: #34D399;" title="Search Lawphil.net for full text">
+                  ⚖️ Lawphil Search
+                </a>
+              ` : ''}
+
+              ${activeUrl ? `
+                <a href="${activeUrl}" target="_blank" rel="noopener noreferrer" class="action-btn" title="Open source link in new tab">
+                  🌐 Open Link
+                </a>
+              ` : ''}
+
+              ${r.direct_pdf_url ? `
+                <a href="${r.direct_pdf_url}" target="_blank" download="${r.citekey}.pdf" class="action-btn btn-download" title="Direct PDF download">
+                  ⬇️ Download PDF
+                </a>
+              ` : `
+                <button class="action-btn" onclick="focusLinkInput('${r.citekey}')" title="Add a direct link to this reference">
+                  ➕ Add PDF Link
+                </button>
+              `}
+
+              <label class="action-btn" style="margin-left: auto; cursor: pointer;">
+                <input type="checkbox" ${isDownloaded ? 'checked' : ''} onchange="toggleDownloaded('${r.citekey}', this.checked)" style="cursor: pointer;">
+                <span>Local PDF Archived</span>
+              </label>
+            </div>
+
+            <!-- Inline Link Updater (Auto Put Link to Add to References) -->
+            <div class="link-editor-box">
+              <span class="link-editor-label">Source Link / DOI:</span>
+              <input type="text" id="link-input-${r.citekey}" class="link-editor-input" 
+                     placeholder="Paste verified URL or DOI here (e.g. https://arxiv.org/abs/... or https://lawphil.net/...)" 
+                     value="${activeUrl}">
+              <button class="btn btn-primary btn-xs" onclick="saveLink('${r.citekey}')">
+                💾 Save Link
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function focusLinkInput(citekey) {
+      const input = document.getElementById(`link-input-${citekey}`);
+      if (input) {
+        input.focus();
+        input.select();
+      }
+    }
+
+    function saveLink(citekey) {
+      const input = document.getElementById(`link-input-${citekey}`);
+      if (!input) return;
+
+      const newUrl = input.value.trim();
+      const ref = references.find(r => r.citekey === citekey);
+      if (ref) {
+        ref.url = newUrl;
+        localSavedLinks[citekey] = newUrl;
+        localStorage.setItem('thesis_ref_links', JSON.stringify(localSavedLinks));
+
+        // Auto-check for direct pdf
+        if (newUrl.endsWith('.pdf') || newUrl.includes('arxiv.org/abs/')) {
+          if (newUrl.includes('arxiv.org/abs/')) {
+            ref.direct_pdf_url = newUrl.replace('arxiv.org/abs/', 'arxiv.org/pdf/') + '.pdf';
+          } else {
+            ref.direct_pdf_url = newUrl;
+          }
+        }
+
+        updateStatistics();
+        applyFilters();
+        showToast(`Saved link for [${citekey}]!`);
+      }
+    }
+
+    function toggleDownloaded(citekey, isChecked) {
+      const ref = references.find(r => r.citekey === citekey);
+      if (ref) {
+        ref.has_local_pdf = isChecked;
+        if (isChecked) {
+          localDownloadedKeys[citekey] = true;
+        } else {
+          delete localDownloadedKeys[citekey];
+        }
+        localStorage.setItem('thesis_ref_downloaded', JSON.stringify(localDownloadedKeys));
+        updateStatistics();
+        showToast(`Updated local status for [${citekey}]`);
+      }
+    }
+
+    function copyBibtex(citekey) {
+      const ref = references.find(r => r.citekey === citekey);
+      if (ref) {
+        let bib = ref.raw_bib;
+        // If user updated URL, inject or replace URL in raw_bib
+        if (ref.url && !bib.includes(ref.url)) {
+          bib = bib.replace(/\n\}\s*$/, `,\n  url = {${ref.url}}\n}`);
+        }
+        copyToClipboard(bib, `Copied BibTeX for [${citekey}]!`);
+      }
+    }
+
+    function exportUpdatedBibtex() {
+      let output = "% ====================================================================\n";
+      output += "% Updated Bibliography generated by Thesis Reference Auditor\n";
+      output += `% Timestamp: ${new Date().toISOString()}\n`;
+      output += "% ====================================================================\n\n";
+
+      references.forEach(r => {
+        let bib = r.raw_bib;
+        if (r.url && !bib.includes(r.url)) {
+          bib = bib.replace(/\n\}\s*$/, `,\n  url = {${r.url}}\n}`);
+        }
+        output += bib.trim() + "\n\n";
+      });
+
+      const blob = new Blob([output], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = "references_verified.bib";
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("Downloaded verified references_verified.bib!");
+    }
+
+    function exportDownloadScript() {
+      let script = `#!/usr/bin/env python3
+# Auto-generated PDF downloader for Thesis References
+# Run: python download_all_references.py
+
+import os, urllib.request, time
+
+TARGET_DIR = "docs/references"
+os.makedirs(TARGET_DIR, exist_ok=True)
+
+REFS = [
+`;
+      references.forEach(r => {
+        const downloadUrl = r.direct_pdf_url || (r.url && r.url.endsWith('.pdf') ? r.url : '');
+        if (downloadUrl) {
+          script += `    {"citekey": "${r.citekey}", "url": "${downloadUrl}"},\n`;
+        }
+      });
+
+      script += `]
+
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ThesisRefAuditor/1.0'}
+print(f"Starting download of {len(REFS)} reference PDFs into {TARGET_DIR}...")
+
+success = 0
+for idx, item in enumerate(REFS):
+    ck = item["citekey"]
+    url = item["url"]
+    out_file = os.path.join(TARGET_DIR, f"{ck}.pdf")
+    if os.path.exists(out_file):
+        print(f"[{idx+1}/{len(REFS)}] Skipping {ck} (already exists)")
+        success += 1
+        continue
+
+    print(f"[{idx+1}/{len(REFS)}] Downloading {ck} from {url}...")
+    try:
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            if resp.status == 200:
+                with open(out_file, 'wb') as f:
+                    f.write(resp.read())
+                print(f"     -> Saved {ck}.pdf")
+                success += 1
+            else:
+                print(f"     -> HTTP {resp.status}")
+    except Exception as e:
+        print(f"     -> Failed: {e}")
+    time.sleep(0.5)
+
+print(f"\\nDownload process complete: {success}/{len(REFS)} stored.")
+`;
+
+      const blob = new Blob([script], { type: 'text/x-python;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = "download_all_references.py";
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("Downloaded download_all_references.py!");
+    }
+
+    function handleFileImport(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const content = e.target.result;
+        if (file.name.endsWith('.json')) {
+          try {
+            references = JSON.parse(content);
+            syncLocalStorageWithRecords();
+            updateStatistics();
+            applyFilters();
+            showToast(`Loaded ${references.length} references from JSON!`);
+          } catch (err) {
+            alert('Invalid JSON file.');
+          }
+        } else {
+          showToast("BibTeX file parsing from browser not supported directly; please use python scripts/audit_refs.py to regenerate JSON/JS.");
+        }
+      };
+      reader.readAsText(file);
+    }
+  </script>
+</body>
+</html>
