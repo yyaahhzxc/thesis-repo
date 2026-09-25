@@ -1,0 +1,697 @@
+{
+  "metadata": {
+    "title": "Stage 2 Cross-Encoder NLI 28-Model Screening & 13-Model Ablation Report",
+    "authors": "Ralph Paolo Dulce & Yahyah Odin (Ateneo de Davao University)",
+    "date": "2026-09-23 23:06:19",
+    "dataset": {
+      "total_pairs": 350,
+      "train_split": 245,
+      "val_split": 52,
+      "test_split": 53
+    },
+    "statistical_significance": {
+      "mcnemar_test": {
+        "comparison": "DeBERTa-v3-base-NLI vs roberta-large-mnli",
+        "chi2_statistic": 7.14,
+        "p_value": 0.0075,
+        "interpretation": "Statistically significant zero-shot error divergence on discordant conflict pairs (p < 0.01)"
+      },
+      "friedman_test": {
+        "comparison": "Across candidate models over 8 legal domains",
+        "chi2_statistic": 18.42,
+        "p_value": 0.048,
+        "interpretation": "Statistically significant ranking divergence across architectural families (p < 0.05)"
+      }
+    }
+  },
+  "step1_zero_shot_28_models": [
+    {
+      "index": 1,
+      "id": "nlpaueb/legal-bert-base-uncased",
+      "name": "legal-bert-base-uncased*",
+      "family": "Legal Domain-Adapted",
+      "params_m": 110,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6604,
+        "macro_f1": 0.638,
+        "f1_contra": 0.6087,
+        "latency_ms": 13.9,
+        "affirmative_bias": "Low (Term sensitivity)"
+      }
+    },
+    {
+      "index": 2,
+      "id": "pile-of-law/legalbert-large-1.7M-2",
+      "name": "PoL-BERT-Large*",
+      "family": "Legal Domain-Adapted",
+      "params_m": 340,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6981,
+        "macro_f1": 0.6845,
+        "f1_contra": 0.6667,
+        "latency_ms": 24.1,
+        "affirmative_bias": "Low (Regulatory fit)"
+      }
+    },
+    {
+      "index": 3,
+      "id": "law-ai/InLegalBERT",
+      "name": "InLegalBERT*",
+      "family": "Legal Domain-Adapted",
+      "params_m": 110,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6226,
+        "macro_f1": 0.598,
+        "f1_contra": 0.5652,
+        "latency_ms": 13.8,
+        "affirmative_bias": "Moderate (Court bias)"
+      }
+    },
+    {
+      "index": 4,
+      "id": "zlucia/custom-legalbert",
+      "name": "CaseLaw-BERT",
+      "family": "Legal Domain-Adapted",
+      "params_m": 110,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.6226,
+        "macro_f1": 0.589,
+        "f1_contra": 0.5455,
+        "latency_ms": 14.1,
+        "affirmative_bias": "Moderate (Case bias)"
+      }
+    },
+    {
+      "index": 5,
+      "id": "thunlp/Lawformer",
+      "name": "Lawformer",
+      "family": "Legal Domain-Adapted",
+      "params_m": 110,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.5849,
+        "macro_f1": 0.5412,
+        "f1_contra": 0.4762,
+        "latency_ms": 34.5,
+        "affirmative_bias": "High (Sliding window)"
+      }
+    },
+    {
+      "index": 6,
+      "id": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+      "name": "DeBERTa-v3-base-NLI*",
+      "family": "Pre-Aligned NLI Reasoners",
+      "params_m": 86,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.717,
+        "macro_f1": 0.7042,
+        "f1_contra": 0.6957,
+        "latency_ms": 14.8,
+        "affirmative_bias": "Low (Strong negation)"
+      }
+    },
+    {
+      "index": 7,
+      "id": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "name": "DeBERTa-v3-large-NLI*",
+      "family": "Pre-Aligned NLI Reasoners",
+      "params_m": 435,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.7358,
+        "macro_f1": 0.7251,
+        "f1_contra": 0.72,
+        "latency_ms": 48.7,
+        "affirmative_bias": "Low (Robust balance)"
+      }
+    },
+    {
+      "index": 8,
+      "id": "microsoft/deberta-v3-base",
+      "name": "deberta-v3-base*",
+      "family": "Pre-Aligned NLI Reasoners",
+      "params_m": 86,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6226,
+        "macro_f1": 0.5891,
+        "f1_contra": 0.5217,
+        "latency_ms": 14.7,
+        "affirmative_bias": "Moderate (Cold MLM)"
+      }
+    },
+    {
+      "index": 9,
+      "id": "FacebookAI/roberta-large-mnli",
+      "name": "roberta-large-mnli*",
+      "family": "Pre-Aligned NLI Reasoners",
+      "params_m": 355,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6038,
+        "macro_f1": 0.542,
+        "f1_contra": 0.4444,
+        "latency_ms": 42.1,
+        "affirmative_bias": "High (Default neutral)"
+      }
+    },
+    {
+      "index": 10,
+      "id": "facebook/bart-large-mnli",
+      "name": "bart-large-mnli",
+      "family": "Pre-Aligned NLI Reasoners",
+      "params_m": 406,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.5849,
+        "macro_f1": 0.531,
+        "f1_contra": 0.4348,
+        "latency_ms": 68.2,
+        "affirmative_bias": "High (Seq2seq lag)"
+      }
+    },
+    {
+      "index": 11,
+      "id": "google/electra-large-discriminator",
+      "name": "electra-large-disc*",
+      "family": "Pre-Aligned NLI Reasoners",
+      "params_m": 335,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6226,
+        "macro_f1": 0.5982,
+        "f1_contra": 0.5385,
+        "latency_ms": 38.4,
+        "affirmative_bias": "Moderate (RTD sample)"
+      }
+    },
+    {
+      "index": 12,
+      "id": "google/electra-base-discriminator",
+      "name": "electra-base-disc",
+      "family": "Pre-Aligned NLI Reasoners",
+      "params_m": 110,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.566,
+        "macro_f1": 0.524,
+        "f1_contra": 0.44,
+        "latency_ms": 13.5,
+        "affirmative_bias": "High (Underparameterized)"
+      }
+    },
+    {
+      "index": 13,
+      "id": "answerdotai/ModernBERT-base",
+      "name": "ModernBERT-base*",
+      "family": "Modern Long-Context",
+      "params_m": 149,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6415,
+        "macro_f1": 0.612,
+        "f1_contra": 0.56,
+        "latency_ms": 9.4,
+        "affirmative_bias": "Moderate (Fast throughput)"
+      }
+    },
+    {
+      "index": 14,
+      "id": "answerdotai/ModernBERT-large",
+      "name": "ModernBERT-large*",
+      "family": "Modern Long-Context",
+      "params_m": 395,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6792,
+        "macro_f1": 0.6654,
+        "f1_contra": 0.64,
+        "latency_ms": 28.6,
+        "affirmative_bias": "Low (Consistent recall)"
+      }
+    },
+    {
+      "index": 15,
+      "id": "allenai/longformer-base-4096",
+      "name": "longformer-base-4096",
+      "family": "Modern Long-Context",
+      "params_m": 149,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.5849,
+        "macro_f1": 0.5385,
+        "f1_contra": 0.4615,
+        "latency_ms": 32.1,
+        "affirmative_bias": "High (Diluted attention)"
+      }
+    },
+    {
+      "index": 16,
+      "id": "google/bigbird-roberta-base",
+      "name": "bigbird-roberta-base",
+      "family": "Modern Long-Context",
+      "params_m": 128,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.566,
+        "macro_f1": 0.519,
+        "f1_contra": 0.4286,
+        "latency_ms": 36.8,
+        "affirmative_bias": "High (Sparse block loss)"
+      }
+    },
+    {
+      "index": 17,
+      "id": "nomic-ai/nomic-bert-2048",
+      "name": "nomic-bert-2048",
+      "family": "Modern Long-Context",
+      "params_m": 137,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.5849,
+        "macro_f1": 0.545,
+        "f1_contra": 0.4783,
+        "latency_ms": 16.4,
+        "affirmative_bias": "Moderate (Short window)"
+      }
+    },
+    {
+      "index": 18,
+      "id": "BAAI/bge-reranker-v2-m3",
+      "name": "bge-reranker-v2-m3*",
+      "family": "Cross-Encoder Rerankers",
+      "params_m": 568,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6415,
+        "macro_f1": 0.621,
+        "f1_contra": 0.5833,
+        "latency_ms": 54.2,
+        "affirmative_bias": "Moderate (Relevance head)"
+      }
+    },
+    {
+      "index": 19,
+      "id": "BAAI/bge-reranker-base",
+      "name": "bge-reranker-base",
+      "family": "Cross-Encoder Rerankers",
+      "params_m": 278,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.6038,
+        "macro_f1": 0.562,
+        "f1_contra": 0.5,
+        "latency_ms": 26.5,
+        "affirmative_bias": "Moderate (Redundant)"
+      }
+    },
+    {
+      "index": 20,
+      "id": "cross-encoder/ms-marco-MiniLM-L-12-v2",
+      "name": "ms-marco-MiniLM-L12",
+      "family": "Cross-Encoder Rerankers",
+      "params_m": 33,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.5283,
+        "macro_f1": 0.472,
+        "f1_contra": 0.3636,
+        "latency_ms": 4.8,
+        "affirmative_bias": "Severe (Relevance bias)"
+      }
+    },
+    {
+      "index": 21,
+      "id": "microsoft/mdeberta-v3-base",
+      "name": "mdeberta-v3-base*",
+      "family": "Multilingual Encoders",
+      "params_m": 86,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.6038,
+        "macro_f1": 0.5694,
+        "f1_contra": 0.48,
+        "latency_ms": 15.2,
+        "affirmative_bias": "High (Loanword robust)"
+      }
+    },
+    {
+      "index": 22,
+      "id": "FacebookAI/xlm-roberta-base",
+      "name": "xlm-roberta-base",
+      "family": "Multilingual Encoders",
+      "params_m": 270,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.5472,
+        "macro_f1": 0.498,
+        "f1_contra": 0.3913,
+        "latency_ms": 27.8,
+        "affirmative_bias": "High (Heavy cross-lingual)"
+      }
+    },
+    {
+      "index": 23,
+      "id": "FacebookAI/xlm-roberta-large",
+      "name": "xlm-roberta-large",
+      "family": "Multilingual Encoders",
+      "params_m": 550,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.566,
+        "macro_f1": 0.518,
+        "f1_contra": 0.4286,
+        "latency_ms": 72.4,
+        "affirmative_bias": "High (Excessive VRAM)"
+      }
+    },
+    {
+      "index": 24,
+      "id": "jcblaise/roberta-tagalog-base",
+      "name": "roberta-tagalog-base",
+      "family": "Multilingual Encoders",
+      "params_m": 110,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.4717,
+        "macro_f1": 0.412,
+        "f1_contra": 0.3077,
+        "latency_ms": 14.0,
+        "affirmative_bias": "Severe (Collapses neutral)"
+      }
+    },
+    {
+      "index": 25,
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "name": "all-MiniLM-L6-v2*",
+      "family": "Distillation & Edge",
+      "params_m": 22,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.5472,
+        "macro_f1": 0.4812,
+        "f1_contra": 0.3846,
+        "latency_ms": 3.2,
+        "affirmative_bias": "Severe (Entailment bias)"
+      }
+    },
+    {
+      "index": 26,
+      "id": "cross-encoder/nli-distilroberta-base",
+      "name": "nli-distilroberta-base*",
+      "family": "Distillation & Edge",
+      "params_m": 82,
+      "qualified": true,
+      "metrics": {
+        "acc": 0.566,
+        "macro_f1": 0.5124,
+        "f1_contra": 0.4167,
+        "latency_ms": 7.4,
+        "affirmative_bias": "Severe (Entailment bias)"
+      }
+    },
+    {
+      "index": 27,
+      "id": "distilbert/distilbert-base-uncased",
+      "name": "distilbert-base-uncased",
+      "family": "Distillation & Edge",
+      "params_m": 66,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.5283,
+        "macro_f1": 0.468,
+        "f1_contra": 0.3478,
+        "latency_ms": 6.8,
+        "affirmative_bias": "Severe (Collapses neutral)"
+      }
+    },
+    {
+      "index": 28,
+      "id": "albert/albert-base-v2",
+      "name": "albert-base-v2",
+      "family": "Distillation & Edge",
+      "params_m": 12,
+      "qualified": false,
+      "metrics": {
+        "acc": 0.4906,
+        "macro_f1": 0.435,
+        "f1_contra": 0.3182,
+        "latency_ms": 11.2,
+        "affirmative_bias": "Severe (Entailment bias)"
+      }
+    }
+  ],
+  "step2_supervised_13_ablation_sweep": {
+    "Axis 1: Scale": [
+      {
+        "id": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+        "name": "DeBERTa-v3-large-NLI*",
+        "family": "Pre-Aligned NLI Reasoners",
+        "params_m": 435,
+        "metrics": {
+          "val_loss": 0.432,
+          "val_acc": 0.8654,
+          "macro_f1": 0.869,
+          "f1_contra": 0.9,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.38,
+          "ablation_axis": "Axis 1: Scale"
+        }
+      },
+      {
+        "id": "FacebookAI/roberta-large-mnli",
+        "name": "roberta-large-mnli*",
+        "family": "Pre-Aligned NLI Reasoners",
+        "params_m": 355,
+        "metrics": {
+          "val_loss": 0.491,
+          "val_acc": 0.8269,
+          "macro_f1": 0.8248,
+          "f1_contra": 0.8571,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.45,
+          "ablation_axis": "Axis 1: Scale"
+        }
+      },
+      {
+        "id": "answerdotai/ModernBERT-base",
+        "name": "ModernBERT-base*",
+        "family": "Modern Long-Context",
+        "params_m": 149,
+        "metrics": {
+          "val_loss": 0.5231,
+          "val_acc": 0.8269,
+          "macro_f1": 0.8241,
+          "f1_contra": 0.85,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.44,
+          "ablation_axis": "Axis 1: Scale"
+        }
+      },
+      {
+        "id": "answerdotai/ModernBERT-large",
+        "name": "ModernBERT-large*",
+        "family": "Modern Long-Context",
+        "params_m": 395,
+        "metrics": {
+          "val_loss": 0.4625,
+          "val_acc": 0.8462,
+          "macro_f1": 0.8462,
+          "f1_contra": 0.875,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.41,
+          "ablation_axis": "Axis 1: Scale"
+        }
+      }
+    ],
+    "Axis 2: Pre-Alignment Warm-Start": [
+      {
+        "id": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+        "name": "DeBERTa-v3-base-NLI*",
+        "family": "Pre-Aligned NLI Reasoners",
+        "params_m": 86,
+        "metrics": {
+          "val_loss": 0.441,
+          "val_acc": 0.8654,
+          "macro_f1": 0.8654,
+          "f1_contra": 0.8947,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.42,
+          "ablation_axis": "Axis 2: Pre-Alignment Warm-Start"
+        }
+      },
+      {
+        "id": "microsoft/deberta-v3-base",
+        "name": "deberta-v3-base*",
+        "family": "Pre-Aligned NLI Reasoners",
+        "params_m": 86,
+        "metrics": {
+          "val_loss": 0.4812,
+          "val_acc": 0.8462,
+          "macro_f1": 0.8462,
+          "f1_contra": 0.875,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.45,
+          "ablation_axis": "Axis 2: Pre-Alignment Warm-Start"
+        }
+      }
+    ],
+    "Axis 3: Legal-Domain Pretraining": [
+      {
+        "id": "nlpaueb/legal-bert-base-uncased",
+        "name": "legal-bert-base-uncased*",
+        "family": "Legal Domain-Adapted",
+        "params_m": 110,
+        "metrics": {
+          "val_loss": 0.495,
+          "val_acc": 0.8269,
+          "macro_f1": 0.8248,
+          "f1_contra": 0.8571,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.44,
+          "ablation_axis": "Axis 3: Legal-Domain Pretraining"
+        }
+      },
+      {
+        "id": "pile-of-law/legalbert-large-1.7M-2",
+        "name": "PoL-BERT-Large*",
+        "family": "Legal Domain-Adapted",
+        "params_m": 340,
+        "metrics": {
+          "val_loss": 0.4712,
+          "val_acc": 0.8462,
+          "macro_f1": 0.844,
+          "f1_contra": 0.8696,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.42,
+          "ablation_axis": "Axis 3: Legal-Domain Pretraining"
+        }
+      },
+      {
+        "id": "law-ai/InLegalBERT",
+        "name": "InLegalBERT*",
+        "family": "Legal Domain-Adapted",
+        "params_m": 110,
+        "metrics": {
+          "val_loss": 0.518,
+          "val_acc": 0.8077,
+          "macro_f1": 0.8062,
+          "f1_contra": 0.8333,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.46,
+          "ablation_axis": "Axis 3: Legal-Domain Pretraining"
+        }
+      }
+    ],
+    "Axis 4: Compact / Edge Baselines": [
+      {
+        "id": "google/electra-large-discriminator",
+        "name": "electra-large-disc*",
+        "family": "Pre-Aligned NLI Reasoners",
+        "params_m": 335,
+        "metrics": {
+          "val_loss": 0.488,
+          "val_acc": 0.8269,
+          "macro_f1": 0.8255,
+          "f1_contra": 0.85,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.47,
+          "ablation_axis": "Axis 4: Compact / Edge Baselines"
+        }
+      },
+      {
+        "id": "BAAI/bge-reranker-v2-m3",
+        "name": "bge-reranker-v2-m3*",
+        "family": "Cross-Encoder Rerankers",
+        "params_m": 568,
+        "metrics": {
+          "val_loss": 0.489,
+          "val_acc": 0.8269,
+          "macro_f1": 0.8261,
+          "f1_contra": 0.8571,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.46,
+          "ablation_axis": "Axis 4: Compact / Edge Baselines"
+        }
+      },
+      {
+        "id": "microsoft/mdeberta-v3-base",
+        "name": "mdeberta-v3-base*",
+        "family": "Multilingual Encoders",
+        "params_m": 86,
+        "metrics": {
+          "val_loss": 0.502,
+          "val_acc": 0.8269,
+          "macro_f1": 0.824,
+          "f1_contra": 0.85,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.45,
+          "ablation_axis": "Axis 4: Compact / Edge Baselines"
+        }
+      },
+      {
+        "id": "sentence-transformers/all-MiniLM-L6-v2",
+        "name": "all-MiniLM-L6-v2*",
+        "family": "Distillation & Edge",
+        "params_m": 22,
+        "metrics": {
+          "val_loss": 0.5784,
+          "val_acc": 0.8077,
+          "macro_f1": 0.7985,
+          "f1_contra": 0.8108,
+          "lr": "3e-5",
+          "batch_size": 8,
+          "tau": 0.48,
+          "ablation_axis": "Axis 4: Compact / Edge Baselines"
+        }
+      },
+      {
+        "id": "cross-encoder/nli-distilroberta-base",
+        "name": "nli-distilroberta-base*",
+        "family": "Distillation & Edge",
+        "params_m": 82,
+        "metrics": {
+          "val_loss": 0.569,
+          "val_acc": 0.8077,
+          "macro_f1": 0.8012,
+          "f1_contra": 0.8182,
+          "lr": "2e-5",
+          "batch_size": 8,
+          "tau": 0.47,
+          "ablation_axis": "Axis 4: Compact / Edge Baselines"
+        }
+      }
+    ]
+  },
+  "shortlisted_champion_models": {
+    "primary_production_engine": {
+      "id": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+      "rationale": "Highest base model validation F1 (0.8947) at low latency (14.8 ms) and compact VRAM (0.42 GB)."
+    },
+    "long_context_scaler": {
+      "id": "answerdotai/ModernBERT-base",
+      "rationale": "8,192-token native context with FlashAttention-2 speed (9.4 ms), achieving 0.8500 Conflict F1."
+    },
+    "scaled_reasoning_ceiling": {
+      "id": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "rationale": "Peak Conflict F1 (0.9000), serving as the empirical reasoning upper bound."
+    }
+  }
+}

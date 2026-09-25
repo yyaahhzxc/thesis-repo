@@ -374,9 +374,9 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 
 ## **8. Ground Truth Benchmark & Human Annotation Protocol**
 
-### **Ground Truth (Gold Standard) Dataset**
-* **Plain Meaning:** The verified, human-authored answer key used to train and test supervised machine learning models.
-* **In This Thesis:** A curated benchmark of **350 statutory premise–hypothesis pairs** evaluated against the Davao City legislative context. It is partitioned into a static **70/15/15 split** (245 training, 52 validation, 53 test pairs).
+### **Ground Truth Partitioning (70/15/15 Split)**
+* **Plain Meaning:** Dividing the expert-annotated gold standard into non-overlapping training, validation, and test subsets to train models and assess true generalization without data leakage.
+* **In This Thesis:** Our 350 statutory premise–hypothesis pairs are partitioned into a static **70/15/15 split** (245 training, 52 validation, 53 test pairs). This preserves enough validation data for fine decision threshold calibration ($\tau^*$) while satisfying the $N \ge 50$ test size required for reliable Minimum Detectable Effect (MDE) and McNemar's test.
 
 ### **Senior Annotator (Hierarchical Adjudicator)**
 * **Plain Meaning:** An expert evaluator designated within each annotation sub-panel who acts as panel lead and tie-breaker for ambiguous or disputed items.
@@ -390,9 +390,9 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** A workload distribution model that achieves multi-rater voting overlap without overloading individual experts.
 * **In This Thesis:** Adapted from Ablazo (2019), the 350 pairs $\times$ 3 independent votes ($1,050$ total annotations) are divided among 15 legal researchers organized into five 3-member panels ($P = 15, k = 3$). Each researcher reviews exactly **70 pairs**, taking approximately 60–90 minutes.
 
-### **Fleiss' Kappa ($\kappa$)**
-* **Plain Meaning:** A statistical measure of agreement between three or more raters that accounts for the possibility of agreement occurring by chance.
-* **In This Thesis:** Calculated across the initial independent votes of the 15 SP legal researchers. The study targets a threshold of $\kappa \ge 0.61$ ("Substantial Agreement"), bounded by the NLI human agreement ceiling established by Bowman et al. (SNLI, $\sim 0.70$).
+### **Annotator Agreement Target & Ceiling**
+* **Plain Meaning:** The expected realistic range of human consensus on subjective or complex legal reasoning tasks.
+* **In This Thesis:** Measured using Fleiss' Kappa ($\kappa$) across the initial independent votes of the 15 SP legal researchers. The study targets a threshold of $\kappa \ge 0.61$ ("Substantial Agreement" under Landis & Koch, 1977), bounded by the empirical NLI human agreement ceiling established by Bowman et al. (SNLI, $\sim 0.70$). Any residual 3-way discordance is resolved through the Senior Annotator adjudication hierarchy.
 
 ---
 

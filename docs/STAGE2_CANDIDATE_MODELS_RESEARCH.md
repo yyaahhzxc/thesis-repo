@@ -102,7 +102,7 @@ From the master list of 28 architectures, the following **Top 10 Official Candid
  │    (Henderson, 340M) │   │    (Laurer, 435M)    │   │    (BAAI, 568M, 8K)  │   │    (Google RTD, 335M)│
  └──────────────────────┘   │                      │   │                      │   │                      │
                             │ 7. RoBERTa-large-mnli│   └──────────────────────┘   │ 10. nli-distilroberta│
-                            │    (COLIEE Base, 355M│                              │    (Edge CPU, 82M)   │
+                            │   (COLIEE Base, 355M)│                              │    (Edge CPU, 82M)   │
                             └──────────────────────┘                              └──────────────────────┘
 ```
 
@@ -137,7 +137,7 @@ From the master list of 28 architectures, the following **Top 10 Official Candid
 * **Why Official Candidate:** Evaluated in recent COLIEE 2025/2026 winning systems. Combines native cross-attention, full 8,192-token context, and multilingual robustness in a single architecture. Serves as the natural logical counterpart to our Stage 1 `bge-m3` bi-encoder.
 
 ### **7. `FacebookAI/roberta-large-mnli` (Canonical Literature Baseline)**
-* **Hugging Face Hub:** `roberta-large-mnli` | **Parameters:** 355M | **Context:** 512 tokens
+* **Hugging Face Hub:** `FacebookAI/roberta-large-mnli` | **Parameters:** 355M | **Context:** 512 tokens
 * **Pretraining Domain:** Pretrained on 160GB text + fine-tuned on MNLI (392k pairs).
 * **Why Official Candidate:** Mandatory baseline cited in Rabelo et al. (2022) for COLIEE Task 4, Williams et al. (2022), and extensively across Chapter 3 (§3.6). Evaluating this model empirically validates our hypothesis that unadapted zero-shot general models fail at legal preemption due to affirmative bias.
 
@@ -164,19 +164,19 @@ The following table presents the complete evaluation matrix comparing our 3 init
 
 | # | Candidate Model Identifier | Parameter Count | Context Window | Architectural Paradigm | Target Evaluation Role in Thesis | Est. fp16 VRAM | Edge Hardware Feasibility (RX 6600 / CPU) |
 | :---: | :--- | :---: | :---: | :--- | :--- | :---: | :--- |
-| *0a* | `all-MiniLM-L6-v2` *(Current)* | 22M | 512 | Distilled Transformer | Lightweight Distillation Baseline | ~0.2 GB | **Optimal**: Sub-second CPU/GPU inference |
-| *0b* | `deberta-v3-base` *(Current)* | 86M | 512 | Disentangled Attention | Core Disentangled Workhorse | ~0.5 GB | **High**: ~4s batch inference on GPU |
-| *0c* | `ModernBERT-base` *(Current)* | 149M | **8,192** | FlashAttention-2 / RoPE | Native Long-Context Baseline | ~0.8 GB | **High**: Fast FlashAttention on GPU |
+| *0a* | `sentence-transformers/all-MiniLM-L6-v2` *(Current)* | 22M | 512 | Distilled Transformer | Lightweight Distillation Baseline | ~0.2 GB | **Optimal**: Sub-second CPU/GPU inference |
+| *0b* | `microsoft/deberta-v3-base` *(Current)* | 86M | 512 | Disentangled Attention | Core Disentangled Workhorse | ~0.5 GB | **High**: ~4s batch inference on GPU |
+| *0c* | `answerdotai/ModernBERT-base` *(Current)* | 149M | **8,192** | FlashAttention-2 / RoPE | Native Long-Context Baseline | ~0.8 GB | **High**: Fast FlashAttention on GPU |
 | **1** | `nlpaueb/legal-bert-base-uncased` | 110M | 512 | Legal Domain Pretrained | LexGLUE Legal Pretraining Benchmark | ~0.6 GB | **High**: Fast edge deployment |
 | **2** | `pile-of-law/legalbert-large-1.7M-2` | 340M | 512 | Large Administrative Domain | Statutory Preemption Corpus Benchmark | ~1.4 GB | **Moderate**: Smooth GPU inference (~1.4GB) |
-| **3** | `MoritzLaurer/DeBERTa-v3-base-NLI` | 86M | 512 | Pre-Aligned NLI (ANLI+FEVER) | Transfer Learning / NLI Pre-Alignment | ~0.5 GB | **High**: Identical footprint to DeBERTa-base |
-| **4** | `MoritzLaurer/DeBERTa-v3-large-NLI` | 435M | 512 | Scaled Pre-Aligned NLI (WANLI) | Empirical Reasoning Quality Ceiling | ~1.8 GB | **Moderate**: Fits comfortably in 8GB VRAM |
+| **3** | `MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli` | 86M | 512 | Pre-Aligned NLI (ANLI+FEVER) | Transfer Learning / NLI Pre-Alignment | ~0.5 GB | **High**: Identical footprint to DeBERTa-base |
+| **4** | `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` | 435M | 512 | Scaled Pre-Aligned NLI (WANLI) | Empirical Reasoning Quality Ceiling | ~1.8 GB | **Moderate**: Fits comfortably in 8GB VRAM |
 | **5** | `answerdotai/ModernBERT-large` | 395M | **8,192** | Modern Long-Context Scaled | Long-Context Scale Ablation (vs Base) | ~1.6 GB | **Moderate**: FlashAttention-2 optimized |
 | **6** | `BAAI/bge-reranker-v2-m3` | 568M | **8,192** | Multilingual Cross-Encoder | End-to-End Multilingual & Long Context | ~2.3 GB | **Moderate**: Fits in 8GB VRAM; heavy on CPU |
 | **7** | `FacebookAI/roberta-large-mnli` | 355M | 512 | Unadapted Pretrained NLI | Mandatory COLIEE Task 4 Zero-Shot Baseline | ~1.5 GB | **Moderate**: Benchmark reference standard |
 | **8** | `microsoft/mdeberta-v3-base` | 86M | 512 | Multilingual Disentangled | Taglish & Regional Translation Robustness | ~0.5 GB | **High**: Efficient edge execution |
 | **9** | `google/electra-large-discriminator` | 335M | 512 | Replaced Token Detection (RTD) | Few-Shot Sample Efficiency Specialist | ~1.4 GB | **Moderate**: Highly stable training dynamics |
-| **10** | `cross-encoder/nli-distilroberta-base`| 82M | 512 | Distilled NLI Cross-Encoder | Edge CPU Latency / Resource Baseline | ~0.4 GB | **Optimal**: Sub-second on standard LGU CPU |
+| **10** | `cross-encoder/nli-distilroberta-base` | 82M | 512 | Distilled NLI Cross-Encoder | Edge CPU Latency / Resource Baseline | ~0.4 GB | **Optimal**: Sub-second on standard LGU CPU |
 
 ---
 
@@ -205,4 +205,4 @@ To ensure maximum scientific rigor during Milestone 3 (Results & Discussion) whi
 2. **Prioritize `MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli`:** This model is hypothesized to achieve the highest empirical score among base models because its pretraining already resolved adversarial negation.
 3. **Compare `ModernBERT-base` vs `ModernBERT-large`:** Provides a clean, publication-grade ablation demonstrating the exact effect of parameter scaling under 8,192-token context windows.
 4. **Benchmark `PoL-BERT-Large` vs `LEGAL-BERT`:** Directly answers whether administrative/regulatory pretraining (Pile of Law) outperforms judicial/case-law pretraining (European/UK law).
-5. **Retain `roberta-large-mnli` as the Formal Baseline:** Confirms alignment with COLIEE Task 4 literature (Rabelo et al., 2022).
+5. **Retain `FacebookAI/roberta-large-mnli` as the Formal Baseline:** Confirms alignment with COLIEE Task 4 literature (Rabelo et al., 2022).

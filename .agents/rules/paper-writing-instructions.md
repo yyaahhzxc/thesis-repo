@@ -39,6 +39,22 @@ description: This rule shall be applied when the user wants the thesis paper dra
 > 9. **Mandatory Literature Grounding & Methodological Justification:**  
 >    * Every empirical threshold, design choice, hyperparameter setting, sample size allocation, split ratio, mathematical formula, difficulty tier, or authoritative legal/technical assertion MUST be firmly grounded with backing citations (`\cite{...}`) and a concise explanation of *why* it was selected based on established literature (legal doctrines, NLP benchmarks, or statistical guidelines).  
 >    * **NEVER** introduce an unbacked claim, arbitrary parameter, or unsupported design decision that could leave holes in the paper or invite defense panel criticism. When introducing any experimental or methodological decision, always state the specific literature rationale (e.g., citing benchmark engineering standards, statistical power constraints, or hardware execution boundaries).
+> 10. **Strict Margin Discipline & Overfull `\hbox` Elimination:**  
+>    * Every paragraph, list item, formula, and table cell must adhere strictly to page margins. Never allow unhyphenated typewriter strings (`\texttt{...}`), long model names, or unyielding text blocks to protrude past the right margin.  
+>    * In running text, write model identifiers in standard roman text (e.g., `DeBERTa-v3-base-NLI`, `ModernBERT-base`, `PoL-BERT-Large`) so that LaTeX can hyphenate at hyphens naturally. Reserve `\texttt{...}` primarily for table cells, code blocks, or literal filenames.
+> 11. **Absolute Ban on Fourth-Wall Breaks (No Course or Milestone References):**  
+>    * The manuscript must read strictly as a formal, peer-reviewed scientific paper.  
+>    * **NEVER** mention course milestones, syllabus requirements, professor instructions, teacher prompts, grading rubrics, or institutional submission deadlines within the thesis prose (e.g., never write *"as required by Milestone 3"* or *"per the professor's guidelines"*).  
+>    * Frame all methodologies, experiments, and analyses as intentional, scientifically motivated research decisions.
+> 12. **Compact, Proportionate Publication Tables:**  
+>    * Tables must not be unnecessarily long, tall, or vertically stretched.  
+>    * Use compact row heights (`\renewcommand{\arraystretch}{0.88}` to `0.92`), appropriate font sizing (`\footnotesize` or `\scriptsize`), and tight horizontal padding (`\setlength{\tabcolsep}{2.5pt}` to `4pt`).  
+>    * Design column widths so that data cells fit on a single line wherever feasible. Ensure multi-row screening benchmarks (such as 28-model sweeps) fit neatly on a single page without spilling onto orphan float pages.
+> 13. **Chronological & Structural Separation of Chapters (Narrative Flow Integrity):**  
+>    * The manuscript must maintain strict narrative and structural boundary separation across chapters:  
+>      - **Chapter 2 (Review of Related Literature):** Strictly exploratory, theoretical, and contextual grounding. It surveys existing literature, historical jurisprudence, architectural paradigms, and benchmark traditions. **NEVER** state operational study decisions or methodology announcements here (e.g., avoid *"the researchers deliberately selected Path 1"* or *"the proponents choose this method because..."*). Frame discussions objectively in terms of what prior studies have demonstrated or how existing paradigms operate (e.g., *"surveying prior benchmarking literature reveals two contrasting selection philosophies..."*).  
+>      - **Chapter 3 (Methodology):** Strictly the research plan, proposed system architecture, mathematical formulations, operational screening criteria, experimental design, and preliminary artifact setup (including corpus extraction and exploratory data analysis / EDA). It defines *how* the study will be conducted and *what* protocols will be executed, without leaking premature empirical evaluation findings, finalist performance tables, or conclusive validation rankings.  
+>      - **Chapter 4 (Results and Discussion):** Strictly the empirical findings, screening metrics, fine-tuning loss curves, comparative evaluation tables, ablation findings, and in-depth analyses of *what actually happened* when executing the plans outlined in Chapter 3.
 
 ---
 
