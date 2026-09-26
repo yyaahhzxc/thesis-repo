@@ -7077,6 +7077,34 @@
     "raw_bib": "@misc{scp2022davaovarc,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{City of Davao and Tanjili v. ARC Investors, Inc. (G.R. No. 249668)}},\n  howpublished = {Supreme Court of the Philippines En Banc Decision},\n  year         = {2022},\n  keywords     = {jurisprudence, davao_city_ordinance, local_business_tax, ultra_vires},\n  url = {https://sc.judiciary.gov.ph/249668-city-of-davao-and-bella-linda-n-tanjili-in-her-official-capacity-as-city-treasurer-of-davao-city-vs-arc-investors-inc/},\n  urldate = {2026-09-26},\n  file = {docs/references/scp2022davaovarc.pdf}\n}"
   },
   {
+    "citekey": "scp2022firstmeridian",
+    "entry_type": "misc",
+    "title": "City of Davao v. First Meridian Development, Inc. (G.R. No. 240078)",
+    "raw_title": "{City of Davao v. First Meridian Development, Inc. (G.R. No. 240078)}",
+    "author": "Supreme Court of the Philippines",
+    "raw_author": "{Supreme Court of the Philippines}",
+    "year": "2022",
+    "venue": "Supreme Court of the Philippines Second Division Decision",
+    "category": "Philippine Law & Jurisprudence",
+    "doi": "",
+    "url": "https://sc.judiciary.gov.ph/240078-city-of-davao-and-villa-v-dureza-vs-first-meridian-development-inc/",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 2,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22City%20of%20Davao%20v.%20First%20Meridian%20Development%2C%20Inc.%20%28G.R.%20No.%20240078%29%22%20Supreme%20Court%20of%20the%20Philippines",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=City%20of%20Davao%20v.%20First%20Meridian%20Development%2C%20Inc.%20%28G.R.%20No.%20240078%29",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=City%20of%20Davao%20v.%20First%20Meridian%20Development%2C%20Inc.%20%28G.R.%20No.%20240078%29",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=City%20of%20Davao%20v.%20First%20Meridian%20Development%2C%20Inc.%20%28G.R.%20No.%20240078%29&rows=1",
+    "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+City%20of%20Davao%20v.%20First%20Meridian%20Development%2C%20Inc.%20%28G.R.%20No.%20240078%29",
+    "raw_bib": "@misc{scp2022firstmeridian,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{City of Davao v. First Meridian Development, Inc. (G.R. No. 240078)}},\n  howpublished = {Supreme Court of the Philippines Second Division Decision},\n  year         = {2022},\n  keywords     = {jurisprudence, davao_city_ordinance, payment_under_protest, ultra_vires},\n  url = {https://sc.judiciary.gov.ph/240078-city-of-davao-and-villa-v-dureza-vs-first-meridian-development-inc/},\n  urldate = {2026-09-26},\n  file = {docs/references/scp2022firstmeridian.pdf}\n}"
+  },
+  {
     "citekey": "scp2008smartvdavao",
     "entry_type": "misc",
     "title": "Smart Communications, Inc. v. City of Davao (G.R. No. 155491)",
@@ -7119,9 +7147,9 @@
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 1,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/introduction.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",

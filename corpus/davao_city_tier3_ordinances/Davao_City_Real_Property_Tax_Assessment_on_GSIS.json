@@ -1,16 +1,16 @@
 {
   "ordinance_no": "Davao City Real Property Tax Assessment on GSIS",
   "series": 2001,
-  "title": "DAVAO CITY MUNICIPAL REAL PROPERTY TAX ASSESSMENT ON GSIS HOUSING AND COMMERCIAL UNITS",
+  "title": "DAVAO CITY MUNICIPAL REAL PROPERTY TAX ASSESSMENT ON GSIS HOUSING AND COMMERCIAL PROPERTIES",
   "enacting_lgu": "City of Davao",
-  "enacting_clause": "MUNICIPAL TAX LEVY EXECUTED PURSUANT TO THE DAVAO CITY LOCAL REVENUE CODE:",
-  "date_approved": "Assessed Calendar Years 1992-2001",
+  "enacting_clause": "MUNICIPAL TAX LEVY EXECUTED PURSUANT TO SECTIONS 193 AND 234 OF THE LOCAL GOVERNMENT CODE OF 1991:",
+  "date_approved": "Assessed Calendar Years 1992-1994 (Upheld August 18, 2005)",
   "judicial_case": "City of Davao v. Court of Appeals and GSIS, G.R. No. 127383 (August 18, 2005; 467 SCRA 280)",
-  "ruling": "Ultra Vires Assessment Struck Down (National Instrumentality Tax Exemption)",
-  "gold_label": "Contradiction",
-  "superior_national_law": "Republic Act No. 7160 §133(o); Presidential Decree No. 1146 §33",
+  "ruling": "Constitutional and Valid (GOCC Tax Exemption Withdrawal Upheld)",
+  "gold_label": "Entailment",
+  "superior_national_law": "Republic Act No. 7160 §193, §232, §234; 1987 Constitution Art. X §5",
   "operative_sections": {
-    "ASSESSMENT MANDATE": "Warrants of levy and distraint assessing real property taxes against real properties titled under the Government Service Insurance System located in Matina and downtown Davao City.",
-    "STATUTORY DEFECT": "Directly collides with Section 133(o) of Republic Act No. 7160, which categorically bars LGUs from imposing any tax or charge upon the national government, its agencies, and instrumentalities."
+    "ASSESSMENT MANDATE": "Notices of assessment and warrants of levy imposing municipal real property taxes upon GSIS properties located in Matina and Ulas, Davao City, pursuant to the city's constitutional and delegated taxing power under the Local Government Code.",
+    "STATUTORY BASIS (ENTAILMENT)": "Fully consistent with Sections 193 and 234 of Republic Act No. 7160, which expressly withdrew all real property tax exemptions previously enjoyed by government-owned or controlled corporations (GOCCs), including the Government Service Insurance System. The Supreme Court reversed the trial court and upheld Davao City's municipal tax assessment as a lawful exercise of delegated statutory authority."
   }
 }

@@ -1,0 +1,20 @@
+=== Ordinance No. 158-05 §423 (2005) ===
+Title: THE 2005 REVENUE CODE OF THE CITY OF DAVAO (MANDATORY PAYMENT UNDER PROTEST)
+Enacting LGU: City of Davao
+Enacting Clause: BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:
+Date Approved: November 16, 2005
+Judicial Reference: City of Davao and Dureza v. First Meridian Development, Inc., G.R. No. 240078 (October 19, 2022)
+Judicial Ruling: Ultra Vires and Void (Mandatory Payment Under Protest Struck Down)
+Gold NLI Label: Contradiction
+Superior National Law: Republic Act No. 7160 §195
+
+--- OPERATIVE SECTIONS ---
+SECTION 1. TITLE:
+This Ordinance shall be known and cited as the '2005 Revenue Code of the City of Davao'.
+
+SECTION 423. PAYMENT UNDER PROTEST:
+No protest against an assessment shall be entertained unless the taxpayer first pays under protest the tax assessed, stating the legal grounds within thirty (30) days from payment.
+
+STATUTORY COLLISION:
+Directly contradicts Section 195 of Republic Act No. 7160 (Local Government Code), which governs administrative protests against local business tax assessments and deliberately does not mandate prior payment under protest, unlike Section 252 governing real property taxes. The Supreme Court held that local legislative bodies cannot impose unauthorized procedural preconditions that restrict statutory remedies.
+

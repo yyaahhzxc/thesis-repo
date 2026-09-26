@@ -1,0 +1,20 @@
+=== Ordinance No. 158-05 §135 (2005) ===
+Title: THE 2005 REVENUE CODE OF THE CITY OF DAVAO (LOCAL BUSINESS TAX ON HOLDING ENTITIES)
+Enacting LGU: City of Davao
+Enacting Clause: BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:
+Date Approved: November 16, 2005
+Judicial Reference: City of Davao and Tanjili v. ARC Investors, Inc., G.R. No. 249668 (July 13, 2022)
+Judicial Ruling: Ultra Vires Assessment Struck Down (Unauthorized Reclassification of Holding Firm as NBFI)
+Gold NLI Label: Contradiction
+Superior National Law: Republic Act No. 7160 §133(a), §143(f); Republic Act No. 8791 §3
+
+--- OPERATIVE SECTIONS ---
+SECTION 1. TITLE:
+This Ordinance shall be known and cited as the '2005 Revenue Code of the City of Davao'.
+
+SECTION 135. TAX ON FINANCIAL INSTITUTIONS AND HOLDING CORPORATIONS:
+Imposes local business taxes on banks, banking institutions, and holding entities receiving dividend income and investment interest, categorizing corporate holding firms as non-bank financial intermediaries.
+
+STATUTORY COLLISION:
+Violates Section 143(f) of Republic Act No. 7160 in relation to Section 3 of Republic Act No. 8791. LGUs possess no legal authority to reclassify a passive holding company as a non-bank financial intermediary without express Bangko Sentral ng Pilipinas authorization.
+

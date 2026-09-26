@@ -189,7 +189,7 @@
     },
     "raw_bib": "@misc{patumbon2025lissp,\n  title        = {{SP} Implements Less Paper with {LISSP}},\n  author       = {Patumbon, Rojean Grace G.},\n  year         = {2025},\n  month        = {February},\n  howpublished = {SunStar Davao},\n  url          = {https://www.sunstar.com.ph/davao/sp-implements-less-paper-with-lissp},\n  urldate      = {2026-09-26},\n  file         = {docs/references/patumbon2025lissp.pdf},\n  note         = {Reporting on official announcement by Davao City Councilor Bonz Andre Militar},\n  file = {docs/references/patumbon2025lissp.pdf}\n}",
     "is_cited": true,
-    "cite_count": 1,
+    "cite_count": 2,
     "cited_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ]
@@ -459,17 +459,18 @@
       "title": "Towards Digital Legislation: Readiness of the {Sangguniang Bayan} of {LGU} Motiong for Paperless Sessions",
       "author": "Renno Jose B. Gabuya",
       "journal": "International Journal of Research and Innovation in Social Science",
-      "year": "2025",
-      "month": "October",
       "volume": "9",
-      "number": "10",
-      "url": "https://rsisinternational.org/journals/ijriss/articles/towards-digital-legislation-readiness-of-the-sangguniang-bayan-of-lgu-motiong-for-paperless-sessions/",
+      "number": "9",
+      "pages": "2980--2991",
+      "year": "2025",
+      "month": "September",
+      "url": "https://ideas.repec.org/a/bcp/journl/v9y2025issue-9p2980-2991.html",
       "urldate": "2026-09-26",
       "file": "docs/references/gabuya2025towardsdigitallegis.pdf"
     },
-    "raw_bib": "@article{gabuya2025towardsdigitallegis,\n  title        = {Towards Digital Legislation: Readiness of the {Sangguniang Bayan} of {LGU} Motiong for Paperless Sessions},\n  author       = {Renno Jose B. Gabuya},\n  journal      = {International Journal of Research and Innovation in Social Science},\n  year         = {2025},\n  month        = {October},\n  volume       = {9},\n  number       = {10},\n  url          = {https://rsisinternational.org/journals/ijriss/articles/towards-digital-legislation-readiness-of-the-sangguniang-bayan-of-lgu-motiong-for-paperless-sessions/},\n  urldate      = {2026-09-26},\n  file         = {docs/references/gabuya2025towardsdigitallegis.pdf},\n  file = {docs/references/gabuya2025towardsdigitallegis.pdf}\n}",
+    "raw_bib": "@article{gabuya2025towardsdigitallegis,\n  title        = {Towards Digital Legislation: Readiness of the {Sangguniang Bayan} of {LGU} Motiong for Paperless Sessions},\n  author       = {Renno Jose B. Gabuya},\n  journal      = {International Journal of Research and Innovation in Social Science},\n  volume       = {9},\n  number       = {9},\n  pages        = {2980--2991},\n  year         = {2025},\n  month        = {September},\n  url          = {https://ideas.repec.org/a/bcp/journl/v9y2025issue-9p2980-2991.html},\n  urldate      = {2026-09-26},\n  file         = {docs/references/gabuya2025towardsdigitallegis.pdf}\n}",
     "is_cited": true,
-    "cite_count": 4,
+    "cite_count": 5,
     "cited_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ]
@@ -551,7 +552,7 @@
       "month": "February",
       "file": "docs/references/ablazo2019designing.pdf"
     },
-    "raw_bib": "@mastersthesis{ablazo2019designing,\n  title        = {Designing a Web Application using the {Twitter} streaming {API} as a Tracking Tool for Weather Updates},\n  author       = {Adrian C. Ablazo},\n  school       = {Ateneo de Davao University},\n  year         = {2019},\n  address      = {Davao City, Philippines},\n  type         = {Graduate Independent Study},\n  month        = {February},\n  file = {docs/references/ablazo2019designing.pdf}\n}",
+    "raw_bib": "@mastersthesis{ablazo2019designing,\n  title        = {Designing a Web Application using the {Twitter} streaming {API} as a Tracking Tool for Weather Updates},\n  author       = {Adrian C. Ablazo},\n  school       = {Ateneo de Davao University},\n  year         = {2019},\n  address      = {Davao City, Philippines},\n  type         = {Graduate Independent Study},\n  month        = {February},\n  file         = {docs/references/ablazo2019designing.pdf}\n}",
     "is_cited": true,
     "cite_count": 3,
     "cited_files": [

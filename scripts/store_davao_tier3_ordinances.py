@@ -54,21 +54,20 @@ ordinances = [
         }
     },
     {
-        "ordinance_no": "Ordinance No. 158-05",
+        "ordinance_no": "Ordinance No. 158-05 §135",
         "series": 2005,
-        "title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO",
+        "title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (LOCAL BUSINESS TAX ON HOLDING ENTITIES)",
         "enacting_lgu": "City of Davao",
         "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
         "date_approved": "November 16, 2005",
-        "judicial_case": "City of Davao and Tanjili v. ARC Investors, Inc., G.R. No. 249668 (July 13, 2022); Mindanao Shopping Destination Corp. v. Duterte, G.R. No. 211093 (June 6, 2017)",
-        "ruling": "Partially Ultra Vires (Holding Company Taxes Struck Down; Statutory Tax Rate Caps Enforced)",
+        "judicial_case": "City of Davao and Tanjili v. ARC Investors, Inc., G.R. No. 249668 (July 13, 2022)",
+        "ruling": "Ultra Vires Assessment Struck Down (Unauthorized Reclassification of Holding Firm as NBFI)",
         "gold_label": "Contradiction",
-        "superior_national_law": "Republic Act No. 7160 §133(a), §143(a), §143(f); Republic Act No. 8791 §3",
+        "superior_national_law": "Republic Act No. 7160 §133(a), §143(f); Republic Act No. 8791 §3",
         "operative_sections": {
             "SECTION 1. TITLE": "This Ordinance shall be known and cited as the '2005 Revenue Code of the City of Davao'.",
-            "SECTION 69. GRADUATED TAX ON BUSINESSES": "Imposes graduated local business tax rates upon retailers, wholesalers, and commercial service establishments operating within Davao City, structured according to gross annual sales brackets.",
             "SECTION 135. TAX ON FINANCIAL INSTITUTIONS AND HOLDING CORPORATIONS": "Imposes local business taxes on banks, banking institutions, and holding entities receiving dividend income and investment interest, categorizing corporate holding firms as non-bank financial intermediaries.",
-            "SECTION 423. PAYMENT UNDER PROTEST": "No protest against an assessment shall be entertained unless the taxpayer first pays under protest the tax assessed, stating the legal grounds within thirty (30) days from payment."
+            "STATUTORY COLLISION": "Violates Section 143(f) of Republic Act No. 7160 in relation to Section 3 of Republic Act No. 8791. LGUs possess no legal authority to reclassify a passive holding company as a non-bank financial intermediary without express Bangko Sentral ng Pilipinas authorization."
         }
     },
     {
@@ -86,6 +85,39 @@ ordinances = [
             "SECTION 1. IMPOSITION OF FRANCHISE TAX": "Notwithstanding any tax exemptions granted in any national franchise, there is hereby levied on all businesses enjoying a franchise operating within Davao City a local franchise tax of fifty percent (50%) of one percent (1%) of gross annual receipts realized during the preceding calendar year.",
             "SECTION 2. COVERED ENTERPRISES": "All telecommunications companies, telephone networks, mobile telephone carriers, and public utilities operating transmission facilities or commercial stations within Davao City shall be covered.",
             "SECTION 3. PAYMENT SCHEDULE": "The franchise tax shall be payable quarterly to the City Treasurer within the first twenty (20) days of January, April, July, and October."
+        }
+    },
+    {
+        "ordinance_no": "Ordinance No. 158-05 §423",
+        "series": 2005,
+        "title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (MANDATORY PAYMENT UNDER PROTEST)",
+        "enacting_lgu": "City of Davao",
+        "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
+        "date_approved": "November 16, 2005",
+        "judicial_case": "City of Davao and Dureza v. First Meridian Development, Inc., G.R. No. 240078 (October 19, 2022)",
+        "ruling": "Ultra Vires and Void (Mandatory Payment Under Protest Struck Down)",
+        "gold_label": "Contradiction",
+        "superior_national_law": "Republic Act No. 7160 §195",
+        "operative_sections": {
+            "SECTION 1. TITLE": "This Ordinance shall be known and cited as the '2005 Revenue Code of the City of Davao'.",
+            "SECTION 423. PAYMENT UNDER PROTEST": "No protest against an assessment shall be entertained unless the taxpayer first pays under protest the tax assessed, stating the legal grounds within thirty (30) days from payment.",
+            "STATUTORY COLLISION": "Directly contradicts Section 195 of Republic Act No. 7160 (Local Government Code), which governs administrative protests against local business tax assessments and deliberately does not mandate prior payment under protest, unlike Section 252 governing real property taxes. The Supreme Court held that local legislative bodies cannot impose unauthorized procedural preconditions that restrict statutory remedies."
+        }
+    },
+    {
+        "ordinance_no": "Davao City Real Property Tax Assessment on GSIS",
+        "series": 2001,
+        "title": "DAVAO CITY MUNICIPAL REAL PROPERTY TAX ASSESSMENT ON GSIS HOUSING AND COMMERCIAL PROPERTIES",
+        "enacting_lgu": "City of Davao",
+        "enacting_clause": "MUNICIPAL TAX LEVY EXECUTED PURSUANT TO SECTIONS 193 AND 234 OF THE LOCAL GOVERNMENT CODE OF 1991:",
+        "date_approved": "Assessed Calendar Years 1992-1994 (Upheld August 18, 2005)",
+        "judicial_case": "City of Davao v. Court of Appeals and GSIS, G.R. No. 127383 (August 18, 2005; 467 SCRA 280)",
+        "ruling": "Constitutional and Valid (GOCC Tax Exemption Withdrawal Upheld)",
+        "gold_label": "Entailment",
+        "superior_national_law": "Republic Act No. 7160 §193, §232, §234; 1987 Constitution Art. X §5",
+        "operative_sections": {
+            "ASSESSMENT MANDATE": "Notices of assessment and warrants of levy imposing municipal real property taxes upon GSIS properties located in Matina and Ulas, Davao City, pursuant to the city's constitutional and delegated taxing power under the Local Government Code.",
+            "STATUTORY BASIS (ENTAILMENT)": "Fully consistent with Sections 193 and 234 of Republic Act No. 7160, which expressly withdrew all real property tax exemptions previously enjoyed by government-owned or controlled corporations (GOCCs), including the Government Service Insurance System. The Supreme Court reversed the trial court and upheld Davao City's municipal tax assessment as a lawful exercise of delegated statutory authority."
         }
     },
     {
@@ -123,23 +155,6 @@ ordinances = [
         }
     },
     {
-        "ordinance_no": "Ordinance No. 060-02",
-        "series": 2002,
-        "title": "AN ORDINANCE PROHIBITING THE MANUFACTURE, SALE, DISTRIBUTION, POSSESSION OR USE OF FIRECRACKERS OR PYROTECHNIC DEVICES AND SUCH OTHER SIMILAR DEVICES IN DAVAO CITY",
-        "enacting_lgu": "City of Davao",
-        "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
-        "date_approved": "November 26, 2002",
-        "judicial_case": "Davao City Firecracker Prohibition under General Welfare Police Power",
-        "ruling": "Valid Local Prohibitory Measure under General Welfare Police Power (Upheld)",
-        "gold_label": "Entailment",
-        "superior_national_law": "Republic Act No. 7160 §16, §458(a)(1)(vi); Republic Act No. 7183 §2",
-        "operative_sections": {
-            "SECTION 1. TITLE": "This Ordinance shall be cited as the 'Davao City Firecracker Ban Ordinance of 2002'.",
-            "SECTION 2. PROHIBITED ACTS": "It shall be unlawful for any person or business entity to manufacture, sell, distribute, possess, transport, or use any firecracker, pyrotechnic device, or explosive novelty anywhere within Davao City at any time of the year.",
-            "SECTION 3. GRADUATED PENALTIES": "Violators shall pay P1,000 fine and 20 days imprisonment for first offense; P3,000 fine and 1 to 3 months imprisonment for second offense; and P5,000 fine and 3 to 6 months imprisonment for third offense."
-        }
-    },
-    {
         "ordinance_no": "Ordinance No. 0270-23",
         "series": 2023,
         "title": "THE COMPREHENSIVE SPEED LIMIT ORDINANCE OF DAVAO CITY",
@@ -157,36 +172,20 @@ ordinances = [
         }
     },
     {
-        "ordinance_no": "Ordinance No. 004-13",
-        "series": 2013,
-        "title": "AN ORDINANCE AMENDING ORDINANCE NO. 1627 RELATIVE TO THE LIQUOR BAN IN DAVAO CITY",
+        "ordinance_no": "Ordinance No. 060-02",
+        "series": 2002,
+        "title": "AN ORDINANCE PROHIBITING THE MANUFACTURE, SALE, DISTRIBUTION, POSSESSION OR USE OF FIRECRACKERS OR PYROTECHNIC DEVICES AND SUCH OTHER SIMILAR DEVICES IN DAVAO CITY",
         "enacting_lgu": "City of Davao",
         "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
-        "date_approved": "July 24, 2013",
-        "judicial_case": "Davao City Sobriety and Public Order Regulation",
-        "ruling": "Valid Exercise of Police Power Regulating Operating Hours of Commercial Establishments (Upheld)",
+        "date_approved": "November 26, 2002",
+        "judicial_case": "Davao City Firecracker Prohibition under General Welfare Police Power",
+        "ruling": "Valid Local Prohibitory Measure under General Welfare Police Power (Upheld)",
         "gold_label": "Entailment",
-        "superior_national_law": "Republic Act No. 7160 §16, §458(a)(4)(iv)",
+        "superior_national_law": "Republic Act No. 7160 §16, §458(a)(1)(vi); Republic Act No. 7183 §2",
         "operative_sections": {
-            "SECTION 1. TITLE": "This Ordinance shall be known as the 'Davao City Liquor Ban Ordinance of 2013'.",
-            "SECTION 2. RESTRICTED HOURS": "It is unlawful for any commercial establishment to serve, sell, furnish, or allow the consumption of alcoholic and intoxicating liquor between 1:00 AM and 8:00 AM within the territorial jurisdiction of Davao City.",
-            "SECTION 4. PENAL CLAUSE": "First offense: P3,000 fine; Second offense: P5,000 fine and 3 months closure; Third offense: Revocation of Mayor's Business Permit."
-        }
-    },
-    {
-        "ordinance_no": "Davao City Real Property Tax Assessment on GSIS",
-        "series": 2001,
-        "title": "DAVAO CITY MUNICIPAL REAL PROPERTY TAX ASSESSMENT ON GSIS HOUSING AND COMMERCIAL UNITS",
-        "enacting_lgu": "City of Davao",
-        "enacting_clause": "MUNICIPAL TAX LEVY EXECUTED PURSUANT TO THE DAVAO CITY LOCAL REVENUE CODE:",
-        "date_approved": "Assessed Calendar Years 1992-2001",
-        "judicial_case": "City of Davao v. Court of Appeals and GSIS, G.R. No. 127383 (August 18, 2005; 467 SCRA 280)",
-        "ruling": "Ultra Vires Assessment Struck Down (National Instrumentality Tax Exemption)",
-        "gold_label": "Contradiction",
-        "superior_national_law": "Republic Act No. 7160 §133(o); Presidential Decree No. 1146 §33",
-        "operative_sections": {
-            "ASSESSMENT MANDATE": "Warrants of levy and distraint assessing real property taxes against real properties titled under the Government Service Insurance System located in Matina and downtown Davao City.",
-            "STATUTORY DEFECT": "Directly collides with Section 133(o) of Republic Act No. 7160, which categorically bars LGUs from imposing any tax or charge upon the national government, its agencies, and instrumentalities."
+            "SECTION 1. TITLE": "This Ordinance shall be cited as the 'Davao City Firecracker Ban Ordinance of 2002'.",
+            "SECTION 2. PROHIBITED ACTS": "It shall be unlawful for any person or business entity to manufacture, sell, distribute, possess, transport, or use any firecracker, pyrotechnic device, or explosive novelty anywhere within Davao City at any time of the year.",
+            "SECTION 3. GRADUATED PENALTIES": "Violators shall pay P1,000 fine and 20 days imprisonment for first offense; P3,000 fine and 1 to 3 months imprisonment for second offense; and P5,000 fine and 3 to 6 months imprisonment for third offense."
         }
     }
 ]
