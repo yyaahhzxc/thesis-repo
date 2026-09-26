@@ -141,6 +141,20 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** An algorithmic safeguard that boosts the search rank of primary congressional legislation over subordinate administrative clutter.
 * **In This Thesis:** In our 25,432 national corpus, 48% of documents are administrative executive orders that share generic administrative vocabulary. A multiplicative boost factor ($\beta = 1.15$) is applied to primary enactments (Republic Acts), preventing administrative issuances from pushing critical governing codes out of the top-$k$ candidate pool and elevating MRR by +45.8%.
 
+### **Dual-Stream Stage 1 Retrieval Engine**
+* **Plain Meaning:** A retrieval architecture that simultaneously searches both national statutes and local city ordinances, partitioning candidate results into two distinct legal streams rather than mixing them together into an undifferentiated pool.
+* **In This Thesis:** Given a draft ordinance section, the Stage 1 engine computes BM25 lexical scores and dense dot-product similarities across all 176,421 provisions in sub-second time. It then applies Reciprocal Rank Fusion ($k=60$) and partitions the top shortlists into:
+  1. *Vertical Preemption Stream:* Top-$k_{\text{nat}}$ national statutes evaluated under *Magtajas v. Pryce Properties*.
+  2. *Horizontal Coherence Stream:* Top-$k_{\text{loc}}$ fellow Davao City ordinances evaluated for local consistency, redundant penalties, or unintended repeals.
+
+### **Unified 176,421-Provision Master Statutory Corpus**
+* **Plain Meaning:** The complete statutory knowledge base combining 25,432 national enactments and 1,664 Davao City local ordinances into a standardized provision-level dataset.
+* **In This Thesis:** Stored in `data/unified_dual_statutory_provisions.jsonl` (394.7 MB) and `data/unified_dual_statutory_provisions_meta.jsonl` (92.5 MB). It contains exactly 164,620 national provisions and 11,801 municipal provisions (8,160 operative substantive rules and 3,641 procedural boilerplate clauses), totaling 176,421 provisions with 172,780 candidate operative rules. Every provision incorporates context-prepended structural headers `[Instrument No.: Title | Section S: Catchline] Operative Text` per Listing 3.4.
+
+### **Offline Precomputed Dense Embeddings (`.npy` Vector Store)**
+* **Plain Meaning:** Computing high-dimensional mathematical vector representations for all 176,421 legal provisions once ahead of time and storing them directly on disk, rather than re-encoding the entire legal corpus during every search query.
+* **In This Thesis:** Encoded using `sentence-transformers/all-MiniLM-L6-v2` (384 dimensions, normalized `float32`) into `output/dual_corpus_embeddings_minilm.npy` (270.98 MB) via direct-to-disk `np.memmap`. At runtime, the system only needs to encode the single input query text (1.33 ms on CPU) and calculate an instant inner dot product against the precomputed matrix, delivering semantic candidate retrieval in under 50 milliseconds without GPU hardware.
+
 ---
 
 ## **3. Stage 2: Natural Language Inference (NLI) & Deep Reasoning**
