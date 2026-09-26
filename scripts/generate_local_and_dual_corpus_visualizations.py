@@ -73,8 +73,8 @@ with open("output/corpus_token_census.json", "r", encoding="utf-8") as f:
 # -------------------------------------------------------------
 def generate_local_temporal_typology_figure():
     print("[1/2] Generating local_ordinance_temporal_and_typology.png...")
-    fig = plt.figure(figsize=(14.2, 4.8), dpi=300)
-    gs = GridSpec(1, 2, width_ratios=[1.0, 1.35], wspace=0.62, left=0.07, right=0.96, bottom=0.15, top=0.88)
+    fig = plt.figure(figsize=(15.8, 5.0), dpi=300)
+    gs = GridSpec(1, 2, width_ratios=[1.0, 1.45], wspace=0.36, left=0.06, right=0.98, bottom=0.14, top=0.88)
     
     # Panel (a): Temporal Distribution
     ax1 = fig.add_subplot(gs[0])
@@ -106,51 +106,76 @@ def generate_local_temporal_typology_figure():
                      ha='center', va='bottom', fontsize=8.8, fontweight='bold', color='#111111')
                      
     ax1.set_xticks(range(len(era_order)))
-    ax1.set_xticklabels(era_labels_clean, fontsize=9.2)
-    ax1.set_ylabel("Enacted Local Ordinances", fontsize=10.5, fontweight='bold')
-    ax1.set_title("(a) Enactment Volume across Four Eras ($N = 1,664$)", fontsize=11, fontweight='bold', pad=12)
+    ax1.set_xticklabels(era_labels_clean, fontsize=9.0, fontweight='bold')
+    ax1.set_ylabel("Enacted Local Ordinances", fontsize=10.0, fontweight='bold')
+    ax1.set_title("(a) Enactment Volume across Four Legislative Eras (N = 1,664)", fontsize=10.8, fontweight='bold', pad=12)
     ax1.set_ylim(0, 1550)
     ax1.yaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}'))
-    ax1.grid(axis='y', zorder=0)
+    ax1.grid(axis='y', linestyle='--', alpha=0.6, zorder=0)
     
-    # Panel (b): Functional Typology Breakdown
+    # Panel (b): 2D Latent Semantic Topic Space (SVD-PCA Projection, N = 1,664)
     ax2 = fig.add_subplot(gs[1])
     
-    typology_counts = df_local['functional_typology'].value_counts()
+    from sklearn.feature_extraction.text import TfidfVectorizer, ENGLISH_STOP_WORDS
+    from sklearn.decomposition import TruncatedSVD, PCA
+    from sklearn.preprocessing import normalize
     
-    short_labels = {
-        "Substantive Regulatory, Health & Penal Ordinances": "Substantive Regulatory & Penal",
-        "Inter-Agency Agreements & Institutional MOAs/MOUs": "Inter-Agency Agreements (MOA/MOU)",
-        "Disaster Risk Reduction, Calamity & QRF Funds": "Disaster Relief & QRF Funds",
-        "Deeds of Donation & Property Usufruct": "Deeds of Donation & Usufruct",
-        "Temporary Road Closures & Traffic Management": "Temporary Road Closures",
-        "Zoning Reclassifications & Subdivision Development": "Zoning & Subdivision Permits"
-    }
+    # Extract operative text for SVD projection
+    op_docs = []
+    for d in local_docs:
+        op_text = ' '.join([s['raw_text'] for s in d['sections'] if not s['is_boilerplate']])
+        if len(op_text.split()) < 10:
+            op_text = d['full_text']
+        op_docs.append(op_text)
+        
+    custom_stops = list(ENGLISH_STOP_WORDS.union([
+        'city', 'shall', 'section', 'councillor', 'councilor', 'davao', 'government', 
+        'mayor', 'behalf', 'ordinance', 'ordinances', 'page', 'turn', 'xxx', 'honorable', 
+        'philippines', 'republic', 'act', 'code', 'session', 'regular', 'approved', 'enacted',
+        'hereby', 'thereof', 'pursuant', 'order', 'duly', 'official', 'sanggunian', 'panlungsod'
+    ]))
     
-    typology_order = list(typology_counts.index)
-    counts = [typology_counts[t] for t in typology_order]
-    labels_display = [short_labels.get(t, t) for t in typology_order]
+    tfidf = TfidfVectorizer(max_features=8000, stop_words=custom_stops, ngram_range=(1,2), min_df=2)
+    X_tfidf = tfidf.fit_transform(op_docs)
     
-    palette = ['#d62728', '#1f77b4', '#e377c2', '#8c564b', '#ff7f0e', '#2ca02c']
+    svd64 = TruncatedSVD(n_components=64, random_state=42)
+    X_64 = svd64.fit_transform(X_tfidf)
+    X_norm = normalize(X_64)
     
-    y_pos = np.arange(len(counts))
-    hbars = ax2.barh(y_pos, counts, color=palette, height=0.58, edgecolor='#222222', linewidth=0.8, zorder=3)
+    pca = PCA(n_components=2, random_state=42)
+    X_2d = pca.fit_transform(X_norm)
     
-    for bar in hbars:
-        w = bar.get_width()
-        pct = (w / len(df_local)) * 100
-        ax2.annotate(f" {w:,} ({pct:.1f}%)",
-                     xy=(w, bar.get_y() + bar.get_height() / 2),
-                     xytext=(3, 0), textcoords="offset points",
-                     ha='left', va='center', fontsize=8.5, fontweight='bold', color='#111111')
-                     
-    ax2.set_yticks(y_pos)
-    ax2.set_yticklabels(labels_display, fontsize=9.0)
-    ax2.invert_yaxis()  # Highest on top
-    ax2.set_xlabel("Ordinance Enactment Count", fontsize=10.5, fontweight='bold')
-    ax2.set_title("(b) Municipal Functional Typology Share ($N = 1,664$)", fontsize=11, fontweight='bold', pad=12)
-    ax2.set_xlim(0, 850)
-    ax2.grid(axis='x', zorder=0)
+    local_labels = np.array([d['functional_typology_id'] for d in local_docs])
+    
+    typo_meta = [
+        (1, 'Substantive Regulatory & Penal', '#1f77b4', 16, 0.65),
+        (2, 'Inter-Agency Agreements (MOA/MOU)', '#2ca02c', 16, 0.65),
+        (3, 'Disaster Relief & QRF Funds', '#d62728', 24, 0.85),
+        (4, 'Deeds of Donation & Usufruct', '#9467bd', 16, 0.70),
+        (5, 'Temporary Road Closures', '#ff7f0e', 24, 0.85),
+        (6, 'Zoning & Subdivision Permits', '#8c564b', 28, 0.90)
+    ]
+    
+    for t_id, name, col, sz, alpha in typo_meta:
+        mask = (local_labels == t_id)
+        ax2.scatter(X_2d[mask, 0], X_2d[mask, 1], c=col, label=f'{name} (n={mask.sum():,})', s=sz, alpha=alpha, edgecolors='white', linewidths=0.3, zorder=3)
+        
+    # Annotations for salient clusters
+    ax2.annotate('Disaster QRF Relief\n(Tight Calamity Cluster)', xy=(-0.30, 0.52), xytext=(-0.56, 0.62),
+                 arrowprops=dict(facecolor='#d62728', edgecolor='#a81c1d', arrowstyle='->', lw=1.2),
+                 fontsize=7.8, fontweight='bold', color='#a81c1d',
+                 bbox=dict(boxstyle='round,pad=0.25', facecolor='#fdf2f2', edgecolor='#d62728', lw=0.7))
+                 
+    ax2.annotate('Temporary Road Closures\n(Traffic Management Cluster)', xy=(-0.24, -0.36), xytext=(-0.46, -0.46),
+                 arrowprops=dict(facecolor='#ff7f0e', edgecolor='#b85805', arrowstyle='->', lw=1.2),
+                 fontsize=7.8, fontweight='bold', color='#b85805',
+                 bbox=dict(boxstyle='round,pad=0.25', facecolor='#fff8f0', edgecolor='#ff7f0e', lw=0.7))
+                 
+    ax2.set_title('(b) 2D Latent Semantic Topic Space of Municipal Ordinances (SVD, N = 1,664)', fontsize=10.8, fontweight='bold', pad=12)
+    ax2.set_xlabel(r'Latent Semantic Dimension 1 (Executive Authorizations $\leftarrow\rightarrow$ Direct Substantive Mandates)', fontsize=8.6, fontweight='bold')
+    ax2.set_ylabel('Latent Semantic Dimension 2\n' + r'(Emergency QRF & Closures $\leftarrow\rightarrow$ Property & Zoning)', fontsize=8.6, fontweight='bold', labelpad=10)
+    ax2.grid(True, linestyle='--', alpha=0.5, zorder=0)
+    ax2.legend(loc='lower right', fontsize=7.6, frameon=True, framealpha=0.94, edgecolor='#cccccc', title='Municipal Functional Typology', title_fontsize=8.0)
     
     p1 = TEMPLATE_FIGS_DIR / "local_ordinance_temporal_and_typology.png"
     p2 = OUTPUT_VIZ_DIR / "local_ordinance_temporal_and_typology.png"
