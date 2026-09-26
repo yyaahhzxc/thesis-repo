@@ -1,0 +1,478 @@
+=== ORDINANCE: Ordinance No. 000363-10 ===
+
+--- [Page 1] ---
+15th City Council
+6th Regular Session
+Series of 2010
+
+Republic of the Philippines
+SANGUNIANG PANLUNGSD
+Lungsod ng Davao
+
+PRESENT:
+
+Councillor Ma. Belen S. Acosta
+Councillor Fillo G. Abeleira
+Councillor Victorio S. Adorcarca Sr.
+Councillor Alfredo A. Agay
+Councillor Dante L. Apostol Sr.
+Councillor Leonardo E. Avila III
+Councillor Conrad C. Baluran
+Councillor Samuel B. Bangoy
+Councillor Antonio B. Bungayan
+Councillor Pilar C. Braga
+Councillor Arnolfo Ricardo B. Cabiling
+Councillor Danilo C. Dayanghirang
+Councillor Paolo Duterte
+Councillor Edgar R. Ibyuan
+Councillor Peter T. Lavdia
+Councillor Juan M. Lopez A. Mahipus Sr.
+Councillor Bonifacio E. Militar
+Councillor Tomas J. Monteverde IV
+Councillor Myrna G. L' Dalode-Oritz
+Councillor Susan Isabel C. Reita
+Councillor Angela A. Librado-Tunidad
+Councillor Jose Louis P. Villafuerte
+
+ABSENT:
+
+Vice-Mayor Sara Z. Duterte
+Councillor Karl S. Bello
+Councillor Teresita C. Mata-Marafon
+Councillor Hallia F. Sulagad
+Councillor Rachel P. Zozobra
+
+ORDINANCE NO. 0363-10
+Series of 2010
+
+AN ORDINANCE ESTABLISHING A SEPTAGE AND SEWERAGE MANAGEMENT PROGRAM IN DAVAO CITY
+
+Be it ordained by the Sangguniang Panlungsod of Davao City in session assembled that:
+
+ARTICLE I
+GENERAL PROVISIONS
+
+Section 1. Title: This Ordinance shall be known as "Septage and Sewerage Management Ordinance of Davao City".
+
+Section 2. Declaration of Policies: It is hereby declared the policy of the City to adopt and implement a comprehensive and integrated septicage and sewerage management program which shall:
+
+--- [Page 2] ---
+Page 2 of 14
+Ord. No. 0363-10
+
+(a) Ensure the protection of public health and the environment;
+(b) Reduce, if not eliminate, the prevalence of waterborne and excreta-related diseases and pollution in bodies of water;
+(c) Encourage water conservation and recovery;
+(d) Utilize environmentally-sound methods to ensure the proper collection, transport, storage, treatment, and disposal of septicage through the formulation and adoption of best environmental practices;
+(e) Promote research and development programs to adopt an effective institutional arrangement and improved indigenous methods of treating and recycling water and other liquid wastes;
+(f) Encourage greater public-private partnership;
+(g) Encourage the integration of septicage and sewerage management and water resource conservation and recovery topics into the academic curricula of formal and non-formal education;
+(h) Promote environmental awareness and action among the citizenry through information, education, and communication campaigns.
+
+Section 3. Authority: This ordinance is enacted to supplement the provisions and specifications of existing laws and ordinances related to septicage and sewerage management and complement existing laws on clean water, building, and plumbing regulations.
+
+ARTICLE II SCOPE
+Section 4. Scope: This Ordinance shall apply to all proposed, planned or existing structures whether public or private, residential, commercial, institutional or industrial.
+
+ARTICLE III DEFINITION OF TERMS
+Section 5. Definition of Terms: The words and phrases used in this Ordinance shall mean as follows:
+
+a) Anaerobic ponds are deep stabilization ponds used to treat high-strength organic wastewater that also contains high concentrations of solids. Anaerobic treatment does not require the presence and use of oxygen and encourages the growth of bacteria, which breaks down the waste material, releasing methane and carbon dioxide;
+
+b) Baffle is a wall or screen to deflect, check or regulate the flow of sewage and septicage. It promotes preliminary and primary treatment of the incoming sewage by allowing the physical separation of solid and liquid components in the sewage;
+
+c) Biosolids is the by-product of the treatment of domestic wastewater in a domestic wastewater treatment plant. Biosolids consist primarily of dead cells, fibers, and organic matter and can be used as organic fertilizer or soil amendments. Untreated septicage or treated sludge with high concentrations of pathogens, metals, or other pollutants are not considered biosolids and should not be applied to soils;
+
+--- [Page 3] ---
+Page 3 of 14
+Ord. No. 0365-10
+
+d) CENRO shall refer to the City Environment and Natural Resources Office;
+e) Chamber is an enclosed space, cavity or compartment of a septic tank;
+f) Cdy shall refer to the City Government of Davao;
+g) Communal Septic Tank is an excreta disposal system serving a dwelling unit;
+h) DERR-EMB shall refer to the Department of Environment and Natural Resources - Environmental Management Bureau;
+i) DCWD shall refer to Davao City Water District;
+j) Desludging is the process of removing the accumulated sludge or septage from the septic tank or wastewater treatment facility;
+k) Desludging fee shall refer to the fee that is collected by the City from the service providers for each desludging services the latter had rendered;
+l) Desludging service fee shall refer to the payment made by property owners that is directly or indirectly collected by the service providers for the desludging services the latter had rendered;
+m) Digestion is a microbiological process that converts chemically complex organic sludge to methane, carbon dioxide, and inoffensive humus like material;
+n) Destination is the place or the facility where the septage/sludge is treated or disposed of, such as the treatment facility, sanitary landfill, or land application site;
+o) Domestic Sewage is the wastewater composed of untreated human waste coming from residential and commercial sources. Domestic sewage does not include industrial and/or hazardous waste;
+p) Effluent is a general term denoting any wastewater, partially or completely treated, or in its natural state, flowing out of a drainage canal, septic tank, building, manufacturing plant, industrial plant, treatment plant, and other similar structures;
+q) Environmental Sanitation Clearance (ESC) is the clearance issued by the Secretary of Health, or the duly authorized representative, allowing the collection, handling, transport, treatment, and disposal of domestic sludge or septage;
+r) Excreta is human waste composed of urine and feces;
+s) Helminthes are parasitic worm-like organisms that live and feed off living hosts and produce eggs that persist in wastewater effluent and septic sludge unless properly treated;
+t) Facultative Ponds are rectangular ponds that stabilize wastes using a combination of anaerobic, aerobic, and facultative (aerobic) conditions provided;
+u) Proxied or Altitude of a Septic Tank is the distance as measured from the maximum liquid level line to the underside of the septic tank slab or cover;
+v) Individual Septic Tank is an excreta disposal system serving a dwelling unit;
+
+--- [Page 4] ---
+Page 4 of 14
+Ord. No. 0363-10
+w) Grease Traps are plumbing devices designed to intercept most
+greases and solids before they enter a wastewater disposal system;
+x) Maturation ponds are low-rate stabilization ponds that are
+designed to provide for secondary effluent polishing and seasonal
+nitrification;
+y) Mobile Service Provider is a public or private entity, operator or
+water utility that provides desludging services and transports the
+septage to treatment and disposal facilities;
+z) Oil-Water Separator is a device designed to separate gross
+amounts of oil and suspended solids from the wastewater
+effluents;
+a) Pollution Control Officer (PCO) is an officer of a private company,
+LGCW, and is jointly under the scope of this Ordinance, who
+provides linkage between the company and the Environmental
+Management Bureau (EMB) of the Department of Environment
+and Natural Resources (DENR). This officer possesses the
+qualifications of a PCO and is duly accredited by DENR;
+b) Project Description is a section of the ESC that contains
+information on the operational process, environmental sanitation
+measures, and site. It should provide sufficient details for the
+regulatory agency to assess;
+c) Project Proposal is the service provider applying for the ESC;
+d) "P" traps are traps used upon plumbing fixtures, such as toilets
+and drains, to prevent sewage gases from entering the plumbing
+system or the atmosphere;
+e) Sewage is the lighter fraction of sewage composed of fats, oils, and
+greases than water;
+f) Septage is the combination of scum, sludge, and liquid that
+accumulates in septic tanks (copied from the Clean Water Act);
+g) Septage Treatment Facility is a facility which receives septage or
+the liquid sludge periodically removed from individual septic
+tanks, and thereafter separates the solids from the liquids, treats
+the liquids and solids, and presses the solids into a sludge "cake"
+that is transported for disposal;
+h) Septic Tank is a watertight, multi-chambered receptacle that
+receives sewage from houses or other buildings and is designed to
+separate and store the solids and partially digest the organic
+matter in storage;
+i) Service Providers are public or private entities, operators or water
+utility that is engaged in the collection, desludging, handling,
+transporting, treating, and disposing of sludge and septage from
+septic tanks, cesspools, influent tanks, portables, sewage
+treatment plants;
+j) Sewage is mainly liquid waste containing some solids produced
+by humans, which typically consists of washing water, feces,
+urine, laundry wastes, and other material that flows down drains
+and toilets and is collected in sewers and drainage;
+k) Sewage Works is a comprehensive term for pumping, treating and
+final disposal of effluent via a centralized treatment plant;
+
+--- [Page 5] ---
+Page 5 of 14
+Ord No. 0363-10
+
+I) Sewer is a pipe or conduit for carrying sewage and wastewater;
+mm) Sewage is a system of sewers that convey wastewater to a
+treatment plant or disposal point. It includes all infrastructure
+for collecting, transporting, and pumping sewage;
+nn) Sludge is a precipitated solid matter with a highly mineralized
+content produced by domestic wastewater treatment processes;
+oo) Stabilization is the process of treating septic sludge or sludge
+to reduce pathogen densities and vector attraction to produce an
+organic material that may be applied to the land as soil conditioner;
+pp) Stabilization pond is an artificial pond designed to treat
+wastewater in general using solely naturally occurring biological
+treatment processes, and without the need for an
+electromechanical energy input;
+qq) Stationary Service Provider is a public or private entity, operator
+or water utility that provides treatment and/or disposal of sludge
+and septic tank at a fixed location.
+
+ARTICLE IV
+CONSTRUCTION REQUIREMENTS AND GENERAL DESIGN
+OF SEPTIC TANKS
+
+Section 6. Buildings or Structures Proposed for Construction. All
+building plans for residential, commercial, and industrial, including those
+for apartments and condominiums, before it is approved by the City
+Engineering Office (CEO), shall conform to the design of the sanitary
+plumbing and septic tank specifications set herein and by other pertinent
+regulations.
+
+Section 7. Specifications. All septic tanks shall be designed and
+constructed in accordance with the provisions of the Revised National
+Plumbing Code of the Philippines specifically Section 14 of its
+implementing Rules and Regulations, the National Building Code and the
+Code of Sanitation and the following specifications:
+
+a) It shall be designed to produce an effluent consistent with
+approved engineering and environmental standards.
+b) It shall be built of solid durable materials and shall be watertight.
+Materials shall conform with applicable Philippine material
+standards.
+c) It shall not be constructed under any building and not within
+twenty-five (25) meters from any existing source of water supply.
+d) It shall be divided into three compartments; the volume of the first
+compartment shall be between one-half to two-thirds of the total
+tank volume.
+e) Where more than one tank is used to accommodate the required
+liquid volume in a given minimum retention time of two (2) days,
+the tanks shall be conjoined. The first tank shall be equal to or
+larger than any subsequent tank in the series.
+
+--- [Page 6] ---
+Page 6 of 14
+Ord. No. 0363-10
+
+f) baffles or similar devices shall be installed at each inlet and outlet of the tank and at each compartment. Materials shall conform with approved applicable standards. It must be integrally cast with the tank, affixed with a permanent waterproofing material, or attached at the top and bottom with connectors that are not subject to corrosion or decay. Sanitary tees used on baffles shall have a minimum diameter of 100 mm (4 inches).
+
+g) The baffles between compartments shall extend at least 200 mm above the maximum liquid surface or all the way to the underside of the top cover.
+
+h) The centerline of the inlet pipe shall lie at least 50 mm above the centerline of the outlet pipe. Both inlet and outlet pipes shall be similar in diameter with each other and shall have a minimum diameter of 100 mm.
+
+i) Adequate venting shall be provided in each compartment with the use of ventilating pipes not less than 50 mm in diameter. For buildings where plumbing fixtures have appropriate "p" traps, venting should occur through the plumbing stack in the building, not from the septic tank. For buildings where toilets and sinks are not protected with "p" traps, vents should be installed, or vent directly from the septic tank.
+
+j) An access to the septic tank shall be at least one maintenance hole for each compartment, with a minimum side dimension of 500 mm. All maintenance holes shall extend through the tank cover and shall extend to finished grade. Manhole covers shall be designed with durable and fully coated or non-corrosive handles for easy lifting. Septic tank access covers should be secured from unauthorized entry, either through safety screws, locks, or a tank lid that weighs 15 kg or more.
+
+k) The design, construction, and location of structures receiving effluent from septic tanks shall conform with the National Plumbing Code. Additional plumbing treatment is further required but will be covered by a separate ordinance and other infrastructure projects.
+
+l) For clustered structures or houses that are highly dense and characterized by lack of or inadequate land space, there shall be designed a communal septic tank consistent with approved engineering and environmental standards.
+
+Section 8. Pre-fabricated tanks: All pre-fabricated septic tanks shall comply with the specifications set under the provisions of this Ordinance.
+
+Section 9. Existing Septic Tanks: Existing septic tanks shall be repaired or upgraded in order to comply with the specifications set under Section 7 hereof.
+
+Existing septic tanks which cannot be repaired or upgraded shall be disused completely and within one (1) year from the effectiveness of this Ordinance, the owners should construct new septic tanks in accordance with the specifications set in Section 8 of this Ordinance;
+
+--- [Page 7] ---
+Page 7 of 14
+Ord. No. 0363-10
+
+Section 10. Communal Septic Tanks: In residential areas where individual lot area is less than fifty (50) square meters or where the area is characterized by inadequate land space, a communal or individual septic tank is required to be constructed.
+
+The design and the manifest of ownership and joint maintenance of communal septic tanks shall be borne by the owners or users as determined under the Implementing Rules and Regulations of this Ordinance.
+
+ARTICLE V
+CONSTRUCTION OF COMMUNAL TOILETS AND/OR SEPTIC TANKS BY THE CITY GOVERNMENT OF DAVAO
+
+Section 11. Construction of Communal Toilets and/or Septic Tanks: The City, through the barangay local government unit in the area, shall construct Communal Toilets and/or Septic Tanks in areas where there are informal settlers who cannot afford to build one. The maintenance of the aforementioned toilets and/or septic tanks shall be administered by the said barangay and borne by the users.
+
+The cost of construction shall be borne by the City through its annual appropriation for the implementation of this Ordinance and may, thereafter, be charged to the users. Payment thereof may either be in the form of installment or through user fees, the procedure of which will be provided under the Implementing Rules and Regulations of this Ordinance.
+
+Section 12. Construction of Septic Tanks after the Compliance Period: The City may construct a septic tank for property owners who do not have one or repair those which do not comply with the required specifications set forth herein. It shall be constructed after the lapse of the compliance period specified under Section 27(d). The cost of construction and penalty shall be borne by the said property owners. Payment thereof may be in the form of installment or through user fees, the procedure of which will be provided under the Implementing Rules and Regulations of this Ordinance.
+
+ARTICLE VI
+DUTY OF OWNER, ADMINISTRATOR OR CONTRACTOR
+
+Section 13. Duty of all building or structure owners, administrators or contractors: It shall be the duty of the owner, administrator, or contractor to inform the concerned agency that the newly-constructed or repaired septic tank, sewage treatment facility or alternative treatment system, with prior plan approval, is ready for inspection.
+
+The septic tank, treatment facility, or alternative treatment system shall not be covered or used until inspected and approved by the City Health Office or Department of Health (DOH), respectively. The certificate of inspection shall be part of the requirements in the issuance of the Occupancy Permit by the City Engineer's Office.
+
+--- [Page 8] ---
+Page 8 of 14
+Ord. No. 0363-10
+ARTICLE VII
+SEPTIC TANK MAINTENANCE
+Section 14. Septic Tank Maintenance: All septic tanks are required to be desludged by an accredited mobile service provider every five (5) years when the sludge volume is already one-half (1/2) of the total capacity of the septic tank, or when the septic tank becomes ineffective, whichever comes first.
+ARTICLE VIII
+SLUDGE COLLECTION, TRANSPORT, TREATMENT AND DISPOSAL
+Section 15. Sludge Collection and Transport: Liquid and/or solid materials collected from septic tanks shall be transported by an accredited mobile service provider, to the Septage Treatment Facility of the City or to an accredited stationary service provider following DOH regulations on desludging and transporting sludge.
+Section 16. Disposal: The sludge shall be disposed of in a proper destination such as treatment facility, sanitary landfill, or land application site. No treated or untreated sludge shall be disposed of in the sea, river, creeks, streams, canals, manholes or in any similar water system. Disposal of sludge materials, whether treated or untreated shall not be included in City Government's local waste collection system. Violation hereof shall be penalized under Section 38 of this Ordinance.
+All entities under this Ordinance upon or after inspection, shall present a Desludging Certificate to avoid penalties thereof.
+Section 17. Treated Sludge: Treated sludge, which qualifies as biosolids, may be utilized as soil conditioner and for other beneficial use.
+ARTICLE IX
+SEPTAGE, SEWERAGE AND WASTEWATER TREATMENT FACILITY
+Section 18. Septage Treatment Facility: There shall be a septage treatment facility to be established by the City Government or by an accredited mobile service provider where all the sludge covered under this Ordinance shall be unattended for a fee as provided under the Implementing Rules and Regulations. The treatment of sludge must be done by any DOH-accredited individuals, companies, whether private or public, in any DOH-approved treatment facility.
+Section 19. Alternative wastewater treatment systems: Alternative wastewater treatment systems shall be reviewed and duly approved by the DOH.
+Section 20. On-site Treatment Facility: Properties or businesses that have on-site wastewater treatment facilities must be subject to the approval by the DOH.
+
+--- [Page 9] ---
+Page 9 of 14
+Ord. No. 0363-10
+
+The on-site treatment facility of residential, commercial, industrial, and agricultural establishments shall release or dispose clear, clean, and odorless effluents that are free from bacteria and parasites such as helminths in accordance with the standards set by the DENR-EMB.
+
+Section 21. Buildings or Structures Proposed for Construction in Protected Areas: Any person or entity who proposes a development plan in protected areas shall include a Sewerage Facility Plan duly reviewed and approved by the DOH before the issuance of a development permit by the CEO.
+
+Section 22. Housing Subdivisions: All subdivisions that will be developed during the effectivity of this Ordinance shall be required to install appropriate sewerage facilities. Their proposed development plan shall include a DOH approved sewage disposal system before it is submitted to the City Council for consideration.
+
+Section 23. Commercial Establishments: If the wastewater contains substances of a commercial nature such as oil or fuel residue, metals or high volumes of fats or grease, an appropriate pre-treatment program, approved by the City Health Office, must be in place. Said commercial and business establishments shall be required to install appropriate sewerage facilities and grease traps or oil-water separator; whichever is applicable, in the outfall of its sewage facility.
+
+All food establishments are required to have grease traps. Motor vehicle repair shops, garage, motorpool, second-hand spare parts retailer, public utility garage, machine shops and other similar establishment that generate solids shall have oil-water separator. Multi-use and multi-storey buildings such as shopping malls and similar structures are required to have sewage treatment facility.
+
+Commercial and business establishments which generate health-hazardous wastewater, such as funeral parlors, hospitals and clinics, shall install an appropriate sewerage treatment facility as approved by the City Health Office.
+
+Section 24. Industrial Establishments: All industrial establishments are required to construct a wastewater treatment facility.
+
+ARTICLE X ADMINISTRATION AND ENFORCEMENT
+
+Section 25. Environmental Sanitation Section: The Environmental Sanitation Section (ESS) of the CHQ shall be the administration and enforcement body of this Ordinance. It shall be headed by a sanitary engineer or its equivalent profession and must be organized, equipped and staffed.
+
+The CENRO, CPDO, and CFO shall designate a permanent representative to the ESS who shall assist in the enforcement of this Ordinance.
+
+A representative from the Non-Government Organizations (NGOs), Davao City Water District (DCWD), Department of Public Works and
+
+--- [Page 10] ---
+Page 10 of 14
+Ord. No. 0363-10
+
+Highways (DPWH), and other relevant national government agencies shall be invited from time to time to assist the ESS.
+
+Section 26. Additional Functions of the ESS - The following are the additional functions of the Environmental Sanitation Section (ESS), to wit:
+
+a) The ESS shall conduct a survey of all properties and premises in the City in coordination with the barangay officials to determine if a septic tank is present, and if it is accessible for desludging;
+
+b) The ESS or its authorized representatives shall be permitted to enter all properties for the purpose of inspection, observation, measurement, sampling, and testing. A prior notice shall be given to property owners to facilitate inspection and provide assistance to the ESS representatives;
+
+c) If a septic tank is not present or it is inaccessible for desludging, the ESS shall serve notices of non-conformance with the provisions of this Ordinance to the owners/administrators, occupants;
+
+d) For those property owners, administrators or occupants served with notices of non-conformance, a compliance period shall be set by the property owners, administrators or occupants and the ESS;
+
+e) The ESS shall issue a certificate of compliance to the property owners who are deemed to have met the minimum specifications for septic tanks provided under Section 7;
+
+f) For new developments, the occupancy permit issued by the building officials shall serve as certificate of compliance until the ESS conducts another round of inspection;
+
+g) The ESS shall keep a record of all owners/administrators of buildings and structures who have deslugged their septic tanks, those that are inaccessible, those that do not have septic tanks, and those that do not have water-sealed toilets, and other data that may be deemed necessary by the ESS;
+
+h) The ESS shall conduct a periodic survey of properties every five (5) years or as determined by the ESS to verify changes in septic tank accessibility or changes in tank capacity requirements. This shall be done in coordination with the barangay officials;
+
+i) The ESS shall plan and implement an information and education program on septic-water management and the city's septage management system;
+
+j) The ESS shall implement and adhere to the rules and regulations set forth by the Department of Health in handling, transporting, treatment and disposal of septic;
+
+k) The ESS shall ensure compliance by the desludging service providers with the requirements set under the provisions of this Ordinance or by the CHQ.
+
+ARTICLE XI SERVICE PROVIDERS
+
+Section 27. Desludging Service Providers: The CHQ shall strictly implement an accreditation system and operational guidelines for desludging service providers that would like to operate in the city,
+
+--- [Page 11] ---
+Page 11 of 14
+Ord. No. 0363-10
+
+including, but not limited to, securing an Environmental Sanitation Clearance (ESC) which is discussed more thoroughly in the rules and regulations set forth by the Department of Health in handling, transporting, treatment and disposal of septicage.
+
+Section 28. Vehicles and Equipment of Service Providers: The vehicles and equipment which will be used by accredited desjudging service providers shall conform with the minimum requirements set by the Department of Health.
+
+ARTICLE XII MONITORING AND EVALUATION
+
+Section 29 Monitoring and Evaluation: Close monitoring of all activities in the treatment facility shall be conducted by the FJS in coordination with the designated Pollution Control Officer of the concerned entity. This is in conjunction with the operations and maintenance plan that will be contained in the operational guidelines. Adverse effects of the project shall be mitigated and considered top priority in prevention and maintenance operations. Any environmental changes or modifications in the operations and maintenance implementation shall be immediately addressed through the help of the CHO and CENRO.
+
+Regulation and monitoring of wastewater discharge shall be undertaken by the CHO with the DENR-EMB and CENRO.
+
+Septage collection, transport and disposal shall be regulated and monitored by the CHO.
+
+All owners and operators of wastewater treatment facilities shall submit or present to the CHO the latest self-monitoring reports of the wastewater discharges and the Environmental Compliance Certificate duly issued by the EMB.
+
+Section 30 Water Effluent Standard: For verification purposes, all water effluents from public or private treatment facilities may undergo actual sampling and must be subjected to existing Effluent Standard issued by the DENR.
+
+ARTICLE XIII DESHUDGING FEE
+
+Section 31 Desjudging Fee: Before any service providers can desjudge, they shall pay to the City, through the City Treasurer's Office, a desjudging fee for every desjudge of a septic tank in the amount of:
+
+a) Two Hundred Fifty Pesos (P250.00) for commercial establishments;
+
+b) Seventy-Five Pesos (75.00) for residential buildings and other structures.
+
+Such payment shall be duly noted by the barangay where the septic tank is located for their record and verification purposes.
+
+--- [Page 12] ---
+Page 12 of 14
+Ord. No. 0363-10
+
+Section 32. Easy Payment Program: The City shall encourage the service providers to come up with an easy payment program in order to assist property owners in paying the desludging service fee.
+
+ARTICLE XIV
+EDUCATION, PUBLIC INFORMATION AND RESEARCH AND DEVELOPMENT
+
+Section 33. IFC Campaign: The City Health Office shall develop and implement an Information, Education, and Communication campaign in accordance with the septic and sewerage management program of the City.
+
+Section 34. Orientation/Seminars: Owners, managers, Pollution Control Officers (PCOs) or heads of market, commercial, industrial, institutional, agro-industrial, agricultural establishments and administrative officers of national government agencies shall be required to attend seminars on septic and sewerage management organized by the City. Attendance to the seminar shall be a requirement to the issuance of the Environmental Sanitation Clearance (ESC) pursuant to this Ordinance. The City Health Officer shall be responsible for the preparation of the schedule and conduct of the seminar.
+
+Section 35. Academic Curricula of Formal and Non-Formal Education: The City Health Office shall coordinate with the Department of Education (DepEd), Commission on Higher Education (CHED), and Technical Education Skills Development Authority (TESDA) regarding the integration of Septage and Sewerage Management into the academic curricula of formal and non-formal education.
+
+Section 36. Research and Development: The Environmental Sanitation Section (ESS) shall collaborate with the City Health Office (CHO), Department of Health (DOH), academe, professional organizations, and other entities for the research and development of appropriate science and technology in the sewerage and septic system in the furtherance of the policies of this Ordinance.
+
+ARTICLE XV
+PENAL PROVISION
+
+Section 37. Prohibited Acts and Omissions: The following acts and omissions shall be penalized:
+
+1. Buildings/structures without septic tanks;
+2. Buildings/structures with septic tanks made not in accordance with the provisions of this Ordinance;
+3. Not meeting the standards set forth by this Ordinance;
+4. Improper sludge disposal;
+5. Not regularly desludging their septic tanks;
+6. Not complying with the procedural requirements.
+
+Section 38. Penalties: Any natural person who shall violate any of the provisions of the Ordinance shall be penalized. The imposable penalties are the following.
+
+--- [Page 13] ---
+Page 13 of 14
+Ord No. 0363-10
+
+a. First Offense:
+Fine of not less than P1,000.00 but
+not more than P2,000.00, at the
+discretion of the court;
+
+b. Second Offense:
+Fine of not less than P2,000.00 but
+not more than P3,000.00 at the
+discretion of the court;
+
+c. Third and Succeeding
+Offenses:
+Fine of not less than P3,000.00 but
+not more than P5,000.00 and/or
+imprisonment of not less than one (1)
+month but not more than six (6)
+months, at the discretion of the court.
+
+Any juridical entity, such as, but not limited to, commercial or industrial establishments, and Service Providers or Treatment Facilities Operators who violate any provisions of the Ordinance shall be subject to a fine of P3,000.00 for violation. For second and succeeding violations, a fine of P5,000.00 and/or a penalty of imprisonment of six (6) months to one (1) year shall be imposed.
+
+If the offense is committed by a corporation, partnership, or other juridical entity duly recognized in accordance with the law, the Chief Executive Officer, president, general manager, managing partner or such other officer-in-charge shall be liable for the commission of the offense penalized under this Ordinance.
+
+Permits of commercial establishments, service providers or treatment facility operators who violate the prohibited acts or omissions for the third time or more may be suspended or cancelled by the City Mayor.
+
+ARTICLE XVI
+MISCELLANEOUS PROVISIONS
+
+Section 39. Appropriation: The City shall provide sufficient funds for this purpose through an appropriation either in the annual budget or in any of the City's supplemental budgets, as the case may be.
+
+Section 40. Authority to seek External Support: The Office of the City Mayor may seek logistical support from any sources to augment the technical, financial, materials, and other requirements in the implementation of this Ordinance.
+
+Section 41. Implementing Rules and Regulations: The City Mayor is hereby authorized to promulgate the implementing Rules and Regulations of this Ordinance. A new implementing rules and regulations committee will be created immediately to promulgate the implementing Rules and Regulations upon the approval of this Ordinance.
+
+Section 42. Repealing Clause: Any existing Ordinance or Resolution or any provision thereof inconsistent with the provisions of this Ordinance shall be repealed.
+
+Section 43. Separability Clause: If for any reason, any part or provision of this Ordinance shall be held unconstitutional or invalid, the
+
+--- [Page 14] ---
+Page 14 of 14
+Ord. No. 0353-10
+
+other parts or provisions hereof which are not affected thereby shall
+continue to be in full force and effect.
+
+Section 44. Effectivity Clause: This Ordinance shall take effect
+within thirty (30) days from its publication in a newspaper of general
+circulation in Davao City.
+
+ERACTED, February 9, 2010, by a majority vote of all the Members
+of the Sangguniang Panlungsod.
+
+CERTIFIED CORRECT:
+
+ZULEIKA T. LOPEZ
+Secretary to the Sangguniang Panlungsod
+(City Government Department Head II]
+
+ATTESTED:
+
+MA. BELEN S. ACOSTA
+Acting Vice Mayor Y
+
+APPROVED: JUN 18 2010
+2010
+
+RODEZKI P. DUTERTE
+City Mayor
+
+ATTESTED:
+
+MARCELINO P. ESCALADA JR.
+Acting City Administrator

@@ -1,0 +1,140 @@
+=== ORDINANCE: Ordinance No. 0699-24 Amendment UAV ===
+
+--- [Page 1] ---
+Republic of the Philippines
+Office of the Sangguniang Panlungsod
+City of Davao
+
+20th City Council
+44th Regular Session
+Series of 2024
+
+PRESENT:
+Vice Mayor J. Melchor B. Quitain Jr.
+Councilor Marissa S. Abella
+Councilor Bai Hundra Cassandra Dominique N. Advincula
+Councilor Bernard E. Al-ag
+Councilor Wilberto E. Al-ag
+Councilor Al Ryan S. Alejandre
+Councilor Dante L. Apostol Sr.
+Councilor Jose Antonio Aquino
+Councilor Jessica M. Bonguyan
+Councilor Louie John J. Bonguyan
+Councilor Pilar C. Braga
+Councilor Augusto Javier G. Campos III
+Councilor Jonchad C. Dayap
+Councilor Edgar P. Ibayan Jr.
+Councilor Jose Luis Ibañez-Bagulid
+Councilor Diosdado Angelo Junior R. Mahipus
+Councilor Rodolfo M. Mande
+Councilor Kristine May John Abdul Mercado
+Councilor Bonz Andre A. Militar
+Councilor Temujin B. Ocampo
+Councilor Myrna G. D'Alado-Oritz
+Councilor Alberto T. Ungab
+Councilor Jose Maria D. Villafuerte
+Councilor Jesus Joseph P. Zozobra III
+
+ABSENT:
+Councilor Nilo M. Absellers Jr.
+Councilor Luna Maria Dominique S. Acosta
+Councilor January N. Duterte
+Councilor Trisha Ann J. Villafuerte
+
+ORDINANCE NO. 0699-24
+Series of 2024
+
+AN ORDINANCE AMENDING ORDINANCE NO. 0158-20, SERIES OF 2020, ENTITLED "AN ORDINANCE REGULATING UNMANNED AERIAL VEHICLES (UAVs), REMOTELY PILOTTED AERIAL UNITS (RPAUs), OR ANY REMOTELY PILOTTED AERIAL SYSTEM (RPAS) IN THE CITY OF DAVAO" ALSO KNOWN AS THE "DRONE REGULATION ORDINANCE OF DAVAO CITY" TO INCLUDE PROVISIONS ABOUT PENALTIES, NO CONTEST PROVISION, AND CITATION TICKETS
+
+--- [Page 2] ---
+Page 2 of 4
+Ord. No. 0699-24
+
+Be it ordained by the Sangguniang Panlungsod of Davao City, in session assembled, that:
+
+SECTION 1. TITLE - This Ordinance shall be known as "AN ORDINANCE AMENDING ORDINANCE NO. 0419-20, SERIES OF 2020, ENTITLED "AN ORDINANCE REGULATING THE USE OF UNMANNED AERIAL VEHICLES (UAVs), REMOTELY PILOTED AERIAL UNITS (RPAUs), OR ANY REMOTELY PILOTED AERIAL SYSTEM (RPAS) IN THIS CITY OF DAVAO" ALSO KNOWN AS THE "DRONE REGULATION ORDINANCE OF DAVAO CITY" TO INCLUDE PROVISIONS ABOUT PENALTIES, NO CONTEST PROVISION, AND CITATION TICKETS".
+
+SECTION 2. OBJECTIVE - This Ordinance aims to include additional provisions on the penalties under Ordinance No. 0419-20, Series of 2020, for proper implementation and enforcement of the Public Safety and Security Office (PSSO), as well as the members of the Safety and Security Cluster for apprehensions.
+
+SECTION 3. AMENDMENT - Section 9 (Penalty) of Ordinance No. 0419-20, Series of 2020, otherwise known as the "Drone Regulation Ordinance of Davao City" shall be amended as follows:
+
+Section 9 (Penalty)
+
+Any violation of the provisions of this Ordinance shall be punished as follows:
+
+a. For Non-registration, or transfer, or falsification, or alteration of issued registration:
+1st Offense - fine of P3,000
+2nd Offense - Confiscation of Drone and a fine of P5,000
+
+b. For operating in No-fly zones or Prohibited or Restricted Airspaces: Immediate confiscation of Drone and a fine of P5,000.
+
+Provided that the operation of a non-registered drone over prohibited/restricted airspace of a no-fly zone, shall constitute two separate offenses under this Ordinance.
+
+Provided that the Public Safety and Security Office (PSSO), Davao City Police Office (DCPO), Task Force Davao (TFD), or any other law enforcement agency shall be allowed to use any lawful and reasonable means necessary to neutralize any drone determined to be imminently dangerous to the general welfare of the people, and to obtain possession of, or confiscate any drone that has been neutralized and/or found within the prohibited/restricted or no-fly zones.
+
+Provided further, that prosecution under this Ordinance for non-registration of the drone or the operation of drones in prohibited/restricted areas or no-fly zones, shall not be a bar to further prosecution for other offenses under the Philippine laws.
+
+--- [Page 3] ---
+Page 3 of 4
+
+Ord. No. 0699-24
+
+SECTION 4. ADDENDUM - Two (2) succeeding separate sections shall be included after the provision of Section 9 of Ordinance No. 0419-20, Series of 2020, otherwise known as the "Drone Regulation Ordinance of Davao City," to be referred and stated as follows:
+
+Section 9-A: (Ordinance Violation Receipt/Citation Ticket)
+
+An Ordinance Violation Receipt, otherwise known as a CITATION TICKET, shall be issued to violators of this Ordinance. The citation ticket shall state the name, address, address where the violation was committed, dated and time, the specific violation committed, and the provisions of the succeeding section, "No-Contest Provision."
+
+The PSSO and such other appropriate enforcers, as may be deputized by the City Mayor, shall have the power to apprehend violators of this Ordinance and issue citation tickets.
+
+The City Mayor may deputize Barangay Officials or representatives of the private sector, non-government organizations and government organizations in the strict implementation and enforcement of this Ordinance, as the need arises.
+
+Section 9-B: (Settlement and No Contest Provision)
+
+Any first time violator of this Ordinance who does not wish to contest the same and is willing to pay voluntarily within seven (7) working days before the filing of a complaint under this Ordinance shall be allowed to do so, and shall pay the corresponding fine imposed under Section 9 of this Ordinance in the City Treasurer's Office (CTO). Awaiting of the no-contest provision shall exempt a person from criminal liability under this Ordinance.
+
+The City Legal Office (CLO) and the City Treasurer's Office shall provide for the procedure for the availing of the "No-Contest Provision" and establish a case inventory and recording system of all violators of this Ordinance.
+
+All proceeds from the payment of the herein imposed fine shall be apportioned as follows:
+
+1. Sixty percent (60%) of the amount collected per apprehension shall accrue to the apprehending barangay;
+
+2. Forty percent (40%) shall accrue to the General Fund of the City.
+
+SECTION 5. DRONE NEUTRALIZATION - The enforcement group and deputized agents of the Civil Aviation Authority of the Philippines (CAAP) included under the Technical Working Group (TWG) of this Ordinance, headed by PSSO, shall procure a drone neutralization device/system intended to physically disable and jam any forms of UAVs. They shall likewise create methods and/or protocols for neutralization including physical measures and electronic countermeasures.
+
+SECTION 6. ENFORCEMENT PROCEDURE - The enforcement group and the deputized agents of CAAP as headed by PSSO shall create methods of enforcement procedures in apprehending violators of this Ordinance. The same method should be uniform and be followed accordingly by the concerned agencies.
+
+--- [Page 4] ---
+Page 4 of 4
+Ord. No. 0699-24
+
+SECTION 7. REPEALING CLAUSE - All other ordinances, local rules, and regulations that are inconsistent with the provisions of this Ordinance are hereby repealed, amended, or modified accordingly.
+
+SECTION 8. SEPARABILITY CLAUSE - If, for any reason, any section or provision of this Ordinance is declared unconstitutional or invalid, other sections or provisions hereof not affected by such declaration shall continue to be in full force and effect.
+
+SECTION 9. EFFECTIVITY - This Ordinance shall take effect immediately upon approval.
+
+ENACTED, on the 26th day of November 2024, by an unanimous vote of all the Members of the Sangguniang Panlungsod.
+
+CERTIFIED CORRECT:
+Charito N. Santos
+City Government Department Head II
+(Secretary to the Sangguniang Panlungsod)
+
+ATTESTED:
+J. Melchor B. Quitain Jr.
+Vice Mayor
+Presiding Officer
+cns/ry
+
+APPROVED:
+DEC 19 2024
+SEBASTIAN Y. DUTERTE
+City Mayor
+
+ATTESTED:
+ATTY. FRANCIS MARK H. LAYOG
+City Administrator
+
+AN ORDINANCE AMENDING ORDINANCE NO. 0419-20, SERIES OF 2020, ENTITLED "AN ORDINANCE REGULATING UNMANNED AERIAL VEHICLES (UAVs), REMOTELY PILOTTED AERIAL UNITS (RPAs), OR ANY REMOTELY PILOTTED AERIAL SYSTEM (RPAS) IN THE CITY OF DAVAO" ALSO KNOWN AS "UNMANNED AIRCRAFT SYSTEM (UAS) REGULATION, ORDINANCE NO. 0419-20, SERIES OF 2020," TO INCLUDE PROVISIONS ABOUT PENALTIES, NO CONTEST PROVISION, AND CITATION TICKETS

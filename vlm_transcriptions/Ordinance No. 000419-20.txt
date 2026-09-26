@@ -1,0 +1,170 @@
+=== ORDINANCE: Ordinance No. 000419-20 ===
+
+--- [Page 1] ---
+**Republic of the Philippines**
+
+**CITY OF DAVAO**
+
+**Office of the Sangguniang Panlungsod**
+
+---
+
+**19th City Council**
+
+**42nd Regular Session**
+
+**Series of 2020**
+
+---
+
+**PRESENT:**
+
+| Councilor | Edgar P. Ibyuan Jr. |
+|-----------|---------------------|
+| Vice Mayor | Sebastian Z. Duterte |
+| Councilor | Ralph O. Abella     |
+| Councilor | Nilo D. Abellera    |
+| Councilor | Maria Belen S. Acosta|
+| Councilor | Bai Hundra Cassandra Dominique N. Advincula|
+| Councilor | Wilberto E. Al-ag     |
+| Councilor | Dante L. Apostol Sr.|
+| Councilor | Conrad M. Delibarar|
+| Councilor | James M. Bonguyan   |
+| Councilor | Louie John J. Bonguyan|
+| Councilor | Pilar C. Braga       |
+| Councilor | Augusto Javier G. Campos III|
+| Councilor | Danilo C. Dayanghirang|
+| Councilor | Jonard C. Dayap     |
+| Councilor | Gabriel H. Ibyuan Sr.|
+| Councilor | Richard N. Marquez-Bagulod|
+| Councilor | Pamela A. Librado-Morata|
+| Councilor | Diosdado Angelo Junior R. Mahipus|
+| Councilor | Jaffar U. Marohomsalic|
+| Councilor | Bonifacio E. Militar|
+| Councilor | Jose Luis M. Librado-Ortiz|
+| Councilor | Antoinette G. Principe-Castrodes|
+| Councilor | J. Melchor B. Quitaan Jr.|
+| Councilor | Alberto T. Ungab    |
+| Councilor | Mary Joselle D. Villafuerte|
+| Councilor | Jesus Joseph P. Zozobrado III|
+
+---
+
+**ORDINANCE NO. 0419-20**
+
+**Series of 2020**
+
+**AN ORDINANCE REGULATING UNMANNED AIRCRAFT VEHICLES (UAV), REMOTELY PILOTED AIRCRAFT UNITS (RPAU), OR ANY REMOTELY PILOTED AIRCRAFT SYSTEM (RPAS) IN THE CITY OF DAVAO**
+
+--- [Page 2] ---
+Page 2 of 4
+Ord. No. 0419-20
+
+Be it ordained by the Honorable Sangguniang Panlungsod of Davao City, in session assembled, that:
+
+SECTION 1. SHORT TITLE - This Ordinance shall be known as the "DRONE REGULATION ORDINANCE OF DAVAO CITY."
+
+SECTION 2. COVERAGE - This Ordinance shall cover all Unmanned Aircraft Vehicles (UAV), Remotely Piloted Aircraft System (RPAS) and Remotely Piloted Aircraft Units (RPAU), within the territorial jurisdiction and airspace of Davao City.
+
+SECTION 3. EXEMPTION - The Unmanned Aircraft Vehicles (UAV), Remotely Piloted Aircraft System (RPAS) and Remotely Piloted Aircraft Units (RPAU) of the Philippine National Police and the Armed Forces of the Philippines, or those used by other government agencies for the purpose of emergency response, public safety, and public security shall be exempt from the coverage of this Ordinance, provided that such agencies obtain prior coordination with the Davao City Public Safety and Security Command Center (PSSCC).
+
+SECTION 4. DEFINITION OF TERMS - As used in this Ordinance, the following terms shall mean:
+
+a. Drone - any powered, Unmanned Aircraft Vehicle (UAV) or Remotely Piloted Aircraft Unit (RPAU) which would be subject to remote control by the controller;
+
+b. No-fly zones - are areas within the territorial jurisdiction or airspace of Davao City which have been declared as areas prohibited to drones, Unmanned Aircraft Vehicles (UAV) or Remotely Piloted Aircraft Unit (RPAU), for a particular time or event, or in specified areas within the City, in the interest of public safety and security;
+
+c. Remotely Piloted Aircraft System (RPAS) - a remotely piloted aircraft, its associated remote pilot stations, the required command and control links and any other components as specified in the type design;
+
+d. Remotely Piloted Aircraft Controller - means a person who manipulates the flight controls of a remotely piloted aircraft;
+
+e. Recreational/Hobbyist Use - is the use of a drone, Unmanned Aircraft Vehicle (UAV), Remotely Piloted Aircraft Unit (RPAU) or any component of a Remotely Piloted Aircraft System (RPAS) for recreational purposes where no profit is made from the use thereof;
+
+f. Private Persons - shall refer to natural or juridical persons not exercising any official governmental function at the time the activity is conducted;
+
+g. Controlled Airspace - an airspace of defined dimensions within which air traffic control service is provided in accordance with the airspace classification;
+
+h. Prohibited/Restricted Airspace - an airspace of defined dimensions identified by an area on the surface of the earth in which flight of aircraft is prohibited, as published by the Civil Aviation Authority of the Philippines (CAAP) or by other applicable laws and regulations;
+
+SECTION 5. REGISTRATION - The Davao City Public Safety and Security Command Center (PSSCC) shall manage the periodic registration of all Drones and Remotely Piloted Aircraft System (RPAS) operated by private persons, used for non-commercial, hobbyist, recreational or sports purposes, within the territorial jurisdiction and airspace of Davao City, under the assistance and coordination of the Civil Aviation Authority of the Philippines (CAAP)-Davao City Office.
+
+--- [Page 3] ---
+Page 3 of 4
+Ord. No. 0119-20
+
+All owners of drones and Remotely Piloted Aircraft System (RPAS) already registered with the Civil Aviation Authority of the Philippines (CAAP)-Davao City Office shall also present their registration with the Davao City Public Safety and Security Command Center (PSSCC) for the purpose of documentation.
+
+SECTION 6. PROHIBITED ACTS
+
+1. No person shall be allowed to operate a drone, at any time, within the territorial jurisdiction or airspace of Davao City without compliance with registration or obtaining a special permit;
+2. No person shall falsify, forge, or in any manner misrepresent compliance with the registration requirements;
+3. No person shall operate a drone improperly with or modify in any manner a registration already granted;
+4. No person shall operate a drone, whether registered or unregistered, in prohibited or restricted airspace, no-fly zones, or other areas prohibited by law or regulation, unless specifically permitted by the proper government authority exercising control or jurisdiction in the area.
+
+SECTION 7. CREATION OF THE TECHNICAL WORKING GROUP (TWG)
+
+Chairperson: City Mayor's Office
+Secretariat: Davao City Public Safety and Security Command Center (PSSCC)
+Members:
+1. Chairperson of the City Council Committee on Peace and Public Safety
+2. Civil Aviation Authority of the Philippines-Davao
+3. Davao International Airport Representative
+4. Philippine Air Force Tactical Operations Group Davao
+5. Office of the Deputy Chief of Staff for Intelligence, J2, of the Armed Forces of the Philippines (AFP)
+6. Task Force Davao
+7. Davao City Police Office
+8. Davao Traffic Operations Office
+9. Department of Tourism
+10. Private Sector Representative from Commercial Drone Users
+11. Private Sector Representative from Hobbyist Drone Users
+
+SECTION 8. IMPLEMENTING RULES AND REGULATIONS - The Technical Working Group shall, within thirty (30) days after the Ordinance has been approved, draft the necessary Implementing Rules and Regulations for the approval of the City Mayor of Davao.
+
+SECTION 9. PENALTY - Any violation of the provisions of this Ordinance shall be punished as follows:
+
+a. For Non-registration, or transfer, falsification or alteration of issued registration:
+1st Offense: a fine of P3,000
+2nd Offense: Confiscation of Drone and a fine of P5,000
+
+b. For Operating in No-fly zones or Prohibited or Restricted Airspaces: Immediate confiscation of Drone and a fine of P5,000
+
+Provided that, the operation of a non-registered drone over prohibited/restricted airspace or a no-fly zone, shall constitute two separate offenses under this Ordinance.
+
+--- [Page 4] ---
+Page 4 of 4
+Ord. No. 0419-20
+
+Provided that the PSSCC, DCCPO, TFD or any other law enforcement agency shall be allowed to use any reasonable means necessary to obtain possession of, or confiscate any drone found within the prohibited/restricted areas or no-fly zones.
+
+Provided further, that prosecution under this Ordinance for non-registration of the drone or the operation of drones in prohibited/restricted areas or no-fly zones, shall not be a bar to further prosecution for other offenses under Philippine laws.
+
+SECTION 10. REPEALING CLAUSE - Any Ordinance, local issuances or rules inconsistent with the provisions of this Ordinance are hereby repealed or modified accordingly.
+
+SECTION 11. SEPARABILITY CLAUSE - If for any reason, any section of this Ordinance is declared unconstitutional or invalid, the other sections or provisions hereof which are not affected thereby shall continue to be in full force and effect.
+
+SECTION 12. EFFECTIVITY - This Ordinance shall take effect fifteen (15) days upon approval, posting and publication in a newspaper of local circulation.
+
+ENACTED, on the 24th day of November 2020, by an unanimous vote of all the Members of the Sangguniang Panlungsod, there being a quorum.
+
+CERTIFIED CORRECT:
+
+CHARLES N. SANTOS
+Secretary to the Sangguniang Panlungsod
+(City Government Department Head II)
+
+ATTESTED:
+EDGAR P. IBUYAN JR.
+President Pro Tempore
+Temporary Presiding Officer
+cns/ikta
+
+APPROVED: FEB 11 2021 2020
+
+SARA Z. DUTERTE
+City Mayor
+
+ATTESTED:
+ATTY. ZULEIKA M. LOPEZ
+City Administrator
+
+AN ORDINANCE REGULATING UNMANNED AERIAL VEHICLES (UAV), REMOTELY PILOTTED AERIAL UNITS (RPAA), OR ANY REMOTELY PILOTTED AERIAL SYSTEM (RPAS) IN THE CITY OF DAVAO

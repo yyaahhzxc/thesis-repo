@@ -1,0 +1,3773 @@
+=== ORDINANCE: Ordinance No. 035-13 ===
+
+--- [Page 1] ---
+Republic of the Philippines
+OFFICE OF THE CITY LEGAL OFFICER
+City of Davao
+Ref. No. 1131-13
+RECEIVED
+CITY-LEGAL OFFICER
+DE ORDINANCE NO. 035-13 SERIES OF 2013 ENTHIRED BY THE COUNCIL AND APPROVED BY THE MAYOR FOR THE CITY OF DAVAO
+ORDINANCE APPROVING THE 2013-2016 DISASTER RECOVERY AND MANAGEMENT PLAN PREPARED IN ACCORDANCE WITH THE 2013-2016 CITY DEVELOPMENT PLAN.
+DAVAO CITY REVENUE REDUCTION AND MANAGEMENT PLAN
+October 18, 2013
+INDORSMENT
+No. ( )
+Legal Opinion
+Respectfully forwarded to the Office of the City Mayor through the Office of the City Administrator, both in the City, the subject Ordinance, informing you that this office interposes no objection in the passage of the said ordinance.
+In view thereof, approval of the subject ordinance is hereby recommended.
+ATTY. MARISSA M. MARASIGAN-CORENTERA
+Attorney III
+ATTY. ORSALINDO VILLANUEVA, JR.
+Acting City Legal Officer
+Date of approval: October 18, 2013
+Date received by the Office: October 9, 2013
+Date received by the lawyer: October 10, 2013
+Received: 035-13, recommendation (076)
+Order
+
+--- [Page 2] ---
+17th City Council
+12th Regular Session
+Series of 2013
+Republika ng Pilipinas
+SANGGUNIANG PANLHGSOD
+Lungsod ng Davao
+PRESENT:
+Councilor Victorio U. Adincola Jr.
+- Temporary Presiding Officer
+Councilor Nilo M. Abellera Jr.
+Ma. Belen S. Acosta
+Bernard E. Alag
+Councilor Manuel Ryan A. Alejandre
+Leonardo P. Alcala III
+Karlo S. Bello
+Joanne M. Bengayan
+Louie John J. Bengayan
+Rene Eliaas C. Lopez
+Diosdado Angelo A. Mahupus Sr.
+Diosdado L. Mambuco-Sr.
+Rene Eliaas C. Lopez
+Tomas J. Montesdeve IV
+Antonette G. Principe
+Manessa P. Saludao-Abella
+Cristy Ann J. Villahorte
+Rachael Z. Zondrado
+ON OFFICIAL BUSINESS:
+Vice Mayor Paolo Z. Duterte
+Councilor Myrna G. L'Daldo-Ortiz
+ABSENT:
+Councilor Edgar R. Ihuyan Sr.
+- On Sick Leave
+ORDINANCE NO. 035-13
+Series of 2013
+AN ORDINANCE APPROVING THE 2013-2016 DISASTER
+RISK REDUCTION AND MANAGEMENT PLAN PREPARED BY THE DAVAO CITY RISK REDUCTION AND MANAGEMENT COUNCIL.
+Be it ordained by the Sangguniang Panlungsod of Davao City in session assembled that:
+SECTION 1. TITLE - This Ordinance shall be known as "AN ORDINANCE APPROVING THE 2013-2016 DISASTER RISK REDUCTION AND MANAGEMENT PLAN PREPARED BY THE DAVAO CITY RISK REDUCTION AND MANAGEMENT COUNCIL".
+
+--- [Page 3] ---
+Page 2 of 2
+Ord No 035-13
+
+SECTION 2. DECLARATION OF POLICY - Section 2, paragraph (d) of Republic Act No. 10121 provides to wit:
+
+(d) Adopt a disaster risk reduction and management approach that is holistic, comprehensive, integrated, and proactive in lessening the socioeconomic and environmental impacts of disasters including climate change, and promote the involvement and participation of all sectors and all stakeholders concerned, at all levels, especially the local community.
+
+SECTION 3. APPROVAL - The Davao City Disaster Risk Reduction and Management Plan covering the period 2011-2016 prepared by the Davao City Risk Reduction and Management Office shall be approved for the purpose of developing an all hazards planning approach that will be used for all natural (e.g., flood, storm surge, etc.) and/or emergency (e.g., earthquake, fire, etc.) disasters as proposed by various national departments to establish responsiveness of the City Government to lessen the impact of disasters in Davao City.
+
+SECTION 4. SEPARABILITY CLAUSE - If for any reason, any section or provision of this Ordinance shall be declared unconstitutional or invalid, no other section or provision shall be affected thereby.
+
+SECTION 5. EFFECTIVITY CLAUSE - This Ordinance shall take effect immediately upon approval.
+
+ENACTED, September 24, 2013, by a majority vote of all the Members of the Sanggunan present.
+
+CERTIFIED CORRECT.
+CHIARITO R. SANTOS
+Secretary to the Sanggunan Panlungsod
+(City Government Department Head II)
+
+ATTESTED:
+VICTORIO U. ADVINCULA JR.
+City Councilor
+Temporary Presiding Officer
+LAPSED
+APPROVED AFTER THE LANCE OF 7:16
+RODRIGO R. DUTERTE
+City Mayor
+ATTESTED
+ATTY. J. MELCHOR V. QUITAIN
+City Administrator
+
+--- [Page 4] ---
+Think Realize Our Davao
+2013 - 2016
+City Disaster Risk Reduction and Management Council
+Davao City Disaster Risk Reduction and Management Plan
+Page 1
+
+--- [Page 5] ---
+**TABLE OF CONTENTS**
+
+**Abbreviations**
+3
+
+**I. Davao City Profile**
+4
+- Background
+12
+- Topography
+Hydrography
+Land Use Classification
+Weather
+
+**II. Davao City Risk Profile**
+33
+- Fires and Configuration
+Floods and Flooding incidents
+Monsoon/Sea Swells
+Rain-Induced Landslides
+Other Natural Hazards
+Bombings
+
+**III. Development Policies and Initiatives**
+32
+- Disaster Risk Reduction and Management initiatives
+Building Back Better Principle
+Building Capabilities of People and Institutions
+
+**IV. Davao City Disaster Risk Reduction and Management Plan**
+37
+- Disaster Risk Reduction and Mitigation
+Disaster Preparedness
+Disaster Response
+Disaster Rehabilitation and Recovery
+
+**V. Implementation Strategies**
+64
+- Awareness Creation and Education Campaigns
+Community-based Capability Building
+Contingency Planning
+Education and Training and CCA for All
+Institutionalization of DRRM and LDRRMO
+Research, Technology Development Knowledge Management
+Networking and Partnerships
+Pre-disaster Risk Assessment
+
+**VI. Implementation Mechanisms, Resource Mobilization, Monitoring and Evaluation, Amendment Clause**
+67
+- Davao City Disaster Risk Reduction and Management Council
+Davao City Disaster Risk Reduction and Management Office
+Agency leads and Implementing Partners
+Resource Mobilization
+Monitoring and Evaluation
+Amendment Clause
+
+**VII. Annexes**
+- Davao City Barangay Hazard Profile
+Risk Areas in Davao City
+List of Identified Execution Campuses/Centers
+
+**Davao City Disaster Risk Reduction and Management Plan** Page 2
+
+--- [Page 6] ---
+List of Tables
+Page
+Table 1. Demographics by Watershed
+14
+Table 2. Watersheds in Davao City
+16
+Table 3. General Land-Use Classification
+18
+Table 4. Inventory of Roads by System Classification and Type of Pavement, Davao City, 2012
+19
+Table 5. Inventory of Bridges by Location by Type, 2012
+19
+Table 6. Number of Day Care and Health Centers, by Administrative District, 2012
+21
+Table 7. Seasonal Rainfall Changes (in %) in 2020 and 2050 Under Medium Range Emission in Davao City
+25
+Table 8. Frequency of Extreme Events in 2020 and 2050 Under Medium-Range Scenario in Davao City
+26
+Table 9. Built-Up Areas Within Geo-Hazard Areas
+27
+
+List of Maps
+Page
+1 Administrative District Maps
+13
+2 Contour Map
+15
+3 Watershed Map
+17
+4 Roads And Bridges Maps
+20
+5 Map of Day-Care Centers
+22
+6 Map of Health Centers
+23
+7 Map of Locations of Public Schools
+24
+8 Terrain Analysis and Mapping Classification
+28
+9 Flood Hazard Map
+29
+10 Landslide Susceptibility Map
+30
+11 Erosion Susceptibility Map
+31
+12 Liquefaction Susceptibility Map
+32
+
+--- [Page 7] ---
+**Acronyms and Abbreviations**
+
+- ACDCV: Accredited Community Disaster Volunteer
+- ABC: Association of Barangay Captains
+- BCCAD: Barangay Cultural and Communities Affairs Division
+- BFP (DCFIO): Bureau of Fire Protection (Davao City Fire Office)
+- CSSDO: City Social Services and Development Office
+- CAO: City Agricultural Office
+- CIO: City Information Officer
+- CVG: City Veterinarian's Office
+- CDH: City Disaster Hotline
+- CPDDO: City Planning and Development Office
+- CEO: City Engineer's Office
+- CENHRO: City Environment and Natural Resources Office
+- DRRM: Disaster Risk Reduction and Management
+- CCA: Climate Change Adaptation
+- DCCI: Davao City Chamber of Commerce and Industry Incorporated
+- DCOCRMO: Davao City Disaster Risk Reduction and Management Office
+- DCDIRRMC: Davao City Disaster Risk Reduction and Management Council
+- EASTM/INCOM: Eastern Mindanao Command
+- HFA: Hyogo Framework for Action
+- IDDQ: Integrated Development and Development Division
+- PCG: Philippine Coast Guard
+- PSSCC: Public Safety and Security Command Center
+- TMC: Traffic Management Center
+
+**Davao City Disaster Risk Reduction and Management Plan**
+
+Page 3
+
+--- [Page 8] ---
+**Executive Summary**
+
+Davao City is a highly urbanized city in Mindanao. It is the largest city in the world in terms of land area. The city has eight (8) watersheds and six(6) river systems bounded by different provinces. It is one of the most livable cities in the World.
+
+With all its distinctions, the City has not been exempted from both natural and human-induced disasters as it has experienced in the past. Despite all these experiences, the City was able to provide the needed intervention to restore the communities that were victims of haphazard disasters that destroy both lives and properties of the people.
+
+**Development Policies and Initiatives**
+
+The passage of the City's Comprehensive Land-Used Plan (CLUP) has provided a new dimension in terms of relocating people in areas that are far from the existing hazards in the City. These development policies will ensure that future developments will now be located away from the hazards.
+
+Likewise, environmental policies enacted by the legislative body of the City, once again proves that the City is serious in protecting the remaining natural assets that could be the City's obligation to the next generations.
+
+**Building Back Better Principle**
+
+The building back better principle is geared towards a sustainable development in the City that would provide safer and more resilient infrastructures that could withstand disasters. This principle will provide more adaptive communities and sustainable development.
+
+**Disaster Risk Reduction and Management Plan**
+
+It is on this aspect that the City shall be responsible in crafting the Davao City Disaster Risk Reduction and Management Plan to answer the growing needs of formulating and aligning the thrust of the Local Government in addressing the DRR programs and projects of the City. This plan will ultimately be the basis for providing for a livable City for all.
+
+**Thematic Area 1: Disaster Prevention and Mitigation**
+
+Disaster Prevention and Mitigation provides key strategic actions to activities revolving around hazards assessment and mitigation, vulnerability analysis, identification of hazard-prone areas and mainstreets, and DRRM into development plans. It underscores the need for sound and scientific analysis of the different underlying vulnerability factors, risks and exposure to hazards and disasters.
+
+**Thematic Area 2: Disaster Preparedness**
+
+Page 4
+
+--- [Page 9] ---
+Disaster Preparedness provides for key strategic actions that give importance to community awareness and understanding, contingency planning, conduct of local drills, and the development of a Davao Disaster Response Plan. In preparing communities and governments for possible disasters, predetermined needs based on information available are crucial. Risk-related communication coming from the Prevention and Mitigation aspect is necessary in order for disaster response activities to be responsive to the needs of affected communities. Also, policies, budget and institutional mechanisms established under the Disaster Prevention and Mitigation aspect will be further enhanced through capacity building activities, development of coordination mechanisms, among others. Through these, coordination, complementation and interoperability of work in DRRM operations and essential services will be ensured.
+
+It should be noted that the activities in this thematic area are not linear but cyclic and anticipate improvements over time. Behavioral change created by the Preparedness aspect is eventually measured by how well people respond to disasters. At the frontlines of disaster preparedness are local government units and communities. Overall, the bottom line is having more prepared citizens and governments.
+
+Thematic Area 3. Disaster Response
+
+Disaster Response provides for key actions that give importance to activities during the actual disaster response operations such as needs assessment, search and rescue, relief operations, and early recovery activities. The activities identified below will be done either before the actual response operations or during the disaster event. For those activities which need to be completed prior to actual response operations, they will be linked to activities earlier identified in the preparedness aspect. However, to ensure that the proper response "fear" is issued in doing the said activities, they have been included in this aspect. Overall, the success and realization of this priority area rely heavily on the completion of the activities under both the prevention and mitigation and preparedness aspects.
+
+This aspect includes Early Recovery which means, under IRR Rule 2 Section 1, the multidimensional process of recovery that begins in a humanitarian crisis and is guided by development principles that seek to build on humanitarian programs and catalyze sustainable development opportunities. It aims to generate self-sufficiency and community-owned, resilient processes for post-crisis recovery. Early recovery encompasses the restoration of basic services, livelihoods, governance, security, and rule of law, environment and social dimensions, including reintegration and social and emotional rehabilitation of displaced populations.
+
+Thematic Area 4. Disaster Rehabilitation and Recovery
+
+The Disaster Rehabilitation and Recovery aspect covers concerns related to employment and livelihoods, infrastructure and lifeline facilities, and housing and resettlement. These are recovery efforts done when people are already outside of the evacuation center.
+
+--- [Page 10] ---
+Specifically for Priority Area of Disaster Response and Rehabilitation and Recovery, Operational Timelines are used primarily to give an overall guidance on the "quick" time element in providing humanitarian activities and recovering from disasters. Likewise, the operational timelines will guide the plan's implementation and monitoring activities for the two priority areas. These operational timelines are as follows:
+
+Immediate Term (IT)
+Short Term (ST)
+Medium Term (MT)
+Long Term (LT)
+
+Within 1 year after the occurrence of the disaster
+Within 3 to 6 years after the occurrence of the disaster
+Beyond 5 years after the occurrence of the disaster
+
+Davao City Disaster Risk Reduction and Management Plan Programs and Projects
+
+It is the responsibility of Davao City Disaster Risk Reduction and Management Council to implement programs and projects which it believes priorities to address the DRR requirements of the City. This includes, among others: a) Reconstituting the different BDCCs; b) Development of IEC materials for DRR; c) Strengthening the mainstreaming of different Development Plans of the City.
+
+These are the priority programs that needs to addressed prior to the full implementation of this Plan:
+
+Cross-cutting Concerns
+
+Disaster Risk Reduction and Management cut across the four(4) thematic areas. It basically connects and interacts with each other. It provides that the thematic areas relates with each other that it will compliment one with the other.
+
+Health
+
+Disasters carries with it other hazards. Every time that disaster happens it includes other hazards that will create health impacts for the the communities affected.
+
+Human-induced Disasters
+
+Disasters encompasses those disasters which is the result of conflicts relative to the struggle of different sectors of our society. Armed conflicts continue to plague communities especially in the upland barangays of the City.
+
+Gender Mainstreaming
+
+Gender sensitivity is an integral component of this Plan. It also provides the City's thrust of ensuring that all plans should always be gender-sensitive and gender should not be a hindrance in the development of this plan.
+
+--- [Page 11] ---
+Environmental Protection
+
+Environmental protection is one of the most important component of DRR/CCA. Hence, in the formulation of this plan it provides for a concrete approach in the protection of the City's environment.
+
+Cultural Sensitivity and Indigenous Practices
+
+Modern technology has actually been an integral component in DRR. However, in this plan, cultural differences cannot be taken for granted since the City is home to many indigenous communities and different cultures within in the City.
+
+Rights-based Approach
+
+It is the responsibility of the City to protect the rights of the people. Not only because it is protected by the constitution but it forms part of the thrust of the City Government.
+
+Implementation Strategies
+
+Advocacy and IEC
+
+DRRM requires understanding, especially for communities exposed to different hazards. Advocacy through information and education campaign shall be one of the most important components in ensuring that the lives of these communities can be protected.
+
+Community-based Capability Building
+
+It is the responsibility of the DRRMC to ensure that community-based capability building be given importance to ensure that communities can now be capacitated to respond to and from disaster or emergencies. This capability building will be anchored on ensuring that communities are the first responders during this event.
+
+Contingency Planning
+
+Contingency Planning is an essential component in every disaster/emergency. This plans basically determines the readiness of the DRRMCs to respond to any event. Resources needed for these events can be traced out and gaps can be determined.
+
+Education on DRRM and CCA
+
+The primary concern for DRR and CCA does not lie only with the DRRMC's but likewise integrating DRRM and CCA in the school curriculum is an ongoing concern. By integrating this in the
+
+Davao City Disaster Risk Reduction and Management Plan Page 7
+
+--- [Page 12] ---
+curricula, it would mean that as early as in the younger years, everyone will have the ability to comprehend and understand why DRR/CCA is a concern for all.
+
+Institutionalization of DRRMC's and DRRMO
+
+Part of the crafting of this Plan is to ensure that DRRMC and DRRMO's will be institutionalized. By institutionalizing it would mean that DRRMO will give continued concern in order that all initiatives will provide safe and resilient communities can be achieved.
+
+Research, Technology Development and Knowledge Management
+
+Continued conduct of research will always be taken into consideration. Priority will also be on developing and acquiring new technology to provide real time alert and warning system for communities.
+
+Knowledge sharing and lessons learned from previous disasters/emergencies will also provide a better understanding for purposes of ensuring that gaps and lapses will not be repeated.
+
+Networking and Partnership
+
+Civil Society Organizations (CSOs) play a crucial role in the implementation of DRR/CCA. Henceforth, it is the responsibility of the DRRMO to ensure that networking and partnership will be given priority. DRR/CCA always needs the participation of the CSOs not only because it was provided for by the law but simply their resources could help in promoting resiliency for the communities.
+
+Pre-disaster Recovery Planning
+
+This Plan also ensures that all of the thematic areas compliment with each other and address a given hazard that will provide a comprehensive approach in the DRR/CCA concern. With the occurrence of disasters, considerations on to how to provide life preservation and ensuring early recovery will form part of this Plan.
+
+Implementation Mechanisms
+
+Plans could not stand if its implementation will not be provided. Hence, in the implementation of this plan several mechanism will be considered.
+
+Disaster Risk Reduction and Management Council
+
+The implementation of this plan will rely on the seriousness of the Council to address the given hazards in the City. Executive Order Number 7 [April 2, 2012] will still be the legal reference of the council until such time that it will be amended by the present administration.
+
+Disaster Risk Reduction and Management Office
+
+The DRRMO plays a vital role in ensuring that what has been stated in the plan will be implemented.
+
+Davao City Disaster Risk Reduction and Management Plan Page 8
+
+--- [Page 13] ---
+With mandates provided by Republic Act 10121, the DRRMO will ensure that the plan become a working mechanism to provide a society that will be safe from both natural and human-induced hazards that will result into a disaster.
+
+Agency Leads and Implementing Partners
+
+In the implementation of the plan, the different lead agencies and partners will work hand in hand in ensuring that activities laid down will be implemented that later will lead to the attainment of its objectives and goals.
+
+Resource Mobilization
+
+Resources is an important component in the implementation of this Plan. It is provided that each stakeholder can utilize their resources aside from other resources from the 5% Local Disaster Risk Reduction and Management Fund of the City and from other sources.
+
+Monitoring and Evaluation
+
+As an essential component of every plan, monitoring and evaluation as to how the programs and projects were implemented form a vital role in the Plan. This will ensure that outcomes, outputs and goals were achieved.
+
+Amendment Clause
+
+Like any other plan, this term plan also provides for amendments to be done as the need arises and the thrust of the Local Government will be incorporated.
+
+Davao City Disaster Risk Reduction and Management Plan Page 9
+
+--- [Page 14] ---
+Republic of the Philippines
+OFFICE OF THE CITY MAYOR
+City of Davao
+herein is the Davao City Disaster Risk Reduction and Management Plan. It provides guidance in the conduct of providing the people of Davao City the assurance of having: "A Safer, Adaptive and Disaster resilient Davao City Communities towards sustainable development".
+This Disaster Risk Reduction and Management Plan is anchored on the National Disaster Risk Reduction and Management Plan and the Regional Disaster Risk Reduction and Management Plan following the four thematic areas with goals to:
+• Disaster Mitigation and Prevention - Avoid hazards and mitigate their potential impacts by reducing vulnerability and exposure and enhancing capacities of communities in the City.
+• Disaster Preparedness - Establish and strengthen disaster risk reduction capacities of communities to anticipate, cope and recover from the negative impacts of emergencies occurrences and disasters in the City.
+• Disaster Response - Provide life preservation and meet the basic subsistence needs of affected population based on acceptable standards during or immediately after a disaster in the City.
+• Disaster Rehabilitation and Recovery - Restore and improve lives, livelihoods and living conditions and re-organizational capacities of affected communities and reduce disaster risks in accordance with the "build back better" principle.
+This DRBMP was prepared in adherence to Republic Act 10123 (May 27, 2010), the NDRRMP and the ADRRMP it will be tested, revised and updated as required. All sectors are requested to advise the Council regarding recommendations for improvements.
+RODOLFO
+City Mayor
+/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+
+--- [Page 15] ---
+DAVAO CITY DISASTER
+RISK REDUCTION
+AND
+MANAGEMENT PLAN
+
+Davao City Disaster Risk Reduction and Management Plan
+Page 11
+
+--- [Page 16] ---
+I. DAVAO CITY PROFILE
+
+Background:
+Davao City is considered one of the largest cities in the world in terms of land area. It has an expanse of more than 244,000 hectares and is populated by about 1.5 million. It has one hundred eighty-two (182) barangays spread throughout the eleven (11) administrative districts. It is located at the south-eastern part of Mindanao Island, with the Davao Gulf to its north; with the Davao del Norte Province in the north, with Davao del Norte Province in the northeast; with Bukidnon Province in the north, with Davao del Sur in the south; it is bounded in the east by the Davao Gulf. It is also the biggest urban market in the growth polygon area called BIMP-EAGA(Brunel-Indonesia-Malaysia-Philippines East Asian Growth Area).
+
+Of the one-hundred eighty-two (182) barangays, ninety-two(92) has been categorized as rural, and the remaining ninety is considered urban barangays.
+
+Demography
+Davao City, a highly urbanized City in Region XI, posted a total population of 1,449,296 persons as of 2010 national census, an increase of 85,959 persons over its total population of 1,363,337 persons in 2007. An increase in the population from 2007 to 2010 translated to an average population growth rate (PGR) of 1.35%, lower than the 2.44% average annual PGR for the city for the period 2000 to 2007.
+
+Davao City Disaster Risk Reduction and Management Plan Page 12
+
+--- [Page 17] ---
+Administrative District Map
+Davao City Disaster Risk Reduction and Management Plan
+Page 13
+
+--- [Page 18] ---
+Population density was placed at 5.94 persons per hectare in 2010. Among urban barangays, population density reached 43 persons per hectare against the estimated population density of 1.52 persons per hectare among rural barangays. Population density in urban barangays in District I was notably highest at 60.88 persons per hectare.
+
+barangays can also be disaggregated into hydrologic boundaries or watersheds. A watershed is the area of land where all of the water that falls under it or drains off of it goes into the same place. It is a bounded hydrologic system within which all things are inseparably linked by their common water course and where, as humans settled, simple logic demanded that they become part of a community. There are 8 watersheds that intersect Davao City. However, only 3 are completely within Davao City (Matina, Talomo, Lipadada).
+
+Table 1: Demographics by Watershed
+
+|Watershed| Pop'n (2010)| Hhs (2010)| Women (18-59) | Children (0-7)|
+|---|---|---|---|---|
+|Tugnanay Watershed| 8,278| 1,670| 1,456| 3,582|
+|Laang River| 17,032| 3,539| 3,037| 6,911|
+|Bunawan River| 369,336| 84,437| 85,904| 120,215|
+|Davao River Watershed| 528,501| 134,258| 124,510| 192,402|
+|Matina River| 124,268| 28,568| 27,313| 36,210|
+|Talomo Watershed| 215,110| 62,870| 52,896| 84,767|
+|Lipadada Watershed| 113,570| 25,908| 23,530| 39,129|
+|Sibulan River| 14,201| 3,222| 2,778| 5,622|
+|TOTAL| 1,449,295| 334,471| 321,476| 488,838|
+
+Topography
+
+A substantial part of Davao City is mountainous, characterized by extensive mountain ranges with uneven distribution of plateaus and lowlands. The mountain range which defines the western boundary of the city extends as far down to South Cotabato. This mountain range nurtures the highest peak in the Philippines, which is Mt. Apo located at the boundaries of North Cotabato, Davao del Sur and Davao City. Mt. Apo has an elevation of about 10,131 feet (3,144 meters) above sea level. It has been considered as a semi-active volcano.
+
+The large, contiguous lowland areas of Davao City are coastal plains and valleys extending inland as gently-rising valleys. These areas are found in the eastern part of the city, in Pantar and Bantayan, which is an extensive plain. Other lowland areas are found in the south eastern part of the city along the western coast of the Gulf, and are in the districts of Bunawan, Buhangan, Agdao, Poblacion, Talomo, and Toril. These lowland areas are level to nearly level with slopes ranging from 0 to 3 percent. These are generally composed of recent alluvium consisting of clay, silt and some sand and gravel.
+
+Davao City Disaster Risk Reduction and Management Plan Page 14
+
+--- [Page 19] ---
+Topographically, only the southeast quarter is plain and slightly hilly along the entire coast and uplands north and westwards to Calinan, with slopes generally below four to five degrees. The plains and valleys merge gradually into the uplands, and the uplands turn into the mountains. Although the eastern part of the city is a broad lowland belt, its surface is interspersed by low hills and knobs.
+
+CONTOUR MAP
+
+CITY OF DAVAO
+
+Davao City Disaster Risk Reduction and Management Plan Page 15
+
+--- [Page 20] ---
+The entire area of Davao City is drained towards the Gulf Davao River and its numerous tributaries. The main drainage system of the city, Davao River, originates from Bukidnon Province, flows towards the south meandering along the central part and finally flows eastward emptying into the Gulf at the southern periphery of the City Proper. The secondary drainage system of the city is the Talomo River which is the drainage outlets of the eastern slopes of Mt. Apo. Other major drainage system includes the Lipadás River, Matina River, Lasang River and Sibulan River.
+
+Hydrography
+
+Davao City lies within the eight watersheds, namely: Tugnanay watershed, Lasang Watershed, Bunawan watershed, Davao River watershed, Pangi watershed, Talomo watershed, Lipadás watershed and the Sibulan watershed. These rivers run crisscross towards the almost 54-kilometer stretch of shoreline to the Davao Gulf.
+
+The southernmost is the Sibulan Watershed which has its headwaters in Davao City and draining towards the municipality of Sta. Cruz. Lipadás River Watershed cuts across from the slopes of Mt. Apo draining towards Lizaoda. Talomo Watershed has its headwaters in Mt. Talomo traversing parts of Calinan and Tugbbox Districts flowing down to Barangay Talomo. The smallest major watershed is the Matina Pangi River Watershed which covers parts of Brgy. Matina, Matina Pangi and Matina River. The largest is the Davao River Watershed which ironically has its headwaters in Bukidnon, covering parts of Marilog and Paquelibo districts funneling down towards Poblacion District. Bunawan watershed cover river that flow from Paquelibo district entering Davao del Norte and draining back to Bunawan district. Tugnanay River Watershed is almost totally part of Davao del Norte except the middle portion that enters Paquelibo District and drained towards Lasang River.
+
+Table 2. Watershed in Davao City
+
+| Watershed | Total Area (Hectares) | Area in Davao City (hectares) | No. of Brgys |
+| --- | --- | --- | --- |
+| Tugnanay Watershed | 74,747 | 18,130 | 2 |
+| Lasang River | 43,390 | 29,192 | 8 |
+| Bunawan River | 25,213 | 18,328 | 21 |
+| Davao River Watershed | 15,776 | 121,365 | 91 |
+| Matina River | 7,879 | 7,879 | 10 |
+| Talomo Watershed | 21,578 | 21,578 | 26 |
+| Lipadás Watershed | 16,796 | 16,796 | 19 |
+| Sibulan River | 29,213 | 10,782 | 5 |
+| TOTAL | 385,982 | 244,000 | 182 |
+
+Davao City Disaster Risk Reduction and Management Plan Page 16
+
+--- [Page 21] ---
+Davao City Disaster Risk Reduction and Management Plan
+Page 17
+
+--- [Page 22] ---
+General Land Use
+
+36,916 hectares have been designated as Built-up / Settlement Area in the approved land use plan of Davao City (1996-2025). Out of the 36,916 hectares, 11,512 hectares is designated for residential areas while 3,800 hectares is designated as commercial areas.
+
+Table 3 General Land-use Classification (1996-2021)
+
+| CLASSIFICATION | AREA (HA) | % OF TOTAL |
+|------------------|------------|------------|
+| Built-up/ Settlement Area | 36,916.74 | 15.13 |
+| Agricultural | 163,936.26 | 67.19 |
+| Forest | 27,626.00 | 11.32 |
+| Conservation | 15,521.00 | 6.36 |
+| Total | 244,000.00 | 100.00 |
+
+In 2011, actual residential areas made up 6,882 hectares or 2.44% of the city's total area. The developments of residential areas in the Central Business District have spilled over to the adjacent districts of Matina and Toril on the south and Bahuguan-Agdao on the north. The barangay with the biggest residential area is Italoma. There are a number of households from the lower-income groups that have resorted to informal setting or building their houses along the riverbanks, along rivers and shorelines. This has led to flooding and landslides brought about by flooding and storm surges. Various residential areas, particularly along the major water systems of the city have been affected by flash floods damaging property and claiming lives.
+
+Areas used for commercial purposes comprise 1,583.92 hectares or 0.65% of the total land area of the city. The Central Business District (the area spanning SM Ecoland to Agdao and Bahuguan) is the center of commerce and trade. The commercial establishments vary from small shops and large commercial complexes. In the past ten years, the expansion of the commercial establishments in the areas of Matina, Lanang and Buhangin was led by the construction of malls. These malls were developed by local and Manila based companies. Many of the residences in the Central Business District are increasingly improved into mixed use; residential buildings also provide commercial space to take advantage of their prime location.
+
+Infrastructure
+
+The total road network in Davao City spans 1,856.24 kilometers with barangay roads registering the longest road length at 1,012.00 kilometers (54.23 percent) and city roads at 844.24 kilometers (45.77 percent). These barangay roads are generally either gravel roads or dirt roads (17 per cent) and are mostly located in Districts II and III, particularly in Pampatibo and Marilay, while only 4.56 per cent is classified as concrete. City roads span 721.79 kilometers (38.88 per cent), more than half of which is concrete (33.81 per cent) while 42.12 per cent remains gravel and the remainder is asphalt roads. National roads cover 122.41 kilometers, of which more than three-fourths are concrete.
+
+--- [Page 23] ---
+**Table 4. Inventory of Roads by System Classification and Type of Pavement, Davao City, 2012**
+
+| Roads by System Classification | Right of Way (ROW) | Total Length | Concrete | Asphalt | Gravel | Earth |
+|---------------------------------|------------------|-------------|---------|---------|--------|-------|
+| National                       | 20-30             | 122.41       | 53.38   | 76.28   | 12.07  | 10.35 | 13.38 |
+| City                           | 20                | 721.79       | 368.36   | 25.91   | 29.44  | 4.01  | 54.74  | 54.12 |
+| Suburban                      | 10                | 1,124.61     | 517.41   | 4.01   | 4.01   | 54.74  | 54.12 | 377.56 |
+| Total                          |                  | 1,536.24     | 527.87   | 29.44   | 82.09  | 4.01  | 88.11  | 377.56 |
+|                               |                  | 20.34       |         |         |        |       |
+
+**Sources:** City Engineer's Office (CEO) and [Source xi]
+
+There are 65 bridges in the city, 36 (55.38 per cent) are located in District III while 22 (33.85 per cent) are in District I. Steel bridges (138) dominate the type of bridges in District II. There are 24 Bailey bridges mostly located in District III. There are 25 steel bridges mostly situated in District II (18). There are 16 concrete bridges mostly located in District III.
+
+**Table 5. Inventory of Bridges by Location, by Type, 2012**
+
+| Bailey | Steel | Concrete | Total |
+|--------|------|---------|-------|
+| 24     | 25   | 18      | 67    |
+
+In addition, there are also 34 supplementary bridges that serve as access in the far-flung areas of the city. These are classified either as reinforced concrete box culvert (RCBC) or cable hanging bridge/footbridge.
+
+Davao City Disaster Risk Reduction and Management Plan
+Page 19
+
+--- [Page 24] ---
+ROADS AND BRIDGES MAP OF DAVAO CITY
+Davao City Disaster Risk Reduction and Management Plan
+Page 20
+
+--- [Page 25] ---
+In terms of social infrastructure that serves as conduit to basic health, early childhood care and education, there is a total of 644 Public Day-care Centers, 180 Private Day-care Centers and 187 Health Centers in Davao City. There are also 356 Public Schools in Davao City (286 elementary and 70 secondary)
+
+Table 6.Number of Daycare and Health Centers, by Administrative District, 2012
+
+| Administrative District | No. of Boys | Daycare Centers | Daycare Centers | Health Centers |
+|-------------------------|------------|-----------------|-----------------|----------------|
+| Talomo                  | 14         | 85             | 54              | 21             |
+| Poblacion               | 40         | 68             | 27              | 30             |
+| Agdao                   | 11         | 31             | 10              | 12             |
+| Suhangin                | 13         | 75             | 40              | 18             |
+| Burauen                 | 9          | 42             | 11              | 11             |
+| Pasiguate                | 13         | 42             | 15              | 15             |
+| Baguio                   | 8          | 25             | -                | 7              |
+| Calinan                 | 19         | 58             | 8               | 16             |
+| Marilog                 | 12         | 86             | 1               | 12             |
+| Toril                   | 25         | 85             | 11              | 27             |
+| Tuguegaro               | 18         | 47             | 8               | 18             |
+| DAVAO CITY              | 182        | 644            | 180             | 187            |
+
+Davao City Disaster Risk Reduction and Management Plan Page 21
+
+--- [Page 26] ---
+MAP SHOWING DAY CARE CENTERS OF DAVAO CITY
+
+Source CSS00
+Figure 9
+
+Davao City Disaster Risk Reduction and Management Plan
+Page 22
+
+--- [Page 27] ---
+MAP SHOWING
+RELEVANT FEATURES OF DAVAO CITY
+Source: CHC
+Figure 12
+
+--- [Page 28] ---
+MAP SHOWING
+PUBLIC SCHOOLS
+OF DAVAO CITY
+Source: Dapdlo
+figure 10
+Davao City Disaster Risk Reduction and Management Plan
+Page 24
+
+--- [Page 29] ---
+**Weather**
+
+Davao City enjoys a tropical climate. Compared with other parts of the Philippines in which there is a distinct hot and wet season, it enjoys the privilege of a climate where the days are always sunny and mild followed by nights of rain. The city is outside the typhoon belt and lacks major seasonal variations.
+
+From 1990 to 2010, the average annual temperature varied from 34.2°C (highest) in April to 21.43°C (lowest) in January. The average annual rainfall in 1990 was recorded at 140 mm and reached 150 mm in 2010 as recorded in two rain stations in Bago Obrero and Davao International Airport.
+
+The predominant wind direction is northward from the Davao Gulf where the cooler air of the sea replaces the warm air mass over the city. A surrounding chain of mountains protects the city effectively from strong winds.
+
+The city does not have a pronounced wet or dry season, but has a rainfall that is evenly distributed throughout the year. The city experiences heavy downpours but is practically typhoon-free. However, in December 4, 2012, the City has partly experienced the effects brought by Typhoon Pablo (Bopha).
+
+**Climate Change**
+
+As stated in the UN International Strategy for Disaster Reduction (ISDR) Policy Issues and Guidelines, water-related disasters account for 90 percent of all natural disasters, and their frequency and intensity is generally rising.
+
+Based on the projections made by PAGASA, seasonal rainfall is expected to decrease in the next 50 years but there is an expected significant increase for the months of December to February. As a direct effect, floods are expected to be more severe. These projections also indicate increases in days with temperatures ranging 15°C and above as well as the number of dry days.
+
+Table 1: Seasonal Rainfall change (in %) in 2020 and 2050 under medium range emission scenario
+
+| Month | Observed Seasonal (1971-2000) | Change in 2020 (2050-2025) | Change in 2050 (2050-2025) |
+|-------|-----------------------------|---------------------------|----------------------------|
+| DEC JAN FEB | 288.1                      | -1.6                       | -1.2                        |
+| MAR APR MAY | 347.1                      | 9.6                       | -12.0                      |
+| JUN JUL AUG | 464.1                      | -7.8                      | -12.8                      |
+| SEP OCT NOV | 442.3                      | -2.4                      | -4.5                        |
+
+Moreover, days with heavy rains are also expected to increase. These changes can result to extreme events like El Niño or La Nina and also flooding.
+
+**Page 25**
+
+Davao City Disaster Risk Reduction and Management Plan
+
+--- [Page 30] ---
+**Table 8: Frequency of extreme events in 2020 and 2050 under medium-range scenarios in Davao del Sur**
+
+| Province | Station | No. of Days w/ Temp Max > 150mm | No. of Days w/ Rainfall > 150mm |
+|----------|---------|------------------------------|--------------------------------|
+| Davao del Sur | Davao | 139 | 2,381 | 5,373 | 7,930 | 4,789 | 5,368 | 2 | 3 | 4 |
+
+**Source:** PAGASA
+
+**Hazard Profile**
+
+The dominant geomorphological processes acting per terrain mapping unit were identified and evaluated by the MGB. This is very useful in determining the potential geo-hazards in the city.
+
+**Flooding -** Areas naturally prone to flooding are all the fluvial landforms. However, detailed analysis and study is needed to further subdivide the fluvial landform into various susceptibility and vulnerability classes. The areas delineated with high susceptibility to flooding correspond to approximately 30-50 year floods. Flooding occurring outside the delineated flood prone areas could be mainly man-induced resulting to excessive overland flow or runoff.
+
+**Mass Movement -** At least four (4) factors (soil class, slope, presence of landslide and landslide potential) were considered in the delineation of the landslide susceptibility classes. Areas which are naturally susceptible to mass movements are the denudational landforms. However, based on landslide mapping and inventory mass movements were also noted in other areas that are moderately deep to deeply incised valleys of the volcanic landform, the structural-denudational landform and the karst landform.
+
+**Erosion -** Generally, the rate of erosion is controlled by slope, climate, and natural of bedrock vegetation cover and human intervention. The delineated erosion susceptibility classes for the study area considered only the natural factors particularly the slope, soil and underlying lithology. The present land use and cultivation/tilling practices could also result in induced erosion.
+
+**Earthquake-induced hazards (seismicity, liquefaction)** - Liquefaction is a geo-hazard that results from seismicity/earthquake and defined as the granular material in solid state, which behaves and deforms like a liquid as a consequence of increased pore water pressure due to earthquake shaking. Generally, areas belonging to the fluvial landform are the most susceptible to liquefaction being overlain by alluvial deposits wherein the same conditions mentioned above could be present.
+
+**Volcanic -** Mts. Sibulan, Talomo and Apo are volcanic complex. The Sibulan-Talomo volcanic complex was previously classified as non-active cones; therefore preparation of a volcanic hazard map at this time is not necessary. Although Phivolcs consider Mt. Apo as potentially active, this has to be further studied.
+
+--- [Page 31] ---
+A total of 1,377 hectares of the 13,000 hectares built-up areas of Davao are within areas that are considered to be highly susceptible to flooding as categorized through the Terrain Analysis of the MGB. Also categorized are other rain-induced hazards like landslide and erosion. There are 788 hectares of built-up areas that are within areas that are considered highly and very highly susceptible to landslides.
+
+Table 9: Built-up Areas within Geo-hazard Areas
+
+| Hazard Areas | Total Area | Within Built-up area(s) (hectares) |
+|--------------|-----------|-----------------------------|
+| Hydro-meteorological hazards | | |
+| High Susceptibility - Floods | 7,346 | 1,377 |
+| High & Very High Susceptibility - Landslide | 151,269 | 788 |
+| Very High Susceptibility - Erosion | 103,242 | 571 |
+| Seismic Hazards | | |
+| Liquefaction prone | 216,867 | 6,163 |
+
+Davao City Disaster Risk Reduction and Management Plan Page 27
+
+--- [Page 32] ---
+Davao City Disaster Risk Reduction and Management Plan
+Page 28
+
+--- [Page 33] ---
+Davao City Disaster Risk Reduction and Management Plan
+Page 29
+
+--- [Page 34] ---
+Davao City Disaster Risk Reduction and Management Plan
+Page 30
+
+--- [Page 35] ---
+EROSION SUSCEPTIBILITY MAP
+BASIC DATA LIMINGO
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+DATE: 10/28/96
+
+--- [Page 36] ---
+LIQUEFACTION SUSCEPTIBILITY MAP
+CITY OF DAVAO
+Davao City Disaster Risk Reduction and Management Plan
+Page 32
+
+--- [Page 37] ---
+II. RISK PROFILE OF DAVAO CITY
+
+Like any other area in the Philippines, Davao City is not exempted both from man-made or human induced and natural disasters.
+
+In the past the City has been the recipient of different disasters.
+
+From data available, the top three (3) calamities that hit Davao City repeatedly since 1996 to date are: 1) Fires and Conflagrations; 2) Floods; and 3) Sea Swells, in that order.
+
+Noteworthy also were the terrorist-initiated incidents of bombing that have caused death and injury to unarmed civilians.
+
+1. Fires & Conflagrations
+
+Through the years, Davao City has progressed and developed. But while progress and development are bustling as demonstrated by the construction of high-rise buildings and areas of the art facilities and amenities while certain residential districts in the downtown area remain to be rustic and still maintain an old setting and packed with structures that are made of combustible materials that are highly susceptible to conflagration. Without mentioning, many of the residential areas in the downtown are thickly populated.
+
+2. Floods and Flooding Incidents
+
+The general characteristics of the geographical/topographical and meteorological conditions are not rigid and dogmatic indicators that Davao City is invulnerable to natural calamities. There are other factors which indirectly affect the meteorological conditions. There had been recent events in the past when intense and prolonged rainfall brought about by rain-producing phenomena - low pressure areas, tropical cyclones, etc. occurred. These phenomena can cause flooding due to overflows and flooding. The areas along the riverbanks are relatively flat and susceptible to flooding, especially when other astronomical phenomena such as high tide coincide with the occurrence of heavy and prolonged rainfall.
+
+The June 28-29, 2011 flooding in Talomo District and the January 19-20 along the Davao River System has reversed the level of awareness of the people in the flooded areas. Aside from the direct damages that flooding events can cause, there are a host of other calamities that may occur as an aftermath of a flood. Interruption of daily activities that result to the lack of basic necessities such as water, food, and shelter, and the disruption of the sanitary regimen of a calamity-stricken community. These invariably can lead to an outbreak of gastro-intestinal and other diseases.
+
+3. Monsoon Wave/Sea Swells
+
+However, sea swells are practically a yearly occurrence. These occurrences are caused by southwest monsoon and usually happen during the second and third quarter of each year. From 1996 to date, collated data on sea swell occurrences indicate coastaline communities are hit annually.
+
+Davao City Disaster Risk Reduction and Management Plan Page 33
+
+--- [Page 38] ---
+4. Rain-induced Landslides
+
+Based on data available, the City has not also escaped from the occurrences of landslides. At present, several areas in the City have been susceptible to landslides due to the topography of the City. Many of these areas had already experienced landslides brought about by continuous downpour.
+
+In the past only barangays classified as rural were exposed to rain-induced landslides, but up to this date some barangays classified as urban is beginning to be exposed to this type of hazard.
+
+5. Other natural hazards
+
+While the city has not experienced any major natural disaster in terms of lives lost and properties damaged in the last 50 years, this should not be reassuring enough for the residents of the city and the government to be complacent and not to plan for worst-case scenarios. The geographical location and the history of the city makes it potentially susceptible to other geo-locations and natural calamities such as earthquakes and its resultant hazards such as ground shaking, landslide, liquefaction, ground rupture and worst of all, tsunamis. There have been incidents that have devastated Davao City although it practically straddles on a fault line. There also had been incidents of soil erosion that have caused damage to crops and other agricultural products.
+
+On the other hand, with Climate Change, sea level rise, drought and other associated hazard could also be a threat for the City.
+
+6. Bombings
+
+Finally, the city does not only have its fair share of natural calamities. It has also been a hapless victim to acts of terrorism. Bombing, hostage-taking, kidnap-for-ransom incidents are examples of acts of terrorism that have transpired in the city in the past and just recently this year. Bombings particularly have left scars not only on the victims who survived but also to the psychological make-up of the survivors. The San Pedrito Church bombings in April 1981, and in December 1993, the San Sebastian Church bombing in March 2003, the bombing at the Jasa Puri in April 4, 2003 bombing outside the gate of the Jasa Puri and the February 24, 2005 bombing at the Overland Transport Terminal are vivid reminders of the acts of terrorism that destroys hundreds of lives as a resultant effect of the multi-faceted disaster.
+
+--- [Page 39] ---
+III. DEVELOPMENT POLICIES AND INITIATIVES OF THE CITY
+
+Disaster Risk Reduction and Management Initiatives of the City
+
+The passage of the Comprehensive Land-use Plan (CLUP) of the City is a realization that the Local Government, policy-makers, and other stakeholders are in the forefront of making the City a safe place to live in. It also provides a new perspective in the environmental protection of the City. Several environmental ordinances have been passed by the local legislative body. Worthy to mention is the declaration of making the Shrine Hills as a protected area and the recently passed Comprehensive Anti-Smoking Ordinance of the Davao City.
+
+The reconstitution of the Davao City Disaster Risk Reduction and Management Council is a real initiative geared towards institutionalizing the DIRR and CCA in the City.
+
+Although, Davao City in 1996 has already created a Disaster Coordinating Division with eight (8) regular ranks and file personnel tasked to implement disaster-related concerns of the City. The passage of the Republic Act has strengthened the capacity of the City to address the growing concern for the protection of all people in the City.
+
+Despite all the initiatives being undertaken by the City, challenges still continue to appear by virtue of the City's massive development brought about by influx of people for purposes of livelihood, education, recreation and or to reside permanently in the City because of its stability in peace and order.
+
+Disasters that happened in the past have provided us a new challenge to face for another milestones in DIRR and CCA. Families that have been displaced by disasters in the past were provided with the chance to recover from the effects brought about by these disasters. Although, the City has initiated a City Shelter Program, many of these families still prefer to stay in areas susceptible to same hazards.
+
+Building Back Better Principle
+
+In the context of post-disaster reconstruction, the "building back better" principle is being promoted. However, current practices have not ensured safer and better structures are built on safe locations during reconstruction and rehabilitation. Neither have engineering and land use practices been risk sensitive such that mitigating future disasters are addressed. Through the combination of increased knowledge and experience, DIRR mainstreaming into development plans and policies, and building institutional mechanisms through monitoring, evaluation and information, "building back better" can be achieved. Over time, improvements in the way DIRR and CCA are addressed in infrastructures, utilities, buildings, and housings should be seen.
+
+--- [Page 40] ---
+Building capacities of people and institutions
+
+Gaps in applying resilience principles to actual practice exist at different levels of government, among disaster management practitioners and various stakeholders. Roles and responsibilities need to be understood in the context of emergency situations and DRR. Thus, comprehensive baseline capacity building programs on DRRM and CCA should be developed and implemented in order to be effective and responsive to the needs of people and institutions. These capacity building activities will help enhance their understanding and skills so that DRRM and CCA principles and concepts can be applied, and concrete actions can be taken towards building resilience.
+
+Dayao City Disaster Risk Reduction and Management Plan Page 36
+
+--- [Page 41] ---
+IV. DAVAO CITY DISASTER RISK REDUCTION AND MANAGEMENT PLAN
+
+Thematic Area 1: Disaster Prevention and Mitigation
+
+OVERALL RESPONSIBLE AGENCY: CITY PLANNING AND DEVELOPMENT OFFICE
+
+Disaster Prevention and Mitigation provides key strategic actions to activities revolving around hazard evaluation and mitigation, vulnerability analysis, identification of hazard-prone areas and mainstreaming DRRM into development plans. It underscores the need for sound and scientific analysis of the different underlying vulnerability factors, risks and exposure to hazards and disasters.
+
+Goal:
+Avoid hazards and mitigate their potential impacts by reducing vulnerabilities and exposure and enhancing capacities of communities in the City.
+
+Objectives:
+1. Reduce vulnerability and exposure of communities to all hazards.
+2. Enhance capacities of communities to reduce their own risks and cope with the impacts of all hazards.
+
+Outcome 1.
+DRRM and CCA mainstreamed and integrated into the Comprehensive Land Used Plan and the Comprehensive Development Plan and Budget
+
+Indicators
+At the City level, 100% utilization of the 5% Local Disaster Risk Reduction and Management Fund dedicated for DRRM and CCA activities
+At the City level, 100% utilization of the 5% Local DRRM Fund (LDRRMF) for the implementation of DRRM-responsive development plans and related activities
+DRRM and CCA mainstreamed in various plans (CDP and CLUP), laws, policies and/or ordinances enacted
+Davao City DRRM Council and Office created and functional
+
+Lead Agency
+Disaster Risk Reduction and Management Office (DRRMO)
+
+Implementing Partners
+City Administrator's Office, City Planning and Development Office, City Budget Office
+
+Page 37
+
+--- [Page 42] ---
+| Outputs | Activities | Percent Completion | Timeline |
+| --- | --- | --- | --- |
+| 1. Impacts of risks on development programs and projects are well recognized in the plans and budgets of the City | 1.1. Inclusion of a provision in the City's Annual Investment Plan approval guidelines on the utilization of the 5% LDRRM dedicated solely for DRM and CCA activities | 100% | 2013 2014 2015-2016 |
+| 2. Decisions supported by tools and technologies that facilitate the financial and economically sound mainstreaming of DRM and CCA | 2.1. Build capacities to effectively mainstream DRM and CCA in development planning, investment programming, project development evaluation; 2.2 Promote capacities of barangays in the formulation of Barangay Development Plans and Programs | 30% | 60% 100% |
+| 3. Enhanced CSO participation in City DRRMCs | 3.1. Develop selection criteria and accreditation for CSO participation in the DRRM Council | a. City Level: 100% b. Barangay Level: 30% 60% 100% |
+| 4. Measures to reduce vulnerability and to increase capacity to cope with disasters are integrated into programs and projects | 4.1. Sectoral representations in the crafting of the CLUP and CDP | 100% |
+| 5. Measures identified to ensure that programs and projects do not contribute to further risks | 5.1. Updating of the Barangay profile especially on the Hazard and Risk | 70% 100% |
+| 5.2 Apply science and evidenced-based scenarios in mainstreaming DRM and CCA into plans, policies, programs | 30% 50% 100% |
+
+--- [Page 43] ---
+6. Decisions supported by tools and technologies that facilitate the financial and economically sound DRRM and CCA management
+7. City DRRM Councils reconstituted
+8. Local offices established (facility, manpower and budget)
+Outcome 2
+DRRM and CCA-sensitive environmental management
+Indicators
+• At the City, DRRM and CCA are integral objectives of environment-related policies and plans, including for land use, natural resource management
+• Alignment of the DRRMP
+Lead Agency
+City ENRO
+Implementing Partners
+City Agriculturist Office, DRRMO, Barangay Community Affairs Division, CPDO
+Outputs
+Percent Completion
+Timeline
+Activities
+2013
+2015
+2015-
+2016
+1. Environmental policies with DRRM and CCA lenses and components
+1.1. Review and integrate DRRM and CCA into various environmental policies, plans, programs and projects (i.e., EO I or the Municipal Greening Program)
+1.2. Crafting of Local Ordinances and Resolutions on Environment Protection
+2013
+2015
+2015-2016
+60%
+100%
+Increased disaster resilience of infrastructure systems
+Indicators
+• At the City level, social and structural development policies and plans implemented to reduce the vulnerability of populations most at risk
+• Number of critical infrastructures assessed
+• Number of critical infrastructures retrofitted
+Davan City Disaster Risk Reduction and Management Plan
+Page 39
+
+--- [Page 44] ---
+Lead Agency City Engineer's Office
+Implementing Partners: City Building Official, City ENRO, BCCAD, CPDO, DEP-ED City Schools
+
+Percent Completion
+Timeline
+
+Outputs
+Activities
+2013 2015 2016
+1. Enhanced disaster mitigation and preparedness strategies for infrastructure systems
+1.1. Advocacy for the implementation of the building code and use of green technology
+1.2. Conduct inventory, hazards and risk assessments for critical facilities and other critical facilities and other critical facilities
+1.3. Develop guidelines on the redesign, retro-fitting or operational modification of infrastructure
+1.4. Integrate DRRM and CCA in the building code and local ordinances
+All gov't. buildings, schools and hospitals and other critical facilities
+1.5. Develop guidelines on the DRRM members
+Outcome 4
+Community based and scientific DRRM and CCA assessment, mapping, analysis and monitoring are conducted and/or improved
+Indicators
+Hazards and risk assessments based on hazard data and vulnerability information are available and include risk assessments for key sectors.
+Systems are in place to monitor and disseminate data on key hazards and vulnerabilities.
+Research methods and tools for multi-risk assessments and cost benefit analysis are developed and strengthened.
+Fully implement Knowledge Management Institute to act as a repository of data, products and information from development partners.
+Capacity enhancement for barangays and communities on vulnerability assessment, analysis and monitoring activities
+Davao City Disaster Risk Reduction and Management Plan
+Page 40
+
+--- [Page 45] ---
+Davao City Disaster Risk Reduction and Management Plan
+Page 41
+
+| Outputs | Activities | Percent Completion | Timeline |
+|----------|-------------|---------------------|-----------|
+| 1. DRRM and CCA assessment and mapping tools | 1.1. Conduct vulnerability assessment on a regular basis (every 1st quarter on election year - per existing LGU policy) when need arises | 50% | 2013 | 2014 | 2015, 2016 |
+| 1.2. Conduct hazards mapping and assessment up to the barangay level | 100% | | |
+| a. Barangay level | 30% | 60% | 100% | |
+| Readily usable and accessible knowledge product as DRRM and CCA planning tools; | 2.1. Establishment of Data Management system | 50% | 2013 | 2014 | 2015, 2016 |
+| 2.2. Conduct studies on Disaster prevention Interventions and climate Change effects | 50% | 100% | |
+| 2.3. Strengthen PEACE and Human Rights education, Values formation and education | 100% | | |
+| 2.4. Establishment of a knowledge management institute at the DRRMO | 100% | | |
+| 2.5. Information dissemination through partnership with various media | 30% | 60% | 100% | |
+| 2.6. Conduct of capacity building research studies and activities | 30% | 60% | 100% | |
+| 2.7. Development of tool kits for vulnerability assessment | | | | |
+
+--- [Page 46] ---
+**Outcome 5**
+Communities have access to effective and applicable disaster risk financing and insurance
+
+**Indicators**
+- Government assets are insured.
+- Accessible and available risk financing options for communities
+
+**Lead Agency**
+City Budget Office
+
+**Implementing Partners**
+BCCAD, City Administrator's Office, DRRMO, CEO, CVO, CAO, CPOO
+
+| Outputs | Activities | Percent Completion | Timeline |
+|----------|-------------|---------------------|-----------|
+|          |             |                    |           |
+| 1. Availability and access to various disaster risk financing and insurance schemes for vulnerable groups and/or communities | 1.1. Produce IECs to encourage hazard insurance coverage for government, private infrastructures, and other business establishments | 100% | 2013 |
+|          | 1.2. Update the directory of available financing windows for the City and Barangay |  | 2014 |
+|          | 1.3. Promote insurance schemes among production sector, small sector, local communities and responders |  | 2015-2016 |
+|          | 2.1. Conduct research and develop new modalities for increased risk financing modalities | 30% | 60% |
+|          | 2.2. Develop an advocacy and risk communication plan to encourage communities to avail of risk financing options |  | 100% |
+
+**Outcome 6**
+End-to-end monitoring system (monitoring and response), forecasting and early warning are established and/or improve
+
+**Indicators**
+- Number of EWS established
+- EWS installed and operational
+- Local policies on early warning systems
+
+Davao City Disaster Risk Reduction and Management Plan Page 42.
+
+--- [Page 47] ---
+Lead Agency
+DRRMO
+Implementing
+City Information Office, PSSCC, CENTRAL 911, DCPO, PCG(Davao Station), BCCAD
+Partners
+Outputs
+Percent Completion
+Timeline
+2013
+2014
+2015-
+2016
+1. Enhanced monitoring,
+forecasting and hazard
+warning
+1.1 Develop and institutionalize
+EWS information sharing
+and communication systems
+between Barangays,
+communities and national
+governments
+1.2 Criteria development and
+/or accreditation standard
+for CERFs
+1.3 Facilitate the Procurement
+of equipment and establish
+facilities for EWS
+1.4 Develop localized disaster
+EWS
+1.5 Establish community-based
+EWS for various hazards
+1.6 Train barangay officials and
+accredited volunteer
+responders for hazard
+monitoring
+100%
+60%
+100%
+30%
+70%
+100%
+50%
+100%
+100%
+30%
+100%
+30%
+100%
+Thematic Area 2: Disaster Preparedness
+OVERALL RESPONSIBLE AGENCY: DRRMO
+Disaster Preparedness provides for key strategic actions that give importance to community awareness and understanding, contingency planning; conduct of local drills, and the development of a national disaster response plan. In preparing communities and governments for possible disasters, predetermined needs based on information available are crucial. Risk-related information coming from the Prevention and Mitigation aspect is necessary in order for preparedness activities to be responsive to the needs of the people and situation on the ground. Also, policies, budget and institutional mechanisms established under the Disaster Prevention and Mitigation aspect will be further enhanced through capacity building activities, development of coordination mechanisms, among others. Through
+Davao City Disaster Risk Reduction and Management Plan
+Page 43
+
+--- [Page 48] ---
+These, coordination, complementation and interoperability of work in DRRM operations and essential services will be ensured.
+
+It should be noted that the activities in this thematic area are not linear but cyclical and anticipate improvement over time. Behavioral change created by the Preparedness aspect is eventually measured by how well people respond to disasters. At the frontlines of disaster preparedness are barangays and communities. Overall, the bottom line is having more prepared citizenry and government.
+
+Goal: Establish and strengthen capacities of communities to anticipate, cope and recover from the negative impacts of emergency occurrences and disasters in the City.
+
+Objectives:
+
+1. Increase the level of awareness of the community to the threats and impacts of all hazards, risks and vulnerabilities.
+2. Equip the community with the necessary skills to cope with the negative impacts of a disaster.
+3. Increase the capacity of institutions to develop and implement comprehensive disaster preparedness policies, plans and systems.
+4. Strengthen partnership among all key players and stakeholders.
+5. Optimize utilization of capacity-building resources and match with the needs of the different sectors.
+
+Outcome 7 Increased level of awareness and enhanced capacity of the community to the threats and impacts of all hazards
+
+Indicators Number of IEC materials developed Number of IEC campaigns conducted Target population reached
+
+Lead Agency City Information Office
+
+Implementing Partners DED-ED City Schools, City Health Office, DRMMO, City Veterinarian's Office, DCPO, Task Force Davao, PRC-Davao City Chapter, CSO's
+
+Davao City Disaster Risk Reduction and Management Plan Page 44
+
+--- [Page 49] ---
+| Outputs | Activities | Percent Completion | Timeline |
+| --- | --- | --- | --- |
+| 1. A comprehensive Davao City DRRM IEC program developed and implemented | 1.1. Develop DRRM and CCA IEC and advocacy plan and program | 30% | 2013-2016 |
+| 1.2. Production of IEC materials for distribution in different barangays | 50% | 2014 |
+| 2. Manual of operations for communities developed and tested | 2.1. Activities: Drafting of Manual of operations for Barangay responders | 50% | 2015-2016 |
+|  |  | 100% |  |
+
+**Outcome 8**
+Communities are equipped with necessary skills and capability to cope with the impacts of disasters
+
+**Indicators**
+- Number of communities trained on disaster preparedness and response
+- Number of teams with specialized training trained for responder
+- Number of DRMM managers and key decision makers trained
+- Number of DRMM training institutions established
+- Number of DRMM and CCA materials developed for formal education and training programs
+
+**Lead Agency**
+DRRMO
+
+**Implementing Partners**
+BCCCD, CENTRAL 911, DCPO, BFP, CSOs, DEP-ED City Schools, City Health Office, CSSDO, PCG, BFR(DCFO), PRC Davao City Chapter
+
+| Outputs | Activities | Percent Completion | Timeline |
+| --- | --- | --- | --- |
+| 1. Increased understanding and application of risk reduction measures and better prepared communities | 1.1. Formulation of standard programming instruction (POIs), training modules | 50% | 2013-2016 |
+|  | 2.1. Conduct of trainings and simulation exercises on disaster preparedness and resilience | 100% | 2014 |
+
+Davao City Disaster Risk Reduction and Management Plan Page 45
+
+--- [Page 50] ---
+3.1 Procurement of equipment for the Barangay responders and communities 30% 50% 100%
+a. Institutions, Establishments, Offices 100%
+b. Barangay/Community level 30% 60% 100%
+
+2. DRRM is mainstreamed and taken into consideration in decision making 2.1. Customized capacity building activities for disaster risk managers and key decision makers
+a. City level 100%
+b. Barangay level 30% 60% 100%
+
+3. Sustained DRRM education and research through permanent training institutions 3.1. Establishment of DRRM Training Institute to conduct education, training, research and publication programs 25% 75% 100%
+4. Increased awareness of students through DRRM and Climate proofing of educational materials and equipment 4.1. Strengthen the integration of DRRM and CCA to school curricula (all level of education) and provide textbooks, teachers guides and manuals 30% 60% 100%
+4.2. Conduct of DRRM and CCA education and training for the public and private sectors
+
+Outcome 9 Increased DRRM and CCA capacity of the City and Barangay DRRM Committees
+
+Indicators
+• Number of operational and self-reliant local DRRM councils
+• Number of fully-functioning local DRRM offices
+• Established barangay/community responders
+
+Lead Agency Association of Barangay Captains
+
+Implementing Partners DRRMO, BCCAD, City Administrator's Office, CSSDO, City Health Office
+
+Davao City Disaster Risk Reduction and Management Plan Page 46
+
+--- [Page 51] ---
+| Outputs | Activities | Percent Completion | Timeline |
+| --- | --- | --- | --- |
+| 1. Self-reliant and operational local DRRM councils | 1.1. Accreditation of NGOs, CSOs, GOs, POs | 100% | 2013 2014 2015-2016 |
+| 2. Fully-functioning, adequately staffed and financially capable DRRM Office | 2.1. Develop the local and line agencies DRMM plan | 100% |  |
+| 2.2. Conduct risk assessments, contingency planning, knowledge management and training activities | 2.3. Inventory of resources |  |  |
+| 2.4. Stockpiling and prepositioning of resources | 2.5. Establish the DRMM Operations Center |  |  |
+
+**Outcome 10**
+Developed and implemented comprehensive city preparedness and response policies, plans, and systems
+
+**Indicators**
+- Number of approved disaster risk preparedness and response plans
+- Number of Incident Command Systems (ICS) institutionalized
+- Number of Integrated Preparedness Teams institutionalized
+- Number of integrated information system, protocols and procedures established
+- Continuity of operations of essential services plan integrated
+
+**Lead Agency**
+DRRMO
+
+**Implementing Partners**
+PSSCC, CENTRAL 911, CSOs, PRC Davao City Chapter
+
+| Outputs | Activities | Percent Completion | Timeline |
+| --- | --- | --- | --- |
+| 1. Enhanced preparedness and response strategies, including coordination mechanisms and infrastructure | 1.1. Develop and/or enhance and stipulate scenario-based preparedness and response plans | 100% | 2013 2014 2015-2016 |
+| 1.2 Develop and/or enhance a standard revision of operations for Operations Center | 1.3 Develop and/or enhance guidelines for emergency response teams |  |  |
+
+Davao City Disaster Risk Reduction and Management Plan Page 47
+
+--- [Page 52] ---
+2. Increased coordination through the incident command systems
+2.1 Capacitating Barangays on the proper guidelines for Incident Command System
+3. Better prepared citizenry
+3.1 Community-based training on preparedness for emergency situations
+3.2 Community drills and exercises
+3.3 Emergency grab kits for communities
+4. Increased coordination, complementation and interoperability of work in DRRM
+4.1 Develop and/or enhance agreed protocols for information gathering and reporting
+4.2 Develop or enhance common and integrated response assessment tools and mechanisms (i.e., SOPs for deployment, for rapid assessment teams, SRR evacuation)
+5. Resources and services assessed
+5.1 Conduct an inventory of existing resources and services
+Outcome 11
+Strengthened partnership and coordination among all key players and stakeholders
+Indicators
+• Number of MOUs/MoAs signed with CSOs and the private sector
+• Increased participation of CSOs in preparedness activities
+• Number of coordination mechanisms formulated
+• Partnership mechanisms are included in the contingency plan
+Lead Agency
+DRRMO
+Implementing Partners
+CSOs, Accredited Disaster Volunteers, CPDO, ABC, BCCAD
+Davao City Disaster Risk Reduction and Management Plan
+Page 48
+
+--- [Page 53] ---
+| Outputs | Activities | Percent Completion | Timeline |
+| --- | --- | --- | --- |
+| 2013 | 2014 | 2015-2016 |
+| Partnership arrangements among stakeholders established | 1.1. Creation, maintenance and update of a directory or database of key players and stakeholders | 30% | 100% |
+|  | 1.2. Formulate coordination mechanisms and guidelines for partnership arrangements in the contingency plan |  |  |
+
+**Thematic Area 3: Disaster Response**
+
+OVERALL RESPONSIBLE AGENCY: CENTRAL 911/CITY SOCIAL SERVICES AND DEVELOPMENT OFFICE
+
+Disaster Response provides for key actions that give importance to activities during the actual disaster response operations such as needs assessment, search and rescue, relief operations, and early recovery activities. Provides life preservation and meet the basic subsistence needs of affected population based on the needs assessment. The priority area of disaster response activities identified below will be done either before the actual response operations or during the disaster event. For those activities which need to be completed prior to actual response operations, they will be linked to activities earlier identified in the preparedness aspect. However, to ensure that the proper response "lines" is issued in doing the said activities, they have been included in this aspect. Overall, the success and realization of this priority area rely heavily on the completion of the activities under both the prevention and mitigation and preparedness aspects.
+
+This aspect includes Early Recovery which means, under IRR Rule 2 Section 1, the multidimensional process of recovery that begins in a humanitarian setting. It is guided by development principles that seek to build on humanitarian programmes and catalyze sustainable development opportunities. It also seeks to provide self-sustained nationally-owned, resilient processes for post-crisis recovery. Early recovery encompasses the restoration of basic services, livelihoods, governance, security and rule of law, environment and social dimensions, including reintegration and social and emotional rehabilitation of displaced populations.
+
+Davao City Disaster Risk Reduction and Management Plan Page 49
+
+--- [Page 54] ---
+Goal:
+Provide life preservation and meet the basic subsistence needs of affected population based on acceptable standards during or immediately after a disaster in the City.
+
+Objectives:
+1. Decrease the number of preventable deaths and injuries
+2. Provide basic subsistence needs of affected population
+3. Immediately restore basic social services and utilities
+
+Outcome 12
+Well-established disaster response operations
+
+Indicators
+• Activated functional Incident Command System (ICS) by the first responder on site
+• Availability of timely, accurate and reliable information during response
+• Acquired additional equipment for timely and efficient response
+• Use of relief distribution mechanisms
+
+Lead Agency
+CENTRAL 911
+
+Implementing Partners
+DRRMO, CSSDO, PRC, DCPD, EASTMINCOM, PCG, TASK FORCE DAVAO, BCCAD, TMC
+
+Outputs
+| Outputs | Activities | Operational Timeline |
+| --- | --- | --- |
+| 1. Activated functional ICS on site | 1.1. Activation of the ICS at the City and Barangay | 1-7 days |
+|  | 1.2. Strengthened the ICS mechanism and approaches | 1-3 months |
+|  |  | Beyond 3 months |
+
+1.1. Activation of the ICS at the City and Barangay
+1.2. Strengthened the ICS mechanism and approaches
+
+Slow onset disaster: activate 24 hours prior to the incident
+Rapid onset disasters: within 12 hours after impact
+
+Davao City Disaster Risk Reduction and Management Plan Page 50
+
+--- [Page 55] ---
+2. Well-established system of information gathering, reporting and dissemination
+2.1. Issue public advisories in accordance with the protocols developed by the DRRMC
+2.2. Full Activation of the DRRMC
+3. Established and functioning system for coordinated and efficient relief operations
+3.1. Activation of relief distribution points/centers
+3.2. Provision for food stockpiles
+3.3. Review and Strengthen the mechanism of relief distribution/operations
+4. Availability of equipment and response paraphernalia
+4.1 Purchase of equipment and other emergency paraphernalia
+4.2 Acquisition of rescue/response vehicles and other construction equipment
+Outcome 13 Adequate and prompt assessment of needs and damages
+Indicators
+• Rapid needs assessment conducted in all affected areas
+• Damage assessment and needs analysis conducted covering all areas affected
+• Integrated assessment from the City to the barangay levels
+Lead Agency CSSDIO
+Implementing Partners DRRMQ, CAO, CVO, CEO, BCCAD, Barangay DRRMC's concern
+Outputs Activities Operational Timeline
+1-7 days 1-3 months Beyond 3 months
+1. Timely and appropriate and consolidated needs assessment reports
+1.1. Activation of RDANA team
+1.2. Prioritization of the RDANA in the Utilization of resources
+Within 12 hours
+Page 51
+
+--- [Page 56] ---
+2. Timely and appropriate and consolidated incident assessment reports
+2.1 Using the latest EANA assessment tool, correlate, analyze and disseminate data by the EANA
+Within 24 to 48 hours
+Outcome 14 Integrated and coordinated Search Rescue and Retrieval (SRR) capacity
+Indicators
+* Number of persons rescued
+* Number of bodies retrieved, identified and turned-over to their respective families
+Lead Agencies
+CENTRAL 911
+Implementing Partners
+CHO, DCP, DRRMO, Accredited Community Disaster Volunteers, HRC, CSSDO, TMC, PSSCC, EASTMINCOM, TASK FORCE DAVAO
+Outputs
+Activities
+Operational Timeline
+1-7 days
+1-3 months
+Beyond 3 mos.
+1. Persons found/retrieved & re-integrated/reconnected with their families
+1.1. Develop and implement a system for SRR and proper disposal with concerned agencies
+1.2. Documentation of Disaster Victim Identification (DVI)
+Within 48 hours
+Outcome 15 Evacuated safely and on time affected communities
+Indicators
+* Number of persons transported and/or evacuated by voluntary, pre-emptive and mandatory actions
+Lead Agency
+DRRMO
+Implementing Partners
+PSSCC, CENTRAL 911, BORRMIC, DCPO, ACDVs
+Page 52
+Davao City Disaster Risk Reduction and Management Plan
+
+--- [Page 57] ---
+| Outputs | Activities | Operational Timeline |
+| --- | --- | --- |
+| 1. Safe and timely evacuation of affected communities | 1.1. Coordination with BDRRMC's system and protocols | Within # days 1-3 months Beyond 3 months |
+| 1.2. Activate an evacuation alert system and protocols | hours |
+| Outcome 16 Temporary shelter needs are adequately addressed Indicators | Number of temporary shelters vis-à-vis number of people needing them Restored education services when evacuation centers are schools Number of evacuation centers with areas for nursing mothers Separate areas for children and adults Number of evacuation centers with livelihood training programs for the people Lead Agency | CSSDO Implementing Partners | DRRMOC, CHO, CEO, CVO, CAO, CPDO (Housing Division), DEP-ED City Schools |
+| Outputs | Activities | Operational Timeline |
+| 1. All evacuees and their assets are sheltered in adequately equipped facilities for all (including areas for lactating mothers) | 1.1. Identification of standard-based | X X |
+| 1.2. Provision of WASH services | 1.3. Provision of tents and other temporary shelter facilities | X |
+| 1.4. Adherence to guidelines on the timelines and placement of classrooms and IECs in order not to hamper education | 1.5. Provision of standard space for lactating mothers, nursery (IC and learning spaces) | X |
+| 2. Establishment of Women-Friendly Spaces | 2.1. Putting up of Women Friendly Spaces for Counseling, IEC among vulnerable population on GBV and Referral Pathway | X X |
+| Davao City Disaster Risk Reduction and Management Plan Page 53 |
+
+--- [Page 58] ---
+3. Child-friendly spaces or temporary learning spaces/areas in the evacuation center for continuity of education
+4. Safety for the sources of livelihood of the people
+5. Increased and diversified people's livelihood skills
+6. Area for worship
+
+Outcome 17 Basic health services provided to affected population whether inside or outside ECs
+Indicators Number of patients seen, treated and served
+Number of identified high risk children enrolled in the nutrition in-emergencies program
+Number of sanitation services based on standards
+Minimum Initial Service Package objectives achieved
+Lead Agency CHO
+Implementing Partners CSSSDO, CENTRAL 911, BDRRMC's, PRC
+
+Operational Timeline
+1-7 days
+1-3 months
+Beyond 3months
+Outputs Activities
+1. All patients seen/treated and epidemics prevented
+1.1. Medical consultation & nutritional assessment
+X
+X
+Davao City Disaster Risk Reduction and Management Plan Page 54
+
+--- [Page 59] ---
+2. Mainstreaming and implementation of the Minimum Initial Service Package (MISP) Objectives
+
+1.2. Capacity Building/Training on MISP
+1.3. Integration of MESP in the Local Health Plans
+1.4. Provision of RHT Kits and Hygiene Kits
+1.5. Capacity Building/Training on Basic Emergency Care (BEMONC)
+
+X
+X
+X
+
+3. Water-borne diseases prevented
+
+3.1. Assessment of water quality and conduct of quick damage repairs and road clearing operations;
+
+X
+X
+
+4. Database of hospitals and other health care providers
+
+4.1. Determination if there is enough clinics and hospital to address the casualties
+
+X
+X
+
+5. Lifelines restored
+
+5.1. Immediate restoration of lifelines
+
+X
+X
+
+Outcome 18 Psychosocial well-being promoted and mental health problems and risks reduced
+
+Indicators
+- Number of affected population which were provided w/ MHPF (mental health and psychosocial services)
+- Number of people who are undergoing trauma debriefing (critical incident stress debriefing)
+- % of the population undergoing psychological stress debriefing
+
+Lead Agency CSSDO
+Implementing Partners CHO, CSO's
+
+Davao City Disaster Risk Reduction and Management Plan Page 55
+
+--- [Page 60] ---
+**Operational Timeline**
+
+| Outputs | Activities | 1-7 days | 1-3 months | Beyond 3 months |
+|----------|-------------|-----------|-------------|------------------|
+| 1. Disaster-affected populations in good mental and psychological state | 1.1. Coordination among members of MHRP with different phases, adopt the current guidelines and/or protocols | With different phases, adopt the current guidelines and/or protocols | X | X |
+| 1.2. Psychosocial programs and referral | | | X | X |
+| 1.3. Conduct of first aid (traumatic) and/or psychological stress debriefings | | | X | X |
+
+**Outcome 19**
+Coordinated, Integrated System for Early Recovery implemented
+
+**Indicators**
+* Number of persons w/ continuing assistance (financial, livelihood)
+* % of vulnerable population provided with adequate and appropriate risk protection measures
+
+**Lead Agency**
+CSSDO
+
+**Implementing Partners**
+DRRMO, CEO, CAO, CVO, BCCAD, CPDO
+
+**Operational Timeline**
+
+| Outputs | Activities | 1-7 days | 1-3 months | Beyond 3 months |
+|----------|-------------|-----------|-------------|------------------|
+| 1. Mechanisms for coordinated and integrated early recovery established and essential services restored | 1.1. Conduct of Post-DANA | X | X | X |
+| 1.2. Develop and implement a system for early recovery, to include specific activities addressing needs identified | | | X | X |
+| 1.3. Develop partnership mechanism with utility providers and key stakeholders | | | X | X |
+| 1.4. Design and implement life-saving measures other than relief or food distribution | | | X | X |
+
+**Davao City Disaster Risk Reduction and Management Plan**
+Page 56
+
+--- [Page 61] ---
+**Thematic Area 4: Disaster Rehabilitation and Recovery**
+
+OVERALL RESPONSIBLE AGENCY: City Social Services and Development Office/CEO
+
+The Disaster Rehabilitation and Recovery aspect covers concerns related to employment and livelihoods, infrastructure, and lifeline facilities, and housing and resettlement. These are recovery efforts done when people are already outside of the evacuation centres.
+
+Specifically for Priority Area of Disaster Response and Rehabilitation and Recovery, Operational Timelines are used primarily to give an overall guidance on the "rapid" time element in providing humanitarian activities and recovering from disasters. Likewise, the operational timelines will guide the plan's implementation and monitoring activities for the two priority areas. These operational timelines are as follows:
+
+- **Immediate Term (IT)**: Within 1 year after the occurrence of the disaster.
+- **Short Term (ST)**: Within 1 to 3 years after the occurrence of the disaster.
+- **Medium Term (MT)**: Within 3 to 6 years after the occurrence of the disaster.
+- **Long Term (LT)**: Beyond 6 years after the occurrence of the disaster.
+
+**Goal:** Restore and improve facilities, livelihoods, and living conditions and organizational capacities of affected communities, and reduce disaster risks in accordance with the "build back better" principle.
+
+**Objectives:**
+1. To restore people's means of livelihood and continuity of economic activities and business.
+2. To restore shelter and other buildings/installation.
+3. To reconstruct infrastructure and other public utilities.
+4. To assist in the physical and psychological rehabilitation of persons who suffered from the effects of disaster.
+
+**Outcome 20:**
+**Damages, Losses and Needs Assessed**
+
+**Indicators:**
+- % of affected constituents' livelihood activities restored/revived through government/LGU support.
+- % increase in livelihoods established through government/LGU support.
+- % of extent of damages/approved credit for affected sectors.
+
+**Lead Agency:** CSSDO
+
+**Implementing Partners:** DRRMO, CEO, CVO, CAO, BCCAD, DCCCI, DEP-ED City Schools
+
+Davao City Disaster Risk Reduction and Management Plan
+Page 57
+
+--- [Page 62] ---
+**Davao City Disaster Risk Reduction and Management Plan**
+
+**Page 58**
+
+| Outputs | Activities | Operational Timeline |
+|----------|-------------|-----------------------|
+| Within 1yr | Within 1-3yrs | Within 3-6yrs | Beyond 6yrs |
+| 1. Post Disaster Needs Assessment | 1.1. Conduct Post-Disaster Needs Assessment (PDNA) | X |
+| 1.2. Consolidation and Analysis of Post Damage Report | | | |
+| 2. Strategic Action Plan | 2.1. Develop the formulation of the Strategic Action Plan for disaster-affected areas | X | | |
+
+**Economic activities restored and, if possible, strengthened or expanded**
+
+**Outcome 21**
+
+**Indicators**
+- % of livelihood activities restored/revised through government/LGU support
+- % increase in livelihoods established through government/LGU support
+- % of approved credit for affected sectors
+- % increase in income
+- % of affected sectors employed
+
+**Lead Agency**
+CSSDOO
+
+**Implementing Partners**
+CAO, CVO, DCCCI, CSO's
+
+| Outputs | Activities | Operational Timeline |
+|----------|-------------|-----------------------|
+| Within 1yr | Within 1-3yrs | Within 3-6yrs | Beyond 6yrs |
+| Livelhood programs and projects | 1.1. Identify the needed assistance and formulate/ implement appropriate programs | X | | |
+| 1.2. Initiate community-based technical skills training | | | |
+| Credit facilities for affected sectors | 2.1. Identify/mobilize funding sources | X | | |
+| 2.2. Advocacy | | | |
+| 2.3. Capacity-Building | | | |
+
+This document outlines the operational timeline and indicators for the Davao City Disaster Risk Reduction and Management Plan, focusing on the restoration and strengthening of economic activities post-disaster. The lead agency is CSSDOO, with implementing partners including CAO, CVO, DCCCI, and CSO's. The plan includes specific activities and timelines for conducting Post-Disaster Needs Assessments, developing the Strategic Action Plan, and restoring livelihoods and credit facilities for affected sectors.
+
+--- [Page 63] ---
+Outcome 22.
+DRRM/CCA elements incorporated in human settlement
+Indicators
+• % of affected Barangays implementing appropriate safety codes
+• % of affected Barangays providing safe relocation and resettlement areas
+• Relevant government housing cum livelihood programs developed or implemented
+Lead Agency
+CPDO
+Implementing Partners
+CSSDO, BCCAD, CSO's, CEO
+Outputs
+Activities
+Operational Timeline
+Within
+1yr
+Within
+1-3yrs
+Within
+3-5yrs
+Beyond
+6yrs
+1. Safe relocation sites
+1.1. Identify and provide
+suitable relocation sites
+for affected population
+X
+X
+2. Disaster-resilient housing
+designed and
+reconstructed
+2.1. Design/construction of
+disaster-resilient
+housing
+X
+X
+X
+3. Self-sufficient
+communities with access
+to basic social services
+3.1. Conduct trainings for
+social preparation of
+host communities and
+those that will be
+relocated to reduce
+conflict
+Outcome 23
+Disaster and climate change-resilient and infrastructure reconstructed
+Indicators
+• % of disaster-resilient transport infrastructure facilities rehabilitated/
+reconstructed
+• % of damaged/reconstructed social infrastructure (hospitals and schools)
+following safety standards
+• % of applications approved within the prescribed time (linked to risk transfer
+mechanism and anti-red tape act RA 9485)
+Lead Agency
+CEO
+Implementing Partners
+CSSDO, CPDO, City Building Official, BCCAD, DEP-ED City Schools, CSO's
+Davao City Disaster Risk Reduction and Management Plan
+Page 59
+
+--- [Page 64] ---
+| Outputs | Activities | Operational Timeline |
+| --- | --- | --- |
+| 1. Infrastructure facilities restored / rehabilitated according to safety and resiliency standards | 1.1. Undertake the necessary rehabilitation or repair of damaged infrastructures | Within 1yr Within 1-3yrs Within 3-6yrs Beyond 6yrs |
+| 2. Development permits approved within prescribed timeline | 1.2. Implement building code and promotion of green technology | X X X X |
+| 2.1. Close monitoring and/ or tracking of approval of infrastructure projects and permits | X X X X |
+Outcome 24: A psychologically sound, safe, and secured citizenry that is protected from the effects of disasters able to restore to normal functioning after each disaster
+
+Indicators: % of vulnerable population provided with adequate and appropriate risk protection measures
+
+Lead Agency: CHQ
+
+Implementing Partners: CSSDO, DRMNO, PRC, DEP-ED City Schools
+
+| Outputs | Activities | Operational Timeline |
+| --- | --- | --- |
+| 1. Vulnerable population provided with adequate and appropriate risk protection measures | 1.1. Develop systems for appropriate risk protection measures | Within 1yr Within 1-3yrs Within 3-6yrs Beyond 6yrs |
+| 1.2. Conduct of post-disaster/conflict needs analysis with affected communities | X | X |
+| 1.3. Develop systems of support and communication among key stakeholders | X | X |
+
+--- [Page 65] ---
+7. Establishment of
+* Centralized Data Base
+* Knowledge Management and Training Institute
+* Davao City Flood early warning systems (through automation and manual systems)
+
+8. Development of IEC and advocacy materials on DRRM and CCA
+
+9. Institutional capability program on DRRM and CCA for decision makers, public sector employees, and key stakeholders;
+
+10. Strengthening the mainstreaming of DRRM and CCA to school curriculum
+
+Cross-Cutting Concerns
+
+The Davao City DRRMP recognizes that certain concerns cut across the four thematic areas. These include health, human-induced disasters, gender mainstreaming, environmental protection, cultural sensitivity or indigenous practices, and the rights-based approach. The Davao City DRRMP shall be the unified instrument by which the Davao City Government ensures consistency of DRM measures with the physical framework, social and economic and environmental plans of barangays, communities, and other institutions in the City.
+
+Health
+
+People's vulnerability to disaster has become more complicated with the presence of climate change. Hazards such as floods and drought can overlap, resulting in another type of disaster. Minor disturbances in the environment surrounding the ecosystem can have far-reaching consequences on the ecosystems' ability to provide services such as water supply, food production, and air quality. Malaria and dengue (which increases mosquito abundance in areas experiencing warmer and damper temperatures, respectively). Likewise, rising sea-level will increase flooding events disproportionately affect the poor through sanitation of their water sources, and intrusion of sea waters in the different sources of waters. From this viewpoint, the City look into this very critical concerns and incorporated in the Davao City DRRMP.
+
+Human-induced disasters
+
+Since the City has not been exempted by this different human-induced disasters brought about by armed conflict and acts of terrorism, this plan would also look into considering some very important concerns. In conflict affected areas, most people are vulnerable not only because they exposed to natural hazards but more often due to disasters more commonly associated with armed conflict and acts of terrorism such as bomb explosions. Considerations of the factors which contribute to these risks and vulnerabilities should be looked into at all times, taking cognizance of the underlying causes of people's vulnerabilities.
+
+--- [Page 66] ---
+1.4. Build capacities of psychosocial care providers
+
+1.5. Conduct assessments and treatments/referral system
+
+List of Davao City DRRMP Priority Programs/Projects
+
+In the implementation of the Davao City DRRMP, priority programs/projects and demonstration sites will be identified. This programs/projects shall be conducted in order to create a basis for future extension to other areas in the City exposed to different types of hazards and those who have already been categorized as high risk areas by reason of exposure and vulnerability of its population. All priority programs/projects are to be implemented within the immediate or short term period from 2013 to 2014. The priority projects of the Davao City DRRMP are:
+
+1. Development of the following plans:
+- Davao City Disaster Risk Reduction and Management Investment Fund Plan;
+- Davao City Disaster Risk Reduction and Management Plan;
+- Revisions of the different response plans;
+- Contingency Plan per hazard;
+- Risk Financing
+
+2. Reconstitution of the Davao City DRM Council and the different Barangay Disaster Risk Reduction and Management Committees; their respective operations centers, as prescribed by RA 10121.
+
+3. Validation of the Conduct existing DRRM and CCA resources and services;
+
+4. Hazards, risks and vulnerabilities' assessments specially in the most high-risk areas in the City;
+
+5. Development of guidelines on
+- Communications and information protocol before, during and after disasters
+- Standard guidelines for local flood early warning systems
+- Evacuation
+- Infrastructure redesign and/or modifications
+- Review of the Manual of operations for disaster operations centers
+- Accreditation of stakeholders including volunteer groups
+
+6. Development of gender-based tools on
+- DRRM and CCA mainstreaming in the different development plans
+- DANA and Post-DANA
+- Psychosocial concerns
+
+--- [Page 67] ---
+Gender mainstreaming
+
+Gender mainstreaming is about the recognition, acceptance, identification and addressing of the different roles, needs, capacities and vulnerabilities of men and women. The City through Davao City DRMP is committed to promoting gender-sensitive vulnerability and capacity analysis in all disaster risk reduction and management activities. It encourages balancing the roles, responsibilities, needs, interests, capacities of and effect on both genders of response and contingency plans as well as implementation of community-based activities. Gender mainstreaming is about reducing the vulnerabilities of men and women to disasters and encourages a balance in the participation and decision making roles of men and women in DRRM.
+
+Environmental protection
+
+The enactment of different environmental ordinances of the City by the Legislative body has put the City in the forefront of environmental protection. Concerns for the environment is essential component of DRR/CCA in order to minimize vulnerability and avoid increasing the risk of this community. It also underlines the thrust of the Local Government to sustain the ecosystem of the City. Strategic Environmental Areas are established so that every activities in all priority areas do not create stress on the remaining natural resources.
+
+Cultural sensitivity/indigenous practices
+
+Davao City is being inhabited by different Indigenous Peoples. Hence, the Davao City DRMP recognizes the importance of culturally-sensitive risk reduction measures at all levels. People's vulnerability to disasters as well as their capacities to adapt to the changing realities are more often than not related to cultural and indigenous practices. By being sensitive to the indigenous practices and local knowledge, DRRM approaches will become more effective and more easily understood and embraced by the people without any discrimination as to race, religion, culture and ethnicity.
+
+Rights-based approach
+
+Republic Act 10121, has on its policy on peoples rights to life and property. Since people has the right to be protected, this Davao City DRMP will ensure that the policies being laid down will then be provided. This policy has also been the thrust of the City Government of Davao. Priority was given because people have the right to live, safety, information, education, cultural beliefs and right to better lives as protected by the Constitution.
+
+--- [Page 68] ---
+V. IMPLEMENTATION STRATEGIES
+
+Strategies are identified to implement the Davao City DRMMF and achieve the desired key results under each of the four thematic areas. This results may inter-fused with each other but the ultimate aimed is to achieved the desired dream of making Davao City as the most Livable City in Asia.
+
+Advocacy and Information, Education and Communication (IEC)
+
+A strong commitment is required to save lives and properties threatened by natural and human-induced disasters. Achieving this will need increasing visibility and understanding of DRMM and CCA issues, executing and developing more partnerships, encouraging actions and gathering public support for successful implementation of the different activities. The Davao City DRMMF will use evidence-based advocacy to influence people, policies and practices that contribute to the resilience of resilient communities by raising awareness, working with the media and key stakeholders. The Davao City DRMM will continue to develop advocacy, IEC and various communication strategies based on risk assessments and good DRMM practices to be shared with other barangays and communities in the City.
+
+Community-based capability building
+
+The existence of different skilled trainers in the City will now be strengthened to provide a uniform approach and provide a venue for knowledge sharing from different pool of trainers coming from other organizations and institutions in the City.
+
+The Knowledge Management Training Institute will coordinate and becomes the venue for this activity in order to customized training programs and ensure that people are trained based on the needed skills in the different DRMM aspects with out prejudice to given culture and tradition of a certain community. Different people have different needs and capacities and developing community-based capability building programs ensures that knowledge, skills and attitudes are enhanced and built upon further.
+
+Contingency Planning
+
+Plans as an essential component shall be revisited or attuned to the changing times. Contingency and other response plans will now be reviewed and tested to ensure that it will provide a better view of the existing society.
+
+Different thematic areas of the DRMM shall be given importance and aligned with the thrust of the Local Government. Past experiences of disasters shall be taken into consideration for the development and revision of all this plans. Likewise, BDRMMC shall also be encouraged to have their plans in adherence to this plan to ensure uniformity of responses during emergencies and disaster.
+
+--- [Page 69] ---
+Education on DRRM and CCA for all
+
+Mainstreaming DRRM into formal education should be undertaken through the integration of DRRM and CCA concepts in the curriculum for basic education, the National Service Training Program (NSTP) at the tertiary level, and bachelor's degree programs. This also includes the conduct of DRRM and CCA training of all public sector employees as mandated by law and the training of teachers and development of teaching materials at the primary and secondary levels.
+
+Institutionalization of DRRMCs and LDRRMOs
+
+Davao City Government has in 1996 created the Disaster Coordinating Division whose mandate is to ensure that all DRRM programs and projects of the City shall be implemented. However with the advent of Republic Act 10211 which requires creation of permanent local DRRM offices to attuned to the new law. It is also ensured that all DRRM-related activities, plans and programs will be implemented and sustained, especially at the local level. The Davao City DRRM Council and Barangay BDRRMCs shall also served as a tool in ensuring a continued approach in the implementation of the different DRRM programs in the City. Having a point of convergence it is important to ensure that risk reduction measures are being implemented in the city. This will help in reducing people and institutional vulnerabilities to disasters. This will likewise promote the paradigm shift towards mainstreaming DRRM in local planning by investing risk-reduction measures from the reactive mode exemplified by activities limited to disaster response operations.
+
+Research, Technology Development and Knowledge Management
+
+With the changes in the climate and technological advances, regularly conducting research and technology development will contribute to more innovative and adaptive mechanisms and approaches towards DRRM and CCA. Along side new information, knowledge management through database development, documentation, recognition and replication of good practices will help achieve the objectives and targets of the RDRRMP through more efficient use of resources, learnings and experiences.
+
+Networking and partnership building between and among stakeholders, media and tiers of government
+
+No one can claim to have monopoly of creating a safe, adaptive and disaster resilient communities. Henceforth, participation and coordination of other sectors in the City MUST always be the preeminent concern of the Davao City DRRM. Success in the implementation of the programs/projects is highly dependent on the close collaboration and cooperation of the different stakeholders. Building effective and mutually reinforcing partnerships and evolving networks ensure the multi-stakeholder and multi-sectorial participation of the different players in DRRM.
+
+Pre-disaster Recovery Planning for Faster Post-disaster Rehabilitation and Recovery
+
+Whenever a disaster occurs in the region, there is always great pressure to quickly reconstruct damaged infrastructures and critical other facilities. Pre-disaster recovery planning will help in a more effective Davao City Disaster Risk Reduction and Management Plan Page 65
+
+--- [Page 70] ---
+response, hasten the recovery from the impacts of a disaster, and ensure the achievement of rehabilitation and recovery outcomes. Pre-disaster recovery planning also promotes greater participation in a non-disaster environment. Within the perspective of building back better, this activity will involve creating a risk assessment, determining the key areas of intervention, and establishing post-disaster recovery organization. Key inputs to this activity are the risk assessments as well as lessons learned from earlier disaster rehabilitation and recovery experiences.
+Davao City Disaster Risk Reduction and Management Plan Page 66
+
+--- [Page 71] ---
+VI. IMPLEMENTATION MECHANISMS
+
+Implementation of the Davao City DRMP shall take place through the integration of DRRM into the different plans of the City (Comprehensive Land Use Plan; Comprehensive Development Plan; City's Shelter Plan; City Drainage Plan).
+
+Statutory Responsibilities - Organizational Complement of the Davao City Disaster Risk Reduction Management Council
+
+This plan envisions the establishment of an organization that will serve as a vehicle for reducing the risk and vulnerability to disasters in response to calamities and other managing resource. Under this plan, the Davao City Disaster Risk Reduction Management Council (hereinafter referred to as the Council) shall be established and, operating with a facility to be known as the Davao City Disaster Risk Reduction and Management Operation Center (DCDRRMOQ -Organizational Structure), shall exercise direction and control over all disaster risk reduction and management operations.
+
+The Local Chief Executive (LCE) shall coordinate the city government's support/ assistance activities in disaster management through the Council. On the other hand, the Council shall provide the City Mayor with a facility to manage and control over multi-department types of disaster-stabilization operations.
+
+The Council shall have as members the following:
+
+City Mayor
+- Chairmanperson
+Vice-Mayor
+- Vice-Chairperson
+Head, City Planning and Dev't. Office
+- Member
+Head, City Health Office
+- Member
+Head, City Agricultural Office
+- Member
+Head, City Social Services and Dev't. Office
+- Member
+Head, Gender and Dev't. Office
+- Member
+Head, City Environment and Natural Resources
+- Member
+Head, City Administrative Office
+- Member
+Head, City Budget Office
+- Member
+Head, City Information Office
+- Member
+Head, BCFD
+- Member
+Head, Traffic Management Center
+- Member
+City Fire Marshall, BFF
+- Member
+City Schools Division, Jrk, Dept.Ed
+- Member
+Chapter President, PRC-Davao City Chapter
+- Member
+City Director, DCPO
+- Member
+Commanding Officer, TFD
+- Member
+Commanding Officer, EASTMINCOM
+- Member
+District Commander, PCCS
+- Member
+Representative, DCCCI
+- Member
+Representative, Regional Community Defense Group XI
+- Member
+
+Davao City Disaster Risk Reduction and Management Plan
+Page 67
+
+--- [Page 72] ---
+Representatives, Civil Society Organizations
+President, Association of Barangay Captains
+COO - CENTRAL 911
+Public Safety Security Command Center
+Office of Civil Defense Xi
+
+Member
+
+The Davao City Disaster Risk Reduction and Management Council (DCDRRMOC) has established six (6) committees; the four (4) Framework exists but an additional committees were created to ensure that all aspects of the DRRM and CCA can be taken care of.
+
+Disaster Risk Reduction and Management Office and Disaster Risk Reduction and Management Operation Center
+In the day-to-day implementation of its functions, the Council has a facility known as the Disaster Risk Reduction and Management Office and the Disaster Risk Reduction and Management Operation Center (DOC). The DCDRRMRO-DCDRRMOC is a facility that serves the requirements of the OCM as well as the DCDRRMOC in carrying out its functions. It is responsible for coordinating related activities and as the repository of statistical data, information and reports. It is headed by the Disaster Risk Reduction and Management Officer.
+
+The DCDRRMRO-DCDRRMOC is equipped with communications facilities to network with the Council's member-agencies in order to mitigate, prevent, mobilize, respond, and provide immediate emergency rescue assistance to victims of any given emergency situation that has a potential to develop into a disaster proportion. Thus, it operates on a 24/7 basis.
+
+Functions under the Provisions of R.A. 10121
+A. Administration and Training
+1. Organize and conduct training, orientation, and, and knowledge management activities at disaster risk reduction and management at the local level.
+2. Prepare and submit to the local Sangguniang Panlungsod the LDRRMO Plan and budget, proposed programming of LDRRMMF, other disaster risk reduction and management resources, and other regular funding sources and budgetary support.
+3. Organize, train, equip and supervise the local emergency response teams and the ACDVs, ensuring that humanitarian aid workers are equipped with basic skills to assist mothers to breastfeed.
+4. Disseminate information and raise public awareness about hazards, vulnerabilities and risk, their nature, effects, early warning signs and countermeasures.
+5. Develop, strengthen and operationalize mechanisms for partnership or networking with the private sector, CSOs and volunteer groups.
+6. Prepare and submit, the report on the utilization of the LDRRMMF and other dedicated disaster risk reduction and management resources to the Local Commission on Audit, copy furnished the regional director of the OCM and the Local Government Operations Office of the LGU.
+
+Davao City Disaster Risk Reduction and Management Plan
+Page 68
+
+--- [Page 73] ---
+7. Coordinate other disaster risk reduction and management activities.
+8. Serve as secretariat of the DRRMNC.
+9. Act on other matters relative to administrative functions.
+
+B. Planning and Research
+
+10. Design program and coordinate disaster risk reduction and management activities consistent with the National Council standards.
+11. Facilitate and support risk assessments and contingency planning activities.
+12. Consolidate local disaster risk information which includes natural hazards, vulnerabilities, and climate change risks, and maintain local risk mass.
+13. Identifies, assesses, and manages hazards, vulnerabilities, and risks.
+14. Maintain a database of human resources, equipment, directories, and location of critical infrastructures and their capabilities.
+15. Take all necessary steps on a continuing basis to maintain, provide, or arrange the provision of or to otherwise make available, suitably-trained and competent personnel for effective civil defense and disaster risk reduction and management.
+16. Formulate and implement a comprehensive and integrated DRMP in accordance with the national, regional framework, and policies on disaster risk reduction in close coordination with Local Development Council.
+17. Act on other matters that may be authorized.
+
+C. Operation and Warning
+
+18. Operate a multi-hazard early warning system linked to disaster risk reduction provide accurate and timely advice to national and local emergency organizations.
+19. Respond to and manage adverse effects of emergencies and carry out emergencies and carry out recovery activities in the affected area, ensuring that there is an efficient mechanism for immediate delivery of food, shelter, and medical supplies for women and children, endeavor to create a special place where mothers can breastfeed their infants and children can help with breastfeeding, feed and care for their babies and give support to each other.
+20. Establish the Disaster Risk Reduction and Management Operation Center. Act on other matters that may be authorized.
+
+Agency Leads and Implementing Partners
+
+Agency leads and implementing partner organizations and/or groups are identified in the Davao City DRRMP to ensure the effective implementation of the plan.
+
+--- [Page 74] ---
+Davao City DRRM Lead Agencies - The overall lead or focal agency for each of the four (4) thematic areas are the different members of the Davao City DRRM, namely:
+
+• Lead Agency for Disaster Prevention and Mitigation: City Planning and Development Office (CPDO)
+• Lead Agency for Disaster Preparedness: Disaster Risk Reduction and Management Office(DRRM)/CENTRAL 911/CSDDO
+• Lead Agency for Disaster Response: CENTRAL 911/CSDDO
+• Lead Agency for Rehabilitation and Recovery: City Social Services and Development Office(CSSDO)/CIO
+
+Agency Leads - the following are their general duties and responsibilities:
+
+1. Takes the lead in initiating the implementation of the activities
+2. Coordinates and collaborates with the different implementing partners to ensure that the activities are operationalized.
+3. Monitors the progress of the activities.
+4. Evaluates the effectiveness of the prevention development and program efficiency.
+5. Consolidates reports from the implementing partners and submits to the respective lead agency of the DRRM priority areas.
+
+Implementing Partners - the following are their general duties and responsibilities:
+
+1. Perform the activities to achieve the specific outcomes.
+2. Work with other implementing partners within the context of coordination, collaboration and partnership.
+3. Submit reports to Agency Leads.
+
+Resource Mobilization
+
+The resources coming from the different offices within the City Government can be utilized to financed different programs and projects for the DRRM/CCA. However, the following sources can be tapped to fund the various DRRM programs and projects:
+
+1. Annual Development Fund - specially those for infrastructure development
+2. Local Disaster Risk Reduction and Management Fund (LDRRMF)
+3. Priority Development Assistance Fund (POAF)
+4. Donor Funds
+
+Monitoring and Evaluation
+
+Feedback mechanisms are important aspects of gauging performance targets and learning from experiences on the ground. The Davao City DRMRP, being a term plan will definitely be anchored on the political term of an existing LGU administration and leadership, hence, review can be done after the term of has ended to attuned to the thrust of the sitting chairperson of the council.
+
+--- [Page 75] ---
+Monitoring and evaluation are essential components of results-based programming in DRRM as these will ensure that the plan's on-going implementation and that lessons from past experiences become input to the plan altogether. Also, through monitoring and evaluation activities, appropriate and needed revisions and/or changes can be identified, from which the plan can be revised and/or implemented again, in case even more appropriate ones are realized. These will be done by the Davao City DRRMC, in close coordination with the Davao City DRRMC's Four (4) lead agencies, and will focus on relevance, effectiveness, impact, and sustainability. A standard monitoring and evaluation template will be done by the City Planning and Development Office and the Davao City DRRMC in consultation with different stakeholders.
+
+Monitoring and evaluation will use the indicators, targets and activities identified in each of the four thematic areas of the Davao City DRRMP. The indicators set will be applicable to both the City and barangays. Customization of the targets will depend on the risk assessments and analysis done in the different barangays and communities in the City. Different outputs and activities will be monitored by the different DRRMCs' chairperson to make sure that the activities are delivered efficiently and effectively.
+
+This will also include an audit report on the use and utilization of the DRRMRF and how the said fund contributed to the implementation of the Plan.
+
+Throughout all activities, ensuring "Faster, Adaptive and Disaster-Resilient Davao City Communities toward Sustainable Development" will be the main focus. It will be evident that the learning is captured and shared amongst the various stakeholders, leads and partners. Throughout its implementation, reporting on the progress on the Plan will be communicated through various media and partners, making sure that the learning are shared effectively. These will then feed into the Monitoring and Evaluation activities, it will be essential to link up the learning from the Davao City DRRMP implementation with that of other related plans.
+
+Steps for the Monitoring and Evaluation Process
+
+| Level | Step | Lead |
+| --- | --- | --- |
+| 1. | Barangay DRRM Committees together with key relevant stakeholders and partners will take the lead in the process by looking into their progress vis-a-vis their assigned tasks. A draft validation report will be submitted to the Davao City DRRMC. | Davao City DRRM Office |
+| 2. | The Davao City DRRMC will prepare validation report. Once finalized, a report will be submitted to the Regional DRRM Council. | Davao City DRRM Council |
+
+Davao City Disaster Risk Reduction and Management Plan Page 71
+
+--- [Page 76] ---
+| Level | Step | Lead |
+| --- | --- | --- |
+| Davao City DRRMC | 3. The implementing partners in each of the outcomes and/or activities identified under the Davao City DRRMAP will submit a report on the progress of the implementation to the lead agency in each of the activities. | Implementing Partners |
+|  | 4. The lead Agency will consolidate the reports and submit to the Davao City DRRMC | Lead Agency |
+|  | 5. The Davao City DRRMC will evaluate and if validated submits report to the Regional DRRM through the OCD. | Region XI DRRM Council |
+| Other Monitoring Tool | In line with the City's adherence to goals sets by other government agencies, other monitoring tools shall be adopted to ensure that the implementation of the plan can be captured and the same will be used to monitor the progress especially on different DRM programs and projects. On the otherhand, different stakeholders in the City, the Civil Society Organizations shall also be given the opportunity to be inform on the progress as well as the challenges meet in the implementation of the Plan. Amendment Clause | This plan must be reviewed and amended every three (3) years to conform with the term of office of the elected local government unit officials. However, any amendments can be undertaken as the need arises and in the event of any changes as a result of a disaster which requires immediate revision of this plan. |
+
+--- [Page 77] ---
+DAVAO CITY HAZARD AND RISK PROFILE
+
+| SARANGAY (Poblacion) | TYPE OF HAZARD | AREAS LIKELY TO BE AFFECTED | TOTAL NUMBER OF POPULATION LIKELY TO BE AFFECTED | TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED |
+|------------------------|-----------------|-------------------------------|----------------------------------------------|--------------------------------------------------|
+| Workshop               | Flood           | Purok 1, 2, 3, 4, 5, 6 & 7     | 2,245                                          | 706                                              |
+|                        | Fire             | Purok 1, 2, 3, 4, 5, 6 & 7     | 2,245                                          | 706                                              |
+|                        | Dengue            | Purok 1, 2, 3, 4, 5, 6 & 7     | 2,245                                          | 706                                              |
+|                        | Theft             | Purok 1, 2, 3, 4, 5, 6 & 7     | 2,245                                          | 706                                              |
+
+(workshop)
+| Flood                 | Purok 1, 2, 3, 8 & 7 | 3,093                                         | 700                                              |
+| Earthquake            | Purok 1, 2, 3, 8 & 7 | 3,093                                         | 700                                              |
+| Earthquake            | Purok 4, 5 & 6    | 300                                            | 60                                               |
+| Dog Bites             | Purok 1, 2, 3, 8 & 7 | 2,000                                         | 640                                              |
+| Leptospirosis         | Purok 1, 2, 3, 8 & 7 | 2,000                                         | 640                                              |
+
+(risk profile)
+| Fire                  | Purok 1, 2, 3, 5 & 6 | 2,554                                          | 727                                              |
+| Earthquake            | Purok 1, 2, 3, 5 & 6 | 2,554                                          | 727                                              |
+
+(risk profile)
+| Flooding              | Purok 2             | 689                                             | 138                                              |
+| Fire                  | Purok 2, 4, 6, 8 & 9 | 3,007                                          | 601                                              |
+
+(risk profile)
+| Flooding              | Purok 9 & 10        | 1,435                                          | 336                                              |
+
+(risk profile)
+| Flooding              | Purok 4, 6, 7 & 8   | 2,568                                         | 700                                              |
+| Fire                  | Purok 1, 6 & 8      | 3,032                                         | 699                                              |
+| Landslide             | Purok 4 & 6         | 1,244                                         | 359                                              |
+| Dengue                | All Puroks          | 4,480                                         | 1,227                                              |
+
+--- [Page 78] ---
+(risk profile) Fire Purok 1, 3, 5 & 6 1,238 237 Earthquake Purok 1, 2, 3, 4, 5, 6 & 7 1,238 237
+
+(risk profile) Fire Purok 2 210 71
+
+(risk profile) Flooding Purok 1-6 1,067 213 Fire Purok 1-6 1,067 213 Dengue Purok 1-6 1,067 213
+
+(risk profile) Flooding Purok 2 & 3 5,600 1,120 Fire Purok 2 - -
+
+(workshop) Flooding El Rio ph1, Almonte 3,208 642 Tijuana, San Antonio, Riverside, Muslim Areas, Awhag Subd & El Rio ph1
+
+Fire All Puroks 14,810 3,048 Landslide Awhag Subd, El Rio ph1 70 14 & 2 Dengue Purok 44, 48, 2, 1 & 6 16,600 3,090
+
+(risk profile) Monsoon Waves Block 50, 57RB, 64, 69 & 78 2060 405 Fire Block 44-46, 66-72, 77- 79 & 81-94 4,994 999 Dengue Block 61, 83, 81 & 82 621 95
+
+--- [Page 79] ---
+(risk profile) Monsoon Waves 3A, 3B, 3C, 4A, 4B, 4C, 6 & 7 7,850 1,850 Fire 1A, 1B, 2, 3A, 3B, 3C, 4A, 4B, 4C, 5, 6, 7 & 8 17,500 2,919 (risk profile) Fire Purok 1, 2, 3 & 4 1,414 406 Dengue Purok 1, 2, 3 & 4 2,363 485 (risk profile) Flooding Purok 1, 1A, 2, 2A, 3, 4 & 5 6,197 553 Fire Purok 1, 1A, 2, 2A, 3, 4 & 5 6,197 553 (risk profile) Flooding Purok 1, 2, 3, 4, 5 & 6 2,238 310 Fire Purok 1 at Masangay Compound & Purok 4 500 71 (risk profile) Flooding Purok 2, 3, 4, 5 & 6 1,984 406 Fire Purok 2, 3, 4, 5, 6 & 7 2,363 485 (workshop) Flood Purok 1 70 15 Fire Purok 1, 2, & 3 454 90 Clogged Drainage Purok 1, 2, 3, 4 & 5 2000 250 Dengue Purok 2 65 13 Stray Dogs Purok 1, 8, 2 100 25 (workshop) Flooding Purok 4 & 7 850 220 Fire Purok 4 170 40 Dengue Purok 4 3 1 Vehicular Accident Purok 4 & 7 600 120 (risk profile) Flooding Purok 3 520 111 Fire All Puroks 2,109 462 Dengue All Puroks 2,109 462
+
+--- [Page 80] ---
+| (risk profile) | Landslide | Purok 1, 2, 3, 4, 5 & 6 | 1,528 | 305 |
+| --- | --- | --- | --- | --- |
+|  | Monsoon | Purok 1, 2, 3, 4, 5 & 6 | 1,528 | 305 |
+|  | Fire | Purok 3, 5 & 6 | 997 | 201 |
+|  | Dengue | Purok 1, 2, 3, 4, 5 & 6 | 1,528 | 305 |
+| (risk profile) | Fire | Purok 1, 2, 3, 4, 5 & 6 | 620 | 128 |
+| (risk profile) | Flooding | Purok 1, 2, 3, 4, 5, 6, 7 & 8 | 603 | 151 |
+|  | Fire | Purok 1, 2, 3, 4, 5, 6, 7 & 8 | 6,725 | 1,431 |
+| BARANGAY (Talomo District) | TYPE OF HAZARD | AREAS LIKELY TO BE AFFECTED | TOTAL NUMBER OF POPULATION LIKELY TO BE AFFECTED | TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED |
+|  | Flooding | Purok 7, 7B, 6, 6B, 17, 18 & 20 | 3,819 | 841 |
+|  | Fire | Purok 10, 8, 3, 7, 9 & 17 | 8,342 | 1,845 |
+|  | Landslide | Purok 7B & 19 | 1,134 | 249 |
+|  | Monsoon | Purok 13 | 173 | 32 |
+| (risk profile) | Flooding | Purok 1, 4 & 8 | 3,668 | 776 |
+|  | Fire | Purok 1, 4 & 6 | 2,043 | 455 |
+|  | Vehicular Accident | Purok 1, 2 & 4 | 1,657 | 345 |
+| (workshop) | Flood | SIR PhI, SIR PhI, BIfusa, pS2 | - | - |
+|  | Monsoon Waves | Purok 11, Purok 12-8 & Times Beach | - | - |
+|  | Fire | Bucana p1-22, SIR PhI p48, 73, SIR phI p3-47 & Times Beach | 67,910 | 19,937 |
+|  | Dengue | Purok 4, 5, 11, 12 & 62 | - | - |
+
+--- [Page 81] ---
+(risk profile) | Landslide | Purok 6, 5, 2, 1 & 1-A | 2,234 | 445 |
+| --- | --- | --- | --- |
+| Fire | Purok 2 | 1,005 | 185 |
+(risk profile) | Flooding | Purok 1, 2, 3, 4, 5, 13, 8, 17, A, 19, 19, 27, 8 & 8 | 7,984 | 1,503 |
+|  | Fire | Purok 10, 11, 12, 14, 15, 13, A, 17-A, 19, 20, 23, 25-A, 25- A, 27-C, 29-D, 29-E, 26, 28, 29-A, 29-B, 48 & 8 | 18,610 | 3,760 |
+|  | Landslide | Purok 9, 10, 11-A, 28, 24, 29- B, 41 | 5,882 | 1,214 |
+Landslide | Purok 4 | 50 | 7 |
+Fire | Purok 1, 4, 2-A, 2-B & 2-B | 1,206 | 282
+(risk profile) | Upper & Lower Tanzaña, Samantha homes, Aplaya Homes (I, II, III), Del Carmen, Seaside ii, Del Carmen, Seaside ii, Apriaya Tabok, Mabuhay Village, Mahalarika Village Pioneer Village, Sunshine Village, Diamond Village, Cristina Village, Pag-asa Village, New Society & Victoria Village | 19,649 | 3,975 |
+Fire |  | 29,257 | 5,690 |
+(risk profile) | Dumlaoii & III, Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach, San Nicolas Happy Times Beach,
+
+--- [Page 82] ---
+| Barangay | Type of Hazard | Areas Likely to be Affected | Total Number of Population Likely to be Affected | Total Number of Households Likely to be Affected |
+| --- | --- | --- | --- | --- |
+| (Risk Profile) | Fire | San Vicente, Upper Sta. Cruz, Magbo & Proper Acacia | 2,575 | 420 |
+|  | Landslide | Sto. Niño, San Pedro & New Visayas | 654 | 105 |
+|  | Dengue | Il Proper Acacia, Lower Sta. Cruz & San Roque | 1,903 | 329 |
+| (Risk Profile) | Flooding | Sandawa, Maglana, Spring Valley, New San | 9,814 | 2,263 |
+
+--- [Page 83] ---
+| Isidro, Medalla, Milagrosa,San Antonio, Mahayag,Talisay |
+| --- |
+| Fire Quinones Compound, San Lorenzo, Interior, Birsaba, Sta. Maria, Lower San Miguel & Kalayan |
+| (Risk Profile) Flooding La Verna Hills, Phase 1 & 2, Little Villa, Villa Park, Dragon Compound, Sta. Teresita |
+| Fire Little Villa Purok 30 |
+| Landslide |
+| (workshop) Flooding Purok 1-A, 1-B, 7 & 9 1,318 329 Dengue Purok 5, 6, 8 & 9 623 184 Fire Purok 3 & 8 2,800 818 Landslide Purok 7 28 10 Dog Bites Purok 3, 5 & 7 1,756 268 |
+| Flooding Sto. Domingo I 1,137 189 (risk profile) Fire Lizada Village Purok 2 & 3 2,112 478 Monsoon Lizada Village Purok 3 555 123 |
+| Fire Santiago, Saint Ignatius, San Isidro Labrador & Sta. Cruz 2,447 497 (risk profile) Landslide Concepcion, Old San 869 198 |
+
+--- [Page 84] ---
+| Agustín & Consolación |  |  |
+| --- | --- | --- |
+| Dengue | Sto. Nino, Saint Joseph, Molave, Santiago & Sagrada Familia | 3,044 | 879 |
+| Flooding | 12 Puroks | 16,680 | 3,336 |
+| (risk profile) | Fire | 16,680 | 3,336 |
+| Monsoon | Cuaco Beach | 340 | 68 |
+| Flooding | Purok 1, 2, 3, 4, 9, 10, 12, 13, 14 & 16 | 12,320 | 1,924 |
+| (risk profile) | Fire | Purok 15 | 910 | 201 |
+| Landslide | Purok 8, 11 & 15 | 2,100 | 376 |
+| Dengue & Dog Bites | Purok 4, 5, 10, 12, 13 & 14 | 9,305 | 1,451 |
+| Flood | Purok 2, 3, 4, 5, 7, 9 & 10 | 473 | 285 |
+| (workshop) | Fire | Purok 3 & 7 | 46 | 16 |
+| Landslide | Purok 8, 12, 13 & 14 | 182 | 82 |
+| Dengue | Purok 3, 9 & 10 | 115 | 52 |
+
+--- [Page 85] ---
+|BARANGAY (Agdao Dist.) | TYPE OF HAZARD | AREAS LIKELY TO BE AFFECTED | TOTAL NUMBER OF POPULATION LIKELY TO BE AFFECTED | TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED |
+|------------------------|------------------|----------------------------|----------------------------------------------|---------------------------------------------|
+| Flooding                |                  | North San Juan & South San Juan | 5,748                                                      | 866                                         |
+| (risk profile)          | Fire             | Sta. Lucia & San Francisco     | -                                                          | -                                          |
+| Monsoon                 |                  | North San Juan & South San Juan | 5,748                                                      | 866                                         |
+| Dengue                  |                  | Sta. Lucia, San Francisco & South San Juan | -                                                          | -                                          |
+
+(risk profile)
+Fire: Purak 2, 4, 5, 6, 7, 8, 9, & 10
+Monsoon: Purak 7, 8, 9 & 10
+
+(workshop)
+Flooding: Sta. Cruz Beach, San Antonio Beach, Sto. Nino Gotamco, San Pedro Gotamco & Sitio Coreas
+Fire: Sta. Cruz Beach, San Antonio Beach, Sto. Nino Gotamco, San Pedro Gotamco, Sitio Coreas, San Pedro Village, Sitio Bakal, Sitio Davao Visayas, Sitio BSR, Sitio SF, Sitio San Vicente de la Reina, Sitio Aquino
+Monsoon: Sta. Cruz Beach, San Antonio Beach, Sto. Nino Gotamco, San Pedro Gotamco & Sitio Coreas
+
+--- [Page 86] ---
+(risk profile) Flooding Putinglupa, Bellario, Ruz Village & Green Village 3,840 864 Fire Fatima, Sto. Nino, Putinglupa, San Vicente, YCF, West St., Anthony, Freeport Village 7,943 1,524 Dengue All Purkets 12,990 2,550
+
+(risk profile) Flooding NHA 1 & 2, Sta. Cruz Blk 1, 2 & 3, AQ, ICC, Villanueva, Kasadya, Viguz, Masah, San Jose, IKP 9,767 1,953 Fire Sta. Cruz Blk 1, 2 & 3, AQ, ICC, Villanueva, Kasadya, Viguz, Masah, San Jose, IKP 8,012 1,602 Monsoon Masah, San Jose, IKP 3,722 744
+
+(workshop) Flooding Zuro Street 1,500 200 Fire Purok 1-7 5,000 600 Dengue Purok 1-7 5,000 600 Dog bite Purok 1-7 5,000 600 Road Accident Purok 7 250 52
+
+--- [Page 87] ---
+| Flooding (River) | Virgo, Taurus, Libra, Scorpio, Pisces, Capricorn, Aquarius | 6,140 | 1,080 |
+| (workshop) | Fire | Pisces, Scorpio, Capricorn, Aquarius | 3,494 | 815 |
+| Monsoon Waves | Pisces, Scorpio | 2,506 | 580 |
+| Dog Bites | Libra, Taurus | 1,566 | 376 |
+| Garbage Disposal | Scorpio, Pisces, Libra, Taurus, Aquarius | 4,475 | 1,046 |
+
+BARANGAY (Poblacion District) | TYPE OF HAZARD | AREAS LIKELY TO BE AFFECTED | TOTAL NUMBER OF POPULATION LIKELY TO BE AFFECTED | TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED |
+| --- | --- | --- | --- |
+| Flooding | Apalit, Colosas Proper, Galacia, Monte Flor, Panaga & Surayan | 1,268 | 229 |
+| (risk profile) | Landslide | Apalit, Colosas Proper, Galacia, Monte Flor, Panaga & Surayan | 820 | 150 |
+| (risk profile) | Flooding | Purok 3, 7 & 13 | 331 | 82 |
+| (risk profile) | Landslide | Purok 3, 8, 7 | 244 | 63 |
+| (risk profile) | Fire | Malabog Proper | 3,000 | 600 |
+| (risk profile) | Landslide | Sitio Kialao | 20 | 8 |
+| (risk profile) | Dengue | Sitio Balugo | 500 | 100 |
+
+--- [Page 88] ---
+| Flooding | Mangga, Mapucao, Purok 2 & 6, Olaniag 3 & 5 | 370 | 106 |
+| --- | --- | --- | --- |
+| (workshop) | Landslide | Purok 4, 19, Mangga, Mapucao, 2, 6, 3 & 5 | 610 | 186 |
+| Strong Wind | Purok 4 & 19 | 295 | 59 |
+| Flooding | Purok 1, 6 & 9 | 400 | 108 |
+| (risk profile) | Landslide | Purok 10, 11 & 12 | 382 | 103 |
+| Flooding | 12 Puroks | 2,598 | 609 |
+| (risk profile) | Landslide | Magwasay & Purok 1-8 | - | - |
+| Flooding | Purok 1 & 2 | 348 | 77 |
+| (risk profile) | Landslide | Purok 10, 12, 13 & 14 | 484 | 104 |
+| BARANGAY (Tarl District) | TYPE OF HAZARD | AREAS LIKELY TO BE AFFECTED | TOTAL NUMBER OF POPULATION LIKELY TO BE AFFECTED | TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED |
+| Flooding | Purok 3 | 300 | 78 |  |
+| (risk profile) | Dog Bites | Purok 2, 3, 6, 7, 8 & 9 | 726 | 165 |
+| Landslide | Purok 1 | 90 | 18 |  |
+| Dengue | Purok 1 & 2 | 577 | 140 |  |
+| Fire | Purok 13 | 384 | 85 |  |
+
+--- [Page 89] ---
+Flooding
+Purak 1-A, 1-B, 2-B, 8
+Landslide
+Purak 5
+Menosour
+Navos
+Flowing
+Purak 1, 2, 3
+(risk profile)
+Flooding
+Purak 1-A, San Jose
+(risk profile)
+Fire
+Pantaleon, Valcarce, La Anglana,
+Loaded & Poblalawes
+Attenzione
+Pantauar, Khulbun, Sampasen,
+Lincau & Poblalawes
+Demogue
+Pintin, Pantauar, Pantauar, Sampasen,
+Lipadas & Poblalawes
+(risk profile)
+Landslide
+Purak 1-A, 5, 9
+(risk profile)
+Fire
+Purak 1
+(risk profile)
+Floodig
+Purak 2, 4, 6
+(risk profile)
+Fire
+Purak 3, 7, 9
+(risk profile)
+Floodig
+Purak 1-8
+(risk profile)
+Fire
+Purak 5-A
+(risk profile)
+Landslide
+Purak 1-A
+(risk profile)
+Floodig
+Purak 1, 2, 3, 4, 5, 6, 8, 7
+Fire
+Purak 1, 2, 3, 4, 5, 6, 8, 7
+Landslide
+Purak 2, 6, 8
+(risk profile)
+Fire
+Purak 4, 11, 12, 13
+Stray Dogs
+Purak 4, 11, 12, 13 (Copy Compound),
+Sawed/Sawed
+Garbage
+Public Market Purak 12, 8, 13
+
+--- [Page 90] ---
+| BARANGAY (Tugbok District) | Type of Hazard | AREAS LIKELY TO BE AFFECTED | TOTAL NUMBER OF POPULATION LIKELY TO BE AFFECTED | TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED |
+| --- | --- | --- | --- | --- |
+|  | Flooding | Purok 2, 3, 6, 8, 9, 11, 13 & 14 | 175 | 31 |
+|  | Typhoon | Purok 6 & 9 | 492 | 98 |
+|  | Dengue | Purok 6 & 9 | 492 | 98 |
+|  | Stray Dogs | Purok 1, 2, 6, 8, 9, 11, 14 & 15 | 1,212 | 273 |
+|  | (risk profile) |  |  |  |
+|  | Flooding | Purok 1-11 | 4,874 | 1,050 |
+|  | Flooding | Purok 1 & 7 | 601 | 137 |
+|  | (risk profile) |  |  |  |
+|  | Flooding (Creek) | Boundary of Egyti, Acacia & Zamblo / Purok 8, Silito Agman | 535 | 107 |
+|  | (workshop) | Flooding (Canal) | 622 | 125 |
+|  |  | Purok 2, Purok 8, Silito Agman | 30 | 6 |
+|  |  | Purok 8, Silito Agman | 612 | 120 |
+|  |  | Highways / Purok 2 | 662 | 130 |
+|  |  | Vehicular accidents | Crossing / Solid P-4 / Cogon P-1 / Purok 2 |  |  |
+|  | (risk profile) | Fire | 567 | 147 |
+|  | (risk profile) | Flooding | Purok III | 20 | 7 |
+|  |  | Landslide | Purok VIII, X & XIV | 600 | 120 |
+|  | (risk profile) | Flood | Purok 4 & 5 | 25 | 5 |
+|  |  | Landslide | Purok 4 & 5 | 25 | 5 |
+|  | (risk profile) | Flood | Purok 4, 5 & 6 | 672 | 134 |
+|  |  | Fire | Purok 2 | 692 | 147 |
+|  |  | Landslide | Purok 1 & 7 | 275 | 59 |
+|  | (risk profile) | Monsoon | Purok 3 | 326 | 97 |
+
+--- [Page 91] ---
+| Dengue | Purok 2 | 692 | 147 |
+| --- | --- | --- | --- |
+| Flooding | Purok 5 | 350 | 71 |
+| (risk profile) | Fire | Purok 5 | 350 | 71 |
+|  | Landslide | Purok 3 & 5 | 590 | 136 |
+|  | Dengue | Purok 2 & 5 | 508 | 103 |
+| Floodings | Purok 1, 2, 3, 4, 5, 6, 7 & 8 | 1,899 | 462 |
+| (risk proper) | Fire | Purok 6, 9 & 10 | 1,549 | 443 |
+|  | Landslide | Purok 2, 3, 4, & 5 | 530 | 249 |
+| Floodings | Purok 2, 3 & 14 | 1,335 | 297 |
+| (risk profile) | Fire | Purok 17 | 350 | 70 |
+|  | Landslide | Purok 2 & 14 | 835 | 192 |
+| Dengue | Purok 12 | 530 | 106 |
+| Floodings | Purok 1, 4, 5, 10 & 11 | 1,343 | 371 |
+| (risk profile) | Fire | Purok 1-13 | 1,267 | 891 |
+|  | Landslide | Purok 3, 4 & 11 | 745 | 213 |
+| BARANGAY (Calinan District) | TYPE OF HAZARD | AREAS LIKELY TO BE AFFECTED | TOTAL NUMBER OF POPULATION LIKELY TO BE AFFECTED | TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED |
+|  |  |  |  |  |
+| Landslide | Purok 2B | 173 | 36 |
+| Dengue | All Puroks | 2,210 | 506 |
+| (risk profile) | Flooding | Purok 1-18, 20-25-A, 38 & 39 | 19,660 | 3,532 |
+|  | Fire | Purok 4-9, 15, 17, 20, & 22-39 | 18,088 | 3,618 |
+| Floodings | Purok 1 & 2 | 340 | 62 |
+| (risk profile) | Landslide | Purok 6 | 120 | 35 |
+
+--- [Page 92] ---
+| Flooding | Purok 1, 2 & 11 | 433 | 107 |
+| --- | --- | --- | --- |
+| (risk profile) | Landslide | Purok 5, 6 & 7 | 309 | 62 |
+| Dengue | Purok 2 | 143 | 30 |
+| Armed Conflict | Purok 5, 6, 7, 8 & 9 | 645 | 122 |
+|  |  |  |  |  |
+| Flooding | Sitio Darila & Macatuno, Purok 2-A, 2-B, 2-B1, 1-A & 1-F | 1,330 | 479 |
+| (risk profile) | Landslide | Sitio Bulan, Purok 2-B, 2-B1 & 1 | 700 | 148 |
+|  |  |  |  |  |
+| Flooding | Purok 1 | 25 | 4 |
+| (risk profile) | Fire | Purok VII | 65 | 15 |
+| Landslide | Purok III & VII | 153 | 30 |
+|  |  |  |  |  |
+| Landslide | 10 Puroks | - | - |
+| (risk profile) | Fire | 23 Puroks | 2,875 | 636 |
+|  |  |  |  |  |
+| Flooding | Purok 3, 5 & 6 | 790 | 159 |
+| (risk profile) | Landslide | Purok 4B | 160 | 26 |
+|  |  |  |  |  |
+| Flood | Pakisama, Kaunlaran, Maharlika, Lanzones, Mabuhay & Pag-ibig | 264 | 66 |
+| (risk profile) | Fire | Barangay Proper | 175 | 35 |
+| Landslide | Maligaya, New Leyte, Salome, | 200 | 40 |
+
+--- [Page 93] ---
+| Pag-ibig & Bagong Silang |
+| --- |
+| Health Hazards | Pag-ibig, Pag-asa, Kaunlaran & Lanzones | 95 | 20 |
+| Flooding | Purok 3 | 613 | 133 |
+| (risk profile) |  |  |  |
+
+**BARANGAY**
+**TYPE OF**
+**(Marilag Dist.)** **HAZARD**
+**AREAS LIKELY TO BE AFFECTED**
+**TOTAL NUMBER OF**
+**POPULATION LIKELY TO BE AFFECTED**
+**TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED**
+
+Flooding
+Sdtio Marapitac
+(risk profile)
+Landslide
+Sdtio Banuyayan, Upper Banuyayan & Upper Muslim Village
+
+Flooding
+Purok 7 & 8
+(risk profile)
+Landslide
+Purok 7 & 8
+
+Flooding
+Kulafo, Magaysay Proper & Katipunan B
+(risk profile)
+Landslide
+Kulafo & Kapatagan Lower
+
+Flooding
+Sdtio Salab, Cabuyao; Avild, Pegalangan & Lower Malongon
+(risk profile)
+Landslide
+Sdtio Avild & Pegalungan
+
+**TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED**
+33
+153
+63
+139
+62
+196
+80
+
+--- [Page 94] ---
+| Fire | Sitio Sumilop, Patag, Guillon, Pamuhatan, Dalisan & Malikongkong | 75 | 15 |
+| --- | --- | --- | --- |
+| (risk profile) | Landslide East Marahan & Ladi-an | 224 | 63 |
+|  |  |  |  |
+|  | Flooding Luwang, Manawong, Sitio Bayaan, Sitio Taupan & Laya | 490 | 87 |
+| (workshop) | Landslide Taupan, Balah, Pamagtinguy, Luwang, C-Balah & Masawang | 772 | 169 |
+|  | Strong Winds Sayawan, Balah & Kalatsutse | 497 | 99 |
+|  | Ground Rupture Manawong, Mahalyana, Luwang Sentro, Purok A & Masawang | 819 | 163 |
+| Dengue | Crossing Balan, Panagligum, Purok A & B, Salaysay Proper | 2,575 | 548 |
+|  |  |  |  |
+| Floodings | Siao & Davao Gulf | 1,192 | 248 |
+| (risk profile) | Landslide Pangyan & Turoyan | 941 | 79 |
+
+--- [Page 95] ---
+| BARANGAY (BUNAWAN Dist.) | TYPE OF HAZARD | AREAS LIKELY TO BE AFFECTED | TOTAL NUMBER OF POPULATION LIKELY TO BE AFFECTED | TOTAL NUMBER OF HOUSEHOLDS LIKELY TO BE AFFECTED |
+| --- | --- | --- | --- | --- |
+| Flooding | Purok 9, 8, 7, 7-A, 7-B, 6, 6-A, 5, 5-A, 4, 4-A, 2, 1, 16 & 16-A | 9,570 | 1,763 |
+| (workshop) | Fire | Purok 7, 7-A, 7-B, 6, 6-A, 16, 16-A & 3 | 7,963 | 1,086 |
+| Monsoon Waves | Purok 4, 5, 5-A, 5B, 6, 6A, 7A, 7B, 7C, 8 & A | 5,503 | 1,101 |
+| Flooding | Purok 2A, 2B, 2A, 4A, 7A & 7B | 4,515 | 1,048 |
+| (risk profile) | Fire | Purok 2A, 2B, 3A, 3B, 3C, 5A, 5B, 5C, 6A & 6B | 8,378 | 1,932 |
+| Landslide | Kabkab & env. | 4,260 | 850 |
+| Monsoon Waves | Purok 3A, 3B, 3C, 6A & 6B | 4,792 | 1,122 |
+| Flooding | Purok 1, 1-A, 2, 4, 5 & 5-A | 1,707 | 430 |
+| (risk profile) | Landslide | Purok 8 | 286 | 64 |
+| Fire | Purok 10-A, 11, 12, 13, 14 & 16 | 8,384 | 1,890 |
+| (workshop) | Monsoon | Purok 10, 10-A, 11, 12, 13, 14, 16 & 17 | 4,875 | 975 |
+| Flooding | Purok 10A, 4, 1, 2, 3, 12, 14, 7 & 6 | 11,060 | 1,932 |
+| Dengue | Purok 10, 1, 2, 3, 3A & 3B | 20,690 | 5,138 |
+
+--- [Page 96] ---
+Republic of the Philippines
+City of Davao
+DAVAO CITY DISASTER RISK REDUCTION AND MANAGEMENT OFFICE
+Centrai 911 Compound, Sandawa., Davao City
+
+LIST OF RISK AREAS IN DAVAO CITY
+
+I. FLOOD RISK AREAS:
+
+1ST CONGRESSIONAL DISTRICT
+
+A. CITY POBLACION DISTRICT
+
+- Barangay 1-A (Bolton Dike)
+  * Purok 1
+  * Purok 2
+  * Purok 3
+
+- Barangay 2-A (Magallanes Dike)
+  * Purok 1
+  * Purok 2
+
+- Barangay 5-A Bankerohan Riverside
+  * Purok 2
+  * Purok 3
+  * Purok 4
+  * Purok 6
+
+- Barangay 7-A General Malvar
+  * Purok 1
+
+- Barangay 8-A
+  * Lower Madapo, Purok 10
+
+- Barangay 9-A
+  * San Rafael Village, Purok 10
+  * Muslim Village
+  * Marfori 2, Purok 8
+
+- Barangay 10-A
+
+* Purok 5
+* Purok 6
+* Purok 7
+
+* Purok 3
+* Purok 7
+
+* Purok 7
+* Purok 11
+* Purok 17
+
+* Purok 2
+
+* Pag-aña Drive, Purok 4
+* Barrio Tubigon, Purok 6
+
+--- [Page 97] ---
+* DHIRO II Subdivision, Purok 10
+* Platinum, Riverside
+
+• Barangay 12-A
+- Cell 1
+- Muslim Area, Purok 8
+
+• Barangay 40-D
+- Purok 1 (near Botcon Bridge)
+
+B. TALOMO DISTRICT
+
+• Barangay Bucana 76-A
+- DAPSA, Purok 12
+- St. John, Purok 12-A
+- Fortuna, Purok 12-B
+- KASILAK, Purok 13
+- Manggahan, Purok 20
+
+• Barangay Ma-a
+- Gravahan, Purok 3
+- Gravahan, Purok
+- Purok 13 (near Bachelor Bus Garage)
+- Purok 13-A (near Yellow Bus Terminal)
+- Purok 13-B, Riverside
+- Datu Jolo, Purok 17
+- New Algojo, Purok 17-A
+
+• Barangay Matina Crossing 74-A
+- Purok Guadalupe
+- Purok San Isidro
+- Purok Manayahay
+- Purok San Isidro
+- Tsimit Avenue, Purok 4
+- Arroyo Compound
+
+• Barangay Matina Pangl
+- Km. 6.5
+
+• Phase 1, El Rio
+• Phase 2, El Rio
+• Phase 3, El Rio
+
+• GILUGA, Purok 19
+• S.I.R., Phase 1
+• S.J.R., Phase II
+• Agro Compound, Purok 32
+• Yanggahan, Purok 21
+
+• GEM Village, Purok 18
+• Don Julian Vill., Purok 19
+• Lower Sangglangan, Purok 20
+• Upper Sangglangan, Purok 20
+• Purok 26 (near SAFECON Batchling Plant)
+• CAMARIN, Purok 30
+• Maharlika, Purok 35
+
+• New Vitayau Village
+• Matina Gravahan, Purok 1
+• Matina Gravahan, Purok 2
+
+• Km. 8.5
+
+--- [Page 98] ---
+* Km. 7
+* Km. 8
+* Barangay Matina Aplaya
+* Dumalag 1
+* Dumalag 2
+* Dumalag 3
+* Seaside Village
+* San Nicolas
+* Barangay Talomo Proper
+* Muslim Village
+* NHA Relocation, Bangkal
+* NHA Kadayanaw Homes, Phase III
+* Barangay Seaside
+* Sto. Niño Del Rosario
+* Taal Duterte
+* Ulas (Back of Public Market)
+* Purok 1 - 14
+* Puan, Block 1
+* Talomo Proper
+* Talomo Salakot
+* New Wellington
+* Talomo Cemento Beach
+* Talomo Cemento
+* Calubi-an, Talomo
+* Bankal (Kadayanaw, Central Park, Taal, Bulusan, Muslim Vill.)
+* Ulas (Back of Mercury Drug)
+* Ulas Trading
+* UUHSAs'Village, Ulas
+* Talusa I
+* Talusa II
+* Dela Merced Typhoon Relocation
+* Teachers' Village
+* San Juan Village, Bangkal
+* SPED Area, Bangkal
+* Barangay Bago Aplaya
+* Galleria de Oro Subd.
+* Crossing Bago Aplaya
+* D' Garden Village
+* Seaside
+* Castro Village
+* Vagnay Village
+* Caliraya Homes
+* Versary
+* Barangay Bago Galleria
+* Mega Homes, Sitio Ifligo
+* Rosalina Village i
+* San Lorenzo Village
+* Sitio Lumansoc
+* Sitio Libby
+* Sitio Lower Nalum
+* Barangay Ballok
+* Rosalina Village III (Blocks 11, 15, 16, 19, 20 & 22)
+* Purok 2
+* Purok 3
+* Barangay Dumoy
+* pagibig Village
+* Dumoy Proper
+
+--- [Page 99] ---
+2ND CONGRESSIONAL DISTRICT
+
+A. RUMANGIN DISTRICT
+
+• Barangay Butangin Proper
+  * Spring Valley
+  * Sarawin
+  * Lajado
+  * Hilidue Subd.
+  * Sino Block II
+  * Balahan-33
+
+• Barangay Cubamian
+  * Taverna Hills
+
+• Barangay Yigotao
+  * Purok 1, Sitio Uvaguren
+  * Purok 2, Sitio San Isidro Labrador
+  * Purok 3, Sitio San Vicente Ferrer
+  * Purok 4, Sitio Sto. Marina
+  * Purok 5, Sitio Tinago
+  * Purok 6, Binangal
+  * Rodriguez Area
+  * Itrn. 10
+
+• Barangay Mianar
+  * Purok 1, Wain Proper
+  * Purok 2, Wain Proper
+  * Purok 3, Wain Proper
+  * Purok 4, Wain Proper
+
+• Barangay Culbwa
+  * Riveraide
+  * Purok 6
+  * Purok 8
+
+• Barangay Mandug
+  * San Isidro
+  * Purok 4
+  * Purok 5
+
+• Gldl San Isidro
+  * Nva. San Isidro
+  * San Antonio
+  * San Vicente
+  * Maglina
+  * NHIA
+
+• Purok 9, Lapanday
+  * Purok 10, Lower Dampa
+  * Purok 11, Sitio Tinago
+  * Purok 12, Juluilo Subd. (P.3)
+  * Purok 13, Sitio Loredes
+  * Purok 14, Jalu Valley Subd.
+  * San Vicente Ferrer Tinago
+
+• Sitto Riverside
+  * Sitto Sto. Nilo
+  * Purok 2, Lower Dampa
+  * Sitto Zamamara (Riverside)
+
+• Purok 2
+  * Purok 3-A
+  * Purok 12
+
+• Sto. Marina
+  * Maglina
+
+--- [Page 100] ---
+- Barangay Sasa
+  * Sto. Niño Riverside
+  * Del Carmen (Upper & Lower)
+  * Bolton Relocation
+
+- Barangay Anglajongto
+  * Purok 19, Dofla Asuncion
+  * Phase 3, Dofla Asuncion
+  * Phase 7, Dofla Asuncion
+  * Sto. Domingo I
+
+B. BUNAWAN DISTRICT
+- Barangay A. L. Navarro
+  * Purok Aquarius, Lasang Proper
+  * Purok Capricorn, Lasang Proper
+  * Purok Gemini, Lasang Proper
+  * Purok Sagittarius, Lasang Proper
+
+- Bunawan Proper
+  * Purok 1
+  * Purok 2-A
+  * Purok 3-A
+  * Purok 4
+  * Purok 5
+  * Purok 5-B
+  * Purok 6
+  * Purok 6-A
+
+- Barangay San Isidro
+  * Purok 1
+  * Purok 1-A
+  * Purok 3
+
+- Barangay Ilang
+  * Purok 7-A
+
+* De Guzman Village
+  * Dofla Pililar, Phase 2
+  * Sto. Rosario Village
+
+* D. A. Pampanga
+  * Liceradele Village, Purok 2
+  * Phase 2, Roseville Subd.
+  * Diamond Village
+
+* Purok Pisces, Sitio Bucana
+  * Purok Scorpio, Sitio Bucana
+  * Purok Taurus, Sitio Tambongon
+  * Purok Libra, Sitio Tambongon
+  * Purok Virgo, Sitio Licanan
+  * Purok Aries, Sitio Licanan
+
+* Purok 7
+  * Purok 7-A
+  * Purok 7-B
+  * Purok 7-C
+  * Purok 8
+  * Purok 9
+  * Purok 10
+
+* Purok 4
+  * Purok 5
+  * Purok 5-B
+  * Sto. Niño Awad, Purok 1
+
+--- [Page 101] ---
+* Purok 7-B
+* Central Ilang (Puroks 2-A and 2-B)
+• Barangay Paracan
+* San Miguel, Purok 12, Km. 14
+* Sumiru, Purok 13, Km. 14
+* Obsitao Village, Purok 22
+* Malagamot Proper, Purok 24
+* Esturis Village, Purok 29
+C. PAQUIBATO DISTRICT
+• Barangay Paquibato Proper
+* Sitio Narra
+* Paquibato Proper
+• Barangay Paflalam
+* Purok 1
+* Purok 2
+* Purok 4
+* Purok 5
+* Purok 6
+* Purok 7
+* Purok 8
+* Purok 9
+• Barangay Mabuhay
+* Purok Mangga
+* Purok Beongon
+* Mabuhay Proper
+* Purok Bayabas
+* Purok Nangka
+• Barangay Pandaitan
+* Sitio Tibungol
+* Purok 5, Sitio Lower Pandaitan
+* Sitio Pigadahan
+• Barangay Colossas
+* Sitio Panaga
+* Colossas Proper
+* Purok 3
+* Lower Latungan
+• Barangay Fatima
+* Purok 1
+* Purok 2
+• Barangay Sumimao
+* Sumimao Proper
+
+--- [Page 102] ---
+D. AGOAO DISTRICT
+• Barangay Centro Agdoao (San Juan)
+* Purak San Francisco VIII.
+* Purak Nasasin
+* Purak Norte San Juan
+* Purak Sto. Nino Pelayo
+• Barangay Purok 3
+• Purak 4
+• Purak 5
+• Purok Sta. Lucia
+• Purak Victoria Pelayo
+• Purak Alicia Pelayo
+• Purak 6
+• Purak 7
+
+3rd CONGRESSIONAL DISTRICT
+
+A. TONIL DISTRICT
+• Barangay Uzaga
+* Sitio Tambacar (Puroks 1, 2, 6, 3)
+* Sitio SOACO (Puroks 1, 2, 3 & 4)
+* Sitio Samuani Village
+* Sitio Lewis (Puroks 1, 2 & 3)
+* Sitio New Lizaña Village (Puroks 1, 2, 3 & 4)
+* Sitio Lizaña (Puroks 1, 2, 3 & 4)
+* Sitio J.V. Ferrido (Puroks 1, 2, 3, 4 & 5)
+* Sitio Gutierrez Village
+* Sitio Culusa Village (Puroks 1, 2, 3, 4, 5 & 6)
+* Sitio Curvado (Puroks 1, 2 & 5)
+* Sitio Lisboa (Puroks 1, 2, 3 & 4)
+* Sitio San Isidro (Puroks 1, 2, 3 & 5)
+* Sitio Malabris
+• Barangay Crossing Bambas
+* Purok 1 (Santos Street)
+* Purok 2 (Venus Extension)
+* Purok 3 (Venus Street)
+
+• Purak 6 (Saypan Riverside)
+• Purak 16 (Sto. Nino Village)
+
+--- [Page 103] ---
+- Barangay Marapangi
+  * Marapangi I (near Lipadas River)
+  * Marapangi I (near Sirawan River)
+  * Marapangi II (near Sirawan River)
+  * Marapangi II (near creek and Lipadas River)
+
+- Barangay Lubogan
+  * Purok 2
+  * Purok 3
+  * Purok 4
+  * Purok 5
+
+- Barangay Sirawan
+  * Purok 1
+  * Purok 10
+  * Purok 11
+
+- Barangay Dalipe
+  * Dirla Manuela
+
+B. TUGBOK DISTRICT
+- Barangay Sto. Niño
+  * Purok 1
+  * Purok 2
+  * Purok 3
+  * Purok 4
+  * Purok 5
+  * Purok 6
+  * Purok 7
+  * Purok 14
+  * Purok 12
+  * Purok 14
+  * Purok 10
+  * Purok 11
+  * Purok 13, Aglipayan Village
+  * Purok 14, Green Meadows Subd.
+  * Purok 16
+  * Purok 19
+
+- Barangay Mintal
+  * Corner Lanatana and Champaca Streets
+  * NAPOLCOM Area
+  * Sampaguita Street (near PLDT)
+  * Barangay Road going to Camp San Gabriel
+
+- Barangay Tugbok Proper
+  * Purok 1
+  * Purok 2
+  * Purok 3
+  * Purok 8, Sitio New Loan
+  * Purok 9, Sitio New Loan
+  * Purok 10, Sitio Upper Tugbok
+
+--- [Page 104] ---
+* Purok 4
+* Purok 5
+* Purok 6
+* Purok 7
+
+* Purok 11, Sitio Mahayahay
+* Purok 12, Sitio Crossing Quarry
+* Purok 13, Sitio Crossing Quarry
+* Purok 14, Sitio Small Tacunan
+
+* Purok 7
+* Purok 8
+
+* Purok 1
+* Purok 2
+* Purok 3
+
+* Purok 9
+* Purok 10
+* Purok 11
+* Purok 12
+* Purok 13
+* Purok 14
+* Purok 15
+* Purok 16
+* Purok 17
+* Purok 18
+* Purok 19
+
+* Purok 28
+* Purok 29
+* Purok 30
+* Teachers' Village
+* Vietcong Area
+* Magsaysay
+* Abayong Village
+* Magsaysay Street
+
+* Purok 4-A
+* Purok 5
+* Purok 5-A
+
+* Colabol
+* Lagawisan
+
+* Purok 1
+* Purok 3-A
+* Purok 4
+
+* Darila
+* Galao
+
+--- [Page 105] ---
+- Barangay Dacudao
+  * Purok 6
+  * Purok 7
+
+- Barangay Inayangan
+  * Sitio Galao
+
+- Barangay Dominga
+  * Areas along the riverside
+
+- Barangay Cawayan
+  * Sitio Banod
+
+- Barangay Laccon
+  * Bacakan Area, Purok 9
+
+- Barangay Dalagdag
+  * Areas along the riverside
+
+D. MARILONG DISTRICT
+- Barangay Tamugan
+  * Sitio Bafa
+  * Sitio Acacia
+  * Sitio San Miguel
+
+- Barangay Suawan
+  * Suawan Proper
+  * Sitio Gatungan
+
+- Purok 8
+- Purok 11
+
+- Sitio Lagawisan
+
+- Sitio Lower Patag
+- Sitio Banod
+- Sitio Davao Gulf (Puroks 7, 8 & 9)
+
+- Sitio Moab
+- Lower Tule
+
+--- [Page 106] ---
+II. SEA SWELL (MONSOON WAVES) RISK AREAS:
+
+17 CONGRESSIONAL DISTRICT
+
+A. POBLACION DISTRICT:
+- Barangay 21-C
+* Riverbed Zones 1, 2, 3, 4 & 5
+- Barangay 23-C
+* Purok 3
+* Purok 4-A
+* Purok 4-B
+- Barangay 31-D
+* Purok 6-A
+* Purok 6-B
+B. TALOMO DISTRICT:
+- Barangay Bago Aplaya
+* Purok Seaside
+* Gulf View
+- Barangay Talomo Proper
+* Purok 1, Salakot
+* Purok 2, Salakot
+* Purok 4, Center Beach
+* Purok 6, Sta. Cruz
+* Purok 7, Center Beach
+- Barangay Matina Aplaya
+* Purok Dumalag 1
+* Purok Dumalag 2
+* Purok Dumalag 3
+* San Nicolas, Dumalag
+* Purok Seaside 2
+- Barangay Bucana 76-A
+* Purok 1
+
+--- [Page 107] ---
+* Purok 1-8
+* Purok 2
+* Purok 5
+* Purok 10
+* Purok 11
+
+Barangay Dumoy
+* Purok Pagbig Village
+
+2nd CONGRESSIONAL DISTRICT
+
+A. AGDAO DISTRICT
+
+* Barangay Vicente Duterte
+* Purok DXRH
+
+* Barangay Centro Agdao (San Juan)
+* Purok North San Juan (Jerome Area)
+* Purok South San Juan
+* Purok San Miguel
+
+* Barangay Leon Garcia Sr.
+* Purok Sta. Cruz
+* Purok Sta. Niño
+* Purok San Antonio
+
+B. BUHANGIN DISTRICT
+
+* Barangay Pampanga
+* Km. 9, Mt. Dew, Lizada Village
+
+C. BUNAWAN DISTRICT
+
+* Barangay Bunawan Proper
+* Purok 6
+* Purok 7
+* Purok 8
+* Purok 9
+
+* Barangay Lasang
+
+--- [Page 108] ---
+* Purak Scorpio, Sitio Bucana
+* Purok Pisces, Sitio Bucana
+
+3RD CONGRESSIONAL DISTRICT
+
+A. TORIL DISTRICT
+- Barangay Dallao
+  * Sitio Pogi-Lawis
+  * Sitio Lipadas
+  * Sitio Kalub-an
+  * Sitio Pantalan
+- Barangay Lizada
+  * Sitio Punong
+  * Sitio Lawis
+
+B. KARIPAAN
+  * Kalayaan
+  * San Isidro
+
+C. SITIO FISHERMAN VILL.
+
+III. FIRE RISK AREAS IN DAVAO CITY
+
+1ST CONGRESSIONAL DISTRICT
+
+A. CITY POBLACION DISTRICT
+- Barangay 1-A
+  * Purok 1
+  * Purok 2
+  * Purok 3
+  * Purok 4
+- Barangay 2-A
+  * Purok 1
+  * Purok 2
+- Barangay 3-A
+  * Purok 4
+  * Purok 5
+  * Purok 6
+  * Purok 7
+
+--- [Page 109] ---
+- Barangay 5-A
+* Purak 1
+* Purak 2
+* Purak 3
+* Purak 4
+* Purak 5
+
+- Barangay 6-A
+* Purak 1
+* Purak 2
+
+- Barangay 7-A
+* Purak 1
+* Purak 2
+* Purak 3
+* Purak 4
+* Purak 5
+
+- Barangay 8-A
+* Purak 1
+* Purak 2
+* Purak 3
+* Purak 4
+
+- Barangay 9-A
+* Purak 1
+* Purak 2
+
+- Barangay 10-A
+* Purak 1
+* Purak 2
+
+- Barangay 11-B
+
+- Barangay 12-B
+* Purak 2
+* Purak 6
+
+- Barangay 13-B
+* Purak 2
+
+- Barangay 14-B
+
+--- [Page 110] ---
+* Purok 2
+* Purok 3
+
+• Barangay 18-B
+* Purok 7
+
+• Barangay 19-B
+* Purok 1-A
+* Purok 1-B
+* Purok 2-A
+* Purok 2-B
+* Purok 3-B
+* Purok 4-A
+* Purok 4-B
+* Purok 5-A
+* Purok 5-B
+* Purok 6-A
+* Purok 7-A
+* Purok 7-B
+
+• Barangay 20-B
+* purok 1 Consegra Compound & Regina Compound
+* purok 3 N. Torres Extension
+* purok 5 Regina Compound
+* purok 6 Dohna Milagros Village
+
+• Barangay 21-C
+* Super Block 1
+* super Block 2
+* Super Block 3
+* Super Block 4
+* Pierveded Zones 1, 2, 3, 4 & 5
+* Super Block 5
+* Super Block 6
+* Super Block 7
+* Super Block 8
+
+• Barangay 22-C
+* Super Block 1
+* Super Block 2
+* Super Block 3
+* Super Block 4
+* Super Block 5
+* Super Block 6
+* Super Block 7
+
+• Barangay 23-C
+* Purok 1
+* Purok 2
+* Purok 3-A
+* Purok 3-B
+* Purok 4-A
+* Purok 4-B
+* Purok 5
+* Purok 6
+* Purok 7
+
+• Barangay 24-C
+* Purok 1
+* Purok 2
+* Purok 3
+* Purok 4
+
+--- [Page 111] ---
+- Barangay 25-C
+* Purok 3
+- Barangay 26-C
+* Purok 2
+* Purok 2-A
+- Barangay 27-C
+* Purok 1
+* Purok 2
+* Purok 3
+- Barangay 28-C
+* Purok 2
+* Purok 4
+- Barangay 29-C
+- Barangay 30-C
+* Purok 1
+* Purok 2
+- Barangay 31-D
+* Purok 1
+* Purok 2
+* Purok 3
+* Purok 4
+* Purok 5
+* Purok 6-A
+* Purok 8-A
+- Barangay 32-D
+* Purok 2
+- Barangay 33-D
+* Purok 1
+* Purok 2
+* Purok 3
+* Purok 4
+- Barangay 34-D
+- Barangay 4-A
+- Barangay 3
+- Barangay 5
+- Barangay 6
+- Barangay 7
+- Barangay 8
+- Barangay 9
+- Barangay 10
+- Barangay 11
+- Barangay 12
+- Barangay 7-A
+- Barangay 9
+- Barangay 10
+- Barangay 11
+- Barangay 12
+- Barangay 7-B
+- Barangay 7-C
+- Barangay 7-D
+- Barangay 7-E
+- Barangay 7-F
+- Barangay 7-G
+- Barangay 7-H
+- Barangay 7-I
+- Barangay 7-J
+- Barangay 7-K
+- Barangay 7-L
+- Barangay 7-M
+- Barangay 7-N
+- Barangay 7-O
+- Barangay 7-P
+- Barangay 7-Q
+- Barangay 7-R
+- Barangay 7-S
+- Barangay 7-T
+- Barangay 7-U
+- Barangay 7-V
+- Barangay 7-W
+- Barangay 7-X
+- Barangay 7-Y
+- Barangay 7-Z
+- Barangay 7-A
+- Barangay 7-B
+- Barangay 7-C
+- Barangay 7-D
+- Barangay 7-E
+- Barangay 7-F
+- Barangay 7-G
+- Barangay 7-H
+- Barangay 7-I
+- Barangay 7-J
+- Barangay 7-K
+- Barangay 7-L
+- Barangay 7-M
+- Barangay 7-N
+- Barangay 7-O
+- Barangay 7-P
+- Barangay 7-Q
+- Barangay 7-R
+- Barangay 7-S
+- Barangay 7-T
+- Barangay 7-U
+- Barangay 7-V
+- Barangay 7-W
+- Barangay 7-X
+- Barangay 7-Y
+- Barangay 7-Z
+
+--- [Page 112] ---
+* Purok 1
+* Purok 2
+* Purok 3
+
+* Purok 4
+* Purok 5
+* Purok 6
+
+Barangay 39-D
+* Purok 5
+* Purok 6
+* Purok 7
+* Purok 8
+
+B. TALOMO DISTRICT
+* Barangay Matina Pangl (13 puroks)
+  * Purok 1-A, Km. 6.5
+  * Purok 5-A, Km. 8
+  * Purok 10-A, Km. 8.5
+
+* Barangay Matina Crossing 74-A (60 puroks)
+  * Purok Sambag
+  * Purok Balusong Extension
+  * Purok Santiago
+  * Purok Palanca Village
+  * Purok Mabuhay Village
+  * Purok Guadalupe I
+  * Purok Guadalupe II
+  * Purok Tulip Drive
+  * Purok Gravahan I
+  * Purok San Antonio I
+  * Purok San Antonio II
+
+* Barangay 76-A (Bucana)
+  * Bucana Proper
+  * SIR Phase I & II
+  * Kabacan to Times Beach
+
+* Barangay Ma-a (51 puroks)
+  * Purok 1 Gravahan
+  * Purok 2 Gravahan
+  * Purok 3 Gravahan
+  * Purok 4 Gravahan
+  * Purok 5 Gravahan
+
+* Purok 1:3 DOPPA
+  * Purok 13 Terminal (Bachelor)
+  * Purok 24 Sto. Niño/GASAI
+  * Purok 25 BUTEL/MAPVISI
+  * Purok 29 Lumicad Comp.
+
+--- [Page 113] ---
+* Purrok 8 Palanca Village
+* Purrok 9 Juaria Village
+* Purrok 13-A Terminal (Yellow Bus)
+• Barangay Talomo Proper (76 puroks)
+* Maria-Maria 1
+* Maria-Maria 2
+* Purrok 1-14
+* Puan
+* Bankal (Seaside, Muslim Village, Bulusan and Taal)
+* Saluruh Talomo, Washington
+• Barangay Melina Aplaya (33 puroks)
+* Purrok Dumalag 1
+* Purrok Dumalag 2
+* Purrok Dumalag 3
+* Aplaya Tabok
+* San Nicholas
+* Cebuano Village
+* Batangueño Village
+* Pagasa Village
+* Teacher's Village
+* Diamond Village
+* Poly Subd.
+• Barangay Dun moy (26 puroks)
+* Pagbig Village
+* Dun moy Proper
+* Philbanking Vill.
+* DOZNA Vill.
+* Ocean Vill
+• Barangay Bago Aplaya (22 puroks)
+* Galleria de Oro Subd.
+* Bliss
+* Gulf View
+* Sasa Homes
+* Carmelo Homes
+* Saavedra
+* Urban
+• Barangay Bago Galleria (21 puroks)
+* Purrok 3
+* Purrok 46, Kapandok
+* Purrok 50 El Condo Village
+• Talomo Center Beach
+* Talomo Cemento
+* Talomo Proper
+* Utas
+* Shanghai 1
+* Shanghai 2
+* Sea Side 2
+* Del Carmen
+* Times Beach 1 & 2
+* Ithaca Village
+* Exec. Homes Phase I, II, III
+* Maharlika Village
+* Ultra Homes Subd.
+* Sunrise Village
+* Maharlika Vill
+* Purrok Mang Robang
+* Rasay Comp. Stdo. Nilo
+* Leonor Comp.
+* Purrok Farland Ext. 1 & 2
+* Sea Side
+* Versary Village
+* Cabotol Subd.
+* Kororaya
+* Lower Rapanaga
+* Castro
+* Purrok 17
+
+--- [Page 114] ---
+* Purok 6
+* Purok 7
+* Purok 8
+* Purok 11
+* Purok 12
+
+* Purok 18
+* Purok 19
+* Purok 21
+* Purok 15
+* Purok 16
+
+Barangay Balik (11 puroks)
+* Purok 1 (Near Holy Family Parish)
+* Purok 3
+* Purok 7
+* Purok 8
+
+* Purok 9
+* Purok 10
+
+2ND CONGRESSIONAL DISTRICT
+
+A. AGDAO DISTRICT
+
+* Agdao Proper (11 puroks)
+* Purok 1
+* Purok 2
+* Purok 3
+* Purok 4
+* Purok 5
+* Purok 6
+
+* Purok 7
+* Purok 8
+* Purok 9
+* Purok 10
+
+* Purok 11
+
+* Pioneer Drive
+* Fatima
+
+* Barangay Aquino (10 puroks)
+* SOS
+* Water Lily
+
+* Barangay Centro Agdao (San Juan) (14 puroks)
+* San Francisco
+* San Miguel
+* Alicia
+* San Nicolas
+* Victoria
+
+* Lawis
+* Sta. Lucia Village
+* Pelayo Gerome's Driver
+* Fatima
+* Purok Sto. Niño Pelayo Vill.
+
+* Barangay Lapu-Lapu (10 puroks)
+* Purok 6
+* Purok 7
+* Purok 8
+
+--- [Page 115] ---
+- Barangay Leon Garcia (12 puroks)
+  * Mascon
+  * Baybay
+  * Bakal
+  * San Pedro
+  * San Vicente
+  * San Antonio
+
+  * Regla
+  * Visayas
+  * Corias
+  * San Roque
+  * Sto. Niño
+  * Sta. Cruz
+
+- Barangay R. Castillo (15 puroks)
+  * San Santiago
+  * Del Pilar (Iboban)
+
+- Barangay San Antonio (12 puroks)
+  * Sto. Niño YCF
+  * San Vicente YCF
+  * Freedom VIII
+
+- Barangay Ubaidé (7 puroks)
+  * Purok 1
+
+- Barangay Duterte (13 puroks)
+  * Sta. Cruz Blk. 1,2,3
+  * IKP
+  * Kasadya
+  * ICC
+
+- Barangay Tomas Monteverde Sr.
+  * Purok 6
+
+- Barangay Gov. Pecliano Bangoy
+  * Purok Bagong Buhay
+  * Purok Sta. Teresa
+  * Purok Sampaguita
+  * Purok Glivext
+  * Purok Vinzon Lupo Diaz Ext.
+
+- Barangay Panacan (45 puroks)
+  * Km. 13
+
+B. BUHANGIN DISTRICT
+
+--- [Page 116] ---
+* Zone 1
+* Purok 2
+* Purok 4
+* Purok 6
+* Purok 8
+* Jasa I
+* Jasa II
+
+* Purok 1
+* Purok 3
+* Purok 5
+* Purok 7
+* Purok 9
+* St. John
+* Muslim Community
+
+• Barangay Tigatto
+* Purok 8 (Sito Binuring)
+* Purok 9 (Sito Lapanday)
+* Purok 11 (Sito San Vicente Ferrer)
+* Purok 13 (Sito Laudes)
+* Purok 15 (Sito Sto. Nino Apeque Hillside)
+
+• Barangay Buhangin Proper
+* Talsay
+* San Vicente
+* Interior
+* San Isidro Zone 5
+
+C. BUNAWAN DISTRICT
+• Barangay Ilang (15 puroks)
+* 6-A
+* 3-A
+* 3-C
+
+* 6-B
+* 3-B
+
+* 8TH CONGRESSIONAL DISTRICT
+
+A. CALINAN DISTRICT
+• Calinan Poblacion (38 puroks)
+* Purok 8
+* Purok 9
+* Purok 15
+* Purok 20
+* Purok 23
+* Purok 24
+* Purok 25
+* Purok 26
+
+B. TORIL DISTRICT
+
+--- [Page 117] ---
+- Barangay Lizada
+  * Sitio New Lizada
+  * Sitio Punong
+
+- Barangay Dullah
+  * Pantalan
+  * Karipaan
+  * San Jose (Waling-waling)
+  * San Isidro
+
+- Sitio Tambacan
+  * Sitio Fisherman VIII.
+
+- Kalubin-an
+  * Sitio Pogi Lawis
+  * Lipadas
+
+--- [Page 118] ---
+INVENTORY OF DESIGNATED EVACUATION CENTERS FOR DISASTER VICTIMS
+As of June 30, 2013
+
+City of Davao
+
+| Name of Evacuation Center | Location | Proximity to Center/Establishment | Floor Area (in sq. meters) | No. of Evacuates | Other Characteristics |
+|-----------------------------|-----------|----------------------------------|-------------------------|-------------------|----------------------------|
+| 1. Brgy. 7-A Covered Court | Prk. 7 Magallanes Riverbys, Brgy. 1 Davao City | Adjacent: City Hall and SP Bldg., Davao City | 1,080 sq. m. | 500 pax | a. Near the CHDC (Secondary Exit) b. Not suitable for Flood Disasters |
+| 2. Magallanes ES | Bolton St., Brgy. 1-A | Adjacent: City Hall and SP Bldg | 84 classrooms | 3,000 pax | Suitable for flashfloods and any other types of disasters |
+| 3. Brgy. 2-A Gym | A. Sta. Cruz Extension, Brgy. 1-A | Adjacent to Grand Menseng Hotel | 1,080 sq. m. | 300 pax | Not suitable for flashfloods |
+| 4. A. Sta. Cruz and Sto. Nino Chapel | Prk. 2 and 3 respectively, Brgy. 2-A | Adjacent to Bankerohan Public Market | 22 and 36 sq. m. | 50 pax/Chapel | Not suitable for flashfloods |
+| 5. University of Mindanao (Bolton) | Bolton corner Bonifacio St., Davao City | Near almost all Business establishment | 45 rooms available | 500 pax | Suitable for all types of disaster |
+| 6. Brgy. Gym (5-A) | Brgy. Hall (Brgy. 5-A) | Adjacent to Public Market and University of Mindanaue Conception | 1,080 sq. m. | 3,000 pax | Suitable for all types of disaster Accessibility to central business district |
+| 7. Brgy. Lamayan Center | Brgy. 5-A | Near brgy. hall | 40 sq. m. | 50 pax | Suitable for all types of disaster |
+| 8. Wireless ES b. School | Fr. Seliga St., corner Malvar St., AMA Computer College, San Isidro Ext. | Adjacent to UIC | 1,200 sq. m. | 1,000 pax | Suitable for all types of disaster |
+| 9. RMC Gym | Lopez Jaena St., Brgy. 7-A | 4,800 sq.m. | 7,000 pax | Suitable for all types of disaster |
+
+--- [Page 119] ---
+**Name of Evaluation Center**
+
+| Location | Proximity to Certain Establishment (in sq. rasters) | Floor Area (in sq. ft.) | No. of Evacuees | Other Characteristics |
+|-----------|---------------------------------------------|------------------------|------------------|-----------------------|
+| 15. San Jose Covered Court | Last Chance Alley, Lopes Jaera St. | Near RMIC Gym | 1,080 sq. ft. | 100% pax. Suitable for all types of disasters |
+| 16. San Jose Covered Court | Pris. 9, Upper Madego Hills Bigg B & A | Adjacent to Breckenridge Hosp. | 10 sq. m. | 100 pax. Suitable for Flash Floods and any other types of disasters |
+| 12. Chapel Co. n. nr. Cheshire Hospital, Fr. 5604 St. | Adjacent to Erkenbrechre Hosp. | 6 m. x 15 m | 20 - 30 pax | Suitable for all types of disasters |
+| 13. Manfori Agts. Covered Court | Fr. 7, Bartons Heights It., Kingfisher St. | Adjacent to many public and private schools | 1,080 sq. m. | 400 pax. Suitable for all types of disasters |
+| 14. Davan Iloci I. B/S/II in Church | Jose Camus Extension | Adjacent to many business establishments | 300 pax | Suitable for all types of disaster |
+| 15. Davan City National High School* | Tincles Avenue | Adjacent to many hotels and other public government offices | 25 ft. x 30 ft. / 30 classrooms | 3,000 pax. Suitable for all types of disasters Accessibility to central business district |
+| 16. San Rafael Subd. | San Rafael Subd. | Adjacent to Innns and other lodging houses | 100 pax | Suitable for all types of disasters |
+| 17. Davan Methodist School | Luco Diaz St., Brigy: 16-B | Adjacent to University of Southeastern Phils. | 300 pax | Suitable for all types of disasters |
+| 18. USFJ Social Hall | U/SEP, Brigy: 16-A | Near 24-Hrm and schools | 800 sq. m. | 400 pax. Suitable for all types of disasters |
+| 19. Don Francisco Dizon ES Multi-purpose Bldg. | 7.5, Dixon Road, Brvs.: 19-B | Near Mills | 20 ft. x 30 fl. / Classroom (46 classroom) | 500 pax. Suitable for all types of disasters |
+| 20. El Rio Covered Court | Ph. 1, El Rio Subd., Brigy: 16-E | Near many drugstores | 1,080 sq. m. | 300 pax. Suitable for all types of disasters |
+
+--- [Page 120] ---
+**Name of Evacuation Center**
+**Location**
+**Proximity to Certain Establishment (in sq meters)**
+**Floor Area (in sq meters)**
+**No. of Evacuees**
+**Other Characteristics**
+
+21. Covered Court
+Brgy. 21-C Piapi Blvd.
+432 sq. m.
+500 pax
+Suitable for flood, fire, not suitable for monsoon
+
+22. Brgy. Health Center
+Brgy. 21-C (besides brgy. Hall)
+Near Ateneo Univ.
+32 sq. m.
+200 pax
+Suitable for flash floods and any types of disasters
+
+23. Davao City Recreation Center
+Brgy. 39-D
+City Hall of Davao and SP Bldg.
+3,040 sq. m.
+2,000 pax
+Suitable for all types of disasters
+
+24. Covered Court
+Gulfview Executive Homes, Brgy. Baguete, Atienza
+432 sq. m.
+400 pax
+Suitable for all types of disasters except monsoon
+
+25. Covered Court
+Prk. 2, Brgy. Bago Galleria
+432 sq. m.
+1,000 pax
+Suitable for all types of disaster
+
+26. Gym
+Prk. 2, Brgy. Balick, Talomo Dist.
+1,080 sq. m.
+100 pax
+Suitable for all types of disasters
+
+27. Cemento Gym
+Talomo Distrito, Brgy. Talomo Proper
+Near the Parish Church
+100 pax
+Not suitable for monsoon
+
+28. Church
+San Lorenzo Ruiz Parish Central Park
+1,800 sq. m.
+300 pax
+Suitable for all types of disasters
+
+29. Langub ES/Covered Court
+Langub, Talomo District
+500 pax
+Suitable for all types of disasters
+
+30. Brgy. Hall
+Del Carmen, Brgy. Matina Aplaya
+Near inns and resorts
+200 pax
+Suitable for all types of disasters except for monsoon
+
+31. Covered Court
+Shanghai, Matina Aplaya
+Near inns and resorts
+432 sq. m.
+300 pax
+Suitable for all types of disasters except for monsoon
+
+32. Generoso Elem. School
+Seaside, Brgy. Bago Aplaya
+1,000 pax
+Not suitable for flash floods and monsoon
+
+--- [Page 121] ---
+**Name of Evacuation Center** | **Location** | **Proximity to Certain Establishment (in sq. meters)** | **No. of Evacuees** | **Other Characteristics**
+---|---|---|---|---
+33. Maa Central Elem. School Covered Court | Don Julian Rodriguez Highway | Near Malls and Brgy. Hall | 960 sq. m. | 3000 pa
+| Suitable for all types of disasters
+34. Sangallangan Covered Court | Prk. 20, Brgy. Maa | Near private and public schools | 960 sq. m. | 2000 pa
+| Not suitable for flash floods
+35. Covered Court | NHA, Brgy. Duterte, Agdao District | Near private and public schools | 960 sq. m. | 300 pa
+| Suitable for all types of disasters
+36. Don Julian Rodriguez ES | NHA, Brgy. Duterte, Agdao District | Near private and public schools | 960 sq. m. | 100 pa
+| Suitable for all types of disasters
+37. Multi-purpose covered court | J.Janang Executive Homes, R. Castillo, Agdao District | Near Malls and hotels | 780 sq. m. | 1,000 pax
+| Suitable for all types of disaster
+38. SARPHIL GYM | Sarphil VIII, Brgy. W. Aquino, Agdao District | Near Assumption School of Davao | 48 sq. m. | 300 pa
+| Suitable for all types of disasters
+39. Brgy. Hall | Bolcan St., Brgy. San Isidro, Agdao District | Near business establishments | 840 sq. m. | 500 pa
+| Suitable for all types of disasters
+40. Barangay GMA | Maya-maya St., Brgy. Lapu-lapu | Near the business establishments | 10,809 sq. m. | 1,800 pax
+| Suitable for all types of disasters
+41. Buhangin Gym | Nat'l. Road, Buhangin Proper | Near private school hall/Brgy. hall | 720 sq. m. | 300 pa
+| Suitable for all types of disasters
+42. Buhangin Gym | Sto. Nino Gym | Near Sto. Rosario Parish Church | 960 sq. m. | 150 pa
+| Suitable for all types of disasters
+43. Sto. Nino Gym | Prk. Sto. Rosario, Buhangin Proper | Near Sto. Rosario Parish Church | 960 sq. m. | 100 pa
+| Suitable for all types of disasters
+44. Sto. Rosario Gym | Brgy. Tigatto, Buhangin District | Near Juvenile Subd., Tigatto | 1,080 sq. m. | 150 pax
+| Suitable for all types of disasters
+45. Ulyanguren Covered Court | Juvenile Subd., Tigatto | Near Malls and Brgy. Hall | 960 sq. m. | 3000 pa
+| Suitable for all types of disasters
+
+--- [Page 122] ---
+**Name of Evaluation Center**
+
+| Name of Evaluation Center | Location | Proximity to Certain Establishment | Floor Area (in sq. meters) | No. of Evacuees | Other Characteristics |
+|-----------------------------|-----------|-------------------------------------|-------------------------|---------------|------------------------|
+| 47. Mandug Gym                | Las Amenas, Mandaluyong Proper | Near Elementary and Secondary School | 500 sq. m. | 500 pax | Suitable for all types of disasters |
+| 48. Pablo Lorenzana National High School | Mandaluyong Highway, Mandaluyong Proper | Near Elementary and Secondary School | 500 sq. m. | 500 pax | Suitable for all types of disasters |
+| 49. Callawa E5 | Brgy. Callawa, Buhangan District | 20 ft. x 30 ft./room x 10 classrooms | 500 pax | 200 pax | Suitable for all types of disasters |
+| 50. Callawa Gym | Brgy. Callawa, Buhangan District | Near Davao Intl' Airport | 1,080 sq. m. | 1,000 pax | Suitable for all types of disasters |
+| 51. Covered Court | St. Anthony Vill., Brgy. Anglomlongto | Near Davao Intl' Airport | 1,080 sq. m. | 1,000 pax | Suitable for all types of disasters |
+| 52. Gym - Cebuanahan Nat'l High Sch. | Country Homes Sulod, Cebuatanian | 500 pax | 500 pax | Suitable for all types of disasters |
+| 53. Brgy. Acacia Gym | Brgy. Acacia, Buhangan District | 1,080 sq. m. | 500 pax | Suitable for all types of disasters |
+| 54. Communal Covered Court | Prk. 3, Brgy. Community Hall | 1,080 sq. m. | 100 pax | Suitable for all types of disasters |
+| 55. Indulon Covered Court | Near Brgy. Hall | Near Rancho Palos Verdes Golf Course | 1,080 sq. m. | 500 pax | Suitable for all types of disasters |
+| 56. Hizon Covered Court | Near Hall | Near hotels and seaport and hotels | 3,000 pax | 3,000 pax | Suitable for all types of disasters |
+| 57. Dona Asuncion, Asuncion Hizon E5 | Dona Asuncion, Brgy. Pampanga | Near hotels and seaport establishment | 15 m x 25 m | 30 pax | Not suitable for flashfloods |
+| 58. San Miguel Chapel | Near highway, Naval Station and TACRFTC | Near seaports | 500 pax | 500 pax | Suitable for all types of disasters, except tsunami |
+| 59. F. Bustamante ES Gym | Trce. A. Tunugco | Near seaports | 500 pax | 500 pax | Suitable for all types of disasters, except tsunami |
+
+--- [Page 123] ---
+**Name of Evacuation Center**
+**Location**
+**Proximity to Certain Establishment (in sq. meters)**
+**Floor Area (in sq. classrooms)**
+**No. of Evacuees**
+**Other Characteristics**
+
+61. JV Ferriols ES
+Sito JV Ferriols, Brgy. Lizaña, Toril District
+12
+500 pax
+Not suitable for Flooding
+
+62. Dona Rosa Covered Court
+Sito Dona Rosa II, Brgy. Lizaña, Toril District
+720 sq. m.
+400 pax
+Suitable for all types of disasters except monsoon
+
+63. C.B. Bangoy Sr. ES
+Pek. 1, Sito I, Marapani
+500 pax
+Suitable for all types of disasters
+
+64. Sirawan ES
+Crossing Srawan, Toril District
+1,000 pax.
+Suitable for all types of disasters
+
+65. Brgy. Gym
+Brgy. Hall, Near Davao Fishport
+960 sq. m.
+500 pax
+Suitable for all types of disasters except tsunami
+
+66. School Gym
+San Miguel ES, Prk. 2, Brgy. Lubagon
+640 sq. m.
+500 pax
+Suitable for all types of disasters
+
+67. Covered Court
+Brgy. 1, Lubagon, Toril District
+500 pax
+Suitable for all types of disasters
+
+68. Toril Gym
+Toril District Hall and Other Business establishment
+Near inland resorts
+2,500 pax
+Suitable for all types of disasters
+
+69. Covered Court
+Volk St., Brgy. Crossing Bayabas
+1,080 sq. m.
+150 pax
+Suitable for all types of disasters
+
+70. Brgy. Gym
+Brgy. Eden
+Near Phil. Science High School
+960 sq. m.
+700 pax
+Suitable for all types of disasters
+
+71. Brgy. Multipurpose Idg.
+Prk. 5, Brgy. Bayabas Proper
+100 sq. m.
+50 pax
+Suitable for all types of disasters
+
+72. Mini-Gym
+Beside Brgy. Hall, Brgy. Sto. Nino, Tugbok School
+Near Bank and police Station
+320 sq. m.
+180 pax
+Suitable for all types of disasters
+
+73. Mintal Gymnasium
+Sampaguita St., Brgy. Mintal
+1,900 sq. m.
+2,000 pax
+Suitable for all types of disasters
+
+74. Gym
+Prk. 4, Tugbok Proper
+Near Elementary and Secondary Schools
+1,080 sq. m.
+2,500 pax
+Suitable for all types of disasters
+
+--- [Page 124] ---
+**Name of Evacuation Center**
+
+| Location | Proximity to Certain Establishment | Floor Area (in sq. meters) | No. of Evacuates | Other Characteristics |
+|-----------|-------------------------------------|--------------------------|------------------|-------------------------|
+| 75. Brgy. Hall | Prk. 6-C, Brgy. Los Amigos | Near both elem. and secondary school | 200 sq.m. | Suitable for all disasters |
+| 76. Gym | Prk. 34, Park Ave., Calinan Proper | Near District Hall | 2,000 sq. m. | Suitable for all types of disasters |
+| 77. Covered Court | Waling-Waling St., Riverside, Calinan District | Near Brgy. Hall | 1,080 sq. m. | Suitable for all types of disasters |
+| 78. Multi- purpose Bldg. | Sanaguita St., Brgy. Riverside | 200 sq. m. | 100 pax | Suitable for all types of disasters |
+| 79. Social Hall | Lacson Es, Prk. 1, Brgy. Lacson | Infront of Brgy. Hall | 140 sq. m. | Suitable for all types of disaster |
+| 80. Covered Court | Lamanan ES | 60 pax | Suitable for all types of disasters |
+| 81. Covered Court | Beside brgy. Hall, Prk. 3, Brgy. Tamayong | Near praye/ mountain | 960 sq. m. | 500 pax | Suitable for all types of disasters |
+| 82. Cawayan Covered Court | Prk. 1, Brgy. Cawayan | | 250 pax | Suitable for all types of disasters |
+| 83. Gym | Upper Kibolang, Marilok Proper | | 150 pax | Suitable for all types of disasters |
+| 84. Covered Court | Brgy. Tamuqan, Marilok District | Near Brgy. Hall | 700 pax | Suitable for all types of disasters |
+| 85. Multi- purpose Gym | Prk. 1, Brgy. Bantol | | 250 pax | Suitable for all types of disasters |
+| 86. Covered Court | Prk. 6-E, Brgy. Pangay, Calinan | Infront of Brgy. Hall | 1,000 sq. m. | 150 pax | Suitable for all types of disasters |
+| 87. Multi- purpose hall | Lumondao, Marilok Proper | Near brgy. hall | 120 sq. m. | 50 pax | Suitable for all types of disasters |
+| 88. Covered Court | Datu Salumay, Marilok District | Near Cawano- Bukidnon Road | 1,080 sq. m. | 150 pax | Suitable for all types of disasters |
+| 89. Covered Court | Marilok District | Infront of Brgy. Hall | 960 sq. m. | 150 pax | Not suitable for Floodings |
+
+--- [Page 125] ---
+**Name of Evacuation Center**
+
+| **Location** | **Proximity to Certain Establishment** | **Floor Area (in sq. meters)** | **No. of Evacuees** | **Other Characteristics** |
+|--------------|-----------------------------------------|-------------------------------|---------------------|----------------------------|
+| 90 Covered Court | Near Binowang Es and Chapel | 750 sq. ft. | 500 pax | Suitable for all types of disasters |
+| 91 Covered Court | Within the community | 25,320 sq. ft. More or less | 500 pax | Suitable for all types of disasters |

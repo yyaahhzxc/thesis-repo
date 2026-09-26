@@ -1,0 +1,126 @@
+=== ORDINANCE: Ordinance No. 0729-24 Digitalization of LCR ===
+
+--- [Page 1] ---
+Republic of the Philippines
+Office of the Sangguniang Panlungsod
+City of Davao
+
+20th City Council
+49th Regular Session
+Series of 2024
+
+PRESIDENT: 
+Vice Mayor J. Melchor B. Quitain Jr.
+Councillor Nilo M. Abeleles Jr.
+Councillor Bal Hundra Cassandra Dominique N. Advincula
+Councillor Al Ryan S. Alejandre
+Councillor Dante A. Apostol Sr.
+Councillor Conrado C. Baluran
+Councillor Jessica M. Bonguyan
+Councillor Jovito R. J. Bonguyan
+Councillor Pilar C. Braga
+Councillor Jonard C. Dayap
+Councillor Edgar P. Ibuayan Jr.
+Councillor Richlyn N. Justol-Baguillod
+Councillor Diosdado Angelo Junior R. Mahipus
+Councillor Maria L. Mariano
+Councillor Kristine May John Abdul Mercado
+Councillor Bonz Andre A. Militar
+Councillor Temujin B. Ocampo
+Councillor Myrna G. L'Dalado-Ortiz
+Councillor Alberto E. Ungab
+Councillor Jose Maria Benitez D. Villafuerte
+Councillor Trisha Ann J. Villafuerte
+Councillor Jesus Joseph P. Zozobrado III
+
+ABSENT:
+Councillor Marissa S. Abella
+Councillor Luna Maria Dominique S. Acosta
+Councillor Bernard E. Al-ag
+Councillor Wilberto E. Al-ag
+Councillor Augusto Javier G. Campos III
+Councillor January N. Dulferis
+
+- QB - Attended the Mindanao Farmer's Summit
+- On Vacation Leave
+- On Sick Leave
+- On Vacation Leave
+- On Domestic Emergency Leave
+
+ORDINANCE NO. 0729-24
+Series of 2024
+
+AN ORDINANCE FOR THE DIGITALIZATION OF THE LOCAL CIVIL REGISTRY OF DAVAO CITY THROUGH THE CIVIL REGISTRY INFORMATION SYSTEM (C.R.I.S.) ONLINE AND APPROPRIATE FUNDS FOR ITS IMPLEMENTATION
+
+--- [Page 2] ---
+Page 2 of 3  
+Ord. No. 0729-24
+
+Be it ordained by the Sangguniang Panlungsod of Davao City in session assembled, that:
+
+SECTION 1. TITLE - This Ordinance shall be known as "AN ORDINANCE FOR THE DIGITALIZATION OF THE LOCAL CIVIL REGISTRY OF DAVAO CITY THROUGH THE CIVIL REGISTRY INFORMATION SYSTEM (C.R.I.S.) ONLINE AND APPROPRIATE FUNDS FOR ITS IMPLEMENTATION".
+
+SECTION 2. COVERAGE - The Local Civil Registry (LCR) of Davao City shall establish an online registry system to receive for the city constituents and the public in general, registration of any Civil Registry Document, request for copies or certification in an efficient and expeditious manner through the use of the Civil Registry Information System (CRIS) Online.
+
+SECTION 3. FEES - For the services rendered to the requesting party, there shall be collected standard fees charged by LCR for such certified copies, certifications of civil registry documents.
+
+SECTION 4. EQUIPMENT/MANPOWER NEEDED - To fully implement the digitalization of Civil Registry Records, the following equipment are needed to develop the project entailing a one-time expense as well as recurring annual expenses for the maintenance of the system, including additional manpower, namely:
+
+a. System Development  
+b. File Server  
+c. Computers, Laptops, Scanners and other peripherals  
+d. Computer Tables  
+e. Queuing System Hardware  
+f. EDP Section Office Renovation  
+g. Printers  
+h. Cloud Service  
+i. Direct Internet Access  
+j. Additional manpower  
+
+All recurring expenses shall be charged against the annual budget of the Office of the Local Civil Registry of Davao City.
+
+SECTION 5. SYSTEM TO BE IMPLEMENTED - A new system will be developed by the City Information Technology Center of the City Government of Davao and will be accessed by the public through a designated application/website. All partner agencies will be provided with a dedicated system for the submission of the civil registry documents for registration.
+
+SECTION 6. NON-DISCLOSURE AGREEMENT - All system users/partner institutions are required to sign a Non-Disclosure Agreement with the City Local Civil Registrar of Davao pertaining to any and all sensitive information/personal data received or which they may have come across by reason of their work designation/assignment.
+
+Any breach of the Non-Disclosure Agreement shall be subject to the Data Privacy Ordinance of Davao City.
+
+SECTION 7. DATA PRIVACY - The Local Civil Registry Office shall implement reasonable and appropriate safeguards for the protection of personal data of all its data subjects and will comply with the Data Privacy Ordinance of Davao City.
+
+--- [Page 3] ---
+**Page 3 of 3**
+
+**Ord. No. 0729-24**
+
+**SECTION 8. APPROPRIATION**  
+The City Government of Davao shall provide an initial funding of Five Million Pesos (P5,000,000.00) for the implementation and enforcement of this Ordinance through its Annual Budget or any of its Supplemental Budget as the case may be. Any recurring expenses for the maintenance, connectivity, and daily operation of the system shall be charged against the Annual Budget intended for the Local Civil Registry of Davao City. Further, any human resource cost not included in the aforementioned initial budget of P5 Million may be augmented in any of the Supplemental Budget of the City Government of Davao as the need arises.
+
+**SECTION 9. SEPARABILITY CLAUSE**  
+If, for any reason, any section or provision of this Ordinance shall be held unconstitutional or invalid, other sections or provisions hereof not affected thereby shall continue to be in full force and effect.
+
+**SECTION 10. EFFECTIVITY**  
+This Ordinance shall take effect immediately after its publication in a newspaper of general circulation.
+
+**ENACTED**, December 12, 2024, by a unanimous vote of all the Members of the Sangguniang Panlungsod.
+
+**CERTIFIED CORRECT:**  
+By:  
+Charito N. Santos  
+City Government Department Head II  
+(Secretary to the Sangguniang Panlungsod)
+
+**ATTESTED:**  
+J. Melchor B. Quitain Jr.  
+Vice Mayor  
+Presiding Officer
+
+**APPROVED:**  
+FEB 04 2025  
+SEBASTIAN Z. DUTERTE  
+City Mayor
+
+**ATTESTED:**  
+ATTY. FRANCIS MARK H. LAYOG  
+City Administrator
+
+AN ORDINANCE FOR THE DIGITALIZATION OF THE LOCAL CIVIL REGISTRY OF DAVAO CITY THROUGH THE CIVIL REGISTRY INFORMATION SYSTEM (C.R.I.S.) ONLINE AND APPROPRIATE FUNDS FOR ITS IMPLEMENTATION

@@ -1,0 +1,308 @@
+=== ORDINANCE: Ordinance No. 000478-21 ===
+
+--- [Page 1] ---
+Republic of the Philippines
+City of Davao
+Office of the Sangguniang Panlungsod
+
+19th City Council
+5th Regular Session
+Series of 2021
+
+PRESENT:
+
+Councilor Edgar P. Ibuwan Jr.
+Councilor Ralph O. Abella
+Councilor Nilo D. Abellera
+Councilor Maria Belen S. Acosta
+Councilor Bai Hundra Cassandra Dominique N. Advincula
+Councilor Wilberto E. Al-ag
+Councilor Dante L. Apostol Sr.
+Councilor Cristine M. Baluran
+Councilor Jessica M. Bonguyan
+Councilor Louie John J. Bonguyan
+Councilor Pilar C. Braga
+Councilor Augusto Javier G. Campos III
+Councilor Danilo C. Dayanghihang
+Councilor Jonard C. Dayap
+Councilor Edgar R. Ibuwan Sr.
+Councilor Gilberto G. Maguigul
+Councilor Pamela A. Librado-Morata
+Councilor Diosdado Angelo Junior R. Mahipus
+Councilor Jaffar U. Marohomsalic
+Councilor Bohfacio E. Militar
+Councilor Myrna G. L'Dalido-Ortiz
+Councilor Antonio G. Princes-Castrodes
+Councilor J. Melchor D. Quinon Jr.
+Councilor Alberto T. Ungab
+Councilor Mary Josele D. Villafuerte
+Councilor Jesus Joseph P. Zozobraado III
+
+ABSENT:
+Vice Mayor Sebastian Z. Duterte
+- On Official Business
+
+ORDINANCE NO. 0478-21
+Series of 2021
+
+AN ORDINANCE FOR THE IMPLEMENTATION OF THE COVID-19 IMMUNIZATION PROGRAM OF DAVAO CITY
+
+--- [Page 2] ---
+Page 2 of 11
+Ord. No. 0478-21
+
+Be it ordained by the Sangguniang Panlungsod of Davao City in session assembled,
+that:
+
+SECTION 1. IIIIE - This Ordinance shall be known as the "COVID-19 IMMUNIZATION PROGRAM OF DAVAO CITY".
+
+SECTION 2. DECLARATION OF POLICY - The fight against COVID-19 requires a whole-of-government and whole-of-society approach. The shared responsibility of national government agencies, local government units, various sectors of society, especially communities and individuals, is a necessary exercise to prevent the transmission of the virus. While vaccine is among the solutions, it is not the only solution to end the pandemic. It is also imperative to minimum public health standards, effective surveillance and disease management as well as capability-building to weather future public health emergencies is a must.
+
+It is hereby declared a policy of the State to take a proactive role in the health care of its citizens. Towards this end, the State shall adopt a comprehensive immunization program for COVID-19 in Davao City (hereafter known as the "Program") which will cover all its residents, ensuring that the promise of normalization of everyday life is achieved.
+
+SECTION 3. DEFINITION OF TERMS - The terms used in this Ordinance are herein defined as follows:
+
+a) Adverse Events Following Immunization (AEFI)- any untoward medical occurrence which follows immunization and which does not necessarily have a causal relationship with the usage of the vaccine. The adverse event may be any unfavorable or unintended sign, abnormal laboratory finding, symptom or disease.
+
+b) Adverse Events of Special Interest (AESI)- a pre-identified and predetermined medically-significant event that has the potential to be causally associated with a vaccine product that needs to be carefully monitored and confirmed by further specific studies.
+
+c) Ancillary immunization supplies- supplies other than the vaccine itself, which is used to administer the vaccine, and includes Personal Protective Equipment (PPEs), auto-disabled needles and syringes, mixing syringes, Safety Collector Boxes (SCB), and others.
+
+d) Cold chain management- is a logistics management process for vaccines that require refrigerated temperatures. It involves performing a chain of tasks to prepare, store, and transport products along the cold supply chain. Failure to keep vaccines under the required cold conditions will render them unavailable for storage, and the required cold conditions will render them unavailable for vaccination. For COVID-19 vaccines, required refrigeration ranges from +8°C to as low as -50°C.
+
+--- [Page 3] ---
+Ord. No. 0478-21
+
+g) Emergency Use Authorization (EUA) - a mechanism to facilitate the availability and use of medical countermeasures, including vaccines, during public health emergencies, such as the current COVID-19 pandemic. Under the EUA, the Philippine Food and Drug Administration (FDFA) may allow the use of unapproved medical products, or unapproved uses of approved medical products, for the treatment, prevention, or cure of life-threatening diseases or conditions when certain statutory criteria under FDA Circular No. 2020-036 have been met, considering that there are no adequate, approved, and available alternatives.
+
+h) Herd immunity - a form of indirect protection from infectious disease that occurs when a sufficient percentage of a population has become immune to an infection, whether through vaccination or previous infections, thereby reducing the likelihood of infection for individuals who lack immunity.
+
+i) Immunization - The process by which an individual's immune system becomes fortified against an agent (or antigen), most commonly gained through vaccination. Also terms used interchangeably with immunization: "inoculation" and "vaccination." This means the use of vaccine-induced immunity in a person against a vaccine-preventable disease.
+
+j) Informed consent - permission granted in the knowledge of the possible consequences, typically that which is given by a patient to a doctor/medical practitioner for treatment/intervention with full knowledge of the possible risks and benefits.
+
+k) Pandemic - an epidemic occurring worldwide, or over a very wide area, crossing international boundaries and usually affecting a large number of people. The classical definition includes nothing about population immunity, virology or disease severity.
+
+l) Vaccines - biological preparations which stimulate the body's own immune system to produce antibodies and be limited to those produced against COVID-19.
+
+m) Vulnerable individuals - refers to individuals who are unable to receive the full vaccine regimen (multiple doses) due to age, pregnancy, breastfeeding, or other reasons.
+
+--- [Page 4] ---
+**SECTION 6. FORMULATION OF A COMMUNITY-BASED COVID-19 IMMUNIZATION PLAN**
+
+The City of Davao shall follow a community-based framework in executing the Program. This framework shall treat barangays and other community subsets as active partners in the execution in order to ensure thorough immunization coverage of persons, adequate and equitable distribution of the vaccine, and proper post-immunization attention and monitoring. The City Health Officer (CHO) in consultation with the Department of Health Center for Health Development Davao (DOH-CHD Davao) shall create this framework with input from other frontline agencies.
+
+Furthermore, as the Program requires a whole-of-society approach, participating agencies and the private sector are also enjoined to closely coordinate with the local government in the implementation of the Program.
+
+**SECTION 7. IMPLEMENTATION**
+
+The CHO shall be the lead agency in the implementation of the COVID-19 Immunization program. It shall identify and identify and train health workers for the program's vaccine handling, storage, and administration, as well as other aspects of the Program. All vaccinators should be adequately trained. No immunization shall be performed by untrained/unqualified/unauthorized personnel. Any unauthorized administering of vaccine shall be punishable by this Ordinance and other applicable laws.
+
+The COVID-19 Electronic Immunization Registry (CEIR) shall be the official platform for masterlisting and registration for COVID-19 vaccination. All health facilities (hospitals, vaccination centers, etc.) within the city shall submit its own masterlist through the CEIR, which will be consolidated by the CHO. It shall ensure that there will be no duplication in masterlists across facilities within their catchment.
+
+Every person vaccinated under this Ordinance shall be given an immunization card which shall reflect the date of immunization, the immunization round/dose received, and other pertinent details. This same data shall also be recorded in the CEIR. Proof of vaccination and subsequent receipt of immunization card shall not mean exemption from continued strict observance of public health protocols. The identity of the person vaccinated and other required information shall be recorded and kept by the CHO for documentation, archiving, and other similar purposes. Information shall not be used for other post-immunization concerns but shall remain private and confidential. For this reason, an efficient method of record-keeping shall be developed which shall ensure a streamlined delivery of the vaccine and detailed record-keeping of persons vaccinated and doses administered. Informed consent form shall be distributed in Program areas, and no person shall be vaccinated without first submitting a duly-accomplished informed consent form.
+
+Since specific COVID-19 vaccine types may require multiple doses to achieve full efficiency and effectiveness, multiple immunization rounds may be implemented, thus the need for careful record-keeping and documentation. Persons thus vaccinated are required to be given the full vaccine regimen (multiple doses as required by the manufacturer) for full effect.
+
+**SECTION 8. VACCINE SELECTION AND PROCUREMENT**
+
+Only vaccines with Emergency Use Approval (EUA) and/or Certificate of Product Registration (CPR) issued by the Philippine Food and Drug Administration (FDA) shall be selected and procured for the Program. In line with vaccine procurement, ancillary immunization supplies shall be acquired as well, and, as much as possible, should be delivered earlier than the vaccines themselves.
+
+--- [Page 5] ---
+Page 5 of 11
+Ord. No. 047B-21
+
+SECTION 9. VACCINE STORAGE, DELIVERY AND LOGISTICS - Existing supply chain systems shall be updated to cope with the additional requirements for storage and distribution of vaccines under the Program. While the specific logistical requirements associated with each vaccine may be different and shall be applied as necessary, a general roadmap is as follows: (a) vaccine is received from manufacturers; (b) vaccines is stored in cold chain until it is ready for distribution; (c) vaccines are prepared for distribution to vaccine locations. Storage of the vaccines shall be centralized and managed based on the guidelines set by DOH and the vaccine supplier.
+
+CHD Davao and the Local Government shall develop a distribution plan appropriate to the specific requirements in its jurisdiction, which shall be consolidated by the National COVID-19 Task Force in order to come up with a comprehensive national cold chain and logistics plan for COVID-19 immunization.
+
+SECTION 10. VACCINE PRIORITIZATION AND PRIORITY ELIGIBLE GROUPS - The implementation of actual immunization shall be in phases, depending on the delivery (transportation, storage, logistical requirements) of vaccines to the country. Deployment shall be based on a sectoral approach within each priority group. As much as possible, the guidelines in the Philippine National Deployment and Vaccination Plan for COVID-19 Vaccines shall be followed, to wit:
+
+I. Priority Eligible Group A
+a. Frontline health workers from the private and public sector currently on active practice/service, regardless if permanent, contractual, job-order, and/or outsourced employees or staff;
+b. Indigent Senior Citizens registered and as determined by the Department of Social Welfare and Development (DSWD);
+c. Remaining Senior Citizens - All senior citizens (not categorized as indigent) registered and as determined by DSWD;
+d. Remaining Indigent Population as determined by DSWD;
+
+e. All enlisted uniformed personnel in active service under the Armed Forces of the Philippines (AFP), Philippine National Police (PNP), Philippine Coast Guard (PCG), Bureau of Fire Protection (BFP) and the Citizen Armed Force Geographical Unit (CAGU).
+
+II. Priority Eligible Group B
+a. All teachers and school workers, whether permanent, job-order, contractual or outsourced in all educational levels, from primary, secondary, tertiary, and vocational educational institutions, both private and public;
+b. All government workers, whether permanent, job-order, contractual or outsourced, in National government agencies, Government-Owned and Controlled Corporations (GOCCs), Government Financial Institutions (GFIs), local government units, among others;
+
+--- [Page 6] ---
+Page 6 of 11
+Ord. No. 0478-21
+
+c. Essential workers, including all those coming from the sectors of agriculture, forestry and fisheries; transportation; construction; food industries; manufacturing of essential goods; tourism; essential retail; water-refilling stations; laundry services; logistics service providers; delivery and courier services; waste supply and sanitation services; telecommunications services; energy; power companies; and other workers who have been identified as those similarly providing basic services during the time of pandemic and essential to the growth of the economy as determined by the Department of Trade and Industry (DTI) and the Department of Labor and Employment (DOLE);
+
+d. Socio-demographic groups at significant higher risk than other senior citizens and indigent populations (e.g., Persons Deprived of Liberty (PDLS), Persons with Disabilities (PwDs), Indigenous Peoples, Filipinos living in high-density areas;
+
+e. Eligible students in primary, secondary, tertiary, and vocational educational institutions, upon the recommendations of the World Health Organization (WHO) and the National Immunization Technical Advisory Group (NITAG);
+
+f. Filipino migrant workers who reside in another country for a limited period of employment that were not vaccinated;
+
+g. All remaining Filipino workforce as determined by DOLE, DTI and Civil Service Commission (CSC);
+
+III. Priority Eligible Group C
+
+a. All remaining Filipino citizens not mentioned in Groups A and B.
+
+These priority groups may be subject to other considerations based on the latest developments and scientific evidence and may be revised as reflected in the Philippine COVID-19 National Vaccine Deployment Plan.
+
+For purposes of herd immunity, the Immunization Program shall continue to run until at least 70 to 85 percent of the population in the City is immunized. Within the City, the deployment of vaccines to specific areas, districts, and barangays, shall be based on the burden of COVID-19 cases, using the indicators as defined by NITAG, to wit:
+
+a. number of active cases in recent four (4) weeks
+
+b. attack rate per 100,000 in recent four (4) weeks
+
+SECTION 11. HUMAN RESOURCE MANAGEMENT AND TRAINING - A human resource management and training plan shall be developed in conjunction with DOH to ensure that there is a sufficient number of human resources available for the implementation of the program. The WHO and other partner organizations shall be tapped to support the capability-building activities and initiatives required for proper Program Implementation.
+
+SECTION 12. EXEMPTIONS AND EXCLUSIONS - Exempt/excluded from the coverage of this Ordinance are:
+
+a. Those who are declared by appropriate medical professionals to have any allergies or found to exhibit adverse reactions to vaccines;
+
+b. Those with prevailing medical conditions and were advised to refrain from immunization;
+
+c. Those persons covered by contraindication clauses made by vaccine manufacturers and suppliers of the respective vaccines;
+
+d. Those who object based on religious and cultural grounds;
+
+--- [Page 7] ---
+Page 7 of 11
+Ord. No. 0478-21
+e. All those who are exempted as provided for by other laws or statutes;
+f. Those who object based on philosophical grounds and those who choose not to be immunized; and
+g. Those who have availed or plan to avail of COVID-19 immunization through other means;
+Such facts should be disclosed by the party claiming exemption.
+SECTION 13. CREATION OF THE COVID-19 IMMUNIZATION PROGRAM TASK FORCE AND LOCAL VACCINATION OPERATIONS CENTER - A COVID-19 Immunization Program Task Force shall be created which shall oversee the planning and implementation of the Program. The Task Force shall have a core group composed of the following:
+A. City Mayor
+B. Chief Health Officer
+C. DOH CHD XI
+D. Sangguniang Panlungsod Committee on Health Chairperson
+E. Liga ng mga Barangay
+F. 3 Representatives from the Health Sector
+G. 3 Representatives from the Private Sector
+To aid the functions of the core group, the following shall be called up as resource persons on a per-need basis:
+A. Representative of Faith-based Organizations
+B. Southeastern Mindanao Governor of the Philippine Medical Association
+C. Presidents of all Medical Specialty and Subspecialty Societies
+D. Representative from each vaccine manufacturer
+E. Indigenous Peoples' representative
+F. OIC of the Task Force
+G. Business sector representative
+H. Infectious Diseases Consultant
+I. Pediatric Specialist Consultant
+J. Food and Drug Administration representative
+The Task Force shall make regular reports to the public through proper government channels on the planning, execution, progress and other necessary disclosures. These regular reports will be the result of close monitoring and assessment of the immunization program by relevant member agencies of the Task Force. The Task Force shall remain constituted and functional until COVID-19 vaccines have moved on from the EUA stage into general use.
+Furthermore, a Local COVID-19 Vaccination Operations Center shall be organized to complement the COVID-19 Vaccine Operations Center (VOC), and shall be composed of the following:
+A. Planning, Campaign Management and Technical Team composed of representatives from the DOH-CHD Davao, CHQ, DILG, DSWD, DepEd, AFP;
+B. Finance, Cold Chain and Logistics Team with representatives from the Office of Civil Defense (OCD), DOH, AFP;
+C. Coordination Team with representatives from OCD, DOH-CHD Davao, DILG and Barangay;
+D. Vaccine Safety, Surveillance and Response Team with representatives from the DOH-CHD Davao, CHQ, and FDA;
+
+--- [Page 8] ---
+Page 8 of 11
+Ord. No. 0478-21
+
+E. Communications, Advocacy and Partnership Team with representatives from the City Information Office, the Philippine Information Agency (PIA), DOH, and other media stakeholders.
+
+The specific duties of the aforementioned teams shall be based on the guidelines set in the National Deployment and Vaccination Plan for COVID-19 Vaccines.
+
+SECTION 14. CREATION OF A LOCAL ADVERSE EVENTS FOLLOWING IMMUNIZATION (AEFI) COMMITTEE SPECIFIC TO COVID-19 IMMUNIZATION
+
+A local AEFI Committee shall be created, whose role is to respond to any adverse events following immunization through reporting, monitoring, surveillance, cross-agency collaboration, and other coordinated modes.
+
+The composition of the AEFI/AESI Committee shall be taken from the following fields of expertise:
+
+1. Pediatrics
+2. Neurology
+3. Virology/Microbiology
+4. Epidemiology
+5. Immunology
+6. Forensic Pathology
+7. Other medical experts (as necessary), may include:
+   a. Geriatrics
+   b. Adult Medicine
+   c. Infectious disease
+
+Membership shall be subject to a Non-Disclosure and Confidentiality Agreement
+
+The roles and functions of the AEFI/AESI committee are as follows:
+
+1. Review all reported serious and cluster of minor AEFI cases presented for expert opinion and provide the final causality assessment of the AEFI cases. The National AEFI Committee will provide the final causality of AEFI cases including those that were not classified by the Regional AEFI Committee.
+
+2. Ensure evidence-based causality assessment by recommending further investigation and data collection as needed.
+
+3. Make final decisions on causality assessment of inconclusive investigations.
+
+4. Ensure that standard protocols for AEFI surveillance and investigation are correctly followed.
+
+5. Engage with other national experts when requirements arise in establishing causality and vaccine quality issues.
+
+6. Provide recommendations to the CHO and DOH XI, Epidemiology Bureau, and Food and Drug Administration (FDA) on improving immunization service delivery compliance with infection safety and efficacy.
+
+7. Serve as technical advisory group to the LRA on vaccine and immunization safety-related issues(s) of highest consideration including immediate recall of vaccine and/or temporary/permanent withdrawal of a vaccine from the immunization program.
+
+--- [Page 9] ---
+8. Serve as resource person in other AEFI related meetings, conferences or capacity-building activities as requested.
+
+While all relevant documents, data and records may be shared and reviewed among other AEFI/AESI committees and the National Adverse Events Following Immunization Committee (NAEFIC) for assessment, evaluation, and other purposes, information gathered is protected against public disclosure by RA 10173 or the Data Privacy Act of 2012. Furthermore, no committee member shall disclose any information outside of meetings, other than to the mandated agency or parties concerned. Public statements about the causality assessment, especially relating to AEFI/AESI deaths may be made as long as confidentiality is maintained.
+
+All other details not covered in this section shall be supplied by the prevailing AEFI/AESI guidelines in force.
+
+AEFI cases under the jurisdiction of the committee shall not only be restricted to those connected with the Program but shall also include AEFI from other COVID immunization avenues.
+
+SECTION 15. ROLE OF COMMUNITY LEADERS AND BARANGAY HEALTH EMERGENCY RESPONSE TEAMS (BHERT) - Barangay Health Emergency Response Teams and Community leaders shall actively assist the CHQ in the implementation of the COVID-19 immunization program.
+
+SECTION 16. EDUCATION AND INFORMATION CAMPAIGN - This Ordinance shall call for a simultaneous and coordinated education and information campaign from both the public and private sectors, including mass media, civil society groups, religious and cultural organizations, and others. All health care practitioners whether in the public or private sectors shall educate all persons on the facts regarding COVID-19 immunization, including information on the entire immunization regimen, its advantages, risks, contraindications, possible side effects. The Department of Education (DepEd) shall also be tasked to disseminate information on the COVID-19 Immunization Program to all students under its jurisdiction. The education and information campaign should commence at least six (6) months prior to the rollout of the vaccines, and will continue throughout the three (3) year period of the program, in order to increase vaccine acceptance.
+
+Barangay halls and health centers are also required to have information and Education Materials placed in strategic locations for easy appreciation of information regarding the Program. All Barangay Officials are also obligated to integrate this information campaign in their respective areas. Religious, tribal and cultural organizations are likewise encouraged to include information about the Program in their COVID-19 campaigns.
+
+SECTION 17. APPROPRIATIONS - The Local Government of Davao City shall allocate funds for the implementation of the various undertakings, including, but not limited to, procurement of vaccines, ancillary immunization supplies, and logistical requirements relative to this Ordinance. However, budget for other essential health services should not be affected by the cost and funding requirements of this Program.
+
+SECTION 18. NON-COMPLIANCE - Parents and legal guardians of (minor children) and other persons of legal age who do not intend to avail of immunization through this Ordinance and who decide to refuse COVID-19 immunization altogether shall not be penalized nor be subjected to prejudice in any manner by mere non-compliance with the provisions of this Ordinance.
+
+--- [Page 10] ---
+**SECTION 19. PENALTIES:** The following acts shall be prohibited under this Ordinance:
+
+a. The importation, use, distribution, and administration of any unregistered or unapproved COVID-19 vaccine;
+
+b. The Administration of any COVID-19 vaccine by any untrained or unauthorized individual;
+
+c. The commercial sale and distribution of COVID-19 vaccines granted EUA;
+
+d. The giving/administration of COVID-19 vaccines outside of the identified priority groups and manufacturer recommendations.
+
+Any violation of the prohibitions shall be punishable by imprisonment of not less than six (6) months to one (1) year or a fine of Five Thousand Pesos (P5,000.00), or both, at the discretion of the court.
+
+The commencement of any action under this Ordinance is independent and without prejudice to the filing of any action with the regular courts.
+
+**SECTION 20. SEPARABILITY CLAUSE:** If, for any reason, any section or provision of this Ordinance shall be declared unconstitutional or invalid, other sections or provisions hereof not affected by such declaration shall continue to be in full force and effect.
+
+**SECTION 21. REPEALING CLAUSE:** All Ordinances, Resolutions, Executive Orders, Memoranda and Administrative Regulations or part thereof in conflict or inconsistent with the provisions of this Ordinance are hereby repealed, amended or modified accordingly.
+
+**SECTION 22. EFFECTIVITY:** This Ordinance shall take effect immediately 15 days after publication in a newspaper or general circulation in the City of Davao, and shall remain effective until the COVID-19 vaccine is approved for general use and incorporated into the regular immunization program of the government.
+
+ENACTED, February 02, 2021, by an unanimous vote of all the Members of the Sanggunian, there being a quorum.
+
+CERTIFIED CORRECT:
+
+CHAKTO H. SANTOS
+
+Secretary to the Sangguniang Panlungsod
+
+(City Government Department Head II)
+
+ATTESTED:
+
+--- [Page 11] ---
+Page 11 of 11
+Ord. No. 0478-21
+APPROVED: MAR 02 2021
+SARA Z. DUTERTE
+City Mayor
+ATTESTED:
+ATTY. ZULEIKAN T. LOPEZ
+City Administrator
+An Ordinance for the Implementation of the Covid-19 Immunization Program of Davao City

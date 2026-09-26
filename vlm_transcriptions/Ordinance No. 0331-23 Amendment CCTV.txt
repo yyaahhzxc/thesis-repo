@@ -1,0 +1,508 @@
+=== ORDINANCE: Ordinance No. 0331-23 Amendment CCTV ===
+
+--- [Page 1] ---
+Republic of the Philippines
+City of Davao
+Office of the Sangguniang Panlungsod
+
+20th City Council
+43rd Regular Session
+Series of 2023
+
+PRESENT:
+Vice Mayor
+J. Melchor B. Quitain Jr.
+- Presiding Officer
+Councillor
+Luna Maria Dominique S. Acosta
+Councillor
+Baj Hundra Cassandra Dominique N. Advincula
+Councillor
+Bernard E. Alag
+Councillor
+Raul J. Dela Cruz
+Councillor
+Al Ryan S. Alejandre
+Councillor
+Dante L. Apostol Sr.
+Councillor
+Conrado C. Baluran
+Councillor
+Jessica M. Bonguyan
+Councillor
+Louie John Bonguyan
+Councillor
+Jordi A. Bonguyan
+Councillor
+Augusto Javier G. Campos III
+Councillor
+Jonard C. Dayap
+Councillor
+Edgar P. Ibuayan Jr.
+Councillor
+Richlyn N. Justol-Baquilled
+Councillor
+Diosdado Angelo Junior R. Mahipus
+Councillor
+Aldrin M. Mariano
+Councillor
+Kristine May John Abdul Mercado
+Councillor
+Bonz Andre A. Militar
+Councillor
+Myrna G. L'Dalco-Oritz
+Councillor
+Alberto U. Ungat
+Councillor
+Lorenzo Benjamin D. Valafuerte
+Councillor
+Trisha Ann J. Valafuerte
+Councillor
+Jesus Joseph P. Zozobra III
+
+ABSENT:
+Councillor
+Marissa S. Abella
+- On Domestic Emergency Leave
+Councillor
+Nilo M. Abellera Jr.
+Councillor
+Temujin B. Ocampo
+- OB - Attended the Training Program for the JICA Grassroots Project in Kitakyushu, Japan
+
+ORDINANCE NO. 0331-23
+Series of 2023
+
+AN ORDINANCE AMENDING ORDINANCE NO. 0407-12, SERIES OF 2012, ENTITLED "AN ORDINANCE REQUIRING ALL ESTABLISHMENTS, WHETHER COMMERCIAL, INDUSTRIAL OR FINANCIAL INSTITUTIONS, WITH CAPITAL ASSETS OF MORE THAN ONE MILLION PESOS (P3,000,000.00), INCLUDING, BUT NOT LIMITED TO, BANKS, PAWNSHOPS, RESTAURANTS, SHOPPING MALLS, HOTELS AND INNS, EDUCATIONAL INSTITUTIONS, HOSPITAL AND MEDICAL INSTITUTIONS, GAMING PROPERTIES (SANGUNGAN), PRIVATE TRANSPORTATION, AIRLINE OPERATIONS, AIR OR SEA OPERATIONS WITHIN THE CITY OF DAVAO," TO INSTALL, OPERATE, AND MAINTAIN CLOSED CIRCUIT TELEVISION (CCTV) CAMERAS IN PUBLIC/COMMON AREA"
+
+--- [Page 2] ---
+Page 2 of 15  
+Ord. No. 0331-23  
+
+Be it ordained by the Sangguniang Panlungsod of Davao City in session assembled, that:  
+
+SECTION 1. TITLE - "This Ordinance shall be known as 'THE AMENDED CCTV ORDINANCE OF DAVAO CITY.'"  
+
+SECTION 2. DECLARATION OF POLICY - The City Government of Davao, pursuant to Section 16 of Republic Act No. 7160 or the Local Government Code of 1991, shall exercise the powers expressly granted, those necessarily implied therefrom, as well as powers necessary, proper, and incidental to efficient and effective governance, and those which are essential to the maintenance of peace and order, the protection of life, liberty, property, and the promotion of general welfare which are essential for the enjoyment by the people of the blessings of democracy.  
+
+The City Government of Davao shall enforce this Ordinance prioritizing peace and public safety but without compromising the fundamental right to the personal and data privacy of every person. It shall recognize the vital role of information and communications technology in nation-building and its inherent obligation to ensure that personal information in information and communications systems in the government and in the private sector are secured and protected.  
+
+SECTION 3. DEFINITION OF TERMS - For purposes of this Ordinance, the following shall be defined as follows:  
+
+(a) Closed Circuit Television (CCTV) System - is a television system in which signals are not publicly distributed. Cameras are connected to television monitors, which are placed in a limited area, and are commonly used in surveillance systems;  
+
+(b) Commercial Establishments - shall include but not be limited to office buildings, hotels, motels, hospitals, condominiums, stores, apartments, supermarkets, schools, studios, stadia, parking areas, memorial chapels/parks, watercraft and aircraft used for business or profit, and any other building's or area's for business purposes, where commercial activities are conducted, provided that such establishments are situated and/or are being used, sold, maintained, assembled, manufactured or operated;  
+
+(c) Financial Establishments - are establishments that focus on dealing with financial transactions, such as banks, financing companies, trust companies, insurance companies, investments, loans and deposits, money changers and the like;  
+
+(d) Industrial Establishments - are establishments where one or several people are employed in manufacturing, fabricating, altering, making up or changing from one shape into another material for sale, use or consumption, irrespective of the products;  
+
+(e) Personal Information Controller (PIC) - refers to a person or organization who controls the collection, holding, processing, or use of personal information, including a person or organization who instructs another person or organization to collect, hold, process, use, transfer or disclose personal information on his or her behalf. The term excludes:  
+
+1. a person or organization who performs such functions as instructed by another person or organization; or  
+
+2. an individual who collects, holds, processes, makes up or changes from one shape into another material for sale, use or consumption, irrespective of the products, or any other person or organization who decides on what information is collected, or the purpose or extent of its processing;
+
+--- [Page 3] ---
+Page 3 of 15
+Ord. No. 0331-23
+
+(f) Personal Information Processor (PIP) - refers to any natural or juridical person or any other body to whom a PIP may outsource or instruct the processing of personal data pertaining to a data subject;
+
+(g) Public/Common Area - is an indoor or outdoor area of commercial, financial or industrial establishments, to which the public has access by right or by invitation, express or implied, whether by payment of money or not, which includes but is not limited to, display areas, lounges, office areas, parking areas. Provided that indoor areas shall not include inside comfort rooms and other private rooms or areas designated for confidential use of clients such as safety deposit box areas and the like;
+
+(h) Tampering - shall refer to any of the following acts:
+- altering, destroying, suppressing, or concealing any part of altered or fabricated CCTV footage with intent to impair its verity, authenticity, legibility, availability, or admissibility as evidence in any investigation or official proceedings in, criminal cases, or to be used in the investigation of, or official proceedings in, criminal cases;
+- giving of false or fabricated CCTV footage to mislead or prevent law enforcement agencies from apprehending the offender or from protecting the life or property of the victim;
+- making, presenting, or using the whole or any part of the CCTV footage with knowledge of its falsity and with intent to affect the course or outcome of the investigation of, or official proceedings in, criminal cases;
+- fabricating the information gathered in confidence with the use of CCTV for purposes of background information and not for publication, publishing, or disseminating the same to mislead the investigator or the court.
+
+[From P.D. No. 1829 - PENALIZING OBSTRUCTION OF APPREHENSION AND PROSECUTION OF CRIMINAL OFFENDERS]
+
+(i) Third Party Recordings - refer to any type of film or recording that wholly or partially captures a CCTV footage with the use of any kind of recording device.
+
+SECTION 4. SCOPE AND APPLICATION - This Ordinance shall be applicable to the following:
+
+4.1. PRIVATE ESTABLISHMENTS
+(a) All businesses with a declared minimum capital of Three Million Pesos (P3,000,000.00) and above, operating within the City of Davao;
+(b) Businesses with a declared minimum capital not exceeding Three Million Pesos (P3,000,000.00), but fall under the following enumeration:
+(1) Financial establishments such as banks, pawnshops, money remittance services, money changers, cooperative lending establishments, lending or loaning businesses and others whose principal line of business falls within similar transactions.
+(2) Business establishments that are part of a national chain or have several branches in other parts of the country such as restaurants/fast-food chains, convenience stores, grocery stores, drug stores, appliance stores, computer and gadget stores, hardware, etc.
+
+--- [Page 4] ---
+Page 4 of 15  
+Ord. No. 0331-23  
+
+(3) Shopping malls, shopping centers, supermarkets, groceries, mini-marts, and other similar establishments.  
+(4) Educational institutions, review centers, tutorial centers, skills and enhancement training institutions, private daycare and child minding centers, and other similar establishments.  
+(5) Dormitories, hotels, motels, inns, bunkhouses, hostels, roadhouses, drive-ins, and other similar establishments.  
+(6) Factories, packing houses, warehouses, industrial compounds, workshops, refrigeration plants, and other similar industrial establishments.  
+(7) Condominiums, apartments, penthouses, boarding houses, tenements, and other residential rental establishments.  
+(8) Commercial rental establishments, commercial arcades, tenements or buildings, office or store spaces for rent to multiple occupants.  
+(9) Hospitals, laboratories, clinics, pharmacies, rehabilitation centers, and other medical centers and facilities.  
+(10) Theaters, movie houses, arcades and play areas, internet cafes and pisonets with more than five (5) units, cockpits or subhangas, casinos, resorts, conference or convention centers, ballrooms, dance halls, discos, event areas, and other places of entertainment or gatherings that draw in a considerable number of customers.  
+(11) Airports, sea or river ports, transportation terminals, parking buildings or lots, and other similar establishments that cater to a large number of vehicles.  
+(12) Car dealerships, motorcycle dealerships, gasoline or fuel stations, vehicle maintenance and service stations.  
+(13) Guns and ammunition shops, military industrial complex, armory, firing ranges, and other similar weapon shops.  
+(14) Other business establishments or areas which the City Government deems proper considering the nature of business and potential risks in their respective areas.  
+
+4.2. PUBLIC AREAS  
+(a) Fixed checkpoints chosen and situated in an area by an official responsible for making overall decisions as to the most effective allocation of limited enforcement resources.  
+(b) Within the respective territorial jurisdiction of Barangays in the City of Davao, to be installed at specific areas as determined by the City Government of Davao through the Public Safety and Security Office (PSSO), together with the respective Barangay Officials.  
+(c) Areas near places of worship, religious places or sacred spaces, major roadways, parks, playgrounds, public areas of conveyance as determined by the City Government through the PSSO.
+
+--- [Page 5] ---
+Page 5 of 15  
+Ord. No. 0331-23  
+
+For purposes of this Ordinance, the City Government of Davao, through the PSSO, shall be the PIC for CCTVs in public areas.  
+
+SECTION 5. MINIMUM TECHNICAL SPECIFICATIONS. - The CCTV system to be installed shall be maintained in proper working order at all times, shall be in continuous operation, and must meet the following minimum specifications:  
+
+(a) For business establishments with a minimum capital of Three Million Pesos (P3,000,000) and above:  
+
+CAMERA  
+- High-Definition Analog or at least 2 Megapixel Digital Camera  
+- 0.1 Lux Minimum Illumination  
+- 2.8mm to 3.6mm Focal Length  
+- Auto Iris with 12 Levels (fixed/var-focal)  
+- 1/30s to 1/50,000s Shutter Speed  
+- > 50-meter Infrared Range  
+- 120dB Wide Dynamic Range  
+- Pan and Tilt Adjustment of 0 degrees to 180 degrees and Rotate adjustment of 0 degrees to 360 degrees  
+- Outdoor cameras must be vandal-proof with IP 66 Weatherproof Casing  
+
+STORAGE  
+For Network Camera:  
+- Hard Disk Drive (HDD) and/or cloud recording  
+- Surveillance Type (For 30 days recording, should have 4TB to 8TB capacity depending on camera type and configuration; up to four (4) CCTVs)  
+For Standalone:  
+- MicroSDHC (8GB to 32GB)  
+- MicroSDXC (64GB to 128GB)  
+
+VIDEO/AUDIO INPUT  
+- Hybrid Type (accepts Digital and Analog signal), Minimum of four (4) camera input  
+- Video and Audio Stream Input  
+- H.264 (Advanced Video Coding) Video Compression and 6.71 1u Audio Compression  
+- 30 frames-per-second (FPS) recording capability per camera  
+- Analog High-Definition Inputs (1080p@29.97FPS, 1080p@30FPS, 720p@25FPS, 720p@30FPS)  
+- Hard Disk Drive (HDD) storage capacity enough to accommodate the prescribed retention period below. (4TB Capacity is approximately sufficient for 40 days of recording for DVR with 4 cameras at 1080p)  
+- Time stamping feature  
+
+VIDEO/AUDIO OUTPUT  
+- 720p or 1080p resolution  
+- 30 FPS  
+- At Least 10 Megabits per second (Mbps) Video Bitrate and at least 64 Kilobits (Kbps) Audio Bitrate  
+
+OTHER SPECIFICATIONS  
+- Centralized power supply for the Video Recorder and Cameras  
+- Uninterruptible Power Supply (UPS) to provide standard and reasonable back-up power to the Video Recorder and Cameras
+
+--- [Page 6] ---
+Page 6 of 15
+Ord. No. 0331-23
+
+(b) For all other business establishments: [Specs below as submitted by CITC]
+
+**CAMERA**
+
+Network Camera with a minimum requirement of:
+- Focal length 3.6mm or 2.8mm
+- Maximum 30fps @1080p
+- 2MP
+- IP66 or IP67 or
+- Standalone Camera with:
+- Pan/Tilt Home Security Wi-Fi Camera
+- High-Definition Video 1080p
+- Visual Distance of up to 30ft
+- Locally stores 16 days with 128 GB of microSD card
+
+**STORAGE**
+
+For Network Camera:
+- Hard Disk Drive (HDD) and/or cloud recording
+- Surveillance Type (For 30 days recording, should have 4TB to 8TB capacity depending on camera type and configuration; up to four (4) CCTVs)
+
+For Standalone:
+- MicroSDHC (8GB to 32GB)
+- MicroSDXC (64GB to 128GB)
+- Time stamping feature
+
+SECTION 6. INSTALLATION GUIDE. The following Installation Guide shall be followed:
+
+**INSTALLATION**
+
+- Cameras must be installed at a secure location with maximum area of coverage of entrances/exits and areas of transaction or risk, making sure that there will be no blind spots.
+- Video recorders must be mounted at secure or concealed locations to protect them from deliberate tampering.
+- CCTV systems must be installed in well-lit areas and with consistent lighting to pick-up identifying details, such as facial features.
+- The angle of the cameras should be considered to avoid lens flare and backlighting.
+- The following objectives and recording distance when installing CCTV cameras shall be determined: General Surveillance = 10 feet or greater, Facial Recognition = 5 to 7 feet, Plate Recognition (for Parking Lots) = 3 to 4 feet.
+- When jamming is suspected, cameras should be installed alongside the CCTV system to ensure that data is kept secure in the event of physical harm to the storage devices such as fires, earthquakes, any form of deliberate tampering, and other similar situations.
+- When possible, dummy CCTV cameras should also be placed in a conspicuous area to deter possible criminal acts and protect the cameras.
+- Signage indicating that the premises being monitored by a CCTV System must also be installed in areas that are visible and obvious to the public, and must use clear, plain, and concise language.
+- At least one (1) staff or employee should be trained to operate the CCTV System.
+
+--- [Page 7] ---
+Page 7 of 15
+Ord. No. 0331-23
+
+SECTION 7. MINIMUM COVERAGE. - All those mentioned under Section 4.1 (a) and (b) hereof shall be required to install CCTV's as to afford a full coverage of the following:
+
+(a) From the interior of the establishment:
+
+(i) All entrances and exits;
+
+(ii) The center of business activity in the establishment according to the nature of business/operations of the establishment, such as: tellers, cashiers, cash registers, sales counters, or areas leading to the vault, the main lobby, office space, sales area, event area, etc.
+
+(b) From the exterior of the establishment (when the establishment is not located inside a mall, arcade or building or when the entrance to the area is not enclosed or is open to the road or parking area):
+
+(i) All entrances and exits;
+
+(ii) From the entrances and exits, a clear view of the area to and from the street(s) abutting the establishment, including frontage thereof taking into particular consideration the clarity of shots in relation to the angles thereof;
+
+(iii) Parking lots and drive-through lanes (when applicable).
+
+Establishments under Section 4.1 (a) must install at least four (4) cameras and establishments under Section 4.1 (b) must install at least two (2) cameras. Additional cameras should be placed when necessary due to the space of the establishment and the nature of the business to cover all areas stated in this Ordinance.
+
+SECTION 8. REGULATION AND COMPLIANCE. - No business establishment covered by this Ordinance operating within the City of Davao shall be allowed to conduct business without installing, operating, and maintaining a CCTV system in accordance with the minimum technical specifications, installation guide, and operation manual provided under Sections 6 and 7 of this Ordinance. Accounting business establishments are required to submit before the Business Bureau of the City Government of Davao an Affidavit of Undertaking stating that the PSSO has issued a Certificate of Compliance in their favor regarding the installation of the required CCTV.
+
+As provided under Section 11 of this Ordinance, the PSSO, in coordination with the City Information Technology Center (CITC), shall send duly authorized representatives to inspect the premises of all business establishments covered by this Ordinance prior to the issuance of their Business Permits by the Business Bureau of the City Government of Davao. For this purpose, the PSSO shall coordinate with the Business Bureau, with regard to the business establishment's compliance with this ordinance.
+
+Existing establishments covered by this Ordinance with existing and duly issued permits, but have no existing CCTV System installed, shall be granted a period of thirty (30) days from written notification of the Business Bureau or PSSO to comply with the provisions of this Ordinance. An extension of another thirty (30) days may be granted under reasonable grounds; Provided, that no further extension shall be allowed thereafter.
+
+Existing establishments covered by this Ordinance with existing CCTV Systems installed but that do not meet the specifications contained in this Ordinance shall be allowed a one (1) year depreciation period of the previously existing CCTV System prior to installation/upgrading to the CCTV System in accordance with the required specifications under this Ordinance. The business establishment shall thus be allowed one (1) year from its next renewal of business permit to comply with the aforementioned specifications.
+
+--- [Page 8] ---
+Page 8 of 15
+Ord. No. 0331-23
+
+The PSSO and Business Bureau, through their authorized representatives, shall have the power to inspect, during reasonable business hours, depending on the nature of the business, all existing business establishments that are covered under this Ordinance, even without prior notice to the business owner, at least once a year, to ensure compliance.
+
+To protect business establishments from any fraudulent machinations, PSSO authorized representatives must first present both identification and Order to Inspect to the respective business owners or its duly authorized representatives before conducting the inspection required under this Ordinance.
+
+Failure to comply with this section shall subject the covered business establishment to penalties in accordance with the provisions of this Ordinance.
+
+SECTION 9._PRIVACY._ All the establishments required to install CCTV's under Section 5 hereof shall comply with the following guidelines on privacy:
+
+Establishments covered shall strictly comply with the National Privacy Commission's (NPC) guidelines on the use of CCTV Systems, as detailed in Section 4 of NPC Advisory No. 2020-04, to wit:
+
+A. Transparency: PICs and PIPs shall provide CCTV notices which are readily visible and prominent within their premises, such as at points of entry, or other conspicuous areas. The CCTV notices shall provide information to the public that there is a CCTV system in operation in clear, plain, and concise language.
+
+B. CCTV policy: PICs and PIPs are required to have a policy governing the operation of CCTV systems. Such policy shall provide details on the following:
+
+1. Designation of an authorized personnel who shall have access to and responsibility for the operation, control, and monitoring of the CCTV system;
+
+2. CCTV notices/s and placement thereof;
+
+3. Procedure for requests for immediate access to CCTV footages and providing a recording or copy thereof when requested;
+
+4. Retention period of CCTV footages and manner of disposal/ destruction thereof when period of retention has lapsed;
+
+5. Security measures to be implemented for the protection of CCTV footages against any unlawful interference or interception, unauthorized access by copying, recording, or viewing, accidental or unlawful destruction, alteration, and disclosure, as well as against any other unlawful processing;
+
+6. Conduct of regular evaluation and audit of security measures and whether the use of CCTV remains to be justified; and
+
+7. Process for the regular review and assessment of the policy and its revision, if necessary.
+
+It shall be the responsibility of the PICs/PIPs to disseminate and appraise its employees or personnel of the CCTV Policy of the business establishment and ensure faithful observance thereto.
+
+--- [Page 9] ---
+Page 9 of 15
+Ord. No. 0331-23
+
+For establishments with several branches within Davao City and a home/main office outside of Davao, it shall be the responsibility of the home/main office to designate a PIC/PIP or Officer-in-Charge of the CCTV Systems of its branches. Failure of the home/main office to designate such PIC/PIP or Officer-in-Charge shall subject the business establishment to penalties under this Ordinance.
+
+C. Location and Placement: To ensure that CCTV systems capture footage in a manner consistent with the Data Privacy Act (DPA), the location and angles of the cameras must be carefully considered. CCTV systems shall only be monitored the intended spaces, taking into consideration the purpose for monitoring the same.
+
+The use of CCTV cameras in areas where individuals have a heightened expectation of privacy (i.e., fitting rooms, rest rooms, toilets, lactation or breastfeeding rooms, and other similar places) is prohibited.
+
+D. Quality and Integrity of Data: CCTV systems shall record images that are of suitable quality to meet the purposes for which it was installed or intended. PICs shall implement reasonable and appropriate safeguards to ensure and maintain the integrity and accuracy of the footage recorded and stored, including any associated metadata (i.e., time, date, and location), and to facilitate access requests for CCTV footage.
+
+E. Data Privacy Commitment: Private establishments and the City Government of Davao through PSSQ, as PICs, shall ensure the implementation of organizational, physical, and technical measures for data privacy and data protection. [From the suggestion of NPC]
+
+SECTION 10. VIEWING OF AND ACCESS TO RECORDINGS:
+
+10.1 If, at any time, law enforcement authorities have a reasonable belief that a crime has been committed and a CCTV system of a private establishment has video coverage of the said event or any part of the recording may aid in the investigation of such event, the owner of the establishment or the PIC, shall, in the interest of public safety, make the camera recordings immediately available for viewing by law enforcement authorities upon request. In cases of ongoing investigations, law enforcement authorities may request access to the recordings of a crime if they believe that the recordings will assist in the investigation. Such requests shall be made upon showing a Mission Order of the duly authorized or designated officer thereof, following the existing standard operating procedures in the conduct of an investigation, and other pertinent laws, orders, rules, and regulations governing the same.
+
+For establishments with several branches within Davao City and a home/main office outside of Davao, the absence of a designated PIC/PIP or Officer-in-Charge of the CCTV System shall not be an excuse for noncompliance of this section. To this end, the manager or person in charge of operations of the branch shall allow law enforcement authorities to immediately view camera recordings in cases of hot pursuit or whenever time is of the essence in an ongoing investigation.
+
+Failure of the owner of the establishment or PIC to comply with this subsection shall be penalized under Section 12 (e) of this Ordinance, without prejudice to any other liabilities said owner or PIC may incur for obstruction of justice and other laws.
+
+10.2 If a crime has been committed, or the operator, employee, or owner of the establishment has reason to believe that a crime has been committed and has been recorded by the CCTV, the operator, employee, or owner of the establishment shall immediately contact the nearest Police Station (PS) and shall provide access to the pertinent recordings to the police and other investigators.
+
+--- [Page 10] ---
+Page 10 of 15
+Ord. No. 0331-23
+
+10.3 For purposes of subsections 10.1 and 10.2, law enforcement authorities who have not secured the paper warrants are only allowed to view the video footage and shall not be allowed to take photos and videos or make copies of the video footage in any form or manner.
+
+The captured video footage or images, including CCTV records, tapes, discs, or media, may be obtained and used at any time to satisfy the written order or subpoena of any court or body with competent jurisdiction.
+
+10.4 Video footage captured through the CCTV Systems shall be retained for a minimum period of one (1) month in order to allow investigating authorities to properly retrieve and prepare back-ups of the data relevant to any incidents that occur. Upon exceeding the prescribed period, video footage may be permanently deleted from the system and all existing forms of back-up, unless a court order has been served preventing or holding the deletion of the same.
+
+However, no CCTV footage shall be deleted despite the lapse of the one (1) month period in the following instances:
+
+(a) Upon the formal request of any person who is the subject of such footage, who has applied to the courts for the preservation of the same, until such time when the court order or authority has been issued;
+
+(b) Upon notification by the law enforcement agencies to the owner or to his or her duly authorized representative regarding the commencement of a criminal, civil or administrative investigation and during the period for application of a cybercrime warrant;
+
+In accordance with Section 3.1, Section 3 of the Rule on Cybercrime Warrants, the required retention or preservation of the CCTV footage under the above enumeration must be for a minimum period of six (6) months, unless law enforcement authorities issue an order for an extension of another six (6) months. Such order of extension by law enforcement authorities shall be made one-time only.
+
+Absence of a recording or any part thereof within the prescribed period constitutes a prima facie evidence that the same has been deliberately deleted.
+
+10.5 For purposes of maintaining peace, order and public safety, captured video footage of a crime or incident subject to an ongoing investigation shall not be released by the operator, employee or owner of the business establishment to any person solely for entertainment purposes.
+
+Any CCTV footage or third party recordings of the said CCTV footage shall not be released without a lawful purpose, unless the subject of the footage has consented to the same.
+
+10.6 Other than the foregoing, the operator, employee, or owner of the business establishment shall give any person whose image is recorded on a CCTV system the right to reasonable access and/or be supplied with a copy of their own personal data from the footage, subject to the provision of Section 13 of NPC Advisory No. 2020-04, to wit:
+
+PICs may refuse to provide a copy of CCTV footages or access thereto in the following instances:
+
+a. Incomplete information regarding the requested CCTV footage;
+
+--- [Page 11] ---
+Page 11 of 15
+Ord. No. 0331-23
+
+b. The access request is frivolous or vexatious. The determination of what constitutes frivolous or vexatious may be made on the basis of the particular circumstances of the request;
+
+c. Purpose for viewing or obtaining a copy of the footage is contrary to law, morals, or public policy;
+
+d. The burden or expense of providing access would be unreasonable or involve disproportionate effort on the part of the PIC or PIP;
+
+e. The footage has been deleted by the time the time the PIC receives the request, pursuant to its documented retention policy; or
+
+f. If sharing the footage could put an ongoing criminal investigation at risk.
+
+Should the PIC deny a request for CCTV access, it shall provide the requesting party with a justification for such denial.
+
+SECTION 11. IMPLEMENTING OFFICERS. - The City Government of Davao, through the PSSO, shall be responsible for the verification and determination of the relevant establishments' compliance with the directives of this Ordinance. PSSO shall specify which compulsory inspection of the installed CCTVs shall be conducted before the necessary clearance or certification thereof may be issued, which clearance or certification shall be a mandatory requirement for the issuance and renewal of the business permit or license by the Business Bureau.
+
+PSSO may thereafter conduct inspections during reasonable business hours, even without notice to the business or establishment owner to determine continued compliance with this Ordinance, post-insurance or upon renewal of such establishments' business permit or license by the Business Bureau.
+
+SECTION 12. PROHIBITED ACTS. - The following are prohibited acts under this Ordinance and shall subject the concerned business establishment to the penalties provided for in Section 14:
+
+(a) Failure to install a CCTV system in accordance with Sections 5, 6, and 7 of this Ordinance;
+
+(b) Failure to maintain an existing CCTV system in accordance with the minimum technical requirements under Sections 5, 6, and 7 of this Ordinance, subject to the one (1) year depreciation period under Section 8;
+
+(c) Failure to develop, devise, or formulate a CCTV Policy, failure to designate a PIC/PIP or Officer-in-Charge of the CCTV System, and failure to properly apprise its employees of such CCTV Policy as provided under Section 9 of this Ordinance;
+
+(d) Refusal to allow the entry of the authorized representatives of the PSSO or Business Bureau during reasonable business hours to inspect the CCTV system;
+
+(e) Failure to allow the immediate viewing of the CCTV recording, or unjustifiable delay in granting the request despite the presentation of the proper documents by the person in charge of the investigation or a mission order;
+
+(f) Failure to surrender the CCTV records, tapes, discs, or media to law enforcement authorities or officers of the court despite due process, through a written order or subpoena, under Section 10 of this Ordinance;
+
+--- [Page 12] ---
+Page 12 of 15  
+Ord. No. 0331-23  
+
+(g) Failure to observe persons' right to privacy under Section 9 of this Ordinance;  
+
+(h) Making public any CCTV footage to the detriment of an ongoing criminal investigation, or using any recording contrary to law, morals and public policy in relation to Section 10 of this Ordinance;  
+
+(i) Deletion of the recordings or any portion thereof within the retention period under Section 10 of this Ordinance;  
+
+(j) Tampering or providing a tampered copy of CCTV footage that will result in falsification of CCTV footage or obstruction of justice;  
+
+(k) Falsely representing himself or herself as a duly authorized representative of the PSSO or the Business Bureau to inspect business establishments and/or gain access to CCTV recordings;  
+
+(l) Failure to put up the proper notices which are readily visible and prominent in areas where a CCTV System is monitoring, in cases of private establishments only.  
+
+SECTION 13. PENALTY CLAUSE. - Business establishments violating any of the provisions of this Ordinance shall suffer the following penalties, to wit:  
+
+13.1. ADMINISTRATIVE SANCTIONS  
+
+(a) Non-issuance, suspension, or revocation of business permit for non-compliance with Sections 5, 6, and 7 of this Ordinance for new establishments;  
+
+(b) In case of existing establishments' failure to install and maintain the CCTV system after the establishment has been granted the time to comply with this Ordinance, the establishment shall be closed for failure to comply with the requirements of a business permit, until the same has complied with in accordance with this Ordinance;  
+
+13.2. PENALTY PROPER  
+
+(a) A fine of Five Thousand Pesos (P5,000.00) for:  
+
+(i) Failure to install and maintain the CCTV system;  
+
+(ii) Failure to develop, devise, or formulate a CCTV Policy, failure to designate a PIC/PIIP or Officer-in-Charge for the CCTV System, and failure to properly apprise its employees of such CCTV Policy;  
+
+(iii) Refusing to allow the entry of the authorized representatives of the PSSO or Business Bureau during reasonable business hours to inspect the CCTV system;  
+
+(iv) Failure to allow the immediate viewing of the CCTV recording, or unjustifiable delay in granting the request despite the presentation of the proper documents by the person in charge of the investigation or a mission order;  
+
+(v) Failure to surrender the CCTV records, tapes, discs, or media to law enforcement authorities or officers of the court despite due process, through a written order of subpoena, under Section 10 of this Ordinance,
+
+--- [Page 13] ---
+(b) A fine of Five Thousand Pesos (P5,000.00) and imprisonment of not more than one (1) year in case of tampering or providing a tampered copy of CCTV footage that will result in falsification of CCTV footage or obstruction of justice, or failure to observe person's right to privacy, without prejudice to the provisions of Section 13.1 of this Ordinance.
+
+(c) A fine of Three Thousand Pesos (P3,000.00) in all other cases under this Ordinance and for each commission of the same offenses thereafter.
+
+In case of a single proprietorship, the owner shall be made liable for the violation of this Ordinance.
+
+Likewise, the managing partners, in cases of partnerships, and the president, secretary and/or such other officers in charge of managing the business as provided in the by-laws, in cases of corporations, shall be made personally liable for the violation of this Ordinance in instances involving juridical entities.
+
+In the absence of evidence to the contrary, the manager and/or operator shall be presumed to be the owner of the business under this Ordinance without prejudice to the application of other laws and regulations.
+
+SECTION 14. APPEAL PROCESS FOR ADMINISTRATIVE SANCTIONS. - Any business establishment found to be liable for the administrative sanctions under Section 13.1 of this Ordinance, by any of the Implementing Offices under Section 11, may appeal the findings thereof to the City Mayor's Office (CMO) within five (5) working days from being notified of its violation by the Implementing Office/s concerned. The business establishment must furnish a copy of the appeal to the Implementing Office/s concerned prior to the filing thereof with the Office of the Mayor.
+
+Within five (5) working days from receipt of the copy of the appeal, the Implementing Office/s concerned shall submit its/its answer to the CMO, furnishing the business establishment a copy of the same. Should the Implementing Office/s fail to file its/their answer to the appeal within the given period, it/they shall be deemed to have opposed the appeal on all its material points. The CMO shall decide on the matter within five (5) working days from receipt of the answer to the appeal. If the Implementing Office/s fails to act upon the appeal within the period of filing therefore has lapsed, giving due notice to the parties involved. The decision of the Mayor shall be final, and no motion for reconsideration shall be entertained thereafter, without prejudice and subject to such remedial measures as may be then available under other laws, rules and regulations or the Rules of Court.
+
+SECTION 15. CREATION OF TECHNICAL WORKING GROUP (TWG)
+
+Chairperson: City Mayor's Office (CMO)
+
+Secretariat: Public Safety and Security Command Office (PSSO)
+
+Members:
+
+(1) Business Bureau
+
+(2) City Information and Technology Center (CITC)
+
+(3) City Legal Office
+
+(4) Davao City Police Office (DCPO)
+
+(5) Department of the Interior and Local Government (DILG) - Field Office
+
+(6) Task Force Davao (TFD)
+
+(7) National Bureau of Investigation (NBI) XI - SEMRO
+
+(8) Two (2) Representatives of the Private Business Sector
+
+--- [Page 14] ---
+**Page 14 of 15  
+Ord. No. 0331-23**
+
+**SECTION 16. IMPLEMENTING RULES AND REGULATIONS (IRR) — The Technical Working Group (TWG) shall, within thirty (30) days after the Ordinance has been approved, draft the necessary Implementing Rules and Regulations (IRR) for the approval of the City Mayor's Office (CMO). Nevertheless, failure of the concerned agencies under the preceding section to promulgate an IRR shall not prevent the implementation of this Ordinance upon its effectiveness.**
+
+**SECTION 17. INFORMATION, EDUCATION, AND COMMUNICATION CAMPAIGN. — The City Information Technology Center (CITC), Business Bureau, PSSO, together with the City Information Office (CIO), shall conduct a continuing information, education, and communication campaign on the CCTV monitoring within the City of Davao, on the impact of the implementation of this Ordinance.**
+
+**SECTION 18. REVIEW OF CCTV ORDINANCE. — The City Information Technology Center (CITC), together with the implementing forces of this Ordinance, shall conduct a review of the CCTV specifications provided in this Ordinance every five (5) years to ensure that the specifications and matters concerning the CCTVs are properly addressed.**
+
+**SECTION 19. REPEALING CLAUSE. — Any Ordinance, local issuances or rules inconsistent with the provisions of this Ordinance are hereby repealed or modified accordingly.**
+
+**SECTION 20. SEPARABILITY CLAUSE. — If, for any reason, any Section of this Ordinance is declared unconstitutional or invalid, the other sections or provisions hereof which are not affected thereby shall continue to be in full force and effect.**
+
+**SECTION 21. EFFECTIVITY. — This Ordinance shall take effect immediately fifteen (15) days upon approval, posting and publication in a newspaper of local circulation.**
+
+**ENACTED, on the 21st day of November 2023, by a unanimous vote of all the Members of the Sanggunian Panlungsod (City Government Department Head II).**
+
+**CERTIFIED CORRECT:**
+
+**J. MELCHOR B. QUITAIN JR.  
+Vice Mayor  
+Presiding Officer  
+crs/jdsn**
+
+--- [Page 15] ---
+Page 15 of 15
+Ord. No. 0331-23
+APPROVED: DEC 22 2023
+SEBASTIAN Z. DUTERTE
+City Mayor
+ATTESTED:
+ATTY. FRANCIS MARK H. LAYOG
+Acting City Administrator
+AN ORDINANCE AMENDING ORDINANCE NO. 0407-12, SERIES OF 2012, ENTITLED "AN ORDINANCE REQUIRING ALL ESTABLISHMENTS, WHETHER COMMERCIAL, INDUSTRIAL OR FINANCIAL INSTITUTIONS, WITH CAPITALIZATION OF NOT LESS THAN THREE MILLION PESOS (3,000,000.00), INCLUDING, BUT NOT LIMITED TO, LIBRARIES, MUSEUMS, CULTURAL AND ARTISTIC INSTITUTIONS, YOUTH AND INDUSTRY EDUCATIONAL INSTITUTIONS, HOSPITAL AND MEDICAL INSTITUTIONS, GAMING COOPFITS (SABUNGAN), PRIVATE TRANSPORT TERMINALS OPERATING ON LAND, AIR OR SEA OPERATING WITHIN THE CITY OF DAVAO," TO INSTALL, OPERATE, AND MAINTAIN CLOSED CIRCUIT TELEVISION (CCTV) CAMERAS IN PUBLIC/COMMON AREAS"

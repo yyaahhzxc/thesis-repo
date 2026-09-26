@@ -1,0 +1,581 @@
+=== ORDINANCE: Ordinance No. 0544-21 ===
+
+--- [Page 1] ---
+Republic of the Philippines
+City of Davao
+Office of the Sangguniang Panlungsod
+
+19th City Council
+15th Regular Session
+Series of 2021.
+
+PRESENT:
+
+Councillor Danilo C. Dayanghirang
+Councillor Ralph O. Abella
+Councillor Mario D. Abellera
+Councillor Maria Lourdes A. Acosta
+Councillor Basimunda Cassandra Dominique N. Advincula
+Councillor Wilberto E. Al-ag
+Councillor Dante L. Apostol Sr.
+Councillor Conrado C. Baluran
+Councillor Jessica M. Bonguyan
+Councillor Louise John J. Bonguyan
+Councillor Antonio C. Braga
+Councillor Augustin G. Campos III
+Councillor Edgar P. Ibayan Jr.
+Councillor Edgar R. Ibayan Sr.
+Councillor Richlyn N. Justol-Baguilod
+Councillor Pamela A. Librado-Morata
+Councillor Diosdado Angelo Junior R. Mahipus
+Councillor Effa U. Malabasulic
+Councillor Bonifacio M. Millano
+Councillor Myrna G. L'Dalido-Ortiz
+Councillor Antoinette G. Principe-Castrodes
+Councillor J. Melchor B. Quitain Jr.
+Councillor Alberto T. Ungab
+Councillor Mary Joselle D. Villafuerte
+Councillor Jesus Joseph P. Zozobra III
+
+ABSENT:
+
+Vice Mayor Sebastian Z. Duterte
+Councillor Jonard C. Dayap
+
+ORDINANCE NO. 0544-21
+Series of 2021
+
+AN ORDINANCE CREATING THE CITY WATER RESOURCES OFFICE,
+DEFINING ITS POWERS AND FUNCTIONS, APPROPRIATING FUNDS
+THEREFOR, AND FOR OTHER PURPOSES
+
+--- [Page 2] ---
+Page 2 of 19
+Ord. No. 0544-21
+
+Be it ordained by the Honorable Sangguniang Panlungsod of Davao City, in session assembled, that:
+
+SECTION 1. SHORT TITLE - This Ordinance shall be referred to and cited as "The City Water Resources Office (CWRO) Ordinance".
+
+SECTION 2. DECLARATION OF PRINCIPLES AND POLICIES.
+
+1. This Ordinance promotes the following basic principles:
+A. Equitable access to safe drinking water;
+B. Safe drinking water is an essential basic human right;
+C. Water resource quality must be maintained for the ecosystem;
+D. Recognize diversity in different geographical locations of water resources;
+E. Consistency of water resource management;
+F. Integrated water resource management is a process which promotes the coordinated development and the management of water, land and related resources, in order to maximize the resultant economic and social welfare in an equitable manner without compromising the sustainability of vital ecosystems.
+
+2. Republic Act No. 7160
+A. Section 16 provides that "every local government unit shall exercise the powers expressly granted, those necessarily implied therefrom, as well as powers necessary, appropriate, or incidental for its efficient and effective governance, and those which are essential to the promotion of the general welfare. Within their respective territorial jurisdictions, local government units shall ensure and support, among other things, the preservation and enrichment of culture, promote health and safety, enhance the right of the people to a balanced ecology, encourage and support the development of appropriate and self-reliant scientific and technological capabilities, improve public morals, enhance economic prosperity and social justice, promote full employment among their residents, maintain peace and order, and preserve the comfort and convenience of their inhabitants."
+B. Section 76 empowers local government units to design and implement its organizational structure and staffing pattern taking into consideration its service requirements and financial capability, subject to the minimum standards and guidelines prescribed by the Civil Service Commission (CSC).
+
+3. National Policies for Conservation of Water Resources
+A. Conservation of Water Quality - PD 3931 in 1964 as amended by PD 984 in 1976 and repealed by RA 9275 or the Clean Water Act of 2004 - To protect, abate and control pollution of water, air and land for effective utilization of resources;
+B. Conservation of Water Quality - DENR AO No. 35 in 1990, Revised Effluent Regulation - This rules and regulation shall apply to all industrial and municipal wastewater effluent
+
+--- [Page 3] ---
+Page 3 of 19
+Ord. No. 0544-21
+C. Conservation of Water Quality - DENR AO No. 34, Revised Water Usage and Classification of Water Quality Criteria - shall classify all bodies of water and comply with water quality criteria;
+D. Marine Water Resources Protection - PD 979 Marine Pollution Decree of 1976 - To control pollution discharge from ships;
+E. Conservation of Water Resources Ownership, Development and Exploitation - PD 106 Water Code - Consolidate legislation relating to ownership, development, exploration and conservation of water resources;
+4. Other National Laws, Policies and Administrative Orders concerning water
+A. PD 1151 in 1977 - The Philippine Environment Policy;
+B. PD 1152 in 1977 - Environment Code of the Philippines;
+C. RA 9003-Ecological Solid Waste Management Act of 2000;
+D. RA 6969-Toxic and Hazardous Nuclear Waste Act of 1993;
+E. PD 1586 in 1977-Environmental Impact Assessment;
+F. PD 274 and PD 281-Rehabilitation of Pasig River;
+G. DENR AO No. 2003-14, Series of 2004-Creating the Environmental Partnership Program to support industry self-regulation towards improved Environmental Protection;
+H. DENR AO No. 2003-26, Series of 2003-Revised Industrial Eco-watch System;
+I. LLDA Rehabilitation Program launched in 1996;
+J. Environmental Users Fee System launched in January 1977 by the LLDA;
+K. Implementation of the Manila Bay Environmental Management Project (MBEMP);
+L. Implementation of the Philippine National Standard for Drinking Water;
+M. PD 856 in 1976-Sanitation Code of the Philippines;
+N. Disaster Risk Reduction and Management Act of 2010;
+O. Climate Change Act of 2009;
+P. Department of Health Administrative Order No. 2006-0024 established rules and regulations governing the accreditation of laboratories for drinking water;
+Q. Department of Health Administrative Order No. 2014-0027 dated September 04, 2014 (a) National Policy on Water Safety Plan (WSP) for all Water Utility Providers which include local water utilities and rural waterworks and sanitation associations;
+R. Department of Health Administrative Order No. 2020-0031 states the Revised Rules and Regulations governing the accreditation of laboratories for Drinking Water Analysis;
+S. Department of Environment and Natural Resources Administrative Order No. 26-A, Series of 1994, states the Philippine Standards for drinking water under the provision of Chapter II, Section 9, of PD 856, otherwise known as the Code of Sanitation of the Philippines.
+
+--- [Page 4] ---
+Page 4 of 19
+Ord. No. 0544-21
+5. Local Laws and Ordinances
+A. Ordinance No. 117-01 - Providing for a Water Resource Management and Protection Code of Davao City and for Other Purposes;
+B. Ordinance No. 0375-07-Marine Protected Areas Ordinance of 2007 - The establishment and management of the Davao City Marine Protected Areas for achieving food security as the overriding consideration in the utilization, management, development, conservation and protection of the coastal, marine and fishery resources while maintaining ecological balance and a good quality of environment;
+C. Ordinance No. 093-08 - Comprehensive Fisheries Ordinance - Promotes the sustainable development, conservation, and management of the fisheries and aquatic resources in the inland surface water and marine water of the City;
+D. Ordinance No. 0298-09 - Rainwater Harvesting Ordinance of 2009 - promotes the proper harvesting, storage and utilization of rainwater as a viable alternative source of water supply as form of conserving groundwater. It also aims to reduce the effects of storm water peak flow and surface runoff; encourages rainwater utilization by commercial, institutional and industrial establishments including medium to high-end residential subdivision;
+E. Ordinance No. 0361-10 - Ecological Solid Waste Management Ordinance - Ecological Solid Waste Management Ordinance among other items provides for the creation of solid waste management boards and the preparation of 10-year solid waste management plans that are consistent with the National Solid Waste Management Framework. The waste management plan shall direct the re-use, recycling and composting of wastes generated in Davao City and is intended to ensure efficient management of solid waste generated within its jurisdiction;
+F. Ordinance No. 0363-10 - Septage and Sewerage Ordinance - The ordinance establishes a program for management septic and sewerage system for Davao City. It provides guidance for, among other items, the construction requirements and general design of both public and private septic tank, sludge collection, transport, treatment and disposal of wastes, fees, enforcement and monitoring of desludging activities and effluent treatment standards;
+G. Ordinance No. 0310-07 - Watershed Code of 2007 - The Watershed Code, among others, identifies the recharge zones, aquifers, and conservation areas for protection. It Institutionalizes a multisectional Body, the Watershed Management Council, to implement the said Code;
+
+--- [Page 5] ---
+Page 5 of 19
+Ord. No. 0544-21
+H. Ordinance No. 0384-10 - Organic Agriculture Ordinance of 2010 - aims to
+advance the rights of all citizens to food sufficiency, sovereignty, and
+safety, sustainable livelihood and social equity in accord with the rhythm
+and harmony of nature through the mainstreaming of organic agriculture
+in Davao City.
+6. House Bill No. 2997
+A bill submitted to the House of Representatives creating the Department of
+Water.
+7. ISO/IEC 17025 General Requirements for the Competence of testing and
+calibration laboratories
+ISO/IEC 17025 is the international reference for testing and calibration
+laboratories wanting to demonstrate capacity to deliver reliable results.
+8. Resource and Socio-Economic Assessment Final Technical Report in 2012
+prepared by The Philippine Eagle Foundation as funded by Foundation
+Philippine Environment (FFE) and the United States Agency for International
+Development (USAID) recommend the following:
+A. Integrated development approach underpins sound watershed
+management;
+B. Watershed managers must adopt a holistic, adaptive management-
+based framework;
+C. A central coordinating body must be identified;
+D. Standard baseline indicators must be identified, defined,
+standardized, and measured for the watersheds as they serve as
+important benchmarks for assessing how well objectives have been
+achieved;
+E. More cross-disciplinary researches to holistically understand the
+watershed as a social-ecological unit whose parts are inextricably linked;
+F. The contribution of the Lumads in the management of the
+watersheds must be seriously considered and respected due to their
+invaluable Indigenous Ecological Knowledge which can be used to
+complement mainstream methods of natural resource management.
+9. The Integrated Water Resource Management Guidelines for Davao City and
+Region XI prepared by Hydrology for Environment, Life and Policy (HELP)
+organization states: "A review of the implementation in Davao City reveals
+that while there has been much documentation of outputs (i.e. trees planted,
+training activities, etc.) there is very little detailed monitoring to indicate the
+actual outcomes (i.e. improved ecosystem health or better economic well-
+being)."
+
+--- [Page 6] ---
+Page 6 of 19
+Ord. No. 0544-21
+
+10. The United Nations Educational, Scientific and Cultural Organization (UNESCO) on their Science, Engineering, Technology and Innovation (SETI) Sustainable Development Goals (SDG's) states "Ensure availability of sustainable management of water and sanitation for all."
+
+Section 3. Definition of Terms - The following words, terms, phrases and acronyms shall be defined as follows:
+
+CWRD
+ISO
+IEC
+Septage
+Lumad
+Multisectoral
+Sustainability
+Water quality
+Water system
+Scientific Research
+Hydrologic survey
+IOS
+ORAOPA
+DOH
+BHS
+CHD
+Context Indicator
+- City Water Resources Office
+- Common short name for the International Organization of Standardization. It is an independent, non-governmental organization, the members of which are the standards organizations of the 165 member countries. It is one of the world's largest developer of voluntary international standards and it facilitates world trade by providing common standards among nations.
+- International Electrotechnical Commission
+- The waste content found in a septic tank
+- Indigenous People
+- Concerning or involving more than one sector of an industry, economy, etc.
+- Able to continue over a period of time
+- Refers to the chemical, physical and biological characteristics of water. It is a measure of the condition of water relative to the requirements of one or more biotic species or to any human need or purpose
+- A study of supplying water
+- It is the process of developing new scientific knowledge and is characterized by objectivity, reproducibility, demonstrability and exactness
+- A study on integrated management of the area's water resources for supplying purposes
+- Index of Occupational Services, Occupational Groups, Classes and Salary Grades of the Department of Budget and Management
+- A record of appointments, promotions, transfers, appointments and other personnel actions of the Civil Service Commission
+- Department of Health
+- Bureau of Health Facilities and Services
+- Center for Health Development
+- Relates to the natural context (e.g., water availability, rate, total infrastructure (such as water treatment capacity, storage), or to human and economic capitals). Context indicators are required to act as benchmarks when assessing the achievements of another territory with a comparable context. (UN Environment – DHI Center)
+
+--- [Page 7] ---
+Page 7 of 19
+Ord. No. 0544-21
+Function Indicator
+- Relates to inputs, outputs and outcomes (e.g., water use intensity). A number of indicators relate to describing the dynamic functioning of the water sector at the national level (e.g., water withdrawals, water depletion or wastewaters actually treated). (UN Environment - DHI Center)
+Governance Indicator
+- Offers possible explanations behind the different levels of performance achieved through the intervention of various policies, programs and regulations intended to improve water use effectiveness, and between a given territory or river basin in comparison with different benchmark territories. Management and governance are sometimes mistakenly considered synonyms, their distinctions are important (Pahl-Wostl 2009). While management refers to activities to keep the state of the resources within designed bounds, governance takes into account the different actors in charge of regulating those who carry out resource management decisions. (UN Environment - DHI Center)
+Performance Indicator
+- Synthesizes the three core indicators (context, function, governance) as a targeted consideration of the functioning of a particular sector in relation to its objectives, within a given context. Issues of efficiency/productivity, effectiveness and impact can be considered (e.g., access to water supply and sanitation or value added in agriculture or industry). Only performance indicators can serve an evaluation function i.e., to provide insights as to general effectiveness or cost-effectiveness of a particular course of action or a set of policies or combination of investments. (UN Environment - DHI Center)
+NWRB
+- National Water Resources Board
+Level I water system
+- Stand-alone water points (e.g. hand pumps, shallow wells, rainwater collectors) serving an average of 15 households within a 250-meter distance (NWRB)
+Level II water system
+- Piped water with a communal water point (e.g. bore well, spring system) serving an average of 30 households within a 25-meter distance (NWRB)
+
+--- [Page 8] ---
+Page 8 of 19
+Ord. No. 0544-21
+
+LEVEL III water system - Piped (water supply with a private water point (e.g., house connection) based on daily water demand of more than 100 liters per person (NWRB)).
+River Basin - A river basin is the area of land from which all the water flows into a particular river, the area from which streams run down into a river the area drained by a river and its tributaries.
+Wetland - Land or areas (such as marshes or swamps) that are covered often intermittently with shallow water or have soil saturated with moisture.
+Watershed - The entire region draining into a river, river system, or other body of water.
+AO - Administrative Order
+Hardware - Physical parts of the computer
+Software - Computer code executed in a computer
+Interrelationship - The way in which two or more things or people affect one another
+Scientific Investigation - A method of investigation in which a problem is first identified, observations, experiments, or other relevant data are then constructed or tested hypotheses that support or refute it.
+Desertification - The process by which fertile land becomes desert, typically as a result of drought, deforestation, or inappropriate agriculture.
+Terrestrial ecosystem - A type of ecosystem found only on land forms. Six primary terrestrial ecosystems exist, namely: tundra, taiga, temperate deciduous forest, tropical rain forest, prairie, and desert.
+
+ARTICLE II Organization
+SECTION 1. THE CITY WATER RESOURCES OFFICE (CWRO)
+1. The City Water Resources Office (CWRO) is hereby created subject to this Ordinance and pursuant to national and local laws;
+2. The CWRO shall ensure that water resources of the city are managed, used, protected, conserved, developed, and controlled for sustainability;
+3. The CWRO shall adhere to the provisions of the constitution, national and local laws and policies pertaining to water resources;
+4. The CWRO shall abide by the principle of equitable access to safe and clean drinking water;
+5. The CWRO shall recognize the relevance of water in transforming the economy and eradicating poverty;
+6. The CWRO shall employ integrated management system meeting the balance between development and the environment in a sustainable manner;
+
+--- [Page 9] ---
+7. The CWRO shall act as a coordinating body of all data, benchmarks, indicators, researches, development and testing all water-related programs, activities, studies and projects of the city.
+
+8. The CWRO shall administer necessary policy and resource reforms with respect to the management of water.
+
+9. The CWRO shall monitor, analyze and evaluate compliance of city goals relating to water.
+
+10. The CWRO shall promote or encourage sustainable development goals in relation to water which shall include, but not limited to:
+
+A. Safe and clean drinking water in the city;
+
+B. Availability and sustainable management of water and sanitation;
+
+C. Sustainable consumption and production patterns;
+
+D. Conservation and sustainable use of the oceans, seas and marine resources for sustainable development;
+
+E. Sustainable use of terrestrial ecosystems;
+
+F. Peaceful and inclusive societies for sustainable development.
+
+11. The CWRO shall improve conservation of water and increase system efficiencies.
+
+SECTION 5. POWERS AND DUTIES OF THE CITY WATER RESOURCES OFFICE - The City Water Resources Office (CWRO) shall have the following powers and duties:
+
+A. Plans, develops and administers policies to promote access of the city to safe, adequate and sustainable drinking water consistent with national and local laws;
+
+B. Coordinates and assists other local offices and national agencies on tasks involving water sources;
+
+C. Gathers samples and specimens from specified water sources and the respective locations;
+
+D. Extends training and other community services to assigned localities;
+
+E. Manages water resources of the city;
+
+F. Monitors and coordinates with proper agencies and other government units the proper implementation of the rules, regulations and laws on water sources;
+
+G. Periodically evaluates and analyzes the physical, chemical, biological and other identified characteristics of water;
+
+H. Recommends revenue measures for the city on its water sources;
+
+I. Creates feasibility studies on the economic viability of a specific water body;
+
+J. Recommends the possible sources of drinking water, economic applications and energy source;
+
+K. Assists community water and sanitation associations;
+
+L. Plans and designs sustainable measures;
+
+M. Monitors, analyzes and evaluates the quantity and quality of water;
+
+N. Creates and maintains a database for all water-related studies, policies, laws, evaluations, analyses, and recommendations;
+
+O. Ensures access of public data and documents;
+
+P. Develops knowledge base and recommends policies, procedures and integrated planning services both for water resources and services;
+
+--- [Page 10] ---
+Page 10 of 19
+Ord. No. 0544-21
+Q. Provides technical assistance to water associations and consumers;
+R. Provides initiation and supervision on all water-related development in accordance with approved government plans and specifications;
+S. Creates and maintains a data bank in all aspects of all water resources of the city;
+T. Accomplishes water resource inventory of the city;
+U. Recommends mitigating measures to industries and other applications on point-source pollution;
+V. Exercises other incidental powers and functions as may be necessary to attain the objectives of this Ordinance;
+W. Performs other functions that the city mayor or legislature laws may assign from time to time consistent with the aims and provisions of this Ordinance.
+SECTION 6. DEPARTMENT HEAD OF THE CITY WATER RESOURCES OFFICE - The City Water Resources Office (CVRO) shall be headed by a Department Head with the position of City Government Department Head II, Salary Grade 26 who possess the related education, experience, trainings and eligibility, as stated in the Index of Occupational Services (IOS), Occupational Groups, Classes and Salary Grades of the Department of Budget and Management.
+A. The Department Head shall be responsible for the management of the CVRO;
+B. The Department Head shall formulate the direction and programs of the CVRO;
+C. The Department Head shall create and enforce the rules, policies and guidelines of CVRO;
+D. The Department Head shall administer the CVRO in compliance with national laws and local ordinances;
+E. The Department Head shall coordinate the affairs of CVRO with other city offices;
+F. The Department Head shall perform other tasks related to the functions and duties of CVRO that maybe deemed necessary by the City Mayor.
+SECTION 7. ORGANIZATIONAL STRUCTURE OF THE CITY WATER RESOURCES OFFICE (CVRO) - The City Water Resources Office shall be composed of five (5) divisions, and each division shall be composed of specific sections.
+A. The divisions under the City Water Resources Office are the following:
+1. Office of the Department Head;
+2. Operations Division (OD);
+3. Business Development Division (BDD);
+4. Science, Technology and Laboratory Division (STLD);
+5. Information Management Division (IMD).
+B. The interrelationship among the divisions shall include but not limited to:
+1. All documents, records, data, evaluations and all other reports from different divisions must be stored in the Information Management Division database;
+2. The Operations Division must submit the findings, periodic monitoring records, location, water resource inventory, and all other water-related data to STLD for analysis, evaluation and interpretation;
+
+--- [Page 11] ---
+3. All reports and documentation of all water-related results, analysis, evaluations and interpretations by STLD must be stored in the IMD;
+4. All hard copies of water-related reports must emanate from the IMD;
+5. BDD must submit all proposals, feasibility studies, and other revenue measures to the STLD for analysis, evaluation, and final recommendation;
+6. STLD may request the OD for further field investigations of specific proposals and other water-related documents;
+7. STLD may propose to BDD for possibilities of revenue-generating measures;
+8. Any proposal or measures for scientific investigations or actions may emanate from the Office of the Department Head;
+C. Additional policies, rules and regulations among divisions and sections, and the whole office may be drafted by the Office of the Department Head pursuant to this Ordinance and related local and national laws.
+
+SECTION 8. OFFICE OF THE DEPARTMENT HEAD OF THE CITY WATER RESOURCES OFFICE - The Office of the Department Head of CWRO shall be composed of the Department Head, the Assistant Department Head and the Administrative Staff of the department.
+A. The Assistant Department Head shall be designated the position of City Government Assistant Department II with Salary Grade 24 and must possess the related education, experience, trainings and eligibility as stated in the Index of Occupational Services, Occupational Groups, Classes and Salary Grades (IOS) of the Department of Budget and Management.
+1. The Assistant Department Head shall assist the Department Head of the CWRO;
+2. The Assistant Department Head shall assume the duties and responsibilities of the department head of the office in his/her absence or as designated by the CWRO department head;
+3. The Assistant Department Head shall manage and administer the Administrative Unit of the Office of the Department Head of CWRO;
+4. The Assistant Department Head shall perform other tasks as may be assigned by the office department head.
+B. The Administrative Staff shall perform the following functions:
+1. Support the administration to ensure efficient operation of the office;
+2. Manage and perform the functions of finance and resources of CWRO encompassing accounting and budgeting, staffing, scheduling employees' seminars and trainings, filing and preparing records and documents, sourcing and scheduling of transportation, procurement of CWRO materials, and other related secretarial and clerical duties;
+3. Support the administration and employees through a variety of tasks related to organization and communication;
+4. Responsible for confidential and time-sensitive materials;
+5. Provide information to the public;
+6. Perform other functions that may be assigned by the immediate supervisor or the office department head.
+
+--- [Page 12] ---
+**Page 12 of 19**
+
+**Ord. No. 0544-21**
+
+**SECTION 9. THE OPERATIONS DIVISION OF THE CITY WATER RESOURCES OFFICE**
+The Operations Division of the City Water Resources Office (CVRO) shall be composed of specialists, engineers, technicians, assistants, community extension workers, and other related field personnel. All data and activities shall be reviewed by the Science, Technology, and Laboratory Division, and shall be recorded at the Information and Management Division. The division shall include, but not limited to, the following sections and the respective functions:
+
+**A. Drinking Water and Groundwater Section**
+
+1. Provides technical support to community water systems, classification of the community water system into Level I, Level II or Level III, and periodic sampling of community water systems source for analysis and evaluation by the Science Technology and Laboratory Division;
+2. Assists in the administration and implementation of the by-laws and regulations of community water systems and sanitation associations;
+3. Periodically gathers water samples and other related specimen from designated locations of drinking water sources and distribution points;
+4. Locates, surveys, and geo-tags possible sources of drinking water and groundwater;
+5. Monitors the quality and quantity of possible drinking water sources and groundwater in specific locations;
+6. Assists in the implementation of national drinking water standards;
+7. Protects underground sources of drinking water;
+8. Accomplishes water resource inventory for drinking water and groundwater of the city;
+9. Performs other tasks that may be assigned from time to time pertaining to drinking and groundwater.
+
+**B. Surface Water and Marine Water Section**
+
+1. Periodically gathers water samples and other related specimen from specific sources of surface water and marine water;
+2. Monitors the quality and quantity of identified surface water and marine water;
+3. Observes and records factors relating to risk management and assessment;
+4. Gathers physical, chemical, biological, and other related characteristics for analysis and evaluation as specified;
+5. Monitors and records specified characteristics of identified coastal waters receiving bodies of water from major and minor river systems;
+6. Monitors dumping and vessel discharges in surface and marine waters;
+7. Assists in reducing aquatic trash and debris;
+8. Accomplishes water resource inventory for surface and marine water of the city;
+9. Performs other tasks that may be assigned from time to time pertaining to surface and marine water.
+
+**C. River Basins, Watersheds, and Wetlands Section**
+
+1. Monitors and records specified factors in climate ready estuaries;
+2. Coordinates protection in river basins, wetlands, and watersheds with other local and national offices and agencies as specified by related laws and ordinances;
+
+--- [Page 13] ---
+Page 13 of 19
+Ord. No. 0544-21
+3. Periodically monitors, records and gathers samples and other specimens as specified in identified locations of river basins, wetlands and watersheds;
+4. Periodically monitors and records quantity and quality of water in specific locations;
+5. Encourages the protection of watersheds, river basins and wetlands;
+6. Accomplishes inventory of river basins, watershed and wetlands in the city;
+7. Performs other tasks that may be assigned from time to time pertaining to river basins, wetlands and watersheds.
+D. Agricultural, Commercial and Industrial Applications Section
+1. Periodically monitors and records quantity and quality of water used for agricultural, commercial or industrial applications;
+2. Periodically gathers water samples and other specific specimens for evaluation and analysis;
+3. Periodically monitors, in coordination with other national and local agencies and entities, regulation of water for agricultural, commercial and industrial applications pursuant to national and local policies, laws and ordinances;
+4. Identifies and records locations of all areas within the city where water is used for agricultural, commercial or industrial applications;
+5. Promotes effective and responsible water use, treatment, disposal and management;
+6. Accomplishes water resource inventory of the city;
+7. Performs other tasks that may be assigned from time to time pertaining to utilization of water for agricultural, commercial and industrial purposes.
+E. Community Extension
+1. Community services shall be a function of the section which will include, but not limited to, community relations, community extension, management and evaluation of all water-related activities;
+2. Provides training and other assistance to communities in identified water resource areas;
+3. Evaluates social and cultural practices and norms in specified areas and recommends mitigations or other actions on such evaluations to the office administration;
+4. Coordinates with barangay local government unit on conflict resolution and implementation of related policies, rules, laws and ordinances;
+5. Performs other tasks that may be assigned from time to time pertaining to community extension.
+SECTION 10. BUSINESS DEVELOPMENT DIVISION - The Business Development Division of the CWRD shall include specialists in finance, investments, accounting, economists and other related support staff. All proposals from the division shall be reviewed by the Science, Technology and Laboratory Division, and inspected by the Operations Division. The Information and Management Division shall record all proposals from the Operations Division and related documents from other divisions. The division shall include, but not limited to, the following sections:
+
+--- [Page 14] ---
+Page 14 of 19
+Ord. No. 0544-21
+
+A. Services Section
+1. Identifies, analyzes, and evaluates feasibility of water sources for bulk water investments to augment water requirements and generate revenues for the city;
+2. Generates feasibility studies for rural waterworks and sanitation associations on specific group of rural residents or group of rural barangays in the city;
+3. Studies the viability of commercial application for drinking water in specific water sources such as springs, rivers and other water sources;
+4. Performs other tasks pertaining to the viability of water sources for water services.
+
+B. Production Section
+1. Studies, analyzes, evaluates and recommends revenue measures on water utilization for agricultural, commercial and industrial usage;
+2. Creates feasibility studies on utilization of water sources in specific areas for fish culture development and other revenue-making investments for food production;
+3. Evaluates the feasibility and commercial viability on energy-generation of a specific water body;
+4. Evaluates the commercial viability of water sources on revenue generation for the city;
+5. Creates and recommends revenue-generation possibilities for the city on commercial and industrial applications of water sources;
+6. Performs other tasks relating to economic viability of water sources for agricultural, commercial, and industrial applications.
+
+C. Other Revenues Section
+1. Generates studies of short-term and long-term benefits of water sources on health and education;
+2. Creates and recommends revenue measures for the city in accordance with the services that the office can generate;
+3. Search and accomplish proposals for national and international funding agencies for the office;
+4. Coordinates with other government agencies and offices, non-government organizations and the academic for possible sources of funds;
+5. Performs other economic tasks that may be assigned from time to time.
+
+SECTION 11. SCIENCE, TECHNOLOGY AND LABORATORY SECTION - The Science, Technology and Laboratory Division shall include specialists in chemical, biological and physical sciences, medical practitioners, engineers, technicians, geologists and other support staff. All results, evaluations and interpretations of this division shall be recorded in the database of the Information Management Division.
+
+A. Chemical, Biological and Laboratory Section
+1. Analyzes, evaluates and generates reports on the quality of water;
+2. Performs studies and generates recommendations on the safety and health factors of water resources;
+
+--- [Page 15] ---
+Page 15 of 19
+Ord. No. 0544-21
+
+3. Maintains the continuous operation of the water laboratory;
+4. Coordinates with other local offices for water analysis and evaluation;
+5. Provides services to other local offices on water analysis;
+6. May provide water analysis services to other organizations or establishments;
+7. Recommends measures to improve water analysis and laboratory services;
+8. Coordinates with the Operations Division for samples, specimen and data requirements;
+9. Coordinates with the Information Management Division for reports, data storage and other needed software applications;
+10. Develops measures on recommended safe water quality levels for toxics, nutrients, and pathogens;
+11. Helps ensure that waters can be used for fishing, swimming, drinking and other domestic uses;
+12. Recommends mitigating measures to industries and other applications on point-source pollution;
+13. Assesses and collates water resource inventory of the city;
+14. Performs other functions related to chemical or biological purposes as may be assigned by the immediate supervisor.
+
+B. Physical and Engineering Section
+
+1. Analyzes and evaluates the physical characteristics of water;
+2. Performs tasks related to engineering design and applications for water sources;
+3. Analyzes and evaluates quantity of water sources;
+4. Creates specifications for the survey of the location of water source including, but not limited to, terrain, geographical coordinates, length, width, and other physical characteristics of water;
+5. Evaluates the viability of the water source as an energy source;
+6. Plans, designs, and creates specifications for the protection, conservation, and sustainability of water sources;
+7. Evaluates and recommends instruments and equipment for optimum, efficient and sustainable utilization of water;
+8. Coordinates with other offices for the planning and design of applications for water sources;
+9. Coordinates with the Operations Division for the needed physical and engineering requirements;
+10. Coordinates with the Information Management Division for database storage and utilization, reports, and other needed software applications;
+11. Performs other tasks relating to engineering and physical characteristics of water as may be assigned from time to time.
+
+C. Research and Development Section
+
+The Division may assign personnel to perform research and development studies of water sources. Research proposals may be submitted to the office from other agencies, offices, and other organizations. All researches done in the office must be stored in a database for use by the public.
+
+--- [Page 16] ---
+**SECTION 12. INFORMATION MANAGEMENT DIVISION - The Information Management Division shall include systems analysts, programmers, computer technicians, encoders, database specialists and other computer-literate personnel necessary for the smooth operation of the division.**
+
+A. Database Management Section
+
+1. Assures database access and interface by available computer languages and software applications;
+2. Creates and maintains procedures on database security;
+3. Performs and stores data recovery and back-up;
+4. Maintains database communication interfaces;
+5. Performs data storage and access management;
+6. Performs other tasks relating to database management as may be assigned from time to time.
+
+B. Software Section
+
+1. Ensures delivery of software-reliant systems;
+2. Develops and improves needed software applications;
+3. Supports other divisions for software requirements and other needed documents;
+4. Performs systems analysis for efficient utilization and application of needed software, for optimization of the structural flow of the office, and create recommendations for needed applications;
+5. Creates and maintains needed software applications for public view and usage by the office;
+6. Ensures requests for report formats, documentations and other needed information requirements of the office are implemented;
+7. Performs computer software design and programming as required;
+8. Maintains all computer software applications;
+9. Performs other tasks that may be required relating to software development and applications.
+
+C. Hardware Section
+
+1. Selects and recommends the required hardware for the office in relation to its function and purpose;
+2. Ensures the continuous operation of all computer hardware;
+3. Maintains all computer hardware;
+4. Recommends required computer hardware components and accessories;
+5. Performs all other tasks as may be assigned relating to computer hardware.
+
+--- [Page 17] ---
+**Page 17 of 19**
+
+**Ord. No. 0544-21**
+
+**SECTION 13. ASSISTANCE FROM NATIONAL AGENCIES:**
+The City Water Resources Office shall promote and accept the detail of employees from national government agencies. Rules and regulations as required by law for the detail of government employees shall be followed and implemented. The office may request assistance for needed materials and equipment from national agencies, if available.
+
+**SECTION 14. ADJUSTMENTS OF OFFICE DIVISIONS AND SECTIONS:**
+The City Water Resources Office shall have at least five (5) functioning divisions. The City Water Resources Office may merge, remove, add or modify sections or divisions pursuant to national and local laws. Functions may be added, removed or modified as deemed necessary for integrated water resources management by the office. Administration in a section of each division or the whole division through an approved ordinance.
+
+**SECTION 15. WATER ANALYSIS LABORATORY:**
+The CVRO shall develop and maintain a city water analysis laboratory complying standards set by national agencies and shall aim for accreditation with the International Organization for Standardization (ISO). The laboratory shall comply with the rules and regulations and requirements of Department of Health (DOH) Administrative Order (AO) 2006-024 and as revised by DOH AO 2020-0031 specifying the rules and regulations governing the accreditation of laboratories for drinking water analysis, and shall comply the Rules and Regulations implementing Section 35 of Republic Act 10657 (Chemistry Profession Act) on the issuance of certificates of authority to operate chemical laboratories and other related establishments.
+
+A. Only Registered Chemists or Registered Chemical Technicians holding valid certificates of registration and professional identification certificates issued by the Professional Regulatory Board of Chemistry and the Professional Regulation Commission can carry out the practice of chemistry in the chemical laboratory.
+
+B. General and specific guidelines for a water analysis laboratory is stated in DOH AO 2020-0031.
+
+C. DOH AO 2020-0031 specifies the technical requirements for the following:
+
+1. Physical Plant;
+2. Personnel;
+3. Equipment, Instruments, Reagents and Supplies;
+4. Analytical Methods;
+5. Quality and Technical Manual;
+6. Laboratory Report;
+7. Laboratory Records;
+8. Proficiency Testing;
+9. Quality Management;
+10. Outsourcing;
+
+D. Other Provisions in DOH AO 2020-0031
+
+1. Rules and requirements for the Certificate of Accreditation are stated;
+2. The procedures for application on accreditation are specified;
+
+--- [Page 18] ---
+Page 18 of 19
+Ord. No. 0544-21
+3. Monitoring on the operation of the laboratory is stated in the Administrative Order;
+4. Sanctions on violations are stated.
+E. Republic Act (RA) No. 10657, otherwise known as the Chemistry Profession Act mandates the Professional Regulatory Board of Chemistry to supervise and regulate the practice of Chemistry profession in the Philippines; to conduct on-site inspection of chemical laboratories and other related establishments engaged in the practice of chemistry.
+F. R.A. No. 10657 further provides the scope of the practice of chemistry which extends, among others; to the performance and/or certification of chemical analyses or chemical synthesis, inspection and certification of laboratories with respect to their chemical or biochemical activities; supervision of chemical laboratories, supervision of chemical analysis or synthesis, whether or not performed in a laboratory.
+SECTION 16. USE OF INDICATORS FOR IMPROVED WATER RESOURCES MANAGEMENT - The City Water Resources Office shall utilize indicators for a variety of purposes, from knowledge and operations to sciences and administration. Indicators shall enhance rationality in crafting policies providing an objective, transparent, robust, and reliable information base in a particular area over a period of time. Usage of indicators may vary according to the rules and policies of the CWRD. Context, function, governance and performance indicators may be used by the CWRD.
+SECTION 17. PERSONNEL AND STAFF OF THE CITY WATER RESOURCES OFFICE - The Sangguniang Panlungsod shall pass a resolution and ordinance specifying the designation, position, salary grade, requirements, and other related specifications of the personnel and staff of the City Water Resources Office.
+ARTICLE III Other Provisions
+SECTION 18. APPROPRIATION - The amount needed to implement this Ordinance shall be sourced from any available funds of the city or from any national agency. Maintenance of the CWRD shall be appropriated annually by the city. Other financial requirements shall be requested through a supplemental budget.
+SECTION 19. AUTOMATIC REVIEW - The Sangguniang Panlungsod shall automatically review this Ordinance once every three (3) years after its approval or whenever the need for such review arises.
+SECTION 20. SEPARABILITY CLAUSE - Any provision of this Ordinance nullified by any court of law shall not affect the validity of the remaining provisions hereof not affected by the said judicial declaration.
+SECTION 21. EFFECTIVITY - This Ordinance shall take effect after the Sangguniang Panlungsod approves the pertinent resolution and ordinance and the city mayor signs for final approval.
+ENACTED, on the 20th day of April 2021, by a unanimous vote of all the Members of the Sanggunian, there being a quorum.
+
+--- [Page 19] ---
+Page 19 of 19
+Ord. No. 0544-21
+CERTIFIED CORRECT:
+CHARITO N. SANTOS
+Secretary to the Sangguniang Panlungsod
+(City Government Department Head II)
+ATTESTED:
+DANilo C. Dayanghirang
+City Councilor
+Temporary Presiding Officer
+cns/kjtq
+APPROVED: MAY 28 2021, 2021
+SARA Z. DUTERTE
+City Mayor
+ATTESTED:
+ATTY. ZULEIKA J. LOPEZ
+City Administrator
+AN ORDINANCE CREATING THE CITY WATER RESOURCES OFFICE, DEFINING ITS POWERS AND
+FUNCTIONS, APPROPRIATING FUNDS THEREFOR, AND FOR OTHER PURPOSES

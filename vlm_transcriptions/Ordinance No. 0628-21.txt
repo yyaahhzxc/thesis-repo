@@ -1,0 +1,729 @@
+=== ORDINANCE: Ordinance No. 0628-21 ===
+
+--- [Page 1] ---
+Republic of the Philippines
+City of Davao
+Office of the Sangguniang Panlungsod
+
+19th City Council
+24th Regular Session
+Series of 2021
+
+PRESENT:
+Councilor
+Alberto T. Ungab
+- Temporary Presiding Officer
+Councilor
+Ralph O. Abeila
+Councilor
+Nilo D. Abellera
+Councilor
+Maria Belen S. Acosta
+Councilor
+Bai Hundra Cassandra Dominique N. Advincula
+Councilor
+Wilberto E. Ar-ag
+Councilor
+Dante L. Apostol Sr.
+Councilor
+Jorge A. Balagueran
+Councilor
+Jessica M. Bonguyan
+Councilor
+Louie John J. Bonguyan
+Councilor
+Pilar C. Braga
+Councilor
+Augusto Javier G. Campos III
+Councilor
+Danilo C. Dayanghihang
+Councilor
+Jonard C. Dayap
+Councilor
+Jorge R. Dayap Jr.
+Councilor
+Edgar R. Ibyan Sr.
+Councilor
+Richlyn N. Justol-Baguilod
+Councilor
+Pamela A. Librado-Morata
+Councilor
+Jaffar U. Manohomsalic
+Councilor
+Bonifacio E. Militar
+Councilor
+Myrna G. L'Daldo-Oritz
+Councilor
+Eduardo P. Lopez-Castrores
+Councilor
+J. Melchor B. Quitain Jr.
+Councilor
+Mary Joselle D. Villafuerte
+Councilor
+Jesus Joseph P. Zozobraado III
+
+ABSENT:
+Vice Mayor
+Sebastian Z. Duterte
+- OB-Acting City Mayor
+Councilor
+Diosdado Angelo Junior R. Mahipus
+
+ORDINANCE NO.: 0628-21
+Series of 2021
+
+AN ORDINANCE REQUIRING THE MANDATORY IMPLEMENTATION OF THE SAFE DAVAO QR (DQR) FOR ALL ESTABLISHMENTS AND ALL INDIVIDUALS, INCLUDING NON-RESIDENTS OF DAVAO CITY, AS AMENDED
+
+--- [Page 2] ---
+Page 2 of 10  
+Ord. No. 0628-21  
+
+Be it ordained by the Sangguniang Panlungsod of Davao City in session assembled, that:  
+
+SECTION 1. TITLE - This Ordinance shall be known as "AN ORDINANCE REQUIRING THE MANDATORY IMPLEMENTATION OF THE SAFE DAVAO QR (DQR) FOR ALL ESTABLISHMENTS AND ALL INDIVIDUALS, INCLUDING NON-RESIDENTS OF DAVAO CITY, AS AMENDED".  
+
+SECTION 2. DECLARATION OF POLICY - Article II, Section 15 of the Philippine Constitution states that the State shall protect and promote the right to health of the people and instill health consciousness among them. Moreover, the City Mayor issued Executive Order No. 60, "An Order Providing for the Guidelines of the Safe Davao QR (DQR)."  
+
+In addition, Section 16 of Republic Act No. 7160 or the Local Government Code of 1991 provides as follows:  
+
+Section 16. General Welfare - Every local government unit shall exercise the powers expressly granted, those necessarily implied therefrom, as well as powers necessary, appropriate, or incidental for its efficient and effective governance, and those which are essential to the promotion of the general welfare. Within their respective territorial jurisdictions, local government units shall ensure and support, among other things, the preservation and enrichment of culture, promote health and safety, enhance the right of the people to education, encourage the development of appropriate and self-reliant scientific and technological capabilities, improve public morals, enhance economic prosperity and social justice, promote full employment among their residents, maintain peace and order, and preserve the comfort and convenience of their inhabitants.  
+
+Further, as articulated in Republic Act 10173, also known as the Data Privacy Act, it states: "It is the policy of the State to protect the fundamental human right of privacy, of communication while ensuring a free flow of information to promote innovation and growth." All law enforcement personnel, barangay officials, and private establishments mandated to scan the DQR shall be liable to keep all the records confidential.  
+
+The DQR shall be used solely for contact tracing purposes only.  
+
+SECTION 3. DEFINITION OF TERMS - For purposes of this Ordinance, the following shall mean:  
+
+a) Safe Davao QR (DQR) - refers to the electronic contact tracing and travel pass platform intended to implement contactless gathering and electronic storage of data.  
+
+b) All Individuals - refers to all individuals currently residing in Davao City and non-residents who need to enter the City for essential or work/business purposes.  
+
+c) Vulnerable Age - refers to all individuals below eighteen (18) years old and above 65.  
+
+d) Establishments - refers to all government and private offices, event venues, hospitals, hotels, malls, stores, grocery, mini-marts, restaurants, carinderias, "palengkes," places of worship, educational institutions and all other offices, establishments and organizations, including their sub-offices or branches.
+
+--- [Page 3] ---
+e) Persons in Authority — any person directly vested with jurisdiction, whether as an individual or as a member of some court or governmental corporation, board or commission, shall be deemed a person in authority. A barrio captain and a barangay chairman shall also be deemed a person in authority.
+
+f) DQR Scanning — refers to the online scanning with internet connection and offline scanning without internet connection.
+
+SECTION 4. DQR FOR INDIVIDUALS — All individuals, including non-residents of Davao City, are required to register and use their respective DQR to enter and move within Davao City and are required to present their DQR if they go outside of their residence gate or beyond three (3) meters from their houses for structures without gates. The demographic includes individuals belonging to the vulnerable age or those below 18 years old and above 65 years old. Such individuals shall be issued a one-time, permanent, and/or unique DQR upon successful online registration.
+
+Further, the Safe Davao QR (DQR) system should be strictly implemented to strengthen and improve contact tracing in the City as it encountered challenges due to the rising COVID-19 cases in the City. In these cases, the demographics mentioned above shall use their QR Codes for the following purposes:
+
+A. As a pass to enter and travel inside Davao City for goods and accessing essential services or for work/business only;
+
+B. As a pass in law enforcement checkpoints and barangay patrols implementing the prohibition on non-essential travel;
+
+C. As a contact tracing record for entry and exit in all public or private offices and establishments;
+
+D. As a pass for random scanning if an individual goes outside his residence gate or beyond three (3) meters from his houses for structures without gates. Barangay personnel are tasked to scan people within their area of responsibility to check violation on the prohibition of non-essential travel.
+
+E. All airplane travelers landing in the Davao International Airport (DIA) shall register for two codes: their QR code for exit which is the Health Declaration form in the DIA and their DQR.
+
+SECTION 4.1. DQR FOR ESTABLISHMENTS — All establishments within the jurisdiction of the City of Davao are likewise required to register and secure their respective DQR.
+
+SECTION 5. PROOF OF ESSENTIAL TRAVEL IN CHECKPOINTS — The following are documents to prove essential travel, to wit:
+
+A. A valid employee ID (a photocopy may be presented by drivers who drop-off and pick up the employee);
+
+B. Employer/Principal Certification for those who have no employer-employee relationship;
+
+C. Business Permit or any other document to prove travel is to access essential goods and services for work/business may be required by checkpoint personnel.
+
+--- [Page 4] ---
+**Page 4 of 10  
+Ord. No. 0628-21**
+
+D. In cases of buying food, goods, medicines, and services, checkpoint personnel may require a valid government-issued ID and proof of purpose and intention;
+
+E. Subject to such further issuances on proof of essential travel in checkpoints issued by the City Mayor.
+
+SECTION 6. EXEMPTION IN THE EVENT OF EMERGENCIES OR NATURAL DISASTERS - The use of DQR and proof of essential travel is not applicable in the event of an emergency or natural disaster.
+
+SECTION 7. REGISTRATION FOR INDIVIDUALS - For the purpose of registration, the following requirements should be prepared before going online to access the DQR link:
+
+A. A clear photo of one (1) valid ID. The following is the list of valid IDs:
+
+1. Social Security System (SSS)/ Government Service Insurance System (GSIS) Unified Multi-Purpose Identification (UMID) Card;
+2. Land Transportation Office (LTO) Driver's License. Student Permit may be accepted if in card format;
+3. Professional Regulatory Commission (PRC) ID;
+4. Overseas Workers Welfare Administration (OWWA)/ Integrated Department of Labor and Employment (DOLE) card;
+5. Commission on Elections (COMELEC) Voter's ID or Voter's Certification from the Election Officer with Dry Seal;
+6. Philippine National Police (PNP) Firearm's License;
+7. Senior Citizen ID;
+8. Airman License (issued August 2016) onwards;
+9. Philippine Postal ID;
+10. School ID;
+11. Passport;
+12. In the absence of a valid ID, Philippine Statistics Authority (PSA) copy of a birth certificate.
+
+B. A clear photo of the individual with the valid ID or birth certificate beside his face;
+
+C. A clear photo of the individual facing the camera and showing the entire face (face mask or coverings are prohibited).
+
+--- [Page 5] ---
+Page 5 of 10
+Ord. No. 0628-21
+
+D. A valid mobile phone number;
+E. A valid email address.
+
+The DQR ID is free and can be saved on the mobile phone or printed on a sheet of paper.
+
+SECTION 7.1. REGISTRATION FOR ESTABLISHMENTS - For the purpose of registration, the following requirements should be prepared before going online to access the DQR link:
+a) Establishment name;
+b) Business permit number;
+c) Establishment type;
+d) Complete Address indicating the Barangay;
+e) Contact person and contact number;
+f) Valid email address.
+
+SECTION 8. GOVERNMENT OFFICES MANDATED TO ASSIST IN THE REGISTRATION OF INDIVIDUALS WITH NO ID OR BIRTH CERTIFICATE - The following public establishments are mandated to assist in the DQR registration of individuals with no ID and/or Birth Certificate:
+A. The Barangay shall assist in the DQR registration of individuals within their respective barangay but cannot charge for the government computer and property used. The individuals may bring their own single sheet of bond paper for printing.
+B. Police stations shall assist in the DQR registration for individuals free from all fees and charges.
+Individuals with no ID and/or Birth Certificate shall present a current Barangay Certification, and the same coupled with a photo of the assisting police officer or barangay personnel shall be uploaded to the system upon registration in lieu of the requirements of Section 7.1 (a) and (c);
+SECTION 9. ENTITIES AUTHORIZED TO CONDUCT DQR SCANNING - The following are authorized to scan DQR, to wit:
+A. Task Force Davao (TFD) checkpoints shall be required to scan the DQR upon entry of all individuals. TFD may create a system to check DQR for people travelling together to avoid long queues at the checkpoints.
+B. Davao City Police Office (DCPO) shall conduct scanning in specified checkpoints within the city.
+C. Barangay officials and personnel in complete official uniform with ID shall conduct random scanning of all individuals found on the streets within their area of responsibility.
+D. Other Law Enforcement personnel supporting the TFD, DCPO, Barangay checkpoints.
+
+--- [Page 6] ---
+**Page 6 of 10  
+Ord. No. 0628-21**
+
+E. All private and government offices, event venues, hospitals, hotels, malls, stores, groceries, mini-marts, restaurants, carinderies, "palengke" stalls, places of worship, educational institutions, and all other offices, establishments, and organizations shall prepare their online and offline scan for individuals entering and exiting their area.
+
+All those who are mandated under this Section to scan the DQR shall be liable to keep all the records confidential under Republic Act 10173 or the Data Privacy Act and can only share data with the City Health Office (CHO).
+
+**SECTION 9.1. MANDATORY FOR SCANNING:**
+All individual offices and establishments shall be required to scan the DQR of the individuals entering their premises or post their establishment DQR ready for scanning by individuals, EXCEPT:
+
+1. Offices and establishments that are not enclosed or are not inside a structure with a roof and walls, for example: milk tea stall, ambulant vendor, lechon manok stand, sari-sari store, bakery, palengke stall, etc., and other establishments similarly situated.
+2. Buildings that contain several offices or stores inside, such as malls, hospitals, commercial complex, and other establishments similarly situated. In this case, individual stores and offices should be the establishment that will scan the DQR.
+
+**SECTION 10. EQUIPMENT USED AS A DQR SCANNERS:**
+The following are the equipment that may be used as DQR scanners:
+A. Smartphone with an internet connection;
+B. Table with internet connection;
+C. QR code scanning device/machine attached to a Personal Computer with internet connection.
+
+**SECTION 11. OFFLINE SCANNER:**
+Offline scanning is an available option for those establishments without internet connection provided they upload the data within the day or as soon as internet connection becomes available.
+
+**SECTION 12. PROHIBITED ACTS:**
+The following acts are prohibited:
+
+A. BY INDIVIDUALS:
+a. Use of a DQR for non-essential movement;
+b. Lending a personal DQR to another person permitting the use or abusing the use thereof;
+c. Use and possession of a fake DQR;
+d. Use of cancelled DQR;
+e. Failure and refusal to present a valid DQR for scanning or inspection purposes when so required by persons in authority;
+f. Use of fake ID, birth certificate, and Business registration number, or another individual's ID or birth certificate or another's Business registration number to register for a DQR;
+
+--- [Page 7] ---
+Page 7 of 10  
+Ord. No. 0628-21  
+
+g. Making or selling fake identities for DQR registration;  
+h. Hacking of the DQR system and/or identity theft;  
+i. Failure to comply with the provisions of this Ordinance.  
+
+B. BY ESTABLISHMENTS.  
+a. Non-registration in the DQR System.  
+b. Non-posting of Establishment DQR Code in the entrance or exit of the establishment.  
+c. Allowing the entry of individuals without scanning the Individual DQR Code.  
+d. Allowing the exit of individuals without scanning the Individual DQR Code.  
+
+A DQR shall be cancelled if upon post audit there is error, mistake or deficient compliance with the provisions of Sections 4 and 4.1.  
+
+SECTION 13. PENAL CLAUSE - Any violation of Section 12 of the Ordinance shall be penalized as follows:  
+
+A. VIOLATION BY INDIVIDUALS UNDER SECTION 12(A).  
+Any violation of the provisions under Section 12(A), except subsections (a), (d) and (e) of this Ordinance shall be penalized as follows:  
+a. First Offense - an amount of Five Hundred Pesos (P500.00) will be meted for the violators of this Ordinance.  
+b. Second Offense - an amount of One Thousand Pesos (P1,000.00) for the second offense.  
+c. Third Offense - an amount of One Thousand Five Hundred Pesos (P1,500.00)  
+
+Any shop or person guilty of tampering or hacking the online link shall be prosecuted for cybercrime under Republic Act No. 10175 of the Cybercrime Prevention Act of 2012.  
+
+Acts constituting violations of Republic Act No. 10173 or the Data Privacy Act shall likewise be prosecuted to the full extent of the law.  
+
+Any violation of subsections (a), (d) and (e) of Section 12 (A) of this Ordinance shall be penalized as follows:  
+a. First Offense - reprimand;  
+b. Second Offense - an amount of Five Hundred Pesos (P500.00) or a penalty of community service, or both;  
+c. Third Offense - an amount of One Thousand Five Hundred Pesos (P1,500.00) or one month imprisonment, or both.
+
+--- [Page 8] ---
+**Page 8 of 10  
+Ord. No. 0628-21**
+
+If the offender is a public officer or employee, an administrative case may also be filed against him/her pursuant to the Local Government Code of 1991 or the Civil Service Laws rules and regulations, as the case may be.
+
+For offenders apprehended by the Barangay, all proceeds from the payment of the herein imposed fine shall be apportioned as follows:
+
+1. Sixty percent (60%) of the amount collected per apprehension shall accrue to the apprehending barangay;
+2. Forty percent (40%) shall accrue to the General Fund of the City Government.
+
+The share of the barangay shall be remitted directly to the barangay, without need of any further action, on a monthly basis within ten (10) days of the following month. Said amount shall be utilized for COVID-19 response and for other matters incidental thereto.
+
+**B. VIOLATION BY ESTABLISHMENTS UNDER SECTION 12(B).**
+
+The owner, president, general manager, or officer in charge of the establishment shall be liable for any violation of the provisions under Section 12(B) of this Ordinance and shall be penalized as follows:
+
+a. First Offense - written warning;
+b. Second Offense - Fine of P5,000.00 and/or suspension of business operations for thirty (30) days from date of violation;
+c. Third Offense - Fine of P5,000.00 and cancellation of Business Permit.
+
+Provided that, establishments without a Business Permit shall not be penalized as above but shall immediately be penalized with a fine of P5,000.00 and immediate closure pending appropriate action.
+
+**SECTION 14. CITATION TICKETS**
+
+A citation ticket shall be issued to violators of the provisions of this Ordinance. The Citation ticket shall state the name and address of the violator, the specific violation committed, and the corresponding penalty.
+
+The Davao City Police Office (DCPO), Task Force Davao (TFD), Barangay Officials, and other authorized enforcers as commissioned by the City Mayor shall have the responsibility to apprehend violator of this Ordinance and issue citation tickets.
+
+**SECTION 15. NO CONTEST PROVISION FOR INDIVIDUALS**
+
+A violator of this Ordinance who is cited for violation and who does not wish to contest the offense and is willing to pay the imposed administrative penalty before the filing of formal charges with the proper court, shall be allowed to pay a penalty of Five Hundred Pesos (P500.00) to the City Treasurer's Office. This is to avoid being criminally prosecuted within three (3) days from apprehension; otherwise, a criminal complaint shall be filed before the City Prosecutor's Office. All proceeds from the payment of the herein penalty imposed shall go to the City's General Fund. Further, the no contest provision can only be availed once.
+
+--- [Page 9] ---
+**Page 9 of 10**
+
+**Ord. No. 0628-21**
+
+This provision does not apply for violations of letters (c), (f), (g), (h) and (i) of Section 12(A) hereof.
+
+**B. NO CONTENT PROVISION FOR ESTABLISHMENTS**
+
+A violator of this Ordinance who is cited for violation and who does not wish to contest the offense and is willing to pay the imposed administrative penalty before the filing of formal charges with the proper court, shall be allowed to pay a penalty of Three Thousand Pesos (P3,000.00) to the City Treasurer's Office. This is to avoid being criminally prosecuted within three (3) days from apprehension; otherwise, a criminal complaint shall be filed before the City Prosecutor's Office of Davao City and prosecuted in court. All proceeds from the payment of the herein penalty imposed shall go to the City's General Fund. Further, no contest provision can only be availed once.
+
+**SECTION 16. ENFORCEMENT - The Task Force Davao (TFD), the Davao City Police Office (DCPO), the City Health Office (CHO), and all Barangay Officials in Davao City are mandated to ensure the strict observance of this Ordinance.**
+
+**SECTION 17. REPEALING CLAUSE - All Ordinances, rules, orders, and regulations or parts thereof contrary to or inconsistent with any of the provisions of this Ordinance are hereby repealed.**
+
+**SECTION 18. SEPARABILITY CLAUSE - If, for any reason, any section or provision of this Ordinance is declared unconstitutional, invalid, or void, other sections or provisions hereof not affected by such declaration shall continue to be in full force and effect.**
+
+**SECTION 19. APPLICABILITY - This Ordinance shall be in full force and effect during the duration of the COVID-19 public health emergency as declared by the National Government.**
+
+**SECTION 20. EFFECTIVITY - This Ordinance shall take effect fifteen (15) days following the required publication in a newspaper of general circulation.**
+
+**ENACTED, June 29, 2021, by an unanimous vote of all the Members of the Sanggunian present, there being a quorum.**
+
+**CERTIFIED CORRECT:**
+
+**CHARITO N. SANTOS**
+
+**Secretary to the Sanggunian Panlungsod (City Government Department Head II)**
+
+**ATTESDED:**
+
+**ALBERTO T. UNGAB**
+
+**Acting Vice Mayor**
+
+**Temporary Presiding Officer**
+
+**CNS/RAY**
+
+--- [Page 10] ---
+Page 10 of 10
+Ord. No. 0628-21
+APPROVED: AUG 2 4 2021
+SARA Z. DUTERTE
+City Mayor
+ATTESTED:
+ATTY. ZULEIKA T. LOPEZ
+City Administrator
+AN ORDINANCE REQUIRING THE MANDATORY IMPLEMENTATION OF THE SAFE DAVAO QR (DQR) FOR ALL ESTABLISHMENTS AND ALL INDIVIDUALS, INCLUDING NON-RESIDENTS OF DAVAO CITY, AS AMENDED
+
+--- [Page 11] ---
+Republic of the Philippines
+City of Davao
+Office of the Sangguniang Panlungsod
+
+19th City Council
+23rd Regular Session
+Series of 2021
+
+PRESENT:
+
+Councilor Edgar P. Ibyuan Jr.
+Vice Mayor Sebastian Z. Duterte
+Councilor Ralph O. Abellera
+Councilor Maria E. Abellera
+Councilor Maria G. Acosta
+Councilor Bai Hundra Cassandra Dominique N. Advincula
+Councilor Wilberte E. Ar-ag
+Councilor Dante L. Apostol Sr.
+Councilor Conrado C. Baluran
+Councilor Jessica M. Bonguyan
+Councilor Louis John J. Bonguyan
+Councilor Raul C. Bonguyan
+Councilor Augusto Javier G. Campos III
+Councilor Danilo C. Dayanghirang
+Councilor Jonard C. Dayap
+Councilor Edgar R. Ibyuan Sr.
+Councilor Richlyn N. Justol-Bagulod
+Councilor Pamela A. Librado-Morata
+Councilor Diosdado Angelo R. Mahipus
+Councilor Benjamin G. Mariano
+Councilor Myrna G. L'Daldo-Ortiz
+Councilor Antoinette G. Principie-Castrodes
+Councilor J. Melchor B. Quitain Jr.
+Councilor Alberto U. Ungab
+Councilor Mary Joselle D. Villafuerte
+Councilor Jesus Joseph P. Zozobraño III
+
+ABSENT:
+
+Councilor Jaffar U. Marohomsalic
+On Sick Leave
+
+RESOLUTION NO. 02396-21
+Series of 2021
+
+ENACTING AN ORDINANCE AMENDING ORDINANCE NO. 431-
+20, SERIES OF 2020, OTHERWISE KNOWN AS "AN
+ORDINANCE REQUIRING THE MANDATORY
+IMPLEMENTATION OF THE SAFE DAVAO QR (DQR) FOR ALL
+ESTABLISHMENTS AND ALL INDIVIDUALS, INCLUDING NON-
+RESIDENTS OF DAVAO CITY"
+
+--- [Page 12] ---
+Page 2 of 10
+Res. No. 02396-21
+WHEREAS, this item pertains to the proposed amendments to Ordinance No.
+431-20, Series of 2020, otherwise known as "AN ORDINANCE REQUIRING THE
+MANDATORY IMPLEMENTATION OF THE SAFE DAVAO QR (DQR) FOR ALL
+ESTABLISHMENTS AND ALL INDIVIDUALS, INCLUDING NON-RESIDENTS OF DAVAO
+CITY" by making the scanning of DQR codes mandatory and penalizing
+non-compliance thereof;
+WHEREAS, on January 7, 2021, the City Council enacted Ordinance No. 431-20,
+Series of 2020, entitled "An Ordinance Requiring the Mandatory Implementation
+of the Safe Davao QR (DQR) for All Establishments and All Individuals, including
+Non-Residents of Davao City," which mandates all individuals and establishments
+to register and use their respective DQR to enter and move within Davao City, for contact tracing purposes;
+WHEREAS, the Honorable Mayor, through Executive Order No. 2, Series of
+2021, entitled "An Order Providing for the Mandatory Implementation of the
+Safe Davao QR for Other Purposes," mandated that individual offices and
+establishments shall be required to scan the DQR of all individuals entering their premises;
+WHEREAS, pursuant to this, Councilor Mabel Acosta, in her privilege speech
+during the 20th Regular Session of the City Council on May 25, 2021, proposed for
+the enactment of an ordinance penalizing business establishments which fail to scan DQR
+Codes upon entry and exit of any individual. In order to make DQR scanning
+mandatory, there is therefore a need to amend Ordinance No. 431-20 to make the
+scanning of DQR codes of individuals who enter and exit establishments mandatory
+making the failure to scan said DQR codes a prohibited act, and providing for penalties
+for violation of the same;
+WHEREAS, after a thorough discussion with the invited guests and resource
+persons in the two scheduled committee hearings, the following amendments were
+introduced to Ordinance No. 431-20, Series of 2020, are as follows:
+AN ORDINANCE REQUIRING THE MANDATORY IMPLEMENTATION OF THE
+SAFE DAVAO QR (DQR) FOR ALL ESTABLISHMENTS AND ALL INDIVIDUALS,
+INCLUDING NON-RESIDENTS OF DAVAO CITY, AS AMENDED
+SECTION 1. TITLE - This Ordinance shall be known as "An Ordinance
+Requiring the Mandatory Implementation of the Safe Davao QR (DQR) for All
+Establishments and All Individuals, Including Non-Residents of Davao City, As
+Amended."
+SECTION 2. DECLARATION OF POLICY - Article II, Section 15 of the
+Philippine Constitution states that the State shall protect and promote the right
+to health of the people and instill health consciousness among them. Moreover,
+the City Mayor of Davao issued Executive Order No. 80, or "An Order Providing
+for the Guidelines of the Safe Davao QR (DQR)."
+In addition, Section 16 of Republic Act No. 7160 or the Local Government
+Code provides:
+
+--- [Page 13] ---
+Page 3 of 10
+Res. No. 02396-21
+
+Section 16. General Welfare. — Every local government unit shall exercise the powers expressly granted, those necessarily implied therefrom, as well as powers necessary, appropriate, or incidental for its efficient and effective governance, and those which are essential to the promotion of the general welfare. Within their respective territorial jurisdictions, local government units shall ensure and support, among other things, the preservation and enrichment of culture, promote health and safety, enhance the right of the people to a balanced ecology, encourage and support the development of the economy, improve public morals, enhance economic prosperity and social justice, promote full employment among their residents, maintain peace and order, and preserve the comfort and convenience of their inhabitants.
+
+Further, as articulated in Republic Act 10173, also known as the Data Privacy Act: "It is the policy of the State to protect the fundamental human right of privacy, of communication while ensuring free flow of information to promote innovation and growth." All law enforcement personnel, barangay officials, and private establishments mandated to scan the DQR shall be liable to keep all the records confidential.
+
+The DQR shall be used solely for contact tracing purposes only.
+
+SECTION 3. DEFINITION OF TERMS — For the purpose of this Ordinance, the following shall mean:
+
+a. Safe Davao QR (DQR) — refers to the electronic contact tracing and travel pass platform intended to implement contactless gathering and electronic storage of data.
+
+b. All Individuals — refers to all individuals currently residing in Davao City and non-residents who need to enter the City for essential or work/business purposes.
+
+c. Vulnerable Age — refers to all individuals below eighteen (18) years old and above 65.
+
+d. Establishments — refers to all government and private offices, event venues, hospitals, hotels, malls, stores, groceries, mini-marts, restaurants, carinderias, palengkes, places of worship, educational institutions and all other offices, establishments and organizations, including their sub-offices or branches.
+
+e. Persons in Authority — any person directly vested with jurisdiction, whether as an individual or as a member of some court or governmental corporation, board, or commission, shall be deemed a person in authority. A barrio captain and a barangay chairman shall also be deemed a person in authority.
+
+f. DQR Scanning — refers to online scanning with internet connection and offline scanning without internet connection.
+
+SECTION 4. DQR FOR INDIVIDUALS — All individuals, including non-residents of Davao City are required to register and use their respective DQR to enter and move within Davao City and are required to bring their DQR if they go outside of their residence gate or beyond three (3) meters from their houses for structures without gates. This demographic includes individuals belonging to the vulnerable age or those below 18 years old and above 65 years old. Such individuals shall be issued a one-time, permanent, and/or unique DQR upon successful online registration.
+
+--- [Page 14] ---
+**Page 4 of 10**
+
+**Res. No. 02936-21**
+
+Further, the Safe Davao QR (DQR) system should be strictly implemented to strengthen and improve contact tracing in the City as it encountered challenges due to the rising COVID-19 cases in the City. In these cases, the demographics mentioned above shall use their QR Codes for the following purposes:
+
+A. As a pass to enter and travel inside Davao City for goods and accessing essential services or for work/business only;
+B. As a pass in law enforcement checkpoints and barangay patrols implementing the prohibition on non-essential travel;
+C. As a contact tracing record for entry and exit in all public or private offices and establishments.
+D. As a pass for random scanning if an individual goes outside his residence gate or beyond three (3) meters from his houses for structures without gates. Barangay personnel are tasked to scan people within their area of responsibility to check violation on the prohibition of non-essential travel.
+E. All airplane travellers landing in the Davao International Airport (DIA) shall register for two codes: their QR code for exit which is the Health Declaration form in the DIA and their DQR.
+
+**SECTION 4.1. DQR FOR ESTABLISHMENTS** - All establishments within the jurisdiction of the City of Davao are likewise required to register and secure their respective DQR.
+
+**SECTION 5. PROOF OF ESSENTIAL TRAVEL IN CHECKPOINTS** - The following documents to prove essential travel, to wit:
+
+A. A valid employee ID (a photocopy may be presented by drivers who drop-off and pick up the employee);
+B. Employer/Principal Certification for those who have no employer-employee relationship;
+C. Business Permit or any other document to prove travel is to access essential goods and services for work/business may be required by checkpoint personnel;
+D. In cases of buying of food, goods, medicines, and services, checkpoint personnel may require a valid government issued ID and proof of purpose and intention;
+E. Subject to such further issuances on proof of essential travel in checkpoints issued by the City Mayor.
+
+**SECTION 6. EXEMPTION IN THE EVENT OF EMERGENCIES OR NATURAL DISASTERS** - The use of DQR and proof of essential travel is not applicable in the event of an emergency or natural disaster.
+
+**SECTION 7. REGISTRATION FOR INDIVIDUALS** - For the purpose of registration, the following requirements should be prepared before going online to access the DQR link:
+
+A. A clear photo of one (1) valid ID. The following is the list of valid IDs:
+
+--- [Page 15] ---
+Page 5 of 10  
+Res. No. 02396-21  
+1. Social Security System (SSS) / Government Service Insurance System (Gsis) Unified Multi-Purpose Identification (UMID) Card;  
+2. Land Transportation Office (LTO) Driver's License. Student Permit may be accepted if in card format;  
+3. Professional Regulatory Commission (PRC) ID;  
+4. Oversees Workers Welfare Administration (OWWA) / Integrated Department of Labor and Employment (IDOLE) card;  
+5. Commission on Elections (COMELEC) Voter's ID or Voter's Certification from the Election Officer with Dry Seal;  
+6. Philippine National Police (PNP) Firearm's License;  
+7. Senior Citizen ID;  
+8. Airman License (Issued August 2016 onwards);  
+9. Philippine Postal ID;  
+10. School ID;  
+11. Passport;  
+12. In the absence of a valid ID, Philippine Statistics Authority (PSA) copy of birth certificate.  
+B. A clear photo of the individual with the valid ID or birth certificate beside his face;  
+C. A clear photo of the individual, facing the camera and showing the entire face (face masks or coverings are prohibited);  
+D. A valid mobile phone number;  
+E. A valid email address.  
+
+The DQR ID is free and can be saved on the mobile phone or printed on a sheet of paper.  
+
+SECTION 7.1. REGISTRATION FOR ESTABLISHMENTS - For the purpose of registration, the following requirements should be prepared before going online to access the DQR Link:  
+a. Establishment name;  
+b. Business permit number;  
+c. Establishment type;  
+d. Complete address indicating the Barangay;  
+e. Contact person and contact number;  
+f. Valid email address.  
+
+SECTION 8. GOVERNMENT OFFICES MANDATED TO ASSIST IN THE REGISTRATION OF INDIVIDUALS WITH NO ID OR BIRTH CERTIFICATE - The following public establishments are mandated to assist in the DQR registration of individuals with no ID and/or Birth Certificate:  
+A. The Barangay shall assist in the DQR registration of individuals within the respective barangay but cannot charge for the government computer and property used. The individuals may bring their own single sheet of paper for printing.
+
+--- [Page 16] ---
+Page 6 of 10
+Res. No. 02396-21
+B. Police stations shall assist in the DQR registration for
+individuals, free of all fees and charges.
+Individuals with no ID and/or Birth Certificate shall present a current
+Barangay certification, and the same coupled with a photo of the assisting police
+officer or Barangay Personnel shall be uploaded to the system upon registration
+in lieu of the requirements of Section 7 (a) (b) and (c).
+SECTION 9. ENTITIES AUTHORIZED TO CONDUCT DQR SCANNING
+The following are authorized to scan DQR, to wit:
+A. Task Force Davao (TFD) checkpoints shall be required to scan
+the DQR upon entry of all individuals. TFD may create a system to
+check DQR for people travelling together to avoid long queues in the
+checkpoints.
+B. Davao City Police Office (DCPO) shall conduct scanning in
+specified checkpoints within the city.
+C. Barangay officials and personnel in complete official uniform
+with ID shall conduct random scanning of all individuals found on
+the streets within their area of responsibility.
+D. Other law enforcement personnel supporting the TFD, DCPO,
+and Barangay checkpoints;
+E. All private and government offices, event venues, hospitals,
+hotels, malls, stores, groceries, mini-marts, restaurants, carinderia,
+palengkies, places of worship, educational institutions and all other
+establishments and organizations shall prepare their online and
+offline scanner for all individuals entering and exiting their area.
+All those who are mandated under this section to scan the DQR shall be liable to
+keep all the records confidential under Republic Act 10173 or the Data Privacy Act
+and can only share data with the City Health Office (CHO).
+SECTION 9.1. MANDATORY DQR SCANNING. All individual offices and
+establishments shall be required to scan the DQR of individuals entering their
+premises or post their establishment DQR ready for scanning by individuals,
+EXCEPT:
+1. Offices and establishments that are not enclosed or are not inside a
+structure with a roof and walls, for example, milk bars, stalls, ambulances,
+vending machines, kiosks, food courts, food stands, palengkies, stalls, etc.,
+and other establishments similarly situated.
+2. Buildings that contain several offices or stores inside such as malls,
+hospitals, commercial complex, and other establishments similarly
+situated. In this case, individual stores and office pertains to the
+establishments that should scan the DQR.
+SECTION 10. EQUIPMENT USED AS DQR SCANNERS - The following
+are the equipment that may be used as DQR scanners:
+A. Smartphone with internet connection;
+B. Tablet with internet connection;
+
+--- [Page 17] ---
+**Page 7 of 10**
+
+Res. No. 02396-21
+
+C. QR code scanning device/machine attached to a Personal Computer with internet connection.
+
+SECTION 11. OFFLINE SCANNER - Offline scanning is an available option for those establishments without internet connection provided they upload the data within the day or as soon as internet connection becomes available.
+
+SECTION 12. PROHIBITED ACTS. The following acts are prohibited:
+
+A. INDIVIDUALS
+
+a. Use of a DQR for non-essential movement;
+
+b. Lending a personal DQR to another person permitting the use or abusing the use thereof;
+
+c. Use and possession of a fake DQR;
+
+d. Use of a cancelled DQR;
+
+e. Failure and refusal to present a valid DQR for scanning or inspection purposes when so required by persons in authority;
+
+f. Use of a fake ID, birth certificate, and Business registration number, or another individual's ID or birth certificate or another's Business registration number to register for a DQR;
+
+g. Making or selling fake identities for DQR registration;
+
+h. Hacking of the DQR system and/or identity theft;
+
+i. Failure to comply with the provisions of this Ordinance.
+
+B. BY ESTABLISHMENTS
+
+a. Non-registration in the DQR System;
+
+b. Non-posting of Establishment DQR Code in the entrance or exit of the establishment;
+
+c. Allowing the entry of individuals without scanning the Individual DQR Code;
+
+d. Allowing the exit of individuals without scanning the Individual DQR Code.
+
+A DQR shall be cancelled if upon post audit there is error, mistake or deficient compliance with the provisions of Sections 4 and 4.1.
+
+SECTION 13. PENAL CLAUSE - Any violation of Section 12 of the Ordinance shall be penalized as follows:
+
+A. VIOLATION BY INDIVIDUALS UNDER SECTION 12(A)
+
+Any violation of the provisions under Section 12(A), except subsections (a) (d) and (e) of this Ordinance shall be penalized as follows:
+
+a. First Offense: an amount of Five hundred pesos (P500.00) will be metered for the violators of this Ordinance.
+
+b. Second Offense: an amount of One Thousand Pesos (P1,000.00) for the second offense.
+
+c. Third Offense: an amount of One Thousand Five Hundred Pesos (P1,500.00) for the third offense
+
+--- [Page 18] ---
+**Page 8 of 10**
+
+Res. No. 02396-21
+
+Any shop or person guilty of tampering or hacking the online link shall be prosecuted for cybercrimes under Republic Act No. 10175 or the Cybercrime Prevention Act of 2013.
+
+Acts constituting violations of Republic Act No. 10173 or the Data Privacy Act shall likewise be prosecuted to the full extent of the law.
+
+Any violation of subsections (a), (d), and (e) of Section 12(a) of this Ordinance shall be penalized as follows:
+
+a. First Offense – reprimand;
+
+b. Second Offense – an amount of Five Hundred Pesos (P500.00) or a penalty of community service, or both;
+
+c. Third Offense – an amount of One Thousand Five Hundred Pesos (P1,500.00) or one month imprisonment, or both.
+
+If the offender is a public officer or employee, an administrative case may also be filed against him/her pursuant to the Local Government Code 1991 or the Civil Service laws, rules and regulations, as the case may be.
+
+For offenders apprehended by the Barangay, all proceeds from the payment of the herein imposed fine shall be apportioned as follows:
+
+1. Sixty percent (60%) of the amount collected per apprehension shall accrue to the apprehending barangay;
+
+and
+
+2. Forty percent (40%) shall accrue to the General Fund of the City Government.
+
+The share of the barangay shall be remitted directly to the barangay, without need of any further action, on a monthly basis within ten (10) days of the following month. Said amount shall be utilized for COVID-19 response and for other matters incidental thereto.
+
+B. VIOLATION BY ESTABLISHMENTS UNDER SECTION 12(B):
+
+The owner, president, general manager, or officer in charge of the establishment shall be liable for any violation of the provisions under Section 12(B) of this Ordinance and shall be penalized as follows:
+
+a. First Offense – written warning;
+
+b. Second Offense – Fine of P5,000 and/or suspension of business operations for thirty (30) days from the date of violation;
+
+c. Third Offense – Fine of P5,000 and cancellation of Business Permit.
+
+Provided that establishments without a Business Permit shall not be penalized as above but shall immediately be penalized with a fine of P5,000 and immediate closure, pending appropriate action.
+
+SECTION 14. CITATION TICKETS: A citation ticket shall be issued to violators of the provisions of this Ordinance. The Citation ticket shall state the name and address of the violator, the specific violation committed, and the corresponding penalty.
+
+The Davao City Police Office (DCPO), Task Force Davao (TFD), Barangay Officials, and other authorized enforcers as commissioned by the City Mayor shall have the responsibility to apprehend violators of this Ordinance and issue citation
+
+--- [Page 19] ---
+**SECTION 15. NO CONTEST PROVISION.**
+
+A. **NO CONTEST PROVISION FOR INDIVIDUALS.**
+
+A violator of this Ordinance who is cited for violation and who does not wish to contest the offense and is willing to pay the imposed administrative penalty before the filing of formal charges with the proper court, shall be allowed to pay a penalty of Five Hundred Pesos (P500) to the City Treasurer's Office. This is to avoid being criminally prosecuted within three (3) days from apprehension; otherwise, a criminal complaint shall be filed before the City Prosecutor's Office of Davao City and prosecuted in court. All proceeds from the payment of the herein penalty imposed shall go to the City's General Fund. Further, the no contest provision can only be availed once.
+
+This provision does not apply for violations of letters (c), (f), (g), (h) and (i) of Section 12(A) hereof.
+
+B. **NO CONTEST PROVISION FOR ESTABLISHMENTS**
+
+A violator of this Ordinance who is cited for violation and who does not wish to contest the offense and is willing to pay the imposed administrative penalty before the filing of formal charges with the proper court, shall be allowed to pay a penalty of Three Thousand Pesos (P3,000) to the City Treasurer's Office. This is to avoid being criminally prosecuted within three (3) days from apprehension; otherwise, a criminal complaint shall be filed before the City Prosecutor's Office of Davao City and prosecuted in court. All proceeds from the payment of the herein penalty imposed shall go to the City's General Fund. Further, the no contest provision can only be availed once.
+
+**SECTION 16. ENFORCEMENT**
+
+The Task Force Davao (TTF), the Davao City Police Office (DCPO), the City Health Office (CHO), and all Barangay Officials in Davao City are mandated to ensure the strict observance of this Ordinance.
+
+**SECTION 17. REPEALING CLAUSE**
+
+All ordinances, rules, orders, and regulations or parts thereof contrary to or inconsistent with any of the provisions of this Ordinance are hereby repealed.
+
+**SECTION 18. SEPARABILITY CLAUSE**
+
+If, for any reason, any section or provision of this Ordinance is declared unconstitutional or invalid, other sections or provisions hereof not affected by such declaration shall continue to be in full force and effect.
+
+**SECTION 19. APPLICABILITY**
+
+This Ordinance shall be in full force and effect during the duration of the COVID-19 public health emergency as declared by the National Government.
+
+**SECTION 20. EFFECTIVITY**
+
+This Ordinance shall take effect after fifteen (15) days following the required publication in a newspaper of general circulation.
+
+--- [Page 20] ---
+**Page 10 of 10**
+
+Res. No. 02396-21
+
+NOW THEREFORE, on motion of Councilor J. Melchor B. Quitain Jr., duly seconded by Councilors Alberto T. Ungab, Pilar C. Braga, Bali Hundra Cassandra Dominique N. Advincula, Maria Belen S. Acosta and Mary Joseelle D. Villafuerte, be it resolved, as it is hereby resolved, to enact an ordinance amending ORDINANCE NO. 431-20, SERIES OF 2020, otherwise known as "AN ORDINANCE REQUIRING THE MANDATORY IMPLEMENTATION OF THE SAFE DAVAO QR (QOR) FOR ALL ESTABLISHMENTS AND ALL INDIVIDUALS, INCLUDING NON-RESIDENTS OF DAVAO CITY";
+
+RESOLVED FURTHER, that copies of this Resolution be furnished the Office of the City Mayor through the City Administrator's Office, the Vice Mayor's Office, the City Treasurer's Office, the City Legal Office, the Human Resource Management Office, the 5D Davao City Police Office, the Department of Labor and Employment (DOLE) - XI, the Civil Service Commission, the City Tourism Operations Office, the MGB - XIX, the MGB - LGU Federation, Liga ng mga Barangay, the City Tourism Operations Office, Davao City Investment Promotion Center, the City Cooperative Development Office, the City Health Office, the City Information Technology Center, ICT Davao, Davao City Chamber of Commerce and Industry, Inc., and all other concerned offices/departments, for their information, guidance and appropriate action;
+
+ADOPTED, June 22, 2021, by unanimous vote of all the Members of the Sanggunian present, there being a quorum.
+
+CERTIFIED CORRECT:
+
+CHARITO N. SANTOS
+Secretary to the Sanggunian Panlungsod
+(City Government Department Head II)
+
+ATTESTED:
+
+EDGAR P. IBUYAN JR.
+President Pro Tempore
+Temporary Presiding Officer
+cis/kjtq
