@@ -229,6 +229,13 @@ Always tie nouns to cross-references and citations using a non-breaking space (`
 * Use `tabularx` with `X` columns for text-heavy columns to enable proper line wrapping within margins.
 * Always supply both `\caption{...}` (placed above the table) and a unique `\label{tab:...}`.
 
+* **Column Width Allocation & Proportional Narrative Space:**
+  In multi-column comparative and summary tables, never allow numeric, code, or short indicator columns to consume excessive horizontal space while descriptive, narrative, or ``Analytical Significance'' columns become severely squished.
+  * **Generous Text Allocation:** Reserve at least **35% to 45% of total table width** for substantive text/significance columns using `>{\RaggedRight}X`.
+  * **Compact Numeric Columns:** Keep numeric counts, percentages, and metrics compact using centered columns with tight widths (`p{1.4cm}` to `p{1.9cm}` or `c`).
+  * **Tight Label Columns:** Restrict initial category/dimension columns to the minimum width required by their longest label (`p{3.2cm}` to `p{3.6cm}`) rather than arbitrary oversized allocations.
+  * **Margin & Padding Tuning:** Use `\setlength{\tabcolsep}{2.5pt}` to `\setlength{\tabcolsep}{3.2pt}` to prevent wasteful column gutters.
+
 ```latex
 \begin{table}[htbp]
     \centering
