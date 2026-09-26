@@ -71,23 +71,6 @@ ordinances = [
         }
     },
     {
-        "ordinance_no": "Ordinance No. 230 / Ordinance No. 519",
-        "series": 1991,
-        "title": "AN ORDINANCE IMPOSING A LOCAL FRANCHISE TAX ON TELECOMMUNICATIONS UTILITIES IN DAVAO CITY",
-        "enacting_lgu": "City of Davao",
-        "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
-        "date_approved": "December 18, 1991 (As amended by Ord. 519, series of 1997)",
-        "judicial_case": "Smart Communications, Inc. v. City of Davao, G.R. No. 155491 (September 16, 2008 & July 21, 2009; 565 SCRA 237); PLDT v. City of Davao, G.R. No. 143867 (August 22, 2001; 363 SCRA 522)",
-        "ruling": "Constitutional and Valid (Local Taxing Autonomy Upheld)",
-        "gold_label": "Entailment",
-        "superior_national_law": "Republic Act No. 7160 §137, §151; Republic Act No. 7294 §9; Republic Act No. 7925 §23",
-        "operative_sections": {
-            "SECTION 1. IMPOSITION OF FRANCHISE TAX": "Notwithstanding any tax exemptions granted in any national franchise, there is hereby levied on all businesses enjoying a franchise operating within Davao City a local franchise tax of fifty percent (50%) of one percent (1%) of gross annual receipts realized during the preceding calendar year.",
-            "SECTION 2. COVERED ENTERPRISES": "All telecommunications companies, telephone networks, mobile telephone carriers, and public utilities operating transmission facilities or commercial stations within Davao City shall be covered.",
-            "SECTION 3. PAYMENT SCHEDULE": "The franchise tax shall be payable quarterly to the City Treasurer within the first twenty (20) days of January, April, July, and October."
-        }
-    },
-    {
         "ordinance_no": "Ordinance No. 158-05 §423",
         "series": 2005,
         "title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (MANDATORY PAYMENT UNDER PROTEST)",
@@ -169,23 +152,6 @@ ordinances = [
             "SECTION 1. TITLE": "This Ordinance shall be known as the 'Comprehensive Speed Limit Ordinance of Davao City'.",
             "SECTION 4. SPEED LIMIT CLASSIFICATION": "Classifies city roads into Open Roads (80 kph private / 50 kph trucks and buses), Through Streets (40 kph / 30 kph), City Streets (30 kph), and Crowded Residential/School Streets (20 kph).",
             "SECTION 6. SPEED DETECTION MACHINERY": "Authorizes CTTMO to utilize DOST-calibrated radar speed cameras and automated speed enforcement tools."
-        }
-    },
-    {
-        "ordinance_no": "Ordinance No. 060-02",
-        "series": 2002,
-        "title": "AN ORDINANCE PROHIBITING THE MANUFACTURE, SALE, DISTRIBUTION, POSSESSION OR USE OF FIRECRACKERS OR PYROTECHNIC DEVICES AND SUCH OTHER SIMILAR DEVICES IN DAVAO CITY",
-        "enacting_lgu": "City of Davao",
-        "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
-        "date_approved": "November 26, 2002",
-        "judicial_case": "Davao City Firecracker Prohibition under General Welfare Police Power",
-        "ruling": "Valid Local Prohibitory Measure under General Welfare Police Power (Upheld)",
-        "gold_label": "Entailment",
-        "superior_national_law": "Republic Act No. 7160 §16, §458(a)(1)(vi); Republic Act No. 7183 §2",
-        "operative_sections": {
-            "SECTION 1. TITLE": "This Ordinance shall be cited as the 'Davao City Firecracker Ban Ordinance of 2002'.",
-            "SECTION 2. PROHIBITED ACTS": "It shall be unlawful for any person or business entity to manufacture, sell, distribute, possess, transport, or use any firecracker, pyrotechnic device, or explosive novelty anywhere within Davao City at any time of the year.",
-            "SECTION 3. GRADUATED PENALTIES": "Violators shall pay P1,000 fine and 20 days imprisonment for first offense; P3,000 fine and 1 to 3 months imprisonment for second offense; and P5,000 fine and 3 to 6 months imprisonment for third offense."
         }
     }
 ]
