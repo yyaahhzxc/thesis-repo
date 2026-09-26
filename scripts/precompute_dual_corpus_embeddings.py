@@ -128,8 +128,9 @@ def run_precomputation():
     emb_memmap = np.load(OUTPUT_EMB_FILE, mmap_mode='r+')
 
     # 4. Initialize Model
-    print("\n[2/3] Loading SentenceTransformer all-MiniLM-L6-v2 on CPU...")
-    model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2', device='cpu')
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"\n[2/3] Loading SentenceTransformer all-MiniLM-L6-v2 on {device.upper()}...")
+    model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2', device=device)
     model.max_seq_length = args.max_seq_len
     t2 = time.time()
     print(f"Model ready in {t2 - t1:.2f}s. Max sequence length set to {model.max_seq_length}.")
