@@ -16,7 +16,9 @@
 | :--- | :--- | :---: | :--- |
 | **Milestone 1** | Data Description - Machine Learning | `COMPLETED` | Commit `cc1c33d` (Sept 4, 2026) |
 | **Milestone 2** | Chapter 3 Methodology Revisions | `READY FOR INITIAL SUBMISSION` | Chapter 3 ~90%+ complete with all methodology, baselines, MWE, power analysis, and citation sweep done; ready for initial submission pending local ordinances EDA once Ralph completes OCR cleaning |
-| **Milestone 3** | Chapter 4 Initial Model Training & Hyperparameters | `IN PROGRESS` | Chapter 4 initialized; Stage 1 migrated; Stage 2 training & Grid Search documented |
+| **Milestone 3** | Chapter 4 Initial Model Training & Hyperparameters | `COMPLETED / POLISHED` | Stage 1 migrated; Stage 2 zero-shot & fine-tuning ablations; Figure 4.2 6-model overlay; Table 4.6 reframed; 0 LaTeX errors |
+| **Milestone 4** | Full RnD Draft (Chapter 4 Results & Discussion Final) | `UPCOMING / PREPARATION` | Unseen test set evaluation, baseline comparisons with CV std dev, statistical validation tables/plots, feature importance & XAI maps |
+| **Milestone 5** | Thesis Manuscript Draft (Chapter 5 Conclusions & Future Work) | `UPCOMING / PREPARATION` | Chapter 5: Conclusions (evidenced against Ch 1 objectives) and Future Work (structured limitations and concrete technical extensions) |
 
 ---
 
@@ -77,7 +79,7 @@
 ---
 
 ### **Milestone 2: Methodology Revisions**
-* **Status:** `ACTIVE / IN PROGRESS`
+* **Status:** `READY FOR INITIAL SUBMISSION`
 * **Official Prompt Provided by Course Professor (Verbatim):**
 
 > *"Revise the portion of your Chapter 3: Methodology to include the following:*
@@ -98,7 +100,7 @@
 ---
 
 ### **Milestone 3: Results and Discussion (Initial Model Training & Hyperparameters)**
-* **Status:** `ACTIVE / IN PROGRESS`
+* **Status:** `COMPLETED / READY FOR SUBMISSION`
 * **Official Prompt Provided by Course Professor (Verbatim):**
 
 > *"Present your first set of concrete experimental results and provide explanations of what these results mean in Chapter 4: Results and Discussion. Present your preliminary data using structured tables and plots (i.e., boxplots, line graphs). Raw and unformatted output is not acceptable.*
@@ -106,6 +108,43 @@
 > *Machine Learning*
 >
 > *You should have trained your initial models and began optimising their internal configurations. This should include the hyperparameter you tuned (e.g., learning rate, network depth, batch size). For each parameter, state the search range and the method used. Also include the training/validation loss curves over time. Report the performance of the best-performing hyperparameter configurations on your validation set. Analyze the training patterns and discuss underfitting/overfitting and hyperparameter sensitivity."*
+
+---
+
+### **Milestone 4: Full RnD Draft**
+* **Status:** `ACTIVE / UPCOMING`
+* **Official Prompt Provided by Course Professor (Verbatim):**
+
+> *"Your final Chapter 4 must include the final evaluation data in polished, publication-ready tables and figures. Report the results of the statistical tests you defined in Chapter 3. Interpret why your approach succeeded or failed under certain conditions, link your findings back to the existing literature, and explicitly address any unexpected results.*
+>
+> *for Machine Learning:*
+>
+> * *Unseen Test Set Evaluation: Report the final model metrics on your held-out test set.*
+> * *Baseline Comparison: Include a performance table directly comparing your proposed architecture against the selected baselines. Report the mean and standard deviation across all your k-fold cross-validation runs.*
+> * *Statistical Validation: Present the results of your test (e.g., McNemar's, Wilcoxon Signed Rank, Friedman) using tables and figures.*
+> * *Feature Importance: Provide the results of your experiments showing the impact of removing 1 or more features. Present feature importance maps or visualisations, if applicable."*
+
+---
+
+### **Milestone 5: Thesis Manuscript Draft**
+* **Status:** `UPCOMING`
+* **Official Prompt Provided by Course Professor (Verbatim):**
+
+> *"The final milestone completes the entire thesis manuscript with the final chapter, Chapter 5: Conclusions and Recommendations. Synthesise the findings into high-level insights and set the direction for future researchers interested in your topic.*
+>
+> *5.1 Conclusions*
+>
+> *This should not be a mere summary of your results. Instead, this is where you revisit the Main Problem Statement/Objective and each of the Specific Problem Statements/Objectives outlined in Chapter 1.*
+>
+> *Start by stating your overarching conclusion regarding the main problem. For each objective/statement achieved, provide clear evidences explaining how the problem statement was answered or how the objective was achieved.*
+>
+> *5.2 Future Work*
+>
+> *This section should be structured into two logical parts: Limitations and Extensions.*
+>
+> *Before you can suggest what future researchers should do, first state what your study cannot or did not do. This serves as the academic justification for your future work recommendations.*
+>
+> *After outlining the limitations, propose concrete technical steps that the next researcher can take to advance your work. Avoid vague suggestions such as, "future researchers should collect more data". Be highly specific, such as recommending exact modifications to the pipeline or detailing the exact problem instances to test next."*
 
 ---
 
@@ -192,6 +231,29 @@
 
 ---
 
+### **Milestone 4 Deliverables (Full RnD Draft - Chapter 4 Finalization)**
+- [ ] **Unseen Test Set Benchmark on Final SP Ground Truth**: Execute out-of-sample evaluation on the 15 SP legal researchers' consensus test split ($\mathcal{D}_{\text{test}}$, $N=53$ or full 350-pair out-of-sample holdout) across the Six Finalist Encoders.
+- [ ] **Baseline Comparison & Cross-Validation Table**: Construct final comprehensive performance table comparing the proposed architecture against baselines, reporting Mean $\pm$ Standard Deviation across 5-fold cross-validation runs on the training/validation splits.
+- [ ] **Statistical Significance Testing & Visualizations**: Present formal statistical validation tables and figures:
+  - [ ] McNemar's paired contingency tables with continuity correction and odds ratios comparing proposed model vs. canonical BERT baseline ($\chi^2, p < 0.05$).
+  - [ ] Friedman non-parametric rank test across 8 legal domains ($\chi_F^2, p < 0.05$) with post-hoc Wilcoxon signed-rank / Nemenyi critical difference diagram.
+- [ ] **Feature Importance & XAI Saliency Maps**:
+  - [ ] Component ablation study quantifying performance drop when removing: (1) Context prepending, (2) Hierarchy Priority Safeguard, (3) Soft domain priors, (4) Unpadded FlashAttention.
+  - [ ] Publication-ready Explainable AI (XAI) token attribution map (Integrated Gradients / attention rollout) highlighting specific deontic conflict tokens on the review dashboard.
+- [ ] **Unexpected Results & Qualitative Error Analysis**: Detailed error breakdown categorizing false positives (authorized municipal exceptions under RA 7160 §458) vs. false negatives (latent statutory preemption without explicit negation markers).
+
+---
+
+### **Milestone 5 Deliverables (Thesis Manuscript Draft - Chapter 5)**
+- [ ] **Chapter 5: Conclusions (§5.1)**:
+  - [ ] Synthesize overarching conclusions addressing the Main Problem Statement.
+  - [ ] Systematically address each Specific Objective from Chapter 1 with direct empirical evidence from Chapters 3 & 4.
+- [ ] **Chapter 5: Future Work (§5.2)**:
+  - [ ] **Part 1 (Limitations)**: Rigorous academic limitations (single-premise assumption, 1-vs-N limitation, bounded 600M parameter edge constraint, reliance on OCR extraction fidelity).
+  - [ ] **Part 2 (Concrete Technical Extensions)**: Highly specific, actionable roadmaps (multi-hop graph preemption reasoning, cross-lingual Tagalog/Cebuano legal NLI, automated municipal repealing clause generation, hardware acceleration via ONNX / TensorRT).
+
+---
+
 ## **6. Chronological Progress Journal**
 
 | Date | Author | Scope | Actions Accomplished | References / Files |
@@ -236,6 +298,11 @@
 | **2026-09-26** | Yah | Bibliography Audit & Verification Dashboard Suite | Implemented full Bibliography Verification Suite requested by Yah: (1) Created AST-based BibTeX parser and audit script `scripts/audit_refs.py` scanning all 267 entries in `references.bib` against all LaTeX files in `CS_Undergraduate_Thesis_Template/` (identifying 229 cited, 208 with URL/DOI, 88 open-access direct PDF resolvable, 0 missing); (2) Built modern, dark-mode interactive HTML Reference Auditor dashboard (`docs/ref_auditor.html`) with zero-CORS offline execution via `docs/references_data.js`; (3) Integrated one-click search actions: Auto Google (title + authors), Google Scholar, Semantic Scholar, Crossref, and Lawphil; (4) Added inline link editor with `localStorage` persistence, verified BibTeX export (`references_verified.bib`), and auto-generated batch Python downloader (`download_all_references.py`) to systematically archive reference PDFs into `docs/references/<citekey>.pdf`. | `docs/ref_auditor.html`, `scripts/audit_refs.py`, `docs/references_data.js`, `docs/references_data.json`, `docs/THESIS_MASTER_TASKS.md` |
 | **2026-09-26** | Yah & Antigravity | Deep Bibliography Verification & Hallucination Resolution Sweep | Executed comprehensive verification sweep on Yah's updated `references_verified.bib` (262 verified URLs, 98.1% coverage): (1) Deep-audited non-academic, government, and media citations to detect and resolve 7 hallucinated/mismatched author entries: `zuasola2025leadership` -> Cortez & Davao Today (Rappler 2025); `andaya2025towards` -> deduplicated into authentic author Renno Jose B. Gabuya (IJRISS 2025); `patumbon2025landmark` -> corrected author to Rojean Grace G. Patumbon (SunStar 2025); `militar2025lissp` -> corrected author to Rojean Grace G. Patumbon (SunStar 2025) with Bonz Militar as sponsor; `alfiani2024digital` -> corrected to authentic Digos/USeP researchers Cydeah Aldic J. Conchas & Aristeo C. Salapa (IJETRM 2025); `bernardo2023demystify` -> corrected to Alejandro S. Bernardo & Angeli P. Albaña-Garrido (IJLD 2023, DOI 10.1515/ijld-2023-2015); `philippine2025house` -> Jose Cielito Reganit (PNA 2025); (2) Fixed missing editor/author fields in proceedings (`coliee2025proceedings`, `coliee2026proceedings`, `aggarwal2012mining`); (3) Synchronized all entries with local repo file links (`file = {docs/references/<citekey>.pdf}`); (4) Updated in-text LaTeX citations across `chapters/literature_review.tex` and `chapters/methodology.tex`; (5) Recompiled full 4-pass Overleaf thesis PDF with 0 errors (7,994.2 KB). | `references.bib`, `references_verified.bib`, `literature_review.tex`, `methodology.tex`, `main.pdf`, `scripts/verify_and_update_bib.py`, `docs/THESIS_MASTER_TASKS.md` |
 | **2026-09-26** | Yah & Antigravity | Full Bibliography Sweep, DOI Restoration & Final Deduplication | Completed comprehensive end-to-end bibliography sweep: (1) Purged hallucinated uncited entry `bhat2025chunking` (fake arXiv ID 2509.07759); (2) Deduplicated 3 entries (`gabuya2025towardsdigitallegis`, `koreeda2021contract`, `ribeiro2020beyond`), bringing total BibTeX entries from 267 to 263; (3) Resolved remaining in-text citation discrepancies in `literature_review.tex` (`andaya2025towards` -> `gabuya2025towardsdigitallegis`, `militar2025lissp` -> `patumbon2025lissp`); (4) Restored authentic DOIs and resolving URLs for landmark works: `benchcapon2003theory` (Elsevier DOI 10.1016/S0004-3702(03)00108-5), `sartor2005legal` (Springer DOI 10.1007/1-4020-3505-5), `sc1985tanadavtuvera` (Lawphil `gr_l-63915_1985.html`), `henderson2022pileoflaw` (arXiv:2207.00220), `liddy2001natural` (Syracuse University repository `surface.syr.edu/istpub/50/`); (5) Verified 100% citation completeness: 226 unique cited keys, 0 missing keys, 0 duplicates, 98.5% link coverage; (6) Recompiled 4-pass Overleaf thesis PDF with 0 errors. | `references.bib`, `references_verified.bib`, `literature_review.tex`, `main.pdf`, `docs/references_data.json`, `docs/references_data.js`, `docs/THESIS_MASTER_TASKS.md` |
+| **2026-09-26** | Yah & Antigravity | Stage 2 Tri-Paradigm Comparative Loss Trajectories & Top 3 Finalists Funnel | Addressed Yah's methodology and narrative critique on premature DeBERTa-v3 favoritism: (1) Upgraded Figure 4.2 into a publication-grade multi-model comparative ablation plot (`figs/stage2_loss_dynamics_and_convergence.png`) cleanly overlaying the Top 3 Paradigm Finalists (Pre-aligned NLI `DeBERTa-v3-base-NLI`, Modern Long-Context `ModernBERT-base`, and Canonical Baseline `bert-base-uncased`) across validation loss trajectories (Panel A) and validation Macro F1 progression (Panel B) without visual bloat; (2) Harmonized Section 4.2.3 and Section 4.3 narrative to establish the three-stage engineering funnel (28 Zero-Shot Candidates -> 13 Shortlisted Ablations -> Top 3 Paradigm Finalists); (3) Explicitly declared that only the Top 3 Paradigm Finalists will be evaluated out-of-sample on the finalized 350-pair human ground truth from the 15 Sangguniang Panlungsod legal researchers to determine the definitive production winner. | `scripts/generate_loss_curves_plot.py`, `figs/stage2_loss_dynamics_and_convergence.png`, `results_and_discussion.tex`, `THESIS_MASTER_TASKS.md` |
+| **2026-09-26** | Yah & Antigravity | Six-Model Finalist Suite (Top 5 + BERT Baseline) & Chapter 3 Methodological Grounding | Expanded the finalist selection framework to the Top 5 validation performers (`DeBERTa-v3-large-NLI`, `DeBERTa-v3-base-NLI`, `ModernBERT-large`, cold `deberta-v3-base`, `PoL-BERT-Large`) plus the canonical `bert-base-uncased` anchor (6 models total): (1) Upgraded `scripts/generate_loss_curves_plot.py` to overlay all 6 models across both panels of Figure 4.2 (`figs/stage2_loss_dynamics_and_convergence.png`) showing universal Epoch 3 convergence; (2) Restructured Chapter 3 (§3.6.2 & §3.6.3) into the formal Three-Stage Engineering Funnel ($28 \rightarrow 13 \rightarrow 6 \rightarrow 1$); (3) Grounded selection strategy in authoritative literature: reporting experimental search spaces (Dodge et al., 2019; Caruana et al., 2004), holdout validity preservation without test-set snooping (Dwork et al., 2015; Blum & Hardt, 2015), baseline anchoring and controlled statistical significance testing (Dietterich, 1998; Devlin et al., 2019), and Green AI / parameter scale trade-offs for municipal LGU hardware (Strubell et al., 2019; Schwartz et al., 2020); (4) Added 5 verified BibTeX entries to `references.bib` and harmonized Chapter 4 (§4.2.3 & §4.3). | `methodology.tex`, `results_and_discussion.tex`, `references.bib`, `generate_loss_curves_plot.py`, `stage2_loss_dynamics_and_convergence.png`, `THESIS_MASTER_TASKS.md` |
+| **2026-09-26** | Yah & Antigravity | Table 4.6 Reframing & Mathematical Synchronization | Reframed Table 4.6 to eliminate single-model bias while preserving granular diagnostic telemetry: (1) Re-titled Table 4.6 to explicitly designate it as the "Epoch-by-Epoch Diagnostic Training Dynamics, Holdout Loss, and Generalization Progression for the Leading Validation Candidate (`DeBERTa-v3-large-NLI`, $\eta = 2\times 10^{-5}, B = 8$)"; (2) Synchronized exact numerical values across Table 4.5, Table 4.6, and Figure 4.2 (Epoch 3 holdout loss 0.4320, accuracy 86.54%, Macro F1 0.8580, Conflict F1 0.9000); (3) Framed surrounding prose to explain that while Figure 4.2 illustrates the comparative landscape across all six finalists, Table 4.6 provides an empirical exemplar case study of the bias-variance trade-off and automated early-stopping trigger prior to the final human evaluation by SP legal researchers. | `results_and_discussion.tex`, `main.pdf`, `THESIS_MASTER_TASKS.md` |
+
+
 
 
 
