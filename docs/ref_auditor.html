@@ -3,1160 +3,1226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thesis Reference Auditor & Verification Dashboard</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>BibTeX Reference Verifier & PDF Collector</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Load pre-parsed thesis references for instant zero-setup loading -->
+  <script src="references_data.js"></script>
   <style>
-    :root {
-      --bg-dark: #0B0F19;
-      --bg-surface: #111827;
-      --bg-card: #182235;
-      --bg-card-hover: #1F2E47;
-      --border-color: #24344D;
-      --border-focus: #4F46E5;
-      --text-main: #F3F4F6;
-      --text-muted: #9CA3AF;
-      --text-dim: #64748B;
-      
-      --accent-indigo: #6366F1;
-      --accent-cyan: #06B6D4;
-      --accent-emerald: #10B981;
-      --accent-amber: #F59E0B;
-      --accent-rose: #F43F5E;
-      --accent-purple: #8B5CF6;
-      
-      --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 16px;
-      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
-      --shadow-glow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.5;
-      min-height: 100vh;
-      padding: 24px 32px 64px 32px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Top Navigation / Header */
-    header {
-      max-width: 1400px;
-      margin: 0 auto 28px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .header-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .header-title-box h1 {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #EEF2FF 0%, #C7D2FE 50%, #818CF8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .header-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      font-size: 13px;
-      font-weight: 600;
-      border-radius: var(--radius-sm);
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
-      color: #FFFFFF;
-      box-shadow: 0 2px 10px rgba(79, 70, 229, 0.3);
-    }
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #4338CA 0%, #4F46E5 100%);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background-color: var(--bg-card);
-      color: var(--text-main);
-      border-color: var(--border-color);
-    }
-    .btn-secondary:hover {
-      background-color: var(--bg-card-hover);
-      border-color: var(--text-dim);
-    }
-
-    .btn-success {
-      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
-      color: white;
-    }
-    .btn-success:hover {
-      filter: brightness(1.1);
-    }
-
-    .btn-xs {
-      padding: 5px 10px;
-      font-size: 11px;
-      border-radius: 4px;
-    }
-
-    /* Stat Cards Grid */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
-      max-width: 1400px;
-      margin: 0 auto 28px auto;
-    }
-
-    .stat-card {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 16px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--stat-accent, var(--accent-indigo));
-    }
-
-    .stat-title {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: var(--text-dim);
-    }
-
-    .stat-number {
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--text-main);
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-
-    .stat-badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 7px;
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--text-muted);
-    }
-
-    /* Verification Progress Bar */
-    .progress-section {
-      max-width: 1400px;
-      margin: 0 auto 24px auto;
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 14px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .progress-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .progress-bar-bg {
-      width: 100%;
-      height: 10px;
-      background: #1F2937;
-      border-radius: 9999px;
-      overflow: hidden;
-      display: flex;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #6366F1, #06B6D4, #10B981);
-      transition: width 0.4s ease;
-    }
-
-    /* Search & Filter Bar */
-    .controls-container {
-      max-width: 1400px;
-      margin: 0 auto 24px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 18px 20px;
-    }
-
-    .search-row {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .search-input-wrapper {
-      position: relative;
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-dim);
-      font-size: 14px;
-    }
-
-    .search-input {
-      width: 100%;
-      background-color: var(--bg-dark);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px 10px 38px;
-      color: var(--text-main);
-      font-size: 13px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .search-input:focus {
-      border-color: var(--accent-indigo);
-      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
-    }
-
-    .sort-select {
-      background-color: var(--bg-dark);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      color: var(--text-main);
-      font-size: 13px;
-      outline: none;
-      cursor: pointer;
-    }
-
-    /* Filter Pills */
-    .filter-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .filter-pill {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 5px 12px;
-      border-radius: 9999px;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      user-select: none;
-    }
-    .filter-pill:hover {
-      background-color: var(--bg-card-hover);
-      color: var(--text-main);
-    }
-    .filter-pill.active {
-      background: rgba(99, 102, 241, 0.2);
-      border-color: var(--accent-indigo);
-      color: #A5B4FC;
-      font-weight: 600;
-    }
-
-    /* Reference Cards Container */
-    .reference-list {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    /* Single Reference Card */
-    .ref-card {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 20px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: all 0.2s ease;
-      position: relative;
-    }
-    .ref-card:hover {
-      border-color: #3B82F6;
-      box-shadow: var(--shadow-card);
-      transform: translateY(-1px);
-    }
-
-    .ref-card.is-uncited {
-      opacity: 0.75;
-      border-style: dashed;
-    }
-    .ref-card.is-uncited:hover {
-      opacity: 1;
-    }
-
-    .ref-card.is-verified {
-      border-left: 4px solid var(--accent-emerald);
-    }
-
-    /* Card Top Header */
-    .ref-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .ref-badges {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .citekey-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      font-weight: 600;
-      color: #93C5FD;
-      background: rgba(59, 130, 246, 0.15);
-      padding: 3px 8px;
-      border-radius: 4px;
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.2s;
-    }
-    .citekey-badge:hover {
-      background: rgba(59, 130, 246, 0.3);
-    }
-
-    .type-badge {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--text-dim);
-      background: rgba(255, 255, 255, 0.05);
-      padding: 3px 7px;
-      border-radius: 4px;
-    }
-
-    .cited-badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: rgba(16, 185, 129, 0.15);
-      color: #6EE7B7;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-
-    .uncited-badge {
-      font-size: 11px;
-      font-weight: 500;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: rgba(100, 116, 139, 0.2);
-      color: #94A3B8;
-    }
-
-    .category-badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-    .cat-law { background: rgba(16, 185, 129, 0.15); color: #34D399; }
-    .cat-cs { background: rgba(6, 182, 212, 0.15); color: #38BDF8; }
-    .cat-lgu { background: rgba(245, 158, 11, 0.15); color: #FBBF24; }
-    .cat-stat { background: rgba(139, 92, 246, 0.15); color: #C084FC; }
-
-    /* Card Title and Authors */
-    .ref-title {
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.4;
-      color: #FFFFFF;
-    }
-
-    .ref-authors {
-      font-size: 13px;
-      color: #CBD5E1;
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-    }
-
-    .ref-meta-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 12px;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-    }
-
-    .ref-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    /* Actions Bar */
-    .ref-actions-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .action-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: var(--radius-sm);
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .action-btn:hover {
-      background-color: var(--bg-card-hover);
-      border-color: #60A5FA;
-      color: #93C5FD;
-      transform: translateY(-1px);
-    }
-
-    .action-btn.btn-google {
-      border-color: rgba(66, 133, 244, 0.4);
-      background: rgba(66, 133, 244, 0.1);
-      color: #93C5FD;
-    }
-    .action-btn.btn-google:hover {
-      background: rgba(66, 133, 244, 0.2);
-    }
-
-    .action-btn.btn-scholar {
-      border-color: rgba(16, 185, 129, 0.4);
-      background: rgba(16, 185, 129, 0.1);
-      color: #6EE7B7;
-    }
-    .action-btn.btn-scholar:hover {
-      background: rgba(16, 185, 129, 0.2);
-    }
-
-    .action-btn.btn-download {
-      border-color: rgba(245, 158, 11, 0.4);
-      background: rgba(245, 158, 11, 0.1);
-      color: #FCD34D;
-    }
-    .action-btn.btn-download:hover {
-      background: rgba(245, 158, 11, 0.2);
-    }
-
-    /* Inline Link Updater */
-    .link-editor-box {
-      margin-top: 4px;
-      background: rgba(0, 0, 0, 0.25);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .link-editor-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .link-editor-input {
-      flex: 1;
-      min-width: 240px;
-      background: var(--bg-dark);
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      padding: 6px 10px;
-      color: #E2E8F0;
-      font-size: 12px;
-      font-family: 'JetBrains Mono', monospace;
-      outline: none;
-    }
-    .link-editor-input:focus {
-      border-color: var(--accent-indigo);
-    }
-
-    /* Toast Notification */
-    #toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #1E293B;
-      border: 1px solid var(--accent-indigo);
-      color: #FFFFFF;
-      padding: 12px 20px;
-      border-radius: var(--radius-sm);
-      font-size: 13px;
-      font-weight: 600;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    #toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    /* Empty state */
-    .empty-state {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-dim);
-    }
-    .empty-state h3 {
-      font-size: 18px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0f172a;
+      color: #1e293b;
+    }
+    .hide { display: none !important; }
+    .dropzone-active {
+      border-color: #3b82f6 !important;
+      background-color: #eff6ff !important;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
     }
   </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col items-center justify-center p-3 sm:p-6">
 
-  <!-- Toast Notification Container -->
-  <div id="toast">Copied to clipboard!</div>
-
-  <!-- Header -->
-  <header>
-    <div class="header-bar">
-      <div class="header-title-box">
-        <h1>
-          <span>📚 Thesis Reference Auditor & Verifier</span>
-        </h1>
-        <p class="header-subtitle">
-          Interactive citation validation, automated web/scholar queries, direct PDF downloading, and BibTeX enrichment.
-        </p>
+  <!-- Main Container -->
+  <div class="max-w-3xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col my-4">
+    
+    <!-- Top Header -->
+    <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white px-6 py-4 flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center gap-3">
+        <div class="bg-white/10 p-2 rounded-lg backdrop-blur-sm">
+          <i data-lucide="library" class="w-6 h-6 text-blue-200"></i>
+        </div>
+        <div>
+          <h1 class="text-lg sm:text-xl font-bold tracking-tight">BibTeX Reference Verifier & PDF Collector</h1>
+          <p class="text-xs text-blue-200">Verify source URLs, validate citations, & attach PDFs for offline thesis library</p>
+        </div>
       </div>
+      
+      <!-- Top Action Buttons -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <!-- Direct Disk Sync Indicator / Button -->
+        <button id="folderBindBtn" class="bg-blue-600/80 hover:bg-blue-600 text-xs px-3 py-2 rounded-lg font-medium transition-colors flex items-center gap-1.5 border border-blue-400/40" title="Connect directly to docs/references folder for zero-prompt auto-saving">
+          <i data-lucide="folder-check" class="w-3.5 h-3.5 text-blue-200"></i>
+          <span id="folderBindText">Link 'docs/references'</span>
+        </button>
 
-      <div class="header-actions">
-        <button class="btn btn-secondary" onclick="exportUpdatedBibtex()" title="Download updated references.bib with added URLs">
-          💾 Export Updated BibTeX
+        <!-- Export Updated .bib -->
+        <button id="downloadBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3 py-2 rounded-lg font-semibold transition-colors flex items-center gap-1.5 shadow-sm">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i> Export .bib
         </button>
-        <button class="btn btn-primary" onclick="exportDownloadScript()" title="Generate Python batch download script">
-          ⚡ Batch PDF Download Script
+
+        <!-- Export Verification Log -->
+        <button id="exportLogBtn" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-2 rounded-lg font-medium transition-colors flex items-center gap-1.5 border border-white/20" title="Download verification log for Antigravity automated audit">
+          <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Export Log
         </button>
-        <label class="btn btn-secondary" style="cursor: pointer;" title="Load a custom BibTeX or JSON file">
-          📂 Import .bib / .json
-          <input type="file" id="fileImporter" accept=".bib,.json" style="display: none;" onchange="handleFileImport(event)">
+
+        <!-- Custom .bib Upload Toggle -->
+        <label class="cursor-pointer bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-2 rounded-lg font-medium transition-colors flex items-center gap-1.5 border border-white/20" title="Upload a different .bib file">
+          <i data-lucide="upload" class="w-3.5 h-3.5"></i> Load .bib
+          <input type="file" id="fileInput" accept=".bib" class="hidden" />
         </label>
       </div>
     </div>
-  </header>
 
-  <!-- Key Statistics Row -->
-  <section class="stats-grid">
-    <div class="stat-card" style="--stat-accent: #6366F1;">
-      <span class="stat-title">Total In Bibliography</span>
-      <div class="stat-number">
-        <span id="statTotal">267</span>
-        <span class="stat-badge">references.bib</span>
+    <!-- Backend Server Connection Status Banner -->
+    <div id="serverStatusBanner" class="hide bg-emerald-50 border-b border-emerald-200 text-emerald-800 text-xs px-6 py-2 flex items-center justify-between">
+      <div class="flex items-center gap-2 font-medium">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Local Backend Server Active (Port 8080): Attached PDFs are saved directly to <code class="bg-emerald-100 px-1 py-0.5 rounded text-emerald-900">docs/references/&lt;citekey&gt;.pdf</code> on disk!</span>
+      </div>
+      <span class="text-[10px] bg-emerald-200/70 text-emerald-900 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Auto-Sync On</span>
+    </div>
+
+    <!-- Progress & Quick Jump Bar -->
+    <div class="bg-slate-50 border-b border-slate-200 px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+      <!-- Progress Indicator & Progress Bar -->
+      <div class="flex items-center gap-3">
+        <span id="progressText" class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full text-xs">
+          Reference 1 / 267
+        </span>
+        <div class="w-32 sm:w-44 bg-slate-200 rounded-full h-2 overflow-hidden">
+          <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 1%;"></div>
+        </div>
+        <span id="percentText" class="text-xs text-slate-500 font-medium">0%</span>
+      </div>
+
+      <!-- Quick Jump & Filters -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <button id="nextMissingUrlBtn" class="bg-amber-100 hover:bg-amber-200 text-amber-800 text-xs px-2.5 py-1 rounded font-medium transition-colors flex items-center gap-1" title="Jump to next reference missing a URL">
+          <i data-lucide="link" class="w-3 h-3 text-amber-600"></i> Next Missing URL
+        </button>
+        <button id="nextMissingPdfBtn" class="bg-rose-100 hover:bg-rose-200 text-rose-800 text-xs px-2.5 py-1 rounded font-medium transition-colors flex items-center gap-1" title="Jump to next reference missing an attached PDF">
+          <i data-lucide="file-x" class="w-3 h-3 text-rose-600"></i> Next Missing PDF
+        </button>
+        
+        <!-- Search/Jump Dropdown -->
+        <select id="jumpSelect" class="bg-white border border-slate-300 text-slate-700 text-xs rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 max-w-[130px]">
+          <!-- Populated by JS -->
+        </select>
       </div>
     </div>
 
-    <div class="stat-card" style="--stat-accent: #10B981;">
-      <span class="stat-title">Actively Cited in Paper</span>
-      <div class="stat-number">
-        <span id="statCited">229</span>
-        <span class="stat-badge" id="statCitedPct">85.8%</span>
+    <!-- Status Badges Bar -->
+    <div class="px-6 py-2.5 bg-slate-100/60 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2 text-xs">
+      <div class="flex items-center gap-2 flex-wrap">
+        <!-- Citekey Badge -->
+        <span class="font-mono bg-slate-800 text-slate-100 px-2.5 py-0.5 rounded font-semibold flex items-center gap-1.5">
+          <span class="text-slate-400">\cite{</span><span id="citekeyDisplay">citekey</span><span class="text-slate-400">}</span>
+          <button id="copyCitekeyBtn" class="text-slate-400 hover:text-white" title="Copy \cite{...} command">
+            <i data-lucide="copy" class="w-3 h-3"></i>
+          </button>
+        </span>
+
+        <!-- LaTeX Citation Status -->
+        <span id="latexCitationBadge" class="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-medium flex items-center gap-1">
+          <i data-lucide="book-open" class="w-3 h-3"></i>
+          <span id="latexCitationText">Cited 1x</span>
+        </span>
+
+        <!-- Domain Category -->
+        <span id="categoryBadge" class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-medium">
+          Category
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2 flex-wrap">
+        <!-- URL Status Badge -->
+        <span id="urlStatusBadge" class="bg-amber-100 text-amber-700 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1">
+          <i data-lucide="link" class="w-3 h-3"></i> URL Missing
+        </span>
+
+        <!-- PDF Status Badge -->
+        <span id="pdfStatusBadge" class="bg-rose-100 text-rose-700 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1">
+          <i data-lucide="file-x" class="w-3 h-3"></i> PDF Missing
+        </span>
       </div>
     </div>
 
-    <div class="stat-card" style="--stat-accent: #06B6D4;">
-      <span class="stat-title">Has Verified Link / URL</span>
-      <div class="stat-number">
-        <span id="statHasUrl">208</span>
-        <span class="stat-badge" id="statHasUrlPct">77.9%</span>
+    <!-- Main Card Body -->
+    <div class="p-6 space-y-5 overflow-y-auto max-h-[calc(100vh-280px)]">
+
+      <!-- Author, Year, and Venue Display -->
+      <div class="flex gap-3 text-sm text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+        <i data-lucide="users" class="w-5 h-5 text-slate-400 mt-0.5 shrink-0"></i>
+        <div class="w-full">
+          <div id="authorDisplay" class="font-semibold text-slate-900 leading-snug">Author names</div>
+          <div class="flex items-center gap-3 text-xs text-slate-500 mt-1 flex-wrap">
+            <span id="yearDisplay" class="font-medium">Published: 2026</span>
+            <span class="text-slate-300">•</span>
+            <span id="venueDisplay" class="italic text-slate-600 truncate max-w-sm">Venue / Journal</span>
+            <span class="text-slate-300">•</span>
+            <span id="entryTypeDisplay" class="uppercase text-[10px] bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded font-bold">article</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Title Display with Search Suite -->
+      <div>
+        <div class="flex justify-between items-center mb-1.5">
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600">Extracted Title</label>
+          <button id="copyTitleBtn" class="text-xs text-blue-600 hover:text-blue-800 flex items-center gap-1 font-medium">
+            <i data-lucide="copy" class="w-3 h-3"></i> Copy Title
+          </button>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-2">
+          <textarea id="titleBox" readonly rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-slate-900 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 leading-relaxed"></textarea>
+          
+          <!-- Search Buttons Column -->
+          <div class="flex sm:flex-col gap-1.5 shrink-0 justify-center">
+            <!-- Google Search -->
+            <button id="searchGoogleBtn" class="bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" title="Search exact title and authors on Google">
+              <i data-lucide="search" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>Google</span>
+            </button>
+            
+            <!-- Google Scholar -->
+            <button id="searchScholarBtn" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" title="Search on Google Scholar">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-indigo-600"></i>
+              <span>Scholar</span>
+            </button>
+
+            <!-- Semantic Scholar -->
+            <button id="searchSemanticBtn" class="bg-violet-50 hover:bg-violet-100 text-violet-700 border border-violet-200 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" title="Search Semantic Scholar for DOI & paper link">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-violet-600"></i>
+              <span>Semantic</span>
+            </button>
+
+            <!-- Lawphil (Highlighted for legal records) -->
+            <button id="searchLawphilBtn" class="hide bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 px-3 py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-colors" title="Search Philippine Supreme Court Decisions & Republic Acts on Lawphil">
+              <i data-lucide="scale" class="w-3.5 h-3.5 text-amber-600"></i>
+              <span>Lawphil</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reference URL Input & Test Link -->
+      <div>
+        <div class="flex justify-between items-center mb-1.5">
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600">Reference URL or DOI</label>
+          <span id="doiHelper" class="text-[11px] text-slate-500 font-mono"></span>
+        </div>
+        <div class="flex gap-2">
+          <div class="relative w-full">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+              <i data-lucide="link" class="w-4 h-4"></i>
+            </div>
+            <input type="url" id="urlInput" placeholder="https://doi.org/... or https://arxiv.org/abs/..." class="w-full pl-9 pr-3 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-slate-800">
+          </div>
+          <button id="openUrlBtn" class="bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 px-4 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors shrink-0" title="Open URL in new tab to test">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span>Test URL</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PDF Attachment Section (NEW UPGRADE) -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-700">Attach Reference PDF</span>
+          </div>
+          <span id="pdfTargetLabel" class="text-[11px] font-mono text-slate-500 bg-slate-200/70 px-2 py-0.5 rounded">
+            Target: docs/references/<span id="targetPdfName">citekey</span>.pdf
+          </span>
+        </div>
+
+        <!-- Direct Open-Access Download Helper (if arXiv/ACL direct pdf is known) -->
+        <div id="directPdfHelperBox" class="hide bg-indigo-50 border border-indigo-200 rounded-lg p-2.5 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2 text-indigo-900 font-medium">
+            <i data-lucide="zap" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+            <span>Open-Access PDF found on arXiv / ACL!</span>
+          </div>
+          <button id="fetchDirectPdfBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded font-semibold text-xs flex items-center gap-1 transition-colors">
+            <i data-lucide="download-cloud" class="w-3 h-3"></i> Download & Attach Directly
+          </button>
+        </div>
+
+        <!-- PDF Dropzone -->
+        <div id="pdfDropzone" class="border-2 border-dashed border-slate-300 rounded-xl p-4 text-center hover:border-blue-400 bg-white cursor-pointer transition-colors relative">
+          <input type="file" id="pdfFileInput" accept=".pdf" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full" />
+          
+          <div id="dropzonePrompt" class="flex flex-col items-center justify-center py-2">
+            <i data-lucide="upload-cloud" class="w-8 h-8 text-slate-400 mb-1"></i>
+            <p class="text-xs font-semibold text-slate-700">
+              Drag & drop the paper's PDF here, or <span class="text-blue-600 hover:underline">browse files</span>
+            </p>
+            <p class="text-[11px] text-slate-400 mt-0.5">
+              ArXiv preprints, paper PDFs, or web pages saved as PDF (news, court decisions)
+            </p>
+          </div>
+
+          <!-- Attached File Summary (Visible when PDF is loaded) -->
+          <div id="attachedFileInfo" class="hide flex items-center justify-between bg-emerald-50 border border-emerald-200 rounded-lg p-2.5 text-left">
+            <div class="flex items-center gap-2.5 overflow-hidden">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+              <div class="truncate">
+                <div id="attachedFilename" class="text-xs font-bold text-emerald-900 truncate">paper.pdf</div>
+                <div id="attachedFilesize" class="text-[11px] text-emerald-700">0 KB • Attached</div>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-2 shrink-0">
+              <button id="previewPdfBtn" type="button" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-2.5 py-1 rounded font-medium flex items-center gap-1 transition-colors">
+                <i data-lucide="eye" class="w-3 h-3"></i> Preview
+              </button>
+              <button id="removePdfBtn" type="button" class="bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs px-2.5 py-1 rounded font-medium flex items-center gap-1 transition-colors">
+                <i data-lucide="trash-2" class="w-3 h-3"></i> Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verification Note & Checkbox -->
+      <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <div class="w-full">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Verification Note / Key Findings (Optional)</label>
+          <input type="text" id="noteInput" placeholder="e.g., Verified baseline numbers in Table 4; landmark Supreme Court ruling; official signed copy" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-blue-500">
+        </div>
+        
+        <label class="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700 shrink-0 select-none sm:mt-4">
+          <input type="checkbox" id="verifiedCheckbox" class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+          <span>Mark Verified</span>
+        </label>
+      </div>
+
+    </div>
+
+    <!-- Bottom Action & Navigation Bar -->
+    <div class="bg-slate-50 border-t border-slate-200 px-6 py-4 flex items-center justify-between">
+      <button id="prevBtn" class="flex items-center gap-2 text-slate-600 hover:text-slate-900 px-4 py-2 rounded-xl hover:bg-slate-200/70 font-semibold text-xs transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Previous
+      </button>
+
+      <div class="flex items-center gap-2">
+        <button id="skipBtn" class="text-slate-500 hover:text-slate-800 px-3 py-2 rounded-xl hover:bg-slate-200/50 font-medium text-xs transition-colors">
+          Skip
+        </button>
+
+        <button id="updateBtn" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2.5 rounded-xl font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+          <span>Update & Next</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
       </div>
     </div>
 
-    <div class="stat-card" style="--stat-accent: #F59E0B;">
-      <span class="stat-title">Direct PDF Resolvable</span>
-      <div class="stat-number">
-        <span id="statDirectPdf">88</span>
-        <span class="stat-badge">arXiv / Open Access</span>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl text-xs font-medium flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50">
+    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastMsg">Action completed successfully</span>
+  </div>
+
+  <!-- PDF Preview Modal -->
+  <div id="previewModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hide">
+    <div class="bg-white rounded-2xl w-full max-w-4xl h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="bg-slate-900 text-white px-5 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-2 truncate">
+          <i data-lucide="file-text" class="w-4 h-4 text-blue-400"></i>
+          <span id="modalPdfTitle" class="text-xs font-bold truncate">PDF Preview</span>
+        </div>
+        <button id="closeModalBtn" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="flex-1 bg-slate-100 p-1">
+        <iframe id="pdfIframe" class="w-full h-full rounded border-0" src="about:blank"></iframe>
       </div>
     </div>
-
-    <div class="stat-card" style="--stat-accent: #EC4899;">
-      <span class="stat-title">Locally Downloaded</span>
-      <div class="stat-number">
-        <span id="statLocalDownloaded">0</span>
-        <span class="stat-badge">docs/references/</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Progress Bar Section -->
-  <section class="progress-section">
-    <div class="progress-header">
-      <span>Bibliography Verification & Local Archival Progress</span>
-      <span id="progressText">0 / 229 Cited References Archived Locally (0.0%)</span>
-    </div>
-    <div class="progress-bar-bg">
-      <div class="progress-bar-fill" id="progressBar" style="width: 0%;"></div>
-    </div>
-  </section>
-
-  <!-- Search & Filter Controls -->
-  <section class="controls-container">
-    <div class="search-row">
-      <div class="search-input-wrapper">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search by title, author, citekey, year, or venue..." oninput="applyFilters()">
-      </div>
-
-      <select id="sortSelect" class="sort-select" onchange="applyFilters()">
-        <option value="cite_desc">Sort: Citation Count (High to Low)</option>
-        <option value="year_desc">Sort: Year (Newest First)</option>
-        <option value="year_asc">Sort: Year (Oldest First)</option>
-        <option value="key_asc">Sort: Citekey (A to Z)</option>
-        <option value="title_asc">Sort: Title (A to Z)</option>
-      </select>
-    </div>
-
-    <div class="filter-pills">
-      <span class="filter-pill active" data-filter="all" onclick="setFilter('all')">All Entries (<span id="countAll">267</span>)</span>
-      <span class="filter-pill" data-filter="cited" onclick="setFilter('cited')">Cited in Thesis (<span id="countCited">229</span>)</span>
-      <span class="filter-pill" data-filter="needs_url" onclick="setFilter('needs_url')">Needs URL / Unverified (<span id="countNeedsUrl">59</span>)</span>
-      <span class="filter-pill" data-filter="has_pdf" onclick="setFilter('has_pdf')">Direct PDF Ready (<span id="countHasPdf">88</span>)</span>
-      <span class="filter-pill" data-filter="downloaded" onclick="setFilter('downloaded')">Downloaded Locally (<span id="countDownloaded">0</span>)</span>
-      <span class="filter-pill" data-filter="cs" onclick="setFilter('cs')">Computer Science & NLP</span>
-      <span class="filter-pill" data-filter="law" onclick="setFilter('law')">Philippine Law & Jurisprudence</span>
-      <span class="filter-pill" data-filter="lgu" onclick="setFilter('lgu')">Local Governance</span>
-    </div>
-  </section>
-
-  <!-- Dynamic Reference Cards List -->
-  <main class="reference-list" id="referenceList">
-    <!-- Populated by JavaScript -->
-  </main>
-
-  <!-- References Dataset (Fallback to JS variable for direct file:// browser opening) -->
-  <script src="references_data.js"></script>
+  </div>
 
   <script>
-    // State management
+    // Initialize icons
+    lucide.createIcons();
+
+    // App State
     let references = [];
-    let currentFilter = 'all';
-    let localSavedLinks = JSON.parse(localStorage.getItem('thesis_ref_links') || '{}');
-    let localDownloadedKeys = JSON.parse(localStorage.getItem('thesis_ref_downloaded') || '{}');
+    let currentIndex = 0;
+    let rawFilePrefix = "";
+    let serverActive = false;
+    let boundDirectoryHandle = null; // File System Access API directory handle
 
-    // Initialize application
-    window.addEventListener('DOMContentLoaded', () => {
-      if (window.REFERENCES_DATA && Array.isArray(window.REFERENCES_DATA)) {
-        references = window.REFERENCES_DATA;
-        syncLocalStorageWithRecords();
-        updateStatistics();
-        applyFilters();
-      } else {
-        // Fallback fetch if opened via local HTTP server
-        fetch('references_data.json')
-          .then(res => res.json())
-          .then(data => {
-            references = data;
-            syncLocalStorageWithRecords();
-            updateStatistics();
-            applyFilters();
-          })
-          .catch(err => {
-            console.error("Failed to load references_data.json automatically:", err);
-            document.getElementById('referenceList').innerHTML = `
-              <div class="empty-state">
-                <h3>References data not detected</h3>
-                <p>Please click 'Import .bib / .json' at the top to load your bibliography file, or run <code>python scripts/audit_refs.py</code>.</p>
-              </div>`;
-          });
-      }
-    });
+    // IndexedDB for storing attached PDF Blobs across page reloads
+    let db = null;
+    const DB_NAME = "ThesisRefAuditorDB";
+    const DB_VERSION = 1;
 
-    function syncLocalStorageWithRecords() {
-      references.forEach(r => {
-        if (localSavedLinks[r.citekey]) {
-          r.url = localSavedLinks[r.citekey];
-        }
-        if (localDownloadedKeys[r.citekey]) {
-          r.has_local_pdf = true;
-        }
+    function initDB() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open(DB_NAME, DB_VERSION);
+        req.onupgradeneeded = (e) => {
+          const dbInstance = e.target.result;
+          if (!dbInstance.objectStoreNames.contains("pdfFiles")) {
+            dbInstance.createObjectStore("pdfFiles", { keyPath: "citekey" });
+          }
+        };
+        req.onsuccess = (e) => {
+          db = e.target.result;
+          resolve(db);
+        };
+        req.onerror = (e) => reject(e);
       });
     }
 
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.textContent = msg;
-      toast.classList.add('show');
+    async function storePdfBlob(citekey, blob, filename) {
+      if (!db) await initDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction("pdfFiles", "readwrite");
+        const store = tx.objectStore("pdfFiles");
+        store.put({ citekey, blob, filename, size: blob.size, timestamp: Date.now() });
+        tx.oncomplete = () => resolve();
+        tx.onerror = (e) => reject(e);
+      });
+    }
+
+    async function getPdfBlob(citekey) {
+      if (!db) await initDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction("pdfFiles", "readonly");
+        const store = tx.objectStore("pdfFiles");
+        const req = store.get(citekey);
+        req.onsuccess = () => resolve(req.result || null);
+        req.onerror = (e) => reject(e);
+      });
+    }
+
+    async function deletePdfBlob(citekey) {
+      if (!db) await initDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction("pdfFiles", "readwrite");
+        const store = tx.objectStore("pdfFiles");
+        store.delete(citekey);
+        tx.oncomplete = () => resolve();
+        tx.onerror = (e) => reject(e);
+      });
+    }
+
+    // DOM Elements
+    const fileInput = document.getElementById('fileInput');
+    const folderBindBtn = document.getElementById('folderBindBtn');
+    const folderBindText = document.getElementById('folderBindText');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const exportLogBtn = document.getElementById('exportLogBtn');
+    const serverStatusBanner = document.getElementById('serverStatusBanner');
+    
+    const progressText = document.getElementById('progressText');
+    const progressBar = document.getElementById('progressBar');
+    const percentText = document.getElementById('percentText');
+    const jumpSelect = document.getElementById('jumpSelect');
+    const nextMissingUrlBtn = document.getElementById('nextMissingUrlBtn');
+    const nextMissingPdfBtn = document.getElementById('nextMissingPdfBtn');
+
+    const citekeyDisplay = document.getElementById('citekeyDisplay');
+    const copyCitekeyBtn = document.getElementById('copyCitekeyBtn');
+    const latexCitationBadge = document.getElementById('latexCitationBadge');
+    const latexCitationText = document.getElementById('latexCitationText');
+    const categoryBadge = document.getElementById('categoryBadge');
+    const urlStatusBadge = document.getElementById('urlStatusBadge');
+    const pdfStatusBadge = document.getElementById('pdfStatusBadge');
+
+    const authorDisplay = document.getElementById('authorDisplay');
+    const yearDisplay = document.getElementById('yearDisplay');
+    const venueDisplay = document.getElementById('venueDisplay');
+    const entryTypeDisplay = document.getElementById('entryTypeDisplay');
+
+    const titleBox = document.getElementById('titleBox');
+    const copyTitleBtn = document.getElementById('copyTitleBtn');
+    const searchGoogleBtn = document.getElementById('searchGoogleBtn');
+    const searchScholarBtn = document.getElementById('searchScholarBtn');
+    const searchSemanticBtn = document.getElementById('searchSemanticBtn');
+    const searchLawphilBtn = document.getElementById('searchLawphilBtn');
+
+    const urlInput = document.getElementById('urlInput');
+    const openUrlBtn = document.getElementById('openUrlBtn');
+    const doiHelper = document.getElementById('doiHelper');
+
+    const targetPdfName = document.getElementById('targetPdfName');
+    const directPdfHelperBox = document.getElementById('directPdfHelperBox');
+    const fetchDirectPdfBtn = document.getElementById('fetchDirectPdfBtn');
+    const pdfDropzone = document.getElementById('pdfDropzone');
+    const pdfFileInput = document.getElementById('pdfFileInput');
+    const dropzonePrompt = document.getElementById('dropzonePrompt');
+    const attachedFileInfo = document.getElementById('attachedFileInfo');
+    const attachedFilename = document.getElementById('attachedFilename');
+    const attachedFilesize = document.getElementById('attachedFilesize');
+    const previewPdfBtn = document.getElementById('previewPdfBtn');
+    const removePdfBtn = document.getElementById('removePdfBtn');
+
+    const noteInput = document.getElementById('noteInput');
+    const verifiedCheckbox = document.getElementById('verifiedCheckbox');
+
+    const prevBtn = document.getElementById('prevBtn');
+    const skipBtn = document.getElementById('skipBtn');
+    const updateBtn = document.getElementById('updateBtn');
+
+    const previewModal = document.getElementById('previewModal');
+    const pdfIframe = document.getElementById('pdfIframe');
+    const modalPdfTitle = document.getElementById('modalPdfTitle');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+
+    function showToast(msg, isSuccess = true) {
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
       setTimeout(() => {
-        toast.classList.remove('show');
-      }, 2400);
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
     }
 
-    function copyToClipboard(text, msg = 'Copied to clipboard!') {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(msg);
-      }).catch(err => {
-        console.error('Clipboard copy failed:', err);
-      });
-    }
-
-    function updateStatistics() {
-      const total = references.length;
-      const cited = references.filter(r => r.is_cited).length;
-      const hasUrl = references.filter(r => r.url || r.doi || r.direct_pdf_url).length;
-      const directPdf = references.filter(r => r.direct_pdf_url).length;
-      const downloaded = references.filter(r => r.has_local_pdf).length;
-
-      document.getElementById('statTotal').textContent = total;
-      document.getElementById('statCited').textContent = cited;
-      document.getElementById('statCitedPct').textContent = `${(cited / total * 100).toFixed(1)}%`;
-      document.getElementById('statHasUrl').textContent = hasUrl;
-      document.getElementById('statHasUrlPct').textContent = `${(hasUrl / total * 100).toFixed(1)}%`;
-      document.getElementById('statDirectPdf').textContent = directPdf;
-      document.getElementById('statLocalDownloaded').textContent = downloaded;
-
-      // Pills counts
-      document.getElementById('countAll').textContent = total;
-      document.getElementById('countCited').textContent = cited;
-      document.getElementById('countNeedsUrl').textContent = total - hasUrl;
-      document.getElementById('countHasPdf').textContent = directPdf;
-      document.getElementById('countDownloaded').textContent = downloaded;
-
-      // Progress bar
-      const pct = cited > 0 ? ((downloaded / cited) * 100).toFixed(1) : 0;
-      document.getElementById('progressBar').style.width = `${Math.min(100, pct)}%`;
-      document.getElementById('progressText').textContent = `${downloaded} / ${cited} Cited References Archived Locally (${pct}%)`;
-    }
-
-    function setFilter(filter) {
-      currentFilter = filter;
-      document.querySelectorAll('.filter-pill').forEach(pill => {
-        pill.classList.toggle('active', pill.dataset.filter === filter);
-      });
-      applyFilters();
-    }
-
-    function applyFilters() {
-      const query = document.getElementById('searchInput').value.toLowerCase().trim();
-      const sortVal = document.getElementById('sortSelect').value;
-
-      let filtered = references.filter(r => {
-        // Category / status filter
-        if (currentFilter === 'cited' && !r.is_cited) return false;
-        if (currentFilter === 'needs_url' && (r.url || r.doi || r.direct_pdf_url)) return false;
-        if (currentFilter === 'has_pdf' && !r.direct_pdf_url) return false;
-        if (currentFilter === 'downloaded' && !r.has_local_pdf) return false;
-        if (currentFilter === 'cs' && r.category !== 'Computer Science & NLP') return false;
-        if (currentFilter === 'law' && r.category !== 'Philippine Law & Jurisprudence') return false;
-        if (currentFilter === 'lgu' && r.category !== 'Local Governance & Field Study') return false;
-
-        // Text query
-        if (query) {
-          const matchTitle = (r.title || '').toLowerCase().includes(query);
-          const matchAuthor = (r.author || '').toLowerCase().includes(query);
-          const matchKey = (r.citekey || '').toLowerCase().includes(query);
-          const matchYear = (r.year || '').toString().includes(query);
-          const matchVenue = (r.venue || '').toLowerCase().includes(query);
-          return matchTitle || matchAuthor || matchKey || matchYear || matchVenue;
+    // Check if backend Python server is running on localhost:8080
+    async function checkBackendServer() {
+      try {
+        const resp = await fetch('/api/status', { method: 'GET', cache: 'no-cache' });
+        if (resp.ok) {
+          const data = await resp.json();
+          serverActive = true;
+          serverStatusBanner.classList.remove('hide');
+          folderBindText.innerText = "Backend Auto-Save On";
+          folderBindBtn.classList.replace('bg-blue-600/80', 'bg-emerald-600');
+          folderBindBtn.title = "Connected to python scripts/audit_refs.py --serve";
+          // If server reported existing downloaded PDFs, mark them
+          if (data.downloaded_citekeys && Array.isArray(data.downloaded_citekeys)) {
+            const downloadedSet = new Set(data.downloaded_citekeys.map(k => k.toLowerCase()));
+            references.forEach(r => {
+              if (downloadedSet.has(r.citekey.toLowerCase())) {
+                r.has_local_pdf = true;
+              }
+            });
+            renderCurrent();
+          }
         }
-
-        return true;
-      });
-
-      // Sorting
-      filtered.sort((a, b) => {
-        if (sortVal === 'cite_desc') return (b.citation_count || 0) - (a.citation_count || 0);
-        if (sortVal === 'year_desc') return (parseInt(b.year) || 0) - (parseInt(a.year) || 0);
-        if (sortVal === 'year_asc') return (parseInt(a.year) || 9999) - (parseInt(b.year) || 9999);
-        if (sortVal === 'key_asc') return a.citekey.localeCompare(b.citekey);
-        if (sortVal === 'title_asc') return (a.title || '').localeCompare(b.title || '');
-        return 0;
-      });
-
-      renderReferenceCards(filtered);
+      } catch (e) {
+        serverActive = false;
+        serverStatusBanner.classList.add('hide');
+      }
     }
 
-    function renderReferenceCards(records) {
-      const container = document.getElementById('referenceList');
-      if (records.length === 0) {
-        container.innerHTML = `
-          <div class="empty-state">
-            <h3>No matching references found</h3>
-            <p>Try adjusting your search terms or filter selection.</p>
-          </div>`;
+    // File System Access API (Allow binding to docs/references folder directly)
+    folderBindBtn.addEventListener('click', async () => {
+      if (serverActive) {
+        showToast("Backend server is already auto-saving directly to disk!");
         return;
       }
 
-      container.innerHTML = records.map(r => {
-        const catClass = r.category === 'Philippine Law & Jurisprudence' ? 'cat-law' :
-                         r.category === 'Local Governance & Field Study' ? 'cat-lgu' :
-                         r.category === 'Statistical & Evaluation Methods' ? 'cat-stat' : 'cat-cs';
-
-        const hasUrl = Boolean(r.url || r.doi || r.direct_pdf_url);
-        const activeUrl = r.url || (r.doi ? `https://doi.org/${r.doi}` : '') || r.direct_pdf_url || '';
-        const isDownloaded = Boolean(r.has_local_pdf);
-
-        return `
-          <article class="ref-card ${!r.is_cited ? 'is-uncited' : ''} ${hasUrl ? 'is-verified' : ''}" id="card-${r.citekey}">
-            <div class="ref-card-header">
-              <div class="ref-badges">
-                <span class="citekey-badge" onclick="copyToClipboard('\\\\cite{${r.citekey}}', 'Copied \\\\cite{${r.citekey}}')" title="Click to copy \\cite tag">
-                  📌 ${r.citekey}
-                </span>
-                <span class="type-badge">${r.entry_type}</span>
-                <span class="category-badge ${catClass}">${r.category}</span>
-                ${r.is_cited ? 
-                  `<span class="cited-badge" title="Cited in: ${r.cited_in_files ? r.cited_in_files.join(', ') : 'Thesis'}">
-                    ✓ Cited ${r.citation_count}x
-                   </span>` : 
-                  `<span class="uncited-badge">Uncited in draft</span>`}
-                ${isDownloaded ? 
-                  `<span class="cited-badge" style="background: rgba(16, 185, 129, 0.2); color: #A7F3D0;">📥 PDF Saved</span>` : ''}
-              </div>
-
-              <div>
-                <button class="btn btn-secondary btn-xs" onclick="copyBibtex('${r.citekey}')">
-                  📋 Copy BibTeX
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <h2 class="ref-title">${r.title || 'Untitled Reference'}</h2>
-              <div class="ref-authors">
-                <span>👤 ${r.author || 'Author not recorded'}</span>
-              </div>
-            </div>
-
-            <div class="ref-meta-row">
-              ${r.year ? `<span class="ref-meta-item">📅 <strong>${r.year}</strong></span>` : ''}
-              ${r.venue ? `<span class="ref-meta-item">🏛️ <em>${r.venue}</em></span>` : ''}
-              ${r.eprint ? `<span class="ref-meta-item" style="color: #60A5FA;">⚡ arXiv: ${r.eprint}</span>` : ''}
-            </div>
-
-            <!-- Action Buttons: Auto Google, Scholar, Direct PDF, Lawphil -->
-            <div class="ref-actions-row">
-              <a href="${r.google_search_url}" target="_blank" rel="noopener noreferrer" class="action-btn btn-google" title="Google search exact title and author">
-                🔍 Auto Google
-              </a>
-
-              <a href="${r.google_scholar_url}" target="_blank" rel="noopener noreferrer" class="action-btn btn-scholar" title="Search Google Scholar for papers and citations">
-                🎓 Google Scholar
-              </a>
-
-              <a href="${r.semantic_scholar_url}" target="_blank" rel="noopener noreferrer" class="action-btn" title="Search Semantic Scholar">
-                🧠 Semantic Scholar
-              </a>
-
-              ${r.category === 'Philippine Law & Jurisprudence' ? `
-                <a href="${r.lawphil_url}" target="_blank" rel="noopener noreferrer" class="action-btn" style="border-color: rgba(16, 185, 129, 0.4); color: #34D399;" title="Search Lawphil.net for full text">
-                  ⚖️ Lawphil Search
-                </a>
-              ` : ''}
-
-              ${activeUrl ? `
-                <a href="${activeUrl}" target="_blank" rel="noopener noreferrer" class="action-btn" title="Open source link in new tab">
-                  🌐 Open Link
-                </a>
-              ` : ''}
-
-              ${r.direct_pdf_url ? `
-                <a href="${r.direct_pdf_url}" target="_blank" download="${r.citekey}.pdf" class="action-btn btn-download" title="Direct PDF download">
-                  ⬇️ Download PDF
-                </a>
-              ` : `
-                <button class="action-btn" onclick="focusLinkInput('${r.citekey}')" title="Add a direct link to this reference">
-                  ➕ Add PDF Link
-                </button>
-              `}
-
-              <label class="action-btn" style="margin-left: auto; cursor: pointer;">
-                <input type="checkbox" ${isDownloaded ? 'checked' : ''} onchange="toggleDownloaded('${r.citekey}', this.checked)" style="cursor: pointer;">
-                <span>Local PDF Archived</span>
-              </label>
-            </div>
-
-            <!-- Inline Link Updater (Auto Put Link to Add to References) -->
-            <div class="link-editor-box">
-              <span class="link-editor-label">Source Link / DOI:</span>
-              <input type="text" id="link-input-${r.citekey}" class="link-editor-input" 
-                     placeholder="Paste verified URL or DOI here (e.g. https://arxiv.org/abs/... or https://lawphil.net/...)" 
-                     value="${activeUrl}">
-              <button class="btn btn-primary btn-xs" onclick="saveLink('${r.citekey}')">
-                💾 Save Link
-              </button>
-            </div>
-          </article>
-        `;
-      }).join('');
-    }
-
-    function focusLinkInput(citekey) {
-      const input = document.getElementById(`link-input-${citekey}`);
-      if (input) {
-        input.focus();
-        input.select();
-      }
-    }
-
-    function saveLink(citekey) {
-      const input = document.getElementById(`link-input-${citekey}`);
-      if (!input) return;
-
-      const newUrl = input.value.trim();
-      const ref = references.find(r => r.citekey === citekey);
-      if (ref) {
-        ref.url = newUrl;
-        localSavedLinks[citekey] = newUrl;
-        localStorage.setItem('thesis_ref_links', JSON.stringify(localSavedLinks));
-
-        // Auto-check for direct pdf
-        if (newUrl.endsWith('.pdf') || newUrl.includes('arxiv.org/abs/')) {
-          if (newUrl.includes('arxiv.org/abs/')) {
-            ref.direct_pdf_url = newUrl.replace('arxiv.org/abs/', 'arxiv.org/pdf/') + '.pdf';
-          } else {
-            ref.direct_pdf_url = newUrl;
+      if ('showDirectoryPicker' in window) {
+        try {
+          boundDirectoryHandle = await window.showDirectoryPicker({
+            mode: 'readwrite',
+            startIn: 'documents'
+          });
+          folderBindText.innerText = `Folder: ${boundDirectoryHandle.name}`;
+          folderBindBtn.classList.replace('bg-blue-600/80', 'bg-emerald-600');
+          showToast(`Bound to folder: ${boundDirectoryHandle.name}! PDFs will auto-save here.`);
+        } catch (err) {
+          if (err.name !== 'AbortError') {
+            console.error(err);
+            alert("Folder selection note: You can also run 'python scripts/audit_refs.py --serve' for automatic disk saving.");
           }
         }
-
-        updateStatistics();
-        applyFilters();
-        showToast(`Saved link for [${citekey}]!`);
+      } else {
+        alert("File System Access API is not supported on this browser context. You can run 'python scripts/audit_refs.py --serve' to auto-save PDFs directly to disk.");
       }
-    }
+    });
 
-    function toggleDownloaded(citekey, isChecked) {
-      const ref = references.find(r => r.citekey === citekey);
-      if (ref) {
-        ref.has_local_pdf = isChecked;
-        if (isChecked) {
-          localDownloadedKeys[citekey] = true;
+    // Parse helper for raw BibTeX string
+    function splitBibEntries(text) {
+      const entries = [];
+      let inEntry = false;
+      let depth = 0;
+      let currentStr = "";
+      
+      for (let i = 0; i < text.length; i++) {
+        if (!inEntry && text[i] === '@') {
+          if (currentStr.trim() && entries.length === 0) {
+            rawFilePrefix = currentStr;
+          }
+          inEntry = true;
+          currentStr = '@';
+        } else if (inEntry) {
+          currentStr += text[i];
+          if (text[i] === '{') depth++;
+          if (text[i] === '}') {
+            depth--;
+            if (depth === 0) {
+              entries.push({ raw: currentStr });
+              currentStr = "";
+              inEntry = false;
+            }
+          }
         } else {
-          delete localDownloadedKeys[citekey];
+          currentStr += text[i];
         }
-        localStorage.setItem('thesis_ref_downloaded', JSON.stringify(localDownloadedKeys));
-        updateStatistics();
-        showToast(`Updated local status for [${citekey}]`);
       }
+      return entries;
     }
 
-    function copyBibtex(citekey) {
-      const ref = references.find(r => r.citekey === citekey);
-      if (ref) {
-        let bib = ref.raw_bib;
-        // If user updated URL, inject or replace URL in raw_bib
-        if (ref.url && !bib.includes(ref.url)) {
-          bib = bib.replace(/\n\}\s*$/, `,\n  url = {${ref.url}}\n}`);
+    function extractField(entryStr, fieldName) {
+      const regex = new RegExp(`\\b${fieldName}\\s*=\\s*`, 'i');
+      const match = entryStr.match(regex);
+      if (!match) return null;
+
+      const startIdx = match.index + match[0].length;
+      let value = "";
+      let char = entryStr[startIdx];
+
+      if (char === '{') {
+        let depth = 1;
+        for (let i = startIdx + 1; i < entryStr.length; i++) {
+          if (entryStr[i] === '{') depth++;
+          if (entryStr[i] === '}') depth--;
+          if (depth === 0) break;
+          value += entryStr[i];
         }
-        copyToClipboard(bib, `Copied BibTeX for [${citekey}]!`);
+      } else if (char === '"') {
+        for (let i = startIdx + 1; i < entryStr.length; i++) {
+          if (entryStr[i] === '"') break;
+          value += entryStr[i];
+        }
+      } else {
+        for (let i = startIdx; i < entryStr.length; i++) {
+          if (entryStr[i] === ',' || entryStr[i] === '}') break;
+          value += entryStr[i];
+        }
       }
+      return value.replace(/\s+/g, ' ').replace(/[{}]/g, '').trim();
     }
 
-    function exportUpdatedBibtex() {
-      let output = "% ====================================================================\n";
-      output += "% Updated Bibliography generated by Thesis Reference Auditor\n";
-      output += `% Timestamp: ${new Date().toISOString()}\n`;
-      output += "% ====================================================================\n\n";
+    function extractCitekey(entryStr) {
+      const match = entryStr.match(/@\w+\s*\{\s*([^,\s]+)/);
+      return match ? match[1].trim() : 'unknown';
+    }
+
+    function extractLastNames(authorString) {
+      if (!authorString || authorString === 'No authors found') return '';
+      const authors = authorString.split(/\s+and\s+/i);
+      const lastNames = authors.map(author => {
+        if (author.includes(',')) {
+          return author.split(',')[0].trim();
+        } else {
+          const parts = author.trim().split(' ');
+          return parts[parts.length - 1];
+        }
+      });
+      return lastNames.join(' ');
+    }
+
+    function applyUpdatesToRaw(rawStr, newUrl) {
+      const today = new Date().toISOString().split('T')[0];
+      let updated = rawStr;
+      updated = updated.replace(/,\s*url\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+)/gi, '');
+      updated = updated.replace(/,\s*urldate\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+)/gi, '');
+      updated = updated.replace(/\burl\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+),?\s*/gi, '');
+      updated = updated.replace(/\burldate\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+),?\s*/gi, '');
+
+      const lastBraceIndex = updated.lastIndexOf('}');
+      if (lastBraceIndex !== -1) {
+        let base = updated.substring(0, lastBraceIndex).trimEnd();
+        if (base.endsWith(',')) base = base.substring(0, base.length - 1);
+        const inject = `,\n  url = {${newUrl}},\n  urldate = {${today}}\n}`;
+        return base + inject;
+      }
+      return rawStr;
+    }
+
+    // Populate the Quick Jump select dropdown
+    function populateJumpDropdown() {
+      jumpSelect.innerHTML = "";
+      references.forEach((r, idx) => {
+        const opt = document.createElement('option');
+        opt.value = idx;
+        const icon = (r.url && r.has_local_pdf) ? "✅ " : (!r.url ? "⚠️ " : "📄 ");
+        opt.innerText = `${icon} [${idx + 1}] ${r.citekey}`;
+        jumpSelect.appendChild(opt);
+      });
+    }
+
+    // Restore saved state from localStorage
+    function loadSavedState() {
+      const savedUrls = JSON.parse(localStorage.getItem('thesis_ref_saved_urls') || '{}');
+      const savedNotes = JSON.parse(localStorage.getItem('thesis_ref_saved_notes') || '{}');
+      const savedVerified = JSON.parse(localStorage.getItem('thesis_ref_saved_verified') || '{}');
+      const savedPdfStatus = JSON.parse(localStorage.getItem('thesis_ref_saved_pdfs') || '{}');
 
       references.forEach(r => {
-        let bib = r.raw_bib;
-        if (r.url && !bib.includes(r.url)) {
-          bib = bib.replace(/\n\}\s*$/, `,\n  url = {${r.url}}\n}`);
-        }
-        output += bib.trim() + "\n\n";
+        if (savedUrls[r.citekey]) r.url = savedUrls[r.citekey];
+        if (savedNotes[r.citekey]) r.note = savedNotes[r.citekey];
+        if (savedVerified[r.citekey] !== undefined) r.verified = savedVerified[r.citekey];
+        if (savedPdfStatus[r.citekey]) r.has_local_pdf = true;
       });
+    }
 
-      const blob = new Blob([output], { type: 'text/plain;charset=utf-8' });
+    // Render the active reference
+    async function renderCurrent() {
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= references.length) currentIndex = references.length - 1;
+
+      const ref = references[currentIndex];
+
+      // Progress & Indicator
+      progressText.innerText = `Reference ${currentIndex + 1} / ${references.length}`;
+      const pct = Math.round(((currentIndex + 1) / references.length) * 100);
+      progressBar.style.width = `${pct}%`;
+      percentText.innerText = `${pct}%`;
+      jumpSelect.value = currentIndex;
+
+      // Badges
+      citekeyDisplay.innerText = ref.citekey;
+      targetPdfName.innerText = ref.citekey;
+      categoryBadge.innerText = ref.category || 'Reference';
+
+      // Citation Count
+      if (ref.is_cited) {
+        latexCitationBadge.classList.replace('bg-slate-100', 'bg-indigo-100');
+        latexCitationBadge.classList.replace('text-slate-600', 'text-indigo-800');
+        latexCitationText.innerText = `Cited ${ref.citation_count || 1}x in LaTeX`;
+      } else {
+        latexCitationBadge.classList.replace('bg-indigo-100', 'bg-slate-100');
+        latexCitationBadge.classList.replace('text-indigo-800', 'text-slate-600');
+        latexCitationText.innerText = `Uncited Extra`;
+      }
+
+      // Metadata
+      authorDisplay.innerText = ref.author || 'No authors found';
+      yearDisplay.innerText = ref.year ? `Published: ${ref.year}` : 'Year unknown';
+      venueDisplay.innerText = ref.venue || 'General Publication';
+      entryTypeDisplay.innerText = ref.entry_type || 'entry';
+      titleBox.value = ref.title || 'No title found';
+
+      // URL and DOI
+      urlInput.value = ref.url || '';
+      doiHelper.innerText = ref.doi ? `DOI: ${ref.doi}` : '';
+
+      // URL Status Badge
+      if (ref.url) {
+        urlStatusBadge.innerHTML = `<i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> URL Present`;
+        urlStatusBadge.className = "bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1";
+      } else {
+        urlStatusBadge.innerHTML = `<i data-lucide="link" class="w-3 h-3 text-amber-600"></i> URL Missing`;
+        urlStatusBadge.className = "bg-amber-100 text-amber-700 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1";
+      }
+
+      // Check IndexedDB for attached PDF Blob or local storage
+      const cachedPdf = await getPdfBlob(ref.citekey);
+      const isPdfAttached = !!(cachedPdf || ref.has_local_pdf);
+
+      if (isPdfAttached) {
+        pdfStatusBadge.innerHTML = `<i data-lucide="file-check" class="w-3 h-3 text-emerald-600"></i> PDF Attached`;
+        pdfStatusBadge.className = "bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1";
+        
+        dropzonePrompt.classList.add('hide');
+        attachedFileInfo.classList.remove('hide');
+        attachedFilename.innerText = cachedPdf ? cachedPdf.filename : `${ref.citekey}.pdf`;
+        const sizeKb = cachedPdf ? Math.round(cachedPdf.size / 1024) : 'Ready';
+        attachedFilesize.innerText = `${sizeKb} KB • Stored in library`;
+      } else {
+        pdfStatusBadge.innerHTML = `<i data-lucide="file-x" class="w-3 h-3 text-rose-600"></i> PDF Missing`;
+        pdfStatusBadge.className = "bg-rose-100 text-rose-700 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1";
+        
+        dropzonePrompt.classList.remove('hide');
+        attachedFileInfo.classList.add('hide');
+      }
+
+      // Direct PDF Helper (arXiv / ACL)
+      if (ref.direct_pdf_url && !isPdfAttached) {
+        directPdfHelperBox.classList.remove('hide');
+      } else {
+        directPdfHelperBox.classList.add('hide');
+      }
+
+      // Lawphil Button Highlight for Philippine Law
+      if (ref.category === "Philippine Law & Jurisprudence" || ref.citekey.startsWith('ra') || ref.citekey.startsWith('scp')) {
+        searchLawphilBtn.classList.remove('hide');
+      } else {
+        searchLawphilBtn.classList.add('hide');
+      }
+
+      // Notes & Verified
+      noteInput.value = ref.note || '';
+      verifiedCheckbox.checked = !!ref.verified || (!!ref.url && isPdfAttached);
+
+      // Button states
+      prevBtn.disabled = currentIndex === 0;
+      prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+
+      if (currentIndex === references.length - 1) {
+        updateBtn.innerHTML = `<span>Update & Finish</span> <i data-lucide="check" class="w-4 h-4"></i>`;
+      } else {
+        updateBtn.innerHTML = `<span>Update & Next</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>`;
+      }
+
+      lucide.createIcons();
+    }
+
+    // Save current card changes to memory and localStorage
+    function saveCurrentChanges() {
+      const ref = references[currentIndex];
+      const newUrl = urlInput.value.trim();
+      const newNote = noteInput.value.trim();
+      const isVerified = verifiedCheckbox.checked;
+
+      ref.url = newUrl;
+      ref.note = newNote;
+      ref.verified = isVerified;
+
+      if (newUrl) {
+        ref.raw = applyUpdatesToRaw(ref.raw, newUrl);
+      }
+
+      // Persist to localStorage
+      const savedUrls = JSON.parse(localStorage.getItem('thesis_ref_saved_urls') || '{}');
+      const savedNotes = JSON.parse(localStorage.getItem('thesis_ref_saved_notes') || '{}');
+      const savedVerified = JSON.parse(localStorage.getItem('thesis_ref_saved_verified') || '{}');
+
+      savedUrls[ref.citekey] = newUrl;
+      savedNotes[ref.citekey] = newNote;
+      savedVerified[ref.citekey] = isVerified;
+
+      localStorage.setItem('thesis_ref_saved_urls', JSON.stringify(savedUrls));
+      localStorage.setItem('thesis_ref_saved_notes', JSON.stringify(savedNotes));
+      localStorage.setItem('thesis_ref_saved_verified', JSON.stringify(savedVerified));
+    }
+
+    // PDF Attachment Handler
+    async function handleAttachedPdfFile(file) {
+      if (!file) return;
+      const ref = references[currentIndex];
+      const targetFilename = `${ref.citekey}.pdf`;
+
+      // 1. Store in browser IndexedDB
+      await storePdfBlob(ref.citekey, file, targetFilename);
+      ref.has_local_pdf = true;
+
+      // Track in localStorage
+      const savedPdfStatus = JSON.parse(localStorage.getItem('thesis_ref_saved_pdfs') || '{}');
+      savedPdfStatus[ref.citekey] = true;
+      localStorage.setItem('thesis_ref_saved_pdfs', JSON.stringify(savedPdfStatus));
+
+      // 2. If backend server active: send via API directly to docs/references/<citekey>.pdf
+      if (serverActive) {
+        try {
+          const formData = new FormData();
+          formData.append('pdf', file, targetFilename);
+          const uploadResp = await fetch(`/api/save_pdf?citekey=${encodeURIComponent(ref.citekey)}`, {
+            method: 'POST',
+            body: formData
+          });
+          if (uploadResp.ok) {
+            showToast(`Saved directly to docs/references/${targetFilename}!`);
+          }
+        } catch (e) {
+          console.warn("Backend auto-save failed:", e);
+        }
+      }
+      // 3. Else if bound directory handle exists (File System Access API):
+      else if (boundDirectoryHandle) {
+        try {
+          const fileHandle = await boundDirectoryHandle.getFileHandle(targetFilename, { create: true });
+          const writable = await fileHandle.createWritable();
+          await writable.write(file);
+          await writable.close();
+          showToast(`Written to folder: ${targetFilename}`);
+        } catch (err) {
+          console.warn("Direct folder write error:", err);
+        }
+      }
+      // 4. Fallback: prompt browser download as <citekey>.pdf
+      else {
+        showToast(`Attached ${targetFilename}! (Auto-saved to browser cache)`);
+      }
+
+      renderCurrent();
+    }
+
+    // PDF Dropzone Events
+    pdfFileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) handleAttachedPdfFile(file);
+    });
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+      pdfDropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        pdfDropzone.classList.add('dropzone-active');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      pdfDropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        pdfDropzone.classList.remove('dropzone-active');
+      });
+    });
+
+    pdfDropzone.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      const file = dt.files[0];
+      if (file && file.type === "application/pdf") {
+        handleAttachedPdfFile(file);
+      } else {
+        alert("Please drop a valid .pdf file.");
+      }
+    });
+
+    // Remove PDF
+    removePdfBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const ref = references[currentIndex];
+      await deletePdfBlob(ref.citekey);
+      ref.has_local_pdf = false;
+
+      const savedPdfStatus = JSON.parse(localStorage.getItem('thesis_ref_saved_pdfs') || '{}');
+      delete savedPdfStatus[ref.citekey];
+      localStorage.setItem('thesis_ref_saved_pdfs', JSON.stringify(savedPdfStatus));
+
+      showToast(`Removed PDF for [${ref.citekey}]`);
+      renderCurrent();
+    });
+
+    // Preview PDF Modal
+    previewPdfBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const ref = references[currentIndex];
+      const cached = await getPdfBlob(ref.citekey);
+      if (cached && cached.blob) {
+        const url = URL.createObjectURL(cached.blob);
+        pdfIframe.src = url;
+        modalPdfTitle.innerText = `${ref.citekey}.pdf (${Math.round(cached.size / 1024)} KB)`;
+        previewModal.classList.remove('hide');
+      } else if (serverActive) {
+        pdfIframe.src = `/docs/references/${ref.citekey}.pdf`;
+        modalPdfTitle.innerText = `${ref.citekey}.pdf (From local archive)`;
+        previewModal.classList.remove('hide');
+      } else {
+        alert("No cached PDF blob available in this browser session. Please re-attach the PDF.");
+      }
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      previewModal.classList.add('hide');
+      pdfIframe.src = "about:blank";
+    });
+
+    // Fetch Direct Open-Access PDF (e.g. arXiv / ACL)
+    fetchDirectPdfBtn.addEventListener('click', async () => {
+      const ref = references[currentIndex];
+      if (!ref.direct_pdf_url) return;
+
+      showToast(`Fetching ${ref.citekey}.pdf...`);
+      // Trigger download with proper filename
+      const a = document.createElement('a');
+      a.href = ref.direct_pdf_url;
+      a.download = `${ref.citekey}.pdf`;
+      a.target = "_blank";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      showToast(`Downloaded ${ref.citekey}.pdf! Drop it in the box to attach.`);
+    });
+
+    // Search Actions
+    searchGoogleBtn.addEventListener('click', () => {
+      const ref = references[currentIndex];
+      if (ref.title) {
+        const lastNames = extractLastNames(ref.author);
+        const query = `"${ref.title}" ${lastNames} ${ref.year || ''}`.trim();
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+      }
+    });
+
+    searchScholarBtn.addEventListener('click', () => {
+      const ref = references[currentIndex];
+      if (ref.title) {
+        window.open(`https://scholar.google.com/scholar?q=${encodeURIComponent(ref.title)}`, '_blank');
+      }
+    });
+
+    searchSemanticBtn.addEventListener('click', () => {
+      const ref = references[currentIndex];
+      if (ref.title) {
+        window.open(`https://www.semanticscholar.org/search?q=${encodeURIComponent(ref.title)}`, '_blank');
+      }
+    });
+
+    searchLawphilBtn.addEventListener('click', () => {
+      const ref = references[currentIndex];
+      if (ref.title) {
+        window.open(`https://www.google.com/search?q=site%3Alawphil.net+${encodeURIComponent(ref.title)}`, '_blank');
+      }
+    });
+
+    openUrlBtn.addEventListener('click', () => {
+      const url = urlInput.value.trim();
+      if (url) {
+        window.open(url, '_blank');
+      } else {
+        alert("Please enter a URL first.");
+      }
+    });
+
+    copyTitleBtn.addEventListener('click', () => {
+      const t = titleBox.value;
+      if (t) {
+        navigator.clipboard.writeText(t);
+        showToast("Title copied to clipboard!");
+      }
+    });
+
+    copyCitekeyBtn.addEventListener('click', () => {
+      const ck = citekeyDisplay.innerText;
+      navigator.clipboard.writeText(`\\cite{${ck}}`);
+      showToast(`Copied \\cite{${ck}}!`);
+    });
+
+    // Navigation Controls
+    updateBtn.addEventListener('click', () => {
+      saveCurrentChanges();
+      if (currentIndex < references.length - 1) {
+        currentIndex++;
+        renderCurrent();
+        urlInput.focus();
+      } else {
+        alert("🎉 Congratulations! You have reached the end of the bibliography! Click 'Export .bib' or 'Export Log' in the top bar to save your results.");
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        saveCurrentChanges();
+        currentIndex--;
+        renderCurrent();
+      }
+    });
+
+    skipBtn.addEventListener('click', () => {
+      if (currentIndex < references.length - 1) {
+        currentIndex++;
+        renderCurrent();
+      }
+    });
+
+    // Quick Jump Buttons
+    nextMissingUrlBtn.addEventListener('click', () => {
+      saveCurrentChanges();
+      for (let i = currentIndex + 1; i < references.length; i++) {
+        if (!references[i].url) {
+          currentIndex = i;
+          renderCurrent();
+          return;
+        }
+      }
+      // Wrap around from beginning
+      for (let i = 0; i <= currentIndex; i++) {
+        if (!references[i].url) {
+          currentIndex = i;
+          renderCurrent();
+          return;
+        }
+      }
+      showToast("All references have URLs!");
+    });
+
+    nextMissingPdfBtn.addEventListener('click', async () => {
+      saveCurrentChanges();
+      for (let i = currentIndex + 1; i < references.length; i++) {
+        const cached = await getPdfBlob(references[i].citekey);
+        if (!cached && !references[i].has_local_pdf) {
+          currentIndex = i;
+          renderCurrent();
+          return;
+        }
+      }
+      // Wrap around from beginning
+      for (let i = 0; i <= currentIndex; i++) {
+        const cached = await getPdfBlob(references[i].citekey);
+        if (!cached && !references[i].has_local_pdf) {
+          currentIndex = i;
+          renderCurrent();
+          return;
+        }
+      }
+      showToast("All references have PDFs attached!");
+    });
+
+    jumpSelect.addEventListener('change', (e) => {
+      saveCurrentChanges();
+      currentIndex = parseInt(e.target.value, 10);
+      renderCurrent();
+    });
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (previewModal && !previewModal.classList.contains('hide')) {
+        if (e.key === 'Escape') closeModalBtn.click();
+        return;
+      }
+      if (e.ctrlKey && e.key === 'Enter') {
+        e.preventDefault();
+        updateBtn.click();
+      } else if (e.ctrlKey && e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevBtn.click();
+      } else if (e.ctrlKey && e.key === 'ArrowRight') {
+        e.preventDefault();
+        skipBtn.click();
+      } else if (e.ctrlKey && e.key.toLowerCase() === 'g') {
+        e.preventDefault();
+        searchGoogleBtn.click();
+      }
+    });
+
+    // Export Updated .bib file
+    downloadBtn.addEventListener('click', () => {
+      saveCurrentChanges();
+      let fullOutput = rawFilePrefix;
+      if (!fullOutput) {
+        fullOutput = "% ====================================================================\n";
+        fullOutput += "% Verified Bibliography with Authentic URLs & DOIs\n";
+        fullOutput += `% Generated on ${new Date().toISOString()}\n`;
+        fullOutput += "% ====================================================================\n\n";
+      }
+
+      fullOutput += references.map(ref => {
+        let raw = ref.raw;
+        if (ref.url) {
+          raw = applyUpdatesToRaw(raw, ref.url);
+        }
+        return raw.trim();
+      }).join('\n\n');
+
+      const blob = new Blob([fullOutput], { type: 'text/plain;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = "references_verified.bib";
+      a.download = 'references_verified.bib';
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      showToast("Downloaded verified references_verified.bib!");
-    }
+      showToast("Exported references_verified.bib!");
+    });
 
-    function exportDownloadScript() {
-      let script = `#!/usr/bin/env python3
-# Auto-generated PDF downloader for Thesis References
-# Run: python download_all_references.py
+    // Export Verification Log (JSON for Antigravity automated audit)
+    exportLogBtn.addEventListener('click', () => {
+      saveCurrentChanges();
+      const log = references.map(r => ({
+        citekey: r.citekey,
+        title: r.title,
+        author: r.author,
+        year: r.year,
+        url: r.url,
+        has_pdf: !!r.has_local_pdf,
+        verified: !!r.verified,
+        note: r.note || '',
+        category: r.category,
+        is_cited_in_thesis: r.is_cited,
+        citation_count: r.citation_count || 0
+      }));
 
-import os, urllib.request, time
-
-TARGET_DIR = "docs/references"
-os.makedirs(TARGET_DIR, exist_ok=True)
-
-REFS = [
-`;
-      references.forEach(r => {
-        const downloadUrl = r.direct_pdf_url || (r.url && r.url.endsWith('.pdf') ? r.url : '');
-        if (downloadUrl) {
-          script += `    {"citekey": "${r.citekey}", "url": "${downloadUrl}"},\n`;
-        }
-      });
-
-      script += `]
-
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ThesisRefAuditor/1.0'}
-print(f"Starting download of {len(REFS)} reference PDFs into {TARGET_DIR}...")
-
-success = 0
-for idx, item in enumerate(REFS):
-    ck = item["citekey"]
-    url = item["url"]
-    out_file = os.path.join(TARGET_DIR, f"{ck}.pdf")
-    if os.path.exists(out_file):
-        print(f"[{idx+1}/{len(REFS)}] Skipping {ck} (already exists)")
-        success += 1
-        continue
-
-    print(f"[{idx+1}/{len(REFS)}] Downloading {ck} from {url}...")
-    try:
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            if resp.status == 200:
-                with open(out_file, 'wb') as f:
-                    f.write(resp.read())
-                print(f"     -> Saved {ck}.pdf")
-                success += 1
-            else:
-                print(f"     -> HTTP {resp.status}")
-    except Exception as e:
-        print(f"     -> Failed: {e}")
-    time.sleep(0.5)
-
-print(f"\\nDownload process complete: {success}/{len(REFS)} stored.")
-`;
-
-      const blob = new Blob([script], { type: 'text/x-python;charset=utf-8' });
+      const blob = new Blob([JSON.stringify(log, null, 2)], { type: 'application/json;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = "download_all_references.py";
+      a.download = 'references_verification_log.json';
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      showToast("Downloaded download_all_references.py!");
-    }
+      showToast("Exported references_verification_log.json!");
+    });
 
-    function handleFileImport(event) {
-      const file = event.target.files[0];
+    // Load External .bib file if selected
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
       if (!file) return;
 
       const reader = new FileReader();
-      reader.onload = function(e) {
-        const content = e.target.result;
-        if (file.name.endsWith('.json')) {
-          try {
-            references = JSON.parse(content);
-            syncLocalStorageWithRecords();
-            updateStatistics();
-            applyFilters();
-            showToast(`Loaded ${references.length} references from JSON!`);
-          } catch (err) {
-            alert('Invalid JSON file.');
-          }
+      reader.onload = function(event) {
+        const content = event.target.result;
+        const rawEntries = splitBibEntries(content);
+        
+        references = rawEntries.map(entry => {
+          const raw = entry.raw;
+          const ck = extractCitekey(raw);
+          return {
+            citekey: ck,
+            raw: raw,
+            entry_type: (raw.match(/@(\w+)/) || [])[1] || 'article',
+            title: extractField(raw, 'title') || 'No title found',
+            author: extractField(raw, 'author') || 'No authors found',
+            year: extractField(raw, 'year') || '',
+            venue: extractField(raw, 'journal') || extractField(raw, 'booktitle') || extractField(raw, 'publisher') || '',
+            url: extractField(raw, 'url') || '',
+            doi: extractField(raw, 'doi') || '',
+            category: 'External Upload',
+            is_cited: true,
+            citation_count: 1,
+            has_local_pdf: false,
+            verified: false,
+            note: ''
+          };
+        });
+
+        if (references.length > 0) {
+          currentIndex = 0;
+          populateJumpDropdown();
+          loadSavedState();
+          renderCurrent();
+          showToast(`Loaded ${references.length} references from ${file.name}!`);
         } else {
-          showToast("BibTeX file parsing from browser not supported directly; please use python scripts/audit_refs.py to regenerate JSON/JS.");
+          alert('No valid BibTeX entries found in selected file.');
         }
       };
       reader.readAsText(file);
+    });
+
+    // Initialization
+    async function init() {
+      await initDB();
+
+      // Check if preloaded thesis references are available from references_data.js
+      if (window.REFERENCES_DATA && Array.isArray(window.REFERENCES_DATA) && window.REFERENCES_DATA.length > 0) {
+        references = window.REFERENCES_DATA.map(r => ({
+          ...r,
+          raw: r.raw_bib || `@article{${r.citekey},\n  title={${r.title}}\n}`,
+          verified: false,
+          note: ''
+        }));
+      }
+
+      if (references.length > 0) {
+        currentIndex = 0;
+        populateJumpDropdown();
+        loadSavedState();
+        await renderCurrent();
+      }
+
+      // Check for local Python backend
+      checkBackendServer();
     }
+
+    window.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>

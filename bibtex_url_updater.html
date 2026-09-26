@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibTeX URL Updater</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; background-color: #f3f4f6; }
+        .hide { display: none !important; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-2xl w-full bg-white rounded-xl shadow-lg overflow-hidden">
+        
+        <!-- Header -->
+        <div class="bg-blue-600 text-white px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold flex items-center gap-2">
+                <i data-lucide="library" class="w-6 h-6"></i>
+                BibTeX URL Updater
+            </h1>
+            <button id="downloadBtn" class="hide bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded font-medium transition-colors flex items-center gap-2">
+                <i data-lucide="download" class="w-4 h-4"></i> Export .bib
+            </button>
+        </div>
+
+        <!-- File Upload State -->
+        <div id="uploadState" class="p-10 flex flex-col items-center justify-center border-b border-gray-100">
+            <i data-lucide="file-text" class="w-16 h-16 text-gray-300 mb-4"></i>
+            <label class="cursor-pointer bg-blue-50 text-blue-600 px-6 py-3 rounded-lg border border-blue-200 font-semibold hover:bg-blue-100 transition-colors">
+                Select .bib File
+                <input type="file" id="fileInput" accept=".bib" class="hidden" />
+            </label>
+            <p class="text-gray-400 text-sm mt-3">Upload your bibliography to begin</p>
+        </div>
+
+        <!-- Main Workspace (Hidden initially) -->
+        <div id="workspace" class="hide p-6">
+            
+            <div class="flex justify-between items-center mb-6">
+                <span id="progressText" class="bg-gray-100 text-gray-600 font-medium px-3 py-1 rounded-full text-sm">
+                    Checking reference 0 / 0
+                </span>
+                
+                <span id="urlStatusBadge" class="hide bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                    <i data-lucide="link" class="w-4 h-4"></i> URL Already Exists
+                </span>
+            </div>
+
+            <!-- Author & Year Display -->
+            <div class="mb-4 flex gap-3 text-sm text-gray-600 bg-gray-50 p-3 rounded-lg border border-gray-200">
+                <i data-lucide="users" class="w-5 h-5 text-gray-400 mt-0.5"></i>
+                <div>
+                    <div id="authorDisplay" class="font-medium text-gray-800"></div>
+                    <div id="yearDisplay" class="text-xs mt-1"></div>
+                </div>
+            </div>
+
+            <!-- Title Display -->
+            <div class="mb-5">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Extracted Title</label>
+                <div class="flex gap-2">
+                    <textarea id="titleBox" readonly rows="3" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-800 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    <button id="searchBtn" class="bg-blue-100 text-blue-700 hover:bg-blue-200 px-4 rounded-lg font-medium flex flex-col items-center justify-center gap-1 transition-colors min-w-[80px]" title="Search on Google Scholar">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                        <span class="text-xs">Search</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- URL Input -->
+            <div class="mb-6">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Reference URL</label>
+                <input type="url" id="urlInput" placeholder="https://..." class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center justify-between mt-8 border-t border-gray-100 pt-6">
+                <button id="prevBtn" class="flex items-center gap-2 text-gray-500 hover:text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i> Previous
+                </button>
+
+                <button id="updateBtn" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold shadow-sm transition-colors flex items-center gap-2">
+                    Update & Next <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Initialize icons
+        lucide.createIcons();
+
+        // State
+        let references = [];
+        let currentIndex = 0;
+        let rawFilePrefix = ""; // Stores text before the first @ entry if any
+
+        // DOM Elements
+        const fileInput = document.getElementById('fileInput');
+        const uploadState = document.getElementById('uploadState');
+        const workspace = document.getElementById('workspace');
+        const titleBox = document.getElementById('titleBox');
+        const authorDisplay = document.getElementById('authorDisplay');
+        const yearDisplay = document.getElementById('yearDisplay');
+        const urlInput = document.getElementById('urlInput');
+        const progressText = document.getElementById('progressText');
+        const urlStatusBadge = document.getElementById('urlStatusBadge');
+        const prevBtn = document.getElementById('prevBtn');
+        const searchBtn = document.getElementById('searchBtn');
+        const updateBtn = document.getElementById('updateBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        // Logic: Parse out the raw text into individual reference blocks
+        function splitBibEntries(text) {
+            const entries = [];
+            let inEntry = false;
+            let depth = 0;
+            let currentStr = "";
+            
+            for (let i = 0; i < text.length; i++) {
+                if (!inEntry && text[i] === '@') {
+                    if (currentStr.trim() && entries.length === 0) {
+                        rawFilePrefix = currentStr; // Capture headers/comments
+                    }
+                    inEntry = true;
+                    currentStr = '@';
+                } else if (inEntry) {
+                    currentStr += text[i];
+                    if (text[i] === '{') depth++;
+                    if (text[i] === '}') {
+                        depth--;
+                        if (depth === 0) {
+                            entries.push({ raw: currentStr });
+                            currentStr = "";
+                            inEntry = false;
+                        }
+                    }
+                } else {
+                    currentStr += text[i];
+                }
+            }
+            return entries;
+        }
+
+        // Logic: Safely extract a field value accounting for nested braces
+        function extractField(entryStr, fieldName) {
+            const regex = new RegExp(`\\b${fieldName}\\s*=\\s*`, 'i');
+            const match = entryStr.match(regex);
+            if (!match) return null;
+
+            const startIdx = match.index + match[0].length;
+            let value = "";
+            let char = entryStr[startIdx];
+
+            if (char === '{') {
+                let depth = 1;
+                for (let i = startIdx + 1; i < entryStr.length; i++) {
+                    if (entryStr[i] === '{') depth++;
+                    if (entryStr[i] === '}') depth--;
+                    if (depth === 0) break;
+                    value += entryStr[i];
+                }
+            } else if (char === '"') {
+                for (let i = startIdx + 1; i < entryStr.length; i++) {
+                    if (entryStr[i] === '"') break;
+                    value += entryStr[i];
+                }
+            } else {
+                for (let i = startIdx; i < entryStr.length; i++) {
+                    if (entryStr[i] === ',' || entryStr[i] === '}') break;
+                    value += entryStr[i];
+                }
+            }
+            // Remove internal line breaks/extra spaces often found in bibtex
+            return value.replace(/\s+/g, ' ').replace(/[{}]/g, '').trim();
+        }
+
+        // Logic: Extract last names for search query
+        function extractLastNames(authorString) {
+            if (!authorString || authorString === 'No authors found') return '';
+            const authors = authorString.split(/\s+and\s+/i);
+            const lastNames = authors.map(author => {
+                if (author.includes(',')) {
+                    return author.split(',')[0].trim(); // "Smith, John" -> "Smith"
+                } else {
+                    const parts = author.trim().split(' ');
+                    return parts[parts.length - 1]; // "John Smith" -> "Smith"
+                }
+            });
+            return lastNames.join(' ');
+        }
+
+        // Logic: Insert URL and URLDate
+        function applyUpdatesToRaw(rawStr, newUrl) {
+            const today = new Date().toISOString().split('T')[0];
+            
+            // Remove existing url/urldate to prevent duplicates
+            let updated = rawStr;
+            updated = updated.replace(/,\s*url\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+)/gi, '');
+            updated = updated.replace(/,\s*urldate\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+)/gi, '');
+            // Secondary catch for formatting without preceding commas
+            updated = updated.replace(/\burl\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+),?\s*/gi, '');
+            updated = updated.replace(/\burldate\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+),?\s*/gi, '');
+
+            const lastBraceIndex = updated.lastIndexOf('}');
+            if (lastBraceIndex !== -1) {
+                let base = updated.substring(0, lastBraceIndex).trimEnd();
+                if (base.endsWith(',')) base = base.substring(0, base.length - 1);
+                
+                const inject = `,\n  url = {${newUrl}},\n  urldate = {${today}}\n}`;
+                return base + inject;
+            }
+            return rawStr;
+        }
+
+        // Load File
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const content = event.target.result;
+                const rawEntries = splitBibEntries(content);
+                
+                references = rawEntries.map(entry => {
+                    return {
+                        raw: entry.raw,
+                        title: extractField(entry.raw, 'title') || 'No title found',
+                        author: extractField(entry.raw, 'author') || 'No authors found',
+                        year: extractField(entry.raw, 'year') || '',
+                        url: extractField(entry.raw, 'url') || ''
+                    };
+                });
+
+                if (references.length > 0) {
+                    currentIndex = 0;
+                    uploadState.classList.add('hide');
+                    workspace.classList.remove('hide');
+                    downloadBtn.classList.remove('hide');
+                    renderCurrent();
+                } else {
+                    alert('No valid BibTeX entries found.');
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        // UI Updates
+        function renderCurrent() {
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= references.length) currentIndex = references.length - 1;
+
+            const ref = references[currentIndex];
+            
+            progressText.innerText = `Checking reference ${currentIndex + 1} / ${references.length}`;
+            titleBox.value = ref.title;
+            authorDisplay.innerText = ref.author;
+            yearDisplay.innerText = ref.year ? `Published: ${ref.year}` : 'Year unknown';
+            urlInput.value = ref.url;
+            
+            if (ref.url) {
+                urlStatusBadge.classList.remove('hide');
+            } else {
+                urlStatusBadge.classList.add('hide');
+            }
+
+            // Button states
+            prevBtn.disabled = currentIndex === 0;
+            prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+            
+            if (currentIndex === references.length - 1) {
+                updateBtn.innerHTML = `Update & Finish <i data-lucide="check" class="w-5 h-5"></i>`;
+                lucide.createIcons();
+            } else {
+                updateBtn.innerHTML = `Update & Next <i data-lucide="arrow-right" class="w-5 h-5"></i>`;
+                lucide.createIcons();
+            }
+            
+            urlInput.focus();
+        }
+
+        // Interactions
+        searchBtn.addEventListener('click', () => {
+            const ref = references[currentIndex];
+            const title = ref.title;
+            
+            if(title && title !== 'No title found') {
+                const lastNames = extractLastNames(ref.author);
+                const queryParts = [title, lastNames, ref.year].filter(Boolean);
+                const query = queryParts.join(' ');
+                
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            }
+        });
+
+        updateBtn.addEventListener('click', () => {
+            const currentUrl = urlInput.value.trim();
+            if (currentUrl) {
+                // Update internal string memory
+                references[currentIndex].raw = applyUpdatesToRaw(references[currentIndex].raw, currentUrl);
+                references[currentIndex].url = currentUrl; // Keep local state accurate
+            }
+
+            if (currentIndex < references.length - 1) {
+                currentIndex++;
+                renderCurrent();
+            } else {
+                alert("You've reached the end of the list! You can now export your updated .bib file.");
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderCurrent();
+            }
+        });
+
+        // Download functionality
+        downloadBtn.addEventListener('click', () => {
+            const fullOutput = rawFilePrefix + references.map(ref => ref.raw).join('\n\n');
+            const blob = new Blob([fullOutput], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'updated_references.bib';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+    </script>
+</body>
+</html>

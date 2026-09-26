@@ -18,6 +18,10 @@ import re
 import sys
 import json
 import glob
+import time
+import shutil
+import webbrowser
+import http.server
 import urllib.parse
 from pathlib import Path
 
@@ -372,6 +376,119 @@ def download_open_access(records):
     print(f"\n[DONE] Successfully downloaded {success_count} PDFs to {REFS_DIR}.")
 
 
+class RefAuditorHandler(http.server.SimpleHTTPRequestHandler):
+    """Custom request handler serving repository files and providing API endpoints for reference verification."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, directory=str(REPO_ROOT), **kwargs)
+
+    def do_GET(self):
+        parsed = urllib.parse.urlparse(self.path)
+        if parsed.path == "/api/status":
+            local_pdfs = [f.stem for f in REFS_DIR.glob("*.pdf")]
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            resp = {"status": "ok", "downloaded_citekeys": local_pdfs}
+            self.wfile.write(json.dumps(resp).encode("utf-8"))
+            return
+        super().do_GET()
+
+    def do_POST(self):
+        parsed = urllib.parse.urlparse(self.path)
+        if parsed.path == "/api/save_pdf":
+            query = urllib.parse.parse_qs(parsed.query)
+            citekey = query.get("citekey", [""])[0]
+            if not citekey:
+                self.send_error(400, "Missing citekey query parameter")
+                return
+
+            content_length = int(self.headers.get("Content-Length", 0))
+            raw_body = self.rfile.read(content_length)
+
+            content_type = self.headers.get("Content-Type", "")
+            pdf_bytes = raw_body
+
+            # Extract from multipart/form-data if browser used FormData
+            if "multipart/form-data" in content_type:
+                boundary = content_type.split("boundary=")[1].strip().encode()
+                parts = raw_body.split(b"--" + boundary)
+                for part in parts:
+                    if b"filename=" in part and b"\r\n\r\n" in part:
+                        hdr_end = part.find(b"\r\n\r\n")
+                        pdf_bytes = part[hdr_end + 4:].rstrip(b"\r\n")
+                        break
+
+            target_file = REFS_DIR / f"{citekey}.pdf"
+            with open(target_file, "wb") as f:
+                f.write(pdf_bytes)
+
+            print(f"[SERVER] Saved PDF for {citekey} -> {target_file.name} ({len(pdf_bytes) // 1024} KB)")
+
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps({"status": "saved", "citekey": citekey, "size": len(pdf_bytes)}).encode("utf-8"))
+            return
+
+        elif parsed.path == "/api/save_bib":
+            content_length = int(self.headers.get("Content-Length", 0))
+            bib_text = self.rfile.read(content_length).decode("utf-8")
+
+            # Create backup
+            backup_file = BIB_FILE.parent / f"references_backup_{int(time.time())}.bib"
+            if BIB_FILE.exists():
+                shutil.copy2(BIB_FILE, backup_file)
+
+            with open(BIB_FILE, "w", encoding="utf-8") as f:
+                f.write(bib_text)
+
+            print(f"[SERVER] Updated {BIB_FILE} (Backup: {backup_file.name})")
+
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(b'{"status": "bib_updated"}')
+            return
+
+        self.send_error(404, "API endpoint not found")
+
+
+def run_server(port=8080):
+    """Run local HTTP server for interactive dashboard with zero-prompt direct disk saving."""
+    server_address = ("127.0.0.1", port)
+    try:
+        httpd = http.server.HTTPServer(server_address, RefAuditorHandler)
+    except OSError:
+        # Port fallback
+        port = 8081
+        server_address = ("127.0.0.1", port)
+        httpd = http.server.HTTPServer(server_address, RefAuditorHandler)
+
+    url = f"http://127.0.0.1:{port}/docs/ref_auditor.html"
+    print(f"\n=======================================================")
+    print(f"   BIBLIOGRAPHY AUDITOR LOCAL SERVER RUNNING          ")
+    print(f"=======================================================")
+    print(f" Local URL: {url}")
+    print(f" Direct PDF Auto-Save: Enabled -> docs/references/<citekey>.pdf")
+    print(f" Press Ctrl+C to terminate.")
+    print(f"=======================================================\n")
+
+    try:
+        webbrowser.open(url)
+    except Exception:
+        pass
+
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\n[SERVER] Shutting down...")
+        httpd.server_close()
+
+
 def main():
     records = build_reference_records()
     export_data(records)
@@ -380,6 +497,10 @@ def main():
     if "--download" in sys.argv:
         download_open_access(records)
 
+    if "--serve" in sys.argv:
+        run_server()
+
 
 if __name__ == "__main__":
     main()
+
