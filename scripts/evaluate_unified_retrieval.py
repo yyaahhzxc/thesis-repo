@@ -60,58 +60,66 @@ def evaluate_engine():
     # Initialize Engine (BM25 + Dense if available)
     engine = DualStreamRetrievalEngine(load_dense=True)
 
-    # 1. Evaluate on 350 Ground Truth Pairs
-    print(f"\n[1/3] Benchmarking Vertical Retrieval on 350 Ground Truth Queries ({GT_FILE})...")
-    gt_pairs = []
-    with open(GT_FILE, 'r', encoding='utf-8') as f:
-        for line in f:
-            if line.strip():
-                gt_pairs.append(json.loads(line))
+    cache_file = Path("output/gt350_retrieval_cache.json")
+    if cache_file.exists():
+        print(f"\n[1/3] Loading cached 350 Ground Truth benchmark results from {cache_file}...")
+        with open(cache_file, 'r', encoding='utf-8') as cf:
+            cached = json.load(cf)
+            overall_metrics = cached['overall_metrics']
+            tier_metrics = cached['tier_metrics']
+    else:
+        print(f"\n[1/3] Benchmarking Vertical Retrieval on 350 Ground Truth Queries ({GT_FILE})...")
+        gt_pairs = []
+        with open(GT_FILE, 'r', encoding='utf-8') as f:
+            for line in f:
+                if line.strip():
+                    gt_pairs.append(json.loads(line))
 
-    ranks = []
-    tier_ranks = {"Tier 1": [], "Tier 2": [], "Tier 3": []}
-    latencies = []
+        ranks = []
+        tier_ranks = {"Tier 1": [], "Tier 2": [], "Tier 3": []}
+        latencies = []
 
-    for item in gt_pairs:
-        query = item['ordinance_hypothesis']['hypothesis_text']
-        statute_title = item['national_premise']['statute_title']
-        gold_id = TITLE_TO_LAW_ID.get(statute_title, '')
-        tier = item.get('difficulty_tier', 'Tier 1')
-        tier_key = "Tier 1" if "Tier 1" in tier else ("Tier 2" if "Tier 2" in tier else "Tier 3")
+        for item in gt_pairs:
+            query = item['ordinance_hypothesis']['hypothesis_text']
+            statute_title = item['national_premise']['statute_title']
+            gold_id = TITLE_TO_LAW_ID.get(statute_title, '')
+            tier = item.get('difficulty_tier', 'Tier 1')
+            tier_key = "Tier 1" if "Tier 1" in tier else ("Tier 2" if "Tier 2" in tier else "Tier 3")
 
-        t0 = time.time()
-        res = engine.retrieve(query, k_vertical=50, k_horizontal=5, operative_only=True)
-        t1 = time.time()
-        latencies.append((t1 - t0) * 1000)
+            t0 = time.time()
+            res = engine.retrieve(query, k_vertical=50, k_horizontal=5, operative_only=True)
+            t1 = time.time()
+            latencies.append((t1 - t0) * 1000)
 
-        # Check rank of gold national statute among vertical candidates
-        gold_rank = None
-        for cand in res['vertical_national_candidates']:
-            if cand['enactment_id'] == gold_id or gold_id in cand['provision_id']:
-                gold_rank = cand['rank']
-                break
+            # Check rank of gold national statute among vertical candidates
+            gold_rank = None
+            for cand in res['vertical_national_candidates']:
+                cand_enact = cand.get('enactment_id', '')
+                cand_prov = cand.get('provision_id', '')
+                if cand_enact == gold_id or (gold_id and gold_id in cand_prov):
+                    gold_rank = cand['rank']
+                    break
 
-        ranks.append(gold_rank)
-        tier_ranks[tier_key].append(gold_rank)
+            ranks.append(gold_rank)
+            tier_ranks[tier_key].append(gold_rank)
 
-    # Calculate metrics
-    def calc_metrics(rk_list):
-        valid = [r for r in rk_list if r is not None]
-        n = len(rk_list)
-        return {
-            "n_queries": n,
-            "recall@5": round(sum(1 for r in valid if r <= 5) / n, 4),
-            "recall@10": round(sum(1 for r in valid if r <= 10) / n, 4),
-            "recall@20": round(sum(1 for r in valid if r <= 20) / n, 4),
-            "recall@50": round(sum(1 for r in valid if r <= 50) / n, 4),
-            "mrr": round(float(np.mean([1.0 / r for r in valid] + [0.0] * (n - len(valid)))), 4)
-        }
+        # Calculate metrics
+        def calc_metrics(rk_list):
+            valid = [r for r in rk_list if r is not None]
+            n = len(rk_list)
+            return {
+                "n_queries": n,
+                "recall@5": round(sum(1 for r in valid if r <= 5) / n, 4),
+                "recall@10": round(sum(1 for r in valid if r <= 10) / n, 4),
+                "recall@20": round(sum(1 for r in valid if r <= 20) / n, 4),
+                "recall@50": round(sum(1 for r in valid if r <= 50) / n, 4),
+                "mrr": round(float(np.mean([1.0 / r for r in valid] + [0.0] * (n - len(valid)))), 4)
+            }
 
-    overall_metrics = calc_metrics(ranks)
-    overall_metrics["mean_latency_ms"] = round(float(np.mean(latencies)), 2)
-    overall_metrics["p95_latency_ms"] = round(float(np.percentile(latencies, 95)), 2)
-
-    tier_metrics = {k: calc_metrics(v) for k, v in tier_ranks.items()}
+        overall_metrics = calc_metrics(ranks)
+        overall_metrics["mean_latency_ms"] = round(float(np.mean(latencies)), 2)
+        overall_metrics["p95_latency_ms"] = round(float(np.percentile(latencies, 95)), 2)
+        tier_metrics = {k: calc_metrics(v) for k, v in tier_ranks.items()}
 
     print("\n--- 350 Ground Truth Retrieval Benchmark Results ---")
     print(f"Overall Recall@5:  {overall_metrics['recall@5']*100:.2f}%")
@@ -133,17 +141,23 @@ def evaluate_engine():
             for line in f:
                 if line.strip():
                     case = json.loads(line)
-                    q = case['ordinance_text']
+                    op_secs = case.get('operative_sections', {})
+                    operative_text = " ".join([v for k, v in op_secs.items() if not any(b in k.upper() for b in ['TITLE', 'EFFECTIVITY', 'REPEALING', 'SEPARABILITY'])])
+                    q = f"{case.get('title', '')} {operative_text}".strip()
+                    if not q:
+                        q = case.get('title', '')
                     res = engine.retrieve(q, k_vertical=5, k_horizontal=5)
+                    case_name = case.get('judicial_reference') or case.get('case_id', '')
                     tier3_results.append({
-                        "case_name": case.get('case_name', ''),
+                        "case_id": case.get('case_id', ''),
+                        "case_name": case_name,
                         "ordinance_no": case.get('ordinance_no', ''),
                         "top_national_match": res['vertical_national_candidates'][0]['enactment_number'] if res['vertical_national_candidates'] else "None",
                         "top_municipal_match": res['horizontal_municipal_candidates'][0]['enactment_number'] if res['horizontal_municipal_candidates'] else "None",
                         "search_latency_ms": res['metrics']['total_latency_ms']
                     })
         for t3 in tier3_results[:4]:
-            print(f"  Case: {t3['case_name']} -> Top Nat: {t3['top_national_match']} | Top Muni: {t3['top_municipal_match']} ({t3['search_latency_ms']} ms)")
+            print(f"  Case: {t3['case_name'][:45]} -> Top Nat: {t3['top_national_match']} | Top Muni: {t3['top_municipal_match']} ({t3['search_latency_ms']} ms)")
 
     # 3. Export benchmark results
     out_data = {

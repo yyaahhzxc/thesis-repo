@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-09-26 23:47:30",
+  "corpus_provisions_total": 176421,
+  "national_provisions": 164620,
+  "municipal_provisions": 11801,
+  "overall_ground_truth_metrics": {
+    "n_queries": 350,
+    "recall@5": 0.4657,
+    "recall@10": 0.5257,
+    "recall@20": 0.5743,
+    "recall@50": 0.6514,
+    "mrr": 0.3462,
+    "mean_latency_ms": 5889.25,
+    "p95_latency_ms": 6120.0
+  },
+  "difficulty_tier_breakdown": {
+    "Tier 1": {
+      "n_queries": 104,
+      "recall@5": 0.5577,
+      "recall@10": 0.5769,
+      "recall@20": 0.5962,
+      "recall@50": 0.6731,
+      "mrr": 0.433
+    },
+    "Tier 2": {
+      "n_queries": 142,
+      "recall@5": 0.5211,
+      "recall@10": 0.5845,
+      "recall@20": 0.6408,
+      "recall@50": 0.7324,
+      "mrr": 0.3922
+    },
+    "Tier 3": {
+      "n_queries": 104,
+      "recall@5": 0.2981,
+      "recall@10": 0.3942,
+      "recall@20": 0.4615,
+      "recall@50": 0.5192,
+      "mrr": 0.1965
+    }
+  },
+  "tier3_case_evaluations": [
+    {
+      "case_id": "DAVAO-TIER3-01",
+      "case_name": "Mosqueda v. Pilipino Banana Growers & Exporters Association, Inc., G.R. Nos. 189185 & 189305 (August 16, 2016; 798 SCRA 389)",
+      "ordinance_no": "Ordinance No. 0309-07",
+      "top_national_match": "Republic Act No. 8435 December 22, 1997",
+      "top_municipal_match": "Ordinance No. 000624-18",
+      "search_latency_ms": 13665.92
+    },
+    {
+      "case_id": "DAVAO-TIER3-02",
+      "case_name": "Hon. Leoncio Evasco, Jr. v. Alex P. Monta\u00f1ez, G.R. No. 199172 (February 21, 2018; 856 SCRA 320)",
+      "ordinance_no": "Ordinance No. 092-2000",
+      "top_national_match": "EXECUTIVE ORDER NO. 165, March 21, 2022",
+      "top_municipal_match": "Ordinance No. 000092-00",
+      "search_latency_ms": 10480.92
+    },
+    {
+      "case_id": "DAVAO-TIER3-03",
+      "case_name": "City of Davao and Tanjili v. ARC Investors, Inc., G.R. No. 249668 (July 13, 2022)",
+      "ordinance_no": "Ordinance No. 158-05 \u00a7135",
+      "top_national_match": "PRESIDENTIAL DECREE No. 1739",
+      "top_municipal_match": "Ordinance No. 000685-21",
+      "search_latency_ms": 5509.24
+    },
+    {
+      "case_id": "DAVAO-TIER3-04",
+      "case_name": "City of Davao and Dureza v. First Meridian Development, Inc., G.R. No. 240078 (October 19, 2022)",
+      "ordinance_no": "Ordinance No. 158-05 \u00a7423",
+      "top_national_match": "Republic Act No. 7160 October 10, 1991",
+      "top_municipal_match": "Ordinance No. 004122-96_10428-4122-96",
+      "search_latency_ms": 6375.24
+    },
+    {
+      "case_id": "DAVAO-TIER3-05",
+      "case_name": "City of Davao v. Court of Appeals and GSIS, G.R. No. 127383 (August 18, 2005; 467 SCRA 280)",
+      "ordinance_no": "Davao City Real Property Tax Assessment on GSIS",
+      "top_national_match": "REPUBLIC ACT NO. 10360",
+      "top_municipal_match": "Ordinance No. 0273-17",
+      "search_latency_ms": 7473.65
+    },
+    {
+      "case_id": "DAVAO-TIER3-06",
+      "case_name": "Davao City Mining Ban & Watershed Legal Controversy (City Council vs. National MPSA Concessions)",
+      "ordinance_no": "Ordinance No. 0310-07",
+      "top_national_match": "EXECUTIVE ORDER No. 79",
+      "top_municipal_match": "Ordinance No. 0742-25",
+      "search_latency_ms": 5726.48
+    },
+    {
+      "case_id": "DAVAO-TIER3-07",
+      "case_name": "Davao City Anti-Smoking Regulation under Health Justice Jurisprudence (Valid Stricter Local Standards)",
+      "ordinance_no": "Ordinance No. 0367-12",
+      "top_national_match": "EXECUTIVE ORDER NO. 106, February 26, 2020",
+      "top_municipal_match": "Ordinance No. 0367-12",
+      "search_latency_ms": 5369.36
+    },
+    {
+      "case_id": "DAVAO-TIER3-08",
+      "case_name": "Davao City Speed Limit Enforcement under Joint DOTr-DPWH-DILG JAO 2018-01",
+      "ordinance_no": "Ordinance No. 0270-23",
+      "top_national_match": "Act No. 3992, December 03, 1932",
+      "top_municipal_match": "Ordinance No. 0270-23",
+      "search_latency_ms": 3624.21
+    }
+  ]
+}

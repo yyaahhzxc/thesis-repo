@@ -165,7 +165,22 @@ class DualStreamRetrievalEngine:
                 f"to generate the offline .npy vector table).",
                 flush=True
             )
-            return
+        # Check if embeddings are still actively being generated
+        progress_path = self.embeddings_path.parent / "embedding_progress.json"
+        if progress_path.exists():
+            try:
+                with open(progress_path, 'r', encoding='utf-8') as pf:
+                    prog = json.load(pf)
+                    if prog.get('completed_provisions', 0) < len(self.provisions):
+                        print(
+                            f"[DualRetrieval] Precomputed embeddings at {self.embeddings_path} are still generating "
+                            f"({prog.get('completed_provisions', 0):,}/{len(self.provisions):,} provisions, "
+                            f"{prog.get('percent_complete', 0):.1f}%). Operating in BM25-lexical mode.",
+                            flush=True
+                        )
+                        return
+            except Exception:
+                pass
 
         t0 = time.time()
         print(f"[DualRetrieval] Loading precomputed dense embeddings from {self.embeddings_path}...", flush=True)
@@ -268,6 +283,7 @@ class DualStreamRetrievalEngine:
                     "dense_rank": int(dense_ranks[g_idx]) if dense_scores is not None else 0,
                     "provision_id": p['provision_id'],
                     "jurisdiction": p['jurisdiction'],
+                    "enactment_id": p.get('enactment_id', ''),
                     "enactment_number": p['enactment_number'],
                     "enactment_title": p['enactment_title'],
                     "year": p.get('year'),

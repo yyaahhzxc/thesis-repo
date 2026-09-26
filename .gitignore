@@ -17,6 +17,8 @@ data/unified_dual_statutory_provisions*.jsonl
 output/*.jsonl
 output/*.pkl
 output/*.npy
+output/embedding_progress.json
+output/gt350_retrieval_cache.json
 
 # LaTeX Auxiliary Build Files
 *.aux
