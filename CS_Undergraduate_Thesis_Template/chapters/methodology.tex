@@ -118,7 +118,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \item \textbf{Davao City SP Public Web Portal:} Provides historical ``Landmark Ordinances'' spanning approximately 15 years, capturing prominent regulatory codes in public safety, zoning, and health.
             \item \textbf{Legislative Information Support System Program (LISSP):} Acquired directly through formal coordination with the Sangguniang Panlungsod (SP) IT Department, providing approximately 1,000 digitized ordinances enacted between 2021 and 2026 (retrieved as of March 2026)~\cite{citygov2025lissp}.
         \end{enumerate}
-        Together, these two channels yield an archive of approximately 1,500 local enactments. When combined with the 25k+ national statutes, the total statutory search space comprises \textbf{over 27,000+ legal enactments}. Unlike national statutes available in digital text, the local ordinances are scanned image-based PDF files currently undergoing optical character recognition (OCR) cleaning and text extraction led by co-author Ralph Paolo Dulce before downstream exploratory analysis.
+        Together, these two channels yielded an archive of exactly 1,664 local enactments spanning from 1950 to 2025. When combined with the 25,432 national statutes, the total statutory search space comprises \textbf{27,096 legal enactments} ($N_{\text{sections}} = 176,421$). Unlike national statutes available in clean digital text, the municipal archive consists of historical scans processed through vision-language model transcription followed by targeted text normalization, as detailed in Section~\ref{sec:municipal_corpus_analysis}.
 
         \subsubsection{Corpus Biases}
         A close look at the collected national laws reveals a large imbalance across legal topics. Over 40\% of the national statutes consist of routine administrative actions, such as converting local schools, renaming roads, adjusting municipal boundaries, or granting broadcast franchises. In contrast, major regulatory areas that interact with city powers, such as public health, land zoning, and local taxation, make up less than 15\% of the total national collection. Searching through this raw distribution without filtering would cause search algorithms to return irrelevant administrative laws instead of actual regulatory rules. To keep search results useful, the system must separate these routine administrative laws from substantive regulatory provisions.
@@ -186,6 +186,85 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \end{figure}
 
         The temporal breakdown reveals that Philippine lawmaking expanded during periods of national administrative reorganization. Early colonial governance relied entirely on 4,199 foundational Acts during the Insular period (1900--1934). Centralized presidential lawmaking predominated during the Martial Law period through 1,844 Presidential Decrees and 886 Batas Pambansa parliamentary enactments (1972--1985). In the modern era governed by Republic Act No.~7160 (1991--2026), statutory production stabilized into a dual stream of 4,900 congressional Republic Acts and 2,421 executive policy orders. Because vocabulary standards shifted markedly across these legislative transitions, search models require chronological awareness to avoid misinterpreting historical statutory phrasing.
+
+        \subsubsection{Municipal Corpus Analysis and Typology}
+        \label{sec:municipal_corpus_analysis}
+        To evaluate local legislative patterns, the proponents conducted an empirical census of all 1,664 digitized Davao City municipal ordinances. Unlike the national archive which spans over a century of centralized governance, the municipal collection documents municipal self-governance across four distinct legislative eras. As illustrated in Figure~\ref{fig:local_ordinance_temporal_and_typology}(a), the archive contains 50 foundational enactments from the Pre-LGC Era (1950--1991), 184 landmark regulatory codes from the Post-LGC Historical Era (1992--2015), and 145 enactments from the Pre-Pandemic Era (2016--2020). Statutory volume concentrates heavily within the modern digital LISSP database, contributing 1,285 enactments (77.2\%) between 2021 and 2025. This temporal surge reflects the establishment of standardized electronic archiving by the Sangguniang Panlungsod, providing complete records of contemporary municipal lawmaking.
+
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[width=0.96\linewidth]{figs/local_ordinance_temporal_and_typology.png}
+            \caption{Chronological Distribution across Four Enactment Eras and Municipal Functional Typology Share of the Davao City Local Legislative Corpus ($N = 1,664$).}
+            \label{fig:local_ordinance_temporal_and_typology}
+        \end{figure}
+
+        An unsupervised lexical clustering of the municipal collection revealed that city legislation divides into six functional archetypes. Under the Local Government Code of 1991~\cite{philgov1991ra7160}, city councils exercise both general regulatory powers and specific administrative responsibilities. Table~\ref{tab:local_typology_composition} provides a breakdown of the municipal collection across these six functional categories. Figure~\ref{fig:local_ordinance_temporal_and_typology}(b) illustrates the relative share of each discovered legislative archetype.
+
+        \begin{table}[!htbp]
+            \centering
+            \footnotesize
+            \renewcommand{\arraystretch}{0.92}
+            \setlength{\tabcolsep}{3.5pt}
+            \caption{Composition and Functional Typology of the Davao City Municipal Legislative Corpus ($N = 1,664$)}
+            \label{tab:local_typology_composition}
+            \begin{tabularx}{\linewidth}{c>{\RaggedRight}p{4.2cm}rr>{\RaggedRight}p{2.6cm}>{\RaggedRight}X}
+                \toprule
+                \textbf{ID} & \textbf{Functional Legislative Typology} & \textbf{Count} & \textbf{Share} & \textbf{Statutory Authority} & \textbf{Core Subject Matter} \\
+                \midrule
+                01 & Substantive Regulatory \& Penal & 684 & 41.11\% & RA 7160 \S458 & Traffic, zoning, public health, safety, and curfew codes \\
+                02 & Inter-Agency Agreements (MOA/MOU) & 481 & 28.91\% & RA 7160 \S\S22(c), 455 & Mayoral authority to sign accords with national agencies \\
+                03 & Disaster Relief \& QRF Funds & 189 & 11.36\% & RA 10121 \S21 & Quick Response Fund releases and calamity subsidies \\
+                04 & Deeds of Donation \& Usufruct & 140 & 8.41\% & RA 7160 \S22(a)(4) & School site usufructs, donated roads, and open spaces \\
+                05 & Temporary Road Closures & 122 & 7.33\% & RA 7160 \S21 & Street closures for festivals, athletics, and civil works \\
+                06 & Zoning \& Subdivision Permits & 48 & 2.88\% & RA 7160 \S20, BP 220 & Agricultural reclassifications and housing permits \\
+                \midrule
+                \multicolumn{2}{l}{\textbf{Total Municipal Collection}} & \textbf{1,664} & \textbf{100.00\%} & \multicolumn{2}{l}{\textbf{All Digitized Ordinances (1950--2025)}} \\
+                \bottomrule
+            \end{tabularx}
+        \end{table}
+
+        The functional distribution reflects statutory restrictions governing local governance in the Philippines. Substantive regulatory and penal enactments form the largest single group (41.11\%, $N=684$), containing community regulations such as truck bans, cemetery setbacks, stray animal controls, and drinking water safety. Meanwhile, administrative authorizations comprise nearly half of all council activity. Under Section~22(c) and Section~455(b)(1)(vi) of Republic Act No.~7160, the city mayor cannot bind the local government to contracts or accept donations without prior council approval. Consequently, inter-agency agreements (28.91\%), calamity fund authorizations under Republic Act No.~10121 (11.36\%), and deeds of donation (8.41\%) appear frequently in the municipal record.
+
+        Document lengths in the municipal collection differ noticeably from national statutes. Across all 1,664 local enactments, ordinances exhibit a median length of 5,644 characters and 880 words, with an interquartile range of 736 to 1,607 words. Brief commendations and routine road closure resolutions fall as low as 193 words. In contrast, comprehensive regulatory codifications reach up to 31,054 words in the \textit{Davao City Comprehensive Zoning Ordinance}. Because municipal enactments concentrate within concise regulatory bounds, they present fewer long-context challenges than national omnibus codes.
+
+        \subsubsection{Dual Statutory Corpus Integration}
+        \label{sec:dual_corpus_integration}
+        Combining national legislation with Davao City municipal enactments establishes a unified search space of \textbf{27,096 legal records}. In automated statutory conflict detection, evaluating draft measures requires examining both vertical statutory preemption and horizontal legislative consistency. Under the doctrine of statutory preemption articulated in \textit{Magtajas v. Pryce Properties}~\cite{scp1994magtajasvpryce}, local measures are tested against the 25,432 superior national statutes. Concurrently, under intra-jurisdictional coherence principles, draft measures are evaluated against the 1,664 existing city ordinances to prevent conflicting local commands, duplicate penalties, or unintended implied repeals. Table~\ref{tab:dual_corpus_comparison} summarizes the empirical parameters and comparative characteristics of the two statutory sources.
+
+        \begin{table}[!htbp]
+            \centering
+            \footnotesize
+            \renewcommand{\arraystretch}{0.92}
+            \setlength{\tabcolsep}{3.4pt}
+            \caption{Comparative Metrics and Structural Parameters of the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$)}
+            \label{tab:dual_corpus_comparison}
+            \begin{tabularx}{\linewidth}{>{\RaggedRight}p{4.2cm}ccc>{\RaggedRight}X}
+                \toprule
+                \textbf{Empirical Dimension / Metric} & \textbf{National Corpus} & \textbf{Municipal Corpus} & \textbf{Combined Corpus} & \textbf{Analytical Significance} \\
+                \midrule
+                Total Enactments ($N$) & 25,432 & 1,664 & \textbf{27,096} & Comprehensive legislative space \\
+                Total Section Provisions & 164,620 & 11,801 & \textbf{176,421} & Total searchable retrieval units \\
+                Operative Provisions & 164,620 & 8,160 & \textbf{172,780} & Candidate substantive rules \\
+                Procedural Boilerplate Sections & 0 & 3,641 (30.85\%) & \textbf{3,641} & Pruned non-regulatory text \\
+                Historical Enactment Span & 1900--2026 (126 yrs) & 1950--2025 (75 yrs) & \textbf{1900--2026} & Longitudinal jurisprudence \\
+                Median Enactment Characters & 10,807 & 5,644 & \textbf{10,480} & Document-level scale disparity \\
+                Median Enactment Words & 1,512 & 880 & \textbf{1,472} & Local text conciseness \\
+                Median Provision Tokens & 122.0 & 90.0 & \textbf{120.0} & Granular provision baseline \\
+                512-Token Compliance Rate & 94.83\% & 92.72\% & \textbf{94.69\%} & Standard transformer compatibility \\
+                Operative 512-Token Compliance & 94.83\% & 90.06\% & \textbf{94.60\%} & High operative window fit \\
+                Normative Conflict Scope & Vertical Preemption & Horizontal Coherence & \textbf{Dual Scope} & Full legal conflict coverage \\
+                \bottomrule
+            \end{tabularx}
+        \end{table}
+
+        Figure~\ref{fig:dual_corpus_length_compliance} illustrates the structural comparisons between the national and municipal collections. Panel~(a) shows the document length disparity, where national enactments display a broader spread and frequently exceed one hundred thousand characters. In contrast, municipal ordinances remain compact, centering tightly around their median of 5,644 characters. Panel~(b) plots the cumulative token distribution across extracted provisions, confirming that both national sections (94.83\%) and local sections (92.72\%) adhere closely to the 512-token transformer sequence ceiling. Across all 176,421 combined provisions, exactly 94.69\% fit cleanly within standard sequence windows, validating natural section boundaries as the primary unit of retrieval.
+
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[width=0.96\linewidth]{figs/dual_corpus_length_compliance.png}
+            \caption{Enactment Length Asymmetry (Full Text) and Provision-Level Cumulative 512-Token Compliance Curves across the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$).}
+            \label{fig:dual_corpus_length_compliance}
+        \end{figure}
 
     \subsection{Preprocessing and Filtering}
     \label{sec:preprocessing_filtering}

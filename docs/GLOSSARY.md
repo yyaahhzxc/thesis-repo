@@ -55,7 +55,21 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 
 ### **Dual Statutory Corpus**
 * **Plain Meaning:** A two-part legal dataset combining national laws and local ordinances.
-* **In This Thesis:** The national corpus of **25,432** statutes is only one part of the story! The complete knowledge base integrates both the national laws and the **~1,500** Davao City local ordinances (being cleaned and digitized by Ralph), totaling **over 27,000+ legal enactments**. This ensures the system can detect conflicts across both jurisdictional levels.
+* **In This Thesis:** The national corpus of **25,432** statutes is only one part of the story! The complete knowledge base integrates both the national laws (25,432 enactments) and the **1,664** Davao City local ordinances (cleaned and digitized from the SP portal and LISSP), totaling exactly **27,096 legal enactments** across **176,421 provision chunks**. This ensures the system can detect conflicts across both jurisdictional levels.
+
+### **Municipal Legislative Functional Typology**
+* **Plain Meaning:** Classifying local city ordinances into specific functional categories based on what the city government is actually doing.
+* **In This Thesis:** An empirical discovery showing that Davao City's 1,664 ordinances fall into six distinct functional archetypes:
+  1. *Substantive Regulatory & Penal Ordinances* (41.11%, $N=684$): Citizen-facing regulations, traffic codes, truck bans, zoning, curfew, and penal fines (RA 7160 §458).
+  2. *Inter-Agency Agreements (MOAs/MOUs)* (28.91%, $N=481$): Authorizations for the City Mayor to sign accords with national departments like DOH, DOST, and DepEd (RA 7160 §§22(c), 455).
+  3. *Disaster Relief & Quick Response Fund (QRF)* (11.36%, $N=189$): Calamity fund releases and financial aid to disaster-stricken areas (RA 10121 §21).
+  4. *Deeds of Donation & Property Usufruct* (8.41%, $N=140$): Accepting donated school sites, road lots, and public spaces.
+  5. *Temporary Road Closures* (7.33%, $N=122$): Street closures for Kadayawan, Araw ng Dabaw, or civil works (RA 7160 §21).
+  6. *Zoning & Subdivision Permits* (2.88%, $N=48$): Agricultural reclassifications and housing development approvals.
+
+### **Quick Response Fund (QRF)**
+* **Plain Meaning:** A designated standby emergency fund (30% of the Local Disaster Risk Reduction and Management Fund) under Republic Act No. 10121.
+* **In This Thesis:** Frequently authorized by the Sangguniang Panlungsod to release rapid relief funds during typhoons, floods, or public health emergencies. In text retrieval, QRF resolutions represent procedural fiscal allocations rather than normative penal rules.
 
 ### **Vertical Conflict Detection (Statutory Preemption)**
 * **Plain Meaning:** Checking if a city ordinance clashes with a superior national law passed by Congress or the President.
