@@ -1,0 +1,673 @@
+[
+  {
+    "entry_type": "article",
+    "citekey": "agotnes2007on",
+    "fields": {
+      "author": "{\\AA}gotnes, Thomas and Hoek, Wiebe and Rodríguez-Aguilar, Juan and Sierra, Carles and Wooldridge, Michael",
+      "year": "2007",
+      "month": "01",
+      "pages": "",
+      "title": "On the Logic of Normative Systems",
+      "journal": "IJCAI International Joint Conference on Artificial Intelligence",
+      "url": "https://www.researchgate.net/publication/30815493_On_the_Logic_of_Normative_Systems",
+      "urldate": "2026-09-26",
+      "file": "docs/references/agotnes2007on.pdf"
+    },
+    "raw_bib": "@article{agotnes2007on,\nauthor = {{\\AA}gotnes, Thomas and Hoek, Wiebe and Rodríguez-Aguilar, Juan and Sierra, Carles and Wooldridge, Michael},\nyear = {2007},\nmonth = {01},\npages = {},\ntitle = {On the Logic of Normative Systems},\njournal = {IJCAI International Joint Conference on Artificial Intelligence},\n  url = {https://www.researchgate.net/publication/30815493_On_the_Logic_of_Normative_Systems},\n  urldate = {2026-09-26},\n  file = {docs/references/agotnes2007on.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 3,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "ruhl2015measuring",
+    "fields": {
+      "title": "Measuring, Monitoring, and Managing Legal Complexity",
+      "author": "Ruhl, J. B. and Katz, Daniel Martin",
+      "journal": "Iowa Law Review",
+      "volume": "101",
+      "number": "1",
+      "pages": "191--244",
+      "year": "2015",
+      "url": "https://ilr.law.uiowa.edu/print/volume-101-issue-1/measuring-monitoring-and-managing-legal-complexity",
+      "urldate": "2026-09-26",
+      "file": "docs/references/ruhl2015measuring.pdf"
+    },
+    "raw_bib": "@article{ruhl2015measuring,\n  title={Measuring, Monitoring, and Managing Legal Complexity},\n  author={Ruhl, J. B. and Katz, Daniel Martin},\n  journal={Iowa Law Review},\n  volume={101},\n  number={1},\n  pages={191--244},\n  year={2015},\n  url = {https://ilr.law.uiowa.edu/print/volume-101-issue-1/measuring-monitoring-and-managing-legal-complexity},\n  urldate = {2026-09-26},\n  file = {docs/references/ruhl2015measuring.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 2,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "rigano2018using",
+    "fields": {
+      "author": "Rigano, Christopher",
+      "title": "Using Artificial Intelligence to Address Criminal Justice Needs",
+      "journal": "NIJ Journal",
+      "issue": "280",
+      "month": "October",
+      "year": "2018",
+      "note": "National Institute of Justice",
+      "url": "https://nij.ojp.gov/topics/articles/using-artificial-intelligence-address-criminal-justice-needs",
+      "urldate": "2026-09-26",
+      "file": "docs/references/rigano2018using.pdf"
+    },
+    "raw_bib": "@article{rigano2018using,\n  author  = {Rigano, Christopher},\n  title   = {Using Artificial Intelligence to Address Criminal Justice Needs},\n  journal = {NIJ Journal},\n  issue   = {280},\n  month   = {October},\n  year    = {2018},\n  note    = {National Institute of Justice},\n  url = {https://nij.ojp.gov/topics/articles/using-artificial-intelligence-address-criminal-justice-needs},\n  urldate = {2026-09-26},\n  file = {docs/references/rigano2018using.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "techreport",
+    "citekey": "worldbank2011intgovfr",
+    "fields": {
+      "author": "{World Bank}",
+      "title": "{The Inter-governmental Framework in the Philippines}",
+      "institution": "World Bank Group",
+      "number": "Working Paper No. 5792",
+      "year": "2011",
+      "keywords": "governance, framework",
+      "url": "https://documents.worldbank.org/curated/en/895301468092388017/pdf/WPS5792.pdf",
+      "urldate": "2026-09-26",
+      "file": "docs/references/worldbank2011intgovfr.pdf"
+    },
+    "raw_bib": "@techreport{worldbank2011intgovfr,\n  author       = {{World Bank}},\n  title        = {{The Inter-governmental Framework in the Philippines}},\n  institution  = {World Bank Group},\n  number       = {Working Paper No. 5792},\n  year         = {2011},\n  keywords     = {governance, framework},\n  url = {https://documents.worldbank.org/curated/en/895301468092388017/pdf/WPS5792.pdf},\n  urldate = {2026-09-26},\n  file = {docs/references/worldbank2011intgovfr.pdf}\n}",
+    "is_cited": false,
+    "cite_count": 0,
+    "cited_files": []
+  },
+  {
+    "entry_type": "misc",
+    "citekey": "reganit2025diokno",
+    "fields": {
+      "title": "Diokno Files Bill to Break Language Barriers in {PH} Laws",
+      "author": "Reganit, Jose Cielito",
+      "year": "2025",
+      "month": "August",
+      "howpublished": "Philippine News Agency",
+      "url": "https://www.pna.gov.ph/articles/1257080",
+      "urldate": "2026-09-26",
+      "file": "docs/references/reganit2025diokno.pdf",
+      "note": "Report on House Bill No. 3863 (Batas sa Sariling Wika Act)"
+    },
+    "raw_bib": "@misc{reganit2025diokno,\n  title        = {Diokno Files Bill to Break Language Barriers in {PH} Laws},\n  author       = {Reganit, Jose Cielito},\n  year         = {2025},\n  month        = {August},\n  howpublished = {Philippine News Agency},\n  url          = {https://www.pna.gov.ph/articles/1257080},\n  urldate      = {2026-09-26},\n  file         = {docs/references/reganit2025diokno.pdf},\n  note         = {Report on House Bill No. 3863 (Batas sa Sariling Wika Act)},\n  file = {docs/references/reganit2025diokno.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "conchas2025digital",
+    "fields": {
+      "title": "Assessing Digital Governance Implementation Issues in Local Government Units: A Systematic Literature Review",
+      "author": "Conchas, Cydeah Aldic J. and Salapa, Aristeo C.",
+      "journal": "International Journal of Engineering Technology Research and Management",
+      "year": "2025",
+      "month": "December",
+      "volume": "9",
+      "number": "12",
+      "pages": "198--208",
+      "url": "https://ijetrm.com/issues/files/Dec-2025-10-1765366936-DEC25.pdf",
+      "urldate": "2026-09-26",
+      "file": "docs/references/conchas2025digital.pdf",
+      "issn": "2456-9348"
+    },
+    "raw_bib": "@article{conchas2025digital,\n  title        = {Assessing Digital Governance Implementation Issues in Local Government Units: A Systematic Literature Review},\n  author       = {Conchas, Cydeah Aldic J. and Salapa, Aristeo C.},\n  journal      = {International Journal of Engineering Technology Research and Management},\n  year         = {2025},\n  month        = {December},\n  volume       = {9},\n  number       = {12},\n  pages        = {198--208},\n  url          = {https://ijetrm.com/issues/files/Dec-2025-10-1765366936-DEC25.pdf},\n  urldate      = {2026-09-26},\n  file         = {docs/references/conchas2025digital.pdf},\n  issn         = {2456-9348},\n  file = {docs/references/conchas2025digital.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 4,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "misc",
+    "citekey": "patumbon2025landmark",
+    "fields": {
+      "title": "{Davao City Council Passes Landmark Measures}",
+      "author": "Patumbon, Rojean Grace G.",
+      "year": "2025",
+      "month": "February",
+      "howpublished": "SunStar Davao",
+      "url": "https://www.sunstar.com.ph/davao/davao-city-council-passes-landmark-measures",
+      "urldate": "2026-09-26",
+      "file": "docs/references/patumbon2025landmark.pdf",
+      "note": "SunStar Davao Special Report on 20th and 21st Sangguniang Panlungsod legislative output"
+    },
+    "raw_bib": "@misc{patumbon2025landmark,\n  title        = {{Davao City Council Passes Landmark Measures}},\n  author       = {Patumbon, Rojean Grace G.},\n  year         = {2025},\n  month        = {February},\n  howpublished = {SunStar Davao},\n  url          = {https://www.sunstar.com.ph/davao/davao-city-council-passes-landmark-measures},\n  urldate      = {2026-09-26},\n  file         = {docs/references/patumbon2025landmark.pdf},\n  note         = {SunStar Davao Special Report on 20th and 21st Sangguniang Panlungsod legislative output}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "online",
+    "citekey": "citygov2025lissp",
+    "fields": {
+      "author": "{City Government of Davao}",
+      "title": "{City Upgrades Legislative Information Support System}",
+      "year": "2025",
+      "month": "August",
+      "day": "14",
+      "note": "Accessed: February 13, 2026",
+      "keywords": "it_infrastructure, legislative_system",
+      "url": "https://davaocity.gov.ph/local-government/city-upgrades-legislative-information-support-system/",
+      "urldate": "2026-09-26",
+      "file": "docs/references/citygov2025lissp.pdf"
+    },
+    "raw_bib": "@online{citygov2025lissp,\n  author   = {{City Government of Davao}},\n  title    = {{City Upgrades Legislative Information Support System}},\n  year     = {2025},\n  month    = {August},\n  day      = {14},\n  note     = {Accessed: February 13, 2026},\n  keywords = {it_infrastructure, legislative_system},\n  url = {https://davaocity.gov.ph/local-government/city-upgrades-legislative-information-support-system/},\n  urldate = {2026-09-26},\n  file = {docs/references/citygov2025lissp.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 5,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ]
+  },
+  {
+    "entry_type": "misc",
+    "citekey": "patumbon2025lissp",
+    "fields": {
+      "title": "{SP} Implements Less Paper with {LISSP}",
+      "author": "Patumbon, Rojean Grace G.",
+      "year": "2025",
+      "month": "February",
+      "howpublished": "SunStar Davao",
+      "url": "https://www.sunstar.com.ph/davao/sp-implements-less-paper-with-lissp",
+      "urldate": "2026-09-26",
+      "file": "docs/references/patumbon2025lissp.pdf",
+      "note": "Reporting on official announcement by Davao City Councilor Bonz Andre Militar"
+    },
+    "raw_bib": "@misc{patumbon2025lissp,\n  title        = {{SP} Implements Less Paper with {LISSP}},\n  author       = {Patumbon, Rojean Grace G.},\n  year         = {2025},\n  month        = {February},\n  howpublished = {SunStar Davao},\n  url          = {https://www.sunstar.com.ph/davao/sp-implements-less-paper-with-lissp},\n  urldate      = {2026-09-26},\n  file         = {docs/references/patumbon2025lissp.pdf},\n  note         = {Reporting on official announcement by Davao City Councilor Bonz Andre Militar},\n  file = {docs/references/patumbon2025lissp.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "inproceedings",
+    "citekey": "vitali2007towards",
+    "fields": {
+      "title": "Towards a country-independent data format: the Akoma Ntoso experience",
+      "author": "Fabio Vitali and F. Zeni",
+      "year": "2007",
+      "url": "https://api.semanticscholar.org/CorpusID:55521562",
+      "urldate": "2026-09-26",
+      "file": "docs/references/vitali2007towards.pdf"
+    },
+    "raw_bib": "@inproceedings{vitali2007towards,\n  title={Towards a country-independent data format: the Akoma Ntoso experience},\n  author={Fabio Vitali and F. Zeni},\n  year={2007},\n  url = {https://api.semanticscholar.org/CorpusID:55521562},\n  urldate = {2026-09-26},\n  file = {docs/references/vitali2007towards.pdf}\n}",
+    "is_cited": false,
+    "cite_count": 0,
+    "cited_files": []
+  },
+  {
+    "entry_type": "article",
+    "citekey": "Guenmayor2018CaseStudyHermeneutics",
+    "fields": {
+      "author": "Fuenmayor, David and Benzmüller, Christoph",
+      "year": "2018",
+      "month": "10",
+      "pages": "",
+      "title": "A Case Study on Computational Hermeneutics: E. J. Lowe’s Modal Ontological Argument",
+      "volume": "5",
+      "journal": "Journal of Applied Logic",
+      "url": "https://www.researchgate.net/publication/333804824_A_Case_Study_on_Computational_Hermeneutics_E_J_Lowe%27s_Modal_Ontological_Argument",
+      "urldate": "2026-09-26",
+      "file": "docs/references/Guenmayor2018CaseStudyHermeneutics.pdf"
+    },
+    "raw_bib": "@article{Guenmayor2018CaseStudyHermeneutics,\nauthor = {Fuenmayor, David and Benzmüller, Christoph},\nyear = {2018},\nmonth = {10},\npages = {},\ntitle = {A Case Study on Computational Hermeneutics: E. J. Lowe’s Modal Ontological Argument},\nvolume = {5},\njournal = {Journal of Applied Logic},\n  url = {https://www.researchgate.net/publication/333804824_A_Case_Study_on_Computational_Hermeneutics_E_J_Lowe%27s_Modal_Ontological_Argument},\n  urldate = {2026-09-26},\n  file = {docs/references/Guenmayor2018CaseStudyHermeneutics.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/theoretical-framework.tex"
+    ]
+  },
+  {
+    "entry_type": "proceedings",
+    "citekey": "coliee2025proceedings",
+    "fields": {
+      "title": "Proceedings of the Twelfth International Competition on Legal Information Extraction and Entailment ({COLIEE} 2025)",
+      "editor": "Goebel, Randy and Kano, Yoshinobu and Kuribayashi, Tatsuki and Martinez-Gil, Jorge and Rabelo, Juliano and Satoh, Ken and Silveira, Lilian and Yoshioka, Masaharu",
+      "year": "2025",
+      "url": "https://coliee.org/documents/Proceedings/2025-Proceedings.pdf",
+      "urldate": "2026-09-26",
+      "file": "docs/references/coliee2025proceedings.pdf",
+      "address": "San Luis, Argentina"
+    },
+    "raw_bib": "@proceedings{coliee2025proceedings,\n  title        = {Proceedings of the Twelfth International Competition on Legal Information Extraction and Entailment ({COLIEE} 2025)},\n  editor       = {Goebel, Randy and Kano, Yoshinobu and Kuribayashi, Tatsuki and Martinez-Gil, Jorge and Rabelo, Juliano and Satoh, Ken and Silveira, Lilian and Yoshioka, Masaharu},\n  year         = {2025},\n  url          = {https://coliee.org/documents/Proceedings/2025-Proceedings.pdf},\n  urldate      = {2026-09-26},\n  file         = {docs/references/coliee2025proceedings.pdf},\n  address      = {San Luis, Argentina}\n}",
+    "is_cited": true,
+    "cite_count": 7,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "inproceedings",
+    "citekey": "wu2025aiir",
+    "fields": {
+      "title": "{AIIR} Lab at {COLIEE} 2025: Exploring Applications of Large Language Models for Legal Text Retrieval and Entailment",
+      "author": "Deiby Wu and Sarah Lawrence and Behrooz Mansouri",
+      "booktitle": "Proceedings of the Workshop on the Twelfth International Competition on Legal Information Extraction and Entailment (COLIEE 2025)",
+      "pages": "112--118",
+      "year": "2025",
+      "publisher": "ACM",
+      "address": "Chicago, USA",
+      "url": "https://www.researchgate.net/publication/393924641_AIIR_Lab_at_COLIEE_2025_Exploring_Applications_of_Large_Language_Models_for_Legal_Text_Retrieval_and_Entailment",
+      "urldate": "2026-09-26",
+      "file": "docs/references/wu2025aiir.pdf"
+    },
+    "raw_bib": "@inproceedings{wu2025aiir,\n  title     = {{AIIR} Lab at {COLIEE} 2025: Exploring Applications of Large Language Models for Legal Text Retrieval and Entailment},\n  author    = {Deiby Wu and Sarah Lawrence and Behrooz Mansouri},\n  booktitle = {Proceedings of the Workshop on the Twelfth International Competition on Legal Information Extraction and Entailment (COLIEE 2025)},\n  pages     = {112--118},\n  year      = {2025},\n  publisher = {ACM},\n  address   = {Chicago, USA},\n  url = {https://www.researchgate.net/publication/393924641_AIIR_Lab_at_COLIEE_2025_Exploring_Applications_of_Large_Language_Models_for_Legal_Text_Retrieval_and_Entailment},\n  urldate = {2026-09-26},\n  file = {docs/references/wu2025aiir.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 9,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ]
+  },
+  {
+    "entry_type": "inproceedings",
+    "citekey": "kadowaki2025modernbert",
+    "fields": {
+      "title": "A {ModernBERT}-Based System by Team {KIS} for the {COLIEE} 2025 Pilot Task: Toward Robust Evaluation in Legal Judgment Prediction",
+      "author": "Kazuma Kadowaki and Yoshinobu Kano",
+      "booktitle": "Proceedings of the Workshop on the Twelfth International Competition on Legal Information Extraction and Entailment (COLIEE 2025)",
+      "pages": "14--22",
+      "year": "2025",
+      "publisher": "ACM",
+      "address": "Chicago, USA",
+      "url": "https://coliee.org/documents/Proceedings/2025-Proceedings.pdf",
+      "urldate": "2026-09-26",
+      "file": "docs/references/kadowaki2025modernbert.pdf"
+    },
+    "raw_bib": "@inproceedings{kadowaki2025modernbert,\n  title     = {A {ModernBERT}-Based System by Team {KIS} for the {COLIEE} 2025 Pilot Task: Toward Robust Evaluation in Legal Judgment Prediction},\n  author    = {Kazuma Kadowaki and Yoshinobu Kano},\n  booktitle = {Proceedings of the Workshop on the Twelfth International Competition on Legal Information Extraction and Entailment (COLIEE 2025)},\n  pages     = {14--22},\n  year      = {2025},\n  publisher = {ACM},\n  address   = {Chicago, USA},\n  url = {https://coliee.org/documents/Proceedings/2025-Proceedings.pdf},\n  urldate = {2026-09-26},\n  file = {docs/references/kadowaki2025modernbert.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 4,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ]
+  },
+  {
+    "entry_type": "proceedings",
+    "citekey": "coliee2026proceedings",
+    "fields": {
+      "title": "Proceedings of the Thirteenth International Competition on Legal Information Extraction and Entailment ({COLIEE} 2026)",
+      "editor": "Goebel, Randy and Kano, Yoshinobu and Kuribayashi, Tatsuki and Martinez-Gil, Jorge and Rabelo, Juliano and Satoh, Ken and Silveira, Lilian and Yoshioka, Masaharu",
+      "year": "2026",
+      "url": "https://coliee.org/documents/Proceedings/2026-Proceedings.pdf",
+      "urldate": "2026-09-26",
+      "file": "docs/references/coliee2026proceedings.pdf",
+      "address": "Rome, Italy"
+    },
+    "raw_bib": "@proceedings{coliee2026proceedings,\n  title        = {Proceedings of the Thirteenth International Competition on Legal Information Extraction and Entailment ({COLIEE} 2026)},\n  editor       = {Goebel, Randy and Kano, Yoshinobu and Kuribayashi, Tatsuki and Martinez-Gil, Jorge and Rabelo, Juliano and Satoh, Ken and Silveira, Lilian and Yoshioka, Masaharu},\n  year         = {2026},\n  url          = {https://coliee.org/documents/Proceedings/2026-Proceedings.pdf},\n  urldate      = {2026-09-26},\n  file         = {docs/references/coliee2026proceedings.pdf},\n  address      = {Rome, Italy}\n}",
+    "is_cited": true,
+    "cite_count": 5,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "inproceedings",
+    "citekey": "largey2026aiirlab",
+    "fields": {
+      "title": "{AIIR} Lab at {COLIEE} 2026: Fusion of Instruction-Tuned {LLMs} and Cross-Encoders for Legal Case Entailment",
+      "author": "Nicholas Largey and Ellis Fitzgerald and Behrooz Mansouri",
+      "booktitle": "Proceedings of the Workshop on the Thirteenth International Competition on Legal Information Extraction and Entailment (COLIEE 2026)",
+      "pages": "89--99",
+      "year": "2026",
+      "address": "Singapore",
+      "url": "https://www.researchgate.net/publication/404872839_AIIRLab_at_COLIEE_2026_Fusion_of_Instruction-Tuned_LLMs_and_Cross-Encoders_for_Legal_Case_Entailment",
+      "urldate": "2026-09-26",
+      "file": "docs/references/largey2026aiirlab.pdf"
+    },
+    "raw_bib": "@inproceedings{largey2026aiirlab,\n  title     = {{AIIR} Lab at {COLIEE} 2026: Fusion of Instruction-Tuned {LLMs} and Cross-Encoders for Legal Case Entailment},\n  author    = {Nicholas Largey and Ellis Fitzgerald and Behrooz Mansouri},\n  booktitle = {Proceedings of the Workshop on the Thirteenth International Competition on Legal Information Extraction and Entailment (COLIEE 2026)},\n  pages     = {89--99},\n  year      = {2026},\n  address   = {Singapore},\n  url = {https://www.researchgate.net/publication/404872839_AIIRLab_at_COLIEE_2026_Fusion_of_Instruction-Tuned_LLMs_and_Cross-Encoders_for_Legal_Case_Entailment},\n  urldate = {2026-09-26},\n  file = {docs/references/largey2026aiirlab.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 3,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "incollection",
+    "citekey": "lundberg2017unified",
+    "fields": {
+      "title": "A unified approach to interpreting model predictions",
+      "author": "Lundberg, Scott M and Lee, Su-In",
+      "booktitle": "Advances in Neural Information Processing Systems",
+      "volume": "30",
+      "year": "2017",
+      "url": "https://www.researchgate.net/publication/317062430_A_Unified_Approach_to_Interpreting_Model_Predictions",
+      "urldate": "2026-09-26",
+      "file": "docs/references/lundberg2017unified.pdf"
+    },
+    "raw_bib": "@incollection{lundberg2017unified,\n  title={A unified approach to interpreting model predictions},\n  author={Lundberg, Scott M and Lee, Su-In},\n  booktitle={Advances in Neural Information Processing Systems},\n  volume={30},\n  year={2017},\n  url = {https://www.researchgate.net/publication/317062430_A_Unified_Approach_to_Interpreting_Model_Predictions},\n  urldate = {2026-09-26},\n  file = {docs/references/lundberg2017unified.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 2,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "fried2015exanteexpost",
+    "fields": {
+      "author": "Fried, Barbara H.",
+      "title": "Ex Ante and Ex Post",
+      "journal": "Stanford Law Review",
+      "year": "2015",
+      "url": "https://law.stanford.edu/wp-content/uploads/2015/06/BarbaraHFriedExAnteExPost.pdf",
+      "urldate": "2026-09-26",
+      "file": "docs/references/fried2015exanteexpost.pdf"
+    },
+    "raw_bib": "@article{fried2015exanteexpost,\n  author  = {Fried, Barbara H.},\n  title   = {Ex Ante and Ex Post},\n  journal = {Stanford Law Review},\n  year    = {2015},\n  url = {https://law.stanford.edu/wp-content/uploads/2015/06/BarbaraHFriedExAnteExPost.pdf},\n  urldate = {2026-09-26},\n  file = {docs/references/fried2015exanteexpost.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 2,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "gesteletal2011exanteevaluation",
+    "fields": {
+      "author": "Van Gestel, Rob and Wiener, Jonathan B.",
+      "title": "Future-oriented research into the expected effects of potential new legislation",
+      "journal": "Tilburg University Working Paper",
+      "year": "2011",
+      "url": "https://repository.tilburguniversity.edu/bitstreams/b2205b2e-6079-4af8-af64-a8ff5bd561b4/download",
+      "urldate": "2026-09-26",
+      "file": "docs/references/gesteletal2011exanteevaluation.pdf"
+    },
+    "raw_bib": "@article{gesteletal2011exanteevaluation,\n  author  = {Van Gestel, Rob and Wiener, Jonathan B.},\n  title   = {Future-oriented research into the expected effects of potential new legislation},\n  journal = {Tilburg University Working Paper},\n  year    = {2011},\n  url = {https://repository.tilburguniversity.edu/bitstreams/b2205b2e-6079-4af8-af64-a8ff5bd561b4/download},\n  urldate = {2026-09-26},\n  file = {docs/references/gesteletal2011exanteevaluation.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 2,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "misc",
+    "citekey": "hrep2023legis",
+    "fields": {
+      "title": "Legislative Information System ({LEGIS}) Open Data {API}",
+      "author": "{House of Representatives of the Philippines}",
+      "year": "2023",
+      "howpublished": "Official Website of the House of Representatives",
+      "note": "Accessed: 2026-04-05",
+      "url": "https://www.congress.gov.ph/legis/",
+      "urldate": "2026-09-26",
+      "file": "docs/references/hrep2023legis.pdf"
+    },
+    "raw_bib": "@misc{hrep2023legis,\n  title        = {Legislative Information System ({LEGIS}) Open Data {API}},\n  author       = {{House of Representatives of the Philippines}},\n  year         = {2023},\n  howpublished = {Official Website of the House of Representatives},\n  note         = {Accessed: 2026-04-05},\n  url = {https://www.congress.gov.ph/legis/},\n  urldate = {2026-09-26},\n  file = {docs/references/hrep2023legis.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "misc",
+    "citekey": "davaocity_sp_dept",
+    "fields": {
+      "title": "Sangguniang Panlungsod - Department of Public Administration",
+      "author": "{City Government of Davao}",
+      "year": "2026",
+      "note": "Accessed: 2026-04-06",
+      "url": "https://davaocity.gov.ph/departments/public-administration/sangguniang-panlungsod/",
+      "urldate": "2026-09-26",
+      "file": "docs/references/davaocity_sp_dept.pdf"
+    },
+    "raw_bib": "@misc{davaocity_sp_dept,\n  title        = {Sangguniang Panlungsod - Department of Public Administration},\n  author       = {{City Government of Davao}},\n  year         = {2026},\n  note         = {Accessed: 2026-04-06},\n  url = {https://davaocity.gov.ph/departments/public-administration/sangguniang-panlungsod/},\n  urldate = {2026-09-26},\n  file = {docs/references/davaocity_sp_dept.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "online",
+    "citekey": "nrcp2024review",
+    "fields": {
+      "title": "{PH} local governance gets reviewed after three decades",
+      "author": "{National Research Council of the Philippines}",
+      "year": "2024",
+      "url": "https://nrcp.dost.gov.ph/ph-local-governance-gets-reviewed-after-three-decades/",
+      "urldate": "2026-09-26",
+      "file": "docs/references/nrcp2024review.pdf"
+    },
+    "raw_bib": "@online{nrcp2024review,\n  title  = {{PH} local governance gets reviewed after three decades},\n  author = {{National Research Council of the Philippines}},\n  year   = {2024},\n  url = {https://nrcp.dost.gov.ph/ph-local-governance-gets-reviewed-after-three-decades/},\n  urldate = {2026-09-26},\n  file = {docs/references/nrcp2024review.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "gabuya2025towardsdigitallegis",
+    "fields": {
+      "title": "Towards Digital Legislation: Readiness of the {Sangguniang Bayan} of {LGU} Motiong for Paperless Sessions",
+      "author": "Renno Jose B. Gabuya",
+      "journal": "International Journal of Research and Innovation in Social Science",
+      "year": "2025",
+      "month": "October",
+      "volume": "9",
+      "number": "10",
+      "url": "https://rsisinternational.org/journals/ijriss/articles/towards-digital-legislation-readiness-of-the-sangguniang-bayan-of-lgu-motiong-for-paperless-sessions/",
+      "urldate": "2026-09-26",
+      "file": "docs/references/gabuya2025towardsdigitallegis.pdf"
+    },
+    "raw_bib": "@article{gabuya2025towardsdigitallegis,\n  title        = {Towards Digital Legislation: Readiness of the {Sangguniang Bayan} of {LGU} Motiong for Paperless Sessions},\n  author       = {Renno Jose B. Gabuya},\n  journal      = {International Journal of Research and Innovation in Social Science},\n  year         = {2025},\n  month        = {October},\n  volume       = {9},\n  number       = {10},\n  url          = {https://rsisinternational.org/journals/ijriss/articles/towards-digital-legislation-readiness-of-the-sangguniang-bayan-of-lgu-motiong-for-paperless-sessions/},\n  urldate      = {2026-09-26},\n  file         = {docs/references/gabuya2025towardsdigitallegis.pdf},\n  file = {docs/references/gabuya2025towardsdigitallegis.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 4,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "inproceedings",
+    "citekey": "lopresti2008optical",
+    "fields": {
+      "title": "Optical character recognition errors and their effects on natural language processing",
+      "author": "Lopresti, Daniel",
+      "booktitle": "Proceedings of the Second Workshop on Analytics for Noisy Unstructured Text Data",
+      "pages": "9--16",
+      "year": "2008",
+      "publisher": "ACM",
+      "url": "https://www.researchgate.net/publication/220163443_Optical_character_recognition_errors_and_their_effects_on_natural_language_processing",
+      "urldate": "2026-09-26",
+      "file": "docs/references/lopresti2008optical.pdf"
+    },
+    "raw_bib": "@inproceedings{lopresti2008optical,\n  title     = {Optical character recognition errors and their effects on natural language processing},\n  author    = {Lopresti, Daniel},\n  booktitle = {Proceedings of the Second Workshop on Analytics for Noisy Unstructured Text Data},\n  pages     = {9--16},\n  year      = {2008},\n  publisher = {ACM},\n  url = {https://www.researchgate.net/publication/220163443_Optical_character_recognition_errors_and_their_effects_on_natural_language_processing},\n  urldate = {2026-09-26},\n  file = {docs/references/lopresti2008optical.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 3,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "artstein2008inter",
+    "fields": {
+      "author": "Artstein, Ron and Poesio, Massimo",
+      "year": "2008",
+      "month": "01",
+      "pages": "555-596",
+      "title": "Inter-Coder Agreement for Computational Linguistics",
+      "volume": "34",
+      "journal": "Computational Linguistics",
+      "url": "https://www.researchgate.net/publication/200044186_Inter-Coder_Agreement_for_Computational_Linguistics",
+      "urldate": "2026-09-26",
+      "file": "docs/references/artstein2008inter.pdf"
+    },
+    "raw_bib": "@article{artstein2008inter,\nauthor = {Artstein, Ron and Poesio, Massimo},\nyear = {2008},\nmonth = {01},\npages = {555-596},\ntitle = {Inter-Coder Agreement for Computational Linguistics},\nvolume = {34},\njournal = {Computational Linguistics},\n  url = {https://www.researchgate.net/publication/200044186_Inter-Coder_Agreement_for_Computational_Linguistics},\n  urldate = {2026-09-26},\n  file = {docs/references/artstein2008inter.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ]
+  },
+  {
+    "entry_type": "misc",
+    "citekey": "cortez2025leadership",
+    "fields": {
+      "title": "Leadership and City Problems Await Newly-Elected {Davao} Councilors",
+      "author": "Cortez, Kath and {Davao Today}",
+      "year": "2025",
+      "month": "May",
+      "howpublished": "Rappler",
+      "url": "https://www.rappler.com/philippines/elections/leadership-city-problems-await-newly-elected-davao-councilors-2025/",
+      "urldate": "2026-09-26",
+      "file": "docs/references/cortez2025leadership.pdf",
+      "note": "Republished with permission from DavaoToday.com for the 2025 Philippine local elections"
+    },
+    "raw_bib": "@misc{cortez2025leadership,\n  title        = {Leadership and City Problems Await Newly-Elected {Davao} Councilors},\n  author       = {Cortez, Kath and {Davao Today}},\n  year         = {2025},\n  month        = {May},\n  howpublished = {Rappler},\n  url          = {https://www.rappler.com/philippines/elections/leadership-city-problems-await-newly-elected-davao-councilors-2025/},\n  urldate      = {2026-09-26},\n  file         = {docs/references/cortez2025leadership.pdf},\n  note         = {Republished with permission from DavaoToday.com for the 2025 Philippine local elections},\n  file = {docs/references/cortez2025leadership.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ]
+  },
+  {
+    "entry_type": "mastersthesis",
+    "citekey": "ablazo2019designing",
+    "fields": {
+      "title": "Designing a Web Application using the {Twitter} streaming {API} as a Tracking Tool for Weather Updates",
+      "author": "Adrian C. Ablazo",
+      "school": "Ateneo de Davao University",
+      "year": "2019",
+      "address": "Davao City, Philippines",
+      "type": "Graduate Independent Study",
+      "month": "February",
+      "file": "docs/references/ablazo2019designing.pdf"
+    },
+    "raw_bib": "@mastersthesis{ablazo2019designing,\n  title        = {Designing a Web Application using the {Twitter} streaming {API} as a Tracking Tool for Weather Updates},\n  author       = {Adrian C. Ablazo},\n  school       = {Ateneo de Davao University},\n  year         = {2019},\n  address      = {Davao City, Philippines},\n  type         = {Graduate Independent Study},\n  month        = {February},\n  file = {docs/references/ablazo2019designing.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 3,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "vellino1986artificial",
+    "fields": {
+      "author": "Vellino, Andre",
+      "year": "1986",
+      "month": "09",
+      "pages": "349–353",
+      "title": "Artificial intelligence: The very idea: J. Haugeland, (MIT Press, Cambridge, MA, 1985); 287 pp.",
+      "volume": "29",
+      "journal": "Artificial Intelligence",
+      "url": "https://www.researchgate.net/publication/256121747_Artificial_intelligence_The_very_idea_J_Haugeland_MIT_Press_Cambridge_MA_1985_287_pp",
+      "urldate": "2026-09-26",
+      "file": "docs/references/vellino1986artificial.pdf"
+    },
+    "raw_bib": "@article{vellino1986artificial,\nauthor = {Vellino, Andre},\nyear = {1986},\nmonth = {09},\npages = {349–353},\ntitle = {Artificial intelligence: The very idea: J. Haugeland, (MIT Press, Cambridge, MA, 1985); 287 pp.},\nvolume = {29},\njournal = {Artificial Intelligence},\n  url = {https://www.researchgate.net/publication/256121747_Artificial_intelligence_The_very_idea_J_Haugeland_MIT_Press_Cambridge_MA_1985_287_pp},\n  urldate = {2026-09-26},\n  file = {docs/references/vellino1986artificial.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "srivastava2014dropout",
+    "fields": {
+      "title": "Dropout: A Simple Way to Prevent Neural Networks from Overfitting",
+      "author": "Srivastava, Nitish and Hinton, Geoffrey and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan",
+      "journal": "Journal of Machine Learning Research",
+      "volume": "15",
+      "number": "56",
+      "pages": "1929--1958",
+      "year": "2014",
+      "url": "http://jmlr.org/papers/v15/srivastava14a.html",
+      "urldate": "2026-09-26",
+      "file": "docs/references/srivastava2014dropout.pdf"
+    },
+    "raw_bib": "@article{srivastava2014dropout,\n  title={Dropout: A Simple Way to Prevent Neural Networks from Overfitting},\n  author={Srivastava, Nitish and Hinton, Geoffrey and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan},\n  journal={Journal of Machine Learning Research},\n  volume={15},\n  number={56},\n  pages={1929--1958},\n  year={2014},\n  url = {http://jmlr.org/papers/v15/srivastava14a.html},\n  urldate = {2026-09-26},\n  file = {docs/references/srivastava2014dropout.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 3,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "pedregosa2011scikitlearn",
+    "fields": {
+      "title": "Scikit-learn: Machine Learning in {P}ython",
+      "author": "Pedregosa, Fabian and Varoquaux, Ga{\\\"e}l and Gramfort, Alexandre and Michel, Vincent and Thirion, Bertrand and Grisel, Olivier and Blondel, Mathieu and Prettenhofer, Peter and Weiss, Ron and Dubourg, Vincent and Vanderplas, Jake and Passos, Alexandre and Cournapeau, David and Brucher, Matthieu and Perrot, Matthieu and Duchesnay, {\\'E}douard",
+      "journal": "Journal of Machine Learning Research",
+      "volume": "12",
+      "pages": "2825--2830",
+      "year": "2011",
+      "url": "http://jmlr.org/papers/v12/pedregosa11a.html",
+      "urldate": "2026-09-26",
+      "file": "docs/references/pedregosa2011scikitlearn.pdf"
+    },
+    "raw_bib": "@article{pedregosa2011scikitlearn,\n  title={Scikit-learn: Machine Learning in {P}ython},\n  author={Pedregosa, Fabian and Varoquaux, Ga{\\\"e}l and Gramfort, Alexandre and Michel, Vincent and Thirion, Bertrand and Grisel, Olivier and Blondel, Mathieu and Prettenhofer, Peter and Weiss, Ron and Dubourg, Vincent and Vanderplas, Jake and Passos, Alexandre and Cournapeau, David and Brucher, Matthieu and Perrot, Matthieu and Duchesnay, {\\'E}douard},\n  journal={Journal of Machine Learning Research},\n  volume={12},\n  pages={2825--2830},\n  year={2011},\n  url = {http://jmlr.org/papers/v12/pedregosa11a.html},\n  urldate = {2026-09-26},\n  file = {docs/references/pedregosa2011scikitlearn.pdf}\n}",
+    "is_cited": false,
+    "cite_count": 0,
+    "cited_files": []
+  },
+  {
+    "entry_type": "article",
+    "citekey": "robertson2009probabilistic",
+    "fields": {
+      "author": "Stephen Robertson and Hugo Zaragoza",
+      "title": "The Probabilistic Relevance Framework: {BM25} and Beyond",
+      "journal": "Foundations and Trends in Information Retrieval",
+      "volume": "3",
+      "number": "4",
+      "pages": "333--389",
+      "year": "2009",
+      "publisher": "Now Publishers",
+      "url": "https://www.researchgate.net/publication/220613776_The_Probabilistic_Relevance_Framework_BM25_and_Beyond",
+      "urldate": "2026-09-26",
+      "file": "docs/references/robertson2009probabilistic.pdf"
+    },
+    "raw_bib": "@article{robertson2009probabilistic,\n  author    = {Stephen Robertson and Hugo Zaragoza},\n  title     = {The Probabilistic Relevance Framework: {BM25} and Beyond},\n  journal   = {Foundations and Trends in Information Retrieval},\n  volume    = {3},\n  number    = {4},\n  pages     = {333--389},\n  year      = {2009},\n  publisher = {Now Publishers},\n  url = {https://www.researchgate.net/publication/220613776_The_Probabilistic_Relevance_Framework_BM25_and_Beyond},\n  urldate = {2026-09-26},\n  file = {docs/references/robertson2009probabilistic.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 4,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ]
+  },
+  {
+    "entry_type": "article",
+    "citekey": "brooke1996sus",
+    "fields": {
+      "title": "{SUS}: A Quick and Dirty Usability Scale",
+      "author": "Brooke, John",
+      "journal": "Usability Evaluation in Industry",
+      "volume": "189",
+      "number": "194",
+      "pages": "4--7",
+      "year": "1996",
+      "publisher": "Taylor \\& Francis",
+      "url": "https://www.researchgate.net/publication/228593520_SUS_A_quick_and_dirty_usability_scale",
+      "urldate": "2026-09-26",
+      "file": "docs/references/brooke1996sus.pdf"
+    },
+    "raw_bib": "@article{brooke1996sus,\n  title        = {{SUS}: A Quick and Dirty Usability Scale},\n  author       = {Brooke, John},\n  journal      = {Usability Evaluation in Industry},\n  volume       = {189},\n  number       = {194},\n  pages        = {4--7},\n  year         = {1996},\n  publisher    = {Taylor \\& Francis},\n  url = {https://www.researchgate.net/publication/228593520_SUS_A_quick_and_dirty_usability_scale},\n  urldate = {2026-09-26},\n  file = {docs/references/brooke1996sus.pdf}\n}",
+    "is_cited": true,
+    "cite_count": 1,
+    "cited_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ]
+  }
+]
