@@ -376,6 +376,30 @@ def download_open_access(records):
     print(f"\n[DONE] Successfully downloaded {success_count} PDFs to {REFS_DIR}.")
 
 
+def inject_bib_file_link(citekey: str, rel_path: str):
+    """Update references.bib to include file = {<rel_path>} for the given citekey."""
+    if not BIB_FILE.exists():
+        return
+    with open(BIB_FILE, 'r', encoding='utf-8') as f:
+        text = f.read()
+
+    pattern = rf'(@\w+\s*\{{\s*{re.escape(citekey)}\s*,[\s\S]*?\n\}})'
+    match = re.search(pattern, text, re.IGNORECASE)
+    if match:
+        entry = match.group(1)
+        cleaned = re.sub(r',\s*file\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+)', '', entry, flags=re.IGNORECASE)
+        last_brace = cleaned.rfind('}')
+        if last_brace != -1:
+            base = cleaned[:last_brace].rstrip()
+            if base.endswith(','):
+                base = base[:-1]
+            updated_entry = f"{base},\n  file = {{{rel_path}}}\n}}"
+            new_text = text[:match.start()] + updated_entry + text[match.end():]
+            with open(BIB_FILE, 'w', encoding='utf-8') as f:
+                f.write(new_text)
+            print(f"[BIB] Linked file = {{{rel_path}}} for [{citekey}] in {BIB_FILE.name}")
+
+
 class RefAuditorHandler(http.server.SimpleHTTPRequestHandler):
     """Custom request handler serving repository files and providing API endpoints for reference verification."""
 
@@ -424,13 +448,17 @@ class RefAuditorHandler(http.server.SimpleHTTPRequestHandler):
             with open(target_file, "wb") as f:
                 f.write(pdf_bytes)
 
-            print(f"[SERVER] Saved PDF for {citekey} -> {target_file.name} ({len(pdf_bytes) // 1024} KB)")
+            print(f"[SERVER] Stored PDF in repo: {target_file.name} ({len(pdf_bytes) // 1024} KB)")
+
+            # Auto-link in references.bib
+            rel_path = f"docs/references/{citekey}.pdf"
+            inject_bib_file_link(citekey, rel_path)
 
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
-            self.wfile.write(json.dumps({"status": "saved", "citekey": citekey, "size": len(pdf_bytes)}).encode("utf-8"))
+            self.wfile.write(json.dumps({"status": "saved", "citekey": citekey, "size": len(pdf_bytes), "file_path": rel_path}).encode("utf-8"))
             return
 
         elif parsed.path == "/api/save_bib":
