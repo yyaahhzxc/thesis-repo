@@ -29,6 +29,7 @@ description: This rule mandates that the agent must always inspect, maintain, an
      > *- [ ] Create Google Forms for Ground Truth evaluation (5 panels, 70 pairs each)*
      > *- [ ] Draft official Sangguniang Panlungsod annotator engagement email*
      > *- [ ] Compile the Annotator Guidebook PDF*
+     > *- [ ] Construct Google Form for Post-Interaction System Usability & Usefulness Survey (TAM/SUS)*
      > *How can we assist you today?"*
 3. **When No Name is Specified:**
    - Default to checking `docs/THESIS_MASTER_TASKS.md` immediately, maintain full situational awareness, and execute requests while preserving continuous task synchronization.

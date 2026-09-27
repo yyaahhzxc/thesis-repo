@@ -14,7 +14,8 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{ragged2e} % For better text alignment in columns
-\usepackage{microtype} % Subtle font expansion and protrusion to prevent margin overflow
+\usepackage{lmodern}
+\usepackage[protrusion=true,expansion=false]{microtype} % Subtle margin protrusion to prevent margin overflow
 \emergencystretch=1.5em % Emergency stretch to prevent overfull hboxes
 \usepackage{url}
 \usepackage{listings}
@@ -51,21 +52,18 @@
 \lstset{style=thesislisting}
 \renewcommand{\lstlistlistingname}{List of Listings}
 
-% Keep hyperref near the end of package loading
-\usepackage[hidelinks]{hyperref}
-
-% This tells LaTeX to always print the URL if it exists
-\newcommand{\URL}[1]{\url{#1}}
-\renewcommand{\contentsname}{Table of Contents}
-\counterwithin{table}{chapter}
-\counterwithin{figure}{chapter}
-\counterwithin{lstlisting}{chapter}
-
 \usepackage{titlesec}
 
 % 1. Set the depth limits (Strictly capped to 3 levels: Chapter -> Section -> Subsection -> Subsubsection)
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+
+% Keep hyperref at the end of preamble
+\usepackage[hidelinks]{hyperref}
+
+% This tells LaTeX to always print the URL if it exists
+\newcommand{\URL}[1]{\url{#1}}
+\renewcommand{\contentsname}{Table of Contents}
 
 % Float placement parameters to prevent solitary floats on empty pages
 \renewcommand{\topfraction}{0.88}       % Max fraction of page for top floats (default 0.70)

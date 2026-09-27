@@ -4,11 +4,11 @@ The evolution of legal information processing has necessitated a transition from
 
 In the context of the Philippine unitary state, preserving the legal hierarchy requires a robust mechanism to ensure that local ordinances do not contravene national statutes. As research specifically targeting automated consistency checking in Philippine local archives remains scarce, the proposed theoretical framework establishes its foundation by adapting the empirical methodologies of the Competition on Legal Information Extraction and Entailment (COLIEE). 
 
-While COLIEE traditionally focuses on retrieving statutes to answer bar exam questions, this study repurposes its "Retrieve-Then-Entail" paradigm to operationalize jurisprudential doctrine within an automated system. This framework is structured around three primary pillars: (1) The Jurisprudential Constraint, (2) The Operational Framework, and (3) The Interpretive Mechanism. By integrating the multi-stage strategies demonstrated in the COLIEE paradigm, the system provides a specialized foundation for the novel task of automated semantic conflict detection between Republic Acts and local ordinances. \cite{nguyen2025nowjcoliee2025multistageframework}.
+While COLIEE traditionally focuses on retrieving statutes to answer bar exam questions, this study repurposes its "Retrieve-Then-Entail" framework to operationalize jurisprudential doctrine within an automated system. This framework is structured around three primary pillars: (1) The Jurisprudential Constraint, (2) The Operational Framework, and (3) The Interpretive Mechanism. By integrating the multi-stage strategies demonstrated in the COLIEE benchmarks, the system provides a specialized foundation for the novel task of automated semantic conflict detection between Republic Acts and local ordinances. \cite{nguyen2025nowjcoliee2025multistageframework}.
 
-This framework is structured around three primary pillars: (1) The Jurisprudential Constraint, (2) The Operational Framework, and (3) The Interpretive Mechanism. By integrating the multi-stage paradigms and large language model (LLM) reasoning strategies demonstrated in recent COLIEE competitions, the system provides a comprehensive foundation for automated semantic conflict detection.\cite{nguyen2025nowjcoliee2025multistageframework}.
+This framework is structured around three primary pillars: (1) The Jurisprudential Constraint, (2) The Operational Framework, and (3) The Interpretive Mechanism. By integrating the multi-stage pipelines and large language model (LLM) reasoning strategies demonstrated in recent COLIEE competitions, the system provides a comprehensive foundation for automated semantic conflict detection.\cite{nguyen2025nowjcoliee2025multistageframework}.
 
-\subsection{The COLIEE Paradigm as a Methodological Foundation}
+\subsection{The COLIEE Framework as a Methodological Foundation}
 The Competition on Legal Information Extraction (COLIEE) provides the empirical and methodological foundation for the proposed system. As an annual evaluation contest, COLIEE benchmarks the state-of-the-art in legal case retrieval, statute law entailment, and legal question answering. By adopting the COLIEE framework, the system moves beyond simple keyword matching and integrates advanced techniques, which include domain-adapted pre-training, transformer-based neural methods, and hybrid ensemble architectures.
 
     \subsubsection{Task Taxonomy and Legislative Relevance}
@@ -20,7 +20,7 @@ The Competition on Legal Information Extraction (COLIEE) provides the empirical 
         \item[Task 4: Statute Law Entailment:] This involves determining if a retrieved set of statutes semantically entails a specific legal conclusion, usually framed as a "Yes" or "No" answer to a query. In this framework, Task 4 is the computational realization of the "No Contravention" test from the Magtajas Doctrine, determining whether the local ordinance (Hypothesis) is logically consistent with the retrieved national law (Premise).
     \end{description}
     
-    The "Retrieve-Then-Entail" paradigm, where Task 3 serves as a preliminary stage for Task 4, is essential for managing the extremely long document contexts inherent in legislative data. This sequential approach ensures that the more computationally expensive entailment models are only applied to a refined set of relevant statutes, balancing efficiency and accuracy.
+    The "Retrieve-Then-Entail" architecture, where Task 3 serves as a preliminary stage for Task 4, is essential for managing the extremely long document contexts inherent in legislative data. This sequential approach ensures that the more computationally expensive entailment models are only applied to a refined set of relevant statutes, balancing efficiency and accuracy.
 
 \subsection{Pillar 1: The Jurisprudential Constraint (Magtajas-NLI Mapping)}
 
@@ -63,7 +63,7 @@ The requirement that an ordinance must not contravene a statute is the most crit
 
 
 \subsection{Pillar 2: The Operational Framework (Coarse-to-Fine Pipeline)}
-To handle the legislative data in this study, the framework adapts the multi-stage architecture proven successful in the COLIEE paradigm for processing large-scale statutory corpora. This decoupled pipeline is influenced by top-performing methodologies such as ViDRILL (2025) and NOWJ (2025), tailored to bridge the "Semantic Gap" between literal keywords and normative intent within the Philippine LGU context.
+To handle the legislative data in this study, the framework adapts the multi-stage architecture proven successful in the COLIEE benchmarks for processing large-scale statutory corpora. This decoupled pipeline is influenced by top-performing methodologies such as ViDRILL (2025) and NOWJ (2025), tailored to bridge the "Semantic Gap" between literal keywords and normative intent within the Philippine LGU context.
 
 \begin{enumerate}
     \item \textbf{Stage 1: Data Pre-processing and Context Compression:} Statutory documents typically exceed the input limits of standard pre-trained language models. Furthermore, these documents often contain noise such as procedural metadata and formatting errors.
@@ -82,7 +82,7 @@ To handle the legislative data in this study, the framework adapts the multi-sta
         \item[LLM2Vec Integration:] Following the NOWJ methodology, the system utilizes LLM2Vec, which enables bi-directional attention and unsupervised contrastive learning for text encoding. 
     \end{description}
     
-    \item \textbf{Stage 3: Fine Phase (Natural Language Inference and Reasoned Entailment):} In the final stage, the system performs the logical check for conflict. While the COLIEE paradigm traditionally utilizes NLI to verify if statutes support a legal conclusion, this framework repurposes that NLI logic to identify conflicting relations (contradictions).
+    \item \textbf{Stage 3: Fine Phase (Natural Language Inference and Reasoned Entailment):} In the final stage, the system performs the logical check for conflict. While COLIEE benchmarks traditionally utilize NLI to verify if statutes support a legal conclusion, this framework repurposes that NLI logic to identify conflicting relations (contradictions).
 
     \begin{description}
         \item[Dual-Encoder Inference:] Adopting the TSRCDF-SS (2024) framework for legal conflict detection, the system employs independent encoders (e.g., SBERT and SimCSE) to vectorize and concatenate requirement sentence pairs \cite{wang2025transferlearningapproachautomatic}. Unlike retrieval, which measures topical similarity, this adapted NLI detects the logical incompatibility (e.g., a "prohibition" in an ordinance contradicting a "permission" in a Republic Act) that exists beneath shared syntax. \cite{kimetal2024legalinformationretrieval}

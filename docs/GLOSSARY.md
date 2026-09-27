@@ -21,6 +21,8 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 6. [Statistical Hypothesis Testing (Comparing Models)](#6-statistical-hypothesis-testing-comparing-models)
 7. [System Architecture, Software Engineering & Reproducibility](#7-system-architecture-software-engineering--reproducibility)
 8. [Ground Truth Benchmark & Human Annotation Protocol](#8-ground-truth-benchmark--human-annotation-protocol)
+9. [System-Level Multi-Tier Evaluation & Landmark Jurisprudence](#9-system-level-multi-tier-evaluation--landmark-jurisprudence)
+10. [End-User System Usability, Technology Acceptance & Practical Utility Evaluation](#10-end-user-system-usability-technology-acceptance--practical-utility-evaluation)
 
 ---
 
@@ -481,6 +483,58 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 ### **Direct Normative Preemption vs. Longitudinal Statutory Construction**
 * **Plain Meaning:** The clear boundary line between (1) direct textual/normative contradictions that an NLP cross-encoder can detect (e.g., an ordinance mandating what a statute forbids, or imposing unauthorized procedural obstacles), and (2) complex statutory construction requiring historical rate reconstruction and multi-hop mathematical compounding.
 * **In This Thesis:** Delimited in Chapter 1 (§1.5). In *Mindanao Shopping Destination Corp. v. Duterte* (2017), the Supreme Court evaluated Davao City's 1.25% business tax against RA 7160 §143(d) (ceiling 1.50%). Finding an overreach required the Court to reconstruct an unprovided 1990 baseline (0.50%) and calculate 10% compounding step-ups across 15 years. Because an NLI model given only the ordinance and statute texts cannot observe unstated historical rates, evaluating such cases under standard NLI is methodologically flawed. The thesis explicitly bounds its NLI engine to direct textual preemption (*First Meridian*, *ARC Investors*, *Mosqueda*).
+
+
+---
+
+## **10. End-User System Usability, Technology Acceptance & Practical Utility Evaluation**
+
+### **Technology Acceptance Model (TAM; Davis, 1989)**
+* **Plain Meaning:** An information systems framework used to predict whether professionals will actually adopt and use a new software tool in their daily work, or reject it.
+* **The Core Belief:** Adoption is primarily driven by two core perceptions:
+  1. *Perceived Usefulness (PU):* Does the user believe the software will help them perform their job better, faster, or with fewer errors?
+  2. *Perceived Ease of Use (PEOU):* Does the user believe that operating the software is straightforward and free of unnecessary effort?
+* **In This Thesis:** Grounding our evaluation in TAM allows us to measure whether the 15 Sangguniang Panlungsod legal researchers view the conflict detection prototype as a genuinely helpful aid in their routine committee work, rather than relying solely on offline machine learning test scores.
+
+### **Perceived Usefulness (PU) in Legislative Review**
+* **Plain Meaning:** The degree to which an SP legal researcher feels the system enhances their capacity to draft and audit ordinances.
+* **In This Thesis:** Measured across four operational dimensions:
+  * *Search Burden Reduction:* Does the system noticeably cut down the hours spent manually searching through physical gazettes, online repositories, or search engines for governing national statutes?
+  * *Preemption Risk Detection:* Does the tool reliably surface non-obvious conflicts with national laws (such as unauthorized penal penalties or licensing restrictions under RA 7160 §458)?
+  * *Drafting Confidence:* Does running a proposed ordinance draft through the system give the researcher greater reassurance that the measure complies with superior laws before committee presentation?
+  * *Overall Job Performance:* Does the tool expedite turnaround during the First Reading review phase?
+
+### **Perceived Ease of Use (PEOU) & Interface Simplicity**
+* **Plain Meaning:** How easy and friction-free the web dashboard feels to a non-technical legal professional.
+* **In This Thesis:** Focuses on whether researchers can paste or upload an ordinance draft and interpret the resulting side-by-side diagnostic findings without requiring specialized machine learning instruction or complex setup steps.
+
+### **Task-Technology Fit (TTF; Goodhue & Thompson, 1995)**
+* **Plain Meaning:** The match between the specific tasks a professional must perform and the actual capabilities of the technology provided.
+* **In This Thesis:** Legal researchers at the Sangguniang Panlungsod are tasked with auditing draft ordinances during the First Reading referral window under RA 7160 §54. TTF examines whether our two-stage pipeline (coarse IR retrieval of governing provisions + fine cross-attention NLI classification) fits this exact municipal review workflow.
+
+### **System Usability Scale (SUS; Brooke, 1996)**
+* **Plain Meaning:** A widely accepted, 10-item industry standard questionnaire that gives a single, normalized score from 0 to 100 for overall software usability.
+* **How It Works:** Uses an alternating battery of 5 positive statements (odd numbers) and 5 negative statements (even numbers) on a 5-point Likert scale (1 = Strongly Disagree, 5 = Strongly Agree). The raw scores are converted using Brooke's scoring formula:
+  $$\text{SUS} = 2.5 \times \left( \sum (R_{\text{odd}} - 1) + \sum (5 - R_{\text{even}}) \right)$$
+* **Interpretation Benchmarks (Sauro & Lewis, 2016):**
+  * Below 50: Not Acceptable (Severe usability barriers)
+  * 50–67: Marginal / Below Average
+  * 68: Industry Average (Grade C)
+  * 70–80: Good (Grade B / Acceptable)
+  * 80+: Excellent (Grade A / Highly usable)
+* **In This Thesis:** We administer the standard 10-item SUS to the 15 SP legal researchers to obtain an objective, standardized benchmark of software usability that can be directly compared against established norms.
+
+### **Explainable AI (XAI) Utility & Diagnostic Transparency**
+* **Plain Meaning:** Making an AI model's inner reasoning clear enough that human experts can understand *why* an alert was generated and verify the finding for themselves.
+* **In This Thesis:** Evaluates whether our prototype's side-by-side display—showing the verbatim statutory excerpt, legal citation metadata, and highlighted conflicting terms (such as deontic markers like *shall not*, *mandatory*, *unlawful*)—gives researchers adequate context to evaluate the legal validity of the warning independently.
+
+### **Alert Fatigue & False Alarm Tolerance**
+* **Plain Meaning:** The mental exhaustion that occurs when an automated system produces too many irrelevant or false warnings, leading users to ignore or disable the tool altogether.
+* **In This Thesis:** In a legislative setting, draft ordinances contain extensive standard boilerplate clauses (title, enacting clause, repealing clause, effectivity clause). If the system raises false alarms on these harmless procedural sections, legal researchers will quickly distrust the tool. Evaluating false alarm tolerance ensures the screening threshold is tuned to minimize unnecessary warnings while preserving sensitivity to real preemption risks.
+
+### **Decision-Support Screening vs. Infallible Legal Arbiter**
+* **Plain Meaning:** The conceptual stance that an AI tool is an assistive screening aid meant to support human judgment, never an autonomous replacement for a qualified legal practitioner.
+* **In This Thesis:** In line with the advice received during our Thesis 1 defense caucus, the system is strictly framed as an applied decision-support screening aid. It flags potential vertical and horizontal concerns for human review, while the final legal interpretation and legislative discretion remain entirely with the Sangguniang Panlungsod legal researchers and city councilors.
 
 ---
 

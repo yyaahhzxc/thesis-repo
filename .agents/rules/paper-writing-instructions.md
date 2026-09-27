@@ -108,9 +108,28 @@ Write in the authentic voice of a methodical, observant computer science researc
 
 ### **Banned AI Buzzwords & Promotional Fluff**
 
-> * **Forbidden Abstract Metaphors:** *tapestry, delve, underscore, testament to, beacon, delicate dance, dynamic interplay, cornerstone, multifaceted paradigm, paramount, pivotal, overarching, nuanced, mastery of, vibrant, intricate web, holistic symphony*.
+> * **Forbidden Abstract Metaphors & AI Crutches:** *tapestry, delve, underscore, testament to, beacon, delicate dance, dynamic interplay, cornerstone, multifaceted paradigm, paramount, pivotal, overarching, nuanced, mastery of, vibrant, intricate web, holistic symphony*.
+> * **Banned Overused AI Jargon ("Protocol" & "Bottleneck" Overuse):**
+>   * **Ban Overuse of "Protocol":** AI models habitually attach "protocol" to routine technical steps (e.g., *"chunking protocol,"* *"screening protocol,"* *"adjudication protocol"*). Prefer natural, human phrasing: *procedure, workflow, process, method, steps, approach,* or *safeguards*. Reserve "protocol" strictly for established formal communications protocols or official medical/legal documents.
+>   * **Ban Overuse of "Bottleneck":** AI models reflexively brand every technical limit a "bottleneck" (e.g., *"manual review bottleneck,"* *"quadratic bottleneck,"* *"lexical bottleneck"*). Use precise engineering descriptions instead: *constraint, memory ceiling, technical hurdle, processing delay, manual review burden, hardware limitation,* or *shortage of domain experts*.
+>   * **Ban Overuse of "Crucial" / "Crucially" & "Leverage":** Avoid formulaic sentence starters like *"Crucially, ...".* State the finding or operational implication directly. Replace *"leverage"* with *use, apply, adopt,* or *incorporate*.
 > * **Forbidden Promotional Hyperbole:** Avoid unearned superlatives (*revolutionary, groundbreaking, remarkable, astounding, paradigm shift*) unless directly quoting historical literature. State specific mechanisms, benchmark metrics, or theoretical limits instead.
 > * **Forbidden Mechanical Transitions:** Ban repetitive chapter/paragraph openers like *"Furthermore," "Moreover," "In addition," "It is worth noting that," "Interestingly,"* and *"Importantly."* Vary transitional sentence structures naturally.
+
+### **The Caucus Principle: Undergraduate Scholarly Humility & Empirical Realism**
+
+* **Remember We Are Undergraduate CS Students (Not Lawyers, Not Masters/PhD Scholars):**
+  * In the Thesis 1 defense caucus, the panel explicitly reminded the proponents that they are undergraduate computer science students and do not know everything. 
+  * Never adopt an arrogant, all-knowing tone. The study does not claim to resolve statutory construction, determine constitutional validity, replace human legislative counsel, or solve all legal conflicts in the Philippines.
+  * Ground the paper strictly as an **applied, assistive decision-support screening tool** designed to flag candidate textual tensions for human legal researchers during First Reading at the Sangguniang Panlungsod.
+* **Balanced Empirical Softening (Not Over-Claiming, Not Journalistic Hedging):**
+  * Avoid "claim-y," absolute declarations that invite panel skepticism:
+    * *Instead of:* "guarantees zero provision attrition" $\rightarrow$ *Use:* "ensures zero provision attrition across the 350 evaluated benchmark queries" or "prevents provision attrition on the evaluated benchmark"
+    * *Instead of:* "this proves whether" $\rightarrow$ *Use:* "this evaluates whether" or "this tests whether"
+    * *Instead of:* "task adaptation is indispensable" $\rightarrow$ *Use:* "task-specific adaptation provides substantial performance benefits"
+    * *Instead of:* "all models decisively surpass" $\rightarrow$ *Use:* "all fine-tuned models substantially outperform"
+    * *Instead of:* "universal cross-architectural phenomenon" $\rightarrow$ *Use:* "consistent cross-architectural trend observed across candidate models"
+  * **Simultaneously Avoid Journalistic Hedging:** Do not swing into journalistic uncertainty words like *"allegedly," "supposedly,"* or *"purportedly."* Keep assertions grounded in verified empirical numbers, established legal doctrines (*Magtajas*, RA 7160), and peer-reviewed literature citations.
 
 ### **Authorial Identity & Perspective**
 * Refer to the authors as **"the proponents"** or **"the researchers"**, or structure sentences in an objective passive/analytical voice (e.g., *"The system evaluates..."*, *"This study investigates..."*).
