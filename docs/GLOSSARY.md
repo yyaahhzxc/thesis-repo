@@ -538,5 +538,25 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 
 ---
 
+## **11. Computing Environments & Hardware Infrastructure**
+
+### **Primary Desktop Host (Edge Simulation Node)**
+* **Plain Meaning:** The local desktop workstation (Yah's PC) dedicated to empirical ingestion, sparse-dense IR indexing, and simulating deployment under standard Philippine LGU IT constraints.
+* **Hardware Profile:** Intel Core i3-10105F (4 cores, 8 threads @ 3.70 GHz), AMD Radeon RX 6600 (8 GB GDDR6 VRAM), 8 GB DDR4 RAM, Windows 10 Pro.
+* **Operational Role in Study:** Used to execute the preprocessing and text normalization pipeline across the 27,096 statutory records, calculate Stage 1 BM25 inverted indices, and simulate realistic edge inference latency to ensure the prototype runs comfortably on modest local municipal hardware.
+
+### **Mobile GPU Host (Neural Training Node)**
+* **Plain Meaning:** The dedicated high-performance laptop workstation (Ralph's Lenovo Legion 5) utilized for local deep learning fine-tuning, cross-encoder training loops, and offline GPU verification.
+* **Hardware Profile:** AMD Ryzen 7 7435HS (8 cores, 16 threads @ 3.10 GHz), NVIDIA GeForce RTX 5050 Laptop GPU (8 GB GDDR6 VRAM, CUDA capability 12.x), 16 GB DDR5 RAM, Windows 11 Home.
+* **Operational Role in Study:** Provides dedicated tensor cores and CUDA acceleration for Stage 2 cross-encoder fine-tuning across the 13 candidate architectures, hyperparameter grid search runs, loss dynamics tracking, and local out-of-sample inference.
+
+### **Cloud Computing Environment (Google Colab Pro)**
+* **Plain Meaning:** A cloud-hosted high-VRAM computing instance utilized as an auxiliary compute layer for distributed training runs and large-batch screening experiments.
+* **Hardware Profile:** NVIDIA L4 / NVIDIA A100 Tensor Core GPUs (24 GB to 40 GB VRAM), High-RAM instance configurations.
+* **Operational Role in Study:** Serves as a scalable benchmark harness for parallelized candidate model screening, long-sequence batch inference (8,192 tokens), and generating training loss telemetry.
+
+---
+
 *This glossary is maintained as a living reference. Whenever new models, metrics, or legal doctrines are introduced to the thesis manuscript, they are immediately added here.*
+
 

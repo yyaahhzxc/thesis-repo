@@ -6,7 +6,7 @@
 **Course Professor:** Ma'am Grace Tacadao  
 **Institution:** Department of Computer Science, School of Arts and Sciences, Ateneo de Davao University  
 **Repository:** [`https://github.com/yyaahhzxc/thesis-repo`](https://github.com/yyaahhzxc/thesis-repo)  
-**Last Updated:** 2026-09-27  
+**Last Updated:** 2026-09-28  
 
 ---
 
@@ -30,7 +30,7 @@
 > *Note for Assistant Execution:* When Yah is present, execute technical tasks directly and update this tracker. When Ralph is present, greet Ralph with a briefing of recent progress and highlight Ralph's assigned action items.
 
 ### **Standing Operational Context & Dependencies**
-* **Dual Statutory Corpus Architecture (~27,000+ Records):** The national corpus of 25,432 statutes is only *one part of the story*. The full statutory corpus combines both national statutes (25,432 enactments) and Davao City local ordinances (~1,500 enactments), bringing the entire statutory search space to **over 27,000+ legal records**.
+* **Dual Statutory Corpus Architecture (~27,000+ Records):** The national corpus of 25,432 statutes is only *one part of the story*. The full statutory corpus combines both national statutes (25,432 enactments) and Davao City local ordinances (1,664 enactments), bringing the entire statutory search space to **over 27,000+ legal records (27,096 enactments, 176,421 provisions)**.
 * **Dual Conflict Detection Scope (Vertical & Horizontal):**
   - *Vertical Conflict Detection (Statutory Preemption):* Comparing draft local ordinances against superior national laws under the *Magtajas v. Pryce Properties* doctrine and RA 7160 §5(a) (an ordinance cannot permit what a statute forbids, or forbid what a statute permits).
   - *Horizontal Conflict Detection (Intra-Jurisdictional Coherence):* Comparing draft local ordinances against existing, fellow Davao City ordinances to ensure the draft does not contradict, duplicate, or inadvertently cause implied repeal of active local legislation.
@@ -44,16 +44,14 @@
 
 ## **2. Canonical System Environment Reference Card**
 
-*Local workstation environment simulating Philippine Local Government Unit (LGU) IT capacity. Cited across all methodology sections and reproducibility guides.*
+*Three-tier computing architecture spanning local LGU simulation, dedicated local GPU training, and high-VRAM cloud benchmarking.*
 
 ### **A. Hardware Specifications**
-| Component | Specification | Operational Role in Study |
-| :--- | :--- | :--- |
-| **Workstation Model** | Local Single-Workstation Desktop Testbed | Simulates standard LGU IT infrastructure |
-| **CPU** | Intel(R) Core(TM) i3-10105F @ 3.70 GHz (4 Cores, 8 Threads) | Stage 1 Sparse/Dense Retrieval & Corpus Tokenization |
-| **GPU** | AMD Radeon RX 6600 (8 GB GDDR6 VRAM, PCIe 4.0) | Stage 2 Cross-Encoder Fine-Tuning & Inference |
-| **System RAM** | 8.00 GB DDR4 | In-memory DataFrame indexing and batch collation |
-| **Storage** | High-Speed NVMe Solid-State Drive | Fast I/O for 25,432 national statutory documents |
+| Environment Tier | Node Designation & Device Model | Core Specifications | Operational Role in Study |
+| :--- | :--- | :--- | :--- |
+| **Edge Simulation Node** | **Primary Desktop Host** (Yah's PC) | Intel Core i3-10105F (4C/8T @ 3.70 GHz), AMD Radeon RX 6600 (8 GB GDDR6), 8 GB DDR4 RAM, 512 GB NVMe SSD | Stage 1 Sparse/Dense Retrieval, dual-corpus BM25 indexing, tokenization, and realistic LGU edge latency benchmarking. |
+| **Neural Training Node** | **Mobile GPU Host** (Ralph's Lenovo Legion 5) | AMD Ryzen 7 7435HS (8C/16T @ 3.10 GHz), NVIDIA GeForce RTX 5050 Laptop GPU (8 GB GDDR6, CUDA 12.x), 16 GB DDR5 RAM, 512 GB NVMe SSD | Local Stage 2 Cross-Encoder fine-tuning, loss dynamics tracking, hyperparameter grid search, and offline model checkpointing. |
+| **Cloud Computing Tier** | **Cloud Computing Environment** (Google Colab Pro) | NVIDIA L4 / A100 Tensor Core GPU (24–40 GB VRAM), 53 GB System RAM, High-Throughput Cloud NVMe | Scalable screening suite across 28 candidate models, long-sequence batch inference (8,192 tokens), and distributed training runs. |
 
 ### **B. Software Specifications**
 | Layer | Environment / Package | Version | Purpose |
@@ -356,6 +354,8 @@
 | **2026-09-26** | Yah & Antigravity | Unified Dual-Corpus Stage 1 BM25 Benchmark & Ch. 4 Text Alignment | (1) Updated Chapter 4 opening framing in `results_and_discussion.tex` (Lines 6 & 12) to explicitly frame the full unified dual statutory search space ($N = 27,096$ enactments, 176,421 searchable provisions across national statutes and Davao City local ordinances) alongside the national baseline; (2) Patched candidate dictionary schema in `src/dual_retrieval.py` (`enactment_id`) and robust Tier 3 case query extraction in `scripts/evaluate_unified_retrieval.py`; (3) Executed full Stage 1 BM25 retrieval evaluation across all 176,421 master provisions: achieved Overall Recall@5 of 46.57%, Recall@10 of 52.57%, Recall@20 of 57.43%, Recall@50 of 65.14% (up from 43.14% baseline unconstrained national search), and MRR of 0.3462 across all 350 Ground Truth queries; evaluated all 8 authentic Davao City jurisprudential cases (Mosqueda, Evasco, ARC Investors, First Meridian, GSIS, Mining Ban, Anti-Smoking, Speed Limit); exported complete machine-readable benchmark records to `output/dual_retrieval_benchmark_results.json`; (4) Synchronized master task tracker and glossary; local background embedding computation (`task-1101`) past 53% completion. | `results_and_discussion.tex`, `src/dual_retrieval.py`, `scripts/evaluate_unified_retrieval.py`, `output/dual_retrieval_benchmark_results.json`, `output/gt350_retrieval_cache.json`, `docs/THESIS_MASTER_TASKS.md` |
 | **2026-09-27** | Yah & Antigravity | Thesis 1 Caucus Humility Principles, Tone Softening & AI Buzzword Cleansing Sweep | (1) Codified Thesis 1 defense caucus feedback ("undergraduate humility, empirical realism, framing system strictly as an applied decision-support screening tool, avoiding legal overreach") and anti-AI buzzword discipline permanently into `.agents/rules/paper-writing-instructions.md`; (2) Softened overly assertive claims across Chapter 3 (`methodology.tex`) and Chapter 4 (`results_and_discussion.tex`), replacing dogmatic terminology ("guarantees", "proves", "indispensable", "decisively surpass") with grounded empirical language without journalistic hedging; (3) Systematically cleansed AI crutch words (`bottleneck`, `protocol`, `crucially`, `leverage`, `paradigm`) across Chapters 2, 3, 4, and `theoretical-framework.tex`, replacing them with context-appropriate academic phrasing; (4) Resolved MiKTeX font expansion crash and fixed figure/table cross-reference numbering in `main.tex` by loading `hyperref` last and adding `lmodern` and non-expanding `microtype`; (5) Restored missing `strubell2019energy` BibTeX citation in `references.bib`; (6) Verified clean compilation via `scripts/build_paper.py` (0 errors, 9.7 MB PDF). | `paper-writing-instructions.md`, `main.tex`, `references.bib`, `literature_review.tex`, `methodology.tex`, `results_and_discussion.tex`, `theoretical-framework.tex`, `main.pdf`, `THESIS_MASTER_TASKS.md` |
 | **2026-09-27** | Yah & Antigravity | End-User Usability & Perceived Usefulness Survey Architecture (TAM / SUS) | Codified comprehensive End-User Usability, Practical Utility & Technology Acceptance Survey Suite into Milestone 4 and Master Task Checklist following Thesis 1 defense caucus feedback; structured across 5 rigorous phases: (1) Theoretical grounding (TAM, Task-Technology Fit, 10-item SUS, Human-Centered XAI trust); (2) 5-dimension Likert and qualitative item formulation (Perceived Usefulness in legislative review, Interface simplicity/responsiveness, XAI token highlighting and alert tier clarity, institutional workflow fit & alert fatigue tolerance, and open-ended feedback); (3) Instrument pre-testing and adviser validation with Sir Ogs; (4) Google Forms deployment to 15 SP legal researchers; (5) Descriptive statistics and Chapter 4/5 integration; updated Ralph's greeting and action items in task-tracking rules. | `docs/THESIS_MASTER_TASKS.md`, `.agents/rules/task-tracking-instructions.md` |
+| **2026-09-28** | Yah & Antigravity | Chapter 3 Restructuring, Curse of Knowledge Sweep, Hardware Rebranding & Overfull Margin Fix | (1) Reorganized Chapter 3 (`methodology.tex`) to adhere strictly to the "Curse of Knowledge" rule: elevated Statistical Power Analysis ($w=0.30, \alpha=0.05, N=350, \text{power}>98.5\%$) and Dataset Partitioning (70/15/15: 245 train, 52 val, 53 test) to the beginning of §3.4 Ground Truth Benchmark Construction *before* introducing difficulty tiers, class balancing, and annotator allocation, eliminating premature 350-pair references; (2) Standardized heading hierarchy to strict 3-level depth (`\chapter` $\rightarrow$ `\section` $\rightarrow$ `\subsection`); (3) Formally renamed computing environments across text, tables, and glossaries: Primary Desktop Host / Desktop Host A (Yah's PC: Core i3-10105F, Radeon RX 6600, 8 GB RAM for LGU edge simulation) and Mobile GPU Host / Mobile Host B (Ralph's Lenovo Legion 5: Ryzen 7 7435HS, RTX 5050 Laptop GPU, 16 GB RAM for DL training); (4) Cleansed outdated references (purged "Tier 3 mobile workstation", fixed local ordinance counts to exact 1,664 enactments); (5) Resolved all overfull `\hbox` margins in Chapter 3 (Candidate Model Pool list, ModernBERT-large, Stage 1 bi-encoders, Phase headings, and Tables 3.4 & 3.6), achieving a clean build with 0 overfull hboxes in Chapter 3; (6) Synchronized `GLOSSARY.md` (Section 11) and `THESIS_MASTER_TASKS.md`. | `methodology.tex`, `main.pdf`, `GLOSSARY.md`, `THESIS_MASTER_TASKS.md` |
+
 
 
 
