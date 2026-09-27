@@ -10,7 +10,7 @@ This section maps how data flows through the proposed system. The architecture f
     \begin{figure}[htbp]
         \centering
         \includegraphics[width=0.88\linewidth]{figs/conceptual_framework_flowchart.png}
-        \caption{Detailed Information Flow of the Coarse-to-Fine Semantic Conflict Detection Architecture.}
+        \caption[Information Flow of the Conflict Detection Architecture]{Detailed Information Flow of the Coarse-to-Fine Semantic Conflict Detection Architecture.}
         \label{fig:conceptualframework}
     \end{figure}
 
@@ -71,7 +71,7 @@ This section maps how data flows through the proposed system. The architecture f
         \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.92\linewidth]{figs/lawphil_republic_act_sample.png}
-            \caption{Sample Statutory Enactment Webpage from the Lawphil Project Repository (Republic Act No.~11035, \textit{Balik Scientist Act}). The repository features a streamlined, clean HTML document layout without intrusive styling or dynamic client-side rendering. Furthermore, its transparent and predictable URL hierarchy (\texttt{/statutes/repacts/ra2018/ra\_11035\_2018.html}) systematically organizes enactments by instrument type, legislative year, and statutory numbering, enabling automated, fault-tolerant corpus harvesting.}
+            \caption[Sample Statutory Enactment Webpage from the Lawphil Repository]{Sample Statutory Enactment Webpage from the Lawphil Project Repository (Republic Act No.~11035, \textit{Balik Scientist Act}). The repository features a streamlined, clean HTML document layout without intrusive styling or dynamic client-side rendering. Furthermore, its transparent and predictable URL hierarchy (\texttt{/statutes/repacts/ra2018/ra\_11035\_2018.html}) systematically organizes enactments by instrument type, legislative year, and statutory numbering, enabling automated, fault-tolerant corpus harvesting.}
             \label{fig:lawphil_web_interface}
         \end{figure}
 
@@ -129,7 +129,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.96\linewidth]{figs/davao_ordinance_scan_sample.png}
-            \caption{Sample Archival Document from the Davao City Sangguniang Panlungsod Corpus Illustrating Physical Scanning Artifacts and Optical Character Recognition (OCR) Noise. Panel (a) illustrates the official municipal session heading, seal, and city council metadata. Panel (b) shows the enacted substantive provisions exhibiting real OCR scanner noise, character substitutions (e.g., ``0667-2L'' for 2021, ``TITTE'' for Title), and document skew.}
+            \caption[Sample Archival Document from Davao City Corpus with OCR Noise]{Sample Archival Document from the Davao City Sangguniang Panlungsod Corpus Illustrating Physical Scanning Artifacts and Optical Character Recognition (OCR) Noise. Panel (a) illustrates the official municipal session heading, seal, and city council metadata. Panel (b) shows the enacted substantive provisions exhibiting real OCR scanner noise, character substitutions (e.g., ``0667-2L'' for 2021, ``TITTE'' for Title), and document skew.}
             \label{fig:davao_ordinance_scan}
         \end{figure}
 
@@ -168,7 +168,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.78\linewidth]{figs/statute_type_composition.png}
-            \caption{Composition of the Philippine National Statutory Corpus by Legislative Instrument ($N = 25,432$).}
+            \caption[Composition of the Philippine National Statutory Corpus]{Composition of the Philippine National Statutory Corpus by Legislative Instrument ($N = 25,432$).}
             \label{fig:statute_type_composition}
         \end{figure}
 
@@ -181,7 +181,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[htbp]
             \centering
             \includegraphics[width=0.96\linewidth]{figs/historical_temporal_evolution.png}
-            \caption{Historical Succession and Volume of Statutory Instruments across Six Chronological Eras (1900--2026, $N = 25,432$).}
+            \caption[Historical Succession and Volume of Statutory Instruments]{Historical Succession and Volume of Statutory Instruments across Six Chronological Eras (1900--2026, $N = 25,432$).}
             \label{fig:historical_temporal_evolution}
         \end{figure}
 
@@ -229,7 +229,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[htbp]
             \centering
             \includegraphics[width=0.88\linewidth]{figs/macro_domain_distribution.png}
-            \caption{Distribution of the 25,432 Philippine National Statutes across the Consolidated Macro Legal Domains.}
+            \caption[Distribution of National Statutes across Consolidated Macro Domains]{Distribution of the 25,432 Philippine National Statutes across the Consolidated Macro Legal Domains.}
             \label{fig:macro_domain_distribution}
         \end{figure}
 
@@ -240,7 +240,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[htbp]
             \centering
             \includegraphics[width=0.92\linewidth]{figs/semantic_topic_landscape_2d.png}
-            \caption{Two-Dimensional Latent Semantic Topic Space of the Philippine National Statutory Corpus (SVD Projection, $N = 3,500$ Representative Sample).}
+            \caption[Two-Dimensional Latent Semantic Topic Space of National Statutes]{Two-Dimensional Latent Semantic Topic Space of the Philippine National Statutory Corpus (SVD Projection, $N = 3,500$ Representative Sample).}
             \label{fig:semantic_topic_landscape_2d}
         \end{figure}
 
@@ -251,7 +251,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.78\linewidth]{figs/top_keywords_per_domain.png}
-            \caption{Top Salient $c\text{-}TF\text{-}IDF$ Keyword Profiles across the Eight Consolidated Macro Legal Domains ($N = 25,432$).}
+            \caption[Top Salient $c\text{-}TF\text{-}IDF$ Keyword Profiles across Macro Domains]{Top Salient $c\text{-}TF\text{-}IDF$ Keyword Profiles across the Eight Consolidated Macro Legal Domains ($N = 25,432$).}
             \label{fig:top_keywords_per_domain}
         \end{figure}
 
@@ -260,7 +260,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.80\linewidth]{figs/statute_source_domain_cross_allocation.png}
-            \caption{Cross-Allocation Matrix of the Six National Statutory Instruments across the Eight Consolidated Macro Legal Domains ($N = 25,432$).}
+            \caption[Cross-Allocation Matrix of National Statutory Instruments]{Cross-Allocation Matrix of the Six National Statutory Instruments across the Eight Consolidated Macro Legal Domains ($N = 25,432$).}
             \label{fig:statute_source_domain_cross_allocation}
         \end{figure}
 
@@ -307,7 +307,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.96\linewidth]{figs/local_ordinance_temporal_and_typology.png}
-            \caption{Temporal Distribution across Four Legislative Eras and Two-Dimensional Latent Semantic Topic Space of the Davao City Municipal Legislative Corpus ($N = 1,664$). Panel (a) illustrates digitized ordinance counts across historical eras, highlighting the digital archiving expansion between 2021 and 2025. Panel (b) depicts the two-dimensional latent semantic space generated through 64-component Truncated SVD, featuring $1.5\sigma$ covariance confidence ellipses and geometric cluster centroids ($\mathbf{C}_1\text{--}\mathbf{C}_6$) across the six discovered functional typologies.}
+            \caption[Temporal Distribution and Latent Semantic Space of Municipal Corpus]{Temporal Distribution across Four Legislative Eras and Two-Dimensional Latent Semantic Topic Space of the Davao City Municipal Legislative Corpus ($N = 1,664$). Panel (a) illustrates digitized ordinance counts across historical eras, highlighting the digital archiving expansion between 2021 and 2025. Panel (b) depicts the two-dimensional latent semantic space generated through 64-component Truncated SVD, featuring $1.5\sigma$ covariance confidence ellipses and geometric cluster centroids ($\mathbf{C}_1\text{--}\mathbf{C}_6$) across the six discovered functional typologies.}
             \label{fig:local_ordinance_temporal_and_typology}
         \end{figure}
 
@@ -410,7 +410,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.96\linewidth]{figs/dual_corpus_length_asymmetry.png}
-            \caption{Enactment Length Asymmetry and Provision-Level Subword Token Densities across the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$). Panel (a) compares enactment full-text character length distributions on a logarithmic scale, highlighting national omnibus codifications against concise municipal ordinances. Panel (b) depicts probability density curves for national statutory provisions (median: 122 tokens), municipal operative provisions (median: 98 tokens), and municipal boilerplate sections (median: 72 tokens) against the 512-token transformer context ceiling.}
+            \caption[Enactment Length Asymmetry and Provision-Level Subword Token Densities]{Enactment Length Asymmetry and Provision-Level Subword Token Densities across the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$). Panel (a) compares enactment full-text character length distributions on a logarithmic scale, highlighting national omnibus codifications against concise municipal ordinances. Panel (b) depicts probability density curves for national statutory provisions (median: 122 tokens), municipal operative provisions (median: 98 tokens), and municipal boilerplate sections (median: 72 tokens) against the 512-token transformer context ceiling.}
             \label{fig:dual_corpus_length_asymmetry}
         \end{figure}
 
@@ -419,7 +419,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.96\linewidth]{figs/dual_corpus_transformer_compliance.png}
-            \caption{Cumulative Provision Compliance Curves and Attention Window Evaluation across the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$). Panel (a) illustrates empirical cumulative distribution functions (CDF) across token lengths up to 1,024 tokens, denoting exact compliance at the 512-token threshold for national provisions (94.83\%), all municipal sections (92.72\%), and municipal operative provisions (90.06\%). Panel (b) provides a comparative grouped bar chart evaluating provision fit across five candidate transformer context windows (128, 256, 512, 1,024, and 8,192 tokens) with dedicated legends for National Statutes and Davao City Local Ordinances.}
+            \caption[Cumulative Provision Compliance Curves and Attention Window Evaluation]{Cumulative Provision Compliance Curves and Attention Window Evaluation across the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$). Panel (a) illustrates empirical cumulative distribution functions (CDF) across token lengths up to 1,024 tokens, denoting exact compliance at the 512-token threshold for national provisions (94.83\%), all municipal sections (92.72\%), and municipal operative provisions (90.06\%). Panel (b) provides a comparative grouped bar chart evaluating provision fit across five candidate transformer context windows (128, 256, 512, 1,024, and 8,192 tokens) with dedicated legends for National Statutes and Davao City Local Ordinances.}
             \label{fig:dual_corpus_transformer_compliance}
         \end{figure}
 

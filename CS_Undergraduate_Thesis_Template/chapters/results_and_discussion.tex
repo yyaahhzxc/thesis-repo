@@ -107,7 +107,7 @@ In empirical machine learning, an ablation study systematically isolates, remove
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.96\linewidth]{figs/stage1_retrieval_ablation_performance.png}
-    \caption{Stage~1 Candidate Retrieval Performance across Shortlist Thresholds and Jurisprudential Difficulty Tiers ($N = 350$). Panel A traces Recall@$k$ progression curves. Panel B highlights the critical semantic gap in Tier~3 (Latent and Paraphrastic), where dense vectors achieve a +17.3\% absolute gain over sparse BM25.}
+    \caption[Stage~1 Candidate Retrieval Performance across Difficulty Tiers]{Stage~1 Candidate Retrieval Performance across Shortlist Thresholds and Jurisprudential Difficulty Tiers ($N = 350$). Panel A traces Recall@$k$ progression curves. Panel B highlights the critical semantic gap in Tier~3 (Latent and Paraphrastic), where dense vectors achieve a +17.3\% absolute gain over sparse BM25.}
     \label{fig:stage1_retrieval_ablation}
 \end{figure}
 
@@ -274,7 +274,7 @@ While Figure~\ref{fig:stage2_loss_curves} visualizes the comparative holdout tra
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.96\linewidth]{figs/stage2_loss_dynamics_and_convergence.png}
-    \caption{Stage~2 Cross-Encoder Comparative Loss Dynamics and Convergence Trajectories across the Six Candidate Finalists ($\eta = 2\times 10^{-5}, B = 8$). Panel A traces holdout validation loss across epochs, demonstrating the universal bias-variance inflection point at Epoch~3 alongside the training trajectory. Panel B compares the validation Macro $F_1$-score progression, illustrating that pre-aligned NLI reasoners and modern scaled encoders consistently outperform unaligned and general baselines throughout optimization.}
+    \caption[Stage~2 Cross-Encoder Loss Dynamics and Convergence Trajectories]{Stage~2 Cross-Encoder Comparative Loss Dynamics and Convergence Trajectories across the Six Candidate Finalists ($\eta = 2\times 10^{-5}, B = 8$). Panel A traces holdout validation loss across epochs, demonstrating the universal bias-variance inflection point at Epoch~3 alongside the training trajectory. Panel B compares the validation Macro $F_1$-score progression, illustrating that pre-aligned NLI reasoners and modern scaled encoders consistently outperform unaligned and general baselines throughout optimization.}
     \label{fig:stage2_loss_curves}
 \end{figure}
 
@@ -283,7 +283,7 @@ While Figure~\ref{fig:stage2_loss_curves} visualizes the comparative holdout tra
     \footnotesize
     \setlength{\tabcolsep}{3.5pt}
     \renewcommand{\arraystretch}{0.90}
-    \caption{Epoch-by-Epoch Diagnostic Training Dynamics, Holdout Loss, and Generalization Progression for the Leading Validation Candidate (\texttt{DeBERTa-v3-large-NLI}, $\eta = 2\times 10^{-5}, B = 8$)}
+    \caption[Epoch-by-Epoch Diagnostic Training Dynamics for Leading Candidate]{Epoch-by-Epoch Diagnostic Training Dynamics, Holdout Loss, and Generalization Progression for the Leading Validation Candidate (\texttt{DeBERTa-v3-large-NLI}, $\eta = 2\times 10^{-5}, B = 8$)}
     \label{tab:epoch_loss_dynamics}
     \begin{tabularx}{\linewidth}{>{\centering\arraybackslash}p{1.1cm}>{\centering\arraybackslash}p{1.6cm}>{\centering\arraybackslash}p{1.8cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\RaggedRight\arraybackslash}X}
         \toprule
