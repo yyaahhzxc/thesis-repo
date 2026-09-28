@@ -145,7 +145,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \centering
             \footnotesize
             \setlength{\tabcolsep}{3.8pt}
-            \caption{Comparative Statutory Coverage and Composition of the Philippine National Legal Archive ($N = 25,432$)}
+            \caption[Comparative Statutory Coverage of the National Legal Archive]{Comparative Statutory Coverage and Composition of the Philippine National Legal Archive ($N = 25,432$)}
             \label{tab:statute_type_composition}
             \begin{tabularx}{\linewidth}{c>{\RaggedRight}p{2.85cm}rrrr>{\RaggedRight}X}
                 \toprule
@@ -206,7 +206,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \begin{table}[htbp]
             \centering
             \footnotesize
-            \caption{Consolidated Macro Legal Domains of the Philippine National Statutory Corpus ($N = 25,432$)}
+            \caption[Consolidated Macro Legal Domains of the National Statutory Corpus]{Consolidated Macro Legal Domains of the Philippine National Statutory Corpus ($N = 25,432$)}
             \label{tab:national_macro_domains}
             \begin{tabularx}{\linewidth}{r>{\RaggedRight}p{5.8cm}rr>{\RaggedRight}X}
                 \toprule
@@ -273,7 +273,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \footnotesize
             \renewcommand{\arraystretch}{0.95}
             \setlength{\tabcolsep}{3.5pt}
-            \caption{Empirical Holdout Validation Metrics, Baseline Comparisons, and Literature Targets for the Topic Modeler ($N_{\text{train}} = 20,345, N_{\text{test}} = 5,087$)}
+            \caption[Empirical Holdout Validation Metrics for the National Topic Modeler]{Empirical Holdout Validation Metrics, Baseline Comparisons, and Literature Targets for the Topic Modeler ($N_{\text{train}} = 20,345, N_{\text{test}} = 5,087$)}
             \label{tab:topic_holdout_validation}
             \begin{tabularx}{\linewidth}{>{\RaggedRight}p{4.5cm}cc>{\Centering}p{2.3cm}>{\RaggedRight}X}
                 \toprule
@@ -320,7 +320,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \footnotesize
             \renewcommand{\arraystretch}{0.92}
             \setlength{\tabcolsep}{3.2pt}
-            \caption{Composition, Functional Typology, and Salient $c\text{-}TF\text{-}IDF$ Keywords of the Davao City Municipal Legislative Corpus ($N = 1,664$)}
+            \caption[Functional Typology of the Davao City Municipal Legislative Corpus]{Composition, Functional Typology, and Salient $c\text{-}TF\text{-}IDF$ Keywords of the Davao City Municipal Legislative Corpus ($N = 1,664$)}
             \label{tab:local_typology_composition}
             \begin{tabularx}{\linewidth}{c>{\RaggedRight}p{3.8cm}rr>{\RaggedRight}p{2.2cm}>{\RaggedRight}X}
                 \toprule
@@ -347,7 +347,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \footnotesize
             \renewcommand{\arraystretch}{0.95}
             \setlength{\tabcolsep}{3.5pt}
-            \caption{Empirical Holdout Validation Metrics, Baseline Comparisons, and Explicit Statutory Title Probes for the Municipal Topic Modeler ($N_{\text{train}} = 1,331, N_{\text{test}} = 333$)}
+            \caption[Empirical Holdout Validation Metrics for the Municipal Topic Modeler]{Empirical Holdout Validation Metrics, Baseline Comparisons, and Explicit Statutory Title Probes for the Municipal Topic Modeler ($N_{\text{train}} = 1,331, N_{\text{test}} = 333$)}
             \label{tab:local_holdout_validation}
             \begin{tabularx}{\linewidth}{>{\RaggedRight}p{4.6cm}cc>{\Centering}p{2.3cm}>{\RaggedRight}X}
                 \toprule
@@ -384,7 +384,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \footnotesize
             \renewcommand{\arraystretch}{0.92}
             \setlength{\tabcolsep}{2.5pt}
-            \caption{Comparative Metrics and Structural Parameters of the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$)}
+            \caption[Comparative Structural Parameters of the Dual Statutory Search Space]{Comparative Metrics and Structural Parameters of the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$)}
             \label{tab:dual_corpus_comparison}
             \begin{tabularx}{\linewidth}{>{\RaggedRight}p{3.4cm}>{\Centering}p{1.7cm}>{\Centering}p{1.9cm}>{\Centering}p{1.8cm}>{\RaggedRight}X}
                 \toprule
@@ -611,7 +611,7 @@ stage2_input_sequence = (
         \centering
         \footnotesize
         \setlength{\tabcolsep}{4pt}
-        \caption{Stratified Jurisprudential Difficulty Tiers for the 350-Pair Ground Truth Evaluation Benchmark}
+        \caption[Stratified Jurisprudential Difficulty Tiers for Ground Truth Benchmark]{Stratified Jurisprudential Difficulty Tiers for the 350-Pair Ground Truth Evaluation Benchmark}
         \label{tab:conflict_difficulty_tiers}
         \begin{tabularx}{\linewidth}{>{\RaggedRight}p{3.4cm}>{\centering\arraybackslash}p{1.4cm}>{\RaggedRight}X>{\RaggedRight}p{4.5cm}}
             \toprule
@@ -646,7 +646,7 @@ stage2_input_sequence = (
         \centering
         \footnotesize
         \setlength{\tabcolsep}{4pt}
-        \caption{Sangguniang Panlungsod Ground Truth Legal Annotation Codebook and Decision Rules}
+        \caption[Legal Annotation Codebook and Ground Truth Decision Rules]{Sangguniang Panlungsod Ground Truth Legal Annotation Codebook and Decision Rules}
         \label{tab:annotation_codebook}
         \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{2.6cm}>{\RaggedRight\arraybackslash}p{3.9cm}>{\RaggedRight\arraybackslash}X>{\RaggedRight\arraybackslash}p{3.9cm}}
             \toprule
@@ -771,7 +771,7 @@ benchmark_pair = {
         \footnotesize
         \renewcommand{\arraystretch}{0.95}
         \setlength{\tabcolsep}{3.8pt}
-        \caption{Hardware Configurations, Software Environment, and Operational Roles across Computing Environments}
+        \caption[Hardware Configurations and Operational Roles across Computing Environments]{Hardware Configurations, Software Environment, and Operational Roles across Computing Environments}
         \label{tab:system_environment_specs}
         \begin{tabularx}{\linewidth}{>{\RaggedRight}p{3.2cm}>{\RaggedRight}p{4.2cm}>{\RaggedRight}p{3.2cm}>{\RaggedRight}X}
             \toprule
@@ -877,7 +877,7 @@ def retrieve_top_k_candidates(draft_section, statutory_corpus, k=50, k_rrf=60, b
         \footnotesize
         \renewcommand{\arraystretch}{0.95}
         \setlength{\tabcolsep}{4pt}
-        \caption{Architectural Retrieval Safeguards Against Real-World Preemption Failure Modes in Stage~1}
+        \caption[Architectural Retrieval Safeguards Against Preemption Failure Modes]{Architectural Retrieval Safeguards Against Real-World Preemption Failure Modes in Stage~1}
         \label{tab:retrieval_safeguards}
         \begin{tabularx}{\linewidth}{>{\RaggedRight}p{2.8cm}>{\RaggedRight}p{3.8cm}>{\RaggedRight}X}
             \toprule
@@ -965,7 +965,7 @@ def retrieve_top_k_candidates(draft_section, statutory_corpus, k=50, k_rrf=60, b
             \centering
             \footnotesize
             \setlength{\tabcolsep}{4.5pt}
-            \caption{Hyperparameter Tuning Configuration and Grid Search Space for Stage~2 Cross-Encoders}
+            \caption[Hyperparameter Tuning Configuration and Grid Search Space]{Hyperparameter Tuning Configuration and Grid Search Space for Stage~2 Cross-Encoders}
             \label{tab:hyperparameter_grid}
             \begin{tabularx}{\linewidth}{>{\RaggedRight}p{3.8cm}>{\RaggedRight}p{3.2cm}>{\RaggedRight}X}
                 \toprule
@@ -1080,7 +1080,7 @@ def detect_section_conflicts(draft_section, candidate_provisions, model, thresho
         \begin{table}[htbp]
             \centering
             \footnotesize
-            \caption{Contingency Matrix of Discordant Predictions for McNemar's Test}
+            \caption[Contingency Matrix of Discordant Predictions for McNemar's Test]{Contingency Matrix of Discordant Predictions for McNemar's Test}
             \label{tab:mcnemar_contingency}
             \begin{tabular}{lcc}
                 \toprule
@@ -1142,7 +1142,7 @@ def detect_section_conflicts(draft_section, candidate_provisions, model, thresho
             \footnotesize
             \setlength{\tabcolsep}{2.2pt}
             \renewcommand{\arraystretch}{0.92}
-            \caption{Landmark Davao City Municipal Jurisprudential Suite for Tier~3 System Evaluation ($N = 8$ Local Ordinances and Preemption Disputes)}
+            \caption[Landmark Davao City Municipal Jurisprudential Evaluation Suite]{Landmark Davao City Municipal Jurisprudential Suite for Tier~3 System Evaluation ($N = 8$ Local Ordinances and Preemption Disputes)}
             \label{tab:tier3_cases}
             \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{2.35cm}>{\centering\arraybackslash}p{1.75cm}>{\RaggedRight\arraybackslash}p{2.8cm}>{\RaggedRight\arraybackslash}X>{\centering\arraybackslash}p{2.2cm}}
                 \toprule
