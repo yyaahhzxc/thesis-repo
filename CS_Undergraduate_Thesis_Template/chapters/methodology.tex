@@ -9,7 +9,7 @@ This section maps how data flows through the proposed system. The architecture f
 
     \begin{figure}[htbp]
         \centering
-        \includegraphics[width=0.88\linewidth]{figs/conceptual_framework_flowchart.png}
+        \includegraphics[width=0.80\linewidth,height=0.75\textheight,keepaspectratio]{figs/conceptual_framework_flowchart.png}
         \caption[Information Flow of the Conflict Detection Architecture]{Detailed Information Flow of the Coarse-to-Fine Semantic Conflict Detection Architecture.}
         \label{fig:conceptualframework}
     \end{figure}
@@ -581,7 +581,7 @@ stage2_input_sequence = (
 
     \subsection{Dataset Partitioning and Split Integrity}
     \label{sec:dataset_partitioning}
-    To maintain experimental rigor, prevent data leakage, and ensure reproducible model evaluation, the 350 Ground Truth pairs are partitioned using a static 70/15/15 train, validation, and test split. This split provides 245 training pairs ($N_{\text{train}} = 245$), 52 validation pairs ($N_{\text{val}} = 52$), and 53 test pairs ($N_{\text{test}} = 53$). Operating within this sample size places the evaluation in a few-shot learning regime, which is well-suited for pretrained transformer language models~\cite{gao2021making}. In machine learning, few-shot task adaptation leverages the foundational linguistic and semantic representations already encoded within deep pretrained encoders, fine-tuning classification heads and attention parameters on domain-specific instances without requiring thousands of newly labeled examples~\cite{gao2021making}.
+    To maintain experimental rigor, prevent data leakage, and ensure reproducible model evaluation, the 350 Ground Truth pairs are partitioned using a static 70/15/15 train, validation, and test split. This split provides 245 training pairs ($N_{\text{train}} = 245$), 52 validation pairs ($N_{\text{val}} = 52$), and 53 test pairs ($N_{\text{test}} = 53$). Operating within this sample size places the evaluation in a few-shot learning regime, which is well-suited for pretrained transformer language models~\cite{gao2021making}. In machine learning, few-shot task adaptation utilizes the foundational linguistic and semantic representations already encoded within deep pretrained encoders, fine-tuning classification heads and attention parameters on domain-specific instances without requiring thousands of newly labeled examples~\cite{gao2021making}.
 
     The proponents specifically selected a 70/15/15 partition over a standard 80/10/10 split due to sample size constraints. In a 350-pair dataset, an 80/10/10 allocation yields only 35 validation and 35 test instances. A validation set of only 35 pairs is statistically fragile for fine-grained decision threshold calibration ($\tau^*$), where a single classification error alters observed accuracy by nearly 3\%. Furthermore, a test set of 35 items falls below the $N \ge 50$ sample size threshold established by Card et al.~\cite{card2020with} for reliable Minimum Detectable Effect (MDE) in natural language processing and risks violating the asymptotic cell expectations of McNemar's test ($b + c \ge 20$). In contrast, allocating 52 validation pairs and 53 test pairs satisfies both the MDE statistical power criteria and the non-parametric hypothesis testing assumptions while retaining 70\% (245 pairs) for robust few-shot Cross-Encoder fine-tuning~\cite{vabalas2019machine}.
 

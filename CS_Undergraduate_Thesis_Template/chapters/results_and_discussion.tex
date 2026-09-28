@@ -31,7 +31,7 @@ To evaluate retrieval robustness in an unconstrained production environment, the
         \bottomrule
     \end{tabularx}
     \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated on all 350 ground truth queries searching the entire 25,432 national statute corpus on a single local CPU (Intel Core i3-10105F). Latency values represent mean per-query retrieval runtime.
+    \raggedright \scriptsize \textit{Note:} Evaluated on all 350 ground truth queries searching the entire 25,432 national statute corpus on the Primary Desktop Host (Intel Core i3-10105F CPU @ 3.70\,GHz). Latency values represent mean per-query retrieval runtime.
 \end{table}
 
 The full-corpus results demonstrate the severe limitations of standalone sparse lexical retrieval in large, heterogeneous legal archives. Unconstrained BM25 achieves only 29.71\% Recall@10 and 43.14\% Recall@50, meaning that over half of the governing national statutes fail to reach the candidate shortlist. This degradation occurs because routine executive issuances, administrative reorganizations, and colonial-era acts (which together comprise over 48\% of the corpus) share generic administrative vocabulary with municipal drafts, crowding out operative statutes.
@@ -46,7 +46,7 @@ To identify the most accurate and computationally efficient dense semantic retri
 \begin{table}[htbp]
     \centering
     \scriptsize
-    \setlength{\tabcolsep}{1.8pt}
+    \setlength{\tabcolsep}{1.3pt}
     \caption[Performance Comparison of Candidate Dense Bi-Encoder Architectures]{Empirical Performance Comparison of Candidate Stage~1 Dense Bi-Encoder Architectures ($N = 350$)}
     \label{tab:stage1_dense_model_benchmark}
     \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{1.9cm}>{\RaggedRight\arraybackslash}Xrrrrrrrrr}
@@ -68,7 +68,7 @@ To identify the most accurate and computationally efficient dense semantic retri
         \bottomrule
     \end{tabularx}
     \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} *Selected model integrated into the production Stage~1 hybrid pipeline. Evaluated standalone using normalized cosine similarity on an Intel Core i3-10105F CPU testbed without sparse keyword assistance. Latencies represent mean per-query CPU runtime.
+    \raggedright \scriptsize \textit{Note:} *Selected model integrated into the production Stage~1 hybrid pipeline. Evaluated standalone using normalized cosine similarity on the Primary Desktop Host (Intel Core i3-10105F CPU @ 3.70\,GHz) without sparse keyword assistance. Latencies represent mean per-query CPU runtime.
 \end{table}
 
 The candidate dense benchmark demonstrates that all eight bi-encoders successfully capture the latent semantic meaning of statutory provisions, with every model achieving at least 96.6\% Recall@10 and 100.0\% Recall@50 across the curated benchmark. High-capacity models such as \texttt{bge-m3} (88.9\% Recall@5, MRR = 0.7621) and \texttt{ModernBERT-base} (88.6\% Recall@5, MRR = 0.7584) establish the highest standalone semantic sensitivity, excelling particularly on Tier~3 (Latent and Paraphrastic) where they reach 93.3\% Recall@5. Furthermore, both models feature an expansive native context window of 8,192 tokens, permitting the ingestion of long multi-section legislative chapters without truncation. 
