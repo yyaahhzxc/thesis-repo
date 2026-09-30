@@ -15,39 +15,37 @@ description: This rule mandates that the agent must always inspect, maintain, an
 ## **1. Author Identity & Collaborative Multi-User Handling**
 
 **Thesis Proponents:**
-* **Yahyah Odin ("Yah")**: Primary technical lead on machine learning modeling, retrieval benchmarking, paper drafting, and script automation.
-* **Ralph Paolo Dulce ("Ralph")**: Co-author leading human evaluation deployment (Google Forms, annotator coordination, Sangguniang Panlungsod administrative communication, annotator guidebook).
+* **Yahyah Odin ("Yah")**: Co-author leading machine learning modeling, retrieval benchmarking, manuscript drafting, and pipeline automation. Operates primarily on **Primary Desktop Host / Desktop Host A** (Core i3-10105F, Radeon RX 6600, 8 GB RAM, Windows) for LGU edge simulation.
+* **Ralph Paolo Dulce ("Ralph")**: Co-author leading local ordinance OCR experiments, human evaluation deployment (Google Forms, 15 SP legal researchers), administrative routing (HRMO / City Administrator), and collaborative manuscript drafting. Operates primarily on **Mobile GPU Host / Mobile Host B** (Lenovo Legion 5: Ryzen 7 7435HS, RTX 5050 Laptop GPU, 16 GB RAM, Windows) for deep learning training and experimental benchmarking.
 
 **Operational Greeting & Execution Behavior:**
+Both Ralph and Yah are first-class proponents with full, equal access to all Antigravity capabilities (code authoring, script execution, benchmark evaluation, LaTeX manuscript drafting, PDF compilation, task tracking, and administrative document preparation).
 1. **When User is Identified as Yah ("I'm Yah", "Yah here", etc.):**
-   - Immediately recognize Yah as the lead author.
-   - Ground directly into `docs/THESIS_MASTER_TASKS.md`, execute tasks with precision, and update the master task tracking checklist as work progresses.
+   - Immediately recognize Yah as co-author.
+   - Ground directly into `docs/THESIS_MASTER_TASKS.md`, provide a rapid progress briefing, execute tasks with precision, and update tracking checklists and journals as work progresses.
 2. **When User is Identified as Ralph ("I'm Ralph", "Ralph here", etc.):**
-   - Recognize Ralph and present a collaborative status briefing:
-     > *"Welcome Ralph! Here is the current progress briefing and task status based on the latest updates logged by Yah in `docs/THESIS_MASTER_TASKS.md`: [brief bullet summary of recent progress].*  
-     > *Here are your primary active action items:*
-     > *- [ ] Create Google Forms for Ground Truth evaluation (5 panels, 70 pairs each)*
-     > *- [ ] Draft official Sangguniang Panlungsod annotator engagement email*
-     > *- [ ] Compile the Annotator Guidebook PDF*
-     > *- [ ] Construct Google Form for Post-Interaction System Usability & Usefulness Survey (TAM/SUS)*
-     > *How can we assist you today?"*
+   - Immediately recognize Ralph as co-author.
+   - Ground directly into `docs/THESIS_MASTER_TASKS.md`, present a crisp progress briefing on recent manuscript/codebase updates, highlight Ralph's active action items as well as shared tasks, and execute any requested work (coding, OCR experiments, manuscript writing, survey design, or LaTeX compilation) with the exact same technical depth and rigor as for Yah.
 3. **When No Name is Specified:**
    - Default to checking `docs/THESIS_MASTER_TASKS.md` immediately, maintain full situational awareness, and execute requests while preserving continuous task synchronization.
+4. **Cross-Host Git Synchronization Protocol:**
+   - Because Yah and Ralph develop collaboratively on separate machines (Desktop Host A and Mobile GPU Host B), proactively remind either author to `git fetch` and `git pull` at the start of a session, and stage/commit/push updates before concluding, ensuring working directories remain synchronized without merge conflicts.
 
 ---
 
 ## **2. Standing Operational Context & External Dependencies**
 
 The agent must maintain awareness of the following operational realities without requiring repeated user updates:
-1. **Dual Statutory Corpus Architecture (~27,000+ Records):** The national corpus of 25,432 statutes is only *one part of the story*. The full statutory corpus combines both national statutes (25,432 enactments) and the Davao City local ordinances (~1,500 enactments), bringing the entire statutory search space to **over 27,000+ legal records**.
+1. **Dual Statutory Corpus Architecture (27,096 Records, 176,421 Provisions):** The complete dual statutory knowledge base combines 25,432 national statutes (Lawphil) and 1,664 Davao City local ordinances (SP portal & LISSP), totaling **27,096 enactments and 176,421 searchable provisions** compiled in `data/unified_dual_statutory_provisions.jsonl`.
 2. **Dual Conflict Detection Scope (Vertical & Horizontal):**
    - *Vertical Conflict Detection (Statutory Preemption):* Comparing draft local ordinances against superior national laws under the *Magtajas v. Pryce Properties* doctrine and RA 7160 §5(a) (an ordinance cannot permit what a statute forbids, or forbid what a statute permits).
    - *Horizontal Conflict Detection (Intra-Jurisdictional Coherence):* Comparing draft local ordinances against existing, fellow Davao City ordinances to ensure the draft does not contradict, duplicate, or inadvertently cause implied repeal of active local legislation.
-3. **Local Ordinances Digitization & Cleaning (Ralph in Progress):** Ralph is actively scanning and OCR-cleaning the ~1,500 Davao City local ordinances from the Sangguniang Panlungsod archives and will provide the cleaned `.jsonl` extraction dataset.
-4. **Local Ordinances EDA (Chapter 3 Integration):** Once Ralph completes the OCR extraction and cleaning pipeline, Exploratory Data Analysis (EDA)—including token length distributions, temporal enactment trends, and scan noise metrics—will be incorporated into Chapter 3 alongside the national corpus EDA.
-5. **Local Ordinances Experiments (Ralph Lead):** Ralph leads the empirical experiments on the digitized ordinances (e.g., comparative traditional scanner OCR vs. local LLM/VLM text extraction fidelity), while Yah leads machine learning modeling, retrieval pipelines, and manuscript drafting.
-6. **Adviser Consultation Pending (Sir Ogs):** The proponents are preparing to schedule a consultation with their thesis adviser, Mr. Adrian "Ogs" Ablazo, for methodology verification and review of recent revisions.
-7. **Sangguniang Panlungsod (City Council) Administrative Latency:** Official email correspondence with the Davao City Sangguniang Panlungsod (SP) typically requires a **one-week turnaround** (responses usually arrive the following Monday). Consequently, administrative communication (such as the official request for 15 legal researchers and the endorsement letter) must be drafted and dispatched as early as possible to prevent scheduling bottlenecks.
+3. **Local Ordinances Digitization & Cleaning (Completed):** Ralph and Yah completed physical/PDF scanning and OCR cleaning of exactly 1,664 Davao City local ordinances (from SP portal and LISSP 2021--2026), compiled to `corpus/city_ordinances/categorized_davao_ordinances.jsonl`.
+4. **Local Ordinances EDA (Completed in Chapter 3):** Exploratory Data Analysis—including temporal distribution across four legislative eras, 6-class functional typology, document length asymmetry, and 94.69% 512-token compliance—is fully written into Chapter 3 (§3.2.4 & §3.2.5) with Figures 3.5 & 3.6 and Tables 3.2 & 3.3.
+5. **Local Ordinances Empirical Experiments (Ralph Lead):** Ralph leads the empirical experiments comparing traditional scanner OCR vs. local LLM/VLM text extraction fidelity (Character Error Rate, Word Error Rate, structural table preservation).
+6. **HRMO & City Administrator Approval Routing (Active):** Sangguniang Panlungsod response received (Sept 28, 2026, signed by Acting Dept. Head II Ma. Theresa A. Reyes) appreciating the study and referring approval of the thesis and 15 legal researchers to the City Administrator's Office via the Human Resource Management Office (HRMO). The formal request packet (`docs/annotation/hrmo_city_admin_approval_request_letter.md`) is drafted and being routed.
+7. **Adviser Consultation Pending (Sir Ogs):** The proponents are preparing for a consultation with thesis adviser Mr. Adrian "Ogs" Ablazo for methodology verification and review of recent revisions.
+8. **Professor Directive on Formatting (Ma'am Grace Tacadao, Sept 30, 2026):** Eliminate unnecessary inline headings, description lists (`\item[...]`), and enumerated outlines across thesis chapters; format discussions as continuous, cohesive academic paragraphs with topics naturally integrated into topic sentences.
 
 ---
 

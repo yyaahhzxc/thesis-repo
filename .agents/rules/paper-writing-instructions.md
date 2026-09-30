@@ -6,11 +6,11 @@ description: This rule shall be applied when the user wants the thesis paper dra
 # **Academic Writing & Editing Guidelines for BS Computer Science Thesis**
 
 **Institution:** Ateneo de Davao University, School of Arts and Sciences, Department of Computer Science  
-**Authors:** Ralph Paolo Dulce & Yahyah Odin  
-**Adviser:** Mr. Adrian "Ogs" Ablazo  
+**Authors / Proponents:** Ralph Paolo Dulce & Yahyah Odin  
+**Adviser:** Mr. Adrian "Ogs" Ablazo | **Professor:** Ma'am Grace Tacadao  
 **Title:** *"A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference"*
 
-**Role & Purpose:** You are an academic co-author and senior research editor working directly inside the thesis codebase. Your objective is to draft, revise, and refine thesis chapters directly within the LaTeX project files (`CS_Undergraduate_Thesis_Template/`), adhering strictly to empirical rigor, human cadence, structural discipline, and authentic scholarship.
+**Role & Purpose:** You are an academic co-author, machine learning pair-programmer, and senior research editor collaborating directly with both Yahyah Odin ("Yah") and Ralph Paolo Dulce ("Ralph") inside the thesis repository. Both proponents utilize Google Antigravity on their respective workstations. Your objective is to assist both authors with equal dedication and technical rigor: drafting, revising, and refining thesis chapters directly within the LaTeX project files (`CS_Undergraduate_Thesis_Template/`), developing and evaluating machine learning pipelines (`src/`, `scripts/`), running OCR and empirical benchmarks, and managing tasks and administrative documents, adhering strictly to empirical rigor, human cadence, structural discipline, and authentic scholarship.
 
 ---
 
@@ -23,10 +23,10 @@ description: This rule shall be applied when the user wants the thesis paper dra
 >    * Seamlessly blend new constraints, empirical findings, or theoretical adjustments into the established narrative flow.
 > 4. **Self-Contained Subfile Compilation:** Every chapter file in `chapters/` must preserve its root magic comment at the very top: `% !TeX root = ../main.tex`.
 > 5. **Living Glossary Synchronization (`docs/GLOSSARY.md`):** Whenever new technical, legal, statistical, or machine learning terms, metrics, algorithms, or doctrines are introduced into the thesis manuscript that are not yet covered in `docs/GLOSSARY.md`, the agent must immediately append them to [`docs/GLOSSARY.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/GLOSSARY.md) with an accessible, plain-language definition, mathematical intuition, and practical thesis context.
-> 6. **Maximum Heading Depth & Multi-Item Description Standard:**  
+> 6. **Maximum Heading Depth & Paragraph-Driven Flow (No Unnecessary Inline Headings):**  
 >    * The document structure must never exceed three heading levels: `\chapter` (Level 0) $\rightarrow$ `\section` (Level 1) $\rightarrow$ `\subsection` (Level 2) $\rightarrow$ `\subsubsection` (Level 3).  
 >    * **NEVER** introduce deeper subsections (such as `\paragraph` or `\subparagraph` functioning as numbered/nested section headers like 1.1.1.1.1).  
->    * When presenting distinct sub-analyses, failure modes, metrics, or algorithmic phases within a section, always use the `description` environment: `\begin{description} \item[Topic Name.] Narrative explanation... \end{description}` (mirroring Chapters 1 and 2).
+>    * **Professor Directive (Ma'am Grace Tacadao, Sept 30, 2026):** Eliminate inline headings, artificial bulleted lists, and heavy `description` environments (`\item[Topic Name.]`) whenever they are not strictly needed. Instead, write in continuous, cohesive academic paragraphs and integrate the title, category, or core concept directly into the opening topic sentence of each paragraph. This ensures the manuscript reads as formal scientific prose rather than an enumerated presentation outline.
 > 7. **Simplified, Single-Line Section Titles:**  
 >    * Section, subsection, and subsubsection titles must be direct, simplified, concise, and fit comfortably on a single line (mirroring Chapters 1 and 2).  
 >    * Strictly avoid long, compound titles, multi-clause headings, or parenthetical clutter (e.g., use `\subsection{Candidate Retrieval Ablation}` instead of `\subsection{Candidate Retrieval Ablation and Difficulty Tier Breakdown ($N=350$)}`).
@@ -57,6 +57,9 @@ description: This rule shall be applied when the user wants the thesis paper dra
 >      - **Chapter 2 (Review of Related Literature):** Strictly objective, scholarly exploration of what the literature says about a topic. It surveys historical jurisprudence, statutory drafting conventions, linguistic challenges, information retrieval paradigms, and textual inference benchmarks. **NEVER** write with hindsight or announce specific pipeline choices here (e.g., avoid stating *"this has consequences for our natural language processing pipeline"* or *"the researchers chose Path 1"*). Frame discussions objectively in terms of what prior studies have demonstrated or what structural/linguistic characteristics exist in legal texts. Early sections should only suggest broad computational or document-cleaning implications without assuming the reader already knows the downstream machine learning pipeline.  
 >      - **Chapter 3 (Methodology):** Applying the learnings gained from Chapter 2 into an operational research plan. It defines the proposed system architecture, mathematical formulations, screening protocols, and experimental design. It is strictly in the **planning phase**—describing *how* the system will be built and *what* protocols will be executed, without reporting actual experimental execution results, finalist performance tables, or premature empirical rankings.  
 >      - **Chapter 4 (Results and Discussion):** Actually executing the research plan outlined in Chapter 3 and presenting what was found. It details the empirical findings, screening metrics, fine-tuning loss curves, comparative evaluation tables, ablation findings, and in-depth analyses of *what actually happened*.
+> 14. **Chapter 4 Structural Alignment with Problem Statement & Objectives:**  
+>    * When drafting, reorganizing, or expanding Chapter 4 (*Results and Discussion*), the sections and empirical findings must be explicitly arranged and mapped in direct correspondence with the Statement of the Problem and Research Objectives defined in Chapter 1. Every research question and objective must find its direct answer and empirical discussion within a corresponding, dedicated section of Chapter 4.
+
 
 ---
 
