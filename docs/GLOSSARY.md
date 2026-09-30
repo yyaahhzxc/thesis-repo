@@ -557,6 +557,30 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 
 ---
 
+## **12. Archival Document Digitization, OCR & Vision-Language Processing**
+
+### **Optical Character Recognition (OCR) Error Cascade (Lopresti, 2008)**
+* **Plain Meaning:** The scientific observation that small visual recognition errors during document scanning cause disproportionately severe, multiplying failures across subsequent natural language processing tasks.
+* **In This Thesis:** In literary text, misreading a character is easily understood by human readers. In statutory conflict detection, however, a single character substitution in an ordinance identifier (e.g., `0667-21` misread as `0667_21`) or statutory citation (`RA 7160` misread as `RA 7l60`) causes token shattering in subword tokenizers, breaks BM25 inverted indices, and corrupts numerical penalty thresholds.
+
+### **Vision-Language Model (VLM) for Document Digitization**
+* **Plain Meaning:** A deep neural network architecture that combines computer vision and natural language processing to read and interpret visual document images directly.
+* **In This Thesis:** The system deploys Qwen2.5-VL-3B-Instruct to transcribe historical Davao City municipal scans. Unlike traditional OCR engines that view characters as isolated pixel glyphs, the VLM's causal language model acts as an intrinsic linguistic prior, allowing it to accurately transcribe damaged or faint legal text by using contextual sentence knowledge.
+
+### **NormalFloat4 (NF4) Quantization & Double Quantization**
+* **Plain Meaning:** An information-theoretically optimal 4-bit data type developed by Dettmers et al. (QLoRA, 2023) that compresses deep learning model weights to a fraction of their original size while retaining high numerical accuracy.
+* **In This Thesis:** Compresses the 3-billion-parameter Qwen2.5-VL model into under 3.5 GB of VRAM. This enables the entire multimodal transcription pipeline to run locally on the Neural Training Workstation (Mobile Host B, equipped with an 8 GB NVIDIA RTX 5050 Laptop GPU) without requiring expensive data-center hardware.
+
+### **Page-Level Ingestion vs. Document-Level Ingestion**
+* **Plain Meaning:** Slicing a multi-page PDF and transcribing each page individually, rather than passing the entire document into the AI model at once.
+* **Why It Matters:** Multi-page ordinances range from single-page resolutions to 50-page revenue codes. Passing an entire document at once would overwhelm GPU memory with thousands of visual patch tokens and dilute the model's visual attention. Page-level processing keeps memory usage strictly bounded, prevents GPU crashes, maintains physical page markers (`--- [Page X] ---`), and supports checkpoint recovery if an interrupted batch needs to resume.
+
+### **Data Privacy Act of 2012 (Republic Act No. 10173) & Data Sovereignty**
+* **Plain Meaning:** The Philippine national privacy law that protects individual and institutional information handled by government and private entities.
+* **In This Thesis:** Pre-enactment municipal drafts and committee reports frequently contain confidential administrative proposals, citizen tax details, and sensitive police regulations. Transmitting these unpromulgated drafts to external commercial cloud OCR APIs introduces legal compliance concerns. Deploying a locally hosted VLM ensures that all legislative data remains sovereign and private within local government premises.
+
+---
+
 *This glossary is maintained as a living reference. Whenever new models, metrics, or legal doctrines are introduced to the thesis manuscript, they are immediately added here.*
 
 
