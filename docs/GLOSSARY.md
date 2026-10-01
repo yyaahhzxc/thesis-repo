@@ -575,12 +575,29 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** Slicing a multi-page PDF and transcribing each page individually, rather than passing the entire document into the AI model at once.
 * **Why It Matters:** Multi-page ordinances range from single-page resolutions to 50-page revenue codes. Passing an entire document at once would overwhelm GPU memory with thousands of visual patch tokens and dilute the model's visual attention. Page-level processing keeps memory usage strictly bounded, prevents GPU crashes, maintains physical page markers (`--- [Page X] ---`), and supports checkpoint recovery if an interrupted batch needs to resume.
 
-### **Data Privacy Act of 2012 (Republic Act No. 10173) & Data Sovereignty**
-* **Plain Meaning:** The Philippine national privacy law that protects individual and institutional information handled by government and private entities.
-* **In This Thesis:** Pre-enactment municipal drafts and committee reports frequently contain confidential administrative proposals, citizen tax details, and sensitive police regulations. Transmitting these unpromulgated drafts to external commercial cloud OCR APIs introduces legal compliance concerns. Deploying a locally hosted VLM ensures that all legislative data remains sovereign and private within local government premises.
+### **Character Error Rate (CER), Word Error Rate (WER) & Normalized Edit Distance (NED)**
+* **Plain Meaning:** Standard mathematical distance formulas based on the Levenshtein algorithm that measure how many characters or words must be substituted, inserted, or deleted to match a verified reference transcript.
+* **In This Thesis:** Used as the baseline string-level metrics for evaluating document transcription fidelity. Normalized Edit Distance scales the edit distance between 0.0 and 1.0, ensuring consistent comparability across short single-page resolutions and lengthy multi-page tax codes.
+
+### **Tree-Edit-Distance-Based Similarity (TEDS; Zhong et al., 2020)**
+* **Plain Meaning:** An evaluation metric designed to measure the structural accuracy of recognized tables by comparing both cell text contents and row-column tree geometry.
+* **In This Thesis:** Evaluates whether complex multi-tier tabular schedules in historical municipal tax codes, zonal valuation grids, and market stall rental schedules preserve their tabular geometry and cell alignments in Markdown format.
+
+### **Substantive Legislative Body Extraction & Boundary State Machine**
+* **Plain Meaning:** An automated parsing procedure that isolates the actual binding laws, rules, and penalties of an ordinance while excusing procedural attendance lists and end-of-document signature blocks.
+* **In This Thesis:** Local ordinances include introductory roll calls of present council members and trailing attestation seals from the SP Secretary and City Mayor. Retaining councillor names dilutes Stage 1 dense vector retrieval with personal names, while retaining signatures clutters Stage 2 candidate hypotheses. An adaptive boundary state machine identifies canonical statutory anchors (`ORDINANCE NO.`, `AN ORDINANCE`, `WHEREAS`, `SECTION 1`) and halts at terminal certifications (`CERTIFIED CORRECT`, `ATTESTED`, `APPROVED`).
+
+### **Precision-Oriented OCR Quality Audit & Classification Hierarchy**
+* **Plain Meaning:** An automated diagnostic screening system that flags true scanning corruption while preventing benign formatting or authentic legal phrases from raising false alarms.
+* **In This Thesis:** Naive repetition filters frequently mistake Markdown table borders (`|---|---|`) or legal ellipsis placeholders (`"xxx xxx xxx"`) for OCR errors. The quality audit categorizes transcript anomalies into seven distinct tiers (Definite Corruption, Possible Corruption, Formatting Noise, Valid Legal Boilerplate, Valid Table Structures, Page Metadata Discrepancies, and Items Requiring Human Review), ensuring that only genuine defects are flagged for manual review.
+
+### **Philippine Legal & Toponymic Gazetteer**
+* **Plain Meaning:** A specialized reference dictionary containing authoritative names of local administrative units, government departments, and statutory Latin expressions.
+* **In This Thesis:** Encompasses all 182 official barangays of Davao City (e.g., Buhangin, Calinan, Marilog, Paquibato, Talomo, Toril), local executive departments (CTTMO, CENRO, CPDO), and statutory Latin maxims (*in pari materia*, *mutatis mutandis*, *ultra vires*). It serves as an exclusion whitelist in the second-stage language review system, preventing authentic local terminology from triggering false spelling warnings.
 
 ---
 
 *This glossary is maintained as a living reference. Whenever new models, metrics, or legal doctrines are introduced to the thesis manuscript, they are immediately added here.*
+
 
 
