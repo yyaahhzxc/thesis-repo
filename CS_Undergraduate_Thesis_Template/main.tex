@@ -112,12 +112,26 @@ Above all, to the Almighty God/Allah SWT, the ultimate source of strength, wisdo
 
 \tableofcontents
 
+% List of Equations definition
+\makeatletter
+\newcommand{\listofequations}{%
+  \chapter*{List of Equations}%
+  \@mkboth{\MakeUppercase{List of Equations}}{\MakeUppercase{List of Equations}}%
+  \@starttoc{loe}%
+}
+\newcommand*\l@equation{\l@figure}
+\newcommand{\eqcaption}[1]{%
+  \addcontentsline{loe}{equation}{\protect\numberline{\theequation}#1}%
+}
+\makeatother
+
 \begingroup
 % Suppress inter-chapter empty vertical space to ensure clean, uniform spacing across all front-matter lists
 \renewcommand*{\addvspace}[1]{}
 \listoffigures
 \listoftables
 \lstlistoflistings
+\listofequations
 \endgroup
 
 \mainmatter

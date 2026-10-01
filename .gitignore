@@ -33,6 +33,7 @@ output/gt350_retrieval_cache.json
 *.fdb_latexmk
 *.synctex.gz
 *.synctex(busy)
+*.loe
 
 # IDE & OS Artifacts
 .vscode/*

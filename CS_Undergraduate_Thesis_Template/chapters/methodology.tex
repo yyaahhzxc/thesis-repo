@@ -29,10 +29,17 @@ This section maps how data flows through the proposed system. The architecture f
     The computational process core then executes two complementary stages: hybrid candidate retrieval followed by natural language inference. In Stage~1 (Dual-Stream Hybrid Information Retrieval), the system narrows the comprehensive statutory search space down to a focused candidate pool. Stream~A executes lexical sparse search via BM25 to match exact statutory citations, numerical penalty amounts, and administrative agency terms, while Stream~B executes dense semantic search via the selected bi-encoder, measuring cosine similarity between the draft provision and statutory embeddings to capture abstract regulatory intent. The ranked outputs are combined using Reciprocal Rank Fusion (RRF) integrated with a Statutory Hierarchy Safeguard prioritizing higher-ranking national statutes over municipal provisions, extracting the Top-$k$ candidate provisions without overburdening local LGU compute resources.
 
     In Stage~2 (Natural Language Inference), each retrieved statutory candidate is paired with the draft ordinance provision into a single cross-encoder sequence:
-    \begin{equation}
-        \mathbf{x} = [\text{CLS}] \, \text{Statutory Premise} \, [\text{SEP}] \, \text{Ordinance Hypothesis} \, [\text{SEP}]
-        \label{eq:cross_encoder_seq}
-    \end{equation}
+
+    \begin{description}
+        \item[Cross-Encoder Joint Sequence Input Representation] \leavevmode
+        \begin{equation}
+            \mathbf{x} = [\text{CLS}] \, \text{Statutory Premise} \, [\text{SEP}] \, \text{Ordinance Hypothesis} \, [\text{SEP}]
+            \label{eq:cross_encoder_seq}
+            \eqcaption{Cross-Encoder Joint Sequence Input Representation}
+        \end{equation}
+        \noindent Where $[\text{CLS}]$ marks the classification sequence start and $[\text{SEP}]$ separates jurisdictional text boundaries.
+    \end{description}
+
     The unified sequence is processed by the selected fine-tuned cross-encoder NLI engine, which performs full inter-token cross-attention to classify the directional logical relationship across Entailment, Neutral, or Contradiction, producing a calibrated contradiction probability $P(\text{Contradiction})$.
 
     Finally, system output and explainable reporting presents an audit trail displaying the Top-$k$ shortlisted candidate statutes for human oversight before evaluating contradiction probability against a calibrated decision threshold $\tau^*$, optimized for recall priority via $F_2$-score weighting. When the contradiction probability meets or exceeds the threshold ($P(\text{Contradiction}) \ge \tau^*$), the system flags a normative legal inconsistency and routes it through a two-tiered jurisdictional classification: Critical Vertical Preemption Alerts signaling collisions with superior national statutes under the \textit{Magtajas} doctrine, and Horizontal Inconsistency Notices highlighting collisions or uncoordinated overlaps with prior Davao City municipal ordinances. To ensure decision-support transparency, the system renders intrinsic structural explainability featuring side-by-side comparative spans, highlighted conflicting phrases, and calibrated confidence percentages. Conversely, when contradiction probabilities remain below the calibrated threshold ($P(\text{Contradiction}) < \tau^*$), the system issues a formal legislative compliance confirmation, accompanied by a statutory clearance audit confirming both national statutory harmony and local municipal code coherence.
@@ -164,16 +171,27 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         The topic classification pipeline groups documents automatically while executing efficiently on the Primary Desktop Host. Statutory texts are first stripped of HTML tags and filtered against a curated list of 49 legal stopwords, such as ``hereby'' and ``enacted,'' which appear ubiquitously without distinguishing legal subjects. Cleaned texts are converted into term frequency-inverse document frequency (TF-IDF) feature vectors across a 25,000-term vocabulary, rewarding distinctive statutory terminology over frequent administrative vocabulary~\cite{manning2008introduction}. To maintain computational efficiency while preserving conceptual cohesion, the pipeline applies Truncated Singular Value Decomposition (SVD) to project the sparse feature vectors into 64 latent semantic dimensions~\cite{deerwester1990indexing}. Following the latent semantic modeling principles of Landauer et al.~\cite{landauer1998introduction}, this 64-dimensional subspace captures core semantic associations while eliminating lexical noise, followed by standard $L_2$ vector normalization.
 
         Partitioning statutory texts directly into a small set of broad categories risks conflating heterogeneous legislative subjects. To prevent premature cluster mixing, the normalized 64-dimensional vectors are initially partitioned into $K = 28$ micro-clusters using MiniBatch $K$-Means clustering~\cite{sculley2010webscale}. Following the over-clustering strategy recommended by Grootendorst~\cite{grootendorst2022bertopic} and Aggarwal~\cite{aggarwal2012mining}, this over-complete partition isolates narrow recurring enactments, such as franchise charters or school conversions, into tight homogenous groups. The pipeline then adapts class-based TF-IDF ($c\text{-}TF\text{-}IDF$) from Grootendorst~\cite{grootendorst2022bertopic} to identify salient keywords by treating all text within a micro-cluster as a unified document:
-        \[
-            c\text{-}TF\text{-}IDF_{i, c} = \frac{|t_{i, c}|}{|c|} \times \log\left(1 + \frac{A}{\sum_{k} |t_{i, k}|}\right)
-        \]
-        where $|t_{i, c}|$ denotes the frequency of term $i$ in cluster $c$, $|c|$ is the total word count of cluster $c$, and $A$ indicates the average word count per cluster across the archive. This cluster-level weighting elevates terminology that specifically characterizes a legislative group while penalizing ubiquitous statutory phrasing.
+        The topic modeling and domain clustering formulations are computed as follows:
 
-        To align mathematical clusters with operative jurisprudence, the extracted $c\text{-}TF\text{-}IDF$ profiles are mapped against regulatory competencies defined in the Local Government Code of 1991~\cite{philgov1991ra7160}. Micro-clusters sharing congruent regulatory functions are merged into consolidated macro domains, requiring each domain to contain at least 1.0\% of the corpus ($N \ge 254$ statutes) to ensure statistical stability~\cite{aggarwal2012mining}. Outlier micro-clusters falling below this volume threshold are reassigned to their nearest semantic centroid, producing balanced clusters suitable for coarse indexing:
-        \[
-            \mathbf{C}_m = \frac{\sum_{i \in \mathcal{D}_m} \mathbf{z}_i}{\left\|\sum_{i \in \mathcal{D}_m} \mathbf{z}_i\right\|_2}, \quad P(m \mid \mathbf{z}_i) = \frac{\exp(\tau \cdot \cos(\mathbf{z}_i, \mathbf{C}_m))}{\sum_{j} \exp(\tau \cdot \cos(\mathbf{z}_i, \mathbf{C}_j))}
-        \]
-        where $\mathbf{z}_i$ represents the normalized 64-dimensional SVD vector of document $i$, $\mathbf{C}_m$ denotes the normalized centroid of macro domain $m$, and $\tau = 6.0$ functions as the inverse temperature scaling parameter. Adapting temperature scaling principles from Guo et al.~\cite{guo2017calibration}, the parameter $\tau = 6.0$ prevents uncalibrated softmax dispersion across cosine distances, ensuring that dominant domain probabilities remain sharply separated. Executing this consolidation across all 25,432 national statutes organizes the historical collection into eight Consolidated Macro Legal Domains, as detailed in Table~\ref{tab:national_macro_domains}.
+        \begin{description}
+            \item[Class-Based Term Frequency-Inverse Document Frequency ($c\text{-}TF\text{-}IDF$)] \leavevmode
+            \begin{equation}
+                c\text{-}TF\text{-}IDF_{i, c} = \frac{|t_{i, c}|}{|c|} \times \log\left(1 + \frac{A}{\sum_{k} |t_{i, k}|}\right)
+                \label{eq:c_tfidf}
+                \eqcaption{Class-Based Term Frequency-Inverse Document Frequency ($c\text{-}TF\text{-}IDF$)}
+            \end{equation}
+            \noindent Where $|t_{i, c}|$ denotes the frequency of term $i$ in cluster $c$, $|c|$ is the total word count of cluster $c$, and $A$ indicates the average word count per cluster across the archive. This cluster-level weighting elevates terminology that specifically characterizes a legislative group while penalizing ubiquitous statutory phrasing.
+
+            \item[Macro Legal Domain Centroid and Softmax Probability] \leavevmode
+            \begin{equation}
+                \mathbf{C}_m = \frac{\sum_{i \in \mathcal{D}_m} \mathbf{z}_i}{\left\|\sum_{i \in \mathcal{D}_m} \mathbf{z}_i\right\|_2}, \quad P(m \mid \mathbf{z}_i) = \frac{\exp(\tau \cdot \cos(\mathbf{z}_i, \mathbf{C}_m))}{\sum_{j} \exp(\tau \cdot \cos(\mathbf{z}_i, \mathbf{C}_j))}
+                \label{eq:macro_centroid}
+                \eqcaption{Macro Legal Domain Centroid and Softmax Probability}
+            \end{equation}
+            \noindent Where $\mathbf{z}_i$ represents the normalized 64-dimensional SVD vector of document $i$, $\mathbf{C}_m$ denotes the normalized centroid of macro domain $m$, and $\tau = 6.0$ functions as the inverse temperature scaling parameter.
+        \end{description}
+
+        Adapting temperature scaling principles from Guo et al.~\cite{guo2017calibration}, the parameter $\tau = 6.0$ prevents uncalibrated softmax dispersion across cosine distances, ensuring that dominant domain probabilities remain sharply separated. Executing this consolidation across all 25,432 national statutes organizes the historical collection into eight Consolidated Macro Legal Domains, as detailed in Table~\ref{tab:national_macro_domains}.
 
         \begin{table}[htbp]
             \centering
@@ -398,10 +416,17 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \end{figure}
 
         To handle provisions in the 5.31\% exceedance tail without information loss under standard-context models, the pipeline implements a hierarchical overlapping sub-chunking fallback. Adapting the sliding window strategy formulated by Devlin et al.~\cite{devlin2019bert}, when an extracted section exceeds a safety threshold of 448 tokens, the preprocessing module divides the section into overlapping sub-chunks using a window of $w = 384$ tokens and a stride of $s = 256$ tokens (128-token overlap). Capping the sub-chunk window at 384 tokens reserves a 64-token structural buffer within the 512-token ceiling to accommodate the prepended metadata header along with mandatory special tokens ($[CLS]$, $[SEP]$)~\cite{devlin2019bert}. Each sub-chunk preserves the prepended structural metadata header $\left[ \text{Statute Title}, \text{ Section } S_i\text{: Catchline} \right]$ to maintain institutional context. In Stage~1 retrieval, the parent provision embedding is computed by mean-pooling sub-chunk vectors, capturing semantic concepts across all paragraphs. In Stage~2 inference, the Cross-Encoder evaluates each sub-chunk independently against the local ordinance hypothesis $h$, determining provision-level conflict through max-pooling across sub-chunk contradiction probabilities:
-        \[
-            \hat{P}(\text{Contradiction} \mid p_i, h) = \max_{j} P\left(\text{Contradiction} \mid p_{i,j}, h\right)
-        \]
-        where $p_{i,j}$ denotes the $j$-th sub-chunk of statutory section $p_i$. This max-pooling aggregation ensures that an isolated prohibition or restrictive condition buried deep in a multi-paragraph section triggers the contradiction alert without being diluted by surrounding agreeable text. Alongside the sub-chunking fallback, the proponents evaluate ModernBERT as a long-context candidate architecture~\cite{warner2024modernbert, kadowaki2025modernbert}, testing whether native 8,192-token attention processing outperforms standard-context models across lengthy codifications.
+        \begin{description}
+            \item[Max-Pooled Sub-Chunk Contradiction Probability] \leavevmode
+            \begin{equation}
+                \hat{P}(\text{Contradiction} \mid p_i, h) = \max_{j} P\left(\text{Contradiction} \mid p_{i,j}, h\right)
+                \label{eq:max_pooled_subchunk}
+                \eqcaption{Max-Pooled Sub-Chunk Contradiction Probability}
+            \end{equation}
+            \noindent Where $p_{i,j}$ denotes the $j$-th sub-chunk of statutory section $p_i$.
+        \end{description}
+
+        This max-pooling aggregation ensures that an isolated prohibition or restrictive condition buried deep in a multi-paragraph section triggers the contradiction alert without being diluted by surrounding agreeable text. Alongside the sub-chunking fallback, the proponents evaluate ModernBERT as a long-context candidate architecture~\cite{warner2024modernbert, kadowaki2025modernbert}, testing whether native 8,192-token attention processing outperforms standard-context models across lengthy codifications.
 
 \section{Preprocessing and Normalization}
     \label{sec:preprocessing_filtering}
@@ -494,10 +519,17 @@ def prepend_statutory_context(statute_record, section):
         \end{lstlisting}
 
         Every extracted statutory section begins with a structural metadata header containing the statute title, section number, and section title:
-        \[
-            \mathbf{x}_{\text{chunk}} = \left[ \text{Statute Title}, \text{ Section } S_i\text{: Catchline} \right] \mathbin{\Vert} \mathbf{t}_{\text{verbatim}}
-        \]
-        where $\mathbf{t}_{\text{verbatim}}$ denotes the exact text extracted from the statutory record, and $\mathbin{\Vert}$ represents string concatenation. Listing~\ref{lst:model_ready_chunk} demonstrates the concrete transformation from an isolated provision into a Stage~1 indexed chunk and the resulting Stage~2 asymmetric input sequence. Prepended metadata provides the neural attention layers with parent enactment authority, preventing false positive matches against subordinate or unrelated municipal penalty clauses.
+        \begin{description}
+            \item[Context-Prepended Statutory Chunk Representation] \leavevmode
+            \begin{equation}
+                \mathbf{x}_{\text{chunk}} = \left[ \text{Statute Title}, \text{ Section } S_i\text{: Catchline} \right] \mathbin{\Vert} \mathbf{t}_{\text{verbatim}}
+                \label{eq:hierarchical_chunk}
+                \eqcaption{Context-Prepended Statutory Chunk Representation}
+            \end{equation}
+            \noindent Where $\mathbf{t}_{\text{verbatim}}$ denotes the exact text extracted from the statutory record, and $\mathbin{\Vert}$ represents string concatenation.
+        \end{description}
+
+        Listing~\ref{lst:model_ready_chunk} demonstrates the concrete transformation from an isolated provision into a Stage~1 indexed chunk and the resulting Stage~2 asymmetric input sequence. Prepended metadata provides the neural attention layers with parent enactment authority, preventing false positive matches against subordinate or unrelated municipal penalty clauses.
 
         \begin{lstlisting}[language=Python, caption={Sample Model-Ready Statutory Chunk and Stage 2 Input Sequence with Context Prepending}, label={lst:model_ready_chunk}]
 # 1. Isolated Statutory Provision (Without Context Prepending)
@@ -533,11 +565,18 @@ stage2_input_sequence = (
         The selection of a local vision-language model follows an extensive architectural evaluation of candidate document extraction systems. The proponents initially deployed Tesseract v5.x~\cite{smith2007overview}, an open-source OCR engine utilizing classical line-slicing and long short-term memory decoders. Although Tesseract achieved low operational latency on central processing units, it degraded substantially when ingesting scanned Philippine municipal records, producing frequent numeral substitutions and collapsing multi-column tabular schedules. The proponents subsequently benchmarked Surya OCR~\cite{paruchuri2024surya}, a modern layout-aware deep learning framework that decouples spatial layout analysis from line recognition. While Surya demonstrated superior layout preservation compared to Tesseract, its multi-stage transformer pipelines frequently exceeded consumer GPU memory limits during sustained batch processing. Proprietary cloud platforms such as Google Cloud Document AI~\cite{google2024documentai} were also evaluated and rejected due to recurring per-page API fees and legal data sovereignty restrictions under the Data Privacy Act of 2012 (Republic Act No.~10173)~\cite{philgov2012ra10173}. Deploying Qwen2.5-VL-3B-Instruct locally resolves these operational trade-offs, providing high transcription fidelity while executing completely offline.
 
         The document ingestion pipeline begins by recursively discovering target PDF files across archival municipal directories. Individual enactments are loaded using PyMuPDF, which inspects document metadata and iterates through pages sequentially. To eliminate physical scanning artifacts, the ingestor applies an inset cropbox that trims exactly 3\% of the page perimeter along all four borders:
-        \begin{equation}
-            \text{CropBox} = \left[ 0.03 \cdot W, \; 0.03 \cdot H, \; 0.97 \cdot W, \; 0.97 \cdot H \right]
-            \label{eq:cropbox_trim}
-        \end{equation}
-        where $W$ and $H$ represent the physical page width and height in points. Physical document scans frequently exhibit dark photocopy margins, punch holes, and staple shadows along document edges. Trimming the page borders eliminates these marginal artifacts before image rendering, preventing the visual encoder from misinterpreting edge shadows as punctuation marks or runaway token loops.
+
+        \begin{description}
+            \item[Archival Inset Perimeter CropBox Trimming] \leavevmode
+            \begin{equation}
+                \text{CropBox} = \left[ 0.03 \cdot W, \; 0.03 \cdot H, \; 0.97 \cdot W, \; 0.97 \cdot H \right]
+                \label{eq:cropbox_trim}
+                \eqcaption{Archival Inset Perimeter CropBox Trimming}
+            \end{equation}
+            \noindent Where $W$ and $H$ represent the physical page width and height in points.
+        \end{description}
+
+        Physical document scans frequently exhibit dark photocopy margins, punch holes, and staple shadows along document edges. Trimming the page borders eliminates these marginal artifacts before image rendering, preventing the visual encoder from misinterpreting edge shadows as punctuation marks or runaway token loops.
 
         Following perimeter trimming, the rasterization module renders each page at an image resolution of 105 dots per inch (DPI). Selecting 105 DPI provides an optimal empirical balance between character legibility and sequence length for high-density legal documents. The rendered image is converted to an RGB array and passed to the visual processor. The processor rescales page patches dynamically, clamping total image pixels between a minimum of $200,704$ pixels ($256 \times 28 \times 28$) and a maximum of $351,232$ pixels ($448 \times 28 \times 28$). Because Qwen2.5-VL allocates visual tokens in $28 \times 28$ patch increments using two-dimensional rotary position embeddings (2D-RoPE), bounding the pixel budget stabilizes sequence length and prevents out-of-memory GPU exceptions during long batch runs.
 
@@ -552,11 +591,18 @@ stage2_input_sequence = (
         To resolve this structural variance, the proponents developed an adaptive boundary state machine that extracts operative legal provisions based on canonical statutory phrasing. The extraction module scans transcripts for authorized opening markers, including enactment designations (\texttt{ORDINANCE NO.}), formal enactment titles (\texttt{AN ORDINANCE}), and preamble clauses (\texttt{WHEREAS}). Upon detecting an opening boundary, the state machine captures the enactment identifier, title, preamble, and all operative sections (\texttt{SECTION 1}, \texttt{ARTICLE I}, \texttt{CHAPTER I}). Text capture halts immediately upon encountering formal terminal attestation markers, such as Sanggunian enactment notices (\texttt{ENACTED}), secretarial certifications (\texttt{CERTIFIED CORRECT}), vice-mayoral attestations (\texttt{ATTESTED}), or executive approval notations (\texttt{APPROVED}).
 
         The extraction module incorporates a robust fallback hierarchy to prevent data loss when archival scans exhibit degraded boundary markers. If an explicit enactment header is obscured, the extractor falls back to the long ordinance title; if the title is absent, it anchors on the initial operative section. Similarly, if formal certification headers are missing, the system terminates extraction following the standard effectivity section (\texttt{SECTION X. EFFECTIVITY}). Each extraction records an explicit confidence score:
-        \begin{equation}
-            \text{Confidence}_{\text{extract}} = 0.35 \cdot C_{\text{start}} + 0.35 \cdot C_{\text{end}} + 0.30 \cdot C_{\text{sec}}
-            \label{eq:extraction_confidence}
-        \end{equation}
-        where $C_{\text{start}}$ and $C_{\text{end}}$ denote boundary match confidences, and $C_{\text{sec}}$ measures section sequential coherence. When confidence falls below 0.70, the document is flagged for manual review while preserving the full unpruned transcript on disk. Listing~\ref{lst:substantive_extraction} outlines the extraction logic.
+
+        \begin{description}
+            \item[Substantive Body Boundary Extraction Confidence Score] \leavevmode
+            \begin{equation}
+                \text{Confidence}_{\text{extract}} = 0.35 \cdot C_{\text{start}} + 0.35 \cdot C_{\text{end}} + 0.30 \cdot C_{\text{sec}}
+                \label{eq:extraction_confidence}
+                \eqcaption{Substantive Body Boundary Extraction Confidence Score}
+            \end{equation}
+            \noindent Where $C_{\text{start}}$ and $C_{\text{end}}$ denote boundary match confidences, and $C_{\text{sec}}$ measures section sequential coherence.
+        \end{description}
+
+        When confidence falls below 0.70, the document is flagged for manual review while preserving the full unpruned transcript on disk. Listing~\ref{lst:substantive_extraction} outlines the extraction logic.
 
         \begin{lstlisting}[language=Python, caption={Adaptive State Machine for Substantive Legislative Body Extraction}, label={lst:substantive_extraction}]
 def extract_substantive_body(raw_transcript: str) -> dict:
@@ -760,18 +806,22 @@ benchmark_pair = {
     To prevent reviewer fatigue while keeping the results statistically sound, this study adapts the batched review framework developed by Ablazo~\cite{ablazo2019designing}. In that earlier study, each item required three independent evaluations to determine a majority label. Managing a collection of 12,054 short texts required over 36,000 individual reviews. By dividing this work among 250 students, the workload was reduced to about 145 items per person. This demonstrated how batched distribution can maintain a three-vote overlap without placing an unrealistic burden on reviewers.
     
     This study applies the same mathematical setup to the legal domain. Because reviewing multi-sentence legal provisions requires much more concentration than reading short messages, the dataset is smaller, but the distribution logic is identical. The workload for the legal reviewers is calculated as follows:
-    
-    $$\begin{aligned}
-    N &= 350 \text{ premise-hypothesis pairs} \\
-    k &= 3 \text{ independent votes per pair} \\
-    P &= 15 \text{ legal annotators} \\[12pt]
-    W &= N \times k \\
-    W &= 350 \times 3 \\
-    W &= 1,050 \text{ total annotations} \\[12pt]
-    \text{Work per person} &= \frac{W}{P} \\
-    \text{Work per person} &= \frac{1,050}{15} \\
-    \text{Work per person} &= \mathbf{70 \text{ pairs per annotator}}
-    \end{aligned}$$
+
+    \begin{description}
+        \item[Annotator Workload Allocation Formulation] \leavevmode
+        \begin{equation}
+        \begin{aligned}
+        N &= 350 \text{ premise-hypothesis pairs} \\
+        k &= 3 \text{ independent votes per pair} \\
+        P &= 15 \text{ legal annotators} \\[6pt]
+        W &= N \times k = 350 \times 3 = 1,050 \text{ total annotations} \\[6pt]
+        \text{Work per person} &= \frac{W}{P} = \frac{1,050}{15} = \mathbf{70 \text{ pairs per annotator}}
+        \end{aligned}
+        \label{eq:workload_allocation}
+        \eqcaption{Annotator Workload Allocation Formulation}
+        \end{equation}
+        \noindent Where $N$ represents the benchmark size, $k$ is the multi-rater replication factor, $P$ is the annotator pool size, and $W$ denotes total evaluations.
+    \end{description}
     
     To organize this workflow, the dataset is divided into five equal sets of 70 pairs each. The 15 researchers are grouped into five sub-panels of three members, with each sub-panel reviewing one 70-pair set. This arrangement ensures that every pair receives three independent reviews while keeping each reviewer's workload manageable.
 
@@ -829,10 +879,17 @@ benchmark_pair = {
     \section{Pipeline Architecture}
     \label{sec:pipeline_architecture}
     The live conflict detection workflow uses a two-stage architecture designed to combine fast searching with detailed logical analysis. The live pipeline begins when a user uploads a draft municipal ordinance. The system first runs the BM25 algorithm to quickly search the statutory database for exact lexical matches. This sparse search captures specific statutory citations, agency acronyms, and numerical penalty limits. At the same time, a dense Bi-Encoder maps the draft provision and the statutes into a continuous semantic space, measuring cosine distance to capture legal meaning that keyword matching overlooks~\cite{reimers2019sentencebert}. Rather than relying on fragile score normalization, the pipeline combines the two retrievers using Reciprocal Rank Fusion (RRF) to generate an ordered shortlist of the top-$k$ candidate provisions~\cite{cormack2009reciprocal}:
-        \[
-            \text{RRF}(d) = \sum_{m \in \mathcal{M}} \frac{1}{k_{\text{rrf}} + \text{rank}_m(d)}
-        \]
-        where $\mathcal{M} = \{\text{BM25}, \text{Dense}\}$ represents the candidate retrieval models, and $\text{rank}_m(d)$ denotes the ordinal position of document $d$ produced by model $m$. The smoothing constant $k_{\text{rrf}} = 60$ follows the standard calibration formulated by Cormack et al.~\cite{cormack2009reciprocal} to prevent high-ranking outliers from dominating the fused score. Standard linear score interpolation ($\alpha S_{\text{BM25}} + (1-\alpha) S_{\text{Dense}}$) requires min-max normalization across unbounded BM25 distributions, which fluctuates wildly across diverse queries. In contrast, Reciprocal Rank Fusion operates entirely on ordinal rankings, making the combination robust against differences in score scales. The resulting fused score ranks provisions that demonstrate both lexical precision and semantic relevance at the top of the candidate pool. Listing~\ref{lst:stage1_hybrid_retrieval} presents the procedural logic of the dual-stream hybrid retrieval and rank fusion pipeline.
+        \begin{description}
+            \item[Reciprocal Rank Fusion (RRF) Scoring] \leavevmode
+            \begin{equation}
+                \text{RRF}(d) = \sum_{m \in \mathcal{M}} \frac{1}{k_{\text{rrf}} + \text{rank}_m(d)}
+                \label{eq:reciprocal_rank_fusion}
+                \eqcaption{Reciprocal Rank Fusion (RRF) Scoring}
+            \end{equation}
+            \noindent Where $\mathcal{M} = \{\text{BM25}, \text{Dense}\}$ represents the candidate retrieval models, $\text{rank}_m(d)$ denotes the ordinal position of document $d$ produced by model $m$, and $k_{\text{rrf}} = 60$ is the smoothing constant.
+        \end{description}
+
+        Standard linear score interpolation ($\alpha S_{\text{BM25}} + (1-\alpha) S_{\text{Dense}}$) requires min-max normalization across unbounded BM25 distributions, which fluctuates wildly across diverse queries. In contrast, Reciprocal Rank Fusion operates entirely on ordinal rankings, making the combination robust against differences in score scales. The resulting fused score ranks provisions that demonstrate both lexical precision and semantic relevance at the top of the candidate pool. Listing~\ref{lst:stage1_hybrid_retrieval} presents the procedural logic of the dual-stream hybrid retrieval and rank fusion pipeline.
 
         \begin{lstlisting}[language=Python, caption={Pseudocode of the Stage 1 Reciprocal Rank Fusion Hybrid Provision Retrieval Pipeline}, label={lst:stage1_hybrid_retrieval}]
 def retrieve_top_k_candidates(draft_section, statutory_corpus, k=50, k_rrf=60, beta=1.20):
@@ -974,44 +1031,84 @@ def retrieve_top_k_candidates(draft_section, statutory_corpus, k=50, k_rrf=60, b
     \label{sec:stage1_metrics}
     Measuring search performance in Stage~1 requires ranking metrics rather than standard classification accuracy~\cite{manning2008introduction}. Because the purpose of the coarse retriever is to find candidate laws rather than make the final decision, standard accuracy does not reflect search quality. If the relevant national statute is left out of the top-$k$ shortlist, the downstream Cross-Encoder cannot detect the conflict. For this reason, the retrieval stage is evaluated primarily using Recall at rank $k$ ($\text{Recall@}k$) at thresholds of $k \in \{10, 30, 50\}$. This metric measures the percentage of test queries where the correct national law appears within the candidate shortlist:
 
-    \[
-        \text{Recall@}k = \frac{1}{|Q|} \sum_{q=1}^{|Q|} \mathbf{1}\left(\text{rank}(d_q^*) \le k\right)
-    \]
-    where $|Q|$ is the total number of test queries, $d_q^*$ is the correct national statute paired with query $q$, and $\mathbf{1}(\cdot)$ is an indicator function that equals one when the target law ranks within the top $k$ candidates.
+    \begin{description}
+        \item[Recall at Rank $k$ ($\text{Recall@}k$)] \leavevmode
+        \begin{equation}
+            \text{Recall@}k = \frac{1}{|Q|} \sum_{q=1}^{|Q|} \mathbf{1}\left(\text{rank}(d_q^*) \le k\right)
+            \label{eq:recall_at_k}
+            \eqcaption{Recall at Rank $k$ ($\text{Recall@}k$)}
+        \end{equation}
+        \noindent Where $|Q|$ is the total number of test queries, $d_q^*$ is the correct national statute paired with query $q$, and $\mathbf{1}(\cdot)$ is an indicator function that equals one when the target law ranks within the top $k$ candidates.
 
-    To measure how high the target law ranks within the candidate list, the researchers use Mean Reciprocal Rank ($\text{MRR@}k$)~\cite{manning2008introduction, robertson2009probabilistic}. While $\text{Recall@}k$ treats all positions within the top-$k$ list the same, $\text{MRR@}k$ gives higher scores to systems that place the governing statute near the top of the list:
+        \item[Mean Reciprocal Rank at Rank $k$ ($\text{MRR@}k$)] \leavevmode
+        \begin{equation}
+            \text{MRR@}k = \frac{1}{|Q|} \sum_{q=1}^{|Q|} \frac{1}{\text{rank}(d_q^*)} \cdot \mathbf{1}\left(\text{rank}(d_q^*) \le k\right)
+            \label{eq:mrr_at_k}
+            \eqcaption{Mean Reciprocal Rank at Rank $k$ ($\text{MRR@}k$)}
+        \end{equation}
+        \noindent Where $d_q^*$ is the correct national statute retrieved for query $q$, with $1/\text{rank}(d_q^*)$ representing the reciprocal rank score.
+    \end{description}
 
-    \[
-        \text{MRR@}k = \frac{1}{|Q|} \sum_{q=1}^{|Q|} \frac{1}{\text{rank}(d_q^*)} \cdot \mathbf{1}\left(\text{rank}(d_q^*) \le k\right)
-    \]
     In this formula, a target statute retrieved at rank one receives a reciprocal score of 1.0, while a statute retrieved at rank ten receives 0.10. The 350 curated premise-hypothesis pairs serve as the query benchmark for testing Stage~1. By using the 350 draft clauses as queries against the 25,432-statute collection, the proponents measure how often candidate retrieval models locate the paired statutory provision. Calculating $\text{Recall@}10$, $\text{Recall@}30$, and $\text{Recall@}50$ confirms whether the coarse retriever supplies a dependable candidate pool for subsequent natural language inference.
 
     \subsection{Stage 2 Inference Metrics}
     \label{sec:stage2_metrics}
-    The Stage~2 Cross-Encoder evaluates candidate statutory pairs across three discrete logical categories: $\mathcal{C} = \{\text{Entailment}, \text{Neutral}, \text{Contradiction}\}$. To assess classification quality across each relationship, the system computes class-specific Precision ($P_c$), Recall ($R_c$), and $F_1$-score ($F_{1,c}$) using standard contingency counts~\cite{sokolova2009systematic}:
-    \[
-        P_c = \frac{TP_c}{TP_c + FP_c}, \quad R_c = \frac{TP_c}{TP_c + FN_c}, \quad F_{1,c} = \frac{2 \cdot P_c \cdot R_c}{P_c + R_c}
-    \]
-    where $TP_c$, $FP_c$, and $FN_c$ represent the true positive, false positive, and false negative classifications for category $c$, respectively. Precision reflects how reliably the model avoids false alarms, while Recall measures the proportion of genuine legal relationships successfully detected. To ensure that performance across all three categories is evaluated equally without allowing dominant neutral pairs to skew the outcome, the system calculates the Macro-averaged $F_1$-score ($\text{Macro } F_1$)~\cite{manning2008introduction, sokolova2009systematic}:
-    \[
-        \text{Macro } F_1 = \frac{1}{|\mathcal{C}|} \sum_{c \in \mathcal{C}} F_{1,c}
-    \]
+    The Stage~2 Cross-Encoder evaluates candidate statutory pairs across three discrete logical categories: $\mathcal{C} = \{\text{Entailment}, \text{Neutral}, \text{Contradiction}\}$. To assess classification quality across each relationship, the baseline inference performance metrics are computed as follows:
+
+    \begin{description}
+        \item[Class-Specific Precision, Recall, and $F_1$-Score] \leavevmode
+        \begin{equation}
+            P_c = \frac{TP_c}{TP_c + FP_c}, \quad R_c = \frac{TP_c}{TP_c + FN_c}, \quad F_{1,c} = \frac{2 \cdot P_c \cdot R_c}{P_c + R_c}
+            \label{eq:class_metrics}
+            \eqcaption{Class-Specific Precision, Recall, and $F_1$-Score}
+        \end{equation}
+        \noindent Where $TP_c$, $FP_c$, and $FN_c$ represent the true positive, false positive, and false negative classifications for category $c$, respectively. Precision reflects how reliably the model avoids false alarms, while Recall measures the proportion of genuine legal relationships successfully detected.
+
+        \item[Macro-Averaged $F_1$-Score Across Logical Classes] \leavevmode
+        \begin{equation}
+            \text{Macro } F_1 = \frac{1}{|\mathcal{C}|} \sum_{c \in \mathcal{C}} F_{1,c}
+            \label{eq:macro_f1}
+            \eqcaption{Macro-Averaged $F_1$-Score Across Logical Classes}
+        \end{equation}
+        \noindent Where $|\mathcal{C}| = 3$ ensures that performance across all three categories is evaluated equally without allowing dominant neutral pairs to skew the outcome.
+    \end{description}
 
     In statutory conflict detection, classification errors carry fundamentally unequal operational costs~\cite{elkan2001foundations, fawcett2006roc}. A false negative, where the system fails to flag an unconstitutional local clause, permits an invalid ordinance to be enacted. This failure triggers costly litigation and statutory invalidation under the \textit{Magtajas} doctrine~\cite{scp1994magtajasvpryce}. In contrast, a false positive, where the system flags a compliant draft clause, merely directs a human legislative researcher to examine the flagged text on the review dashboard, requiring only seconds of reviewer time. Standard classifiers default to a symmetric decision threshold of $P(\text{Contradiction}) \ge 0.50$, which assumes that false alarms and missed conflicts cause identical harm. In foundational cost-sensitive learning theory, Elkan~\cite{elkan2001foundations} proved that when false negative costs exceed false positive costs ($C(FN) > C(FP)$), setting the decision boundary at 0.50 is mathematically suboptimal and produces an unsafe number of missed conflicts~\cite{fawcett2006roc, koreeda2021contract}.
 
-    To address this cost asymmetry, the proponents implement a validation-tuned decision boundary $\tau_{\text{conflict}}$ for contradiction alerts. Rather than using a fixed 0.50 cutoff, the pipeline sweeps candidate thresholds across $\tau \in [0.25, 0.50]$ in increments of $\Delta \tau = 0.01$ exclusively on the validation set ($\mathcal{D}_{\text{val}}$, $N = 52$). The optimal threshold $\tau^*$ is selected by maximizing the $F_2$-score on the Contradiction class~\cite{chinchor1992muc4, koreeda2021contract}:
-    \[
-        F_{2, \text{conflict}} = \frac{5 \cdot P_{\text{conflict}} \cdot R_{\text{conflict}}}{4 \cdot P_{\text{conflict}} + R_{\text{conflict}}}
-    \]
-    \[
-        \tau^* = \arg\max_{\tau \in [0.25, 0.50]} F_{2, \text{conflict}}(\tau; \mathcal{D}_{\text{val}})
-    \]
-    Weighting recall twice as heavily as precision ensures that the system aggressively captures potential legal conflicts while preventing reviewer fatigue through a precision floor of $P_{\text{conflict}} \ge 0.70$. During live inference, a candidate provision triggers a formal conflict alert whenever its softmax contradiction probability satisfies $P(\text{Contradiction} \mid p_i, h) \ge \tau^*$.
+    To address this cost asymmetry, the proponents implement a validation-tuned decision boundary $\tau_{\text{conflict}}$ for contradiction alerts. Rather than using a fixed 0.50 cutoff, the pipeline sweeps candidate thresholds across $\tau \in [0.25, 0.50]$ in increments of $\Delta \tau = 0.01$ exclusively on the validation set ($\mathcal{D}_{\text{val}}$, $N = 52$). The cost-sensitive contradiction metrics are computed as follows:
 
-    When evaluating complete multi-section ordinances during live system execution, Stage~1 retains its full safety buffer of $k = 50$ candidates for each substantive section ($S_i$). To prevent runtime delays when scoring up to 500 total candidate pairs per document, the Stage~2 inference engine employs vectorized mini-batch collation ($B = 16$). Batching evaluates candidate provisions in parallel tensor forward passes rather than sequential single-item loops, keeping inference runtime under five seconds on GPU hosts and under thirty seconds on standard LGU processors. To consolidate the resulting candidate scores into a single decision for each section, the pipeline applies max-pooling aggregation across the candidate pool:
-    \[
-        P(\text{Conflict} \mid S_i) = \max_{j \in [1, k]} P(\text{Contradiction} \mid P_j, S_i)
-    \]
+    \begin{description}
+        \item[Cost-Sensitive Contradiction $F_2$-Score] \leavevmode
+        \begin{equation}
+            F_{2, \text{conflict}} = \frac{5 \cdot P_{\text{conflict}} \cdot R_{\text{conflict}}}{4 \cdot P_{\text{conflict}} + R_{\text{conflict}}}
+            \label{eq:f2_conflict}
+            \eqcaption{Cost-Sensitive Contradiction $F_2$-Score}
+        \end{equation}
+        \noindent Where $P_{\text{conflict}}$ and $R_{\text{conflict}}$ denote Precision and Recall on the Contradiction class, weighting recall twice as heavily as precision ($\beta = 2$) to aggressively capture potential legal conflicts.
+
+        \item[Optimal Contradiction Decision Threshold Calibration ($\tau^*$)] \leavevmode
+        \begin{equation}
+            \tau^* = \arg\max_{\tau \in [0.25, 0.50]} F_{2, \text{conflict}}(\tau; \mathcal{D}_{\text{val}})
+            \label{eq:optimal_threshold}
+            \eqcaption{Optimal Contradiction Decision Threshold Calibration ($\tau^*$)}
+        \end{equation}
+        \noindent Where $\mathcal{D}_{\text{val}}$ denotes the 52 validation pairs used to sweep candidate decision thresholds $\tau \in [0.25, 0.50]$ while enforcing an empirical precision floor of $P_{\text{conflict}} \ge 0.70$.
+    \end{description}
+
+    During live inference, a candidate provision triggers a formal conflict alert whenever its softmax contradiction probability satisfies $P(\text{Contradiction} \mid p_i, h) \ge \tau^*$.
+
+    When evaluating complete multi-section ordinances during live system execution, Stage~1 retains its full safety buffer of $k = 50$ candidates for each substantive section ($S_i$). To prevent runtime delays when scoring up to 500 total candidate pairs per document, the Stage~2 inference engine employs vectorized mini-batch collation ($B = 16$). Batching evaluates candidate provisions in parallel tensor forward passes rather than sequential single-item loops, keeping inference runtime under five seconds on GPU hosts and under thirty seconds on standard LGU processors. To consolidate the resulting candidate scores into a single decision for each section, the aggregation metric is computed as follows:
+
+    \begin{description}
+        \item[Section-Level Max-Pooled Conflict Probability] \leavevmode
+        \begin{equation}
+            P(\text{Conflict} \mid S_i) = \max_{j \in [1, k]} P(\text{Contradiction} \mid P_j, S_i)
+            \label{eq:section_conflict_prob}
+            \eqcaption{Section-Level Max-Pooled Conflict Probability}
+        \end{equation}
+        \noindent Where $P_j$ ranges over all $k = 50$ candidate statutory provisions retrieved for draft section $S_i$.
+    \end{description}
+
     A section triggers an operative conflict warning if and only if $P(\text{Conflict} \mid S_i) \ge \tau^*$, with the system highlighting the specific governing candidate provision $P_j^* = \arg\max_{j} P(\text{Contradiction} \mid P_j, S_i)$ that produced the highest conflict probability. This max-pooling aggregation ensures that an authentic statutory clash ranked lower in the candidate shortlist is not obscured by neutral or harmonious provisions appearing at higher retrieval ranks. Listing~\ref{lst:stage2_inference_aggregation} outlines the operational inference and conflict aggregation procedure.
 
     \begin{lstlisting}[language=Python, caption={Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}, label={lst:stage2_inference_aggregation}]
@@ -1053,11 +1150,7 @@ def detect_section_conflicts(draft_section, candidate_provisions, model, thresho
     \label{sec:statistical_comparisons}
     To evaluate whether performance disparities between candidate Cross-Encoder models represent statistically significant differences rather than random sampling fluctuations, the proponents employ formal non-parametric hypothesis tests recommended by Dem{\v{s}}ar~\cite{demsar2006statistical}. Traditional paired $t$-tests assume normally distributed classification errors, an assumption routinely violated by discrete NLP accuracy and F1 scores on small test sets~\cite{demsar2006statistical}. Therefore, this study adopts McNemar's Test for pairwise model comparisons and the Friedman Test for multi-model ranking across legal domains.
 
-    When comparing the classification accuracy of two competing Stage~2 models (such as fine-tuned DeBERTa-v3 versus fine-tuned ModernBERT) evaluated on the identical 53-item test set ($\mathcal{D}_{\text{test}}$), the proponents employ McNemar's test for pairwise significance~\cite{mcnemar1947note}. The test constructs a $2 \times 2$ contingency table analyzing discordant predictions, as summarized in Table~\ref{tab:mcnemar_contingency}. In this contingency framework, cell $b$ represents items correctly classified by Model~A but misclassified by Model~B, while cell $c$ represents items correctly classified by Model~B but misclassified by Model~A. Under the null hypothesis $H_0: p_b = p_c$, the two models have equivalent error rates. To account for discrete cell frequencies, the proponents apply Edwards' continuity correction to calculate the chi-squared statistic with one degree of freedom ($\text{df} = 1$):
-    \[
-        \chi^2 = \frac{(|b - c| - 1)^2}{b + c} \sim \chi^2_1
-    \]
-    A calculated $p$-value below the significance threshold $\alpha = 0.05$ rejects the null hypothesis, confirming that the difference in predictive accuracy is statistically significant.
+    When comparing the classification accuracy of two competing Stage~2 models (such as fine-tuned DeBERTa-v3 versus fine-tuned ModernBERT) evaluated on the identical 53-item test set ($\mathcal{D}_{\text{test}}$), the proponents employ McNemar's test for pairwise significance~\cite{mcnemar1947note}. The test constructs a $2 \times 2$ contingency table analyzing discordant predictions, as summarized in Table~\ref{tab:mcnemar_contingency}. In this contingency framework, cell $b$ represents items correctly classified by Model~A but misclassified by Model~B, while cell $c$ represents items correctly classified by Model~B but misclassified by Model~A. Under the null hypothesis $H_0: p_b = p_c$, the two models have equivalent error rates.
 
     \begin{table}[htbp]
         \centering
@@ -1073,15 +1166,31 @@ def detect_section_conflicts(draft_section, candidate_provisions, model, thresho
             \bottomrule
         \end{tabular}
     \end{table}
-    
+
     Because the Stage~2 evaluation compares three candidate models ($k = 3$: MiniLM, DeBERTa-v3, ModernBERT), pairwise evaluation yields $m = \binom{3}{2} = 3$ distinct model comparisons. To prevent Type~I error inflation (false positive significance) across multiple tests, the proponents apply the standard Bonferroni correction~\cite{demsar2006statistical}, evaluating each pair against the adjusted threshold $\alpha' = \alpha / m = 0.05 / 3 \approx 0.0167$. 
 
     Furthermore, when expanding candidate model explorations to larger suites (e.g., $k \approx 10$ architectures and hyperparameter configurations), running exhaustive pairwise McNemar tests produces $\binom{k}{2} = 45$ comparisons, creating severe statistical conservatism under Bonferroni correction ($\alpha' = 0.05 / 45 \approx 0.0011$). To handle larger candidate pools without losing statistical power, the proponents follow Dem{\v{s}}ar's two-step testing procedure~\cite{demsar2006statistical}: first executing the omnibus Friedman test across all $k$ models simultaneously, and only upon rejecting the global null hypothesis ($p < 0.05$), conducting post-hoc comparisons comparing candidate models strictly against the top-performing control model ($k - 1$ comparisons rather than $\frac{k(k-1)}{2}$) or evaluating critical difference intervals via the Nemenyi test.
 
-    Beyond pairwise significance, assessing the consistency of candidate architectures across the eight Macro Legal Domains without making restrictive distributional assumptions requires non-parametric multi-model ranking. For this purpose, the proponents utilize the Friedman non-parametric two-way analysis of variance by ranks~\cite{friedman1937use, demsar2006statistical}. For $k$ candidate models evaluated across $N = 8$ distinct legal domains, each model is assigned a rank $r_i^j$ within domain $i$, where the best-performing model receives rank 1. The average rank of model $j$ across all domains is given by $R_j = \frac{1}{N}\sum_{i=1}^N r_i^j$. The Friedman test statistic is defined as:
-    \[
-        \chi_F^2 = \frac{12N}{k(k+1)}\left[\sum_{j=1}^k R_j^2 - \frac{k(k+1)^2}{4}\right]
-    \]
+    Beyond pairwise significance, assessing the consistency of candidate architectures across the eight Macro Legal Domains without making restrictive distributional assumptions requires non-parametric multi-model ranking. For this purpose, the proponents utilize the Friedman non-parametric two-way analysis of variance by ranks~\cite{friedman1937use, demsar2006statistical}. For $k$ candidate models evaluated across $N = 8$ distinct legal domains, each model is assigned a rank $r_i^j$ within domain $i$, where the best-performing model receives rank 1. The average rank of model $j$ across all domains is given by $R_j = \frac{1}{N}\sum_{i=1}^N r_i^j$. Each statistical hypothesis test is to be computed as follows:
+
+    \begin{description}
+        \item[McNemar's Chi-Squared Test with Edwards' Continuity Correction] \leavevmode
+        \begin{equation}
+            \chi^2 = \frac{(|b - c| - 1)^2}{b + c} \sim \chi^2_1
+            \label{eq:mcnemar_test}
+            \eqcaption{McNemar's Chi-Squared Test with Edwards' Continuity Correction}
+        \end{equation}
+        \noindent Where $b$ represents items correctly classified by Model~A but misclassified by Model~B, $c$ represents items correctly classified by Model~B but misclassified by Model~A, and the numerator incorporates Edwards' continuity correction ($-1$) for discrete cell frequencies. A calculated $p$-value below the significance threshold $\alpha = 0.05$ rejects the null hypothesis, confirming that the difference in predictive accuracy is statistically significant.
+
+        \item[Friedman Two-Way Analysis of Variance by Ranks ($\chi_F^2$)] \leavevmode
+        \begin{equation}
+            \chi_F^2 = \frac{12N}{k(k+1)}\left[\sum_{j=1}^k R_j^2 - \frac{k(k+1)^2}{4}\right]
+            \label{eq:friedman_test}
+            \eqcaption{Friedman Two-Way Analysis of Variance by Ranks ($\chi_F^2$)}
+        \end{equation}
+        \noindent Where $N = 8$ is the number of macro legal domains, $k$ is the number of candidate models, and $R_j = \frac{1}{N}\sum_{i=1}^N r_i^j$ is the average rank of model $j$ across all domains ($r_i^j$ being the rank of model $j$ in domain $i$).
+    \end{description}
+
     Under the null hypothesis that all candidate models perform equivalently across legal domains, $\chi_F^2$ follows a chi-squared distribution with $k - 1$ degrees of freedom. If the Friedman test yields $p < 0.05$, the proponents conduct post-hoc pairwise comparisons using the Wilcoxon signed-rank test with Bonferroni correction and the Nemenyi test to isolate specific models that exhibit statistically superior domain generalization~\cite{demsar2006statistical}.
 
     \section{System-Level Evaluation}
@@ -1089,17 +1198,32 @@ def detect_section_conflicts(draft_section, candidate_provisions, model, thresho
     While isolated benchmarks measure retrieval recall and natural language inference accuracy separately, evaluating the live utility of the system requires testing both stages as an integrated pipeline. In real legislative drafting, an inference engine cannot detect a contradiction if the retrieval engine fails to supply the governing statute, and a retrieval engine is useless if the inference engine misclassifies the pair. Following the multi-stage system evaluation standards established in legal information extraction competitions~\cite{rabelo2022coliee, alshehri2026cross} and fact verification benchmarks~\cite{thorne2018fever}, the proponents implement a structured Three-Tier Evaluation Framework. This multi-tier framework connects controlled statistical benchmarking with full-document stress testing. Together, these three evaluation tiers systematically assess whether the complete pipeline can operate reliably within the Davao City Sangguniang Panlungsod.
 
     The first evaluation tier measures the combined algorithmic performance of Stage~1 retrieval and Stage~2 inference when executed sequentially without human intervention. Unlike isolated model testing where the Cross-Encoder receives the exact gold statutory provision, the cascaded benchmark feeds only the local draft hypothesis clause $h_q$ from the 53 held-out test pairs into Stage~1 coarse retrieval. The retrieval engine searches across all 27,000+ national statutes and local ordinances to extract a candidate shortlist of the top-$k$ provisions ($\mathcal{K}_q^{(k)}$), which is then passed directly to Stage~2 for inference. A test item is scored as a Cascaded True Positive if and only if Stage~1 retrieves the correct governing statute $p_q^*$ within the top-$k$ shortlist and Stage~2 correctly classifies the pair $(p_q^*, h_q)$ as a Contradiction:
-    \[
-        \text{Hit}_{\text{casc}}(q) = \mathbf{1}\left(p_q^* \in \mathcal{K}_q^{(k)}\right) \cdot \mathbf{1}\left(\hat{y}(p_q^*, h_q) = y_q^*\right)
-    \]
+    \begin{description}
+        \item[Cascaded End-to-End Joint Conflict Detection Hit Indicator] \leavevmode
+        \begin{equation}
+            \text{Hit}_{\text{casc}}(q) = \mathbf{1}\left(p_q^* \in \mathcal{K}_q^{(k)}\right) \cdot \mathbf{1}\left(\hat{y}(p_q^*, h_q) = y_q^*\right)
+            \label{eq:cascaded_hit}
+            \eqcaption{Cascaded End-to-End Joint Conflict Detection Hit Indicator}
+        \end{equation}
+        \noindent Where $p_q^*$ is the target governing statute, $\mathcal{K}_q^{(k)}$ is the candidate shortlist of top-$k$ provisions retrieved in Stage~1, and $\hat{y}(p_q^*, h_q) = y_q^*$ indicates whether Stage~2 correctly classifies the candidate pair as a contradiction.
+    \end{description}
+
     Adapting this joint metric from the FEVER fact verification framework~\cite{thorne2018fever} isolates whether an operational error stems from retrieval omissions ($p_q^* \notin \mathcal{K}_q^{(k)}$) or classification errors ($\hat{y} \neq y_q^*$), preventing either stage from masking pipeline failures.
 
     The second evaluation tier assesses how the complete coarse-to-fine pipeline processes full, multi-section legislative drafts rather than isolated sentence pairs. In municipal practice, proposed ordinances contain extensive procedural text, including administrative definitions and standard effectivity clauses, which should not trigger conflict warnings. Adapting the behavioral perturbation and fault-injection principles formulated by Ribeiro et al.~\cite{ribeiro2020beyond} and Koreeda and Manning~\cite{koreeda2021contract}, the proponents construct synthetic and semi-synthetic ordinance drafts containing controlled legal faults. In each test document, the majority of sections remain compliant with superior law, while targeted operative provisions contain deliberate statutory violations, such as unauthorized regulatory mandates or excessive penalty amounts. The automated preprocessor chunks the submitted document into operative sections, auditing every section independently against the statutory archive.
 
     Evaluating full documents measures both the sensitivity of the pipeline to authentic legal defects and its ability to avoid false alarms on compliant text. For every audited section, the system records whether a conflict alert is triggered and identifies the retrieved governing statute. The proponents calculate Section-Level Sensitivity to measure the percentage of injected conflicts successfully flagged, paired with Section-Level Specificity to assess false-alarm resistance:
-    \[
-        \text{Specificity}_{\text{sec}} = \frac{TN_{\text{sec}}}{TN_{\text{sec}} + FP_{\text{sec}}}
-    \]
+
+    \begin{description}
+        \item[Section-Level Specificity for Full-Document Stress Testing] \leavevmode
+        \begin{equation}
+            \text{Specificity}_{\text{sec}} = \frac{TN_{\text{sec}}}{TN_{\text{sec}} + FP_{\text{sec}}}
+            \label{eq:section_specificity}
+            \eqcaption{Section-Level Specificity for Full-Document Stress Testing}
+        \end{equation}
+        \noindent Where $TN_{\text{sec}}$ denotes compliant draft sections correctly passing without triggering a false alarm, and $FP_{\text{sec}}$ denotes compliant draft sections erroneously flagged as contradictory.
+    \end{description}
+
     Maintaining high specificity protects legislative researchers from alert fatigue, ensuring that the system does not produce spurious warnings on standard boilerplate clauses. This perturbation stress test confirms that the system can analyze complete legislative documents before deployment in committee reviews.
 
     The third evaluation tier validates the practical utility and legal soundness of the system using documented historical legal disputes and active expert review. Rather than relying solely on synthetic tests, the proponents systematically assembled an authentic judicial validation suite of eight landmark legal controversies and municipal enactments originating strictly within Davao City. These historical cases encompass both judicial invalidations where local enactments were struck down for exceeding statutory boundaries, and landmark rulings where the Supreme Court affirmed the validity of Davao City ordinances under local police power. By subjecting the pipeline to actual local disputes that reached the judiciary, this tier evaluates whether algorithmic contradiction detection mirrors authentic judicial reasoning. The resulting test suite spans multiple substantive categories, including agrochemical oversight, structural zoning, revenue powers, and public health mandates.

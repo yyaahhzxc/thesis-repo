@@ -281,14 +281,23 @@ Always tie nouns to cross-references and citations using a non-breaking space (`
 ### **E. Mathematical & Algorithmic Formulations**
 * Use `amsmath` environments (`equation`, `align*`, `aligned`).
 * Place mathematical variables in math mode: `$N$`, `$k$`, `$\kappa$`, `$top\text{-}k$`.
-* Format multi-line calculations with clear alignment and explain all variables immediately following the equation:
+* **Instruction & Code Grounding Directive (Ma'am Grace Tacadao, Sept 30, 2026):** Only include algorithms, pseudocode listings, and mathematical instructions that are actually implemented, executed, and functional within the project repository (`src/`, `scripts/`). Never include speculative, unused, or generic textbook algorithms.
+* **Equation-Algorithm Non-Redundancy Directive (Ma'am Grace Tacadao, Sept 30, 2026):** Do not redundantly highlight or duplicate equations if they are already embedded within an algorithm listing or pseudocode block. Keep presentations unified without duplicate highlighted equation callouts.
+* **Equation Numbering & List of Equations Integration:** All formal display equations must be numbered and captioned using `\eqcaption{<Descriptive Title>}` inside the `equation` environment. This automatically populates the front matter `List of Equations` (`\listofequations`).
+* **Indentation Control on Equation Explanations:** Inside `description` environments or following equations, always preface the variable breakdown with `\noindent Where ...` to suppress the standard 0.5-inch paragraph indentation. Insert a blank line after `\end{description}` to restore standard 0.5-inch paragraph indentation for subsequent narrative text:
 
 ```latex
-\begin{equation}
-    \kappa = \frac{\bar{P} - \bar{P}_e}{1 - \bar{P}_e}
-    \label{eq:fleiss_kappa}
-\end{equation}
-where $\bar{P}$ represents the mean observed agreement across all premise-hypothesis pairs, and $\bar{P}_e$ denotes the mean agreement expected by chance alone.
+\begin{description}
+    \item[Fleiss' Generalized Multi-Rater Kappa Reliability Metric ($\kappa$)] \leavevmode
+    \begin{equation}
+        \kappa = \frac{\bar{P} - \bar{P}_e}{1 - \bar{P}_e}
+        \label{eq:fleiss_kappa}
+        \eqcaption{Fleiss' Generalized Multi-Rater Kappa Reliability Metric ($\kappa$)}
+    \end{equation}
+    \noindent Where $\bar{P}$ represents the mean observed agreement across all premise-hypothesis pairs, and $\bar{P}_e$ denotes the mean agreement expected by chance alone.
+\end{description}
+
+The resulting inter-rater reliability score evaluates consistency across independent annotators...
 ```
 
 ### **F. Lists & Structural Elements**

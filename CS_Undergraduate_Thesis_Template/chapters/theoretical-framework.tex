@@ -98,7 +98,15 @@ The framework mathematically operationalizes the Hermeneutic Circle—the princi
 
 In legal interpretation, the canon of noscitur a sociis dictates that a word is known by the company it keeps. In Magtajas v. Pryce, the Supreme Court applied this rule to determine that the phrase "gambling and other prohibited games of chance" referred only to illegal gambling because of its surrounding context. The self-attention mechanism computationally replicates this by calculating the interaction of Query ($Q$), Key ($K$), and Value ($V$) matrices:
 
-$$Attention(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+\begin{description}
+    \item[Scaled Dot-Product Attention Mechanism] \leavevmode
+    \begin{equation}
+        \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+        \label{eq:scaled_dot_product_attention}
+        \eqcaption{Scaled Dot-Product Attention Mechanism}
+    \end{equation}
+    \noindent Where $Q$, $K$, and $V$ represent the Query, Key, and Value matrices, and $d_k$ is the dimensionality of the key vectors.
+\end{description}
 
 This allows the model to resolve Contextual Polysemy—where common words like "party" or "consideration" assume specialized meanings based on surrounding "legalese"—by dynamically adjusting vector representations based on the local syntactic context.
 

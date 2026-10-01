@@ -25,24 +25,35 @@ Local vision-language models unify visual patch encoding and autoregressive text
 \subsection{The Multi-Dimensional Evaluation Framework}
 Evaluating document transcription on municipal legislation exposes vulnerabilities that general-domain OCR benchmarks fail to capture. As Lopresti demonstrated~\cite{lopresti2008optical}, optical character recognition errors trigger an error cascade across subsequent natural language processing layers. In statutory construction, a single mutated character or omitted numeral corrupts governing legal semantics. A comprehensive evaluation framework for legislative transcription must combine classical string edit distances with specialized legal entity accuracy metrics and dense semantic embedding fidelity.
 
-The foundational character and word accuracy metrics are formulated via the Levenshtein edit distance $\mathcal{L}_{\text{Lev}}$~\cite{levenshtein1966binary}:
-\begin{equation}
-    \text{CER} = \frac{\mathcal{L}_{\text{Lev}}(\mathbf{c}_{\text{ref}}, \mathbf{c}_{\text{hyp}})}{|\mathbf{c}_{\text{ref}}|} = \frac{S_c + D_c + I_c}{N_c}, \quad
-    \text{WER} = \frac{\mathcal{L}_{\text{Lev}}(\mathbf{w}_{\text{ref}}, \mathbf{w}_{\text{hyp}})}{|\mathbf{w}_{\text{ref}}|} = \frac{S_w + D_w + I_w}{N_w}
-    \label{eq:cer_wer}
-\end{equation}
-where $S$, $D$, and $I$ denote character or word substitutions, deletions, and insertions relative to the gold-standard reference sequence of length $N$. To provide a bounded distance metric that remains stable across varying document lengths, the framework computes Normalized Edit Distance (NED):
-\begin{equation}
-    \text{NED}(\mathbf{s}_{\text{ref}}, \mathbf{s}_{\text{hyp}}) = 1.0 - \frac{\mathcal{L}_{\text{Lev}}(\mathbf{s}_{\text{ref}}, \mathbf{s}_{\text{hyp}})}{\max(|\mathbf{s}_{\text{ref}}|, |\mathbf{s}_{\text{hyp}}|)}
-    \label{eq:ned}
-\end{equation}
-While CER and WER quantify overall typographical fidelity, they treat all tokens symmetrically. A transposed character in a narrative preamble receives the exact same mathematical penalty as an altered digit in a penal sanction.
+The foundational character and word accuracy metrics are formulated via the Levenshtein edit distance $\mathcal{L}_{\text{Lev}}$~\cite{levenshtein1966binary}. Each performance metric is to be computed as follows:
 
-To measure statutory preservation, the framework introduces six domain-specific information extraction metrics:
-\begin{equation}
-    \text{Metric Accuracy} = \frac{1}{|K|} \sum_{k \in K} \mathbb{I}\left( \mathbf{v}_{\text{hyp}}^{(k)} \equiv \mathbf{v}_{\text{ref}}^{(k)} \right)
-    \label{eq:legal_metric_acc}
-\end{equation}
+\begin{description}
+    \item[Character Error Rate (CER) and Word Error Rate (WER)] \leavevmode
+    \begin{equation}
+        \text{CER} = \frac{\mathcal{L}_{\text{Lev}}(\mathbf{c}_{\text{ref}}, \mathbf{c}_{\text{hyp}})}{|\mathbf{c}_{\text{ref}}|} = \frac{S_c + D_c + I_c}{N_c}, \quad
+        \text{WER} = \frac{\mathcal{L}_{\text{Lev}}(\mathbf{w}_{\text{ref}}, \mathbf{w}_{\text{hyp}})}{|\mathbf{w}_{\text{ref}}|} = \frac{S_w + D_w + I_w}{N_w}
+        \label{eq:cer_wer}
+        \eqcaption{Character Error Rate (CER) and Word Error Rate (WER)}
+    \end{equation}
+    \noindent Where $S$, $D$, and $I$ denote character or word substitutions, deletions, and insertions relative to the gold-standard reference sequence of length $N$. While CER and WER quantify overall typographical fidelity, they treat all tokens symmetrically.
+
+    \item[Normalized Edit Distance (NED)] \leavevmode
+    \begin{equation}
+        \text{NED}(\mathbf{s}_{\text{ref}}, \mathbf{s}_{\text{hyp}}) = 1.0 - \frac{\mathcal{L}_{\text{Lev}}(\mathbf{s}_{\text{ref}}, \mathbf{s}_{\text{hyp}})}{\max(|\mathbf{s}_{\text{ref}}|, |\mathbf{s}_{\text{hyp}}|)}
+        \label{eq:ned}
+        \eqcaption{Normalized Edit Distance (NED)}
+    \end{equation}
+    \noindent Where $\mathbf{s}_{\text{ref}}$ and $\mathbf{s}_{\text{hyp}}$ denote the reference and hypothesis string sequences, bounded between 0.0 (maximum dissimilarity) and 1.0 (exact match) to provide a length-invariant evaluation baseline.
+
+    \item[Domain-Specific Legislative Component Accuracy] \leavevmode
+    \begin{equation}
+        \text{Metric Accuracy} = \frac{1}{|K|} \sum_{k \in K} \mathbb{I}\left( \mathbf{v}_{\text{hyp}}^{(k)} \equiv \mathbf{v}_{\text{ref}}^{(k)} \right)
+        \label{eq:legal_metric_acc}
+        \eqcaption{Domain-Specific Legislative Component Accuracy}
+    \end{equation}
+    \noindent Where $K$ represents the set of extracted legal entity instances, and $\mathbb{I}(\cdot)$ is an exact-match indicator function comparing hypothesis values $\mathbf{v}_{\text{hyp}}^{(k)}$ against gold references $\mathbf{v}_{\text{ref}}^{(k)}$.
+\end{description}
+
 These domain metrics evaluate exact string equality across critical legislative components: Legal-Entity Accuracy (LEA) for local administrative offices and private contracting parties; Ordinance-Number Accuracy (ONA) for municipal enactment numbers and series suffixes; Date Accuracy (DA) for enactment, approval, and effectivity dates; Monetary-Value Accuracy (MVPA) for fines, fees, and penalty ceilings; Section-Heading Integrity (SHI) for operative structural catchlines; and Page Completeness (PC) for sequential page preservation. Furthermore, tabular schedule fidelity is evaluated using Tree-Edit-Distance-based Similarity (TEDS)~\cite{zhong2020image}, measuring row-column cell adjacency across multi-tier tax and zoning grids. Finally, Semantic Embedding Cosine Fidelity (SECF) measures dense vector retention by calculating the cosine similarity between dense embeddings of the reference and hypothesis texts.
 
 
@@ -379,10 +390,16 @@ To evaluate statistical significance across the candidate models, the proponents
 
 \subsection{Loss Dynamics and Convergence}
 In supervised machine learning, the loss function mathematically quantifies the penalty incurred when the model's predicted probability distribution diverges from the actual ground truth labels. For multi-class natural language inference, the training objective optimizes Multi-Class Cross-Entropy Loss:
-\[
-    \mathcal{L}_{\text{CE}} = -\sum_{c \in \mathcal{C}} y_c \log \hat{P}(c)
-\]
-where $y_c \in \{0, 1\}$ denotes the binary ground truth indicator for class $c$, and $\hat{P}(c)$ represents the calibrated softmax probability output by the model. 
+
+\begin{description}
+    \item[Multi-Class Cross-Entropy Training Loss Function] \leavevmode
+    \begin{equation}
+        \mathcal{L}_{\text{CE}} = -\sum_{c \in \mathcal{C}} y_c \log \hat{P}(c)
+        \label{eq:cross_entropy_loss}
+        \eqcaption{Multi-Class Cross-Entropy Training Loss Function}
+    \end{equation}
+    \noindent Where $y_c \in \{0, 1\}$ denotes the binary ground truth indicator for class $c \in \mathcal{C}$, and $\hat{P}(c)$ represents the calibrated softmax probability output by the model.
+\end{description} 
 
 An epoch represents one complete training pass across all 245 training pairs. Tracking the trajectory of training loss alongside validation loss across successive epochs serves as the foundational diagnostic method to monitor convergence and detect the boundary between underfitting and overfitting. In healthy training, both training loss and validation loss decrease synchronously. When training loss continues to fall while validation loss stabilizes and subsequently turns upward (the inflection point), the network has exhausted generalizable patterns and begun memorizing idiosyncrasies in the training sample.
 

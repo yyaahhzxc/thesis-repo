@@ -137,10 +137,18 @@ Before the adoption of neural networks, computational legal analysis relied heav
     \subsection{Boolean Information Retrieval}
     To understand why traditional legal databases struggle with semantic conflict detection, we first need to look at how they fundamentally process text at the machine level. Boolean Information Retrieval (BIR) represents the foundational search architecture for almost all commercial law databases currently in use. Instead of reading a document like a human, BIR treats every file simply as a ``bag of words,'' stripping away all grammar and sentence structure. It relies on an inverted index, which is essentially a massive lookup table that tracks exactly which specific words appear in which files across the entire database. Because it only registers the presence or absence of characters, the system is completely blind to the actual context or legal intent behind those words.
     
-    At its core, the retrieval mechanism in BIR is strictly based on set theory and formal Boolean logic. A user constructs a query using logical operators like \texttt{AND} ($\land$), \texttt{OR} ($\lor$), and \texttt{NOT} ($\neg$) to create intersecting sets of documents. For example, a search for a specific ordinance regarding explosives might be formulated mathematically as:
-    
-    \[ Q = (\text{fireworks} \lor \text{pyrotechnics}) \land \neg \text{exempt} \]
-    
+    At its core, the retrieval mechanism in BIR is strictly based on set theory and formal Boolean logic. A user constructs a query using logical operators like \texttt{AND} ($\land$), \texttt{OR} ($\lor$), and \texttt{NOT} ($\neg$) to create intersecting sets of documents. For example, a search for a specific ordinance regarding explosives is formulated mathematically as:
+
+    \begin{description}
+        \item[Boolean Query Set Intersection Formulation] \leavevmode
+        \begin{equation}
+            Q = (\text{fireworks} \lor \text{pyrotechnics}) \land \neg \text{exempt}
+            \label{eq:boolean_query}
+            \eqcaption{Boolean Query Set Intersection Formulation}
+        \end{equation}
+        \noindent Where the compound query $Q$ combines disjunctive keyword sets under conjunction with a negated exemption condition.
+    \end{description}
+
     The system then retrieves documents by calculating the exact mathematical intersection of these sets, pulling only the files that satisfy every condition simultaneously. If a document contains the specific string of characters requested, it is retrieved and scored as a 1; if it misses even a single required term, it is completely ignored and scored as a 0. It evaluates the raw presence of strings, entirely ignoring the conceptual meaning or legal intent behind them \cite{blair1985an}.
 
         \subsubsection{Challenges with BIR}
@@ -153,11 +161,19 @@ Before the adoption of neural networks, computational legal analysis relied heav
     \subsection{Symbolic AI}
     Because BIR fundamentally fails to capture underlying meaning, early artificial intelligence researchers attempted to automate legal reasoning by directly modeling the rules of law themselves. This approach, widely known as Symbolic AI or ``Good Old-Fashioned AI'' (GOFAI), operates on the premise that human cognition can be replicated by manipulating formal symbols \cite{vellino1986artificial}. It moves beyond simple word matching by teaching computers actual legal logic through explicit, human-coded ``IF-THEN'' formulas. Instead of searching a database for raw text strings, Symbolic AI requires human engineers to manually translate the constraints of a statute into formal logic structures. This theoretically allows the computer to process the actual regulatory mechanics of a law rather than just reading its surface vocabulary.
 
-    To execute this logic, these systems specifically utilize propositional or first-order logic combined with deontic operators. Deontic logic is a highly specialized branch of mathematical logic that deals specifically with obligations, permissions, and prohibitions. For example, a system might represent a local zoning prohibition mathematically as:
+    To execute this logic, these systems specifically utilize propositional or first-order logic combined with deontic operators. Deontic logic is a highly specialized branch of mathematical logic that deals specifically with obligations, permissions, and prohibitions. For example, a system represents a local zoning prohibition mathematically as:
 
-    \[ \forall x (\text{Business}(x) \land \text{ResidentialZone}(x) \rightarrow \text{Prohibited}(x)) \]
-    
-    In this formula, the universal quantifier ($\forall$) asserts that for any entity $x$, if it is classified as a business ($\land$) and located in a residential zone, it is strictly prohibited ($\rightarrow$). By converting ordinances into these rigid formulas, a system can theoretically use deductive reasoning to spot a conflict. If Rule A dictates $\mathcal{O}(X)$ (an absolute obligation to do X) and Rule B dictates $\mathcal{F}(X)$ (an absolute prohibition against doing X), the system successfully flags a formal logical contradiction ($\bot$) \cite{athan2013legalruleml}. 
+    \begin{description}
+        \item[First-Order Deontic Prohibition Formulation] \leavevmode
+        \begin{equation}
+            \forall x (\text{Business}(x) \land \text{ResidentialZone}(x) \rightarrow \text{Prohibited}(x))
+            \label{eq:first_order_deontic}
+            \eqcaption{First-Order Deontic Prohibition Formulation}
+        \end{equation}
+        \noindent Where the universal quantifier ($\forall$) asserts that for any entity $x$, if it is classified as a business ($\land$) and located in a residential zone, it is strictly prohibited ($\rightarrow$).
+    \end{description}
+
+    By converting ordinances into these rigid formulas, a system can theoretically use deductive reasoning to spot a conflict. If Rule A dictates $\mathcal{O}(X)$ (an absolute obligation to do X) and Rule B dictates $\mathcal{F}(X)$ (an absolute prohibition against doing X), the system successfully flags a formal logical contradiction ($\bot$) \cite{athan2013legalruleml}. 
 
         \subsubsection{Challenges with Symbolic AI}
         While Symbolic AI provides perfectly transparent and mathematically sound reasoning, its absolute reliance on manual programming makes it practically impossible to scale for real-world governance. The primary architectural barrier is the classical ``knowledge acquisition barrier'' in expert systems: human domain experts and software engineers must manually read, interpret, and translate thousands of unstructured city ordinances into rigid computer rules. This manual translation process is unacceptably slow, extremely expensive, and highly prone to human error during the coding phase \cite{lucos2025neurosymbolic}. Furthermore, every time the city council amends an existing law, the underlying symbolic formula must be manually rewritten, making the system incredibly difficult to maintain over time.
@@ -290,17 +306,25 @@ Information Retrieval (IR) is the process of extracting relevant documents from 
     \label{sec:retrieval_paradigms_fusion}
     In computational legal informatics, isolating candidate enactments from extensive statutory collections requires understanding the theoretical foundations, failure modes, and complementary trade-offs of diverse retrieval strategies. Recent findings from the COLIEE benchmarks and legislative consistency literature identify five core methodological dimensions governing coarse statutory search.
 
-    The foundational baseline for document retrieval in computational law is the Okapi BM25 model, formulated by Robertson and Zaragoza~\cite{robertson2009probabilistic} within the probabilistic relevance framework. BM25 scores the relevance of a statutory document $D$ to a query $Q$ by evaluating non-linear term frequency saturation and document length normalization:
-    \[
-        S_{\text{BM25}}(D, Q) = \sum_{q \in Q} \text{IDF}(q) \cdot \frac{f(q, D) \cdot (k_1 + 1)}{f(q, D) + k_1 \cdot \left(1 - b + b \cdot \frac{|D|}{\text{avgdl}}\right)}
-    \]
-    where $f(q, D)$ denotes term frequency, $|D|/\text{avgdl}$ normalizes for provision length, and parameters $k_1 = 1.5$ and $b = 0.75$ govern term saturation and length penalization. In statutory retrieval competitions such as COLIEE Task~3, BM25 serves as an indispensable baseline (as demonstrated by Team AIIR~\cite{wu2025aiir}) because legislative drafting routinely depends on exact statutory section citations, formal administrative acronyms, and verbatim penal monetary amounts. However, exact lexical matching suffers from the vocabulary mismatch problem: when local ordinances paraphrase statutory commands or enact indirect prohibitions using alternative civic vocabulary, BM25 fails to retrieve governing laws~\cite{blair1985an, manning2008introduction}.
+    The foundational retrieval strategies in computational law encompass sparse probabilistic scoring and dense semantic embeddings. Each relevance scoring metric is to be computed as follows:
 
-    To overcome lexical mismatch and synonymy limits, dense retrieval maps provisions into continuous vector spaces using Siamese Bi-Encoder architectures~\cite{reimers2019sentencebert}. Rather than evaluating token overlap, dense retrievers score relevance via cosine proximity in latent semantic space:
-    \[
-        S_{\text{dense}}(D, Q) = \frac{\mathbf{e}_Q \cdot \mathbf{e}_D}{\|\mathbf{e}_Q\| \|\mathbf{e}_D\|}
-    \]
-    where $\mathbf{e}_Q$ and $\mathbf{e}_D$ represent pooled contextual embeddings generated by dense bi-encoders such as \texttt{all-MiniLM-L6-v2}. In statutory preemption analysis, dense representations capture conceptual legal intent, successfully retrieving governing statutes even when local drafts employ entirely disparate phrasing. This semantic continuity ensures that provisions sharing regulatory purpose are retrieved despite absent keyword overlap.
+    \begin{description}
+        \item[Okapi BM25 Probabilistic Relevance Scoring Function] \leavevmode
+        \begin{equation}
+            S_{\text{BM25}}(D, Q) = \sum_{q \in Q} \text{IDF}(q) \cdot \frac{f(q, D) \cdot (k_1 + 1)}{f(q, D) + k_1 \cdot \left(1 - b + b \cdot \frac{|D|}{\text{avgdl}}\right)}
+            \label{eq:okapi_bm25}
+            \eqcaption{Okapi BM25 Probabilistic Relevance Scoring Function}
+        \end{equation}
+        \noindent Where $f(q, D)$ denotes term frequency of query token $q$ in document $D$, $|D|/\text{avgdl}$ normalizes for provision length, and parameters $k_1 = 1.5$ and $b = 0.75$ govern term saturation and length penalization within Robertson and Zaragoza's probabilistic relevance framework~\cite{robertson2009probabilistic}. In statutory retrieval competitions such as COLIEE Task~3, BM25 serves as an indispensable baseline (as demonstrated by Team AIIR~\cite{wu2025aiir}) because legislative drafting routinely depends on exact statutory citations, formal administrative acronyms, and verbatim penal monetary amounts. However, exact lexical matching suffers from the vocabulary mismatch problem when local ordinances paraphrase statutory commands~\cite{blair1985an, manning2008introduction}.
+
+        \item[Dense Semantic Cosine Proximity Relevance Function] \leavevmode
+        \begin{equation}
+            S_{\text{dense}}(D, Q) = \frac{\mathbf{e}_Q \cdot \mathbf{e}_D}{\|\mathbf{e}_Q\| \|\mathbf{e}_D\|}
+            \label{eq:dense_cosine_sim}
+            \eqcaption{Dense Semantic Cosine Proximity Relevance Function}
+        \end{equation}
+        \noindent Where $\mathbf{e}_Q$ and $\mathbf{e}_D$ represent pooled contextual embeddings generated by dense bi-encoders such as \texttt{all-MiniLM-L6-v2}~\cite{reimers2019sentencebert}. Rather than evaluating token overlap, dense retrievers score relevance via cosine proximity in latent semantic space, capturing conceptual legal intent and retrieving governing statutes even when local drafts employ disparate phrasing.
+    \end{description}
 
     In heterogeneous statutory databases spanning tens of thousands of enactments, researchers frequently investigate topic classification or domain partitioning to reduce search space complexity. However, empirical literature highlights the severe danger of hard categorical filtering in legal domains. Foundational statutory instruments, such as the Philippine Local Government Code of 1991 (RA 7160) or comprehensive penal codes, function as omnibus legislation that simultaneously govern municipal administration, taxation, public safety, and environmental sanitation. Hard filtering by a single predicted regulatory category discards the governing omnibus code whenever a query touches an adjacent regulatory area, causing catastrophic candidate recall collapse. In contrast, information retrieval theory establishes soft domain priors~\cite{robertson2009probabilistic}. Instead of binary candidate exclusion, soft priors apply a calibrated multiplicative score boost (e.g., $+20\%$) to candidate documents matching the predicted topic or latent semantic cluster, preserving access to multi-domain statutory codes while gently elevating topically congruent provisions.
 
@@ -363,17 +387,27 @@ Beyond just teaching the model, the ground truth is the only objective way to me
     
     To evaluate the effectiveness of these strict guidelines, researchers must utilize Inter-Rater Reliability (IRR) metrics \cite{mchugh2012interrater} rather than mathematically flawed percentage agreements. Raw percentage agreement fails to account for statistical probability, where in a multiple-choice classification task, there is an inherent likelihood that annotators will occasionally select the same label by pure random guessing.
     
-    The two primary statistical formulas used to subtract this random chance are Cohen's Kappa \cite{cohen1960coefficient} and Fleiss' Kappa \cite{fleiss1971measuring}. Cohen's Kappa evaluates agreement between exactly two raters using the following formula:
-    
-    $$\kappa = \frac{p_o - p_e}{1 - p_e}$$
-    
-    where $p_o$ represents the relative observed agreement between the two individual raters, and $p_e$ represents the hypothetical probability of chance agreement.
-    
-    When a dataset requires a multi-expert consensus—such as utilizing three or more domain experts to establish a majority rule—Fleiss' Kappa becomes the mandatory statistical metric. Fleiss generalized Cohen's formula to accommodate a fixed, larger number of multiple raters:
-    
-    $$\kappa = \frac{\bar{P} - \bar{P_e}}{1 - \bar{P_e}}$$
-    
-    In this generalized equation, $\bar{P}$ represents the mean observed agreement across all pairs of raters, while $\bar{P_e}$ represents the expected chance agreement across the entire pool. The resulting $\kappa$ score is interpreted using the universally accepted statistical matrix established by Landis and Koch \cite{landis1977measurement}:
+    The two primary statistical formulas used to subtract this random chance are Cohen's Kappa~\cite{cohen1960coefficient} and Fleiss' Kappa~\cite{fleiss1971measuring}. Each inter-rater reliability metric is to be computed as follows:
+
+    \begin{description}
+        \item[Cohen's Pairwise Kappa ($\kappa$)] \leavevmode
+        \begin{equation}
+            \kappa = \frac{p_o - p_e}{1 - p_e}
+            \label{eq:cohens_kappa}
+            \eqcaption{Cohen's Pairwise Kappa Reliability Metric ($\kappa$)}
+        \end{equation}
+        \noindent Where $p_o$ represents the relative observed agreement between the two individual raters, and $p_e$ represents the hypothetical probability of chance agreement. Cohen's Kappa evaluates agreement between exactly two raters.
+
+        \item[Fleiss' Generalized Multi-Rater Kappa ($\kappa$)] \leavevmode
+        \begin{equation}
+            \kappa = \frac{\bar{P} - \bar{P_e}}{1 - \bar{P_e}}
+            \label{eq:fleiss_kappa}
+            \eqcaption{Fleiss' Generalized Multi-Rater Kappa Reliability Metric ($\kappa$)}
+        \end{equation}
+        \noindent Where $\bar{P}$ represents the mean observed agreement across all pairs of raters, while $\bar{P_e}$ represents the expected chance agreement across the entire pool. Fleiss' Kappa generalizes Cohen's formula to accommodate three or more domain experts establishing a majority consensus.
+    \end{description}
+
+    The resulting $\kappa$ score is interpreted using the universally accepted statistical matrix established by Landis and Koch \cite{landis1977measurement}:
     
     \begin{table}[htbp]
         \centering
