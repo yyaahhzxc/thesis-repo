@@ -59,6 +59,10 @@ description: This rule shall be applied when the user wants the thesis paper dra
 >      - **Chapter 4 (Results and Discussion):** Actually executing the research plan outlined in Chapter 3 and presenting what was found. It details the empirical findings, screening metrics, fine-tuning loss curves, comparative evaluation tables, ablation findings, and in-depth analyses of *what actually happened*.
 > 14. **Chapter 4 Structural Alignment with Problem Statement & Objectives:**  
 >    * When drafting, reorganizing, or expanding Chapter 4 (*Results and Discussion*), the sections and empirical findings must be explicitly arranged and mapped in direct correspondence with the Statement of the Problem and Research Objectives defined in Chapter 1. Every research question and objective must find its direct answer and empirical discussion within a corresponding, dedicated section of Chapter 4.
+> 15. **Proximity and Flow of Visual Elements (Figures, Tables, and Listings):**  
+>    * **Proximity to First Mention:** Every figure, table, and code/pseudocode listing must be placed in the source LaTeX as close as possible immediately following the paragraph where it is first cited or introduced in the narrative. Avoid defining visuals pages before or after their textual discussion.  
+>    * **No Back-to-Back Visual Stacking ("Float Walls"):** Avoid clustering multiple figures, tables, or listings immediately adjacent to each other without intervening explanatory text. Interleave narrative discussion between visual elements so that the reader can absorb the empirical context alongside each visual rather than navigating back-to-back visual walls.  
+>    * **Consistent Pagination & Float Controls:** Position float specifiers (`[htbp]` or `[tbp]`) and sizing so that visual assets do not get awkwardly cut off, cause orphan headings, or displace narrative paragraphs across multi-page gaps. Maintain logical reading cadence where text introduces the visual, the visual presents the data/architecture, and following text analyzes or expands upon it.
 
 
 ---

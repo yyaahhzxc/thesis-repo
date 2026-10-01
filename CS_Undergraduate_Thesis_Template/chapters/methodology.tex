@@ -49,14 +49,16 @@ This section maps how data flows through the proposed system. The architecture f
     Building the legal database requires collecting text from different public repositories so that the system includes as many relevant laws as possible. These sources provide the national statutes and city ordinances needed to check draft legislation for consistency. To keep the language consistent and make vector processing simpler, the system gathers only the English-language versions of all legal texts. This choice matches Philippine statutory rules under Section~20, Chapter~5, Book~I of Executive Order No.~292 (Administrative Code of 1987)~\cite{philgov1987eo292}, which explicitly mandates that in the interpretation of laws promulgated in official languages, the English text shall control unless otherwise specifically provided. National statutes and local ordinances are gathered using separate automated scripts designed for the format of each source.
 
         \subsection{Corpus Composition}
-        The Lawphil Project (Arellano Law Foundation) serves as the primary digitized extraction source for national statutory text because its documents are provided in clean HTML, follow a consistent layout, and offer broad historical coverage~\cite{lawphil2000}. Automated scraping scripts browse through chronological and alphabetical indexes to collect Republic Acts, Batas Pambansa, Commonwealth Acts, Acts, Executive Orders, and Presidential Decrees. Using a custom web extraction pipeline built by the proponents, statutory extraction was conducted as of \textbf{March 2026}, collecting 25,432 unique legal records enacted between 1900 and 2026. The Official Gazette of the Republic of the Philippines~\cite{officialgazette} and the Chan Robles Virtual Law Library were used as authoritative secondary cross-references to verify enactment dates, chronological numbering, and historical amendment status. All collected national laws are converted into standardized JSON records with metadata, such as dates of approval, titles, and section numbers. Listing~\ref{lst:corpus_extraction} illustrates the web scraping and provision extraction logic implemented to retrieve and structure the statutory archive. As illustrated in Figure~\ref{fig:lawphil_web_interface}, the Lawphil repository presents statutory text in clean, unstyled HTML typography with a predictable hierarchical URL schema (e.g., \texttt{/statutes/repacts/ra2018/ra\_11035\_2018.html} for Republic Act No.~11035). This standardized structure separates introductory legislative headers from operative provisions and eliminates the need for dynamic JavaScript browser rendering, facilitating rapid, fault-tolerant web scraping.
+        The Lawphil Project (Arellano Law Foundation) serves as the primary digitized extraction source for national statutory text because its documents are provided in clean HTML, follow a consistent layout, and offer broad historical coverage~\cite{lawphil2000}. Automated scraping scripts browse through chronological and alphabetical indexes to collect Republic Acts, Batas Pambansa, Commonwealth Acts, Acts, Executive Orders, and Presidential Decrees. Using a custom web extraction pipeline built by the proponents, statutory extraction was conducted as of \textbf{March 2026}, collecting 25,432 unique legal records enacted between 1900 and 2026. The Official Gazette of the Republic of the Philippines~\cite{officialgazette} and the Chan Robles Virtual Law Library were used as authoritative secondary cross-references to verify enactment dates, chronological numbering, and historical amendment status. All collected national laws are converted into standardized JSON records with metadata, such as dates of approval, titles, and section numbers. As illustrated in Figure~\ref{fig:lawphil_web_interface}, the Lawphil repository presents statutory text in clean, unstyled HTML typography with a predictable hierarchical URL schema (e.g., \texttt{/statutes/repacts/ra2018/ra\_11035\_2018.html} for Republic Act No.~11035). This standardized structure separates introductory legislative headers from operative provisions and eliminates the need for dynamic JavaScript browser rendering, facilitating rapid, fault-tolerant web scraping.
 
-        \begin{figure}[!htbp]
+        \begin{figure}[htbp]
             \centering
-            \includegraphics[width=0.92\linewidth]{figs/lawphil_republic_act_sample.png}
-            \caption[Sample Statutory Enactment Webpage from the Lawphil Repository]{Sample Statutory Enactment Webpage from the Lawphil Project Repository (Republic Act No.~11035, \textit{Balik Scientist Act}). The repository features a streamlined, clean HTML document layout without intrusive styling or dynamic client-side rendering. Furthermore, its transparent and predictable URL hierarchy (\texttt{/statutes/repacts/ra2018/ra\_11035\_2018.html}) systematically organizes enactments by instrument type, legislative year, and statutory numbering, enabling automated, fault-tolerant corpus harvesting.}
+            \includegraphics[width=0.74\linewidth]{figs/lawphil_republic_act_sample.png}
+            \caption[Sample Statutory Enactment Webpage from the Lawphil Repository]{Sample Statutory Enactment Webpage from the Lawphil Project Repository (Republic Act No.~11035, \textit{Balik Scientist Act}). The repository features a streamlined HTML document layout with a transparent and predictable URL hierarchy (\texttt{/statutes/repacts/ra2018/ra\_11035\_2018.html}) enabling automated, fault-tolerant statutory harvesting.}
             \label{fig:lawphil_web_interface}
         \end{figure}
+
+        Collecting national laws from Lawphil helps avoid the disorganization common to public legal websites. Although the Official Gazette and congressional websites also host statutory records, their web pages frequently change layout and often provide older laws only as image-only PDF scans. In contrast, Lawphil keeps a standard HTML structure across all historical eras, clearly separating introductory preambles from operative legal sections. Scraping from this repository ensured uniform text formatting across the national collection (over 25,000 enactments), preventing formatting differences from skewing vector embeddings during Stage~1 retrieval. Listing~\ref{lst:corpus_extraction} illustrates the web scraping and provision extraction logic implemented to retrieve and structure the statutory archive, establishing a consistent text foundation for semantic analysis and conflict detection.
 
         \begin{lstlisting}[language=Python, caption={Code Snippet of the Statutory Corpus Acquisition and Provision Extraction Pipeline}, label={lst:corpus_extraction}]
 def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
@@ -64,11 +66,9 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
     Extracts, sanitizes, and structures national statutes from the online archive.
     """
     statute_records = []
-    
     for year in range(start_year, end_year + 1):
         year_index = fetch_page(f"{base_url}/year/{year}")
         statute_links = parse_index_links(year_index)
-        
         for link in statute_links:
             # Fetch raw web page and parse HTML DOM tree
             html_content = fetch_page_with_retry(link, delay_seconds=1.0)
@@ -77,23 +77,17 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             # Extract statutory metadata and clean document body
             metadata = extract_header_metadata(soup)
             body_text = clean_document_body(soup)
-            
-            # Segment statute into discrete section-level provisions
             sections = segment_into_sections(body_text)
             
-            record = {
+            statute_records.append({
                 "statute_id": metadata.id,
                 "title": metadata.title,
                 "instrument": metadata.type,
                 "date_enacted": metadata.date,
                 "sections": sections
-            }
-            statute_records.append(record)
-            
+            })
     return statute_records
         \end{lstlisting}
-
-        Collecting national laws from Lawphil helps avoid the disorganization common to public legal websites. Although the Official Gazette and congressional websites also host statutory records, their web pages frequently change layout and often provide older laws only as image-only PDF scans. In contrast, Lawphil keeps a standard HTML structure across all historical eras, clearly separating introductory preambles from operative legal sections. Scraping from this repository ensured uniform text formatting across the national collection (over 25,000 enactments), preventing formatting differences from skewing vector embeddings during Stage~1 retrieval. The resulting collection provides a clean, consistent text foundation for semantic analysis and conflict detection.
 
         To capture the complete statutory search space, the national collection is paired with Davao City municipal legislation gathered across two complementary acquisition streams. The first channel consists of the official Davao City Sangguniang Panlungsod Public Web Portal, which provides selective historical landmark ordinances and municipal uploads spanning approximately fifteen years, capturing prominent regulatory codes in public safety, zoning, and health~\cite{spdavao2026}. The second and primary channel comprises the municipal Legislative Information Support System Program (LISSP), acquired directly through formal administrative coordination with the Sangguniang Panlungsod Secretariat and Information Technology division~\cite{citygov2025lissp}. Through this institutional coordination, municipal authorities granted the proponents direct access to digitized enactments via a shared repository, encompassing enactments passed primarily by the 19th and 20th City Councils between 2021 and 2025. Together, these two channels yielded an archive of exactly 1,664 municipal enactments spanning from 1950 to 2025. These 1,664 documents represent the complete accessible digital corpus gathered within the proponents' institutional capabilities. In practice, the true cumulative historical total of ordinances enacted since Davao City was chartered under Commonwealth Act No.~51 in 1936 remains unrecorded on the internet and unknown to municipal authorities. In institutional consultations, Sangguniang Panlungsod personnel confirmed that an official cumulative ledger does not exist because local legislation is numbered sequentially per calendar year and council term rather than in an unbroken cumulative sequence. Furthermore, the vast majority of historical enactments, particularly those prior to the 2021 LISSP digital initiative, exist exclusively as physical paper documents preserved in archive rooms and filing cabinets at the Sangguniang Panlungsod building on San Pedro Street, requiring manual page-by-page physical inventorying to tally. When combined with the 25,432 national statutes, the total statutory search space comprises \textbf{27,096 legal enactments} ($N_{\text{sections}} = 176,421$).
 
@@ -115,9 +109,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
 
         \subsection{National Statutory Corpus Analysis}
         \label{sec:domain_categorization}
-        Across the five main types of legislation with sequential numbers, the collected corpus includes 19,683 statutes out of an estimated 20,246 historical laws, achieving a coverage rate of 97.22\%. When combined with the 5,749 Executive Orders from fifteen presidential administrations, the compiled national archive holds 25,432 out of about 26,451 total historical legal documents, reaching a national recall rate of 96.15\%. All official legislative totals reflect the chronological numbering sequence established by Congress and presidential records as of \textbf{March 2026}, where sequential Republic Acts reached Republic Act No.~12,313. Table~\ref{tab:statute_type_composition} provides a breakdown of the national corpus, comparing the collected documents with official legislative totals for each statutory type. Figure~\ref{fig:statute_type_composition} shows the share of each legal instrument in the archive, illustrating the large volume of executive orders alongside congressional acts.
-
-        A key methodological decision in compiling this database is the explicit inclusion of \textbf{Executive Orders (EOs)} alongside congressional legislation. Under Article~VII, Section~17 of the 1987 Philippine Constitution and Book~III of Executive Order No.~292~\cite{philgov1987eo292}, Executive Orders are presidential acts providing rules of a general character in execution of statutory mandates. Unlike Supreme Court decisions that settle private adversarial controversies under \textit{stare decisis}, Executive Orders operate as \textit{ex-ante}, forward-looking statutory instruments possessing the full force of law. Modern Executive Orders establish binding nationwide regulatory mandates, such as Executive Order No.~26 (s.~2017) mandating nationwide public smoking bans, that legally preempt inconsistent local ordinances. Excluding Executive Orders would create an artificial regulatory gap, allowing local ordinances to contradict operative presidential mandates.
+        Across the five main types of legislation with sequential numbers, the collected corpus includes 19,683 statutes out of an estimated 20,246 historical laws, achieving a coverage rate of 97.22\%. When combined with the 5,749 Executive Orders from fifteen presidential administrations, the compiled national archive holds 25,432 out of about 26,451 total historical legal documents, reaching a national recall rate of 96.15\%. All official legislative totals reflect the chronological numbering sequence established by Congress and presidential records as of \textbf{March 2026}, where sequential Republic Acts reached Republic Act No.~12,313. Table~\ref{tab:statute_type_composition} provides a breakdown of the national corpus, comparing the collected documents with official legislative totals for each statutory type.
 
         \begin{table}[!htbp]
             \centering
@@ -143,6 +135,12 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \end{tabularx}
         \end{table}
 
+        A key methodological decision in compiling this database is the explicit inclusion of \textbf{Executive Orders (EOs)} alongside congressional legislation. Under Article~VII, Section~17 of the 1987 Philippine Constitution and Book~III of Executive Order No.~292~\cite{philgov1987eo292}, Executive Orders are presidential acts providing rules of a general character in execution of statutory mandates. Unlike Supreme Court decisions that settle private adversarial controversies under \textit{stare decisis}, Executive Orders operate as \textit{ex-ante}, forward-looking statutory instruments possessing the full force of law. Modern Executive Orders establish binding nationwide regulatory mandates, such as Executive Order No.~26 (s.~2017) mandating nationwide public smoking bans, that legally preempt inconsistent local ordinances. Excluding Executive Orders would create an artificial regulatory gap, allowing local ordinances to contradict operative presidential mandates.
+
+        The coverage rates confirm that the national legal archive is nearly complete across all historical governance eras. Commonwealth Acts show full 100.00\% coverage across all 733 enactments, while American-era Acts (99.58\%) and Batas Pambansa (99.66\%) miss only 18 and 3 enactments, respectively. For Republic Acts, the 11,963 collected records cover 97.16\% of the 12,313 official total, with missing entries mainly being local bills or recent laws still being indexed. For Presidential Decrees, the 1,844 gathered records represent 90.57\% of the 2,036 numbered decrees from the Martial Law period, where uncollected entries were unpublished directives until the Supreme Court required full publication in \textit{Tañada v. Tuvera}~\cite{sc1985tanadavtuvera}. For Executive Orders, the 5,749 collected records represent 92.65\% of the 6,205 numbered orders issued across fifteen presidential terms, offering an extensive record of administrative policy.
+
+        This institutional breakdown also explains why executive and administrative orders account for nearly half (48.01\%) of the subsequent topic groups. Executive Orders (22.61\%) and Presidential Decrees (7.25\%) together make up 7,593 documents, representing nearly one-third of the entire national archive. When combined with colonial-era civil administration Acts and agency reorganizations, administrative directives form the largest single category of Philippine legal text. In language processing, this large volume of administrative text poses a challenge during search, as queries can easily match routine bureaucratic language rather than municipal regulations. Figure~\ref{fig:statute_type_composition} illustrates the share of each legal instrument in the archive, highlighting the large volume of executive orders alongside congressional acts. This computational reality demonstrates why automated topic grouping is necessary to keep local ordinance checks focused on relevant laws.
+
         \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.78\linewidth]{figs/statute_type_composition.png}
@@ -150,15 +148,11 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \label{fig:statute_type_composition}
         \end{figure}
 
-        The coverage rates confirm that the national legal archive is nearly complete across all historical governance eras. Commonwealth Acts show full 100.00\% coverage across all 733 enactments, while American-era Acts (99.58\%) and Batas Pambansa (99.66\%) miss only 18 and 3 enactments, respectively. For Republic Acts, the 11,963 collected records cover 97.16\% of the 12,313 official total, with missing entries mainly being local bills or recent laws still being indexed. For Presidential Decrees, the 1,844 gathered records represent 90.57\% of the 2,036 numbered decrees from the Martial Law period, where uncollected entries were unpublished directives until the Supreme Court required full publication in \textit{Tañada v. Tuvera}~\cite{sc1985tanadavtuvera}. For Executive Orders, the 5,749 collected records represent 92.65\% of the 6,205 numbered orders issued across fifteen presidential terms, offering an extensive record of administrative policy.
-
-        This institutional breakdown also explains why executive and administrative orders account for nearly half (48.01\%) of the subsequent topic groups. Executive Orders (22.61\%) and Presidential Decrees (7.25\%) together make up 7,593 documents, representing nearly one-third of the entire national archive. When combined with colonial-era civil administration Acts and agency reorganizations, administrative directives form the largest single category of Philippine legal text. In language processing, this large volume of administrative text poses a challenge during search, as queries can easily match routine bureaucratic language rather than municipal regulations. This computational reality demonstrates why automated topic grouping is necessary to keep local ordinance checks focused on relevant laws.
-
         To trace how the six statutory instruments evolved across Philippine jurisprudence, the proponents categorized statutory enactments across six chronological eras. Each historical era established distinct legislative authorities, ranging from colonial commissions to modern constitutional congresses. Figure~\ref{fig:historical_temporal_evolution} charts the chronological succession and aggregate volume of statutory instruments from 1900 through 2026. The distribution reflects the shifting primacy of legislative acts, presidential decrees, and administrative executive orders across political transitions. Examining these enactment waves illustrates how historical governance structures directly shaped the composition of the national legal corpus.
 
         \begin{figure}[htbp]
             \centering
-            \includegraphics[width=0.96\linewidth]{figs/historical_temporal_evolution.png}
+            \includegraphics[width=0.88\linewidth]{figs/historical_temporal_evolution.png}
             \caption[Historical Succession and Volume of Statutory Instruments]{Historical Succession and Volume of Statutory Instruments across Six Chronological Eras (1900--2026, $N = 25,432$).}
             \label{fig:historical_temporal_evolution}
         \end{figure}
@@ -179,7 +173,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
         \[
             \mathbf{C}_m = \frac{\sum_{i \in \mathcal{D}_m} \mathbf{z}_i}{\left\|\sum_{i \in \mathcal{D}_m} \mathbf{z}_i\right\|_2}, \quad P(m \mid \mathbf{z}_i) = \frac{\exp(\tau \cdot \cos(\mathbf{z}_i, \mathbf{C}_m))}{\sum_{j} \exp(\tau \cdot \cos(\mathbf{z}_i, \mathbf{C}_j))}
         \]
-        where $\mathbf{z}_i$ represents the normalized 64-dimensional SVD vector of document $i$, $\mathbf{C}_m$ denotes the normalized centroid of macro domain $m$, and $\tau = 6.0$ functions as the inverse temperature scaling parameter. Adapting temperature scaling principles from Guo et al.~\cite{guo2017calibration}, the parameter $\tau = 6.0$ prevents uncalibrated softmax dispersion across cosine distances, ensuring that dominant domain probabilities remain sharply separated. Executing this consolidation across all 25,432 national statutes organizes the historical collection into eight Consolidated Macro Legal Domains, as detailed in Table~\ref{tab:national_macro_domains} and illustrated in Figure~\ref{fig:macro_domain_distribution}.
+        where $\mathbf{z}_i$ represents the normalized 64-dimensional SVD vector of document $i$, $\mathbf{C}_m$ denotes the normalized centroid of macro domain $m$, and $\tau = 6.0$ functions as the inverse temperature scaling parameter. Adapting temperature scaling principles from Guo et al.~\cite{guo2017calibration}, the parameter $\tau = 6.0$ prevents uncalibrated softmax dispersion across cosine distances, ensuring that dominant domain probabilities remain sharply separated. Executing this consolidation across all 25,432 national statutes organizes the historical collection into eight Consolidated Macro Legal Domains, as detailed in Table~\ref{tab:national_macro_domains}.
 
         \begin{table}[htbp]
             \centering
@@ -204,6 +198,8 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \end{tabularx}
         \end{table}
 
+        The topic distribution reflects the historical patterns of Philippine lawmaking. Executive issuances, administrative orders, and presidential decrees make up nearly half of the entire statutory collection, reflecting centralized authority during past political transitions. Common municipal subjects, including school infrastructure (13.73\%) and public utility franchises (8.03\%), form large distinct clusters with repetitive drafting patterns. In contrast, key regulatory topics like taxation (1.80\%) and public health (7.43\%) occupy smaller, highly focused portions of the database. As illustrated in Figure~\ref{fig:macro_domain_distribution}, routine executive issuances, administrative orders, and presidential decrees dominate the aggregate volume, while municipal regulatory categories remain relatively compact. Separating these regulatory clusters keeps routine administrative orders from crowding the candidate list during Stage~1 retrieval.
+
         \begin{figure}[htbp]
             \centering
             \includegraphics[width=0.88\linewidth]{figs/macro_domain_distribution.png}
@@ -211,13 +207,13 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
             \label{fig:macro_domain_distribution}
         \end{figure}
 
-        The topic distribution reflects the historical patterns of Philippine lawmaking. Executive issuances, administrative orders, and presidential decrees make up nearly half of the entire statutory collection, reflecting centralized authority during past political transitions. Common municipal subjects, including school infrastructure (13.73\%) and public utility franchises (8.03\%), form large distinct clusters with repetitive drafting patterns. In contrast, key regulatory topics like taxation (1.80\%) and public health (7.43\%) occupy smaller, highly focused portions of the database. Separating these regulatory clusters keeps routine administrative orders from crowding the candidate list during Stage~1 retrieval.
+        \clearpage
 
         To examine the geometric separation of these legal topics, the proponents projected the 64-dimensional SVD document vectors into a two-dimensional latent semantic landscape. Dimensionality reduction maps document similarities onto coordinate axes, allowing direct visual inspection of cluster cohesion. Figure~\ref{fig:semantic_topic_landscape_2d} illustrates this topic landscape across a representative stratified sample ($N = 3,500$), highlighting the core clusters and their spatial distributions. Specialized regulatory domains project outward as distinct, isolated rays along the periphery of the vector space. Enactments establishing academic institutions and telecommunications franchises form tight, cohesive rays with minimal dispersion.
 
         \begin{figure}[htbp]
             \centering
-            \includegraphics[width=0.92\linewidth]{figs/semantic_topic_landscape_2d.png}
+            \includegraphics[width=0.86\linewidth]{figs/semantic_topic_landscape_2d.png}
             \caption[Two-Dimensional Latent Semantic Topic Space of National Statutes]{Two-Dimensional Latent Semantic Topic Space of the Philippine National Statutory Corpus (SVD Projection, $N = 3,500$ Representative Sample).}
             \label{fig:semantic_topic_landscape_2d}
         \end{figure}
@@ -284,7 +280,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
 
         \begin{figure}[!htbp]
             \centering
-            \includegraphics[width=0.96\linewidth]{figs/local_ordinance_temporal_and_typology.png}
+            \includegraphics[width=0.88\linewidth]{figs/local_ordinance_temporal_and_typology.png}
             \caption[Temporal Distribution and Latent Semantic Space of Municipal Corpus]{Temporal Distribution across Four Legislative Eras and Two-Dimensional Latent Semantic Topic Space of the Davao City Municipal Legislative Corpus ($N = 1,664$). Panel (a) illustrates digitized ordinance counts across historical eras, highlighting the digital archiving expansion between 2021 and 2025. Panel (b) depicts the two-dimensional latent semantic space generated through 64-component Truncated SVD, featuring $1.5\sigma$ covariance confidence ellipses and geometric cluster centroids ($\mathbf{C}_1\text{--}\mathbf{C}_6$) across the six discovered functional typologies.}
             \label{fig:local_ordinance_temporal_and_typology}
         \end{figure}
@@ -387,7 +383,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
 
         \begin{figure}[!htbp]
             \centering
-            \includegraphics[width=0.96\linewidth]{figs/dual_corpus_length_asymmetry.png}
+            \includegraphics[width=0.88\linewidth]{figs/dual_corpus_length_asymmetry.png}
             \caption[Enactment Length Asymmetry and Provision-Level Subword Token Densities]{Enactment Length Asymmetry and Provision-Level Subword Token Densities across the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$). Panel (a) compares enactment full-text character length distributions on a logarithmic scale, highlighting national omnibus codifications against concise municipal ordinances. Panel (b) depicts probability density curves for national statutory provisions (median: 122 tokens), municipal operative provisions (median: 98 tokens), and municipal boilerplate sections (median: 72 tokens) against the 512-token transformer context ceiling.}
             \label{fig:dual_corpus_length_asymmetry}
         \end{figure}
@@ -396,7 +392,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
 
         \begin{figure}[!htbp]
             \centering
-            \includegraphics[width=0.96\linewidth]{figs/dual_corpus_transformer_compliance.png}
+            \includegraphics[width=0.88\linewidth]{figs/dual_corpus_transformer_compliance.png}
             \caption[Cumulative Provision Compliance Curves and Attention Window Evaluation]{Cumulative Provision Compliance Curves and Attention Window Evaluation across the Dual Statutory Search Space ($N = 27,096$ Enactments, $N_{\text{sections}} = 176,421$). Panel (a) illustrates empirical cumulative distribution functions (CDF) across token lengths up to 1,024 tokens, denoting exact compliance at the 512-token threshold for national provisions (94.83\%), all municipal sections (92.72\%), and municipal operative provisions (90.06\%). Panel (b) provides a comparative grouped bar chart evaluating provision fit across five candidate transformer context windows (128, 256, 512, 1,024, and 8,192 tokens) with dedicated legends for National Statutes and Davao City Local Ordinances.}
             \label{fig:dual_corpus_transformer_compliance}
         \end{figure}
@@ -413,9 +409,7 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
 
     \subsection{Draft Ingestion and Boundary Parsing}
     \label{sec:draft_ingestion_segmentation}
-        A critical operational distinction in this research separates the historical training archive from live ex-ante draft submissions. While the historical Davao City collection consists of scanned physical PDFs requiring optical character recognition (OCR) and text normalization, newly drafted ordinances submitted for ex-ante review are digital-born documents. Legislative staff create these proposed measures using standard word processing software, generating clean electronic text or searchable PDF files. Because digital-born drafts contain authentic character encodings without scanning artifacts, the live pipeline bypasses OCR error correction entirely. This structural decoupling allows the preprocessor to focus immediately on automated section boundary parsing and clause segmentation.
-
-        To evaluate legislative commands without semantic distortion, an automated regular expression parser splits the submitted draft at formal section boundaries into discrete operative blocks. In Philippine local legislative practice, proposed measures follow standardized structural templates established by the Department of the Interior and Local Government~\cite{dilg2022drafting}. Real-world legislative drafts contain substantial procedural boilerplate that does not express substantive legal commands. If routine clauses such as title declarations, repealing clauses, and effectivity dates are fed into Stage~1 retrieval, they match thousands of administrative national statutes containing similar formulaic phrases. Listing~\ref{lst:jsonl_sample} displays an authentic raw ingestion record from the national statutory collection, while Listing~\ref{lst:provision_extractor} details the regular expression parser that segments live draft measures into discrete operative sections while filtering out procedural boilerplate.
+        A critical operational distinction in this research separates the historical training archive from live ex-ante draft submissions. While the historical Davao City collection consists of scanned physical PDFs requiring optical character recognition (OCR) and text normalization, newly drafted ordinances submitted for ex-ante review are digital-born documents. Legislative staff create these proposed measures using standard word processing software, generating clean electronic text or searchable PDF files. Because digital-born drafts contain authentic character encodings without scanning artifacts, the live pipeline bypasses OCR error correction entirely. This structural decoupling allows the preprocessor to focus immediately on automated section boundary parsing and clause segmentation. To illustrate the structure of the ingested raw statutory text prior to segmentation, Listing~\ref{lst:jsonl_sample} displays an authentic raw ingestion record from the national statutory collection (Republic Act No.~11035).
 
         \begin{lstlisting}[language=Python, caption={Sample Raw JSONL Ingestion Record from the National Statutory Archive (Republic Act No. 11035)}, label={lst:jsonl_sample}]
 # Raw Ingestion Record from corpus/national_laws/republic_acts.jsonl (ra_11035_2018)
@@ -444,6 +438,8 @@ raw_statute_record = {
     )
 }
         \end{lstlisting}
+
+        To evaluate legislative commands without semantic distortion, an automated regular expression parser splits the submitted draft at formal section boundaries into discrete operative blocks. In Philippine local legislative practice, proposed measures follow standardized structural templates established by the Department of the Interior and Local Government~\cite{dilg2022drafting}. Real-world legislative drafts contain substantial procedural boilerplate that does not express substantive legal commands. If routine clauses such as title declarations, repealing clauses, and effectivity dates are fed into Stage~1 retrieval, they match thousands of administrative national statutes containing similar formulaic phrases. Listing~\ref{lst:provision_extractor} details the regular expression parser that segments live draft measures into discrete operative sections while filtering out procedural boilerplate.
 
         \begin{lstlisting}[language=Python, caption={Code Snippet of the Operative Provision Extractor and Boilerplate Filter}, label={lst:provision_extractor}]
 import re
@@ -481,11 +477,7 @@ def extract_operative_provisions(draft_text):
         \label{sec:boilerplate_and_metadata}
         Filtering formulaic boilerplate prevents search drift and computational waste during candidate retrieval. In both national statutes and municipal enactments, procedural clauses---specifically Title, Separability, Repealing, and Effectivity clauses---contain generic legislative phrases that carry zero substantive regulatory restrictions. When these sections are vectorized, their embeddings align with unrelated administrative acts that happen to share identical legal boilerplate. By systematically pruning these non-operative sections during ingestion, the preprocessor directs candidate retrieval exclusively toward substantive regulatory and penal provisions. As established in the corpus census, this filtering prunes 3,641 procedural sections (30.85\%) from the municipal collection, isolating 8,160 operative provisions for indexing.
 
-        Once operative sections are isolated, evaluating granular statutory provisions requires preserving their governing legislative identity. An isolated sub-clause stripped of its parent enactment number and title suffers from severe semantic vector dilution, causing retrieval models to confuse municipal regulatory penalties with unrelated national tax or criminal codes. To maintain semantic precision and hierarchy across both stages, the pipeline applies structural context prepending. Listing~\ref{lst:context_prepending} details the context prepending procedure, while Listing~\ref{lst:model_ready_chunk} demonstrates the concrete transformation from an isolated provision into a Stage~1 indexed chunk and the resulting Stage~2 asymmetric input sequence. Every extracted statutory section begins with a structural metadata header containing the statute title, section number, and section title:
-        \[
-            \mathbf{x}_{\text{chunk}} = \left[ \text{Statute Title}, \text{ Section } S_i\text{: Catchline} \right] \mathbin{\Vert} \mathbf{t}_{\text{verbatim}}
-        \]
-        where $\mathbf{t}_{\text{verbatim}}$ denotes the exact text extracted from the statutory record, and $\mathbin{\Vert}$ represents string concatenation.
+        Once operative sections are isolated, evaluating granular statutory provisions requires preserving their governing legislative identity. An isolated sub-clause stripped of its parent enactment number and title suffers from severe semantic vector dilution, causing retrieval models to confuse municipal regulatory penalties with unrelated national tax or criminal codes. To maintain semantic precision and hierarchy across both stages, the pipeline applies structural context prepending. Listing~\ref{lst:context_prepending} details the context prepending procedure implemented to format granular provisions.
 
         \begin{lstlisting}[language=Python, caption={Pseudocode of Section Context Prepending for Granular Provision Chunking}, label={lst:context_prepending}]
 def prepend_statutory_context(statute_record, section):
@@ -501,35 +493,34 @@ def prepend_statutory_context(statute_record, section):
     return model_ready_text
         \end{lstlisting}
 
+        Every extracted statutory section begins with a structural metadata header containing the statute title, section number, and section title:
+        \[
+            \mathbf{x}_{\text{chunk}} = \left[ \text{Statute Title}, \text{ Section } S_i\text{: Catchline} \right] \mathbin{\Vert} \mathbf{t}_{\text{verbatim}}
+        \]
+        where $\mathbf{t}_{\text{verbatim}}$ denotes the exact text extracted from the statutory record, and $\mathbin{\Vert}$ represents string concatenation. Listing~\ref{lst:model_ready_chunk} demonstrates the concrete transformation from an isolated provision into a Stage~1 indexed chunk and the resulting Stage~2 asymmetric input sequence. Prepended metadata provides the neural attention layers with parent enactment authority, preventing false positive matches against subordinate or unrelated municipal penalty clauses.
+
         \begin{lstlisting}[language=Python, caption={Sample Model-Ready Statutory Chunk and Stage 2 Input Sequence with Context Prepending}, label={lst:model_ready_chunk}]
 # 1. Isolated Statutory Provision (Without Context Prepending)
-# Lacks parent statutory identity; dense embeddings match ambiguous administrative powers.
 isolated_section = (
-    "Section 458. (a) The sangguniang panlungsod, as the legislative body of the city, "
-    "shall enact ordinances... (v) Approve ordinances which shall impose a fine not "
-    "exceeding Five thousand pesos (P5,000.00) or an imprisonment not exceeding one (1) "
-    "year, or both."
+    "Section 458. (a) The sangguniang panlungsod... shall enact ordinances... "
+    "(v) Approve ordinances which shall impose a fine not exceeding P5,000.00 "
+    "or an imprisonment not exceeding one (1) year, or both."
 )
 
-# 2. Model-Ready Contextualized Provision Chunk (Indexed by Stage 1 BM25 & Dense Bi-Encoders)
-# Prepends statutory title and citation to establish legal hierarchy and topical specificity.
+# 2. Model-Ready Contextualized Provision Chunk (Indexed by Stage 1 BM25 & Bi-Encoders)
 stage1_indexed_chunk = (
-    "[Republic Act No. 7160: Local Government Code of 1991 | Section 458: Powers, Duties, "
-    "and Functions of the Sangguniang Panlungsod] Section 458. (a) The sangguniang panlungsod, "
-    "as the legislative body of the city, shall enact ordinances... (v) Approve ordinances which "
-    "shall impose a fine not exceeding Five thousand pesos (P5,000.00) or an imprisonment not "
-    "exceeding one (1) year, or both."
+    "[Republic Act No. 7160: Local Government Code | Section 458: Powers] "
+    "Section 458. (a) The sangguniang panlungsod, as the legislative body of the city, "
+    "shall enact ordinances... (v) Approve ordinances which shall impose a fine not "
+    "exceeding Five thousand pesos (P5,000.00) or imprisonment not exceeding one year..."
 )
 
 # 3. Assembled Asymmetric Input Sequence Passed to Stage 2 Cross-Encoder
-# Formatted with [CLS] and [SEP] tokens pairing governing premise with proposed draft hypothesis.
 stage2_input_sequence = (
-    "[CLS] Premise: [Republic Act No. 7160: Local Government Code of 1991 | Section 458: "
-    "Powers of the Sangguniang Panlungsod] Section 458. (a)... Approve ordinances which shall "
-    "impose a fine not exceeding Five thousand pesos (P5,000.00)... "
-    "[SEP] Hypothesis: [Proposed Davao City Ordinance No. 2024-012 | Section 6: Penalties] "
-    "SECTION 6. PENALTY CLAUSE. Any person violating this Ordinance shall be penalized with "
-    "a fine of Fifteen Thousand Pesos (PHP 15,000.00) or two years imprisonment. [SEP]"
+    "[CLS] Premise: [RA 7160 | Section 458] Approve ordinances which shall impose a fine "
+    "not exceeding P5,000.00... [SEP] Hypothesis: [Proposed Ordinance No. 2024-012 | "
+    "Section 6: Penalties] SECTION 6. PENALTY CLAUSE. Any person violating this Ordinance "
+    "shall be penalized with a fine of Fifteen Thousand Pesos or two years imprisonment. [SEP]"
 )
         \end{lstlisting}
 
@@ -600,7 +591,7 @@ def extract_substantive_body(raw_transcript: str) -> dict:
 
         To minimize false positives, the audit pattern matching explicitly accommodates authentic legislative structures. A broad repeated-character regular expression frequently flags Markdown table borders (\texttt{|---|---|}) as OCR corruption. To prevent this error, table boundary delimiters, pipes, and header markers are explicitly excluded from symbol repetition rules. Valid legislative boilerplate notations such as \texttt{"xxx xxx xxx"}, which denote unamended text in amending ordinances, are protected using negative lookahead expressions. Geographic survey coordinates containing degree symbols ($^\circ$), minute marks ($'$), and second marks ($''$), as well as accented Filipino surnames (\textit{Pe\~na}, \textit{Dañguilan}), are validated against an extended Unicode whitelist. Furthermore, page sequences beginning at Page~2 due to excluded cover sheets are recognized as valid contiguous sequences rather than misordered files.
 
-        Deterministic text normalization is performed via a conservative cleaning pipeline that strictly preserves legal meaning. The cleanup module applies Unicode Form KC normalization, strips invisible zero-width characters, removes stray VLM prompt echoes (\texttt{**正文:**}), and collapses runaway character loops exceeding seven consecutive repetitions to a standardized three-character representation. All modifications are logged in an audit report with line-level traceability. Under strict architectural safeguards, automated scripts are prohibited from altering personal names, calendar dates, numerical monetary amounts, ordinance numbers, statutory citations, penalty clauses, or section numbering. Discrepancies involving these sensitive entities are routed exclusively to human legal researchers.
+        Deterministic text normalization is performed via a conservative cleaning pipeline that strictly preserves legal meaning. The cleanup module applies Unicode Form KC normalization, strips invisible zero-width characters, removes stray VLM prompt echoes (such as \texttt{**[body text]:**} / \textit{zh\`engw\'en} markers), and collapses runaway character loops exceeding seven consecutive repetitions to a standardized three-character representation. All modifications are logged in an audit report with line-level traceability. Under strict architectural safeguards, automated scripts are prohibited from altering personal names, calendar dates, numerical monetary amounts, ordinance numbers, statutory citations, penalty clauses, or section numbering. Discrepancies involving these sensitive entities are routed exclusively to human legal researchers.
 
         \subsection{Advisory Language Quality Review Architecture}
         \label{sec:advisory_review_architecture}
@@ -686,7 +677,7 @@ def extract_substantive_body(raw_transcript: str) -> dict:
 
     Following the consensus guidelines adapted from Ablazo~\cite{ablazo2019designing}, a label is accepted into the final Ground Truth if at least two of the three reviewers in a sub-panel agree. In cases where all three reviewers select different categories, resulting in a three-way split with no majority, the pair is referred to that panel's designated Senior Annotator for binding qualitative adjudication~\cite{gao2022hierarchical, artstein2008inter}. The Senior Annotator reviews the pair against the standardized codebook to resolve whether the split arose from statutory ambiguity or an overlooked proviso. This hierarchical adjudication step ensures that every item in the 350-pair benchmark reaches an authoritative label while preserving the initial independent ratings for calculating Fleiss' Kappa ($\kappa$). Maintaining this structured division between initial independent scoring and expert tie-breaking safeguards both statistical validity and qualitative consistency across the dataset.
 
-    To formally recognize the substantial intellectual labor and professional time dedicated by the 15 Sangguniang Panlungsod legal researchers in evaluating the statutory benchmark, and in accordance with institutional research ethics and civil service engagement protocols approved by course professor Ma'am Grace Tacadao, participating legal researchers who successfully complete their assigned 70-pair annotation batches are awarded an official Certificate of Contribution and Commendation. This formal institutional credential is specifically structured and endorsed for inclusion in the evaluators' official Civil Service 201 personnel records, serving as permanent administrative documentation of specialized technical advisory service rendered to municipal AI and natural language processing research. To confer appropriate institutional gravity and academic recognition, each certificate is formally endorsed by course professor Ma'am Grace Tacadao, thesis adviser Mr. Adrian ``Ogs'' Ablazo, Computer Science Assistant Dean Dr. Oneil, and the student proponents, with panelist inclusion pending final defense committee confirmation. By providing a verified credential that integrates directly into the researchers' professional promotion and performance dossiers, this protocol establishes a reciprocal institutional bridge between the university research team and the local legislative staff, sustaining active stakeholder engagement throughout the annotation lifecycle.
+    To recognize the time and professional expertise dedicated by the participating Sangguniang Panlungsod legal researchers, evaluators who complete their assigned annotation batches are awarded an official Certificate of Contribution. This certificate serves as a formal token of appreciation and institutional documentation acknowledging their voluntary advisory assistance in validating the statutory benchmark. Each certificate is endorsed by the academic department leadership, thesis adviser, and student proponents to confer formal institutional validity. Providing this acknowledgment establishes a collaborative partnership between the university research team and the local legislative staff, ensuring appropriate recognition for the legal professionals who support the research.
 
     \subsection{Annotation Codebook and Decision Rules}
     \label{sec:annotation_codebook}
@@ -845,36 +836,25 @@ benchmark_pair = {
 
         \begin{lstlisting}[language=Python, caption={Pseudocode of the Stage 1 Reciprocal Rank Fusion Hybrid Provision Retrieval Pipeline}, label={lst:stage1_hybrid_retrieval}]
 def retrieve_top_k_candidates(draft_section, statutory_corpus, k=50, k_rrf=60, beta=1.20):
-    """
-    Stage 1 Hybrid Retrieval: Combines keyword search (BM25) and 
-    semantic search (Bi-Encoder) using Reciprocal Rank Fusion (RRF).
-    """
-    # 1. Retrieve top-100 candidates from both sparse and dense streams
+    # 1. Retrieve top-100 candidates from sparse BM25 and dense Bi-Encoder
     bm25_results = search_bm25(corpus=statutory_corpus, query=draft_section, top_n=100)
     dense_results = search_dense(corpus=statutory_corpus, query=draft_section, top_n=100)
 
-    # 2. Combine unique candidate provisions from both result lists
+    # 2. Compute Reciprocal Rank Fusion (RRF) scores across candidate pool
     candidate_pool = set(bm25_results.keys()) | set(dense_results.keys())
     fused_scores = {}
-
-    # 3. Calculate Reciprocal Rank Fusion (RRF) score for each candidate
-    for provision_id in candidate_pool:
-        # Find 1-based rank position in each retriever (default to 101 if not found)
-        rank_bm25 = bm25_results.get_rank(provision_id, default=101)
-        rank_dense = dense_results.get_rank(provision_id, default=101)
-        
-        # Compute reciprocal rank score
+    for prov_id in candidate_pool:
+        rank_bm25 = bm25_results.get_rank(prov_id, default=101)
+        rank_dense = dense_results.get_rank(prov_id, default=101)
         rrf_score = (1.0 / (k_rrf + rank_bm25)) + (1.0 / (k_rrf + rank_dense))
         
-        # Apply hierarchy safeguard boost to Republic Acts
-        if provision_id.startswith("RA_") or is_primary_act(provision_id):
-            rrf_score *= beta  # Boost primary national acts by 20%
-            
-        fused_scores[provision_id] = rrf_score
+        # Apply hierarchy safeguard: boost primary national Republic Acts by 20%
+        if prov_id.startswith("RA_") or is_primary_act(prov_id):
+            rrf_score *= beta
+        fused_scores[prov_id] = rrf_score
 
-    # 4. Sort candidates by fused score and return top-k shortlist
-    sorted_shortlist = sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
-    return sorted_shortlist[:k]
+    # 3. Sort candidates by fused score and return top-k shortlist
+    return sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)[:k]
         \end{lstlisting}
 
     \subsection{Stage 1 Candidate Pool}
@@ -1073,7 +1053,12 @@ def detect_section_conflicts(draft_section, candidate_provisions, model, thresho
     \label{sec:statistical_comparisons}
     To evaluate whether performance disparities between candidate Cross-Encoder models represent statistically significant differences rather than random sampling fluctuations, the proponents employ formal non-parametric hypothesis tests recommended by Dem{\v{s}}ar~\cite{demsar2006statistical}. Traditional paired $t$-tests assume normally distributed classification errors, an assumption routinely violated by discrete NLP accuracy and F1 scores on small test sets~\cite{demsar2006statistical}. Therefore, this study adopts McNemar's Test for pairwise model comparisons and the Friedman Test for multi-model ranking across legal domains.
 
-    When comparing the classification accuracy of two competing Stage~2 models (such as fine-tuned DeBERTa-v3 versus fine-tuned ModernBERT) evaluated on the identical 53-item test set ($\mathcal{D}_{\text{test}}$), the proponents employ McNemar's test for pairwise significance~\cite{mcnemar1947note}. The test constructs a $2 \times 2$ contingency table analyzing discordant predictions:
+    When comparing the classification accuracy of two competing Stage~2 models (such as fine-tuned DeBERTa-v3 versus fine-tuned ModernBERT) evaluated on the identical 53-item test set ($\mathcal{D}_{\text{test}}$), the proponents employ McNemar's test for pairwise significance~\cite{mcnemar1947note}. The test constructs a $2 \times 2$ contingency table analyzing discordant predictions, as summarized in Table~\ref{tab:mcnemar_contingency}. In this contingency framework, cell $b$ represents items correctly classified by Model~A but misclassified by Model~B, while cell $c$ represents items correctly classified by Model~B but misclassified by Model~A. Under the null hypothesis $H_0: p_b = p_c$, the two models have equivalent error rates. To account for discrete cell frequencies, the proponents apply Edwards' continuity correction to calculate the chi-squared statistic with one degree of freedom ($\text{df} = 1$):
+    \[
+        \chi^2 = \frac{(|b - c| - 1)^2}{b + c} \sim \chi^2_1
+    \]
+    A calculated $p$-value below the significance threshold $\alpha = 0.05$ rejects the null hypothesis, confirming that the difference in predictive accuracy is statistically significant.
+
     \begin{table}[htbp]
         \centering
         \footnotesize
@@ -1088,11 +1073,6 @@ def detect_section_conflicts(draft_section, candidate_provisions, model, thresho
             \bottomrule
         \end{tabular}
     \end{table}
-    where $b$ represents items correctly classified by Model~A but misclassified by Model~B, and $c$ represents items correctly classified by Model~B but misclassified by Model~A. Under the null hypothesis $H_0: p_b = p_c$, the two models have equivalent error rates. To account for discrete cell frequencies, the proponents apply Edwards' continuity correction to calculate the chi-squared statistic with one degree of freedom ($\text{df} = 1$):
-    \[
-        \chi^2 = \frac{(|b - c| - 1)^2}{b + c} \sim \chi^2_1
-    \]
-    A calculated $p$-value below the significance threshold $\alpha = 0.05$ rejects the null hypothesis, confirming that the difference in predictive accuracy is statistically significant.
     
     Because the Stage~2 evaluation compares three candidate models ($k = 3$: MiniLM, DeBERTa-v3, ModernBERT), pairwise evaluation yields $m = \binom{3}{2} = 3$ distinct model comparisons. To prevent Type~I error inflation (false positive significance) across multiple tests, the proponents apply the standard Bonferroni correction~\cite{demsar2006statistical}, evaluating each pair against the adjusted threshold $\alpha' = \alpha / m = 0.05 / 3 \approx 0.0167$. 
 
