@@ -34,7 +34,7 @@ description: This rule shall be applied when the user wants the thesis paper dra
 >    * When referencing workstations and computing hardware in the manuscript, always use formal academic designations:
 >      * **Primary Ingestion Workstation** (or **Workstation A / Edge Simulation Node**) for the lead author's desktop.
 >      * **Neural Training Workstation** (or **Workstation B / Dedicated GPU Node**) for the co-author's mobile workstation.
->      * **Cloud Computing Environment** (Google Colab Pro) for large-scale matrix factorization and exploratory notebooks.
+>      * **Cloud Computing Environment** (Google Colab, standard tier) for large-scale matrix factorization and exploratory notebooks.
 >    * **NEVER** use informal colloquialisms such as "Yah's PC" or "Ralph's laptop" in the manuscript.
 > 9. **Mandatory Literature Grounding & Methodological Justification:**  
 >    * Every empirical threshold, design choice, hyperparameter setting, sample size allocation, split ratio, mathematical formula, difficulty tier, or authoritative legal/technical assertion MUST be firmly grounded with backing citations (`\cite{...}`) and a concise explanation of *why* it was selected based on established literature (legal doctrines, NLP benchmarks, or statistical guidelines).  
@@ -59,10 +59,28 @@ description: This rule shall be applied when the user wants the thesis paper dra
 >      - **Chapter 4 (Results and Discussion):** Actually executing the research plan outlined in Chapter 3 and presenting what was found. It details the empirical findings, screening metrics, fine-tuning loss curves, comparative evaluation tables, ablation findings, and in-depth analyses of *what actually happened*.
 > 14. **Chapter 4 Structural Alignment with Problem Statement & Objectives:**  
 >    * When drafting, reorganizing, or expanding Chapter 4 (*Results and Discussion*), the sections and empirical findings must be explicitly arranged and mapped in direct correspondence with the Statement of the Problem and Research Objectives defined in Chapter 1. Every research question and objective must find its direct answer and empirical discussion within a corresponding, dedicated section of Chapter 4.
-> 15. **Proximity and Flow of Visual Elements (Figures, Tables, and Listings):**  
->    * **Proximity to First Mention:** Every figure, table, and code/pseudocode listing must be placed in the source LaTeX as close as possible immediately following the paragraph where it is first cited or introduced in the narrative. Avoid defining visuals pages before or after their textual discussion.  
+> 15. **Proximity and Dedicated Exposition of Visual Elements (Figures, Tables, Listings, and Equations):**  
+>    * **Proximity to First Mention:** Every figure, table, equation, and code/pseudocode listing must be placed in the source LaTeX as close as possible immediately following the paragraph where it is first cited or introduced in the narrative. Avoid defining visuals pages before or after their textual discussion.  
 >    * **No Back-to-Back Visual Stacking ("Float Walls"):** Avoid clustering multiple figures, tables, or listings immediately adjacent to each other without intervening explanatory text. Interleave narrative discussion between visual elements so that the reader can absorb the empirical context alongside each visual rather than navigating back-to-back visual walls.  
->    * **Consistent Pagination & Float Controls:** Position float specifiers (`[htbp]` or `[tbp]`) and sizing so that visual assets do not get awkwardly cut off, cause orphan headings, or displace narrative paragraphs across multi-page gaps. Maintain logical reading cadence where text introduces the visual, the visual presents the data/architecture, and following text analyzes or expands upon it.
+>    * **The "Setup $\rightarrow$ Visual $\rightarrow$ Dedicated Exposition" Architectural Pattern:**  
+>      1. **Setup:** The narrative immediately preceding the visual introduces its focus and explicitly cites it (e.g., *"Table~\ref{tab:retrieval_benchmark} presents the retrieval metrics..."*).  
+>      2. **Caption Brevity:** Figure and table captions must strictly describe *what* the visual illustrates (e.g., title, source, sample size, or scope). **NEVER** cram long analytical explanations, take-away arguments, or empirical conclusions into the caption; all interpretative analysis belongs in the narrative text below.  
+>      3. **Dedicated Comprehensive Exposition:** Immediately following the visual float, dedicate a comprehensive 4-to-6 sentence paragraph (or paragraphs) that methodically explains:  
+>         * *What it contains:* Define the columns, rows, axes, parameter metrics, or architectural modules shown.  
+>         * *Why it is there:* Explain the technical or methodological necessity of those specific metrics/columns.  
+>         * *What is happening:* Analyze the observable trends, empirical trade-offs, or procedural transitions shown in the data.  
+>         * *What it means:* Articulate the substantive conclusion, system implication, or baseline comparison for the study.  
+> 16. **Structural Symmetry and Subsection Minimums:**  
+>    * If a section or subsection is subdivided, it must contain at least two child subsections (e.g., if `\subsection{...}` contains `\subsubsection{A}`, it must also contain `\subsubsection{B}`). Never leave an orphan single subsection.  
+>    * Strictly respect the 3-level heading ceiling (`\chapter` $\rightarrow$ `\section` $\rightarrow$ `\subsection` $\rightarrow$ `\subsubsection`). Level 4 headings (`\paragraph` used as a section header) are prohibited; use continuous academic paragraphs with integrated topic sentences instead.  
+> 17. **Equation Presentation and Post-Equation Indentation:**  
+>    * When display equations are titled or introduced within `description` environments, do not bold the equation titles.  
+>    * The text immediately following an equation must continue the thought without paragraph indentation. Use `\noindent Where ...` or ensure no blank line separates the equation from the continuing sentence.  
+> 18. **Canonical Terminology Conventions:**  
+>    * **Local vs. Municipal:** Davao City is a Highly Urbanized City (HUC), not a municipality. Refer to local legislation as "local ordinances," "city ordinances," or "local enactments." Reserve "municipal" only when specifically citing general statutory provisions (e.g., RA 7160 provisions on municipalities) or historical legal sources.  
+>    * **Hardware Classifications:** Refer to computing nodes formally, realistically, and simply: **Primary Desktop Host** (Desktop Host A, general CPU pipeline and edge simulation), **Mobile GPU Host** (Mobile Host B, dedicated CUDA training and local VLM ingestion), and **Cloud Computing Environment** (Google Colab, standard tier, used for extensive exploratory screening). Avoid informal phrasing or claiming Colab Pro.  
+>    * **Ex-Ante vs. Ex-Post Scope:** Ex-ante refers strictly to pre-enactment review of proposed legislation (draft ordinances, bills, executive issuances before passage) to prevent statutory collisions; ex-post refers to post-enactment dispute adjudication (Supreme Court jurisprudence, *stare decisis*, and litigation).  
+>    * **Domain-Grounded vs. Expert-Curated Hypotheses:** The 350-pair ground truth hypotheses are **domain-grounded** (authored by the proponents adhering to authentic local drafting templates, DILG conventions, and administrative departments, reviewed and validated by the thesis adviser), and subsequently evaluated by the 15 Sangguniang Panlungsod legal researchers. Do not claim the synthetic hypotheses themselves were drafted by legal experts.
 
 
 ---
