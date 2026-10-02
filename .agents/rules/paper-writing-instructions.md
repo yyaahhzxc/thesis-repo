@@ -140,6 +140,11 @@ Write in the authentic voice of a methodical, observant computer science researc
   * In the Thesis 1 defense caucus, the panel explicitly reminded the proponents that they are undergraduate computer science students and do not know everything. 
   * Never adopt an arrogant, all-knowing tone. The study does not claim to resolve statutory construction, determine constitutional validity, replace human legislative counsel, or solve all legal conflicts in the Philippines.
   * Ground the paper strictly as an **applied, assistive decision-support screening tool** designed to flag candidate textual tensions for human legal researchers during First Reading at the Sangguniang Panlungsod.
+* **Undergraduate Scholarly Voice (Articulate, Direct, and Above-Average):**
+  * Write with the authentic, articulate voice of a serious undergraduate computer science researcher rather than an over-the-top, pompous academic thesaurus.
+  * State practical decisions, institutional constraints, and mathematical rationales in a clean, straightforward manner:
+    * *Instead of:* "The target scale of exactly $N = 350$ premise-hypothesis pairs is mathematically derived from the intersection of institutional personnel constraints and cognitive ergonomics." $\rightarrow$ *Use:* "For the ground truth evaluation benchmark, the proponents settled on exactly 350 premise-hypothesis pairs based on three practical reasons: the number of available legal researchers, manageable workload limits to avoid review fatigue, and statistical sample size requirements. The detailed reasoning and explanations are as follows..."
+  * Explain *why* choices were made plainly and directly, using concrete reasons that any reader can follow without wading through artificial academic pretension.
 * **Balanced Empirical Softening (Not Over-Claiming, Not Journalistic Hedging):**
   * Avoid "claim-y," absolute declarations that invite panel skepticism:
     * *Instead of:* "guarantees zero provision attrition" $\rightarrow$ *Use:* "ensures zero provision attrition across the 350 evaluated benchmark queries" or "prevents provision attrition on the evaluated benchmark"
@@ -155,10 +160,10 @@ Write in the authentic voice of a methodical, observant computer science researc
 
 ### **Vocabulary Calibration & Readability Standard (Accessible Academic Voice)**
 
-* **Calibrate to Chapters 1 and 2 (0.5 Level Lower than Hyper-Academic Prose):**
+* **Calibrate to Chapters 1 and 2 (0.5 to 1.0 Level Lower than Hyper-Academic Prose):**
   * The baseline tone across the thesis is defined by **Chapter 1 (Introduction)** and **Chapter 2 (Literature Review)**: clear, direct, grounded, and accessible to general computer science and legal readers.
-  * Calibrate the vocabulary level to approximately **0.5 level lower** than standard dense, Latinate, or hyper-elevated academic prose.
-  * Write with the authentic, articulate voice of a methodical undergraduate computer science researcher rather than an over-the-top academic thesaurus.
+  * Calibrate the vocabulary level to approximately **0.5 to 1.0 level lower** than standard dense, Latinate, or hyper-elevated academic prose.
+  * Write like a methodical, articulate undergraduate honors student who explains complex things clearly, rather than a doctoral thesis trying to sound complicated.
 * **Prefer Direct, Plain Phrasing Over Stilted Formulations:**
   * Use straightforward, natural words whenever they convey the exact same meaning as dense academic jargon.
   * *Instead of:* "systematic compilation of text from disparate public repositories to ensure comprehensive statutory recall" $\rightarrow$ *Use:* "gathering text from different public repositories to ensure the system collects as many relevant laws as possible"
