@@ -540,20 +540,20 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 
 ## **11. Computing Environments & Hardware Infrastructure**
 
-### **Primary Desktop Host (Edge Simulation Node)**
+### **Host A (Desktop)**
 * **Plain Meaning:** The local desktop workstation (Yah's PC) dedicated to empirical ingestion, sparse-dense IR indexing, and simulating deployment under standard Philippine LGU IT constraints.
 * **Hardware Profile:** Intel Core i3-10105F (4 cores, 8 threads @ 3.70 GHz), AMD Radeon RX 6600 (8 GB GDDR6 VRAM), 8 GB DDR4 RAM, Windows 10 Pro.
 * **Operational Role in Study:** Used to execute the preprocessing and text normalization pipeline across the 27,096 statutory records, calculate Stage 1 BM25 inverted indices, and simulate realistic edge inference latency to ensure the prototype runs comfortably on modest local municipal hardware.
 
-### **Mobile GPU Host (Neural Training Node)**
+### **Host B (GPU Laptop)**
 * **Plain Meaning:** The dedicated high-performance laptop workstation (Ralph's Lenovo Legion 5) utilized for local deep learning fine-tuning, cross-encoder training loops, and offline GPU verification.
 * **Hardware Profile:** AMD Ryzen 7 7435HS (8 cores, 16 threads @ 3.10 GHz), NVIDIA GeForce RTX 5050 Laptop GPU (8 GB GDDR6 VRAM, CUDA capability 12.x), 16 GB DDR5 RAM, Windows 11 Home.
 * **Operational Role in Study:** Provides dedicated tensor cores and CUDA acceleration for Stage 2 cross-encoder fine-tuning across the 13 candidate architectures, hyperparameter grid search runs, loss dynamics tracking, and local out-of-sample inference.
 
-### **Cloud Computing Environment (Google Colab Pro)**
-* **Plain Meaning:** A cloud-hosted high-VRAM computing instance utilized as an auxiliary compute layer for distributed training runs and large-batch screening experiments.
-* **Hardware Profile:** NVIDIA L4 / NVIDIA A100 Tensor Core GPUs (24 GB to 40 GB VRAM), High-RAM instance configurations.
-* **Operational Role in Study:** Serves as a scalable benchmark harness for parallelized candidate model screening, long-sequence batch inference (8,192 tokens), and generating training loss telemetry.
+### **Google Colab**
+* **Plain Meaning:** A cloud-hosted computing service utilized as an auxiliary compute layer for distributed training runs, large-matrix singular value decomposition, and exploratory notebooks.
+* **Hardware Profile:** Dynamically allocated cloud instance (as of 2026, standard tier provisioned with NVIDIA T4/V100 GPUs with 16 GB VRAM and ~12.7 GB system RAM under Ubuntu Linux; subject to dynamic cloud provider resource adjustments over time).
+* **Operational Role in Study:** Serves as a scalable auxiliary compute harness for candidate model screening, long-sequence batch inference, and generating training loss telemetry.
 
 ---
 
@@ -569,7 +569,7 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 
 ### **NormalFloat4 (NF4) Quantization & Double Quantization**
 * **Plain Meaning:** An information-theoretically optimal 4-bit data type developed by Dettmers et al. (QLoRA, 2023) that compresses deep learning model weights to a fraction of their original size while retaining high numerical accuracy.
-* **In This Thesis:** Compresses the 3-billion-parameter Qwen2.5-VL model into under 3.5 GB of VRAM. This enables the entire multimodal transcription pipeline to run locally on the Neural Training Workstation (Mobile Host B, equipped with an 8 GB NVIDIA RTX 5050 Laptop GPU) without requiring expensive data-center hardware.
+* **In This Thesis:** Compresses the 3-billion-parameter Qwen2.5-VL model into under 3.5 GB of VRAM. This enables the entire multimodal transcription pipeline to run locally on Host B (GPU Laptop, equipped with an 8 GB NVIDIA RTX 5050 Laptop GPU) without requiring expensive data-center hardware.
 
 ### **Page-Level Ingestion vs. Document-Level Ingestion**
 * **Plain Meaning:** Slicing a multi-page PDF and transcribing each page individually, rather than passing the entire document into the AI model at once.

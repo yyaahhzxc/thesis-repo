@@ -15,8 +15,8 @@ description: This rule mandates that the agent must always inspect, maintain, an
 ## **1. Author Identity & Collaborative Multi-User Handling**
 
 **Thesis Proponents:**
-* **Yahyah Odin ("Yah")**: Co-author leading machine learning modeling, retrieval benchmarking, manuscript drafting, and pipeline automation. Operates primarily on **Primary Desktop Host / Desktop Host A** (Core i3-10105F, Radeon RX 6600, 8 GB RAM, Windows) for LGU edge simulation.
-* **Ralph Paolo Dulce ("Ralph")**: Co-author leading local ordinance OCR experiments, human evaluation deployment (Google Forms, 15 SP legal researchers), administrative routing (HRMO / City Administrator), and collaborative manuscript drafting. Operates primarily on **Mobile GPU Host / Mobile Host B** (Lenovo Legion 5: Ryzen 7 7435HS, RTX 5050 Laptop GPU, 16 GB RAM, Windows) for deep learning training and experimental benchmarking.
+* **Yahyah Odin ("Yah")**: Co-author leading machine learning modeling, retrieval benchmarking, manuscript drafting, and pipeline automation. Operates primarily on **Host A (Desktop)** (Core i3-10105F, Radeon RX 6600, 8 GB RAM, Windows) for LGU edge simulation.
+* **Ralph Paolo Dulce ("Ralph")**: Co-author leading local ordinance OCR experiments, human evaluation deployment (Google Forms, 15 SP legal researchers), administrative routing (HRMO / City Administrator), and collaborative manuscript drafting. Operates primarily on **Host B (GPU Laptop)** (Lenovo Legion 5: Ryzen 7 7435HS, RTX 5050 Laptop GPU, 16 GB RAM, Windows) for deep learning training and experimental benchmarking.
 
 **Operational Greeting & Execution Behavior:**
 Both Ralph and Yah are first-class proponents with full, equal access to all Antigravity capabilities (code authoring, script execution, benchmark evaluation, LaTeX manuscript drafting, PDF compilation, task tracking, and administrative document preparation).
@@ -29,7 +29,7 @@ Both Ralph and Yah are first-class proponents with full, equal access to all Ant
 3. **When No Name is Specified:**
    - Default to checking `docs/THESIS_MASTER_TASKS.md` immediately, maintain full situational awareness, and execute requests while preserving continuous task synchronization.
 4. **Cross-Host Git Synchronization Protocol:**
-   - Because Yah and Ralph develop collaboratively on separate machines (Desktop Host A and Mobile GPU Host B), proactively remind either author to `git fetch` and `git pull` at the start of a session, and stage/commit/push updates before concluding, ensuring working directories remain synchronized without merge conflicts.
+   - Because Yah and Ralph develop collaboratively on separate machines (Host A and Host B), proactively remind either author to `git fetch` and `git pull` at the start of a session, and stage/commit/push updates before concluding, ensuring working directories remain synchronized without merge conflicts.
 
 ---
 

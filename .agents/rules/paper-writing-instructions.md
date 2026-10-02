@@ -30,36 +30,31 @@ description: This rule shall be applied when the user wants the thesis paper dra
 > 7. **Simplified, Single-Line Section Titles:**  
 >    * Section, subsection, and subsubsection titles must be direct, simplified, concise, and fit comfortably on a single line (mirroring Chapters 1 and 2).  
 >    * Strictly avoid long, compound titles, multi-clause headings, or parenthetical clutter (e.g., use `\subsection{Candidate Retrieval Ablation}` instead of `\subsection{Candidate Retrieval Ablation and Difficulty Tier Breakdown ($N=350$)}`).
-> 8. **Formal Academic Computing Terminology:**  
->    * When referencing workstations and computing hardware in the manuscript, always use formal academic designations:
->      * **Primary Ingestion Workstation** (or **Workstation A / Edge Simulation Node**) for the lead author's desktop.
->      * **Neural Training Workstation** (or **Workstation B / Dedicated GPU Node**) for the co-author's mobile workstation.
->      * **Cloud Computing Environment** (Google Colab, standard tier) for large-scale matrix factorization and exploratory notebooks.
->    * **NEVER** use informal colloquialisms such as "Yah's PC" or "Ralph's laptop" in the manuscript.
-> 9. **Mandatory Literature Grounding & Methodological Justification:**  
+
+> 8. **Mandatory Literature Grounding & Methodological Justification:**  
 >    * Every empirical threshold, design choice, hyperparameter setting, sample size allocation, split ratio, mathematical formula, difficulty tier, or authoritative legal/technical assertion MUST be firmly grounded with backing citations (`\cite{...}`) and a concise explanation of *why* it was selected based on established literature (legal doctrines, NLP benchmarks, or statistical guidelines).  
 >    * **NEVER** introduce an unbacked claim, arbitrary parameter, or unsupported design decision that could leave holes in the paper or invite defense panel criticism. When introducing any experimental or methodological decision, always state the specific literature rationale (e.g., citing benchmark engineering standards, statistical power constraints, or hardware execution boundaries).
-> 10. **Strict Margin Discipline & Overfull `\hbox` Elimination:**  
+> 9. **Strict Margin Discipline & Overfull `\hbox` Elimination:**  
 >    * Every paragraph, list item, formula, and table cell must adhere strictly to page margins. Never allow unhyphenated typewriter strings (`\texttt{...}`), long model names, or unyielding text blocks to protrude past the right margin.  
 >    * In running text, write model identifiers in standard roman text (e.g., `DeBERTa-v3-base-NLI`, `ModernBERT-base`, `PoL-BERT-Large`) so that LaTeX can hyphenate at hyphens naturally. Reserve `\texttt{...}` primarily for table cells, code blocks, or literal filenames.
-> 11. **Absolute Ban on Fourth-Wall Breaks (No Course or Milestone References):**  
+> 10. **Absolute Ban on Fourth-Wall Breaks (No Course or Milestone References):**  
 >    * The manuscript must read strictly as a formal, peer-reviewed scientific paper.  
 >    * **NEVER** mention course milestones, syllabus requirements, professor instructions, teacher prompts, grading rubrics, or institutional submission deadlines within the thesis prose (e.g., never write *"as required by Milestone 3"* or *"per the professor's guidelines"*).  
 >    * Frame all methodologies, experiments, and analyses as intentional, scientifically motivated research decisions.
-> 12. **Compact, Proportionate Publication Tables:**  
+> 11. **Compact, Proportionate Publication Tables:**  
 >    * Tables must not be unnecessarily long, tall, or vertically stretched.  
 >    * Use compact row heights (`\renewcommand{\arraystretch}{0.88}` to `0.92`), appropriate font sizing (`\footnotesize` or `\scriptsize`), and tight horizontal padding (`\setlength{\tabcolsep}{2.5pt}` to `4pt`).  
 >    * Design column widths so that data cells fit on a single line wherever feasible. Ensure multi-row screening benchmarks (such as 28-model sweeps) fit neatly on a single page without spilling onto orphan float pages.
-> 13. **Chronological & Structural Separation of Chapters (Avoiding the "Curse of Knowledge"):**  
+> 12. **Chronological & Structural Separation of Chapters (Avoiding the "Curse of Knowledge"):**  
 >    * The manuscript must maintain strict narrative and structural boundary separation across chapters, strictly avoiding the **"Curse of Knowledge"**—the cognitive bias of drafting early chapters with hindsight or prematurely referencing specific later-stage implementations, downstream algorithmic selections, or empirical findings that have not yet been introduced.  
 >    * Each chapter serves a distinct, self-contained scientific vision:  
 >      - **Chapter 1 (Introduction):** Sets the problem statement, local governance background, ex-ante motivation, research objectives, and high-level scope and limitations. It outlines the overarching goals without declaring specific experimental winners, downstream hyperparameters, or hindsight outcomes.  
 >      - **Chapter 2 (Review of Related Literature):** Strictly objective, scholarly exploration of what the literature says about a topic. It surveys historical jurisprudence, statutory drafting conventions, linguistic challenges, information retrieval paradigms, and textual inference benchmarks. **NEVER** write with hindsight or announce specific pipeline choices here (e.g., avoid stating *"this has consequences for our natural language processing pipeline"* or *"the researchers chose Path 1"*). Frame discussions objectively in terms of what prior studies have demonstrated or what structural/linguistic characteristics exist in legal texts. Early sections should only suggest broad computational or document-cleaning implications without assuming the reader already knows the downstream machine learning pipeline.  
 >      - **Chapter 3 (Methodology):** Applying the learnings gained from Chapter 2 into an operational research plan. It defines the proposed system architecture, mathematical formulations, screening protocols, and experimental design. It is strictly in the **planning phase**—describing *how* the system will be built and *what* protocols will be executed, without reporting actual experimental execution results, finalist performance tables, or premature empirical rankings.  
 >      - **Chapter 4 (Results and Discussion):** Actually executing the research plan outlined in Chapter 3 and presenting what was found. It details the empirical findings, screening metrics, fine-tuning loss curves, comparative evaluation tables, ablation findings, and in-depth analyses of *what actually happened*.
-> 14. **Chapter 4 Structural Alignment with Problem Statement & Objectives:**  
+> 13. **Chapter 4 Structural Alignment with Problem Statement & Objectives:**  
 >    * When drafting, reorganizing, or expanding Chapter 4 (*Results and Discussion*), the sections and empirical findings must be explicitly arranged and mapped in direct correspondence with the Statement of the Problem and Research Objectives defined in Chapter 1. Every research question and objective must find its direct answer and empirical discussion within a corresponding, dedicated section of Chapter 4.
-> 15. **Proximity and Dedicated Exposition of Visual Elements (Figures, Tables, Listings, and Equations):**  
+> 14. **Proximity and Dedicated Exposition of Visual Elements (Figures, Tables, Listings, and Equations):**  
 >    * **Proximity to First Mention:** Every figure, table, equation, and code/pseudocode listing must be placed in the source LaTeX as close as possible immediately following the paragraph where it is first cited or introduced in the narrative. Avoid defining visuals pages before or after their textual discussion.  
 >    * **No Back-to-Back Visual Stacking ("Float Walls"):** Avoid clustering multiple figures, tables, or listings immediately adjacent to each other without intervening explanatory text. Interleave narrative discussion between visual elements so that the reader can absorb the empirical context alongside each visual rather than navigating back-to-back visual walls.  
 >    * **The "Setup $\rightarrow$ Visual $\rightarrow$ Dedicated Exposition" Architectural Pattern:**  
@@ -70,17 +65,15 @@ description: This rule shall be applied when the user wants the thesis paper dra
 >         * *Why it is there:* Explain the technical or methodological necessity of those specific metrics/columns.  
 >         * *What is happening:* Analyze the observable trends, empirical trade-offs, or procedural transitions shown in the data.  
 >         * *What it means:* Articulate the substantive conclusion, system implication, or baseline comparison for the study.  
-> 16. **Structural Symmetry and Subsection Minimums:**  
+> 15. **Structural Symmetry and Subsection Minimums:**  
 >    * If a section or subsection is subdivided, it must contain at least two child subsections (e.g., if `\subsection{...}` contains `\subsubsection{A}`, it must also contain `\subsubsection{B}`). Never leave an orphan single subsection.  
 >    * Strictly respect the 3-level heading ceiling (`\chapter` $\rightarrow$ `\section` $\rightarrow$ `\subsection` $\rightarrow$ `\subsubsection`). Level 4 headings (`\paragraph` used as a section header) are prohibited; use continuous academic paragraphs with integrated topic sentences instead.  
-> 17. **Equation Presentation and Post-Equation Indentation:**  
+> 16. **Equation Presentation and Post-Equation Indentation:**  
 >    * When display equations are titled or introduced within `description` environments, do not bold the equation titles.  
 >    * The text immediately following an equation must continue the thought without paragraph indentation. Use `\noindent Where ...` or ensure no blank line separates the equation from the continuing sentence.  
-> 18. **Canonical Terminology Conventions:**  
+> 17. **Canonical Terminology Conventions:**  
 >    * **Local vs. Municipal:** Davao City is a Highly Urbanized City (HUC), not a municipality. Refer to local legislation as "local ordinances," "city ordinances," or "local enactments." Reserve "municipal" only when specifically citing general statutory provisions (e.g., RA 7160 provisions on municipalities) or historical legal sources.  
->    * **Hardware Classifications:** Refer to computing nodes formally, realistically, and simply: **Primary Desktop Host** (Desktop Host A, general CPU pipeline and edge simulation), **Mobile GPU Host** (Mobile Host B, dedicated CUDA training and local VLM ingestion), and **Cloud Computing Environment** (Google Colab, standard tier, used for extensive exploratory screening). Avoid informal phrasing or claiming Colab Pro.  
->    * **Ex-Ante vs. Ex-Post Scope:** Ex-ante refers strictly to pre-enactment review of proposed legislation (draft ordinances, bills, executive issuances before passage) to prevent statutory collisions; ex-post refers to post-enactment dispute adjudication (Supreme Court jurisprudence, *stare decisis*, and litigation).  
->    * **Domain-Grounded vs. Expert-Curated Hypotheses:** The 350-pair ground truth hypotheses are **domain-grounded** (authored by the proponents adhering to authentic local drafting templates, DILG conventions, and administrative departments, reviewed and validated by the thesis adviser), and subsequently evaluated by the 15 Sangguniang Panlungsod legal researchers. Do not claim the synthetic hypotheses themselves were drafted by legal experts.
+>    * **Ex-Ante vs. Ex-Post Scope:** Ex-ante refers strictly to pre-enactment review of proposed legislation (draft ordinances, bills, executive issuances before passage) to prevent statutory collisions; ex-post refers to post-enactment dispute adjudication (Supreme Court jurisprudence, *stare decisis*, and litigation).
 
 
 ---
@@ -139,7 +132,7 @@ Write in the authentic voice of a methodical, observant computer science researc
 >   * **Ban Overuse of "Bottleneck":** AI models reflexively brand every technical limit a "bottleneck" (e.g., *"manual review bottleneck,"* *"quadratic bottleneck,"* *"lexical bottleneck"*). Use precise engineering descriptions instead: *constraint, memory ceiling, technical hurdle, processing delay, manual review burden, hardware limitation,* or *shortage of domain experts*.
 >   * **Ban Overuse of "Crucial" / "Crucially" & "Leverage":** Avoid formulaic sentence starters like *"Crucially, ...".* State the finding or operational implication directly. Replace *"leverage"* with *use, apply, adopt,* or *incorporate*.
 > * **Forbidden Promotional Hyperbole:** Avoid unearned superlatives (*revolutionary, groundbreaking, remarkable, astounding, paradigm shift*) unless directly quoting historical literature. State specific mechanisms, benchmark metrics, or theoretical limits instead.
-> * **Forbidden Mechanical Transitions:** Ban repetitive chapter/paragraph openers like *"Furthermore," "Moreover," "In addition," "It is worth noting that," "Interestingly,"* and *"Importantly."* Vary transitional sentence structures naturally.
+> * **Forbidden Mechanical Transitions:** Ban repetitive chapter/paragraph openers like *"In addition," "It is worth noting that," "Interestingly,"* and *"Importantly."* Vary transitional sentence structures naturally. Note: *"Furthermore," "Moreover,"* and *"Consequently"* are acceptable when they genuinely connect a chain of thought.
 
 ### **The Caucus Principle: Undergraduate Scholarly Humility & Empirical Realism**
 
@@ -196,7 +189,7 @@ Maintain structural discipline so every paragraph carries balanced analytical we
 >   3. **Sentence 3 (Evidence / Data / Metric / Citation):** The concrete empirical finding, system metric, formula, or verified legal citation.
 >   4. **Sentence 4 (Analytical Bridge):** Critical examination dissecting *what* this evidence demonstrates and *why* it matters computationally or legally.
 >   5. **Sentence 5 (Implication & Forward Link):** Practical takeaway, system constraint, or seamless transition into the next topic.
-> * **Visual Balance:** Eliminate both thin 1–2 sentence micro-paragraphs and dense 9–10 sentence monolithic walls of text.
+> * **Visual Balance:** Eliminate thin 1–3 sentence micro-paragraphs (expand them or merge with adjacent paragraphs). Paragraphs up to 7–8 sentences are acceptable for dedicated visual-element expositions, but beyond 10 sentences consider splitting into two focused paragraphs while preserving the chain of thought.
 
 ---
 
