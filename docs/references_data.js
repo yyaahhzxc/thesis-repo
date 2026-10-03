@@ -6421,7 +6421,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 12,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -6922,7 +6922,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/1702.08608.pdf",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -8012,7 +8012,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -8068,7 +8068,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -8108,5 +8108,61 @@ window.REFERENCES_DATA = [
     "crossref_search_url": "https://api.crossref.org/works?query.title=Cognitive%20Load%20During%20Problem%20Solving%3A%20Effects%20on%20Learning&rows=1",
     "lawphil_url": "",
     "raw_bib": "@article{sweller1988cognitive,\n  title     = {Cognitive Load During Problem Solving: Effects on Learning},\n  author    = {Sweller, John},\n  journal   = {Cognitive Science},\n  volume    = {12},\n  number    = {2},\n  pages     = {257--285},\n  year      = {1988},\n  publisher = {Elsevier},\n  doi       = {10.1207/s15516709cog1202_4}\n}"
+  },
+  {
+    "citekey": "cronbach1951coefficient",
+    "entry_type": "article",
+    "title": "Coefficient Alpha and the Internal Structure of Tests",
+    "raw_title": "Coefficient Alpha and the Internal Structure of Tests",
+    "author": "Cronbach, Lee J.",
+    "raw_author": "Cronbach, Lee J.",
+    "year": "1951",
+    "venue": "Psychometrika",
+    "category": "Computer Science & NLP",
+    "doi": "10.1007/BF02310555",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Coefficient%20Alpha%20and%20the%20Internal%20Structure%20of%20Tests%22%20Cronbach%2C%20Lee%20J.",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Coefficient%20Alpha%20and%20the%20Internal%20Structure%20of%20Tests",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Coefficient%20Alpha%20and%20the%20Internal%20Structure%20of%20Tests",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Coefficient%20Alpha%20and%20the%20Internal%20Structure%20of%20Tests&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{cronbach1951coefficient,\n  title     = {Coefficient Alpha and the Internal Structure of Tests},\n  author    = {Cronbach, Lee J.},\n  journal   = {Psychometrika},\n  volume    = {16},\n  number    = {3},\n  pages     = {297--334},\n  year      = {1951},\n  publisher = {Springer},\n  doi       = {10.1007/BF02310555}\n}"
+  },
+  {
+    "citekey": "sauro2012quantifying",
+    "entry_type": "book",
+    "title": "Quantifying the User Experience: Practical Statistics for User Research",
+    "raw_title": "Quantifying the User Experience: Practical Statistics for User Research",
+    "author": "Sauro, Jeff and Lewis, James R.",
+    "raw_author": "Sauro, Jeff and Lewis, James R.",
+    "year": "2012",
+    "venue": "Morgan Kaufmann",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Quantifying%20the%20User%20Experience%3A%20Practical%20Statistics%20for%20User%20Research%22%20Sauro%2C%20Jeff",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Quantifying%20the%20User%20Experience%3A%20Practical%20Statistics%20for%20User%20Research",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Quantifying%20the%20User%20Experience%3A%20Practical%20Statistics%20for%20User%20Research",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Quantifying%20the%20User%20Experience%3A%20Practical%20Statistics%20for%20User%20Research&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@book{sauro2012quantifying,\n  title     = {Quantifying the User Experience: Practical Statistics for User Research},\n  author    = {Sauro, Jeff and Lewis, James R.},\n  year      = {2012},\n  publisher = {Morgan Kaufmann},\n  address   = {Waltham, MA},\n  isbn      = {978-0-12-384968-7}\n}"
   }
 ];
