@@ -101,7 +101,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 4,
+    "citation_count": 5,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -130,7 +130,7 @@ window.REFERENCES_DATA = [
     "eprint": "2005.05257",
     "direct_pdf_url": "https://arxiv.org/pdf/2005.05257.pdf",
     "is_cited": true,
-    "citation_count": 4,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -384,7 +384,7 @@ window.REFERENCES_DATA = [
     "eprint": "https://royalsocietypublishing.org/rsta/article-pdf/doi/10.1098/rsta.2023.0254/1328474/rsta.2023.0254.pdf",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 4,
+    "citation_count": 5,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
@@ -610,7 +610,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/2021.findings-emnlp.361.pdf",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -638,7 +638,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 17,
+    "citation_count": 19,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
@@ -698,7 +698,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 11,
+    "citation_count": 12,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
@@ -729,7 +729,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -1315,7 +1315,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -1803,7 +1803,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -1859,7 +1859,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -1887,7 +1887,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -1971,10 +1971,9 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/2111.09543.pdf",
     "is_cited": true,
-    "citation_count": 5,
+    "citation_count": 3,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -2164,7 +2163,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 6,
+    "citation_count": 7,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -2192,7 +2191,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/N19-1423.pdf",
     "is_cited": true,
-    "citation_count": 7,
+    "citation_count": 6,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -2277,7 +2276,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/2412.13663.pdf",
     "is_cited": true,
-    "citation_count": 4,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -2553,7 +2552,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/D15-1075.pdf",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -2638,7 +2637,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/2022.scil-1.3.pdf",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -2798,10 +2797,9 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/2020.findings-emnlp.261.pdf",
     "is_cited": true,
-    "citation_count": 6,
+    "citation_count": 5,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
-      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -3182,11 +3180,9 @@ window.REFERENCES_DATA = [
     "url": "https://arxiv.org/abs/1901.04085",
     "eprint": "1901.04085",
     "direct_pdf_url": "https://arxiv.org/pdf/1901.04085.pdf",
-    "is_cited": true,
-    "citation_count": 1,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
-    ],
+    "is_cited": false,
+    "citation_count": 0,
+    "cited_in_files": [],
     "has_local_pdf": false,
     "local_pdf_path": "",
     "google_search_url": "https://www.google.com/search?q=%22Passage%20Re-ranking%20with%20BERT%22%20Rodrigo%20Nogueira",
@@ -3211,7 +3207,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/2021.acl-long.243.pdf",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -3267,7 +3263,7 @@ window.REFERENCES_DATA = [
     "eprint": "2004.04906",
     "direct_pdf_url": "https://arxiv.org/pdf/2004.04906.pdf",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 1,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -3295,7 +3291,7 @@ window.REFERENCES_DATA = [
     "eprint": "1908.10084",
     "direct_pdf_url": "https://arxiv.org/pdf/1908.10084.pdf",
     "is_cited": true,
-    "citation_count": 9,
+    "citation_count": 8,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -3352,7 +3348,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 1,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -3380,7 +3376,7 @@ window.REFERENCES_DATA = [
     "eprint": "2108.03937",
     "direct_pdf_url": "https://arxiv.org/pdf/2108.03937.pdf",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 1,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -3604,7 +3600,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://coliee.org/documents/Proceedings/2025-Proceedings.pdf",
     "is_cited": true,
-    "citation_count": 7,
+    "citation_count": 8,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -3632,7 +3628,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 9,
+    "citation_count": 7,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -3718,7 +3714,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/2607.11400.pdf",
     "is_cited": true,
-    "citation_count": 8,
+    "citation_count": 7,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
@@ -3748,10 +3744,9 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/2607.16603.pdf",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 2,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -3947,9 +3942,10 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/2211.02405.pdf",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 5,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -4003,7 +3999,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://law.stanford.edu/wp-content/uploads/2015/06/BarbaraHFriedExAnteExPost.pdf",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 1,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -4059,7 +4055,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 1,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -4283,7 +4279,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -4366,7 +4362,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 5,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -4490,34 +4486,6 @@ window.REFERENCES_DATA = [
     "raw_bib": "@inproceedings{oard2003desperately,\n  title     = {Desperately Seeking {C}ebuano},\n  author    = {Oard, Douglas W. and others},\n  booktitle = {Proceedings of the {ACM} {SIGIR} Workshop on Analytics for Noisy Unstructured Text Data},\n  year      = {2003},\n  url = {https://www.research.ed.ac.uk/files/25694746/p76_oard.pdf},\n  urldate = {2026-09-26},\n  file = {docs/references/oard2003desperately.pdf}\n}"
   },
   {
-    "citekey": "lopresti2008optical",
-    "entry_type": "inproceedings",
-    "title": "Optical character recognition errors and their effects on natural language processing",
-    "raw_title": "Optical character recognition errors and their effects on natural language processing",
-    "author": "Lopresti, Daniel",
-    "raw_author": "Lopresti, Daniel",
-    "year": "2008",
-    "venue": "Proceedings of the Second Workshop on Analytics for Noisy Unstructured Text Data",
-    "category": "Computer Science & NLP",
-    "doi": "",
-    "url": "https://www.researchgate.net/publication/220163443_Optical_character_recognition_errors_and_their_effects_on_natural_language_processing",
-    "eprint": "",
-    "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 3,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
-    ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "google_search_url": "https://www.google.com/search?q=%22Optical%20character%20recognition%20errors%20and%20their%20effects%20on%20natural%20language%20processing%22%20Lopresti%2C%20Daniel",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=Optical%20character%20recognition%20errors%20and%20their%20effects%20on%20natural%20language%20processing",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Optical%20character%20recognition%20errors%20and%20their%20effects%20on%20natural%20language%20processing",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=Optical%20character%20recognition%20errors%20and%20their%20effects%20on%20natural%20language%20processing&rows=1",
-    "lawphil_url": "",
-    "raw_bib": "@inproceedings{lopresti2008optical,\n  title     = {Optical character recognition errors and their effects on natural language processing},\n  author    = {Lopresti, Daniel},\n  booktitle = {Proceedings of the Second Workshop on Analytics for Noisy Unstructured Text Data},\n  pages     = {9--16},\n  year      = {2008},\n  publisher = {ACM},\n  url = {https://www.researchgate.net/publication/220163443_Optical_character_recognition_errors_and_their_effects_on_natural_language_processing},\n  urldate = {2026-09-26},\n  file = {docs/references/lopresti2008optical.pdf}\n}"
-  },
-  {
     "citekey": "ignat2022ocr",
     "entry_type": "inproceedings",
     "title": "OCR Improves Machine Translation for Low-Resource Languages",
@@ -4558,9 +4526,10 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -5098,9 +5067,10 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 3,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -5155,7 +5125,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -5213,9 +5183,10 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -5606,7 +5577,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 6,
+    "citation_count": 5,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
@@ -5665,7 +5636,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -5693,7 +5664,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 5,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -5721,7 +5692,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 6,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -5749,7 +5720,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 4,
+    "citation_count": 12,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -5946,11 +5917,9 @@ window.REFERENCES_DATA = [
     "url": "https://doi.org/10.1016/j.ipm.2009.03.002",
     "eprint": "",
     "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 2,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
-    ],
+    "is_cited": false,
+    "citation_count": 0,
+    "cited_in_files": [],
     "has_local_pdf": false,
     "local_pdf_path": "",
     "google_search_url": "https://www.google.com/search?q=%22A%20Systematic%20Analysis%20of%20Performance%20Measures%20for%20Classification%20Tasks%22%20Sokolova%2C%20Marina",
@@ -5975,7 +5944,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -6003,9 +5972,10 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/M92-1002.pdf",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 3,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -6031,7 +6001,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -6226,7 +6196,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/1803.05355.pdf",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 5,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -6366,7 +6336,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 7,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -6508,10 +6478,9 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/2207.00220.pdf",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 1,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
-      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -6537,10 +6506,9 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 2,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
-      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -6870,7 +6838,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -6954,9 +6922,10 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/1702.08608.pdf",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -6982,9 +6951,10 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/1811.10154.pdf",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
@@ -7119,11 +7089,9 @@ window.REFERENCES_DATA = [
     "url": "https://lawphil.net/judjuris/juri2008/sep2008/gr_155491_2008.html",
     "eprint": "",
     "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 2,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
-    ],
+    "is_cited": false,
+    "citation_count": 0,
+    "cited_in_files": [],
     "has_local_pdf": false,
     "local_pdf_path": "",
     "google_search_url": "https://www.google.com/search?q=%22Smart%20Communications%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20155491%29%22%20Supreme%20Court%20of%20the%20Philippines",
@@ -7255,11 +7223,9 @@ window.REFERENCES_DATA = [
     "url": "https://lawphil.net/judjuris/juri2001/aug2001/gr_143867_2001.html",
     "eprint": "",
     "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 1,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
-    ],
+    "is_cited": false,
+    "citation_count": 0,
+    "cited_in_files": [],
     "has_local_pdf": false,
     "local_pdf_path": "",
     "google_search_url": "https://www.google.com/search?q=%22Philippine%20Long%20Distance%20Telephone%20Company%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20143867%29%22%20Supreme%20Court%20of%20the%20Philippines",
@@ -7367,11 +7333,9 @@ window.REFERENCES_DATA = [
     "url": "https://lissp2.davaocity.gov.ph/uploads/items/26555/Ordinance%20No.%20000060-02.pdf",
     "eprint": "",
     "direct_pdf_url": "https://lissp2.davaocity.gov.ph/uploads/items/26555/Ordinance%20No.%20000060-02.pdf",
-    "is_cited": true,
-    "citation_count": 2,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
-    ],
+    "is_cited": false,
+    "citation_count": 0,
+    "cited_in_files": [],
     "has_local_pdf": false,
     "local_pdf_path": "",
     "google_search_url": "https://www.google.com/search?q=%22Davao%20City%20Ordinance%20No.%20060-02%3A%20An%20Ordinance%20Prohibiting%20the%20Manufacture%2C%20Sale%2C%20Distribution%2C%20Possession%20or%20Use%20of%20Firecrackers%20or%20Pyrotechnic%20Devices%20in%20Davao%20City%22%20Sangguniang%20Panlungsod%20of%20Davao%20City",
@@ -7480,7 +7444,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -7520,5 +7484,629 @@ window.REFERENCES_DATA = [
     "crossref_search_url": "https://api.crossref.org/works?query.title=Green%20AI&rows=1",
     "lawphil_url": "",
     "raw_bib": "@article{schwartz2020green,\n  title     = {Green {AI}},\n  author    = {Schwartz, Roy and Dodge, Jesse and Smith, Noah A. and Etzioni, Oren},\n  journal   = {Communications of the ACM},\n  volume    = {63},\n  number    = {12},\n  pages     = {54--63},\n  year      = {2020},\n  doi       = {10.1145/3381831},\n  url       = {https://doi.org/10.1145/3381831},\n  urldate   = {2026-09-26}\n}"
+  },
+  {
+    "citekey": "strubell2019energy",
+    "entry_type": "inproceedings",
+    "title": "Energy and Policy Considerations for Deep Learning in NLP",
+    "raw_title": "Energy and Policy Considerations for Deep Learning in {NLP}",
+    "author": "Emma Strubell and Ananya Ganesh and Andrew McCallum",
+    "raw_author": "Emma Strubell and Ananya Ganesh and Andrew McCallum",
+    "year": "2019",
+    "venue": "Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (ACL)",
+    "category": "Computer Science & NLP",
+    "doi": "10.18653/v1/P19-1355",
+    "url": "https://aclanthology.org/P19-1355/",
+    "eprint": "",
+    "direct_pdf_url": "https://aclanthology.org/P19-1355.pdf",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Energy%20and%20Policy%20Considerations%20for%20Deep%20Learning%20in%20NLP%22%20Emma%20Strubell",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Energy%20and%20Policy%20Considerations%20for%20Deep%20Learning%20in%20NLP",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Energy%20and%20Policy%20Considerations%20for%20Deep%20Learning%20in%20NLP",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Energy%20and%20Policy%20Considerations%20for%20Deep%20Learning%20in%20NLP&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@inproceedings{strubell2019energy,\n  author    = {Emma Strubell and Ananya Ganesh and Andrew McCallum},\n  title     = {Energy and Policy Considerations for Deep Learning in {NLP}},\n  booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (ACL)},\n  pages     = {3645--3650},\n  year      = {2019},\n  doi       = {10.18653/v1/P19-1355},\n  url       = {https://aclanthology.org/P19-1355/},\n  urldate   = {2026-09-26}\n}"
+  },
+  {
+    "citekey": "lopresti2008optical",
+    "entry_type": "article",
+    "title": "Optical Character Recognition Errors and Their Effect on Natural Language Processing",
+    "raw_title": "Optical Character Recognition Errors and Their Effect on Natural Language Processing",
+    "author": "Daniel Lopresti",
+    "raw_author": "Daniel Lopresti",
+    "year": "2008",
+    "venue": "International Journal on Document Analysis and Recognition (IJDAR)",
+    "category": "Computer Science & NLP",
+    "doi": "10.1007/s10032-008-0073-4",
+    "url": "https://doi.org/10.1007/s10032-008-0073-4",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 5,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Optical%20Character%20Recognition%20Errors%20and%20Their%20Effect%20on%20Natural%20Language%20Processing%22%20Daniel%20Lopresti",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Optical%20Character%20Recognition%20Errors%20and%20Their%20Effect%20on%20Natural%20Language%20Processing",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Optical%20Character%20Recognition%20Errors%20and%20Their%20Effect%20on%20Natural%20Language%20Processing",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Optical%20Character%20Recognition%20Errors%20and%20Their%20Effect%20on%20Natural%20Language%20Processing&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{lopresti2008optical,\n  author    = {Daniel Lopresti},\n  title     = {Optical Character Recognition Errors and Their Effect on Natural Language Processing},\n  journal   = {International Journal on Document Analysis and Recognition (IJDAR)},\n  volume    = {10},\n  number    = {3--4},\n  pages     = {141--151},\n  year      = {2008},\n  doi       = {10.1007/s10032-008-0073-4},\n  url       = {https://doi.org/10.1007/s10032-008-0073-4},\n  urldate   = {2026-09-28}\n}"
+  },
+  {
+    "citekey": "smith2007overview",
+    "entry_type": "inproceedings",
+    "title": "An Overview of the Tesseract OCR Engine",
+    "raw_title": "An Overview of the {Tesseract} {OCR} Engine",
+    "author": "Ray Smith",
+    "raw_author": "Ray Smith",
+    "year": "2007",
+    "venue": "Proceedings of the Ninth International Conference on Document Analysis and Recognition (ICDAR 2007)",
+    "category": "Computer Science & NLP",
+    "doi": "10.1109/ICDAR.2007.4378689",
+    "url": "https://doi.org/10.1109/ICDAR.2007.4378689",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 2,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22An%20Overview%20of%20the%20Tesseract%20OCR%20Engine%22%20Ray%20Smith",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=An%20Overview%20of%20the%20Tesseract%20OCR%20Engine",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=An%20Overview%20of%20the%20Tesseract%20OCR%20Engine",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=An%20Overview%20of%20the%20Tesseract%20OCR%20Engine&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@inproceedings{smith2007overview,\n  author    = {Ray Smith},\n  title     = {An Overview of the {Tesseract} {OCR} Engine},\n  booktitle = {Proceedings of the Ninth International Conference on Document Analysis and Recognition (ICDAR 2007)},\n  pages     = {629--633},\n  year      = {2007},\n  publisher = {IEEE Computer Society},\n  doi       = {10.1109/ICDAR.2007.4378689},\n  url       = {https://doi.org/10.1109/ICDAR.2007.4378689},\n  urldate   = {2026-09-28}\n}"
+  },
+  {
+    "citekey": "paruchuri2024surya",
+    "entry_type": "misc",
+    "title": "Surya: Multilingual Document OCR, Layout Analysis, and Line Detection",
+    "raw_title": "Surya: Multilingual Document {OCR}, Layout Analysis, and Line Detection",
+    "author": "Vikram Paruchuri",
+    "raw_author": "Vikram Paruchuri",
+    "year": "2024",
+    "venue": "https://github.com/VikParuchuri/surya",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "https://github.com/VikParuchuri/surya",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 2,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection%22%20Vikram%20Paruchuri",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@misc{paruchuri2024surya,\n  author       = {Vikram Paruchuri},\n  title        = {Surya: Multilingual Document {OCR}, Layout Analysis, and Line Detection},\n  year         = {2024},\n  howpublished = {\\url{https://github.com/VikParuchuri/surya}},\n  url          = {https://github.com/VikParuchuri/surya},\n  urldate      = {2026-09-28}\n}"
+  },
+  {
+    "citekey": "bai2025qwen25vl",
+    "entry_type": "article",
+    "title": "Qwen2.5-VL Technical Report",
+    "raw_title": "{Qwen2.5-VL} Technical Report",
+    "author": "Qwen Team and Jinze Bai and Shuai Bai and Yunfei Chu and Zeyu Cui and Kai Dang and Xiaodong Deng and Yang Fan and Lu Gao and Ruqing Ge and others",
+    "raw_author": "Qwen Team and Jinze Bai and Shuai Bai and Yunfei Chu and Zeyu Cui and Kai Dang and Xiaodong Deng and Yang Fan and Lu Gao and Ruqing Ge and others",
+    "year": "2025",
+    "venue": "arXiv preprint arXiv:2502.13923",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2502.13923",
+    "eprint": "",
+    "direct_pdf_url": "https://arxiv.org/pdf/2502.13923.pdf",
+    "is_cited": true,
+    "citation_count": 3,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Qwen2.5-VL%20Technical%20Report%22%20Qwen%20Team",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Qwen2.5-VL%20Technical%20Report",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Qwen2.5-VL%20Technical%20Report",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Qwen2.5-VL%20Technical%20Report&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{bai2025qwen25vl,\n  author    = {Qwen Team and Jinze Bai and Shuai Bai and Yunfei Chu and Zeyu Cui and Kai Dang and Xiaodong Deng and Yang Fan and Lu Gao and Ruqing Ge and others},\n  title     = {{Qwen2.5-VL} Technical Report},\n  journal   = {arXiv preprint arXiv:2502.13923},\n  year      = {2025},\n  url       = {https://arxiv.org/abs/2502.13923},\n  urldate   = {2026-09-28}\n}"
+  },
+  {
+    "citekey": "dettmers2024qlora",
+    "entry_type": "inproceedings",
+    "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+    "raw_title": "{QLoRA}: Efficient Finetuning of Quantized {LLMs}",
+    "author": "Tim Dettmers and Artidoro Pagnoni and Ari Holtzman and Luke Zettlemoyer",
+    "raw_author": "Tim Dettmers and Artidoro Pagnoni and Ari Holtzman and Luke Zettlemoyer",
+    "year": "2024",
+    "venue": "Advances in Neural Information Processing Systems (NeurIPS 2023)",
+    "category": "Philippine Law & Jurisprudence",
+    "doi": "",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1feb87871436031bdc0f2beaa794e216-Abstract-Conference.html",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 2,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22QLoRA%3A%20Efficient%20Finetuning%20of%20Quantized%20LLMs%22%20Tim%20Dettmers",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=QLoRA%3A%20Efficient%20Finetuning%20of%20Quantized%20LLMs",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=QLoRA%3A%20Efficient%20Finetuning%20of%20Quantized%20LLMs",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=QLoRA%3A%20Efficient%20Finetuning%20of%20Quantized%20LLMs&rows=1",
+    "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+QLoRA%3A%20Efficient%20Finetuning%20of%20Quantized%20LLMs",
+    "raw_bib": "@inproceedings{dettmers2024qlora,\n  author    = {Tim Dettmers and Artidoro Pagnoni and Ari Holtzman and Luke Zettlemoyer},\n  title     = {{QLoRA}: Efficient Finetuning of Quantized {LLMs}},\n  booktitle = {Advances in Neural Information Processing Systems (NeurIPS 2023)},\n  volume    = {36},\n  pages     = {10088--10115},\n  year      = {2024},\n  url       = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/1feb87871436031bdc0f2beaa794e216-Abstract-Conference.html},\n  urldate   = {2026-09-28}\n}"
+  },
+  {
+    "citekey": "google2024documentai",
+    "entry_type": "misc",
+    "title": "Document AI and Cloud Vision API Architecture Overview",
+    "raw_title": "Document {AI} and Cloud Vision {API} Architecture Overview",
+    "author": "Google Cloud",
+    "raw_author": "{Google Cloud}",
+    "year": "2024",
+    "venue": "https://cloud.google.com/document-ai/docs/overview",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "https://cloud.google.com/document-ai/docs/overview",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 2,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview%22%20Google%20Cloud",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@misc{google2024documentai,\n  author       = {{Google Cloud}},\n  title        = {Document {AI} and Cloud Vision {API} Architecture Overview},\n  year         = {2024},\n  howpublished = {\\url{https://cloud.google.com/document-ai/docs/overview}},\n  url          = {https://cloud.google.com/document-ai/docs/overview},\n  urldate      = {2026-09-28}\n}"
+  },
+  {
+    "citekey": "philgov2012ra10173",
+    "entry_type": "misc",
+    "title": "Republic Act No. 10173: An Act Protecting Individual Personal Information in Information and Communications Systems in the Government and the Private Sector (Data Privacy Act of 2012)",
+    "raw_title": "Republic Act No. 10173: An Act Protecting Individual Personal Information in Information and Communications Systems in the Government and the Private Sector ({Data Privacy Act of 2012})",
+    "author": "Republic of the Philippines",
+    "raw_author": "{Republic of the Philippines}",
+    "year": "2012",
+    "venue": "Official Gazette of the Republic of the Philippines, Vol. 108, No. 35, p. 4398",
+    "category": "Philippine Law & Jurisprudence",
+    "doi": "",
+    "url": "https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 3,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Republic%20Act%20No.%2010173%3A%20An%20Act%20Protecting%20Individual%20Personal%20Information%20in%20Information%20and%20Communications%20Systems%20in%20the%20Government%20and%20the%20Private%20Sector%20%28Data%20Privacy%20Act%20of%202012%29%22%20Republic%20of%20the%20Philippines",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Republic%20Act%20No.%2010173%3A%20An%20Act%20Protecting%20Individual%20Personal%20Information%20in%20Information%20and%20Communications%20Systems%20in%20the%20Government%20and%20the%20Private%20Sector%20%28Data%20Privacy%20Act%20of%202012%29",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Republic%20Act%20No.%2010173%3A%20An%20Act%20Protecting%20Individual%20Personal%20Information%20in%20Information%20and%20Communications%20Systems%20in%20the%20Government%20and%20the%20Private%20Sector%20%28Data%20Privacy%20Act%20of%202012%29",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Republic%20Act%20No.%2010173%3A%20An%20Act%20Protecting%20Individual%20Personal%20Information%20in%20Information%20and%20Communications%20Systems%20in%20the%20Government%20and%20the%20Private%20Sector%20%28Data%20Privacy%20Act%20of%202012%29&rows=1",
+    "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Republic%20Act%20No.%2010173%3A%20An%20Act%20Protecting%20Individual%20Personal%20Information%20in%20Information%20and%20Communications%20Systems%20in%20the%20Government%20and%20the%20Private%20Sector%20%28Data%20Privacy%20Act%20of%202012%29",
+    "raw_bib": "@misc{philgov2012ra10173,\n  author       = {{Republic of the Philippines}},\n  title        = {Republic Act No. 10173: An Act Protecting Individual Personal Information in Information and Communications Systems in the Government and the Private Sector ({Data Privacy Act of 2012})},\n  year         = {2012},\n  howpublished = {Official Gazette of the Republic of the Philippines, Vol. 108, No. 35, p. 4398},\n  url          = {https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/},\n  urldate      = {2026-09-28}\n}"
+  },
+  {
+    "citekey": "levenshtein1966binary",
+    "entry_type": "article",
+    "title": "Binary Codes Capable of Correcting Deletions, Insertions, and Reversals",
+    "raw_title": "Binary Codes Capable of Correcting Deletions, Insertions, and Reversals",
+    "author": "Vladimir Iosifovich Levenshtein",
+    "raw_author": "Vladimir Iosifovich Levenshtein",
+    "year": "1966",
+    "venue": "Soviet Physics Doklady",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 2,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Binary%20Codes%20Capable%20of%20Correcting%20Deletions%2C%20Insertions%2C%20and%20Reversals%22%20Vladimir%20Iosifovich%20Levenshtein",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Binary%20Codes%20Capable%20of%20Correcting%20Deletions%2C%20Insertions%2C%20and%20Reversals",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Binary%20Codes%20Capable%20of%20Correcting%20Deletions%2C%20Insertions%2C%20and%20Reversals",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Binary%20Codes%20Capable%20of%20Correcting%20Deletions%2C%20Insertions%2C%20and%20Reversals&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{levenshtein1966binary,\n  author  = {Vladimir Iosifovich Levenshtein},\n  title   = {Binary Codes Capable of Correcting Deletions, Insertions, and Reversals},\n  journal = {Soviet Physics Doklady},\n  year    = {1966},\n  volume  = {10},\n  number  = {8},\n  pages   = {707--710}\n}"
+  },
+  {
+    "citekey": "zhong2020image",
+    "entry_type": "article",
+    "title": "Image-Based Table Recognition: Data, Model, and Evaluation",
+    "raw_title": "Image-Based Table Recognition: Data, Model, and Evaluation",
+    "author": "Xu Zhong and Elaheh ShafieiBavani and Antonio Jimeno Yepes",
+    "raw_author": "Xu Zhong and Elaheh ShafieiBavani and Antonio Jimeno Yepes",
+    "year": "2020",
+    "venue": "Computer Vision -- ECCV 2020",
+    "category": "Computer Science & NLP",
+    "doi": "10.1007/978-3-030-58589-1_34",
+    "url": "https://doi.org/10.1007/978-3-030-58589-1_34",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Image-Based%20Table%20Recognition%3A%20Data%2C%20Model%2C%20and%20Evaluation%22%20Xu%20Zhong",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Image-Based%20Table%20Recognition%3A%20Data%2C%20Model%2C%20and%20Evaluation",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Image-Based%20Table%20Recognition%3A%20Data%2C%20Model%2C%20and%20Evaluation",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Image-Based%20Table%20Recognition%3A%20Data%2C%20Model%2C%20and%20Evaluation&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{zhong2020image,\n  author    = {Xu Zhong and Elaheh ShafieiBavani and Antonio Jimeno Yepes},\n  title     = {Image-Based Table Recognition: Data, Model, and Evaluation},\n  booktitle = {Computer Vision -- {ECCV} 2020},\n  series    = {Lecture Notes in Computer Science},\n  volume    = {12366},\n  pages     = {564--580},\n  year      = {2020},\n  publisher = {Springer},\n  doi       = {10.1007/978-3-030-58589-1_34},\n  url       = {https://doi.org/10.1007/978-3-030-58589-1_34}\n}"
+  },
+  {
+    "citekey": "vanrijsbergen1979information",
+    "entry_type": "book",
+    "title": "Information Retrieval",
+    "raw_title": "Information Retrieval",
+    "author": "van Rijsbergen, C. J.",
+    "raw_author": "van Rijsbergen, C. J.",
+    "year": "1979",
+    "venue": "Butterworth-Heinemann",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 2,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Information%20Retrieval%22%20van%20Rijsbergen%2C%20C.%20J.",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Information%20Retrieval",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Information%20Retrieval",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Information%20Retrieval&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@book{vanrijsbergen1979information,\n  title     = {Information Retrieval},\n  author    = {van Rijsbergen, C. J.},\n  edition   = {2nd},\n  publisher = {Butterworth-Heinemann},\n  address   = {London},\n  year      = {1979},\n  isbn      = {9780408709293}\n}"
+  },
+  {
+    "citekey": "edwards1948note",
+    "entry_type": "article",
+    "title": "Note on the ``Correction for Continuity'' in Testing the Significance of the Difference Between Correlated Proportions",
+    "raw_title": "Note on the ``Correction for Continuity'' in Testing the Significance of the Difference Between Correlated Proportions",
+    "author": "Edwards, Allen L.",
+    "raw_author": "Edwards, Allen L.",
+    "year": "1948",
+    "venue": "Psychometrika",
+    "category": "Computer Science & NLP",
+    "doi": "10.1007/BF02289261",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Note%20on%20the%20%60%60Correction%20for%20Continuity%27%27%20in%20Testing%20the%20Significance%20of%20the%20Difference%20Between%20Correlated%20Proportions%22%20Edwards%2C%20Allen%20L.",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Note%20on%20the%20%60%60Correction%20for%20Continuity%27%27%20in%20Testing%20the%20Significance%20of%20the%20Difference%20Between%20Correlated%20Proportions",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Note%20on%20the%20%60%60Correction%20for%20Continuity%27%27%20in%20Testing%20the%20Significance%20of%20the%20Difference%20Between%20Correlated%20Proportions",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Note%20on%20the%20%60%60Correction%20for%20Continuity%27%27%20in%20Testing%20the%20Significance%20of%20the%20Difference%20Between%20Correlated%20Proportions&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{edwards1948note,\n  title   = {Note on the ``Correction for Continuity'' in Testing the Significance of the Difference Between Correlated Proportions},\n  author  = {Edwards, Allen L.},\n  journal = {Psychometrika},\n  volume  = {13},\n  number  = {3},\n  pages   = {185--187},\n  year    = {1948},\n  doi     = {10.1007/BF02289261}\n}"
+  },
+  {
+    "citekey": "marzal1993computation",
+    "entry_type": "article",
+    "title": "Computation of Normalized Edit Distance and Applications",
+    "raw_title": "Computation of Normalized Edit Distance and Applications",
+    "author": "Marzal, Andr'es and Vidal, Enrique",
+    "raw_author": "Marzal, Andr{\\'e}s and Vidal, Enrique",
+    "year": "1993",
+    "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "category": "Computer Science & NLP",
+    "doi": "10.1109/34.232078",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Computation%20of%20Normalized%20Edit%20Distance%20and%20Applications%22%20Marzal%2C%20Andr%27es",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Computation%20of%20Normalized%20Edit%20Distance%20and%20Applications",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Computation%20of%20Normalized%20Edit%20Distance%20and%20Applications",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Computation%20of%20Normalized%20Edit%20Distance%20and%20Applications&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{marzal1993computation,\n  title   = {Computation of Normalized Edit Distance and Applications},\n  author  = {Marzal, Andr{\\'e}s and Vidal, Enrique},\n  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  volume  = {15},\n  number  = {9},\n  pages   = {926--932},\n  year    = {1993},\n  doi     = {10.1109/34.232078}\n}"
+  },
+  {
+    "citekey": "altman1994diagnostic",
+    "entry_type": "article",
+    "title": "Diagnostic Tests 1: Sensitivity and Specificity",
+    "raw_title": "Diagnostic Tests 1: Sensitivity and Specificity",
+    "author": "Altman, Douglas G. and Bland, J. Martin",
+    "raw_author": "Altman, Douglas G. and Bland, J. Martin",
+    "year": "1994",
+    "venue": "BMJ",
+    "category": "Computer Science & NLP",
+    "doi": "10.1136/bmj.308.6943.1552",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Diagnostic%20Tests%201%3A%20Sensitivity%20and%20Specificity%22%20Altman%2C%20Douglas%20G.",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Diagnostic%20Tests%201%3A%20Sensitivity%20and%20Specificity",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Diagnostic%20Tests%201%3A%20Sensitivity%20and%20Specificity",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Diagnostic%20Tests%201%3A%20Sensitivity%20and%20Specificity&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{altman1994diagnostic,\n  title   = {Diagnostic Tests 1: Sensitivity and Specificity},\n  author  = {Altman, Douglas G. and Bland, J. Martin},\n  journal = {BMJ},\n  volume  = {308},\n  number  = {6943},\n  pages   = {1552},\n  year    = {1994},\n  doi     = {10.1136/bmj.308.6943.1552}\n}"
+  },
+  {
+    "citekey": "rocchio1971relevance",
+    "entry_type": "incollection",
+    "title": "Relevance Feedback in Information Retrieval",
+    "raw_title": "Relevance Feedback in Information Retrieval",
+    "author": "Rocchio, J. J.",
+    "raw_author": "Rocchio, J. J.",
+    "year": "1971",
+    "venue": "The SMART Retrieval System: Experiments in Automatic Document Processing",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Relevance%20Feedback%20in%20Information%20Retrieval%22%20Rocchio%2C%20J.%20J.",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Relevance%20Feedback%20in%20Information%20Retrieval",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Relevance%20Feedback%20in%20Information%20Retrieval",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Relevance%20Feedback%20in%20Information%20Retrieval&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@incollection{rocchio1971relevance,\n  title     = {Relevance Feedback in Information Retrieval},\n  author    = {Rocchio, J. J.},\n  booktitle = {The SMART Retrieval System: Experiments in Automatic Document Processing},\n  editor    = {Salton, Gerard},\n  pages     = {313--323},\n  publisher = {Prentice-Hall},\n  address   = {Englewood Cliffs, NJ},\n  year      = {1971}\n}"
+  },
+  {
+    "citekey": "bisong2019google",
+    "entry_type": "incollection",
+    "title": "Google Colaboratory",
+    "raw_title": "Google Colaboratory",
+    "author": "Bisong, Ekaba",
+    "raw_author": "Bisong, Ekaba",
+    "year": "2019",
+    "venue": "Building Machine Learning and Deep Learning Models on Google Cloud Platform",
+    "category": "Computer Science & NLP",
+    "doi": "10.1007/978-1-4842-4470-8_7",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Google%20Colaboratory%22%20Bisong%2C%20Ekaba",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Google%20Colaboratory",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Google%20Colaboratory",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Google%20Colaboratory&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@incollection{bisong2019google,\n  title     = {Google Colaboratory},\n  author    = {Bisong, Ekaba},\n  booktitle = {Building Machine Learning and Deep Learning Models on Google Cloud Platform},\n  pages     = {59--64},\n  year      = {2019},\n  publisher = {Apress},\n  address   = {Berkeley, CA},\n  doi       = {10.1007/978-1-4842-4470-8_7}\n}"
+  },
+  {
+    "citekey": "googlecolab2026",
+    "entry_type": "misc",
+    "title": "Google Colaboratory: Frequently Asked Questions and Resource Allocations",
+    "raw_title": "Google {Colaboratory}: Frequently Asked Questions and Resource Allocations",
+    "author": "Google Research",
+    "raw_author": "{Google Research}",
+    "year": "2026",
+    "venue": "",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "https://research.google.com/colaboratory/faq.html",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 2,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Google%20Colaboratory%3A%20Frequently%20Asked%20Questions%20and%20Resource%20Allocations%22%20Google%20Research",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Google%20Colaboratory%3A%20Frequently%20Asked%20Questions%20and%20Resource%20Allocations",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Google%20Colaboratory%3A%20Frequently%20Asked%20Questions%20and%20Resource%20Allocations",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Google%20Colaboratory%3A%20Frequently%20Asked%20Questions%20and%20Resource%20Allocations&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@misc{googlecolab2026,\n  author       = {{Google Research}},\n  title        = {Google {Colaboratory}: Frequently Asked Questions and Resource Allocations},\n  year         = {2026},\n  url          = {https://research.google.com/colaboratory/faq.html},\n  urldate      = {2026-10-02},\n  note         = {Accessed October 2026}\n}"
+  },
+  {
+    "citekey": "Greco2023Bringing",
+    "entry_type": "article",
+    "title": "Bringing order into the realm of Transformer-based language models for artificial intelligence and law",
+    "raw_title": "Bringing order into the realm of {Transformer}-based language models for artificial intelligence and law",
+    "author": "Greco, Candida Maria and Tagarelli, Andrea",
+    "raw_author": "Greco, Candida Maria and Tagarelli, Andrea",
+    "year": "2024",
+    "venue": "Artificial Intelligence and Law",
+    "category": "Computer Science & NLP",
+    "doi": "10.1007/s10506-023-09374-7",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 3,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Bringing%20order%20into%20the%20realm%20of%20Transformer-based%20language%20models%20for%20artificial%20intelligence%20and%20law%22%20Greco%2C%20Candida%20Maria",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Bringing%20order%20into%20the%20realm%20of%20Transformer-based%20language%20models%20for%20artificial%20intelligence%20and%20law",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Bringing%20order%20into%20the%20realm%20of%20Transformer-based%20language%20models%20for%20artificial%20intelligence%20and%20law",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Bringing%20order%20into%20the%20realm%20of%20Transformer-based%20language%20models%20for%20artificial%20intelligence%20and%20law&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{Greco2023Bringing,\n  author    = {Greco, Candida Maria and Tagarelli, Andrea},\n  title     = {Bringing order into the realm of {Transformer}-based language models for artificial intelligence and law},\n  journal   = {Artificial Intelligence and Law},\n  year      = {2024},\n  volume    = {32},\n  number    = {3},\n  pages     = {863--1010},\n  doi       = {10.1007/s10506-023-09374-7},\n  note      = {Online first published 2023}\n}"
+  },
+  {
+    "citekey": "davis1989perceived",
+    "entry_type": "article",
+    "title": "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology",
+    "raw_title": "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology",
+    "author": "Davis, Fred D.",
+    "raw_author": "Davis, Fred D.",
+    "year": "1989",
+    "venue": "MIS Quarterly",
+    "category": "Computer Science & NLP",
+    "doi": "10.2307/249008",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Perceived%20Usefulness%2C%20Perceived%20Ease%20of%20Use%2C%20and%20User%20Acceptance%20of%20Information%20Technology%22%20Davis%2C%20Fred%20D.",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Perceived%20Usefulness%2C%20Perceived%20Ease%20of%20Use%2C%20and%20User%20Acceptance%20of%20Information%20Technology",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Perceived%20Usefulness%2C%20Perceived%20Ease%20of%20Use%2C%20and%20User%20Acceptance%20of%20Information%20Technology",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Perceived%20Usefulness%2C%20Perceived%20Ease%20of%20Use%2C%20and%20User%20Acceptance%20of%20Information%20Technology&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{davis1989perceived,\n  title     = {Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology},\n  author    = {Davis, Fred D.},\n  journal   = {MIS Quarterly},\n  volume    = {13},\n  number    = {3},\n  pages     = {319--340},\n  year      = {1989},\n  publisher = {Management Information Systems Research Center, University of Minnesota},\n  doi       = {10.2307/249008}\n}"
+  },
+  {
+    "citekey": "bangor2008empirical",
+    "entry_type": "article",
+    "title": "An Empirical Evaluation of the System Usability Scale",
+    "raw_title": "An Empirical Evaluation of the System Usability Scale",
+    "author": "Bangor, Aaron and Kortum, Philip T. and Miller, James T.",
+    "raw_author": "Bangor, Aaron and Kortum, Philip T. and Miller, James T.",
+    "year": "2008",
+    "venue": "International Journal of Human-Computer Interaction",
+    "category": "Computer Science & NLP",
+    "doi": "10.1080/10447310802205776",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22An%20Empirical%20Evaluation%20of%20the%20System%20Usability%20Scale%22%20Bangor%2C%20Aaron",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=An%20Empirical%20Evaluation%20of%20the%20System%20Usability%20Scale",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=An%20Empirical%20Evaluation%20of%20the%20System%20Usability%20Scale",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=An%20Empirical%20Evaluation%20of%20the%20System%20Usability%20Scale&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{bangor2008empirical,\n  title     = {An Empirical Evaluation of the System Usability Scale},\n  author    = {Bangor, Aaron and Kortum, Philip T. and Miller, James T.},\n  journal   = {International Journal of Human-Computer Interaction},\n  volume    = {24},\n  number    = {6},\n  pages     = {574--594},\n  year      = {2008},\n  publisher = {Taylor \\& Francis},\n  doi       = {10.1080/10447310802205776}\n}"
+  },
+  {
+    "citekey": "goodhue1995task",
+    "entry_type": "article",
+    "title": "Task-Technology Fit and Individual Performance",
+    "raw_title": "Task-Technology Fit and Individual Performance",
+    "author": "Goodhue, Dale L. and Thompson, Ronald L.",
+    "raw_author": "Goodhue, Dale L. and Thompson, Ronald L.",
+    "year": "1995",
+    "venue": "MIS Quarterly",
+    "category": "Computer Science & NLP",
+    "doi": "10.2307/249689",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Task-Technology%20Fit%20and%20Individual%20Performance%22%20Goodhue%2C%20Dale%20L.",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Task-Technology%20Fit%20and%20Individual%20Performance",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Task-Technology%20Fit%20and%20Individual%20Performance",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Task-Technology%20Fit%20and%20Individual%20Performance&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{goodhue1995task,\n  title     = {Task-Technology Fit and Individual Performance},\n  author    = {Goodhue, Dale L. and Thompson, Ronald L.},\n  journal   = {MIS Quarterly},\n  volume    = {19},\n  number    = {2},\n  pages     = {213--236},\n  year      = {1995},\n  publisher = {Management Information Systems Research Center, University of Minnesota},\n  doi       = {10.2307/249689}\n}"
+  },
+  {
+    "citekey": "sweller1988cognitive",
+    "entry_type": "article",
+    "title": "Cognitive Load During Problem Solving: Effects on Learning",
+    "raw_title": "Cognitive Load During Problem Solving: Effects on Learning",
+    "author": "Sweller, John",
+    "raw_author": "Sweller, John",
+    "year": "1988",
+    "venue": "Cognitive Science",
+    "category": "Computer Science & NLP",
+    "doi": "10.1207/s15516709cog1202_4",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Cognitive%20Load%20During%20Problem%20Solving%3A%20Effects%20on%20Learning%22%20Sweller%2C%20John",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Cognitive%20Load%20During%20Problem%20Solving%3A%20Effects%20on%20Learning",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Cognitive%20Load%20During%20Problem%20Solving%3A%20Effects%20on%20Learning",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Cognitive%20Load%20During%20Problem%20Solving%3A%20Effects%20on%20Learning&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@article{sweller1988cognitive,\n  title     = {Cognitive Load During Problem Solving: Effects on Learning},\n  author    = {Sweller, John},\n  journal   = {Cognitive Science},\n  volume    = {12},\n  number    = {2},\n  pages     = {257--285},\n  year      = {1988},\n  publisher = {Elsevier},\n  doi       = {10.1207/s15516709cog1202_4}\n}"
   }
 ];
