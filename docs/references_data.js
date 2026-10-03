@@ -384,7 +384,7 @@ window.REFERENCES_DATA = [
     "eprint": "https://royalsocietypublishing.org/rsta/article-pdf/doi/10.1098/rsta.2023.0254/1328474/rsta.2023.0254.pdf",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 5,
+    "citation_count": 6,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
@@ -413,7 +413,7 @@ window.REFERENCES_DATA = [
     "eprint": "2204.07047",
     "direct_pdf_url": "https://arxiv.org/pdf/2204.07047.pdf",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
@@ -496,7 +496,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/2022.acl-long.297.pdf",
     "is_cited": true,
-    "citation_count": 11,
+    "citation_count": 12,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -1913,7 +1913,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/1706.03762.pdf",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 1,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -2274,7 +2274,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/2412.13663.pdf",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -2767,7 +2767,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -3150,11 +3150,9 @@ window.REFERENCES_DATA = [
     "url": "https://arxiv.org/abs/2412.13663",
     "eprint": "2412.13663",
     "direct_pdf_url": "https://arxiv.org/pdf/2412.13663.pdf",
-    "is_cited": true,
-    "citation_count": 1,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
-    ],
+    "is_cited": false,
+    "citation_count": 0,
+    "cited_in_files": [],
     "has_local_pdf": false,
     "local_pdf_path": "",
     "google_search_url": "https://www.google.com/search?q=%22Smarter%2C%20Better%2C%20Faster%2C%20Longer%3A%20A%20Modern%20Bidirectional%20Encoder%20for%20Fast%2C%20Memory%20Efficient%2C%20and%20Long%20Context%20Finetuning%20and%20Inference%22%20Benjamin%20Warner",
@@ -3289,7 +3287,7 @@ window.REFERENCES_DATA = [
     "eprint": "1908.10084",
     "direct_pdf_url": "https://arxiv.org/pdf/1908.10084.pdf",
     "is_cited": true,
-    "citation_count": 8,
+    "citation_count": 7,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -4581,7 +4579,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/N18-2017.pdf",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -4892,7 +4890,7 @@ window.REFERENCES_DATA = [
     "eprint": "2012.15723",
     "direct_pdf_url": "https://arxiv.org/pdf/2012.15723.pdf",
     "is_cited": true,
-    "citation_count": 4,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -6111,9 +6109,11 @@ window.REFERENCES_DATA = [
     "url": "https://www.researchgate.net/publication/319395280_The_pascal_recognising_textual_entailment_challenge",
     "eprint": "",
     "direct_pdf_url": "",
-    "is_cited": false,
-    "citation_count": 0,
-    "cited_in_files": [],
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
     "has_local_pdf": false,
     "local_pdf_path": "",
     "google_search_url": "https://www.google.com/search?q=%22The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge%22%20Dagan%2C%20Ido",
@@ -6138,7 +6138,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/1805.01042.pdf",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -6949,7 +6949,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://arxiv.org/pdf/1811.10154.pdf",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -7982,7 +7982,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -8218,5 +8218,61 @@ window.REFERENCES_DATA = [
     "crossref_search_url": "https://api.crossref.org/works?query.title=Rules%20of%20the%20House%20of%20Representatives%20%2819th%20Congress%29&rows=1",
     "lawphil_url": "",
     "raw_bib": "@techreport{philhouse2022rules,\n  author       = {{House of Representatives of the Philippines}},\n  title        = {{Rules of the House of Representatives (19th Congress)}},\n  institution  = {House of Representatives, Republic of the Philippines},\n  year         = {2022},\n  keywords     = {legislative_procedure, congress, house_rules},\n  url          = {https://www.congress.gov.ph/legisdocs/rules/rules_19th.pdf},\n  urldate      = {2026-09-26}\n}"
+  },
+  {
+    "citekey": "hart1961concept",
+    "entry_type": "book",
+    "title": "The Concept of Law",
+    "raw_title": "The Concept of Law",
+    "author": "H. L. A. Hart",
+    "raw_author": "H. L. A. Hart",
+    "year": "1961",
+    "venue": "Clarendon Press, Oxford University Press",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22The%20Concept%20of%20Law%22%20H.%20L.%20A.%20Hart",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=The%20Concept%20of%20Law",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20Concept%20of%20Law",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=The%20Concept%20of%20Law&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@book{hart1961concept,\n  author    = {H. L. A. Hart},\n  title     = {The Concept of Law},\n  publisher = {Clarendon Press, Oxford University Press},\n  address   = {Oxford, UK},\n  year      = {1961}\n}"
+  },
+  {
+    "citekey": "dagan2006pascal",
+    "entry_type": "inproceedings",
+    "title": "The PASCAL Recognising Textual Entailment Challenge",
+    "raw_title": "The {PASCAL} Recognising Textual Entailment Challenge",
+    "author": "Ido Dagan and Oren Glickman and Bernardo Magnini",
+    "raw_author": "Ido Dagan and Oren Glickman and Bernardo Magnini",
+    "year": "2006",
+    "venue": "Machine Learning Challenges. Evaluating Predictive Uncertainty, Visual Object Classification, and Recognising Textual Entailment",
+    "category": "Computer Science & NLP",
+    "doi": "10.1007/11736790_9",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge%22%20Ido%20Dagan",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@inproceedings{dagan2006pascal,\n  author    = {Ido Dagan and Oren Glickman and Bernardo Magnini},\n  title     = {The {PASCAL} Recognising Textual Entailment Challenge},\n  booktitle = {Machine Learning Challenges. Evaluating Predictive Uncertainty, Visual Object Classification, and Recognising Textual Entailment},\n  series    = {Lecture Notes in Computer Science},\n  volume    = {3944},\n  pages     = {177--190},\n  publisher = {Springer},\n  year      = {2006},\n  doi       = {10.1007/11736790_9}\n}"
   }
 ];

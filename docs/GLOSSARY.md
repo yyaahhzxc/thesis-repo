@@ -609,6 +609,58 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 
 ---
 
+## **13. Statistical Evaluation, Empirical Benchmarking & Usability Metrics**
+
+### **Cost-Sensitive Thresholding & $F_2$-Score ($\beta=2$)**
+* **Plain Meaning:** An evaluation metric and decision rule that weights catching true errors (Recall) twice as heavily as avoiding false alarms (Precision).
+* **In This Thesis:** Missing a genuine legal conflict (false negative) causes catastrophic harm---an unconstitutional ordinance is passed, exposing citizens to unlawful penalties and the city to judicial invalidation under the *Magtajas* doctrine. Conversely, a false alarm (false positive) causes minimal harm---a legal researcher simply inspects the draft and dismisses the alert in seconds. Calibrating the decision threshold $\tau^*$ with $F_2$ tunes the system to act as an assertive protective shield.
+
+### **Asymmetric Span-Level Pairing ($1\text{ premise vs } N\text{ hypothesis}$)**
+* **Plain Meaning:** Matching a single concise sentence from a national statute against a complete multi-sentence block of an ordinance draft.
+* **In This Thesis:** National laws are typically drafted as concise principle statements, whereas local ordinances wrap prohibitions, penalty schedules, and exceptions into multi-sentence sections. Evaluating an isolated single sentence from an ordinance breaks its context and triggers false conflicts; asymmetric pairing preserves the complete local rule in its natural legislative habitat.
+
+### **Section-Level Max-Pooling**
+* **Plain Meaning:** Evaluating a draft ordinance section against 50 candidate statutes and assigning the section's final conflict risk to the highest contradiction score among all 50 candidates ($P(\text{Conflict}) = \max P_j$).
+* **In This Thesis:** If 49 candidate statutes are completely harmonious but 1 statute reveals a fatal contradiction, averaging the scores would dilute the contradiction to near-zero. Max-pooling guarantees that the worst-case legal clash is immediately surfaced to legislative staff.
+
+### **McNemar's Chi-Squared Test with Edwards' Continuity Correction**
+* **Plain Meaning:** A non-parametric statistical hypothesis test designed specifically for paired, discrete (yes/no) classifications from two machine learning models.
+* **In This Thesis:** Unlike paired $t$-tests that assume normal bell-curve error distributions, McNemar's test isolates the exact cases where two AI models disagree (Model A correct, Model B wrong, and vice versa), testing whether one model's superiority on hard cases is statistically significant rather than due to chance.
+
+### **Friedman Two-Way Analysis of Variance by Ranks**
+* **Plain Meaning:** A non-parametric statistical test that compares multiple models across multiple test domains by ranking them from best to worst.
+* **In This Thesis:** Ranks candidate Cross-Encoders across all eight Macro Legal Domains (public health, zoning, taxation, etc.) to verify that the winning model is an all-around top performer across diverse areas of municipal law without making restrictive distributional assumptions.
+
+### **System Usability Scale (SUS; Brooke, 1996) Composite Index**
+* **Plain Meaning:** A validated 10-item psychometric questionnaire that converts user feedback into an objective 0--100 software usability score.
+* **In This Thesis:** Alternates between positive and negative statements to neutralize acquiescence bias (the human habit of agreeing with every statement). A score of 68 is the global industry average for acceptable usability, while scores exceeding 80 indicate superior, highly intuitive software.
+
+### **Cronbach's Alpha ($\alpha$)**
+* **Plain Meaning:** A statistical test of internal consistency reliability that checks whether multiple survey questions measure the same underlying construct.
+* **In This Thesis:** Verifies that the four Technology Acceptance items (search efficiency, risk detection, XAI clarity, adoption viability) consistently measure practical legislative utility.
+
+---
+
+## **14. Legal Theory & Jurisprudential Philosophy**
+
+### **Open Texture of Law (H.L.A. Hart, 1961)**
+* **Plain Meaning:** The principle that human language is inherently indeterminate, meaning statutes cannot anticipate every future factual scenario and must use flexible, evaluative terms (e.g., "reasonable care", "due process", "fair market value").
+* **In This Thesis:** Explains why rigid, rule-based symbolic AI and Boolean IF-THEN systems inevitably fail in statutory conflict detection. Because laws possess open texture, conflict detection requires deep semantic natural language inference capable of contextual reasoning.
+
+### **Legal Inflation & Regulatory Debt**
+* **Plain Meaning:** The continuous, exponential accumulation of laws and ordinances over decades without systematic repeal of outdated rules, creating a dense legal thicket analogous to technical debt in software engineering.
+* **In This Thesis:** Explains why manual human pre-enactment review has broken down in local governments---human researchers cannot manually memorize or cross-reference 27,000+ enactments, making automated AI assistance indispensable.
+
+### **Affirmative Entailment Bias**
+* **Plain Meaning:** The tendency of neural language models to default toward predicting that two texts agree (Entailment) or are unrelated (Neutral), failing to detect subtle disagreements.
+* **In This Thesis:** General-domain language models default to agreement on complex legal syntax. Fine-tuning on curated adversarial pairs and calibrating decision thresholds counteracts this bias, ensuring subtle preemption risks are surfaced.
+
+### **Faithfulness vs. Plausibility (Jacovi & Goldberg, 2020)**
+* **Plain Meaning:** In Explainable AI (XAI), *faithfulness* measures whether an explanation accurately reflects the model's actual internal decision-making process, while *plausibility* measures whether the explanation merely sounds convincing to a human.
+* **In This Thesis:** Grounding the review interface in intrinsic cross-attention token heatmaps ensures faithfulness to the model's actual reasoning, avoiding generative hallucinations that appear plausible but misrepresent statutory analysis.
+
+---
+
 *This glossary is maintained as a living reference. Whenever new models, metrics, or legal doctrines are introduced to the thesis manuscript, they are immediately added here.*
 
 
