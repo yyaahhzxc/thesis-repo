@@ -85,9 +85,21 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** Evaluating a draft local ordinance provision against **one** statutory provision at a time.
 * **In This Thesis:** Instead of asking an AI to simultaneously digest a web of 10 different laws at once (which causes severe hallucinations and requires massive cloud servers), our pipeline pairs each candidate draft section with a single statutory section. This keeps inference fast, mathematically sound, and executable on standard local office hardware.
 
-### **Dual Legislative Heritage (Civil Law Codification & Anglo-American Drafting)**
-* **Plain Meaning:** The unique historical blend of Spanish Continental civil law structure (systematic, abstract codification) and American common law legislative drafting (highly technical, verbose, enumerative administrative provisions).
-* **In This Thesis:** Philippine statutes inherit both styles. Foundational codes (Civil Code, Local Government Code) use dense, high-level abstract principles, while modern regulatory Republic Acts and municipal ordinances use granular, clause-heavy sentences with multi-condition qualifiers ("Provided, that...", "Notwithstanding..."). Our tokenization, structural section chunking, and cross-attention models are specifically tailored to parse this complex syntactic blend.
+### **Three Readings Procedure (Plenary Legislative Process)**
+* **Plain Meaning:** The mandatory parliamentary rule requiring every proposed bill or ordinance to undergo three separate readings on distinct days in formal plenary session before becoming law.
+* **In This Thesis:** Mandated at the national level by Article~VI, Section~26(2) of the 1987 Philippine Constitution for Acts of Congress, and at the local level by Sections~53–54 of the Local Government Code (RA 7160) and SP Resolution No.~001-22 for Davao City ordinances.
+  * *First Reading (Plenary):* Purely introductory and ministerial; the title, number, and author are read on the floor, and the measure is immediately referred to committee. **Zero debate, interpellation, or amendment is allowed.**
+  * *Committee Review Phase:* Inter-session technical review, hearings, and report drafting by legal researchers and committee members.
+  * *Second Reading (Plenary):* The critical substantive stage comprising the sponsorship speech, the **Period of Interpellation and General Debate**, and the **Period of Amendments** (where committee and floor amendments are adopted). This is the exact procedural stage where our semantic conflict detection system fits best, arming staff to spot preemption collisions and formulate corrective amendments.
+  * *Third Reading (Plenary):* Final nominal roll-call voting. Under explicit constitutional and statutory rules, **no amendment whatsoever is permitted** on Third Reading. If a conflict is not caught before or during Second Reading, the flawed measure becomes locked into void positive law.
+
+### **Period of Interpellation and General Debate**
+* **Plain Meaning:** The formal stage during the Second Reading in plenary session where lawmakers scrutinize and interrogate the bill or ordinance sponsor.
+* **In This Thesis:** Floor members probe whether a proposed ordinance violates higher-tier national statutes (statutory preemption under *Magtajas*) or creates unworkable local rules. Our conflict detection system provides researchers with counter-statutory citations to support evidence-based debate.
+
+### **Period of Amendments**
+* **Plain Meaning:** The decisive formal stage following general debate on Second Reading where the legislative body amends the text line by line.
+* **In This Thesis:** The **sole plenary window** where substantive textual corrections can be introduced and adopted. Because Third Reading constitutionally prohibits all amendments, our ex-ante system delivers its highest utility by equipping drafters to resolve statutory contradictions during this amendment window.
 
 ---
 

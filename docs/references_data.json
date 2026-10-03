@@ -668,7 +668,7 @@
     "eprint": "",
     "direct_pdf_url": "https://sp.davaocity.gov.ph/wp-content/uploads/2024/03/Resolution-No.-001-22-House-Rules-in-SP.pdf",
     "is_cited": true,
-    "citation_count": 8,
+    "citation_count": 9,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
@@ -896,11 +896,9 @@
     "url": "https://www.officialgazette.gov.ph/1987/07/25/executive-order-no-292-book-viichapter-1-general-provisions/",
     "eprint": "",
     "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 1,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
-    ],
+    "is_cited": false,
+    "citation_count": 0,
+    "cited_in_files": [],
     "has_local_pdf": false,
     "local_pdf_path": "",
     "google_search_url": "https://www.google.com/search?q=%22Executive%20Order%20No.%20292%20%5BAdministrative%20Code%20of%201987%5D%2C%20Book%20VII%2C%20Chapter%201%3A%20General%20Provisions%22%20Republic%20of%20the%20Philippines",
@@ -6084,7 +6082,7 @@
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 4,
+    "citation_count": 5,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -6363,7 +6361,7 @@
     "eprint": "",
     "direct_pdf_url": "https://www.dilg.gov.ph/PDF_File/reports_resources/dilg-reports-resources-2017110_298b91787e.pdf",
     "is_cited": true,
-    "citation_count": 5,
+    "citation_count": 6,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -8163,5 +8161,61 @@
     "crossref_search_url": "https://api.crossref.org/works?query.title=Quantifying%20the%20User%20Experience%3A%20Practical%20Statistics%20for%20User%20Research&rows=1",
     "lawphil_url": "",
     "raw_bib": "@book{sauro2012quantifying,\n  title     = {Quantifying the User Experience: Practical Statistics for User Research},\n  author    = {Sauro, Jeff and Lewis, James R.},\n  year      = {2012},\n  publisher = {Morgan Kaufmann},\n  address   = {Waltham, MA},\n  isbn      = {978-0-12-384968-7}\n}"
+  },
+  {
+    "citekey": "philconst1987",
+    "entry_type": "misc",
+    "title": "The 1987 Constitution of the Republic of the Philippines",
+    "raw_title": "{The 1987 Constitution of the Republic of the Philippines}",
+    "author": "Constitutional Commission of 1986",
+    "raw_author": "{Constitutional Commission of 1986}",
+    "year": "1987",
+    "venue": "Official Gazette of the Republic of the Philippines",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "https://www.officialgazette.gov.ph/constitutions/1987-constitution/",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 2,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22The%201987%20Constitution%20of%20the%20Republic%20of%20the%20Philippines%22%20Constitutional%20Commission%20of%201986",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=The%201987%20Constitution%20of%20the%20Republic%20of%20the%20Philippines",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%201987%20Constitution%20of%20the%20Republic%20of%20the%20Philippines",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=The%201987%20Constitution%20of%20the%20Republic%20of%20the%20Philippines&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@misc{philconst1987,\n  author       = {{Constitutional Commission of 1986}},\n  title        = {{The 1987 Constitution of the Republic of the Philippines}},\n  howpublished = {Official Gazette of the Republic of the Philippines},\n  year         = {1987},\n  note         = {Article VI, Section 26(2)},\n  url          = {https://www.officialgazette.gov.ph/constitutions/1987-constitution/},\n  urldate      = {2026-09-26}\n}"
+  },
+  {
+    "citekey": "philhouse2022rules",
+    "entry_type": "techreport",
+    "title": "Rules of the House of Representatives (19th Congress)",
+    "raw_title": "{Rules of the House of Representatives (19th Congress)}",
+    "author": "House of Representatives of the Philippines",
+    "raw_author": "{House of Representatives of the Philippines}",
+    "year": "2022",
+    "venue": "House of Representatives, Republic of the Philippines",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "https://www.congress.gov.ph/legisdocs/rules/rules_19th.pdf",
+    "eprint": "",
+    "direct_pdf_url": "https://www.congress.gov.ph/legisdocs/rules/rules_19th.pdf",
+    "is_cited": true,
+    "citation_count": 4,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "google_search_url": "https://www.google.com/search?q=%22Rules%20of%20the%20House%20of%20Representatives%20%2819th%20Congress%29%22%20House%20of%20Representatives%20of%20the%20Philippines",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Rules%20of%20the%20House%20of%20Representatives%20%2819th%20Congress%29",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Rules%20of%20the%20House%20of%20Representatives%20%2819th%20Congress%29",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Rules%20of%20the%20House%20of%20Representatives%20%2819th%20Congress%29&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@techreport{philhouse2022rules,\n  author       = {{House of Representatives of the Philippines}},\n  title        = {{Rules of the House of Representatives (19th Congress)}},\n  institution  = {House of Representatives, Republic of the Philippines},\n  year         = {2022},\n  keywords     = {legislative_procedure, congress, house_rules},\n  url          = {https://www.congress.gov.ph/legisdocs/rules/rules_19th.pdf},\n  urldate      = {2026-09-26}\n}"
   }
 ]
