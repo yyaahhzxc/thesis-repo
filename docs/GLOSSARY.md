@@ -607,6 +607,14 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** A specialized reference dictionary containing authoritative names of local administrative units, government departments, and statutory Latin expressions.
 * **In This Thesis:** Encompasses all 182 official barangays of Davao City (e.g., Buhangin, Calinan, Marilog, Paquibato, Talomo, Toril), local executive departments (CTTMO, CENRO, CPDO), and statutory Latin maxims (*in pari materia*, *mutatis mutandis*, *ultra vires*). It serves as an exclusion whitelist in the second-stage language review system, preventing authentic local terminology from triggering false spelling warnings.
 
+### **Document Image Defect Models (Baird, 1993; Lopresti, 2008)**
+* **Plain Meaning:** Scientific models describing physical flaws introduced during mechanical typing, paper aging, and scanning.
+* **In This Thesis:** Mid-twentieth-century local ordinances suffer from specific physical defects: uneven key strike velocity causing closed-loop character filling (`e`, `a`, `o`), horizontal underscore strikes slicing through letter descenders (`p`, `g`, `y`, `q`), circular binder hole punch occlusions, and tropical carbon ink bleed-through.
+
+### **Two-Tier Archival Quarantine Framework (`FLAGGED_ARCHIVAL_DEGRADATION`)**
+* **Plain Meaning:** An operational preservation policy that flags severely damaged physical documents for human verification instead of letting AI guess smudged characters.
+* **In This Thesis:** Out of 1,664 local ordinances, exactly 32 historical scans (primarily pre-1991 typewriter enactments) were flagged due to physical damage. To prevent unconstitutional preemption errors caused by misreading numbers under RA 7160 §458 and the *Magtajas* doctrine, these files are preserved in the archive under human-in-the-loop audit rather than discarding or guessing.
+
 ---
 
 ## **13. Statistical Evaluation, Empirical Benchmarking & Usability Metrics**
