@@ -46,3 +46,9 @@ Thumbs.db
 ~$*
 *.tmp
 scratch/
+
+# Environment Variables & API Secrets
+.env
+*.env
+.env.*
+

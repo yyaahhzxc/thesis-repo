@@ -35,6 +35,9 @@ Both Ralph and Yah are first-class proponents with full, equal access to all Ant
    - Default to checking `docs/THESIS_MASTER_TASKS.md` immediately, maintain full situational awareness, and execute requests while preserving continuous task synchronization.
 4. **Cross-Host Git Synchronization Protocol:**
    - Because Yah and Ralph develop collaboratively on separate machines (Host A and Host B), proactively remind either author to `git fetch` and `git pull` at the start of a session, and stage/commit/push updates before concluding, ensuring working directories remain synchronized without merge conflicts.
+5. **Ordinance Text Update & Empirical Re-Run Trigger:**
+   - Whenever Ralph pushes updates to ordinance texts (e.g., in `cleaned_transcriptions/`, `corpus/city_ordinances/`, or `data/unified_dual_statutory_provisions.jsonl`) resulting from his manual archival verification and OCR checks, immediately re-run the relevant exploratory data analysis (EDA), word/token counts, temporal distributions (`scripts/generate_word_count_temporal_figure.py`), dual-corpus token compliance metrics, and any downstream retrieval or NLI evaluation scripts affected by the updated text upon pulling.
+   - Verify if any reported statistics, tables (e.g., Table 3.2, Table 3.3, Table 4.1, Table 4.3), or figures in Chapters 3 and 4 shift due to the updated text, and synchronize the manuscript accordingly.
 
 ---
 
