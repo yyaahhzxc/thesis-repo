@@ -1,0 +1,443 @@
+[
+  {
+    "filename": "Ordinance No. 000014-07.pdf",
+    "year": 2007,
+    "legislative_era": "Modern Photocopied/Degraded Era (2001\u20132013)",
+    "pages": 1,
+    "size_kb": 1631.0,
+    "primary_degradation_modes": [
+      "Multi-Generation Photocopier Toner Burnout",
+      "Paper Skew & Heavy Stamp Overlay"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000014-07.txt"
+  },
+  {
+    "filename": "Ordinance No. 000029-07.pdf",
+    "year": 2007,
+    "legislative_era": "Modern Photocopied/Degraded Era (2001\u20132013)",
+    "pages": 1,
+    "size_kb": 489.4,
+    "primary_degradation_modes": [
+      "Multi-Generation Photocopier Toner Burnout",
+      "Paper Skew & Heavy Stamp Overlay"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000029-07.txt"
+  },
+  {
+    "filename": "Ordinance No. 000044-56.pdf",
+    "year": 1956,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 146.1,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000044-56.txt"
+  },
+  {
+    "filename": "Ordinance No. 000051-89_333-51-89.pdf",
+    "year": 1989,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 323.2,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000051-89_333-51-89.txt"
+  },
+  {
+    "filename": "Ordinance No. 000110-70.pdf",
+    "year": 1970,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 83.7,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000110-70.txt"
+  },
+  {
+    "filename": "Ordinance No. 000113-01.pdf",
+    "year": 2001,
+    "legislative_era": "Modern Photocopied/Degraded Era (2001\u20132013)",
+    "pages": 1,
+    "size_kb": 81.4,
+    "primary_degradation_modes": [
+      "Multi-Generation Photocopier Toner Burnout",
+      "Paper Skew & Heavy Stamp Overlay"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000113-01.txt"
+  },
+  {
+    "filename": "Ordinance No. 000116-88_1068-116-88.pdf",
+    "year": 1958,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 798.0,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000116-88_1068-116-88.txt"
+  },
+  {
+    "filename": "Ordinance No. 000123-60.pdf",
+    "year": 1960,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 25,
+    "size_kb": 1917.9,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000123-60.txt"
+  },
+  {
+    "filename": "Ordinance No. 000130-89_969-130-89.pdf",
+    "year": 1969,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 269.4,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000130-89_969-130-89.txt"
+  },
+  {
+    "filename": "Ordinance No. 000132-03.pdf",
+    "year": 2003,
+    "legislative_era": "Modern Photocopied/Degraded Era (2001\u20132013)",
+    "pages": 1,
+    "size_kb": 652.2,
+    "primary_degradation_modes": [
+      "Multi-Generation Photocopier Toner Burnout",
+      "Paper Skew & Heavy Stamp Overlay"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000132-03.txt"
+  },
+  {
+    "filename": "Ordinance No. 000271-64.pdf",
+    "year": 1964,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 47.4,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000271-64.txt"
+  },
+  {
+    "filename": "Ordinance No. 000332-10.pdf",
+    "year": 1968,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 45.7,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000332-10.txt"
+  },
+  {
+    "filename": "Ordinance No. 000419-10.pdf",
+    "year": 2010,
+    "legislative_era": "Modern Photocopied/Degraded Era (2001\u20132013)",
+    "pages": 1,
+    "size_kb": 263.8,
+    "primary_degradation_modes": [
+      "Multi-Generation Photocopier Toner Burnout",
+      "Paper Skew & Heavy Stamp Overlay"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000419-10.txt"
+  },
+  {
+    "filename": "Ordinance No. 000420-10.pdf",
+    "year": 2010,
+    "legislative_era": "Modern Photocopied/Degraded Era (2001\u20132013)",
+    "pages": 1,
+    "size_kb": 126.7,
+    "primary_degradation_modes": [
+      "Multi-Generation Photocopier Toner Burnout",
+      "Paper Skew & Heavy Stamp Overlay"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000420-10.txt"
+  },
+  {
+    "filename": "Ordinance No. 000447-70.pdf",
+    "year": 1970,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 727.4,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000447-70.txt"
+  },
+  {
+    "filename": "Ordinance No. 000707-73.pdf",
+    "year": 1973,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 490.0,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000707-73.txt"
+  },
+  {
+    "filename": "Ordinance No. 000778-73.pdf",
+    "year": 1973,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 2313.0,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000778-73.txt"
+  },
+  {
+    "filename": "Ordinance No. 000999-74.pdf",
+    "year": 1974,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 55.8,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 000999-74.txt"
+  },
+  {
+    "filename": "Ordinance No. 004042-96_10254-4042-96.pdf",
+    "year": 1996,
+    "legislative_era": "Post-LGC Historical Transition Era (1992\u20132000)",
+    "pages": 1,
+    "size_kb": 219.2,
+    "primary_degradation_modes": [
+      "Early Photocopier Generation Loss",
+      "Dot-Matrix / Low-Res Scan Blur",
+      "Official Stamp & Signature Bleed"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 004042-96_10254-4042-96.txt"
+  },
+  {
+    "filename": "Ordinance No. 005003-97_12875-5003-97.pdf",
+    "year": 1997,
+    "legislative_era": "Post-LGC Historical Transition Era (1992\u20132000)",
+    "pages": 1,
+    "size_kb": 969.3,
+    "primary_degradation_modes": [
+      "Early Photocopier Generation Loss",
+      "Dot-Matrix / Low-Res Scan Blur",
+      "Official Stamp & Signature Bleed"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 005003-97_12875-5003-97.txt"
+  },
+  {
+    "filename": "Ordinance No. 0115-86.pdf",
+    "year": 1986,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 194.2,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 0115-86.txt"
+  },
+  {
+    "filename": "Ordinance No. 014-87.pdf",
+    "year": 1987,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 458.7,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 014-87.txt"
+  },
+  {
+    "filename": "Ordinance No. 0153-90A.pdf",
+    "year": 1990,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 376.5,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 0153-90A.txt"
+  },
+  {
+    "filename": "Ordinance No. 0166-81.pdf",
+    "year": 1961,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 135.6,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 0166-81.txt"
+  },
+  {
+    "filename": "Ordinance No. 023-85.pdf",
+    "year": 1925,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 143.7,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 023-85.txt"
+  },
+  {
+    "filename": "Ordinance No. 033-88.pdf",
+    "year": 1938,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 340.2,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 033-88.txt"
+  },
+  {
+    "filename": "Ordinance No. 035-13.pdf",
+    "year": 2013,
+    "legislative_era": "Modern Photocopied/Degraded Era (2001\u20132013)",
+    "pages": 125,
+    "size_kb": 5810.8,
+    "primary_degradation_modes": [
+      "Multi-Generation Photocopier Toner Burnout",
+      "Paper Skew & Heavy Stamp Overlay"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 035-13.txt"
+  },
+  {
+    "filename": "Ordinance No. 0363-82.pdf",
+    "year": 1962,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 34,
+    "size_kb": 3212.8,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 0363-82.txt"
+  },
+  {
+    "filename": "Ordinance No. 0381-82.pdf",
+    "year": 1982,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 151.5,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 0381-82.txt"
+  },
+  {
+    "filename": "Ordinance No. 050-87.pdf",
+    "year": 1987,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 579.2,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 050-87.txt"
+  },
+  {
+    "filename": "Ordinance No. 0593-92A.pdf",
+    "year": 1992,
+    "legislative_era": "Post-LGC Historical Transition Era (1992\u20132000)",
+    "pages": 1,
+    "size_kb": 185.9,
+    "primary_degradation_modes": [
+      "Early Photocopier Generation Loss",
+      "Dot-Matrix / Low-Res Scan Blur",
+      "Official Stamp & Signature Bleed"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance No. 0593-92A.txt"
+  },
+  {
+    "filename": "Ordinance no. 000737-78.pdf",
+    "year": 1976,
+    "legislative_era": "Pre-LGC Manual Typewriter Era (1950\u20131991)",
+    "pages": 1,
+    "size_kb": 1019.4,
+    "primary_degradation_modes": [
+      "Mechanical Typewriter Stroke Variance",
+      "Carbon-Copy Bleed & Show-Through",
+      "Binding Punch-Hole & Margin Occlusion"
+    ],
+    "has_transcription_txt": true,
+    "transcription_txt_path": "cleaned_transcriptions\\Ordinance no. 000737-78.txt"
+  }
+]
