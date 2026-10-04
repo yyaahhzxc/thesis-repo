@@ -4,7 +4,7 @@ import argparse
 from pathlib import Path
 from collections import Counter
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_TRANSCRIPT_DIR = BASE_DIR / "vlm_transcriptions"
 CLEANED_TRANSCRIPT_DIR = BASE_DIR / "cleaned_transcriptions"
 DEFAULT_REPORT_PATH = BASE_DIR / "transcript_quality_report.csv"

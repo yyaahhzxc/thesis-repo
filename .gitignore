@@ -19,6 +19,7 @@ output/*.pkl
 output/*.npy
 output/embedding_progress.json
 output/gt350_retrieval_cache.json
+transcript_quality_report.csv
 
 # LaTeX Auxiliary Build Files
 *.aux
