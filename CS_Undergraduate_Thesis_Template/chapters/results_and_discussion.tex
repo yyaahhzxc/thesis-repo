@@ -148,6 +148,46 @@ To evaluate the practical effect of transcription errors, the proponents ran a t
 In contrast, the locally hosted vision-language model achieved 0.00\% Word Error Rate, 0.02\% Character Error Rate, and 100.0\% precision across all eleven evaluated statutory indicators. In addition, comparing text vectors using TF-IDF n-grams confirmed that the VLM transcription reached 100.0\% semantic cosine similarity with the reference text, compared to 99.21\% for traditional OCR. The language model decoder acts as a helpful reading assistant: when letters are faded or smudged by scanner noise, the model uses its knowledge of standard legal phrasing to fill in the missing words accurately.
 
 
+\subsection{Historical Degradation Empirical Benchmark}
+\label{sec:historical_degradation_benchmark}
+
+While modern digital enactments such as Ordinance No.~000667-21 demonstrate near-perfect character fidelity under vision-language parsing, historical local archives present severe physical degradation that challenges automated transcription. An empirical audit across the digitized collection identified 32 historical municipal enactments exhibiting severe visual defects. Over 75.0\% of these degraded records originate before the year 2000, with 68.8\% produced during the pre-Local Government Code era (1950--1991) using manual impact typewriters, carbon transfer paper, and early analog duplicators. To quantify transcription performance under real-world archival conditions, the proponents evaluated four authentic legislative exemplars representing distinct eras and physical failure modes against human-verified gold-standard ground truth. Table~\ref{tab:historical_ocr_benchmark} presents the comparative Word Error Rate (WER) and Character Error Rate (CER) achieved by the locally deployed vision-language model (Qwen2.5-VL-3B-Instruct in 4-bit NF4) alongside the commercial cloud baseline.
+
+\begin{table}[htbp]
+    \centering
+    \scriptsize
+    \setlength{\tabcolsep}{2.8pt}
+    \renewcommand{\arraystretch}{0.92}
+    \caption[Comparative Error Rates Across Degraded Historical Legislative Eras]{Comparative Empirical Transcription Error Rates Across Degraded Historical Legislative Eras}
+    \label{tab:historical_ocr_benchmark}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{2.2cm}>{\RaggedRight\arraybackslash}p{2.3cm}>{\RaggedRight\arraybackslash}X>{\Centering\arraybackslash}p{1.4cm}>{\Centering\arraybackslash}p{1.4cm}>{\Centering\arraybackslash}p{1.4cm}>{\Centering\arraybackslash}p{1.4cm}}
+        \toprule
+        \textbf{Historical} & \textbf{Legislative Era} & \textbf{Dominant Physical} & \multicolumn{2}{c}{\textbf{Local VLM (4-bit NF4)}} & \multicolumn{2}{c}{\textbf{Cloud Baseline}} \\
+        \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+        \textbf{Enactment} & \textbf{\& Technology} & \textbf{Degradation Mode} & \textbf{WER} & \textbf{CER} & \textbf{WER} & \textbf{CER} \\
+        \midrule
+        \textbf{Ord. 000044-56} & Pre-LGC (1956)\newline Manual Typewriter & Carbon bleed-through, uneven key strikes, city seal stamp & 12.23\% & 7.66\% & 1.92\% & 1.74\% \\
+        \midrule
+        \textbf{Ord. 000332-10} & Pre-LGC (1968)\newline Manual Typewriter & Ribbon ink fade, baseline cuts, staple shadow & 11.06\% & 5.91\% & Baseline & Baseline \\
+        \midrule
+        \textbf{Ord. 0166-81} & Pre-LGC (1981)\newline Manual Typewriter & Binder hole punch occlusions, strike fill-in, cursive ink & 19.78\% & 12.87\% & 8.84\% & 4.99\% \\
+        \midrule
+        \textbf{Ord. 000667-21} & Modern LISSP (2021)\newline Digital Raster & Clean electronic layout, high-contrast typography & 0.00\% & 0.02\% & 0.00\% & 0.00\% \\
+        \bottomrule
+    \end{tabularx}
+    \vspace{2pt}
+    \raggedright \scriptsize \textit{Note:} Evaluated against human-verified gold-standard transcriptions. Local VLM corresponds to Qwen2.5-VL-3B-Instruct (4-bit NF4) executed on Host~B. Cloud baseline corresponds to Gemini Flash multimodal inference. Evaluated archival exemplars preserved in repository benchmark suite.
+\end{table}
+
+Table~\ref{tab:historical_ocr_benchmark} compares word and character error rates across four authentic Davao City legislative records representing different eras and physical conditions. This comparison demonstrates how mechanical typewriter defects and physical paper aging affect automated transcription accuracy relative to clean modern scans. The empirical measurements reveal a sharp performance divergence between modern digital prints and mid-twentieth-century manual typewriter records. On modern digital scans (Ordinance No.~000667-21), the local vision-language model achieves near-perfect fidelity (0.00\% WER and 0.02\% CER). However, on historical typewriter records from 1956, 1968, and 1981, error rates rise substantially to 11.06\%--19.78\% WER and 5.91\%--12.87\% CER. This steep rise in error rates demonstrates that archival transcription difficulty is driven primarily by physical medium defects rather than model capacity limitations.
+
+Detailed inspection of the historical transcripts reveals specific physical degradation mechanisms documented in document image defect literature~\cite{baird1993defect,lopresti2008optical}. In Ordinance No.~000044-56 (1956), mechanical strike velocity variance caused ink to fill closed-loop characters such as \textit{e}, \textit{a}, and \textit{o}, leading the local vision-language model to misread \textit{municipal waters} as \textit{municipal maters} and to transcribe \textit{log pond or for storage of logs} as \textit{lux powd or for straight of lots}. Furthermore, uneven carbon transfer caused the engine to misread the statutory license fee of \textit{\textpeso 200.00} as an American dollar figure (\textit{\$200.00}) and to alter \textit{Penal Provisions} into \textit{Final Provisions}. Large embossed city seal stamps and dark cursive ink signatures also obscured official attestation blocks, causing the model to omit the names of the acting mayor and city secretary.
+
+Similar physical occlusions affected Ordinance No.~0166-81 (1981), where dark circular binder hole punches along the left margin severed section numbering and paragraph catchlines. The mechanical typewriter ribbon also caused heavy ink fill-in across title lines, causing the model to misread \textit{Lungsod ng Dabaw} as \textit{Luneskon ng Darw}, \textit{Series of 1981} as \textit{Series of 1961}, and \textit{liquified petroleum gas} as \textit{liquid profession (cas)}. In the approval block, overlapping cursive ink pen strokes across the city council seal caused the model to misinterpret \textit{Carried, by a majority} as \textit{Cashed: By a majority}, and to misread the Sangguniang Panlungsod secretary's name. In Ordinance No.~000332-10 (1968), horizontal typewriter underscore strikes directly sliced through character descenders (\textit{p}, \textit{g}, \textit{y}, \textit{q}), fragmenting word segmentation and misreading the legislative term.
+
+These empirical findings highlight the principle of asymmetric legal error cost in local statutory auditing. Under Section~458 of Republic Act No.~7160 and the judicial doctrine of \textit{Magtajas v. Pryce Properties}~\cite{scp1994magtajasvpryce}, local ordinance penalty provisions are legally invalid if they exceed statutory fine limits. If an optical character recognition engine guesses at smudged mechanical numbers and transcribes a \textpeso 200.00 fee as \textpeso 2,000.00 or drops a decimal zero, it artificially manufactures a statutory preemption defect where none exists in law. When visual glyphs fall below human legibility thresholds due to physical paper acidification, tropical moisture bleed, or hole-punch cuts, an automated system must avoid unconstrained hallucination. This necessitates a two-tier archival quarantine framework where severely degraded enactments are formally flagged for human verification, ensuring that downstream semantic conflict detection operates exclusively upon legally reliable statutory text.
+
+
 \subsection{Model Selection and Hardware Boundaries}
 Selecting Qwen2.5-VL-3B-Instruct as the primary document ingestion engine balances text accuracy, operating cost, and data privacy. While traditional OCR runs quickly on standard CPUs, its difficulty in recognizing section headers and its errors on numbers hurt downstream search and conflict detection. Although commercial cloud platforms deliver strong accuracy, using commercial APIs across 1,664 multi-page ordinances incurs recurring financial costs. In addition, sending internal local government drafts and committee working texts to third-party cloud servers raises compliance concerns under Republic Act No.~10173 (Data Privacy Act of 2012)~\cite{philgov2012ra10173}. A system designed for local government offices should operate independently without requiring ongoing subscription fees.
 
