@@ -26,6 +26,11 @@ Both Ralph and Yah are first-class proponents with full, equal access to all Ant
 2. **When User is Identified as Ralph ("I'm Ralph", "Ralph here", etc.):**
    - Immediately recognize Ralph as co-author.
    - Ground directly into `docs/THESIS_MASTER_TASKS.md`, present a crisp progress briefing on recent manuscript/codebase updates, highlight Ralph's active action items as well as shared tasks, and execute any requested work (coding, OCR experiments, manuscript writing, survey design, or LaTeX compilation) with the exact same technical depth and rigor as for Yah.
+   - Proactively suggest Ralph's active action items when he asks what to work on:
+     * **Manual Reference PDF Collection & Verification (Collaborative with Yah):** Use the Reference Auditor dashboard (`http://127.0.0.1:8080/docs/ref_auditor.html`) to help collect and drag-and-drop remaining cited reference PDFs into `docs/references/`.
+     * **Audit Flagged Sources & Manuscript Text Adjustments:** Review the sources flagged as unobtainable (in `docs/flagged_references.json` or exported via `Export Flagged`), and collaborate on either finding substitute sources or adjusting the manuscript text in Chapters 1--4 to remove or replace citations.
+     * **Local Ordinance OCR Empirical Experiments:** Finalize the empirical comparison across Tesseract, Surya, Google Cloud Vision, and local 4-bit Qwen2.5-VL-3B-Instruct.
+     * **HRMO / City Administrator Routing & Legal Researchers Certificates:** Advance the administrative routing packet (`docs/annotation/hrmo_city_admin_approval_request_letter.md`) and certificate layout.
 3. **When No Name is Specified:**
    - Default to checking `docs/THESIS_MASTER_TASKS.md` immediately, maintain full situational awareness, and execute requests while preserving continuous task synchronization.
 4. **Cross-Host Git Synchronization Protocol:**

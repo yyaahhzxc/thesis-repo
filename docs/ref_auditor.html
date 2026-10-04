@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BibTeX Reference Verifier & PDF Collector</title>
+  <title>BibTeX Reference Auditor & Full-Text PDF Library Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Load pre-parsed thesis references for instant zero-setup loading -->
@@ -11,7 +11,7 @@
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #0f172a;
+      background-color: #0b1120;
       color: #1e293b;
     }
     .hide { display: none !important; }
@@ -36,305 +36,482 @@
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-3 sm:p-6">
+<body class="min-h-screen flex flex-col items-center justify-start p-2 sm:p-5">
 
   <!-- Main Container -->
-  <div class="max-w-3xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col my-4">
+  <div class="max-w-6xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col my-2">
     
     <!-- Top Header -->
-    <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white px-6 py-4 flex flex-wrap justify-between items-center gap-3">
+    <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-slate-900 text-white px-6 py-4 flex flex-wrap justify-between items-center gap-3">
       <div class="flex items-center gap-3">
-        <div class="bg-white/10 p-2 rounded-lg backdrop-blur-sm">
+        <div class="bg-white/10 p-2.5 rounded-xl backdrop-blur-sm shadow-inner">
           <i data-lucide="library" class="w-6 h-6 text-blue-200"></i>
         </div>
         <div>
-          <h1 class="text-lg sm:text-xl font-bold tracking-tight">BibTeX Reference Verifier & PDF Collector</h1>
-          <p class="text-xs text-blue-200">Verify source URLs, validate citations, & attach PDFs for offline thesis library</p>
+          <div class="flex items-center gap-2">
+            <h1 class="text-lg sm:text-xl font-bold tracking-tight">BibTeX Reference Auditor & PDF Library</h1>
+            <span class="bg-blue-500/30 text-blue-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider border border-blue-400/30">Thesis v2.0</span>
+          </div>
+          <p class="text-xs text-blue-200 mt-0.5">Automated open-access resolver, full-text PDF downloader & citation integrity suite</p>
         </div>
       </div>
       
-      <!-- Top Action Buttons -->
-      <div class="flex items-center gap-2 flex-wrap">
-        <!-- Direct Disk Sync Indicator / Button -->
-        <button id="folderBindBtn" class="bg-blue-600/80 hover:bg-blue-600 text-xs px-3 py-2 rounded-lg font-medium transition-colors flex items-center gap-1.5 border border-blue-400/40" title="Connect directly to docs/references folder for zero-prompt auto-saving">
-          <i data-lucide="folder-check" class="w-3.5 h-3.5 text-blue-200"></i>
-          <span id="folderBindText">Link 'docs/references'</span>
+      <!-- Top Action Buttons & View Switcher -->
+      <div class="flex items-center gap-2.5 flex-wrap">
+        
+        <!-- View Mode Switcher -->
+        <div class="bg-slate-800/80 p-0.5 rounded-lg flex items-center border border-white/20 text-xs">
+          <button id="viewCardBtn" class="px-3 py-1.5 rounded-md font-bold transition-all bg-white text-slate-900 shadow">
+            Card Inspector
+          </button>
+          <button id="viewTableBtn" class="px-3 py-1.5 rounded-md font-medium text-slate-300 hover:text-white transition-all">
+            Table Overview
+          </button>
+        </div>
+
+        <!-- ⚡ Batch Download All Open-Access Button -->
+        <button id="batchDownloadBtn" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs px-3 py-2 rounded-lg font-bold transition-colors flex items-center gap-1.5 shadow-md" title="Trigger automated download of all available open-access PDFs into docs/references/">
+          <i data-lucide="zap" class="w-4 h-4 fill-current"></i>
+          <span>Auto-Download OA (<span id="batchDownloadCount">127</span>)</span>
         </button>
 
         <!-- Export Updated .bib -->
-        <button id="downloadBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3 py-2 rounded-lg font-semibold transition-colors flex items-center gap-1.5 shadow-sm">
+        <button id="downloadBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3 py-2 rounded-lg font-semibold transition-colors flex items-center gap-1.5 shadow-sm" title="Export updated BibTeX file with attached file = {...} tags">
           <i data-lucide="download" class="w-3.5 h-3.5"></i> Export .bib
         </button>
 
         <!-- Export Verification Log -->
-        <button id="exportLogBtn" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-2 rounded-lg font-medium transition-colors flex items-center gap-1.5 border border-white/20" title="Download verification log for Antigravity automated audit">
-          <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Export Log
+        <button id="exportLogBtn" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-2 rounded-lg font-medium transition-colors flex items-center gap-1.5 border border-white/20" title="Download verification log for thesis audit">
+          <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Log
+        </button>
+
+        <!-- Export Flagged for Review -->
+        <button id="exportFlaggedBtn" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/40 text-xs px-3 py-2 rounded-lg font-medium transition-colors flex items-center gap-1.5" title="Export Markdown summary of all flagged references (missing PDFs) and citing manuscript locations">
+          <i data-lucide="flag" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+          <span>Flagged (<span id="countFlaggedHeader">0</span>)</span>
         </button>
 
         <!-- Custom .bib Upload Toggle -->
-        <label class="cursor-pointer bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-2 rounded-lg font-medium transition-colors flex items-center gap-1.5 border border-white/20" title="Upload a different .bib file">
-          <i data-lucide="upload" class="w-3.5 h-3.5"></i> Load .bib
+        <label class="cursor-pointer bg-white/10 hover:bg-white/20 text-white text-xs px-2.5 py-2 rounded-lg font-medium transition-colors flex items-center gap-1 border border-white/20" title="Upload a different .bib file">
+          <i data-lucide="upload" class="w-3.5 h-3.5"></i>
           <input type="file" id="fileInput" accept=".bib" class="hidden" />
         </label>
       </div>
     </div>
 
     <!-- Backend Server Connection Status Banner -->
-    <div id="serverStatusBanner" class="hide bg-emerald-50 border-b border-emerald-200 text-emerald-800 text-xs px-6 py-2 flex items-center justify-between">
+    <div id="serverStatusBanner" class="bg-emerald-50 border-b border-emerald-200 text-emerald-800 text-xs px-6 py-2 flex items-center justify-between flex-wrap gap-2">
       <div class="flex items-center gap-2 font-medium">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>Local Backend Server Active (Port 8080): Attached PDFs are saved directly to <code class="bg-emerald-100 px-1 py-0.5 rounded text-emerald-900">docs/references/&lt;citekey&gt;.pdf</code> on disk!</span>
+        <span id="serverDot" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span id="serverStatusText">Checking Local Server...</span>
       </div>
-      <span class="text-[10px] bg-emerald-200/70 text-emerald-900 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Auto-Sync On</span>
+      <div class="flex items-center gap-3 text-[11px]">
+        <span class="bg-emerald-100/80 text-emerald-900 px-2 py-0.5 rounded font-mono font-semibold">
+          Saved in Repo: <strong id="cachedPdfCountLabel">0</strong> / <span id="totalRefsLabel">296</span> PDFs
+        </span>
+        <span id="serverModeBadge" class="bg-emerald-200/70 text-emerald-900 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider text-[10px]">
+          Connecting...
+        </span>
+      </div>
     </div>
 
-    <!-- Progress & Quick Jump Bar -->
-    <div class="bg-slate-50 border-b border-slate-200 px-6 py-3 flex flex-wrap items-center justify-between gap-3">
-      <!-- Progress Indicator & Progress Bar -->
-      <div class="flex items-center gap-3">
-        <span id="progressText" class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full text-xs">
-          Reference 1 / 267
-        </span>
-        <div class="w-32 sm:w-44 bg-slate-200 rounded-full h-2 overflow-hidden">
-          <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 1%;"></div>
+    <!-- Active Batch Download Banner (Live Progress) -->
+    <div id="downloadProgressBarBanner" class="hide bg-indigo-50 border-b border-indigo-200 px-6 py-2.5 text-xs text-indigo-950 flex flex-col gap-1.5">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 font-bold">
+          <i data-lucide="loader-2" class="w-4 h-4 animate-spin text-indigo-600"></i>
+          <span id="downloadStatusMsg">Downloading open-access PDFs in background...</span>
         </div>
-        <span id="percentText" class="text-xs text-slate-500 font-medium">0%</span>
+        <span id="downloadProgressRatio" class="font-mono text-indigo-700 font-semibold">0 / 0</span>
       </div>
-
-      <!-- Quick Jump & Filters -->
-      <div class="flex items-center gap-2 flex-wrap">
-        <button id="nextMissingUrlBtn" class="bg-amber-100 hover:bg-amber-200 text-amber-800 text-xs px-2.5 py-1 rounded font-medium transition-colors flex items-center gap-1" title="Jump to next reference missing a URL">
-          <i data-lucide="link" class="w-3 h-3 text-amber-600"></i> Next Missing URL
-        </button>
-        <button id="nextMissingPdfBtn" class="bg-rose-100 hover:bg-rose-200 text-rose-800 text-xs px-2.5 py-1 rounded font-medium transition-colors flex items-center gap-1" title="Jump to next reference missing an attached PDF">
-          <i data-lucide="file-x" class="w-3 h-3 text-rose-600"></i> Next Missing PDF
-        </button>
-        
-        <!-- Search/Jump Dropdown -->
-        <select id="jumpSelect" class="bg-white border border-slate-300 text-slate-700 text-xs rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 max-w-[130px]">
-          <!-- Populated by JS -->
-        </select>
+      <div class="w-full bg-indigo-200/70 rounded-full h-2 overflow-hidden">
+        <div id="batchProgressBar" class="bg-indigo-600 h-2 rounded-full transition-all duration-300" style="width: 0%;"></div>
       </div>
     </div>
 
-    <!-- Status Badges Bar -->
-    <div class="px-6 py-2.5 bg-slate-100/60 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2 text-xs">
-      <div class="flex items-center gap-2 flex-wrap">
-        <!-- Citekey Badge -->
-        <span class="font-mono bg-slate-800 text-slate-100 px-2.5 py-0.5 rounded font-semibold flex items-center gap-1.5">
-          <span class="text-slate-400">\cite{</span><span id="citekeyDisplay">citekey</span><span class="text-slate-400">}</span>
-          <button id="copyCitekeyBtn" class="text-slate-400 hover:text-white" title="Copy \cite{...} command">
-            <i data-lucide="copy" class="w-3 h-3"></i>
-          </button>
-        </span>
-
-        <!-- LaTeX Citation Status -->
-        <span id="latexCitationBadge" class="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-medium flex items-center gap-1">
-          <i data-lucide="book-open" class="w-3 h-3"></i>
-          <span id="latexCitationText">Cited 1x</span>
-        </span>
-
-        <!-- Domain Category -->
-        <span id="categoryBadge" class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-medium">
-          Category
-        </span>
-      </div>
-
-      <div class="flex items-center gap-2 flex-wrap">
-        <!-- URL Status Badge -->
-        <span id="urlStatusBadge" class="bg-amber-100 text-amber-700 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1">
-          <i data-lucide="link" class="w-3 h-3"></i> URL Missing
-        </span>
-
-        <!-- PDF Status Badge -->
-        <span id="pdfStatusBadge" class="bg-rose-100 text-rose-700 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1">
-          <i data-lucide="file-x" class="w-3 h-3"></i> PDF Missing
-        </span>
-      </div>
-    </div>
-
-    <!-- Main Card Body -->
-    <div class="p-6 space-y-5 overflow-y-auto max-h-[calc(100vh-280px)]">
-
-      <!-- Author, Year, and Venue Display -->
-      <div class="flex gap-3 text-sm text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
-        <i data-lucide="users" class="w-5 h-5 text-slate-400 mt-0.5 shrink-0"></i>
-        <div class="w-full">
-          <div id="authorDisplay" class="font-semibold text-slate-900 leading-snug">Author names</div>
-          <div class="flex items-center gap-3 text-xs text-slate-500 mt-1 flex-wrap">
-            <span id="yearDisplay" class="font-medium">Published: 2026</span>
-            <span class="text-slate-300">•</span>
-            <span id="venueDisplay" class="italic text-slate-600 truncate max-w-sm">Venue / Journal</span>
-            <span class="text-slate-300">•</span>
-            <span id="entryTypeDisplay" class="uppercase text-[10px] bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded font-bold">article</span>
+    <!-- ======================================================== -->
+    <!-- VIEW 1: TABLE OVERVIEW                                   -->
+    <!-- ======================================================== -->
+    <div id="tableViewContainer" class="hide flex flex-col p-6 space-y-4 max-h-[calc(100vh-180px)] overflow-y-auto">
+      
+      <!-- Filter and Search Bar -->
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+        <!-- Search Input -->
+        <div class="relative w-full md:w-80">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <i data-lucide="search" class="w-4 h-4"></i>
           </div>
+          <input type="text" id="tableSearchInput" placeholder="Filter citekey, title, author, year..." class="w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex items-center gap-1.5 flex-wrap text-xs">
+          <button class="table-filter-btn active bg-blue-600 text-white px-2.5 py-1 rounded-md font-semibold" data-filter="all">
+            All (<span id="countAll">296</span>)
+          </button>
+          <button class="table-filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-2.5 py-1 rounded-md font-medium" data-filter="missing_pdf">
+            Missing PDF (<span id="countMissingPdf">0</span>)
+          </button>
+          <button class="table-filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-2.5 py-1 rounded-md font-medium" data-filter="oa_ready">
+            OA Ready (<span id="countOaReady">0</span>)
+          </button>
+          <button class="table-filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-2.5 py-1 rounded-md font-medium" data-filter="cached">
+            Cached Locally (<span id="countCached">0</span>)
+          </button>
+          <button class="table-filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-2.5 py-1 rounded-md font-medium" data-filter="cited">
+            Cited in Thesis (<span id="countCited">0</span>)
+          </button>
+          <button class="table-filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-2.5 py-1 rounded-md font-medium" data-filter="flagged">
+            🚩 Flagged (<span id="countFlagged">0</span>)
+          </button>
+          <button class="table-filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-2.5 py-1 rounded-md font-medium" data-filter="cs">
+            CS & NLP (<span id="countCs">0</span>)
+          </button>
+          <button class="table-filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-2.5 py-1 rounded-md font-medium" data-filter="law">
+            PH Law (<span id="countLaw">0</span>)
+          </button>
         </div>
       </div>
 
-      <!-- Title Display with Search Suite -->
-      <div>
-        <div class="flex justify-between items-center mb-1.5">
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600">Extracted Title</label>
-          <button id="copyTitleBtn" class="text-xs text-blue-600 hover:text-blue-800 flex items-center gap-1 font-medium">
-            <i data-lucide="copy" class="w-3 h-3"></i> Copy Title
-          </button>
+      <!-- Table -->
+      <div class="overflow-x-auto border border-slate-200 rounded-xl">
+        <table class="min-w-full text-left text-xs divide-y divide-slate-200">
+          <thead class="bg-slate-100/80 text-slate-600 font-bold uppercase tracking-wider text-[11px]">
+            <tr>
+              <th scope="col" class="py-3 px-3 w-10 text-center">#</th>
+              <th scope="col" class="py-3 px-3 w-36">Citekey</th>
+              <th scope="col" class="py-3 px-4">Title & Primary Author</th>
+              <th scope="col" class="py-3 px-3 w-28">Category</th>
+              <th scope="col" class="py-3 px-3 w-16 text-center">LaTeX</th>
+              <th scope="col" class="py-3 px-3 w-28 text-center">Status</th>
+              <th scope="col" class="py-3 px-3 w-40 text-center">PDF Source (Drag & Drop)</th>
+              <th scope="col" class="py-3 px-3 w-44 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody" class="bg-white divide-y divide-slate-100 font-medium">
+            <!-- Populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="flex items-center justify-between text-xs text-slate-500 pt-2">
+        <span id="tableShowingCount">Showing 296 of 296 references</span>
+        <span>Click "Inspect" on any reference to open detailed Card View</span>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VIEW 2: CARD INSPECTOR                                   -->
+    <!-- ======================================================== -->
+    <div id="cardViewContainer" class="flex flex-col">
+      
+      <!-- Progress & Quick Jump Bar -->
+      <div class="bg-slate-50 border-b border-slate-200 px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+        <!-- Progress Indicator & Bar -->
+        <div class="flex items-center gap-3">
+          <span id="progressText" class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full text-xs">
+            Reference 1 / 296
+          </span>
+          <div class="w-32 sm:w-44 bg-slate-200 rounded-full h-2 overflow-hidden">
+            <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 1%;"></div>
+          </div>
+          <span id="percentText" class="text-xs text-slate-500 font-medium">0%</span>
         </div>
-        
-        <div class="flex flex-col sm:flex-row gap-2">
-          <textarea id="titleBox" readonly rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-slate-900 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 leading-relaxed"></textarea>
+
+        <!-- Quick Jump & Filters -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <button id="nextMissingUrlBtn" class="bg-amber-100 hover:bg-amber-200 text-amber-800 text-xs px-2.5 py-1 rounded font-medium transition-colors flex items-center gap-1" title="Jump to next reference missing a URL">
+            <i data-lucide="link" class="w-3 h-3 text-amber-600"></i> Next Missing URL
+          </button>
+          <button id="nextMissingPdfBtn" class="bg-rose-100 hover:bg-rose-200 text-rose-800 text-xs px-2.5 py-1 rounded font-medium transition-colors flex items-center gap-1" title="Jump to next reference missing an attached PDF">
+            <i data-lucide="file-x" class="w-3 h-3 text-rose-600"></i> Next Missing PDF
+          </button>
+          <button id="nextFlaggedBtn" class="bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs px-2.5 py-1 rounded font-medium transition-colors flex items-center gap-1" title="Jump to next reference flagged for manuscript review">
+            <i data-lucide="flag" class="w-3 h-3 text-amber-700"></i> Next Flagged
+          </button>
           
-          <!-- Search Buttons Column -->
-          <div class="flex sm:flex-col gap-1.5 shrink-0 justify-center">
-            <!-- Google Search -->
-            <button id="searchGoogleBtn" class="bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" title="Search exact title and authors on Google">
-              <i data-lucide="search" class="w-3.5 h-3.5 text-blue-600"></i>
-              <span>Google</span>
-            </button>
-            
-            <!-- Google Scholar -->
-            <button id="searchScholarBtn" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" title="Search on Google Scholar">
-              <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-indigo-600"></i>
-              <span>Scholar</span>
-            </button>
-
-            <!-- Semantic Scholar -->
-            <button id="searchSemanticBtn" class="bg-violet-50 hover:bg-violet-100 text-violet-700 border border-violet-200 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" title="Search Semantic Scholar for DOI & paper link">
-              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-violet-600"></i>
-              <span>Semantic</span>
-            </button>
-
-            <!-- Lawphil (Highlighted for legal records) -->
-            <button id="searchLawphilBtn" class="hide bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 px-3 py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-colors" title="Search Philippine Supreme Court Decisions & Republic Acts on Lawphil">
-              <i data-lucide="scale" class="w-3.5 h-3.5 text-amber-600"></i>
-              <span>Lawphil</span>
-            </button>
-          </div>
+          <!-- Search/Jump Dropdown -->
+          <select id="jumpSelect" class="bg-white border border-slate-300 text-slate-700 text-xs rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 max-w-[160px]">
+            <!-- Populated by JS -->
+          </select>
         </div>
       </div>
 
-      <!-- Reference URL Input & Test Link -->
-      <div>
-        <div class="flex justify-between items-center mb-1.5">
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600">Reference URL or DOI</label>
-          <span id="doiHelper" class="text-[11px] text-slate-500 font-mono"></span>
-        </div>
-        <div class="flex gap-2">
-          <div class="relative w-full">
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-              <i data-lucide="link" class="w-4 h-4"></i>
-            </div>
-            <input type="url" id="urlInput" placeholder="https://doi.org/... or https://arxiv.org/abs/..." class="w-full pl-9 pr-3 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-slate-800">
-          </div>
-          <button id="openUrlBtn" class="bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 px-4 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors shrink-0" title="Open URL in new tab to test">
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            <span>Test URL</span>
-          </button>
-        </div>
-      </div>
+      <!-- Status Badges Bar -->
+      <div class="px-6 py-2.5 bg-slate-100/60 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <div class="flex items-center gap-2 flex-wrap">
+          <!-- Citekey Badge -->
+          <span class="font-mono bg-slate-800 text-slate-100 px-2.5 py-0.5 rounded font-semibold flex items-center gap-1.5">
+            <span class="text-slate-400">\cite{</span><span id="citekeyDisplay">citekey</span><span class="text-slate-400">}</span>
+            <button id="copyCitekeyBtn" class="text-slate-400 hover:text-white" title="Copy \cite{...} command">
+              <i data-lucide="copy" class="w-3 h-3"></i>
+            </button>
+          </span>
 
-      <!-- PDF Attachment Section (NEW UPGRADE) -->
-      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
-        <div class="flex justify-between items-center">
-          <div class="flex items-center gap-2">
-            <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
-            <span class="text-xs font-bold uppercase tracking-wider text-slate-700">Attach Reference PDF</span>
-          </div>
-          <span id="pdfTargetLabel" class="text-[11px] font-mono text-slate-500 bg-slate-200/70 px-2 py-0.5 rounded">
-            Target: docs/references/<span id="targetPdfName">citekey</span>.pdf
+          <!-- LaTeX Citation Status -->
+          <span id="latexCitationBadge" class="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-medium flex items-center gap-1">
+            <i data-lucide="book-open" class="w-3 h-3"></i>
+            <span id="latexCitationText">Cited 1x</span>
+          </span>
+
+          <!-- Domain Category -->
+          <span id="categoryBadge" class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-medium">
+            Category
           </span>
         </div>
 
-        <!-- Direct Open-Access Download Helper (if arXiv/ACL direct pdf is known) -->
-        <div id="directPdfHelperBox" class="hide bg-indigo-50 border border-indigo-200 rounded-lg p-2.5 flex items-center justify-between text-xs">
-          <div class="flex items-center gap-2 text-indigo-900 font-medium">
-            <i data-lucide="zap" class="w-4 h-4 text-indigo-600 shrink-0"></i>
-            <span>Open-Access PDF found on arXiv / ACL!</span>
+        <div class="flex items-center gap-2 flex-wrap">
+          <!-- Flag Button in Card Inspector -->
+          <button id="cardFlagBtn" class="border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-semibold px-2.5 py-1 rounded-md transition-colors flex items-center gap-1.5 shadow-xs" title="Flag this source: Missing PDF, candidate for replacement or manuscript text adjustment">
+            <i id="cardFlagIcon" data-lucide="flag" class="w-3.5 h-3.5 text-amber-600"></i>
+            <span id="cardFlagBtnText">Flag Source</span>
+          </button>
+
+          <!-- URL Status Badge -->
+          <span id="urlStatusBadge" class="bg-amber-100 text-amber-700 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1">
+            <i data-lucide="link" class="w-3 h-3"></i> URL Missing
+          </span>
+
+          <!-- PDF Status Badge -->
+          <span id="pdfStatusBadge" class="bg-rose-100 text-rose-700 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1">
+            <i data-lucide="file-x" class="w-3 h-3"></i> PDF Missing
+          </span>
+        </div>
+      </div>
+
+      <!-- Main Card Body -->
+      <div class="p-6 space-y-5 overflow-y-auto max-h-[calc(100vh-280px)]">
+
+        <!-- Author, Year, and Venue Display -->
+        <div class="flex gap-3 text-sm text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+          <i data-lucide="users" class="w-5 h-5 text-slate-400 mt-0.5 shrink-0"></i>
+          <div class="w-full">
+            <div id="authorDisplay" class="font-semibold text-slate-900 leading-snug">Author names</div>
+            <div class="flex items-center gap-3 text-xs text-slate-500 mt-1 flex-wrap">
+              <span id="yearDisplay" class="font-medium">Published: 2026</span>
+              <span class="text-slate-300">•</span>
+              <span id="venueDisplay" class="italic text-slate-600 truncate max-w-sm">Venue / Journal</span>
+              <span class="text-slate-300">•</span>
+              <span id="entryTypeDisplay" class="uppercase text-[10px] bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded font-bold">article</span>
+            </div>
           </div>
-          <button id="fetchDirectPdfBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded font-semibold text-xs flex items-center gap-1 transition-colors">
-            <i data-lucide="download-cloud" class="w-3 h-3"></i> Download & Attach Directly
+        </div>
+
+        <!-- Flagged Source Warning Banner -->
+        <div id="cardFlaggedBanner" class="hide bg-amber-50 border-2 border-amber-300 rounded-xl p-4 text-xs text-amber-950 space-y-2.5 shadow-xs">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-start gap-3">
+              <div class="p-2 bg-amber-200 rounded-lg text-amber-900 shrink-0">
+                <i data-lucide="flag" class="w-5 h-5 fill-amber-600 text-amber-700"></i>
+              </div>
+              <div>
+                <div class="font-bold text-sm text-amber-950 flex items-center gap-2 flex-wrap">
+                  <span>Source Flagged for Review (No PDF Found)</span>
+                  <span id="cardFlaggedTimestamp" class="text-[10px] font-mono text-amber-800 bg-amber-200/80 px-2 py-0.5 rounded font-normal"></span>
+                </div>
+                <p class="text-xs text-amber-900 mt-1 leading-relaxed">
+                  No full-text PDF or verifiable copy has been found for this citation. 
+                  The proponents should either:
+                  (1) locate an alternative empirical/doctrinal source, or 
+                  (2) adjust / rephrase the citing statement in the manuscript and remove or substitute this citation.
+                </p>
+              </div>
+            </div>
+            <button id="cardUnflagActionBtn" type="button" class="bg-white hover:bg-amber-100 text-amber-900 border border-amber-300 px-3 py-1 rounded-lg text-xs font-bold shrink-0 transition-colors shadow-2xs">
+              Unflag
+            </button>
+          </div>
+          <div class="pt-2 border-t border-amber-200 flex flex-wrap items-center justify-between gap-2 text-[11px] text-amber-900">
+            <span class="flex items-center gap-1.5 font-medium">
+              <i data-lucide="file-text" class="w-3.5 h-3.5 text-amber-700"></i>
+              <span>Citing Manuscript Files:</span>
+              <strong id="cardFlaggedFiles" class="font-mono bg-white px-2 py-0.5 rounded border border-amber-200 text-amber-950">None</strong>
+            </span>
+            <span id="cardFlaggedCountText" class="font-semibold text-amber-800"></span>
+          </div>
+        </div>
+
+        <!-- Title Display with Search Suite -->
+        <div>
+          <div class="flex justify-between items-center mb-1.5">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600">Paper / Statute Title</label>
+            <div class="flex items-center gap-2">
+              <button id="autoFindOaBtn" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 px-2.5 py-1 rounded text-xs font-bold flex items-center gap-1 transition-colors" title="Query arXiv and Open-Access APIs for a free full-text PDF">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-600"></i> Auto-Find OA PDF
+              </button>
+              <button id="copyTitleBtn" class="text-xs text-blue-600 hover:text-blue-800 flex items-center gap-1 font-medium">
+                <i data-lucide="copy" class="w-3 h-3"></i> Copy Title
+              </button>
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-2">
+            <textarea id="titleBox" readonly rows="2" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-slate-900 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 leading-relaxed"></textarea>
+            
+            <!-- Search Buttons Column -->
+            <div class="flex sm:flex-col gap-1.5 shrink-0 justify-center">
+              <button id="searchGoogleBtn" class="bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 px-3 py-1 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" title="Search exact title and authors on Google">
+                <i data-lucide="search" class="w-3.5 h-3.5 text-blue-600"></i>
+                <span>Google</span>
+              </button>
+              
+              <button id="searchScholarBtn" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" title="Search on Google Scholar">
+                <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-indigo-600"></i>
+                <span>Scholar</span>
+              </button>
+
+              <button id="searchSemanticBtn" class="bg-violet-50 hover:bg-violet-100 text-violet-700 border border-violet-200 px-3 py-1 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" title="Search Semantic Scholar">
+                <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-600"></i>
+                <span>Semantic</span>
+              </button>
+
+              <button id="searchLawphilBtn" class="hide bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 px-3 py-1 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-colors" title="Search Philippine Supreme Court & RA on Lawphil">
+                <i data-lucide="scale" class="w-3.5 h-3.5 text-amber-600"></i>
+                <span>Lawphil</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auto-Found Open Access Result Banner -->
+        <div id="oaFoundBanner" class="hide bg-emerald-50 border border-emerald-300 rounded-xl p-3 text-xs text-emerald-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5">
+          <div class="flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+            <div>
+              <span class="font-bold text-emerald-900" id="oaFoundTitle">Open-Access Pre-print Found!</span>
+              <p class="text-[11px] text-emerald-700" id="oaFoundDetails">arXiv: 1810.04805 (Similarity: 99%)</p>
+            </div>
+          </div>
+          <button id="applyOaBtn" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg font-bold text-xs flex items-center gap-1.5 shadow shrink-0">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> Apply & Download PDF
           </button>
         </div>
 
-        <!-- PDF Dropzone -->
-        <div id="pdfDropzone" class="border-2 border-dashed border-slate-300 rounded-xl p-4 text-center hover:border-blue-400 bg-white cursor-pointer transition-colors relative">
-          <input type="file" id="pdfFileInput" accept=".pdf" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full" />
-          
-          <div id="dropzonePrompt" class="flex flex-col items-center justify-center py-2">
-            <i data-lucide="upload-cloud" class="w-8 h-8 text-slate-400 mb-1"></i>
-            <p class="text-xs font-semibold text-slate-700">
-              Drag & drop the paper's PDF here, or <span class="text-blue-600 hover:underline">browse files</span>
-            </p>
-            <p class="text-[11px] text-slate-400 mt-0.5">
-              ArXiv preprints, paper PDFs, or web pages saved as PDF (news, court decisions)
-            </p>
+        <!-- Reference URL Input & Test Link -->
+        <div>
+          <div class="flex justify-between items-center mb-1.5">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600">Reference URL or DOI</label>
+            <span id="doiHelper" class="text-[11px] text-slate-500 font-mono"></span>
+          </div>
+          <div class="flex gap-2">
+            <div class="relative w-full">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="link" class="w-4 h-4"></i>
+              </div>
+              <input type="url" id="urlInput" placeholder="https://doi.org/... or https://arxiv.org/abs/..." class="w-full pl-9 pr-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-slate-800">
+            </div>
+            <button id="openUrlBtn" class="bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 px-3.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors shrink-0" title="Open URL in new tab to test">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span>Test URL</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PDF Attachment Section -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-700">Attach Reference PDF</span>
+            </div>
+            <span id="pdfTargetLabel" class="text-[11px] font-mono text-slate-500 bg-slate-200/70 px-2 py-0.5 rounded">
+              Target: docs/references/<span id="targetPdfName">citekey</span>.pdf
+            </span>
           </div>
 
-          <!-- Attached File Summary (Visible when PDF is loaded) -->
-          <div id="attachedFileInfo" class="hide flex flex-col bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-left space-y-2">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2.5 overflow-hidden">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 shrink-0"></i>
-                <div class="truncate">
-                  <div id="attachedFilename" class="text-xs font-bold text-emerald-900 truncate">paper.pdf</div>
-                  <div id="attachedFilesize" class="text-[11px] text-emerald-700">0 KB • Attached</div>
+          <!-- Direct Open-Access Download Helper -->
+          <div id="directPdfHelperBox" class="hide bg-indigo-50 border border-indigo-200 rounded-lg p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
+            <div class="flex items-center gap-2 text-indigo-900 font-medium">
+              <i data-lucide="zap" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+              <span>Direct Open-Access PDF detected (arXiv / ACL / JMLR)!</span>
+            </div>
+            <button id="fetchDirectPdfBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-3.5 py-1.5 rounded-lg font-bold text-xs flex items-center gap-1.5 transition-colors shadow-sm shrink-0">
+              <i data-lucide="download-cloud" class="w-3.5 h-3.5"></i> Download PDF to Disk
+            </button>
+          </div>
+
+          <!-- PDF Dropzone -->
+          <div id="pdfDropzone" class="border-2 border-dashed border-slate-300 rounded-xl p-4 text-center hover:border-blue-400 bg-white cursor-pointer transition-colors relative">
+            <input type="file" id="pdfFileInput" accept=".pdf" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full" />
+            
+            <div id="dropzonePrompt" class="flex flex-col items-center justify-center py-2">
+              <i data-lucide="upload-cloud" class="w-8 h-8 text-slate-400 mb-1"></i>
+              <p class="text-xs font-semibold text-slate-700">
+                Drag & drop the paper's PDF here, or <span class="text-blue-600 hover:underline">browse files</span>
+              </p>
+              <p class="text-[11px] text-slate-400 mt-0.5">
+                Saved directly to docs/references/&lt;citekey&gt;.pdf and linked in BibTeX
+              </p>
+            </div>
+
+            <!-- Attached File Summary -->
+            <div id="attachedFileInfo" class="hide flex flex-col bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-left space-y-2">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5 overflow-hidden">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+                  <div class="truncate">
+                    <div id="attachedFilename" class="text-xs font-bold text-emerald-900 truncate">paper.pdf</div>
+                    <div id="attachedFilesize" class="text-[11px] text-emerald-700">0 KB • Attached</div>
+                  </div>
+                </div>
+                
+                <div class="flex items-center gap-2 shrink-0">
+                  <button id="previewPdfBtn" type="button" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-2.5 py-1 rounded font-medium flex items-center gap-1 transition-colors">
+                    <i data-lucide="eye" class="w-3 h-3"></i> Preview
+                  </button>
+                  <button id="removePdfBtn" type="button" class="bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs px-2.5 py-1 rounded font-medium flex items-center gap-1 transition-colors">
+                    <i data-lucide="trash-2" class="w-3 h-3"></i> Remove
+                  </button>
                 </div>
               </div>
-              
-              <div class="flex items-center gap-2 shrink-0">
-                <button id="previewPdfBtn" type="button" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-2.5 py-1 rounded font-medium flex items-center gap-1 transition-colors">
-                  <i data-lucide="eye" class="w-3 h-3"></i> Preview
-                </button>
-                <button id="removePdfBtn" type="button" class="bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs px-2.5 py-1 rounded font-medium flex items-center gap-1 transition-colors">
-                  <i data-lucide="trash-2" class="w-3 h-3"></i> Remove
-                </button>
-              </div>
-            </div>
 
-            <!-- Repo Storage & BibTeX File Link Info -->
-            <div class="pt-2 border-t border-emerald-200/80 flex flex-wrap items-center justify-between gap-1.5 text-[11px] text-emerald-800">
-              <span class="flex items-center gap-1 font-mono">
-                <i data-lucide="hard-drive" class="w-3.5 h-3.5 text-emerald-600"></i>
-                <span>Stored in Repo: <strong class="text-emerald-950">docs/references/<span id="attachedRepoFilename">citekey</span>.pdf</strong></span>
-              </span>
-              <span class="font-mono bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded text-[10px] font-semibold">
-                file = {docs/references/<span id="attachedBibtexTag">citekey</span>.pdf}
-              </span>
+              <!-- Storage Info -->
+              <div class="pt-2 border-t border-emerald-200/80 flex flex-wrap items-center justify-between gap-1.5 text-[11px] text-emerald-800">
+                <span class="flex items-center gap-1 font-mono">
+                  <i data-lucide="hard-drive" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span>Stored on disk: <strong class="text-emerald-950">docs/references/<span id="attachedRepoFilename">citekey</span>.pdf</strong></span>
+                </span>
+                <span class="font-mono bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded text-[10px] font-semibold">
+                  file = {docs/references/<span id="attachedBibtexTag">citekey</span>.pdf}
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Verification Note & Checkbox -->
-      <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between bg-slate-50 border border-slate-200 p-3 rounded-xl">
-        <div class="w-full">
-          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Verification Note / Key Findings (Optional)</label>
-          <input type="text" id="noteInput" placeholder="e.g., Verified baseline numbers in Table 4; landmark Supreme Court ruling; official signed copy" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-blue-500">
+        <!-- Verification Note & Checkbox -->
+        <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between bg-slate-50 border border-slate-200 p-3 rounded-xl">
+          <div class="w-full">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Verification Note / Key Findings (Optional)</label>
+            <input type="text" id="noteInput" placeholder="e.g., Verified baseline numbers in Table 4; landmark Supreme Court ruling; official signed copy" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-blue-500">
+          </div>
+          
+          <label class="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700 shrink-0 select-none sm:mt-4">
+            <input type="checkbox" id="verifiedCheckbox" class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+            <span>Mark Verified</span>
+          </label>
         </div>
-        
-        <label class="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700 shrink-0 select-none sm:mt-4">
-          <input type="checkbox" id="verifiedCheckbox" class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
-          <span>Mark Verified</span>
-        </label>
+
       </div>
 
-    </div>
-
-    <!-- Bottom Action & Navigation Bar -->
-    <div class="bg-slate-50 border-t border-slate-200 px-6 py-4 flex items-center justify-between">
-      <button id="prevBtn" class="flex items-center gap-2 text-slate-600 hover:text-slate-900 px-4 py-2 rounded-xl hover:bg-slate-200/70 font-semibold text-xs transition-colors">
-        <i data-lucide="arrow-left" class="w-4 h-4"></i> Previous
-      </button>
-
-      <div class="flex items-center gap-2">
-        <button id="skipBtn" class="text-slate-500 hover:text-slate-800 px-3 py-2 rounded-xl hover:bg-slate-200/50 font-medium text-xs transition-colors">
-          Skip
+      <!-- Bottom Action & Navigation Bar -->
+      <div class="bg-slate-50 border-t border-slate-200 px-6 py-4 flex items-center justify-between">
+        <button id="prevBtn" class="flex items-center gap-2 text-slate-600 hover:text-slate-900 px-4 py-2 rounded-xl hover:bg-slate-200/70 font-semibold text-xs transition-colors">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> Previous
         </button>
 
-        <button id="updateBtn" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2.5 rounded-xl font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2">
-          <span>Update & Next</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <button id="skipBtn" class="text-slate-500 hover:text-slate-800 px-3 py-2 rounded-xl hover:bg-slate-200/50 font-medium text-xs transition-colors">
+            Skip
+          </button>
+
+          <button id="updateBtn" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2.5 rounded-xl font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+            <span>Update & Next</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
       </div>
+
     </div>
 
   </div>
@@ -372,77 +549,202 @@
     let currentIndex = 0;
     let rawFilePrefix = "";
     let serverActive = false;
-    let boundDirectoryHandle = null; // File System Access API directory handle
+    let currentView = "card"; // "card" or "table"
+    let currentFilter = "all";
+    let apiBase = window.location.protocol === 'file:' ? 'http://127.0.0.1:8080' : '';
 
-    // IndexedDB for storing attached PDF Blobs across page reloads
-    let db = null;
-    const DB_NAME = "ThesisRefAuditorDB";
-    const DB_VERSION = 1;
+    function isPdfFile(file) {
+      if (!file) return false;
+      const name = (file.name || "").toLowerCase();
+      const type = (file.type || "").toLowerCase();
+      return name.endsWith('.pdf') || type.includes('pdf') || type === 'application/octet-stream' || !type;
+    }
 
-    function initDB() {
-      return new Promise((resolve, reject) => {
-        const req = indexedDB.open(DB_NAME, DB_VERSION);
-        req.onupgradeneeded = (e) => {
-          const dbInstance = e.target.result;
-          if (!dbInstance.objectStoreNames.contains("pdfFiles")) {
-            dbInstance.createObjectStore("pdfFiles", { keyPath: "citekey" });
+    async function uploadPdfForCitekey(citekey, file, sourceElement) {
+      if (!file) return false;
+      if (!isPdfFile(file)) {
+        alert(`The selected file "${file.name}" does not appear to be a PDF. Please select or drop a valid .pdf file.`);
+        return false;
+      }
+
+      if (!serverActive) {
+        await checkBackendServer();
+      }
+      if (!serverActive) {
+        alert(
+          `Local backend server is not running!\n\n` +
+          `To auto-save PDFs directly to docs/references/${citekey}.pdf and update references.bib, ` +
+          `please run this command in your repository terminal:\n\n` +
+          `python scripts/audit_refs.py --serve\n\n` +
+          `Once running, you can drop or select files here.`
+        );
+        return false;
+      }
+
+      showToast(`Saving ${citekey}.pdf (${Math.round(file.size / 1024)} KB)...`);
+      if (sourceElement) {
+        sourceElement.classList.add('opacity-50', 'pointer-events-none');
+      }
+
+      try {
+        const formData = new FormData();
+        formData.append('pdf', file, `${citekey}.pdf`);
+
+        const resp = await fetch(`${apiBase}/api/save_pdf?citekey=${encodeURIComponent(citekey)}`, {
+          method: 'POST',
+          body: formData
+        });
+
+        if (resp.ok) {
+          const res = await resp.json();
+          const match = references.find(r => r.citekey.toLowerCase() === citekey.toLowerCase());
+          if (match) {
+            match.has_local_pdf = true;
           }
-        };
-        req.onsuccess = (e) => {
-          db = e.target.result;
-          resolve(db);
-        };
-        req.onerror = (e) => reject(e);
-      });
+          showToast(`Saved & linked docs/references/${citekey}.pdf!`, true);
+          updateStatsCounts();
+          if (currentView === "table") {
+            renderTable();
+          } else {
+            renderCurrent();
+          }
+          return true;
+        } else {
+          let errText = "Unknown error";
+          try {
+            const errJson = await resp.json();
+            errText = errJson.error || JSON.stringify(errJson);
+          } catch (_) {
+            errText = await resp.text();
+          }
+          alert(`Server error saving PDF: ${errText}`);
+          return false;
+        }
+      } catch (err) {
+        alert(`Upload error: ${err.message}\nMake sure 'python scripts/audit_refs.py --serve' is active.`);
+        return false;
+      } finally {
+        if (sourceElement) {
+          sourceElement.classList.remove('opacity-50', 'pointer-events-none');
+        }
+      }
     }
 
-    async function storePdfBlob(citekey, blob, filename) {
-      if (!db) await initDB();
-      return new Promise((resolve, reject) => {
-        const tx = db.transaction("pdfFiles", "readwrite");
-        const store = tx.objectStore("pdfFiles");
-        store.put({ citekey, blob, filename, size: blob.size, timestamp: Date.now() });
-        tx.oncomplete = () => resolve();
-        tx.onerror = (e) => reject(e);
-      });
+    // Toggle Flag state for a reference
+    async function toggleFlagForCitekey(citekey) {
+      if (!citekey) return;
+      const ref = references.find(r => r.citekey.toLowerCase() === citekey.toLowerCase());
+      if (!ref) return;
+
+      const targetState = !ref.flagged;
+
+      if (!serverActive) {
+        await checkBackendServer();
+      }
+
+      if (serverActive) {
+        try {
+          const resp = await fetch(`${apiBase}/api/toggle_flag?citekey=${encodeURIComponent(ref.citekey)}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ citekey: ref.citekey, flagged: targetState })
+          });
+          if (resp.ok) {
+            const res = await resp.json();
+            ref.flagged = res.flagged;
+            ref.flag_timestamp = res.flagged ? (new Date()).toLocaleString() : "";
+            showToast(ref.flagged ? `Flagged [${ref.citekey}] for manuscript review` : `Unflagged [${ref.citekey}]`, true);
+          } else {
+            let errText = "Unknown error";
+            try {
+              const errJson = await resp.json();
+              errText = errJson.error || JSON.stringify(errJson);
+            } catch (_) {
+              errText = await resp.text();
+            }
+            alert(`Server error toggling flag: ${errText}`);
+            return;
+          }
+        } catch (err) {
+          ref.flagged = targetState;
+          showToast(ref.flagged ? `Flagged [${ref.citekey}] (session only)` : `Unflagged [${ref.citekey}]`, true);
+        }
+      } else {
+        ref.flagged = targetState;
+        showToast(ref.flagged ? `Flagged [${ref.citekey}] (Offline mode - start server to persist)` : `Unflagged [${ref.citekey}]`, true);
+      }
+
+      updateStatsCounts();
+      if (currentView === "table") {
+        renderTable();
+      } else {
+        renderCurrent();
+      }
     }
 
-    async function getPdfBlob(citekey) {
-      if (!db) await initDB();
-      return new Promise((resolve, reject) => {
-        const tx = db.transaction("pdfFiles", "readonly");
-        const store = tx.objectStore("pdfFiles");
-        const req = store.get(citekey);
-        req.onsuccess = () => resolve(req.result || null);
-        req.onerror = (e) => reject(e);
-      });
-    }
-
-    async function deletePdfBlob(citekey) {
-      if (!db) await initDB();
-      return new Promise((resolve, reject) => {
-        const tx = db.transaction("pdfFiles", "readwrite");
-        const store = tx.objectStore("pdfFiles");
-        store.delete(citekey);
-        tx.oncomplete = () => resolve();
-        tx.onerror = (e) => reject(e);
-      });
-    }
+    window.toggleFlagFromTable = async function(citekey) {
+      await toggleFlagForCitekey(citekey);
+    };
 
     // DOM Elements
+    const viewCardBtn = document.getElementById('viewCardBtn');
+    const viewTableBtn = document.getElementById('viewTableBtn');
+    const cardViewContainer = document.getElementById('cardViewContainer');
+    const tableViewContainer = document.getElementById('tableViewContainer');
+
     const fileInput = document.getElementById('fileInput');
-    const folderBindBtn = document.getElementById('folderBindBtn');
-    const folderBindText = document.getElementById('folderBindText');
     const downloadBtn = document.getElementById('downloadBtn');
     const exportLogBtn = document.getElementById('exportLogBtn');
+    const exportFlaggedBtn = document.getElementById('exportFlaggedBtn');
+    const countFlaggedHeader = document.getElementById('countFlaggedHeader');
+    const batchDownloadBtn = document.getElementById('batchDownloadBtn');
+    const batchDownloadCount = document.getElementById('batchDownloadCount');
+
     const serverStatusBanner = document.getElementById('serverStatusBanner');
-    
+    const serverDot = document.getElementById('serverDot');
+    const serverStatusText = document.getElementById('serverStatusText');
+    const serverModeBadge = document.getElementById('serverModeBadge');
+    const cachedPdfCountLabel = document.getElementById('cachedPdfCountLabel');
+    const totalRefsLabel = document.getElementById('totalRefsLabel');
+
+    const downloadProgressBarBanner = document.getElementById('downloadProgressBarBanner');
+    const downloadStatusMsg = document.getElementById('downloadStatusMsg');
+    const downloadProgressRatio = document.getElementById('downloadProgressRatio');
+    const batchProgressBar = document.getElementById('batchProgressBar');
+
+    // Table elements
+    const tableBody = document.getElementById('tableBody');
+    const tableSearchInput = document.getElementById('tableSearchInput');
+    const tableShowingCount = document.getElementById('tableShowingCount');
+    const filterBtns = document.querySelectorAll('.table-filter-btn');
+
+    // Counts
+    const countAll = document.getElementById('countAll');
+    const countMissingPdf = document.getElementById('countMissingPdf');
+    const countOaReady = document.getElementById('countOaReady');
+    const countCached = document.getElementById('countCached');
+    const countCited = document.getElementById('countCited');
+    const countFlagged = document.getElementById('countFlagged');
+    const countCs = document.getElementById('countCs');
+    const countLaw = document.getElementById('countLaw');
+
+    // Card elements
     const progressText = document.getElementById('progressText');
     const progressBar = document.getElementById('progressBar');
     const percentText = document.getElementById('percentText');
     const jumpSelect = document.getElementById('jumpSelect');
     const nextMissingUrlBtn = document.getElementById('nextMissingUrlBtn');
     const nextMissingPdfBtn = document.getElementById('nextMissingPdfBtn');
+    const nextFlaggedBtn = document.getElementById('nextFlaggedBtn');
+
+    const cardFlagBtn = document.getElementById('cardFlagBtn');
+    const cardFlagIcon = document.getElementById('cardFlagIcon');
+    const cardFlagBtnText = document.getElementById('cardFlagBtnText');
+    const cardFlaggedBanner = document.getElementById('cardFlaggedBanner');
+    const cardFlaggedTimestamp = document.getElementById('cardFlaggedTimestamp');
+    const cardFlaggedFiles = document.getElementById('cardFlaggedFiles');
+    const cardFlaggedCountText = document.getElementById('cardFlaggedCountText');
+    const cardUnflagActionBtn = document.getElementById('cardUnflagActionBtn');
 
     const citekeyDisplay = document.getElementById('citekeyDisplay');
     const copyCitekeyBtn = document.getElementById('copyCitekeyBtn');
@@ -459,6 +761,12 @@
 
     const titleBox = document.getElementById('titleBox');
     const copyTitleBtn = document.getElementById('copyTitleBtn');
+    const autoFindOaBtn = document.getElementById('autoFindOaBtn');
+    const oaFoundBanner = document.getElementById('oaFoundBanner');
+    const oaFoundTitle = document.getElementById('oaFoundTitle');
+    const oaFoundDetails = document.getElementById('oaFoundDetails');
+    const applyOaBtn = document.getElementById('applyOaBtn');
+
     const searchGoogleBtn = document.getElementById('searchGoogleBtn');
     const searchScholarBtn = document.getElementById('searchScholarBtn');
     const searchSemanticBtn = document.getElementById('searchSemanticBtn');
@@ -495,6 +803,8 @@
     const toast = document.getElementById('toast');
     const toastMsg = document.getElementById('toastMsg');
 
+    let currentOaMatch = null;
+
     function showToast(msg, isSuccess = true) {
       toastMsg.innerText = msg;
       toast.classList.remove('translate-y-20', 'opacity-0');
@@ -503,205 +813,379 @@
       }, 2500);
     }
 
-    // Check if backend Python server is running on localhost:8080
-    async function checkBackendServer() {
-      try {
-        const resp = await fetch('/api/status', { method: 'GET', cache: 'no-cache' });
-        if (resp.ok) {
-          const data = await resp.json();
-          serverActive = true;
-          serverStatusBanner.classList.remove('hide');
-          folderBindText.innerText = "Backend Auto-Save On";
-          folderBindBtn.classList.replace('bg-blue-600/80', 'bg-emerald-600');
-          folderBindBtn.title = "Connected to python scripts/audit_refs.py --serve";
-          // If server reported existing downloaded PDFs, mark them
-          if (data.downloaded_citekeys && Array.isArray(data.downloaded_citekeys)) {
-            const downloadedSet = new Set(data.downloaded_citekeys.map(k => k.toLowerCase()));
-            references.forEach(r => {
-              if (downloadedSet.has(r.citekey.toLowerCase())) {
-                r.has_local_pdf = true;
-              }
-            });
-            renderCurrent();
-          }
-        }
-      } catch (e) {
-        serverActive = false;
-        serverStatusBanner.classList.add('hide');
+    // Switch View
+    function setView(view) {
+      currentView = view;
+      if (view === "table") {
+        cardViewContainer.classList.add('hide');
+        tableViewContainer.classList.remove('hide');
+        viewTableBtn.classList.add('bg-white', 'text-slate-900', 'shadow');
+        viewTableBtn.classList.remove('text-slate-300');
+        viewCardBtn.classList.remove('bg-white', 'text-slate-900', 'shadow');
+        viewCardBtn.classList.add('text-slate-300');
+        renderTable();
+      } else {
+        tableViewContainer.classList.add('hide');
+        cardViewContainer.classList.remove('hide');
+        viewCardBtn.classList.add('bg-white', 'text-slate-900', 'shadow');
+        viewCardBtn.classList.remove('text-slate-300');
+        viewTableBtn.classList.remove('bg-white', 'text-slate-900', 'shadow');
+        viewTableBtn.classList.add('text-slate-300');
+        renderCurrent();
       }
+      lucide.createIcons();
     }
 
-    // File System Access API (Allow binding to docs/references folder directly)
-    folderBindBtn.addEventListener('click', async () => {
-      if (serverActive) {
-        showToast("Backend server is already auto-saving directly to disk!");
-        return;
+    viewCardBtn.addEventListener('click', () => setView("card"));
+    viewTableBtn.addEventListener('click', () => setView("table"));
+
+    // Check Backend Server Status
+    async function checkBackendServer() {
+      const candidateBases = [
+        apiBase,
+        window.location.protocol === 'file:' ? 'http://127.0.0.1:8080' : '',
+        'http://127.0.0.1:8080',
+        'http://localhost:8080',
+        'http://127.0.0.1:8081',
+        'http://localhost:8081'
+      ];
+      const uniqueBases = Array.from(new Set(candidateBases.filter(b => b !== undefined)));
+
+      for (const base of uniqueBases) {
+        try {
+          const resp = await fetch(`${base}/api/status`, { method: 'GET', cache: 'no-cache' });
+          if (resp.ok) {
+            const data = await resp.json();
+            apiBase = base;
+            serverActive = true;
+            serverDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
+            serverStatusText.innerHTML = `Local Backend Server Active (${base || 'Port ' + (window.location.port || '8080')}) &bull; Direct Auto-Save to <code class="bg-emerald-100 px-1 py-0.5 rounded text-emerald-900 font-mono">docs/references/&lt;citekey&gt;.pdf</code>`;
+            serverModeBadge.className = "bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider text-[10px]";
+            serverModeBadge.innerText = "Auto-Sync On";
+
+            if (data.downloaded_citekeys && Array.isArray(data.downloaded_citekeys)) {
+              const downloadedSet = new Set(data.downloaded_citekeys.map(k => k.toLowerCase()));
+              references.forEach(r => {
+                if (downloadedSet.has(r.citekey.toLowerCase())) {
+                  r.has_local_pdf = true;
+                }
+              });
+              updateStatsCounts();
+            }
+
+            if (data.flagged_citekeys && Array.isArray(data.flagged_citekeys)) {
+              const flaggedSet = new Set(data.flagged_citekeys.map(k => k.toLowerCase()));
+              references.forEach(r => {
+                r.flagged = flaggedSet.has(r.citekey.toLowerCase());
+              });
+              updateStatsCounts();
+            }
+
+            if (data.download_state && data.download_state.active) {
+              showDownloadProgress(data.download_state);
+              startPollingDownloadProgress();
+            }
+            return true;
+          }
+        } catch (e) {
+          // Probe next candidate
+        }
       }
 
-      if ('showDirectoryPicker' in window) {
-        try {
-          boundDirectoryHandle = await window.showDirectoryPicker({
-            mode: 'readwrite',
-            startIn: 'documents'
-          });
-          folderBindText.innerText = `Folder: ${boundDirectoryHandle.name}`;
-          folderBindBtn.classList.replace('bg-blue-600/80', 'bg-emerald-600');
-          showToast(`Bound to folder: ${boundDirectoryHandle.name}! PDFs will auto-save here.`);
-        } catch (err) {
-          if (err.name !== 'AbortError') {
-            console.error(err);
-            alert("Folder selection note: You can also run 'python scripts/audit_refs.py --serve' for automatic disk saving.");
-          }
-        }
-      } else {
-        alert("File System Access API is not supported on this browser context. You can run 'python scripts/audit_refs.py --serve' to auto-save PDFs directly to disk.");
+      serverActive = false;
+      serverDot.className = "w-2.5 h-2.5 rounded-full bg-amber-400";
+      serverStatusText.innerHTML = `Offline Mode &bull; Run <code class="bg-amber-100 px-1.5 py-0.5 rounded font-mono font-bold text-amber-900">python scripts/audit_refs.py --serve</code> for direct disk saving`;
+      serverModeBadge.className = "bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider text-[10px]";
+      serverModeBadge.innerText = "Offline";
+      return false;
+    }
+
+    function updateStatsCounts() {
+      const total = references.length;
+      const cached = references.filter(r => r.has_local_pdf).length;
+      const missingPdf = references.filter(r => !r.has_local_pdf).length;
+      const oaReady = references.filter(r => r.direct_pdf_url && !r.has_local_pdf).length;
+      const cited = references.filter(r => r.is_cited).length;
+      const flagged = references.filter(r => r.flagged).length;
+      const cs = references.filter(r => r.category === 'Computer Science & NLP').length;
+      const law = references.filter(r => r.category === 'Philippine Law & Jurisprudence').length;
+
+      cachedPdfCountLabel.innerText = cached;
+      totalRefsLabel.innerText = total;
+      batchDownloadCount.innerText = oaReady;
+
+      countAll.innerText = total;
+      countMissingPdf.innerText = missingPdf;
+      countOaReady.innerText = oaReady;
+      countCached.innerText = cached;
+      countCited.innerText = cited;
+      countFlagged.innerText = flagged;
+      if (countFlaggedHeader) countFlaggedHeader.innerText = flagged;
+      countCs.innerText = cs;
+      countLaw.innerText = law;
+    }
+
+    // Render Table Overview
+    function renderTable() {
+      const q = tableSearchInput.value.toLowerCase().trim();
+      let filtered = references.map((r, idx) => ({ ...r, originalIndex: idx }));
+
+      if (currentFilter === "missing_pdf") filtered = filtered.filter(r => !r.has_local_pdf);
+      else if (currentFilter === "oa_ready") filtered = filtered.filter(r => r.direct_pdf_url && !r.has_local_pdf);
+      else if (currentFilter === "cached") filtered = filtered.filter(r => r.has_local_pdf);
+      else if (currentFilter === "cited") filtered = filtered.filter(r => r.is_cited);
+      else if (currentFilter === "flagged") filtered = filtered.filter(r => r.flagged);
+      else if (currentFilter === "cs") filtered = filtered.filter(r => r.category === 'Computer Science & NLP');
+      else if (currentFilter === "law") filtered = filtered.filter(r => r.category === 'Philippine Law & Jurisprudence');
+
+      if (q) {
+        filtered = filtered.filter(r => 
+          (r.citekey && r.citekey.toLowerCase().includes(q)) ||
+          (r.title && r.title.toLowerCase().includes(q)) ||
+          (r.author && r.author.toLowerCase().includes(q)) ||
+          (r.year && r.year.toString().includes(q))
+        );
       }
+
+      tableShowingCount.innerText = `Showing ${filtered.length} of ${references.length} references`;
+
+      tableBody.innerHTML = filtered.map((r, idx) => {
+        let statusBadge = "";
+        if (r.has_local_pdf) {
+          statusBadge = `<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center justify-center gap-1"><i data-lucide="check-circle" class="w-3 h-3"></i> Saved</span>`;
+        } else if (r.direct_pdf_url) {
+          statusBadge = `<span class="bg-indigo-100 text-indigo-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center justify-center gap-1"><i data-lucide="zap" class="w-3 h-3"></i> OA Ready</span>`;
+        } else if (r.url) {
+          statusBadge = `<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center justify-center gap-1"><i data-lucide="link" class="w-3 h-3"></i> Paywalled</span>`;
+        } else {
+          statusBadge = `<span class="bg-rose-100 text-rose-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center justify-center gap-1"><i data-lucide="alert-circle" class="w-3 h-3"></i> No URL</span>`;
+        }
+
+        if (r.flagged) {
+          statusBadge += `<span class="bg-amber-100 text-amber-900 border border-amber-300 text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center justify-center gap-1 mt-1 shadow-2xs" title="Flagged: Cannot find PDF. Candidate for replacement or manuscript text adjustment."><i data-lucide="flag" class="w-2.5 h-2.5 fill-amber-700 text-amber-700"></i> Flagged</span>`;
+        }
+
+        const primaryAuthor = r.author ? r.author.split(' and ')[0] : 'Unknown';
+
+        // Column 7: PDF Source (Drag & Drop)
+        let pdfSourceCell = "";
+        if (r.has_local_pdf) {
+          pdfSourceCell = `
+            <div class="flex items-center justify-center gap-1.5 py-0.5">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 shadow-xs" title="PDF stored in docs/references/${r.citekey}.pdf">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600"></i>
+                Saved
+              </span>
+              <button type="button" onclick="previewPdfFromTable('${r.citekey}')" class="p-1 text-slate-500 hover:text-emerald-700 hover:bg-emerald-50 rounded transition-colors" title="Preview PDF in viewer">
+                <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              </button>
+              <label class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded cursor-pointer transition-colors" title="Replace / Re-drop PDF">
+                <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+                <input type="file" accept=".pdf" class="hidden table-file-input" data-citekey="${r.citekey}">
+              </label>
+            </div>
+          `;
+        } else {
+          pdfSourceCell = `
+            <div class="table-dropzone relative flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-lg border-2 border-dashed border-slate-300 hover:border-blue-500 hover:bg-blue-50/70 bg-white cursor-pointer transition-all duration-150 group shadow-xs" data-citekey="${r.citekey}" title="Drag & drop downloaded PDF here, or click to browse">
+              <input type="file" accept=".pdf" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full table-file-input" data-citekey="${r.citekey}">
+              <i data-lucide="upload-cloud" class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+              <span class="text-[11px] font-semibold text-slate-600 group-hover:text-blue-700 select-none">
+                Drop PDF here
+              </span>
+            </div>
+          `;
+        }
+
+        // Column 8: Actions (Open Link, Auto-Download, Inspect)
+        let actionsCell = `
+          <div class="flex items-center justify-end gap-1.5 flex-wrap">
+            ${r.url ? `
+              <a href="${r.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-50 text-blue-700 hover:bg-blue-600 hover:text-white border border-blue-200 transition-all shadow-xs shrink-0" title="Open source link in new tab to download PDF">
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+                <span>Open Link</span>
+              </a>
+            ` : `
+              <a href="https://scholar.google.com/scholar?q=${encodeURIComponent(r.title)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[10px] font-semibold bg-indigo-50 text-indigo-700 hover:bg-indigo-600 hover:text-white border border-indigo-200 shrink-0" title="Search Google Scholar">
+                <i data-lucide="graduation-cap" class="w-3 h-3"></i> Scholar
+              </a>
+            `}
+            ${(r.category === "Philippine Law & Jurisprudence" || r.citekey.startsWith('ra') || r.citekey.startsWith('scp')) ? `
+              <a href="https://www.google.com/search?q=site%3Alawphil.net+${encodeURIComponent(r.title)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[10px] font-semibold bg-amber-50 text-amber-800 hover:bg-amber-600 hover:text-white border border-amber-200 shrink-0" title="Search Lawphil">
+                <i data-lucide="scale" class="w-3 h-3"></i> Lawphil
+              </a>
+            ` : ''}
+            ${r.direct_pdf_url && !r.has_local_pdf ? `
+              <button onclick="downloadFromTable('${r.citekey}')" class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[10px] font-bold bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 shrink-0" title="Auto-download directly from OA/arXiv to disk">
+                <i data-lucide="zap" class="w-3 h-3 fill-amber-500"></i> Auto
+              </button>
+            ` : ''}
+            ${r.flagged ? `
+              <button type="button" onclick="toggleFlagFromTable('${r.citekey}')" class="inline-flex items-center gap-1 px-2 py-1 rounded text-[10px] font-bold bg-amber-500 hover:bg-amber-600 text-white transition-all shadow-xs shrink-0" title="Flagged: Cannot find PDF. Click to unflag.">
+                <i data-lucide="flag" class="w-3 h-3 fill-white"></i> <span>Flagged</span>
+              </button>
+            ` : `
+              <button type="button" onclick="toggleFlagFromTable('${r.citekey}')" class="inline-flex items-center gap-1 px-2 py-1 rounded text-[10px] font-medium bg-slate-100 hover:bg-amber-50 hover:text-amber-800 hover:border-amber-300 text-slate-600 border border-slate-200 transition-colors shrink-0" title="Flag source: No PDF found; candidate for replacement or manuscript text adjustment">
+                <i data-lucide="flag" class="w-3 h-3 text-slate-400"></i> <span>Flag</span>
+              </button>
+            `}
+            <button onclick="inspectFromTable(${r.originalIndex})" class="inline-flex items-center gap-1 bg-slate-100 hover:bg-slate-200 text-slate-700 px-2 py-1 rounded text-[11px] font-semibold border border-slate-300 transition-colors shrink-0" title="Inspect details in Card View">
+              <i data-lucide="sliders" class="w-3 h-3"></i> Inspect
+            </button>
+          </div>
+        `;
+
+        const rowClass = r.flagged 
+          ? "table-entry-row bg-amber-50/60 hover:bg-amber-100/70 border-l-4 border-l-amber-500 transition-all border-b border-amber-200/60"
+          : "table-entry-row hover:bg-slate-50/90 transition-all border-b border-slate-100";
+
+        return `
+          <tr class="${rowClass}" data-citekey="${r.citekey}">
+            <td class="py-2.5 px-3 text-slate-400 text-center font-mono">${idx + 1}</td>
+            <td class="py-2.5 px-3 font-mono font-bold text-slate-900 flex items-center gap-1">
+              <span class="truncate max-w-[120px]">${r.citekey}</span>
+              <button onclick="navigator.clipboard.writeText('${r.citekey}'); showToast('Copied ${r.citekey}');" class="text-slate-400 hover:text-slate-700" title="Copy citekey">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+              </button>
+            </td>
+            <td class="py-2.5 px-4">
+              <div class="font-semibold text-slate-900 leading-snug line-clamp-1" title="${r.title}">${r.title}</div>
+              <div class="text-[11px] text-slate-500 mt-0.5 flex items-center gap-2">
+                <span>${primaryAuthor}</span>
+                <span>&bull;</span>
+                <span>${r.year || 'N/A'}</span>
+              </div>
+            </td>
+            <td class="py-2.5 px-3 text-[11px] text-slate-600 truncate max-w-[110px]">${r.category || 'General'}</td>
+            <td class="py-2.5 px-3 text-center">
+              ${r.is_cited 
+                ? `<span class="bg-indigo-50 text-indigo-700 px-1.5 py-0.5 rounded text-[10px] font-bold">${r.citation_count || 1}x</span>` 
+                : `<span class="text-slate-400 text-[10px]">Uncited</span>`}
+            </td>
+            <td class="py-2.5 px-3 text-center">${statusBadge}</td>
+            <td class="py-2.5 px-3 text-center">${pdfSourceCell}</td>
+            <td class="py-2.5 px-3 text-right">${actionsCell}</td>
+          </tr>
+        `;
+      }).join('');
+
+      attachTableDragAndDrop();
+      lucide.createIcons();
+    }
+
+    // Attach Drag & Drop and File Input Listeners to Table Rows
+    function attachTableDragAndDrop() {
+      // Row-level drag & drop: user can drop anywhere on the row!
+      const rows = tableBody.querySelectorAll('.table-entry-row');
+      rows.forEach(row => {
+        const citekey = row.dataset.citekey;
+
+        ['dragenter', 'dragover'].forEach(ev => {
+          row.addEventListener(ev, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            row.classList.add('bg-blue-100/90', 'ring-2', 'ring-blue-500', 'ring-inset');
+          });
+        });
+
+        row.addEventListener('dragleave', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (!row.contains(e.relatedTarget)) {
+            row.classList.remove('bg-blue-100/90', 'ring-2', 'ring-blue-500', 'ring-inset');
+          }
+        });
+
+        row.addEventListener('drop', async (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          row.classList.remove('bg-blue-100/90', 'ring-2', 'ring-blue-500', 'ring-inset');
+          const file = e.dataTransfer.files[0];
+          if (file) {
+            await uploadPdfForCitekey(citekey, file, row);
+          }
+        });
+      });
+
+      // Table file inputs (clicking browse inside dropzone or replace button)
+      const inputs = tableBody.querySelectorAll('.table-file-input');
+      inputs.forEach(input => {
+        input.addEventListener('change', async (e) => {
+          const file = e.target.files[0];
+          const citekey = input.dataset.citekey;
+          if (file && citekey) {
+            await uploadPdfForCitekey(citekey, file, input.closest('tr'));
+          }
+        });
+      });
+    }
+
+    // Preview PDF from Table
+    window.previewPdfFromTable = function(citekey) {
+      const url = apiBase ? `${apiBase}/docs/references/${citekey}.pdf` : `references/${citekey}.pdf`;
+      pdfIframe.src = url;
+      modalPdfTitle.innerText = `${citekey}.pdf`;
+      previewModal.classList.remove('hide');
+      lucide.createIcons();
+    };
+
+    // Filter Button Clicks
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-blue-600', 'text-white', 'font-semibold', 'active');
+          b.classList.add('bg-slate-200', 'text-slate-700');
+        });
+        btn.classList.add('bg-blue-600', 'text-white', 'font-semibold', 'active');
+        btn.classList.remove('bg-slate-200', 'text-slate-700');
+        currentFilter = btn.dataset.filter;
+        renderTable();
+      });
     });
 
-    // Parse helper for raw BibTeX string
-    function splitBibEntries(text) {
-      const entries = [];
-      let inEntry = false;
-      let depth = 0;
-      let currentStr = "";
-      
-      for (let i = 0; i < text.length; i++) {
-        if (!inEntry && text[i] === '@') {
-          if (currentStr.trim() && entries.length === 0) {
-            rawFilePrefix = currentStr;
-          }
-          inEntry = true;
-          currentStr = '@';
-        } else if (inEntry) {
-          currentStr += text[i];
-          if (text[i] === '{') depth++;
-          if (text[i] === '}') {
-            depth--;
-            if (depth === 0) {
-              entries.push({ raw: currentStr });
-              currentStr = "";
-              inEntry = false;
-            }
-          }
+    tableSearchInput.addEventListener('input', () => renderTable());
+
+    window.inspectFromTable = function(index) {
+      currentIndex = index;
+      setView("card");
+    };
+
+    window.downloadFromTable = async function(citekey) {
+      if (!serverActive) {
+        await checkBackendServer();
+      }
+      if (!serverActive) {
+        alert("Please start the backend server: python scripts/audit_refs.py --serve");
+        return;
+      }
+      showToast(`Downloading ${citekey}.pdf...`);
+      try {
+        const resp = await fetch(`${apiBase}/api/download_single?citekey=${encodeURIComponent(citekey)}`, { method: 'POST' });
+        const res = await resp.json();
+        if (res.success) {
+          showToast(`Saved ${citekey}.pdf (${Math.round(res.size/1024)} KB)!`);
+          const match = references.find(r => r.citekey.toLowerCase() === citekey.toLowerCase());
+          if (match) match.has_local_pdf = true;
+          updateStatsCounts();
+          renderTable();
         } else {
-          currentStr += text[i];
+          alert(`Download failed: ${res.error}`);
         }
+      } catch (e) {
+        alert(`Error: ${e}`);
       }
-      return entries;
-    }
+    };
 
-    function extractField(entryStr, fieldName) {
-      const regex = new RegExp(`\\b${fieldName}\\s*=\\s*`, 'i');
-      const match = entryStr.match(regex);
-      if (!match) return null;
-
-      const startIdx = match.index + match[0].length;
-      let value = "";
-      let char = entryStr[startIdx];
-
-      if (char === '{') {
-        let depth = 1;
-        for (let i = startIdx + 1; i < entryStr.length; i++) {
-          if (entryStr[i] === '{') depth++;
-          if (entryStr[i] === '}') depth--;
-          if (depth === 0) break;
-          value += entryStr[i];
-        }
-      } else if (char === '"') {
-        for (let i = startIdx + 1; i < entryStr.length; i++) {
-          if (entryStr[i] === '"') break;
-          value += entryStr[i];
-        }
-      } else {
-        for (let i = startIdx; i < entryStr.length; i++) {
-          if (entryStr[i] === ',' || entryStr[i] === '}') break;
-          value += entryStr[i];
-        }
-      }
-      return value.replace(/\s+/g, ' ').replace(/[{}]/g, '').trim();
-    }
-
-    function extractCitekey(entryStr) {
-      const match = entryStr.match(/@\w+\s*\{\s*([^,\s]+)/);
-      return match ? match[1].trim() : 'unknown';
-    }
-
-    function extractLastNames(authorString) {
-      if (!authorString || authorString === 'No authors found') return '';
-      const authors = authorString.split(/\s+and\s+/i);
-      const lastNames = authors.map(author => {
-        if (author.includes(',')) {
-          return author.split(',')[0].trim();
-        } else {
-          const parts = author.trim().split(' ');
-          return parts[parts.length - 1];
-        }
-      });
-      return lastNames.join(' ');
-    }
-
-    function applyUpdatesToRaw(rawStr, newUrl, citekey, hasLocalPdf) {
-      const today = new Date().toISOString().split('T')[0];
-      let updated = rawStr;
-      updated = updated.replace(/,\s*url\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+)/gi, '');
-      updated = updated.replace(/,\s*urldate\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+)/gi, '');
-      updated = updated.replace(/,\s*file\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+)/gi, '');
-      updated = updated.replace(/\burl\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+),?\s*/gi, '');
-      updated = updated.replace(/\burldate\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+),?\s*/gi, '');
-      updated = updated.replace(/\bfile\s*=\s*(?:\{[^{}]*\}|"[^"]*"|[^\s,}]+),?\s*/gi, '');
-
-      const lastBraceIndex = updated.lastIndexOf('}');
-      if (lastBraceIndex !== -1) {
-        let base = updated.substring(0, lastBraceIndex).trimEnd();
-        if (base.endsWith(',')) base = base.substring(0, base.length - 1);
-        let inject = "";
-        if (newUrl) {
-          inject += `,\n  url = {${newUrl}},\n  urldate = {${today}}`;
-        }
-        if (hasLocalPdf && citekey) {
-          inject += `,\n  file = {docs/references/${citekey}.pdf}`;
-        }
-        inject += "\n}";
-        return base + inject;
-      }
-      return rawStr;
-    }
-
-    // Populate the Quick Jump select dropdown
-    function populateJumpDropdown() {
-      jumpSelect.innerHTML = "";
-      references.forEach((r, idx) => {
-        const opt = document.createElement('option');
-        opt.value = idx;
-        const icon = (r.url && r.has_local_pdf) ? "✅ " : (!r.url ? "⚠️ " : "📄 ");
-        opt.innerText = `${icon} [${idx + 1}] ${r.citekey}`;
-        jumpSelect.appendChild(opt);
-      });
-    }
-
-    // Restore saved state from localStorage
-    function loadSavedState() {
-      const savedUrls = JSON.parse(localStorage.getItem('thesis_ref_saved_urls') || '{}');
-      const savedNotes = JSON.parse(localStorage.getItem('thesis_ref_saved_notes') || '{}');
-      const savedVerified = JSON.parse(localStorage.getItem('thesis_ref_saved_verified') || '{}');
-      const savedPdfStatus = JSON.parse(localStorage.getItem('thesis_ref_saved_pdfs') || '{}');
-
-      references.forEach(r => {
-        if (savedUrls[r.citekey]) r.url = savedUrls[r.citekey];
-        if (savedNotes[r.citekey]) r.note = savedNotes[r.citekey];
-        if (savedVerified[r.citekey] !== undefined) r.verified = savedVerified[r.citekey];
-        if (savedPdfStatus[r.citekey]) r.has_local_pdf = true;
-      });
-    }
-
-    // Render the active reference
+    // Render Current Card
     async function renderCurrent() {
       if (currentIndex < 0) currentIndex = 0;
       if (currentIndex >= references.length) currentIndex = references.length - 1;
 
       const ref = references[currentIndex];
+      currentOaMatch = null;
+      oaFoundBanner.classList.add('hide');
 
-      // Progress & Indicator
+      // Progress & Indicators
       progressText.innerText = `Reference ${currentIndex + 1} / ${references.length}`;
       const pct = Math.round(((currentIndex + 1) / references.length) * 100);
       progressBar.style.width = `${pct}%`;
@@ -744,19 +1228,15 @@
         urlStatusBadge.className = "bg-amber-100 text-amber-700 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1";
       }
 
-      // Check IndexedDB for attached PDF Blob or local storage
-      const cachedPdf = await getPdfBlob(ref.citekey);
-      const isPdfAttached = !!(cachedPdf || ref.has_local_pdf);
-
-      if (isPdfAttached) {
-        pdfStatusBadge.innerHTML = `<i data-lucide="file-check" class="w-3 h-3 text-emerald-600"></i> PDF Attached`;
+      // Local PDF check
+      if (ref.has_local_pdf) {
+        pdfStatusBadge.innerHTML = `<i data-lucide="file-check" class="w-3 h-3 text-emerald-600"></i> PDF Cached`;
         pdfStatusBadge.className = "bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1";
         
         dropzonePrompt.classList.add('hide');
         attachedFileInfo.classList.remove('hide');
-        attachedFilename.innerText = cachedPdf ? cachedPdf.filename : `${ref.citekey}.pdf`;
-        const sizeKb = cachedPdf ? Math.round(cachedPdf.size / 1024) : 'Ready';
-        attachedFilesize.innerText = `${sizeKb} KB • Stored in library`;
+        attachedFilename.innerText = `${ref.citekey}.pdf`;
+        attachedFilesize.innerText = `Stored in docs/references/`;
 
         const attachedRepoFilename = document.getElementById('attachedRepoFilename');
         const attachedBibtexTag = document.getElementById('attachedBibtexTag');
@@ -770,14 +1250,14 @@
         attachedFileInfo.classList.add('hide');
       }
 
-      // Direct PDF Helper (arXiv / ACL)
-      if (ref.direct_pdf_url && !isPdfAttached) {
+      // Direct PDF Helper Box
+      if (ref.direct_pdf_url && !ref.has_local_pdf) {
         directPdfHelperBox.classList.remove('hide');
       } else {
         directPdfHelperBox.classList.add('hide');
       }
 
-      // Lawphil Button Highlight for Philippine Law
+      // Lawphil Button Highlight
       if (ref.category === "Philippine Law & Jurisprudence" || ref.citekey.startsWith('ra') || ref.citekey.startsWith('scp')) {
         searchLawphilBtn.classList.remove('hide');
       } else {
@@ -786,9 +1266,29 @@
 
       // Notes & Verified
       noteInput.value = ref.note || '';
-      verifiedCheckbox.checked = !!ref.verified || (!!ref.url && isPdfAttached);
+      verifiedCheckbox.checked = !!ref.verified || (!!ref.url && ref.has_local_pdf);
 
-      // Button states
+      // Flag state in Card View
+      if (ref.flagged) {
+        cardFlagBtn.className = "bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold px-2.5 py-1 rounded-md shadow-xs transition-colors flex items-center gap-1.5";
+        cardFlagBtn.title = "Flagged: Cannot find PDF. Click to unflag.";
+        cardFlagBtnText.innerText = "Flagged (No PDF)";
+        cardFlagIcon.setAttribute("class", "w-3.5 h-3.5 fill-white text-white");
+
+        cardFlaggedBanner.classList.remove('hide');
+        cardFlaggedTimestamp.innerText = ref.flag_timestamp ? `Flagged: ${ref.flag_timestamp}` : 'Flagged';
+        const filesList = (ref.cited_in_files && ref.cited_in_files.length) ? ref.cited_in_files.join(', ') : (ref.is_cited ? 'Cited in manuscript' : 'Uncited in thesis');
+        cardFlaggedFiles.innerText = filesList;
+        cardFlaggedCountText.innerText = ref.citation_count ? `Cited ${ref.citation_count} time(s)` : 'Not actively cited';
+      } else {
+        cardFlagBtn.className = "border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-semibold px-2.5 py-1 rounded-md transition-colors flex items-center gap-1.5 shadow-xs";
+        cardFlagBtn.title = "Flag this source: Missing PDF, candidate for replacement or manuscript text adjustment";
+        cardFlagBtnText.innerText = "Flag Source";
+        cardFlagIcon.setAttribute("class", "w-3.5 h-3.5 text-amber-600");
+        cardFlaggedBanner.classList.add('hide');
+      }
+
+      // Buttons
       prevBtn.disabled = currentIndex === 0;
       prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
 
@@ -801,8 +1301,147 @@
       lucide.createIcons();
     }
 
-    // Save current card changes to memory and localStorage
-    function saveCurrentChanges() {
+    // Auto-Find Open-Access PDF via API
+    autoFindOaBtn.addEventListener('click', async () => {
+      const ref = references[currentIndex];
+      if (!serverActive) {
+        alert("Please run 'python scripts/audit_refs.py --serve' to use the automated Open-Access resolver.");
+        return;
+      }
+
+      showToast(`Searching open-access preprints for [${ref.citekey}]...`);
+      try {
+        const resp = await fetch(`${apiBase}/api/resolve_oa?citekey=${encodeURIComponent(ref.citekey)}`);
+        const data = await resp.json();
+
+        if (data.found) {
+          currentOaMatch = data;
+          oaFoundTitle.innerText = `Open-Access Preprint Found via ${data.source}!`;
+          oaFoundDetails.innerText = `${data.arxiv_id ? 'arXiv: ' + data.arxiv_id : ''} (Match Similarity: ${Math.round(data.similarity * 100)}%) &bull; ${data.matched_title || ''}`;
+          oaFoundBanner.classList.remove('hide');
+          showToast(`Found match on ${data.source}!`);
+        } else {
+          showToast(`No exact arXiv match found. Try Google Scholar / Semantic buttons.`);
+        }
+      } catch (err) {
+        alert(`Error querying resolver: ${err}`);
+      }
+    });
+
+    // Apply OA Button
+    applyOaBtn.addEventListener('click', async () => {
+      if (!currentOaMatch) return;
+      const ref = references[currentIndex];
+      urlInput.value = currentOaMatch.abstract_url || currentOaMatch.direct_pdf_url;
+      ref.direct_pdf_url = currentOaMatch.direct_pdf_url;
+
+      showToast(`Downloading ${ref.citekey}.pdf from ${currentOaMatch.source}...`);
+      try {
+        const resp = await fetch(`${apiBase}/api/download_single?citekey=${encodeURIComponent(ref.citekey)}&url=${encodeURIComponent(currentOaMatch.direct_pdf_url)}`, { method: 'POST' });
+        const res = await resp.json();
+        if (res.success) {
+          ref.has_local_pdf = true;
+          oaFoundBanner.classList.add('hide');
+          showToast(`Downloaded & linked ${ref.citekey}.pdf!`);
+          updateStatsCounts();
+          renderCurrent();
+        } else {
+          alert(`Download failed: ${res.error}`);
+        }
+      } catch (e) {
+        alert(`Error downloading: ${e}`);
+      }
+    });
+
+    // Fetch Direct PDF button on card
+    fetchDirectPdfBtn.addEventListener('click', async () => {
+      const ref = references[currentIndex];
+      if (!ref.direct_pdf_url) return;
+
+      if (serverActive) {
+        showToast(`Downloading ${ref.citekey}.pdf...`);
+        try {
+          const resp = await fetch(`${apiBase}/api/download_single?citekey=${encodeURIComponent(ref.citekey)}`, { method: 'POST' });
+          const res = await resp.json();
+          if (res.success) {
+            ref.has_local_pdf = true;
+            showToast(`Saved ${ref.citekey}.pdf to repo!`);
+            updateStatsCounts();
+            renderCurrent();
+          } else {
+            alert(`Download error: ${res.error}`);
+          }
+        } catch (e) {
+          alert(`Error: ${e}`);
+        }
+      } else {
+        const a = document.createElement('a');
+        a.href = ref.direct_pdf_url;
+        a.download = `${ref.citekey}.pdf`;
+        a.target = "_blank";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast(`Download triggered in browser! Drop file to attach.`);
+      }
+    });
+
+    // Batch Download All OA Button
+    batchDownloadBtn.addEventListener('click', async () => {
+      if (!serverActive) {
+        await checkBackendServer();
+      }
+      if (!serverActive) {
+        alert("Batch downloader requires the local server. Run 'python scripts/audit_refs.py --serve' in terminal.");
+        return;
+      }
+
+      if (!confirm("Start automated download of all available open-access PDFs into docs/references/?")) return;
+
+      try {
+        const resp = await fetch(`${apiBase}/api/download_all_oa`, { method: 'POST' });
+        const res = await resp.json();
+        showToast("Batch download started!");
+        startPollingDownloadProgress();
+      } catch (e) {
+        alert(`Error starting batch download: ${e}`);
+      }
+    });
+
+    let pollInterval = null;
+    function startPollingDownloadProgress() {
+      if (pollInterval) clearInterval(pollInterval);
+      downloadProgressBarBanner.classList.remove('hide');
+
+      pollInterval = setInterval(async () => {
+        try {
+          const resp = await fetch(`${apiBase}/api/download_progress`);
+          const state = await resp.json();
+          showDownloadProgress(state);
+
+          if (!state.active) {
+            clearInterval(pollInterval);
+            pollInterval = null;
+            setTimeout(() => {
+              checkBackendServer();
+              downloadProgressBarBanner.classList.add('hide');
+            }, 3000);
+          }
+        } catch (e) {
+          clearInterval(pollInterval);
+        }
+      }, 1000);
+    }
+
+    function showDownloadProgress(state) {
+      downloadStatusMsg.innerText = state.message;
+      downloadProgressRatio.innerText = `${state.current} / ${state.total} (${state.downloaded} saved)`;
+      const pct = state.total > 0 ? Math.round((state.current / state.total) * 100) : 0;
+      batchProgressBar.style.width = `${pct}%`;
+    }
+
+    // Save changes to current card
+    async function saveCurrentChanges() {
       const ref = references[currentIndex];
       const newUrl = urlInput.value.trim();
       const newNote = noteInput.value.trim();
@@ -812,136 +1451,80 @@
       ref.note = newNote;
       ref.verified = isVerified;
 
-      ref.raw = applyUpdatesToRaw(ref.raw, newUrl, ref.citekey, ref.has_local_pdf);
-
-      // Persist to localStorage
-      const savedUrls = JSON.parse(localStorage.getItem('thesis_ref_saved_urls') || '{}');
-      const savedNotes = JSON.parse(localStorage.getItem('thesis_ref_saved_notes') || '{}');
-      const savedVerified = JSON.parse(localStorage.getItem('thesis_ref_saved_verified') || '{}');
-
-      savedUrls[ref.citekey] = newUrl;
-      savedNotes[ref.citekey] = newNote;
-      savedVerified[ref.citekey] = isVerified;
-
-      localStorage.setItem('thesis_ref_saved_urls', JSON.stringify(savedUrls));
-      localStorage.setItem('thesis_ref_saved_notes', JSON.stringify(savedNotes));
-      localStorage.setItem('thesis_ref_saved_verified', JSON.stringify(savedVerified));
-    }
-
-    // PDF Attachment Handler
-    async function handleAttachedPdfFile(file) {
-      if (!file) return;
-      const ref = references[currentIndex];
-      const targetFilename = `${ref.citekey}.pdf`;
-
-      // 1. Store in browser IndexedDB
-      await storePdfBlob(ref.citekey, file, targetFilename);
-      ref.has_local_pdf = true;
-      ref.raw = applyUpdatesToRaw(ref.raw, ref.url, ref.citekey, true);
-
-      // Track in localStorage
-      const savedPdfStatus = JSON.parse(localStorage.getItem('thesis_ref_saved_pdfs') || '{}');
-      savedPdfStatus[ref.citekey] = true;
-      localStorage.setItem('thesis_ref_saved_pdfs', JSON.stringify(savedPdfStatus));
-
-      // 2. If backend server active: send via API directly to docs/references/<citekey>.pdf
       if (serverActive) {
         try {
-          const formData = new FormData();
-          formData.append('pdf', file, targetFilename);
-          const uploadResp = await fetch(`/api/save_pdf?citekey=${encodeURIComponent(ref.citekey)}`, {
+          await fetch(`${apiBase}/api/update_entry`, {
             method: 'POST',
-            body: formData
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ citekey: ref.citekey, url: newUrl, note: newNote, verified: isVerified })
           });
-          if (uploadResp.ok) {
-            showToast(`Saved to repo: docs/references/${targetFilename} & linked in BibTeX!`);
-          }
         } catch (e) {
-          console.warn("Backend auto-save failed:", e);
+          console.warn("Failed to sync entry to server:", e);
         }
       }
-      // 3. Else if bound directory handle exists (File System Access API):
-      else if (boundDirectoryHandle) {
-        try {
-          const fileHandle = await boundDirectoryHandle.getFileHandle(targetFilename, { create: true });
-          const writable = await fileHandle.createWritable();
-          await writable.write(file);
-          await writable.close();
-          showToast(`Written to repo folder: ${targetFilename}`);
-        } catch (err) {
-          console.warn("Direct folder write error:", err);
-        }
-      }
-      // 4. Fallback: prompt browser download as <citekey>.pdf
-      else {
-        showToast(`Attached ${targetFilename}! (Auto-saved to browser library)`);
-      }
-
-      renderCurrent();
     }
 
-    // PDF Dropzone Events
-    pdfFileInput.addEventListener('change', (e) => {
+    // Jump Dropdown
+    function populateJumpDropdown() {
+      jumpSelect.innerHTML = "";
+      references.forEach((r, idx) => {
+        const opt = document.createElement('option');
+        opt.value = idx;
+        let icon = "📄 ";
+        if (r.flagged) icon = "🚩 ";
+        else if (r.url && r.has_local_pdf) icon = "✅ ";
+        else if (!r.url) icon = "⚠️ ";
+        opt.innerText = `${icon} [${idx + 1}] ${r.citekey}`;
+        jumpSelect.appendChild(opt);
+      });
+    }
+
+    // Card View Dropzone Events
+    pdfFileInput.addEventListener('change', async (e) => {
       const file = e.target.files[0];
-      if (file) handleAttachedPdfFile(file);
+      if (!file) return;
+      const ref = references[currentIndex];
+      await uploadPdfForCitekey(ref.citekey, file, pdfDropzone);
     });
 
-    ['dragenter', 'dragover'].forEach(eventName => {
-      pdfDropzone.addEventListener(eventName, (e) => {
+    ['dragenter', 'dragover'].forEach(ev => {
+      pdfDropzone.addEventListener(ev, (e) => {
         e.preventDefault();
+        e.stopPropagation();
         pdfDropzone.classList.add('dropzone-active');
       });
     });
-
-    ['dragleave', 'drop'].forEach(eventName => {
-      pdfDropzone.addEventListener(eventName, (e) => {
+    ['dragleave'].forEach(ev => {
+      pdfDropzone.addEventListener(ev, (e) => {
         e.preventDefault();
-        pdfDropzone.classList.remove('dropzone-active');
+        e.stopPropagation();
+        if (!pdfDropzone.contains(e.relatedTarget)) {
+          pdfDropzone.classList.remove('dropzone-active');
+        }
       });
     });
-
-    pdfDropzone.addEventListener('drop', (e) => {
-      const dt = e.dataTransfer;
-      const file = dt.files[0];
-      if (file && file.type === "application/pdf") {
-        handleAttachedPdfFile(file);
-      } else {
-        alert("Please drop a valid .pdf file.");
+    pdfDropzone.addEventListener('drop', async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      pdfDropzone.classList.remove('dropzone-active');
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        const ref = references[currentIndex];
+        await uploadPdfForCitekey(ref.citekey, file, pdfDropzone);
       }
     });
 
-    // Remove PDF
-    removePdfBtn.addEventListener('click', async (e) => {
-      e.stopPropagation();
+    // Global dragover & drop prevention so browser does not navigate away on mis-drop
+    window.addEventListener('dragover', (e) => e.preventDefault());
+    window.addEventListener('drop', (e) => e.preventDefault());
+
+    // Preview PDF
+    previewPdfBtn.addEventListener('click', () => {
       const ref = references[currentIndex];
-      await deletePdfBlob(ref.citekey);
-      ref.has_local_pdf = false;
-
-      const savedPdfStatus = JSON.parse(localStorage.getItem('thesis_ref_saved_pdfs') || '{}');
-      delete savedPdfStatus[ref.citekey];
-      localStorage.setItem('thesis_ref_saved_pdfs', JSON.stringify(savedPdfStatus));
-
-      showToast(`Removed PDF for [${ref.citekey}]`);
-      renderCurrent();
-    });
-
-    // Preview PDF Modal
-    previewPdfBtn.addEventListener('click', async (e) => {
-      e.stopPropagation();
-      const ref = references[currentIndex];
-      const cached = await getPdfBlob(ref.citekey);
-      if (cached && cached.blob) {
-        const url = URL.createObjectURL(cached.blob);
-        pdfIframe.src = url;
-        modalPdfTitle.innerText = `${ref.citekey}.pdf (${Math.round(cached.size / 1024)} KB)`;
-        previewModal.classList.remove('hide');
-      } else if (serverActive) {
-        pdfIframe.src = `/docs/references/${ref.citekey}.pdf`;
-        modalPdfTitle.innerText = `${ref.citekey}.pdf (From local archive)`;
-        previewModal.classList.remove('hide');
-      } else {
-        alert("No cached PDF blob available in this browser session. Please re-attach the PDF.");
-      }
+      const url = apiBase ? `${apiBase}/docs/references/${ref.citekey}.pdf` : `references/${ref.citekey}.pdf`;
+      pdfIframe.src = url;
+      modalPdfTitle.innerText = `${ref.citekey}.pdf`;
+      previewModal.classList.remove('hide');
     });
 
     closeModalBtn.addEventListener('click', () => {
@@ -949,69 +1532,40 @@
       pdfIframe.src = "about:blank";
     });
 
-    // Fetch Direct Open-Access PDF (e.g. arXiv / ACL)
-    fetchDirectPdfBtn.addEventListener('click', async () => {
-      const ref = references[currentIndex];
-      if (!ref.direct_pdf_url) return;
-
-      showToast(`Fetching ${ref.citekey}.pdf...`);
-      // Trigger download with proper filename
-      const a = document.createElement('a');
-      a.href = ref.direct_pdf_url;
-      a.download = `${ref.citekey}.pdf`;
-      a.target = "_blank";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      showToast(`Downloaded ${ref.citekey}.pdf! Drop it in the box to attach.`);
-    });
-
     // Search Actions
     searchGoogleBtn.addEventListener('click', () => {
       const ref = references[currentIndex];
       if (ref.title) {
-        const lastNames = extractLastNames(ref.author);
-        const query = `"${ref.title}" ${lastNames} ${ref.year || ''}`.trim();
-        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+        const q = `"${ref.title}" ${ref.author ? ref.author.split(' and ')[0] : ''} ${ref.year || ''}`.trim();
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(q)}`, '_blank');
       }
     });
 
     searchScholarBtn.addEventListener('click', () => {
       const ref = references[currentIndex];
-      if (ref.title) {
-        window.open(`https://scholar.google.com/scholar?q=${encodeURIComponent(ref.title)}`, '_blank');
-      }
+      if (ref.title) window.open(`https://scholar.google.com/scholar?q=${encodeURIComponent(ref.title)}`, '_blank');
     });
 
     searchSemanticBtn.addEventListener('click', () => {
       const ref = references[currentIndex];
-      if (ref.title) {
-        window.open(`https://www.semanticscholar.org/search?q=${encodeURIComponent(ref.title)}`, '_blank');
-      }
+      if (ref.title) window.open(`https://www.semanticscholar.org/search?q=${encodeURIComponent(ref.title)}`, '_blank');
     });
 
     searchLawphilBtn.addEventListener('click', () => {
       const ref = references[currentIndex];
-      if (ref.title) {
-        window.open(`https://www.google.com/search?q=site%3Alawphil.net+${encodeURIComponent(ref.title)}`, '_blank');
-      }
+      if (ref.title) window.open(`https://www.google.com/search?q=site%3Alawphil.net+${encodeURIComponent(ref.title)}`, '_blank');
     });
 
     openUrlBtn.addEventListener('click', () => {
-      const url = urlInput.value.trim();
-      if (url) {
-        window.open(url, '_blank');
-      } else {
-        alert("Please enter a URL first.");
-      }
+      const u = urlInput.value.trim();
+      if (u) window.open(u, '_blank');
+      else alert("Please enter a URL first.");
     });
 
     copyTitleBtn.addEventListener('click', () => {
-      const t = titleBox.value;
-      if (t) {
-        navigator.clipboard.writeText(t);
-        showToast("Title copied to clipboard!");
+      if (titleBox.value) {
+        navigator.clipboard.writeText(titleBox.value);
+        showToast("Title copied!");
       }
     });
 
@@ -1021,21 +1575,21 @@
       showToast(`Copied \\cite{${ck}}!`);
     });
 
-    // Navigation Controls
-    updateBtn.addEventListener('click', () => {
-      saveCurrentChanges();
+    // Navigation
+    updateBtn.addEventListener('click', async () => {
+      await saveCurrentChanges();
       if (currentIndex < references.length - 1) {
         currentIndex++;
         renderCurrent();
         urlInput.focus();
       } else {
-        alert("🎉 Congratulations! You have reached the end of the bibliography! Click 'Export .bib' or 'Export Log' in the top bar to save your results.");
+        alert("Reached end of bibliography!");
       }
     });
 
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', async () => {
       if (currentIndex > 0) {
-        saveCurrentChanges();
+        await saveCurrentChanges();
         currentIndex--;
         renderCurrent();
       }
@@ -1048,53 +1602,127 @@
       }
     });
 
-    // Quick Jump Buttons
-    nextMissingUrlBtn.addEventListener('click', () => {
-      saveCurrentChanges();
+    nextMissingUrlBtn.addEventListener('click', async () => {
+      await saveCurrentChanges();
       for (let i = currentIndex + 1; i < references.length; i++) {
-        if (!references[i].url) {
-          currentIndex = i;
-          renderCurrent();
-          return;
-        }
+        if (!references[i].url) { currentIndex = i; renderCurrent(); return; }
       }
-      // Wrap around from beginning
       for (let i = 0; i <= currentIndex; i++) {
-        if (!references[i].url) {
-          currentIndex = i;
-          renderCurrent();
-          return;
-        }
+        if (!references[i].url) { currentIndex = i; renderCurrent(); return; }
       }
       showToast("All references have URLs!");
     });
 
     nextMissingPdfBtn.addEventListener('click', async () => {
-      saveCurrentChanges();
+      await saveCurrentChanges();
       for (let i = currentIndex + 1; i < references.length; i++) {
-        const cached = await getPdfBlob(references[i].citekey);
-        if (!cached && !references[i].has_local_pdf) {
-          currentIndex = i;
-          renderCurrent();
-          return;
-        }
+        if (!references[i].has_local_pdf) { currentIndex = i; renderCurrent(); return; }
       }
-      // Wrap around from beginning
       for (let i = 0; i <= currentIndex; i++) {
-        const cached = await getPdfBlob(references[i].citekey);
-        if (!cached && !references[i].has_local_pdf) {
-          currentIndex = i;
-          renderCurrent();
-          return;
-        }
+        if (!references[i].has_local_pdf) { currentIndex = i; renderCurrent(); return; }
       }
-      showToast("All references have PDFs attached!");
+      showToast("All references have attached PDFs!");
     });
 
-    jumpSelect.addEventListener('change', (e) => {
-      saveCurrentChanges();
+    jumpSelect.addEventListener('change', async (e) => {
+      await saveCurrentChanges();
       currentIndex = parseInt(e.target.value, 10);
       renderCurrent();
+    });
+
+    // Export Log
+    exportLogBtn.addEventListener('click', () => {
+      const log = references.map(r => ({
+        citekey: r.citekey,
+        title: r.title,
+        author: r.author,
+        year: r.year,
+        url: r.url,
+        has_pdf: !!r.has_local_pdf,
+        verified: !!r.verified,
+        note: r.note || '',
+        category: r.category,
+        is_cited_in_thesis: r.is_cited
+      }));
+      const blob = new Blob([JSON.stringify(log, null, 2)], { type: 'application/json;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'references_verification_log.json';
+      a.click();
+    });
+
+    // Jump to next flagged reference
+    nextFlaggedBtn.addEventListener('click', async () => {
+      await saveCurrentChanges();
+      for (let i = currentIndex + 1; i < references.length; i++) {
+        if (references[i].flagged) { currentIndex = i; renderCurrent(); return; }
+      }
+      for (let i = 0; i <= currentIndex; i++) {
+        if (references[i].flagged) { currentIndex = i; renderCurrent(); return; }
+      }
+      showToast("No flagged references found!");
+    });
+
+    // Card View Flag Button
+    cardFlagBtn.addEventListener('click', async () => {
+      const ref = references[currentIndex];
+      if (ref) {
+        await toggleFlagForCitekey(ref.citekey);
+      }
+    });
+
+    // Card View Unflag button inside alert banner
+    if (cardUnflagActionBtn) {
+      cardUnflagActionBtn.addEventListener('click', async () => {
+        const ref = references[currentIndex];
+        if (ref) {
+          await toggleFlagForCitekey(ref.citekey);
+        }
+      });
+    }
+
+    // Export Flagged for Review (Markdown)
+    exportFlaggedBtn.addEventListener('click', () => {
+      const flaggedRefs = references.filter(r => r.flagged);
+      if (flaggedRefs.length === 0) {
+        alert("No references are currently flagged!\n\nTo flag references where no PDF could be found, click the 'Flag' button in the Table Overview or Card Inspector.");
+        return;
+      }
+
+      let md = `# Flagged References for Thesis Manuscript Review\n\n`;
+      md += `**Generated:** ${new Date().toLocaleString()}\n`;
+      md += `**Total Flagged Sources:** ${flaggedRefs.length}\n`;
+      md += `**Purpose:** Identify sources where no verifiable PDF could be found, so proponents can substitute them with accessible sources or adjust manuscript prose.\n\n`;
+      md += `| # | Citekey | Title | Primary Author | Year | Cited In Files | Recommended Action |\n`;
+      md += `|---|---|---|---|---|---|---|\n`;
+
+      flaggedRefs.forEach((r, i) => {
+        const author = r.author ? r.author.split(' and ')[0] : 'Unknown';
+        const files = (r.cited_in_files && r.cited_in_files.length) ? r.cited_in_files.join(', ') : (r.is_cited ? 'Cited in manuscript' : 'Not cited');
+        const title = (r.title || '').replace(/\|/g, '\\|');
+        md += `| ${i + 1} | \`${r.citekey}\` | ${title} | ${author} | ${r.year || 'N/A'} | \`${files}\` | Find substitute PDF or adjust/remove manuscript citation |\n`;
+      });
+
+      md += `\n## Granular Action Plan per Reference\n\n`;
+      flaggedRefs.forEach((r, i) => {
+        md += `### ${i + 1}. \`${r.citekey}\`: ${r.title}\n`;
+        md += `- **Authors:** ${r.author || 'N/A'}\n`;
+        md += `- **Venue / Year:** ${r.venue || 'N/A'} (${r.year || 'N/A'})\n`;
+        md += `- **Current URL:** ${r.url || 'None'}\n`;
+        md += `- **Manuscript Citations:** ${(r.cited_in_files && r.cited_in_files.length) ? r.cited_in_files.map(f => '`' + f + '`').join(', ') : 'None'}\n`;
+        md += `- **Citation Count:** ${r.citation_count || 0} time(s)\n`;
+        md += `- **Action:** ${r.flag_reason || 'Missing PDF. Find substitute paper or remove/rephrase text in manuscript.'}\n\n`;
+      });
+
+      const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      const dateStr = new Date().toISOString().slice(0, 10);
+      a.download = `flagged_references_review_${dateStr}.md`;
+      a.click();
+      showToast(`Exported ${flaggedRefs.length} flagged references to Markdown!`);
     });
 
     // Keyboard Shortcuts
@@ -1112,124 +1740,14 @@
       } else if (e.ctrlKey && e.key === 'ArrowRight') {
         e.preventDefault();
         skipBtn.click();
-      } else if (e.ctrlKey && e.key.toLowerCase() === 'g') {
-        e.preventDefault();
-        searchGoogleBtn.click();
       }
-    });
-
-    // Export Updated .bib file
-    downloadBtn.addEventListener('click', () => {
-      saveCurrentChanges();
-      let fullOutput = rawFilePrefix;
-      if (!fullOutput) {
-        fullOutput = "% ====================================================================\n";
-        fullOutput += "% Verified Bibliography with Authentic URLs & DOIs\n";
-        fullOutput += `% Generated on ${new Date().toISOString()}\n`;
-        fullOutput += "% ====================================================================\n\n";
-      }
-
-      fullOutput += references.map(ref => {
-        let raw = ref.raw;
-        raw = applyUpdatesToRaw(raw, ref.url, ref.citekey, ref.has_local_pdf);
-        return raw.trim();
-      }).join('\n\n');
-
-      const blob = new Blob([fullOutput], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'references_verified.bib';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      showToast("Exported references_verified.bib!");
-    });
-
-    // Export Verification Log (JSON for Antigravity automated audit)
-    exportLogBtn.addEventListener('click', () => {
-      saveCurrentChanges();
-      const log = references.map(r => ({
-        citekey: r.citekey,
-        title: r.title,
-        author: r.author,
-        year: r.year,
-        url: r.url,
-        has_pdf: !!r.has_local_pdf,
-        verified: !!r.verified,
-        note: r.note || '',
-        category: r.category,
-        is_cited_in_thesis: r.is_cited,
-        citation_count: r.citation_count || 0
-      }));
-
-      const blob = new Blob([JSON.stringify(log, null, 2)], { type: 'application/json;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'references_verification_log.json';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      showToast("Exported references_verification_log.json!");
-    });
-
-    // Load External .bib file if selected
-    fileInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        const content = event.target.result;
-        const rawEntries = splitBibEntries(content);
-        
-        references = rawEntries.map(entry => {
-          const raw = entry.raw;
-          const ck = extractCitekey(raw);
-          return {
-            citekey: ck,
-            raw: raw,
-            entry_type: (raw.match(/@(\w+)/) || [])[1] || 'article',
-            title: extractField(raw, 'title') || 'No title found',
-            author: extractField(raw, 'author') || 'No authors found',
-            year: extractField(raw, 'year') || '',
-            venue: extractField(raw, 'journal') || extractField(raw, 'booktitle') || extractField(raw, 'publisher') || '',
-            url: extractField(raw, 'url') || '',
-            doi: extractField(raw, 'doi') || '',
-            category: 'External Upload',
-            is_cited: true,
-            citation_count: 1,
-            has_local_pdf: false,
-            verified: false,
-            note: ''
-          };
-        });
-
-        if (references.length > 0) {
-          currentIndex = 0;
-          populateJumpDropdown();
-          loadSavedState();
-          renderCurrent();
-          showToast(`Loaded ${references.length} references from ${file.name}!`);
-        } else {
-          alert('No valid BibTeX entries found in selected file.');
-        }
-      };
-      reader.readAsText(file);
     });
 
     // Initialization
     async function init() {
-      await initDB();
-
-      // Check if preloaded thesis references are available from references_data.js
-      if (window.REFERENCES_DATA && Array.isArray(window.REFERENCES_DATA) && window.REFERENCES_DATA.length > 0) {
+      if (window.REFERENCES_DATA && Array.isArray(window.REFERENCES_DATA)) {
         references = window.REFERENCES_DATA.map(r => ({
           ...r,
-          raw: r.raw_bib || `@article{${r.citekey},\n  title={${r.title}}\n}`,
           verified: false,
           note: ''
         }));
@@ -1238,12 +1756,16 @@
       if (references.length > 0) {
         currentIndex = 0;
         populateJumpDropdown();
-        loadSavedState();
+        updateStatsCounts();
         await renderCurrent();
       }
 
-      // Check for local Python backend
-      checkBackendServer();
+      await checkBackendServer();
+
+      // Poll periodically to catch backend server startup without manual refresh
+      setInterval(() => {
+        if (!serverActive) checkBackendServer();
+      }, 4000);
     }
 
     window.addEventListener('DOMContentLoaded', init);

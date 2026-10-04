@@ -1,0 +1,28 @@
+{
+  "li2012detecting": {
+    "citekey": "li2012detecting",
+    "flagged": true,
+    "title": "Detecting Conflicts in Legal Systems",
+    "author": "Li, Tingting and Balke, Tina and De Vos, Marina and Satoh, Ken and Padget, Julian",
+    "year": "2012",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "citation_count": 2,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-04 16:45:24"
+  },
+  "nunez2026pomi": {
+    "citekey": "nunez2026pomi",
+    "flagged": true,
+    "title": "POMI: A Corpus to Support a Natural Language Inference-based Approach for Detecting Misinformation in Philippine Online News",
+    "author": "Nu nez, Kristine Bernadette Q. and Abcede, Ma. Pauline G. and Salazar, Led Rhoniel R. and Chua, Yvonne T. and Romero II, Victor M. and Gabud, Roselyn S. and Regonia, Paul Rossener R.",
+    "year": "2026",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "citation_count": 2,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-04 16:45:33"
+  }
+}
