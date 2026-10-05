@@ -17,6 +17,7 @@ data/unified_dual_statutory_provisions*.jsonl
 output/*.jsonl
 output/*.pkl
 output/*.npy
+output/kaggle/
 output/embedding_progress.json
 output/gt350_retrieval_cache.json
 transcript_quality_report.csv

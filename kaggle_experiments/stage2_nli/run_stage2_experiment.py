@@ -44,7 +44,7 @@ def main():
     # 2. Workspace & Repo Synchronization
     print("\n[+] Step 2: Synchronizing Repository Workspace...")
     working_dir = Path("/kaggle/working")
-    repo_dir = working_dir / "thesis-repo"
+    repo_dir = Path("/tmp/thesis-repo")
 
     repo_url = "https://github.com/yyaahhzxc/thesis-repo.git"
     if not repo_dir.exists():
