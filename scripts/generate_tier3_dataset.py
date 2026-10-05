@@ -1,0 +1,220 @@
+"""
+generate_tier3_dataset.py
+=========================
+Generates the canonical data/tier3_jurisprudential_cases.jsonl dataset
+containing:
+- 8 Landmark Davao City Local Controversies (N = 8, Table 3.x in thesis methodology)
+- 3 Landmark Philippine Statutory Preemption Pillars (N = 3, Magtajas, Laguio, Batangas CATV)
+Total N = 11 cases with explicit Premise (Statute) and Hypothesis (Challenged Local Clause).
+"""
+
+import json
+import os
+
+cases = [
+    {
+        "case_id": "DAVAO-TIER3-01",
+        "case_name": "Mosqueda v. Pilipino Banana Growers & Exporters Association, Inc.",
+        "docket_no": "G.R. Nos. 189185 & 189305",
+        "promulgation_date": "August 16, 2016",
+        "scra_citation": "798 SCRA 389",
+        "scope": "davao_landmark",
+        "ordinance_no": "Ordinance No. 0309-07",
+        "series": 2007,
+        "title": "AN ORDINANCE BANNING AERIAL SPRAYING AS AN AGRICULTURAL PRACTICE IN ALL AGRICULTURAL ACTIVITIES BY ALL AGRICULTURAL ENTITIES IN DAVAO CITY",
+        "challenged_text": "Section 5: Ban on Aerial Spraying. Aerial spraying shall be strictly prohibited in all agricultural activities in Davao City after a three (3) month transition period from the effectivity of this Ordinance. Section 6: Buffer Zone. All agricultural entities must maintain a mandatory thirty (30) meter buffer zone within the boundaries of their plantations.",
+        "controlling_statute": "Presidential Decree No. 1144 §6",
+        "statute_title": "Creating the Fertilizer and Pesticide Authority",
+        "premise_text": "Section 6. Powers and Functions. The Fertilizer and Pesticide Authority shall have jurisdiction over all fertilizers, pesticides, and other agricultural chemicals, and shall regulate and monitor their importation, manufacture, formulation, sale, distribution, delivery, transport, storage, handling and use in order to assure agricultural productivity and environmental safety.",
+        "ruling": "Unconstitutional and Ultra Vires (Overturned)",
+        "gold_nli_label": "Contradiction",
+        "legal_rationale": "Under the Magtajas doctrine, an ordinance cannot prohibit an activity expressly permitted or regulated by national law. PD 1144 vests exclusive jurisdiction in the Fertilizer and Pesticide Authority to regulate agricultural chemical application methods."
+    },
+    {
+        "case_id": "DAVAO-TIER3-02",
+        "case_name": "Hon. Leoncio Evasco, Jr. v. Alex P. Montañez",
+        "docket_no": "G.R. No. 199172",
+        "promulgation_date": "February 21, 2018",
+        "scra_citation": "856 SCRA 320",
+        "scope": "davao_landmark",
+        "ordinance_no": "Ordinance No. 092-2000",
+        "series": 2000,
+        "title": "AN ORDINANCE REGULATING THE CONSTRUCTION, REPAIR, RENOVATION, ERECTION, INSTALLATION AND MAINTENANCE OF OUTDOOR ADVERTISING MATERIALS AND STRUCTURES IN DAVAO CITY",
+        "challenged_text": "Section 7: Billboards and Signages. Outdoor advertising signs and commercial billboards are strictly prohibited in residential zones. Free-standing billboards along public highways must maintain an unobstructed 150-meter line of sight and must be located at least 10 meters away from property lines abutting the road right-of-way.",
+        "controlling_statute": "Republic Act No. 7160 §458(a)(4)(iv); Presidential Decree No. 1096 §301",
+        "statute_title": "Local Government Code of 1991 & National Building Code",
+        "premise_text": "Section 458(a)(4)(iv). The sangguniang panlungsod shall regulate the display and prescribe the physical setback of signs, signboards, and commercial billboards along public roads and highways within the territorial jurisdiction of the city.",
+        "ruling": "Constitutional and Valid Exercise of Police Power (Upheld)",
+        "gold_nli_label": "Entailment",
+        "legal_rationale": "Under RA 7160 §458(a)(4)(iv), city councils possess explicit statutory police power to regulate advertising displays and signboards, harmoniously complementing the National Building Code."
+    },
+    {
+        "case_id": "DAVAO-TIER3-03",
+        "case_name": "City of Davao and Tanjili v. ARC Investors, Inc.",
+        "docket_no": "G.R. No. 249668",
+        "promulgation_date": "July 13, 2022",
+        "scra_citation": "G.R. No. 249668 En Banc Decision",
+        "scope": "davao_landmark",
+        "ordinance_no": "Ordinance No. 158-05 §135",
+        "series": 2005,
+        "title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (LOCAL BUSINESS TAX ON HOLDING ENTITIES)",
+        "challenged_text": "Section 135: Tax on Financial Institutions and Holding Corporations. Imposes local business taxes on banks, banking institutions, and holding entities receiving dividend income and investment interest, categorizing corporate holding firms as non-bank financial intermediaries.",
+        "controlling_statute": "Republic Act No. 7160 §143(f); Republic Act No. 8791 §3",
+        "statute_title": "Local Government Code of 1991 & General Banking Law of 2000",
+        "premise_text": "Section 143(f). The municipality or city may impose taxes on banks and other financial institutions, non-bank financial intermediaries, lending investors, and finance companies authorized and regulated by the Bangko Sentral ng Pilipinas.",
+        "ruling": "Ultra Vires Assessment Struck Down (Overturned)",
+        "gold_nli_label": "Contradiction",
+        "legal_rationale": "A holding company passively earning dividend income is not a non-bank financial intermediary without express Bangko Sentral ng Pilipinas licensing. LGUs cannot redefine statutory banking categories."
+    },
+    {
+        "case_id": "DAVAO-TIER3-04",
+        "case_name": "City of Davao and Dureza v. First Meridian Development, Inc.",
+        "docket_no": "G.R. No. 240078",
+        "promulgation_date": "October 19, 2022",
+        "scra_citation": "G.R. No. 240078 Decision",
+        "scope": "davao_landmark",
+        "ordinance_no": "Ordinance No. 158-05 §423",
+        "series": 2005,
+        "title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (MANDATORY PAYMENT UNDER PROTEST)",
+        "challenged_text": "Section 423: Payment Under Protest. No protest against an assessment shall be entertained unless the taxpayer first pays under protest the tax assessed, stating the legal grounds within thirty (30) days from payment.",
+        "controlling_statute": "Republic Act No. 7160 §195",
+        "statute_title": "Local Government Code of 1991",
+        "premise_text": "Section 195. Protest of Assessment. When the local treasurer finds that correct taxes have not been paid, he shall issue an assessment. The taxpayer may file a written protest with the local treasurer within sixty (60) days from receipt of the notice without being required to pay the assessment under protest.",
+        "ruling": "Ultra Vires and Void (Overturned)",
+        "gold_nli_label": "Contradiction",
+        "legal_rationale": "Section 195 of the Local Government Code governing business taxes deliberately does not require payment under protest. Local councils cannot impose restrictive procedural preconditions not authorized by statute."
+    },
+    {
+        "case_id": "DAVAO-TIER3-05",
+        "case_name": "City of Davao v. Court of Appeals and GSIS",
+        "docket_no": "G.R. No. 127383",
+        "promulgation_date": "August 18, 2005",
+        "scra_citation": "467 SCRA 280",
+        "scope": "davao_landmark",
+        "ordinance_no": "Davao City Real Property Tax Assessment on GSIS",
+        "series": 2001,
+        "title": "DAVAO CITY MUNICIPAL REAL PROPERTY TAX ASSESSMENT ON GSIS PROPERTIES",
+        "challenged_text": "Assessment Mandate: Notices of assessment and warrants of levy imposing municipal real property taxes upon GSIS properties located in Matina and Ulas, Davao City, for outstanding municipal tax liabilities.",
+        "controlling_statute": "Republic Act No. 7160 §193, §234",
+        "statute_title": "Local Government Code of 1991",
+        "premise_text": "Section 193 & Section 234. Withdrawal of Tax Exemption Privileges. Unless otherwise provided in this Code, tax exemptions or the incentive privileges granted to or presently enjoyed by all persons, whether natural or juridical, including government-owned or controlled corporations, are hereby withdrawn.",
+        "ruling": "Constitutional and Valid (Upheld)",
+        "gold_nli_label": "Entailment",
+        "legal_rationale": "Sections 193 and 234 of RA 7160 expressly withdrew prior real property tax exemptions of government-owned or controlled corporations, making Davao City's municipal tax assessment a lawful exercise of delegated authority."
+    },
+    {
+        "case_id": "DAVAO-TIER3-06",
+        "case_name": "Davao City Mining Ban and Panigan-Tamugan Watershed Dispute",
+        "docket_no": "SP Resolution / May 2015 Mining Ban Ordinance",
+        "promulgation_date": "May 12, 2015",
+        "scra_citation": "Enactment Review under RA 7942",
+        "scope": "davao_landmark",
+        "ordinance_no": "Ordinance No. 0310-07 & 2015 Mining Ban Ordinance",
+        "series": 2015,
+        "title": "THE DAVAO CITY WATERSHED PROTECTION AND MINING BAN ORDINANCE",
+        "challenged_text": "Section 2: Total Mining Ban. No mining operations of any nature, whether large-scale or small-scale, shall be permitted anywhere within the territorial jurisdiction of Davao City. The City Mayor shall refuse to issue business permits or Mayor's clearances to any entity holding national mineral agreements (MPSAs) from the national government.",
+        "controlling_statute": "Republic Act No. 7942 §4, §27",
+        "statute_title": "Philippine Mining Act of 1995",
+        "premise_text": "Section 4 & Section 27. Ownership of Mineral Resources. All mineral resources in public or private lands within the territory and exclusive economic zone of the Republic of the Philippines are owned by the State. Exploration and mining operations authorized under national mineral agreements shall be governed by national concessions issued by the national government.",
+        "ruling": "Active Vertical Preemption / Ultra Vires under Magtajas",
+        "gold_nli_label": "Contradiction",
+        "legal_rationale": "Under the Magtajas doctrine, an ordinance cannot forbid what national law permits. Blanket territorial bans on mining collide directly with national statutory concessions under RA 7942."
+    },
+    {
+        "case_id": "DAVAO-TIER3-07",
+        "case_name": "Davao City Comprehensive Anti-Smoking Ordinance vs. National Standards",
+        "docket_no": "Promulgated as Ord. No. 0367-12",
+        "promulgation_date": "May 31, 2013",
+        "scra_citation": "Health Justice Jurisprudence Review",
+        "scope": "davao_landmark",
+        "ordinance_no": "Ordinance No. 0367-12",
+        "series": 2012,
+        "title": "THE NEW COMPREHENSIVE ANTI-SMOKING ORDINANCE OF DAVAO CITY",
+        "challenged_text": "Section 4 & Section 5: Prohibition and DSA Setbacks. Smoking is prohibited in all public conveyances and enclosed public spaces, and designated smoking areas must be open outdoor spaces situated not less than ten (10) meters away from building entrances, exits, and windows, exceeding national statutory minimums.",
+        "controlling_statute": "Republic Act No. 7160 §16; Republic Act No. 9211 §5",
+        "statute_title": "Local Government Code of 1991 & Tobacco Regulation Act of 2003",
+        "premise_text": "Section 16. General Welfare Clause. Every local government unit shall exercise powers essential to the promotion of the general welfare, the maintenance of public health and safety, and the protection of the inhabitants from harmful environmental exposure.",
+        "ruling": "Valid Stricter Police Power Standard (Upheld)",
+        "gold_nli_label": "Entailment",
+        "legal_rationale": "National health statutes establish minimum baseline standards, not maximum ceilings. Stricter local health measures under police power are valid provided they do not legalize what national law prohibits."
+    },
+    {
+        "case_id": "DAVAO-TIER3-08",
+        "case_name": "Davao City Comprehensive Speed Limit Ordinance under Joint JAO 2018-01",
+        "docket_no": "Promulgated as Ord. No. 0270-23",
+        "promulgation_date": "October 2023",
+        "scra_citation": "Landmark Road Safety Enactment",
+        "scope": "davao_landmark",
+        "ordinance_no": "Ordinance No. 0270-23",
+        "series": 2023,
+        "title": "THE COMPREHENSIVE SPEED LIMIT ORDINANCE OF DAVAO CITY",
+        "challenged_text": "Section 4: Speed Limit Classification. Classifies city roads into Open Roads (80 kph private / 50 kph trucks), Through Streets (40 kph / 30 kph), City Streets (30 kph), and Crowded Residential Streets (20 kph), enforced by calibrated radar speed cameras.",
+        "controlling_statute": "Republic Act No. 4136 §35, §38; Joint DILG-DOTr-DPWH JAO 2018-01",
+        "statute_title": "Land Transportation and Traffic Code & Joint Administrative Order 2018-01",
+        "premise_text": "Section 38 & JAO 2018-01. Speed Limits on Local Roads. Local government units are authorized to classify roads within their territorial boundaries and prescribe appropriate maximum and minimum speed limits consistent with public safety, geometric road conditions, and pedestrian traffic.",
+        "ruling": "Valid Delegated Local Speed Setting (Upheld)",
+        "gold_nli_label": "Entailment",
+        "legal_rationale": "National traffic statutes and Joint JAO 2018-01 expressly delegate speed classification and local road rate-setting powers to local government units."
+    },
+    {
+        "case_id": "SC-PHIL-09",
+        "case_name": "Magtajas v. Pryce Properties Corp. and PAGCOR",
+        "docket_no": "G.R. No. 111097",
+        "promulgation_date": "July 20, 1994",
+        "scra_citation": "234 SCRA 255",
+        "scope": "national_preemption_pillar",
+        "ordinance_no": "Cagayan de Oro Ord. No. 3353 & Ord. No. 3375-93",
+        "series": 1993,
+        "title": "AN ORDINANCE PROHIBITING THE OPERATION OF CASINOS IN THE CITY OF CAGAYAN DE ORO",
+        "challenged_text": "Section 1: Prohibition of Casinos. The opening, establishment, and operation of casinos and all forms of gambling are strictly prohibited and banned within the territorial jurisdiction of the City of Cagayan de Oro.",
+        "controlling_statute": "Presidential Decree No. 1869 §1; Republic Act No. 7160 §5(a)",
+        "statute_title": "PAGCOR Charter & Local Government Code of 1991",
+        "premise_text": "Section 1. PAGCOR Charter. PAGCOR is hereby authorized and empowered to establish, operate, and maintain gambling casinos, clubs, and other recreational facilities within the territorial jurisdiction of the Philippines to generate government revenues.",
+        "ruling": "Ordinances Null and Void / Foundational Preemption Ruling (Overturned)",
+        "gold_nli_label": "Contradiction",
+        "legal_rationale": "An ordinance cannot permit what a statute forbids, nor forbid what a statute permits. Local councils are merely delegated agents of the national legislature."
+    },
+    {
+        "case_id": "SC-PHIL-10",
+        "case_name": "City of Manila v. Laguio, Jr.",
+        "docket_no": "G.R. No. 118127",
+        "promulgation_date": "April 12, 2005",
+        "scra_citation": "455 SCRA 308",
+        "scope": "national_preemption_pillar",
+        "ordinance_no": "Manila Ordinance No. 7783",
+        "series": 1993,
+        "title": "AN ORDINANCE PROHIBITING THE ESTABLISHMENT OR OPERATION OF MOTELS, INNS, AND KARAOKE BARS IN ERMITA-MALATE",
+        "challenged_text": "Section 1: Closure of Hospitality Establishments. Prohibits the establishment or operation of motels, inns, and karaoke bars in the Ermita-Malate district, ordering their permanent closure or relocation within three (3) months without just compensation.",
+        "controlling_statute": "1987 Constitution, Article III, Section 1; Republic Act No. 7160 §458",
+        "statute_title": "1987 Philippine Constitution (Due Process Clause)",
+        "premise_text": "Article III, Section 1. No person shall be deprived of life, liberty, or property without due process of law, nor shall any person be denied the equal protection of the laws.",
+        "ruling": "Ordinance Declared Unconstitutional (Overturned)",
+        "gold_nli_label": "Contradiction",
+        "legal_rationale": "Prohibiting lawful commercial businesses instead of regulating them violates substantive due process. Local police power cannot arbitrarily destroy legitimate enterprises."
+    },
+    {
+        "case_id": "SC-PHIL-11",
+        "case_name": "Batangas CATV, Inc. v. Court of Appeals",
+        "docket_no": "G.R. No. 138810",
+        "promulgation_date": "October 29, 2004",
+        "scra_citation": "441 SCRA 530",
+        "scope": "national_preemption_pillar",
+        "ordinance_no": "Batangas SP Resolution No. 210, Series of 1993",
+        "series": 1993,
+        "title": "RESOLUTION REGULATING THE CABLE TELEVISION FRANCHISE AND SUBSCRIBER RATES OF BATANGAS CATV, INC.",
+        "challenged_text": "Section 2: Cable Rate Regulation. The Sangguniang Panlungsod assumes authority to fix, regulate, and adjust subscriber rates and channel programming charges for commercial cable television services.",
+        "controlling_statute": "Executive Order No. 205 §2; Executive Order No. 546 §15",
+        "statute_title": "National Telecommunications Commission Regulatory Mandate",
+        "premise_text": "Section 2 & Section 15. The National Telecommunications Commission shall have exclusive jurisdiction and authority over the regulation, supervision, rate-fixing, and licensing of cable television systems throughout the Philippines.",
+        "ruling": "Resolution and Rate-Fixing Powers Struck Down (Overturned)",
+        "gold_nli_label": "Contradiction",
+        "legal_rationale": "Executive orders vest exclusive regulatory and rate-fixing authority over cable television in the National Telecommunications Commission. Where national law occupies the regulatory field, municipal ordinances are preempted."
+    }
+]
+
+out_path = os.path.join("data", "tier3_jurisprudential_cases.jsonl")
+with open(out_path, "w", encoding="utf-8") as f:
+    for c in cases:
+        f.write(json.dumps(c, ensure_ascii=False) + "\n")
+
+print(f"Successfully generated {len(cases)} landmark cases in {out_path} (8 Davao Landmark + 3 National Preemption Pillars)")

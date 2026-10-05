@@ -1,0 +1,15 @@
+{
+  "id": "yyaahhzxc/thesis-system-level-sc-benchmark",
+  "title": "Thesis System Level Supreme Court Benchmark",
+  "code_file": "run_system_level_experiment.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
