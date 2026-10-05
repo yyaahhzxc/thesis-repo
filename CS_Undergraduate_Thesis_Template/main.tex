@@ -62,6 +62,12 @@
 % Keep hyperref at the end of preamble
 \usepackage[hidelinks]{hyperref}
 
+% Format appendices in TOC as indented, compressed sub-items under a single chapter-level Appendices heading
+\makeatletter
+\newcommand*\l@appendix{\@dottedtocline{1}{1.5em}{2.3em}}
+\newcommand*\toclevel@appendix{1}
+\makeatother
+
 % This tells LaTeX to always print the URL if it exists
 \newcommand{\URL}[1]{\url{#1}}
 \renewcommand{\contentsname}{Table of Contents}
@@ -186,10 +192,33 @@ Above all, to the Almighty God/Allah SWT, the ultimate source of strength, wisdo
 \include{chapters/results_and_discussion}
 
 
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{acm}
 \bibliography{references}
 
 \appendix
+\cleardoublepage
+\phantomsection\label{appendix}
+\makeatletter
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{%
+  \def\temp@toc{toc}%
+  \def\temp@chap{chapter}%
+  \def\arg@one{#1}%
+  \def\arg@two{#2}%
+  \ifx\arg@one\temp@toc
+    \ifx\arg@two\temp@chap
+      \oldaddcontentsline{toc}{appendix}{#3}%
+    \else
+      \oldaddcontentsline{#1}{#2}{#3}%
+    \fi
+  \else
+    \oldaddcontentsline{#1}{#2}{#3}%
+  \fi
+}
+\makeatother
 \include{appendices/appendix_a}
 \include{appendices/appendix_b}
 \include{appendices/appendix_c}
