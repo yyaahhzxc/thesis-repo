@@ -1,13 +1,11 @@
 % !TeX root = ../main.tex
-\chapter{Core System Source Code Listings}
-\label{app:source_code}
+\chapter{Statutory Ingestion and Archival Scraping Pipeline Code}
+\label{app:code_ingestion}
 
 % =========================================================================
 % Appendix A Content Plan:
-% 1. src/build_unified_dual_corpus_provisions.py (National Statutory Preprocessing & Metadata Prepending)
-% 2. src/clean_transcripts.py (Adaptive Boundary State Machine for Local Ordinances)
-% 3. src/dual_retrieval.py (Stage 1 Dual-Stream BM25 + Dense Semantic RRF Retrieval Engine)
-% 4. src/stage2_cross_encoder_inference.py (Stage 2 Cost-Sensitive Cross-Encoder Inference & Threshold Calibration)
-% 5. src/section_max_pooling.py (Section-Level Max-Pooling Aggregator)
-% Note: Excludes auxiliary development scripts (reference auditor, verification scratch tools, spreadsheet generators).
+% 1. scripts/scrape_lawphil.py: Autonomous Lawphil National Statutory Crawler & HTML Ingestion Engine
+% 2. Hierarchical Statute Metadata Extractor: Republic Acts, Commonwealth Acts, Batas Pambansa, Presidential Decrees
+% 3. scripts/scrape_lissp_metadata.py: Davao City SP Portal / LISSP Metadata Harvester
+% 4. Unified Statutory Record Builder: Structural Metadata Standardizer & JSONL Serializer
 % =========================================================================
