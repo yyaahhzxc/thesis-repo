@@ -1,13 +1,13 @@
 % !TeX root = ../main.tex
-\chapter{Source Code Listings and Implementation Modules}
+\chapter{Core System Source Code Listings}
 \label{app:source_code}
 
 % =========================================================================
 % Appendix A Content Plan:
-% 1. scripts/scrape_lawphil.py (Lawphil National Statutory Crawler)
-% 2. scripts/run_vlm_pipeline.py (Local 4-bit Qwen2.5-VL-3B OCR Pipeline)
-% 3. scripts/clean_transcripts.py (Adaptive Boundary State Machine)
-% 4. scripts/hybrid_retriever.py (Stage 1 Hybrid RRF Retrieval Engine)
-% 5. scripts/stage2_train_cross_encoders.py (Stage 2 Cost-Sensitive Cross-Encoder Engine)
-% 6. scripts/audit_transcripts.py (Automated Anomaly Audit & Sanity Check)
+% 1. src/build_unified_dual_corpus_provisions.py (National Statutory Preprocessing & Metadata Prepending)
+% 2. src/clean_transcripts.py (Adaptive Boundary State Machine for Local Ordinances)
+% 3. src/dual_retrieval.py (Stage 1 Dual-Stream BM25 + Dense Semantic RRF Retrieval Engine)
+% 4. src/stage2_cross_encoder_inference.py (Stage 2 Cost-Sensitive Cross-Encoder Inference & Threshold Calibration)
+% 5. src/section_max_pooling.py (Section-Level Max-Pooling Aggregator)
+% Note: Excludes auxiliary development scripts (reference auditor, verification scratch tools, spreadsheet generators).
 % =========================================================================
