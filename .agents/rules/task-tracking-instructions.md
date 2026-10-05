@@ -38,6 +38,10 @@ Both Ralph and Yah are first-class proponents with full, equal access to all Ant
 5. **Ordinance Text Update & Empirical Re-Run Trigger:**
    - Whenever Ralph pushes updates to ordinance texts (e.g., in `cleaned_transcriptions/`, `corpus/city_ordinances/`, or `data/unified_dual_statutory_provisions.jsonl`) resulting from his manual archival verification and OCR checks, immediately re-run the relevant exploratory data analysis (EDA), word/token counts, temporal distributions (`scripts/generate_word_count_temporal_figure.py`), dual-corpus token compliance metrics, and any downstream retrieval or NLI evaluation scripts affected by the updated text upon pulling.
    - Verify if any reported statistics, tables (e.g., Table 3.2, Table 3.3, Table 4.1, Table 4.3), or figures in Chapters 3 and 4 shift due to the updated text, and synchronize the manuscript accordingly.
+6. **Chat Communication Efficiency & Formatting Protocol (Yah & Ralph Directives):**
+   - **Concise & Direct Responses:** Provide straightforward, concise, and high-density answers without losing critical technical specifics. Eliminate conversational filler, repetitive introductory recaps, and unnecessary post-execution boilerplate to save tokens and time.
+   - **Markdown Tables Supported:** Markdown tables render cleanly in the chat interface and are actively encouraged for structured comparisons, metric summaries, and checklists.
+   - **Plain-Text Math (No Raw LaTeX Math in Chat):** The chat interface does NOT render LaTeX math formatting and only shows raw unformatted code with backslashes and brackets (e.g., `$\frac{...}{...}$`, `\[ ... \]`). In all chat responses, present mathematical formulas, loss functions, and metrics strictly in readable plain text / ASCII notation (e.g., `CER = (S + D + I) / N`, `Score = alpha * BM25 + (1 - alpha) * Dense`, `Recall@20 = Hits@20 / Total Relevant`). Reserve formal LaTeX math syntax exclusively for `.tex` files within `CS_Undergraduate_Thesis_Template/`.
 
 ---
 
