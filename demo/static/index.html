@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sangguniang Panlungsod — Ordinance Legal Conflict Reviewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #f8fafc;
+      --bg-surface: #ffffff;
+      --border-color: #e2e8f0;
+      --border-darker: #cbd5e1;
+      --text-heading: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --brand-blue: #2563eb;
+      --brand-blue-hover: #1d4ed8;
+      --brand-blue-light: #eff6ff;
+      --brand-blue-border: #bfdbfe;
+      --conflict-red: #dc2626;
+      --conflict-red-bg: #fef2f2;
+      --conflict-red-border: #fecaca;
+      --valid-green: #16a34a;
+      --valid-green-bg: #f0fdf4;
+      --valid-green-border: #bbf7d0;
+      --highlight-yellow: #fef08a;
+      --highlight-blue: #bae6fd;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.02);
+      --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      font-family: var(--font-stack);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* TOP NAVBAR */
+    .navbar {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-heading);
+    }
+
+    .seal-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--brand-blue-light);
+      border: 1px solid var(--brand-blue-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .nav-badge-pill {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--valid-green);
+    }
+
+    /* MAIN CONTAINER */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 36px 20px 80px;
+    }
+
+    /* HERO & TITLE */
+    .hero-section {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .hero-title {
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* UPLOAD / CONVERTER STYLE DROPZONE */
+    .upload-card {
+      background: var(--bg-surface);
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 44px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+    }
+
+    .upload-card:hover, .upload-card.dragover {
+      border-color: var(--brand-blue);
+      background: var(--brand-blue-light);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .upload-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      color: var(--brand-blue);
+    }
+
+    .btn-upload {
+      background: var(--brand-blue);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 32px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+      transition: all 0.15s ease;
+    }
+
+    .btn-upload:hover {
+      background: var(--brand-blue-hover);
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    }
+
+    .upload-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    #file-input {
+      display: none;
+    }
+
+    /* QUICK SAMPLES ROW */
+    .sample-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sample-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      white-space: nowrap;
+    }
+
+    .sample-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .sample-pill {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 6px 13px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .sample-pill:hover {
+      background: #e2e8f0;
+      color: var(--text-heading);
+      border-color: var(--border-darker);
+    }
+
+    /* COLLAPSIBLE MANUAL TEXTAREA */
+    .manual-toggle {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .manual-toggle-btn {
+      background: none;
+      border: none;
+      color: var(--brand-blue);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .manual-box {
+      display: none;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .manual-box.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      font-family: inherit;
+      color: var(--text-body);
+      background: #fafafa;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--brand-blue);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .btn-submit-manual {
+      background: var(--brand-blue);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* AUDIT REPORT VIEW */
+    .report-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: none;
+      margin-top: 16px;
+    }
+
+    .report-card.active {
+      display: block;
+    }
+
+    /* RESULT BANNER */
+    .report-banner {
+      padding: 24px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+    }
+
+    .report-banner.conflict {
+      background: var(--conflict-red-bg);
+      border-color: var(--conflict-red-border);
+    }
+
+    .report-banner.valid {
+      background: var(--valid-green-bg);
+      border-color: var(--valid-green-border);
+    }
+
+    .banner-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .banner-icon {
+      font-size: 2rem;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .banner-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .report-banner.conflict .banner-title {
+      color: var(--conflict-red);
+    }
+
+    .report-banner.valid .banner-title {
+      color: var(--valid-green);
+    }
+
+    .banner-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* CONFIDENCE GAUGE BOX */
+    .confidence-gauge-box {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 18px;
+      text-align: right;
+      min-width: 220px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .gauge-val {
+      font-size: 1.7rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .report-banner.conflict .gauge-val {
+      color: var(--conflict-red);
+    }
+    .report-banner.valid .gauge-val {
+      color: var(--valid-green);
+    }
+
+    .gauge-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .gauge-bar-track {
+      height: 6px;
+      background: #e2e8f0;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .gauge-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+    .report-banner.conflict .gauge-bar-fill {
+      background: var(--conflict-red);
+    }
+    .report-banner.valid .gauge-bar-fill {
+      background: var(--valid-green);
+    }
+
+    /* SIDE BY SIDE TEXT COMPARISON */
+    .comparison-wrapper {
+      padding: 28px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .comparison-heading {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .comparison-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-cols {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .doc-box {
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .doc-header {
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .doc-body {
+      padding: 18px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-body);
+      min-height: 130px;
+    }
+
+    /* MARKER HIGHLIGHTING */
+    mark.hl-ordinance {
+      background-color: var(--highlight-yellow);
+      color: #000;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    mark.hl-statute {
+      background-color: var(--highlight-blue);
+      color: #000;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    /* LEGAL FINDINGS & RATIONALE */
+    .rationale-box {
+      margin: 24px 28px;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 18px 22px;
+    }
+
+    .rationale-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rationale-text {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* CANDIDATE LAWS AUDIT SECTION */
+    .candidates-section {
+      padding: 24px 28px;
+      background: #fafbfc;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .candidates-intro {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      margin-bottom: 18px;
+    }
+
+    /* TOP 5 STAGE 2 CARDS */
+    .top5-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .candidate-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.15s ease;
+    }
+    .candidate-card:hover {
+      border-color: var(--brand-blue-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .candidate-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .rank-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: var(--text-heading);
+    }
+    .rank-1-tag {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .candidate-cit {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-top: 4px;
+    }
+
+    .candidate-title {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .candidate-summary {
+      font-size: 0.8rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    .candidate-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 0.78rem;
+    }
+
+    .risk-badge {
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+    .risk-danger {
+      background: var(--conflict-red-bg);
+      color: var(--conflict-red);
+      border: 1px solid var(--conflict-red-border);
+    }
+    .risk-safe {
+      background: var(--valid-green-bg);
+      color: var(--valid-green);
+      border: 1px solid var(--valid-green-border);
+    }
+    .risk-info {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+
+    .btn-lawphil {
+      color: var(--brand-blue);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.78rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s ease;
+    }
+    .btn-lawphil:hover {
+      color: var(--brand-blue-hover);
+      text-decoration: underline;
+    }
+
+    /* EXPANDABLE 50 LAWS TABLE */
+    .toggle-all-laws-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand-blue);
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      text-align: center;
+      transition: background 0.15s ease;
+      margin-bottom: 14px;
+    }
+    .toggle-all-laws-btn:hover {
+      background: #f8fafc;
+      border-color: var(--border-darker);
+    }
+
+    .all-laws-container {
+      display: none;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .all-laws-container.active {
+      display: block;
+    }
+
+    .laws-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      text-align: left;
+    }
+    .laws-table th {
+      background: #f8fafc;
+      padding: 10px 14px;
+      font-weight: 700;
+      color: var(--text-heading);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .laws-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #f1f5f9;
+      color: var(--text-body);
+      vertical-align: middle;
+    }
+    .laws-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* FOOTER ACTIONS */
+    .meta-footer {
+      border-top: 1px solid var(--border-color);
+      background: #f8fafc;
+      padding: 16px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-reset {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 9px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-reset:hover {
+      background: #f1f5f9;
+      border-color: var(--border-darker);
+    }
+
+    /* LOADING SPINNER */
+    .loading-spinner-box {
+      display: none;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .loading-spinner-box.active {
+      display: block;
+    }
+
+    .simple-spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid #cbd5e1;
+      border-top-color: var(--brand-blue);
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      animation: spin 0.7s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border-color);
+      background: var(--bg-surface);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <div class="seal-icon">⚖️</div>
+      <div>
+        <div class="brand-title">Sangguniang Panlungsod of Davao City</div>
+        <div class="brand-sub">Ex-Ante Ordinance Legislative Consistency Reviewer</div>
+      </div>
+    </a>
+    <div class="nav-badge-pill">
+      <span class="status-dot"></span>
+      <span>Stage 1: <strong>176,421 Indexed Provisions</strong> | Stage 2: <strong>DeBERTa-v3</strong></span>
+    </div>
+  </nav>
+
+  <!-- MAIN BODY -->
+  <main>
+
+    <!-- HERO TEXT -->
+    <section class="hero-section">
+      <h1 class="hero-title">Check Ordinance Drafts for Legal Conflicts</h1>
+      <p class="hero-sub">
+        Upload a proposed ordinance clause to automatically screen 176,421 statutory provisions and verify consistency with National Statutes and Supreme Court Precedents.
+      </p>
+    </section>
+
+    <!-- DRAG AND DROP ZONE -->
+    <div class="upload-card" id="drop-zone" onclick="document.getElementById('file-input').click()">
+      <div class="upload-icon">📄</div>
+      <button type="button" class="btn-upload">Select Ordinance File</button>
+      <div class="upload-text">or drag and drop a <code>.json</code> or <code>.txt</code> file here</div>
+      <input type="file" id="file-input" accept=".json,.txt">
+    </div>
+
+    <!-- QUICK SAMPLES -->
+    <div class="sample-section" id="samples">
+      <span class="sample-label">Or test with a landmark case:</span>
+      <div class="sample-pills">
+        <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-01')">
+          Mosqueda (Aerial Spraying Ban)
+        </button>
+        <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-02')">
+          Evasco (Outdoor Billboards)
+        </button>
+        <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-03')">
+          ARC Investors (Holding Entity Tax)
+        </button>
+        <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-05')">
+          GSIS Real Property Tax
+        </button>
+        <button type="button" class="sample-pill" onclick="loadCase('SC-PHIL-09')">
+          Magtajas (Casino Ban)
+        </button>
+      </div>
+    </div>
+
+    <!-- OPTIONAL MANUAL PASTE TOGGLE -->
+    <div class="manual-toggle">
+      <button type="button" class="manual-toggle-btn" onclick="toggleManualInput()">
+        Or paste ordinance text manually &darr;
+      </button>
+    </div>
+
+    <div class="manual-box" id="manual-box">
+      <div class="form-group">
+        <label class="form-label" for="manual-title">Ordinance Title / Identifier</label>
+        <input type="text" id="manual-title" class="form-control" placeholder="e.g., Draft Ordinance No. 2026-01 (Environmental Code)">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="manual-ordinance">Draft Ordinance Provision Text</label>
+        <textarea id="manual-ordinance" class="form-control" rows="4" placeholder="Enter the draft ordinance clause here..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="manual-statute">Controlling National Statute (Optional — auto-retrieved via Stage 1 if blank)</label>
+        <textarea id="manual-statute" class="form-control" rows="3" placeholder="Leave blank to automatically retrieve matching national statute from 176,421 provisions..."></textarea>
+      </div>
+      <button type="button" class="btn-submit-manual" onclick="submitManual()">Check for Conflicts</button>
+    </div>
+
+    <!-- LOADING STATE -->
+    <div class="loading-spinner-box" id="loading-box">
+      <div class="simple-spinner"></div>
+      <div style="font-weight:700; color:var(--text-heading); font-size:1rem;">Screening 176,421 statutory provisions...</div>
+      <div style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">Stage 1 Hybrid Retrieval (1.33 ms) &rarr; Stage 2 DeBERTa Cross-Encoder Scoring</div>
+    </div>
+
+    <!-- AUDIT REPORT CARD -->
+    <div class="report-card" id="report-card">
+      
+      <!-- STATUS BANNER WITH STAGE 2 CONFIDENCE RATE GAUGE -->
+      <div class="report-banner conflict" id="report-banner">
+        <div class="banner-left">
+          <div class="banner-icon" id="banner-icon">⚠️</div>
+          <div>
+            <div class="banner-title" id="banner-title">Potential Legal Conflict Detected</div>
+            <div class="banner-desc" id="banner-desc">
+              This provision may conflict with a superior national statute under the <em>Magtajas</em> doctrine.
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2 CONFIDENCE GAUGE -->
+        <div class="confidence-gauge-box">
+          <div class="gauge-label">Stage 2 Contradiction Probability</div>
+          <div class="gauge-val" id="gauge-prob">88.4%</div>
+          <div style="font-size:0.75rem; color:var(--text-muted); line-height: 1.4;" id="gauge-sub">
+            ⚠️ System flags an alert because confidence is &ge; 45% (The calibrated decision threshold)
+          </div>
+          <div class="gauge-bar-track" style="position: relative; margin-top: 10px; height: 8px;">
+            <div class="gauge-bar-fill" id="gauge-bar-fill" style="width: 88.4%;"></div>
+            <div style="position: absolute; left: 45%; top: -5px; bottom: -5px; width: 2px; background: #dc2626; z-index: 5;" title="45% Calibrated Decision Threshold"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-top:4px; font-size:0.7rem; color:var(--text-muted);">
+            <span>0%</span>
+            <span style="font-weight:700; color:#dc2626;">▲ 45% Trigger Line</span>
+            <span>100%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDE BY SIDE REVIEW -->
+      <div class="comparison-wrapper">
+        <div class="section-header-row">
+          <div class="comparison-heading">Side-by-Side Provision Comparison</div>
+          <div style="font-size:0.75rem; color:var(--text-muted);">
+            <mark class="hl-ordinance">Yellow</mark> = Draft Prohibitions &bull; <mark class="hl-statute">Blue</mark> = Statutory Authority
+          </div>
+        </div>
+
+        <div class="comparison-cols">
+          <!-- Left: Ordinance Provision -->
+          <div class="doc-box">
+            <div class="doc-header">
+              <span id="label-ordinance">Draft Local Ordinance Section</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Proposed Measure</span>
+            </div>
+            <div class="doc-body" id="text-ordinance">
+              <!-- Highlighted text injected here -->
+            </div>
+          </div>
+
+          <!-- Right: Controlling National Statute -->
+          <div class="doc-box">
+            <div class="doc-header">
+              <span id="label-statute">Controlling National Statute</span>
+              <a id="btn-controlling-lawphil" href="#" target="_blank" class="btn-lawphil">Open Lawphil ↗</a>
+            </div>
+            <!-- Hierarchical Prepending Path (Chapter 3 §3.2.2) -->
+            <div id="statute-hierarchy-breadcrumb" style="background:#f1f5f9; border-bottom:1px solid var(--border-color); padding:8px 16px; font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:6px;">
+              <span style="font-weight:600; color:var(--brand-blue);">📂 Hierarchical Prepending:</span>
+              <span id="statute-hierarchy-text" style="color:var(--text-body); font-weight:500;">Presidential Decree No. 1144 &gt; Section 6 (Powers and Functions)</span>
+            </div>
+            <div class="doc-body" id="text-statute">
+              <!-- Highlighted text injected here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEGAL FINDINGS & PRECEDENT -->
+      <div class="rationale-box">
+        <div class="rationale-title">
+          <span>⚖️ Legal Findings & Applicable Precedent</span>
+        </div>
+        <div class="rationale-text" id="text-rationale">
+          <!-- Plain-language explanation injected here -->
+        </div>
+      </div>
+
+      <!-- CANDIDATE LAWS SHORTLIST & AUDIT TRAIL -->
+      <div class="candidates-section">
+        <div class="section-header-row" style="margin-bottom:8px;">
+          <div>
+            <div class="comparison-heading">Statutory Candidate Shortlist (Top 50 Laws Screened by Stage 1)</div>
+            <div class="candidates-intro" style="margin-bottom:0;">
+              Stage 1 hybrid retrieval screened all <strong>176,421 provisions</strong> in <strong>1.33 ms</strong>. Below is the scrollable shortlist showing 5 provisions at a time (scroll down to inspect all 50 laws with direct Lawphil links).
+            </div>
+          </div>
+        </div>
+
+        <!-- SCROLLABLE QUICK TABLE SHOWING 5 AT A TIME -->
+        <div class="all-laws-container active" style="display:block; max-height: 295px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 10px; margin-top: 14px; background:#fff;">
+          <table class="laws-table" style="width:100%; border-collapse:collapse;">
+            <thead style="position: sticky; top: 0; background: #f8fafc; z-index: 2; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+              <tr>
+                <th style="width: 55px; padding:10px 12px;">Rank</th>
+                <th style="width: 220px; padding:10px 12px;">Statutory Citation</th>
+                <th style="padding:10px 12px;">Enactment Official Title</th>
+                <th style="width: 105px; padding:10px 12px;">Jurisdiction</th>
+                <th style="width: 110px; padding:10px 12px;">Stage 1 Score</th>
+                <th style="width: 180px; padding:10px 12px;">Stage 2 Status</th>
+                <th style="width: 95px; padding:10px 12px;">Source</th>
+              </tr>
+            </thead>
+            <tbody id="all-laws-tbody">
+              <!-- Injected via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FOOTER ACTIONS -->
+      <div class="meta-footer">
+        <div>
+          <span>Top Primary Citation: <strong id="meta-statute-ref">Presidential Decree No. 1144 §6</strong></span>
+        </div>
+        <div>
+          <button type="button" class="btn-reset" onclick="resetToUpload()">Check Another File</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    Department of Computer Science, Ateneo de Davao University &bull; In Partnership with Sangguniang Panlungsod of Davao City
+  </footer>
+
+  <script>
+    function cleanHighlightOrdinance(text) {
+      if (!text) return "";
+      const triggers = [
+        /(strictly prohibited)/gi,
+        /(shall be strictly prohibited)/gi,
+        /(ban on aerial spraying)/gi,
+        /(prohibited)/gi,
+        /(banned)/gi,
+        /(mandatory)/gi,
+        /(must maintain)/gi,
+        /(no protest.*shall be entertained)/gi
+      ];
+      let res = text;
+      triggers.forEach(pattern => {
+        res = res.replace(pattern, '<mark class="hl-ordinance">$1</mark>');
+      });
+      return res;
+    }
+
+    function cleanHighlightStatute(text) {
+      if (!text) return "";
+      const triggers = [
+        /(exclusive jurisdiction)/gi,
+        /(jurisdiction)/gi,
+        /(Fertilizer and Pesticide Authority)/gi,
+        /(regulate and monitor)/gi,
+        /(shall have jurisdiction)/gi,
+        /(without being required to pay the assessment under protest)/gi,
+        /(tax exemptions.*are hereby withdrawn)/gi
+      ];
+      let res = text;
+      triggers.forEach(pattern => {
+        res = res.replace(pattern, '<mark class="hl-statute">$1</mark>');
+      });
+      return res;
+    }
+
+    function toggleManualInput() {
+      const box = document.getElementById('manual-box');
+      box.classList.toggle('active');
+    }
+
+    function toggleAllLawsTable() {
+      const box = document.getElementById('all-laws-box');
+      const btn = document.getElementById('toggle-laws-btn');
+      if (box.classList.contains('active')) {
+        box.classList.remove('active');
+        btn.innerHTML = 'Show all 50 candidate laws screened by Stage 1 (45 more) &darr;';
+      } else {
+        box.classList.add('active');
+        btn.innerHTML = 'Hide extended candidate list &uarr;';
+      }
+    }
+
+    async function loadCase(caseId) {
+      showLoading();
+      try {
+        const res = await fetch(`/api/case/${caseId}`);
+        if (!res.ok) throw new Error("Could not load case data");
+        const data = await res.json();
+        
+        await runAnalysisRequest({
+          case_id: data.case_id,
+          ordinance_title: `${data.ordinance_no}: ${data.title || data.case_name}`,
+          challenged_clause_text: data.challenged_text,
+          statute_premise_text: data.premise_text,
+          controlling_statute: data.controlling_statute,
+          statute_title: data.statute_title
+        });
+      } catch (e) {
+        alert("Error: " + e.message);
+        hideLoading();
+      }
+    }
+
+    async function submitManual() {
+      const ordText = document.getElementById('manual-ordinance').value.trim();
+      if (!ordText) {
+        alert("Please enter the draft ordinance clause text.");
+        return;
+      }
+      showLoading();
+      try {
+        await runAnalysisRequest({
+          case_id: "CUSTOM-INPUT",
+          ordinance_title: document.getElementById('manual-title').value || "Draft Ordinance Provision",
+          challenged_clause_text: ordText,
+          statute_premise_text: document.getElementById('manual-statute').value.trim()
+        });
+      } catch (e) {
+        alert("Analysis error: " + e.message);
+        hideLoading();
+      }
+    }
+
+    async function runAnalysisRequest(payload) {
+      const res = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error("Server analysis failed");
+      const result = await res.json();
+      displayReport(result, payload);
+      hideLoading();
+    }
+
+    function displayReport(data, payload) {
+      const card = document.getElementById('report-card');
+      const banner = document.getElementById('report-banner');
+      const icon = document.getElementById('banner-icon');
+      const title = document.getElementById('banner-title');
+      const desc = document.getElementById('banner-desc');
+      const gaugeVal = document.getElementById('gauge-prob');
+      const gaugeBar = document.getElementById('gauge-bar-fill');
+      const gaugeSub = document.getElementById('gauge-sub');
+
+      const isConflict = data.verdict === 'CONTRADICTION';
+      const confPct = data.confidence_percentage;
+
+      // 1. Banner & Gauge
+      if (isConflict) {
+        banner.className = 'report-banner conflict';
+        icon.textContent = '⚠️';
+        title.textContent = 'Potential Legal Conflict Detected';
+        desc.innerHTML = `This provision appears to conflict with superior national law. Under Section 5(a) of the Local Government Code and the <em>Magtajas</em> doctrine, local ordinances cannot forbid what a national statute permits or regulates.`;
+        gaugeSub.textContent = 'High Preemption Risk (Threshold: 45.0%)';
+      } else {
+        banner.className = 'report-banner valid';
+        icon.textContent = '✅';
+        title.textContent = 'No Direct Legal Conflict Detected';
+        desc.innerHTML = `This provision appears consistent with governing statutes and represents a valid exercise of local regulatory authority or municipal general welfare power.`;
+        gaugeSub.textContent = 'Low Conflict Risk (Threshold: 45.0%)';
+      }
+
+      gaugeVal.textContent = `${confPct}%`;
+      gaugeBar.style.width = `${Math.min(100, confPct)}%`;
+
+      // 2. Texts & Highlights
+      document.getElementById('label-ordinance').textContent = payload.ordinance_title || "Draft Local Ordinance Section";
+      document.getElementById('text-ordinance').innerHTML = cleanHighlightOrdinance(payload.challenged_clause_text);
+      
+      const statuteRef = data.input_metadata.controlling_statute || "Controlling National Statute";
+      const statuteTitle = data.input_metadata.statute_title || (data.candidate_shortlist && data.candidate_shortlist[0] ? data.candidate_shortlist[0].title : "");
+      const fullStatuteHeading = statuteTitle ? `${statuteRef} — ${statuteTitle}` : statuteRef;
+      document.getElementById('label-statute').textContent = fullStatuteHeading;
+      document.getElementById('text-statute').innerHTML = cleanHighlightStatute(payload.statute_premise_text || data.stage1_retrieval.candidate_rank);
+      document.getElementById('meta-statute-ref').textContent = fullStatuteHeading;
+
+      // Lawphil link on controlling statute
+      const controllingCandidate = (data.candidate_shortlist && data.candidate_shortlist[0]) || {};
+      const controllingUrl = controllingCandidate.lawphil_url || "https://lawphil.net";
+      document.getElementById('btn-controlling-lawphil').href = controllingUrl;
+
+      // 3. Legal Rationale
+      const doctrine = data.input_metadata.legal_doctrine_rationale || "Evaluated under Philippine statutory preemption rules.";
+      const scRuling = data.input_metadata.sc_ruling_reference || "";
+      document.getElementById('text-rationale').innerHTML = `
+        <strong>Legal Doctrine:</strong> ${doctrine}<br><br>
+        <strong>Judicial Ruling Reference:</strong> ${scRuling ? scRuling : 'Evaluated in accordance with established Sangguniang Panlungsod pre-enactment review standards.'}
+      `;
+
+      // Set Hierarchical Prepending Path
+      const hierarchyPath = data.input_metadata.prepended_path || "National Statutory Knowledge Base > Operative Provision";
+      const hierElem = document.getElementById('statute-hierarchy-text');
+      if (hierElem) hierElem.textContent = hierarchyPath;
+
+      // 5. Render All 50 Candidate Laws Table
+      const tbody = document.getElementById('all-laws-tbody');
+      tbody.innerHTML = '';
+      (data.candidate_shortlist || []).forEach(cand => {
+        const tr = document.createElement('tr');
+        
+        let statusBadge = `<span style="color:var(--text-muted);">In Shortlist Pool</span>`;
+        if (cand.stage2_confidence !== null) {
+          if (cand.stage2_confidence >= 45) {
+            statusBadge = `<span style="color:var(--conflict-red); font-weight:700;">⚠️ ${cand.stage2_confidence}% Conflict</span>`;
+          } else {
+            statusBadge = `<span style="color:var(--valid-green); font-weight:600;">🟢 ${cand.stage2_confidence}% Low Risk</span>`;
+          }
+        }
+
+        tr.innerHTML = `
+          <td><strong>#${cand.rank}</strong></td>
+          <td><strong>${cand.citation}</strong></td>
+          <td style="color:var(--text-muted);">${cand.title}</td>
+          <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">${cand.jurisdiction === 'National Statute' ? 'National' : 'Local'}</span></td>
+          <td><code>${(cand.stage1_score * 100).toFixed(1)}%</code></td>
+          <td>${statusBadge}</td>
+          <td><a href="${cand.lawphil_url}" target="_blank" class="btn-lawphil">Lawphil ↗</a></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      card.classList.add('active');
+      card.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showLoading() {
+      document.getElementById('report-card').classList.remove('active');
+      document.getElementById('loading-box').classList.add('active');
+    }
+
+    function hideLoading() {
+      document.getElementById('loading-box').classList.remove('active');
+    }
+
+    function resetToUpload() {
+      document.getElementById('report-card').classList.remove('active');
+      document.getElementById('drop-zone').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Drag & Drop
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+      });
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      const files = e.dataTransfer.files;
+      if (files.length) handleDroppedFile(files[0]);
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length) handleDroppedFile(e.target.files[0]);
+    });
+
+    function handleDroppedFile(file) {
+      const reader = new FileReader();
+      reader.onload = async function(event) {
+        showLoading();
+        try {
+          const content = event.target.result;
+          let parsed;
+          try {
+            parsed = JSON.parse(content);
+          } catch(err) {
+            parsed = {
+              case_id: "UPLOADED-TXT",
+              ordinance_title: file.name,
+              challenged_clause_text: content,
+              statute_premise_text: ""
+            };
+          }
+
+          await runAnalysisRequest({
+            case_id: parsed.case_id || "UPLOADED-FILE",
+            ordinance_title: parsed.ordinance_title || parsed.title || file.name,
+            challenged_clause_text: parsed.challenged_clause_text || parsed.challenged_text || "",
+            statute_premise_text: parsed.statute_premise_text || parsed.premise_text || "",
+            controlling_statute: parsed.controlling_statute || "",
+            statute_title: parsed.statute_title || ""
+          });
+        } catch(e) {
+          alert("Could not process file: " + e.message);
+          hideLoading();
+        }
+      };
+      reader.readAsText(file);
+    }
+  </script>
+
+</body>
+</html>

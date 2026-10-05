@@ -1,0 +1,14 @@
+{
+  "case_id": "DAVAO-TIER3-04",
+  "case_name": "City of Davao and Dureza v. First Meridian Development, Inc.",
+  "docket_no": "G.R. No. 240078",
+  "ordinance_no": "Ordinance No. 158-05 §423",
+  "ordinance_title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (MANDATORY PAYMENT UNDER PROTEST)",
+  "challenged_clause_text": "Section 423: Payment Under Protest. No protest against an assessment shall be entertained unless the taxpayer first pays under protest the tax assessed, stating the legal grounds within thirty (30) days from payment.",
+  "controlling_statute": "Republic Act No. 7160 §195",
+  "statute_title": "Local Government Code of 1991",
+  "statute_premise_text": "Section 195. Protest of Assessment. When the local treasurer finds that correct taxes have not been paid, he shall issue an assessment. The taxpayer may file a written protest with the local treasurer within sixty (60) days from receipt of the notice without being required to pay the assessment under protest.",
+  "sc_ruling": "Ultra Vires and Void (Overturned)",
+  "gold_label": "Contradiction",
+  "legal_doctrine_rationale": "Section 195 of the Local Government Code governing business taxes deliberately does not require payment under protest. Local councils cannot impose restrictive procedural preconditions not authorized by statute."
+}

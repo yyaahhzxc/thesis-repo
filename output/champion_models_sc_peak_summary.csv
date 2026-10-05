@@ -1,0 +1,6 @@
+Candidate Model,Family,Params,Optimal Alpha*,Optimal Tau*,Overall Accuracy,Conflict Recall,Conflict Precision,Macro F1,Peak F2-Score,Cases Correct
+DistilRoBERTa (NLI),Distilled Edge,82M,0.2,0.1,72.7%,100.0%,70.0%,0.8235,0.9211,8/11
+RoBERTa-large (MNLI),Deep Pre-Aligned,355M,0.2,0.1,72.7%,100.0%,70.0%,0.8235,0.9211,8/11
+Legal-BERT-base,Legal Domain-Adapted,110M,0.2,0.1,63.6%,100.0%,63.6%,0.7778,0.8974,7/11
+BGE-Reranker-base,Cross-Encoder Reranker,278M,0.2,0.1,63.6%,100.0%,63.6%,0.7778,0.8974,7/11
+DeBERTa-v3-base (NLI),Pre-Aligned Reasoner,86M,0.4,0.45,72.7%,85.7%,85.7%,0.8571,0.8571,9/11

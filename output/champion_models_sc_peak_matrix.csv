@@ -1,0 +1,12 @@
+Case ID,Landmark Dispute,Gold Ruling,DeBERTa-v3-base (NLI),DistilRoBERTa (NLI),RoBERTa-large (MNLI),Legal-BERT-base,BGE-Reranker-base
+DAVAO-TIER3-01,Mosqueda v. Pilipino Banan,Contradiction,✅ Contra,✅ Contra,✅ Contra,✅ Contra,✅ Contra
+DAVAO-TIER3-02,"Hon. Leoncio Evasco, Jr. v",Entailment,❌ Contra,❌ Contra,❌ Contra,❌ Contra,❌ Contra
+DAVAO-TIER3-03,City of Davao and Tanjili ,Contradiction,✅ Contra,✅ Contra,✅ Contra,✅ Contra,✅ Contra
+DAVAO-TIER3-04,City of Davao and Dureza v,Contradiction,✅ Contra,✅ Contra,✅ Contra,✅ Contra,✅ Contra
+DAVAO-TIER3-05,City of Davao v. Court of ,Entailment,✅ Entail,✅ Entail,❌ Contra,❌ Contra,❌ Contra
+DAVAO-TIER3-06,Davao City Mining Ban and ,Contradiction,❌ Entail,✅ Contra,✅ Contra,✅ Contra,✅ Contra
+DAVAO-TIER3-07,Davao City Comprehensive A,Entailment,❌ Neutra,❌ Contra,❌ Contra,❌ Contra,❌ Contra
+DAVAO-TIER3-08,Davao City Comprehensive S,Entailment,✅ Entail,❌ Contra,✅ Entail,❌ Contra,❌ Contra
+SC-PHIL-09,Magtajas v. Pryce Properti,Contradiction,✅ Contra,✅ Contra,✅ Contra,✅ Contra,✅ Contra
+SC-PHIL-10,"City of Manila v. Laguio, ",Contradiction,✅ Contra,✅ Contra,✅ Contra,✅ Contra,✅ Contra
+SC-PHIL-11,"Batangas CATV, Inc. v. Cou",Contradiction,✅ Contra,✅ Contra,✅ Contra,✅ Contra,✅ Contra

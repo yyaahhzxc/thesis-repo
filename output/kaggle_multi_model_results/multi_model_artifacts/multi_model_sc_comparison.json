@@ -1,0 +1,432 @@
+{
+  "metadata": {
+    "benchmark": "Tier 3 Supreme Court Jurisprudence Benchmark",
+    "date": "2026-10-05 12:54:37",
+    "total_cases": 11,
+    "models_evaluated": 5
+  },
+  "aggregate_metrics": [
+    {
+      "accuracy": 0.3636,
+      "recall_contra": 0.5714,
+      "precision_contra": 0.8,
+      "f1_score": 0.6667,
+      "f2_score": 0.6061,
+      "tp": 4,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3,
+      "latency_total_s": 37.48,
+      "avg_latency_ms": 3407.2,
+      "model_name": "DeBERTa-v3-base (NLI)",
+      "family": "Pre-Aligned Reasoner",
+      "params_m": 86
+    },
+    {
+      "accuracy": 0.5455,
+      "recall_contra": 0.8571,
+      "precision_contra": 0.6667,
+      "f1_score": 0.75,
+      "f2_score": 0.8108,
+      "tp": 6,
+      "fp": 3,
+      "fn": 1,
+      "tn": 1,
+      "latency_total_s": 3.98,
+      "avg_latency_ms": 362.2,
+      "model_name": "DistilRoBERTa (NLI)",
+      "family": "Distilled Edge",
+      "params_m": 82
+    },
+    {
+      "accuracy": 0.4545,
+      "recall_contra": 0.2857,
+      "precision_contra": 0.6667,
+      "f1_score": 0.4,
+      "f2_score": 0.3226,
+      "tp": 2,
+      "fp": 1,
+      "fn": 5,
+      "tn": 3,
+      "latency_total_s": 11.1,
+      "avg_latency_ms": 1009.3,
+      "model_name": "RoBERTa-large (MNLI)",
+      "family": "Deep Pre-Aligned",
+      "params_m": 355
+    },
+    {
+      "accuracy": 0.3636,
+      "recall_contra": 0.2857,
+      "precision_contra": 0.5,
+      "f1_score": 0.3636,
+      "f2_score": 0.3125,
+      "tp": 2,
+      "fp": 2,
+      "fn": 5,
+      "tn": 2,
+      "latency_total_s": 5.19,
+      "avg_latency_ms": 471.6,
+      "model_name": "Legal-BERT-base",
+      "family": "Legal Domain-Adapted",
+      "params_m": 110
+    },
+    {
+      "accuracy": 0.0909,
+      "recall_contra": 0.1429,
+      "precision_contra": 1.0,
+      "f1_score": 0.25,
+      "f2_score": 0.1724,
+      "tp": 1,
+      "fp": 0,
+      "fn": 6,
+      "tn": 4,
+      "latency_total_s": 10.7,
+      "avg_latency_ms": 973.0,
+      "model_name": "BGE-Reranker-base",
+      "family": "Cross-Encoder Reranker",
+      "params_m": 278
+    }
+  ],
+  "case_predictions": {
+    "deberta_v3": [
+      {
+        "case_id": "DAVAO-TIER3-01",
+        "pred_label": "Neutral",
+        "p_contra": 0.0003,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-02",
+        "pred_label": "Neutral",
+        "p_contra": 0.0008,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-03",
+        "pred_label": "Contradiction",
+        "p_contra": 0.9847,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-04",
+        "pred_label": "Contradiction",
+        "p_contra": 0.9999,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-05",
+        "pred_label": "Neutral",
+        "p_contra": 0.0003,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-06",
+        "pred_label": "Neutral",
+        "p_contra": 0.0005,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-07",
+        "pred_label": "Contradiction",
+        "p_contra": 0.9721,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-08",
+        "pred_label": "Neutral",
+        "p_contra": 0.0039,
+        "match": false
+      },
+      {
+        "case_id": "SC-PHIL-09",
+        "pred_label": "Contradiction",
+        "p_contra": 0.9999,
+        "match": true
+      },
+      {
+        "case_id": "SC-PHIL-10",
+        "pred_label": "Neutral",
+        "p_contra": 0.0042,
+        "match": false
+      },
+      {
+        "case_id": "SC-PHIL-11",
+        "pred_label": "Contradiction",
+        "p_contra": 0.7456,
+        "match": true
+      }
+    ],
+    "distilroberta": [
+      {
+        "case_id": "DAVAO-TIER3-01",
+        "pred_label": "Contradiction",
+        "p_contra": 0.8373,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-02",
+        "pred_label": "Contradiction",
+        "p_contra": 0.9031,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-03",
+        "pred_label": "Contradiction",
+        "p_contra": 0.7063,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-04",
+        "pred_label": "Contradiction",
+        "p_contra": 0.965,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-05",
+        "pred_label": "Neutral",
+        "p_contra": 0.057,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-06",
+        "pred_label": "Contradiction",
+        "p_contra": 0.9257,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-07",
+        "pred_label": "Contradiction",
+        "p_contra": 0.8192,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-08",
+        "pred_label": "Contradiction",
+        "p_contra": 0.9197,
+        "match": false
+      },
+      {
+        "case_id": "SC-PHIL-09",
+        "pred_label": "Contradiction",
+        "p_contra": 0.9945,
+        "match": true
+      },
+      {
+        "case_id": "SC-PHIL-10",
+        "pred_label": "Contradiction",
+        "p_contra": 0.8962,
+        "match": true
+      },
+      {
+        "case_id": "SC-PHIL-11",
+        "pred_label": "Neutral",
+        "p_contra": 0.0618,
+        "match": false
+      }
+    ],
+    "roberta_large": [
+      {
+        "case_id": "DAVAO-TIER3-01",
+        "pred_label": "Entailment",
+        "p_contra": 0.3922,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-02",
+        "pred_label": "Entailment",
+        "p_contra": 0.3885,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-03",
+        "pred_label": "Entailment",
+        "p_contra": 0.2854,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-04",
+        "pred_label": "Contradiction",
+        "p_contra": 0.5204,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-05",
+        "pred_label": "Entailment",
+        "p_contra": 0.2776,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-06",
+        "pred_label": "Entailment",
+        "p_contra": 0.3578,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-07",
+        "pred_label": "Contradiction",
+        "p_contra": 0.449,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-08",
+        "pred_label": "Entailment",
+        "p_contra": 0.0508,
+        "match": true
+      },
+      {
+        "case_id": "SC-PHIL-09",
+        "pred_label": "Entailment",
+        "p_contra": 0.3517,
+        "match": false
+      },
+      {
+        "case_id": "SC-PHIL-10",
+        "pred_label": "Contradiction",
+        "p_contra": 0.4514,
+        "match": true
+      },
+      {
+        "case_id": "SC-PHIL-11",
+        "pred_label": "Neutral",
+        "p_contra": 0.2458,
+        "match": false
+      }
+    ],
+    "legal_bert": [
+      {
+        "case_id": "DAVAO-TIER3-01",
+        "pred_label": "Contradiction",
+        "p_contra": 0.3349,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-02",
+        "pred_label": "Entailment",
+        "p_contra": 0.3341,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-03",
+        "pred_label": "Neutral",
+        "p_contra": 0.3255,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-04",
+        "pred_label": "Entailment",
+        "p_contra": 0.3192,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-05",
+        "pred_label": "Entailment",
+        "p_contra": 0.3237,
+        "match": true
+      },
+      {
+        "case_id": "DAVAO-TIER3-06",
+        "pred_label": "Entailment",
+        "p_contra": 0.3248,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-07",
+        "pred_label": "Contradiction",
+        "p_contra": 0.3427,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-08",
+        "pred_label": "Contradiction",
+        "p_contra": 0.3404,
+        "match": false
+      },
+      {
+        "case_id": "SC-PHIL-09",
+        "pred_label": "Entailment",
+        "p_contra": 0.3297,
+        "match": false
+      },
+      {
+        "case_id": "SC-PHIL-10",
+        "pred_label": "Contradiction",
+        "p_contra": 0.3373,
+        "match": true
+      },
+      {
+        "case_id": "SC-PHIL-11",
+        "pred_label": "Entailment",
+        "p_contra": 0.3338,
+        "match": false
+      }
+    ],
+    "bge_reranker": [
+      {
+        "case_id": "DAVAO-TIER3-01",
+        "pred_label": "Neutral",
+        "p_contra": 0.5233,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-02",
+        "pred_label": "Neutral",
+        "p_contra": 0.5523,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-03",
+        "pred_label": "Neutral",
+        "p_contra": 0.5621,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-04",
+        "pred_label": "Neutral",
+        "p_contra": 0.5693,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-05",
+        "pred_label": "Neutral",
+        "p_contra": 0.5001,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-06",
+        "pred_label": "Neutral",
+        "p_contra": 0.5123,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-07",
+        "pred_label": "Neutral",
+        "p_contra": 0.5002,
+        "match": false
+      },
+      {
+        "case_id": "DAVAO-TIER3-08",
+        "pred_label": "Neutral",
+        "p_contra": 0.5693,
+        "match": false
+      },
+      {
+        "case_id": "SC-PHIL-09",
+        "pred_label": "Neutral",
+        "p_contra": 0.5002,
+        "match": false
+      },
+      {
+        "case_id": "SC-PHIL-10",
+        "pred_label": "Neutral",
+        "p_contra": 0.5018,
+        "match": false
+      },
+      {
+        "case_id": "SC-PHIL-11",
+        "pred_label": "Contradiction",
+        "p_contra": 0.7136,
+        "match": true
+      }
+    ]
+  }
+}

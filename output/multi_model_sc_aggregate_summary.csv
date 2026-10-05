@@ -1,0 +1,6 @@
+Candidate Model,Family,Params,Accuracy,Recall@C,Precision@C,Macro F1,F2-Score,Correct Cases,Avg Latency
+DeBERTa-v3-base (NLI),Pre-Aligned Reasoner,86M,36.4%,57.1%,80.0%,0.6667,0.6061,7/11,0.0ms
+DistilRoBERTa (NLI),Distilled Edge,82M,45.5%,42.9%,100.0%,0.6000,0.4839,7/11,0.0ms
+RoBERTa-large (MNLI),Deep Pre-Aligned,355M,63.6%,57.1%,100.0%,0.7273,0.6250,8/11,0.0ms
+Legal-BERT-base,Legal Domain-Adapted,110M,72.7%,71.4%,100.0%,0.8333,0.7576,9/11,0.0ms
+BGE-Reranker-base,Cross-Encoder Reranker,278M,63.6%,71.4%,100.0%,0.8333,0.7576,9/11,0.0ms

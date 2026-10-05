@@ -1,0 +1,12 @@
+Case ID,Dispute,Gold Label,DeBERTa-v3-base (NLI),DistilRoBERTa (NLI),RoBERTa-large (MNLI),Legal-BERT-base,BGE-Reranker-base
+DAVAO-TIER3-01,Mosqueda v. Pilipino Banana ,Contradiction,❌ Neutra,✅ Contra,✅ Contra,✅ Contra,✅ Contra
+DAVAO-TIER3-02,"Hon. Leoncio Evasco, Jr. v. ",Entailment,❌ Neutra,❌ Neutra,❌ Neutra,✅ Entail,❌ Neutra
+DAVAO-TIER3-03,City of Davao and Tanjili v.,Contradiction,✅ Contra,❌ Neutra,❌ Neutra,✅ Contra,✅ Contra
+DAVAO-TIER3-04,City of Davao and Dureza v. ,Contradiction,✅ Contra,❌ Neutra,❌ Neutra,❌ Neutra,✅ Contra
+DAVAO-TIER3-05,City of Davao v. Court of Ap,Entailment,❌ Neutra,✅ Entail,✅ Entail,✅ Entail,✅ Entail
+DAVAO-TIER3-06,Davao City Mining Ban and Pa,Contradiction,❌ Neutra,✅ Contra,❌ Neutra,✅ Contra,✅ Contra
+DAVAO-TIER3-07,Davao City Comprehensive Ant,Entailment,❌ Contra,❌ Neutra,✅ Entail,❌ Neutra,❌ Neutra
+DAVAO-TIER3-08,Davao City Comprehensive Spe,Entailment,❌ Neutra,✅ Entail,✅ Entail,✅ Entail,✅ Entail
+SC-PHIL-09,Magtajas v. Pryce Properties,Contradiction,✅ Contra,✅ Contra,✅ Contra,✅ Contra,✅ Contra
+SC-PHIL-10,"City of Manila v. Laguio, Jr",Contradiction,❌ Neutra,❌ Neutra,✅ Contra,❌ Neutra,❌ Neutra
+SC-PHIL-11,"Batangas CATV, Inc. v. Court",Contradiction,✅ Contra,❌ Neutra,✅ Contra,✅ Contra,❌ Neutra

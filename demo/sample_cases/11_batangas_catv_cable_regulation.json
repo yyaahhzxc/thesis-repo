@@ -1,0 +1,14 @@
+{
+  "case_id": "SC-PHIL-11",
+  "case_name": "Batangas CATV, Inc. v. Court of Appeals",
+  "docket_no": "G.R. No. 138810",
+  "ordinance_no": "Batangas SP Resolution No. 210, Series of 1993",
+  "ordinance_title": "RESOLUTION REGULATING THE CABLE TELEVISION FRANCHISE AND SUBSCRIBER RATES OF BATANGAS CATV, INC.",
+  "challenged_clause_text": "Section 2: Cable Rate Regulation. The Sangguniang Panlungsod assumes authority to fix, regulate, and adjust subscriber rates and channel programming charges for commercial cable television services.",
+  "controlling_statute": "Executive Order No. 205 §2; Executive Order No. 546 §15",
+  "statute_title": "National Telecommunications Commission Regulatory Mandate",
+  "statute_premise_text": "Section 2 & Section 15. The National Telecommunications Commission shall have exclusive jurisdiction and authority over the regulation, supervision, rate-fixing, and licensing of cable television systems throughout the Philippines.",
+  "sc_ruling": "Resolution and Rate-Fixing Powers Struck Down (Overturned)",
+  "gold_label": "Contradiction",
+  "legal_doctrine_rationale": "Executive orders vest exclusive regulatory and rate-fixing authority over cable television in the National Telecommunications Commission. Where national law occupies the regulatory field, municipal ordinances are preempted."
+}

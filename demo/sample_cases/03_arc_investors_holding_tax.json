@@ -1,0 +1,14 @@
+{
+  "case_id": "DAVAO-TIER3-03",
+  "case_name": "City of Davao and Tanjili v. ARC Investors, Inc.",
+  "docket_no": "G.R. No. 249668",
+  "ordinance_no": "Ordinance No. 158-05 §135",
+  "ordinance_title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (LOCAL BUSINESS TAX ON HOLDING ENTITIES)",
+  "challenged_clause_text": "Section 135: Tax on Financial Institutions and Holding Corporations. Imposes local business taxes on banks, banking institutions, and holding entities receiving dividend income and investment interest, categorizing corporate holding firms as non-bank financial intermediaries.",
+  "controlling_statute": "Republic Act No. 7160 §143(f); Republic Act No. 8791 §3",
+  "statute_title": "Local Government Code of 1991 & General Banking Law of 2000",
+  "statute_premise_text": "Section 143(f). The municipality or city may impose taxes on banks and other financial institutions, non-bank financial intermediaries, lending investors, and finance companies authorized and regulated by the Bangko Sentral ng Pilipinas.",
+  "sc_ruling": "Ultra Vires Assessment Struck Down (Overturned)",
+  "gold_label": "Contradiction",
+  "legal_doctrine_rationale": "A holding company passively earning dividend income is not a non-bank financial intermediary without express Bangko Sentral ng Pilipinas licensing. LGUs cannot redefine statutory banking categories."
+}
