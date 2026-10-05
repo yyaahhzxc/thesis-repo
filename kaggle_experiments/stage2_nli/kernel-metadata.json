@@ -1,0 +1,15 @@
+{
+  "id": "yyaahhzxc/thesis-stage-2-nli-screening",
+  "title": "Thesis Stage 2 NLI Screening",
+  "code_file": "run_stage2_experiment.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
