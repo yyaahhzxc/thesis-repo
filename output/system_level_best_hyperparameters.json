@@ -1,0 +1,10 @@
+{
+  "Alpha (Neural Weight)": 0.4,
+  "Optimal tau*": 0.45,
+  "Accuracy": 0.5455,
+  "Recall@C": 0.8571,
+  "Precision@C": 0.8571,
+  "F1-Score": 0.8571,
+  "F2-Score": 0.8571,
+  "Correct Cases": "9.0/11"
+}
