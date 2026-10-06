@@ -20,6 +20,11 @@ import urllib.parse
 from pathlib import Path
 from flask import Flask, request, jsonify, send_from_directory
 
+try:
+    from canonical_hierarchies import CANONICAL_HIERARCHIES
+except ImportError:
+    from demo.canonical_hierarchies import CANONICAL_HIERARCHIES
+
 app = Flask(__name__, static_folder='static')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -567,12 +572,17 @@ def get_cases():
 def get_case(case_id):
     if case_id in CASES_DICT:
         data = dict(CASES_DICT[case_id])
-        # Enrich with canonical unabridged title and prepended hierarchy
+        # Enrich with canonical unabridged title, prepended hierarchy, and tree
         c_meta = CANONICAL_METADATA.get(case_id, {})
         if c_meta:
             data["statute_title"] = c_meta.get("statute_title", data.get("statute_title"))
             data["prepended_path"] = c_meta.get("prepended_path", "")
             data["prepended_context"] = c_meta.get("prepended_context", "")
+        
+        c_tree = CANONICAL_HIERARCHIES.get(case_id, {})
+        if c_tree:
+            data["statute_tree"] = c_tree.get("statute_tree")
+            data["ordinance_tree"] = c_tree.get("ordinance_tree")
         return jsonify(data)
     return jsonify({"error": f"Case {case_id} not found"}), 404
 
@@ -593,6 +603,7 @@ def analyze_clause():
         
     matched = CASES_DICT.get(case_id)
     c_meta = CANONICAL_METADATA.get(case_id, {})
+    c_tree = CANONICAL_HIERARCHIES.get(case_id, {})
     
     if not statute_text and matched:
         statute_text = matched["premise_text"]
@@ -624,7 +635,9 @@ def analyze_clause():
         "prepended_path": c_meta.get("prepended_path", "National Statutory Knowledge Base > Operative Provision"),
         "prepended_context": c_meta.get("prepended_context", ""),
         "sc_ruling_reference": matched.get("ruling", "Pre-enactment legislative consistency screening under standard Sangguniang Panlungsod procedures.") if matched else "Custom Draft Review",
-        "legal_doctrine_rationale": matched.get("legal_rationale", "Under the Magtajas doctrine, an ordinance cannot prohibit an activity expressly permitted or regulated by national statute.") if matched else "Evaluated against Philippine statutory hierarchy and Local Government Code preemption doctrines."
+        "legal_doctrine_rationale": matched.get("legal_rationale", "Under the Magtajas doctrine, an ordinance cannot prohibit an activity expressly permitted or regulated by national statute.") if matched else "Evaluated against Philippine statutory hierarchy and Local Government Code preemption doctrines.",
+        "statute_tree": c_tree.get("statute_tree") if c_tree else None,
+        "ordinance_tree": c_tree.get("ordinance_tree") if c_tree else None
     }
     
     return jsonify(result)
