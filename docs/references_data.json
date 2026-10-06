@@ -542,7 +542,7 @@
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/2022.acl-long.297.pdf",
     "is_cited": true,
-    "citation_count": 14,
+    "citation_count": 16,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
@@ -767,10 +767,12 @@
     "direct_pdf_url": "",
     "is_cited": true,
     "citation_count": 14,
+    "citation_count": 14,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex",
       "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex",
       "CS_Undergraduate_Thesis_Template/chapters/theoretical-framework.tex"
     ],
@@ -1054,9 +1056,9 @@
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 13:21:57",
     "google_search_url": "https://www.google.com/search?q=%22Diokno%20Files%20Bill%20to%20Break%20Language%20Barriers%20in%20PH%20Laws%22%20Reganit%2C%20Jose%20Cielito",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Diokno%20Files%20Bill%20to%20Break%20Language%20Barriers%20in%20PH%20Laws",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Diokno%20Files%20Bill%20to%20Break%20Language%20Barriers%20in%20PH%20Laws",
@@ -1114,8 +1116,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/cruz2007political.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1124,7 +1126,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Philippine%20Political%20Law",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Philippine%20Political%20Law&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{cruz2007political,\n  title={Philippine Political Law},\n  author={Cruz, Isagani A.},\n  year={2007},\n  publisher={Central Lawbook Publishing},\n  address={Quezon City},\n  isbn={971-16-0610-1},\n}"
+    "raw_bib": "@book{cruz2007political,\n  title={Philippine Political Law},\n  author={Cruz, Isagani A.},\n  year={2007},\n  publisher={Central Lawbook Publishing},\n  address={Quezon City},\n  isbn={971-16-0610-1},\n  file = {docs/references/cruz2007political.pdf}\n}"
   },
   {
     "citekey": "humphreys2020populating",
@@ -1301,8 +1303,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/patumbon2025landmark.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1311,7 +1313,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Davao%20City%20Council%20Passes%20Landmark%20Measures",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Davao%20City%20Council%20Passes%20Landmark%20Measures&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@misc{patumbon2025landmark,\n  title        = {{Davao City Council Passes Landmark Measures}},\n  author       = {Patumbon, Rojean Grace G.},\n  year         = {2025},\n  month        = {February},\n  howpublished = {SunStar Davao},\n  url          = {https://www.sunstar.com.ph/davao/davao-city-council-passes-landmark-measures},\n  urldate      = {2026-09-26},\n  note         = {SunStar Davao Special Report on 20th and 21st Sangguniang Panlungsod legislative output}\n}"
+    "raw_bib": "@misc{patumbon2025landmark,\n  title        = {{Davao City Council Passes Landmark Measures}},\n  author       = {Patumbon, Rojean Grace G.},\n  year         = {2025},\n  month        = {February},\n  howpublished = {SunStar Davao},\n  url          = {https://www.sunstar.com.ph/davao/davao-city-council-passes-landmark-measures},\n  urldate      = {2026-09-26},\n  note         = {SunStar Davao Special Report on 20th and 21st Sangguniang Panlungsod legislative output},\n  file = {docs/references/patumbon2025landmark.pdf}\n}"
   },
   {
     "citekey": "citygov2025lissp",
@@ -1333,8 +1335,8 @@
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/citygov2025lissp.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1343,7 +1345,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=City%20Upgrades%20Legislative%20Information%20Support%20System",
     "crossref_search_url": "https://api.crossref.org/works?query.title=City%20Upgrades%20Legislative%20Information%20Support%20System&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@online{citygov2025lissp,\n  author   = {{City Government of Davao}},\n  title    = {{City Upgrades Legislative Information Support System}},\n  year     = {2025},\n  month    = {August},\n  day      = {14},\n  note     = {Accessed: February 13, 2026},\n  keywords = {it_infrastructure, legislative_system},\n  url = {https://davaocity.gov.ph/local-government/city-upgrades-legislative-information-support-system/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@online{citygov2025lissp,\n  author   = {{City Government of Davao}},\n  title    = {{City Upgrades Legislative Information Support System}},\n  year     = {2025},\n  month    = {August},\n  day      = {14},\n  note     = {Accessed: February 13, 2026},\n  keywords = {it_infrastructure, legislative_system},\n  url = {https://davaocity.gov.ph/local-government/city-upgrades-legislative-information-support-system/},\n  urldate = {2026-09-26},\n  file = {docs/references/citygov2025lissp.pdf}\n}"
   },
   {
     "citekey": "patumbon2025lissp",
@@ -1364,8 +1366,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/patumbon2025lissp.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1374,7 +1376,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=SP%20Implements%20Less%20Paper%20with%20LISSP",
     "crossref_search_url": "https://api.crossref.org/works?query.title=SP%20Implements%20Less%20Paper%20with%20LISSP&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@misc{patumbon2025lissp,\n  title        = {{SP} Implements Less Paper with {LISSP}},\n  author       = {Patumbon, Rojean Grace G.},\n  year         = {2025},\n  month        = {February},\n  howpublished = {SunStar Davao},\n  url          = {https://www.sunstar.com.ph/davao/sp-implements-less-paper-with-lissp},\n  urldate      = {2026-09-26},\n  note         = {Reporting on official announcement by Davao City Councilor Bonz Andre Militar},\n}"
+    "raw_bib": "@misc{patumbon2025lissp,\n  title        = {{SP} Implements Less Paper with {LISSP}},\n  author       = {Patumbon, Rojean Grace G.},\n  year         = {2025},\n  month        = {February},\n  howpublished = {SunStar Davao},\n  url          = {https://www.sunstar.com.ph/davao/sp-implements-less-paper-with-lissp},\n  urldate      = {2026-09-26},\n  note         = {Reporting on official announcement by Davao City Councilor Bonz Andre Militar},\n  file = {docs/references/patumbon2025lissp.pdf}\n}"
   },
   {
     "citekey": "spdc2025rots",
@@ -1393,8 +1395,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/spdc2025rots.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1403,7 +1405,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Resolution%20Ordinance%20Tracking%20System%20%28ROTS%29%20and%20Administrative%20Functions",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Resolution%20Ordinance%20Tracking%20System%20%28ROTS%29%20and%20Administrative%20Functions&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Resolution%20Ordinance%20Tracking%20System%20%28ROTS%29%20and%20Administrative%20Functions",
-    "raw_bib": "@online{spdc2025rots,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Resolution Ordinance Tracking System (ROTS) and Administrative Functions}},\n  year         = {2025},\n  keywords     = {data_management, ordinance_tracking},\n  url = {https://spdavao.wordpress.com/divisions-2/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@online{spdc2025rots,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Resolution Ordinance Tracking System (ROTS) and Administrative Functions}},\n  year         = {2025},\n  keywords     = {data_management, ordinance_tracking},\n  url = {https://spdavao.wordpress.com/divisions-2/},\n  urldate = {2026-09-26},\n  file = {docs/references/spdc2025rots.pdf}\n}"
   },
   {
     "citekey": "chalkidis2019deep",
@@ -1482,8 +1484,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/fitzgerald2021information.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1492,7 +1494,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Information%20retrieval%3A%20Solving%20mismatching%20vocabulary%20in%20closed%20document%20collections",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Information%20retrieval%3A%20Solving%20mismatching%20vocabulary%20in%20closed%20document%20collections&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Information%20retrieval%3A%20Solving%20mismatching%20vocabulary%20in%20closed%20document%20collections",
-    "raw_bib": "@article{fitzgerald2021information,\nauthor = {Fitzgerald, Kyle and Harpe, Andre and Uys, Corrie and Bytheway, Andrew},\nyear = {2021},\nmonth = {01},\npages = {42-54},\ntitle = {Information retrieval: Solving mismatching vocabulary in closed document collections},\nvolume = {87},\njournal = {South African Journal of Libraries and Information Science},\ndoi = {10.7553/10.7553/87-2-1957},\n  url = {https://www.researchgate.net/publication/360814540_Information_retrieval_Solving_mismatching_vocabulary_in_closed_document_collections},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{fitzgerald2021information,\nauthor = {Fitzgerald, Kyle and Harpe, Andre and Uys, Corrie and Bytheway, Andrew},\nyear = {2021},\nmonth = {01},\npages = {42-54},\ntitle = {Information retrieval: Solving mismatching vocabulary in closed document collections},\nvolume = {87},\njournal = {South African Journal of Libraries and Information Science},\ndoi = {10.7553/10.7553/87-2-1957},\n  url = {https://www.researchgate.net/publication/360814540_Information_retrieval_Solving_mismatching_vocabulary_in_closed_document_collections},\n  urldate = {2026-09-26},\n  file = {docs/references/fitzgerald2021information.pdf}\n}"
   },
   {
     "citekey": "zhao2010term",
@@ -1511,8 +1513,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/zhao2010term.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1521,7 +1523,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Term%20necessity%20prediction",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Term%20necessity%20prediction&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@inproceedings{zhao2010term,\nauthor = {Zhao, Le and Callan, Jamie},\ntitle = {Term necessity prediction},\nyear = {2010},\nisbn = {9781450300995},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\ndoi = {10.1145/1871437.1871474},\nbooktitle = {Proceedings of the 19th ACM International Conference on Information and Knowledge Management},\npages = {259–268},\nnumpages = {10},\nkeywords = {ad-hoc retrieval models, mismatch, necessity, term weighting},\nlocation = {Toronto, ON, Canada},\nseries = {CIKM '10},\n  url = {https://doi.org/10.1145/1871437.1871474},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@inproceedings{zhao2010term,\nauthor = {Zhao, Le and Callan, Jamie},\ntitle = {Term necessity prediction},\nyear = {2010},\nisbn = {9781450300995},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\ndoi = {10.1145/1871437.1871474},\nbooktitle = {Proceedings of the 19th ACM International Conference on Information and Knowledge Management},\npages = {259–268},\nnumpages = {10},\nkeywords = {ad-hoc retrieval models, mismatch, necessity, term weighting},\nlocation = {Toronto, ON, Canada},\nseries = {CIKM '10},\n  url = {https://doi.org/10.1145/1871437.1871474},\n  urldate = {2026-09-26},\n  file = {docs/references/zhao2010term.pdf}\n}"
   },
   {
     "citekey": "dempsey2016student",
@@ -1540,8 +1542,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/dempsey2016student.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1550,7 +1552,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Student%20Use%20of%20Keywords%20and%20Limiters%20in%20Web-scale%20Discovery%20Searching",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Student%20Use%20of%20Keywords%20and%20Limiters%20in%20Web-scale%20Discovery%20Searching&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{dempsey2016student,\ntitle = {Student Use of Keywords and Limiters in Web-scale Discovery Searching},\njournal = {The Journal of Academic Librarianship},\nvolume = {42},\nnumber = {3},\npages = {200-206},\nyear = {2016},\nissn = {0099-1333},\ndoi = {https://doi.org/10.1016/j.acalib.2016.03.002},\nauthor = {Megan Dempsey and Alyssa M. Valenti},\nkeywords = {Information literacy, Web-scale discovery, EBSCO Discovery Service, Keywords, Search strategies},\n  url = {https://www.sciencedirect.com/science/article/pii/S0099133316300027},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{dempsey2016student,\ntitle = {Student Use of Keywords and Limiters in Web-scale Discovery Searching},\njournal = {The Journal of Academic Librarianship},\nvolume = {42},\nnumber = {3},\npages = {200-206},\nyear = {2016},\nissn = {0099-1333},\ndoi = {https://doi.org/10.1016/j.acalib.2016.03.002},\nauthor = {Megan Dempsey and Alyssa M. Valenti},\nkeywords = {Information literacy, Web-scale discovery, EBSCO Discovery Service, Keywords, Search strategies},\n  url = {https://www.sciencedirect.com/science/article/pii/S0099133316300027},\n  urldate = {2026-09-26},\n  file = {docs/references/dempsey2016student.pdf}\n}"
   },
   {
     "citekey": "lowe2018the",
@@ -1569,8 +1571,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/lowe2018the.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1579,7 +1581,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20Boolean%20is%20Dead%2C%20Long%20Live%20the%20Boolean%21%20Natural%20Language%20versus%20Boolean%20Searching%20in%20Introductory%20Undergraduate%20Instruction",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20Boolean%20is%20Dead%2C%20Long%20Live%20the%20Boolean%21%20Natural%20Language%20versus%20Boolean%20Searching%20in%20Introductory%20Undergraduate%20Instruction&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{lowe2018the,\n\tauthor = {M. Lowe and Bronwen Maxson and Sean Stone and Willie Miller and Eric Snajdr and Kathleen Hanna},\n\ttitle = {The Boolean is Dead, Long Live the Boolean! Natural Language versus Boolean Searching in Introductory Undergraduate Instruction},\n\tjournal = {College \\& Research Libraries},\n\tvolume = {79},\n\tnumber = {4},\n\tyear = {2018},\n\tkeywords = {},\n\tissn = {2150-6701},\tpages = {517},\tdoi = {10.5860/crl.79.4.517},\n  url = {https://crl.acrl.org/index.php/crl/article/view/16729},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{lowe2018the,\n\tauthor = {M. Lowe and Bronwen Maxson and Sean Stone and Willie Miller and Eric Snajdr and Kathleen Hanna},\n\ttitle = {The Boolean is Dead, Long Live the Boolean! Natural Language versus Boolean Searching in Introductory Undergraduate Instruction},\n\tjournal = {College \\& Research Libraries},\n\tvolume = {79},\n\tnumber = {4},\n\tyear = {2018},\n\tkeywords = {},\n\tissn = {2150-6701},\tpages = {517},\tdoi = {10.5860/crl.79.4.517},\n  url = {https://crl.acrl.org/index.php/crl/article/view/16729},\n  urldate = {2026-09-26},\n  file = {docs/references/lowe2018the.pdf}\n}"
   },
   {
     "citekey": "furnas1987the",
@@ -1598,8 +1600,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/furnas1987the.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1608,7 +1610,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20vocabulary%20problem%20in%20human-system%20communication",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20vocabulary%20problem%20in%20human-system%20communication&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{furnas1987the,\nauthor = {Furnas, G. W. and Landauer, T. K. and Gomez, L. M. and Dumais, S. T.},\ntitle = {The vocabulary problem in human-system communication},\nyear = {1987},\nissue_date = {Nov. 1987},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\nvolume = {30},\nnumber = {11},\nissn = {0001-0782},\ndoi = {10.1145/32206.32212},\njournal = {Commun. ACM},\nmonth = nov,\npages = {964–971},\nnumpages = {8},\n  url = {https://doi.org/10.1145/32206.32212},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{furnas1987the,\nauthor = {Furnas, G. W. and Landauer, T. K. and Gomez, L. M. and Dumais, S. T.},\ntitle = {The vocabulary problem in human-system communication},\nyear = {1987},\nissue_date = {Nov. 1987},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\nvolume = {30},\nnumber = {11},\nissn = {0001-0782},\ndoi = {10.1145/32206.32212},\njournal = {Commun. ACM},\nmonth = nov,\npages = {964–971},\nnumpages = {8},\n  url = {https://doi.org/10.1145/32206.32212},\n  urldate = {2026-09-26},\n  file = {docs/references/furnas1987the.pdf}\n}"
   },
   {
     "citekey": "palmirani2021legalruleml",
@@ -1627,8 +1629,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/palmirani2021legalruleml.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1637,7 +1639,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=LegalRuleML%20Core%20Specification%20Version%201.0",
     "crossref_search_url": "https://api.crossref.org/works?query.title=LegalRuleML%20Core%20Specification%20Version%201.0&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+LegalRuleML%20Core%20Specification%20Version%201.0",
-    "raw_bib": "@techreport{palmirani2021legalruleml,\n  author      = {Monica Palmirani and Guido Governatori and Tara Athan and Harold Boley and Adrian Paschke and Adam Wyner},\n  title       = {{LegalRuleML Core Specification Version 1.0}},\n  institution = {OASIS Open},\n  month       = {August},\n  year        = {2021},\n  type        = {OASIS Standard},\n  note        = {Approved 30 August 2021},\n  url = {https://docs.oasis-open.org/legalruleml/legalruleml-core-spec/v1.0/os/legalruleml-core-spec-v1.0-os.html},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@techreport{palmirani2021legalruleml,\n  author      = {Monica Palmirani and Guido Governatori and Tara Athan and Harold Boley and Adrian Paschke and Adam Wyner},\n  title       = {{LegalRuleML Core Specification Version 1.0}},\n  institution = {OASIS Open},\n  month       = {August},\n  year        = {2021},\n  type        = {OASIS Standard},\n  note        = {Approved 30 August 2021},\n  url = {https://docs.oasis-open.org/legalruleml/legalruleml-core-spec/v1.0/os/legalruleml-core-spec-v1.0-os.html},\n  urldate = {2026-09-26},\n  file = {docs/references/palmirani2021legalruleml.pdf}\n}"
   },
   {
     "citekey": "vitali2007towards",
@@ -1658,9 +1660,9 @@
     "cited_in_files": [],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 13:51:13",
     "google_search_url": "https://www.google.com/search?q=%22Towards%20a%20country-independent%20data%20format%3A%20the%20Akoma%20Ntoso%20experience%22%20Fabio%20Vitali",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Towards%20a%20country-independent%20data%20format%3A%20the%20Akoma%20Ntoso%20experience",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Towards%20a%20country-independent%20data%20format%3A%20the%20Akoma%20Ntoso%20experience",
@@ -1687,8 +1689,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/athan2013legalruleml.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1697,7 +1699,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=LegalRuleML%3A%20From%20Metamodel%20to%20Use%20Cases%20-%20%28A%20Tutorial%29",
     "crossref_search_url": "https://api.crossref.org/works?query.title=LegalRuleML%3A%20From%20Metamodel%20to%20Use%20Cases%20-%20%28A%20Tutorial%29&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@inproceedings{athan2013legalruleml,\nauthor = {Athan, Tara and Boley, Harold and Governatori, Guido and Palmirani, Monica and Paschke, Adrian and Wyner, Adam},\nyear = {2013},\nmonth = {07},\npages = {13-18},\ntitle = {LegalRuleML: From Metamodel to Use Cases - (A Tutorial)},\nvolume = {8035},\nisbn = {978-3-642-39616-8},\ndoi = {10.1007/978-3-642-39617-5_4},\n  url = {https://link.springer.com/chapter/10.1007/978-3-642-39617-5_4},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@inproceedings{athan2013legalruleml,\nauthor = {Athan, Tara and Boley, Harold and Governatori, Guido and Palmirani, Monica and Paschke, Adrian and Wyner, Adam},\nyear = {2013},\nmonth = {07},\npages = {13-18},\ntitle = {LegalRuleML: From Metamodel to Use Cases - (A Tutorial)},\nvolume = {8035},\nisbn = {978-3-642-39616-8},\ndoi = {10.1007/978-3-642-39617-5_4},\n  url = {https://link.springer.com/chapter/10.1007/978-3-642-39617-5_4},\n  urldate = {2026-09-26},\n  file = {docs/references/athan2013legalruleml.pdf}\n}"
   },
   {
     "citekey": "Palmirani2018Modelling",
@@ -1716,8 +1718,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/Palmirani2018Modelling.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1726,7 +1728,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Modelling%20Legal%20Knowledge%20for%20GDPR%20Compliance%20Checking",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Modelling%20Legal%20Knowledge%20for%20GDPR%20Compliance%20Checking&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Modelling%20Legal%20Knowledge%20for%20GDPR%20Compliance%20Checking",
-    "raw_bib": "@inproceedings{Palmirani2018Modelling,\n  title={Modelling Legal Knowledge for GDPR Compliance Checking},\n  author={Monica Palmirani and Guido Governatori},\n  booktitle={International Conference on Legal Knowledge and Information Systems},\n  year={2018},\n  url = {https://ebooks.iospress.nl/volumearticle/50839},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@inproceedings{Palmirani2018Modelling,\n  title={Modelling Legal Knowledge for GDPR Compliance Checking},\n  author={Monica Palmirani and Guido Governatori},\n  booktitle={International Conference on Legal Knowledge and Information Systems},\n  year={2018},\n  url = {https://ebooks.iospress.nl/volumearticle/50839},\n  urldate = {2026-09-26},\n  file = {docs/references/Palmirani2018Modelling.pdf}\n}"
   },
   {
     "citekey": "lucos2025neurosymbolic",
@@ -1747,8 +1749,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/lucos2025neurosymbolic.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1757,7 +1759,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Neuro-Symbolic%20Artificial%20Intelligence%3A%20Foundations%2C%20Advances%2C%20and%20Future%20Directions",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Neuro-Symbolic%20Artificial%20Intelligence%3A%20Foundations%2C%20Advances%2C%20and%20Future%20Directions&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{lucos2025neurosymbolic,\n  author  = {Lucos, Reshma and L P, Supriya and P R, Vinod and Girish, Dhanya and M, Reshma and Kurup, Parvathy S and M S, Chinchu and Saleela, Divya},\n  title   = {{Neuro-Symbolic Artificial Intelligence: Foundations, Advances, and Future Directions}},\n  journal = {SSRN Electronic Journal},\n  year    = {2025},\n  month   = {December},\n  day     = {13},\n  doi     = {10.2139/ssrn.5915242},\n  url = {https://ssrn.com/abstract=5915242},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{lucos2025neurosymbolic,\n  author  = {Lucos, Reshma and L P, Supriya and P R, Vinod and Girish, Dhanya and M, Reshma and Kurup, Parvathy S and M S, Chinchu and Saleela, Divya},\n  title   = {{Neuro-Symbolic Artificial Intelligence: Foundations, Advances, and Future Directions}},\n  journal = {SSRN Electronic Journal},\n  year    = {2025},\n  month   = {December},\n  day     = {13},\n  doi     = {10.2139/ssrn.5915242},\n  url = {https://ssrn.com/abstract=5915242},\n  urldate = {2026-09-26},\n  file = {docs/references/lucos2025neurosymbolic.pdf}\n}"
   },
   {
     "citekey": "ashley2017artificial",
@@ -1778,8 +1780,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/ashley2017artificial.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1788,7 +1790,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Artificial%20Intelligence%20and%20Legal%20Analytics%3A%20New%20Tools%20for%20Law%20Practice%20in%20the%20Digital%20Age",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Artificial%20Intelligence%20and%20Legal%20Analytics%3A%20New%20Tools%20for%20Law%20Practice%20in%20the%20Digital%20Age&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{ashley2017artificial, \nplace={Cambridge}, \ntitle={Artificial Intelligence and Legal Analytics: New Tools for Law Practice in the Digital Age}, \npublisher={Cambridge University Press}, \nauthor={Ashley, Kevin}, \nyear={2017},\n  url = {https://www.researchgate.net/publication/325555949_Artificial_intelligence_and_legal_analytics_New_tools_for_law_practice_in_the_digital_age},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@book{ashley2017artificial, \nplace={Cambridge}, \ntitle={Artificial Intelligence and Legal Analytics: New Tools for Law Practice in the Digital Age}, \npublisher={Cambridge University Press}, \nauthor={Ashley, Kevin}, \nyear={2017},\n  url = {https://www.researchgate.net/publication/325555949_Artificial_intelligence_and_legal_analytics_New_tools_for_law_practice_in_the_digital_age},\n  urldate = {2026-09-26},\n  file = {docs/references/ashley2017artificial.pdf}\n}"
   },
   {
     "citekey": "harde2025lecnet",
@@ -2026,8 +2028,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/yang2021legalgnn.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -2036,7 +2038,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=LegalGNN%3A%20Legal%20Information%20Enhanced%20Graph%20Neural%20Network%20for%20Recommendation",
     "crossref_search_url": "https://api.crossref.org/works?query.title=LegalGNN%3A%20Legal%20Information%20Enhanced%20Graph%20Neural%20Network%20for%20Recommendation&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{yang2021legalgnn,\nauthor = {Yang, Jun and Ma, Weizhi and Zhang, Min and Zhou, Xin and Liu, Yiqun and Ma, Shaoping},\ntitle = {LegalGNN: Legal Information Enhanced Graph Neural Network for Recommendation},\nyear = {2021},\nissue_date = {April 2022},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\nvolume = {40},\nnumber = {2},\nissn = {1046-8188},\ndoi = {10.1145/3469887},\njournal = {ACM Trans. Inf. Syst.},\nmonth = sep,\narticleno = {33},\nnumpages = {29},\nkeywords = {graph neural network, heterogeneous information network, heterogeneous environments, Legal information recommendation},\n  url = {https://doi.org/10.1145/3469887},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{yang2021legalgnn,\nauthor = {Yang, Jun and Ma, Weizhi and Zhang, Min and Zhou, Xin and Liu, Yiqun and Ma, Shaoping},\ntitle = {LegalGNN: Legal Information Enhanced Graph Neural Network for Recommendation},\nyear = {2021},\nissue_date = {April 2022},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\nvolume = {40},\nnumber = {2},\nissn = {1046-8188},\ndoi = {10.1145/3469887},\njournal = {ACM Trans. Inf. Syst.},\nmonth = sep,\narticleno = {33},\nnumpages = {29},\nkeywords = {graph neural network, heterogeneous information network, heterogeneous environments, Legal information recommendation},\n  url = {https://doi.org/10.1145/3469887},\n  urldate = {2026-09-26},\n  file = {docs/references/yang2021legalgnn.pdf}\n}"
   },
   {
     "citekey": "vu2022abstract",
@@ -2270,8 +2272,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/Eleftheriadis2023evaluating.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -2280,7 +2282,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Evaluating%20Deep%20Learning%20Techniques%20for%20Natural%20Language%20Inference",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Evaluating%20Deep%20Learning%20Techniques%20for%20Natural%20Language%20Inference&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@Article{Eleftheriadis2023evaluating,\nAUTHOR = {Eleftheriadis, Petros and Perikos, Isidoros and Hatzilygeroudis, Ioannis},\nTITLE = {Evaluating Deep Learning Techniques for Natural Language Inference},\nJOURNAL = {Applied Sciences},\nVOLUME = {13},\nYEAR = {2023},\nNUMBER = {4},\nARTICLE-NUMBER = {2577},\nISSN = {2076-3417},\nDOI = {10.3390/app13042577},\n  url = {https://www.mdpi.com/2076-3417/13/4/2577},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@Article{Eleftheriadis2023evaluating,\nAUTHOR = {Eleftheriadis, Petros and Perikos, Isidoros and Hatzilygeroudis, Ioannis},\nTITLE = {Evaluating Deep Learning Techniques for Natural Language Inference},\nJOURNAL = {Applied Sciences},\nVOLUME = {13},\nYEAR = {2023},\nNUMBER = {4},\nARTICLE-NUMBER = {2577},\nISSN = {2076-3417},\nDOI = {10.3390/app13042577},\n  url = {https://www.mdpi.com/2076-3417/13/4/2577},\n  urldate = {2026-09-26},\n  file = {docs/references/Eleftheriadis2023evaluating.pdf}\n}"
   },
   {
     "citekey": "quevedo2024legal",
@@ -2301,8 +2303,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/quevedo2024legal.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -2311,7 +2313,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Legal%20Natural%20Language%20Processing%20From%202015%20to%202022%3A%20A%20Comprehensive%20Systematic%20Mapping%20Study%20of%20Advances%20and%20Applications",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Legal%20Natural%20Language%20Processing%20From%202015%20to%202022%3A%20A%20Comprehensive%20Systematic%20Mapping%20Study%20of%20Advances%20and%20Applications&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@ARTICLE{quevedo2024legal,\n  author={Quevedo, Ernesto and Cerny, Tomas and Rodriguez, Alejandro and Rivas, Pablo and Yero, Jorge and Sooksatra, Korn and Zhakubayev, Alibek and Taibi, Davide},\n  journal={IEEE Access}, \n  title={Legal Natural Language Processing From 2015 to 2022: A Comprehensive Systematic Mapping Study of Advances and Applications}, \n  year={2024},\n  volume={12},\n  number={},\n  pages={145286-145317},\n  keywords={Law;Natural language processing;Task analysis;Systematics;Information retrieval;Surveys;Search problems;Deep learning;Systematic-mapping-study;legal-NLP;deep learning},\n  doi={10.1109/ACCESS.2023.3333946},\n  url = {https://www.researchgate.net/publication/375707785_Legal_Natural_Language_Processing_From_2015_to_2022_A_Comprehensive_Systematic_Mapping_Study_of_Advances_and_Applications},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@ARTICLE{quevedo2024legal,\n  author={Quevedo, Ernesto and Cerny, Tomas and Rodriguez, Alejandro and Rivas, Pablo and Yero, Jorge and Sooksatra, Korn and Zhakubayev, Alibek and Taibi, Davide},\n  journal={IEEE Access}, \n  title={Legal Natural Language Processing From 2015 to 2022: A Comprehensive Systematic Mapping Study of Advances and Applications}, \n  year={2024},\n  volume={12},\n  number={},\n  pages={145286-145317},\n  keywords={Law;Natural language processing;Task analysis;Systematics;Information retrieval;Surveys;Search problems;Deep learning;Systematic-mapping-study;legal-NLP;deep learning},\n  doi={10.1109/ACCESS.2023.3333946},\n  url = {https://www.researchgate.net/publication/375707785_Legal_Natural_Language_Processing_From_2015_to_2022_A_Comprehensive_Systematic_Mapping_Study_of_Advances_and_Applications},\n  urldate = {2026-09-26},\n  file = {docs/references/quevedo2024legal.pdf}\n}"
   },
   {
     "citekey": "yang2024improving",
@@ -2365,9 +2367,9 @@
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:12:43",
     "google_search_url": "https://www.google.com/search?q=%22A%20semantics-aware%20approach%20for%20multilingual%20natural%20language%20inference%22%20Le-Hong%2C%20Phuong",
     "google_scholar_url": "https://scholar.google.com/scholar?q=A%20semantics-aware%20approach%20for%20multilingual%20natural%20language%20inference",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=A%20semantics-aware%20approach%20for%20multilingual%20natural%20language%20inference",
@@ -2394,8 +2396,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/blair1985an.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -2404,7 +2406,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=An%20evaluation%20of%20retrieval%20effectiveness%20for%20a%20full-text%20document-retrieval%20system",
     "crossref_search_url": "https://api.crossref.org/works?query.title=An%20evaluation%20of%20retrieval%20effectiveness%20for%20a%20full-text%20document-retrieval%20system&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{blair1985an,\nauthor = {Blair, David C. and Maron, M. E.},\ntitle = {An evaluation of retrieval effectiveness for a full-text document-retrieval system},\nyear = {1985},\nissue_date = {March 1985},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\nvolume = {28},\nnumber = {3},\nissn = {0001-0782},\ndoi = {10.1145/3166.3197},\nabstract = {An evaluation of a large, operational full-text document-retrieval system (containing roughly 350,000 pages of text) shows the system to be retrieving less than 20 percent of the documents relevant to a particular search. The findings are discussed in terms of the theory and practice of full-text document retrieval.},\njournal = {Commun. ACM},\nmonth = mar,\npages = {289–299},\nnumpages = {11},\n  url = {https://doi.org/10.1145/3166.3197},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{blair1985an,\nauthor = {Blair, David C. and Maron, M. E.},\ntitle = {An evaluation of retrieval effectiveness for a full-text document-retrieval system},\nyear = {1985},\nissue_date = {March 1985},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\nvolume = {28},\nnumber = {3},\nissn = {0001-0782},\ndoi = {10.1145/3166.3197},\nabstract = {An evaluation of a large, operational full-text document-retrieval system (containing roughly 350,000 pages of text) shows the system to be retrieving less than 20 percent of the documents relevant to a particular search. The findings are discussed in terms of the theory and practice of full-text document retrieval.},\njournal = {Commun. ACM},\nmonth = mar,\npages = {289–299},\nnumpages = {11},\n  url = {https://doi.org/10.1145/3166.3197},\n  urldate = {2026-09-26},\n  file = {docs/references/blair1985an.pdf}\n}"
   },
   {
     "citekey": "devlin2019bert",
@@ -2763,8 +2765,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/liddy2001natural.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -2773,7 +2775,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Natural%20Language%20Processing",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Natural%20Language%20Processing&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Natural%20Language%20Processing",
-    "raw_bib": "@incollection{liddy2001natural,\n  title        = {Natural Language Processing},\n  author       = {Liddy, Elizabeth D.},\n  booktitle    = {Encyclopedia of Library and Information Science},\n  edition      = {2nd},\n  publisher    = {Marcel Dekker, Inc.},\n  year         = {2001},\n  url          = {https://surface.syr.edu/istpub/50/},\n  urldate      = {2026-09-26},\n}"
+    "raw_bib": "@incollection{liddy2001natural,\n  title        = {Natural Language Processing},\n  author       = {Liddy, Elizabeth D.},\n  booktitle    = {Encyclopedia of Library and Information Science},\n  edition      = {2nd},\n  publisher    = {Marcel Dekker, Inc.},\n  year         = {2001},\n  url          = {https://surface.syr.edu/istpub/50/},\n  urldate      = {2026-09-26},\n  file = {docs/references/liddy2001natural.pdf}\n}"
   },
   {
     "citekey": "jurafsky2024speech",
@@ -3035,8 +3037,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/hu2021impact.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -3045,7 +3047,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Impact%20of%20OCR%20Quality%20on%20BERT%20Embeddings%20in%20the%20Domain%20Classification%20of%20Book%20Excerpts.",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Impact%20of%20OCR%20Quality%20on%20BERT%20Embeddings%20in%20the%20Domain%20Classification%20of%20Book%20Excerpts.&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Impact%20of%20OCR%20Quality%20on%20BERT%20Embeddings%20in%20the%20Domain%20Classification%20of%20Book%20Excerpts.",
-    "raw_bib": "@inproceedings{hu2021impact,\nauthor = {Hu, Yuerong and Jiang, Ming and Downie, J. and Layne-Worthey, Glen and Dubnicek, Ryan and Underwood, Ted},\nyear = {2021},\nmonth = {11},\npages = {},\ntitle = {Impact of OCR Quality on BERT Embeddings in the Domain Classification of Book Excerpts.},\n  url = {https://www.researchgate.net/publication/361785109_Impact_of_OCR_Quality_on_BERT_Embeddings_in_the_Domain_Classification_of_Book_Excerpts},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@inproceedings{hu2021impact,\nauthor = {Hu, Yuerong and Jiang, Ming and Downie, J. and Layne-Worthey, Glen and Dubnicek, Ryan and Underwood, Ted},\nyear = {2021},\nmonth = {11},\npages = {},\ntitle = {Impact of OCR Quality on BERT Embeddings in the Domain Classification of Book Excerpts.},\n  url = {https://www.researchgate.net/publication/361785109_Impact_of_OCR_Quality_on_BERT_Embeddings_in_the_Domain_Classification_of_Book_Excerpts},\n  urldate = {2026-09-26},\n  file = {docs/references/hu2021impact.pdf}\n}"
   },
   {
     "citekey": "Greco2023Bringing",
@@ -3370,8 +3372,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/aoki2022data.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -3380,7 +3382,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Data-Augmentation%20Method%20for%20BERT-based%20Legal%20Textual%20Entailment%20Systems%20in%20COLIEE%20Statute%20Law%20Task",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Data-Augmentation%20Method%20for%20BERT-based%20Legal%20Textual%20Entailment%20Systems%20in%20COLIEE%20Statute%20Law%20Task&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{aoki2022data,\nauthor = {Aoki, Yasuhiro and Yoshioka, Masaharu and Suzuki, Youta},\nyear = {2022},\nmonth = {02},\npages = {},\ntitle = {Data-Augmentation Method for BERT-based Legal Textual Entailment Systems in COLIEE Statute Law Task},\nvolume = {16},\njournal = {The Review of Socionetwork Strategies},\ndoi = {10.1007/s12626-022-00104-0},\n  url = {https://link.springer.com/article/10.1007/s12626-022-00104-0},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{aoki2022data,\nauthor = {Aoki, Yasuhiro and Yoshioka, Masaharu and Suzuki, Youta},\nyear = {2022},\nmonth = {02},\npages = {},\ntitle = {Data-Augmentation Method for BERT-based Legal Textual Entailment Systems in COLIEE Statute Law Task},\nvolume = {16},\njournal = {The Review of Socionetwork Strategies},\ndoi = {10.1007/s12626-022-00104-0},\n  url = {https://link.springer.com/article/10.1007/s12626-022-00104-0},\n  urldate = {2026-09-26},\n  file = {docs/references/aoki2022data.pdf}\n}"
   },
   {
     "citekey": "bommarito2025kl3m",
@@ -3430,8 +3432,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/li2024construction.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -3440,7 +3442,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Construction%20of%20Legal%20Knowledge%20Graph%20Based%20on%20Knowledge-Enhanced%20Large%20Language%20Models",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Construction%20of%20Legal%20Knowledge%20Graph%20Based%20on%20Knowledge-Enhanced%20Large%20Language%20Models&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{li2024construction,\nauthor = {Li, Jun and Qian, Lu and Liu, Peifeng and Liu, Taoxiong},\nyear = {2024},\nmonth = {10},\npages = {666},\ntitle = {Construction of Legal Knowledge Graph Based on Knowledge-Enhanced Large Language Models},\nvolume = {15},\njournal = {Information},\ndoi = {10.3390/info15110666},\n  url = {https://www.researchgate.net/publication/385191261_Construction_of_Legal_Knowledge_Graph_Based_on_Knowledge-Enhanced_Large_Language_Models},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{li2024construction,\nauthor = {Li, Jun and Qian, Lu and Liu, Peifeng and Liu, Taoxiong},\nyear = {2024},\nmonth = {10},\npages = {666},\ntitle = {Construction of Legal Knowledge Graph Based on Knowledge-Enhanced Large Language Models},\nvolume = {15},\njournal = {Information},\ndoi = {10.3390/info15110666},\n  url = {https://www.researchgate.net/publication/385191261_Construction_of_Legal_Knowledge_Graph_Based_on_Knowledge-Enhanced_Large_Language_Models},\n  urldate = {2026-09-26},\n  file = {docs/references/li2024construction.pdf}\n}"
   },
   {
     "citekey": "beltagy2020longformer",
@@ -4459,9 +4461,9 @@
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:17:20",
     "google_search_url": "https://www.google.com/search?q=%22Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018%22%20Government%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018",
@@ -4488,17 +4490,17 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/gesteletal2011exanteevaluation.pdf",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:21:12",
     "google_search_url": "https://www.google.com/search?q=%22Future-oriented%20research%20into%20the%20expected%20effects%20of%20potential%20new%20legislation%22%20Van%20Gestel%2C%20Rob",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Future-oriented%20research%20into%20the%20expected%20effects%20of%20potential%20new%20legislation",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Future-oriented%20research%20into%20the%20expected%20effects%20of%20potential%20new%20legislation",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Future-oriented%20research%20into%20the%20expected%20effects%20of%20potential%20new%20legislation&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{gesteletal2011exanteevaluation,\n  author  = {Van Gestel, Rob and Wiener, Jonathan B.},\n  title   = {Future-oriented research into the expected effects of potential new legislation},\n  journal = {Tilburg University Working Paper},\n  year    = {2011},\n  url = {https://repository.tilburguniversity.edu/bitstreams/b2205b2e-6079-4af8-af64-a8ff5bd561b4/download},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{gesteletal2011exanteevaluation,\n  author  = {Van Gestel, Rob and Wiener, Jonathan B.},\n  title   = {Future-oriented research into the expected effects of potential new legislation},\n  journal = {Tilburg University Working Paper},\n  year    = {2011},\n  url = {https://repository.tilburguniversity.edu/bitstreams/b2205b2e-6079-4af8-af64-a8ff5bd561b4/download},\n  urldate = {2026-09-26},\n  file = {docs/references/gesteletal2011exanteevaluation.pdf}\n}"
   },
   {
     "citekey": "officialgazette",
@@ -4522,9 +4524,9 @@
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:24:17",
     "google_search_url": "https://www.google.com/search?q=%22Official%20Gazette%20of%20the%20Republic%20of%20the%20Philippines%22%20Government%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Official%20Gazette%20of%20the%20Republic%20of%20the%20Philippines",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Official%20Gazette%20of%20the%20Republic%20of%20the%20Philippines",
@@ -4543,7 +4545,7 @@
     "venue": "Supreme Court E-Library",
     "category": "Philippine Law & Jurisprudence",
     "doi": "",
-    "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/28/24573",
+    "url": "https://lawphil.net/statutes/acts/act1902/act_453_1902.html",
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
@@ -4553,15 +4555,15 @@
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:26:35",
     "google_search_url": "https://www.google.com/search?q=%22Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction%22%20Philippine%20Commission",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction",
-    "raw_bib": "@misc{act453_1902,\n  title        = {Act No. 453: An Act Providing for the Publication by the Insular Government of an Official Gazette Under the General Direction of the Department of Public Instruction},\n  author       = {{Philippine Commission}},\n  year         = {1902},\n  month        = {September},\n  day          = {2},\n  howpublished = {Supreme Court E-Library},\n  url = {https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/28/24573},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{act453_1902,\n  title        = {Act No. 453: An Act Providing for the Publication by the Insular Government of an Official Gazette Under the General Direction of the Department of Public Instruction},\n  author       = {{Philippine Commission}},\n  year         = {1902},\n  month        = {September},\n  day          = {2},\n  howpublished = {Supreme Court E-Library},\n  url = {https://lawphil.net/statutes/acts/act1902/act_453_1902.html},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "ca638_1941",
@@ -4584,15 +4586,15 @@
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:27:54",
     "google_search_url": "https://www.google.com/search?q=%22Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette%22%20National%20Assembly%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette",
-    "raw_bib": "@misc{ca638_1941,\n  title        = {Commonwealth Act No. 638: An Act to Provide for the Uniform Publication and Distribution of the Official Gazette},\n  author       = {{National Assembly of the Philippines}},\n  year         = {1941},\n  month        = {June},\n  day          = {10},\n  howpublished = {Supreme Court E-Library},\n  url = {https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/29/36850},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{ca638_1941,\n  title        = {Commonwealth Act No. 638: An Act to Provide for the Uniform Publication and Distribution of the Official Gazette},\n  author       = {{National Assembly of the Philippines}},\n  year         = {1941},\n  month        = {June},\n  day          = {10},\n  howpublished = {Supreme Court E-Library},\n  url = {https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/29/36850},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "hrep2023legis",
@@ -4615,9 +4617,9 @@
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:28:39",
     "google_search_url": "https://www.google.com/search?q=%22Legislative%20Information%20System%20%28LEGIS%29%20Open%20Data%20API%22%20House%20of%20Representatives%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Legislative%20Information%20System%20%28LEGIS%29%20Open%20Data%20API",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Legislative%20Information%20System%20%28LEGIS%29%20Open%20Data%20API",
@@ -4645,8 +4647,8 @@
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/lawphil2000.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -4655,7 +4657,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20LawPhil%20Project%3A%20Philippine%20Laws%20and%20Jurisprudence%20Databank",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20LawPhil%20Project%3A%20Philippine%20Laws%20and%20Jurisprudence%20Databank&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@misc{lawphil2000,\n  title        = {The {LawPhil} Project: Philippine Laws and Jurisprudence Databank},\n  author       = {{Arellano Law Foundation}},\n  year         = {2000},\n  note         = {Accessed: 2026-04-05},\n  url = {https://lawphil.net/aboutus.html},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{lawphil2000,\n  title        = {The {LawPhil} Project: Philippine Laws and Jurisprudence Databank},\n  author       = {{Arellano Law Foundation}},\n  year         = {2000},\n  note         = {Accessed: 2026-04-05},\n  url = {https://lawphil.net/aboutus.html},\n  urldate = {2026-09-26},\n  file = {docs/references/lawphil2000.pdf}\n}"
   },
   {
     "citekey": "davaocity_sp_dept",
@@ -4676,8 +4678,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/davaocity_sp_dept.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -4686,7 +4688,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Sangguniang%20Panlungsod%20-%20Department%20of%20Public%20Administration",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Sangguniang%20Panlungsod%20-%20Department%20of%20Public%20Administration&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@misc{davaocity_sp_dept,\n  title        = {Sangguniang Panlungsod - Department of Public Administration},\n  author       = {{City Government of Davao}},\n  year         = {2026},\n  note         = {Accessed: 2026-04-06},\n  url = {https://davaocity.gov.ph/departments/public-administration/sangguniang-panlungsod/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{davaocity_sp_dept,\n  title        = {Sangguniang Panlungsod - Department of Public Administration},\n  author       = {{City Government of Davao}},\n  year         = {2026},\n  note         = {Accessed: 2026-04-06},\n  url = {https://davaocity.gov.ph/departments/public-administration/sangguniang-panlungsod/},\n  urldate = {2026-09-26},\n  file = {docs/references/davaocity_sp_dept.pdf}\n}"
   },
   {
     "citekey": "hajra2021scraping",
@@ -4739,15 +4741,15 @@
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:30:40",
     "google_search_url": "https://www.google.com/search?q=%22Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City%22%20Sangguniang%20Panlungsod%20of%20Davao%20City",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City",
-    "raw_bib": "@misc{spdavao2026,\n  title        = {Official Website of the {Sangguniang Panlungsod} of {Davao City}},\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  year         = {2026},\n  note         = {Accessed: 2026-04-05},\n  url = {https://sp.davaocity.gov.ph/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{spdavao2026,\n  title        = {Official Website of the {Sangguniang Panlungsod} of {Davao City}},\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  year         = {2026},\n  note         = {Accessed: 2026-04-05},\n  url = {https://sp.davaocity.gov.ph/},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "yang2023batayan",
@@ -4797,8 +4799,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/nrcp2024review.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -4807,7 +4809,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=PH%20local%20governance%20gets%20reviewed%20after%20three%20decades",
     "crossref_search_url": "https://api.crossref.org/works?query.title=PH%20local%20governance%20gets%20reviewed%20after%20three%20decades&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@online{nrcp2024review,\n  title  = {{PH} local governance gets reviewed after three decades},\n  author = {{National Research Council of the Philippines}},\n  year   = {2024},\n  url = {https://nrcp.dost.gov.ph/ph-local-governance-gets-reviewed-after-three-decades/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@online{nrcp2024review,\n  title  = {{PH} local governance gets reviewed after three decades},\n  author = {{National Research Council of the Philippines}},\n  year   = {2024},\n  url = {https://nrcp.dost.gov.ph/ph-local-governance-gets-reviewed-after-three-decades/},\n  urldate = {2026-09-26},\n  file = {docs/references/nrcp2024review.pdf}\n}"
   },
   {
     "citekey": "gabuya2025towardsdigitallegis",
@@ -4857,8 +4859,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/largo2020essentials.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -4867,7 +4869,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20Essentials%20of%20Local%20Government%20Law%20in%20the%20Philippines",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20Essentials%20of%20Local%20Government%20Law%20in%20the%20Philippines&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{largo2020essentials,\n  author    = {Largo, Daryl Bretch M.},\n  title     = {The Essentials of Local Government Law in the Philippines},\n  edition   = {2nd},\n  year      = {2020},\n  publisher = {Rex Book Store},\n  address   = {Manila, Philippines},\n  isbn      = {9786210404678},\n  url = {https://books.google.com.ph/books/about/The_Essentials_of_Local_Government_Law_i.html},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@book{largo2020essentials,\n  author    = {Largo, Daryl Bretch M.},\n  title     = {The Essentials of Local Government Law in the Philippines},\n  edition   = {2nd},\n  year      = {2020},\n  publisher = {Rex Book Store},\n  address   = {Manila, Philippines},\n  isbn      = {9786210404678},\n  url = {https://books.google.com.ph/books/about/The_Essentials_of_Local_Government_Law_i.html},\n  urldate = {2026-09-26},\n  file = {docs/references/largo2020essentials.pdf}\n}"
   },
   {
     "citekey": "huangetal2025integrated",
@@ -4888,8 +4890,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/huangetal2025integrated.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -4898,7 +4900,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Integrated%20Robust%20Optimization%20for%20Lightweight%20Transformer%20Models%20in%20Low-Resource%20Scenarios",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Integrated%20Robust%20Optimization%20for%20Lightweight%20Transformer%20Models%20in%20Low-Resource%20Scenarios&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Integrated%20Robust%20Optimization%20for%20Lightweight%20Transformer%20Models%20in%20Low-Resource%20Scenarios",
-    "raw_bib": "@Article{huangetal2025integrated,\nAUTHOR = {Huang, Hui and Zhang, Hengyu and Wang, Yusen and Liu, Haibin and Chen, Xiaojie and Chen, Yiling and Liang, Yuan},\nTITLE = {Integrated Robust Optimization for Lightweight Transformer Models in Low-Resource Scenarios},\nJOURNAL = {Symmetry},\nVOLUME = {17},\nYEAR = {2025},\nNUMBER = {7},\nARTICLE-NUMBER = {1162},\nISSN = {2073-8994},\nDOI = {10.3390/sym17071162},\n  url = {https://www.mdpi.com/2073-8994/17/7/1162},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@Article{huangetal2025integrated,\nAUTHOR = {Huang, Hui and Zhang, Hengyu and Wang, Yusen and Liu, Haibin and Chen, Xiaojie and Chen, Yiling and Liang, Yuan},\nTITLE = {Integrated Robust Optimization for Lightweight Transformer Models in Low-Resource Scenarios},\nJOURNAL = {Symmetry},\nVOLUME = {17},\nYEAR = {2025},\nNUMBER = {7},\nARTICLE-NUMBER = {1162},\nISSN = {2073-8994},\nDOI = {10.3390/sym17071162},\n  url = {https://www.mdpi.com/2073-8994/17/7/1162},\n  urldate = {2026-09-26},\n  file = {docs/references/huangetal2025integrated.pdf}\n}"
   },
   {
     "citekey": "leonen2024keynote",
@@ -6170,7 +6172,7 @@
     "eprint": "",
     "direct_pdf_url": "https://nlp.stanford.edu/IR-book/pdf/irbookonlinereading.pdf",
     "is_cited": true,
-    "citation_count": 5,
+    "citation_count": 6,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
@@ -6328,12 +6330,12 @@
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 12,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/aggarwal2012mining.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -7013,7 +7015,7 @@
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 7,
+    "citation_count": 6,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -7570,7 +7572,9 @@
     "direct_pdf_url": "",
     "is_cited": true,
     "citation_count": 3,
+    "citation_count": 3,
     "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
@@ -8764,7 +8768,10 @@
   },
   {
     "citekey": "bisong2019kaggle",
+    "citekey": "bisong2019kaggle",
     "entry_type": "incollection",
+    "title": "Kaggle on Google Cloud Platform",
+    "raw_title": "Kaggle on Google Cloud Platform",
     "title": "Kaggle on Google Cloud Platform",
     "raw_title": "Kaggle on Google Cloud Platform",
     "author": "Bisong, Ekaba",
@@ -8772,6 +8779,7 @@
     "year": "2019",
     "venue": "Building Machine Learning and Deep Learning Models on Google Cloud Platform",
     "category": "Computer Science & NLP",
+    "doi": "10.1007/978-1-4842-4470-8_8",
     "doi": "10.1007/978-1-4842-4470-8_8",
     "url": "",
     "eprint": "",
@@ -8790,12 +8798,21 @@
     "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%20on%20Google%20Cloud%20Platform",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%20on%20Google%20Cloud%20Platform",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%20on%20Google%20Cloud%20Platform&rows=1",
+    "google_search_url": "https://www.google.com/search?q=%22Kaggle%20on%20Google%20Cloud%20Platform%22%20Bisong%2C%20Ekaba",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%20on%20Google%20Cloud%20Platform",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%20on%20Google%20Cloud%20Platform",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%20on%20Google%20Cloud%20Platform&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@incollection{bisong2019kaggle,\n  title     = {Kaggle on Google Cloud Platform},\n  author    = {Bisong, Ekaba},\n  booktitle = {Building Machine Learning and Deep Learning Models on Google Cloud Platform},\n  pages     = {65--74},\n  year      = {2019},\n  publisher = {Apress},\n  address   = {Berkeley, CA},\n  doi       = {10.1007/978-1-4842-4470-8_8},\n  file = {docs/references/bisong2019kaggle.pdf}\n}"
+    "raw_bib": "@incollection{bisong2019kaggle,\n  title     = {Kaggle on Google Cloud Platform},\n  author    = {Bisong, Ekaba},\n  booktitle = {Building Machine Learning and Deep Learning Models on Google Cloud Platform},\n  pages     = {65--74},\n  year      = {2019},\n  publisher = {Apress},\n  address   = {Berkeley, CA},\n  doi       = {10.1007/978-1-4842-4470-8_8}\n}"
   },
   {
     "citekey": "kaggle2026",
+    "citekey": "kaggle2026",
     "entry_type": "misc",
+    "title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
+    "raw_title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
+    "author": "Kaggle Inc.",
+    "raw_author": "{Kaggle Inc.}",
     "title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
     "raw_title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
     "author": "Kaggle Inc.",
@@ -8814,15 +8831,15 @@
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:06:38",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure%22%20Kaggle%20Inc.",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@misc{kaggle2026,\n  author       = {{Kaggle Inc.}},\n  title        = {Kaggle: Machine Learning and Data Science Cloud Infrastructure},\n  publisher    = {Google LLC},\n  year         = {2026},\n  note         = {Accessed October 2026},\n  url = {https://www.kaggle.com},\n  urldate = {2026-10-06}\n}"
+    "raw_bib": "@misc{kaggle2026,\n  author       = {{Kaggle Inc.}},\n  title        = {Kaggle: Machine Learning and Data Science Cloud Infrastructure},\n  publisher    = {Google LLC},\n  year         = {2026},\n  url          = {https://www.kaggle.com},\n  urldate      = {2026-10-05},\n  note         = {Accessed October 2026}\n}"
   },
   {
     "citekey": "davis1989perceived",
@@ -9184,16 +9201,16 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
     ],
-    "has_local_pdf": true,
-    "local_pdf_path": "docs/references/baird1993defect.pdf",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 13:55:01",
+    "has_local_pdf": false,
+    "local_pdf_path": "",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Document%20Image%20Defect%20Models%22%20Henry%20S.%20Baird",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Document%20Image%20Defect%20Models",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Document%20Image%20Defect%20Models",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Document%20Image%20Defect%20Models&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@incollection{baird1993defect,\n  author    = {Henry S. Baird},\n  title     = {Document Image Defect Models},\n  booktitle = {Structured Document Image Analysis},\n  editor    = {Henry S. Baird and Horst Bunke and Kazuhiko Yamamoto},\n  pages     = {546--556},\n  publisher = {Springer},\n  year      = {1993},\n  doi       = {10.1007/978-3-642-77281-8_24},\n  file = {docs/references/baird1993defect.pdf}\n}"
+    "raw_bib": "@incollection{baird1993defect,\n  author    = {Henry S. Baird},\n  title     = {Document Image Defect Models},\n  booktitle = {Structured Document Image Analysis},\n  editor    = {Henry S. Baird and Horst Bunke and Kazuhiko Yamamoto},\n  pages     = {546--556},\n  publisher = {Springer},\n  year      = {1993},\n  doi       = {10.1007/978-3-642-77281-8_24}\n}"
   }
 ]

@@ -63,5 +63,134 @@
     "citation_count": 1,
     "reason": "PDF unobtainable - consider replacing source or revising citing text",
     "timestamp": "2026-10-06 14:30:00"
+  "reganit2025diokno": {
+    "citekey": "reganit2025diokno",
+    "flagged": true,
+    "title": "Diokno Files Bill to Break Language Barriers in PH Laws",
+    "author": "Reganit, Jose Cielito",
+    "year": "2025",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "citation_count": 1,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 13:21:57"
+  },
+  "vitali2007towards": {
+    "citekey": "vitali2007towards",
+    "flagged": true,
+    "title": "Towards a country-independent data format: the Akoma Ntoso experience",
+    "author": "Fabio Vitali and F. Zeni",
+    "year": "2007",
+    "cited_in_files": [],
+    "citation_count": 0,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 13:51:13"
+  },
+  "lehong2023a": {
+    "citekey": "lehong2023a",
+    "flagged": true,
+    "title": "A semantics-aware approach for multilingual natural language inference",
+    "author": "Le-Hong, Phuong and Cambria, Erik",
+    "year": "2023",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "citation_count": 1,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:12:43"
+  },
+  "philippines2018ra11032": {
+    "citekey": "philippines2018ra11032",
+    "flagged": true,
+    "title": "Republic Act No. 11032: Ease of Doing Business and Efficient Government Service Delivery Act of 2018",
+    "author": "Government of the Philippines",
+    "year": "2018",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "citation_count": 2,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:17:20"
+  },
+  "gesteletal2011exanteevaluation": {
+    "citekey": "gesteletal2011exanteevaluation",
+    "flagged": true,
+    "title": "Future-oriented research into the expected effects of potential new legislation",
+    "author": "Van Gestel, Rob and Wiener, Jonathan B.",
+    "year": "2011",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "citation_count": 1,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:21:12"
+  },
+  "officialgazette": {
+    "citekey": "officialgazette",
+    "flagged": true,
+    "title": "Official Gazette of the Republic of the Philippines",
+    "author": "Government of the Philippines",
+    "year": "2026",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "citation_count": 2,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:24:17"
+  },
+  "act453_1902": {
+    "citekey": "act453_1902",
+    "flagged": true,
+    "title": "Act No. 453: An Act Providing for the Publication by the Insular Government of an Official Gazette Under the General Direction of the Department of Public Instruction",
+    "author": "Philippine Commission",
+    "year": "1902",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "citation_count": 1,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:26:35"
+  },
+  "ca638_1941": {
+    "citekey": "ca638_1941",
+    "flagged": true,
+    "title": "Commonwealth Act No. 638: An Act to Provide for the Uniform Publication and Distribution of the Official Gazette",
+    "author": "National Assembly of the Philippines",
+    "year": "1941",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "citation_count": 1,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:27:54"
+  },
+  "hrep2023legis": {
+    "citekey": "hrep2023legis",
+    "flagged": true,
+    "title": "Legislative Information System (LEGIS) Open Data API",
+    "author": "House of Representatives of the Philippines",
+    "year": "2023",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
+    ],
+    "citation_count": 1,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:28:39"
+  },
+  "spdavao2026": {
+    "citekey": "spdavao2026",
+    "flagged": true,
+    "title": "Official Website of the Sangguniang Panlungsod of Davao City",
+    "author": "Sangguniang Panlungsod of Davao City",
+    "year": "2026",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "citation_count": 3,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:30:40"
   }
 }
