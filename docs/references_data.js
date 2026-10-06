@@ -4920,8 +4920,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/leonen2024keynote.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -4930,7 +4930,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=SAJ%20Leonen%3A%20Despite%20Risks%2C%20Legal%20System%20Should%20Keep%20Abreast%20With%20AI%20Developments",
     "crossref_search_url": "https://api.crossref.org/works?query.title=SAJ%20Leonen%3A%20Despite%20Risks%2C%20Legal%20System%20Should%20Keep%20Abreast%20With%20AI%20Developments&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+SAJ%20Leonen%3A%20Despite%20Risks%2C%20Legal%20System%20Should%20Keep%20Abreast%20With%20AI%20Developments",
-    "raw_bib": "@misc{leonen2024keynote,\n  title        = {{SAJ} Leonen: Despite Risks, Legal System Should Keep Abreast With {AI} Developments},\n  author       = {Leonen, Marvic M.V.F.},\n  howpublished = {Keynote Speech at Manila Tech Summit 2024},\n  month        = {August},\n  year         = {2024},\n  url = {https://sc.judiciary.gov.ph/saj-leonen-despite-risks-legal-system-should-keep-abreast-with-ai-developments/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{leonen2024keynote,\n  title        = {{SAJ} Leonen: Despite Risks, Legal System Should Keep Abreast With {AI} Developments},\n  author       = {Leonen, Marvic M.V.F.},\n  howpublished = {Keynote Speech at Manila Tech Summit 2024},\n  month        = {August},\n  year         = {2024},\n  url = {https://sc.judiciary.gov.ph/saj-leonen-despite-risks-legal-system-should-keep-abreast-with-ai-developments/},\n  urldate = {2026-09-26},\n  file = {docs/references/leonen2024keynote.pdf}\n}"
   },
   {
     "citekey": "oard2003desperately",

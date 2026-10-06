@@ -6,13 +6,15 @@
 **Course Professor:** Ma'am Grace Tacadao  
 **Institution:** Department of Computer Science, School of Arts and Sciences, Ateneo de Davao University  
 **Repository:** [`https://github.com/yyaahhzxc/thesis-repo`](https://github.com/yyaahhzxc/thesis-repo)  
-**Last Updated:** 2026-10-05  
+**Last Updated:** 2026-10-06  
 
 ---
 
 ## **Executive Status Banner: Active Milestones**
 
 | Milestone | Target Scope | Current Status | Primary Deliverable |
+| :--- | :--- | :---: | :--- |
+| **Oral Presentation & Mock Defense** | First Oral Presentation / Mock Defense Deck (20 mins) | `COMPLETED` | Comprehensive 15-slide deck + live demo script + defense Q&A cards in `docs/PRESENTATION_SLIDES_MOCK_DEFENSE.md` strictly compliant with Ma'am Grace's 7x7 rule and guidelines |
 | :--- | :--- | :---: | :--- |
 | **Milestone 1** | Data Description - Machine Learning | `COMPLETED` | Commit `cc1c33d` (Sept 4, 2026) |
 | **Milestone 2** | Chapter 3 Methodology Revisions | `COMPLETED` | Chapter 3 100% complete with full local ordinances EDA (1,664 enactments), dual-corpus integration (27,096 records, 176,421 provisions), 6-class functional typology, Figures 3.5 & 3.6, Tables 3.2 & 3.3, and 0 LaTeX errors |
