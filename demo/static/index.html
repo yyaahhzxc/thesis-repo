@@ -492,11 +492,165 @@
     }
 
     .doc-body {
-      padding: 18px;
-      font-size: 0.92rem;
-      line-height: 1.7;
+      padding: 14px;
+      font-size: 0.9rem;
+      line-height: 1.6;
       color: var(--text-body);
       min-height: 130px;
+    }
+
+    .btn-tree-toggle {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-tree-toggle:hover {
+      background: #f1f5f9;
+      color: var(--brand-blue);
+      border-color: var(--brand-blue-border);
+    }
+
+    /* REDDIT-STYLE HIERARCHICAL PREPENDING TREE */
+    .reddit-tree-root {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .reddit-node {
+      position: relative;
+      padding-left: 14px;
+      border-left: 2px solid #cbd5e1;
+      margin-left: 4px;
+      margin-top: 6px;
+      transition: border-color 0.15s ease;
+    }
+    .reddit-node:hover {
+      border-left-color: var(--brand-blue);
+    }
+
+    .reddit-threadline-bar {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -6px;
+      width: 12px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .reddit-node-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+      padding: 7px 10px;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    .reddit-node-header:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .reddit-btn-toggle {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #e2e8f0;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .reddit-pill-ord {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #fef3c7;
+      color: #92400e;
+      flex-shrink: 0;
+    }
+
+    .reddit-pill-stat {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #e0f2fe;
+      color: #0369a1;
+      flex-shrink: 0;
+    }
+
+    .reddit-title-text {
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: var(--text-heading);
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .reddit-collapsed-msg {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      font-style: italic;
+      display: none;
+      flex-shrink: 0;
+    }
+
+    .reddit-node-content {
+      margin-top: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .reddit-node.collapsed > .reddit-node-content {
+      display: none;
+    }
+
+    .reddit-node.collapsed > .reddit-node-header {
+      background: #ffffff;
+      opacity: 0.85;
+    }
+
+    .reddit-node.collapsed > .reddit-node-header .reddit-btn-toggle {
+      background: var(--brand-blue-light);
+      color: var(--brand-blue);
+    }
+
+    .reddit-node.collapsed > .reddit-node-header .reddit-collapsed-msg {
+      display: inline;
+    }
+
+    .reddit-leaf-box {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-top: 6px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }
 
     /* MARKER HIGHLIGHTING */
@@ -955,30 +1109,38 @@
         </div>
 
         <div class="comparison-cols">
-          <!-- Left: Ordinance Provision -->
+          <!-- Left: Ordinance Provision (Hypothesis) -->
           <div class="doc-box">
             <div class="doc-header">
-              <span id="label-ordinance">Draft Local Ordinance Section</span>
-              <span style="font-size:0.75rem; color:var(--text-muted);">Proposed Measure</span>
+              <div>
+                <span id="label-ordinance" style="font-weight:700;">Draft Local Ordinance (Hypothesis)</span>
+                <span style="font-size:0.75rem; color:var(--text-muted); margin-left:6px;">Ex-Ante Measure</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <button type="button" class="btn-tree-toggle" onclick="toggleAllRedditNodes('tree-ordinance-container', false)" title="Collapse all sections">Collapse All</button>
+                <button type="button" class="btn-tree-toggle" onclick="toggleAllRedditNodes('tree-ordinance-container', true)" title="Expand all sections">Expand All</button>
+              </div>
             </div>
-            <div class="doc-body" id="text-ordinance">
-              <!-- Highlighted text injected here -->
+            <div class="doc-body" id="tree-ordinance-container">
+              <!-- Reddit-style hierarchical tree rendered here -->
             </div>
           </div>
 
-          <!-- Right: Controlling National Statute -->
+          <!-- Right: Controlling National Statute (Premise) -->
           <div class="doc-box">
             <div class="doc-header">
-              <span id="label-statute">Controlling National Statute</span>
-              <a id="btn-controlling-lawphil" href="#" target="_blank" class="btn-lawphil">Open Lawphil ↗</a>
+              <div>
+                <span id="label-statute" style="font-weight:700;">Controlling National Statute (Premise)</span>
+                <span style="font-size:0.75rem; color:var(--text-muted); margin-left:6px;">Superior Authority</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <button type="button" class="btn-tree-toggle" onclick="toggleAllRedditNodes('tree-statute-container', false)" title="Collapse all sections">Collapse All</button>
+                <button type="button" class="btn-tree-toggle" onclick="toggleAllRedditNodes('tree-statute-container', true)" title="Expand all sections">Expand All</button>
+                <a id="btn-controlling-lawphil" href="#" target="_blank" class="btn-lawphil">Open Lawphil ↗</a>
+              </div>
             </div>
-            <!-- Hierarchical Prepending Path (Chapter 3 §3.2.2) -->
-            <div id="statute-hierarchy-breadcrumb" style="background:#f1f5f9; border-bottom:1px solid var(--border-color); padding:8px 16px; font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:6px;">
-              <span style="font-weight:600; color:var(--brand-blue);">Hierarchical Prepending:</span>
-              <span id="statute-hierarchy-text" style="color:var(--text-body); font-weight:500;">Presidential Decree No. 1144 &gt; Section 6 (Powers and Functions)</span>
-            </div>
-            <div class="doc-body" id="text-statute">
-              <!-- Highlighted text injected here -->
+            <div class="doc-body" id="tree-statute-container">
+              <!-- Reddit-style hierarchical tree rendered here -->
             </div>
           </div>
         </div>
@@ -1044,7 +1206,7 @@
   <footer>
     <div class="footer-title">A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference</div>
     <div class="footer-desc">An automated computational decision-support system evaluating proposed Davao City ordinances against superior national statutes and local legislation using hybrid information retrieval and calibrated natural language inference.</div>
-    <div class="footer-institution">Department of Computer Science, Ateneo de Davao University &bull; Sangguniang Panlungsod of Davao City</div>
+    <div class="footer-institution">Undergraduate Thesis by Ralph Paolo Dulce and Yahyah Odin &bull; BS Computer Science &bull; Ateneo de Davao University</div>
   </footer>
 
   <script>
@@ -1083,6 +1245,193 @@
         res = res.replace(pattern, '<mark class="hl-statute">$1</mark>');
       });
       return res;
+    }
+
+    function toggleRedditNode(headerElem, event) {
+      if (event) event.stopPropagation();
+      const node = headerElem.closest('.reddit-node');
+      if (!node) return;
+      const isCollapsed = node.classList.toggle('collapsed');
+      const btn = node.querySelector(':scope > .reddit-node-header .reddit-btn-toggle');
+      if (btn) btn.textContent = isCollapsed ? '+' : '–';
+    }
+
+    function toggleAllRedditNodes(containerId, forceExpand) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const nodes = container.querySelectorAll('.reddit-node');
+      nodes.forEach(n => {
+        if (forceExpand) {
+          n.classList.remove('collapsed');
+          const btn = n.querySelector(':scope > .reddit-node-header .reddit-btn-toggle');
+          if (btn) btn.textContent = '–';
+        } else {
+          n.classList.add('collapsed');
+          const btn = n.querySelector(':scope > .reddit-node-header .reddit-btn-toggle');
+          if (btn) btn.textContent = '+';
+        }
+      });
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function parseOrdinanceSections(text) {
+      if (!text || typeof text !== 'string') return [];
+      const trimmed = text.trim();
+      
+      const pattern = /(?:^|[\n.;]\s+)((?:Section|Sec\.|Article|Art\.|Assessment Mandate)\s+[0-9A-Za-z\-&,\s]+?(?:[:.\-—]\s*[^\n.;]+)?(?:\.|\n|:))/gi;
+      const matches = [...trimmed.matchAll(pattern)];
+      
+      if (!matches || matches.length === 0) {
+        return [{
+          title: "Operative Substantive Clause",
+          body: trimmed
+        }];
+      }
+      
+      const sections = [];
+      for (let i = 0; i < matches.length; i++) {
+        const startIdx = matches[i].index + (matches[i][0].length - matches[i][1].length);
+        const headerRaw = matches[i][1].replace(/[:.\s]+$/, '').trim();
+        const nextStart = (i + 1 < matches.length) 
+          ? matches[i + 1].index + (matches[i + 1][0].length - matches[i + 1][1].length)
+          : trimmed.length;
+        let body = trimmed.substring(startIdx, nextStart).trim();
+        if (body.toLowerCase().startsWith(headerRaw.toLowerCase())) {
+          body = body.substring(headerRaw.length).replace(/^[:.\-—\s]+/, '').trim();
+        }
+        sections.push({
+          title: headerRaw,
+          body: body || headerRaw
+        });
+      }
+      return sections;
+    }
+
+    function renderOrdinanceRedditTree(title, rawText) {
+      const container = document.getElementById('tree-ordinance-container');
+      if (!container) return;
+      
+      const sections = parseOrdinanceSections(rawText);
+      const cleanTitle = title || "Draft Local Ordinance Section";
+
+      let sectionsHtml = '';
+      sections.forEach((sec, idx) => {
+        sectionsHtml += `
+          <div class="reddit-node" data-level="2">
+            <div class="reddit-threadline-bar" onclick="toggleRedditNode(this.nextElementSibling, event)" title="Click threadline to collapse/expand"></div>
+            <div class="reddit-node-header" onclick="toggleRedditNode(this, event)">
+              <span class="reddit-btn-toggle">–</span>
+              <span class="reddit-pill-ord">Section ${idx + 1}</span>
+              <span class="reddit-title-text" title="${escapeHtml(sec.title)}">${escapeHtml(sec.title)}</span>
+              <span class="reddit-collapsed-msg">(click to expand)</span>
+            </div>
+            <div class="reddit-node-content">
+              <div class="reddit-leaf-box">
+                ${cleanHighlightOrdinance(sec.body)}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = `
+        <div class="reddit-tree-root">
+          <div class="reddit-node" data-level="1">
+            <div class="reddit-threadline-bar" onclick="toggleRedditNode(this.nextElementSibling, event)" title="Click threadline to collapse/expand"></div>
+            <div class="reddit-node-header" onclick="toggleRedditNode(this, event)">
+              <span class="reddit-btn-toggle">–</span>
+              <span class="reddit-pill-ord">Local Ordinance</span>
+              <span class="reddit-title-text" title="${escapeHtml(cleanTitle)}">${escapeHtml(cleanTitle)}</span>
+              <span class="reddit-collapsed-msg">(${sections.length} sections collapsed)</span>
+            </div>
+            <div class="reddit-node-content">
+              ${sectionsHtml}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderStatuteRedditTree(statuteRef, statuteTitle, prependedPath, rawText, lawphilUrl) {
+      const container = document.getElementById('tree-statute-container');
+      if (!container) return;
+
+      const pathString = prependedPath || `${statuteRef} > Operative Provision`;
+      const segments = pathString.split(/\s*>\s*/).map(s => s.trim()).filter(Boolean);
+      
+      const rootCitation = segments[0] || statuteRef;
+      const leafSection = segments[segments.length - 1] || "Operative Section";
+      const intermediateSegments = segments.slice(1, segments.length - 1);
+
+      // Deepest node: Operative Section containing the full provision text box
+      let currentContentHtml = `
+        <div class="reddit-node" data-level="${intermediateSegments.length + 2}">
+          <div class="reddit-threadline-bar" onclick="toggleRedditNode(this.nextElementSibling, event)" title="Click threadline to collapse/expand"></div>
+          <div class="reddit-node-header" onclick="toggleRedditNode(this, event)">
+            <span class="reddit-btn-toggle">–</span>
+            <span class="reddit-pill-stat">Section</span>
+            <span class="reddit-title-text" title="${escapeHtml(leafSection)}">${escapeHtml(leafSection)}</span>
+            <span class="reddit-collapsed-msg">(click to expand)</span>
+          </div>
+          <div class="reddit-node-content">
+            <div class="reddit-leaf-box">
+              ${cleanHighlightStatute(rawText)}
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Wrap each intermediate segment backwards to construct full recursive hierarchy
+      for (let i = intermediateSegments.length - 1; i >= 0; i--) {
+        const segTitle = intermediateSegments[i];
+        let badgeLabel = "Division";
+        if (/^title/i.test(segTitle)) badgeLabel = "Title";
+        else if (/^chapter/i.test(segTitle)) badgeLabel = "Chapter";
+        else if (/^book/i.test(segTitle)) badgeLabel = "Book";
+        else if (/^article/i.test(segTitle)) badgeLabel = "Article";
+
+        currentContentHtml = `
+          <div class="reddit-node" data-level="${i + 2}">
+            <div class="reddit-threadline-bar" onclick="toggleRedditNode(this.nextElementSibling, event)" title="Click threadline to collapse/expand"></div>
+            <div class="reddit-node-header" onclick="toggleRedditNode(this, event)">
+              <span class="reddit-btn-toggle">–</span>
+              <span class="reddit-pill-stat">${badgeLabel}</span>
+              <span class="reddit-title-text" title="${escapeHtml(segTitle)}">${escapeHtml(segTitle)}</span>
+              <span class="reddit-collapsed-msg">(click to expand)</span>
+            </div>
+            <div class="reddit-node-content">
+              ${currentContentHtml}
+            </div>
+          </div>
+        `;
+      }
+
+      const enactmentDisplay = statuteTitle ? `${rootCitation}: ${statuteTitle}` : rootCitation;
+
+      container.innerHTML = `
+        <div class="reddit-tree-root">
+          <div class="reddit-node" data-level="1">
+            <div class="reddit-threadline-bar" onclick="toggleRedditNode(this.nextElementSibling, event)" title="Click threadline to collapse/expand"></div>
+            <div class="reddit-node-header" onclick="toggleRedditNode(this, event)">
+              <span class="reddit-btn-toggle">–</span>
+              <span class="reddit-pill-stat">National Statute</span>
+              <span class="reddit-title-text" title="${escapeHtml(enactmentDisplay)}">${escapeHtml(enactmentDisplay)}</span>
+              <span class="reddit-collapsed-msg">(provisions collapsed)</span>
+            </div>
+            <div class="reddit-node-content">
+              ${currentContentHtml}
+            </div>
+          </div>
+        </div>
+      `;
     }
 
     function toggleManualInput() {
@@ -1186,21 +1535,30 @@
       gaugeVal.textContent = `${confPct}%`;
       gaugeBar.style.width = `${Math.min(100, confPct)}%`;
 
-      // 2. Texts & Highlights
-      document.getElementById('label-ordinance').textContent = payload.ordinance_title || "Draft Local Ordinance Section";
-      document.getElementById('text-ordinance').innerHTML = cleanHighlightOrdinance(payload.challenged_clause_text);
+      // 2. Render Reddit-Style Prepending Trees for Hypothesis and Premise
+      renderOrdinanceRedditTree(
+        payload.ordinance_title || "Draft Local Ordinance Section",
+        payload.challenged_clause_text
+      );
       
       const statuteRef = data.input_metadata.controlling_statute || "Controlling National Statute";
       const statuteTitle = data.input_metadata.statute_title || (data.candidate_shortlist && data.candidate_shortlist[0] ? data.candidate_shortlist[0].title : "");
       const fullStatuteHeading = statuteTitle ? `${statuteRef} — ${statuteTitle}` : statuteRef;
-      document.getElementById('label-statute').textContent = fullStatuteHeading;
-      document.getElementById('text-statute').innerHTML = cleanHighlightStatute(payload.statute_premise_text || data.stage1_retrieval.candidate_rank);
       document.getElementById('meta-statute-ref').textContent = fullStatuteHeading;
 
       // Lawphil link on controlling statute
       const controllingCandidate = (data.candidate_shortlist && data.candidate_shortlist[0]) || {};
       const controllingUrl = controllingCandidate.lawphil_url || "https://lawphil.net";
-      document.getElementById('btn-controlling-lawphil').href = controllingUrl;
+      const btnLawphil = document.getElementById('btn-controlling-lawphil');
+      if (btnLawphil) btnLawphil.href = controllingUrl;
+
+      renderStatuteRedditTree(
+        statuteRef,
+        statuteTitle,
+        data.input_metadata.prepended_path,
+        payload.statute_premise_text || data.stage1_retrieval.candidate_rank,
+        controllingUrl
+      );
 
       // 3. Legal Rationale
       const doctrine = data.input_metadata.legal_doctrine_rationale || "Evaluated under Philippine statutory preemption rules.";
@@ -1209,11 +1567,6 @@
         <strong>Legal Doctrine:</strong> ${doctrine}<br><br>
         <strong>Judicial Ruling Reference:</strong> ${scRuling ? scRuling : 'Evaluated in accordance with established Sangguniang Panlungsod pre-enactment review standards.'}
       `;
-
-      // Set Hierarchical Prepending Path
-      const hierarchyPath = data.input_metadata.prepended_path || "National Statutory Knowledge Base > Operative Provision";
-      const hierElem = document.getElementById('statute-hierarchy-text');
-      if (hierElem) hierElem.textContent = hierarchyPath;
 
       // 5. Render All 50 Candidate Laws Table
       const tbody = document.getElementById('all-laws-tbody');
