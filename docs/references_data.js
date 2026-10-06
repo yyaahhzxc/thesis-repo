@@ -6144,8 +6144,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/sc1985tanadavtuvera.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -8824,46 +8824,6 @@ window.REFERENCES_DATA = [
     "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure&rows=1",
     "lawphil_url": "",
     "raw_bib": "@misc{kaggle2026,\n  author       = {{Kaggle Inc.}},\n  title        = {Kaggle: Machine Learning and Data Science Cloud Infrastructure},\n  publisher    = {Google LLC},\n  year         = {2026},\n  note         = {Accessed October 2026},\n  url = {https://www.kaggle.com},\n  urldate = {2026-10-06}\n}"
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
-    "google_search_url": "https://www.google.com/search?q=%22Kaggle%20on%20Google%20Cloud%20Platform%22%20Bisong%2C%20Ekaba",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%20on%20Google%20Cloud%20Platform",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%20on%20Google%20Cloud%20Platform",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%20on%20Google%20Cloud%20Platform&rows=1",
-    "lawphil_url": "",
-    "raw_bib": "@incollection{bisong2019kaggle,\n  title     = {Kaggle on Google Cloud Platform},\n  author    = {Bisong, Ekaba},\n  booktitle = {Building Machine Learning and Deep Learning Models on Google Cloud Platform},\n  pages     = {65--74},\n  year      = {2019},\n  publisher = {Apress},\n  address   = {Berkeley, CA},\n  doi       = {10.1007/978-1-4842-4470-8_8}\n}"
-  },
-  {
-    "citekey": "kaggle2026",
-    "entry_type": "misc",
-    "title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
-    "raw_title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
-    "author": "Kaggle Inc.",
-    "raw_author": "{Kaggle Inc.}",
-    "year": "2026",
-    "venue": "Google LLC",
-    "category": "Computer Science & NLP",
-    "doi": "",
-    "url": "https://www.kaggle.com",
-    "eprint": "",
-    "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 1,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
-    ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
-    "google_search_url": "https://www.google.com/search?q=%22Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure%22%20Kaggle%20Inc.",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure&rows=1",
-    "lawphil_url": "",
-    "raw_bib": "@misc{kaggle2026,\n  author       = {{Kaggle Inc.}},\n  title        = {Kaggle: Machine Learning and Data Science Cloud Infrastructure},\n  publisher    = {Google LLC},\n  year         = {2026},\n  url          = {https://www.kaggle.com},\n  urldate      = {2026-10-05},\n  note         = {Accessed October 2026}\n}"
   },
   {
     "citekey": "davis1989perceived",
@@ -9142,8 +9102,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20Concept%20of%20Law",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20Concept%20of%20Law&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{hart1961concept,\n  author    = {H. L. A. Hart},\n  title     = {The Concept of Law},\n  publisher = {Clarendon Press, Oxford University Press},\n  address   = {Oxford, UK},\n  year      = {1961},\n  file = {docs/references/hart1961concept.pdf}\n}",
-    "raw_bib": "@book{hart1961concept,\n  author    = {H. L. A. Hart},\n  title     = {The Concept of Law},\n  publisher = {Clarendon Press, Oxford University Press},\n  address   = {Oxford, UK},\n  year      = {1961}\n}"
+    "raw_bib": "@book{hart1961concept,\n  author    = {H. L. A. Hart},\n  title     = {The Concept of Law},\n  publisher = {Clarendon Press, Oxford University Press},\n  address   = {Oxford, UK},\n  year      = {1961},\n  file = {docs/references/hart1961concept.pdf}\n}"
   },
   {
     "citekey": "banarescu2013abstract",
@@ -9231,17 +9190,11 @@ window.REFERENCES_DATA = [
     "flagged": true,
     "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
     "flag_timestamp": "2026-10-06 13:55:01",
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Document%20Image%20Defect%20Models%22%20Henry%20S.%20Baird",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Document%20Image%20Defect%20Models",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Document%20Image%20Defect%20Models",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Document%20Image%20Defect%20Models&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@incollection{baird1993defect,\n  author    = {Henry S. Baird},\n  title     = {Document Image Defect Models},\n  booktitle = {Structured Document Image Analysis},\n  editor    = {Henry S. Baird and Horst Bunke and Kazuhiko Yamamoto},\n  pages     = {546--556},\n  publisher = {Springer},\n  year      = {1993},\n  doi       = {10.1007/978-3-642-77281-8_24},\n  file = {docs/references/baird1993defect.pdf}\n}",
-    "raw_bib": "@incollection{baird1993defect,\n  author    = {Henry S. Baird},\n  title     = {Document Image Defect Models},\n  booktitle = {Structured Document Image Analysis},\n  editor    = {Henry S. Baird and Horst Bunke and Kazuhiko Yamamoto},\n  pages     = {546--556},\n  publisher = {Springer},\n  year      = {1993},\n  doi       = {10.1007/978-3-642-77281-8_24}\n}"
+    "raw_bib": "@incollection{baird1993defect,\n  author    = {Henry S. Baird},\n  title     = {Document Image Defect Models},\n  booktitle = {Structured Document Image Analysis},\n  editor    = {Henry S. Baird and Horst Bunke and Kazuhiko Yamamoto},\n  pages     = {546--556},\n  publisher = {Springer},\n  year      = {1993},\n  doi       = {10.1007/978-3-642-77281-8_24},\n  file = {docs/references/baird1993defect.pdf}\n}"
   }
 ];
