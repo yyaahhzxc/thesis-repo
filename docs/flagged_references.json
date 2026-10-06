@@ -24,5 +24,44 @@
     "citation_count": 2,
     "reason": "PDF unobtainable - consider replacing source or revising citing text",
     "timestamp": "2026-10-04 16:45:33"
+  },
+  "baird1993defect": {
+    "citekey": "baird1993defect",
+    "flagged": true,
+    "title": "Document Image Defect Models",
+    "author": "Henry S. Baird",
+    "year": "1993",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "citation_count": 1,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 13:55:01"
+  },
+  "kaggle2026": {
+    "citekey": "kaggle2026",
+    "flagged": true,
+    "title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
+    "author": "Kaggle Inc.",
+    "year": "2026",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "citation_count": 1,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:06:38"
+  },
+  "rocchio1971relevance": {
+    "citekey": "rocchio1971relevance",
+    "flagged": true,
+    "title": "Relevance Feedback in Information Retrieval",
+    "author": "Rocchio, J. J.",
+    "year": "1971",
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "citation_count": 1,
+    "reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "timestamp": "2026-10-06 14:30:00"
   }
 }

@@ -174,7 +174,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 5,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
@@ -423,9 +423,8 @@ window.REFERENCES_DATA = [
     "eprint": "https://royalsocietypublishing.org/rsta/article-pdf/doi/10.1098/rsta.2023.0254/1328474/rsta.2023.0254.pdf",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 6,
+    "citation_count": 1,
     "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
     "has_local_pdf": true,
@@ -454,12 +453,9 @@ window.REFERENCES_DATA = [
     "url": "https://arxiv.org/abs/2204.07047",
     "eprint": "2204.07047",
     "direct_pdf_url": "https://arxiv.org/pdf/2204.07047.pdf",
-    "is_cited": true,
-    "citation_count": 3,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
-    ],
+    "is_cited": false,
+    "citation_count": 0,
+    "cited_in_files": [],
     "has_local_pdf": true,
     "local_pdf_path": "docs/references/dias2022state.pdf",
     "flagged": false,
@@ -547,8 +543,9 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://aclanthology.org/2022.acl-long.297.pdf",
     "is_cited": true,
-    "citation_count": 12,
+    "citation_count": 14,
     "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -770,11 +767,12 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 13,
+    "citation_count": 14,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex",
       "CS_Undergraduate_Thesis_Template/chapters/theoretical-framework.tex"
     ],
     "has_local_pdf": true,
@@ -1175,8 +1173,9 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "https://ijetrm.com/issues/files/Dec-2025-10-1765366936-DEC25.pdf",
     "is_cited": true,
-    "citation_count": 4,
+    "citation_count": 7,
     "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
     "has_local_pdf": true,
@@ -6890,8 +6889,9 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
     "has_local_pdf": false,
@@ -7570,8 +7570,9 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 2,
+    "citation_count": 3,
     "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
     "has_local_pdf": false,
@@ -8335,7 +8336,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 5,
+    "citation_count": 6,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
@@ -8528,7 +8529,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 3,
+    "citation_count": 4,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
       "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
@@ -8688,8 +8689,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/marzal1993computation.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -8698,7 +8699,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Computation%20of%20Normalized%20Edit%20Distance%20and%20Applications",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Computation%20of%20Normalized%20Edit%20Distance%20and%20Applications&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{marzal1993computation,\n  title   = {Computation of Normalized Edit Distance and Applications},\n  author  = {Marzal, Andr{\\'e}s and Vidal, Enrique},\n  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  volume  = {15},\n  number  = {9},\n  pages   = {926--932},\n  year    = {1993},\n  doi     = {10.1109/34.232078}\n}"
+    "raw_bib": "@article{marzal1993computation,\n  title   = {Computation of Normalized Edit Distance and Applications},\n  author  = {Marzal, Andr{\\'e}s and Vidal, Enrique},\n  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  volume  = {15},\n  number  = {9},\n  pages   = {926--932},\n  year    = {1993},\n  doi     = {10.1109/34.232078},\n  file = {docs/references/marzal1993computation.pdf}\n}"
   },
   {
     "citekey": "altman1994diagnostic",
@@ -8752,9 +8753,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:30:00",
     "google_search_url": "https://www.google.com/search?q=%22Relevance%20Feedback%20in%20Information%20Retrieval%22%20Rocchio%2C%20J.%20J.",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Relevance%20Feedback%20in%20Information%20Retrieval",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Relevance%20Feedback%20in%20Information%20Retrieval",
@@ -8763,17 +8764,48 @@ window.REFERENCES_DATA = [
     "raw_bib": "@incollection{rocchio1971relevance,\n  title     = {Relevance Feedback in Information Retrieval},\n  author    = {Rocchio, J. J.},\n  booktitle = {The SMART Retrieval System: Experiments in Automatic Document Processing},\n  editor    = {Salton, Gerard},\n  pages     = {313--323},\n  publisher = {Prentice-Hall},\n  address   = {Englewood Cliffs, NJ},\n  year      = {1971}\n}"
   },
   {
-    "citekey": "bisong2019google",
+    "citekey": "bisong2019kaggle",
     "entry_type": "incollection",
-    "title": "Google Colaboratory",
-    "raw_title": "Google Colaboratory",
+    "title": "Kaggle on Google Cloud Platform",
+    "raw_title": "Kaggle on Google Cloud Platform",
     "author": "Bisong, Ekaba",
     "raw_author": "Bisong, Ekaba",
     "year": "2019",
     "venue": "Building Machine Learning and Deep Learning Models on Google Cloud Platform",
     "category": "Computer Science & NLP",
-    "doi": "10.1007/978-1-4842-4470-8_7",
+    "doi": "10.1007/978-1-4842-4470-8_8",
     "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
+    ],
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/bisong2019kaggle.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
+    "google_search_url": "https://www.google.com/search?q=%22Kaggle%20on%20Google%20Cloud%20Platform%22%20Bisong%2C%20Ekaba",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%20on%20Google%20Cloud%20Platform",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%20on%20Google%20Cloud%20Platform",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%20on%20Google%20Cloud%20Platform&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@incollection{bisong2019kaggle,\n  title     = {Kaggle on Google Cloud Platform},\n  author    = {Bisong, Ekaba},\n  booktitle = {Building Machine Learning and Deep Learning Models on Google Cloud Platform},\n  pages     = {65--74},\n  year      = {2019},\n  publisher = {Apress},\n  address   = {Berkeley, CA},\n  doi       = {10.1007/978-1-4842-4470-8_8},\n  file = {docs/references/bisong2019kaggle.pdf}\n}"
+  },
+  {
+    "citekey": "kaggle2026",
+    "entry_type": "misc",
+    "title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
+    "raw_title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
+    "author": "Kaggle Inc.",
+    "raw_author": "{Kaggle Inc.}",
+    "year": "2026",
+    "venue": "Google LLC",
+    "category": "Computer Science & NLP",
+    "doi": "",
+    "url": "https://www.kaggle.com",
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
@@ -8783,77 +8815,15 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
-    "google_search_url": "https://www.google.com/search?q=%22Google%20Colaboratory%22%20Bisong%2C%20Ekaba",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=Google%20Colaboratory",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Google%20Colaboratory",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=Google%20Colaboratory&rows=1",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:06:38",
+    "google_search_url": "https://www.google.com/search?q=%22Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure%22%20Kaggle%20Inc.",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@incollection{bisong2019google,\n  title     = {Google Colaboratory},\n  author    = {Bisong, Ekaba},\n  booktitle = {Building Machine Learning and Deep Learning Models on Google Cloud Platform},\n  pages     = {59--64},\n  year      = {2019},\n  publisher = {Apress},\n  address   = {Berkeley, CA},\n  doi       = {10.1007/978-1-4842-4470-8_7}\n}"
-  },
-  {
-    "citekey": "googlecolab2026",
-    "entry_type": "misc",
-    "title": "Google Colaboratory: Frequently Asked Questions and Resource Allocations",
-    "raw_title": "Google {Colaboratory}: Frequently Asked Questions and Resource Allocations",
-    "author": "Google Research",
-    "raw_author": "{Google Research}",
-    "year": "2026",
-    "venue": "",
-    "category": "Computer Science & NLP",
-    "doi": "",
-    "url": "https://research.google.com/colaboratory/faq.html",
-    "eprint": "",
-    "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 2,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
-    ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
-    "google_search_url": "https://www.google.com/search?q=%22Google%20Colaboratory%3A%20Frequently%20Asked%20Questions%20and%20Resource%20Allocations%22%20Google%20Research",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=Google%20Colaboratory%3A%20Frequently%20Asked%20Questions%20and%20Resource%20Allocations",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Google%20Colaboratory%3A%20Frequently%20Asked%20Questions%20and%20Resource%20Allocations",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=Google%20Colaboratory%3A%20Frequently%20Asked%20Questions%20and%20Resource%20Allocations&rows=1",
-    "lawphil_url": "",
-    "raw_bib": "@misc{googlecolab2026,\n  author       = {{Google Research}},\n  title        = {Google {Colaboratory}: Frequently Asked Questions and Resource Allocations},\n  year         = {2026},\n  url          = {https://research.google.com/colaboratory/faq.html},\n  urldate      = {2026-10-02},\n  note         = {Accessed October 2026}\n}"
-  },
-  {
-    "citekey": "Greco2023Bringing",
-    "entry_type": "article",
-    "title": "Bringing order into the realm of Transformer-based language models for artificial intelligence and law",
-    "raw_title": "Bringing order into the realm of {Transformer}-based language models for artificial intelligence and law",
-    "author": "Greco, Candida Maria and Tagarelli, Andrea",
-    "raw_author": "Greco, Candida Maria and Tagarelli, Andrea",
-    "year": "2024",
-    "venue": "Artificial Intelligence and Law",
-    "category": "Computer Science & NLP",
-    "doi": "10.1007/s10506-023-09374-7",
-    "url": "",
-    "eprint": "",
-    "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 4,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
-    ],
-    "has_local_pdf": true,
-    "local_pdf_path": "docs/references/Greco2023Bringing.pdf",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
-    "google_search_url": "https://www.google.com/search?q=%22Bringing%20order%20into%20the%20realm%20of%20Transformer-based%20language%20models%20for%20artificial%20intelligence%20and%20law%22%20Greco%2C%20Candida%20Maria",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=Bringing%20order%20into%20the%20realm%20of%20Transformer-based%20language%20models%20for%20artificial%20intelligence%20and%20law",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Bringing%20order%20into%20the%20realm%20of%20Transformer-based%20language%20models%20for%20artificial%20intelligence%20and%20law",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=Bringing%20order%20into%20the%20realm%20of%20Transformer-based%20language%20models%20for%20artificial%20intelligence%20and%20law&rows=1",
-    "lawphil_url": "",
-    "raw_bib": "@article{Greco2023Bringing,\n  author    = {Greco, Candida Maria and Tagarelli, Andrea},\n  title     = {Bringing order into the realm of {Transformer}-based language models for artificial intelligence and law},\n  journal   = {Artificial Intelligence and Law},\n  year      = {2024},\n  volume    = {32},\n  number    = {3},\n  pages     = {863--1010},\n  doi       = {10.1007/s10506-023-09374-7},\n  note      = {Online first published 2023},\n  file = {docs/references/Greco2023Bringing.pdf}\n}"
+    "raw_bib": "@misc{kaggle2026,\n  author       = {{Kaggle Inc.}},\n  title        = {Kaggle: Machine Learning and Data Science Cloud Infrastructure},\n  publisher    = {Google LLC},\n  year         = {2026},\n  note         = {Accessed October 2026},\n  url = {https://www.kaggle.com},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "davis1989perceived",
@@ -8874,8 +8844,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/davis1989perceived.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -8884,7 +8854,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Perceived%20Usefulness%2C%20Perceived%20Ease%20of%20Use%2C%20and%20User%20Acceptance%20of%20Information%20Technology",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Perceived%20Usefulness%2C%20Perceived%20Ease%20of%20Use%2C%20and%20User%20Acceptance%20of%20Information%20Technology&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{davis1989perceived,\n  title     = {Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology},\n  author    = {Davis, Fred D.},\n  journal   = {MIS Quarterly},\n  volume    = {13},\n  number    = {3},\n  pages     = {319--340},\n  year      = {1989},\n  publisher = {Management Information Systems Research Center, University of Minnesota},\n  doi       = {10.2307/249008}\n}"
+    "raw_bib": "@article{davis1989perceived,\n  title     = {Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology},\n  author    = {Davis, Fred D.},\n  journal   = {MIS Quarterly},\n  volume    = {13},\n  number    = {3},\n  pages     = {319--340},\n  year      = {1989},\n  publisher = {Management Information Systems Research Center, University of Minnesota},\n  doi       = {10.2307/249008},\n  file = {docs/references/davis1989perceived.pdf}\n}"
   },
   {
     "citekey": "bangor2008empirical",
@@ -8936,8 +8906,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/goodhue1995task.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -8946,7 +8916,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Task-Technology%20Fit%20and%20Individual%20Performance",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Task-Technology%20Fit%20and%20Individual%20Performance&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{goodhue1995task,\n  title     = {Task-Technology Fit and Individual Performance},\n  author    = {Goodhue, Dale L. and Thompson, Ronald L.},\n  journal   = {MIS Quarterly},\n  volume    = {19},\n  number    = {2},\n  pages     = {213--236},\n  year      = {1995},\n  publisher = {Management Information Systems Research Center, University of Minnesota},\n  doi       = {10.2307/249689}\n}"
+    "raw_bib": "@article{goodhue1995task,\n  title     = {Task-Technology Fit and Individual Performance},\n  author    = {Goodhue, Dale L. and Thompson, Ronald L.},\n  journal   = {MIS Quarterly},\n  volume    = {19},\n  number    = {2},\n  pages     = {213--236},\n  year      = {1995},\n  publisher = {Management Information Systems Research Center, University of Minnesota},\n  doi       = {10.2307/249689},\n  file = {docs/references/goodhue1995task.pdf}\n}"
   },
   {
     "citekey": "sweller1988cognitive",
@@ -9029,8 +8999,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/sauro2012quantifying.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -9039,7 +9009,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Quantifying%20the%20User%20Experience%3A%20Practical%20Statistics%20for%20User%20Research",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Quantifying%20the%20User%20Experience%3A%20Practical%20Statistics%20for%20User%20Research&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{sauro2012quantifying,\n  title     = {Quantifying the User Experience: Practical Statistics for User Research},\n  author    = {Sauro, Jeff and Lewis, James R.},\n  year      = {2012},\n  publisher = {Morgan Kaufmann},\n  address   = {Waltham, MA},\n  isbn      = {978-0-12-384968-7}\n}"
+    "raw_bib": "@book{sauro2012quantifying,\n  title     = {Quantifying the User Experience: Practical Statistics for User Research},\n  author    = {Sauro, Jeff and Lewis, James R.},\n  year      = {2012},\n  publisher = {Morgan Kaufmann},\n  address   = {Waltham, MA},\n  isbn      = {978-0-12-384968-7},\n  file = {docs/references/sauro2012quantifying.pdf}\n}"
   },
   {
     "citekey": "philconst1987",
@@ -9091,8 +9061,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/philhouse2022rules.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -9101,7 +9071,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Rules%20of%20the%20House%20of%20Representatives%20%2819th%20Congress%29",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Rules%20of%20the%20House%20of%20Representatives%20%2819th%20Congress%29&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@techreport{philhouse2022rules,\n  author       = {{House of Representatives of the Philippines}},\n  title        = {{Rules of the House of Representatives (19th Congress)}},\n  institution  = {House of Representatives, Republic of the Philippines},\n  year         = {2022},\n  keywords     = {legislative_procedure, congress, house_rules},\n  url          = {https://www.congress.gov.ph/legisdocs/rules/rules_19th.pdf},\n  urldate      = {2026-09-26}\n}"
+    "raw_bib": "@techreport{philhouse2022rules,\n  author       = {{House of Representatives of the Philippines}},\n  title        = {{Rules of the House of Representatives (19th Congress)}},\n  institution  = {House of Representatives, Republic of the Philippines},\n  year         = {2022},\n  keywords     = {legislative_procedure, congress, house_rules},\n  url          = {https://www.congress.gov.ph/legisdocs/rules/rules_19th.pdf},\n  urldate      = {2026-09-26},\n  file = {docs/references/philhouse2022rules.pdf}\n}"
   },
   {
     "citekey": "hart1961concept",
@@ -9122,8 +9092,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/hart1961concept.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -9132,38 +9102,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20Concept%20of%20Law",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20Concept%20of%20Law&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{hart1961concept,\n  author    = {H. L. A. Hart},\n  title     = {The Concept of Law},\n  publisher = {Clarendon Press, Oxford University Press},\n  address   = {Oxford, UK},\n  year      = {1961}\n}"
-  },
-  {
-    "citekey": "dagan2006pascal",
-    "entry_type": "inproceedings",
-    "title": "The PASCAL Recognising Textual Entailment Challenge",
-    "raw_title": "The {PASCAL} Recognising Textual Entailment Challenge",
-    "author": "Ido Dagan and Oren Glickman and Bernardo Magnini",
-    "raw_author": "Ido Dagan and Oren Glickman and Bernardo Magnini",
-    "year": "2006",
-    "venue": "Machine Learning Challenges. Evaluating Predictive Uncertainty, Visual Object Classification, and Recognising Textual Entailment",
-    "category": "Computer Science & NLP",
-    "doi": "10.1007/11736790_9",
-    "url": "",
-    "eprint": "",
-    "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 1,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
-    ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
-    "google_search_url": "https://www.google.com/search?q=%22The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge%22%20Ido%20Dagan",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge&rows=1",
-    "lawphil_url": "",
-    "raw_bib": "@inproceedings{dagan2006pascal,\n  author    = {Ido Dagan and Oren Glickman and Bernardo Magnini},\n  title     = {The {PASCAL} Recognising Textual Entailment Challenge},\n  booktitle = {Machine Learning Challenges. Evaluating Predictive Uncertainty, Visual Object Classification, and Recognising Textual Entailment},\n  series    = {Lecture Notes in Computer Science},\n  volume    = {3944},\n  pages     = {177--190},\n  publisher = {Springer},\n  year      = {2006},\n  doi       = {10.1007/11736790_9}\n}"
+    "raw_bib": "@book{hart1961concept,\n  author    = {H. L. A. Hart},\n  title     = {The Concept of Law},\n  publisher = {Clarendon Press, Oxford University Press},\n  address   = {Oxford, UK},\n  year      = {1961},\n  file = {docs/references/hart1961concept.pdf}\n}"
   },
   {
     "citekey": "banarescu2013abstract",
@@ -9194,7 +9133,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Abstract%20Meaning%20Representation%20for%20Sembanking",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Abstract%20Meaning%20Representation%20for%20Sembanking&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Abstract%20Meaning%20Representation%20for%20Sembanking",
-    "raw_bib": "@inproceedings{banarescu2013abstract,\n  title     = {Abstract Meaning Representation for Sembanking},\n  author    = {Banarescu, Laura and Bonial, Claire and Cai, Shu and Georgescu, Madalina and Griffitt, Kira and Hermjakob, Ulf and Knight, Kevin and Koehn, Philipp and Palmer, Martha and Schneider, Nathan},\n  booktitle = {Proceedings of the 7th Linguistic Annotation Workshop and Interoperability with Discourse},\n  pages     = {178--186},\n  year      = {2013},\n  month     = aug,\n  address   = {Sofia, Bulgaria},\n  publisher = {Association for Computational Linguistics},\n  url       = {https://aclanthology.org/W13-2322},\n  file      = {docs/references/banarescu2013abstract.pdf}\n  file = {docs/references/banarescu2013abstract.pdf},\n}"
+    "raw_bib": "@inproceedings{banarescu2013abstract,\n  title     = {Abstract Meaning Representation for Sembanking},\n  author    = {Banarescu, Laura and Bonial, Claire and Cai, Shu and Georgescu, Madalina and Griffitt, Kira and Hermjakob, Ulf and Knight, Kevin and Koehn, Philipp and Palmer, Martha and Schneider, Nathan},\n  booktitle = {Proceedings of the 7th Linguistic Annotation Workshop and Interoperability with Discourse},\n  pages     = {178--186},\n  year      = {2013},\n  month     = aug,\n  address   = {Sofia, Bulgaria},\n  publisher = {Association for Computational Linguistics},\n  url       = {https://aclanthology.org/W13-2322},\n  file      = {docs/references/banarescu2013abstract.pdf}\n}"
   },
   {
     "citekey": "bangor2009determining",
@@ -9226,5 +9165,36 @@ window.REFERENCES_DATA = [
     "crossref_search_url": "https://api.crossref.org/works?query.title=Determining%20What%20Individual%20SUS%20Scores%20Mean%3A%20Adding%20an%20Adjective%20Rating%20Scale&rows=1",
     "lawphil_url": "",
     "raw_bib": "@article{bangor2009determining,\n  title   = {Determining What Individual {SUS} Scores Mean: Adding an Adjective Rating Scale},\n  author  = {Bangor, Aaron and Kortum, Philip T. and Miller, James T.},\n  journal = {Journal of Usability Studies},\n  volume  = {4},\n  number  = {3},\n  pages   = {114--123},\n  year    = {2009},\n  url     = {https://uxpajournal.org/determining-what-individual-sus-scores-mean-adding-an-adjective-rating-scale/},\n  file    = {docs/references/bangor2009determining.pdf}\n}"
+  },
+  {
+    "citekey": "baird1993defect",
+    "entry_type": "incollection",
+    "title": "Document Image Defect Models",
+    "raw_title": "Document Image Defect Models",
+    "author": "Henry S. Baird",
+    "raw_author": "Henry S. Baird",
+    "year": "1993",
+    "venue": "Structured Document Image Analysis",
+    "category": "Computer Science & NLP",
+    "doi": "10.1007/978-3-642-77281-8_24",
+    "url": "",
+    "eprint": "",
+    "direct_pdf_url": "",
+    "is_cited": true,
+    "citation_count": 1,
+    "cited_in_files": [
+      "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
+    ],
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/baird1993defect.pdf",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 13:55:01",
+    "google_search_url": "https://www.google.com/search?q=%22Document%20Image%20Defect%20Models%22%20Henry%20S.%20Baird",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Document%20Image%20Defect%20Models",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Document%20Image%20Defect%20Models",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Document%20Image%20Defect%20Models&rows=1",
+    "lawphil_url": "",
+    "raw_bib": "@incollection{baird1993defect,\n  author    = {Henry S. Baird},\n  title     = {Document Image Defect Models},\n  booktitle = {Structured Document Image Analysis},\n  editor    = {Henry S. Baird and Horst Bunke and Kazuhiko Yamamoto},\n  pages     = {546--556},\n  publisher = {Springer},\n  year      = {1993},\n  doi       = {10.1007/978-3-642-77281-8_24},\n  file = {docs/references/baird1993defect.pdf}\n}"
   }
 ];
