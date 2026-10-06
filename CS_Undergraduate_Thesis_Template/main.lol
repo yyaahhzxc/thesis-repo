@@ -6,4 +6,4 @@
 \contentsline {lstlisting}{\numberline {3.6}Code Snippet of the Operative Provision Extractor and Boilerplate Filter}{99}{lstlisting.3.6}%
 \contentsline {lstlisting}{\numberline {3.7}Sample Evaluation Pair from the Ground Truth Benchmark Dataset}{109}{lstlisting.3.7}%
 \contentsline {lstlisting}{\numberline {3.8}Pseudocode of the Stage 1 Reciprocal Rank Fusion Hybrid Provision Retrieval Pipeline}{115}{lstlisting.3.8}%
-\contentsline {lstlisting}{\numberline {3.9}Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}{126}{lstlisting.3.9}%
+\contentsline {lstlisting}{\numberline {3.9}Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}{127}{lstlisting.3.9}%
