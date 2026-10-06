@@ -6144,8 +6144,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/sc1985tanadavtuvera.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
