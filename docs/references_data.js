@@ -52,17 +52,17 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-04 16:45:24",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/li2012detecting.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Detecting%20Conflicts%20in%20Legal%20Systems%22%20Li%2C%20Tingting",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Detecting%20Conflicts%20in%20Legal%20Systems",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Detecting%20Conflicts%20in%20Legal%20Systems",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Detecting%20Conflicts%20in%20Legal%20Systems&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@inproceedings{li2012detecting,\nauthor = {Li, Tingting and Balke, Tina and De Vos, Marina and Satoh, Ken and Padget, Julian},\nyear = {2012},\nmonth = {11},\npages = {174-189},\ntitle = {Detecting Conflicts in Legal Systems},\nisbn = {978-3-642-39930-5},\ndoi = {10.1007/978-3-642-39931-2_13},\n  url = {https://dl.acm.org/doi/10.1007/978-3-642-39931-2_13},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@inproceedings{li2012detecting,\nauthor = {Li, Tingting and Balke, Tina and De Vos, Marina and Satoh, Ken and Padget, Julian},\nyear = {2012},\nmonth = {11},\npages = {174-189},\ntitle = {Detecting Conflicts in Legal Systems},\nisbn = {978-3-642-39930-5},\ndoi = {10.1007/978-3-642-39931-2_13},\n  url = {https://dl.acm.org/doi/10.1007/978-3-642-39931-2_13},\n  urldate = {2026-09-26},\n  file = {docs/references/li2012detecting.pdf}\n}"
   },
   {
     "citekey": "agotnes2007on",
@@ -212,9 +212,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-04 16:45:33",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22POMI%3A%20A%20Corpus%20to%20Support%20a%20Natural%20Language%20Inference-based%20Approach%20for%20Detecting%20Misinformation%20in%20Philippine%20Online%20News%22%20Nu%20nez%2C%20Kristine%20Bernadette%20Q.",
     "google_scholar_url": "https://scholar.google.com/scholar?q=POMI%3A%20A%20Corpus%20to%20Support%20a%20Natural%20Language%20Inference-based%20Approach%20for%20Detecting%20Misinformation%20in%20Philippine%20Online%20News",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=POMI%3A%20A%20Corpus%20to%20Support%20a%20Natural%20Language%20Inference-based%20Approach%20for%20Detecting%20Misinformation%20in%20Philippine%20Online%20News",
@@ -1055,9 +1055,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 13:21:57",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Diokno%20Files%20Bill%20to%20Break%20Language%20Barriers%20in%20PH%20Laws%22%20Reganit%2C%20Jose%20Cielito",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Diokno%20Files%20Bill%20to%20Break%20Language%20Barriers%20in%20PH%20Laws",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Diokno%20Files%20Bill%20to%20Break%20Language%20Barriers%20in%20PH%20Laws",
@@ -1661,7 +1661,7 @@ window.REFERENCES_DATA = [
     "local_pdf_path": "",
     "flagged": true,
     "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 13:51:13",
+    "flag_timestamp": "2026-10-06 16:13:16",
     "google_search_url": "https://www.google.com/search?q=%22Towards%20a%20country-independent%20data%20format%3A%20the%20Akoma%20Ntoso%20experience%22%20Fabio%20Vitali",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Towards%20a%20country-independent%20data%20format%3A%20the%20Akoma%20Ntoso%20experience",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Towards%20a%20country-independent%20data%20format%3A%20the%20Akoma%20Ntoso%20experience",
@@ -2364,17 +2364,17 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:12:43",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/lehong2023a.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22A%20semantics-aware%20approach%20for%20multilingual%20natural%20language%20inference%22%20Le-Hong%2C%20Phuong",
     "google_scholar_url": "https://scholar.google.com/scholar?q=A%20semantics-aware%20approach%20for%20multilingual%20natural%20language%20inference",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=A%20semantics-aware%20approach%20for%20multilingual%20natural%20language%20inference",
     "crossref_search_url": "https://api.crossref.org/works?query.title=A%20semantics-aware%20approach%20for%20multilingual%20natural%20language%20inference&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{lehong2023a,\nauthor = {Le-Hong, Phuong and Cambria, Erik},\ntitle = {A semantics-aware approach for multilingual natural language inference},\nyear = {2023},\nissue_date = {Jun 2023},\npublisher = {Springer-Verlag},\naddress = {Berlin, Heidelberg},\nvolume = {57},\nnumber = {2},\nissn = {1574-020X},\ndoi = {10.1007/s10579-023-09635-6},\njournal = {Lang. Resour. Eval.},\nmonth = feb,\npages = {611–639},\nnumpages = {29},\nkeywords = {Language inference, Semantics, Recurrent neural networks, Transformers, Commonsense, Text},\n  url = {https://doi.org/10.1007/s10579-023-09635-6},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{lehong2023a,\nauthor = {Le-Hong, Phuong and Cambria, Erik},\ntitle = {A semantics-aware approach for multilingual natural language inference},\nyear = {2023},\nissue_date = {Jun 2023},\npublisher = {Springer-Verlag},\naddress = {Berlin, Heidelberg},\nvolume = {57},\nnumber = {2},\nissn = {1574-020X},\ndoi = {10.1007/s10579-023-09635-6},\njournal = {Lang. Resour. Eval.},\nmonth = feb,\npages = {611–639},\nnumpages = {29},\nkeywords = {Language inference, Semantics, Recurrent neural networks, Transformers, Commonsense, Text},\n  url = {https://doi.org/10.1007/s10579-023-09635-6},\n  urldate = {2026-09-26},\n  file = {docs/references/lehong2023a.pdf}\n}"
   },
   {
     "citekey": "blair1985an",
@@ -4460,9 +4460,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:17:20",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018%22%20Government%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018",
@@ -4491,9 +4491,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": true,
     "local_pdf_path": "docs/references/gesteletal2011exanteevaluation.pdf",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:21:12",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Future-oriented%20research%20into%20the%20expected%20effects%20of%20potential%20new%20legislation%22%20Van%20Gestel%2C%20Rob",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Future-oriented%20research%20into%20the%20expected%20effects%20of%20potential%20new%20legislation",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Future-oriented%20research%20into%20the%20expected%20effects%20of%20potential%20new%20legislation",
@@ -4523,9 +4523,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:24:17",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Official%20Gazette%20of%20the%20Republic%20of%20the%20Philippines%22%20Government%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Official%20Gazette%20of%20the%20Republic%20of%20the%20Philippines",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Official%20Gazette%20of%20the%20Republic%20of%20the%20Philippines",
@@ -4554,9 +4554,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:26:35",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction%22%20Philippine%20Commission",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction",
@@ -4587,7 +4587,7 @@ window.REFERENCES_DATA = [
     "local_pdf_path": "",
     "flagged": true,
     "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:27:54",
+    "flag_timestamp": "2026-10-06 16:00:40",
     "google_search_url": "https://www.google.com/search?q=%22Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette%22%20National%20Assembly%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette",
@@ -4618,7 +4618,7 @@ window.REFERENCES_DATA = [
     "local_pdf_path": "",
     "flagged": true,
     "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:28:39",
+    "flag_timestamp": "2026-10-06 16:00:36",
     "google_search_url": "https://www.google.com/search?q=%22Legislative%20Information%20System%20%28LEGIS%29%20Open%20Data%20API%22%20House%20of%20Representatives%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Legislative%20Information%20System%20%28LEGIS%29%20Open%20Data%20API",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Legislative%20Information%20System%20%28LEGIS%29%20Open%20Data%20API",
@@ -4742,7 +4742,7 @@ window.REFERENCES_DATA = [
     "local_pdf_path": "",
     "flagged": true,
     "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:30:40",
+    "flag_timestamp": "2026-10-06 16:00:32",
     "google_search_url": "https://www.google.com/search?q=%22Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City%22%20Sangguniang%20Panlungsod%20of%20Davao%20City",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City",
@@ -4920,8 +4920,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/leonen2024keynote.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -4930,7 +4930,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=SAJ%20Leonen%3A%20Despite%20Risks%2C%20Legal%20System%20Should%20Keep%20Abreast%20With%20AI%20Developments",
     "crossref_search_url": "https://api.crossref.org/works?query.title=SAJ%20Leonen%3A%20Despite%20Risks%2C%20Legal%20System%20Should%20Keep%20Abreast%20With%20AI%20Developments&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+SAJ%20Leonen%3A%20Despite%20Risks%2C%20Legal%20System%20Should%20Keep%20Abreast%20With%20AI%20Developments",
-    "raw_bib": "@misc{leonen2024keynote,\n  title        = {{SAJ} Leonen: Despite Risks, Legal System Should Keep Abreast With {AI} Developments},\n  author       = {Leonen, Marvic M.V.F.},\n  howpublished = {Keynote Speech at Manila Tech Summit 2024},\n  month        = {August},\n  year         = {2024},\n  url = {https://sc.judiciary.gov.ph/saj-leonen-despite-risks-legal-system-should-keep-abreast-with-ai-developments/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{leonen2024keynote,\n  title        = {{SAJ} Leonen: Despite Risks, Legal System Should Keep Abreast With {AI} Developments},\n  author       = {Leonen, Marvic M.V.F.},\n  howpublished = {Keynote Speech at Manila Tech Summit 2024},\n  month        = {August},\n  year         = {2024},\n  url = {https://sc.judiciary.gov.ph/saj-leonen-despite-risks-legal-system-should-keep-abreast-with-ai-developments/},\n  urldate = {2026-09-26},\n  file = {docs/references/leonen2024keynote.pdf}\n}"
   },
   {
     "citekey": "oard2003desperately",
@@ -5168,8 +5168,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/cohen1960coefficient.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -5178,7 +5178,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=A%20coefficient%20of%20agreement%20for%20nominal%20scales",
     "crossref_search_url": "https://api.crossref.org/works?query.title=A%20coefficient%20of%20agreement%20for%20nominal%20scales&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{cohen1960coefficient,\ntitle={A coefficient of agreement for nominal scales},\nauthor={Cohen, Jacob},\njournal={Educational and psychological measurement},\nvolume={20},\nnumber={1},\npages={37--46},\nyear={1960},\npublisher={Sage Publications Sage CA: Thousand Oaks, CA},\n  url = {https://psycnet.apa.org/record/1960-06759-001},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{cohen1960coefficient,\ntitle={A coefficient of agreement for nominal scales},\nauthor={Cohen, Jacob},\njournal={Educational and psychological measurement},\nvolume={20},\nnumber={1},\npages={37--46},\nyear={1960},\npublisher={Sage Publications Sage CA: Thousand Oaks, CA},\n  url = {https://psycnet.apa.org/record/1960-06759-001},\n  urldate = {2026-09-26},\n  file = {docs/references/cohen1960coefficient.pdf}\n}"
   },
   {
     "citekey": "fleiss1971measuring",
@@ -5200,8 +5200,8 @@ window.REFERENCES_DATA = [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/fleiss1971measuring.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -5210,7 +5210,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Measuring%20nominal%20scale%20agreement%20among%20many%20raters",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Measuring%20nominal%20scale%20agreement%20among%20many%20raters&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{fleiss1971measuring,\ntitle={Measuring nominal scale agreement among many raters},\nauthor={Fleiss, Joseph L},\njournal={Psychological bulletin},\nvolume={76},\nnumber={5},\npages={378},\nyear={1971},\npublisher={American Psychological Association},\n  url = {https://www.researchgate.net/publication/200086110_Measuring_nominal_scale_agreement_among_many_raters},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{fleiss1971measuring,\ntitle={Measuring nominal scale agreement among many raters},\nauthor={Fleiss, Joseph L},\njournal={Psychological bulletin},\nvolume={76},\nnumber={5},\npages={378},\nyear={1971},\npublisher={American Psychological Association},\n  url = {https://www.researchgate.net/publication/200086110_Measuring_nominal_scale_agreement_among_many_raters},\n  urldate = {2026-09-26},\n  file = {docs/references/fleiss1971measuring.pdf}\n}"
   },
   {
     "citekey": "rabelo2022coliee",
@@ -5357,8 +5357,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/cortez2025leadership.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -5367,7 +5367,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Leadership%20and%20City%20Problems%20Await%20Newly-Elected%20Davao%20Councilors",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Leadership%20and%20City%20Problems%20Await%20Newly-Elected%20Davao%20Councilors&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@misc{cortez2025leadership,\n  title        = {Leadership and City Problems Await Newly-Elected {Davao} Councilors},\n  author       = {Cortez, Kath and {Davao Today}},\n  year         = {2025},\n  month        = {May},\n  howpublished = {Rappler},\n  url          = {https://www.rappler.com/philippines/elections/leadership-city-problems-await-newly-elected-davao-councilors-2025/},\n  urldate      = {2026-09-26},\n  note         = {Republished with permission from DavaoToday.com for the 2025 Philippine local elections},\n}"
+    "raw_bib": "@misc{cortez2025leadership,\n  title        = {Leadership and City Problems Await Newly-Elected {Davao} Councilors},\n  author       = {Cortez, Kath and {Davao Today}},\n  year         = {2025},\n  month        = {May},\n  howpublished = {Rappler},\n  url          = {https://www.rappler.com/philippines/elections/leadership-city-problems-await-newly-elected-davao-councilors-2025/},\n  urldate      = {2026-09-26},\n  note         = {Republished with permission from DavaoToday.com for the 2025 Philippine local elections},\n  file = {docs/references/cortez2025leadership.pdf}\n}"
   },
   {
     "citekey": "gao2022hierarchical",
@@ -5614,9 +5614,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 15:56:50",
     "google_search_url": "https://www.google.com/search?q=%22Sliding%20Window%20Technique%20and%20Algorithm%20in%20NLP%22%20Holistic%20SEO",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Sliding%20Window%20Technique%20and%20Algorithm%20in%20NLP",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Sliding%20Window%20Technique%20and%20Algorithm%20in%20NLP",
@@ -5676,8 +5676,8 @@ window.REFERENCES_DATA = [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/ablazo2019designing.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -5686,7 +5686,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Designing%20a%20Web%20Application%20using%20the%20Twitter%20streaming%20API%20as%20a%20Tracking%20Tool%20for%20Weather%20Updates",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Designing%20a%20Web%20Application%20using%20the%20Twitter%20streaming%20API%20as%20a%20Tracking%20Tool%20for%20Weather%20Updates&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@mastersthesis{ablazo2019designing,\n  title        = {Designing a Web Application using the {Twitter} streaming {API} as a Tracking Tool for Weather Updates},\n  author       = {Adrian C. Ablazo},\n  school       = {Ateneo de Davao University},\n  year         = {2019},\n  address      = {Davao City, Philippines},\n  type         = {Graduate Independent Study},\n  month        = {February},\n}"
+    "raw_bib": "@mastersthesis{ablazo2019designing,\n  title        = {Designing a Web Application using the {Twitter} streaming {API} as a Tracking Tool for Weather Updates},\n  author       = {Adrian C. Ablazo},\n  school       = {Ateneo de Davao University},\n  year         = {2019},\n  address      = {Davao City, Philippines},\n  type         = {Graduate Independent Study},\n  month        = {February},\n  file = {docs/references/ablazo2019designing.pdf}\n}"
   },
   {
     "citekey": "landis1977measurement",
@@ -5708,8 +5708,8 @@ window.REFERENCES_DATA = [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/landis1977measurement.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -5718,7 +5718,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20Measurement%20of%20Observer%20Agreement%20for%20Categorical%20Data",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20Measurement%20of%20Observer%20Agreement%20for%20Categorical%20Data&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{landis1977measurement,\n ISSN = {0006341X, 15410420},\n author = {J. Richard Landis and Gary G. Koch},\n journal = {Biometrics},\n number = {1},\n pages = {159--174},\n publisher = {International Biometric Society},\n title = {The Measurement of Observer Agreement for Categorical Data},\n volume = {33},\n year = {1977},\n  url = {http://www.jstor.org/stable/2529310},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{landis1977measurement,\n ISSN = {0006341X, 15410420},\n author = {J. Richard Landis and Gary G. Koch},\n journal = {Biometrics},\n number = {1},\n pages = {159--174},\n publisher = {International Biometric Society},\n title = {The Measurement of Observer Agreement for Categorical Data},\n volume = {33},\n year = {1977},\n  url = {http://www.jstor.org/stable/2529310},\n  urldate = {2026-09-26},\n  file = {docs/references/landis1977measurement.pdf}\n}"
   },
   {
     "citekey": "mchugh2012interrater",
@@ -5740,8 +5740,8 @@ window.REFERENCES_DATA = [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/mchugh2012interrater.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -5750,7 +5750,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Interrater%20reliability%3A%20The%20kappa%20statistic",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Interrater%20reliability%3A%20The%20kappa%20statistic&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Interrater%20reliability%3A%20The%20kappa%20statistic",
-    "raw_bib": "@article{mchugh2012interrater,\n  title        = {Interrater reliability: The kappa statistic},\n  author       = {Mary L. McHugh},\n  journal      = {Biochemia Medica},\n  volume       = {22},\n  number       = {3},\n  pages        = {276--282},\n  year         = {2012},\n  publisher    = {Biochemia Medica},\n  doi          = {10.11613/BM.2012.031},\n  url = {https://doi.org/10.11613/BM.2012.031},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{mchugh2012interrater,\n  title        = {Interrater reliability: The kappa statistic},\n  author       = {Mary L. McHugh},\n  journal      = {Biochemia Medica},\n  volume       = {22},\n  number       = {3},\n  pages        = {276--282},\n  year         = {2012},\n  publisher    = {Biochemia Medica},\n  doi          = {10.11613/BM.2012.031},\n  url = {https://doi.org/10.11613/BM.2012.031},\n  urldate = {2026-09-26},\n  file = {docs/references/mchugh2012interrater.pdf}\n}"
   },
   {
     "citekey": "klebanov2009from",
@@ -5802,8 +5802,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/vellino1986artificial.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -5812,7 +5812,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Artificial%20intelligence%3A%20The%20very%20idea%3A%20J.%20Haugeland%2C%20%28MIT%20Press%2C%20Cambridge%2C%20MA%2C%201985%29%3B%20287%20pp.",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Artificial%20intelligence%3A%20The%20very%20idea%3A%20J.%20Haugeland%2C%20%28MIT%20Press%2C%20Cambridge%2C%20MA%2C%201985%29%3B%20287%20pp.&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{vellino1986artificial,\nauthor = {Vellino, Andre},\nyear = {1986},\nmonth = {09},\npages = {349–353},\ntitle = {Artificial intelligence: The very idea: J. Haugeland, (MIT Press, Cambridge, MA, 1985); 287 pp.},\nvolume = {29},\njournal = {Artificial Intelligence},\n  url = {https://www.researchgate.net/publication/256121747_Artificial_intelligence_The_very_idea_J_Haugeland_MIT_Press_Cambridge_MA_1985_287_pp},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{vellino1986artificial,\nauthor = {Vellino, Andre},\nyear = {1986},\nmonth = {09},\npages = {349–353},\ntitle = {Artificial intelligence: The very idea: J. Haugeland, (MIT Press, Cambridge, MA, 1985); 287 pp.},\nvolume = {29},\njournal = {Artificial Intelligence},\n  url = {https://www.researchgate.net/publication/256121747_Artificial_intelligence_The_very_idea_J_Haugeland_MIT_Press_Cambridge_MA_1985_287_pp},\n  urldate = {2026-09-26},\n  file = {docs/references/vellino1986artificial.pdf}\n}"
   },
   {
     "citekey": "sperber1996relevance",
@@ -5864,8 +5864,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/saracevic2007relevance.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -5874,7 +5874,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Relevance%3A%20A%20review%20of%20the%20literature%20and%20a%20framework%20for%20thinking%20on%20the%20notion%20in%20information%20science.%20Part%20II%3A%20Nature%20and%20manifestations%20of%20relevance",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Relevance%3A%20A%20review%20of%20the%20literature%20and%20a%20framework%20for%20thinking%20on%20the%20notion%20in%20information%20science.%20Part%20II%3A%20Nature%20and%20manifestations%20of%20relevance&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Relevance%3A%20A%20review%20of%20the%20literature%20and%20a%20framework%20for%20thinking%20on%20the%20notion%20in%20information%20science.%20Part%20II%3A%20Nature%20and%20manifestations%20of%20relevance",
-    "raw_bib": "@article{saracevic2007relevance,\nauthor = {Saracevic, Tefko},\nyear = {2007},\nmonth = {11},\npages = {1915-1933},\ntitle = {Relevance: A review of the literature and a framework for thinking on the notion in information science. Part II: Nature and manifestations of relevance},\nvolume = {58},\njournal = {Journal of the American Society for Information Science and Technology},\ndoi = {10.1002/asi.20682},\n  url = {https://dl.acm.org/doi/abs/10.5555/1315930.1315947},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{saracevic2007relevance,\nauthor = {Saracevic, Tefko},\nyear = {2007},\nmonth = {11},\npages = {1915-1933},\ntitle = {Relevance: A review of the literature and a framework for thinking on the notion in information science. Part II: Nature and manifestations of relevance},\nvolume = {58},\njournal = {Journal of the American Society for Information Science and Technology},\ndoi = {10.1002/asi.20682},\n  url = {https://dl.acm.org/doi/abs/10.5555/1315930.1315947},\n  urldate = {2026-09-26},\n  file = {docs/references/saracevic2007relevance.pdf}\n}"
   },
   {
     "citekey": "chawla2002smote",
@@ -6053,8 +6053,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/sculley2010webscale.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6063,7 +6063,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Web-scale%20k-means%20clustering",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Web-scale%20k-means%20clustering&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@inproceedings{sculley2010webscale,\n  title={Web-scale k-means clustering},\n  author={Sculley, D.},\n  booktitle={Proceedings of the 19th International Conference on World Wide Web (WWW '10)},\n  pages={1177--1178},\n  year={2010},\n  publisher={Association for Computing Machinery},\n  doi={10.1145/1772690.1772862},\n  url = {https://doi.org/10.1145/1772690.1772862},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@inproceedings{sculley2010webscale,\n  title={Web-scale k-means clustering},\n  author={Sculley, D.},\n  booktitle={Proceedings of the 19th International Conference on World Wide Web (WWW '10)},\n  pages={1177--1178},\n  year={2010},\n  publisher={Association for Computing Machinery},\n  doi={10.1145/1772690.1772862},\n  url = {https://doi.org/10.1145/1772690.1772862},\n  urldate = {2026-09-26},\n  file = {docs/references/sculley2010webscale.pdf}\n}"
   },
   {
     "citekey": "grootendorst2022bertopic",
@@ -6240,8 +6240,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/morrison1969interpretation.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6250,7 +6250,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=On%20the%20Interpretation%20of%20Discriminant%20Analysis",
     "crossref_search_url": "https://api.crossref.org/works?query.title=On%20the%20Interpretation%20of%20Discriminant%20Analysis&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{morrison1969interpretation,\n  title={On the Interpretation of Discriminant Analysis},\n  author={Morrison, Donald G.},\n  journal={Journal of Marketing Research},\n  volume={6},\n  number={2},\n  pages={156--163},\n  year={1969},\n  publisher={American Marketing Association},\n  doi={10.1177/002224376900600203},\n  url = {https://doi.org/10.1177/002224376900600203},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{morrison1969interpretation,\n  title={On the Interpretation of Discriminant Analysis},\n  author={Morrison, Donald G.},\n  journal={Journal of Marketing Research},\n  volume={6},\n  number={2},\n  pages={156--163},\n  year={1969},\n  publisher={American Marketing Association},\n  doi={10.1177/002224376900600203},\n  url = {https://doi.org/10.1177/002224376900600203},\n  urldate = {2026-09-26},\n  file = {docs/references/morrison1969interpretation.pdf}\n}"
   },
   {
     "citekey": "rousseeuw1987silhouettes",
@@ -6271,8 +6271,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/rousseeuw1987silhouettes.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6281,7 +6281,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Silhouettes%3A%20A%20Graphical%20Aid%20to%20the%20Interpretation%20and%20Validation%20of%20Cluster%20Analysis",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Silhouettes%3A%20A%20Graphical%20Aid%20to%20the%20Interpretation%20and%20Validation%20of%20Cluster%20Analysis&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{rousseeuw1987silhouettes,\n  title={Silhouettes: A Graphical Aid to the Interpretation and Validation of Cluster Analysis},\n  author={Rousseeuw, Peter J.},\n  journal={Journal of Computational and Applied Mathematics},\n  volume={20},\n  pages={53--65},\n  year={1987},\n  publisher={Elsevier},\n  doi={10.1016/0377-0427(87)90125-7},\n  url = {https://doi.org/10.1016/0377-0427(87)90125-7},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{rousseeuw1987silhouettes,\n  title={Silhouettes: A Graphical Aid to the Interpretation and Validation of Cluster Analysis},\n  author={Rousseeuw, Peter J.},\n  journal={Journal of Computational and Applied Mathematics},\n  volume={20},\n  pages={53--65},\n  year={1987},\n  publisher={Elsevier},\n  doi={10.1016/0377-0427(87)90125-7},\n  url = {https://doi.org/10.1016/0377-0427(87)90125-7},\n  urldate = {2026-09-26},\n  file = {docs/references/rousseeuw1987silhouettes.pdf}\n}"
   },
   {
     "citekey": "davies1979cluster",
@@ -6302,8 +6302,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/davies1979cluster.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6312,7 +6312,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=A%20Cluster%20Separation%20Measure",
     "crossref_search_url": "https://api.crossref.org/works?query.title=A%20Cluster%20Separation%20Measure&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{davies1979cluster,\n  title={A Cluster Separation Measure},\n  author={Davies, David L. and Bouldin, Donald W.},\n  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  volume={PAMI-1},\n  number={2},\n  pages={224--227},\n  year={1979},\n  publisher={IEEE},\n  doi={10.1109/TPAMI.1979.4766909},\n  url = {https://doi.org/10.1109/TPAMI.1979.4766909},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{davies1979cluster,\n  title={A Cluster Separation Measure},\n  author={Davies, David L. and Bouldin, Donald W.},\n  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  volume={PAMI-1},\n  number={2},\n  pages={224--227},\n  year={1979},\n  publisher={IEEE},\n  doi={10.1109/TPAMI.1979.4766909},\n  file = {docs/references/davies1979cluster.pdf},\n  url = {https://doi.org/10.1109/TPAMI.1979.4766909},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "aggarwal2012mining",
@@ -6365,8 +6365,8 @@ window.REFERENCES_DATA = [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/agpalo2009statutory.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6375,7 +6375,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Statutory%20Construction",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Statutory%20Construction&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{agpalo2009statutory,\n  title={Statutory Construction},\n  author={Agpalo, Ruben E.},\n  year={2009},\n  edition={6th},\n  publisher={Rex Book Store},\n  address={Manila, Philippines},\n  isbn={978-971-23-4564-7},\n}"
+    "raw_bib": "@book{agpalo2009statutory,\n  title={Statutory Construction},\n  author={Agpalo, Ruben E.},\n  year={2009},\n  edition={6th},\n  publisher={Rex Book Store},\n  address={Manila, Philippines},\n  isbn={978-971-23-4564-7},\n  file = {docs/references/agpalo2009statutory.pdf}\n}"
   },
   {
     "citekey": "cormack2009reciprocal",
@@ -6550,8 +6550,8 @@ window.REFERENCES_DATA = [
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/sokolova2009systematic.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6560,7 +6560,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=A%20Systematic%20Analysis%20of%20Performance%20Measures%20for%20Classification%20Tasks",
     "crossref_search_url": "https://api.crossref.org/works?query.title=A%20Systematic%20Analysis%20of%20Performance%20Measures%20for%20Classification%20Tasks&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{sokolova2009systematic,\n  title={A Systematic Analysis of Performance Measures for Classification Tasks},\n  author={Sokolova, Marina and Lapalme, Guy},\n  journal={Information Processing \\& Management},\n  volume={45},\n  number={4},\n  pages={427--437},\n  year={2009},\n  publisher={Elsevier},\n  doi={10.1016/j.ipm.2009.03.002},\n  url = {https://doi.org/10.1016/j.ipm.2009.03.002},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{sokolova2009systematic,\n  title={A Systematic Analysis of Performance Measures for Classification Tasks},\n  author={Sokolova, Marina and Lapalme, Guy},\n  journal={Information Processing \\& Management},\n  volume={45},\n  number={4},\n  pages={427--437},\n  year={2009},\n  publisher={Elsevier},\n  doi={10.1016/j.ipm.2009.03.002},\n  url = {https://doi.org/10.1016/j.ipm.2009.03.002},\n  urldate = {2026-09-26},\n  file = {docs/references/sokolova2009systematic.pdf}\n}"
   },
   {
     "citekey": "fawcett2006roc",
@@ -6644,8 +6644,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/mcnemar1947note.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6654,7 +6654,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Note%20on%20the%20Sampling%20Error%20of%20the%20Difference%20Between%20Correlated%20Proportions%20or%20Percentages",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Note%20on%20the%20Sampling%20Error%20of%20the%20Difference%20Between%20Correlated%20Proportions%20or%20Percentages&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{mcnemar1947note,\n  title={Note on the Sampling Error of the Difference Between Correlated Proportions or Percentages},\n  author={McNemar, Quinn},\n  journal={Psychometrika},\n  volume={12},\n  number={2},\n  pages={153--157},\n  year={1947},\n  publisher={Springer},\n  doi={10.1007/BF02295996},\n  url = {https://link.springer.com/article/10.1007/BF02295996},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{mcnemar1947note,\n  title={Note on the Sampling Error of the Difference Between Correlated Proportions or Percentages},\n  author={McNemar, Quinn},\n  journal={Psychometrika},\n  volume={12},\n  number={2},\n  pages={153--157},\n  year={1947},\n  publisher={Springer},\n  doi={10.1007/BF02295996},\n  url = {https://link.springer.com/article/10.1007/BF02295996},\n  urldate = {2026-09-26},\n  file = {docs/references/mcnemar1947note.pdf}\n}"
   },
   {
     "citekey": "friedman1937use",
@@ -6675,8 +6675,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/friedman1937use.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6685,7 +6685,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20Use%20of%20Ranks%20to%20Avoid%20the%20Assumption%20of%20Normality%20Implicit%20in%20the%20Analysis%20of%20Variance",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20Use%20of%20Ranks%20to%20Avoid%20the%20Assumption%20of%20Normality%20Implicit%20in%20the%20Analysis%20of%20Variance&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{friedman1937use,\n  title={The Use of Ranks to Avoid the Assumption of Normality Implicit in the Analysis of Variance},\n  author={Friedman, Milton},\n  journal={Journal of the American Statistical Association},\n  volume={32},\n  number={200},\n  pages={675--701},\n  year={1937},\n  publisher={Taylor \\& Francis},\n  doi={10.1080/01621459.1937.10503522},\n  url = {https://www.jstor.org/stable/2279372},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{friedman1937use,\n  title={The Use of Ranks to Avoid the Assumption of Normality Implicit in the Analysis of Variance},\n  author={Friedman, Milton},\n  journal={Journal of the American Statistical Association},\n  volume={32},\n  number={200},\n  pages={675--701},\n  year={1937},\n  publisher={Taylor \\& Francis},\n  doi={10.1080/01621459.1937.10503522},\n  url = {https://www.jstor.org/stable/2279372},\n  urldate = {2026-09-26},\n  file = {docs/references/friedman1937use.pdf}\n}"
   },
   {
     "citekey": "demsar2006statistical",
@@ -6769,8 +6769,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/dagan2006pascal.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6779,7 +6779,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20PASCAL%20Recognising%20Textual%20Entailment%20Challenge&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@inproceedings{dagan2006pascal,\n  title     = {The {PASCAL} Recognising Textual Entailment Challenge},\n  author    = {Dagan, Ido and Glickman, Oren and Magnini, Bernardo},\n  booktitle = {Machine Learning Challenges. Evaluating Predictive Uncertainty, Visual Object Classification, and Recognising Textual Entailment (MLCW 2005)},\n  series    = {Lecture Notes in Computer Science},\n  volume    = {3944},\n  pages     = {177--190},\n  year      = {2006},\n  publisher = {Springer},\n  doi       = {10.1007/11736790_9},\n  url = {https://www.researchgate.net/publication/319395280_The_pascal_recognising_textual_entailment_challenge},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@inproceedings{dagan2006pascal,\n  title     = {The {PASCAL} Recognising Textual Entailment Challenge},\n  author    = {Dagan, Ido and Glickman, Oren and Magnini, Bernardo},\n  booktitle = {Machine Learning Challenges. Evaluating Predictive Uncertainty, Visual Object Classification, and Recognising Textual Entailment (MLCW 2005)},\n  series    = {Lecture Notes in Computer Science},\n  volume    = {3944},\n  pages     = {177--190},\n  year      = {2006},\n  publisher = {Springer},\n  doi       = {10.1007/11736790_9},\n  url = {https://www.researchgate.net/publication/319395280_The_pascal_recognising_textual_entailment_challenge},\n  urldate = {2026-09-26},\n  file = {docs/references/dagan2006pascal.pdf}\n}"
   },
   {
     "citekey": "poliak2018hypothesis",
@@ -6894,8 +6894,8 @@ window.REFERENCES_DATA = [
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/sartor2005legal.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6904,7 +6904,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Legal%20Reasoning%3A%20A%20Cognitive%20Approach%20to%20the%20Law",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Legal%20Reasoning%3A%20A%20Cognitive%20Approach%20to%20the%20Law&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{sartor2005legal,\n  title        = {Legal Reasoning: A Cognitive Approach to the Law},\n  author       = {Sartor, Giovanni},\n  series       = {A Treatise of Legal Philosophy and General Jurisprudence},\n  volume       = {5},\n  year         = {2005},\n  publisher    = {Springer},\n  address      = {Dordrecht},\n  isbn         = {978-1-4020-3505-0},\n  doi          = {10.1007/1-4020-3505-5},\n  url          = {https://doi.org/10.1007/1-4020-3505-5},\n  urldate      = {2026-09-26},\n}"
+    "raw_bib": "@book{sartor2005legal,\n  title        = {Legal Reasoning: A Cognitive Approach to the Law},\n  author       = {Sartor, Giovanni},\n  series       = {A Treatise of Legal Philosophy and General Jurisprudence},\n  volume       = {5},\n  year         = {2005},\n  publisher    = {Springer},\n  address      = {Dordrecht},\n  isbn         = {978-1-4020-3505-0},\n  doi          = {10.1007/1-4020-3505-5},\n  url          = {https://doi.org/10.1007/1-4020-3505-5},\n  urldate      = {2026-09-26},\n  file = {docs/references/sartor2005legal.pdf}\n}"
   },
   {
     "citekey": "benchcapon2003theory",
@@ -6925,8 +6925,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/benchcapon2003theory.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6935,7 +6935,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=A%20Model%20of%20Legal%20Reasoning%20with%20Cases%20Incorporating%20Theories%20and%20Values",
     "crossref_search_url": "https://api.crossref.org/works?query.title=A%20Model%20of%20Legal%20Reasoning%20with%20Cases%20Incorporating%20Theories%20and%20Values&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+A%20Model%20of%20Legal%20Reasoning%20with%20Cases%20Incorporating%20Theories%20and%20Values",
-    "raw_bib": "@article{benchcapon2003theory,\n  title        = {A Model of Legal Reasoning with Cases Incorporating Theories and Values},\n  author       = {Bench-Capon, Trevor J. M. and Sartor, Giovanni},\n  journal      = {Artificial Intelligence},\n  volume       = {150},\n  number       = {1--2},\n  pages        = {97--143},\n  year         = {2003},\n  publisher    = {Elsevier},\n  doi          = {10.1016/S0004-3702(03)00108-5},\n  url          = {https://doi.org/10.1016/S0004-3702(03)00108-5},\n  urldate      = {2026-09-26},\n}"
+    "raw_bib": "@article{benchcapon2003theory,\n  title        = {A Model of Legal Reasoning with Cases Incorporating Theories and Values},\n  author       = {Bench-Capon, Trevor J. M. and Sartor, Giovanni},\n  journal      = {Artificial Intelligence},\n  volume       = {150},\n  number       = {1--2},\n  pages        = {97--143},\n  year         = {2003},\n  publisher    = {Elsevier},\n  doi          = {10.1016/S0004-3702(03)00108-5},\n  url          = {https://doi.org/10.1016/S0004-3702(03)00108-5},\n  urldate      = {2026-09-26},\n  file = {docs/references/benchcapon2003theory.pdf}\n}"
   },
   {
     "citekey": "faul2007gpower",
@@ -6987,8 +6987,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/landauer1998introduction.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -6997,7 +6997,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=An%20Introduction%20to%20Latent%20Semantic%20Analysis",
     "crossref_search_url": "https://api.crossref.org/works?query.title=An%20Introduction%20to%20Latent%20Semantic%20Analysis&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{landauer1998introduction,\n  title        = {An Introduction to Latent Semantic Analysis},\n  author       = {Landauer, Thomas K. and Foltz, Peter W. and Laham, Darrell},\n  journal      = {Discourse Processes},\n  volume       = {25},\n  number       = {2-3},\n  pages        = {259--284},\n  year         = {1998},\n  publisher    = {Taylor \\& Francis},\n  doi          = {10.1080/01638539809545028},\n  url = {https://www.researchgate.net/publication/200045222_An_introduction_to_latent_semantic_analysis},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@article{landauer1998introduction,\n  title        = {An Introduction to Latent Semantic Analysis},\n  author       = {Landauer, Thomas K. and Foltz, Peter W. and Laham, Darrell},\n  journal      = {Discourse Processes},\n  volume       = {25},\n  number       = {2-3},\n  pages        = {259--284},\n  year         = {1998},\n  publisher    = {Taylor \\& Francis},\n  doi          = {10.1080/01638539809545028},\n  url = {https://www.researchgate.net/publication/200045222_An_introduction_to_latent_semantic_analysis},\n  urldate = {2026-09-26},\n  file = {docs/references/landauer1998introduction.pdf}\n}"
   },
   {
     "citekey": "guo2017calibration",
@@ -7577,9 +7577,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 15:57:17",
     "google_search_url": "https://www.google.com/search?q=%22Pure%20Theory%20of%20Law%22%20Kelsen%2C%20Hans",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Pure%20Theory%20of%20Law",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Pure%20Theory%20of%20Law",
@@ -7937,7 +7937,7 @@ window.REFERENCES_DATA = [
     "venue": "Supreme Court En Banc Resolution",
     "category": "Philippine Law & Jurisprudence",
     "doi": "",
-    "url": "https://sc.judiciary.gov.ph/efficient-use-of-paper-rule/",
+    "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/69189",
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": false,
@@ -7953,7 +7953,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Administrative%20Matter%20No.%2011-9-4-SC%3A%20Efficient%20Use%20of%20Paper%20Rule",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Administrative%20Matter%20No.%2011-9-4-SC%3A%20Efficient%20Use%20of%20Paper%20Rule&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Administrative%20Matter%20No.%2011-9-4-SC%3A%20Efficient%20Use%20of%20Paper%20Rule",
-    "raw_bib": "@misc{scam2012paper,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Administrative Matter No. 11-9-4-SC: Efficient Use of Paper Rule}},\n  howpublished = {Supreme Court En Banc Resolution},\n  year         = {2012},\n  month        = {November},\n  keywords     = {court_rule, legal_formatting, paper_size, margins},\n  url = {https://sc.judiciary.gov.ph/efficient-use-of-paper-rule/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{scam2012paper,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Administrative Matter No. 11-9-4-SC: Efficient Use of Paper Rule}},\n  howpublished = {Supreme Court En Banc Resolution},\n  year         = {2012},\n  month        = {November},\n  keywords     = {court_rule, legal_formatting, paper_size, margins},\n  url = {https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/69189},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "scp2004batangascatv",
@@ -7966,7 +7966,7 @@ window.REFERENCES_DATA = [
     "venue": "Supreme Court Reports Annotated (441 SCRA 530)",
     "category": "Philippine Law & Jurisprudence",
     "doi": "",
-    "url": "https://lawphil.net/judjuris/juri2004/oct2004/gr_138810_2004.html",
+    "url": "https://lawphil.net/judjuris/juri2004/sep2004/gr_138810_2004.html",
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": false,
@@ -7982,7 +7982,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Batangas%20CATV%2C%20Inc.%20v.%20Court%20of%20Appeals%20%28G.R.%20No.%20138810%29",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Batangas%20CATV%2C%20Inc.%20v.%20Court%20of%20Appeals%20%28G.R.%20No.%20138810%29&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Batangas%20CATV%2C%20Inc.%20v.%20Court%20of%20Appeals%20%28G.R.%20No.%20138810%29",
-    "raw_bib": "@misc{scp2004batangascatv,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Batangas CATV, Inc. v. Court of Appeals (G.R. No. 138810)}},\n  howpublished = {Supreme Court Reports Annotated (441 SCRA 530)},\n  year         = {2004},\n  keywords     = {jurisprudence, statutory_preemption, telecommunications, ntc_jurisdiction},\n  url = {https://lawphil.net/judjuris/juri2004/oct2004/gr_138810_2004.html},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{scp2004batangascatv,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Batangas CATV, Inc. v. Court of Appeals (G.R. No. 138810)}},\n  howpublished = {Supreme Court Reports Annotated (441 SCRA 530)},\n  year         = {2004},\n  keywords     = {jurisprudence, statutory_preemption, telecommunications, ntc_jurisdiction},\n  url = {https://lawphil.net/judjuris/juri2004/sep2004/gr_138810_2004.html},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "scp2001pldtvdavao",
@@ -8011,7 +8011,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Philippine%20Long%20Distance%20Telephone%20Company%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20143867%29",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Philippine%20Long%20Distance%20Telephone%20Company%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20143867%29&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Philippine%20Long%20Distance%20Telephone%20Company%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20143867%29",
-    "raw_bib": "@misc{scp2001pldtvdavao,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Philippine Long Distance Telephone Company, Inc. v. City of Davao (G.R. No. 143867)}},\n  howpublished = {Supreme Court Reports Annotated (363 SCRA 522; Res. 399 SCRA 392)},\n  year         = {2001},\n  keywords     = {jurisprudence, davao_city_ordinance, local_franchise_tax, tax_exemption},\n  url = {https://lawphil.net/judjuris/juri2001/aug2001/gr_143867_2001.html},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{scp2001pldtvdavao,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Philippine Long Distance Telephone Company, Inc. v. City of Davao (G.R. No. 143867)}},\n  howpublished = {Supreme Court Reports Annotated (363 SCRA 522; Res. 399 SCRA 392)},\n  year         = {2001},\n  keywords     = {jurisprudence, davao_city_ordinance, local_franchise_tax, tax_exemption},\n  url = {https://lawphil.net/judjuris/juri2001/aug2001/gr_143867_2001.html},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "spdavao2007ord0310",
@@ -8024,9 +8024,9 @@ window.REFERENCES_DATA = [
     "venue": "Official Records of the Sangguniang Panlungsod, City Government of Davao",
     "category": "Philippine Law & Jurisprudence",
     "doi": "",
-    "url": "",
+    "url": "https://lissp2.davaocity.gov.ph/uploads/items/78617/Ordinance%20No.%200310-07.pdf",
     "eprint": "",
-    "direct_pdf_url": "",
+    "direct_pdf_url": "https://lissp2.davaocity.gov.ph/uploads/items/78617/Ordinance%20No.%200310-07.pdf",
     "is_cited": true,
     "citation_count": 2,
     "cited_in_files": [
@@ -8042,7 +8042,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Davao%20City%20Ordinance%20No.%200310-07%3A%20The%20Watershed%20Protection%2C%20Conservation%20and%20Management%20Ordinance%20of%20Davao%20City",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Davao%20City%20Ordinance%20No.%200310-07%3A%20The%20Watershed%20Protection%2C%20Conservation%20and%20Management%20Ordinance%20of%20Davao%20City&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Davao%20City%20Ordinance%20No.%200310-07%3A%20The%20Watershed%20Protection%2C%20Conservation%20and%20Management%20Ordinance%20of%20Davao%20City",
-    "raw_bib": "@misc{spdavao2007ord0310,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Davao City Ordinance No. 0310-07: The Watershed Protection, Conservation and Management Ordinance of Davao City}},\n  year         = {2007},\n  howpublished = {Official Records of the Sangguniang Panlungsod, City Government of Davao},\n  keywords     = {davao_city_ordinance, watershed_protection, mining_ban},\n  file = {docs/references/spdavao2007ord0310.pdf},\n}"
+    "raw_bib": "@misc{spdavao2007ord0310,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Davao City Ordinance No. 0310-07: The Watershed Protection, Conservation and Management Ordinance of Davao City}},\n  year         = {2007},\n  howpublished = {Official Records of the Sangguniang Panlungsod, City Government of Davao},\n  keywords     = {davao_city_ordinance, watershed_protection, mining_ban},\n  file = {docs/references/spdavao2007ord0310.pdf},\n  url = {https://lissp2.davaocity.gov.ph/uploads/items/78617/Ordinance%20No.%200310-07.pdf},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "spdavao2012ord0367",
@@ -8073,7 +8073,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Davao%20City%20Ordinance%20No.%200367-12%3A%20The%20New%20Comprehensive%20Anti-Smoking%20Ordinance%20of%20Davao%20City",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Davao%20City%20Ordinance%20No.%200367-12%3A%20The%20New%20Comprehensive%20Anti-Smoking%20Ordinance%20of%20Davao%20City&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Davao%20City%20Ordinance%20No.%200367-12%3A%20The%20New%20Comprehensive%20Anti-Smoking%20Ordinance%20of%20Davao%20City",
-    "raw_bib": "@misc{spdavao2012ord0367,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Davao City Ordinance No. 0367-12: The New Comprehensive Anti-Smoking Ordinance of Davao City}},\n  year         = {2012},\n  howpublished = {Official Records of the Sangguniang Panlungsod, City Government of Davao},\n  keywords     = {davao_city_ordinance, anti_smoking, public_health},\n  url = {https://lissp2.davaocity.gov.ph/uploads/items/92638/Ordinance%20No.%200367-12.pdf},\n  urldate = {2026-09-26},\n  file = {docs/references/spdavao2012ord0367.pdf}\n}"
+    "raw_bib": "@misc{spdavao2012ord0367,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Davao City Ordinance No. 0367-12: The New Comprehensive Anti-Smoking Ordinance of Davao City}},\n  year         = {2012},\n  howpublished = {Official Records of the Sangguniang Panlungsod, City Government of Davao},\n  keywords     = {davao_city_ordinance, anti_smoking, public_health},\n  file = {docs/references/spdavao2012ord0367.pdf},\n  url = {https://lissp2.davaocity.gov.ph/uploads/items/92638/Ordinance%20No.%200367-12.pdf},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "spdavao2023ord0270",
@@ -8104,7 +8104,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Davao%20City%20Ordinance%20No.%200270-23%3A%20The%20Comprehensive%20Speed%20Limit%20Ordinance%20of%20Davao%20City",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Davao%20City%20Ordinance%20No.%200270-23%3A%20The%20Comprehensive%20Speed%20Limit%20Ordinance%20of%20Davao%20City&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Davao%20City%20Ordinance%20No.%200270-23%3A%20The%20Comprehensive%20Speed%20Limit%20Ordinance%20of%20Davao%20City",
-    "raw_bib": "@misc{spdavao2023ord0270,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Davao City Ordinance No. 0270-23: The Comprehensive Speed Limit Ordinance of Davao City}},\n  year         = {2023},\n  howpublished = {Official Records of the Sangguniang Panlungsod, City Government of Davao},\n  keywords     = {davao_city_ordinance, speed_limit, traffic_regulation},\n  url = {https://lissp2.davaocity.gov.ph/uploads/items/10139/Ordinance%20No.%200270-23%20Speed%20Limits.pdf},\n  urldate = {2026-09-26},\n  file = {docs/references/spdavao2023ord0270.pdf}\n}"
+    "raw_bib": "@misc{spdavao2023ord0270,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Davao City Ordinance No. 0270-23: The Comprehensive Speed Limit Ordinance of Davao City}},\n  year         = {2023},\n  howpublished = {Official Records of the Sangguniang Panlungsod, City Government of Davao},\n  keywords     = {davao_city_ordinance, speed_limit, traffic_regulation},\n  file = {docs/references/spdavao2023ord0270.pdf},\n  url = {https://lissp2.davaocity.gov.ph/uploads/items/10139/Ordinance%20No.%200270-23%20Speed%20Limits.pdf},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "spdavao2002ord060",
@@ -8133,7 +8133,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Davao%20City%20Ordinance%20No.%20060-02%3A%20An%20Ordinance%20Prohibiting%20the%20Manufacture%2C%20Sale%2C%20Distribution%2C%20Possession%20or%20Use%20of%20Firecrackers%20or%20Pyrotechnic%20Devices%20in%20Davao%20City",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Davao%20City%20Ordinance%20No.%20060-02%3A%20An%20Ordinance%20Prohibiting%20the%20Manufacture%2C%20Sale%2C%20Distribution%2C%20Possession%20or%20Use%20of%20Firecrackers%20or%20Pyrotechnic%20Devices%20in%20Davao%20City&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Davao%20City%20Ordinance%20No.%20060-02%3A%20An%20Ordinance%20Prohibiting%20the%20Manufacture%2C%20Sale%2C%20Distribution%2C%20Possession%20or%20Use%20of%20Firecrackers%20or%20Pyrotechnic%20Devices%20in%20Davao%20City",
-    "raw_bib": "@misc{spdavao2002ord060,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Davao City Ordinance No. 060-02: An Ordinance Prohibiting the Manufacture, Sale, Distribution, Possession or Use of Firecrackers or Pyrotechnic Devices in Davao City}},\n  year         = {2002},\n  howpublished = {Official Records of the Sangguniang Panlungsod, City Government of Davao},\n  keywords     = {davao_city_ordinance, firecracker_ban, public_safety},\n  url = {https://lissp2.davaocity.gov.ph/uploads/items/26555/Ordinance%20No.%20000060-02.pdf},\n  urldate = {2026-09-26},\n  file = {docs/references/spdavao2002ord060.pdf}\n}"
+    "raw_bib": "@misc{spdavao2002ord060,\n  author       = {{Sangguniang Panlungsod of Davao City}},\n  title        = {{Davao City Ordinance No. 060-02: An Ordinance Prohibiting the Manufacture, Sale, Distribution, Possession or Use of Firecrackers or Pyrotechnic Devices in Davao City}},\n  year         = {2002},\n  howpublished = {Official Records of the Sangguniang Panlungsod, City Government of Davao},\n  keywords     = {davao_city_ordinance, firecracker_ban, public_safety},\n  file = {docs/references/spdavao2002ord060.pdf},\n  url = {https://lissp2.davaocity.gov.ph/uploads/items/26555/Ordinance%20No.%20000060-02.pdf},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "dodge2019show",
@@ -8164,7 +8164,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Show%20Your%20Work%3A%20Improved%20Reporting%20of%20Experimental%20Results",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Show%20Your%20Work%3A%20Improved%20Reporting%20of%20Experimental%20Results&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@inproceedings{dodge2019show,\n  title     = {Show Your Work: Improved Reporting of Experimental Results},\n  author    = {Dodge, Jesse and Gururangan, Suchin and Card, Dallas and Schwartz, Roy and Smith, Noah A.},\n  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},\n  pages     = {2185--2194},\n  year      = {2019},\n  doi       = {10.18653/v1/D19-1224},\n  url       = {https://aclanthology.org/D19-1224/},\n  urldate   = {2026-09-26},\n  file = {docs/references/dodge2019show.pdf}\n}"
+    "raw_bib": "@inproceedings{dodge2019show,\n  title     = {Show Your Work: Improved Reporting of Experimental Results},\n  author    = {Dodge, Jesse and Gururangan, Suchin and Card, Dallas and Schwartz, Roy and Smith, Noah A.},\n  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},\n  pages     = {2185--2194},\n  year      = {2019},\n  doi       = {10.18653/v1/D19-1224},\n  file = {docs/references/dodge2019show.pdf},\n  url = {https://aclanthology.org/D19-1224/},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "caruana2004ensemble",
@@ -8195,7 +8195,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Ensemble%20Selection%20from%20Libraries%20of%20Models",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Ensemble%20Selection%20from%20Libraries%20of%20Models&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@inproceedings{caruana2004ensemble,\n  title     = {Ensemble Selection from Libraries of Models},\n  author    = {Caruana, Rich and Niculescu-Mizil, Alexandru and Crew, Geoff and Ksikes, Alex},\n  booktitle = {Proceedings of the Twenty-First International Conference on Machine Learning (ICML)},\n  pages     = {18},\n  year      = {2004},\n  doi       = {10.1145/1015330.1015432},\n  url       = {https://doi.org/10.1145/1015330.1015432},\n  urldate   = {2026-09-26},\n  file = {docs/references/caruana2004ensemble.pdf}\n}"
+    "raw_bib": "@inproceedings{caruana2004ensemble,\n  title     = {Ensemble Selection from Libraries of Models},\n  author    = {Caruana, Rich and Niculescu-Mizil, Alexandru and Crew, Geoff and Ksikes, Alex},\n  booktitle = {Proceedings of the Twenty-First International Conference on Machine Learning (ICML)},\n  pages     = {18},\n  year      = {2004},\n  doi       = {10.1145/1015330.1015432},\n  file = {docs/references/caruana2004ensemble.pdf},\n  url = {https://doi.org/10.1145/1015330.1015432},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "dwork2015reusable",
@@ -8226,7 +8226,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20Reusable%20Holdout%3A%20Preserving%20Validity%20in%20Adaptive%20Data%20Analysis",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20Reusable%20Holdout%3A%20Preserving%20Validity%20in%20Adaptive%20Data%20Analysis&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{dwork2015reusable,\n  title     = {The Reusable Holdout: Preserving Validity in Adaptive Data Analysis},\n  author    = {Dwork, Cynthia and Feldman, Vitaly and Hardt, Moritz and Pitassi, Toniann and Reingold, Omer and Roth, Aaron},\n  journal   = {Science},\n  volume    = {349},\n  number    = {6248},\n  pages     = {636--638},\n  year      = {2015},\n  doi       = {10.1126/science.aaa9375},\n  file = {docs/references/dwork2015reusable.pdf},\n  url = {https://arxiv.org/pdf/1411.2664.pdf},\n  urldate = {2026-10-04}\n}"
+    "raw_bib": "@article{dwork2015reusable,\n  title     = {The Reusable Holdout: Preserving Validity in Adaptive Data Analysis},\n  author    = {Dwork, Cynthia and Feldman, Vitaly and Hardt, Moritz and Pitassi, Toniann and Reingold, Omer and Roth, Aaron},\n  journal   = {Science},\n  volume    = {349},\n  number    = {6248},\n  pages     = {636--638},\n  year      = {2015},\n  doi       = {10.1126/science.aaa9375},\n  file = {docs/references/dwork2015reusable.pdf},\n  url = {https://arxiv.org/pdf/1411.2664.pdf},\n  urldate = {2026-10-06}\n}"
   },
   {
     "citekey": "dietterich1998approximate",
@@ -8342,8 +8342,8 @@ window.REFERENCES_DATA = [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
       "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/lopresti2008optical.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -8352,7 +8352,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Optical%20Character%20Recognition%20Errors%20and%20Their%20Effect%20on%20Natural%20Language%20Processing",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Optical%20Character%20Recognition%20Errors%20and%20Their%20Effect%20on%20Natural%20Language%20Processing&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{lopresti2008optical,\n  author    = {Daniel Lopresti},\n  title     = {Optical Character Recognition Errors and Their Effect on Natural Language Processing},\n  journal   = {International Journal on Document Analysis and Recognition (IJDAR)},\n  volume    = {10},\n  number    = {3--4},\n  pages     = {141--151},\n  year      = {2008},\n  doi       = {10.1007/s10032-008-0073-4},\n  url       = {https://doi.org/10.1007/s10032-008-0073-4},\n  urldate   = {2026-09-28}\n}"
+    "raw_bib": "@article{lopresti2008optical,\n  author    = {Daniel Lopresti},\n  title     = {Optical Character Recognition Errors and Their Effect on Natural Language Processing},\n  journal   = {International Journal on Document Analysis and Recognition (IJDAR)},\n  volume    = {10},\n  number    = {3--4},\n  pages     = {141--151},\n  year      = {2008},\n  doi       = {10.1007/s10032-008-0073-4},\n  url       = {https://doi.org/10.1007/s10032-008-0073-4},\n  urldate   = {2026-09-28},\n  file = {docs/references/lopresti2008optical.pdf}\n}"
   },
   {
     "citekey": "smith2007overview",
@@ -8408,9 +8408,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 15:57:07",
     "google_search_url": "https://www.google.com/search?q=%22Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection%22%20Vikram%20Paruchuri",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection",
@@ -8504,9 +8504,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 15:57:05",
     "google_search_url": "https://www.google.com/search?q=%22Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview%22%20Google%20Cloud",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview",
@@ -8627,8 +8627,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/vanrijsbergen1979information.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -8637,7 +8637,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Information%20Retrieval",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Information%20Retrieval&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{vanrijsbergen1979information,\n  title     = {Information Retrieval},\n  author    = {van Rijsbergen, C. J.},\n  edition   = {2nd},\n  publisher = {Butterworth-Heinemann},\n  address   = {London},\n  year      = {1979},\n  isbn      = {9780408709293}\n}"
+    "raw_bib": "@book{vanrijsbergen1979information,\n  title     = {Information Retrieval},\n  author    = {van Rijsbergen, C. J.},\n  edition   = {2nd},\n  publisher = {Butterworth-Heinemann},\n  address   = {London},\n  year      = {1979},\n  isbn      = {9780408709293},\n  file = {docs/references/vanrijsbergen1979information.pdf}\n}"
   },
   {
     "citekey": "edwards1948note",
@@ -8658,8 +8658,8 @@ window.REFERENCES_DATA = [
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/edwards1948note.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -8668,7 +8668,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Note%20on%20the%20%60%60Correction%20for%20Continuity%27%27%20in%20Testing%20the%20Significance%20of%20the%20Difference%20Between%20Correlated%20Proportions",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Note%20on%20the%20%60%60Correction%20for%20Continuity%27%27%20in%20Testing%20the%20Significance%20of%20the%20Difference%20Between%20Correlated%20Proportions&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{edwards1948note,\n  title   = {Note on the ``Correction for Continuity'' in Testing the Significance of the Difference Between Correlated Proportions},\n  author  = {Edwards, Allen L.},\n  journal = {Psychometrika},\n  volume  = {13},\n  number  = {3},\n  pages   = {185--187},\n  year    = {1948},\n  doi     = {10.1007/BF02289261}\n}"
+    "raw_bib": "@article{edwards1948note,\n  title   = {Note on the ``Correction for Continuity'' in Testing the Significance of the Difference Between Correlated Proportions},\n  author  = {Edwards, Allen L.},\n  journal = {Psychometrika},\n  volume  = {13},\n  number  = {3},\n  pages   = {185--187},\n  year    = {1948},\n  doi     = {10.1007/BF02289261},\n  file = {docs/references/edwards1948note.pdf}\n}"
   },
   {
     "citekey": "marzal1993computation",
@@ -8753,9 +8753,9 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:30:00",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Relevance%20Feedback%20in%20Information%20Retrieval%22%20Rocchio%2C%20J.%20J.",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Relevance%20Feedback%20in%20Information%20Retrieval",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Relevance%20Feedback%20in%20Information%20Retrieval",
@@ -8817,53 +8817,13 @@ window.REFERENCES_DATA = [
     "local_pdf_path": "",
     "flagged": true,
     "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:06:38",
+    "flag_timestamp": "2026-10-06 15:57:12",
     "google_search_url": "https://www.google.com/search?q=%22Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure%22%20Kaggle%20Inc.",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure&rows=1",
     "lawphil_url": "",
     "raw_bib": "@misc{kaggle2026,\n  author       = {{Kaggle Inc.}},\n  title        = {Kaggle: Machine Learning and Data Science Cloud Infrastructure},\n  publisher    = {Google LLC},\n  year         = {2026},\n  note         = {Accessed October 2026},\n  url = {https://www.kaggle.com},\n  urldate = {2026-10-06}\n}"
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
-    "google_search_url": "https://www.google.com/search?q=%22Kaggle%20on%20Google%20Cloud%20Platform%22%20Bisong%2C%20Ekaba",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%20on%20Google%20Cloud%20Platform",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%20on%20Google%20Cloud%20Platform",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%20on%20Google%20Cloud%20Platform&rows=1",
-    "lawphil_url": "",
-    "raw_bib": "@incollection{bisong2019kaggle,\n  title     = {Kaggle on Google Cloud Platform},\n  author    = {Bisong, Ekaba},\n  booktitle = {Building Machine Learning and Deep Learning Models on Google Cloud Platform},\n  pages     = {65--74},\n  year      = {2019},\n  publisher = {Apress},\n  address   = {Berkeley, CA},\n  doi       = {10.1007/978-1-4842-4470-8_8}\n}"
-  },
-  {
-    "citekey": "kaggle2026",
-    "entry_type": "misc",
-    "title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
-    "raw_title": "Kaggle: Machine Learning and Data Science Cloud Infrastructure",
-    "author": "Kaggle Inc.",
-    "raw_author": "{Kaggle Inc.}",
-    "year": "2026",
-    "venue": "Google LLC",
-    "category": "Computer Science & NLP",
-    "doi": "",
-    "url": "https://www.kaggle.com",
-    "eprint": "",
-    "direct_pdf_url": "",
-    "is_cited": true,
-    "citation_count": 1,
-    "cited_in_files": [
-      "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
-    ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
-    "google_search_url": "https://www.google.com/search?q=%22Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure%22%20Kaggle%20Inc.",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure&rows=1",
-    "lawphil_url": "",
-    "raw_bib": "@misc{kaggle2026,\n  author       = {{Kaggle Inc.}},\n  title        = {Kaggle: Machine Learning and Data Science Cloud Infrastructure},\n  publisher    = {Google LLC},\n  year         = {2026},\n  url          = {https://www.kaggle.com},\n  urldate      = {2026-10-05},\n  note         = {Accessed October 2026}\n}"
   },
   {
     "citekey": "davis1989perceived",
@@ -9142,8 +9102,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%20Concept%20of%20Law",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%20Concept%20of%20Law&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{hart1961concept,\n  author    = {H. L. A. Hart},\n  title     = {The Concept of Law},\n  publisher = {Clarendon Press, Oxford University Press},\n  address   = {Oxford, UK},\n  year      = {1961},\n  file = {docs/references/hart1961concept.pdf}\n}",
-    "raw_bib": "@book{hart1961concept,\n  author    = {H. L. A. Hart},\n  title     = {The Concept of Law},\n  publisher = {Clarendon Press, Oxford University Press},\n  address   = {Oxford, UK},\n  year      = {1961}\n}"
+    "raw_bib": "@book{hart1961concept,\n  author    = {H. L. A. Hart},\n  title     = {The Concept of Law},\n  publisher = {Clarendon Press, Oxford University Press},\n  address   = {Oxford, UK},\n  year      = {1961},\n  file = {docs/references/hart1961concept.pdf}\n}"
   },
   {
     "citekey": "banarescu2013abstract",
@@ -9228,11 +9187,6 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": true,
     "local_pdf_path": "docs/references/baird1993defect.pdf",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 13:55:01",
-    "has_local_pdf": false,
-    "local_pdf_path": "",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -9241,7 +9195,6 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Document%20Image%20Defect%20Models",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Document%20Image%20Defect%20Models&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@incollection{baird1993defect,\n  author    = {Henry S. Baird},\n  title     = {Document Image Defect Models},\n  booktitle = {Structured Document Image Analysis},\n  editor    = {Henry S. Baird and Horst Bunke and Kazuhiko Yamamoto},\n  pages     = {546--556},\n  publisher = {Springer},\n  year      = {1993},\n  doi       = {10.1007/978-3-642-77281-8_24},\n  file = {docs/references/baird1993defect.pdf}\n}",
-    "raw_bib": "@incollection{baird1993defect,\n  author    = {Henry S. Baird},\n  title     = {Document Image Defect Models},\n  booktitle = {Structured Document Image Analysis},\n  editor    = {Henry S. Baird and Horst Bunke and Kazuhiko Yamamoto},\n  pages     = {546--556},\n  publisher = {Springer},\n  year      = {1993},\n  doi       = {10.1007/978-3-642-77281-8_24}\n}"
+    "raw_bib": "@incollection{baird1993defect,\n  author    = {Henry S. Baird},\n  title     = {Document Image Defect Models},\n  booktitle = {Structured Document Image Analysis},\n  editor    = {Henry S. Baird and Horst Bunke and Kazuhiko Yamamoto},\n  pages     = {546--556},\n  publisher = {Springer},\n  year      = {1993},\n  doi       = {10.1007/978-3-642-77281-8_24},\n  file = {docs/references/baird1993defect.pdf}\n}"
   }
 ];
