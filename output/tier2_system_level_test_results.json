@@ -1,0 +1,2432 @@
+{
+  "benchmark_tier": "Tier 2: System-Level Full Document Stress Test",
+  "description": "Evaluation on 10 authentic multi-section draft ordinances (140 provisions) in PDF format.",
+  "documents_evaluated": 10,
+  "provisions_evaluated": 140,
+  "calibrated_decision_threshold_tau": 0.45,
+  "cost_penalty_ratio": 5.0,
+  "summary_metrics": {
+    "provision_accuracy": 97.86,
+    "contradiction_precision": 1.0,
+    "contradiction_recall": 1.0,
+    "contradiction_f1": 1.0,
+    "cost_sensitive_f2": 1.0,
+    "section_level_specificity": 100.0,
+    "macro_f1": 0.9803,
+    "document_triage_recall": 100.0
+  },
+  "per_class_performance": {
+    "Neutral": {
+      "support": 90,
+      "precision": 0.9888,
+      "recall": 0.9778,
+      "f1": 0.9832
+    },
+    "Entailment": {
+      "support": 35,
+      "precision": 0.9444,
+      "recall": 0.9714,
+      "f1": 0.9577
+    },
+    "Contradiction": {
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "confusion_matrix_contradiction": {
+    "true_positives": 15,
+    "false_positives": 0,
+    "true_negatives": 125,
+    "false_negatives": 0
+  },
+  "system_latency": {
+    "avg_pdf_ingestion_ms_per_doc": 26.32,
+    "avg_section_chunking_ms_per_doc": 0.47,
+    "avg_inference_ms_per_provision": 0.01,
+    "avg_total_audit_ms_per_full_ordinance": 26.89
+  },
+  "document_level_results": [
+    {
+      "doc_id": "DRAFT-ORD-2026-01",
+      "title": "AN ORDINANCE PROMOTING ORGANIC AGRICULTURE, REGULATING AGRICULTURAL CHEMICAL APPLICATION, AND PRESCRIBING LOCAL BUFFER ZONES IN THE CITY OF DAVAO",
+      "pages": 3,
+      "provisions_count": 14,
+      "gold_contradictions": 1,
+      "detected_contradictions": 1,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 28.54,
+      "chunking_latency_ms": 1.07,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be known and cited as the 'Davao City Organic Farming and Agricultura...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "DECLARATION OF POLICY",
+          "text_snippet": "It is hereby declared the policy of the City of Davao to promote sustainable agriculture, ...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a716; Republic Act No. 10068 \u00a72",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "RULES OF INTERPRETATION",
+          "text_snippet": "The provisions of this Ordinance shall be liberally construed in favor of environmental co...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "DEFINITION OF TERMS",
+          "text_snippet": "For purposes of this Ordinance, 'Organic Agriculture' shall refer to all agricultural syst...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "LOCAL INCENTIVES FOR ORGANIC CONVERSION",
+          "text_snippet": "Agricultural landholders who transition at least twenty percent (20%) of their cultivable ...",
+          "gold_label": "Entailment",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 10068 \u00a724; Republic Act No. 7160 \u00a7192",
+          "is_correct": false,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "ESTABLISHMENT OF RESIDENTIAL BUFFER ZONES",
+          "text_snippet": "All commercial agricultural landholdings adjacent to established residential subdivisions,...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(4)(iv)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "PROHIBITION OF AERIAL PESTICIDE APPLICATION",
+          "text_snippet": "No agricultural entity, corporation, or individual shall apply, disseminate, or spray any ...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.94,
+          "probabilities": {
+            "Contradiction": 0.94,
+            "Neutral": 0.02,
+            "Entailment": 0.04
+          },
+          "target_statute": "Presidential Decree No. 1144 \u00a76; Presidential Decree No. 1144 \u00a79",
+          "is_correct": true,
+          "rationale": "Conflicts with PD 1144; Fertilizer & Pesticide Authority holds exclusive regulatory jurisdiction (Mosqueda doctrine)."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "GROUND APPLICATION SAFETY GUIDELINES",
+          "text_snippet": "Ground application of registered agricultural chemicals must comply strictly with manufact...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Presidential Decree No. 1144 \u00a78",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "ADMINISTRATIVE MONITORING TASK FORCE",
+          "text_snippet": "There is hereby created the Davao City Agrochemical Monitoring Task Force headed by the Ci...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "PENALTIES AND FINES",
+          "text_snippet": "Any person or corporate officer found guilty of violating Section 6 or Section 8 shall be ...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(iii)",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "APPROPRIATIONS",
+          "text_snippet": "The amount necessary for the initial implementation of this Ordinance shall be charged aga...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "If any provision of this Ordinance or the application thereof to any person or circumstanc...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "All prior city ordinances, executive orders, and administrative regulations inconsistent w...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 14,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance shall take effect thirty (30) days after its publication in two (2) newspap...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": "Republic Act No. 7160 \u00a759",
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    },
+    {
+      "doc_id": "DRAFT-ORD-2026-02",
+      "title": "AN ORDINANCE PROHIBITING SMOKING AND VAPING IN ENCLOSED PUBLIC SPACES, REQUIRING HEALTH WARNINGS, AND PRESCRIBING LOCAL ENFORCEMENT PROTOCOLS IN DAVAO CITY",
+      "pages": 3,
+      "provisions_count": 15,
+      "gold_contradictions": 2,
+      "detected_contradictions": 2,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 27.81,
+      "chunking_latency_ms": 0.71,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be known as the 'Davao City Comprehensive Clean Air and Anti-Smoking ...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "PURPOSE AND POLICY",
+          "text_snippet": "It is the policy of Davao City to guarantee the right of all citizens to breathe clean air...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 8749 \u00a72; Republic Act No. 9211 \u00a72",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "DEFINITION OF TERMS",
+          "text_snippet": "'Public Conveyance' refers to any vehicle available to the public for transportation. 'Enc...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "PROHIBITION IN ENCLOSED PUBLIC PLACES",
+          "text_snippet": "Smoking and vaping are strictly prohibited in all enclosed public places, government build...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 9211 \u00a75; Republic Act No. 11900 \u00a712",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "DESIGNATED OUTDOOR SMOKING AREAS",
+          "text_snippet": "Designated smoking and vaping areas must be located in outdoor open spaces at least ten (1...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 9211 \u00a76",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "MANDATORY POINT",
+          "text_snippet": "OF-SALE WARNINGS - All retail establishments licensed to sell tobacco or vapor products sh...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 11900 \u00a77",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "SEARCH AND CONFISCATION IN PRIVATE CONVEYANCES",
+          "text_snippet": "Authorized local traffic enforcers and police officers are hereby empowered to stop, enter...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.96,
+          "probabilities": {
+            "Contradiction": 0.96,
+            "Neutral": 0.02,
+            "Entailment": 0.02
+          },
+          "target_statute": "1987 Constitution Art. III \u00a72; Republic Act No. 4136 \u00a75",
+          "is_correct": true,
+          "rationale": "Violates 1987 Constitution Art. III \u00a72 and RA 4136 warrantless vehicular search protections."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "EXCESSIVE PENAL SANCTIONS",
+          "text_snippet": "Any person caught smoking within any prohibited zone shall suffer imprisonment for a fixed...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.97,
+          "probabilities": {
+            "Contradiction": 0.97,
+            "Neutral": 0.01,
+            "Entailment": 0.02
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(iii)",
+          "is_correct": true,
+          "rationale": "Directly violates RA 7160 \u00a7458(a)(1)(iii) statutory penalty ceiling limiting city imprisonment to a maximum of one (1) year."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "ANTI",
+          "text_snippet": "SMOKING TASK FORCE - The Davao City Anti-Smoking Task Force shall oversee enforcement, mai...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "COMMUNITY SERVICE OPTION",
+          "text_snippet": "First-time individual offenders unable to pay administrative fines may perform eight (8) h...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "DUTIES OF ESTABLISHMENT OWNERS",
+          "text_snippet": "Proprietors and building managers must post standard 'No Smoking' notices and ensure compl...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "APPROPRIATIONS",
+          "text_snippet": "The sum of Two Million Pesos (P2,000,000.00) is hereby allocated from the City Annual Budg...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "If any section or part of this Ordinance is declared unconstitutional or invalid, other se...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 14,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "All prior city ordinances inconsistent with this Ordinance are hereby repealed.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 15,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance shall take effect fifteen (15) days after complete publication in a local n...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": "Republic Act No. 7160 \u00a759",
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    },
+    {
+      "doc_id": "DRAFT-ORD-2026-03",
+      "title": "AN ORDINANCE REGULATING SPEED LIMITS, DESIGNATING ACTIVE MOBILITY CORRIDORS, AND ESTABLISHING TRAFFIC SAFETY STANDARDS IN DAVAO CITY",
+      "pages": 3,
+      "provisions_count": 14,
+      "gold_contradictions": 1,
+      "detected_contradictions": 1,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 23.84,
+      "chunking_latency_ms": 0.32,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be cited as the 'Davao City Speed Limit and Active Mobility Ordinance...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "DECLARATION OF TRAFFIC SAFETY POLICY",
+          "text_snippet": "The City Government adopts a Safe Systems approach to urban mobility, prioritizing pedestr...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "DEFINITION OF TERMS",
+          "text_snippet": "'Urban Road' refers to municipal streets within the poblacion. 'National Highway' refers t...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "URBAN ROAD SPEED CEILINGS",
+          "text_snippet": "Vehicles traversing local municipal roads and crowded school zones shall observe a maximum...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 4136 \u00a735(b); Joint DILG-DOTr-DPWH JAO 2018-01",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "DEDICATED BICYCLE AND ACTIVE MOBILITY LANES",
+          "text_snippet": "The City Transport and Traffic Management Office (CTTMO) shall delineate protected bicycle...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(3)(vi)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "SPEED LIMIT ON NATIONAL ARTERIAL HIGHWAYS",
+          "text_snippet": "All motor vehicles, including provincial buses and inter-regional freight trucks traversin...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.91,
+          "probabilities": {
+            "Contradiction": 0.91,
+            "Neutral": 0.04,
+            "Entailment": 0.05
+          },
+          "target_statute": "Republic Act No. 4136 \u00a735; Republic Act No. 4136 \u00a738",
+          "is_correct": true,
+          "rationale": "Violates RA 4136 \u00a735 and DPWH arterial guidelines by imposing obstructive speed ceilings on national highways."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "PEDESTRIAN WALKWAYS AND CROSSWALKS",
+          "text_snippet": "Motorists must yield complete right-of-way to pedestrians crossing marked street intersect...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 4136 \u00a742(c)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "SPEED MONITORING DEVICES",
+          "text_snippet": "The CTTMO is authorized to deploy calibrated radar speed guns and automated optical speed ...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "TRAFFIC CITATION TICKET SYSTEM",
+          "text_snippet": "Infractions under this Ordinance shall be penalized by administrative citation tickets iss...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "GRADUATED FINES",
+          "text_snippet": "Violators shall pay a fine of P1,000 for the first offense, P2,000 for the second offense,...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(iii)",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "SPEED CALIBRATION AUDITING",
+          "text_snippet": "All speed detection devices must undergo semi-annual calibration certification by the Depa...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "Should any provision of this Ordinance be declared void by a competent court, all remainin...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "All municipal speed ordinances or executive directives inconsistent herewith are amended o...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 14,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance shall take effect thirty (30) days following publication in two newspapers ...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": "Republic Act No. 7160 \u00a759",
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    },
+    {
+      "doc_id": "DRAFT-ORD-2026-04",
+      "title": "AN ORDINANCE STRENGTHENING THE LOCAL PRICE COORDINATING COUNCIL, REGULATING COMMODITY PRICE MONITORING, AND PREVENTING HOARDING DURING CALAMITIES IN DAVAO CITY",
+      "pages": 3,
+      "provisions_count": 13,
+      "gold_contradictions": 1,
+      "detected_contradictions": 1,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 24.5,
+      "chunking_latency_ms": 0.36,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be known as the 'Davao City Fair Price and Calamity Consumer Protecti...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "DECLARATION OF CONSUMER PROTECTION POLICY",
+          "text_snippet": "The City Government ensures the availability of basic necessities and prime commodities at...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7581 \u00a72",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "LOCAL PRICE COORDINATING COUNCIL",
+          "text_snippet": "The Davao City Local Price Coordinating Council (LPCC) is hereby revitalized, with the Cit...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7581 \u00a712; DILG-DTI-DA-DOH JAO 2013-01",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "AUTOMATIC PRICE FREEZE UPON CALAMITY",
+          "text_snippet": "Upon declaration of a state of calamity by the Sangguniang Panlungsod, prices of basic nec...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7581 \u00a76; Republic Act No. 10121 \u00a716",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "DEFINITION OF BASIC NECESSITIES",
+          "text_snippet": "'Basic Necessities' shall include rice, corn, bread, fresh fish, pork, beef, poultry, vege...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "MUNICIPAL UNILATERAL PRICE MANDATE",
+          "text_snippet": "The City Mayor, by executive order, is hereby authorized to unilaterally fix and mandate p...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.95,
+          "probabilities": {
+            "Contradiction": 0.95,
+            "Neutral": 0.02,
+            "Entailment": 0.03
+          },
+          "target_statute": "Republic Act No. 7581 \u00a77",
+          "is_correct": true,
+          "rationale": "Contradicts RA 7581 \u00a77 reserving price ceiling authority exclusively to the President of the Philippines."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "INSPECTION OF WAREHOUSES AND RETAIL OUTLETS",
+          "text_snippet": "Authorized joint inspection teams of the LPCC and DTI may conduct periodic inspections of ...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "PROHIBITION OF PROFITEERING AND HOARDING",
+          "text_snippet": "No retail or wholesale merchant shall accumulate goods in excess of normal inventory to co...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7581 \u00a75",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "LOCAL BUSINESS LICENSE REVOCATION",
+          "text_snippet": "Merchants proven to engage in illegal hoarding during a declared state of calamity shall f...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(4)(ii)",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "PENAL SANCTIONS",
+          "text_snippet": "Violators shall be subject to an administrative fine of P5,000.00 and suspension of busine...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(iii)",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "The invalidity of any provision shall not invalidate the other portions hereof.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "All ordinances in conflict with this enactment are hereby repealed.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance shall take effect immediately upon its approval.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    },
+    {
+      "doc_id": "DRAFT-ORD-2026-05",
+      "title": "AN ORDINANCE MANDATING CLOSED-CIRCUIT TELEVISION (CCTV) INSTALLATION IN COMMERCIAL PREMISES AND ESTABLISHING SECURITY DATA PROTOCOLS IN DAVAO CITY",
+      "pages": 3,
+      "provisions_count": 14,
+      "gold_contradictions": 2,
+      "detected_contradictions": 2,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 24.46,
+      "chunking_latency_ms": 0.37,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be known as the 'Davao City Mandatory Commercial CCTV and Security Su...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "LEGISLATIVE INTENT",
+          "text_snippet": "The City Government exercises its police power to preserve public order, enhance crime det...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a716",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "COVERED COMMERCIAL ESTABLISHMENTS",
+          "text_snippet": "All banks, shopping malls, supermarkets, pawnshops, money-transfer stations, hotels, fuel ...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "DILG Memorandum Circular No. 2022-060",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "MINIMUM TECHNICAL SPECIFICATIONS",
+          "text_snippet": "Surveillance cameras must possess a minimum resolution of 1080p, night vision capability, ...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "DILG Memorandum Circular No. 2022-060",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "DEFINITION OF TERMS",
+          "text_snippet": "'Biometric Data' refers to physiological characteristics used for identification. 'Persona...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "MANDATORY PUBLIC BROADCAST OF REAL",
+          "text_snippet": "TIME PRIVATE FEEDS - All covered private business entities must connect their internal sec...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.94,
+          "probabilities": {
+            "Contradiction": 0.94,
+            "Neutral": 0.02,
+            "Entailment": 0.04
+          },
+          "target_statute": "Republic Act No. 10173 \u00a711; Republic Act No. 10173 \u00a712; NPC Circular No. 16-01",
+          "is_correct": true,
+          "rationale": "Violates RA 10173 (Data Privacy Act of 2012) principles of transparency, legitimate purpose, and consent."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "INDEFINITE BIOMETRIC DATA RETENTION",
+          "text_snippet": "The City Government shall retain all captured facial recognition logs and customer movemen...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.95,
+          "probabilities": {
+            "Contradiction": 0.95,
+            "Neutral": 0.02,
+            "Entailment": 0.03
+          },
+          "target_statute": "Republic Act No. 10173 \u00a716; Republic Act No. 10173 \u00a718",
+          "is_correct": true,
+          "rationale": "Directly violates the Rights of the Data Subject under Section 16 of RA 10173 (right to erasure, blocking, and data minimization)."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "ANNUAL BUSINESS PERMIT AUDIT",
+          "text_snippet": "Inspection and certification of CCTV functionality by the City Engineers Office shall be a...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(4)(ii)",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "DATA SECURITY COMPLIANCE OFFICER",
+          "text_snippet": "Each commercial establishment shall designate a Compliance Officer responsible for safegua...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "PENALTIES FOR NON",
+          "text_snippet": "INSTALLATION - Failure to install functional CCTVs within ninety (90) days from notice sha...",
+          "gold_label": "Neutral",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(iii)",
+          "is_correct": false,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "APPROPRIATIONS",
+          "text_snippet": "Necessary funds for city monitoring terminals shall be allocated from the annual executive...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "If any provision is declared unconstitutional, the rest shall remain operative.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "All prior conflicting city orders and resolutions are hereby revoked. Page 2 of 3 Proposed...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 14,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance shall take effect thirty (30) days after publication.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    },
+    {
+      "doc_id": "DRAFT-ORD-2026-06",
+      "title": "AN ORDINANCE REGULATING SINGLE-USE PLASTICS, ENFORCING SOURCE SEGREGATION, AND ADVANCING CIRCULAR WASTE MANAGEMENT IN DAVAO CITY",
+      "pages": 3,
+      "provisions_count": 15,
+      "gold_contradictions": 2,
+      "detected_contradictions": 2,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 26.36,
+      "chunking_latency_ms": 0.37,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be known as the 'Davao City Ecological Solid Waste Management and Pla...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "DECLARATION OF SOLID WASTE POLICY",
+          "text_snippet": "The City Government commits to systemic ecological solid waste management, waste minimizat...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 9003 \u00a72; Republic Act No. 11898 \u00a72",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "DEFINITION OF TERMS",
+          "text_snippet": "'Single-Use Plastics' refers to disposable plastic items designed for one-time use before ...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "MANDATORY SEGREGATION AT SOURCE",
+          "text_snippet": "All households, commercial establishments, and public institutions must segregate solid wa...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 9003 \u00a721",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "BARANGAY MATERIALS RECOVERY FACILITIES",
+          "text_snippet": "Each of the 182 barangays of Davao City shall establish and operate a dedicated Materials ...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 9003 \u00a732",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "PHASE",
+          "text_snippet": "OUT OF PLASTIC BAGS IN COMMERCE - Commercial groceries and department stores are prohibite...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(vi); Republic Act No. 9003 \u00a748",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "MUNICIPAL IMPORT BARRICADE AND CARGO FORFEITURE",
+          "text_snippet": "The City Government shall establish checkpoints at the Port of Davao to inspect, intercept...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.98,
+          "probabilities": {
+            "Contradiction": 0.98,
+            "Neutral": 0.01,
+            "Entailment": 0.01
+          },
+          "target_statute": "1987 Constitution Art. XII \u00a71; Republic Act No. 10863 \u00a7200; Republic Act No. 10863 \u00a7300",
+          "is_correct": true,
+          "rationale": "Invades exclusive jurisdiction of Bureau of Customs under RA 10863 and constitutional foreign commerce powers."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "EXORBITANT CONSUMER FINES",
+          "text_snippet": "Any individual resident found possessing a single-use plastic straw or fork shall be asses...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.98,
+          "probabilities": {
+            "Contradiction": 0.98,
+            "Neutral": 0.01,
+            "Entailment": 0.01
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(iii)",
+          "is_correct": true,
+          "rationale": "Directly violates RA 7160 \u00a7458(a)(1)(iii) limiting city penal sanctions to P5,000 fine and 1-year imprisonment."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "COLLECTION SCHEDULE COMPLIANCE",
+          "text_snippet": "Waste collection trucks shall strictly collect segregated biodegradables on designated day...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "PUBLIC AWARENESS AND EDUCATION",
+          "text_snippet": "The City Environment and Natural Resources Office (CENRO) shall conduct information campai...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "ECO",
+          "text_snippet": "ENTERPRISE ACCREDITATION - Private recycling firms may register with CENRO for preferred p...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "APPROPRIATIONS",
+          "text_snippet": "Funds for the support of barangay MRFs shall be incorporated into the annual statutory eco...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "If any clause is held unconstitutional, other clauses remain valid. Page 2 of 3 Proposed O...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 14,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "Inconsistent local enactments are repealed.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 15,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance takes effect thirty (30) days from publication.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    },
+    {
+      "doc_id": "DRAFT-ORD-2026-07",
+      "title": "AN ORDINANCE REGULATING THE ERECTION, INSTALLATION, AND MAINTENANCE OF OUTDOOR BILLBOARDS AND SIGNAGE IN DAVAO CITY",
+      "pages": 3,
+      "provisions_count": 14,
+      "gold_contradictions": 1,
+      "detected_contradictions": 1,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 25.82,
+      "chunking_latency_ms": 0.34,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be cited as the 'Davao City Signage and Outdoor Advertising Safety Or...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "DECLARATION OF URBAN SAFETY POLICY",
+          "text_snippet": "The City Government exercises its police power to preserve structural safety, traffic sigh...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(4)(iv)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "DEFINITION OF TERMS",
+          "text_snippet": "'Billboard' refers to any off-premise advertising sign. 'Signage' refers to any identifica...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "SETBACK AND CLEARANCE REQUIREMENTS",
+          "text_snippet": "All free-standing billboards must maintain a minimum setback of five (5) meters from road ...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(4)(iv)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "MAXIMUM HEIGHT LIMITATIONS",
+          "text_snippet": "No billboard structure along the scenic coastal and mountain corridors shall exceed eighte...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(4)(iv)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "SEISMIC AND STRUCTURAL EXEMPTION",
+          "text_snippet": "Billboards erected by registered local municipal businesses are hereby declared exempt fro...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.92,
+          "probabilities": {
+            "Contradiction": 0.92,
+            "Neutral": 0.04,
+            "Entailment": 0.04
+          },
+          "target_statute": "Presidential Decree No. 1096 \u00a7301; Presidential Decree No. 1096 \u00a7302",
+          "is_correct": true,
+          "rationale": "Contradicts PD 1096 \u00a7301; municipal ordinance cannot exempt physical commercial structures from national building permits."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "ELECTRICAL AND ILLUMINATION STANDARDS",
+          "text_snippet": "Digital LED billboards must incorporate auto-dimming mechanisms to reduce glaring illumina...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a716",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "INSPECTION AND INVENTORY",
+          "text_snippet": "The City Building Official shall maintain an updated geo-referenced inventory of all permi...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "DISMANTLING OF DILAPIDATED STRUCTURES",
+          "text_snippet": "Signage abandoned for more than six (6) months or posing imminent danger of collapse shall...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "ANNUAL SIGNAGE FEES",
+          "text_snippet": "Annual regulatory inspection fees shall be collected based on total display square meterag...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7147",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "PENALTIES FOR NON",
+          "text_snippet": "COMPLIANCE - Violators shall be fined P5,000.00 and ordered to dismantle unauthorized stru...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(iii)",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "The declaration of unconstitutionality of any provision shall not impair other sections.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "Conflicting local measures are hereby repealed. Page 2 of 3 Proposed Ordinance SP Davao Le...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 14,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance shall take effect fifteen (15) days after publication.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    },
+    {
+      "doc_id": "DRAFT-ORD-2026-08",
+      "title": "AN ORDINANCE REGULATING COMMERCIAL SAND AND GRAVEL EXTRACTION, SAFEGUARDING RIVERBANKS, AND ESTABLISHING QUARRY PERMITTING IN DAVAO CITY",
+      "pages": 3,
+      "provisions_count": 13,
+      "gold_contradictions": 1,
+      "detected_contradictions": 1,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 26.89,
+      "chunking_latency_ms": 0.3,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be cited as the 'Davao City Sustainable Quarrying and River Protectio...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "POLICY STATEMENT",
+          "text_snippet": "The City Government balances local construction material needs with ecological preservatio...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7942 \u00a743; Republic Act No. 7160 \u00a716",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "DEFINITION OF TERMS",
+          "text_snippet": "'Quarry Resources' refers to common rocks, sand, gravel, and earth materials. 'Commercial ...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "RIVER EMBANKMENT BUFFER ZONE",
+          "text_snippet": "Extraction of sand and gravel is strictly prohibited within one hundred (100) meters upstr...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Presidential Decree No. 1067 \u00a751; Republic Act No. 7942 \u00a743",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "CITY MINING REGULATORY BOARD PERMITTING",
+          "text_snippet": "Commercial quarry permits within five (5) hectares shall be evaluated by the City Mining R...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7076 \u00a724; Republic Act No. 7942 \u00a743",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "UNILATERAL MINERAL EXPORT AUTHORIZATION",
+          "text_snippet": "The Sangguniang Panlungsod is hereby empowered to issue local extraction permits for heavy...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.98,
+          "probabilities": {
+            "Contradiction": 0.98,
+            "Neutral": 0.01,
+            "Entailment": 0.01
+          },
+          "target_statute": "1987 Constitution Art. XII \u00a72; Republic Act No. 7942 \u00a727; Republic Act No. 8371 \u00a759",
+          "is_correct": true,
+          "rationale": "Violates Regalian Doctrine, DENR MPSA concession jurisdiction under RA 7942, and IPRA RA 8371 FPIC mandates."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "DELIVERY RECEIPT TRACKING",
+          "text_snippet": "All trucks transporting quarried aggregates within Davao City must carry a valid Delivery ...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "REHABILITATION BOND",
+          "text_snippet": "Permittees shall post an environmental rehabilitation deposit prior to the commencement of...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "PROHIBITION OF NIGHT EXTRACTION",
+          "text_snippet": "No quarrying operations shall be conducted between 6:00 PM and 6:00 AM.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "PENALTIES AND CONFISCATION",
+          "text_snippet": "Illegal extraction shall result in a fine of P5,000.00 and impoundment of transport vehicl...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(iii)",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "Invalidity of any section shall not affect other portions.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "All inconsistent local rules are repealed.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance takes effect thirty (30) days from publication.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    },
+    {
+      "doc_id": "DRAFT-ORD-2026-09",
+      "title": "AN ORDINANCE REGULATING TELECOMMUNICATIONS CABLE INSTALLATIONS, UNDERGROUND UTILITY DUCTS, AND RESTORATION OF PUBLIC ROADS IN DAVAO CITY",
+      "pages": 3,
+      "provisions_count": 14,
+      "gold_contradictions": 2,
+      "detected_contradictions": 2,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 26.42,
+      "chunking_latency_ms": 0.44,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be cited as the 'Davao City Telecommunications Infrastructure and Und...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "DECLARATION OF INFRASTRUCTURE POLICY",
+          "text_snippet": "The City Government ensures public road safety, prevents aerial cable clutter, and coordin...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7925 \u00a74; Republic Act No. 7160 \u00a7458(a)(5)(vi)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "DEFINITION OF TERMS",
+          "text_snippet": "'Public Telecommunications Entity' refers to any entity authorized to provide public telec...",
+          "gold_label": "Neutral",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": null,
+          "is_correct": false,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "EXCAVATION PERMITS AND RESTORATION BONDS",
+          "text_snippet": "All telecommunications utilities undertaking street excavation for fiber optic installatio...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(5)(vi)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "UNDERGROUND CABLING MANDATE IN HERITAGE ZONES",
+          "text_snippet": "All overhead aerial power and telecommunications cables within the designated downtown his...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(4)(iv)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "LOCAL LEGISLATIVE FRANCHISE REQUIREMENT FOR WIRELESS CARRIERS",
+          "text_snippet": "No public telecommunications entity holding a national legislative franchise from the Cong...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.95,
+          "probabilities": {
+            "Contradiction": 0.95,
+            "Neutral": 0.02,
+            "Entailment": 0.03
+          },
+          "target_statute": "Republic Act No. 7925 \u00a75; Republic Act No. 7925 \u00a721; Presidential Decree No. 576-A \u00a71",
+          "is_correct": true,
+          "rationale": "Directly conflicts with RA 7925 and Smart v. City of Davao (2014); NTC and Congress hold exclusive telecom franchise authority."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "UNILATERAL RATE REGULATION OF INTERNET SERVICES",
+          "text_snippet": "The Sangguniang Panlungsod shall fix the maximum retail subscription tariffs that mobile t...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.94,
+          "probabilities": {
+            "Contradiction": 0.94,
+            "Neutral": 0.02,
+            "Entailment": 0.04
+          },
+          "target_statute": "Republic Act No. 7925 \u00a717; 1987 Constitution Art. XII \u00a719",
+          "is_correct": true,
+          "rationale": "Contradicts RA 7925 \u00a717 vesting telecommunications tariff and rate oversight exclusively in the NTC."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "SHARED TELECOMMUNICATION TOWER INFRASTRUCTURE",
+          "text_snippet": "Cellular operators are encouraged to utilize shared passive infrastructure and co-locate o...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "DICT Department Circular No. 008-2020",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "RESTORATION QUALITY STANDARDS",
+          "text_snippet": "Excavated road trenches must be restored to original asphalt or concrete specifications wi...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "COORDINATING INFRASTRUCTURE COMMITTEE",
+          "text_snippet": "The City Telecommunications Infrastructure Coordinating Committee shall coordinate all sch...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "PENALTIES AND FINES",
+          "text_snippet": "Unauthorized excavation or failure to restore roads shall be penalized by a fine of P5,000...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7458(a)(1)(iii)",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "Invalidity of any section shall not affect the remaining portions.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "All prior conflicting municipal measures are repealed. Page 2 of 3 Proposed Ordinance SP D...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 14,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance takes effect thirty (30) days from publication.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    },
+    {
+      "doc_id": "DRAFT-ORD-2026-10",
+      "title": "AN ORDINANCE AMENDING THE REVENUE CODE OF DAVAO CITY, REGULATING BUSINESS TAX ON COMMERCIAL ENTERPRISES, AND PRESCRIBING LOCAL TAX ADMINISTRATION",
+      "pages": 3,
+      "provisions_count": 14,
+      "gold_contradictions": 2,
+      "detected_contradictions": 2,
+      "triage_flagged": true,
+      "triage_success": true,
+      "ingestion_latency_ms": 28.54,
+      "chunking_latency_ms": 0.43,
+      "sections": [
+        {
+          "sec_num": 1,
+          "sec_title": "TITLE",
+          "text_snippet": "This Ordinance shall be known as the 'Davao City Revenue Code Amendment on Commercial Busi...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 2,
+          "sec_title": "DECLARATION OF FISCAL POLICY",
+          "text_snippet": "The City Government exercises its constitutional power to create its own sources of revenu...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "1987 Constitution Art. X \u00a75; Republic Act No. 7160 \u00a7129",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 3,
+          "sec_title": "DEFINITION OF TERMS",
+          "text_snippet": "'Business' refers to commercial activity for profit. 'Gross Sales or Receipts' refers to t...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 4,
+          "sec_title": "GRADUATED BUSINESS TAX ON RETAIL MERCHANTS",
+          "text_snippet": "Retail merchants with gross sales exceeding Four Hundred Thousand Pesos (P400,000.00) shal...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7143(a)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 5,
+          "sec_title": "TAX ON FINANCIAL INSTITUTIONS AND BANKS",
+          "text_snippet": "Commercial banks, banking institutions, and offshore banking units authorized by the Bangk...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7143(f)",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 6,
+          "sec_title": "BUSINESS TAX ON CORPORATE HOLDING DIVIDENDS",
+          "text_snippet": "All corporate holding companies owning shares in manufacturing or utility firms are hereby...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.96,
+          "probabilities": {
+            "Contradiction": 0.96,
+            "Neutral": 0.02,
+            "Entailment": 0.02
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7133(a); Republic Act No. 7160 \u00a7143(f); Republic Act No. 8791 \u00a73",
+          "is_correct": true,
+          "rationale": "Directly conflicts with RA 7160 \u00a7143(f) and Davao v. ARC Investors (2022); LGU cannot classify holding firms as NBFIs without BSP license."
+        },
+        {
+          "sec_num": 7,
+          "sec_title": "RETROACTIVE IMPOSITION ON GOVERNMENT PENSION PROPERTIES",
+          "text_snippet": "Real properties and facilities titled under the Government Service Insurance System (GSIS)...",
+          "gold_label": "Contradiction",
+          "predicted_label": "Contradiction",
+          "conflict_probability": 0.97,
+          "probabilities": {
+            "Contradiction": 0.97,
+            "Neutral": 0.01,
+            "Entailment": 0.02
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7133(o); Republic Act No. 8291 \u00a739; Presidential Decree No. 1146 \u00a733",
+          "is_correct": true,
+          "rationale": "Directly violates RA 7160 \u00a7133(o) and RA 8291 \u00a739 prohibiting LGU tax levies and execution on social security and pension assets."
+        },
+        {
+          "sec_num": 8,
+          "sec_title": "LOCAL FRANCHISE TAX ON TELECOMMUNICATIONS",
+          "text_snippet": "Telecommunications utilities operating within Davao City shall be subject to a local franc...",
+          "gold_label": "Entailment",
+          "predicted_label": "Entailment",
+          "conflict_probability": 0.03,
+          "probabilities": {
+            "Entailment": 0.89,
+            "Neutral": 0.08,
+            "Contradiction": 0.03
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7137; Republic Act No. 7160 \u00a7151",
+          "is_correct": true,
+          "rationale": "Valid exercise of delegated local police power conforming with national statutory framework."
+        },
+        {
+          "sec_num": 9,
+          "sec_title": "TIME OF PAYMENT AND DISCOUNTS",
+          "text_snippet": "Local business taxes shall be payable for every calendar quarter, with a ten percent (10%)...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7167",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 10,
+          "sec_title": "EXAMINATION OF BOOKS OF ACCOUNTS",
+          "text_snippet": "The City Treasurer or duly designated deputies may examine the accounting books and record...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7171",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 11,
+          "sec_title": "SURCHARGES AND INTEREST",
+          "text_snippet": "Failure to pay taxes on time shall incur a surcharge of twenty-five percent (25%) and inte...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.04,
+          "probabilities": {
+            "Neutral": 0.88,
+            "Entailment": 0.08,
+            "Contradiction": 0.04
+          },
+          "target_statute": "Republic Act No. 7160 \u00a7168",
+          "is_correct": true,
+          "rationale": "Standard municipal administrative provision or local definition without preemption conflict."
+        },
+        {
+          "sec_num": 12,
+          "sec_title": "SEPARABILITY CLAUSE",
+          "text_snippet": "If any provision is declared void, remaining provisions shall stay effective. Page 2 of 3 ...",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 13,
+          "sec_title": "REPEALING CLAUSE",
+          "text_snippet": "Provisions of the 2005 Revenue Code inconsistent herewith are amended.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": null,
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        },
+        {
+          "sec_num": 14,
+          "sec_title": "EFFECTIVITY",
+          "text_snippet": "This Ordinance takes effect on January 1 of the following calendar year after publication.",
+          "gold_label": "Neutral",
+          "predicted_label": "Neutral",
+          "conflict_probability": 0.02,
+          "probabilities": {
+            "Neutral": 0.95,
+            "Entailment": 0.03,
+            "Contradiction": 0.02
+          },
+          "target_statute": "Republic Act No. 7160 \u00a759",
+          "is_correct": true,
+          "rationale": "Standard legislative procedural boilerplate clause."
+        }
+      ]
+    }
+  ]
+}

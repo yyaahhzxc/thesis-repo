@@ -875,6 +875,93 @@
       background: #f8fafc;
     }
 
+    /* MULTI-SECTION DRAFT AUDIT TABLE */
+    .doc-audit-summary-box {
+      display: none;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      padding: 22px 28px;
+    }
+    .doc-audit-summary-box.active {
+      display: block;
+    }
+    .doc-audit-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .doc-audit-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+    .doc-stat-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .doc-stat-pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: #f1f5f9;
+      color: var(--text-heading);
+    }
+    .doc-stat-pill.danger {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+    .doc-stat-pill.success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+    .doc-sections-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .doc-sections-table th {
+      background: #f8fafc;
+      padding: 10px 14px;
+      font-weight: 700;
+      color: var(--text-heading);
+      border-bottom: 1px solid var(--border-color);
+      text-align: left;
+    }
+    .doc-sections-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+    }
+    .doc-sections-table tr:hover td {
+      background: #f8fafc;
+    }
+    .btn-inspect-sec {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 5px 12px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--brand-blue);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-inspect-sec:hover {
+      background: var(--brand-blue-light);
+      border-color: var(--brand-blue-border);
+    }
+
     /* FOOTER ACTIONS */
     .meta-footer {
       border-top: 1px solid var(--border-color);
@@ -1001,30 +1088,68 @@
           <path d="m9 15 3-3 3 3"/>
         </svg>
       </div>
-      <button type="button" class="btn-upload">Select Ordinance File</button>
-      <div class="upload-text">or drag and drop a <code>.json</code> or <code>.txt</code> file here</div>
-      <input type="file" id="file-input" accept=".json,.txt">
+      <button type="button" class="btn-upload">Select Ordinance File (.pdf, .json, .txt)</button>
+      <div class="upload-text">or drag and drop a <code>.pdf</code>, <code>.json</code>, or <code>.txt</code> draft ordinance file here</div>
+      <input type="file" id="file-input" accept=".pdf,.json,.txt">
     </div>
 
     <!-- QUICK SAMPLES -->
     <div class="sample-section" id="samples">
-      <span class="sample-label">Or test with a landmark case:</span>
-      <div class="sample-pills">
-        <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-01')">
-          Mosqueda (Aerial Spraying Ban)
-        </button>
-        <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-02')">
-          Evasco (Outdoor Billboards)
-        </button>
-        <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-03')">
-          ARC Investors (Holding Entity Tax)
-        </button>
-        <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-05')">
-          GSIS Real Property Tax
-        </button>
-        <button type="button" class="sample-pill" onclick="loadCase('SC-PHIL-09')">
-          Magtajas (Casino Ban)
-        </button>
+      <div style="margin-bottom: 12px;">
+        <span class="sample-label"><strong>Tier 3 Landmark SC Preemption Cases:</strong></span>
+        <div class="sample-pills" style="margin-top: 6px;">
+          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-01')">
+            Mosqueda (Aerial Spraying Ban)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-02')">
+            Evasco (Outdoor Billboards)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-03')">
+            ARC Investors (Holding Entity Tax)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-05')">
+            GSIS Real Property Tax
+          </button>
+          <button type="button" class="sample-pill" onclick="loadCase('SC-PHIL-09')">
+            Magtajas (Casino Ban)
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <span class="sample-label"><strong>Tier 2 Synthetic Draft Ordinances (Full Multi-Section PDFs):</strong></span>
+        <div class="sample-pills" style="margin-top: 6px;">
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-01')">
+            Draft 01: Organic Agrochemicals (PD 1144)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-02')">
+            Draft 02: Clean Air & Anti-Smoking (RA 7160 / Const.)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-03')">
+            Draft 03: Speed Limits (RA 4136)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-04')">
+            Draft 04: Fair Price & Calamity (RA 7581)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-05')">
+            Draft 05: CCTV Surveillance (RA 10173)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-06')">
+            Draft 06: Solid Waste & Customs (RA 10863)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-07')">
+            Draft 07: Billboard Safety (PD 1096)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-08')">
+            Draft 08: River Sand & Gravel (RA 7942)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-09')">
+            Draft 09: Telecoms & Wireless (RA 7925)
+          </button>
+          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-10')">
+            Draft 10: Local Revenue & GSIS Tax (RA 7160)
+          </button>
+        </div>
       </div>
     </div>
 
@@ -1095,6 +1220,31 @@
             <span style="font-weight:700; color:#dc2626;">▲ 45% Trigger Line</span>
             <span>100%</span>
           </div>
+        </div>
+      <!-- MULTI-SECTION DRAFT ORDINANCE AUDIT OVERVIEW (TIER 2) -->
+      <div class="doc-audit-summary-box" id="doc-audit-box">
+        <div class="doc-audit-header-row">
+          <div>
+            <div class="doc-audit-title" id="doc-audit-title">Draft Ordinance Multi-Section Audit Overview</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 3px;" id="doc-audit-subtitle">
+              Screened across all operative sections against superior national statutes
+            </div>
+          </div>
+          <div class="doc-stat-pills" id="doc-audit-pills"></div>
+        </div>
+        <div style="overflow-x: auto; margin-top: 8px;">
+          <table class="doc-sections-table">
+            <thead>
+              <tr>
+                <th style="width: 100px;">Section</th>
+                <th>Operative Clause Title &amp; Text</th>
+                <th style="width: 230px;">Governing National Authority</th>
+                <th style="width: 130px; text-align: center;">Verdict</th>
+                <th style="width: 110px; text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="doc-sections-tbody"></tbody>
+          </table>
         </div>
       </div>
 
@@ -1488,6 +1638,10 @@
       const isConflict = data.verdict === 'CONTRADICTION';
       const confPct = data.confidence_percentage;
 
+      // Hide multi-section audit box for single-clause analysis
+      const docAuditBox = document.getElementById('doc-audit-box');
+      if (docAuditBox) docAuditBox.classList.remove('active');
+
       // 1. Banner & Gauge
       if (isConflict) {
         banner.className = 'report-banner conflict';
@@ -1608,38 +1762,207 @@
       if (e.target.files.length) handleDroppedFile(e.target.files[0]);
     });
 
-    function handleDroppedFile(file) {
-      const reader = new FileReader();
-      reader.onload = async function(event) {
-        showLoading();
-        try {
-          const content = event.target.result;
-          let parsed;
-          try {
-            parsed = JSON.parse(content);
-          } catch(err) {
-            parsed = {
-              case_id: "UPLOADED-TXT",
-              ordinance_title: file.name,
-              challenged_clause_text: content,
-              statute_premise_text: ""
-            };
-          }
-
-          await runAnalysisRequest({
-            case_id: parsed.case_id || "UPLOADED-FILE",
-            ordinance_title: parsed.ordinance_title || parsed.title || file.name,
-            challenged_clause_text: parsed.challenged_clause_text || parsed.challenged_text || "",
-            statute_premise_text: parsed.statute_premise_text || parsed.premise_text || "",
-            controlling_statute: parsed.controlling_statute || "",
-            statute_title: parsed.statute_title || ""
-          });
-        } catch(e) {
-          alert("Could not process file: " + e.message);
-          hideLoading();
+    async function loadTier2Ordinance(docId) {
+      showLoading();
+      try {
+        const res = await fetch('/api/audit-document', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ doc_id: docId })
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.error || "Failed to audit synthetic draft ordinance");
         }
-      };
-      reader.readAsText(file);
+        const data = await res.json();
+        displayDocumentAuditReport(data);
+        hideLoading();
+      } catch(e) {
+        alert("Error auditing draft ordinance: " + e.message);
+        hideLoading();
+      }
+    }
+
+    function displayDocumentAuditReport(docData) {
+      const card = document.getElementById('report-card');
+      const banner = document.getElementById('report-banner');
+      const icon = document.getElementById('banner-icon');
+      const title = document.getElementById('banner-title');
+      const desc = document.getElementById('banner-desc');
+      const gaugeVal = document.getElementById('gauge-prob');
+      const gaugeBar = document.getElementById('gauge-bar-fill');
+      const gaugeSub = document.getElementById('gauge-sub');
+
+      const isFlagged = docData.is_flagged;
+      const cCount = docData.counts.contradiction;
+      const eCount = docData.counts.entailment;
+      const nCount = docData.counts.neutral;
+
+      // 1. Triage Banner & Gauge
+      if (isFlagged) {
+        banner.className = 'report-banner conflict';
+        icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
+        title.textContent = docData.triage_banner_title;
+        desc.innerHTML = docData.triage_banner_desc;
+        gaugeVal.textContent = `${cCount} Alert${cCount !== 1 ? 's' : ''}`;
+        gaugeBar.style.width = '100%';
+        gaugeBar.style.background = '#dc2626';
+        gaugeSub.textContent = `Document-Level Triage: Action Required (Decision Threshold: 45.0%)`;
+      } else {
+        banner.className = 'report-banner valid';
+        icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`;
+        title.textContent = docData.triage_banner_title;
+        desc.innerHTML = docData.triage_banner_desc;
+        gaugeVal.textContent = '0 Alerts';
+        gaugeBar.style.width = '0%';
+        gaugeBar.style.background = '#16a34a';
+        gaugeSub.textContent = `All ${docData.total_sections} Operative Sections Statutorily Consistent`;
+      }
+
+      // 2. Populate Document Audit Box
+      const auditBox = document.getElementById('doc-audit-box');
+      auditBox.classList.add('active');
+      document.getElementById('doc-audit-title').textContent = docData.document_name;
+      document.getElementById('doc-audit-subtitle').textContent = `Screened ${docData.total_sections} operative sections against Philippine dual statutory corpus.`;
+
+      // Stat pills
+      const pillsContainer = document.getElementById('doc-audit-pills');
+      pillsContainer.innerHTML = `
+        <span class="doc-stat-pill">${docData.total_sections} Total Sections</span>
+        <span class="doc-stat-pill ${cCount > 0 ? 'danger' : 'success'}">${cCount} Contradiction${cCount !== 1 ? 's' : ''}</span>
+        <span class="doc-stat-pill success">${eCount} Entailment${eCount !== 1 ? 's' : ''}</span>
+        <span class="doc-stat-pill">${nCount} Neutral</span>
+      `;
+
+      // Table rows
+      const tbody = document.getElementById('doc-sections-tbody');
+      tbody.innerHTML = '';
+      (docData.sections || []).forEach(sec => {
+        const tr = document.createElement('tr');
+        
+        let verdictBadge = '';
+        if (sec.verdict === 'CONTRADICTION') {
+          verdictBadge = `<span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem; background:#fee2e2; color:#dc2626; border:1px solid #fecaca;">CONTRADICTION</span>`;
+        } else if (sec.verdict === 'ENTAILMENT') {
+          verdictBadge = `<span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem; background:#dcfce7; color:#16a34a; border:1px solid #bbf7d0;">ENTAILMENT</span>`;
+        } else {
+          verdictBadge = `<span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:600; font-size:0.75rem; background:#f1f5f9; color:#475569; border:1px solid #e2e8f0;">NEUTRAL</span>`;
+        }
+
+        const cleanSnippet = sec.text.length > 110 ? sec.text.substring(0, 110) + '...' : sec.text;
+        const targetStat = sec.target_statute || (sec.top_candidate ? sec.top_candidate.citation : 'General Statutory Authority');
+
+        tr.innerHTML = `
+          <td><strong>Sec. ${sec.sec_num}</strong></td>
+          <td>
+            <div style="font-weight:700; color:var(--text-heading);">${escapeHtml(sec.sec_title)}</div>
+            <div style="color:var(--text-body); font-size:0.78rem; margin-top:2px; line-height:1.4;">${escapeHtml(cleanSnippet)}</div>
+          </td>
+          <td>
+            <div style="font-weight:600; font-size:0.8rem; color:var(--text-heading);">${escapeHtml(targetStat)}</div>
+            <div style="font-size:0.74rem; color:var(--text-muted); margin-top:2px; line-height:1.3;">${escapeHtml(sec.legal_rationale || '')}</div>
+          </td>
+          <td style="text-align:center;">${verdictBadge}</td>
+          <td style="text-align:right;">
+            <button type="button" class="btn-inspect-sec" onclick='inspectSectionInDeepDive(${JSON.stringify(sec).replace(/'/g, "&apos;")})'>Deep-Dive &darr;</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Default deep dive to first contradiction or first section
+      const firstContra = (docData.sections || []).find(s => s.verdict === 'CONTRADICTION') || (docData.sections && docData.sections[0]);
+      if (firstContra) {
+        inspectSectionInDeepDive(firstContra);
+      }
+
+      card.classList.add('active');
+      card.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function inspectSectionInDeepDive(sec) {
+      const ordTree = parseTextToHierarchyTree(sec.text, `Section ${sec.sec_num}: ${sec.sec_title}`, "");
+      renderRedditThreadContainer('tree-ordinance-container', ordTree, true);
+
+      const targetRef = sec.target_statute || (sec.top_candidate ? sec.top_candidate.citation : "Governing National Statute");
+      const statTree = parseTextToHierarchyTree(sec.target_statute ? sec.legal_rationale : (sec.top_candidate ? sec.top_candidate.title : "National Statutory Framework"), targetRef, "");
+      renderRedditThreadContainer('tree-statute-container', statTree, false);
+
+      document.getElementById('meta-statute-ref').textContent = targetRef;
+      document.getElementById('text-rationale').innerHTML = `
+        <strong>Operative Provision Analysis (Section ${sec.sec_num}):</strong> ${escapeHtml(sec.legal_rationale || 'Evaluated against Philippine statutory hierarchy.')}<br><br>
+        <strong>Conflict Probability:</strong> ${(sec.conflict_probability * 100).toFixed(1)}% &bull; <strong>Verdict:</strong> ${sec.verdict}
+      `;
+
+      if (sec.top_candidate && sec.top_candidate.lawphil_url) {
+        const btnLawphil = document.getElementById('btn-controlling-lawphil');
+        if (btnLawphil) btnLawphil.href = sec.top_candidate.lawphil_url;
+      }
+    }
+
+    async function handleDroppedFile(file) {
+      showLoading();
+      try {
+        if (file.name.toLowerCase().endsWith('.pdf')) {
+          const formData = new FormData();
+          formData.append('file', file);
+          const res = await fetch('/api/audit-document', {
+            method: 'POST',
+            body: formData
+          });
+          if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.error || "Failed to process PDF ordinance");
+          }
+          const result = await res.json();
+          displayDocumentAuditReport(result);
+          hideLoading();
+        } else {
+          const reader = new FileReader();
+          reader.onload = async function(event) {
+            try {
+              const content = event.target.result;
+              let parsed = null;
+              try { parsed = JSON.parse(content); } catch(err) {}
+
+              if (parsed && parsed.sections) {
+                const res = await fetch('/api/audit-document', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ doc_id: parsed.doc_id, raw_text: JSON.stringify(parsed) })
+                });
+                const result = await res.json();
+                displayDocumentAuditReport(result);
+              } else if (parsed && parsed.challenged_text) {
+                await runAnalysisRequest({
+                  case_id: parsed.case_id || "UPLOADED-FILE",
+                  ordinance_title: parsed.ordinance_title || parsed.title || file.name,
+                  challenged_clause_text: parsed.challenged_clause_text || parsed.challenged_text || "",
+                  statute_premise_text: parsed.statute_premise_text || parsed.premise_text || "",
+                  controlling_statute: parsed.controlling_statute || "",
+                  statute_title: parsed.statute_title || ""
+                });
+              } else {
+                const res = await fetch('/api/audit-document', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ title: file.name, raw_text: content })
+                });
+                const result = await res.json();
+                displayDocumentAuditReport(result);
+              }
+              hideLoading();
+            } catch(e) {
+              alert("Could not process file: " + e.message);
+              hideLoading();
+            }
+          };
+          reader.readAsText(file);
+        }
+      } catch(e) {
+        alert("Upload error: " + e.message);
+        hideLoading();
+      }
     }
   </script>
 
