@@ -4460,15 +4460,15 @@ window.REFERENCES_DATA = [
     ],
     "has_local_pdf": false,
     "local_pdf_path": "",
-    "flagged": false,
-    "flag_reason": "",
-    "flag_timestamp": "",
+    "flagged": true,
+    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
+    "flag_timestamp": "2026-10-06 14:17:20",
     "google_search_url": "https://www.google.com/search?q=%22Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018%22%20Government%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018",
-    "raw_bib": "@techreport{philippines2018ra11032,\n  author      = {{Government of the Philippines}},\n  title       = {Republic Act No. 11032: Ease of Doing Business and Efficient Government Service Delivery Act of 2018},\n  institution = {Official Gazette of the Republic of the Philippines},\n  year        = {2018},\n  url = {https://www.officialgazette.gov.ph/2018/05/28/republic-act-no-11032/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@techreport{philippines2018ra11032,\n  author      = {{Government of the Philippines}},\n  title       = {Republic Act No. 11032: Ease of Doing Business and Efficient Government Service Delivery Act of 2018},\n  institution = {Official Gazette of the Republic of the Philippines},\n  year        = {2018},\n  url = {https://www.officialgazette.gov.ph/2018/05/28/republic-act-no-11032/},\n  urldate = {2026-09-26},\n  file = {docs/references/philippines2018ra11032.pdf},\n}"
   },
   {
     "citekey": "gesteletal2011exanteevaluation",
@@ -4839,7 +4839,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Towards%20Digital%20Legislation%3A%20Readiness%20of%20the%20Sangguniang%20Bayan%20of%20LGU%20Motiong%20for%20Paperless%20Sessions",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Towards%20Digital%20Legislation%3A%20Readiness%20of%20the%20Sangguniang%20Bayan%20of%20LGU%20Motiong%20for%20Paperless%20Sessions&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{gabuya2025towardsdigitallegis,\n  title        = {Towards Digital Legislation: Readiness of the {Sangguniang Bayan} of {LGU} Motiong for Paperless Sessions},\n  author       = {Renno Jose B. Gabuya},\n  journal      = {International Journal of Research and Innovation in Social Science},\n  volume       = {9},\n  number       = {9},\n  pages        = {2980--2991},\n  year         = {2025},\n  month        = {September},\n  url          = {https://ideas.repec.org/a/bcp/journl/v9y2025issue-9p2980-2991.html},\n  urldate      = {2026-09-26},\n  file         = {docs/references/gabuya2025towardsdigitallegis.pdf}\n  file = {docs/references/gabuya2025towardsdigitallegis.pdf},\n}"
+    "raw_bib": "@article{gabuya2025towardsdigitallegis,\n  title        = {Towards Digital Legislation: Readiness of the {Sangguniang Bayan} of {LGU} Motiong for Paperless Sessions},\n  author       = {Renno Jose B. Gabuya},\n  journal      = {International Journal of Research and Innovation in Social Science},\n  volume       = {9},\n  number       = {9},\n  pages        = {2980--2991},\n  year         = {2025},\n  month        = {September},\n  url          = {https://ideas.repec.org/a/bcp/journl/v9y2025issue-9p2980-2991.html},\n  urldate      = {2026-09-26},\n  file         = {docs/references/gabuya2025towardsdigitallegis.pdf},\n  file = {docs/references/gabuya2025towardsdigitallegis.pdf},\n}"
   },
   {
     "citekey": "largo2020essentials",
@@ -6154,7 +6154,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Ta%20nada%20v.%20Tuvera%2C%20G.R.%20No.%20L-63915",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Ta%20nada%20v.%20Tuvera%2C%20G.R.%20No.%20L-63915&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Ta%20nada%20v.%20Tuvera%2C%20G.R.%20No.%20L-63915",
-    "raw_bib": "@misc{sc1985tanadavtuvera,\n  title        = {{Ta{\\~n}ada v. Tuvera}, {G.R.} No. {L-63915}},\n  author       = {{Supreme Court of the Philippines}},\n  year         = {1985},\n  month        = {April},\n  day          = {24},\n  howpublished = {Philippine Reports, Vol. 136, pp. 27--45, Lawphil Project},\n  note         = {En Banc Decision on the Mandatory Publication of Laws and Presidential Decrees},\n  url          = {https://lawphil.net/judjuris/juri1985/apr1985/gr_l-63915_1985.html},\n  urldate      = {2026-09-26},\n}"
+    "raw_bib": "@misc{sc1985tanadavtuvera,\n  title        = {{Ta{\\~n}ada v. Tuvera}, {G.R.} No. {L-63915}},\n  author       = {{Supreme Court of the Philippines}},\n  year         = {1985},\n  month        = {April},\n  day          = {24},\n  howpublished = {Philippine Reports, Vol. 136, pp. 27--45, Lawphil Project},\n  note         = {En Banc Decision on the Mandatory Publication of Laws and Presidential Decrees},\n  url          = {https://lawphil.net/judjuris/juri1985/apr1985/gr_l-63915_1985.html},\n  urldate      = {2026-09-26},\n  file         = {docs/references/sc1985tanadavtuvera.pdf},\n}"
   },
   {
     "citekey": "manning2008introduction",
@@ -6343,7 +6343,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Mining%20Text%20Data",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Mining%20Text%20Data&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@book{aggarwal2012mining,\n  title        = {Mining Text Data},\n  author       = {Aggarwal, Charu C. and Zhai, ChengXiang},\n  editor       = {Aggarwal, Charu C. and Zhai, ChengXiang},\n  publisher    = {Springer Science+Business Media},\n  year         = {2012},\n  doi          = {10.1007/978-1-4614-3223-4},\n  url          = {https://doi.org/10.1007/978-1-4614-3223-4},\n  urldate      = {2026-09-26},\n  address      = {Boston, MA}\n}"
+    "raw_bib": "@book{aggarwal2012mining,\n  title        = {Mining Text Data},\n  author       = {Aggarwal, Charu C. and Zhai, ChengXiang},\n  editor       = {Aggarwal, Charu C. and Zhai, ChengXiang},\n  publisher    = {Springer Science+Business Media},\n  year         = {2012},\n  doi          = {10.1007/978-1-4614-3223-4},\n  url          = {https://doi.org/10.1007/978-1-4614-3223-4},\n  urldate      = {2026-09-26},\n  address      = {Boston, MA},\n  file         = {docs/references/aggarwal2012mining.pdf},\n}"
   },
   {
     "citekey": "agpalo2009statutory",
@@ -8544,7 +8544,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Republic%20Act%20No.%2010173%3A%20An%20Act%20Protecting%20Individual%20Personal%20Information%20in%20Information%20and%20Communications%20Systems%20in%20the%20Government%20and%20the%20Private%20Sector%20%28Data%20Privacy%20Act%20of%202012%29",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Republic%20Act%20No.%2010173%3A%20An%20Act%20Protecting%20Individual%20Personal%20Information%20in%20Information%20and%20Communications%20Systems%20in%20the%20Government%20and%20the%20Private%20Sector%20%28Data%20Privacy%20Act%20of%202012%29&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Republic%20Act%20No.%2010173%3A%20An%20Act%20Protecting%20Individual%20Personal%20Information%20in%20Information%20and%20Communications%20Systems%20in%20the%20Government%20and%20the%20Private%20Sector%20%28Data%20Privacy%20Act%20of%202012%29",
-    "raw_bib": "@misc{philgov2012ra10173,\n  author       = {{Republic of the Philippines}},\n  title        = {Republic Act No. 10173: An Act Protecting Individual Personal Information in Information and Communications Systems in the Government and the Private Sector ({Data Privacy Act of 2012})},\n  year         = {2012},\n  howpublished = {Official Gazette of the Republic of the Philippines, Vol. 108, No. 35, p. 4398},\n  url          = {https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/},\n  urldate      = {2026-09-28}\n  file = {docs/references/philgov2012ra10173.pdf},\n}"
+    "raw_bib": "@misc{philgov2012ra10173,\n  author       = {{Republic of the Philippines}},\n  title        = {Republic Act No. 10173: An Act Protecting Individual Personal Information in Information and Communications Systems in the Government and the Private Sector ({Data Privacy Act of 2012})},\n  year         = {2012},\n  howpublished = {Official Gazette of the Republic of the Philippines, Vol. 108, No. 35, p. 4398},\n  url          = {https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/},\n  urldate      = {2026-09-28},\n  file = {docs/references/philgov2012ra10173.pdf},\n}"
   },
   {
     "citekey": "levenshtein1966binary",
@@ -8765,15 +8765,15 @@ window.REFERENCES_DATA = [
   },
   {
     "citekey": "bisong2019kaggle",
-    "entry_type": "incollection",
-    "title": "Kaggle on Google Cloud Platform",
-    "raw_title": "Kaggle on Google Cloud Platform",
+    "entry_type": "book",
+    "title": "Building Machine Learning and Deep Learning Models on Google Cloud Platform: A Comprehensive Guide for Beginners",
+    "raw_title": "Building Machine Learning and Deep Learning Models on Google Cloud Platform: A Comprehensive Guide for Beginners",
     "author": "Bisong, Ekaba",
     "raw_author": "Bisong, Ekaba",
     "year": "2019",
-    "venue": "Building Machine Learning and Deep Learning Models on Google Cloud Platform",
+    "venue": "Apress",
     "category": "Computer Science & NLP",
-    "doi": "10.1007/978-1-4842-4470-8_8",
+    "doi": "10.1007/978-1-4842-4470-8",
     "url": "",
     "eprint": "",
     "direct_pdf_url": "",
@@ -8787,12 +8787,12 @@ window.REFERENCES_DATA = [
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
-    "google_search_url": "https://www.google.com/search?q=%22Kaggle%20on%20Google%20Cloud%20Platform%22%20Bisong%2C%20Ekaba",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%20on%20Google%20Cloud%20Platform",
-    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%20on%20Google%20Cloud%20Platform",
-    "crossref_search_url": "https://api.crossref.org/works?query.title=Kaggle%20on%20Google%20Cloud%20Platform&rows=1",
+    "google_search_url": "https://www.google.com/search?q=%22Building%20Machine%20Learning%20and%20Deep%20Learning%20Models%20on%20Google%20Cloud%20Platform%3A%20A%20Comprehensive%20Guide%20for%20Beginners%22%20Bisong%2C%20Ekaba",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=Building%20Machine%20Learning%20and%20Deep%20Learning%20Models%20on%20Google%20Cloud%20Platform%3A%20A%20Comprehensive%20Guide%20for%20Beginners",
+    "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Building%20Machine%20Learning%20and%20Deep%20Learning%20Models%20on%20Google%20Cloud%20Platform%3A%20A%20Comprehensive%20Guide%20for%20Beginners",
+    "crossref_search_url": "https://api.crossref.org/works?query.title=Building%20Machine%20Learning%20and%20Deep%20Learning%20Models%20on%20Google%20Cloud%20Platform%3A%20A%20Comprehensive%20Guide%20for%20Beginners&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@incollection{bisong2019kaggle,\n  title     = {Kaggle on Google Cloud Platform},\n  author    = {Bisong, Ekaba},\n  booktitle = {Building Machine Learning and Deep Learning Models on Google Cloud Platform},\n  pages     = {65--74},\n  year      = {2019},\n  publisher = {Apress},\n  address   = {Berkeley, CA},\n  doi       = {10.1007/978-1-4842-4470-8_8},\n  file = {docs/references/bisong2019kaggle.pdf}\n}"
+    "raw_bib": "@book{bisong2019kaggle,\n  title     = {Building Machine Learning and Deep Learning Models on Google Cloud Platform: A Comprehensive Guide for Beginners},\n  author    = {Bisong, Ekaba},\n  year      = {2019},\n  publisher = {Apress},\n  address   = {Berkeley, CA},\n  doi       = {10.1007/978-1-4842-4470-8},\n  file      = {docs/references/bisong2019kaggle.pdf}\n}"
   },
   {
     "citekey": "kaggle2026",
@@ -8809,7 +8809,7 @@ window.REFERENCES_DATA = [
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 1,
+    "citation_count": 2,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
@@ -8885,7 +8885,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=An%20Empirical%20Evaluation%20of%20the%20System%20Usability%20Scale",
     "crossref_search_url": "https://api.crossref.org/works?query.title=An%20Empirical%20Evaluation%20of%20the%20System%20Usability%20Scale&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@article{bangor2008empirical,\n  title     = {An Empirical Evaluation of the System Usability Scale},\n  author    = {Bangor, Aaron and Kortum, Philip T. and Miller, James T.},\n  journal   = {International Journal of Human-Computer Interaction},\n  volume    = {24},\n  number    = {6},\n  pages     = {574--594},\n  year      = {2008},\n  publisher = {Taylor \\& Francis},\n  doi       = {10.1080/10447310802205776}\n  file = {docs/references/bangor2008empirical.pdf},\n}"
+    "raw_bib": "@article{bangor2008empirical,\n  title     = {An Empirical Evaluation of the System Usability Scale},\n  author    = {Bangor, Aaron and Kortum, Philip T. and Miller, James T.},\n  journal   = {International Journal of Human-Computer Interaction},\n  volume    = {24},\n  number    = {6},\n  pages     = {574--594},\n  year      = {2008},\n  publisher = {Taylor \\& Francis},\n  doi       = {10.1080/10447310802205776},\n  file = {docs/references/bangor2008empirical.pdf},\n}"
   },
   {
     "citekey": "goodhue1995task",
@@ -9040,7 +9040,7 @@ window.REFERENCES_DATA = [
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=The%201987%20Constitution%20of%20the%20Republic%20of%20the%20Philippines",
     "crossref_search_url": "https://api.crossref.org/works?query.title=The%201987%20Constitution%20of%20the%20Republic%20of%20the%20Philippines&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@misc{philconst1987,\n  author       = {{Constitutional Commission of 1986}},\n  title        = {{The 1987 Constitution of the Republic of the Philippines}},\n  howpublished = {Official Gazette of the Republic of the Philippines},\n  year         = {1987},\n  note         = {Article VI, Section 26(2)},\n  url          = {https://www.officialgazette.gov.ph/constitutions/1987-constitution/},\n  urldate      = {2026-09-26}\n  file = {docs/references/philconst1987.pdf},\n}"
+    "raw_bib": "@misc{philconst1987,\n  author       = {{Constitutional Commission of 1986}},\n  title        = {{The 1987 Constitution of the Republic of the Philippines}},\n  howpublished = {Official Gazette of the Republic of the Philippines},\n  year         = {1987},\n  note         = {Article VI, Section 26(2)},\n  url          = {https://www.officialgazette.gov.ph/constitutions/1987-constitution/},\n  urldate      = {2026-09-26},\n  file = {docs/references/philconst1987.pdf},\n}"
   },
   {
     "citekey": "philhouse2022rules",
