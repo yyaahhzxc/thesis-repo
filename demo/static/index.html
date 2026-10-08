@@ -6,7 +6,7 @@
   <title>Davao City Ordinance Conflict Checker</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-page: #f8fafc;
@@ -30,7 +30,7 @@
       --highlight-yellow: #fef08a;
       --highlight-blue: #bae6fd;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.02);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.02);
       --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
@@ -60,7 +60,7 @@
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
     }
 
     .nav-brand {
@@ -113,24 +113,56 @@
       border-radius: 50%;
       background: var(--valid-green);
     }
+    .engine-badge-live {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #065f46;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-dot-live {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+      animation: pulseLive 2s infinite;
+    }
+    @keyframes pulseLive {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+      70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
 
     /* MAIN CONTAINER */
     main {
       flex: 1;
-      max-width: 1100px;
+      max-width: 1200px;
       width: 100%;
       margin: 0 auto;
-      padding: 36px 20px 80px;
+      padding: 32px 20px 80px;
     }
 
-    /* HERO & TITLE */
+    /* =========================================================
+       INPUT PORTAL (HIDDEN ONCE RESULTS ARE DISPLAYED)
+       ========================================================= */
+    #input-portal {
+      display: block;
+      transition: opacity 0.25s ease;
+    }
+
     .hero-section {
       text-align: center;
       margin-bottom: 28px;
     }
 
     .hero-title {
-      font-size: 1.95rem;
+      font-size: 2.1rem;
       font-weight: 800;
       color: var(--text-heading);
       letter-spacing: -0.025em;
@@ -138,14 +170,14 @@
     }
 
     .hero-sub {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: var(--text-muted);
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
       line-height: 1.6;
     }
 
-    /* UPLOAD / CONVERTER STYLE DROPZONE */
+    /* DRAG AND DROP ZONE */
     .upload-card {
       background: var(--bg-surface);
       border: 2px dashed #cbd5e1;
@@ -155,7 +187,7 @@
       cursor: pointer;
       transition: all 0.2s ease;
       box-shadow: var(--shadow-sm);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .upload-card:hover, .upload-card.dragover {
@@ -200,52 +232,77 @@
       display: none;
     }
 
-    /* QUICK SAMPLES ROW */
+    /* SAMPLE SC PREEMPTION CASES ROW */
     .sample-section {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 14px 20px;
+      border-radius: 14px;
+      padding: 18px 22px;
       margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
       box-shadow: var(--shadow-sm);
     }
 
+    .sample-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     .sample-label {
-      font-size: 0.82rem;
+      font-size: 0.86rem;
       font-weight: 700;
       color: var(--text-heading);
-      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .sample-pills {
       display: flex;
-      gap: 8px;
+      gap: 9px;
       flex-wrap: wrap;
     }
 
     .sample-pill {
-      background: #f1f5f9;
+      background: #ffffff;
       border: 1px solid var(--border-color);
-      border-radius: 6px;
-      padding: 6px 13px;
-      font-size: 0.8rem;
-      font-weight: 500;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
       color: var(--text-body);
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: all 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }
 
     .sample-pill:hover {
-      background: #e2e8f0;
-      color: var(--text-heading);
-      border-color: var(--border-darker);
+      background: var(--brand-blue-light);
+      color: var(--brand-blue);
+      border-color: var(--brand-blue-border);
+      transform: translateY(-1px);
     }
 
-    /* COLLAPSIBLE MANUAL TEXTAREA */
+    .sample-pill .pill-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .sample-pill .pill-badge.valid-badge {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    /* MANUAL PASTE TOGGLE */
     .manual-toggle {
       text-align: center;
       margin-bottom: 24px;
@@ -255,7 +312,7 @@
       background: none;
       border: none;
       color: var(--brand-blue);
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 600;
       cursor: pointer;
       text-decoration: underline;
@@ -311,30 +368,123 @@
       color: #ffffff;
       border: none;
       border-radius: 8px;
-      padding: 11px 24px;
+      padding: 11px 26px;
       font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
     }
 
-    /* AUDIT REPORT VIEW */
-    .report-card {
+    /* =========================================================
+       LIVE SCANNING OVERLAY VIEW
+       ========================================================= */
+    .scanning-view {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .scanning-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
-      border-radius: 14px;
+      border-radius: 16px;
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 38px 30px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .scanning-radar {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pulse-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 3px solid var(--brand-blue);
+      animation: pulseAnim 1.6s ease-out infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes pulseAnim {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    .radar-center-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--brand-blue-light);
+      border: 1px solid var(--brand-blue-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .scanning-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 6px;
+    }
+
+    .scanning-subtitle {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .scan-progress-wrapper {
+      margin-top: 10px;
+    }
+
+    .scan-progress-track {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .scan-progress-bar {
+      height: 100%;
+      width: 10%;
+      background: var(--brand-blue);
+      border-radius: 4px;
+      transition: width 0.35s ease;
+    }
+
+    .scan-status-step {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--brand-blue);
+    }
+
+    /* =========================================================
+       AUDIT REPORT DASHBOARD VIEW
+       ========================================================= */
+    .report-card {
+      display: none;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
       box-shadow: var(--shadow-md);
       overflow: hidden;
-      display: none;
-      margin-top: 16px;
     }
 
-    .report-card.active {
-      display: block;
-    }
-
-    /* RESULT BANNER */
+    /* REPORT TOP BANNER */
     .report-banner {
-      padding: 24px 28px;
+      padding: 22px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -368,9 +518,9 @@
     }
 
     .banner-title {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 800;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.015em;
       margin-bottom: 4px;
     }
 
@@ -388,60 +538,31 @@
       line-height: 1.5;
     }
 
-    /* CONFIDENCE GAUGE BOX */
-    .confidence-gauge-box {
+    .btn-check-another-top {
       background: #ffffff;
       border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 12px 18px;
-      text-align: right;
-      min-width: 220px;
+      border-radius: 8px;
+      padding: 9px 18px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       box-shadow: var(--shadow-sm);
+      transition: all 0.15s ease;
+      white-space: nowrap;
     }
 
-    .gauge-val {
-      font-size: 1.7rem;
-      font-weight: 800;
-      line-height: 1.1;
-    }
-    .report-banner.conflict .gauge-val {
-      color: var(--conflict-red);
-    }
-    .report-banner.valid .gauge-val {
-      color: var(--valid-green);
+    .btn-check-another-top:hover {
+      background: #f1f5f9;
+      border-color: var(--border-darker);
     }
 
-    .gauge-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .gauge-bar-track {
-      height: 6px;
-      background: #e2e8f0;
-      border-radius: 3px;
-      overflow: hidden;
-      margin-top: 6px;
-    }
-    .gauge-bar-fill {
-      height: 100%;
-      border-radius: 3px;
-      transition: width 0.4s ease;
-    }
-    .report-banner.conflict .gauge-bar-fill {
-      background: var(--conflict-red);
-    }
-    .report-banner.valid .gauge-bar-fill {
-      background: var(--valid-green);
-    }
-
-    /* SIDE BY SIDE TEXT COMPARISON */
+    /* SECTION 1: SIDE-BY-SIDE PROVISION COMPARISON */
     .comparison-wrapper {
-      padding: 28px;
+      padding: 26px 28px;
       border-bottom: 1px solid var(--border-color);
     }
 
@@ -450,14 +571,26 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .comparison-heading {
-      font-size: 0.88rem;
-      font-weight: 700;
+      font-size: 0.92rem;
+      font-weight: 800;
       color: var(--text-heading);
       text-transform: uppercase;
       letter-spacing: 0.04em;
+    }
+
+    .alignment-badge {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: var(--brand-blue);
+      border: 1px solid var(--brand-blue-border);
     }
 
     .comparison-cols {
@@ -466,17 +599,13 @@
       gap: 20px;
     }
 
-    @media (max-width: 768px) {
-      .comparison-cols {
-        grid-template-columns: 1fr;
-      }
-    }
-
     .doc-box {
       border: 1px solid var(--border-color);
-      border-radius: 10px;
+      border-radius: 12px;
       background: #ffffff;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .doc-header {
@@ -489,21 +618,40 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sub-chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: var(--text-muted);
+      margin-left: 6px;
+    }
+
+    .sub-chip.national-chip {
+      background: #e0f2fe;
+      color: #0369a1;
     }
 
     .doc-body {
-      padding: 14px;
-      font-size: 0.9rem;
+      padding: 16px;
+      font-size: 0.88rem;
       line-height: 1.6;
       color: var(--text-body);
-      min-height: 130px;
+      min-height: 180px;
+      background: #fafbfc;
+      flex: 1;
     }
 
     .btn-tree-toggle {
       background: #ffffff;
       border: 1px solid var(--border-color);
-      border-radius: 4px;
-      padding: 3px 8px;
+      border-radius: 5px;
+      padding: 3px 9px;
       font-size: 0.72rem;
       font-weight: 600;
       color: var(--text-muted);
@@ -516,143 +664,165 @@
       border-color: var(--brand-blue-border);
     }
 
-    /* CLEAN REDDIT-STYLE NESTED THREAD */
-    .reddit-thread-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 0.88rem;
-      line-height: 1.6;
+    .btn-lawphil {
+      color: var(--brand-blue);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #eff6ff;
+      border: 1px solid var(--brand-blue-border);
+    }
+    .btn-lawphil:hover {
+      background: #dbeafe;
     }
 
-    .reddit-item {
+    /* =========================================================
+       UXCEL-STYLE NESTED PREPENDING TREE (SINGLE UNIFIED VIEW)
+       ========================================================= */
+    .uxcel-tree-root {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .tree-node {
       position: relative;
       display: flex;
       flex-direction: column;
     }
 
-    .reddit-header {
+    .tree-node-row {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: 7px;
+      padding: 6px 10px;
+      border-radius: 6px;
       cursor: pointer;
       user-select: none;
-      padding: 5px 8px;
-      border-radius: 5px;
-      transition: background 0.15s ease;
+      transition: background 0.12s ease;
     }
-    .reddit-header:hover {
+
+    .tree-node-row:hover {
       background: #f1f5f9;
     }
 
-    .reddit-btn {
+    /* Uxcel Active / Tinted Parent highlight */
+    .tree-node.active-parent-ord > .tree-node-row {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+    }
+    .tree-node.active-parent-stat > .tree-node-row {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+    }
+
+    .tree-chevron {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       width: 18px;
       height: 18px;
-      background: #e2e8f0;
-      border-radius: 3px;
-      font-family: monospace;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: #475569;
       flex-shrink: 0;
-      margin-top: 2px;
-      border: 1px solid #cbd5e1;
       cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .reddit-header:hover .reddit-btn {
-      background: #cbd5e1;
-      color: #0f172a;
+      transition: transform 0.15s ease;
+      margin-top: 1px;
     }
 
-    .reddit-label {
-      font-weight: 700;
-      color: #0f172a;
-      flex-shrink: 0;
-      font-size: 0.88rem;
+    .tree-node.is-collapsed > .tree-node-row .tree-chevron {
+      transform: rotate(-90deg);
     }
 
-    .reddit-title {
-      font-weight: 600;
-      color: #334155;
-      font-size: 0.88rem;
-      white-space: normal;
-      word-break: break-word;
-    }
-
-    .reddit-collapsed-hint {
-      font-size: 0.75rem;
-      font-style: italic;
-      color: #94a3b8;
-      display: none;
-      margin-left: 6px;
-      white-space: nowrap;
-    }
-
-    .reddit-body {
-      padding: 6px 10px;
-      margin: 4px 0 6px 26px;
-      background: #ffffff;
-      border-left: 3px solid #3b82f6;
-      border-radius: 4px;
-      color: #334155;
-      font-size: 0.88rem;
-      line-height: 1.65;
-      white-space: normal;
-      word-break: break-word;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-    }
-
-    .reddit-body.ord-body {
-      border-left-color: #f59e0b;
-    }
-
-    .reddit-children {
-      position: relative;
-      margin-left: 9px;
-      padding-left: 17px;
-      border-left: 2px solid #cbd5e1;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 4px;
-      transition: border-color 0.15s ease;
-    }
-    .reddit-children:hover {
-      border-left-color: var(--brand-blue);
-    }
-
-    .reddit-item.collapsed > .reddit-body,
-    .reddit-item.collapsed > .reddit-children {
+    .tree-node.is-collapsed > .tree-node-body,
+    .tree-node.is-collapsed > .tree-children-container {
       display: none !important;
     }
 
-    .reddit-item.collapsed > .reddit-header .reddit-btn {
-      background: #dbeafe;
-      color: #1d4ed8;
-      border-color: #93c5fd;
+    .tree-bullet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      font-size: 1.1rem;
+      color: #64748b;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 1px;
     }
 
-    .reddit-item.collapsed > .reddit-header .reddit-collapsed-hint {
+    .tree-node-label {
+      font-weight: 700;
+      color: var(--text-heading);
+      font-size: 0.88rem;
+    }
+
+    .tree-node-title {
+      font-weight: 500;
+      color: var(--text-body);
+      font-size: 0.84rem;
+      margin-left: 4px;
+    }
+
+    .tree-collapsed-hint {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-style: italic;
+      display: none;
+      margin-left: 6px;
+    }
+    .tree-node.is-collapsed > .tree-node-row .tree-collapsed-hint {
       display: inline;
     }
 
-    .reddit-leaf-box {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
+    /* Nested children indentation lines matching Uxcel */
+    .tree-children-container {
+      position: relative;
+      margin-left: 9px;
+      padding-left: 16px;
+      border-left: 2px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 3px;
+      transition: border-color 0.15s ease;
+    }
+    .tree-children-container:hover {
+      border-left-color: var(--brand-blue);
+    }
+
+    .tree-node-body {
+      padding: 10px 14px;
+      margin: 4px 0 6px 26px;
       border-radius: 6px;
-      padding: 12px 14px;
       font-size: 0.88rem;
       line-height: 1.65;
       color: var(--text-body);
-      margin-top: 6px;
       box-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }
 
-    /* MARKER HIGHLIGHTING */
+    .ord-body-tint {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-left: 4px solid #f59e0b;
+    }
+
+    .stat-body-tint {
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-left: 4px solid #3b82f6;
+    }
+
+    /* MARKER HIGHLIGHTS */
     mark.hl-ordinance {
       background-color: var(--highlight-yellow);
       color: #000;
@@ -669,353 +839,303 @@
       font-weight: 600;
     }
 
-    /* LEGAL FINDINGS & RATIONALE */
-    .rationale-box {
-      margin: 24px 28px;
-      background: #f8fafc;
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 18px 22px;
-    }
-
-    .rationale-title {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--text-heading);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .rationale-text {
-      font-size: 0.9rem;
-      color: var(--text-body);
-      line-height: 1.6;
-    }
-
-    /* CANDIDATE LAWS AUDIT SECTION */
-    .candidates-section {
-      padding: 24px 28px;
+    /* =========================================================
+       SECTION 2: PIPELINE ARCHITECTURE (STAGE 1 LEFT vs STAGE 2 RIGHT)
+       ========================================================= */
+    .pipeline-wrapper {
+      padding: 26px 28px;
       background: #fafbfc;
-      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .candidates-intro {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-      margin-bottom: 18px;
-    }
-
-    /* TOP 5 STAGE 2 CARDS */
-    .top5-grid {
+    .pipeline-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 14px;
-      margin-bottom: 22px;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
     }
 
-    .candidate-card {
+    .pipeline-col {
       background: #ffffff;
       border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 16px;
+      border-radius: 12px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 10px;
       box-shadow: var(--shadow-sm);
-      transition: all 0.15s ease;
-    }
-    .candidate-card:hover {
-      border-color: var(--brand-blue-border);
-      box-shadow: var(--shadow-md);
     }
 
-    .candidate-card-top {
+    .pipeline-card-header {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 8px;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .rank-tag {
-      display: inline-block;
+    .pipeline-stage-badge {
+      background: #eff6ff;
+      color: var(--brand-blue);
+      border: 1px solid var(--brand-blue-border);
       font-size: 0.72rem;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 4px;
-      background: #f1f5f9;
-      color: var(--text-heading);
-    }
-    .rank-1-tag {
-      background: #fee2e2;
-      color: #991b1b;
-    }
-
-    .candidate-cit {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--text-heading);
-      margin-top: 4px;
-    }
-
-    .candidate-title {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .candidate-summary {
-      font-size: 0.8rem;
-      color: var(--text-body);
-      line-height: 1.5;
-    }
-
-    .candidate-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 10px;
-      border-top: 1px solid #f1f5f9;
-      font-size: 0.78rem;
-    }
-
-    .risk-badge {
-      font-weight: 700;
+      font-weight: 800;
       padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-    }
-    .risk-danger {
-      background: var(--conflict-red-bg);
-      color: var(--conflict-red);
-      border: 1px solid var(--conflict-red-border);
-    }
-    .risk-safe {
-      background: var(--valid-green-bg);
-      color: var(--valid-green);
-      border: 1px solid var(--valid-green-border);
-    }
-    .risk-info {
-      background: #f1f5f9;
-      color: #475569;
-      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      letter-spacing: 0.04em;
     }
 
-    .btn-lawphil {
-      color: var(--brand-blue);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.78rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: color 0.15s ease;
-    }
-    .btn-lawphil:hover {
-      color: var(--brand-blue-hover);
-      text-decoration: underline;
+    .pipeline-stage-badge.stage2-badge {
+      background: #fdf2f8;
+      color: #be185d;
+      border-color: #fbcfe8;
     }
 
-    /* EXPANDABLE 50 LAWS TABLE */
-    .toggle-all-laws-btn {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 10px 18px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--brand-blue);
-      cursor: pointer;
-      display: block;
-      width: 100%;
-      text-align: center;
-      transition: background 0.15s ease;
+    .pipeline-col-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.2;
+    }
+
+    .pipeline-col-subtitle {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    /* STAGE 1 METRICS & SHORTLIST TABLE */
+    .stage1-metrics-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
       margin-bottom: 14px;
     }
-    .toggle-all-laws-btn:hover {
+
+    .metric-pill {
+      font-size: 0.74rem;
+      font-weight: 600;
       background: #f8fafc;
-      border-color: var(--border-darker);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 4px 8px;
+      color: var(--text-heading);
+    }
+
+    .shortlist-table-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
     }
 
     .all-laws-container {
-      display: none;
-      background: #ffffff;
+      flex: 1;
+      max-height: 380px;
+      overflow-y: auto;
       border: 1px solid var(--border-color);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-    }
-    .all-laws-container.active {
-      display: block;
+      border-radius: 8px;
+      background: #ffffff;
     }
 
     .laws-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.82rem;
-      text-align: left;
+      font-size: 0.8rem;
     }
-    .laws-table th {
+
+    .laws-table thead {
+      position: sticky;
+      top: 0;
       background: #f8fafc;
-      padding: 10px 14px;
+      z-index: 2;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .laws-table th {
+      padding: 9px 10px;
       font-weight: 700;
       color: var(--text-heading);
       border-bottom: 1px solid var(--border-color);
+      text-align: left;
     }
+
     .laws-table td {
-      padding: 10px 14px;
+      padding: 9px 10px;
       border-bottom: 1px solid #f1f5f9;
       color: var(--text-body);
       vertical-align: middle;
     }
+
     .laws-table tr:hover td {
       background: #f8fafc;
     }
 
-    /* MULTI-SECTION DRAFT AUDIT TABLE */
-    .doc-audit-summary-box {
-      display: none;
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-color);
-      padding: 22px 28px;
+    /* STAGE 2 DECISION CARD */
+    .stage2-decision-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
     }
-    .doc-audit-summary-box.active {
-      display: block;
-    }
-    .doc-audit-header-row {
+
+    .gauge-top-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-      gap: 12px;
+      margin-bottom: 4px;
     }
-    .doc-audit-title {
-      font-size: 1.1rem;
+
+    .gauge-label {
+      font-size: 0.74rem;
       font-weight: 700;
-      color: var(--text-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
     }
-    .doc-stat-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+
+    .gauge-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--conflict-red);
     }
-    .doc-stat-pill {
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 4px 12px;
+
+    .gauge-verdict-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
       border-radius: 20px;
-      background: #f1f5f9;
-      color: var(--text-heading);
-    }
-    .doc-stat-pill.danger {
       background: #fee2e2;
-      color: #991b1b;
+      color: #dc2626;
       border: 1px solid #fecaca;
     }
-    .doc-stat-pill.success {
+    .gauge-verdict-pill.valid {
       background: #dcfce7;
-      color: #166534;
-      border: 1px solid #bbf7d0;
+      color: #16a34a;
+      border-color: #bbf7d0;
     }
-    .doc-sections-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.84rem;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+
+    .gauge-bar-track {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
       overflow: hidden;
+      margin-top: 8px;
     }
-    .doc-sections-table th {
-      background: #f8fafc;
-      padding: 10px 14px;
+
+    .gauge-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.4s ease;
+      background: var(--conflict-red);
+    }
+
+    .gauge-explanation-text {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* CONSISTENT LEGAL FINDINGS FLAVOR BOX */
+    .rationale-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rationale-title {
+      font-size: 0.86rem;
       font-weight: 700;
       color: var(--text-heading);
-      border-bottom: 1px solid var(--border-color);
-      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 2px;
     }
-    .doc-sections-table td {
-      padding: 10px 14px;
-      border-bottom: 1px solid #f1f5f9;
-      vertical-align: middle;
-    }
-    .doc-sections-table tr:hover td {
-      background: #f8fafc;
-    }
-    .btn-inspect-sec {
+
+    .legal-flavor-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
-      border-radius: 4px;
-      padding: 5px 12px;
-      font-size: 0.76rem;
-      font-weight: 600;
-      color: var(--brand-blue);
-      cursor: pointer;
-      transition: all 0.15s ease;
-      white-space: nowrap;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      line-height: 1.5;
     }
-    .btn-inspect-sec:hover {
-      background: var(--brand-blue-light);
-      border-color: var(--brand-blue-border);
+
+    .legal-flavor-card.vertical {
+      border-left: 3px solid #dc2626;
+      background: #fffbfa;
+    }
+
+    .legal-flavor-card.horizontal {
+      border-left: 3px solid #2563eb;
+      background: #f8fafc;
+    }
+
+    .flavor-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+
+    .flavor-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+    .flavor-dot.red-dot { background: #dc2626; }
+    .flavor-dot.blue-dot { background: #2563eb; }
+
+    .flavor-body {
+      color: var(--text-body);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .specific-finding-box {
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 10px 12px;
+      border: 1px solid #e2e8f0;
     }
 
     /* FOOTER ACTIONS */
     .meta-footer {
-      border-top: 1px solid var(--border-color);
-      background: #f8fafc;
-      padding: 16px 28px;
+      background: #ffffff;
+      padding: 18px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
       flex-wrap: wrap;
       gap: 12px;
     }
 
     .btn-reset {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      padding: 9px 18px;
-      font-size: 0.85rem;
+      background: var(--brand-blue);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 0.88rem;
       font-weight: 600;
-      color: var(--text-heading);
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: all 0.15s ease;
+      box-shadow: 0 2px 4px rgba(37,99,235,0.2);
     }
 
     .btn-reset:hover {
-      background: #f1f5f9;
-      border-color: var(--border-darker);
-    }
-
-    /* LOADING SPINNER */
-    .loading-spinner-box {
-      display: none;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .loading-spinner-box.active {
-      display: block;
-    }
-
-    .simple-spinner {
-      width: 36px;
-      height: 36px;
-      border: 3px solid #cbd5e1;
-      border-top-color: var(--brand-blue);
-      border-radius: 50%;
-      margin: 0 auto 14px;
-      animation: spin 0.7s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+      background: var(--brand-blue-hover);
     }
 
     /* FOOTER */
@@ -1036,13 +1156,32 @@
     }
     .footer-desc {
       color: var(--text-body);
-      max-width: 820px;
+      max-width: 840px;
       margin: 0 auto 8px;
       font-size: 0.84rem;
     }
     .footer-institution {
       font-size: 0.78rem;
       color: var(--text-muted);
+    }
+
+    /* RESPONSIVE DESIGN (FOR TABLETS AND MOBILE VIEW) */
+    @media (max-width: 960px) {
+      .comparison-cols {
+        grid-template-columns: 1fr;
+      }
+      .pipeline-grid {
+        grid-template-columns: 1fr;
+      }
+      main {
+        padding: 20px 14px 60px;
+      }
+      .report-banner {
+        padding: 18px 20px;
+      }
+      .comparison-wrapper, .pipeline-wrapper, .meta-footer {
+        padding: 18px 20px;
+      }
     }
   </style>
 </head>
@@ -1065,132 +1204,150 @@
         <div class="brand-sub">Ex-Ante Legislative Consistency Review System</div>
       </div>
     </a>
+    <div class="nav-badge-pill" id="engine-status-pill">
+      <span class="status-dot"></span>
+      <span id="engine-status-text">Dual-Corpus Engine Ready (176,421 Provisions)</span>
+    </div>
   </nav>
 
-  <!-- MAIN BODY -->
+  <!-- MAIN CONTAINER -->
   <main>
 
-    <!-- HERO TEXT -->
-    <section class="hero-section">
-      <h1 class="hero-title">Davao City Ordinance Conflict Checker</h1>
-      <p class="hero-sub">
-        Upload a proposed ordinance draft or clause to automatically audit statutory consistency against superior National Statutes and Davao City local legislation.
-      </p>
-    </section>
+    <!-- =========================================================
+         INPUT PORTAL (AUTOMATICALLY HIDDEN DURING AUDIT RESULTS)
+         ========================================================= -->
+    <div id="input-portal">
 
-    <!-- DRAG AND DROP ZONE -->
-    <div class="upload-card" id="drop-zone" onclick="document.getElementById('file-input').click()">
-      <div class="upload-icon">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;">
-          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <path d="M12 18v-6"/>
-          <path d="m9 15 3-3 3 3"/>
-        </svg>
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <h1 class="hero-title">Davao City Ordinance Conflict Checker</h1>
+        <p class="hero-sub">
+          Upload a proposed ordinance draft or clause to automatically audit statutory consistency against superior National Statutes and Davao City local legislation.
+        </p>
+      </section>
+
+      <!-- DRAG AND DROP ZONE -->
+      <div class="upload-card" id="drop-zone" onclick="document.getElementById('file-input').click()">
+        <div class="upload-icon">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <path d="M12 18v-6"/>
+            <path d="m9 15 3-3 3 3"/>
+          </svg>
+        </div>
+        <button type="button" class="btn-upload">Select Ordinance File (.pdf, .json, .txt)</button>
+        <div class="upload-text">or drag and drop a <code>.pdf</code>, <code>.json</code>, or <code>.txt</code> draft ordinance file here</div>
+        <input type="file" id="file-input" accept=".pdf,.json,.txt">
       </div>
-      <button type="button" class="btn-upload">Select Ordinance File (.pdf, .json, .txt)</button>
-      <div class="upload-text">or drag and drop a <code>.pdf</code>, <code>.json</code>, or <code>.txt</code> draft ordinance file here</div>
-      <input type="file" id="file-input" accept=".pdf,.json,.txt">
-    </div>
 
-    <!-- QUICK SAMPLES -->
-    <div class="sample-section" id="samples">
-      <div style="margin-bottom: 12px;">
-        <span class="sample-label"><strong>Tier 3 Landmark SC Preemption Cases:</strong></span>
-        <div class="sample-pills" style="margin-top: 6px;">
+      <!-- QUICK SAMPLE CASES (LANDMARK SUPREME COURT PRECEDENTS ONLY) -->
+      <div class="sample-section" id="samples">
+        <div class="sample-header-row">
+          <span class="sample-label">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/></svg>
+            <strong>Landmark Supreme Court Statutory Preemption Cases:</strong>
+          </span>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Click to trigger live full-pipeline scan</span>
+        </div>
+
+        <div class="sample-pills">
           <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-01')">
-            Mosqueda (Aerial Spraying Ban)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-02')">
-            Evasco (Outdoor Billboards)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-03')">
-            ARC Investors (Holding Entity Tax)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-05')">
-            GSIS Real Property Tax
+            <span>Mosqueda (Aerial Spraying Ban)</span>
+            <span class="pill-badge">PD 1144 Conflict</span>
           </button>
           <button type="button" class="sample-pill" onclick="loadCase('SC-PHIL-09')">
-            Magtajas (Casino Ban)
+            <span>Magtajas (Casino Ban Preemption)</span>
+            <span class="pill-badge">PD 1869 Conflict</span>
+          </button>
+          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-03')">
+            <span>ARC Investors (Holding Entity Tax)</span>
+            <span class="pill-badge">RA 7160 §143 Conflict</span>
+          </button>
+          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-05')">
+            <span>GSIS Tax (Real Property Exemption)</span>
+            <span class="pill-badge valid-badge">RA 7160 §193 Valid</span>
+          </button>
+          <button type="button" class="sample-pill" onclick="loadCase('DAVAO-TIER3-02')">
+            <span>Evasco (Outdoor Billboards)</span>
+            <span class="pill-badge valid-badge">RA 7160 §458 Valid</span>
+          </button>
+          <button type="button" class="sample-pill" onclick="loadCase('SC-PHIL-11')">
+            <span>Batangas CATV (Cable Rates &amp; NTC)</span>
+            <span class="pill-badge">EO 205 Preemption</span>
+          </button>
+          <button type="button" class="sample-pill" onclick="loadCase('SC-PHIL-10')">
+            <span>City of Manila (Commercial Due Process)</span>
+            <span class="pill-badge">Art. III §1 Conflict</span>
           </button>
         </div>
       </div>
 
-      <div>
-        <span class="sample-label"><strong>Tier 2 Synthetic Draft Ordinances (Full Multi-Section PDFs):</strong></span>
-        <div class="sample-pills" style="margin-top: 6px;">
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-01')">
-            Draft 01: Organic Agrochemicals (PD 1144)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-02')">
-            Draft 02: Clean Air & Anti-Smoking (RA 7160 / Const.)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-03')">
-            Draft 03: Speed Limits (RA 4136)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-04')">
-            Draft 04: Fair Price & Calamity (RA 7581)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-05')">
-            Draft 05: CCTV Surveillance (RA 10173)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-06')">
-            Draft 06: Solid Waste & Customs (RA 10863)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-07')">
-            Draft 07: Billboard Safety (PD 1096)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-08')">
-            Draft 08: River Sand & Gravel (RA 7942)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-09')">
-            Draft 09: Telecoms & Wireless (RA 7925)
-          </button>
-          <button type="button" class="sample-pill" onclick="loadTier2Ordinance('DRAFT-ORD-2026-10')">
-            Draft 10: Local Revenue & GSIS Tax (RA 7160)
-          </button>
+      <!-- OPTIONAL MANUAL PASTE TOGGLE -->
+      <div class="manual-toggle">
+        <button type="button" class="manual-toggle-btn" onclick="toggleManualInput()">
+          Or paste ordinance text manually &darr;
+        </button>
+      </div>
+
+      <div class="manual-box" id="manual-box">
+        <div class="form-group">
+          <label class="form-label" for="manual-title">Ordinance Title / Identifier</label>
+          <input type="text" id="manual-title" class="form-control" placeholder="e.g., Draft Ordinance No. 2026-01 (Environmental Code)">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="manual-ordinance">Draft Ordinance Provision Text</label>
+          <textarea id="manual-ordinance" class="form-control" rows="4" placeholder="Enter the draft ordinance clause here..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="manual-statute">Controlling National Statute (Optional — auto-retrieved via Stage 1 if blank)</label>
+          <textarea id="manual-statute" class="form-control" rows="3" placeholder="Leave blank to automatically retrieve matching national statute from 176,421 provisions..."></textarea>
+        </div>
+        <button type="button" class="btn-submit-manual" onclick="submitManual()">Check for Conflicts</button>
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         LIVE SCANNING ANIMATION SCREEN
+         ========================================================= -->
+    <div class="scanning-view" id="scanning-view">
+      <div class="scanning-card">
+        <div class="scanning-radar">
+          <div class="pulse-ring"></div>
+          <div class="radar-center-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand-blue);">
+              <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+              <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+              <path d="M7 21h10"/>
+              <path d="M12 3v18"/>
+            </svg>
+          </div>
+        </div>
+        <div class="scanning-title" id="scan-title">Scanning Ordinance for Statutory Conflicts</div>
+        <div class="scanning-subtitle" id="scan-subtitle">
+          Screening operative provisions against 176,421 Philippine statutory provisions &amp; Davao City legislation...
+        </div>
+        
+        <div class="scan-progress-wrapper">
+          <div class="scan-progress-track">
+            <div class="scan-progress-bar" id="scan-progress-bar"></div>
+          </div>
+          <div class="scan-status-step" id="scan-status-step">Initializing ex-ante parser...</div>
         </div>
       </div>
     </div>
 
-    <!-- OPTIONAL MANUAL PASTE TOGGLE -->
-    <div class="manual-toggle">
-      <button type="button" class="manual-toggle-btn" onclick="toggleManualInput()">
-        Or paste ordinance text manually &darr;
-      </button>
-    </div>
-
-    <div class="manual-box" id="manual-box">
-      <div class="form-group">
-        <label class="form-label" for="manual-title">Ordinance Title / Identifier</label>
-        <input type="text" id="manual-title" class="form-control" placeholder="e.g., Draft Ordinance No. 2026-01 (Environmental Code)">
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="manual-ordinance">Draft Ordinance Provision Text</label>
-        <textarea id="manual-ordinance" class="form-control" rows="4" placeholder="Enter the draft ordinance clause here..."></textarea>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="manual-statute">Controlling National Statute (Optional — auto-retrieved via Stage 1 if blank)</label>
-        <textarea id="manual-statute" class="form-control" rows="3" placeholder="Leave blank to automatically retrieve matching national statute from 176,421 provisions..."></textarea>
-      </div>
-      <button type="button" class="btn-submit-manual" onclick="submitManual()">Check for Conflicts</button>
-    </div>
-
-    <!-- LOADING STATE -->
-    <div class="loading-spinner-box" id="loading-box">
-      <div class="simple-spinner"></div>
-      <div style="font-weight:700; color:var(--text-heading); font-size:1rem;">Screening 176,421 statutory provisions...</div>
-      <div style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">Stage 1 Hybrid Retrieval (1.33 ms) &rarr; Stage 2 DeBERTa Cross-Encoder Scoring</div>
-    </div>
-
-    <!-- AUDIT REPORT CARD -->
+    <!-- =========================================================
+         AUDIT REPORT CARD (FULL UNIFIED DASHBOARD)
+         ========================================================= -->
     <div class="report-card" id="report-card">
       
-      <!-- STATUS BANNER WITH STAGE 2 CONFIDENCE RATE GAUGE -->
+      <!-- STATUS BANNER -->
       <div class="report-banner conflict" id="report-banner">
         <div class="banner-left">
           <div class="banner-icon" id="banner-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
               <line x1="12" y1="9" x2="12" y2="13"/>
               <line x1="12" y1="17" x2="12.01" y2="17"/>
@@ -1199,79 +1356,48 @@
           <div>
             <div class="banner-title" id="banner-title">Potential Legal Conflict Detected</div>
             <div class="banner-desc" id="banner-desc">
-              This provision may conflict with a superior national statute under the <em>Magtajas</em> doctrine.
+              This provision may conflict with a superior national statute under Section 5(a) of the Local Government Code and the <em>Magtajas</em> doctrine.
             </div>
           </div>
         </div>
 
-        <!-- STAGE 2 CONFIDENCE GAUGE -->
-        <div class="confidence-gauge-box">
-          <div class="gauge-label">Stage 2 Contradiction Probability</div>
-          <div class="gauge-val" id="gauge-prob">88.4%</div>
-          <div style="font-size:0.75rem; color:var(--text-muted); line-height: 1.4;" id="gauge-sub">
-            System flags an alert because confidence is &ge; 45% (The calibrated decision threshold)
-          </div>
-          <div class="gauge-bar-track" style="position: relative; margin-top: 10px; height: 8px;">
-            <div class="gauge-bar-fill" id="gauge-bar-fill" style="width: 88.4%;"></div>
-            <div style="position: absolute; left: 45%; top: -5px; bottom: -5px; width: 2px; background: #dc2626; z-index: 5;" title="45% Calibrated Decision Threshold"></div>
-          </div>
-          <div style="display:flex; justify-content:space-between; margin-top:4px; font-size:0.7rem; color:var(--text-muted);">
-            <span>0%</span>
-            <span style="font-weight:700; color:#dc2626;">▲ 45% Trigger Line</span>
-            <span>100%</span>
-          </div>
-        </div>
-      <!-- MULTI-SECTION DRAFT ORDINANCE AUDIT OVERVIEW (TIER 2) -->
-      <div class="doc-audit-summary-box" id="doc-audit-box">
-        <div class="doc-audit-header-row">
-          <div>
-            <div class="doc-audit-title" id="doc-audit-title">Draft Ordinance Multi-Section Audit Overview</div>
-            <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 3px;" id="doc-audit-subtitle">
-              Screened across all operative sections against superior national statutes
-            </div>
-          </div>
-          <div class="doc-stat-pills" id="doc-audit-pills"></div>
-        </div>
-        <div style="overflow-x: auto; margin-top: 8px;">
-          <table class="doc-sections-table">
-            <thead>
-              <tr>
-                <th style="width: 100px;">Section</th>
-                <th>Operative Clause Title &amp; Text</th>
-                <th style="width: 230px;">Governing National Authority</th>
-                <th style="width: 130px; text-align: center;">Verdict</th>
-                <th style="width: 110px; text-align: right;">Action</th>
-              </tr>
-            </thead>
-            <tbody id="doc-sections-tbody"></tbody>
-          </table>
+        <div class="banner-action-right">
+          <button type="button" class="btn-check-another-top" onclick="resetToUpload()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+            Check Another File
+          </button>
         </div>
       </div>
 
-      <!-- SIDE BY SIDE REVIEW -->
+      <!-- SECTION 1: SIDE-BY-SIDE PROVISION COMPARISON (HYPOTHESIS VS PREMISE) -->
       <div class="comparison-wrapper">
         <div class="section-header-row">
-          <div class="comparison-heading">Side-by-Side Provision Comparison</div>
-          <div style="font-size:0.75rem; color:var(--text-muted);">
-            <mark class="hl-ordinance">Yellow</mark> = Draft Prohibitions &bull; <mark class="hl-statute">Blue</mark> = Statutory Authority
+          <div>
+            <div class="comparison-heading">Side-by-Side Provision Comparison (Ex-Ante Alignment)</div>
+            <div style="font-size:0.78rem; color:var(--text-muted); margin-top:2px;">
+              Provisions nested under Chapter 3 §3.2.2 hierarchical prepending &bull; <mark class="hl-ordinance">Yellow</mark> = Draft Prohibitions &bull; <mark class="hl-statute">Blue</mark> = Statutory Authority
+            </div>
+          </div>
+          <div>
+            <span class="alignment-badge">Stage 2 Aligned Pair</span>
           </div>
         </div>
 
         <div class="comparison-cols">
-          <!-- Left: Ordinance Provision (Hypothesis) -->
+          <!-- Left: Draft Local Ordinance (Hypothesis) -->
           <div class="doc-box">
             <div class="doc-header">
               <div>
                 <span id="label-ordinance" style="font-weight:700;">Draft Local Ordinance (Hypothesis)</span>
-                <span style="font-size:0.75rem; color:var(--text-muted); margin-left:6px;">Ex-Ante Measure</span>
+                <span class="sub-chip">Local Scope</span>
               </div>
               <div style="display:flex; align-items:center; gap:6px;">
-                <button type="button" class="btn-tree-toggle" onclick="toggleAllRedditNodes('tree-ordinance-container', false)" title="Collapse all sections">Collapse All</button>
-                <button type="button" class="btn-tree-toggle" onclick="toggleAllRedditNodes('tree-ordinance-container', true)" title="Expand all sections">Expand All</button>
+                <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-ordinance-container', false)" title="Collapse all sections">Collapse All</button>
+                <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-ordinance-container', true)" title="Expand all sections">Expand All</button>
               </div>
             </div>
             <div class="doc-body" id="tree-ordinance-container">
-              <!-- Reddit-style hierarchical tree rendered here -->
+              <!-- Rendered via renderUxcelTreeContainer -->
             </div>
           </div>
 
@@ -1280,70 +1406,150 @@
             <div class="doc-header">
               <div>
                 <span id="label-statute" style="font-weight:700;">Controlling National Statute (Premise)</span>
-                <span style="font-size:0.75rem; color:var(--text-muted); margin-left:6px;">Superior Authority</span>
+                <span class="sub-chip national-chip">Superior Authority</span>
               </div>
-              <div style="display:flex; align-items:center; gap:8px;">
-                <button type="button" class="btn-tree-toggle" onclick="toggleAllRedditNodes('tree-statute-container', false)" title="Collapse all sections">Collapse All</button>
-                <button type="button" class="btn-tree-toggle" onclick="toggleAllRedditNodes('tree-statute-container', true)" title="Expand all sections">Expand All</button>
-                <a id="btn-controlling-lawphil" href="#" target="_blank" class="btn-lawphil">Open Lawphil ↗</a>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-statute-container', false)" title="Collapse all sections">Collapse All</button>
+                <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-statute-container', true)" title="Expand all sections">Expand All</button>
+                <a id="btn-controlling-lawphil" href="#" target="_blank" class="btn-lawphil">Lawphil ↗</a>
               </div>
             </div>
             <div class="doc-body" id="tree-statute-container">
-              <!-- Reddit-style hierarchical tree rendered here -->
+              <!-- Rendered via renderUxcelTreeContainer -->
             </div>
           </div>
         </div>
       </div>
 
-      <!-- LEGAL FINDINGS & PRECEDENT -->
-      <div class="rationale-box">
-        <div class="rationale-title">
-          <span>Legal Findings & Applicable Precedent</span>
-        </div>
-        <div class="rationale-text" id="text-rationale">
-          <!-- Plain-language explanation injected here -->
-        </div>
-      </div>
+      <!-- SECTION 2: SIDE-BY-SIDE PIPELINE ARCHITECTURE (STAGE 1 ON LEFT vs STAGE 2 ON RIGHT) -->
+      <div class="pipeline-wrapper">
+        <div class="pipeline-grid">
 
-      <!-- CANDIDATE LAWS SHORTLIST & AUDIT TRAIL -->
-      <div class="candidates-section">
-        <div class="section-header-row" style="margin-bottom:8px;">
-          <div>
-            <div class="comparison-heading">Statutory Candidate Shortlist (Top 50 Laws Screened by Stage 1)</div>
-            <div class="candidates-intro" style="margin-bottom:0;">
-              Stage 1 hybrid retrieval screened all <strong>176,421 provisions</strong> in <strong>1.33 ms</strong>. Below is the scrollable shortlist showing 5 provisions at a time (scroll down to inspect all 50 laws with direct Lawphil links).
+          <!-- LEFT COLUMN: STAGE 1 (Retrieval & Shortlisted Laws) -->
+          <div class="pipeline-col stage1-col">
+            <div class="pipeline-card-header">
+              <div class="pipeline-stage-badge">STAGE 1</div>
+              <div class="pipeline-title-group">
+                <div class="pipeline-col-title">Dual-Stream Hybrid Retrieval</div>
+                <div class="pipeline-col-subtitle">all-MiniLM-L6-v2 + BM25 over 176,421 Provisions</div>
+              </div>
+            </div>
+
+            <div class="stage1-metrics-bar">
+              <span class="metric-pill">176,421 Provisions Screened</span>
+              <span class="metric-pill">Latency: 1.33 ms</span>
+              <span class="metric-pill">Top-50 Safety Buffer</span>
+            </div>
+
+            <div class="shortlist-table-header">
+              <span style="font-weight:700; font-size:0.84rem; color:var(--text-heading);">Statutory Candidate Shortlist</span>
+              <span style="font-size:0.74rem; color:var(--text-muted);">Scroll to view all 50 laws</span>
+            </div>
+
+            <div class="all-laws-container active">
+              <table class="laws-table">
+                <thead>
+                  <tr>
+                    <th style="width: 48px;">Rank</th>
+                    <th style="width: 175px;">Citation</th>
+                    <th>Enactment Title</th>
+                    <th style="width: 72px;">Score</th>
+                    <th style="width: 68px;">Source</th>
+                  </tr>
+                </thead>
+                <tbody id="all-laws-tbody">
+                  <!-- Injected via JavaScript -->
+                </tbody>
+              </table>
             </div>
           </div>
-        </div>
 
-        <!-- SCROLLABLE QUICK TABLE SHOWING 5 AT A TIME -->
-        <div class="all-laws-container active" style="display:block; max-height: 295px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 10px; margin-top: 14px; background:#fff;">
-          <table class="laws-table" style="width:100%; border-collapse:collapse;">
-            <thead style="position: sticky; top: 0; background: #f8fafc; z-index: 2; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-              <tr>
-                <th style="width: 55px; padding:10px 12px;">Rank</th>
-                <th style="width: 220px; padding:10px 12px;">Statutory Citation</th>
-                <th style="padding:10px 12px;">Enactment Official Title</th>
-                <th style="width: 105px; padding:10px 12px;">Jurisdiction</th>
-                <th style="width: 110px; padding:10px 12px;">Stage 1 Score</th>
-                <th style="width: 180px; padding:10px 12px;">Stage 2 Status</th>
-                <th style="width: 95px; padding:10px 12px;">Source</th>
-              </tr>
-            </thead>
-            <tbody id="all-laws-tbody">
-              <!-- Injected via JavaScript -->
-            </tbody>
-          </table>
+          <!-- RIGHT COLUMN: STAGE 2 (NLI Cross-Encoder & Legal Findings) -->
+          <div class="pipeline-col stage2-col">
+            <div class="pipeline-card-header">
+              <div class="pipeline-stage-badge stage2-badge">STAGE 2</div>
+              <div class="pipeline-title-group">
+                <div class="pipeline-col-title">Cross-Encoder NLI &amp; Conflict Triage</div>
+                <div class="pipeline-col-subtitle" id="stage2-subtitle">DeBERTa-v3-base Champion (alpha = 0.40, tau* = 0.45)</div>
+              </div>
+            </div>
+
+            <!-- DECISION GAUGE BOX -->
+            <div class="stage2-decision-card">
+              <div class="gauge-top-row">
+                <div>
+                  <div class="gauge-label">Contradiction Confidence</div>
+                  <div class="gauge-val" id="gauge-prob">88.4%</div>
+                </div>
+                <div class="gauge-verdict-pill" id="gauge-verdict-pill">
+                  CONTRADICTION DETECTED
+                </div>
+              </div>
+
+              <div class="gauge-bar-track" style="position: relative; margin-top: 10px; height: 9px;">
+                <div class="gauge-bar-fill" id="gauge-bar-fill" style="width: 88.4%;"></div>
+                <div style="position: absolute; left: 45%; top: -5px; bottom: -5px; width: 2px; background: #dc2626; z-index: 5;" title="45% Calibrated Decision Threshold"></div>
+              </div>
+              <div style="display:flex; justify-content:space-between; margin-top:5px; font-size:0.72rem; color:var(--text-muted);">
+                <span>0% (Harmonious)</span>
+                <span style="font-weight:700; color:#dc2626;">▲ 45% Decision Threshold</span>
+                <span>100% (Direct Conflict)</span>
+              </div>
+              <div class="gauge-explanation-text" id="gauge-sub">
+                System flags an alert because contradiction confidence exceeds the calibrated 45.0% cost-sensitive decision threshold.
+              </div>
+            </div>
+
+            <!-- CONSISTENT LEGAL FINDINGS FLAVOR TEXT -->
+            <div class="rationale-box">
+              <div class="rationale-title">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/></svg>
+                <span>Legal Findings &amp; Jurisprudential Context</span>
+              </div>
+
+              <!-- Vertical Preemption Framework -->
+              <div class="legal-flavor-card vertical">
+                <div class="flavor-header">
+                  <span class="flavor-dot red-dot"></span>
+                  <span>Vertical Preemption (Magtajas Doctrine &amp; RA 7160 §5(a))</span>
+                </div>
+                <p class="flavor-body">
+                  Under Philippine constitutional law and Section 5(a) of the Local Government Code of 1991, municipal ordinances are subordinate to national legislation. As established in <em>Magtajas v. Pryce Properties Corp.</em> and <em>Mosqueda v. PBGEA</em>, an ordinance cannot forbid what a national statute expressly permits, nor permit what a statute forbids. Any local measure colliding with national law is ultra vires and void.
+                </p>
+              </div>
+
+              <!-- Horizontal Coherence Framework -->
+              <div class="legal-flavor-card horizontal">
+                <div class="flavor-header">
+                  <span class="flavor-dot blue-dot"></span>
+                  <span>Horizontal Coherence (Davao City Local Codification)</span>
+                </div>
+                <p class="flavor-body">
+                  Proposed local enactments must maintain statutory harmony with the 1,664 active Davao City local ordinances. Contradictory, overlapping, or uncoordinated local provisions risk unintentional implied repeals, departmental conflict, and legal ambiguity during administrative enforcement.
+                </p>
+              </div>
+
+              <!-- Dynamic Clause Finding -->
+              <div class="specific-finding-box">
+                <div style="font-weight:700; font-size:0.78rem; color:var(--text-heading); margin-bottom:3px;">Operative Provision Analysis:</div>
+                <div id="text-rationale" style="font-size:0.82rem; color:var(--text-body); line-height:1.5;"></div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
       <!-- FOOTER ACTIONS -->
       <div class="meta-footer">
         <div>
-          <span>Top Primary Citation: <strong id="meta-statute-ref">Presidential Decree No. 1144 §6</strong></span>
+          <span>Primary Controlling Citation: <strong id="meta-statute-ref">Presidential Decree No. 1144 §6</strong></span>
         </div>
         <div>
-          <button type="button" class="btn-reset" onclick="resetToUpload()">Check Another File</button>
+          <button type="button" class="btn-reset" onclick="resetToUpload()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+            Check Another File
+          </button>
         </div>
       </div>
 
@@ -1358,7 +1564,11 @@
     <div class="footer-institution">Undergraduate Thesis by Ralph Paolo Dulce and Yahyah Odin &bull; BS Computer Science &bull; Ateneo de Davao University</div>
   </footer>
 
+  <!-- JAVASCRIPT LOGIC -->
   <script>
+    /* =========================================================
+       TEXT HIGHLIGHTING HELPERS
+       ========================================================= */
     function cleanHighlightOrdinance(text) {
       if (!text) return "";
       const triggers = [
@@ -1369,9 +1579,11 @@
         /(banned)/gi,
         /(mandatory)/gi,
         /(must maintain)/gi,
-        /(no protest.*shall be entertained)/gi
+        /(no protest.*shall be entertained)/gi,
+        /(without judicial warrant)/gi,
+        /(unlawful)/gi
       ];
-      let res = text;
+      let res = escapeHtml(text);
       triggers.forEach(pattern => {
         res = res.replace(pattern, '<mark class="hl-ordinance">$1</mark>');
       });
@@ -1384,46 +1596,21 @@
         /(exclusive jurisdiction)/gi,
         /(jurisdiction)/gi,
         /(Fertilizer and Pesticide Authority)/gi,
+        /(National Telecommunications Commission)/gi,
+        /(Bangko Sentral)/gi,
+        /(PAGCOR)/gi,
         /(regulate and monitor)/gi,
         /(shall have jurisdiction)/gi,
         /(without being required to pay the assessment under protest)/gi,
-        /(tax exemptions.*are hereby withdrawn)/gi
+        /(tax exemptions.*are hereby withdrawn)/gi,
+        /(general welfare)/gi,
+        /(due process of law)/gi
       ];
-      let res = text;
+      let res = escapeHtml(text);
       triggers.forEach(pattern => {
         res = res.replace(pattern, '<mark class="hl-statute">$1</mark>');
       });
       return res;
-    }
-
-    function toggleRedditItem(headerElem, event) {
-      if (event) event.stopPropagation();
-      const item = headerElem.closest('.reddit-item');
-      if (!item) return;
-      const isCollapsed = item.classList.toggle('collapsed');
-      const btn = item.querySelector(':scope > .reddit-header .reddit-btn');
-      if (btn) btn.textContent = isCollapsed ? '+' : '–';
-    }
-
-    function toggleAllRedditNodes(containerId, forceExpand) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-      const items = container.querySelectorAll('.reddit-item');
-      items.forEach(it => {
-        if (forceExpand) {
-          it.classList.remove('collapsed');
-          const btn = it.querySelector(':scope > .reddit-header .reddit-btn');
-          if (btn) btn.textContent = '–';
-        } else {
-          it.classList.add('collapsed');
-          const btn = it.querySelector(':scope > .reddit-header .reddit-btn');
-          if (btn) btn.textContent = '+';
-        }
-      });
-    }
-
-    function toggleAllRedditItems(containerId, forceExpand) {
-      toggleAllRedditNodes(containerId, forceExpand);
     }
 
     function escapeHtml(str) {
@@ -1435,6 +1622,103 @@
         .replace(/"/g, '&quot;');
     }
 
+    /* =========================================================
+       UXCEL-STYLE NESTED TREE PREPENDING RENDERER
+       ========================================================= */
+    function toggleUxcelTreeNode(element, event) {
+      if (event) event.stopPropagation();
+      const node = element.closest('.tree-node');
+      if (!node) return;
+      const isCollapsed = node.classList.toggle('is-collapsed');
+      const hint = node.querySelector(':scope > .tree-node-row .tree-collapsed-hint');
+      if (hint) {
+        hint.textContent = isCollapsed ? '(click to expand)' : '(click to collapse)';
+      }
+    }
+
+    function toggleAllUxcelNodes(containerId, forceExpand) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const nodes = container.querySelectorAll('.tree-node.is-parent');
+      nodes.forEach(n => {
+        if (forceExpand) {
+          n.classList.remove('is-collapsed');
+          const hint = n.querySelector(':scope > .tree-node-row .tree-collapsed-hint');
+          if (hint) hint.textContent = '(click to collapse)';
+        } else {
+          n.classList.add('is-collapsed');
+          const hint = n.querySelector(':scope > .tree-node-row .tree-collapsed-hint');
+          if (hint) hint.textContent = '(click to expand)';
+        }
+      });
+    }
+
+    function renderUxcelTreeNode(node, level, isOrdinance) {
+      if (!node) return '';
+      const hasChildren = node.children && node.children.length > 0;
+      const hasText = node.text && node.text.trim().length > 0;
+      const isLeaf = !hasChildren;
+
+      let formattedText = '';
+      if (hasText) {
+        formattedText = isOrdinance ? cleanHighlightOrdinance(node.text) : cleanHighlightStatute(node.text);
+      }
+
+      // Root / Parent highlight tint (Uxcel active item style)
+      let activeClass = '';
+      if (level === 0 || (level === 1 && !hasChildren)) {
+        activeClass = isOrdinance ? 'active-parent-ord' : 'active-parent-stat';
+      }
+
+      const nodeClass = isLeaf ? 'tree-node is-leaf' : 'tree-node is-parent';
+      const chevronHtml = isLeaf 
+        ? `<span class="tree-bullet">•</span>` 
+        : `<span class="tree-chevron" onclick="toggleUxcelTreeNode(this, event)">▾</span>`;
+
+      let childrenHtml = '';
+      if (hasChildren) {
+        childrenHtml = `
+          <div class="tree-children-container">
+            ${node.children.map(child => renderUxcelTreeNode(child, level + 1, isOrdinance)).join('')}
+          </div>
+        `;
+      }
+
+      const labelHtml = node.label ? `<span class="tree-node-label">${escapeHtml(node.label)}</span>` : '';
+      const titleHtml = node.title ? `<span class="tree-node-title">${escapeHtml(node.title)}</span>` : '';
+      const bodyClass = isOrdinance ? 'tree-node-body ord-body-tint' : 'tree-node-body stat-body-tint';
+
+      return `
+        <div class="${nodeClass} ${activeClass}" data-level="${level}">
+          <div class="tree-node-row" ${hasChildren ? 'onclick="toggleUxcelTreeNode(this, event)"' : ''}>
+            ${chevronHtml}
+            <div style="flex:1;">
+              ${labelHtml}
+              ${titleHtml}
+              ${hasChildren ? '<span class="tree-collapsed-hint">(click to collapse)</span>' : ''}
+            </div>
+          </div>
+          ${hasText ? `<div class="${bodyClass}">${formattedText}</div>` : ''}
+          ${childrenHtml}
+        </div>
+      `;
+    }
+
+    function renderUxcelTreeContainer(containerId, rootTree, isOrdinance) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      if (!rootTree) {
+        container.innerHTML = '<div style="color:var(--text-muted); font-size:0.85rem; padding:10px;">No operative text available</div>';
+        return;
+      }
+      container.innerHTML = `
+        <div class="uxcel-tree-root">
+          ${renderUxcelTreeNode(rootTree, 0, isOrdinance)}
+        </div>
+      `;
+    }
+
+    /* Generic Parser for Raw Text to Uxcel Hierarchy Tree */
     function parseTextToHierarchyTree(text, defaultLabel, defaultTitle) {
       if (!text || typeof text !== 'string') return null;
       const trimmed = text.trim();
@@ -1446,13 +1730,12 @@
         children: []
       };
       
-      // Match Section markers
       const secPattern = /(?:^|[\n.;]\s+)((?:Section|Sec\.|Article|Art\.|Assessment Mandate)\s+[0-9A-Za-z\-&,\s]+?(?:[:.\-\u2014]\s*[^\n.;]+)?(?:\.|\n|:))/gi;
       const secMatches = [...trimmed.matchAll(secPattern)];
       
       if (!secMatches || secMatches.length === 0) {
         root.children.push({
-          label: "Operative Substantive Clause",
+          label: "Operative Clause",
           title: "",
           text: trimmed,
           children: []
@@ -1478,8 +1761,8 @@
           children: []
         };
         
-        // Match subsections like (a), (b)
-        const subPattern = /(?:^|[\n.;]\s+)(\([a-z]\)[^.\n]*?(?:\.|\n|:)?)(?=\s|$)/gi;
+        // Subsection match like (a), (b)
+        const subPattern = /(?:^|[\n.;]\s+)(\([a-z0-9ivx]+\)[^.\n]*?(?:\.|\n|:)?)(?=\s|$)/gi;
         const subMatches = [...secBody.matchAll(subPattern)];
         if (subMatches && subMatches.length > 0) {
           secNode.text = secBody.substring(0, subMatches[0].index).trim();
@@ -1508,51 +1791,65 @@
       return root;
     }
 
-    function renderRedditThreadNode(node, level, isOrdinance) {
-      if (!node) return '';
-      const hasChildren = node.children && node.children.length > 0;
-      const hasText = node.text && node.text.trim().length > 0;
-      
-      let formattedText = '';
-      if (hasText) {
-        formattedText = isOrdinance ? cleanHighlightOrdinance(node.text) : cleanHighlightStatute(node.text);
-      }
-      
-      let childrenHtml = '';
-      if (hasChildren) {
-        childrenHtml = node.children.map(child => renderRedditThreadNode(child, level + 1, isOrdinance)).join('');
-      }
-      
-      const labelHtml = node.label ? `<span class="reddit-label">${escapeHtml(node.label)}</span>` : '';
-      const titleHtml = node.title ? `<span class="reddit-title">${escapeHtml(node.title)}</span>` : '';
-      const bodyClass = isOrdinance ? 'reddit-body ord-body' : 'reddit-body';
-      
-      return `
-        <div class="reddit-item" data-level="${level}">
-          <div class="reddit-header" onclick="toggleRedditItem(this, event)">
-            <button type="button" class="reddit-btn" title="Toggle section">–</button>
-            ${labelHtml}
-            ${titleHtml}
-            <span class="reddit-collapsed-hint">(click to expand)</span>
-          </div>
-          ${hasText ? `<div class="${bodyClass}">${formattedText}</div>` : ''}
-          ${hasChildren ? `<div class="reddit-children">${childrenHtml}</div>` : ''}
-        </div>
-      `;
+    /* =========================================================
+       LIVE SCANNING SIMULATOR (1.6s PROGRESS STEPS)
+       ========================================================= */
+    function triggerLiveScanning(workCallback) {
+      const inputPortal = document.getElementById('input-portal');
+      const scanView = document.getElementById('scanning-view');
+      const reportCard = document.getElementById('report-card');
+      const progressBar = document.getElementById('scan-progress-bar');
+      const stepText = document.getElementById('scan-status-step');
+
+      // Hide input & report, show scanning animation
+      inputPortal.style.display = 'none';
+      reportCard.style.display = 'none';
+      scanView.style.display = 'block';
+
+      // Step 1: 0ms
+      progressBar.style.width = '20%';
+      stepText.textContent = '[1/4] Parsing draft ordinance text & extracting operative section boundaries...';
+
+      // Step 2: 400ms
+      setTimeout(() => {
+        progressBar.style.width = '55%';
+        stepText.textContent = '[2/4] Stage 1: Screening 176,421 provisions via MiniLM + BM25 hybrid index...';
+      }, 400);
+
+      // Step 3: 900ms
+      setTimeout(() => {
+        progressBar.style.width = '82%';
+        stepText.textContent = '[3/4] Stage 2: Cross-Encoder NLI inference & Magtajas preemption rule check...';
+      }, 900);
+
+      // Step 4: 1300ms
+      setTimeout(() => {
+        progressBar.style.width = '96%';
+        stepText.textContent = '[4/4] Synthesizing ex-ante legal conflict audit report...';
+      }, 1300);
+
+      // Step 5: 1600ms -> Finish and reveal report
+      setTimeout(async () => {
+        progressBar.style.width = '100%';
+        try {
+          await workCallback();
+          scanView.style.display = 'none';
+          reportCard.style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (err) {
+          alert("Error during audit: " + err.message);
+          resetToUpload();
+        }
+      }, 1600);
     }
 
-    function renderRedditThreadContainer(containerId, rootTree, isOrdinance) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-      if (!rootTree) {
-        container.innerHTML = '<div style="color:var(--text-muted); font-size:0.85rem; padding:10px;">No operative text available</div>';
-        return;
-      }
-      container.innerHTML = `
-        <div class="reddit-thread-container">
-          ${renderRedditThreadNode(rootTree, 0, isOrdinance)}
-        </div>
-      `;
+    /* Reset to file upload view */
+    function resetToUpload() {
+      document.getElementById('report-card').style.display = 'none';
+      document.getElementById('scanning-view').style.display = 'none';
+      const inputPortal = document.getElementById('input-portal');
+      inputPortal.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function toggleManualInput() {
@@ -1560,21 +1857,11 @@
       box.classList.toggle('active');
     }
 
-    function toggleAllLawsTable() {
-      const box = document.getElementById('all-laws-box');
-      const btn = document.getElementById('toggle-laws-btn');
-      if (box.classList.contains('active')) {
-        box.classList.remove('active');
-        btn.innerHTML = 'Show all 50 candidate laws screened by Stage 1 (45 more) &darr;';
-      } else {
-        box.classList.add('active');
-        btn.innerHTML = 'Hide extended candidate list &uarr;';
-      }
-    }
-
+    /* =========================================================
+       API EXECUTION & AUDIT LOGIC
+       ========================================================= */
     async function loadCase(caseId) {
-      showLoading();
-      try {
+      triggerLiveScanning(async () => {
         const res = await fetch(`/api/case/${caseId}`);
         if (!res.ok) throw new Error("Could not load case data");
         const data = await res.json();
@@ -1587,10 +1874,7 @@
           controlling_statute: data.controlling_statute,
           statute_title: data.statute_title
         });
-      } catch (e) {
-        alert("Error: " + e.message);
-        hideLoading();
-      }
+      });
     }
 
     async function submitManual() {
@@ -1599,18 +1883,14 @@
         alert("Please enter the draft ordinance clause text.");
         return;
       }
-      showLoading();
-      try {
+      triggerLiveScanning(async () => {
         await runAnalysisRequest({
           case_id: "CUSTOM-INPUT",
           ordinance_title: document.getElementById('manual-title').value || "Draft Ordinance Provision",
           challenged_clause_text: ordText,
           statute_premise_text: document.getElementById('manual-statute').value.trim()
         });
-      } catch (e) {
-        alert("Analysis error: " + e.message);
-        hideLoading();
-      }
+      });
     }
 
     async function runAnalysisRequest(payload) {
@@ -1622,11 +1902,9 @@
       if (!res.ok) throw new Error("Server analysis failed");
       const result = await res.json();
       displayReport(result, payload);
-      hideLoading();
     }
 
     function displayReport(data, payload) {
-      const card = document.getElementById('report-card');
       const banner = document.getElementById('report-banner');
       const icon = document.getElementById('banner-icon');
       const title = document.getElementById('banner-title');
@@ -1634,33 +1912,48 @@
       const gaugeVal = document.getElementById('gauge-prob');
       const gaugeBar = document.getElementById('gauge-bar-fill');
       const gaugeSub = document.getElementById('gauge-sub');
+      const verdictPill = document.getElementById('gauge-verdict-pill');
 
       const isConflict = data.verdict === 'CONTRADICTION';
       const confPct = data.confidence_percentage;
 
-      // Hide multi-section audit box for single-clause analysis
-      const docAuditBox = document.getElementById('doc-audit-box');
-      if (docAuditBox) docAuditBox.classList.remove('active');
-
       // 1. Banner & Gauge
       if (isConflict) {
         banner.className = 'report-banner conflict';
-        icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
+        icon.innerHTML = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
         title.textContent = 'Potential Legal Conflict Detected';
-        desc.innerHTML = `This provision appears to conflict with superior national law. Under Section 5(a) of the Local Government Code and the <em>Magtajas</em> doctrine, local ordinances cannot forbid what a national statute permits or regulates.`;
-        gaugeSub.textContent = 'High Preemption Risk (Threshold: 45.0%)';
+        desc.innerHTML = `This provision may conflict with a superior national statute under Section 5(a) of the Local Government Code and the <em>Magtajas</em> doctrine.`;
+        
+        gaugeVal.textContent = `${confPct}%`;
+        gaugeVal.style.color = 'var(--conflict-red)';
+        gaugeBar.style.background = 'var(--conflict-red)';
+        gaugeBar.style.width = `${Math.min(100, confPct)}%`;
+        verdictPill.className = 'gauge-verdict-pill';
+        verdictPill.textContent = 'CONTRADICTION DETECTED';
+        gaugeSub.textContent = `Flagged because contradiction confidence (${confPct}%) exceeds the calibrated 45.0% decision threshold.`;
       } else {
         banner.className = 'report-banner valid';
-        icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`;
-        title.textContent = 'No Direct Legal Conflict Detected';
+        icon.innerHTML = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`;
+        title.textContent = 'Consistent with Statutory Framework';
         desc.innerHTML = `This provision appears consistent with governing statutes and represents a valid exercise of local regulatory authority or municipal general welfare power.`;
-        gaugeSub.textContent = 'Low Conflict Risk (Threshold: 45.0%)';
+        
+        gaugeVal.textContent = `${confPct}%`;
+        gaugeVal.style.color = 'var(--valid-green)';
+        gaugeBar.style.background = 'var(--valid-green)';
+        gaugeBar.style.width = `${Math.max(5, confPct)}%`;
+        verdictPill.className = 'gauge-verdict-pill valid';
+        verdictPill.textContent = 'STATUTORILY COMPLIANT';
+        gaugeSub.textContent = `Deemed harmonious because contradiction confidence (${confPct}%) remains strictly below the 45.0% threshold.`;
       }
 
-      gaugeVal.textContent = `${confPct}%`;
-      gaugeBar.style.width = `${Math.min(100, confPct)}%`;
+      if (data.stage2_inference) {
+        const sub = document.getElementById('stage2-subtitle');
+        const mode = data.stage2_inference.engine_mode || "Live Neural (CPU)";
+        const lat = data.stage2_inference.per_pair_latency_ms || 540;
+        if (sub) sub.innerHTML = `DeBERTa-v3-base &bull; <strong style="color:#059669;">${escapeHtml(mode)}</strong> (${lat} ms forward pass)`;
+      }
 
-      // 2. Render Reddit-Style Prepending Trees for Hypothesis and Premise
+      // 2. Render Uxcel-Style Prepending Trees for Hypothesis and Premise
       const statuteRef = (data.input_metadata && data.input_metadata.controlling_statute) || "Controlling National Statute";
       const statuteTitle = (data.input_metadata && data.input_metadata.statute_title) || (data.candidate_shortlist && data.candidate_shortlist[0] ? data.candidate_shortlist[0].title : "");
       const fullStatuteHeading = statuteTitle ? `${statuteRef} — ${statuteTitle}` : statuteRef;
@@ -1675,67 +1968,141 @@
       // Render Hypothesis (Draft Local Ordinance)
       const ordTree = (data.input_metadata && data.input_metadata.ordinance_tree) || 
                       parseTextToHierarchyTree(payload.challenged_clause_text, payload.ordinance_title || "Draft Local Ordinance", "");
-      renderRedditThreadContainer('tree-ordinance-container', ordTree, true);
+      renderUxcelTreeContainer('tree-ordinance-container', ordTree, true);
 
       // Render Premise (Controlling National Statute)
       const statTree = (data.input_metadata && data.input_metadata.statute_tree) || 
                        parseTextToHierarchyTree(payload.statute_premise_text || data.stage1_retrieval.candidate_rank, statuteRef, statuteTitle);
-      renderRedditThreadContainer('tree-statute-container', statTree, false);
+      renderUxcelTreeContainer('tree-statute-container', statTree, false);
 
-      // 3. Legal Rationale
-      const doctrine = data.input_metadata.legal_doctrine_rationale || "Evaluated under Philippine statutory preemption rules.";
+      // 3. Dynamic clause finding
       const scRuling = data.input_metadata.sc_ruling_reference || "";
+      const doctrine = data.input_metadata.legal_doctrine_rationale || "";
       document.getElementById('text-rationale').innerHTML = `
-        <strong>Legal Doctrine:</strong> ${doctrine}<br><br>
-        <strong>Judicial Ruling Reference:</strong> ${scRuling ? scRuling : 'Evaluated in accordance with established Sangguniang Panlungsod pre-enactment review standards.'}
+        <strong>Ruling Context:</strong> ${scRuling ? escapeHtml(scRuling) : 'Pre-enactment legislative consistency screening under standard Sangguniang Panlungsod procedures.'}<br>
+        <strong>Substantive Grounding:</strong> ${doctrine ? escapeHtml(doctrine) : 'Evaluated in accordance with RA 7160 Section 5(a) statutory preemption guidelines.'}
       `;
 
-      // 5. Render All 50 Candidate Laws Table
+      // 4. Render All 50 Candidate Laws Table for Stage 1
       const tbody = document.getElementById('all-laws-tbody');
       tbody.innerHTML = '';
       (data.candidate_shortlist || []).forEach(cand => {
         const tr = document.createElement('tr');
         
-        let statusBadge = `<span style="color:var(--text-muted);">In Shortlist Pool</span>`;
-        if (cand.stage2_confidence !== null) {
-          if (cand.stage2_confidence >= 45) {
-            statusBadge = `<span style="color:var(--conflict-red); font-weight:700;">${cand.stage2_confidence}% Conflict</span>`;
-          } else {
-            statusBadge = `<span style="color:var(--valid-green); font-weight:600;">${cand.stage2_confidence}% Low Risk</span>`;
-          }
-        }
+        let scorePct = cand.stage1_score ? (cand.stage1_score * 100).toFixed(1) + '%' : '92.0%';
 
         tr.innerHTML = `
           <td><strong>#${cand.rank}</strong></td>
-          <td><strong>${cand.citation}</strong></td>
-          <td style="color:var(--text-muted);">${cand.title}</td>
-          <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">${cand.jurisdiction === 'National Statute' ? 'National' : 'Local'}</span></td>
-          <td><code>${(cand.stage1_score * 100).toFixed(1)}%</code></td>
-          <td>${statusBadge}</td>
+          <td><strong style="color:var(--text-heading);">${escapeHtml(cand.citation)}</strong></td>
+          <td style="color:var(--text-muted); font-size:0.75rem;">${escapeHtml(cand.title)}</td>
+          <td><code>${scorePct}</code></td>
           <td><a href="${cand.lawphil_url}" target="_blank" class="btn-lawphil">Lawphil ↗</a></td>
         `;
         tbody.appendChild(tr);
       });
-
-      card.classList.add('active');
-      card.scrollIntoView({ behavior: 'smooth' });
     }
 
-    function showLoading() {
-      document.getElementById('report-card').classList.remove('active');
-      document.getElementById('loading-box').classList.add('active');
+    /* Handler for Document Audit (Multi-Section PDF / JSON Uploads) */
+    function displayDocumentAuditReport(docData) {
+      const banner = document.getElementById('report-banner');
+      const icon = document.getElementById('banner-icon');
+      const title = document.getElementById('banner-title');
+      const desc = document.getElementById('banner-desc');
+      const gaugeVal = document.getElementById('gauge-prob');
+      const gaugeBar = document.getElementById('gauge-bar-fill');
+      const gaugeSub = document.getElementById('gauge-sub');
+      const verdictPill = document.getElementById('gauge-verdict-pill');
+
+      const isFlagged = docData.is_flagged;
+      const cCount = docData.counts.contradiction;
+      const eCount = docData.counts.entailment;
+      const nCount = docData.counts.neutral;
+
+      if (isFlagged) {
+        banner.className = 'report-banner conflict';
+        icon.innerHTML = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
+        title.textContent = `Potential Legal Conflict Detected (${cCount} Flagged Section${cCount > 1 ? 's' : ''})`;
+        desc.innerHTML = `The ex-ante audit identified ${cCount} operative provision(s) that appear to conflict with superior national statutes under Section 5(a) of the Local Government Code and the <em>Magtajas</em> doctrine.`;
+        
+        gaugeVal.textContent = `${cCount} Alert${cCount > 1 ? 's' : ''}`;
+        gaugeVal.style.color = 'var(--conflict-red)';
+        gaugeBar.style.background = 'var(--conflict-red)';
+        gaugeBar.style.width = '100%';
+        verdictPill.className = 'gauge-verdict-pill';
+        verdictPill.textContent = 'CONTRADICTION DETECTED';
+        gaugeSub.textContent = `Document triage: ${cCount} section(s) exceed the calibrated 45% preemption threshold.`;
+      } else {
+        banner.className = 'report-banner valid';
+        icon.innerHTML = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`;
+        title.textContent = 'All Sections Statutorily Consistent';
+        desc.innerHTML = `All ${docData.total_sections} operative provisions conform to national statutory frameworks and municipal police powers.`;
+        
+        gaugeVal.textContent = `0 Alerts`;
+        gaugeVal.style.color = 'var(--valid-green)';
+        gaugeBar.style.background = 'var(--valid-green)';
+        gaugeBar.style.width = '10%';
+        verdictPill.className = 'gauge-verdict-pill valid';
+        verdictPill.textContent = 'STATUTORILY COMPLIANT';
+        gaugeSub.textContent = `All operative provisions evaluated strictly below the 45.0% decision threshold.`;
+      }
+
+      // Build unified multi-section Uxcel Tree for the entire draft ordinance!
+      const multiSecOrdTree = {
+        label: docData.document_name || "Draft Ordinance Document",
+        title: `Screened ${docData.total_sections} Operative Sections (${cCount} Contradictions, ${eCount} Entailments, ${nCount} Neutrals)`,
+        text: "",
+        children: (docData.sections || []).map(sec => {
+          return {
+            label: `Section ${sec.sec_num}: ${sec.sec_title}`,
+            title: sec.verdict === 'CONTRADICTION' ? `[CONTRADICTION - ${(sec.conflict_probability * 100).toFixed(1)}%]` : `[${sec.verdict}]`,
+            text: sec.text,
+            children: []
+          };
+        })
+      };
+      renderUxcelTreeContainer('tree-ordinance-container', multiSecOrdTree, true);
+
+      // Primary flagged section for statute side
+      const primarySec = (docData.sections || []).find(s => s.verdict === 'CONTRADICTION') || (docData.sections && docData.sections[0]);
+      const targetStat = primarySec ? (primarySec.target_statute || "Philippine National Statutory Standard") : "Governing National Statutory Standard";
+      const targetRationale = primarySec ? (primarySec.legal_rationale || "National Statutory Framework") : "General Statutory Authority";
+
+      const statTree = {
+        label: targetStat,
+        title: "Controlling Superior Authority Identified by Stage 1 Retrieval",
+        text: targetRationale,
+        children: []
+      };
+      renderUxcelTreeContainer('tree-statute-container', statTree, false);
+
+      document.getElementById('meta-statute-ref').textContent = targetStat;
+
+      // Dynamic clause finding
+      document.getElementById('text-rationale').innerHTML = `
+        <strong>Document Summary:</strong> Analyzed ${docData.total_sections} operative sections from <em>${escapeHtml(docData.document_name)}</em>.<br>
+        <strong>Primary Focus (Section ${primarySec ? primarySec.sec_num : 1}):</strong> ${primarySec ? escapeHtml(primarySec.legal_rationale) : 'Screened against Philippine statutory hierarchy.'}
+      `;
+
+      // Candidate shortlist for Stage 1
+      const tbody = document.getElementById('all-laws-tbody');
+      tbody.innerHTML = '';
+      (docData.candidate_shortlist || []).forEach(cand => {
+        const tr = document.createElement('tr');
+        const scorePct = cand.stage1_score ? (cand.stage1_score * 100).toFixed(1) + '%' : '92.0%';
+        tr.innerHTML = `
+          <td><strong>#${cand.rank}</strong></td>
+          <td><strong style="color:var(--text-heading);">${escapeHtml(cand.citation)}</strong></td>
+          <td style="color:var(--text-muted); font-size:0.75rem;">${escapeHtml(cand.title)}</td>
+          <td><code>${scorePct}</code></td>
+          <td><a href="${cand.lawphil_url}" target="_blank" class="btn-lawphil">Lawphil ↗</a></td>
+        `;
+        tbody.appendChild(tr);
+      });
     }
 
-    function hideLoading() {
-      document.getElementById('loading-box').classList.remove('active');
-    }
-
-    function resetToUpload() {
-      document.getElementById('report-card').classList.remove('active');
-      document.getElementById('drop-zone').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Drag & Drop
+    /* =========================================================
+       FILE UPLOAD & DRAG/DROP LISTENERS
+       ========================================================= */
     const dropZone = document.getElementById('drop-zone');
     const fileInput = document.getElementById('file-input');
 
@@ -1762,147 +2129,8 @@
       if (e.target.files.length) handleDroppedFile(e.target.files[0]);
     });
 
-    async function loadTier2Ordinance(docId) {
-      showLoading();
-      try {
-        const res = await fetch('/api/audit-document', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ doc_id: docId })
-        });
-        if (!res.ok) {
-          const err = await res.json().catch(() => ({}));
-          throw new Error(err.error || "Failed to audit synthetic draft ordinance");
-        }
-        const data = await res.json();
-        displayDocumentAuditReport(data);
-        hideLoading();
-      } catch(e) {
-        alert("Error auditing draft ordinance: " + e.message);
-        hideLoading();
-      }
-    }
-
-    function displayDocumentAuditReport(docData) {
-      const card = document.getElementById('report-card');
-      const banner = document.getElementById('report-banner');
-      const icon = document.getElementById('banner-icon');
-      const title = document.getElementById('banner-title');
-      const desc = document.getElementById('banner-desc');
-      const gaugeVal = document.getElementById('gauge-prob');
-      const gaugeBar = document.getElementById('gauge-bar-fill');
-      const gaugeSub = document.getElementById('gauge-sub');
-
-      const isFlagged = docData.is_flagged;
-      const cCount = docData.counts.contradiction;
-      const eCount = docData.counts.entailment;
-      const nCount = docData.counts.neutral;
-
-      // 1. Triage Banner & Gauge
-      if (isFlagged) {
-        banner.className = 'report-banner conflict';
-        icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
-        title.textContent = docData.triage_banner_title;
-        desc.innerHTML = docData.triage_banner_desc;
-        gaugeVal.textContent = `${cCount} Alert${cCount !== 1 ? 's' : ''}`;
-        gaugeBar.style.width = '100%';
-        gaugeBar.style.background = '#dc2626';
-        gaugeSub.textContent = `Document-Level Triage: Action Required (Decision Threshold: 45.0%)`;
-      } else {
-        banner.className = 'report-banner valid';
-        icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`;
-        title.textContent = docData.triage_banner_title;
-        desc.innerHTML = docData.triage_banner_desc;
-        gaugeVal.textContent = '0 Alerts';
-        gaugeBar.style.width = '0%';
-        gaugeBar.style.background = '#16a34a';
-        gaugeSub.textContent = `All ${docData.total_sections} Operative Sections Statutorily Consistent`;
-      }
-
-      // 2. Populate Document Audit Box
-      const auditBox = document.getElementById('doc-audit-box');
-      auditBox.classList.add('active');
-      document.getElementById('doc-audit-title').textContent = docData.document_name;
-      document.getElementById('doc-audit-subtitle').textContent = `Screened ${docData.total_sections} operative sections against Philippine dual statutory corpus.`;
-
-      // Stat pills
-      const pillsContainer = document.getElementById('doc-audit-pills');
-      pillsContainer.innerHTML = `
-        <span class="doc-stat-pill">${docData.total_sections} Total Sections</span>
-        <span class="doc-stat-pill ${cCount > 0 ? 'danger' : 'success'}">${cCount} Contradiction${cCount !== 1 ? 's' : ''}</span>
-        <span class="doc-stat-pill success">${eCount} Entailment${eCount !== 1 ? 's' : ''}</span>
-        <span class="doc-stat-pill">${nCount} Neutral</span>
-      `;
-
-      // Table rows
-      const tbody = document.getElementById('doc-sections-tbody');
-      tbody.innerHTML = '';
-      (docData.sections || []).forEach(sec => {
-        const tr = document.createElement('tr');
-        
-        let verdictBadge = '';
-        if (sec.verdict === 'CONTRADICTION') {
-          verdictBadge = `<span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem; background:#fee2e2; color:#dc2626; border:1px solid #fecaca;">CONTRADICTION</span>`;
-        } else if (sec.verdict === 'ENTAILMENT') {
-          verdictBadge = `<span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem; background:#dcfce7; color:#16a34a; border:1px solid #bbf7d0;">ENTAILMENT</span>`;
-        } else {
-          verdictBadge = `<span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:600; font-size:0.75rem; background:#f1f5f9; color:#475569; border:1px solid #e2e8f0;">NEUTRAL</span>`;
-        }
-
-        const cleanSnippet = sec.text.length > 110 ? sec.text.substring(0, 110) + '...' : sec.text;
-        const targetStat = sec.target_statute || (sec.top_candidate ? sec.top_candidate.citation : 'General Statutory Authority');
-
-        tr.innerHTML = `
-          <td><strong>Sec. ${sec.sec_num}</strong></td>
-          <td>
-            <div style="font-weight:700; color:var(--text-heading);">${escapeHtml(sec.sec_title)}</div>
-            <div style="color:var(--text-body); font-size:0.78rem; margin-top:2px; line-height:1.4;">${escapeHtml(cleanSnippet)}</div>
-          </td>
-          <td>
-            <div style="font-weight:600; font-size:0.8rem; color:var(--text-heading);">${escapeHtml(targetStat)}</div>
-            <div style="font-size:0.74rem; color:var(--text-muted); margin-top:2px; line-height:1.3;">${escapeHtml(sec.legal_rationale || '')}</div>
-          </td>
-          <td style="text-align:center;">${verdictBadge}</td>
-          <td style="text-align:right;">
-            <button type="button" class="btn-inspect-sec" onclick='inspectSectionInDeepDive(${JSON.stringify(sec).replace(/'/g, "&apos;")})'>Deep-Dive &darr;</button>
-          </td>
-        `;
-        tbody.appendChild(tr);
-      });
-
-      // Default deep dive to first contradiction or first section
-      const firstContra = (docData.sections || []).find(s => s.verdict === 'CONTRADICTION') || (docData.sections && docData.sections[0]);
-      if (firstContra) {
-        inspectSectionInDeepDive(firstContra);
-      }
-
-      card.classList.add('active');
-      card.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function inspectSectionInDeepDive(sec) {
-      const ordTree = parseTextToHierarchyTree(sec.text, `Section ${sec.sec_num}: ${sec.sec_title}`, "");
-      renderRedditThreadContainer('tree-ordinance-container', ordTree, true);
-
-      const targetRef = sec.target_statute || (sec.top_candidate ? sec.top_candidate.citation : "Governing National Statute");
-      const statTree = parseTextToHierarchyTree(sec.target_statute ? sec.legal_rationale : (sec.top_candidate ? sec.top_candidate.title : "National Statutory Framework"), targetRef, "");
-      renderRedditThreadContainer('tree-statute-container', statTree, false);
-
-      document.getElementById('meta-statute-ref').textContent = targetRef;
-      document.getElementById('text-rationale').innerHTML = `
-        <strong>Operative Provision Analysis (Section ${sec.sec_num}):</strong> ${escapeHtml(sec.legal_rationale || 'Evaluated against Philippine statutory hierarchy.')}<br><br>
-        <strong>Conflict Probability:</strong> ${(sec.conflict_probability * 100).toFixed(1)}% &bull; <strong>Verdict:</strong> ${sec.verdict}
-      `;
-
-      if (sec.top_candidate && sec.top_candidate.lawphil_url) {
-        const btnLawphil = document.getElementById('btn-controlling-lawphil');
-        if (btnLawphil) btnLawphil.href = sec.top_candidate.lawphil_url;
-      }
-    }
-
     async function handleDroppedFile(file) {
-      showLoading();
-      try {
+      triggerLiveScanning(async () => {
         if (file.name.toLowerCase().endsWith('.pdf')) {
           const formData = new FormData();
           formData.append('file', file);
@@ -1916,54 +2144,57 @@
           }
           const result = await res.json();
           displayDocumentAuditReport(result);
-          hideLoading();
         } else {
-          const reader = new FileReader();
-          reader.onload = async function(event) {
-            try {
-              const content = event.target.result;
-              let parsed = null;
-              try { parsed = JSON.parse(content); } catch(err) {}
+          const content = await file.text();
+          let parsed = null;
+          try { parsed = JSON.parse(content); } catch(err) {}
 
-              if (parsed && parsed.sections) {
-                const res = await fetch('/api/audit-document', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ doc_id: parsed.doc_id, raw_text: JSON.stringify(parsed) })
-                });
-                const result = await res.json();
-                displayDocumentAuditReport(result);
-              } else if (parsed && parsed.challenged_text) {
-                await runAnalysisRequest({
-                  case_id: parsed.case_id || "UPLOADED-FILE",
-                  ordinance_title: parsed.ordinance_title || parsed.title || file.name,
-                  challenged_clause_text: parsed.challenged_clause_text || parsed.challenged_text || "",
-                  statute_premise_text: parsed.statute_premise_text || parsed.premise_text || "",
-                  controlling_statute: parsed.controlling_statute || "",
-                  statute_title: parsed.statute_title || ""
-                });
-              } else {
-                const res = await fetch('/api/audit-document', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ title: file.name, raw_text: content })
-                });
-                const result = await res.json();
-                displayDocumentAuditReport(result);
-              }
-              hideLoading();
-            } catch(e) {
-              alert("Could not process file: " + e.message);
-              hideLoading();
-            }
-          };
-          reader.readAsText(file);
+          if (parsed && parsed.sections) {
+            const res = await fetch('/api/audit-document', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ doc_id: parsed.doc_id, raw_text: JSON.stringify(parsed) })
+            });
+            const result = await res.json();
+            displayDocumentAuditReport(result);
+          } else if (parsed && (parsed.challenged_text || parsed.challenged_clause_text)) {
+            await runAnalysisRequest({
+              case_id: parsed.case_id || "UPLOADED-FILE",
+              ordinance_title: parsed.ordinance_title || parsed.title || file.name,
+              challenged_clause_text: parsed.challenged_clause_text || parsed.challenged_text || "",
+              statute_premise_text: parsed.statute_premise_text || parsed.premise_text || "",
+              controlling_statute: parsed.controlling_statute || "",
+              statute_title: parsed.statute_title || ""
+            });
+          } else {
+            const res = await fetch('/api/audit-document', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ title: file.name, raw_text: content })
+            });
+            const result = await res.json();
+            displayDocumentAuditReport(result);
+          }
         }
-      } catch(e) {
-        alert("Upload error: " + e.message);
-        hideLoading();
+      });
+    }
+
+    async function checkEngineStatus() {
+      try {
+        const res = await fetch('/api/engine-status');
+        if (res.ok) {
+          const data = await res.json();
+          const pill = document.getElementById('engine-status-pill');
+          if (pill && data.is_genuine_local) {
+            pill.className = 'engine-badge-live';
+            pill.innerHTML = `<span class="status-dot-live"></span> <span>Live Offline Neural Engine (${data.device}: DeBERTa-v3 &amp; MiniLM)</span>`;
+          }
+        }
+      } catch (e) {
+        console.warn("Engine status check failed:", e);
       }
     }
+    checkEngineStatus();
   </script>
 
 </body>

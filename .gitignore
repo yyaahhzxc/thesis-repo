@@ -13,11 +13,13 @@ env/
 
 # Large Corpus Data & Scanned PDFs (Kept locally / on Google Drive)
 corpus/
+models/
 data/unified_dual_statutory_provisions*.jsonl
 output/*.jsonl
 output/*.pkl
 output/*.npy
 output/kaggle*/
+output/demo_local_statutory*
 output/embedding_progress.json
 output/gt350_retrieval_cache.json
 transcript_quality_report.csv
