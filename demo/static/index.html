@@ -142,7 +142,7 @@
     /* MAIN CONTAINER */
     main {
       flex: 1;
-      max-width: 1200px;
+      max-width: 1360px;
       width: 100%;
       margin: 0 auto;
       padding: 32px 20px 80px;
@@ -643,6 +643,8 @@
       line-height: 1.6;
       color: var(--text-body);
       min-height: 180px;
+      max-height: 540px;
+      overflow-y: auto;
       background: #fafbfc;
       flex: 1;
     }
@@ -840,37 +842,40 @@
     }
 
     /* =========================================================
-       SECTION 2: PIPELINE ARCHITECTURE (STAGE 1 LEFT vs STAGE 2 RIGHT)
+       UNIFIED DASHBOARD: MAIN PIPELINE SPLIT (STAGE 1 LEFT, STAGE 2 RIGHT)
        ========================================================= */
-    .pipeline-wrapper {
-      padding: 26px 28px;
+    .main-pipeline-split {
+      display: grid;
+      grid-template-columns: 410px 1fr;
+      gap: 20px;
+      padding: 24px 28px;
       background: #fafbfc;
       border-bottom: 1px solid var(--border-color);
+      align-items: stretch;
     }
 
-    .pipeline-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .pipeline-col {
+    /* STAGE 1 SIDEBAR CARD (LEFT) */
+    .stage1-sidebar-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 20px;
+      padding: 18px 20px;
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
     }
 
-    .pipeline-card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
+    .stage1-card-header {
+      margin-bottom: 12px;
       padding-bottom: 12px;
       border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
     }
 
     .pipeline-stage-badge {
@@ -890,46 +895,37 @@
       border-color: #fbcfe8;
     }
 
-    .pipeline-col-title {
-      font-size: 0.95rem;
-      font-weight: 700;
+    .stage1-card-title {
+      font-size: 0.98rem;
+      font-weight: 800;
       color: var(--text-heading);
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
-    .pipeline-col-subtitle {
+    .stage1-card-subtitle {
       font-size: 0.76rem;
       color: var(--text-muted);
+      margin-top: 3px;
     }
 
-    /* STAGE 1 METRICS & SHORTLIST TABLE */
-    .stage1-metrics-bar {
+    .stage1-meta-strip {
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .metric-pill {
-      font-size: 0.74rem;
-      font-weight: 600;
-      background: #f8fafc;
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      padding: 4px 8px;
-      color: var(--text-heading);
-    }
-
-    .shortlist-table-header {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      background: #f8fafc;
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
     }
 
-    .all-laws-container {
+    .shortlist-table-container {
       flex: 1;
-      max-height: 380px;
+      min-height: 480px;
+      max-height: 600px;
       overflow-y: auto;
       border: 1px solid var(--border-color);
       border-radius: 8px;
@@ -951,7 +947,7 @@
     }
 
     .laws-table th {
-      padding: 9px 10px;
+      padding: 8px 6px;
       font-weight: 700;
       color: var(--text-heading);
       border-bottom: 1px solid var(--border-color);
@@ -959,7 +955,7 @@
     }
 
     .laws-table td {
-      padding: 9px 10px;
+      padding: 8px 6px;
       border-bottom: 1px solid #f1f5f9;
       color: var(--text-body);
       vertical-align: middle;
@@ -969,58 +965,105 @@
       background: #f8fafc;
     }
 
-    /* STAGE 2 DECISION CARD */
-    .stage2-decision-card {
+    /* STAGE 2 MAIN CARD (RIGHT) */
+    .stage2-main-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stage2-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+    }
+
+    .stage2-header-left {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .stage2-card-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      line-height: 1.2;
+    }
+
+    .stage2-card-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* TOP RIGHT: XX% CONFIDENT GAUGE BOX */
+    .stage2-gauge-box {
       background: #f8fafc;
       border: 1px solid var(--border-color);
       border-radius: 10px;
-      padding: 14px 16px;
-      margin-bottom: 16px;
+      padding: 12px 16px;
+      width: 320px;
+      max-width: 100%;
+      flex-shrink: 0;
     }
 
-    .gauge-top-row {
+    .gauge-top-flex {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      gap: 10px;
       margin-bottom: 4px;
     }
 
-    .gauge-label {
-      font-size: 0.74rem;
+    .gauge-label-micro {
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--text-muted);
     }
 
-    .gauge-val {
-      font-size: 1.5rem;
+    .gauge-val-big {
+      font-size: 1.55rem;
       font-weight: 800;
       line-height: 1.1;
       color: var(--conflict-red);
     }
 
     .gauge-verdict-pill {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 4px 9px;
       border-radius: 20px;
       background: #fee2e2;
       color: #dc2626;
       border: 1px solid #fecaca;
+      white-space: nowrap;
     }
+
     .gauge-verdict-pill.valid {
       background: #dcfce7;
       color: #16a34a;
       border-color: #bbf7d0;
     }
 
-    .gauge-bar-track {
+    .gauge-bar-track-compact {
+      position: relative;
       height: 8px;
       background: #e2e8f0;
       border-radius: 4px;
-      overflow: hidden;
-      margin-top: 8px;
+      overflow: visible;
+      margin-top: 6px;
     }
 
     .gauge-bar-fill {
@@ -1030,47 +1073,86 @@
       background: var(--conflict-red);
     }
 
-    .gauge-explanation-text {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-      line-height: 1.4;
+    .threshold-marker-line {
+      position: absolute;
+      left: 45%;
+      top: -4px;
+      bottom: -4px;
+      width: 2px;
+      background: #dc2626;
+      z-index: 5;
     }
 
-    /* CONSISTENT LEGAL FINDINGS FLAVOR BOX */
-    .rationale-box {
-      flex: 1;
+    .gauge-scale-row {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      justify-content: space-between;
+      margin-top: 4px;
+      font-size: 0.68rem;
+      color: var(--text-muted);
     }
 
-    .rationale-title {
-      font-size: 0.86rem;
+    .threshold-tag {
       font-weight: 700;
+      color: #dc2626;
+    }
+
+    .gauge-sub-micro {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+
+    /* PROVISIONS INNER GRID (PREMISE LEFT, HYPOTHESIS RIGHT) */
+    .provisions-inner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      flex: 1;
+      align-items: stretch;
+    }
+
+    /* FLAVOR TEXT CARD (VERTICAL & HORIZONTAL STUFF) */
+    .flavor-text-card {
+      padding: 24px 28px;
+      background: #fafbfc;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .flavor-card-header {
+      font-size: 0.88rem;
+      font-weight: 800;
       color: var(--text-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 2px;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .flavor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
 
     .legal-flavor-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      padding: 10px 12px;
+      padding: 12px 14px;
       font-size: 0.8rem;
       line-height: 1.5;
     }
 
     .legal-flavor-card.vertical {
-      border-left: 3px solid #dc2626;
+      border-left: 4px solid #dc2626;
       background: #fffbfa;
     }
 
     .legal-flavor-card.horizontal {
-      border-left: 3px solid #2563eb;
+      border-left: 4px solid #2563eb;
       background: #f8fafc;
     }
 
@@ -1078,10 +1160,10 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--text-heading);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .flavor-dot {
@@ -1094,48 +1176,50 @@
 
     .flavor-body {
       color: var(--text-body);
-      font-size: 0.78rem;
-      line-height: 1.45;
+      font-size: 0.8rem;
+      line-height: 1.5;
     }
 
     .specific-finding-box {
       background: #f1f5f9;
       border-radius: 8px;
-      padding: 10px 12px;
+      padding: 12px 14px;
       border: 1px solid #e2e8f0;
+      margin-top: 14px;
     }
 
-    /* FOOTER ACTIONS */
-    .meta-footer {
+    /* BOTTOM ACTION CARD (CHECK ANOTHER FILE CENTERED) */
+    .bottom-action-card {
+      padding: 28px 24px;
       background: #ffffff;
-      padding: 18px 28px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
       gap: 12px;
     }
 
-    .btn-reset {
+    .btn-check-another-large {
       background: var(--brand-blue);
       color: #ffffff;
       border: none;
-      border-radius: 8px;
-      padding: 10px 22px;
-      font-size: 0.88rem;
-      font-weight: 600;
+      border-radius: 9px;
+      padding: 12px 32px;
+      font-size: 0.95rem;
+      font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.15s ease;
-      box-shadow: 0 2px 4px rgba(37,99,235,0.2);
+      gap: 8px;
+      box-shadow: 0 2px 6px rgba(37,99,235,0.25);
+      transition: all 0.18s ease;
     }
 
-    .btn-reset:hover {
-      background: var(--brand-blue-hover);
+    .btn-check-another-large:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.35);
     }
 
     /* FOOTER */
@@ -1166,21 +1250,30 @@
     }
 
     /* RESPONSIVE DESIGN (FOR TABLETS AND MOBILE VIEW) */
-    @media (max-width: 960px) {
-      .comparison-cols {
+    @media (max-width: 1024px) {
+      .main-pipeline-split {
         grid-template-columns: 1fr;
       }
-      .pipeline-grid {
+      .stage2-header-row {
+        flex-direction: column;
+      }
+      .stage2-gauge-box {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .provisions-inner-grid {
+        grid-template-columns: 1fr;
+      }
+      .flavor-grid {
         grid-template-columns: 1fr;
       }
       main {
         padding: 20px 14px 60px;
       }
-      .report-banner {
-        padding: 18px 20px;
-      }
-      .comparison-wrapper, .pipeline-wrapper, .meta-footer {
-        padding: 18px 20px;
+      .main-pipeline-split, .flavor-text-card, .bottom-action-card {
+        padding: 16px;
       }
     }
   </style>
@@ -1343,11 +1436,11 @@
          ========================================================= -->
     <div class="report-card" id="report-card">
       
-      <!-- STATUS BANNER -->
+      <!-- STATUS BANNER (COMPACT TOP ALERT STRIP) -->
       <div class="report-banner conflict" id="report-banner">
         <div class="banner-left">
           <div class="banner-icon" id="banner-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
               <line x1="12" y1="9" x2="12" y2="13"/>
               <line x1="12" y1="17" x2="12.01" y2="17"/>
@@ -1360,197 +1453,185 @@
             </div>
           </div>
         </div>
-
-        <div class="banner-action-right">
-          <button type="button" class="btn-check-another-top" onclick="resetToUpload()">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
-            Check Another File
-          </button>
-        </div>
       </div>
 
-      <!-- SECTION 1: SIDE-BY-SIDE PROVISION COMPARISON (HYPOTHESIS VS PREMISE) -->
-      <div class="comparison-wrapper">
-        <div class="section-header-row">
-          <div>
-            <div class="comparison-heading">Side-by-Side Provision Comparison (Ex-Ante Alignment)</div>
-            <div style="font-size:0.78rem; color:var(--text-muted); margin-top:2px;">
-              Provisions nested under Chapter 3 §3.2.2 hierarchical prepending &bull; <mark class="hl-ordinance">Yellow</mark> = Draft Prohibitions &bull; <mark class="hl-statute">Blue</mark> = Statutory Authority
-            </div>
-          </div>
-          <div>
-            <span class="alignment-badge">Stage 2 Aligned Pair</span>
-          </div>
-        </div>
+      <!-- 1. TOP MAIN SPLIT: STAGE 1 LIST (LEFT) vs STAGE 2 RESULTS (RIGHT) -->
+      <div class="main-pipeline-split">
 
-        <div class="comparison-cols">
-          <!-- Left: Draft Local Ordinance (Hypothesis) -->
-          <div class="doc-box">
-            <div class="doc-header">
-              <div>
-                <span id="label-ordinance" style="font-weight:700;">Draft Local Ordinance (Hypothesis)</span>
-                <span class="sub-chip">Local Scope</span>
-              </div>
-              <div style="display:flex; align-items:center; gap:6px;">
-                <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-ordinance-container', false)" title="Collapse all sections">Collapse All</button>
-                <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-ordinance-container', true)" title="Expand all sections">Expand All</button>
-              </div>
+        <!-- LEFT COLUMN: STAGE 1 LIST -->
+        <div class="stage1-sidebar-card">
+          <div class="stage1-card-header">
+            <div class="header-badge-row">
+              <span class="pipeline-stage-badge">STAGE 1</span>
+              <span class="pipeline-stage-badge" style="background:#f1f5f9; color:var(--text-muted); border-color:#cbd5e1;">176,421 Screened</span>
             </div>
-            <div class="doc-body" id="tree-ordinance-container">
-              <!-- Rendered via renderUxcelTreeContainer -->
-            </div>
+            <div class="stage1-card-title">Statutory Candidate Shortlist</div>
+            <div class="stage1-card-subtitle">all-MiniLM-L6-v2 + BM25 Hybrid Retrieval</div>
           </div>
 
-          <!-- Right: Controlling National Statute (Premise) -->
-          <div class="doc-box">
-            <div class="doc-header">
-              <div>
-                <span id="label-statute" style="font-weight:700;">Controlling National Statute (Premise)</span>
-                <span class="sub-chip national-chip">Superior Authority</span>
-              </div>
-              <div style="display:flex; align-items:center; gap:6px;">
-                <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-statute-container', false)" title="Collapse all sections">Collapse All</button>
-                <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-statute-container', true)" title="Expand all sections">Expand All</button>
-                <a id="btn-controlling-lawphil" href="#" target="_blank" class="btn-lawphil">Lawphil ↗</a>
-              </div>
-            </div>
-            <div class="doc-body" id="tree-statute-container">
-              <!-- Rendered via renderUxcelTreeContainer -->
-            </div>
+          <div class="stage1-meta-strip">
+            <span>Latency: 1.33 ms</span>
+            <span>•</span>
+            <span>Top-50 Safety Buffer</span>
+          </div>
+
+          <div class="shortlist-table-container">
+            <table class="laws-table">
+              <thead>
+                <tr>
+                  <th style="width: 44px;">Rank</th>
+                  <th style="width: 140px;">Citation</th>
+                  <th>Enactment Title</th>
+                  <th style="width: 65px;">Score</th>
+                  <th style="width: 60px;">Link</th>
+                </tr>
+              </thead>
+              <tbody id="all-laws-tbody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
           </div>
         </div>
-      </div>
 
-      <!-- SECTION 2: SIDE-BY-SIDE PIPELINE ARCHITECTURE (STAGE 1 ON LEFT vs STAGE 2 ON RIGHT) -->
-      <div class="pipeline-wrapper">
-        <div class="pipeline-grid">
+        <!-- RIGHT CONTAINER: STAGE 2 RESULTS -->
+        <div class="stage2-main-card">
 
-          <!-- LEFT COLUMN: STAGE 1 (Retrieval & Shortlisted Laws) -->
-          <div class="pipeline-col stage1-col">
-            <div class="pipeline-card-header">
-              <div class="pipeline-stage-badge">STAGE 1</div>
-              <div class="pipeline-title-group">
-                <div class="pipeline-col-title">Dual-Stream Hybrid Retrieval</div>
-                <div class="pipeline-col-subtitle">all-MiniLM-L6-v2 + BM25 over 176,421 Provisions</div>
+          <!-- STAGE 2 HEADER ROW (TITLE ON LEFT, CONFIDENCE BOX ON RIGHT) -->
+          <div class="stage2-header-row">
+            <div class="stage2-header-left">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                <span class="pipeline-stage-badge stage2-badge">STAGE 2</span>
+                <span class="stage2-card-title">Cross-Encoder NLI &amp; Conflict Triage</span>
+              </div>
+              <div class="stage2-card-subtitle" id="stage2-subtitle">
+                DeBERTa-v3-base • Live Neural (CPU) (alpha = 0.40, tau* = 0.45)
               </div>
             </div>
 
-            <div class="stage1-metrics-bar">
-              <span class="metric-pill">176,421 Provisions Screened</span>
-              <span class="metric-pill">Latency: 1.33 ms</span>
-              <span class="metric-pill">Top-50 Safety Buffer</span>
-            </div>
-
-            <div class="shortlist-table-header">
-              <span style="font-weight:700; font-size:0.84rem; color:var(--text-heading);">Statutory Candidate Shortlist</span>
-              <span style="font-size:0.74rem; color:var(--text-muted);">Scroll to view all 50 laws</span>
-            </div>
-
-            <div class="all-laws-container active">
-              <table class="laws-table">
-                <thead>
-                  <tr>
-                    <th style="width: 48px;">Rank</th>
-                    <th style="width: 175px;">Citation</th>
-                    <th>Enactment Title</th>
-                    <th style="width: 72px;">Score</th>
-                    <th style="width: 68px;">Source</th>
-                  </tr>
-                </thead>
-                <tbody id="all-laws-tbody">
-                  <!-- Injected via JavaScript -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- RIGHT COLUMN: STAGE 2 (NLI Cross-Encoder & Legal Findings) -->
-          <div class="pipeline-col stage2-col">
-            <div class="pipeline-card-header">
-              <div class="pipeline-stage-badge stage2-badge">STAGE 2</div>
-              <div class="pipeline-title-group">
-                <div class="pipeline-col-title">Cross-Encoder NLI &amp; Conflict Triage</div>
-                <div class="pipeline-col-subtitle" id="stage2-subtitle">DeBERTa-v3-base Champion (alpha = 0.40, tau* = 0.45)</div>
-              </div>
-            </div>
-
-            <!-- DECISION GAUGE BOX -->
-            <div class="stage2-decision-card">
-              <div class="gauge-top-row">
+            <!-- TOP RIGHT: XX% CONFIDENT BOX -->
+            <div class="stage2-gauge-box">
+              <div class="gauge-top-flex">
                 <div>
-                  <div class="gauge-label">Contradiction Confidence</div>
-                  <div class="gauge-val" id="gauge-prob">88.4%</div>
+                  <div class="gauge-label-micro">Contradiction Confidence</div>
+                  <div class="gauge-val-big" id="gauge-prob">88.4%</div>
                 </div>
                 <div class="gauge-verdict-pill" id="gauge-verdict-pill">
                   CONTRADICTION DETECTED
                 </div>
               </div>
-
-              <div class="gauge-bar-track" style="position: relative; margin-top: 10px; height: 9px;">
+              <div class="gauge-bar-track-compact">
                 <div class="gauge-bar-fill" id="gauge-bar-fill" style="width: 88.4%;"></div>
-                <div style="position: absolute; left: 45%; top: -5px; bottom: -5px; width: 2px; background: #dc2626; z-index: 5;" title="45% Calibrated Decision Threshold"></div>
+                <div class="threshold-marker-line" title="45% Calibrated Decision Threshold"></div>
               </div>
-              <div style="display:flex; justify-content:space-between; margin-top:5px; font-size:0.72rem; color:var(--text-muted);">
-                <span>0% (Harmonious)</span>
-                <span style="font-weight:700; color:#dc2626;">▲ 45% Decision Threshold</span>
-                <span>100% (Direct Conflict)</span>
+              <div class="gauge-scale-row">
+                <span>0%</span>
+                <span class="threshold-tag">▲ 45% Threshold</span>
+                <span>100%</span>
               </div>
-              <div class="gauge-explanation-text" id="gauge-sub">
-                System flags an alert because contradiction confidence exceeds the calibrated 45.0% cost-sensitive decision threshold.
+              <div class="gauge-sub-micro" id="gauge-sub">
+                Exceeds calibrated 45% preemption decision threshold.
+              </div>
+            </div>
+          </div>
+
+          <!-- INNER SIDE-BY-SIDE: PREMISE (LEFT) vs HYPOTHESIS (RIGHT) -->
+          <div class="provisions-inner-grid">
+
+            <!-- PREMISE: CONTROLLING NATIONAL STATUTE (LEFT) -->
+            <div class="doc-box premise-box">
+              <div class="doc-header">
+                <div>
+                  <span id="label-statute" style="font-weight:700;">Controlling National Statute (Premise)</span>
+                  <span class="sub-chip national-chip">Superior Authority</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:6px;">
+                  <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-statute-container', false)" title="Collapse all">Collapse All</button>
+                  <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-statute-container', true)" title="Expand all">Expand All</button>
+                  <a id="btn-controlling-lawphil" href="#" target="_blank" class="btn-lawphil">Lawphil ↗</a>
+                </div>
+              </div>
+              <div class="doc-body" id="tree-statute-container">
+                <!-- Rendered via renderUxcelTreeContainer -->
               </div>
             </div>
 
-            <!-- CONSISTENT LEGAL FINDINGS FLAVOR TEXT -->
-            <div class="rationale-box">
-              <div class="rationale-title">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/></svg>
-                <span>Legal Findings &amp; Jurisprudential Context</span>
-              </div>
-
-              <!-- Vertical Preemption Framework -->
-              <div class="legal-flavor-card vertical">
-                <div class="flavor-header">
-                  <span class="flavor-dot red-dot"></span>
-                  <span>Vertical Preemption (Magtajas Doctrine &amp; RA 7160 §5(a))</span>
+            <!-- HYPOTHESIS: DRAFT LOCAL ORDINANCE (RIGHT) -->
+            <div class="doc-box hypothesis-box">
+              <div class="doc-header">
+                <div>
+                  <span id="label-ordinance" style="font-weight:700;">Draft Local Ordinance (Hypothesis)</span>
+                  <span class="sub-chip">Local Scope</span>
                 </div>
-                <p class="flavor-body">
-                  Under Philippine constitutional law and Section 5(a) of the Local Government Code of 1991, municipal ordinances are subordinate to national legislation. As established in <em>Magtajas v. Pryce Properties Corp.</em> and <em>Mosqueda v. PBGEA</em>, an ordinance cannot forbid what a national statute expressly permits, nor permit what a statute forbids. Any local measure colliding with national law is ultra vires and void.
-                </p>
-              </div>
-
-              <!-- Horizontal Coherence Framework -->
-              <div class="legal-flavor-card horizontal">
-                <div class="flavor-header">
-                  <span class="flavor-dot blue-dot"></span>
-                  <span>Horizontal Coherence (Davao City Local Codification)</span>
+                <div style="display:flex; align-items:center; gap:6px;">
+                  <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-ordinance-container', false)" title="Collapse all">Collapse All</button>
+                  <button type="button" class="btn-tree-toggle" onclick="toggleAllUxcelNodes('tree-ordinance-container', true)" title="Expand all">Expand All</button>
                 </div>
-                <p class="flavor-body">
-                  Proposed local enactments must maintain statutory harmony with the 1,664 active Davao City local ordinances. Contradictory, overlapping, or uncoordinated local provisions risk unintentional implied repeals, departmental conflict, and legal ambiguity during administrative enforcement.
-                </p>
               </div>
-
-              <!-- Dynamic Clause Finding -->
-              <div class="specific-finding-box">
-                <div style="font-weight:700; font-size:0.78rem; color:var(--text-heading); margin-bottom:3px;">Operative Provision Analysis:</div>
-                <div id="text-rationale" style="font-size:0.82rem; color:var(--text-body); line-height:1.5;"></div>
+              <div class="doc-body" id="tree-ordinance-container">
+                <!-- Rendered via renderUxcelTreeContainer -->
               </div>
             </div>
 
           </div>
+
+        </div>
+
+      </div>
+
+      <!-- 2. MIDDLE FULL-WIDTH: FLAVOR TEXT (VERTICAL & HORIZONTAL STUFF) -->
+      <div class="flavor-text-card">
+        <div class="flavor-card-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+            <path d="M7 21h10"/>
+            <path d="M12 3v18"/>
+          </svg>
+          <span>Legal Findings &amp; Jurisprudential Context</span>
+        </div>
+
+        <div class="flavor-grid">
+          <!-- Vertical Preemption Framework -->
+          <div class="legal-flavor-card vertical">
+            <div class="flavor-header">
+              <span class="flavor-dot red-dot"></span>
+              <span>Vertical Preemption (Magtajas Doctrine &amp; RA 7160 §5(a))</span>
+            </div>
+            <p class="flavor-body">
+              Under Philippine constitutional law and Section 5(a) of the Local Government Code of 1991, municipal ordinances are subordinate to national legislation. As established in <em>Magtajas v. Pryce Properties Corp.</em> and <em>Mosqueda v. PBGEA</em>, an ordinance cannot forbid what a national statute expressly permits, nor permit what a statute forbids. Any local measure colliding with national law is ultra vires and void.
+            </p>
+          </div>
+
+          <!-- Horizontal Coherence Framework -->
+          <div class="legal-flavor-card horizontal">
+            <div class="flavor-header">
+              <span class="flavor-dot blue-dot"></span>
+              <span>Horizontal Coherence (Davao City Local Codification)</span>
+            </div>
+            <p class="flavor-body">
+              Proposed local enactments must maintain statutory harmony with the 1,664 active Davao City local ordinances. Contradictory, overlapping, or uncoordinated local provisions risk unintentional implied repeals, departmental conflict, and legal ambiguity during administrative enforcement.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dynamic Operative Clause Finding -->
+        <div class="specific-finding-box">
+          <div style="font-weight:700; font-size:0.78rem; color:var(--text-heading); margin-bottom:4px;">Operative Provision Analysis:</div>
+          <div id="text-rationale" style="font-size:0.82rem; color:var(--text-body); line-height:1.5;"></div>
         </div>
       </div>
 
-      <!-- FOOTER ACTIONS -->
-      <div class="meta-footer">
-        <div>
-          <span>Primary Controlling Citation: <strong id="meta-statute-ref">Presidential Decree No. 1144 §6</strong></span>
+      <!-- 3. BOTTOM FULL-WIDTH: CHECK ANOTHER FILE (CENTERED) -->
+      <div class="bottom-action-card">
+        <div style="margin-bottom: 8px; font-size: 0.82rem; color: var(--text-muted);">
+          Primary Controlling Citation: <strong id="meta-statute-ref">Presidential Decree No. 1144 §6</strong>
         </div>
-        <div>
-          <button type="button" class="btn-reset" onclick="resetToUpload()">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
-            Check Another File
-          </button>
-        </div>
+        <button type="button" class="btn-check-another-large" onclick="resetToUpload()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          Check Another File
+        </button>
       </div>
 
     </div>
@@ -1810,25 +1891,25 @@
       progressBar.style.width = '20%';
       stepText.textContent = '[1/4] Parsing draft ordinance text & extracting operative section boundaries...';
 
-      // Step 2: 400ms
+      // Step 2: 500ms
       setTimeout(() => {
         progressBar.style.width = '55%';
         stepText.textContent = '[2/4] Stage 1: Screening 176,421 provisions via MiniLM + BM25 hybrid index...';
-      }, 400);
+      }, 500);
 
-      // Step 3: 900ms
+      // Step 3: 1100ms
       setTimeout(() => {
-        progressBar.style.width = '82%';
-        stepText.textContent = '[3/4] Stage 2: Cross-Encoder NLI inference & Magtajas preemption rule check...';
-      }, 900);
+        progressBar.style.width = '80%';
+        stepText.textContent = '[3/4] Stage 2: Cross-Encoder NLI inference (DeBERTa-v3) & preemption check...';
+      }, 1100);
 
-      // Step 4: 1300ms
+      // Step 4: 1700ms
       setTimeout(() => {
-        progressBar.style.width = '96%';
-        stepText.textContent = '[4/4] Synthesizing ex-ante legal conflict audit report...';
-      }, 1300);
+        progressBar.style.width = '95%';
+        stepText.textContent = '[4/4] Evaluating Magtajas preemption doctrine & intra-jurisdictional coherence...';
+      }, 1700);
 
-      // Step 5: 1600ms -> Finish and reveal report
+      // Step 5: 2300ms -> Finish and reveal report
       setTimeout(async () => {
         progressBar.style.width = '100%';
         try {
@@ -1840,7 +1921,7 @@
           alert("Error during audit: " + err.message);
           resetToUpload();
         }
-      }, 1600);
+      }, 2300);
     }
 
     /* Reset to file upload view */
