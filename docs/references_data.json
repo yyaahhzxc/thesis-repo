@@ -209,8 +209,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/nunez2026pomi.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -990,8 +990,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/republic1987executive.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1000,7 +1000,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Executive%20Order%20No.%20292%20%5BAdministrative%20Code%20of%201987%5D%2C%20Book%20VII%2C%20Chapter%201%3A%20General%20Provisions",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Executive%20Order%20No.%20292%20%5BAdministrative%20Code%20of%201987%5D%2C%20Book%20VII%2C%20Chapter%201%3A%20General%20Provisions&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@misc{republic1987executive,\n  title={Executive Order No. 292 [Administrative Code of 1987], Book {VII}, Chapter 1: General Provisions},\n  author={{Republic of the Philippines}},\n  year={1987},\n  month={July},\n  day={25},\n  howpublished={Official Gazette of the Republic of the Philippines},\n  note={Accessed: 2026-03-21},\n  url = {https://www.officialgazette.gov.ph/1987/07/25/executive-order-no-292-book-viichapter-1-general-provisions/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{republic1987executive,\n  title={Executive Order No. 292 [Administrative Code of 1987], Book {VII}, Chapter 1: General Provisions},\n  author={{Republic of the Philippines}},\n  year={1987},\n  month={July},\n  day={25},\n  howpublished={Official Gazette of the Republic of the Philippines},\n  note={Accessed: 2026-03-21},\n  url = {https://www.officialgazette.gov.ph/1987/07/25/executive-order-no-292-book-viichapter-1-general-provisions/},\n  urldate = {2026-09-26},,\n  file = {docs/references/republic1987executive.pdf}\n}"
   },
   {
     "citekey": "supreme1985tanada",
@@ -1044,7 +1044,7 @@
     "venue": "Philippine News Agency",
     "category": "Computer Science & NLP",
     "doi": "",
-    "url": "https://www.pna.gov.ph/articles/1257080",
+    "url": "https://www.gmanetwork.com/news/topstories/nation/956597/chel-diokno-bill-translation-to-filipino-laws/story/",
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
@@ -1052,8 +1052,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/reganit2025diokno.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -1062,7 +1062,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Diokno%20Files%20Bill%20to%20Break%20Language%20Barriers%20in%20PH%20Laws",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Diokno%20Files%20Bill%20to%20Break%20Language%20Barriers%20in%20PH%20Laws&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@misc{reganit2025diokno,\n  title        = {Diokno Files Bill to Break Language Barriers in {PH} Laws},\n  author       = {Reganit, Jose Cielito},\n  year         = {2025},\n  month        = {August},\n  howpublished = {Philippine News Agency},\n  url          = {https://www.pna.gov.ph/articles/1257080},\n  urldate      = {2026-09-26},\n  note         = {Report on House Bill No. 3863 (Batas sa Sariling Wika Act)},\n}"
+    "raw_bib": "@misc{reganit2025diokno,\n  title        = {Diokno Files Bill to Break Language Barriers in {PH} Laws},\n  author       = {Reganit, Jose Cielito},\n  year         = {2025},\n  month        = {August},\n  howpublished = {Philippine News Agency},\n  note         = {Report on House Bill No. 3863 (Batas sa Sariling Wika Act)},\n  url = {https://www.gmanetwork.com/news/topstories/nation/956597/chel-diokno-bill-translation-to-filipino-laws/story/},\n  urldate = {2026-10-08},\n  file = {docs/references/reganit2025diokno.pdf}\n}"
   },
   {
     "citekey": "maxilom2008semantic",
@@ -1656,11 +1656,11 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 16:13:16",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/vitali2007towards.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Towards%20a%20country-independent%20data%20format%3A%20the%20Akoma%20Ntoso%20experience%22%20Fabio%20Vitali",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Towards%20a%20country-independent%20data%20format%3A%20the%20Akoma%20Ntoso%20experience",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Towards%20a%20country-independent%20data%20format%3A%20the%20Akoma%20Ntoso%20experience",
@@ -4457,11 +4457,11 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 14:17:20",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/philippines2018ra11032.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018%22%20Government%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Republic%20Act%20No.%2011032%3A%20Ease%20of%20Doing%20Business%20and%20Efficient%20Government%20Service%20Delivery%20Act%20of%202018",
@@ -4520,8 +4520,8 @@
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/officialgazette.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -4530,7 +4530,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Official%20Gazette%20of%20the%20Republic%20of%20the%20Philippines",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Official%20Gazette%20of%20the%20Republic%20of%20the%20Philippines&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@electronic{officialgazette,\n  title        = {Official Gazette of the Republic of the Philippines},\n  author       = {{Government of the Philippines}},\n  year         = {2026},\n  note         = {Accessed: 2026-04-05},\n  url = {https://www.officialgazette.gov.ph/},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@electronic{officialgazette,\n  title        = {Official Gazette of the Republic of the Philippines},\n  author       = {{Government of the Philippines}},\n  year         = {2026},\n  note         = {Accessed: 2026-04-05},\n  url = {https://www.officialgazette.gov.ph/},\n  urldate = {2026-10-08}\n}"
   },
   {
     "citekey": "act453_1902",
@@ -4551,8 +4551,8 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/act453_1902.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -4561,7 +4561,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Act%20No.%20453%3A%20An%20Act%20Providing%20for%20the%20Publication%20by%20the%20Insular%20Government%20of%20an%20Official%20Gazette%20Under%20the%20General%20Direction%20of%20the%20Department%20of%20Public%20Instruction",
-    "raw_bib": "@misc{act453_1902,\n  title        = {Act No. 453: An Act Providing for the Publication by the Insular Government of an Official Gazette Under the General Direction of the Department of Public Instruction},\n  author       = {{Philippine Commission}},\n  year         = {1902},\n  month        = {September},\n  day          = {2},\n  howpublished = {Supreme Court E-Library},\n  url = {https://lawphil.net/statutes/acts/act1902/act_453_1902.html},\n  urldate = {2026-10-06}\n}"
+    "raw_bib": "@misc{act453_1902,\n  title        = {Act No. 453: An Act Providing for the Publication by the Insular Government of an Official Gazette Under the General Direction of the Department of Public Instruction},\n  author       = {{Philippine Commission}},\n  year         = {1902},\n  month        = {September},\n  day          = {2},\n  howpublished = {Supreme Court E-Library},\n  url = {https://lawphil.net/statutes/acts/act1902/act_453_1902.html},\n  urldate = {2026-10-08},\n  file = {docs/references/act453_1902.pdf}\n}"
   },
   {
     "citekey": "ca638_1941",
@@ -4582,17 +4582,17 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 16:00:40",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/ca638_1941.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette%22%20National%20Assembly%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Commonwealth%20Act%20No.%20638%3A%20An%20Act%20to%20Provide%20for%20the%20Uniform%20Publication%20and%20Distribution%20of%20the%20Official%20Gazette",
-    "raw_bib": "@misc{ca638_1941,\n  title        = {Commonwealth Act No. 638: An Act to Provide for the Uniform Publication and Distribution of the Official Gazette},\n  author       = {{National Assembly of the Philippines}},\n  year         = {1941},\n  month        = {June},\n  day          = {10},\n  howpublished = {Supreme Court E-Library},\n  url = {https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/29/36850},\n  urldate = {2026-10-06}\n}"
+    "raw_bib": "@misc{ca638_1941,\n  title        = {Commonwealth Act No. 638: An Act to Provide for the Uniform Publication and Distribution of the Official Gazette},\n  author       = {{National Assembly of the Philippines}},\n  year         = {1941},\n  month        = {June},\n  day          = {10},\n  howpublished = {Supreme Court E-Library},\n  url = {https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/29/36850},\n  urldate = {2026-10-06},\n  file = {docs/references/ca638_1941.pdf}\n}"
   },
   {
     "citekey": "hrep2023legis",
@@ -4613,11 +4613,11 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 16:00:36",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/hrep2023legis.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Legislative%20Information%20System%20%28LEGIS%29%20Open%20Data%20API%22%20House%20of%20Representatives%20of%20the%20Philippines",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Legislative%20Information%20System%20%28LEGIS%29%20Open%20Data%20API",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Legislative%20Information%20System%20%28LEGIS%29%20Open%20Data%20API",
@@ -4737,11 +4737,11 @@
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 16:00:32",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/spdavao2026.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City%22%20Sangguniang%20Panlungsod%20of%20Davao%20City",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Official%20Website%20of%20the%20Sangguniang%20Panlungsod%20of%20Davao%20City",
@@ -5611,11 +5611,11 @@
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 15:56:50",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/seo2025sliding.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Sliding%20Window%20Technique%20and%20Algorithm%20in%20NLP%22%20Holistic%20SEO",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Sliding%20Window%20Technique%20and%20Algorithm%20in%20NLP",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Sliding%20Window%20Technique%20and%20Algorithm%20in%20NLP",
@@ -6732,7 +6732,7 @@
     "eprint": "",
     "direct_pdf_url": "",
     "is_cited": true,
-    "citation_count": 5,
+    "citation_count": 6,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex",
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
@@ -7574,11 +7574,11 @@
       "CS_Undergraduate_Thesis_Template/chapters/introduction.tex",
       "CS_Undergraduate_Thesis_Template/chapters/literature_review.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 15:57:17",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/kelsen1967pure.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Pure%20Theory%20of%20Law%22%20Kelsen%2C%20Hans",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Pure%20Theory%20of%20Law",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Pure%20Theory%20of%20Law",
@@ -7851,8 +7851,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/scp2008smartvdavao.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -7861,7 +7861,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Smart%20Communications%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20155491%29",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Smart%20Communications%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20155491%29&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Smart%20Communications%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20155491%29",
-    "raw_bib": "@misc{scp2008smartvdavao,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Smart Communications, Inc. v. City of Davao (G.R. No. 155491)}},\n  howpublished = {Supreme Court Reports Annotated (565 SCRA 237; Res. 593 SCRA 395)},\n  year         = {2008},\n  keywords     = {jurisprudence, davao_city_ordinance, local_franchise_tax, tax_exemption},\n  url = {https://lawphil.net/judjuris/juri2008/sep2008/gr_155491_2008.html},\n  urldate = {2026-09-26},\n}"
+    "raw_bib": "@misc{scp2008smartvdavao,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Smart Communications, Inc. v. City of Davao (G.R. No. 155491)}},\n  howpublished = {Supreme Court Reports Annotated (565 SCRA 237; Res. 593 SCRA 395)},\n  year         = {2008},\n  keywords     = {jurisprudence, davao_city_ordinance, local_franchise_tax, tax_exemption},\n  url = {https://lawphil.net/judjuris/juri2008/sep2008/gr_155491_2008.html},\n  urldate = {2026-09-26},,\n  file = {docs/references/scp2008smartvdavao.pdf}\n}"
   },
   {
     "citekey": "scp2017mindanaoshopping",
@@ -7942,8 +7942,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/scam2012paper.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -7952,7 +7952,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Administrative%20Matter%20No.%2011-9-4-SC%3A%20Efficient%20Use%20of%20Paper%20Rule",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Administrative%20Matter%20No.%2011-9-4-SC%3A%20Efficient%20Use%20of%20Paper%20Rule&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Administrative%20Matter%20No.%2011-9-4-SC%3A%20Efficient%20Use%20of%20Paper%20Rule",
-    "raw_bib": "@misc{scam2012paper,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Administrative Matter No. 11-9-4-SC: Efficient Use of Paper Rule}},\n  howpublished = {Supreme Court En Banc Resolution},\n  year         = {2012},\n  month        = {November},\n  keywords     = {court_rule, legal_formatting, paper_size, margins},\n  url = {https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/69189},\n  urldate = {2026-10-06}\n}"
+    "raw_bib": "@misc{scam2012paper,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Administrative Matter No. 11-9-4-SC: Efficient Use of Paper Rule}},\n  howpublished = {Supreme Court En Banc Resolution},\n  year         = {2012},\n  month        = {November},\n  keywords     = {court_rule, legal_formatting, paper_size, margins},\n  url = {https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/69189},\n  urldate = {2026-10-06},\n  file = {docs/references/scam2012paper.pdf}\n}"
   },
   {
     "citekey": "scp2004batangascatv",
@@ -7971,8 +7971,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/scp2004batangascatv.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -7981,7 +7981,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Batangas%20CATV%2C%20Inc.%20v.%20Court%20of%20Appeals%20%28G.R.%20No.%20138810%29",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Batangas%20CATV%2C%20Inc.%20v.%20Court%20of%20Appeals%20%28G.R.%20No.%20138810%29&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Batangas%20CATV%2C%20Inc.%20v.%20Court%20of%20Appeals%20%28G.R.%20No.%20138810%29",
-    "raw_bib": "@misc{scp2004batangascatv,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Batangas CATV, Inc. v. Court of Appeals (G.R. No. 138810)}},\n  howpublished = {Supreme Court Reports Annotated (441 SCRA 530)},\n  year         = {2004},\n  keywords     = {jurisprudence, statutory_preemption, telecommunications, ntc_jurisdiction},\n  url = {https://lawphil.net/judjuris/juri2004/sep2004/gr_138810_2004.html},\n  urldate = {2026-10-06}\n}"
+    "raw_bib": "@misc{scp2004batangascatv,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Batangas CATV, Inc. v. Court of Appeals (G.R. No. 138810)}},\n  howpublished = {Supreme Court Reports Annotated (441 SCRA 530)},\n  year         = {2004},\n  keywords     = {jurisprudence, statutory_preemption, telecommunications, ntc_jurisdiction},\n  url = {https://lawphil.net/judjuris/juri2004/sep2004/gr_138810_2004.html},\n  urldate = {2026-10-06},\n  file = {docs/references/scp2004batangascatv.pdf}\n}"
   },
   {
     "citekey": "scp2001pldtvdavao",
@@ -8000,8 +8000,8 @@
     "is_cited": false,
     "citation_count": 0,
     "cited_in_files": [],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/scp2001pldtvdavao.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -8010,7 +8010,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Philippine%20Long%20Distance%20Telephone%20Company%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20143867%29",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Philippine%20Long%20Distance%20Telephone%20Company%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20143867%29&rows=1",
     "lawphil_url": "https://www.google.com/search?q=site%3Alawphil.net+Philippine%20Long%20Distance%20Telephone%20Company%2C%20Inc.%20v.%20City%20of%20Davao%20%28G.R.%20No.%20143867%29",
-    "raw_bib": "@misc{scp2001pldtvdavao,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Philippine Long Distance Telephone Company, Inc. v. City of Davao (G.R. No. 143867)}},\n  howpublished = {Supreme Court Reports Annotated (363 SCRA 522; Res. 399 SCRA 392)},\n  year         = {2001},\n  keywords     = {jurisprudence, davao_city_ordinance, local_franchise_tax, tax_exemption},\n  url = {https://lawphil.net/judjuris/juri2001/aug2001/gr_143867_2001.html},\n  urldate = {2026-10-06}\n}"
+    "raw_bib": "@misc{scp2001pldtvdavao,\n  author       = {{Supreme Court of the Philippines}},\n  title        = {{Philippine Long Distance Telephone Company, Inc. v. City of Davao (G.R. No. 143867)}},\n  howpublished = {Supreme Court Reports Annotated (363 SCRA 522; Res. 399 SCRA 392)},\n  year         = {2001},\n  keywords     = {jurisprudence, davao_city_ordinance, local_franchise_tax, tax_exemption},\n  url = {https://lawphil.net/judjuris/juri2001/aug2001/gr_143867_2001.html},\n  urldate = {2026-10-06},\n  file = {docs/references/scp2001pldtvdavao.pdf}\n}"
   },
   {
     "citekey": "spdavao2007ord0310",
@@ -8405,11 +8405,11 @@
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
       "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 15:57:07",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/paruchuri2024surya.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection%22%20Vikram%20Paruchuri",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Surya%3A%20Multilingual%20Document%20OCR%2C%20Layout%20Analysis%2C%20and%20Line%20Detection",
@@ -8501,11 +8501,11 @@
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex",
       "CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 15:57:05",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/google2024documentai.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview%22%20Google%20Cloud",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Document%20AI%20and%20Cloud%20Vision%20API%20Architecture%20Overview",
@@ -8742,16 +8742,16 @@
     "venue": "The SMART Retrieval System: Experiments in Automatic Document Processing",
     "category": "Computer Science & NLP",
     "doi": "",
-    "url": "",
+    "url": "https://sigir.org/files/museum/pub-08/XXIII-1.pdf",
     "eprint": "",
-    "direct_pdf_url": "",
+    "direct_pdf_url": "https://sigir.org/files/museum/pub-08/XXIII-1.pdf",
     "is_cited": true,
     "citation_count": 1,
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/rocchio1971relevance.pdf",
     "flagged": false,
     "flag_reason": "",
     "flag_timestamp": "",
@@ -8760,7 +8760,7 @@
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Relevance%20Feedback%20in%20Information%20Retrieval",
     "crossref_search_url": "https://api.crossref.org/works?query.title=Relevance%20Feedback%20in%20Information%20Retrieval&rows=1",
     "lawphil_url": "",
-    "raw_bib": "@incollection{rocchio1971relevance,\n  title     = {Relevance Feedback in Information Retrieval},\n  author    = {Rocchio, J. J.},\n  booktitle = {The SMART Retrieval System: Experiments in Automatic Document Processing},\n  editor    = {Salton, Gerard},\n  pages     = {313--323},\n  publisher = {Prentice-Hall},\n  address   = {Englewood Cliffs, NJ},\n  year      = {1971}\n}"
+    "raw_bib": "@incollection{rocchio1971relevance,\n  title     = {Relevance Feedback in Information Retrieval},\n  author    = {Rocchio, J. J.},\n  booktitle = {The SMART Retrieval System: Experiments in Automatic Document Processing},\n  editor    = {Salton, Gerard},\n  pages     = {313--323},\n  publisher = {Prentice-Hall},\n  address   = {Englewood Cliffs, NJ},\n  year      = {1971},\n  file = {docs/references/rocchio1971relevance.pdf},\n  url = {https://sigir.org/files/museum/pub-08/XXIII-1.pdf},\n  urldate = {2026-10-08}\n}"
   },
   {
     "citekey": "bisong2019kaggle",
@@ -8812,11 +8812,11 @@
     "cited_in_files": [
       "CS_Undergraduate_Thesis_Template/chapters/methodology.tex"
     ],
-    "has_local_pdf": false,
-    "local_pdf_path": "",
-    "flagged": true,
-    "flag_reason": "PDF unobtainable - consider replacing source or revising citing text",
-    "flag_timestamp": "2026-10-06 15:57:12",
+    "has_local_pdf": true,
+    "local_pdf_path": "docs/references/kaggle2026.pdf",
+    "flagged": false,
+    "flag_reason": "",
+    "flag_timestamp": "",
     "google_search_url": "https://www.google.com/search?q=%22Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure%22%20Kaggle%20Inc.",
     "google_scholar_url": "https://scholar.google.com/scholar?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
     "semantic_scholar_url": "https://www.semanticscholar.org/search?q=Kaggle%3A%20Machine%20Learning%20and%20Data%20Science%20Cloud%20Infrastructure",
