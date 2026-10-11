@@ -1,126 +1,112 @@
 {
   "doc_id": "DRAFT-ORD-2026-10",
-  "title": "AN ORDINANCE AMENDING THE REVENUE CODE OF DAVAO CITY, REGULATING BUSINESS TAX ON COMMERCIAL ENTERPRISES, AND PRESCRIBING LOCAL TAX ADMINISTRATION",
+  "title": "AN ORDINANCE AMENDING CERTAIN PROVISIONS OF THE 2005 REVENUE CODE OF DAVAO CITY, ADJUSTING REGULATORY FEES, LEVYING TAXES ON CERTAIN CORPORATE ACTIVITIES AND PROPERTIES, AND FOR OTHER PURPOSES",
   "proposed_ordinance_no": "Proposed Ordinance No. 2026-10, Series of 2026",
   "committee": "Committee on Ways and Means, Sangguniang Panlungsod",
-  "physical_specs": {
-    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
-    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
-    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
-    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
-  },
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be known as the 'Davao City Revenue Code Amendment on Commercial Business Taxation of 2026'.",
+      "text": "This Ordinance shall be known and cited as the '2026 Omnibus Revenue Code Amendments Ordinance of Davao City'.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard title provision."
+      "legal_rationale": "Standard municipal title clause modeled after Ord. 000030-07."
     },
     {
       "sec_num": 2,
-      "sec_title": "DECLARATION OF FISCAL POLICY",
-      "text": "The City Government exercises its constitutional power to create its own sources of revenue, ensuring fair taxation within statutory limits under Republic Act No. 7160.",
+      "sec_title": "DECLARATION OF POLICY",
+      "text": "Under Section 129 and Section 151 of Republic Act No. 7160 (The Local Government Code of 1991), the City of Davao is authorized to create its own sources of revenues, levy taxes, fees, and charges for public purposes, and adjust its revenue schedules to finance basic public services.\n\nIt is the policy of the City Government of Davao to maintain an equitable, progressive, and efficient revenue collection system that supports infrastructure and social development while remaining strictly within the statutory taxing powers granted by law.",
       "label": "Entailment",
-      "target_statute": "1987 Constitution Art. X §5; Republic Act No. 7160 §129",
-      "legal_rationale": "Valid exercise of constitutional and statutory local taxing authority."
+      "target_statute": "Republic Act No. 7160 §129; Republic Act No. 7160 §151",
+      "legal_rationale": "Valid exercise of local taxing authority under RA 7160 §129 and §151."
     },
     {
       "sec_num": 3,
-      "sec_title": "DEFINITION OF TERMS",
-      "text": "'Business' refers to commercial activity for profit. 'Gross Sales or Receipts' refers to the total amount received from merchandise sales or services.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Adapts Section 131 definitions from RA 7160."
+      "sec_title": "AMENDMENT TO FIXED REGULATORY PERMIT FEES",
+      "text": "Section 45 of the 2005 Revenue Code of Davao City is hereby amended to adjust the annual regulatory permit fees on commercial establishments to reflect the reasonable administrative cost of regulation and inspection:\n\n(a) Wholesale and retail merchants with capital of more than P500,000: One Thousand Pesos (Php 1,000.00);\n\n(b) Manufacturing and industrial processing plants: Two Thousand Five Hundred Pesos (Php 2,500.00);\n\n(c) Commercial banks and financial intermediaries: Three Thousand Pesos (Php 3,000.00).",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §147",
+      "legal_rationale": "Valid adjustment of municipal regulatory fees under RA 7160 §147."
     },
     {
       "sec_num": 4,
-      "sec_title": "GRADUATED BUSINESS TAX ON RETAIL MERCHANTS",
-      "text": "Retail merchants with gross sales exceeding Four Hundred Thousand Pesos (P400,000.00) shall pay a local business tax not exceeding one percent (1%) of gross annual receipts.",
+      "sec_title": "ADJUSTMENT OF SANITATION AND HEALTH INSPECTION FEES",
+      "text": "Section 52 of the 2005 Revenue Code of Davao City is hereby amended to prescribe updated annual sanitary inspection fees for all food handling and hospitality businesses operating in the city.\n\nAll food establishments, restaurants, and bakeries shall pay an annual sanitary inspection fee of Three Hundred Pesos (Php 300.00) to cover the cost of hygiene certification by the City Health Office.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §143(a)",
-      "legal_rationale": "Directly complies with the statutory business tax ceiling for cities under Section 143(a) of RA 7160."
+      "target_statute": "Republic Act No. 7160 §147",
+      "legal_rationale": "Valid municipal inspection fee under RA 7160 §147."
     },
     {
       "sec_num": 5,
-      "sec_title": "TAX ON FINANCIAL INSTITUTIONS AND BANKS",
-      "text": "Commercial banks, banking institutions, and offshore banking units authorized by the Bangko Sentral ng Pilipinas shall be assessed a business tax of fifty percent (50%) of one percent (1%) on gross receipts.",
+      "sec_title": "MAYOR'S PERMIT ON SPECIAL BUSINESS OCCUPATIONS",
+      "text": "Section 61 of the 2005 Revenue Code of Davao City is hereby amended to require individuals engaged in specialized commercial trades, security agency operations, and private warehouse leasing to secure an annual Mayor's Permit clearance prior to operation in Davao City.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §143(f)",
-      "legal_rationale": "Directly implements statutory tax rate on licensed banks under RA 7160 Section 143(f)."
+      "target_statute": "Republic Act No. 7160 §151",
+      "legal_rationale": "Valid exercise of municipal licensing powers."
     },
     {
       "sec_num": 6,
-      "sec_title": "BUSINESS TAX ON CORPORATE HOLDING DIVIDENDS",
-      "text": "All corporate holding companies owning shares in manufacturing or utility firms are hereby classified as 'Non-Bank Financial Intermediaries' and shall pay a two percent (2%) local business tax on all passive dividend earnings and interest income received from corporate stock holdings, regardless of whether the holding company is licensed as a financial intermediary by the Bangko Sentral ng Pilipinas.",
+      "sec_title": "LEVY ON CORPORATE DIVIDENDS",
+      "text": "Section 68 of the 2005 Revenue Code of Davao City is hereby amended to levy an annual business tax of two percent (2%) on the gross amount of dividends and investment yields distributed by corporations and holding companies maintaining their principal office or branch in Davao City.\n\nThe City Treasurer is authorized to assess and collect this tax from corporate entities at the end of each fiscal dividend declaration period.",
       "label": "Contradiction",
-      "target_statute": "Republic Act No. 7160 §133(a); Republic Act No. 7160 §143(f); Republic Act No. 8791 §3",
-      "legal_rationale": "Directly contradicts Republic Act No. 7160 Section 133(a) (prohibiting local taxes on income) and Section 143(f) in relation to General Banking Law. Invalidated in City of Davao and Tanjili v. ARC Investors, Inc. (G.R. No. 249668, 2022)."
+      "target_statute": "Republic Act No. 7160 §133(a)",
+      "legal_rationale": "Directly violates Section 133(a) of Republic Act No. 7160 (The Local Government Code of 1991), which expressly prohibits local government units from levying income tax of any kind, including taxes on corporate dividends and investment returns. Struck down under the Magtajas preemption doctrine."
     },
     {
       "sec_num": 7,
-      "sec_title": "RETROACTIVE IMPOSITION ON GOVERNMENT PENSION PROPERTIES",
-      "text": "Real properties and facilities titled under the Government Service Insurance System (GSIS) and Social Security System (SSS) located in Davao City are hereby assessed real property taxes retroactively for ten (10) past calendar years, authorizing the City Treasurer to levy on execution.",
+      "sec_title": "REAL PROPERTY TAX ON PENSION ASSETS",
+      "text": "Section 112 of the 2005 Revenue Code of Davao City is hereby amended to provide that real properties, commercial lands, and investment assets situated within Davao City belonging to or held in trust by national pension and social security institutions, including the Government Service Insurance System (GSIS) and the Social Security System (SSS), shall be subject to the basic real property tax and special education fund tax levied by the City Government.\n\nAll previous local tax exemptions granted to such statutory pension properties are hereby revoked.",
       "label": "Contradiction",
-      "target_statute": "Republic Act No. 7160 §133(o); Republic Act No. 8291 §39; Presidential Decree No. 1146 §33",
-      "legal_rationale": "Directly violates Section 133(o) of RA 7160 and national agency charters which explicitly exempt government instrumentalities and social security funds from local taxation. Invalidated in City of Davao v. GSIS (G.R. No. 127383, 2005)."
+      "target_statute": "Republic Act No. 8291 §39; Republic Act No. 7160 §133(o)",
+      "legal_rationale": "Directly contradicts Republic Act No. 8291 §39 (GSIS Act of 1997) and Republic Act No. 7160 §133(o). National law explicitly exempts GSIS and statutory pension reserve assets and properties from all local taxes, charges, and assessments under the doctrine of sovereign and statutory exemption affirmed in GSIS v. City Assessor of Iloilo (2006)."
     },
     {
       "sec_num": 8,
-      "sec_title": "LOCAL FRANCHISE TAX ON TELECOMMUNICATIONS",
-      "text": "Telecommunications utilities operating within Davao City shall be subject to a local franchise tax of one-half of one percent (0.5%) on their gross annual receipts pursuant to Section 137 of Republic Act No. 7160.",
+      "sec_title": "DELINQUENCY SURCHARGE AND INTEREST",
+      "text": "Section 125 of the 2005 Revenue Code is amended to provide that failure to pay any local tax or fee on or before the twentieth (20th) day of January of each calendar year shall subject the taxpayer to a surcharge of twenty-five percent (25%) of the amount due, plus interest at the rate of two percent (2%) per month until paid, up to a maximum period of thirty-six (36) months.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §137; Republic Act No. 7160 §151",
-      "legal_rationale": "Valid exercise of local franchise taxing power explicitly affirmed by the Supreme Court in Smart Communications v. City of Davao (2008) and PLDT v. City of Davao (2001)."
+      "target_statute": "Republic Act No. 7160 §168",
+      "legal_rationale": "Harmonious local tax delinquency surcharge adhering strictly to Section 168 of the Local Government Code."
     },
     {
       "sec_num": 9,
-      "sec_title": "TIME OF PAYMENT AND DISCOUNTS",
-      "text": "Local business taxes shall be payable for every calendar quarter, with a ten percent (10%) discount for full advance annual payments made before January 20.",
+      "sec_title": "IMPLEMENTING OFFICE",
+      "text": "The City Treasurer's Office, in coordination with the City Assessor's Office and the Business Bureau, shall implement and administer the collection of taxes, fees, and charges prescribed under this Ordinance.\n\nThe City Treasurer shall formulate administrative guidelines for tax assessments.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §167",
-      "legal_rationale": "Standard municipal tax payment schedule."
+      "target_statute": null,
+      "legal_rationale": "Standard implementing agency clause assigning duties to the City Treasurer."
     },
     {
       "sec_num": 10,
-      "sec_title": "EXAMINATION OF BOOKS OF ACCOUNTS",
-      "text": "The City Treasurer or duly designated deputies may examine the accounting books and records of businesses operating within the city to verify tax payments.",
-      "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §171",
-      "legal_rationale": "Statutory authority to inspect commercial books under Section 171 of RA 7160."
+      "sec_title": "PENAL SANCTIONS",
+      "text": "Any person who willfully violates any provision of this Ordinance, or fails to pay assessed local taxes within the prescribed period, shall, upon conviction, be punished by a fine of Five Thousand Pesos (Php 5,000.00) or imprisonment of up to six (6) months, or both, at the discretion of the court.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Complies strictly with statutory penalty ceilings under RA 7160 §458."
     },
     {
       "sec_num": 11,
-      "sec_title": "SURCHARGES AND INTEREST",
-      "text": "Failure to pay taxes on time shall incur a surcharge of twenty-five percent (25%) and interest of two percent (2%) per month.",
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "If any section, subsection, or provision of this Ordinance is declared unconstitutional or invalid by a court of competent jurisdiction, the remaining sections and provisions hereof not affected thereby shall continue in full force and effect.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §168",
-      "legal_rationale": "Statutory interest and surcharge limits."
+      "target_statute": null,
+      "legal_rationale": "Standard separability clause modeled after Ord. 000030-07."
     },
     {
       "sec_num": 12,
-      "sec_title": "SEPARABILITY CLAUSE",
-      "text": "If any provision is declared void, remaining provisions shall stay effective.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard separability clause."
-    },
-    {
-      "sec_num": 13,
       "sec_title": "REPEALING CLAUSE",
-      "text": "Provisions of the 2005 Revenue Code inconsistent herewith are amended.",
+      "text": "All city ordinances, executive orders, or rules and regulations inconsistent with the provisions of this Ordinance are hereby repealed or modified accordingly.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard repealing clause."
     },
     {
-      "sec_num": 14,
+      "sec_num": 13,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance takes effect on January 1 of the following calendar year after publication.",
+      "text": "This Ordinance shall take effect on January 1, 2027, following its approval and complete publication in a newspaper of local circulation in Davao City.",
       "label": "Neutral",
       "target_statute": "Republic Act No. 7160 §59",
-      "legal_rationale": "Standard tax ordinance effectivity clause."
+      "legal_rationale": "Standard effectivity clause."
     }
   ]
 }

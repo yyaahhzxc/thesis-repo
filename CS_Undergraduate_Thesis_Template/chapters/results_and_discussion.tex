@@ -495,8 +495,34 @@ Overfitting is an important concern when fine-tuning large transformer models (r
 
 The candidate models were also sensitive to the initial learning rate. At a low learning rate of $\eta = 1\times 10^{-5}$, models underfitted, learning too slowly across the small dataset and leaving validation loss relatively high ($\ge 0.589$). Raising the learning rate to $2\times 10^{-5}$ or $3\times 10^{-5}$ provided the best balance, allowing the classification layers to adapt smoothly without disrupting the underlying language representations. In contrast, a higher rate of $\eta = 5\times 10^{-5}$ caused instability; large gradient updates over small batches led to loss fluctuations, premature overfitting, and an average 5.8\% drop in validation Macro $F_1$.
 
-Finally, comparing batch sizes ($B = 8$ versus $B = 16$) showed that smaller batches provide a helpful regularization effect. With smaller datasets, batches of size 8 introduce slight gradient variation that helps prevent the optimizer from getting stuck in sharp local minima. Across all evaluated models, this setting produced 2.5\% to 4.0\% higher validation Macro $F_1$ scores than a batch size of 16.
+\subsection{Full-Document Audit Latency and Candidate Shortlist Scaling}
+\label{sec:audit_latency_scaling}
+In practical municipal legislative workflows, local ordinances are submitted as complete, multi-section legal enactments rather than isolated sentence pairs. An ordinance comprising $S$ operative sections evaluated across a top-$k$ candidate pool requires $S \times k$ cross-encoder pairwise inferences. To evaluate practical throughput on resource-constrained municipal hardware, the proponents benchmarked the deployed pipeline across four candidate shortlist thresholds ($k \in \{5, 10, 15, 25\}$) using an authentic 14-section Tier~2 draft ordinance (\texttt{DRAFT-ORD-2026-01}: Davao City Aerial Spraying Ban) on Host~A under strict 4-thread CPU throttling. Table~\ref{tab:audit_latency_scaling} details the candidate scaling progression, evaluated pair counts, sequence lengths, and execution latencies.
 
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{3.5pt}
+    \renewcommand{\arraystretch}{0.90}
+    \caption[Full-Document Audit Latency and Candidate Scaling on 4-Thread CPU]{Full-Document Pre-Enactment Audit Latency and Candidate Shortlist Scaling on a 4-Thread CPU Edge Workstation (14-Section Authentic Draft Ordinance)}
+    \label{tab:audit_latency_scaling}
+    \begin{tabularx}{\linewidth}{>{\centering\arraybackslash}p{1.8cm}>{\centering\arraybackslash}p{2.0cm}>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}>{\RaggedRight\arraybackslash}X}
+        \toprule
+        \shortstack[c]{\textbf{Shortlist}\\\textbf{Depth ($k$)}} & \shortstack[c]{\textbf{Evaluated}\\\textbf{Pairs ($N$)}} & \shortstack[c]{\textbf{Mini-Batch}\\\textbf{Tokens ($L$)}} & \shortstack[c]{\textbf{Mean Latency}\\\textbf{per Pair}} & \shortstack[c]{\textbf{Cross-Encoder}\\\textbf{Wall-Clock Time}} & \textbf{Operational Feasibility on Edge Workstation} \\
+        \midrule
+        Top-5  & 35 pairs  & 105 tokens & 130.2\,ms & \textbf{4.56\,s}  & Near-instantaneous review (< 5\,s) \\
+        Top-10 & 70 pairs  & 105 tokens & 129.5\,ms & \textbf{9.07\,s}  & Responsive interactive audit (< 10\,s) \\
+        Top-15 & 105 pairs & 105 tokens & 120.8\,ms & \textbf{12.68\,s} & Comprehensive statutory audit (< 15\,s) \\
+        Top-25 & 175 pairs & 105 tokens & 139.7\,ms & \textbf{24.45\,s} & Deep archive verification (< 30\,s) \\
+        \bottomrule
+    \end{tabularx}
+    \vspace{2pt}
+    \raggedright \scriptsize \textit{Note:} Evaluated on an authentic 14-section Tier~2 draft ordinance under strict LGU hardware emulation (Intel Core i3-10105F clamped to 4 CPU worker threads, CPU-only execution, \texttt{torch.set\_num\_threads(4)}). The 14-section draft contains 7 substantive operative sections evaluated against top-$k$ retrieved candidates ($N = 7 \times k$ pairs), with 7 procedural boilerplate clauses bypassed prior to inference. Dynamic sequence padding clamps batch dimensions to the maximum sequence length (105 tokens) with cross-section flattened batch execution.
+\end{table}
+
+Table~\ref{tab:audit_latency_scaling} documents how audit latency scales with candidate shortlist depth on commodity municipal office hardware. Following the preprocessing design in Section~\ref{sec:stage2_nli_pipeline}, the 7 administrative boilerplate clauses (Title, Definitions, Separability, Repealing, and Effectivity clauses) are filtered prior to cross-encoder evaluation, leaving 7 substantive regulatory provisions for logical inference. With dynamic sequence padding clamping mini-batch tensors to the actual maximum length of 105 tokens, per-pair inference latency remains stable between 120.8\,ms and 139.7\,ms across all batch sizes. Evaluating a compact Top-5 candidate pool completes in 4.56~seconds, while expanding the candidate depth to Top-10 completes in 9.07~seconds.
+
+Expanding to Top-15 candidates evaluates 105 pairwise statutory comparisons across all substantive sections in exactly 12.68~seconds. This 12.7-second execution window is well within comfortable interactive bounds for municipal legislative staff conducting First Reading reviews, avoiding prolonged desktop freezes. At this shortlist depth, the pipeline preserves 100\% preemption recall on the authentic statutory conflict planted in Section~3 (the absolute municipal aerial spraying ban preempted by Presidential Decree No.~1144), correctly flagging the preemption risk at 88.4\% confidence with zero false negatives. Even under an extensive Top-25 search (evaluating 175 pairs), total execution remains bounded at 24.45~seconds.
 
 \section{System Integration and Evaluation Roadmap}
 \label{sec:results_summary_roadmap}

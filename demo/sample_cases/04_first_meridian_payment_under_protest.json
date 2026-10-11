@@ -1,14 +1,42 @@
 {
+  "filename_prefix": "04_first_meridian_payment_under_protest",
   "case_id": "DAVAO-TIER3-04",
   "case_name": "City of Davao and Dureza v. First Meridian Development, Inc.",
-  "docket_no": "G.R. No. 240078",
+  "docket_no": "G.R. No. 240078 (October 19, 2022)",
   "ordinance_no": "Ordinance No. 158-05 §423",
-  "ordinance_title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (MANDATORY PAYMENT UNDER PROTEST)",
-  "challenged_clause_text": "Section 423: Payment Under Protest. No protest against an assessment shall be entertained unless the taxpayer first pays under protest the tax assessed, stating the legal grounds within thirty (30) days from payment.",
-  "controlling_statute": "Republic Act No. 7160 §195",
-  "statute_title": "Local Government Code of 1991",
-  "statute_premise_text": "Section 195. Protest of Assessment. When the local treasurer finds that correct taxes have not been paid, he shall issue an assessment. The taxpayer may file a written protest with the local treasurer within sixty (60) days from receipt of the notice without being required to pay the assessment under protest.",
-  "sc_ruling": "Ultra Vires and Void (Overturned)",
-  "gold_label": "Contradiction",
-  "legal_doctrine_rationale": "Section 195 of the Local Government Code governing business taxes deliberately does not require payment under protest. Local councils cannot impose restrictive procedural preconditions not authorized by statute."
+  "title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (PAYMENT UNDER PROTEST)",
+  "enacting_lgu": "City of Davao",
+  "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be known and cited as the '2005 Revenue Code of the City of Davao'."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "SCOPE AND APPLICATION",
+      "text": "This Code shall govern the levy, assessment, and collection of all city taxes, fees, and other charges within the territorial jurisdiction of Davao City."
+    },
+    {
+      "sec_num": 423,
+      "sec_title": "PAYMENT UNDER PROTEST",
+      "text": "No protest shall be entertained unless the taxpayers first pays the tax. There shall be annotated on the tax receipts the words 'paid under protest.' The protest in writing must be filed within thirty (30) days from payment of the tax the City Treasurer who shall decide the protest within sixty (60) days from receipt of the protest. In case the City Treasurer fails to decide within sixty (60) days from receipt of the protest, the taxpayer may appeal to the Regional Trial Court within thirty (30) days from the lapse of the sixty-day period, otherwise the assessment becomes final and executory."
+    },
+    {
+      "sec_num": 424,
+      "sec_title": "CIVIL REMEDIES FOR COLLECTION OF REVENUES",
+      "text": "The city taxes, fees, or other charges may be collected through the administrative remedies of distraint of personal property and levy upon real property or by judicial action in any court of competent jurisdiction."
+    },
+    {
+      "sec_num": 433,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "All city ordinances, executive orders, rules and regulations or parts thereof which are inconsistent with this Code are hereby repealed or modified accordingly."
+    },
+    {
+      "sec_num": 434,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Code shall take effect upon approval and publication as required by law."
+    }
+  ]
 }

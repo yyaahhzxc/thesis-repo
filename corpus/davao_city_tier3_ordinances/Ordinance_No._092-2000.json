@@ -1,19 +1,293 @@
 {
+  "filename_prefix": "02_evasco_billboard_regulation",
+  "case_id": "DAVAO-TIER3-02",
+  "case_name": "Hon. Leoncio Evasco, Jr. v. Alex P. Montañez",
+  "docket_no": "G.R. No. 199172 (February 21, 2018)",
   "ordinance_no": "Ordinance No. 092-2000",
-  "series": 2000,
-  "title": "AN ORDINANCE REGULATING THE CONSTRUCTION, REPAIR, RENOVATION, ERECTION, INSTALLATION AND MAINTENANCE OF OUTDOOR ADVERTISING MATERIALS AND FOR RELATED PURPOSES",
+  "title": "AN ORDINANCE REGULATING THE CONSTRUCTION, REPAIR, RENOVATION, ERECTION, INSTALLATION AND MAINTENANCE OF OUTDOOR ADVERTISING MATERIALS AND STRUCTURES IN DAVAO CITY",
   "enacting_lgu": "City of Davao",
-  "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
-  "date_approved": "August 8, 2000",
-  "judicial_case": "Hon. Leoncio Evasco, Jr. v. Alex P. Montañez, G.R. No. 199172 (February 21, 2018; 856 SCRA 320)",
-  "ruling": "Constitutional and Valid Exercise of Police Power (Upheld)",
-  "gold_label": "Entailment",
-  "superior_national_law": "Republic Act No. 7160 §458(a)(4)(iv); Presidential Decree No. 1096 §301",
-  "operative_sections": {
-    "SECTION 1. TITLE": "This Ordinance shall be known as the 'Signage and Outdoor Advertising Ordinance of Davao City'.",
-    "SECTION 7. BILLBOARDS AND SIGNAGES": "Outdoor advertising signs and commercial billboards are strictly prohibited in residential zones. Free-standing billboards along public highways must maintain an unobstructed 150-meter line of sight and must be located at least 10 meters away from property lines abutting the road right-of-way.",
-    "SECTION 8. REGULATED SCENIC AREAS": "Areas within two hundred (200) meters of scenic bridges, the Davao River, scenic vantage points of Mount Apo, and the city coastal shoreline are declared regulated areas where commercial advertising displays are restricted to preserve environmental aesthetics.",
-    "SECTION 37. SIGN PERMIT FEES": "All commercial advertising structures must obtain an annual Sign Permit from the City Building Official and pay the corresponding regulatory inspection fees prescribed herein.",
-    "SECTION 45. REMOVAL OF ILLEGAL ADVERTISING MATERIALS": "The City Engineer and Building Official are authorized to summarily dismantle and remove illegal, dilapidated, or hazardously situated outdoor advertising structures after serving thirty (30) days written notice of violation."
-  }
+  "enacting_clause": "Be it ordained by the Sangguniang Panlungsod of Davao City in session assembled:",
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be known as the Signage Ordinance of Davao City."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "STATEMENT OF POLICY",
+      "text": "It is the policy of the City, Government of Davao to:\n(1) safeguard its people's life and property by providing all signs and sign structures prescribed standards relative to their size, design, load and stresses, anchorage, quality, durability, visibility and other characteristics;\n(2) keep premises clean and orderly by imposing basic discipline and regulation in the location of signs and sign structures both in public and private places;\n(3) display or convey only messages or visuals that conform to public decency and good taste; and\n(4) install or display all kinds of signs in a manner that the harmonious aesthetic relationship of all units therein is presented."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "SCOPE",
+      "text": "The provisions of this Ordinance shall apply to all advertising and/or propaganda materials pertaining to lighted billboards, illuminated signs, construction, repair, removal, dismantling and maintenance of all signs and sign structures intended for advertisement and other related purposes.",
+      "chapter": "CHAPTER 2\nSCOPE AND APPLICABILITY"
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "APPLICABILITY",
+      "text": "The provisions of this Ordinance shall be applicable within the entire territory and jurisdiction of the City of Davao."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "For purposes of this Ordinance the following definitions shall apply:\na. ADVERTISING SIGN - a sign that directs attention to a business, profession, commodity, services or entertainment conducted, sold or offered for public/private consumption exposed in an outdoor area;\nb. ARCADE - any portion of a building above the first floor projecting over the sidewalk beyond the first story wall used as protection for pedestrians;\nc. BILLBOARD - a panel for posting bills or posters which exceeds 4' (A) eq. m. in area;\nd. BUSINESS SIGN - an identification on premises or accessory sign that directs attention to a business, commodity, service or entertainment conducted, sold or offered in the same place where the business is located.\n\ne. BUILDING LINE - the line formed by the intersection of the outer surface of the enclosing wall of the building and the surface of the ground.\n\nf. DISPLAY SIGN - any material, device or structure that is arranged, intended, designed, or used as an advertisement, announcement or directory that includes sign, sign screen, billboard or advertising device of any kind.\n\ng. DISPLAY STAND - an movable structure, table, showcase cabinet and the like where goods or periodicals are displayed.\n\nh. DISPLAY SURFACE - the entire area enclosed by the extreme limits or perimeter of a sign.\n\ni. DISPLAY WINDOW - that portion of a building abutting the sidewalk open to public view protected by grills, screens or transparent materials for the display of goods.\n\nj. ELECTRICAL SIGN - any sign which has characters, letters, figures, designs, faces, backgrounds or outlines illuminated by incandescent or fluorescent lamps or luminous tubes as part of the sign proper, neon signs included, these light sources being either external or internal.\n\nk. GROUND SIGN - a sign resting on the ground.\n\nl. HIGHLY-BUILT URBAN AREA - a commercial and/or industrial site which is characterized by high-rise buildings or establishment.\n\nm. NEON SIGN - a discharge lamp where the neon tube contains a large proportion of neon gas, made/outlined to project letters or characters for the purpose of advertising.\n\nn. POSTER - a fabricated flat surface upon which a message is either posted or painted.\n\no. PROJECTING SIGN - a sign fastened to, suspended from or supported on a building or structure the display surface of which is perpendicular from the wall surface or at an angle thereof.\n\np. ROOF SIGN - any sign installed on roofs, roof decks, parapets or eaves.\n\nq. SIGN - any letter, word, numeral, pictorial presentation (illustration, decoration, emblem, device, symbol or trademark flag banner or pennant, or any other figure of similar character that is:\n\n- attached to, painted on or in any manner represented on a building or structure\n\n- used to announce, direct attention to or advertise and visible to the public\n\nr. SIGNBOARD - a broad flat piece of wood or other material bearing information and/or advertising less than six (6) square meter in area.\n\ns. SIGN STAND - any movable structure upon which a sign is mounted or supported.\n\nt. SIGN STRUCTURE - that which is built or constructed, an edifice or building of any kind, or any piece of work artificially built up or composed of parts joined together in some definite manner.\n\nu. STREAMER - any advertising material made of light materials such as cloth, canvas, plastic and the like, hung from and outside of public view.\n\nv. TEMPORARY SIGN - a sign of cloth or other light and/or combustible material, with or without frame, installed for a limited period of time.\n\nw. WALL SIGN - a sign painted on, attached or fastened to the surface of the wall or any part of a building or structure, the display surface of which is parallel to the wall surface.\n\nx. IMPRINT - a plaque or sticker or lettering to be painted on either the top or the bottom of the poster or sign as a means of identifying the company to whom the structure belongs and the permits issued therefor.",
+      "chapter": "CHAPTER 3\nDEFINITION OF TERMS"
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "GENERAL PROVISIONS",
+      "text": "(a) and uphold the public good especially in historic monuments and shrines, natural scenic areas, parks and parkways, and shall be located or installed in the above-mentioned areas at a distance of at least 50.00 meters from the periphery of said areas. Such condition shall be disregarded when signs and sign structures are in use.\n\n(b) Signs which are written in foreign language shall have a corresponding translation either in English, in Filipino or in the local dialect;\n\n(c) No sign or signboard shall be constructed as to unhealthily obstruct the natural view of the scenic landscape, which is likely to include the view of Mt. Apo and Davao Gulf.\n\n(d) All signs, together with all of their supports, brackets, guys, and anchors, shall be properly maintained. The display of all signs shall be kept neatly painted and secured at all times.\n\n(e) Sign stands or display stands shall not be placed on\nsidewalk pavement, parks and street islands.\n\n(f) Signs shall not be attached to, installed or\ndisplayed on posts or columns of arcades.\n\n(g) Sign structures shall be designed and constructed to\nresist all forces in accordance with the National Structural Code for Buildings.\n\n(h) Sign structures may be constructed only in areas where zoning regulations permit them in accordance with the\naccepted standards of design, construction and maintenance.\n\n(i) Plans of sign structures exceeding 3.00 meters in height from the ground or roof level shall be signed and sealed by a duly registered Architect or Civil Engineer.\n\n(j) Signs and sign structures built within highly restrictive fire zones, as determined by the Bureau of Fire Protection, shall be of incombustible materials. No combustible materials other than approved plastics shall be used in construction. Electrical signs shall be of incombustible materials.\n\n(k) Signs and sign structures equipped with electrical devices shall have an electrical wiring plan conforming with the provisions of the National Electrical Code and duly signed by a Professional Electrical Engineer provided that, for installation of electrical devices, a copy of the wiring sketch diagram and Bill of Materials, signed and sealed by an Electrical Engineer or Master Electrician who will install the same shall be sufficient. All other permits exceeding their requirements be approved by the local police company.\n\n(l) Signs shall be signed in such manner that it will not interfere in any way with the free use of doorways, fire escape, stand pipe, window, emergency exit or other required means of exit and fire protective devices.\n\n(m) No signs shall be erected or placed closer than a minimum of 1.00 meter distance from any electric and telephone posts or wires. Existing signs in the City public places providing for requirements as set forth herein may still be allowed proper proper insulators from the local telephone and power companies shall be installed thereby.\n\n(n) Signs shall be erected in such a manner as not to confuse or obstruct the view or interpretation of any public signs, traffic signals, or signs nor obstruct the sight or distract the attention of motorists, reflect blinding light or cause glare to incoming traffic.\n\n(o) The bottom line of all signboards adjacent to each other shall follow a common base line as determined by the Building Official.\n\n(p) All sign structures, above 100 meters elevation from\nthe mean sea level and/or within the 5 kilometers radius from\nthe airport, shall secure Air Transportation Office (ATO)\nclearance.",
+      "chapter": "CHAPTER 4\nGENERAL PROVISIONS"
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "BILLBOARDS AND SIGNAGES",
+      "text": "Outdoor advertising signs shall\nnot be allowed in a residential zone as designated in the\nOfficial Zoning Map. Adjacent billboards shall be erected in\nsuch a way as to maintain 150.00 meters unobstructed line of\nsight.\n\nBillboards and other self-supporting outdoor signs along\nhighways shall be located within a minimum of 10.00 meters\naway from the property lines abutting the road right-of-way.",
+      "chapter": "CHAPTER 5\nSPECIFIC PROVISIONS\n\nArticle 1\nAdvertising Sign"
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "REGULATED SCENIC AREAS",
+      "text": "Bridge approach areas\nwithin 200 meters of the following bridges shall be\ndesignated as regulated areas: the bridge approaches along\nn others, the natural view and beauty of the Davao River,\nMt. Apo, the Davao City Skyline and the view of Samal Island,\nto wit:\n\n1. Generoso Bridge I and II;\n2. Bolton Bridge I and II;\n3. Lasang Bridge"
+    },
+    {
+      "sec_num": 9,
+      "sec_title": "ALLOWABLE HEIGHT FOR SIGN STRUCTURES IN REGULATED AREAS",
+      "text": "IN\nREGULATED AREAS - Sign structures in regulated areas shall be\nlimited to a maximum total height of 17.00 meters from the\nstreet crown, provided the first 3 meters from the street\ncrown remain open space. For this purpose only the\nwell 14.00 meters shall be considered to be the maximum\nadvertising surface. The top and bottom lines of billboards\nerected in said areas shall follow a common base line as determined by\nthe Building Official."
+    },
+    {
+      "sec_num": 10,
+      "sec_title": "ALLOWABLE SIZE FOR BUSINESS SIGNS",
+      "text": "Business signs shall have a length not exceeding the frontage\nof the lot.",
+      "chapter": "Article 2\nBusiness Signs"
+    },
+    {
+      "sec_num": 11,
+      "sec_title": "SIGNS ON BUILDING",
+      "text": "Business signs\ninstalled, displayed or erected on the same building shall\npreferably be of identified size and flushed against the\nbuilding facade."
+    },
+    {
+      "sec_num": 12,
+      "sec_title": "SIGNS IN HIGHLY BUILT-UP URBAN AREAS",
+      "text": "UP URBAN AREAS. Business signs, in highly built-up urban areas, may not be allowed within the immediate approaches from the periphery of historical monuments, shrines, natural scenic areas, parks and highways, notwithstanding Section 6 (a) of this Ordinance."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "CONSTRUCTION OF ROOF SIGNS",
+      "text": "The design and construction of roof signs shall conform with the provisions of Section A (h) of this Ordinance. In no case shall such signs be erected, attached to, installed or fastened on roof top of buildings of wooden structure.",
+      "chapter": "ARTICLE 3 Roof Signs"
+    },
+    {
+      "sec_num": 14,
+      "sec_title": "ALLOWABLE HEIGHT FOR GROUND SIGNS",
+      "text": "Ground signs shall not exceed 17.00 meters in height above the street crown. And in cases where there are no streets, on the ground levels and subject to other applicable provisions of this Ordinance.",
+      "chapter": "Article 4 Arround Signs"
+    },
+    {
+      "sec_num": 15,
+      "sec_title": "LIMITATIONS ON GROUND SIGNS",
+      "text": "Ground signs shall not exceed 12.00 meters in height above the street crown, or the base of said ground signs.\n1. It shall be located 1.00 meter within the property line, and in no case shall occupy the street or sidewalk, passageway, alley, easements or river abutments.\n2. Public or Government signs erected or installed within the area of the sidewalk shall be so designed and located so that they shall neither obstruct nor distract the attention of motorists.\n3. Self-supporting outdoor signs along highways shall be located at a minimum of 10.00 meters away from the property lines abutting the road right-of-way."
+    },
+    {
+      "sec_num": 16,
+      "sec_title": "PROJECTING SIGNS, IN GENERAL",
+      "text": "The erection of projecting signs are subject to the following conditions:\n\na. On NON-ARCAGED STREETS OR WHERE ARCADES ARE PROPOSED\n- Signs shall not extend more than 1.50 meters from the wall line or building line;\n\nb. ON ARACDED STREETS,\nSigns shall not project more than 1.20 meters from the wall line over the street.\n\nc. BUILDINGS ABUTTING ON STREETS/ALLEYS WITHOUT SIDEWALKS OR PROVISIONS\nThe rules for arcaded streets shall apply on buildings abutting on street/alleys without sidewalks or provisions.\n\nd. Where a clearance of not less than 7.00 meters shall be provided below the lowest part of such signs projecting over sidewalks or buildings abutting on street/alleys without sidewalks or provisions, a clearance of not less than 5.00 meters shall be provided below the lowest part of such signs projecting over carriage ways.",
+      "chapter": "Article 5 Projecting Signs"
+    },
+    {
+      "sec_num": 17,
+      "sec_title": "INSTALLATION OF PROJECTING SIGNS",
+      "text": "The installation of projecting signs shall be prohibited in front of or over other advertisements of smaller nature projecting over roadways or public streets, shall be allowed provided that:\n\na. The distance between the signboards installed in one building is not less than 1.00 meters;\n\nb. Signboards on multi-story buildings shall be installed in the same vertical line and shall not overlap each other;\n\nc. The horizontal projection of signboards shall follow the provision of Article 5, Section 16 of this Ordinance;\n\nd. In case of two adjacent buildings, adjacent signboards shall be placed at a distance of not less than 2.00 meters from the common boundary line;\n\ne. Vertical clearances shall follow the provisions of the last paragraph of Article 5, Section 16,"
+    },
+    {
+      "sec_num": 18,
+      "sec_title": "WALL SIGNS ATTACHED ON BUILDINGS",
+      "text": "Display signs placed against the exterior surface of buildings shall not extend more than .30 meter from the wall with its lowest point and not less than 3.00 meters above the sidewalk.\n\nProvided, that wall signs shall not extend beyond the top and/or sides of any face of the exterior perimeter walls of the building.\n\nProvided further, that walls signs made of combustible materials shall not be allowed. While those made of incombustible materials may be allowed to cover the entire surface of blank walls, but in no case, be allowed to cover or obstruct openings.",
+      "chapter": "Article 6\nWall Signs"
+    },
+    {
+      "sec_num": 19,
+      "sec_title": "LIMITATION ON WALL SIGNS AND DISPLAY WINDOWS",
+      "text": "Display windows or wall signs within 3.0 meters above the ceiling shall be fluted or recessed. Nonetheless, all signs painted or lettered on the exterior surface of buildings or structures are considered business or advertising signs."
+    },
+    {
+      "sec_num": 20,
+      "sec_title": "TEMPORARY SIGNS",
+      "text": "In general, All temporary signs, bills, posters and the like may be installed or posted only in areas or structures allowed by this Ordinance and all applicable statutes, rules and ordinances.",
+      "chapter": "Article 7\nTemporary Signs"
+    },
+    {
+      "sec_num": 21,
+      "sec_title": "DISPLAY OF STREAMERS",
+      "text": "Streamers strung along public thoroughfares shall have the necessary permit from the city clerk. The lowest edge of the bottom edge of streamers shall have an minimum clearance of 1.00 meter above the ground or pavement. Streamers must conform with existing Ordinances and in no case shall these streamers be allowed in restricted areas."
+    },
+    {
+      "sec_num": 22,
+      "sec_title": "LOADS AND STRESSES, IN GENERAL",
+      "text": "In general, Signs and sign structures shall be designed and constructed to resist wind and seismic forces as specified in the National Structural Code for Buildings (NSCB). All bracing system shall be designed and reconnected to transfer lateral forces to the foundations.\n\nFor signs on buildings, the dead and lateral loads shall be transmitted through the structural frame of the building to the ground in such manner as not to overstress any of the elements thereof.\n\nThe overturning moment produced from lateral forces shall in no case exceed two-thirds of the dead-load resisting moment. The overturning moment shall be symmetrically resisted by proper anchorage to the ground or to the structural frame of the building. The weight of earth",
+      "chapter": "Chapter 6\nLOADS AND STRESSES"
+    },
+    {
+      "sec_num": 23,
+      "sec_title": "WIND LOADS",
+      "text": "SIGNS AND SIGN STRUCTURES SHALL BE DESIGNED AND CONSTRUCTED TO RESIST WIND FORCES AS SPECIFIED IN CHAPTER 2 OF THE NATIONAL STRUCTURAL CODE FOR BUILDINGS (NCSBC)."
+    },
+    {
+      "sec_num": 24,
+      "sec_title": "SEISMIC LOADS",
+      "text": "SIGNS OR SIGN STRUCTURES SHALL BE DESIGNED AND CONSTRUCTED TO RESIST SEISMIC FORCES AS SPECIFIED IN CHAPTER 2 OF THE NATIONAL STRUCTURAL CODE FOR BUILDINGS (NCSBC)."
+    },
+    {
+      "sec_num": 25,
+      "sec_title": "COMBINED LOADS",
+      "text": "WIND AND SEISMIC LOADS SHALL NOT BE COMBINED IN THE DESIGN OF SIGNS OR SIGN STRUCTURES, UNLESS LOADS PRODUCING LARGER STRESS NEED BE USED.\nVERTICAL LOADS, EXCEPT ROOF LOADS, SHALL BE ASSUMED TO ACT IN LINEARLY WITH THE WIND OR SEISMIC LOADS."
+    },
+    {
+      "sec_num": 26,
+      "sec_title": "ALLOWABLE STRESSES",
+      "text": "THE DESIGN OF WOOD, CONCRETE, OR STEEL MEMBERS SHALL CONFORM WITH THE REQUIREMENTS OF CHAPTER 7, SECTION 7, OF THE NATIONAL STRUCTURAL CODE FOR BUILDINGS (LOADS ON VERTICAL AND HORIZONTAL AXES, APPLIED AT THE SHELL SHALL NOT PRODUCE STRESSES EXCEEDING THOSE SPECIFIED IN CHAPTER 7 OF THE NATIONAL STRUCTURAL CODE FOR BUILDINGS (NCSBC).\nThe allowable stresses of any wire ropes or cables and its components (excluding) shall exceed 25 percent of the ultimate strength of the material from which they are made. The stresses for wind or seismic loads combined with dead loads may be increased as specified in Chapter 2 of the National Structural Code for Buildings. All steel wires shall be provided with wire buckles for tightening."
+    },
+    {
+      "sec_num": 27,
+      "sec_title": "CONSTRUCTION, IN GENERAL",
+      "text": "THE SUPPORTS OF ALL SIGNS OR SIGN STRUCTURES SHALL BE PLACED ON OR AROUND PRIORITE PROPERTY, AND SHALL BE SECURELY BUILT, CONSTRUCTED AND ERECTED IN CONFORMITY WITH THE REQUIREMENTS OF THIS ORDINANCE.",
+      "chapter": "CHAPTER 7\nCONSTRUCTION"
+    },
+    {
+      "sec_num": 28,
+      "sec_title": "MATERIALS",
+      "text": "MATERIALS FOR CONSTRUCTION OF SIGNS AND SIGN STRUCTURES SHALL BE OF QUALITY AND STRUCTURAL GRADE AS SPECIFIED FOR BUILDINGS UNDER THIS ORDINANCE.\n\nIn the absence of specified requirements, the materials and details of construction shall conform with the following:\n\n1. Structural steel shall be of such quality as to conform with ASTM A 36. Secondary members in contact with the display surface or supporting the display surface may be formed out of light gauge steel provided such members are designed in accordance with the specifications for the design of light gauge steel specified in ASTM A 249 and the same shall be galvanized. Secondary members when formed integrally with the display surface, the minimum thickness of any of the steel members furnishing structural support for signs shall be 0.35 mm., except that it shall be galvanized, such members shall not be more than 0.35 mm. thick. Secondary members may be connected with one galvanized bolt provided that connection is adequate to transfer the stresses in the members.\n\n2. Anchors and supports, when made of wood and embedded in the soil, or within 150 mm. of the soil, shall all be hardened of durable species or shall be pressure treated with approved preservatives.\n\nCHAPTER B ANCHORAGE"
+    },
+    {
+      "sec_num": 29,
+      "sec_title": "ANCHORAGE, IN GENERAL",
+      "text": "IN APHERAL. Members supporting unbraced signs shall be so proportioned so that the bearing loads on the soil, in either direction, horizontal or vertical, shall not exceed safety values.\n\nPaced ground signs shall be anchored to resist the specified wind pressures acting in any direction. Anchors and supports shall be designed for safe bearing loads on the soil and for an effective resistance to pull out amounting to a force 25 percent greater than the required resistance for overturning."
+    },
+    {
+      "sec_num": 30,
+      "sec_title": "SIGNS ATTACHED TO BASE",
+      "text": "Portable ground signs supported by frames or posts rigidly attached to the base shall be proportioned so that the weight and size of the base will be adequate to resist the wind pressure."
+    },
+    {
+      "sec_num": 31,
+      "sec_title": "SIGNS ATTACHED TO CONCRETE",
+      "text": "Signs attached to masonry, concrete or steel shall be safely and securely fastened thereof by means of metal anchors, bolts, or approved expansion screws of sufficient size and anchorage to support safely the loads applied."
+    },
+    {
+      "sec_num": 32,
+      "sec_title": "SIGNS ATTACHED TO WOOD",
+      "text": "No wooden blocks or plugs or anchors with wood used in connection with screws or nails shall be considered proper anchorage, except in the case of signs attached to wood framing."
+    },
+    {
+      "sec_num": 33,
+      "sec_title": "ISSUANCE OF SIGN PERMITS",
+      "text": "It shall be unlawful for any person to exhibit, manufacture, or hang temporary signs, post posters or install billboards, business signs, electrical signs, ground signs, projecting signs, roof signs, signboards and wall signs, or display similar advertising and propaganda materials, unless:\na. An application for a sign permit is filed with the Office of the Local Building Official and approved by the City Mayor or his duly designated representative;\nb. The application is accompanied with location plan, structure plans, and such other pertinent data as may be required by the Local Building Official;\nc. Payment of sign fee is made with the Office of the City Treasurer in accordance with Section 37 of this Ordinance;\nd. For billboards, business signs, electrical signs, ground signs, projecting signs, roof signs and wall signs, the applicant must comply with the requirements and limitations imposed by this Ordinance and other applicable statutes and/or ordinances.",
+      "chapter": "CHAPTER 7 - SIGN PERMIT"
+    },
+    {
+      "sec_num": 34,
+      "sec_title": "EFFECTIVITY OF SIGN PERMIT",
+      "text": "Sign permits shall automatically revert upon lapse of the following periods, to be counted from the date of issuance of an approved sign permit:\na. One (1) year for billboards, business signs, electrical signs, ground signs, projecting signs, roof signs, signboards and wall signs.\nA sign permit issued under the provisions of this Ordinance shall expire and become null and void if the next authorized therein is not commenced within a reasonable time after the expiration of the term of the permit, or if the work authorized is suspended or abandoned at any time after it has been commenced for a period of thirty (30) days. Provided that, no construction and/or display shall be allowed upon abandonment, non-removalment or suspension of work unless upon payment of the sign fee with a corresponding surcharge of 25% of the total fees.\nb. Two (2) months for posters;\nc. Two (2) months for temporary signs;\nd. Two (2) months for other advertising and/or propaganda materials."
+    },
+    {
+      "sec_num": 35,
+      "sec_title": "EXTENSION OF SIGN PERMITS",
+      "text": "Extension of sign permits shall be granted upon filing of an application in accordance with Section 33 and payment of sign fee in accordance with Section 37, PROVIDED, that the application and payment for extension shall be done within the period sought to be extended.\nIn cases where the application for extension is done beyond the period sought to be extended, the applicant shall have imposed, in addition to an extension sign permit fee, a surcharge equivalent to 25% of the amount due, for reason of delay.\nProvided further, that all signs and sign structures must be in good and presentable condition, as may be determined by the Building Official, until such period sought to be extended."
+    },
+    {
+      "sec_num": 36,
+      "sec_title": "EXEMPTION FROM SIGN PERMIT",
+      "text": "Sign permit is not required for advertising and/or propaganda materials displayed in the premises of the person displaying it, except: (1) when such material is a billboard, bus shelter, electrical sign, ground sign, projecting sign, roof sign, signboard and wall sign, or, (2) when sponsored by advertisers/persons whose logo or name appeared in the sign displayed and that the said advertisers/persons are not exempt by this Ordinance."
+    },
+    {
+      "sec_num": 37,
+      "sec_title": "SIGN PERMIT FEES",
+      "text": "Fees for the application of Sign Permits to be paid at the Office of the City Treasurer shall be as follows:\nI. DISPLAY SURFACE\na) Sign fee shall be collected per square meter of display surface of billboards, business signs, electrical signs, ground signs, projecting signs, roof signs, signboards and wall signs for such amount as follows:\na.1 outdoor video screen\na.2 tri-wind billboard\na.3 neon\na.4 illuminated\na.5 painted-on\na.6 others\nb) Posters (per piece)\nc) Temporary signs (per square meter)\n\nd) Other advertising and/or propaganda materials (per square meter)\ne) Building lines/staking line and Grade (fixed amount)\n\nII. STRUCTURE\nErection of support for any signboard, billboard and the like shall be charged a fee as follows:\n1) up to 4 square meter of signboard\n2) in every square meter or fraction thereof\n\nIII. RENEWAL FEE\nRenewal of sign permit shall include among others the corresponding payment for the display surface and support structure of the sign as determined in accordance with this Ordinance.\n\nIV. OTHER FEES\nSign fees paid under this Ordinance shall be without prejudice to an additional payment of electrical permit fee for signs with electrical devices as required in accordance with the provisions of the National Building Code.",
+      "chapter": "CHAPTER 10\nFEES"
+    },
+    {
+      "sec_num": 38,
+      "sec_title": "EXEMPTION FROM SIGN FEE",
+      "text": "Sign fees are not required for the following advertising and/or propaganda materials which may be exempted from taking a sign permit as heretofore provided:\n\na. Those displayed by government agencies and/or offices, either national or local;\nb. Those which are otherables, religious in nature and for civic purposes; except when sponsored by advertisers/persons whose logo or name/s appear on the sign displayed, which advertisers/persons are not exempt by law. However, they shall be subject to an additional fee of P50.00 per sign where such signs/streamers are installed.\nc. Those displayed in the premises of the person displaying it, if the material does not exceed 6.00 square meters in area except: (1) when it is a billboard, business sign, electrical light, ground sign, projecting sign, off sign, signboard and wall signs; or, (2) when sponsored by advertisers/persons whose logo or name/s appear on the sign displayed, said advertisers/persons are not exempt by law.\n\nProvided however that this exemption shall not relieve the owner from responsibility in case of any accident arising out of that design, construction, installation, maintenance and removal of signs displayed or exhibited."
+    },
+    {
+      "sec_num": 39,
+      "sec_title": "MARKING REQUIREMENTS",
+      "text": "It shall be unlawful for any person who has been issued a permit to install, erect, construct, post, paste, hang or attach advertising and/or propaganda materials unless the same bear the following:\na. The name or names of the structure owner;\nb. The permit number and its date of issuance;\nc. The duration of the display which shall not exceed the period stated in Section 34 of this Ordinance.",
+      "chapter": "CHAPTER 11\nMARKING REQUIREMENTS"
+    },
+    {
+      "sec_num": 40,
+      "sec_title": "EXEMPTION FROM MARKING REQUIREMENT",
+      "text": "No charge is not required for advertising and/or propaganda materials displayed by the premises of the person displayed if, except (1) such material is billboard, business sign, electrical sign, ground sign, projecting roof sign, signboard and wall sign, or (2) when sponsored by the city or persons whose name or names appear in the sign displayed, said advertisers/persons are not exempt by law."
+    },
+    {
+      "sec_num": 41,
+      "sec_title": "RESTRICTED AREAS",
+      "text": "It shall be unlawful for any person to install or display any advertising and/or propaganda materials in the following areas:\na. Across public thoroughfares;\nb. On any electrical post along streets, islands;\nc. On parks and playgrounds;\nd. On church and school fences;\ne. On sidewalks and public waiting sheds;\nf. Traffic light posts;\ng. On bridges and bridge approaches (for streamers);\nh. On trees along main streets or thoroughfares\n\nI. Pedestrian overpasses and fly-overs, and\nJ. Waiting sheds.",
+      "chapter": "CHAPTER 12\nRESTRICTED AREAS"
+    },
+    {
+      "sec_num": 42,
+      "sec_title": "EXEMPTION FROM RESTRICTED AREA PROHIBITIONS",
+      "text": "Exemption from the prohibition stated in the preceding provision are propaganda materials displayed by or under authority of a government agency, whether national or local, provided such materials are removed prior to expiration date as indicated in the sign permit."
+    },
+    {
+      "sec_num": 43,
+      "sec_title": "MONITORING OFFICIAL",
+      "text": "The Building Official has the authority to supervise and enforce the supervision of the installation, site, design, materials and anchorage of signs and sign structures so as to ensure that all those displayed are installed, hanged and posted in accordance with the regulation provided in this Ordinance.\n\nAny signs and sign structures which are not in accordance with this Ordinance may be removed by the City Engineer or other agencies designated by the City Mayor upon recommendation of the Building Official, provided that prior notice is given to the owner.",
+      "chapter": "CHAPTER 13\nMAINTENANCE AND MONITORING"
+    },
+    {
+      "sec_num": 44,
+      "sec_title": "SIGNS AND SIGN STRUCTURES INSPECTION",
+      "text": "IN GENERAL: All advertising signs, business signs, roof signs, ground signs, protective signs, lighted signs, billboards, posters, streamers, posters and the like shall be maintained by the owner of the structure in a safe and presentable condition. Should a sign become unsafe or unsightly and be ordered removed by the Building Official, within fifteen (15) days from receipt of notice, the owner thereof, then in that non-compliance to the order, with the specified conditions shall warrant the removal of the signs or sign structures."
+    },
+    {
+      "sec_num": 45,
+      "sec_title": "REMOVAL OF ILLEGAL ADVERTISING MATERIALS",
+      "text": "The City Engineer or his duly authorized representative shall remove upon recommendation of the Building Official, the following at the expense of the City:\n\n1. Advertising signs.\n2. Business signs.\n3. Roof signs.\n4. Ground signs.\n5. Protective signs.\n6. Lighted signs.\n7. Billboards.\n8. Streamers.\n9. Posters.\n10. Other signs and sign structures.\n\n1. Those displayed without permit from the Local Building Official, provided that the displaying party shall be given a reasonable period of sixty (60) days from receipt of the notice to comply with the sign permit requirement provided hereof;\n2. Those displayed with a permit but without bearing the necessary permit marking requirement as provided in Section 34 hereof, provided that the displaying party shall be given a reasonable period of sixty (60) days from receipt of the notice to comply with the marking permit requirement provided hereof;\n3. Those displayed beyond the expiry date as provided in Section 34 hereof, however, if the displaying party fails to remove it even before the period sought to be extended, the same shall be given a reasonable period of sixty (60) days from receipt of the notice to comply with the renewal requirement provided hereof without penalty or payment of surcharge of 25% of the total fees for such delay.\n4. Those displayed in public places and/or structures as stated in Section 34;\n5. Those displayed in the above signs, electrical signs, ground signs, protective signs, real estate signs or wall signs which are installed or constructed in violation of this Ordinance or other applicable statutes and ordinances.",
+      "chapter": "CHAPTER 14\nREMOVAL OF ILLEGAL MATERIALS"
+    },
+    {
+      "sec_num": 46,
+      "sec_title": "PENALTIES",
+      "text": "Any person, whether natural or juridical, found violating the provisions of this Ordinance shall be penalized as follows:\nA. For the first offense, a fine of not less than P5,000.00 but not more than P7,000.00, or an infringement of not less than seven (7) days but not more than two (2) months, or both, at the discretion of the court;\nB. For the second or subsequent offenses, a fine of not less than P7,000.00 but not more than P9,000.00, or an infringement of not less than one (1) month and six (6) days but not more than two (2) months, or both, at the discretion of the court;\nC. In case the violation is in consequence of the negligence of the holder, shall be meted with a fine of not more than three (3) business permit upon the second or subsequent offenses;\nD. If the violation has been committed by a juridical person, the person in-charge of management and who has knowledge thereof shall be held responsible.",
+      "chapter": "CHAPTER II. PENALTY"
+    },
+    {
+      "sec_num": 47,
+      "sec_title": "EXISTING SIGNS, IN GENERAL",
+      "text": "IN GENERAL. Signs with permits which were erected before the adoption of this Ordinance but not conforming thereto shall be given a grace period of one (1) year to conform to the same which period shall start from the receipt of said notice.\n\nIn case of failure to secure the necessary permit within the grace period, the existing signs shall be removed by the owner. Failure of the owner to remove the sign, the Building Official shall order its removal at the expense of the owner.",
+      "chapter": "CHAPTER 16\nTRANSITORIOUS PROVISIONS"
+    },
+    {
+      "sec_num": 48,
+      "sec_title": "VALIDATING PERMIT",
+      "text": "Existing signs without permit but conforming to the provisions of this Ordinance shall be allowed to remain provided that the owner shall obtain a validating permit within sixty (60) days from receipt of the notice from the Local Building Official.\n\nFailure to obtain validating permit within the given grace period shall subject the applicant to additional imposition in addition to the sign permit fee, equivalent to 100% of the amount due for such delay."
+    },
+    {
+      "sec_num": 49,
+      "sec_title": "NON-OBSERVANCE OF THIS ORDINANCE",
+      "text": "Existing signs without permit and not in accordance with the provisions of this Ordinance shall be altered to conform to the same. The owner shall secure the necessary permit not later than thirty (30) days from receipt of notice from the Building Official.\n\nIn case of failure to secure permit within the grace period, the sign shall be removed by the owner. Failure of the owner to remove the sign, the City Engineer, upon recommendation of the Building Official, shall cause the removal of the sign at the expense of the owner."
+    },
+    {
+      "sec_num": 50,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "If any provision of this Ordinance is declared invalid or unconstitutional, the remaining provisions not affected thereby shall continue to be in full force and effect.",
+      "chapter": "CHAPTER 17\nFINAL PROVISIONS"
+    },
+    {
+      "sec_num": 51,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "Any existing Ordinance or parts thereof which are inconsistent with the provisions of this Ordinance are hereby repealed or modified accordingly."
+    },
+    {
+      "sec_num": 52,
+      "sec_title": "EFFECTIVITY CLAUSE",
+      "text": "This Ordinance shall\ntake effect immediately upon its publication in a newspaper\nof general circulation in the City of Davao.\nENACTED: August 9, 2006 by a majority vote of all the\nMembers of the Sangguniang Panlungsod.\nCERTIFIED CORRECT:\nLOLITA C. GARCIA\nSecretary to the Sangguniang Panlungsod\n(City Government Department Head II)\nFOR AND IN THE ABSENCE OF THE SECRETARY:\nMARGARITO S. DELA CRUZ\nAsst. Secretary to the Sangguniang Panlungsod\n(City Government Asst. Department Head II)\nATTESTED:\nLino C. BOSCHMAN\nVice Mayor II\nPresiding Officer\nAPPROVED: 2000\nATTESTED:\nJOSAMIN C. DE GUZMAN\nCity Mayor"
+    }
+  ]
 }

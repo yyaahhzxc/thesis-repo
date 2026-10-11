@@ -1,125 +1,111 @@
 {
   "doc_id": "DRAFT-ORD-2026-09",
-  "title": "AN ORDINANCE REGULATING TELECOMMUNICATIONS CABLE INSTALLATIONS, UNDERGROUND UTILITY DUCTS, AND RESTORATION OF PUBLIC ROADS IN DAVAO CITY",
+  "title": "AN ORDINANCE REGULATING COMMERCIAL SAND, GRAVEL, AND QUARRY EXTRACTION OPERATIONS, PRESCRIBING ENVIRONMENTAL SAFEGUARDS ALONG RIVER SYSTEMS, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
   "proposed_ordinance_no": "Proposed Ordinance No. 2026-09, Series of 2026",
-  "committee": "Committee on Public Works and Telecommunications, Sangguniang Panlungsod",
-  "physical_specs": {
-    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
-    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
-    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
-    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
-  },
+  "committee": "Committee on Environment and Natural Resources, Sangguniang Panlungsod",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be cited as the 'Davao City Telecommunications Infrastructure and Underground Cabling Ordinance of 2026'.",
+      "text": "This Ordinance shall be known and cited as the 'Riverbed Sand, Gravel, and Quarry Regulation Ordinance of Davao City'.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard title provision."
+      "legal_rationale": "Standard municipal title clause."
     },
     {
       "sec_num": 2,
-      "sec_title": "DECLARATION OF INFRASTRUCTURE POLICY",
-      "text": "The City Government ensures public road safety, prevents aerial cable clutter, and coordinates telecommunications infrastructure pursuant to Republic Act No. 7925 and Republic Act No. 7160.",
+      "sec_title": "DECLARATION OF POLICY",
+      "text": "Pursuant to Section 16 and Section 138 of Republic Act No. 7160 (The Local Government Code of 1991), the City Government of Davao is authorized to regulate the extraction of quarry resources and protect rivers and natural ecosystems from degradation.\n\nIt is hereby declared the policy of the City of Davao to regulate small-scale quarrying and sand and gravel extraction along river systems to protect riverbanks, prevent flooding, and ensure that commercial extraction complies with environmental laws.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7925 §4; Republic Act No. 7160 §458(a)(5)(vi)",
-      "legal_rationale": "Valid municipal police power over city roads and utilities."
+      "target_statute": "Republic Act No. 7160 §16; Republic Act No. 7160 §138",
+      "legal_rationale": "Valid exercise of delegated quarry regulatory powers under RA 7160."
     },
     {
       "sec_num": 3,
       "sec_title": "DEFINITION OF TERMS",
-      "text": "'Public Telecommunications Entity' refers to any entity authorized to provide public telecommunications services. 'Excavation Permit' refers to an authorization to dig public streets.",
+      "text": "As used in this Ordinance, the following terms shall mean:\n\n(a) Quarry Resources - refers to any common stone, gravel, sand, earth, and volcanic rock extracted for construction purposes;\n\n(b) Commercial Sand and Gravel Permit - refers to an extraction permit issued by the City Mayor for quarry areas not exceeding five (5) hectares pursuant to Section 138 of RA 7160;\n\n(c) Quarry Operator - refers to any individual, cooperative, or enterprise granted a valid quarry extraction permit by the City Government;\n\n(d) CQRB - refers to the City Quarry Regulatory Board of Davao City;\n\n(e) Riverbed - refers to the natural bed and banks of rivers within the city, including the Davao River, Talomo River, and Lasang River.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard definitions."
+      "legal_rationale": "Standard definitional section modeled after CQRB rules and RA 7160 §138."
     },
     {
       "sec_num": 4,
-      "sec_title": "EXCAVATION PERMITS AND RESTORATION BONDS",
-      "text": "All telecommunications utilities undertaking street excavation for fiber optic installation must obtain an Excavation Permit from the City Engineer and post a performance restoration bond.",
+      "sec_title": "PERMIT REQUIREMENT AND AREA RESTRICTIONS",
+      "text": "No person or entity shall extract, haul, or transport sand, gravel, or quarry materials from any riverbed or public land in Davao City without first securing a Commercial Sand and Gravel Permit issued by the City Mayor upon recommendation of the CQRB.\n\nQuarry permits shall be limited to designated extraction zones and shall not exceed five (5) hectares in area per permit.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(5)(vi)",
-      "legal_rationale": "Direct municipal authority to regulate street digging and ensure road repair."
+      "target_statute": "Republic Act No. 7160 §138",
+      "legal_rationale": "Harmonious local permitting standard adhering strictly to the 5-hectare limit under RA 7160 §138."
     },
     {
       "sec_num": 5,
-      "sec_title": "UNDERGROUND CABLING MANDATE IN HERITAGE ZONES",
-      "text": "All overhead aerial power and telecommunications cables within the designated downtown historical and commercial zones must be placed underground within three (3) years.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
-      "legal_rationale": "Valid local zoning and public safety measure."
+      "sec_title": "GRANT OF LONG-TERM QUARRY AND MINERAL CONCESSIONS",
+      "text": "The City Mayor, upon recommendation of the City Quarry Regulatory Board (CQRB) and approval of the Sangguniang Panlungsod, is hereby authorized to grant twenty-five (25) year mineral extraction concessions and agreements for the commercial extraction of sand, gravel, and associated metallic mineral ores along major river systems in Davao City.\n\nSuch municipal mineral concessions shall confer exclusive commercial exploration and mining rights over mineralized riverbeds, and holders thereof shall be exempt from securing national mineral agreements from the Department of Environment and Natural Resources.",
+      "label": "Contradiction",
+      "target_statute": "1987 Constitution, Art. XII §2; Republic Act No. 7942 §27",
+      "legal_rationale": "Directly contradicts Article XII, Section 2 of the 1987 Constitution and Section 27 of Republic Act No. 7942 (The Philippine Mining Act of 1995). Under constitutional and statutory law, all mineral resources are owned by the State, and large-scale, long-term 25-year mineral agreements and metallic mining concessions can only be entered into by the National Government through the President and DENR. Local governments are restricted to small-scale sand and gravel permits up to 5 hectares under RA 7160 §138."
     },
     {
       "sec_num": 6,
-      "sec_title": "LOCAL LEGISLATIVE FRANCHISE REQUIREMENT FOR WIRELESS CARRIERS",
-      "text": "No public telecommunications entity holding a national legislative franchise from the Congress of the Philippines shall transmit wireless cellular signals or operate frequency transmitters within Davao City without first obtaining a separate secondary legislative franchise approved by the Sangguniang Panlungsod.",
-      "label": "Contradiction",
-      "target_statute": "Republic Act No. 7925 §5; Republic Act No. 7925 §21; Presidential Decree No. 576-A §1",
-      "legal_rationale": "Directly contradicts Republic Act No. 7925 which vests exclusive regulatory authority over wireless frequencies and national telecommunications carriers in the National Telecommunications Commission (NTC). Confirmed in Batangas CATV v. CA (2004) under the preemption doctrine."
+      "sec_title": "RIVERBANK BUFFER AND DEPTH RESTRICTIONS",
+      "text": "To prevent riverbank erosion, all extraction activities shall maintain an inviolable setback of not less than twenty (20) meters from the natural riverbank, dikes, and flood control structures.\n\nExcavation depth shall not exceed two (2) meters below the natural water level of the river, and the use of heavy suction dredgers without special environmental permits is strictly prohibited.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(vi); Presidential Decree No. 1067",
+      "legal_rationale": "Valid municipal environmental protection standard preserving riverbanks."
     },
     {
       "sec_num": 7,
-      "sec_title": "UNILATERAL RATE REGULATION OF INTERNET SERVICES",
-      "text": "The Sangguniang Panlungsod shall fix the maximum retail subscription tariffs that mobile telephone carriers may charge individual subscribers residing within Davao City.",
-      "label": "Contradiction",
-      "target_statute": "Republic Act No. 7925 §17; 1987 Constitution Art. XII §19",
-      "legal_rationale": "Directly violates Section 17 of Republic Act No. 7925, which reserves the regulation and deregulation of telecommunication tariffs exclusively to the NTC."
+      "sec_title": "HAULING DELIVERY RECEIPTS AND TARPAULIN COVERS",
+      "text": "All dump trucks and transport vehicles hauling sand and gravel on public roads in Davao City must possess official Delivery Receipts (DR) issued by the City Treasurer's Office.\n\nTruck beds containing sand and gravel must be fully covered with sturdy tarpaulins or canvas sheets to prevent spillage and flying dust while traversing public thoroughfares.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §138; Republic Act No. 4136",
+      "legal_rationale": "Valid municipal transport and safety regulation."
     },
     {
       "sec_num": 8,
-      "sec_title": "SHARED TELECOMMUNICATION TOWER INFRASTRUCTURE",
-      "text": "Cellular operators are encouraged to utilize shared passive infrastructure and co-locate on authorized common cellular towers.",
+      "sec_title": "IMPLEMENTING AND MONITORING AGENCIES",
+      "text": "The City Quarry Regulatory Board (CQRB) and the City Environment and Natural Resources Office (City ENRO) shall oversee the enforcement of this Ordinance.\n\nCity ENRO checkpoint personnel and CTTMO inspectors are authorized to inspect hauling trucks and verify valid delivery receipts at city monitoring stations.",
       "label": "Neutral",
-      "target_statute": "DICT Department Circular No. 008-2020",
-      "legal_rationale": "Parallels national DICT common tower policy."
+      "target_statute": null,
+      "legal_rationale": "Standard implementing agency clause."
     },
     {
       "sec_num": 9,
-      "sec_title": "RESTORATION QUALITY STANDARDS",
-      "text": "Excavated road trenches must be restored to original asphalt or concrete specifications within forty-eight (48) hours of cable laying.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard municipal engineering requirement."
+      "sec_title": "SUSPENSION AND CANCELLATION OF PERMITS",
+      "text": "Any permit holder who violates riverbank buffer restrictions or operates outside their permitted boundary shall be issued a Cease and Desist Order by the City Mayor and their permit suspended for thirty (30) days for the first offense, and cancelled for subsequent offenses.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §138",
+      "legal_rationale": "Valid municipal administrative authority regulating local quarry permits."
     },
     {
       "sec_num": 10,
-      "sec_title": "COORDINATING INFRASTRUCTURE COMMITTEE",
-      "text": "The City Telecommunications Infrastructure Coordinating Committee shall coordinate all scheduled road works to prevent duplicate street diggings.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Municipal inter-agency administrative tasking."
+      "sec_title": "PENALTIES FOR ILLEGAL EXTRACTION",
+      "text": "Any person or operator engaging in unauthorized sand and gravel extraction without a valid permit shall, upon conviction, be punished by a fine of Five Thousand Pesos (Php 5,000.00) or imprisonment for six (6) months, or both, at the discretion of the court.\n\nIn addition, all extracted minerals, heavy equipment, and hauling trucks used in illegal quarrying operations shall be subject to impoundment by the City Government.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Complies strictly with statutory penalty ceilings under RA 7160 §458."
     },
     {
       "sec_num": 11,
-      "sec_title": "PENALTIES AND FINES",
-      "text": "Unauthorized excavation or failure to restore roads shall be penalized by a fine of P5,000.00 and forfeiture of the restoration bond.",
+      "sec_title": "APPROPRIATION",
+      "text": "The City Government of Davao shall allocate sufficient funds in its annual budget to support riverbed environmental monitoring, drone surveillance, and CQRB operational activities.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Statutory fine within municipal limits."
+      "target_statute": null,
+      "legal_rationale": "Standard appropriation clause."
     },
     {
       "sec_num": 12,
       "sec_title": "SEPARABILITY CLAUSE",
-      "text": "Invalidity of any section shall not affect the remaining portions.",
+      "text": "If any provision of this Ordinance is declared invalid or unconstitutional, the remaining provisions not affected thereby shall continue in full force and effect.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard separability clause."
     },
     {
       "sec_num": 13,
-      "sec_title": "REPEALING CLAUSE",
-      "text": "All prior conflicting municipal measures are repealed.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard repealing clause."
-    },
-    {
-      "sec_num": 14,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance takes effect thirty (30) days from publication.",
+      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of local circulation in Davao City.",
       "label": "Neutral",
-      "target_statute": null,
+      "target_statute": "Republic Act No. 7160 §59",
       "legal_rationale": "Standard effectivity clause."
     }
   ]

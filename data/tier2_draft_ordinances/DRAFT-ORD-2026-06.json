@@ -1,133 +1,111 @@
 {
   "doc_id": "DRAFT-ORD-2026-06",
-  "title": "AN ORDINANCE REGULATING SINGLE-USE PLASTICS, ENFORCING SOURCE SEGREGATION, AND ADVANCING CIRCULAR WASTE MANAGEMENT IN DAVAO CITY",
-  "proposed_ordinance_no": "Proposed Ordinance No. 2026-06, Series of 2026",
-  "committee": "Committee on Environment and Natural Resources, Sangguniang Panlungsod",
-  "physical_specs": {
-    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
-    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
-    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
-    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
-  },
+  "title": "AN ORDINANCE REQUIRING THE INSTALLATION OF CLOSED-CIRCUIT TELEVISION (CCTV) SYSTEMS IN COMMERCIAL AND BUSINESS ESTABLISHMENTS, PRESCRIBING SECURITY ARCHIVING STANDARDS, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
+  "proposed_ordinance_no": "Proposed Ordinance No. 2026-04, Series of 2026",
+  "committee": "Committee on Peace and Public Safety, Sangguniang Panlungsod",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be known as the 'Davao City Ecological Solid Waste Management and Plastic Regulation Ordinance of 2026'.",
+      "text": "This Ordinance shall be known and cited as the 'Enhanced Commercial CCTV Surveillance and Security Records Ordinance of Davao City'.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard title clause."
+      "legal_rationale": "Standard municipal title clause modeled after Ord. 0331-23."
     },
     {
       "sec_num": 2,
-      "sec_title": "DECLARATION OF SOLID WASTE POLICY",
-      "text": "The City Government commits to systemic ecological solid waste management, waste minimization, and resource recovery pursuant to Republic Act No. 9003 and Republic Act No. 11898.",
+      "sec_title": "DECLARATION OF POLICY",
+      "text": "Pursuant to Section 16 of Republic Act No. 7160 (The Local Government Code of 1991), the City Government of Davao shall exercise powers essential to the maintenance of peace and order, the protection of life and property, and the promotion of public safety.\n\nIt is hereby declared the policy of the City of Davao to require the installation and maintenance of operational CCTV systems in commercial establishments to assist law enforcement agencies in crime prevention and investigation, while maintaining appropriate standards for the security and protection of recorded information.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 9003 §2; Republic Act No. 11898 §2",
-      "legal_rationale": "Harmonious adoption of national solid waste management and extended producer responsibility policies."
+      "target_statute": "Republic Act No. 7160 §16",
+      "legal_rationale": "Valid exercise of general welfare powers under RA 7160 §16 modeled after Ord. 0331-23 §2."
     },
     {
       "sec_num": 3,
       "sec_title": "DEFINITION OF TERMS",
-      "text": "'Single-Use Plastics' refers to disposable plastic items designed for one-time use before disposal. 'Source Segregation' refers to the sorting of solid waste at the household level.",
+      "text": "For purposes of this Ordinance, the following terms shall mean:\n\n(a) Closed-Circuit Television (CCTV) System - refers to a video surveillance system in which signals are transmitted to monitors and recording devices within a closed network;\n\n(b) Commercial Establishment - refers to banks, shopping malls, supermarkets, hotels, restaurants, bars, pawnshops, and business establishments operating in Davao City;\n\n(c) Public and Common Areas - refers to entry and exit doors, lobbies, parking areas, and transaction counters accessible to the general public;\n\n(d) PSSO - refers to the Public Safety and Security Office of the City Government of Davao.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard definitional terms."
+      "legal_rationale": "Standard definitions modeled after Ord. 0331-23 §3."
     },
     {
       "sec_num": 4,
-      "sec_title": "MANDATORY SEGREGATION AT SOURCE",
-      "text": "All households, commercial establishments, and public institutions must segregate solid waste into biodegradable, recyclable, non-recyclable, and special hazardous waste categories prior to collection.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 9003 §21",
-      "legal_rationale": "Directly implements the mandatory source segregation requirement of RA 9003."
+      "sec_title": "COVERAGE",
+      "text": "This Ordinance shall apply to all commercial, industrial, and financial establishments operating within Davao City with capital investments of more than One Million Pesos (Php 1,000,000.00), including banks, money changers, supermarkets, convenience stores, and hotels.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard coverage clause modeled after Ord. 0331-23."
     },
     {
       "sec_num": 5,
-      "sec_title": "BARANGAY MATERIALS RECOVERY FACILITIES",
-      "text": "Each of the 182 barangays of Davao City shall establish and operate a dedicated Materials Recovery Facility (MRF) or cluster MRF for recyclable and biodegradable composting.",
+      "sec_title": "MANDATORY CCTV INSTALLATION AND MINIMUM SPECIFICATIONS",
+      "text": "All covered commercial establishments shall install, operate, and maintain CCTV cameras covering all public entry and exit points, cash transaction counters, and parking facilities.\n\nCCTV systems must possess sufficient image resolution to clearly identify individuals and vehicle license plates, equipped with continuous time and date stamping, and backed up with an uninterrupted power supply (UPS).",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 9003 §32",
-      "legal_rationale": "Directly enforces the statutory mandate under Section 32 of RA 9003 requiring barangay-level MRFs."
+      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
+      "legal_rationale": "Valid municipal regulation of commercial establishment safety devices."
     },
     {
       "sec_num": 6,
-      "sec_title": "PHASE-OUT OF PLASTIC BAGS IN COMMERCE",
-      "text": "Commercial groceries and department stores are prohibited from distributing non-biodegradable single-use checkout plastic bags, encouraging reusable shopping bags.",
+      "sec_title": "NOTICE OF CCTV SURVEILLANCE",
+      "text": "Covered establishments shall post conspicuous signage at all entrance doors informing the public that the premises are under 24-hour video surveillance.\n\nSigns must be clearly visible and legible to all entering customers and visitors.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(vi); Republic Act No. 9003 §48",
-      "legal_rationale": "Valid municipal police power regulating commercial packaging for environmental sanitation."
+      "target_statute": "Republic Act No. 10173 §11",
+      "legal_rationale": "Harmonious local transparency requirement complying with the Data Privacy Act."
     },
     {
       "sec_num": 7,
-      "sec_title": "MUNICIPAL IMPORT BARRICADE AND CARGO FORFEITURE",
-      "text": "The City Government shall establish checkpoints at the Port of Davao to inspect, intercept, confiscate, and destroy all international cargo shipments of plastic polymers imported under national customs clearance.",
-      "label": "Contradiction",
-      "target_statute": "1987 Constitution Art. XII §1; Republic Act No. 10863 §200; Republic Act No. 10863 §300",
-      "legal_rationale": "Contradicts the exclusive jurisdiction of the Bureau of Customs under Republic Act No. 10863 (Customs Modernization and Tariff Act); municipal councils have no constitutional power over international trade and customs clearance."
+      "sec_title": "CONFIDENTIALITY AND ACCESS TO FOOTAGE",
+      "text": "CCTV recordings shall be treated as confidential and shall not be released, viewed, or published except upon lawful court order, formal subpoena, or official written request by law enforcement authorities conducting a criminal investigation.\n\nUnauthorized disclosure or publication of footage on social media or public platforms is strictly prohibited.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 10173 §12",
+      "legal_rationale": "Harmonious local privacy rule protecting data confidentiality."
     },
     {
       "sec_num": 8,
-      "sec_title": "EXORBITANT CONSUMER FINES",
-      "text": "Any individual resident found possessing a single-use plastic straw or fork shall be assessed an administrative fine of Fifty Thousand Pesos (P50,000.00) and three (3) years imprisonment.",
+      "sec_title": "RECORD RETENTION AND ARCHIVING",
+      "text": "All captured CCTV recordings, video footage, and associated facial recognition logs shall be preserved and retained indefinitely in secure digital archives for public safety and crime investigation purposes.\n\nNo commercial establishment or system administrator shall delete, alter, or purge any stored video footage or facial logs upon the request of any private individual or data subject, in order to protect the integrity of the public safety archive.",
       "label": "Contradiction",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Blatantly violates Section 458(a)(1)(iii) of RA 7160 which limits city sanggunian penalties to a maximum of P5,000 fine and 1-year imprisonment."
+      "target_statute": "Republic Act No. 10173 §11; Republic Act No. 10173 §16",
+      "legal_rationale": "Directly violates Sections 11 and 16 of Republic Act No. 10173 (The Data Privacy Act of 2012). National law establishes that personal data shall only be retained for as long as necessary for the purpose, and grants data subjects the statutory right to request erasure or blocking of personal information upon justifiable grounds. Blanket perpetual retention and prohibition of deletion violate national privacy statutes under the Magtajas doctrine."
     },
     {
       "sec_num": 9,
-      "sec_title": "COLLECTION SCHEDULE COMPLIANCE",
-      "text": "Waste collection trucks shall strictly collect segregated biodegradables on designated days and non-biodegradables on alternate days.",
+      "sec_title": "INSPECTION AND COMPLIANCE VERIFICATION",
+      "text": "The Public Safety and Security Office (PSSO), in coordination with the Business Bureau, shall verify CCTV compliance during annual business permit application and renewal inspections.\n\nEstablishments that comply with all technical specifications shall be issued a CCTV Compliance Certificate.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard municipal operational scheduling."
+      "legal_rationale": "Standard inspection procedure modeled after Ord. 0331-23."
     },
     {
       "sec_num": 10,
-      "sec_title": "PUBLIC AWARENESS AND EDUCATION",
-      "text": "The City Environment and Natural Resources Office (CENRO) shall conduct information campaigns in all public schools regarding waste reduction.",
+      "sec_title": "NOTICE OF DEFICIENCY",
+      "text": "Establishments found with defective, non-operational, or missing CCTV cameras shall be issued a Notice of Deficiency by the PSSO and given thirty (30) calendar days to install or repair the required equipment.\n\nFailure to comply within the grace period shall result in the suspension of the establishment's Mayor's Business Permit.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Municipal educational mandate."
+      "legal_rationale": "Standard administrative compliance notice clause."
     },
     {
       "sec_num": 11,
-      "sec_title": "ECO-ENTERPRISE ACCREDITATION",
-      "text": "Private recycling firms may register with CENRO for preferred participation in municipal resource-recovery programs.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard municipal partner registration."
+      "sec_title": "PENALTIES",
+      "text": "Any establishment or person violating this Ordinance shall, upon conviction, be penalized as follows:\n\n(a) First Offense: A fine of One Thousand Pesos (Php 1,000.00);\n\n(b) Second Offense: A fine of Three Thousand Pesos (Php 3,000.00);\n\n(c) Third and Subsequent Offenses: A fine of Five Thousand Pesos (Php 5,000.00) and revocation of Mayor's Business Permit until full compliance is certified.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Complies strictly with statutory penalty ceilings under RA 7160 §458."
     },
     {
       "sec_num": 12,
-      "sec_title": "APPROPRIATIONS",
-      "text": "Funds for the support of barangay MRFs shall be incorporated into the annual statutory ecological fund.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard appropriation clause."
-    },
-    {
-      "sec_num": 13,
       "sec_title": "SEPARABILITY CLAUSE",
-      "text": "If any clause is held unconstitutional, other clauses remain valid.",
+      "text": "If any provision of this Ordinance is declared invalid or unconstitutional, the other provisions not affected thereby shall continue in full force and effect.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard separability clause."
     },
     {
-      "sec_num": 14,
-      "sec_title": "REPEALING CLAUSE",
-      "text": "Inconsistent local enactments are repealed.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard repealing clause."
-    },
-    {
-      "sec_num": 15,
+      "sec_num": 13,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance takes effect thirty (30) days from publication.",
+      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of general circulation in Davao City.",
       "label": "Neutral",
-      "target_statute": null,
+      "target_statute": "Republic Act No. 7160 §59",
       "legal_rationale": "Standard effectivity clause."
     }
   ]

@@ -78,6 +78,10 @@ description: This rule shall be applied when the user wants the thesis paper dra
 > 17. **Canonical Terminology Conventions:**  
 >    * **Local vs. Municipal:** Davao City is a Highly Urbanized City (HUC), not a municipality. Refer to local legislation as "local ordinances," "city ordinances," or "local enactments." Reserve "municipal" only when specifically citing general statutory provisions (e.g., RA 7160 provisions on municipalities) or historical legal sources.  
 >    * **Ex-Ante vs. Ex-Post Scope:** Ex-ante refers strictly to pre-enactment review of proposed legislation (draft ordinances, bills, executive issuances before passage) to prevent statutory collisions; ex-post refers to post-enactment dispute adjudication (Supreme Court jurisprudence, *stare decisis*, and litigation).
+> 18. **Strict Zero Editorial Pollution Protocol (Verbatim Legal Text Integrity):**  
+>    * Under NO circumstances should any statutory provision, ordinance text, benchmark premise, or candidate text string in code, prototypes, or manuscript examples be synthetically rewritten, paraphrased, injected with explanatory commentary, or augmented with synthetic sentences (e.g., appending penalty warnings, doctrinal summaries, or preemption explanations into the statutory text string).  
+>    * The text passed into Stage 2 Cross-Encoder tensors and displayed within prototype Explainable AI (XAI) cards or manuscript example boxes MUST be 100% verbatim authentic text directly extracted from official repositories (Lawphil or Sangguniang Panlungsod archives).  
+>    * All legal doctrine explanations, preemption rationales, or *ratios decidendi* must reside strictly in dedicated metadata/explanation fields (`legal_rationale`, `verdict_desc`, `ratio_decidendi`) and NEVER pollute the statutory text fields (`statutory_text`, `statute_text`, `ordinance_text`, `premise`).
 
 
 ---
@@ -161,6 +165,12 @@ Write in the authentic voice of a methodical, observant computer science researc
 ### **Authorial Identity & Perspective**
 * Refer to the authors as **"the proponents"** or **"the researchers"**, or structure sentences in an objective passive/analytical voice (e.g., *"The system evaluates..."*, *"This study investigates..."*).
 * Avoid first-person singular pronouns (*"I"*, *"my"*). Use first-person plural (*"we"*) very sparingly, reserving it primarily for collaborative method framing.
+* **Strict Academic Anonymity & Professional Formality (Zero Personal Names in Chapter Prose):**
+  * **NEVER** mention the personal names of student proponents (*Yahyah Odin*, *Ralph Paolo Dulce*) or faculty advisers (*Mr. Adrian "Ogs" Ablazo*, *Sir Ogs*) anywhere within thesis chapter prose (Chapters 1--5). Personal names belong exclusively on official front-matter administrative pages (Title Page, Approval Sheet, and Acknowledgments in `main.tex`).
+  * Refer to the student authors strictly as *"the proponents"* or *"the research team"*.
+  * Refer to faculty advisers, panel members, and instructors by their institutional roles: *"the thesis adviser"*, *"the faculty adviser"*, *"the course instructor"*, or *"the defense panel"* (e.g., use *"formally verified through iterative faculty adviser review"* instead of naming the adviser).
+  * **Formal Scholarly Citation Exception:** When citing published peer-reviewed literature or prior academic theses authored by faculty or advisers (such as Ablazo's 2019 master's thesis), cite the work strictly by the author's academic surname using formal BibTeX citations (e.g., `Ablazo~\cite{ablazo2019designing}`), never by conversational or first-name designations.
+  * **Objective Computing Platform Designations:** Hardware environments, workstations, and testbeds must be designated with simple, objective, and general identifiers (e.g., *Host A (Desktop)*, *Host B (Laptop 1)*, *Host C (Laptop 2)*) rather than personal ownership or possessive names.
 
 ### **Vocabulary Calibration & Readability Standard (Accessible Academic Voice)**
 

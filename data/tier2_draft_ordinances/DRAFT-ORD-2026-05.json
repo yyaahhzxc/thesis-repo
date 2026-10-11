@@ -1,125 +1,111 @@
 {
   "doc_id": "DRAFT-ORD-2026-05",
-  "title": "AN ORDINANCE MANDATING CLOSED-CIRCUIT TELEVISION (CCTV) INSTALLATION IN COMMERCIAL PREMISES AND ESTABLISHING SECURITY DATA PROTOCOLS IN DAVAO CITY",
+  "title": "AN ORDINANCE PROMOTING STABILITY OF FOOD COMMODITY PRICES, PRESCRIBING MARKET MONITORING PROCEDURES IN PUBLIC AND PRIVATE MARKETS, PROHIBITING HOARDING, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
   "proposed_ordinance_no": "Proposed Ordinance No. 2026-05, Series of 2026",
-  "committee": "Committee on Public Safety and Security, Sangguniang Panlungsod",
-  "physical_specs": {
-    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
-    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
-    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
-    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
-  },
+  "committee": "Committee on Trade, Commerce and Industry, Sangguniang Panlungsod",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be known as the 'Davao City Mandatory Commercial CCTV and Security Surveillance Ordinance of 2026'.",
+      "text": "This Ordinance shall be known and cited as the 'Basic Food Commodities and Price Monitoring Ordinance of Davao City'.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard title provision."
+      "legal_rationale": "Standard municipal title clause."
     },
     {
       "sec_num": 2,
-      "sec_title": "LEGISLATIVE INTENT",
-      "text": "The City Government exercises its police power to preserve public order, enhance crime detection, and protect commercial establishments through modern surveillance technologies under Section 16 of Republic Act No. 7160.",
+      "sec_title": "DECLARATION OF POLICY",
+      "text": "Under Section 16 of Republic Act No. 7160 (The Local Government Code of 1991), local government units are authorized to protect public health and safety and promote economic prosperity and general welfare.\n\nIt is the policy of the City Government of Davao to ensure the constant availability of basic food necessities and prime commodities at fair prices, protect consumers from unfair trading practices, and prevent hoarding and artificial price manipulation in public markets and retail establishments throughout the city.",
       "label": "Entailment",
       "target_statute": "Republic Act No. 7160 §16",
-      "legal_rationale": "Valid exercise of police power for crime prevention under the general welfare clause."
+      "legal_rationale": "Valid exercise of general welfare powers under RA 7160 §16."
     },
     {
       "sec_num": 3,
-      "sec_title": "COVERED COMMERCIAL ESTABLISHMENTS",
-      "text": "All banks, shopping malls, supermarkets, pawnshops, money-transfer stations, hotels, fuel stations, and private educational institutions operating within the City shall install functional CCTV systems.",
-      "label": "Entailment",
-      "target_statute": "DILG Memorandum Circular No. 2022-060",
-      "legal_rationale": "Aligns with national DILG guidelines on mandatory business CCTV requirements."
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "As used in this Ordinance, the following terms shall mean:\n\n(a) Basic Necessities - refers to essential food items including rice, corn, fresh milk, fresh eggs, pork, beef, poultry meat, fresh vegetables, root crops, and cooking oil;\n\n(b) Price Gouging - refers to the act of selling basic food necessities at prices significantly higher than the prevailing market price without justifiable economic reason;\n\n(c) Hoarding - refers to the undue accumulation and holding back of basic food items from commercial channels of trade to create an artificial shortage and hike prices;\n\n(d) Public Market - refers to city-owned public markets including Bankerohan, Agdao, Calinan, and Toril, as well as privately operated wet markets in Davao City;\n\n(e) LPCC - refers to the Local Price Coordinating Council of Davao City.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard definitions modeled after Ord. 0823-21 and national price monitoring statutes."
     },
     {
       "sec_num": 4,
-      "sec_title": "MINIMUM TECHNICAL SPECIFICATIONS",
-      "text": "Surveillance cameras must possess a minimum resolution of 1080p, night vision capability, and a minimum continuous recording retention capacity of not less than thirty (30) calendar days.",
-      "label": "Entailment",
-      "target_statute": "DILG Memorandum Circular No. 2022-060",
-      "legal_rationale": "Standard technical specifications for evidentiary reliability."
+      "sec_title": "SCOPE AND COVERAGE",
+      "text": "This Ordinance shall apply to all public and private wet markets, supermarkets, grocery stores, grain wholesalers, meat retailers, and food vendors operating within the territorial jurisdiction of Davao City.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard scope and coverage clause."
     },
     {
       "sec_num": 5,
-      "sec_title": "DEFINITION OF TERMS",
-      "text": "'Biometric Data' refers to physiological characteristics used for identification. 'Personal Data' refers to information from which the identity of an individual is apparent. 'CCTV' refers to closed-circuit television.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard definitions."
+      "sec_title": "PRICE MONITORING AND DISPLAY OF PRICE TAGS",
+      "text": "All retailers, market vendors, and commercial establishments selling basic food commodities shall clearly display price tags or price boards on all goods offered for sale.\n\nPrice tags must be written in legible characters indicating the price per kilogram or standard unit of measure, and goods shall not be sold at prices higher than those indicated on the price tag.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7394 §81",
+      "legal_rationale": "Harmonious local consumer protection standard enforcing the Consumer Act (RA 7394)."
     },
     {
       "sec_num": 6,
-      "sec_title": "MANDATORY PUBLIC BROADCAST OF REAL-TIME PRIVATE FEEDS",
-      "text": "All covered private business entities must connect their internal security cameras directly to a publicly accessible municipal cloud portal, transmitting unredacted, unencrypted real-time facial recognition data of all customers without individual consent or National Privacy Commission clearance.",
-      "label": "Contradiction",
-      "target_statute": "Republic Act No. 10173 §11; Republic Act No. 10173 §12; NPC Circular No. 16-01",
-      "legal_rationale": "Directly violates Republic Act No. 10173 (Data Privacy Act of 2012) principles of transparency, legitimate purpose, and proportionality, and breaches constitutional privacy guarantees by publishing unredacted surveillance feeds without consent."
+      "sec_title": "PROHIBITION OF HOARDING AND ARTIFICIAL SHORTAGES",
+      "text": "No wholesale dealer, distributor, or market vendor shall hoard, conceal, or withhold basic food necessities from the market, or collude with other traders to restrict supply and artificially inflate prevailing retail prices in the City of Davao.\n\nAny establishment found possessing hoarded basic commodities shall be reported immediately to the City Mayor and the Department of Trade and Industry (DTI).",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7581 §5",
+      "legal_rationale": "Harmonious local anti-hoarding rule aligned with the Price Act (RA 7581)."
     },
     {
       "sec_num": 7,
-      "sec_title": "INDEFINITE BIOMETRIC DATA RETENTION",
-      "text": "The City Government shall retain all captured facial recognition logs and customer movement records permanently in perpetuity, prohibiting any citizen from requesting data deletion or rectification.",
+      "sec_title": "MANDATORY CEILING PRICES ON BASIC COMMODITIES",
+      "text": "Whenever prevailing market retail prices of basic necessities in Davao City experience sudden price increases or market volatility, the City Mayor, upon recommendation of the Local Price Coordinating Council (LPCC), is hereby authorized to establish, fix, and enforce mandatory maximum ceiling prices across all public markets, supermarkets, and retail stores in Davao City.\n\nAny vendor or merchant who sells basic food items above the municipal ceiling prices fixed by the City Mayor shall be subject to immediate administrative closure and the penalties provided in this Ordinance.",
       "label": "Contradiction",
-      "target_statute": "Republic Act No. 10173 §16; Republic Act No. 10173 §18",
-      "legal_rationale": "Directly contradicts the statutory Rights of the Data Subject under Section 16 of RA 10173, including the right to erasure, blocking, and data minimization."
+      "target_statute": "Republic Act No. 7581 §6; Republic Act No. 7581 §7",
+      "legal_rationale": "Directly contradicts Republic Act No. 7581 §§6 and 7 (The Price Act). The statutory power to declare price ceilings and fix maximum prices on basic necessities is exclusively vested by national law in the President of the Philippines upon recommendation of the National Price Coordinating Council. Local government units have no unilateral power to fix price ceilings on basic necessities under the Magtajas preemption doctrine."
     },
     {
       "sec_num": 8,
-      "sec_title": "ANNUAL BUSINESS PERMIT AUDIT",
-      "text": "Inspection and certification of CCTV functionality by the City Engineers Office shall be a mandatory prerequisite for the renewal of Mayor's Business Permits.",
+      "sec_title": "LOCAL PRICE COORDINATING COUNCIL FUNCTIONS",
+      "text": "The Local Price Coordinating Council (LPCC) of Davao City, chaired by the City Mayor and co-chaired by the DTI Provincial Director, shall conduct regular weekly market price monitoring across all major trading centers in Davao City.\n\nThe LPCC shall publish weekly Prevailing Price Bulletins to guide consumers and ensure transparent market operations.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §458(a)(4)(ii)",
-      "legal_rationale": "Valid regulatory condition precedent for municipal business licensing."
+      "target_statute": null,
+      "legal_rationale": "Standard local administrative council functions under national price monitoring guidelines."
     },
     {
       "sec_num": 9,
-      "sec_title": "DATA SECURITY COMPLIANCE OFFICER",
-      "text": "Each commercial establishment shall designate a Compliance Officer responsible for safeguarding stored recordings against unauthorized dissemination.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Administrative compliance requirement."
+      "sec_title": "TESTING AND CALIBRATION OF WEIGHING SCALES",
+      "text": "All weighing scales used in public and private markets shall be inspected, tested, and sealed annually by the City Treasurer's Office.\n\nThe use of unsealed, defective, or tampered weighing scales is strictly prohibited. The City Economic Enterprise Office shall maintain 'Timbangan ng Bayan' weighing stations in all public markets for consumer verification.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §148; Republic Act No. 7394 §62",
+      "legal_rationale": "Valid municipal regulation of weights and measures under RA 7160."
     },
     {
       "sec_num": 10,
-      "sec_title": "PENALTIES FOR NON-INSTALLATION",
-      "text": "Failure to install functional CCTVs within ninety (90) days from notice shall result in a fine of P5,000.00 and suspension of business permit.",
+      "sec_title": "NOTICE OF VIOLATION",
+      "text": "Any vendor found selling without price tags or using uncalibrated scales shall be issued a Notice of Violation by the City Treasurer or market administrator, directing immediate correction.\n\nFailure to correct the infraction within forty-eight (48) hours shall result in confiscation of the defective scale and formal administrative sanctions.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Statutory fine within municipal limits."
+      "target_statute": null,
+      "legal_rationale": "Standard administrative warning procedure."
     },
     {
       "sec_num": 11,
-      "sec_title": "APPROPRIATIONS",
-      "text": "Necessary funds for city monitoring terminals shall be allocated from the annual executive budget.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard appropriation clause."
+      "sec_title": "PENALTIES",
+      "text": "Any person, merchant, or establishment who violates the provisions of this Ordinance shall, upon conviction, be punished by a fine of One Thousand Pesos (Php 1,000.00) for the first offense; Three Thousand Pesos (Php 3,000.00) for the second offense; and Five Thousand Pesos (Php 5,000.00) or imprisonment of up to six (6) months, or both, for the third offense.\n\nIn addition, the market stall award or Mayor's Business Permit may be revoked for repeated violations.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Complies strictly with statutory penalty ceilings under RA 7160 §458."
     },
     {
       "sec_num": 12,
       "sec_title": "SEPARABILITY CLAUSE",
-      "text": "If any provision is declared unconstitutional, the rest shall remain operative.",
+      "text": "If any section or part of this Ordinance is held unconstitutional or invalid, other sections or provisions hereof not affected thereby shall continue in full force and effect.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard separability clause."
     },
     {
       "sec_num": 13,
-      "sec_title": "REPEALING CLAUSE",
-      "text": "All prior conflicting city orders and resolutions are hereby revoked.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard repealing clause."
-    },
-    {
-      "sec_num": 14,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect thirty (30) days after publication.",
+      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of local circulation in Davao City.",
       "label": "Neutral",
-      "target_statute": null,
+      "target_statute": "Republic Act No. 7160 §59",
       "legal_rationale": "Standard effectivity clause."
     }
   ]

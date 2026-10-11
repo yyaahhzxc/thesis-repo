@@ -1,14 +1,42 @@
 {
+  "filename_prefix": "11_batangas_catv_cable_regulation",
   "case_id": "SC-PHIL-11",
   "case_name": "Batangas CATV, Inc. v. Court of Appeals",
-  "docket_no": "G.R. No. 138810",
+  "docket_no": "G.R. No. 138810 (September 29, 2004; 439 SCRA 326)",
   "ordinance_no": "Batangas SP Resolution No. 210, Series of 1993",
-  "ordinance_title": "RESOLUTION REGULATING THE CABLE TELEVISION FRANCHISE AND SUBSCRIBER RATES OF BATANGAS CATV, INC.",
-  "challenged_clause_text": "Section 2: Cable Rate Regulation. The Sangguniang Panlungsod assumes authority to fix, regulate, and adjust subscriber rates and channel programming charges for commercial cable television services.",
-  "controlling_statute": "Executive Order No. 205 §2; Executive Order No. 546 §15",
-  "statute_title": "National Telecommunications Commission Regulatory Mandate",
-  "statute_premise_text": "Section 2 & Section 15. The National Telecommunications Commission shall have exclusive jurisdiction and authority over the regulation, supervision, rate-fixing, and licensing of cable television systems throughout the Philippines.",
-  "sc_ruling": "Resolution and Rate-Fixing Powers Struck Down (Overturned)",
-  "gold_label": "Contradiction",
-  "legal_doctrine_rationale": "Executive orders vest exclusive regulatory and rate-fixing authority over cable television in the National Telecommunications Commission. Where national law occupies the regulatory field, municipal ordinances are preempted."
+  "title": "RESOLUTION REGULATING THE CABLE TELEVISION FRANCHISE AND SUBSCRIBER RATES OF BATANGAS CATV, INC.",
+  "enacting_lgu": "City of Batangas",
+  "enacting_clause": "BE IT RESOLVED BY THE SANGGUNIANG PANLUNGSOD OF BATANGAS CITY, IN SESSION ASSEMBLED, THAT:",
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Resolution shall be known as the 'Batangas City Cable Television Regulatory Resolution of 1993'."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "DECLARATION OF CONSUMER POLICY",
+      "text": "The City declares its duty to protect city residents from excessive monthly charges imposed by commercial telecommunications providers."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "CABLE RATE REGULATION",
+      "text": "The Sangguniang Panlungsod assumes authority to fix, regulate, and adjust subscriber rates and channel programming charges for commercial cable television services."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "MANDATORY RATE SCHEDULE",
+      "text": "All cable TV concessionaires must submit rate adjustment applications to the City Council for public hearing and approval prior to implementation."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "PENALTIES FOR NON-COMPLIANCE",
+      "text": "Unauthorized rate increases shall be subject to a fine of Five Thousand Pesos (P5,000.00) per month of unauthorized collection and revocation of Mayor's Permit."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "SEPARABILITY AND EFFECTIVITY",
+      "text": "This Resolution shall take effect upon approval."
+    }
+  ]
 }
