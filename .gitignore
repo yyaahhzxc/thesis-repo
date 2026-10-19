@@ -56,3 +56,7 @@ scratch/
 *.env
 .env.*
 
+# Kaggle Experiments Large PDFs
+kaggle_experiments/**/*.pdf
+
+

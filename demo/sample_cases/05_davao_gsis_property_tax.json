@@ -1,14 +1,32 @@
 {
+  "filename_prefix": "05_davao_gsis_property_tax",
   "case_id": "DAVAO-TIER3-05",
   "case_name": "City of Davao v. Court of Appeals and GSIS",
-  "docket_no": "G.R. No. 127383",
+  "docket_no": "G.R. No. 127383 (August 18, 2005)",
   "ordinance_no": "Davao City Real Property Tax Assessment on GSIS",
-  "ordinance_title": "DAVAO CITY MUNICIPAL REAL PROPERTY TAX ASSESSMENT ON GSIS PROPERTIES",
-  "challenged_clause_text": "Assessment Mandate: Notices of assessment and warrants of levy imposing municipal real property taxes upon GSIS properties located in Matina and Ulas, Davao City, for outstanding municipal tax liabilities.",
-  "controlling_statute": "Republic Act No. 7160 §193, §234",
-  "statute_title": "Local Government Code of 1991",
-  "statute_premise_text": "Section 193 & Section 234. Withdrawal of Tax Exemption Privileges. Unless otherwise provided in this Code, tax exemptions or the incentive privileges granted to or presently enjoyed by all persons, whether natural or juridical, including government-owned or controlled corporations, are hereby withdrawn.",
-  "sc_ruling": "Constitutional and Valid (Upheld)",
-  "gold_label": "Entailment",
-  "legal_doctrine_rationale": "Sections 193 and 234 of RA 7160 expressly withdrew prior real property tax exemptions of government-owned or controlled corporations, making Davao City's municipal tax assessment a lawful exercise of delegated authority."
+  "title": "DAVAO CITY MUNICIPAL REAL PROPERTY TAX ASSESSMENT ON GSIS PROPERTIES",
+  "enacting_lgu": "City of Davao",
+  "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Measure establishes the Municipal Real Property Tax Assessment Mandate on Government-Owned Corporation Assets."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "ASSESSMENT MANDATE ON COMMERCIAL REALTY",
+      "text": "Notices of assessment and warrants of levy are hereby issued imposing municipal real property taxes upon GSIS properties located in Matina and Ulas, Davao City, for outstanding municipal tax liabilities pursuant to the withdrawal of GOCC tax exemptions."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "LEVY AND REMEDIES",
+      "text": "The City Treasurer is instructed to pursue all administrative remedies under the Local Government Code to enforce tax delinquencies against taxable properties."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Measure takes effect immediately upon passage."
+    }
+  ]
 }

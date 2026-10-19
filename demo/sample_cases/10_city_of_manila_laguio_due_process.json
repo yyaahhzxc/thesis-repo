@@ -1,14 +1,47 @@
 {
+  "filename_prefix": "10_city_of_manila_laguio_due_process",
   "case_id": "SC-PHIL-10",
   "case_name": "City of Manila v. Laguio, Jr.",
-  "docket_no": "G.R. No. 118127",
+  "docket_no": "G.R. No. 118127 (April 12, 2005; 455 SCRA 308)",
   "ordinance_no": "Manila Ordinance No. 7783",
-  "ordinance_title": "AN ORDINANCE PROHIBITING THE ESTABLISHMENT OR OPERATION OF MOTELS, INNS, AND KARAOKE BARS IN ERMITA-MALATE",
-  "challenged_clause_text": "Section 1: Closure of Hospitality Establishments. Prohibits the establishment or operation of motels, inns, and karaoke bars in the Ermita-Malate district, ordering their permanent closure or relocation within three (3) months without just compensation.",
-  "controlling_statute": "1987 Constitution, Article III, Section 1; Republic Act No. 7160 §458",
-  "statute_title": "1987 Philippine Constitution (Due Process Clause)",
-  "statute_premise_text": "Article III, Section 1. No person shall be deprived of life, liberty, or property without due process of law, nor shall any person be denied the equal protection of the laws.",
-  "sc_ruling": "Ordinance Declared Unconstitutional (Overturned)",
-  "gold_label": "Contradiction",
-  "legal_doctrine_rationale": "Prohibiting lawful commercial businesses instead of regulating them violates substantive due process. Local police power cannot arbitrarily destroy legitimate enterprises."
+  "title": "AN ORDINANCE PROHIBITING THE ESTABLISHMENT OR OPERATION OF MOTELS, INNS, AND KARAOKE BARS IN ERMITA-MALATE",
+  "enacting_lgu": "City of Manila",
+  "enacting_clause": "BE IT ORDAINED BY THE CITY COUNCIL OF MANILA, IN SESSION ASSEMBLED, THAT:",
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be known as the 'Ermita-Malate Hospitality Zoning and Moral Rehabilitation Ordinance'."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "DECLARATION OF URBAN POLICY",
+      "text": "It is declared the policy of the City of Manila to revitalize the tourist district of Ermita-Malate and eliminate venues associated with illicit commercial activities."
+    },
+    {
+      "sec_num": 3,
+      "sec_title": "CLOSURE OF HOSPITALITY ESTABLISHMENTS",
+      "text": "Prohibits the establishment or operation of motels, inns, and karaoke bars in the Ermita-Malate district, ordering their permanent closure or relocation within three (3) months without just compensation."
+    },
+    {
+      "sec_num": 4,
+      "sec_title": "REVOCATION OF BUSINESS LICENSES",
+      "text": "The City Mayor and Bureau of Permits are directed to cancel all business permits previously issued to motels, inns, massage parlors, and sauna baths in the covered area."
+    },
+    {
+      "sec_num": 5,
+      "sec_title": "PENAL SANCTIONS",
+      "text": "Failure to comply shall result in a fine of Five Thousand Pesos (P5,000.00) and summary eviction and physical sealing of premises."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "The provisions of this Ordinance are separable; invalidity of any provision shall not affect the remaining parts."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Ordinance shall take effect immediately upon enactment."
+    }
+  ]
 }

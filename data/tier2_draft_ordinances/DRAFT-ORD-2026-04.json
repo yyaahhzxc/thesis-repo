@@ -1,117 +1,103 @@
 {
   "doc_id": "DRAFT-ORD-2026-04",
-  "title": "AN ORDINANCE STRENGTHENING THE LOCAL PRICE COORDINATING COUNCIL, REGULATING COMMODITY PRICE MONITORING, AND PREVENTING HOARDING DURING CALAMITIES IN DAVAO CITY",
+  "title": "AN ORDINANCE REGULATING THE OPERATION OF ELECTRIC BICYCLES, ELECTRIC SCOOTERS, AND LIGHT CONVEYANCES, PRESCRIBING SPEED LIMITS AND SAFETY STANDARDS, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
   "proposed_ordinance_no": "Proposed Ordinance No. 2026-04, Series of 2026",
-  "committee": "Committee on Trade, Commerce and Industry, Sangguniang Panlungsod",
-  "physical_specs": {
-    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
-    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
-    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
-    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
-  },
+  "committee": "Committee on Transportation and Communication, Sangguniang Panlungsod",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be known as the 'Davao City Fair Price and Calamity Consumer Protection Ordinance of 2026'.",
+      "text": "This Ordinance shall be known and cited as the 'Electric Mobility and Light Vehicle Regulation Ordinance of Davao City'.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard title provision."
+      "legal_rationale": "Standard municipal title clause."
     },
     {
       "sec_num": 2,
-      "sec_title": "DECLARATION OF CONSUMER PROTECTION POLICY",
-      "text": "The City Government ensures the availability of basic necessities and prime commodities at reasonable prices, protecting consumers from trade malpractices pursuant to Republic Act No. 7581.",
+      "sec_title": "DECLARATION OF POLICY",
+      "text": "Pursuant to Section 16 of Republic Act No. 7160 (The Local Government Code of 1991), the City Government of Davao is authorized to regulate traffic and the use of streets to protect public safety and general welfare.\n\nIt is hereby declared the policy of the City of Davao to promote active and sustainable transportation by providing guidelines for the safe operation of electric bicycles, e-scooters, and light mobility vehicles, preventing road crashes, and protecting pedestrians and motorists across city streets.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7581 §2",
-      "legal_rationale": "Directly implements the national Price Act policy."
+      "target_statute": "Republic Act No. 7160 §16",
+      "legal_rationale": "Valid exercise of local police powers regulating road traffic."
     },
     {
       "sec_num": 3,
-      "sec_title": "LOCAL PRICE COORDINATING COUNCIL",
-      "text": "The Davao City Local Price Coordinating Council (LPCC) is hereby revitalized, with the City Mayor as Chairman and the DTI Provincial Director as Vice Chairman.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7581 §12; DILG-DTI-DA-DOH JAO 2013-01",
-      "legal_rationale": "Directly implements national institutional architecture for local price coordination."
+      "sec_title": "DEFINITION OF TERMS",
+      "text": "As used in this Ordinance, the following terms shall mean:\n\n(a) Electric Bicycle (E-Bike) - refers to any two- or three-wheeled vehicle equipped with an electric motor and functional pedals;\n\n(b) Electric Scooter (E-Scooter) - refers to a stand-up or sit-down light two-wheeled vehicle powered by an electric motor;\n\n(c) City Streets - refers to roads and streets within Davao City not designated as national or provincial highways;\n\n(d) Dedicated Bicycle Lanes - refers to designated lanes on public roads reserved for bicycles and light mobility conveyances;\n\n(e) CTTMO - refers to the City Transport and Traffic Management Office of Davao City.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard definitional section modeled after Ord. 0270-23."
     },
     {
       "sec_num": 4,
-      "sec_title": "AUTOMATIC PRICE FREEZE UPON CALAMITY",
-      "text": "Upon declaration of a state of calamity by the Sangguniang Panlungsod, prices of basic necessities shall be automatically frozen at their prevailing market rates.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7581 §6; Republic Act No. 10121 §16",
-      "legal_rationale": "Echoes mandatory statutory price freeze triggered by LGU state of calamity declaration."
+      "sec_title": "SCOPE AND COVERAGE",
+      "text": "This Ordinance shall apply to all users, riders, and operators of electric bicycles, electric scooters, and light electric conveyances driven on public streets, lanes, and thoroughfares within Davao City.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard coverage clause."
     },
     {
       "sec_num": 5,
-      "sec_title": "DEFINITION OF BASIC NECESSITIES",
-      "text": "'Basic Necessities' shall include rice, corn, bread, fresh fish, pork, beef, poultry, vegetables, root crops, fresh milk, cooking oil, salt, laundry soap, and medicines.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard statutory categorization from RA 7581."
+      "sec_title": "SAFETY REQUIREMENTS AND PROTECTIVE GEAR",
+      "text": "All riders and operators of electric bicycles and e-scooters traversing public roads in Davao City shall observe the following safety requirements:\n\n(a) Mandatory wearing of protective bicycle or motorcycle safety helmets at all times;\n\n(b) Equipping vehicles with operational white front headlights and red rear reflectors or tail lights during nighttime operation from 6:00 PM to 6:00 AM;\n\n(c) Installation of functional mechanical brakes and an audible bell or horn;\n\n(d) Prohibition against carrying passengers beyond the designed manufacturer capacity of the vehicle.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(5)(v)",
+      "legal_rationale": "Harmonious local safety standards under municipal traffic powers."
     },
     {
       "sec_num": 6,
-      "sec_title": "MUNICIPAL UNILATERAL PRICE MANDATE",
-      "text": "The City Mayor, by executive order, is hereby authorized to unilaterally fix and mandate price ceilings on all manufactured consumer goods at fifty percent (50%) below the Suggested Retail Price (SRP) issued by the Department of Trade and Industry, without presidential approval or emergency proclamation.",
+      "sec_title": "MAXIMUM SPEED LIMITS ON MAJOR THOROUGHFARES AND HIGHWAYS",
+      "text": "To ensure the safety of pedestrians and light vehicle commuters, the maximum allowable speed for all motor vehicles and electric conveyances traversing national highways within Davao City, including Daang Maharlika and the Davao-Cotabato Highway, shall not exceed fifteen (15) kilometers per hour.\n\nAny driver or operator exceeding this uniform fifteen (15) kilometer per hour limit on any national highway within the city shall be cited for reckless driving and penalized accordingly.",
       "label": "Contradiction",
-      "target_statute": "Republic Act No. 7581 §7",
-      "legal_rationale": "Directly contradicts Republic Act No. 7581 Section 7, which reserves the power to mandate price ceilings strictly to the President of the Philippines upon recommendation of the implementing agency."
+      "target_statute": "Republic Act No. 4136 §35; Republic Act No. 4136 §38; Joint Memorandum Circular JAO 2018-01",
+      "legal_rationale": "Directly contradicts Republic Act No. 4136 §§35 and 38 (The Land Transportation and Traffic Code) and DOTr-DPWH-DILG Joint Memorandum Circular (JAO 2018-01). National laws establish higher speed classifications for national highways and restrict local governments from imposing blanket 15 km/h restrictions on national highways under the Magtajas preemption doctrine."
     },
     {
       "sec_num": 7,
-      "sec_title": "INSPECTION OF WAREHOUSES AND RETAIL OUTLETS",
-      "text": "Authorized joint inspection teams of the LPCC and DTI may conduct periodic inspections of commercial storage facilities to verify inventory logs.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard joint regulatory inspection powers."
+      "sec_title": "USE OF DESIGNATED BICYCLE LANES",
+      "text": "Operators of electric bicycles and e-scooters shall strictly utilize designated bicycle lanes wherever such lanes have been demarcated by the City Government.\n\nWhere no dedicated bike lane exists, light vehicles shall operate along the rightmost lane of the roadway and shall yield the right-of-way to pedestrians crossing at intersections and marked pedestrian lanes.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(5)(vi)",
+      "legal_rationale": "Valid exercise of local traffic management powers."
     },
     {
       "sec_num": 8,
-      "sec_title": "PROHIBITION OF PROFITEERING AND HOARDING",
-      "text": "No retail or wholesale merchant shall accumulate goods in excess of normal inventory to corner the market or sell above prevailing price freezes.",
+      "sec_title": "ENFORCEMENT AND IMPLEMENTATION",
+      "text": "The City Transport and Traffic Management Office (CTTMO), in coordination with the Traffic Enforcement Unit of the Davao City Police Office (DCPO), shall be the lead enforcement agency of this Ordinance.\n\nDeputized traffic enforcement personnel are authorized to issue City Traffic Citation Tickets (CTCT) to any rider or operator violating the provisions of this Ordinance.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7581 §5",
-      "legal_rationale": "Parallels national anti-hoarding provisions."
+      "target_statute": null,
+      "legal_rationale": "Standard enforcement clause assigning duties to CTTMO and DCPO."
     },
     {
       "sec_num": 9,
-      "sec_title": "LOCAL BUSINESS LICENSE REVOCATION",
-      "text": "Merchants proven to engage in illegal hoarding during a declared state of calamity shall face immediate cancellation of their Mayor's Business Permit.",
-      "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §458(a)(4)(ii)",
-      "legal_rationale": "Valid municipal licensing authority."
+      "sec_title": "NO-CONTEST ADMINISTRATIVE SETTLEMENT",
+      "text": "Any person issued a citation ticket for violation of Section 5 or Section 7 who does not wish to contest the citation may avail of the No-Contest provision by paying an administrative fine to the City Treasurer within seventy-two (72) hours:\n\n(a) First Offense: Three Hundred Pesos (Php 300.00);\n\n(b) Second Offense: Five Hundred Pesos (Php 500.00);\n\n(c) Third Offense: One Thousand Pesos (Php 1,000.00).",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458",
+      "legal_rationale": "Valid administrative compromise procedure modeled after Ord. 0270-23."
     },
     {
       "sec_num": 10,
-      "sec_title": "PENAL SANCTIONS",
-      "text": "Violators shall be subject to an administrative fine of P5,000.00 and suspension of business operations for not more than six (6) months.",
-      "label": "Neutral",
+      "sec_title": "PENALTIES",
+      "text": "Any person who violates the provisions of this Ordinance and fails to avail of administrative settlement shall, upon conviction before a court of competent jurisdiction, be penalized by a fine of One Thousand Pesos (Php 1,000.00) for the first offense, Three Thousand Pesos (Php 3,000.00) for the second offense, and Five Thousand Pesos (Php 5,000.00) or imprisonment of up to thirty (30) days for subsequent offenses.",
+      "label": "Entailment",
       "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Compliant with municipal penalty ceiling."
+      "legal_rationale": "Complies strictly with statutory penalty ceilings under RA 7160 §458."
     },
     {
       "sec_num": 11,
       "sec_title": "SEPARABILITY CLAUSE",
-      "text": "The invalidity of any provision shall not invalidate the other portions hereof.",
+      "text": "If any provision of this Ordinance is declared unconstitutional or invalid, the other provisions not affected thereby shall remain in full force and effect.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard separability clause."
     },
     {
       "sec_num": 12,
-      "sec_title": "REPEALING CLAUSE",
-      "text": "All ordinances in conflict with this enactment are hereby repealed.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard repealing clause."
-    },
-    {
-      "sec_num": 13,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect immediately upon its approval.",
+      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of local circulation in Davao City.",
       "label": "Neutral",
-      "target_statute": null,
+      "target_statute": "Republic Act No. 7160 §59",
       "legal_rationale": "Standard effectivity clause."
     }
   ]

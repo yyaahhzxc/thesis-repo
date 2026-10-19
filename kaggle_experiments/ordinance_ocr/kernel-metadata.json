@@ -1,0 +1,17 @@
+{
+  "id": "yyaahhzxc/davao-ordinance-158-ocr",
+  "title": "Davao Ordinance 158-05 Full 434 Sections OCR",
+  "code_file": "run_ordinance_ocr.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "yyaahhzxc/davao-ordinance-158-pdf"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

@@ -1,117 +1,111 @@
 {
   "doc_id": "DRAFT-ORD-2026-08",
-  "title": "AN ORDINANCE REGULATING COMMERCIAL SAND AND GRAVEL EXTRACTION, SAFEGUARDING RIVERBANKS, AND ESTABLISHING QUARRY PERMITTING IN DAVAO CITY",
+  "title": "AN ORDINANCE REGULATING COMMERCIAL HIGH-RISE BUILDING STRUCTURAL INSPECTIONS, MANDATING PERIODIC SAFETY AUDITS, AND PRESCRIBING PENALTIES FOR NON-COMPLIANCE IN THE CITY OF DAVAO",
   "proposed_ordinance_no": "Proposed Ordinance No. 2026-08, Series of 2026",
-  "committee": "Committee on Environment and Natural Resources, Sangguniang Panlungsod",
-  "physical_specs": {
-    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
-    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
-    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
-    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
-  },
+  "committee": "Committee on Housing, Rural and Urban Development, Sangguniang Panlungsod",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be cited as the 'Davao City Sustainable Quarrying and River Protection Ordinance of 2026'.",
+      "text": "This Ordinance shall be known and cited as the 'Commercial High-Rise Building Structural Safety Ordinance of Davao City'.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard title provision."
+      "legal_rationale": "Standard municipal title clause."
     },
     {
       "sec_num": 2,
-      "sec_title": "POLICY STATEMENT",
-      "text": "The City Government balances local construction material needs with ecological preservation of vital river ecosystems under Republic Act No. 7942 and Section 16 of Republic Act No. 7160.",
+      "sec_title": "DECLARATION OF POLICY",
+      "text": "Under Section 16 of Republic Act No. 7160 (The Local Government Code of 1991), the City Government of Davao shall promote public safety and protect its inhabitants from hazards.\n\nIt is hereby declared the policy of the City of Davao to ensure the structural integrity, earthquake resilience, and public safety of commercial high-rise buildings and high-occupancy structures by establishing regular structural maintenance requirements and periodic safety inspections by the Office of the City Building Official.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7942 §43; Republic Act No. 7160 §16",
-      "legal_rationale": "Harmonious balance of quarrying regulation with national mining statute."
+      "target_statute": "Republic Act No. 7160 §16",
+      "legal_rationale": "Valid exercise of general welfare powers under RA 7160 §16."
     },
     {
       "sec_num": 3,
       "sec_title": "DEFINITION OF TERMS",
-      "text": "'Quarry Resources' refers to common rocks, sand, gravel, and earth materials. 'Commercial Sand and Gravel Permit' refers to a license granted for extraction not exceeding five (5) hectares.",
+      "text": "As used in this Ordinance, the following terms shall mean:\n\n(a) Commercial High-Rise Building - refers to any commercial, residential, or mixed-use building in Davao City having five (5) storeys or more in height;\n\n(b) Structural Audit - refers to a comprehensive structural safety assessment and engineering inspection of a building's load-bearing columns, beams, foundations, and shear walls;\n\n(c) Building Owner - refers to the registered owner, condominium corporation, or authorized property management administrator of a commercial high-rise building;\n\n(d) OCBO - refers to the Office of the City Building Official of Davao City.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Adapts national definitions from RA 7942 Section 43."
+      "legal_rationale": "Standard definitions modeled after Ord. 0495-21 and building regulations."
     },
     {
       "sec_num": 4,
-      "sec_title": "RIVER EMBANKMENT BUFFER ZONE",
-      "text": "Extraction of sand and gravel is strictly prohibited within one hundred (100) meters upstream and downstream of any bridge, water intake, or public flood control structure.",
+      "sec_title": "MANDATORY PERIODIC STRUCTURAL SAFETY AUDITS",
+      "text": "All owners and property managers of commercial high-rise buildings that have been in continuous occupancy for fifteen (15) years or more shall cause a structural safety audit to be conducted on the building every five (5) years.\n\nThe audit must be performed and certified by a duly licensed civil/structural engineer, certifying that the building remains structurally stable and safe for continued public occupancy.",
       "label": "Entailment",
-      "target_statute": "Presidential Decree No. 1067 §51; Republic Act No. 7942 §43",
-      "legal_rationale": "Implements national Water Code river protection setbacks."
+      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
+      "legal_rationale": "Valid municipal building maintenance regulation under local police powers."
     },
     {
       "sec_num": 5,
-      "sec_title": "CITY MINING REGULATORY BOARD PERMITTING",
-      "text": "Commercial quarry permits within five (5) hectares shall be evaluated by the City Mining Regulatory Board (CMRB) and approved by the City Mayor.",
+      "sec_title": "POST-EARTHQUAKE STRUCTURAL INSPECTIONS",
+      "text": "Immediately following any earthquake of Intensity VI or higher on the PHIVOLCS Earthquake Intensity Scale affecting Davao City, all building owners must conduct an immediate visual structural inspection of their buildings.\n\nA rapid assessment report must be submitted to the OCBO within forty-eight (48) hours following the seismic event, verifying whether any structural cracking or damage occurred.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7076 §24; Republic Act No. 7942 §43",
-      "legal_rationale": "Follows the exact statutory delegation under Section 43 of RA 7942."
+      "target_statute": "Republic Act No. 7160 §16; Presidential Decree No. 1096",
+      "legal_rationale": "Harmonious local safety standard protecting public welfare during disaster response."
     },
     {
       "sec_num": 6,
-      "sec_title": "UNILATERAL MINERAL EXPORT AUTHORIZATION",
-      "text": "The Sangguniang Panlungsod is hereby empowered to issue local extraction permits for heavy metallic minerals (including nickel, copper, and gold) across ancestral domain lands, authorizing direct commercial export overseas without securing a Mineral Production Sharing Agreement (MPSA) from the DENR or clearance from the NCIP.",
-      "label": "Contradiction",
-      "target_statute": "1987 Constitution Art. XII §2; Republic Act No. 7942 §27; Republic Act No. 8371 §59",
-      "legal_rationale": "Directly violates the Regalian Doctrine (State ownership of metallic mineral resources), Republic Act No. 7942 which reserves mineral agreements strictly to national DENR authority, and Republic Act No. 8371 (IPRA) Free Prior Informed Consent mandates."
+      "sec_title": "SUBMISSION OF STRUCTURAL STABILITY CERTIFICATE",
+      "text": "The verified Structural Stability Certificate shall be submitted to the Office of the City Building Official as a mandatory requirement for the renewal of the building's Annual Safety Inspection Certificate and Mayor's Business Permit.\n\nBuildings failing to submit the certified audit report shall be issued a Notice of Non-Compliance by the OCBO.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(3)(iv)",
+      "legal_rationale": "Valid municipal licensing requirement."
     },
     {
       "sec_num": 7,
-      "sec_title": "DELIVERY RECEIPT TRACKING",
-      "text": "All trucks transporting quarried aggregates within Davao City must carry a valid Delivery Receipt issued by the City Environment Office indicating the volume and extraction site.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Valid municipal transport tracking requirement."
+      "sec_title": "AUTHORITY TO GRANT STRUCTURAL WAIVERS",
+      "text": "The City Building Official is hereby authorized, upon application and submission of an engineering certification from the project developer, to grant structural code waivers and relax specific seismic design requirements under the National Building Code for specialized commercial and mixed-use high-rise developments within designated commercial growth zones of the city.\n\nUpon approval of such waiver by the City Building Official, the building project shall be deemed compliant with all applicable structural and engineering standards.",
+      "label": "Contradiction",
+      "target_statute": "Presidential Decree No. 1096 §301; Presidential Decree No. 1096 §302",
+      "legal_rationale": "Directly contradicts Presidential Decree No. 1096 §§301 and 302 (The National Building Code of the Philippines). National building standards and seismic design criteria are established exclusively by the Secretary of Public Works and Highways under national law. Local building officials possess no statutory authority to grant waivers or relax structural safety codes under the Magtajas preemption doctrine."
     },
     {
       "sec_num": 8,
-      "sec_title": "REHABILITATION BOND",
-      "text": "Permittees shall post an environmental rehabilitation deposit prior to the commencement of extraction operations.",
+      "sec_title": "IMPLEMENTING AGENCY",
+      "text": "The Office of the City Building Official (OCBO), in coordination with the City Disaster Risk Reduction and Management Office (CDRRMO), shall be the primary agency responsible for enforcing the provisions of this Ordinance.\n\nOCBO engineers are authorized to conduct on-site verifications of high-rise structures during regular working hours.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard municipal environmental safeguard."
+      "legal_rationale": "Standard implementing agency clause modeled after Ord. 0495-21."
     },
     {
       "sec_num": 9,
-      "sec_title": "PROHIBITION OF NIGHT EXTRACTION",
-      "text": "No quarrying operations shall be conducted between 6:00 PM and 6:00 AM.",
+      "sec_title": "NOTICE OF DEFICIENCY AND REPAIR ORDER",
+      "text": "Whenever an inspection reveals structural distress, excessive cracking, or uncertified modifications, the OCBO shall issue a written Notice of Deficiency and Repair Order giving the owner sixty (60) calendar days to execute retrofitting works.\n\nDuring retrofitting, hazardous sections of the building must be barricaded to ensure public safety.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Local police power operating hours regulation."
+      "legal_rationale": "Standard administrative enforcement notice clause."
     },
     {
       "sec_num": 10,
-      "sec_title": "PENALTIES AND CONFISCATION",
-      "text": "Illegal extraction shall result in a fine of P5,000.00 and impoundment of transport vehicles.",
-      "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Statutory fine within municipal limits."
+      "sec_title": "REVOCATION OF OCCUPANCY PERMIT",
+      "text": "Failure of the building owner to submit the required structural audit or rectify certified structural defects shall be sufficient ground for the City Building Official to revoke the building's Certificate of Occupancy and order the temporary evacuation of the structure until retrofitting is completed.",
+      "label": "Entailment",
+      "target_statute": "Presidential Decree No. 1096 §306",
+      "legal_rationale": "Harmonious local enforcement standard aligned with national building safety powers."
     },
     {
       "sec_num": 11,
+      "sec_title": "PENALTIES",
+      "text": "Any building owner, property manager, or corporate officer who fails or refuses to comply with this Ordinance shall, upon conviction, be punished by a fine of Three Thousand Pesos (Php 3,000.00) for the first offense; Five Thousand Pesos (Php 5,000.00) or imprisonment of up to six (6) months, or both, for subsequent offenses.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Complies strictly with statutory penalty ceilings under RA 7160 §458."
+    },
+    {
+      "sec_num": 12,
       "sec_title": "SEPARABILITY CLAUSE",
-      "text": "Invalidity of any section shall not affect other portions.",
+      "text": "If any provision of this Ordinance is held unconstitutional or invalid, the other provisions hereof not affected thereby shall continue in full force and effect.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard separability clause."
     },
     {
-      "sec_num": 12,
-      "sec_title": "REPEALING CLAUSE",
-      "text": "All inconsistent local rules are repealed.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard repealing clause."
-    },
-    {
       "sec_num": 13,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance takes effect thirty (30) days from publication.",
+      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of general circulation in Davao City.",
       "label": "Neutral",
-      "target_statute": null,
+      "target_statute": "Republic Act No. 7160 §59",
       "legal_rationale": "Standard effectivity clause."
     }
   ]

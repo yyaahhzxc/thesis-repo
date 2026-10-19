@@ -28,7 +28,7 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-REPO_ROOT = Path(r"c:\Users\HP\Documents\GitHub\thesis-repo")
+REPO_ROOT = Path(__file__).resolve().parent.parent
 INPUT_DIR = REPO_ROOT / "data" / "tier2_draft_ordinances"
 OUTPUT_DIR = REPO_ROOT / "data" / "tier2_draft_ordinances_pdf"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -281,10 +281,16 @@ def build_ordinance_pdf(json_path: Path):
         num = sec["sec_num"]
         title = sec.get("sec_title", "")
         text = sec.get("text", "")
-        
-        sec_header_str = f"SECTION {num}. {title.upper()} - "
-        story.append(Paragraph(sec_header_str, style_section_title))
-        story.append(Paragraph(text, style_section_body))
+
+        paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
+        if not paragraphs:
+            paragraphs = [text.strip()]
+
+        first_p_text = f"<b>SECTION {num}. {title.upper()} - </b>{paragraphs[0].replace(chr(10), '<br/>')}"
+        story.append(Paragraph(first_p_text, style_section_body))
+
+        for p in paragraphs[1:]:
+            story.append(Paragraph(p.replace(chr(10), '<br/>'), style_section_body))
 
     # 6. Formal Closing & Legislative Certification Block
     story.append(Spacer(1, 16))

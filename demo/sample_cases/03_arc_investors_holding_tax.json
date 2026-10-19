@@ -1,14 +1,42 @@
 {
+  "filename_prefix": "03_arc_investors_holding_tax",
   "case_id": "DAVAO-TIER3-03",
   "case_name": "City of Davao and Tanjili v. ARC Investors, Inc.",
-  "docket_no": "G.R. No. 249668",
-  "ordinance_no": "Ordinance No. 158-05 §135",
-  "ordinance_title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (LOCAL BUSINESS TAX ON HOLDING ENTITIES)",
-  "challenged_clause_text": "Section 135: Tax on Financial Institutions and Holding Corporations. Imposes local business taxes on banks, banking institutions, and holding entities receiving dividend income and investment interest, categorizing corporate holding firms as non-bank financial intermediaries.",
-  "controlling_statute": "Republic Act No. 7160 §143(f); Republic Act No. 8791 §3",
-  "statute_title": "Local Government Code of 1991 & General Banking Law of 2000",
-  "statute_premise_text": "Section 143(f). The municipality or city may impose taxes on banks and other financial institutions, non-bank financial intermediaries, lending investors, and finance companies authorized and regulated by the Bangko Sentral ng Pilipinas.",
-  "sc_ruling": "Ultra Vires Assessment Struck Down (Overturned)",
-  "gold_label": "Contradiction",
-  "legal_doctrine_rationale": "A holding company passively earning dividend income is not a non-bank financial intermediary without express Bangko Sentral ng Pilipinas licensing. LGUs cannot redefine statutory banking categories."
+  "docket_no": "G.R. No. 249668 (July 13, 2022)",
+  "ordinance_no": "Ordinance No. 158-05 §69(f)",
+  "title": "THE 2005 REVENUE CODE OF THE CITY OF DAVAO (LOCAL BUSINESS TAX ON HOLDING ENTITIES)",
+  "enacting_lgu": "City of Davao",
+  "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
+  "sections": [
+    {
+      "sec_num": 1,
+      "sec_title": "TITLE",
+      "text": "This Ordinance shall be known and cited as the '2005 Revenue Code of the City of Davao'."
+    },
+    {
+      "sec_num": 2,
+      "sec_title": "SCOPE AND APPLICATION",
+      "text": "This Code shall govern the levy, assessment, and collection of all city taxes, fees, and other charges within the territorial jurisdiction of Davao City."
+    },
+    {
+      "sec_num": 69,
+      "sec_title": "IMPOSITION OF TAX ON BUSINESSES",
+      "text": "There is hereby imposed on the following persons who establish, operate, conduct or maintain their respective business within the City a graduated business tax in the amounts hereafter prescribed: ... (f) On Banks and Other Financial Institutions, at the rate of fifty-five percent (55%) of one percent (1%) of the gross receipts of the preceding calendar year derived from interest, commissions and discounts from lending activities, income from financial leasing, dividends, rentals on property, and profit from exchange or sale of property, insurance premium. All other income and receipts not herein enumerated shall be excluded in the computation of the tax."
+    },
+    {
+      "sec_num": 70,
+      "sec_title": "TAX ON RETIREMENT OF BUSINESS",
+      "text": "Upon cessation of a business subject to the tax imposed under this Article, the tax shall be computed based on the gross sales or receipts for the current calendar year."
+    },
+    {
+      "sec_num": 433,
+      "sec_title": "REPEALING CLAUSE",
+      "text": "All city ordinances, executive orders, rules and regulations or parts thereof which are inconsistent with this Code are hereby repealed or modified accordingly."
+    },
+    {
+      "sec_num": 434,
+      "sec_title": "EFFECTIVITY",
+      "text": "This Code shall take effect upon approval and publication as required by law."
+    }
+  ]
 }

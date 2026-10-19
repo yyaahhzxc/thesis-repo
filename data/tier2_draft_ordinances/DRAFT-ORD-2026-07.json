@@ -1,125 +1,111 @@
 {
   "doc_id": "DRAFT-ORD-2026-07",
-  "title": "AN ORDINANCE REGULATING THE ERECTION, INSTALLATION, AND MAINTENANCE OF OUTDOOR BILLBOARDS AND SIGNAGE IN DAVAO CITY",
+  "title": "AN ORDINANCE REGULATING WASTE DISCHARGE AND ENVIRONMENTAL SANITATION IN COASTAL WATERS, PORT WHARVES, AND DOCKING FACILITIES, PRESCRIBING PORT SANITATION STANDARDS, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
   "proposed_ordinance_no": "Proposed Ordinance No. 2026-07, Series of 2026",
-  "committee": "Committee on Housing and Urban Development, Sangguniang Panlungsod",
-  "physical_specs": {
-    "paper_size": "Legal / Folio (8.5 x 13.0 inches / 215.9 x 330.2 mm)",
-    "margins": "Top 1.0 in, Bottom 1.0 in, Left 1.5 in, Right 1.0 in",
-    "typography": "12pt Arial, 1.5 line spacing, formal section bold caps",
-    "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED"
-  },
+  "committee": "Committee on Environment and Natural Resources, Sangguniang Panlungsod",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be cited as the 'Davao City Signage and Outdoor Advertising Safety Ordinance of 2026'.",
+      "text": "This Ordinance shall be known and cited as the 'Coastal Port Sanitation and Marine Pollution Prevention Ordinance of Davao City'.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard title provision."
+      "legal_rationale": "Standard municipal title clause."
     },
     {
       "sec_num": 2,
-      "sec_title": "DECLARATION OF URBAN SAFETY POLICY",
-      "text": "The City Government exercises its police power to preserve structural safety, traffic sightlines, and aesthetic order from hazardously situated outdoor signage under Section 458(a)(4)(iv) of Republic Act No. 7160.",
+      "sec_title": "DECLARATION OF POLICY",
+      "text": "Under Section 16 of Republic Act No. 7160 (The Local Government Code of 1991), local government units shall enhance the right of the people to a balanced ecology and protect the environment within their territorial boundaries.\n\nIt is hereby declared the policy of the City Government of Davao to maintain clean coastal waters, prevent marine pollution, and regulate the disposal of waste from vessels and port docking facilities along the shores and wharves of Davao City.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
-      "legal_rationale": "Directly invokes explicit city council authority to regulate outdoor advertising signs (affirmed in Evasco v. Montañez, 2018)."
+      "target_statute": "Republic Act No. 7160 §16",
+      "legal_rationale": "Valid exercise of general welfare powers under RA 7160 §16."
     },
     {
       "sec_num": 3,
       "sec_title": "DEFINITION OF TERMS",
-      "text": "'Billboard' refers to any off-premise advertising sign. 'Signage' refers to any identification banner or emblem visible from a public street.",
+      "text": "As used in this Ordinance, the following terms shall mean:\n\n(a) Coastal Waters - refers to the municipal waters, foreshore areas, and marine waters within the territorial jurisdiction of Davao City;\n\n(b) Commercial Vessel - refers to motorized cargo ships, passenger vessels, tugboats, and commercial fishing vessels docking in city ports;\n\n(c) Bilge Water - refers to water that collects in the lowest compartment of a ship's hull, frequently containing oil and chemical residues;\n\n(d) Port Wharves - refers to Santa Ana Wharf, Sasa Port, and private docking wharves operating in Davao City;\n\n(e) City ENRO - refers to the City Environment and Natural Resources Office.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard definitions."
+      "legal_rationale": "Standard definitions modeled after Ord. 0539-24 and Ord. 0500-21."
     },
     {
       "sec_num": 4,
-      "sec_title": "SETBACK AND CLEARANCE REQUIREMENTS",
-      "text": "All free-standing billboards must maintain a minimum setback of five (5) meters from road right-of-way boundaries and must not obstruct street traffic lights.",
+      "sec_title": "PROHIBITION OF BILGE WATER AND UNTREATED WASTE DISCHARGE",
+      "text": "No commercial vessel, motorboat, barge, or watercraft shall pump, discharge, or dump untreated bilge water, dirty engine oils, sewage, or garbage into the coastal waters, foreshore zones, or harbor waters of Davao City.\n\nAll vessels docked at city wharves must utilize approved shore reception facilities or private waste haulers accredited by the City ENRO for bilge water disposal.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
-      "legal_rationale": "Valid local safety setback regulation."
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(vi); Presidential Decree No. 979 §4",
+      "legal_rationale": "Harmonious local environmental sanitation standard prohibiting water pollution."
     },
     {
       "sec_num": 5,
-      "sec_title": "MAXIMUM HEIGHT LIMITATIONS",
-      "text": "No billboard structure along the scenic coastal and mountain corridors shall exceed eighteen (18) meters in total height measured from ground elevation.",
+      "sec_title": "PORT FACILITY WASTE RECEPTACLES AND RECEPTION",
+      "text": "All operators of public and private port wharves, landing stages, and ferry terminals shall provide segregated waste collection bins for biodegradable, recyclable, and hazardous waste generated by docking vessels and passengers.\n\nPort operators shall maintain regular collection schedules with City ENRO solid waste collection personnel to prevent trash accumulation.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
-      "legal_rationale": "Valid local police power zoning limitation preserving sightlines."
+      "target_statute": "Republic Act No. 9003 §32",
+      "legal_rationale": "Harmonious local solid waste management rule under RA 9003."
     },
     {
       "sec_num": 6,
-      "sec_title": "SEISMIC AND STRUCTURAL EXEMPTION",
-      "text": "Billboards erected by registered local municipal businesses are hereby declared exempt from the structural design computations, wind load testing, and building permit requirements of the National Building Code of the Philippines (Presidential Decree No. 1096), requiring only a Barangay Clearance.",
-      "label": "Contradiction",
-      "target_statute": "Presidential Decree No. 1096 §301; Presidential Decree No. 1096 §302",
-      "legal_rationale": "Directly contradicts Presidential Decree No. 1096 (National Building Code) Section 301; a municipal ordinance cannot exempt physical commercial structures from national structural safety permits."
+      "sec_title": "MANDATORY HARBOR SANITATION CLEARANCE",
+      "text": "Commercial vessels berthing at city wharves for more than twenty-four (24) hours must secure a Harbor Sanitation Clearance from the City ENRO prior to departure, certifying that no illegal discharge of waste occurred during their stay.\n\nA reasonable inspection fee of Five Hundred Pesos (Php 500.00) shall be collected by the City Treasurer for each sanitation inspection.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458(a)(3)(iv)",
+      "legal_rationale": "Valid municipal inspection and regulatory fee authority."
     },
     {
       "sec_num": 7,
-      "sec_title": "ELECTRICAL AND ILLUMINATION STANDARDS",
-      "text": "Digital LED billboards must incorporate auto-dimming mechanisms to reduce glaring illumination during nighttime hours between 10:00 PM and 5:00 AM.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §16",
-      "legal_rationale": "Valid traffic safety regulation under general welfare police power."
+      "sec_title": "IMPLEMENTING AND MONITORING AGENCIES",
+      "text": "The City ENRO, in coordination with the Philippine Coast Guard (Coast Guard Station Davao), the PNP Regional Maritime Unit XI, and the City Legal Office, shall be responsible for enforcing the provisions of this Ordinance.\n\nAuthorized inspectors may board vessels docked at wharves to inspect waste storage logs and ensure compliance with environmental regulations.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard institutional coordination clause modeled after Ord. 0539-24."
     },
     {
       "sec_num": 8,
-      "sec_title": "INSPECTION AND INVENTORY",
-      "text": "The City Building Official shall maintain an updated geo-referenced inventory of all permitted outdoor signs in Davao City.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Administrative municipal database maintenance."
+      "sec_title": "SPECIAL SANCTIONS ON COMMERCIAL VESSELS",
+      "text": "Any commercial cargo vessel, passenger vessel, or motorized watercraft found discharging untreated bilge water, dirty ballast, or solid waste into the coastal waters, wharves, or docking facilities of Davao City shall be assessed an administrative fine of Fifty Thousand Pesos (Php 50,000.00) per day of continued violation.\n\nThe City Government, through the City Legal Office and port authorities, is hereby authorized to summarily impound and attach the vessel until all assessed fines and clean-up costs are fully paid.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii); Republic Act No. 10863 §1412",
+      "legal_rationale": "Directly violates Section 458(a)(1)(iii) of Republic Act No. 7160, which limits municipal fines strictly to P5,000.00, and Republic Act No. 10863 (Customs Modernization and Tariff Act) and maritime admiralty law. Summary administrative attachment, impoundment, and multi-thousand daily fines on commercial vessels exceed municipal authority and usurp national maritime and customs jurisdiction under the Magtajas preemption doctrine."
     },
     {
       "sec_num": 9,
-      "sec_title": "DISMANTLING OF DILAPIDATED STRUCTURES",
-      "text": "Signage abandoned for more than six (6) months or posing imminent danger of collapse shall be dismantled after due notice.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard municipal abatement of nuisance."
+      "sec_title": "CLEAN-UP AND REMEDIATION RESPONSIBILITY",
+      "text": "In addition to administrative penalties, the owner or operator of any vessel that discharges oil, bilge, or hazardous pollutants shall be solely responsible for the immediate containment and clean-up of the spilled materials at their own expense.\n\nFailure to perform clean-up operations within twelve (12) hours shall authorize the City to hire emergency response contractors and bill the expenses to the vessel owner.",
+      "label": "Entailment",
+      "target_statute": "Presidential Decree No. 979 §8",
+      "legal_rationale": "Harmonious local polluter-pays requirement under national marine pollution laws."
     },
     {
       "sec_num": 10,
-      "sec_title": "ANNUAL SIGNAGE FEES",
-      "text": "Annual regulatory inspection fees shall be collected based on total display square meterage.",
-      "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §147",
-      "legal_rationale": "Valid municipal regulatory fee under RA 7160 Section 147."
+      "sec_title": "PENALTIES FOR INDIVIDUALS AND STEVEDORES",
+      "text": "Any individual, passenger, crew member, or port laborer who intentionally throws garbage, plastic waste, or debris into coastal waters or wharves shall be penalized with a fine of One Thousand Pesos (Php 1,000.00) or eight (8) hours of coastal clean-up community service for the first offense, and Three Thousand Pesos (Php 3,000.00) for subsequent offenses.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §458; Republic Act No. 9003 §49",
+      "legal_rationale": "Valid municipal littering penalty complying with RA 7160."
     },
     {
       "sec_num": 11,
-      "sec_title": "PENALTIES FOR NON-COMPLIANCE",
-      "text": "Violators shall be fined P5,000.00 and ordered to dismantle unauthorized structures within ten (10) calendar days.",
+      "sec_title": "APPROPRIATION",
+      "text": "The City Government of Davao shall allocate sufficient funds in its annual budget to support coastal water quality monitoring equipment, harbor patrol logistics, and marine sanitation enforcement.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Statutorily compliant fine."
+      "target_statute": null,
+      "legal_rationale": "Standard municipal appropriation clause."
     },
     {
       "sec_num": 12,
       "sec_title": "SEPARABILITY CLAUSE",
-      "text": "The declaration of unconstitutionality of any provision shall not impair other sections.",
+      "text": "If any provision of this Ordinance is declared invalid or unconstitutional, the remaining provisions not affected thereby shall continue in full force and effect.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard separability clause."
     },
     {
       "sec_num": 13,
-      "sec_title": "REPEALING CLAUSE",
-      "text": "Conflicting local measures are hereby repealed.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard repealing clause."
-    },
-    {
-      "sec_num": 14,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect fifteen (15) days after publication.",
+      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of local circulation in Davao City.",
       "label": "Neutral",
-      "target_statute": null,
+      "target_statute": "Republic Act No. 7160 §59",
       "legal_rationale": "Standard effectivity clause."
     }
   ]
