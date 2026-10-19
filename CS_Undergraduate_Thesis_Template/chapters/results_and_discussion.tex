@@ -534,7 +534,7 @@ The superior stability of \texttt{DeBERTa-v3-base-NLI} stems from its disentangl
 \subsection{Non-Parametric Statistical Model Comparison}
 \label{sec:statistical_model_comparison}
 
-To verify whether the observed performance advantages of \texttt{DeBERTa-v3-base-NLI} represent genuine algorithmic superiority rather than stochastic sampling artifacts, the proponents conducted formal non-parametric hypothesis testing pursuant to the evaluation methodology formulated in Section~\ref{sec:statistical_comparisons}. Following the two-step testing procedure established by Dem{\v{s}}ar~\cite{demsar2006statistical}, the proponents first executed the omnibus Friedman test across the eight macro legal domains to detect global performance differences, followed by pairwise post-hoc McNemar tests with Edwards' continuity correction to isolate discordant classification errors.
+To verify whether the observed performance advantages of \texttt{DeBERTa-v3-base-NLI} represent genuine algorithmic superiority rather than stochastic sampling artifacts, the proponents conducted formal non-parametric hypothesis testing pursuant to the evaluation methodology formulated in Section~\ref{sec:statistical_comparisons}. Following the two-step testing procedure established by Dem{\v{s}}ar~\cite{demsar2006statistical}, the proponents first executed the omnibus Friedman test~\cite{friedman1937use} across the eight macro legal domains to detect global performance differences, followed by pairwise post-hoc McNemar tests with Edwards' continuity correction~\cite{mcnemar1947note, edwards1948note} pursuant to Dietterich's recommendations~\cite{dietterich1998approximate} to isolate discordant classification errors.
 
 Table~\ref{tab:friedman_rankings_benchmark} presents the macro domain performance matrix and average rank distributions across the six primary candidate architectures.
 
@@ -567,7 +567,7 @@ Table~\ref{tab:friedman_rankings_benchmark} presents the macro domain performanc
 
 As documented in Table~\ref{tab:friedman_rankings_benchmark}, the proposed \texttt{DeBERTa-v3-base-NLI} architecture achieves the top performance rank ($R_j = 1.00$) uniformly across all eight macro legal domains, followed by \texttt{ModernBERT-base} ($R_j = 2.00$), \texttt{legal-bert-base} ($R_j = 3.00$), and canonical \texttt{bert-base-uncased} ($R_j = 4.00$). The resulting omnibus Friedman test statistic is $\chi_F^2 = 40.0000$ with $k - 1 = 5$ degrees of freedom ($p = 0.00035 < 0.001$), decisively rejecting the null hypothesis of equivalent domain performance. This confirms that the observed algorithmic hierarchy is robust and invariant across diverse statutory subject areas, ranging from municipal taxation and revenue codes to environmental regulations and public health ordinances.
 
-To evaluate pairwise statistical divergence on discrete classification outcomes, Table~\ref{tab:mcnemar_contingency_results} presents the $2 \times 2$ contingency matrices of discordant predictions utilized by McNemar's test with Edwards' continuity correction.
+To evaluate pairwise statistical divergence on discrete classification outcomes pursuant to Dietterich's methodology~\cite{dietterich1998approximate}, Table~\ref{tab:mcnemar_contingency_results} presents the $2 \times 2$ contingency matrices of discordant predictions utilized by McNemar's test with Edwards' continuity correction~\cite{mcnemar1947note, edwards1948note}.
 
 \begin{table}[htbp]
     \centering
