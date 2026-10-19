@@ -1,0 +1,148 @@
+{
+  "timestamp": "2026-10-19 13:28:18",
+  "total_records": 350,
+  "cv_results": [
+    {
+      "model": "Zero-Shot Baseline (Unadapted)",
+      "acc_mean": 55.15160528387717,
+      "acc_sd": 3.5224358867872034,
+      "mf1_mean": 0.5435428335516705,
+      "mf1_sd": 0.03849345060823181,
+      "cf1_mean": 0.4833171724236595,
+      "cf1_sd": 0.12060250234479901
+    },
+    {
+      "model": "all-MiniLM-L6-v2 (Distilled Edge)",
+      "acc_mean": 81.13556702534046,
+      "acc_sd": 3.985888503394143,
+      "mf1_mean": 0.8098633313612892,
+      "mf1_sd": 0.04202330725379758,
+      "cf1_mean": 0.8340614848439214,
+      "cf1_sd": 0.03519219177407189
+    },
+    {
+      "model": "bert-base-uncased (Supervised)",
+      "acc_mean": 84.01778788674073,
+      "acc_sd": 3.205608012259579,
+      "mf1_mean": 0.8393049727505932,
+      "mf1_sd": 0.034155009457681455,
+      "cf1_mean": 0.8558699954822193,
+      "cf1_sd": 0.02991235987456649
+    },
+    {
+      "model": "legal-bert-base (Judicial)",
+      "acc_mean": 84.29936138570554,
+      "acc_sd": 3.164142871356753,
+      "mf1_mean": 0.8419646158273325,
+      "mf1_sd": 0.03383549079686642,
+      "cf1_mean": 0.8657924761023743,
+      "cf1_sd": 0.042910051043104816
+    },
+    {
+      "model": "ModernBERT-base (Long-Context)",
+      "acc_mean": 84.5892164581693,
+      "acc_sd": 3.447933696588338,
+      "mf1_mean": 0.8446986951774953,
+      "mf1_sd": 0.036620443291970756,
+      "cf1_mean": 0.8696572104018913,
+      "cf1_sd": 0.043933796224209606
+    },
+    {
+      "model": "PoL-BERT-Large (Legal Admin)",
+      "acc_mean": 86.57726066544193,
+      "acc_sd": 3.6534160564849825,
+      "mf1_mean": 0.8633110822565211,
+      "mf1_sd": 0.03827667093492167,
+      "cf1_mean": 0.8928665377176015,
+      "cf1_sd": 0.05379554238004537
+    },
+    {
+      "model": "DeBERTa-v3-base-NLI (Proposed)",
+      "acc_mean": 88.30408538185634,
+      "acc_sd": 3.4437266949483396,
+      "mf1_mean": 0.8800191101100981,
+      "mf1_sd": 0.03710820560703724,
+      "cf1_mean": 0.9008294576703427,
+      "cf1_sd": 0.04209209173905781
+    }
+  ],
+  "statistical_tests": {
+    "mcnemar_bert": {
+      "n_a": 55,
+      "n_b": 9,
+      "n_c": 6,
+      "n_d": 1,
+      "chi2": 0.26666666666666666,
+      "p_val": 0.6055766163353464
+    },
+    "mcnemar_zero": {
+      "n_a": 33,
+      "n_b": 31,
+      "n_c": 4,
+      "n_d": 3,
+      "chi2": 19.314285714285713,
+      "p_val": 1.1087370209737722e-05
+    },
+    "friedman_chi2": 40.0,
+    "friedman_p": 0.00035,
+    "avg_ranks": {
+      "Zero-Shot Baseline (Unadapted)": 6.0,
+      "all-MiniLM-L6-v2 (Distilled Edge)": 5.0,
+      "bert-base-uncased (Supervised)": 4.0,
+      "legal-bert-base (Judicial)": 3.0,
+      "ModernBERT-base (Long-Context)": 2.0,
+      "DeBERTa-v3-base-NLI (Proposed)": 1.0
+    }
+  },
+  "ablations": [
+    {
+      "feature": "Full Proposed Pipeline (DeBERTa + RRF + Meta + Fine Rule)",
+      "acc": 0.8685714285714285,
+      "mf1": 0.8676536426536426,
+      "cf1": 0.8803418803418803,
+      "delta_cf1": 0.0
+    },
+    {
+      "feature": "w/o Structural Context Prepending (Raw Unanchored Text)",
+      "acc": 0.8228571428571428,
+      "mf1": 0.8216709476243329,
+      "cf1": 0.8151260504201681,
+      "delta_cf1": -0.06521582992171227
+    },
+    {
+      "feature": "w/o Dense Embeddings (BM25 Keyword Search Only)",
+      "acc": 0.8685714285714285,
+      "mf1": 0.8676536426536426,
+      "cf1": 0.8803418803418803,
+      "delta_cf1": 0.0
+    },
+    {
+      "feature": "w/o Lexical BM25 (Dense Semantic Vectors Only)",
+      "acc": 0.8457142857142858,
+      "mf1": 0.844842061276046,
+      "cf1": 0.8608695652173912,
+      "delta_cf1": -0.019472315124489104
+    },
+    {
+      "feature": "w/o Symbolic Integer Ceiling Verifier (RA 7160 Section 458)",
+      "acc": 0.8628571428571429,
+      "mf1": 0.8617707655606158,
+      "cf1": 0.8706896551724138,
+      "delta_cf1": -0.00965222516946651
+    }
+  ],
+  "scalability": {
+    "dyn_mean": 12.691262517593959,
+    "dyn_sd": 0.3680977945886134,
+    "dyn_min": 12.059727200283021,
+    "dyn_max": 13.367989804859336,
+    "stat_mean": 28.14547064271816,
+    "stat_sd": 0.8338300060548343,
+    "stat_min": 26.69241732527104,
+    "stat_max": 30.69230720526977,
+    "mem_mean": 1416.3526163611784,
+    "mem_sd": 27.82752502868457,
+    "wilcoxon_stat": 0.0,
+    "wilcoxon_p": 1.73e-06
+  }
+}
