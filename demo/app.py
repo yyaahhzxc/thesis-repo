@@ -18,7 +18,10 @@ import json
 import time
 import urllib.parse
 import io
-import pypdf
+try:
+    import pypdf
+except ImportError:
+    pypdf = None
 from pathlib import Path
 from flask import Flask, request, jsonify, send_from_directory
 
@@ -959,6 +962,8 @@ def audit_document():
         uploaded_file = request.files["file"]
         filename = uploaded_file.filename
         if filename.lower().endswith(".pdf"):
+            if pypdf is None:
+                return jsonify({"error": "pypdf is not installed. Run 'pip install pypdf' to enable PDF extraction."}), 400
             try:
                 pdf_bytes = io.BytesIO(uploaded_file.read())
                 reader = pypdf.PdfReader(pdf_bytes)
