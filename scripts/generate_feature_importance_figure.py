@@ -51,7 +51,7 @@ components = [
     "w/o NLI Pre-Alignment\n(Cold MLM deberta-v3)",
     "w/o Task Fine-Tuning\n(Zero-Shot Baseline)"
 ]
-deltas = [0.0, -6.52, -1.95, -0.97, -2.58, -41.75]
+deltas = [0.0, -6.52, -1.95, -0.97, -2.58, -39.70]
 colors = ["#2b5c8f", "#d95f02", "#7570b3", "#e7298a", "#e6ab02", "#a6761d"]
 
 y_pos = np.arange(len(components))[::-1]
@@ -61,7 +61,7 @@ bars = ax1.barh(y_pos, [abs(d) for d in deltas], color=colors, height=0.62, edge
 for idx, (b, d) in enumerate(zip(bars, deltas)):
     w = b.get_width()
     if d == 0.0:
-        ax1.text(w + 0.8, b.get_y() + b.get_height()/2, "Reference Ceiling (F1 = 0.9008)", 
+        ax1.text(w + 0.8, b.get_y() + b.get_height()/2, "Reference Pipeline (F1 = 0.8803)", 
                  va="center", ha="left", fontsize=8.5, fontweight="bold", color="#2b5c8f")
     else:
         ax1.text(w + 0.8, b.get_y() + b.get_height()/2, f"-{abs(d):.2f}% Delta F1", 

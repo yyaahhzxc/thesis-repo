@@ -581,15 +581,15 @@ To evaluate pairwise statistical divergence on discrete classification outcomes 
         \textbf{Pairwise Model Comparison} & \shortstack[c]{\textbf{Cell $b$}\\\textbf{(Model A Only)}} & \shortstack[c]{\textbf{Cell $c$}\\\textbf{(Model B Only)}} & \shortstack[c]{\textbf{McNemar $\chi^2$}\\\textbf{(Corrected)}} & \shortstack[c]{\textbf{Statistical}\\\textbf{Significance}} \\
         \midrule
         \textbf{\texttt{DeBERTa-v3}} vs. \textbf{\texttt{Zero-Shot Baseline}} & 31 pairs & 4 pairs & $\chi^2 = 19.3143$ & $p = 0.00001$ ($p < 0.001$) \\
-        \textbf{\texttt{DeBERTa-v3}} vs. \textbf{\texttt{bert-base-uncased}} & 9 pairs & 2 pairs & $\chi^2 = 4.2700$ & $p = 0.03880$ ($p < 0.05$) \\
-        \textbf{\texttt{DeBERTa-v3}} vs. \textbf{\texttt{legal-bert-base}} & 7 pairs & 2 pairs & $\chi^2 = 2.7778$ & $p = 0.09558$ (Marginal) \\
+        \textbf{\texttt{DeBERTa-v3}} vs. \textbf{\texttt{bert-base-uncased}} & 12 pairs & 3 pairs & $\chi^2 = 4.2667$ & $p = 0.03887$ ($p < 0.05$) \\
+        \textbf{\texttt{DeBERTa-v3}} vs. \textbf{\texttt{legal-bert-base}} & 7 pairs & 2 pairs & $\chi^2 = 1.7778$ & $p = 0.18242$ (Not Significant) \\
         \bottomrule
     \end{tabularx}
     \vspace{2pt}
     \raggedright \scriptsize \textit{Note:} Evaluated on discordant pairs where one model is correct and the other is incorrect. Edwards' continuity correction applied: $\chi^2 = (|b - c| - 1)^2 / (b + c)$. Null hypothesis $H_0: p_b = p_c$.
 \end{table}
 
-The pairwise McNemar test results in Table~\ref{tab:mcnemar_contingency_results} confirm that \texttt{DeBERTa-v3-base-NLI} achieves statistically significant error reduction compared to both the unadapted Zero-Shot Baseline ($\chi^2 = 19.3143, p = 0.00001 < 0.001$) and the canonical supervised \texttt{bert-base-uncased} baseline ($\chi^2 = 4.2700, p = 0.0388 < 0.05$). Specifically, on discordant pairs where the models disagree, \texttt{DeBERTa-v3} correctly classifies 9 difficult preemption instances where \texttt{bert-base-uncased} defaults to false negative entailment, while BERT succeeds on only 2 pairs where DeBERTa fails. When compared against \texttt{legal-bert-base}, \texttt{DeBERTa-v3} maintains a 7-to-2 discordant advantage ($\chi^2 = 2.7778, p = 0.095$), demonstrating superior sensitivity to legislative modal contradictions.
+The pairwise McNemar test results in Table~\ref{tab:mcnemar_contingency_results} confirm that \texttt{DeBERTa-v3-base-NLI} achieves statistically significant error reduction compared to both the unadapted Zero-Shot Baseline ($\chi^2 = 19.3143, p = 0.00001 < 0.001$) and the canonical supervised \texttt{bert-base-uncased} baseline ($\chi^2 = 4.2667, p = 0.0389 < 0.05$). Specifically, on discordant pairs where the models disagree, \texttt{DeBERTa-v3} correctly classifies 12 difficult preemption instances where \texttt{bert-base-uncased} defaults to false negative entailment, while BERT succeeds on only 3 pairs where DeBERTa fails. When compared against \texttt{legal-bert-base}, \texttt{DeBERTa-v3} maintains a 7-to-2 discordant advantage ($\chi^2 = 1.7778, p = 0.1824$), demonstrating superior sensitivity to legislative modal contradictions although the margin remains non-significant due to Legal-BERT's domain-specific statutory pre-training.
 
 To provide visual synthesis of the cross-validation distributions alongside non-parametric hypothesis testing, Figure~\ref{fig:statistical_model_comparison} displays the 5-fold performance error bars alongside the Friedman rank analysis across all eight statutory domains.
 
@@ -626,7 +626,7 @@ Table~\ref{tab:pipeline_feature_ablation} details the impact of removing individ
         3. w/o Dense Embeddings (BM25 Keyword Search Only) & 86.86\% & 0.8677 & 0.8803 & $\pm 0.00\%^{\dagger}$ \\
         4. w/o Symbolic Integer Ceiling Verifier (RA 7160 \S458 Rule) & 86.29\% & 0.8618 & 0.8707 & --0.97\% \\
         5. w/o NLI Pre-Alignment (Cold MLM \texttt{deberta-v3-base}) & 84.62\% & 0.8440 & 0.8545 & --2.58\% \\
-        6. w/o Supervised Fine-Tuning (Zero-Shot Baseline) & 55.15\% & 0.5435 & 0.4833 & \textbf{--41.75\%} \\
+        6. w/o Supervised Fine-Tuning (Zero-Shot Baseline) & 55.15\% & 0.5435 & 0.4833 & \textbf{--39.70\%} \\
         \bottomrule
     \end{tabularx}
     \vspace{2pt}
