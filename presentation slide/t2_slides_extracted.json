@@ -1,0 +1,317 @@
+[
+  {
+    "slide": 1,
+    "lines": [
+      "A Coarse-to-Fine Semantic Conflict",
+      "Detection System for Ex-Ante Davao City",
+      "Ordinances Using Information Retrieval",
+      "and Natural Language Inference",
+      "A Coarse-to-Fine Semantic Conflict",
+      "Detection System for Ex-Ante Davao City",
+      "Ordinances Using Information Retrieval",
+      "and Natural Language Inference",
+      "Proponents:",
+      "Ralph Paolo Dulce",
+      "Yahyah Odin",
+      "Proponents:",
+      "Ralph Paolo Dulce",
+      "Yahyah Odin",
+      "CS Thesis Writing II",
+      "Adviser:",
+      "Adrian \u201cOgs\u201d Ablazo, MIT",
+      "Adviser:",
+      "Adrian \u201cOgs\u201d Ablazo, MIT"
+    ]
+  },
+  {
+    "slide": 2,
+    "lines": [
+      "3",
+      "3",
+      "Background of the Study",
+      "Background of the Study",
+      "Rapid legislative expansion outpaces manual human review",
+      "Historical local archives exist primarily as physical scans",
+      "Scanner and typewriter noise degrade OCR accuracy",
+      "Typographical errors break standard keyword search queries",
+      "Latent contradictions create invalid local legislation",
+      "Rapid legislative expansion outpaces manual human review",
+      "Historical local archives exist primarily as physical scans",
+      "Scanner and typewriter noise degrade OCR accuracy",
+      "Typographical errors break standard keyword search queries",
+      "Latent contradictions create invalid local legislation"
+    ]
+  },
+  {
+    "slide": 3,
+    "lines": [
+      "3",
+      "3",
+      "Background of the Study",
+      "Background of the Study",
+      "Local governments hold strictly delegated legislative powers",
+      "Magtajas Doctrine voids ordinances that contradict national statutes",
+      "An ordinance cannot prohibit what a statute permits",
+      "Ex-ante auditing catches legal conflicts before enactment",
+      "Aligns with RA 11032 preventative regulatory review mandates",
+      "Local governments hold strictly delegated legislative powers",
+      "Magtajas Doctrine voids ordinances that contradict national statutes",
+      "An ordinance cannot prohibit what a statute permits",
+      "Ex-ante auditing catches legal conflicts before enactment",
+      "Aligns with RA 11032 preventative regulatory review mandates"
+    ]
+  },
+  {
+    "slide": 4,
+    "lines": [
+      "3",
+      "3",
+      "Statement of the Problem",
+      "Statement of the Problem",
+      "Q1: What linguistic parameters define semantic conflicts?",
+      "Q2: How can Coarse-to-Fine retrieval scale on LGU hardware?",
+      "Q3: Which hybrid IR and NLI combination maximizes accuracy?",
+      "Q4: What is the empirical performance on legal ground-truth?",
+      "Q5: How usable is the decision-support tool for SP legal staff?",
+      "Q1: What linguistic parameters define semantic conflicts?",
+      "Q2: How can Coarse-to-Fine retrieval scale on LGU hardware?",
+      "Q3: Which hybrid IR and NLI combination maximizes accuracy?",
+      "Q4: What is the empirical performance on legal ground-truth?",
+      "Q5: How usable is the decision-support tool for SP legal staff?"
+    ]
+  },
+  {
+    "slide": 5,
+    "lines": [
+      "Objective 1: Characterize legislative archive degradation and text noise",
+      "Objective 2: Design a decoupled two-stage Coarse-to-Fine architecture",
+      "Objective 3: Implement a hybrid IR and NLI system for Philippine law",
+      "Objective 4: Evaluate conflict detection accuracy against ground truth",
+      "Objective 5: Deploy an interactive decision-support web application",
+      "Objectives of the Study",
+      "Objectives of the Study"
+    ]
+  },
+  {
+    "slide": 6,
+    "lines": [
+      "ConceptualFramework",
+      "ConceptualFramework"
+    ]
+  },
+  {
+    "slide": 7,
+    "lines": [
+      "Methodology",
+      "Methodology"
+    ]
+  },
+  {
+    "slide": 8,
+    "lines": [
+      "3",
+      "3",
+      "Methodology: Knowledge Base",
+      "Methodology: Knowledge Base",
+      "27,096 total enactments containing 176,421 searchable provisions",
+      "25,432 national statutes (1901\u20132026) from Lawphil",
+      "1,664 Davao City ordinances (1950\u20132026) from Sangguniang",
+      "Panlungsod",
+      "Supports both vertical preemption and horizontal coherence",
+      "94.69% of provisions comply with 512-token transformer limits",
+      "27,096 total enactments containing 176,421 searchable provisions",
+      "25,432 national statutes (1901\u20132026) from Lawphil",
+      "1,664 Davao City ordinances (1950\u20132026) from Sangguniang",
+      "Panlungsod",
+      "Supports both vertical preemption and horizontal coherence",
+      "94.69% of provisions comply with 512-token transformer limits"
+    ]
+  },
+  {
+    "slide": 9,
+    "lines": [
+      "3",
+      "3",
+      "Methodology: Stage 1 (Retrieval Stage)",
+      "Methodology: Stage 1 (Retrieval Stage)"
+    ]
+  },
+  {
+    "slide": 10,
+    "lines": [
+      "3",
+      "3",
+      "Methodology: Coarse-to-Fine Architecture",
+      "Methodology: Coarse-to-Fine Architecture",
+      "Comparing drafts against 176,421 provisions pairwise is inefficient",
+      "Stage 1 (Coarse Retrieval): High-throughput candidate filtering",
+      "Filters full corpus down to a compact top-50 shortlist in",
+      "milliseconds",
+      "Stage 2 (Fine Inference): Deep pairwise cross-encoder evaluation",
+      "Classifies pairs into Entailment, Neutral, or Contradiction offline",
+      "Comparing drafts against 176,421 provisions pairwise is inefficient",
+      "Stage 1 (Coarse Retrieval): High-throughput candidate filtering",
+      "Filters full corpus down to a compact top-50 shortlist in",
+      "milliseconds",
+      "Stage 2 (Fine Inference): Deep pairwise cross-encoder evaluation",
+      "Classifies pairs into Entailment, Neutral, or Contradiction offline"
+    ]
+  },
+  {
+    "slide": 11,
+    "lines": [
+      "3",
+      "3",
+      "Methodology: Stage 1 (Retrieval Stage)",
+      "Methodology: Stage 1 (Retrieval Stage)",
+      "BM25: Fast sparse search for exact statutory numbers and",
+      "citations",
+      "all-MiniLM-L6-v2: Dense bi-encoder for semantic paraphrasing",
+      "Reciprocal Rank Fusion (k=60): Combines disparate rankings",
+      "robustly",
+      "Hierarchy Priority Safeguard: Prioritizes primary Republic Acts",
+      "Achieves 1.26 ms mean latency per query on consumer CPU",
+      "BM25: Fast sparse search for exact statutory numbers and",
+      "citations",
+      "all-MiniLM-L6-v2: Dense bi-encoder for semantic paraphrasing",
+      "Reciprocal Rank Fusion (k=60): Combines disparate rankings",
+      "robustly",
+      "Hierarchy Priority Safeguard: Prioritizes primary Republic Acts",
+      "Achieves 1.26 ms mean latency per query on consumer CPU"
+    ]
+  },
+  {
+    "slide": 12,
+    "lines": [
+      "3",
+      "3",
+      "Methodology: Stage 2 (Cross-Encoder)",
+      "Methodology: Stage 2 (Cross-Encoder)",
+      "Ingests concatenated premise-hypothesis pairs into a single",
+      "tower",
+      "Enables full bidirectional cross-attention between all tokens",
+      "Overcomes affirmative entailment bias through supervised fine-",
+      "tuning",
+      "Calibrated three-class probability outputs for legal confidence",
+      "Generates token-level self-attention attribution heatmaps",
+      "Ingests concatenated premise-hypothesis pairs into a single",
+      "tower",
+      "Enables full bidirectional cross-attention between all tokens",
+      "Overcomes affirmative entailment bias through supervised fine-",
+      "tuning",
+      "Calibrated three-class probability outputs for legal confidence",
+      "Generates token-level self-attention attribution heatmaps"
+    ]
+  },
+  {
+    "slide": 13,
+    "lines": [
+      "3",
+      "3",
+      "Stage 1 Retrieval Benchmarks",
+      "Stage 1 Retrieval Benchmarks"
+    ]
+  },
+  {
+    "slide": 14,
+    "lines": [
+      "3",
+      "3",
+      "Stage 1 Retrieval Benchmarks",
+      "Stage 1 Retrieval Benchmarks"
+    ]
+  },
+  {
+    "slide": 15,
+    "lines": [
+      "3",
+      "3",
+      "Stage 2 NLI Screening & Fine-Tuning",
+      "Stage 2 NLI Screening & Fine-Tuning",
+      "Screened 28 scouted transformer architectures zero-shot",
+      "Fine-tuned 13 shortlisted encoders across hyperparameter grids",
+      "DeBERTa-v3-base-NLI achieves 89.47% Conflict F1  (86.54% Val Acc)",
+      "Statistically outperforms supervised BERT baseline (p=0.0388)",
+      "Stable convergence at Epoch 3 with low 14.8 ms per pair latency",
+      "Screened 28 scouted transformer architectures zero-shot",
+      "Fine-tuned 13 shortlisted encoders across hyperparameter grids",
+      "DeBERTa-v3-base-NLI achieves 89.47% Conflict F1  (86.54% Val Acc)",
+      "Statistically outperforms supervised BERT baseline (p=0.0388)",
+      "Stable convergence at Epoch 3 with low 14.8 ms per pair latency"
+    ]
+  },
+  {
+    "slide": 16,
+    "lines": [
+      "3",
+      "3"
+    ]
+  },
+  {
+    "slide": 17,
+    "lines": [
+      "3",
+      "3"
+    ]
+  },
+  {
+    "slide": 18,
+    "lines": [
+      "3",
+      "3",
+      "Stage 2 NLI Screening & Fine-Tuning",
+      "Stage 2 NLI Screening & Fine-Tuning"
+    ]
+  },
+  {
+    "slide": 19,
+    "lines": [
+      "3",
+      "3",
+      "Live Technical System Demonstration",
+      "Live Technical System Demonstration",
+      "Interactive decision-support web app for local LGU deployment",
+      "Parses draft ordinances into Reddit-style hierarchical section trees",
+      "Sub-second dual-corpus retrieval surfaces relevant candidate laws",
+      "Real-time cross-encoder classifies normative conflicts",
+      "Visualizes token-level attention heatmaps and exports audit reports",
+      "Interactive decision-support web app for local LGU deployment",
+      "Parses draft ordinances into Reddit-style hierarchical section trees",
+      "Sub-second dual-corpus retrieval surfaces relevant candidate laws",
+      "Real-time cross-encoder classifies normative conflicts",
+      "Visualizes token-level attention heatmaps and exports audit reports"
+    ]
+  },
+  {
+    "slide": 20,
+    "lines": [
+      "3",
+      "3",
+      "Current Progress Summary",
+      "Current Progress Summary",
+      "Chapters 1 to 4 fully drafted; dual statutory knowledge base compiled",
+      "Two-stage hybrid IR and cross-encoder pipeline built and",
+      "benchmarked",
+      "Functional, interactive web prototype completed with live demo",
+      "Sangguniang Panlungsod endorsed study via HRMO",
+      "Preparing human evaluation with 15 legal researchers and Civil",
+      "Service 201 certs",
+      "Chapters 1 to 4 fully drafted; dual statutory knowledge base compiled",
+      "Two-stage hybrid IR and cross-encoder pipeline built and",
+      "benchmarked",
+      "Functional, interactive web prototype completed with live demo",
+      "Sangguniang Panlungsod endorsed study via HRMO",
+      "Preparing human evaluation with 15 legal researchers and Civil",
+      "Service 201 certs"
+    ]
+  },
+  {
+    "slide": 21,
+    "lines": [
+      "W e  w ill no w  b e  a c c e p t i ng",
+      "y o u r  r e vie w .",
+      "W e  w ill no w  b e  a c c e p t i ng",
+      "y o u r  r e vie w ."
+    ]
+  }
+]

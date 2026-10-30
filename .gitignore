@@ -24,6 +24,12 @@ output/embedding_progress.json
 output/gt350_retrieval_cache.json
 transcript_quality_report.csv
 
+# Large Presentation Decks & Rendered Slide PNGs/PDFs (>100MB)
+presentation slide/*.pdf
+presentation slide/*.pptx
+presentation slide/*.png
+presentation slide/generated_slides_preview/
+
 # LaTeX Auxiliary Build Files
 *.aux
 *.log

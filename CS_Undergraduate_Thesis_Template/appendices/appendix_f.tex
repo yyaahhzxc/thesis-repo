@@ -2,18 +2,20 @@
 \chapter{Statutory Stop Words and Boilerplate Patterns}
 \label{app:lexicons_stopwords}
 
-% =========================================================================
-% Appendix F Content Plan:
-% 1. Procedural Boilerplate Extraction Patterns & Regular Expressions:
-%    - Title Preamble & Enacting Clauses ("Be it ordained by the Sangguniang Panlungsod of Davao City...")
-%    - Separability Clauses ("If any provision of this Ordinance is declared invalid...")
-%    - Repealing Clauses ("All ordinances, executive orders, or rules inconsistent herewith are hereby repealed...")
-%    - Effectivity Formulas ("This Ordinance shall take effect immediately upon approval...")
-%    - Administrative Attestation & Signature Blocks (City Vice Mayor, SP Secretary, City Mayor)
-% 2. Domain-Specific Legal Stop Words Roster (Common procedural terms suppressed during sparse indexing)
-% 3. Deontic Modality & Statutory Preemption Lexicons:
-%    - Mandatory / Obligation Markers (shall, must, is hereby required, directed to, mandated)
-%    - Prohibitive / Negative Markers (shall not, unlawful, prohibited, no person may, forbidden, penalized)
-%    - Permissive / Discretionary Markers (may, is authorized to, at the discretion of, permitted)
-% 4. Regional Administrative Cebuano and Taglish Vocabulary Dictionary in Local Enactments
-% =========================================================================
+This appendix provides the complete lexical specifications, regular expression patterns, and domain stopword dictionaries utilized during corpus preprocessing, sparse indexing, topic modeling, and procedural boilerplate filtering across both the national statute and Davao City local ordinance corpora.
+
+\section{Procedural Boilerplate Extraction Patterns}
+\label{sec:app_boilerplate_regex}
+Standard regular expressions and structural extraction heuristics for identifying and filtering non-operative legislative sections (Enacting Formulas, WHEREAS Preambles, Separability Clauses, General Repealing Formulas, Effectivity Clauses, and Signature/Attestation Blocks).
+
+\section{Legal Stop Words Roster}
+\label{sec:app_legal_stopwords_roster}
+Complete alphabetical roster of the 49 domain-specific Philippine legal stop words suppressed during TF-IDF vectorization and two-stage Latent Semantic Analysis topic modeling.
+
+\section{Deontic Modality and Statutory Conflict Lexicons}
+\label{sec:app_deontic_lexicons}
+Categorized lexical markers governing mandatory legal obligations, strict prohibitions, and permissive discretionary authorities under Republic Act No.~7160.
+
+\section{Regional Administrative and Taglish Lexicon}
+\label{sec:app_regional_lexicon}
+Lexicon of regional Cebuano terminology and administrative Taglish occurring within digitized historical and contemporary Davao City local ordinances.
