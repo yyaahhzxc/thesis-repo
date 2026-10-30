@@ -2,10 +2,69 @@
 \chapter{Candidate Retrieval Engine Code}
 \label{app:code_retrieval}
 
-% =========================================================================
-% Appendix D Content Plan:
-% 1. src/dual_retrieval.py: Production Dual-Stream Sparse BM25Okapi and Dense Semantic Dot Product Engine
-% 2. Reciprocal Rank Fusion (RRF, k=60): Rank Aggregation & Dual-Candidate List Partitioning
-% 3. scripts/precompute_dual_corpus_embeddings.py: Memory-Mapped Dense Vector Precomputation (all-MiniLM-L6-v2)
-% 4. Top-50 Shortlist Extractor: Vertical Preemption & Horizontal Inconsistency Dual Dispatchers
-% =========================================================================
+This appendix provides the Python source code implementing the Stage~1 Coarse Candidate Retrieval engine, combining sparse lexical search (Okapi BM25) and dense semantic representations (\texttt{all-MiniLM-L6-v2}) fused via Reciprocal Rank Fusion (RRF) with a statutory hierarchy priority safeguard.
+
+\section{Hybrid Sparse-Dense Search and Reciprocal Rank Fusion}
+\label{sec:app_code_hybrid_rrf}
+
+Listing~\ref{lst:code_stage1_retrieval} illustrates the core retrieval class from \texttt{src/retrieval.py}, which indexes the unified dual statutory repository (176,421 provisions) and executes fast multi-threaded candidate shortlisting.
+
+\begin{lstlisting}[language=Python, caption={Stage 1 Hybrid Retrieval Engine and RRF Fusion (\texttt{src/retrieval.py})}, label={lst:code_stage1_retrieval}]
+import numpy as np
+from typing import List, Dict
+from rank_bm25 import BM25Okapi
+from sentence_transformers import SentenceTransformer
+
+class DualStreamRetrievalEngine:
+    """Stage 1 hybrid coarse retrieval combining Okapi BM25 and dense embeddings."""
+
+    def __init__(self, corpus: List[Dict], dense_model_name: str = "all-MiniLM-L6-v2"):
+        self.corpus = corpus
+        self.dense_model = SentenceTransformer(dense_model_name)
+        
+        # Build Okapi BM25 tokenized index
+        tokenized_corpus = [doc["text"].lower().split() for doc in self.corpus]
+        self.bm25 = BM25Okapi(tokenized_corpus, k1=1.2, b=0.75)
+        
+        # Precompute dense embeddings
+        texts = [doc["text"] for doc in self.corpus]
+        self.dense_embeddings = self.dense_model.encode(
+            texts, batch_size=64, show_progress_bar=False, normalize_embeddings=True
+        )
+
+    def retrieve_candidates(self, query: str, top_k: int = 50, rrf_k: int = 60) -> List[Dict]:
+        """Executes hybrid retrieval and merges candidate lists via Reciprocal Rank Fusion."""
+        # 1. Sparse BM25 search
+        query_tokens = query.lower().split()
+        bm25_scores = self.bm25.get_scores(query_tokens)
+        bm25_rankings = np.argsort(bm25_scores)[::-1][:top_k * 2]
+
+        # 2. Dense semantic search
+        query_emb = self.dense_model.encode([query], normalize_embeddings=True)[0]
+        dense_scores = np.dot(self.dense_embeddings, query_emb)
+        dense_rankings = np.argsort(dense_scores)[::-1][:top_k * 2]
+
+        # 3. Reciprocal Rank Fusion (RRF) with statutory hierarchy safeguard
+        rrf_scores = {}
+        for rank, idx in enumerate(bm25_rankings):
+            rrf_scores[idx] = rrf_scores.get(idx, 0.0) + (1.0 / (rrf_k + rank + 1))
+            
+        for rank, idx in enumerate(dense_rankings):
+            rrf_scores[idx] = rrf_scores.get(idx, 0.0) + (1.0 / (rrf_k + rank + 1))
+
+        # Apply statutory hierarchy boost (prioritizing national codes over local acts)
+        for idx in rrf_scores:
+            if self.corpus[idx].get("is_national_statute", False):
+                rrf_scores[idx] *= 1.10  # 10% hierarchical priority safeguard
+
+        # Sort and return top-k shortlisted provisions
+        sorted_indices = sorted(rrf_scores.keys(), key=lambda i: rrf_scores[i], reverse=True)[:top_k]
+        
+        results = []
+        for idx in sorted_indices:
+            candidate = dict(self.corpus[idx])
+            candidate["retrieval_score"] = float(rrf_scores[idx])
+            results.append(candidate)
+            
+        return results
+\end{lstlisting}

@@ -2,24 +2,128 @@
 \chapter{Legal Annotator Guidebook and Protocol}
 \label{app:annotator_guidebook}
 
-This appendix presents the comprehensive Legal Annotator Guidebook and institutional evaluation protocol developed for the cohort of 15 legal researchers and legislative officers from the Sangguniang Panlungsod (City Council) of Davao City during the gold-standard ground truth annotation campaign.
+This appendix provides the full, unabridged text of the \textit{Sangguniang Panlungsod Legal Annotation Guide} distributed to the cohort of 15 legal researchers and legislative staff members of the City Council of Davao City.
 
-\section{Institutional Framework and Ethical Protections}
-\label{sec:app_ethics_dataprivacy}
-Ethical guidelines, anonymization schemas, voluntary participation terms, and Republic Act No.~10173 (Data Privacy Act of 2012) compliance protocols governing legal researcher evaluation data.
+\begin{center}
+    \large\textbf{SANGGUNIANG PANLUNGSOD LEGAL ANNOTATION GUIDE}\\
+    \normalsize\textit{Evaluating National Statute vs. Local Ordinance Legal Consistency}\\
+    \small Ateneo de Davao University --- Computer Studies Cluster
+\end{center}
 
-\section{Task Formulation and the Single-Premise Constraint}
-\label{sec:app_single_premise_rule}
-Operational formulation of the pairwise inference task and the strict single-premise constraint requiring evaluators to suppress external multi-statute synthesis.
+\vspace{0.5em}
+\noindent\textbf{Thesis Title:} \textit{A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference}\\
+\textbf{Thesis Proponents:} Ralph Paolo Dulce \& Yahyah Odin\\
+\textbf{Advisory \& Faculty:} Adrian Ablazo (Thesis Adviser) $|$ Grace Tacadao (Thesis Professor)\\
+\textbf{Annotators:} 15 Legal Researchers / Legislative Staff, Sangguniang Panlungsod of Davao City
 
-\section{Three-Tier Preemption Difficulty Rubric}
-\label{sec:app_difficulty_tiers}
-Stratification criteria for benchmark text pairs across Tier~1 (Surface \& Quantitative), Tier~2 (Structural Preemption \& Carve-Outs), and Tier~3 (Latent \& Paraphrastic Friction).
+\section{Project Purpose and Your Role}
+\label{sec:app_guide_purpose}
 
-\section{Three-Class Normative Decision Schema}
-\label{sec:app_decision_schema}
-Formal definitions, jurisprudential triggers under the \textit{Magtajas} doctrine, and positive/negative examples for Contradiction, Entailment, and Neutral classifications.
+Welcome! As a legal researcher or legislative staff member of the Sangguniang Panlungsod, your everyday work ensures that Davao City ordinances are well-crafted, effective, and legally sound. 
 
-\section{Workload Allocation and Consensus Protocol}
-\label{sec:app_workload_consensus}
-The 70-pair batched allocation structure across five 3-rater sub-panels, Fleiss' Kappa multi-rater reliability calculation, and Senior Legal Researcher tie-breaking adjudication protocol.
+For our undergraduate thesis, we are building an automated tool to assist local governments in screening draft ordinance provisions before they are enacted, flagging potential legal clashes against national laws early during the committee review process. To evaluate and train this system, we need Domain Expert Ground Truth---authoritative, real-world consistency judgments from legal professionals like you.
+
+We are truly grateful for your time, dedication, and generosity in sharing your valuable domain expertise to support our undergraduate thesis. Your contributions play a vital role in advancing this research and shaping a meaningful, impactful tool for legislative work.
+
+\section{The Core Task: Comparing Text Pairs}
+\label{sec:app_guide_task}
+
+For each assigned item, you will compare two legal texts:
+\begin{enumerate}
+    \item \textbf{National Statute (The Standard):} A specific section from a Philippine Republic Act or national law.
+    \item \textbf{Proposed Local Ordinance (The Draft Clause):} A drafted section of a proposed Davao City ordinance.
+\end{enumerate}
+
+\noindent When evaluating each item, your key guiding question is:
+\begin{quote}
+    \textit{``Based strictly on this specific national statute provision, does the local ordinance draft conflict with it, comply with it, or regulate a completely separate matter?''}
+\end{quote}
+
+\noindent\textbf{Evaluation Rule:} Judge each pair only against the specific National Statute section provided in that item. Do not bring in other unlisted statutes from memory.
+
+\section{The Three Choices Explained}
+\label{sec:app_guide_choices}
+
+\subsection{Choice 1: Contradiction (Legal Conflict / Overreach)}
+\textbf{Meaning:} The draft local ordinance violates, weakens, or exceeds what the national statute establishes (\textit{ultra vires} under the \textit{Magtajas} doctrine).
+
+\begin{itemize}
+    \item \textbf{Exceeding Penalty Caps:} National law (RA 7160 \S458) strictly limits city ordinance fines to \textpeso 5,000 and imprisonment to 1 year. A local draft setting a \textpeso 25,000 fine or real property title forfeiture is a contradiction.
+    \item \textbf{Exceeding Time Limits:} National law (RA 7581 \S6) limits automatic calamity price freezes to 60 days. A draft setting a 180-day freeze is a contradiction.
+    \item \textbf{Withholding Guaranteed Rights/Discounts:} National law (RA 11314) guarantees a 20\% student fare discount all year. A draft cutting it to 10\% or suspending it during summer breaks/holidays is a contradiction.
+    \item \textbf{Encroaching on National Agency Powers:} National law gives the Energy Regulatory Commission (ERC) exclusive power over power rates and Congress/NTC exclusive power over telecom franchises. A draft attempting to set local electric rate caps or issue telecom franchises is a contradiction.
+    \item \textbf{Euphemisms Hiding Violations:} National law (RA 9344) prohibits detaining minors for curfew violations. A draft that holds minors overnight in lock-up facilities (even if politely termed ``overnight reflection in a youth sanctuary'') is a contradiction.
+\end{itemize}
+
+\subsection{Choice 2: Entailment (Compliant / Lawful Execution)}
+\textbf{Meaning:} The draft local ordinance directly adopts, enforces, or lawfully executes what the national law requires or authorizes.
+
+\begin{itemize}
+    \item \textbf{Direct Adoption:} The local draft adopts national highway speed limits (e.g., 80 km/h for passenger cars under RA 4136).
+    \item \textbf{Statutory Budget Formulas:} The draft appropriates exactly 20\% of its National Tax Allotment to local development (RA 7160 \S287) or 5\% of regular revenues to disaster funds (RA 10121).
+    \item \textbf{Respecting Required Clearance Steps:} The draft requires sand-and-gravel quarry operators to present a national DENR Environmental Compliance Certificate (ECC) before receiving a Mayor's Permit.
+    \item \textbf{Non-Custodial Youth Care:} The draft directs apprehended youth to community-based counseling rather than detention, adhering to RA 9344.
+\end{itemize}
+
+\subsection{Choice 3: Neutral (Independent / Unrelated Subject Matter)}
+\textbf{Meaning:} Both laws may belong to the same broad field (e.g., health, transportation, taxation), but they govern completely separate obligations and do not conflict or depend on each other.
+
+\begin{itemize}
+    \item \textbf{Health:} National law mandates reporting notifiable infectious diseases to DOH, while the local draft sets hygiene rules for wiping waiting room benches or banning mercury thermometers.
+    \item \textbf{Local Governance:} National law sets the juvenile criminal exemption age (15 years old), while the local draft sets minimum floor dimensions for daycare centers (30 sq.m.).
+    \item \textbf{Public Utilities:} National law sets electric utility rate jurisdiction, while the local draft specifies reflective tape widths on street sweeper vests or median shrub trimming heights.
+\end{itemize}
+
+\section{Quick 3-Step Decision Checklist}
+\label{sec:app_guide_checklist}
+
+\begin{enumerate}
+    \item \textbf{Step 1:} Does the draft clash with, exceed, or remove what national law provides?\\
+    $\rightarrow$ \textbf{YES:} Choose \textbf{CONTRADICTION}
+    \item \textbf{Step 2:} Does the draft directly enforce, execute, or stay within the national rule?\\
+    $\rightarrow$ \textbf{YES:} Choose \textbf{ENTAILMENT}
+    \item \textbf{Step 3:} Are the two laws talking about completely separate administrative matters?\\
+    $\rightarrow$ \textbf{YES:} Choose \textbf{NEUTRAL}
+\end{enumerate}
+
+\section{Desk Cheat Sheet: Key Legal Ceilings and Thresholds}
+\label{sec:app_guide_cheatsheet}
+
+Table~\ref{tab:app_guide_ceilings} summarizes the statutory ceilings and non-negotiable legal limits governing Philippine local ordinances under positive national law.
+
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{3.5pt}
+    \renewcommand{\arraystretch}{0.92}
+    \caption[Key Statutory Ceilings and Preemption Thresholds]{Key Statutory Ceilings and Preemption Red Flags Under Philippine Law}
+    \label{tab:app_guide_ceilings}
+    \begin{tabularx}{\linewidth}{>{\bfseries}p{2.6cm}>{\RaggedRight\arraybackslash}p{4.2cm}>{\RaggedRight\arraybackslash}X}
+        \toprule
+        \textbf{Subject Area} & \textbf{National Law Baseline} & \textbf{Red Flag in Local Draft (Contradiction)} \\
+        \midrule
+        Ordinance Penalties & Max \textpeso 5,000 fine / 1 year jail (RA 7160 \S458). & Drafts imposing \textpeso 10,000--\textpeso 25,000 fines or real property title confiscation. \\
+        \addlinespace[2pt]
+        Calamity Price Freeze & Max 60 days duration (RA 7581 \S6). & Drafts imposing 90-day or 180-day local price freezes. \\
+        \addlinespace[2pt]
+        Processing Time (EODB) & Max 3 days (Simple), 7 days (Complex) (RA 11032). & Drafts taking 15 days for simple permits or indefinite holds. \\
+        \addlinespace[2pt]
+        Student Fare Discount & 20\% discount, year-round on all transit (RA 11314). & Drafts cutting discounts to 10\% or suspending during vacations. \\
+        \addlinespace[2pt]
+        Juvenile Justice & Age 15 and below exempt from criminal liability (RA 9344). & Drafts locking up minors or charging 12-year-olds in court. \\
+        \addlinespace[2pt]
+        Real Property Tax & Basic tax capped at max 2\% for cities (RA 7160 \S233). & Drafts setting 3\% to 5\%, or hiking rates without council ordinance. \\
+        \addlinespace[2pt]
+        Amusement Tax & Capped at max 30\%; school plays/events exempt (RA 7160 \S140). & Drafts charging 35\%, or levying tax on school dramatic/athletic events. \\
+        \addlinespace[2pt]
+        Local Dev. Fund & At least 20\% of Annual Tax Allotment (RA 7160 \S287). & Drafts allocating less than 20\% (e.g., 7\%) or using funds for travel. \\
+        \addlinespace[2pt]
+        Disaster Fund (LDRRMF) & At least 5\% of regular revenue; 30\% Quick Response (RA 10121). & Drafts setting 2\%, using QRF for tourism, or reverting unspent funds. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Submission and Transmittal}
+\label{sec:app_guide_submission}
+
+Evaluations are submitted through the standardized digital assessment instrument hosted on Google Forms. In accordance with Republic Act No.~10173 and ethical research approvals, each evaluator evaluates exactly one panel of 70 short legal pairs. Upon conclusion of full-scale deployment, participating legal officers receive the official Certificate of Contribution and Commendation endorsed for their Civil Service 201 records.

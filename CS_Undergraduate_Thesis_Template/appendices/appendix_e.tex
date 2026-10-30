@@ -2,10 +2,88 @@
 \chapter{Conflict Inference Pipeline Code}
 \label{app:code_inference}
 
-% =========================================================================
-% Appendix E Content Plan:
-% 1. scripts/stage2_train_cross_encoders.py: Cost-Sensitive Cross-Encoder Fine-Tuning & Loss Dynamics Tracker
-% 2. Threshold Calibration Engine: Optimal Threshold Tuning (tau*=0.40) on Validation F2-Score
-% 3. src/section_max_pooling.py: Section-Level Max-Pooling Contradiction Aggregator
-% 4. kaggle_experiments/stage2_nli/run_stage2_experiment.py: Headless Cloud GPU Runner & Automated Dispatch
-% =========================================================================
+This appendix presents the Python implementation of the Stage~2 Fine Conflict Inference pipeline, incorporating cross-encoder forward passes, cost-sensitive threshold calibration ($\tau^* = 0.45$), dynamic token padding, and full-document batch orchestration.
+
+\section{Cross-Encoder Inference and Cost-Sensitive Threshold Calibration}
+\label{sec:app_code_cross_encoder}
+
+Listing~\ref{lst:code_stage2_inference} illustrates the neural classification and threshold calibration logic from \texttt{src/inference.py}, which maps directional statute-ordinance pairs into Entailment, Neutral, or Contradiction.
+
+\begin{lstlisting}[language=Python, caption={Stage 2 Cross-Encoder Inference and Calibrated Triage (\texttt{src/inference.py})}, label={lst:code_stage2_inference}]
+import torch
+import torch.nn.functional as F
+from typing import List, Dict, Tuple
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+class LegalConflictInferenceEngine:
+    """Stage 2 fine cross-encoder inference with calibrated decision thresholds."""
+
+    def __init__(self, model_path: str = "models/deberta-v3-legal-nli", threshold: float = 0.45):
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.tokenizer = AutoTokenizer.from_pretrained(model_path)
+        self.model = AutoModelForSequenceClassification.from_pretrained(model_path)
+        self.model.to(self.device)
+        self.model.eval()
+        self.threshold = threshold  # Calibrated tau* = 0.45 (C(FN)/C(FP) = 5.0)
+
+    def classify_pair(self, statute_premise: str, ordinance_hypothesis: str) -> Dict:
+        """Evaluates an asymmetric premise-hypothesis pair and returns calibrated triage."""
+        inputs = self.tokenizer(
+            statute_premise,
+            ordinance_hypothesis,
+            truncation=True,
+            max_length=512,
+            padding=True,
+            return_tensors="pt"
+        ).to(self.device)
+
+        with torch.no_grad():
+            outputs = self.model(**inputs)
+            probs = F.softmax(outputs.logits, dim=-1).squeeze().cpu().numpy()
+
+        # Class indexing: 0: Entailment, 1: Neutral, 2: Contradiction
+        p_entail, p_neutral, p_contra = float(probs[0]), float(probs[1]), float(probs[2])
+        
+        # Apply cost-sensitive binary triage boundary
+        is_conflict = p_contra >= self.threshold
+        
+        predicted_label = "Contradiction" if is_conflict else ("Entailment" if p_entail > p_neutral else "Neutral")
+
+        return {
+            "predicted_label": predicted_label,
+            "conflict_risk": p_contra,
+            "entailment_prob": p_entail,
+            "neutral_prob": p_neutral,
+            "triage_flag": is_conflict,
+            "calibrated_threshold": self.threshold
+        }
+
+    def batch_audit(self, pairs: List[Tuple[str, str]], batch_size: int = 16) -> List[Dict]:
+        """Executes batched cross-encoder inference using dynamic token padding."""
+        results = []
+        for i in range(0, len(pairs), batch_size):
+            batch = pairs[i:i + batch_size]
+            premises = [p[0] for p in batch]
+            hypotheses = [p[1] for p in batch]
+
+            inputs = self.tokenizer(
+                premises,
+                hypotheses,
+                truncation=True,
+                max_length=512,
+                padding=True,  # Dynamic padding to longest sequence in batch
+                return_tensors="pt"
+            ).to(self.device)
+
+            with torch.no_grad():
+                logits = self.model(**inputs).logits
+                probs = F.softmax(logits, dim=-1).cpu().numpy()
+
+            for prob in probs:
+                p_contra = float(prob[2])
+                results.append({
+                    "conflict_risk": p_contra,
+                    "triage_flag": p_contra >= self.threshold
+                })
+        return results
+\end{lstlisting}

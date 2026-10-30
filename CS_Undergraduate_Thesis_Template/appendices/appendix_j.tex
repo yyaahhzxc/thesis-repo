@@ -1,11 +1,111 @@
 % !TeX root = ../main.tex
-\chapter{Usability and Technology Acceptance Questionnaires}
+\chapter{Ground Truth Evaluation and Usability Questionnaires}
 \label{app:usability_instruments}
 
-% =========================================================================
-% Appendix J Content Plan:
-% 1. Standardized 10-Item System Usability Scale (SUS) Questionnaire with Alternating Polarity
-% 2. 4-Item Technology Acceptance Model (TAM) & Task-Technology Fit (TTF) Domain Survey
-% 3. First Reading Simulation Usability Testing Protocol for 15 SP Legal Researchers
-% 4. Post-Interaction Qualitative Structured Interview Form
-% =========================================================================
+This appendix provides the complete digital evaluation instrument deployed to Sangguniang Panlungsod legal researchers, reformatted in LaTeX from the official Google Forms questionnaire, including the Data Privacy disclosure, pairwise consistency evaluation cards, and post-interaction usability surveys.
+
+\section{Institutional Statement and Informed Consent (R.A. 10173)}
+\label{sec:app_gforms_consent}
+
+\begin{center}
+    \textbf{SP Davao City --- Legal Consistency Ground Truth Evaluation}\\
+    \small Ateneo de Davao University $\cdot$ Department of Computer Science
+\end{center}
+
+\vspace{0.5em}
+\noindent\textbf{Research Context:} Under Republic Act No.~7160 and the landmark \textit{Magtajas v. Pryce Properties} doctrine, local ordinances cannot contradict national statutes. To assist Second Reading legislative reviews, this study develops an automated screening tool to flag candidate legal conflicts in draft Davao City ordinances before enactment. As Sangguniang Panlungsod legal researchers, your independent professional ratings serve as the authoritative ground truth benchmark to evaluate model accuracy.
+
+\vspace{0.5em}
+\noindent\textbf{Data Privacy Notice (Republic Act No.~10173):}
+\begin{enumerate}
+    \item \textbf{Statutory Compliance and Oversight:} In strict compliance with Republic Act No.~10173 (The Data Privacy Act of 2012) and the ethical standards of the Ateneo de Davao University Research Ethics Committee, this study guarantees full confidentiality, privacy, and intellectual integrity.
+    \item \textbf{Purpose and Scope:} All submitted ratings (Contradiction, Entailment, Neutral) and qualitative notes are collected strictly for academic benchmarking within this undergraduate thesis.
+    \item \textbf{Evaluator Anonymization:} Evaluations are analyzed in aggregate (e.g., domain accuracy, inter-rater reliability). Evaluators are assigned alphanumeric tokens (\texttt{SP-ANN-01} to \texttt{SP-ANN-15}). Name submission is optional and used solely for issuing official Certificates of Contribution for Civil Service 201 records.
+    \item \textbf{Voluntary Participation:} Participation is voluntary. Evaluators may skip items or withdraw at any stage without prejudice to their institutional standing.
+    \item \textbf{Data Retention:} Raw responses are stored in encrypted institutional repositories accessible solely to proponents and their adviser, and retained only for thesis defense verification.
+\end{enumerate}
+
+\noindent\fbox{\parbox{0.97\linewidth}{\textbf{Informed Consent Checkbox:}\\[2pt]
+$\Box$ \textit{I confirm that I am an active legal researcher or legislative staff member at the Sangguniang Panlungsod of Davao City; I have read and understood this Data Privacy Disclosure; and I freely consent to participate as a domain expert evaluator.}}}
+
+\section{Evaluator Profile and Panel Allocation}
+\label{sec:app_gforms_profile}
+
+\begin{enumerate}
+    \item \textbf{Full Name (Optional):} \underline{\hspace{8cm}}
+    \item \textbf{Highest Educational Attainment (Required):}
+    \begin{itemize}
+        \item[$\bigcirc$] Member of the Philippine Bar (Admitted / Roll of Attorneys)
+        \item[$\bigcirc$] Juris Doctor (J.D.) / Bachelor of Laws (LL.B.)
+        \item[$\bigcirc$] Postgraduate / Master's Degree (e.g., MPA, LL.M.)
+        \item[$\bigcirc$] Bachelor's Degree (e.g., Political Science, Legal Management, Philosophy)
+    \end{itemize}
+    \item \textbf{Years of Legislative / Legal Experience (Required):} \underline{\hspace{4cm}}
+    \item \textbf{Assigned Evaluation Panel (Pre-Allocated 70-Item Workload):}
+    \begin{itemize}
+        \item[$\bigcirc$] \texttt{SP-ANN-01} to \texttt{SP-ANN-03} (Panel A: Items GT-001 to GT-070)
+        \item[$\bigcirc$] \texttt{SP-ANN-04} to \texttt{SP-ANN-06} (Panel B: Items GT-071 to GT-140)
+        \item[$\bigcirc$] \texttt{SP-ANN-07} to \texttt{SP-ANN-09} (Panel C: Items GT-141 to GT-210)
+        \item[$\bigcirc$] \texttt{SP-ANN-10} to \texttt{SP-ANN-12} (Panel D: Items GT-211 to GT-280)
+        \item[$\bigcirc$] \texttt{SP-ANN-13} to \texttt{SP-ANN-15} (Panel E: Items GT-281 to GT-350)
+    \end{itemize}
+\end{enumerate}
+
+\section{Pairwise Consistency Evaluation Instrument}
+\label{sec:app_gforms_items}
+
+Each evaluation item presents a verified national statute section alongside an authentic or draft municipal ordinance provision. Below is the standardized question card format deployed in Google Forms:
+
+\vspace{0.5em}
+\noindent\fbox{\parbox{0.97\linewidth}{
+\textbf{Sample Item: GT-001 [Panel A, Item 1 of 70]}\\[4pt]
+\textbf{NATIONAL STATUTE PREMISE (Republic Act No.~7581 \S6):}\\
+\textit{``Section 6. Automatic Price Control. --- Unless otherwise declared by the President, prices of basic necessities in an area shall automatically be frozen at their prevailing prices or placed under automatic price control whenever that area is proclaimed or declared a disaster area or under a state of calamity\dots\ Unless sooner lifted by the President, price control of basic necessities under this section shall remain effective for the duration of the condition that brought it about, but not for more than sixty (60) days.''}\\[4pt]
+\textbf{MUNICIPAL ORDINANCE HYPOTHESIS (Davao City Draft Clause \S4):}\\
+\textit{``SECTION 4. MANDATORY LOCAL PRICE CEILINGS UPON CALAMITY. --- In accordance with local civil defense standards and the emergency management powers of the City Government of Davao, upon official declaration of a state of local calamity by the Sangguniang Panlungsod, the City Mayor shall enforce mandatory price ceilings across all commercial retail establishments, which price freeze shall remain in continuous legal effect for a mandatory period of one hundred eighty (180) calendar days from issuance.''}\\[6pt]
+\textbf{Question 1: Legal Consistency Decision (Required):}
+\begin{itemize}
+    \item[$\bigcirc$] \textbf{Contradiction} (Legal Conflict / Overreaches National Statute)
+    \item[$\bigcirc$] \textbf{Entailment} (Complies With / Directly Executes National Statute)
+    \item[$\bigcirc$] \textbf{Neutral} (Independent / Regulates Separate Administrative Matter)
+\end{itemize}
+\textbf{Question 2: Confidence Rating (Required):}\\
+$\bigcirc$ 1 --- Low Confidence \hspace{1cm} $\bigcirc$ 2 --- Moderate Confidence \hspace{1cm} $\bigcirc$ 3 --- High Confidence\\[4pt]
+\textbf{Question 3: Qualitative Legal Rationale (Optional):}\\
+\underline{\hspace{0.95\linewidth}}
+}}
+
+\section{System Usability and Technology Acceptance Survey}
+\label{sec:app_gforms_tam_sus}
+
+Table~\ref{tab:app_tam_sus_items} lists the 14-item psychometric evaluation survey combining Brooke's System Usability Scale (SUS) and Davis' Technology Acceptance Model (TAM), administered using a 5-point Likert scale (1 = Strongly Disagree to 5 = Strongly Agree).
+
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{4.0pt}
+    \renewcommand{\arraystretch}{0.92}
+    \caption[Post-Interaction Usability and Technology Acceptance Survey]{Post-Interaction Usability (SUS) and Technology Acceptance (TAM) Survey Items}
+    \label{tab:app_tam_sus_items}
+    \begin{tabularx}{\linewidth}{>{\bfseries}p{1.4cm}>{\RaggedRight\arraybackslash}p{2.8cm}>{\RaggedRight\arraybackslash}X}
+        \toprule
+        \textbf{Item ID} & \textbf{Evaluation Construct} & \textbf{Survey Statement (5-Point Likert: Strongly Disagree to Strongly Agree)} \\
+        \midrule
+        SUS-01 & Usability: Frequency & I think that I would like to use this conflict detection system frequently during First Reading reviews. \\
+        SUS-02 & Usability: Complexity & I found the conflict detection interface unnecessarily complex. \\
+        SUS-03 & Usability: Ease of Use & I thought the single-page prototype was easy to use. \\
+        SUS-04 & Usability: Support Need & I think that I would need the support of a technical person to be able to use this system. \\
+        SUS-05 & Usability: Integration & I found the various functions in this system were well integrated. \\
+        SUS-06 & Usability: Consistency & I thought there was too much inconsistency in this system. \\
+        SUS-07 & Usability: Learnability & I would imagine that most legal researchers would learn to use this system very quickly. \\
+        SUS-08 & Usability: Cumbersome & I found the document ingestion and candidate review process very cumbersome to use. \\
+        SUS-09 & Usability: Confidence & I felt very confident using the calibrated conflict risk meter and XAI cards. \\
+        SUS-10 & Usability: Overhead & I needed to learn a lot of things before I could get going with this system. \\
+        \midrule
+        TAM-01 & Perceived Usefulness & Using this system enhances my productivity when auditing draft ordinances against national codes. \\
+        TAM-02 & Perceived Usefulness & The side-by-side verbatim text cards make it easier to pinpoint statutory preemption issues. \\
+        TAM-03 & Perceived Ease of Use & Learning to operate the offline decision-support tool was clear and understandable. \\
+        TAM-04 & Behavioral Intention & Assuming access within the SP intranet, I would recommend integrating this tool into committee review. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}

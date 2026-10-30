@@ -1,12 +1,109 @@
 % !TeX root = ../main.tex
-\chapter{Prototype Interface Wireframes and Layouts}
-\label{app:ui_wireframes}
+\chapter{Experimental Jupyter Notebooks Highlights}
+\label{app:notebooks}
 
-% =========================================================================
-% Appendix G Content Plan:
-% 1. Low-Fidelity Information Architecture & Navigation State Machine
-% 2. First Reading Review Dashboard Layout Wireframe (Input Drawer & Summary Banner)
-% 3. Dual-Stream Candidate Shortlist Wireframe (Vertical Preemption vs. Horizontal Inconsistency)
-% 4. Comparative Side-by-Side XAI Modal & Deontic Highlighting Inspector Wireframe
-% 5. Two-Tier Color-Coded Alert Card Component Specifications (Critical Red vs. Informational Blue)
-% =========================================================================
+This appendix presents the condensed, functional Python highlights from the four primary Jupyter notebooks documenting the experimental lifecycle of this research.
+
+\section{Notebook 01: Corpus Preparation and Topic Modeling}
+\label{sec:app_nb01}
+
+Listing~\ref{lst:code_nb01_highlights} presents the core cell logic from \texttt{01\_corpus\_preparation\_and\_topic\_modeling.ipynb}, executing class-based TF-IDF (c-TF-IDF) and MiniBatch $K$-Means clustering over the unified dual statutory provisions.
+
+\begin{lstlisting}[language=Python, caption={Notebook 01: Dual Corpus Topic Modeling and Cluster Extraction}, label={lst:code_nb01_highlights}]
+# Notebook 01: Corpus Preparation and Topic Modeling
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import MiniBatchKMeans
+
+# Load cleaned statutory and municipal provisions
+df = pd.read_json("data/unified_dual_statutory_provisions.jsonl", lines=True)
+
+# Compute c-TF-IDF vector representations across substantive provisions
+vectorizer = TfidfVectorizer(max_features=10000, stop_words="english", ngram_range=(1, 2))
+X_tfidf = vectorizer.fit_transform(df["provision_text"])
+
+# Cluster provisions into 28 sub-clusters across 8 Macro Legal Domains
+kmeans = MiniBatchKMeans(n_clusters=28, random_state=42, batch_size=1024)
+df["cluster_id"] = kmeans.fit_predict(X_tfidf)
+
+print(f"Successfully clustered {len(df):,} provisions into {kmeans.n_clusters} clusters.")
+\end{lstlisting}
+
+\section{Notebook 02: Stage 1 Hybrid Retrieval Benchmarking}
+\label{sec:app_nb02}
+
+Listing~\ref{lst:code_nb02_highlights} shows the evaluation loop from \texttt{02\_stage1\_retrieval\_and\_embeddings.ipynb}, calculating Recall@$k$ across sparse, dense, and fused candidate retrieval on the 350 ground truth queries.
+
+\begin{lstlisting}[language=Python, caption={Notebook 02: Stage 1 Retrieval Sweep and Recall@k Evaluation}, label={lst:code_nb02_highlights}]
+# Notebook 02: Stage 1 Hybrid Retrieval Evaluation
+import numpy as np
+
+def evaluate_retrieval_recalls(retrieval_engine, benchmark_queries, k_values=[5, 10, 20, 50]):
+    """Evaluates candidate retrieval recall across multiple top-k thresholds."""
+    recall_results = {k: 0 for k in k_values}
+    
+    for query in benchmark_queries:
+        gold_id = query["gold_statute_id"]
+        retrieved = retrieval_engine.retrieve_candidates(query["ordinance_text"], top_k=max(k_values))
+        retrieved_ids = [doc["section_id"] for doc in retrieved]
+        
+        for k in k_values:
+            if gold_id in retrieved_ids[:k]:
+                recall_results[k] += 1
+
+    total = len(benchmark_queries)
+    return {f"Recall@{k}": f"{(hits / total) * 100:.2f}%" for k, hits in recall_results.items()}
+\end{lstlisting}
+
+\section{Notebook 03: Stage 2 Cross-Encoder Fine-Tuning and Ablation}
+\label{sec:app_nb03}
+
+Listing~\ref{lst:code_nb03_highlights} illustrates the model training and cross-validation loop from \texttt{03\_stage2\_nli\_modeling\_and\_ablation.ipynb}, implementing the AdamW optimizer, linear warmup, and cost-sensitive loss evaluation.
+
+\begin{lstlisting}[language=Python, caption={Notebook 03: Cross-Encoder Fine-Tuning and Validation Metrics}, label={lst:code_nb03_highlights}]
+# Notebook 03: Stage 2 Cross-Encoder Fine-Tuning Loop
+from transformers import AutoModelForSequenceClassification, AdamW, get_linear_schedule_with_warmup
+from torch.utils.data import DataLoader
+
+model = AutoModelForSequenceClassification.from_pretrained("microsoft/deberta-v3-base", num_labels=3)
+optimizer = AdamW(model.parameters(), lr=2e-5, weight_decay=0.01)
+
+# Training loop with validation checkpointing
+for epoch in range(5):
+    model.train()
+    for batch in train_dataloader:
+        optimizer.zero_grad()
+        outputs = model(**batch)
+        loss = outputs.loss
+        loss.backward()
+        optimizer.step()
+        scheduler.step()
+
+    # Validation evaluation for Macro F1 and Conflict F1
+    val_macro_f1, val_conflict_f1 = evaluate_nli_fold(model, val_dataloader)
+    print(f"Epoch {epoch+1}: Val Macro F1 = {val_macro_f1:.4f}, Conflict F1 = {val_conflict_f1:.4f}")
+\end{lstlisting}
+
+\section{Notebook 04: Full-Document System Stress Testing}
+\label{sec:app_nb04}
+
+Listing~\ref{lst:code_nb04_highlights} illustrates the complete document audit test runner from \texttt{04\_system\_level\_evaluation.ipynb}, processing multi-section Folio drafts and benchmarking the 11 Supreme Court preemption cases.
+
+\begin{lstlisting}[language=Python, caption={Notebook 04: End-to-End System Audit and Supreme Court Verification}, label={lst:code_nb04_highlights}]
+# Notebook 04: System-Level Full Document Evaluation
+def audit_complete_draft_ordinance(draft_pdf_path, pipeline):
+    """Executes end-to-end audit: ingestion -> boilerplate filter -> retrieval -> NLI."""
+    raw_sections = extract_folio_sections(draft_pdf_path)
+    operative_sections = [s for s in raw_sections if not is_boilerplate(s)]
+    
+    audit_report = []
+    for section in operative_sections:
+        candidates = pipeline.retrieval.retrieve_candidates(section["text"], top_k=50)
+        inference_results = pipeline.inference.classify_candidates(section["text"], candidates)
+        audit_report.append({
+            "section_num": section["num"],
+            "max_conflict_risk": max(r["conflict_risk"] for r in inference_results),
+            "flagged": any(r["triage_flag"] for r in inference_results)
+        })
+    return audit_report
+\end{lstlisting}

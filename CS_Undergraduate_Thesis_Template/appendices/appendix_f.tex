@@ -2,20 +2,122 @@
 \chapter{Statutory Stop Words and Boilerplate Patterns}
 \label{app:lexicons_stopwords}
 
-This appendix provides the complete lexical specifications, regular expression patterns, and domain stopword dictionaries utilized during corpus preprocessing, sparse indexing, topic modeling, and procedural boilerplate filtering across both the national statute and Davao City local ordinance corpora.
-
-\section{Procedural Boilerplate Extraction Patterns}
-\label{sec:app_boilerplate_regex}
-Standard regular expressions and structural extraction heuristics for identifying and filtering non-operative legislative sections (Enacting Formulas, WHEREAS Preambles, Separability Clauses, General Repealing Formulas, Effectivity Clauses, and Signature/Attestation Blocks).
+This appendix provides the domain-specific stop word dictionaries, regular expression patterns, and legislative vocabulary utilized during corpus preprocessing, sparse retrieval, and procedural boilerplate filtering.
 
 \section{Legal Stop Words Roster}
 \label{sec:app_legal_stopwords_roster}
-Complete alphabetical roster of the 49 domain-specific Philippine legal stop words suppressed during TF-IDF vectorization and two-stage Latent Semantic Analysis topic modeling.
 
-\section{Deontic Modality and Statutory Conflict Lexicons}
+Table~\ref{tab:app_legal_stopwords} lists the 49 domain-specific Philippine statutory stop words suppressed during sparse retrieval vectorization and topic modeling to prevent non-discriminative institutional terms from dominating candidate scoring.
+
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{6.0pt}
+    \renewcommand{\arraystretch}{0.95}
+    \caption[Alphabetical Roster of Philippine Legal Stop Words]{Alphabetical Roster of the 49 Domain-Specific Philippine Legal Stop Words}
+    \label{tab:app_legal_stopwords}
+    \begin{tabularx}{\linewidth}{XXXX}
+        \toprule
+        \textbf{Terms 1--13} & \textbf{Terms 14--25} & \textbf{Terms 26--37} & \textbf{Terms 38--49} \\
+        \midrule
+        act & force & order & secretary \\
+        amended & further & ordinance & section \\
+        approved & government & penalties & shall \\
+        article & hereby & philippines & thereof \\
+        board & herein & president & thereto \\
+        city & hereunder & provided & treasurer \\
+        commission & inconsistent & provisions & violation \\
+        council & law & purpose & whereas \\
+        davao & may & pursuant & \\
+        department & mayor & regulations & \\
+        duly & office & repealed & \\
+        effect & official & republic & \\
+        effective & operative & rules & \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Procedural Boilerplate Extraction Patterns}
+\label{sec:app_boilerplate_regex}
+
+Table~\ref{tab:app_boilerplate_regex} presents the compiled regular expressions utilized by the procedural boundary parser to identify and filter standard administrative clauses during pre-enactment ingestion.
+
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{4.0pt}
+    \renewcommand{\arraystretch}{0.95}
+    \caption[Procedural Legislative Boilerplate Regular Expression Patterns]{Procedural Legislative Boilerplate Regular Expression Patterns}
+    \label{tab:app_boilerplate_regex}
+    \begin{tabularx}{\linewidth}{>{\bfseries}p{3.2cm}>{\ttfamily\RaggedRight\arraybackslash}X}
+        \toprule
+        \textbf{Clause Typology} & \textbf{Regular Expression Extraction Pattern} \\
+        \midrule
+        Title / Short Title & \verb|^(?:Section\s+1[\.:]\s*)?(?:Short\s+Title|Title)\b| \\
+        \addlinespace[2pt]
+        Preamble / Recitals & \verb|^WHEREAS\b| \\
+        \addlinespace[2pt]
+        Definition of Terms & \verb|^(?:Section\s+2[\.:]\s*)?Definition\s+of\s+Terms\b| \\
+        \addlinespace[2pt]
+        Separability Clause & \verb|^(?:Section\s+\d+[\.:]\s*)?Separability\s+Clause\b| \\
+        \addlinespace[2pt]
+        Repealing Clause & \verb|^(?:Section\s+\d+[\.:]\s*)?Repealing\s+Clause\b| \\
+        \addlinespace[2pt]
+        Effectivity Clause & \verb|^(?:Section\s+\d+[\.:]\s*)?Effectivity\s+Clause\b| \\
+        \addlinespace[2pt]
+        Enacting Formula & \verb|^BE\s+IT\s+ORDAINED\s+by\s+the\s+Sangguniang\s+Panlungsod\b| \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Deontic Modality Markers}
 \label{sec:app_deontic_lexicons}
-Categorized lexical markers governing mandatory legal obligations, strict prohibitions, and permissive discretionary authorities under Republic Act No.~7160.
 
-\section{Regional Administrative and Taglish Lexicon}
+Table~\ref{tab:app_deontic_markers} details the modal verbs and statutory command terms monitored during explainable self-attention extraction to identify normative tensions between national baselines and local drafts.
+
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{4.0pt}
+    \renewcommand{\arraystretch}{0.95}
+    \caption[Deontic Modality Statutory Markers]{Deontic Modality Statutory Markers Monitored in Cross-Encoder Attention}
+    \label{tab:app_deontic_markers}
+    \begin{tabularx}{\linewidth}{>{\bfseries}p{3.5cm}>{\RaggedRight\arraybackslash}X}
+        \toprule
+        \textbf{Deontic Class} & \textbf{Statutory Marker Terms and Phrases} \\
+        \midrule
+        Mandatory / Obligatory & shall, must, is required to, shall be the duty of, directed to, mandatory, compulsory, shall enforce. \\
+        \addlinespace[3pt]
+        Prohibitory / Restrictive & shall not, cannot, prohibited, unlawful, no person shall, in no case shall, banned, disallowed, forbidden. \\
+        \addlinespace[3pt]
+        Permissive / Discretionary & may, is authorized to, at the discretion of, optional, allowed, permitted, can, empowered to. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Regional Administrative and Taglish Vocabulary}
 \label{sec:app_regional_lexicon}
-Lexicon of regional Cebuano terminology and administrative Taglish occurring within digitized historical and contemporary Davao City local ordinances.
+
+Table~\ref{tab:app_regional_vocabulary} presents regional administrative terms, localized Cebuano expressions, and Taglish phrases occurring within authentic Davao City municipal ordinances.
+
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{4.0pt}
+    \renewcommand{\arraystretch}{0.95}
+    \caption[Regional Administrative and Localized Vocabulary]{Regional Administrative and Localized Vocabulary in Davao City Legislation}
+    \label{tab:app_regional_vocabulary}
+    \begin{tabularx}{\linewidth}{>{\bfseries}p{3.5cm}>{\RaggedRight\arraybackslash}X}
+        \toprule
+        \textbf{Jurisdictional Category} & \textbf{Recognized Administrative and Localized Terms} \\
+        \midrule
+        Sub-Municipal Units & barangay, purok, sitio, purok leader, barangay tanod, lupon tagapamayapa. \\
+        \addlinespace[3pt]
+        Local Legislative Organs & sangguniang panlungsod, punong barangay, kagawad, sangguniang kabataan. \\
+        \addlinespace[3pt]
+        Enforcement \& Citations & citation ticket, ordinance violation receipt (OVR), no-contest compromise settlement, 72-hour settlement window. \\
+        \addlinespace[3pt]
+        Localized Transport \& Commerce & habal-habal, trisikad, payao, hulog-hulog, sari-sari store, sidewalk vendor, palengke, bangketa. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}

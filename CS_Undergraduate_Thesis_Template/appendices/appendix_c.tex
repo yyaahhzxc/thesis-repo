@@ -1,11 +1,74 @@
 % !TeX root = ../main.tex
-\chapter{Ordinance Text Cleaning Code}
+\chapter{Ordinance Text Cleaning and Normalization Code}
 \label{app:code_cleaning}
 
-% =========================================================================
-% Appendix C Content Plan:
-% 1. src/clean_transcriptions.py: Adaptive Regex Finite State Machine for Section Boundary Detection
-% 2. Operative Provision Extractor: Substantive Rule vs. Procedural Boilerplate Classification Logic
-% 3. Section Context Prepending Protocol: Structural Prefixing with Jurisdiction, Enactment, and Title
-% 4. scripts/build_davao_ordinances_jsonl.py: Master Local Ordinance Corpus Ingestion Pipeline
-% =========================================================================
+This appendix provides the functional Python code responsible for normalizing raw municipal transcriptions, filtering administrative enactment preambles, segmenting multi-paragraph substantive sections, and formatting unpolluted ordinance records for downstream candidate retrieval.
+
+\section{Legislative Boilerplate Filter and Boundary State Machine}
+\label{sec:app_code_boilerplate_filter}
+
+Listing~\ref{lst:code_ordinance_cleaner} presents the boundary parser that strips non-operative preamble clauses (such as \texttt{WHEREAS} series and enacting formulas) and segments local enactments into discrete, self-contained regulatory provisions.
+
+\begin{lstlisting}[language=Python, caption={Ordinance Segmentation and Boilerplate Filtering (\texttt{scripts/clean\_ordinances.py})}, label={lst:code_ordinance_cleaner}]
+import re
+from typing import List, Dict
+
+class OrdinanceCleaner:
+    """Isolates substantive legislative provisions from raw municipal transcriptions."""
+    
+    BOILERPLATE_PATTERNS = [
+        re.compile(r'^WHEREAS\b', re.IGNORECASE),
+        re.compile(r'^BE IT ORDAINED\b', re.IGNORECASE),
+        re.compile(r'^ENACTED by the Sangguniang Panlungsod\b', re.IGNORECASE),
+        re.compile(r'^APPROVED,\s*this\b', re.IGNORECASE)
+    ]
+    
+    SECTION_START = re.compile(
+        r'^(SECTION|SEC\.)\s+(\d+[a-zA-Z]?)\.?\s*([A-Z\s\(\)]+)?[\.\-\—]?\s*(.*)', 
+        re.IGNORECASE
+    )
+
+    def clean_and_segment(self, raw_text: str, ordinance_num: str) -> List[Dict]:
+        """Parses raw ordinance transcription into substantive operative sections."""
+        lines = [line.strip() for line in raw_text.split('\n') if line.strip()]
+        sections = []
+        current_sec_num = None
+        current_title = ""
+        current_text = []
+
+        in_operative_body = False
+
+        for line in lines:
+            # Check for transition into substantive operative text
+            sec_match = self.SECTION_START.match(line)
+            if sec_match:
+                in_operative_body = True
+                if current_sec_num and current_text:
+                    sections.append({
+                        "ordinance_num": ordinance_num,
+                        "section_num": current_sec_num,
+                        "section_title": current_title.strip(),
+                        "provision_text": " ".join(current_text).strip()
+                    })
+                current_sec_num = sec_match.group(2)
+                current_title = sec_match.group(3) or ""
+                current_text = [sec_match.group(4)] if sec_match.group(4) else []
+                continue
+
+            if in_operative_body and current_sec_num:
+                current_text.append(line)
+            elif not in_operative_body:
+                # Discard non-operative preambles
+                continue
+
+        # Append terminal section
+        if current_sec_num and current_text:
+            sections.append({
+                "ordinance_num": ordinance_num,
+                "section_num": current_sec_num,
+                "section_title": current_title.strip(),
+                "provision_text": " ".join(current_text).strip()
+            })
+
+        return sections
+\end{lstlisting}
