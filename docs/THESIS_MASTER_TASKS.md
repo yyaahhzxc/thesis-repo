@@ -48,7 +48,7 @@
 >   - Pipeline integration and prototype deployment on Host A for LGU edge simulation.
 >   - Continued systematic verification of mathematical/empirical parameters in manuscript.
 >   - **[PENDING RALPH'S OCR] Local Ordinances EDA Regeneration & Corpuz et al. Attribution:** Re-run EDA token census, temporal distribution charts (`scripts/generate_word_count_temporal_figure.py`), and dual-corpus compliance once Ralph completes the Kaggle OCR batch extraction on the additional 2016–2020 LISSP ordinances; integrate dataset sharing attribution in Chapter 3 §3.2 and corroborate the 2022 disaster-relief peak in the EDA discussion.
->   - **Custom Slide Deck Maker & Automated Presentation Pipeline [COMPLETED]:** Automated Canva-compatible slide deck pipeline connecting slides, text, and presenter notes directly to Antigravity (`presentation slide/generate_defense_pptx.py`, `presentation slide/index.html`); integrated Canva background templates & visual assets (`presentation slide/thesis slides assets/`), adhering strictly to Ma'am Grace's defense slide instructions (7x7 rule, high legibility, 3-corner anchors, and segmented Conceptual Framework).
+>   - **[EXCLUDED / ARCHIVED] Slide Deck Maker & Presentation Assets:** Presentation slide decks and preview assets excluded from repository tracking to focus 100% on the final manuscript submission and LaTeX build.
 >   - **Manuscript Print & Binding Visual Layout Polish (Post-Chapter 5):** Plan full-page and landscape orientation (`pdflscape` / `sidewaystable`) for wide tables and dense figures across all chapters to optimize readability for physical printing and bookbinding.
 > * **Ralph's Active Focus (PDF Collection, Source Auditing, & OCR Experiments):**
 >   - **[PENDING CORPUS ACQUISITION] 2016–2020 LISSP Archival Scans Acquisition & Kaggle OCR Extraction:** Contact Corpuz, Lamsin, and Nuril to acquire the remaining 2016–2020 LISSP Davao City ordinance file list; dispatch headless batch OCR/text extraction across these additional scans using the Kaggle GPU environment (`kaggle`); pass verified cleaned transcriptions to Yah for corpus recompilation.
@@ -59,8 +59,6 @@
 >     (b) draft text adjustments to the citing sentences across Chapters 1--4, adjusting the narrative while cleanly removing or substituting the citation.
 >   - **Local Ordinance OCR Empirical Benchmark:** Finalize comparative OCR/VLM metrics (Surya vs. Tesseract vs. GCV vs. Qwen2.5-VL) on the Davao City ordinance sample.
 >   - **HRMO / City Administrator Routing & Legal Researchers Certificates:** Advance the formal request packet (`docs/annotation/hrmo_city_admin_approval_request_letter.md`) and finalize the commemorative certificate template for the 15 annotators.
->   - **Slide Deck Asset Collection & Background Extraction:** Export clean PNG/SVG slide backgrounds and graphic assets from Canva to supply the automated slide deck maker.
->   - **Presentation-Optimized Custom Slide Figures (Collaborative with Yah):** Design simplified, presentation-tailored figure variants of key pipeline diagrams (Conceptual Framework, Retrieval vs NLI, Attention Heatmaps) to replace overly dense manuscript figures for oral defense delivery.
 
 ### **Critical Deadlines & Administrative Requirements (October 2026)**
 * **Upcoming Course Milestones & Deadlines:**
