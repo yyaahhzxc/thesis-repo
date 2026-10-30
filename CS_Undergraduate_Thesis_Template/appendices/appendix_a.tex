@@ -15,17 +15,17 @@
     \renewcommand{\arraystretch}{0.92}
     \caption[Python Package Dependencies and Import Manifest]{Python Package Dependencies and Import Manifest Across the Project Codebase}
     \label{tab:app_package_manifest}
-    \begin{tabularx}{\linewidth}{>{\ttfamily}p{3.2cm}>{\centering\arraybackslash}p{2.0cm}>{\RaggedRight\arraybackslash}p{3.8cm}>{\RaggedRight\arraybackslash}X}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash\ttfamily}p{3.0cm}>{\centering\arraybackslash}p{1.7cm}>{\RaggedRight\arraybackslash}p{4.2cm}>{\RaggedRight\arraybackslash}X}
         \toprule
-        \textbf{Package Identifier} & \textbf{Verified Ver.} & \textbf{Primary Module / Function} & \textbf{Architectural Role in Pipeline} \\
+        \textbf{Package} & \textbf{Verified} & \textbf{Primary Module / Function} & \textbf{Architectural Role in Pipeline} \\
         \midrule
         torch & $\ge 2.1.0$ & \texttt{torch.nn}, \texttt{torch.cuda} & PyTorch tensor execution, AVX2 CPU operations, neural inference. \\
-        transformers & $\ge 4.36.0$ & \texttt{AutoModelForSequenceClassification} & HuggingFace transformer backbones (\texttt{DeBERTa-v3}, \texttt{BERT}). \\
-        sentence-transformers & $\ge 2.2.0$ & \texttt{SentenceTransformer} & Dense bi-encoder provision embeddings (\texttt{all-MiniLM-L6-v2}). \\
+        transformers & $\ge 4.36.0$ & \texttt{AutoModelFor}\allowbreak\texttt{SequenceClassification} & HuggingFace transformer backbones (\texttt{DeBERTa-v3}, \texttt{BERT}). \\
+        sentence-\\transformers & $\ge 2.2.0$ & \texttt{SentenceTransformer} & Dense bi-encoder provision embeddings (\texttt{all-MiniLM-L6-v2}). \\
         accelerate & $\ge 0.25.0$ & \texttt{Accelerator} & Multi-threaded CPU execution and FP16 tensor batching. \\
         rank-bm25 & $\ge 0.2.2$ & \texttt{BM25Okapi} & Lexical sparse inverted index and candidate provision scoring. \\
         scikit-learn & $\ge 1.3.0$ & \texttt{sklearn.metrics}, \texttt{KMeans} & 5-fold cross-validation, topic modeling, and McNemar tests. \\
-        scipy & $\ge 1.10.0$ & \texttt{scipy.stats.friedmanchisquare} & Non-parametric statistical significance hypothesis testing. \\
+        scipy & $\ge 1.10.0$ & \texttt{scipy.stats.}\allowbreak\texttt{friedmanchisquare} & Non-parametric statistical significance hypothesis testing. \\
         pandas & $\ge 2.0.0$ & \texttt{pandas.DataFrame} & Tabular metric aggregation, corpus census, and CSV reporting. \\
         numpy & $\ge 1.24.0$ & \texttt{numpy.ndarray} & Vectorized cosine similarity arrays and matrix arithmetic. \\
         pymupdf & $\ge 1.23.0$ & \texttt{fitz.open} & High-fidelity Folio PDF ingestion and bounding-box rendering. \\
