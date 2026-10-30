@@ -5,12 +5,8 @@
 \chapter{Statutory Scraping and Package Import Manifest}
 \label{app:code_ingestion}
 
-This appendix presents the complete computational package dependency manifest utilized across the project codebase, followed by the condensed, functional source code for the autonomous national statutory scraper and ingestion pipeline.
-
 \section{Software Environment and Package Import Manifest}
 \label{sec:app_package_manifest}
-
-Table~\ref{tab:app_package_manifest} documents all external Python packages, libraries, and runtime dependencies imported across the data processing scripts, machine learning engines, and experimental notebooks in this study, detailing their minimum verified version numbers and functional role within the pipeline.
 
 \begin{table}[htbp]
     \centering
@@ -47,8 +43,6 @@ Table~\ref{tab:app_package_manifest} documents all external Python packages, lib
 
 \section{Autonomous Statutory Scraper and Provision Chunking Code}
 \label{sec:app_code_scraping}
-
-Listing~\ref{lst:code_scraper_lawphil} provides the condensed, functional Python implementation of the Lawphil statutory ingestion engine. The scraper traverses official repository indices, extracts substantive statutory provisions, strips procedural headers, and serializes unpolluted legislative records into structured JSON Lines.
 
 \begin{lstlisting}[language=Python, caption={Lawphil Statutory Scraper and Provision Boundary Serializer (\texttt{scripts/scrape\_lawphil.py})}, label={lst:code_scraper_lawphil}]
 import os

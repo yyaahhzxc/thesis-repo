@@ -2,12 +2,8 @@
 \chapter{Experimental Jupyter Notebooks Highlights}
 \label{app:notebooks}
 
-This appendix presents the condensed, functional Python highlights from the four primary Jupyter notebooks documenting the experimental lifecycle of this research.
-
 \section{Notebook 01: Corpus Preparation and Topic Modeling}
 \label{sec:app_nb01}
-
-Listing~\ref{lst:code_nb01_highlights} presents the core cell logic from \texttt{01\_corpus\_preparation\_and\_topic\_modeling.ipynb}, executing class-based TF-IDF (c-TF-IDF) and MiniBatch $K$-Means clustering over the unified dual statutory provisions.
 
 \begin{lstlisting}[language=Python, caption={Notebook 01: Dual Corpus Topic Modeling and Cluster Extraction}, label={lst:code_nb01_highlights}]
 # Notebook 01: Corpus Preparation and Topic Modeling
@@ -32,8 +28,6 @@ print(f"Successfully clustered {len(df):,} provisions into {kmeans.n_clusters} c
 \section{Notebook 02: Stage 1 Hybrid Retrieval Benchmarking}
 \label{sec:app_nb02}
 
-Listing~\ref{lst:code_nb02_highlights} shows the evaluation loop from \texttt{02\_stage1\_retrieval\_and\_embeddings.ipynb}, calculating Recall@$k$ across sparse, dense, and fused candidate retrieval on the 350 ground truth queries.
-
 \begin{lstlisting}[language=Python, caption={Notebook 02: Stage 1 Retrieval Sweep and Recall@k Evaluation}, label={lst:code_nb02_highlights}]
 # Notebook 02: Stage 1 Hybrid Retrieval Evaluation
 import numpy as np
@@ -57,8 +51,6 @@ def evaluate_retrieval_recalls(retrieval_engine, benchmark_queries, k_values=[5,
 
 \section{Notebook 03: Stage 2 Cross-Encoder Fine-Tuning and Ablation}
 \label{sec:app_nb03}
-
-Listing~\ref{lst:code_nb03_highlights} illustrates the model training and cross-validation loop from \texttt{03\_stage2\_nli\_modeling\_and\_ablation.ipynb}, implementing the AdamW optimizer, linear warmup, and cost-sensitive loss evaluation.
 
 \begin{lstlisting}[language=Python, caption={Notebook 03: Cross-Encoder Fine-Tuning and Validation Metrics}, label={lst:code_nb03_highlights}]
 # Notebook 03: Stage 2 Cross-Encoder Fine-Tuning Loop
@@ -86,8 +78,6 @@ for epoch in range(5):
 
 \section{Notebook 04: Full-Document System Stress Testing}
 \label{sec:app_nb04}
-
-Listing~\ref{lst:code_nb04_highlights} illustrates the complete document audit test runner from \texttt{04\_system\_level\_evaluation.ipynb}, processing multi-section Folio drafts and benchmarking the 11 Supreme Court preemption cases.
 
 \begin{lstlisting}[language=Python, caption={Notebook 04: End-to-End System Audit and Supreme Court Verification}, label={lst:code_nb04_highlights}]
 # Notebook 04: System-Level Full Document Evaluation

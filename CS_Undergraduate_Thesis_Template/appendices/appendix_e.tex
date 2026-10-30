@@ -2,12 +2,8 @@
 \chapter{Conflict Inference Pipeline Code}
 \label{app:code_inference}
 
-This appendix presents the Python implementation of the Stage~2 Fine Conflict Inference pipeline, incorporating cross-encoder forward passes, cost-sensitive threshold calibration ($\tau^* = 0.45$), dynamic token padding, and full-document batch orchestration.
-
 \section{Cross-Encoder Inference and Cost-Sensitive Threshold Calibration}
 \label{sec:app_code_cross_encoder}
-
-Listing~\ref{lst:code_stage2_inference} illustrates the neural classification and threshold calibration logic from \texttt{src/inference.py}, which maps directional statute-ordinance pairs into Entailment, Neutral, or Contradiction.
 
 \begin{lstlisting}[language=Python, caption={Stage 2 Cross-Encoder Inference and Calibrated Triage (\texttt{src/inference.py})}, label={lst:code_stage2_inference}]
 import torch

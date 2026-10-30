@@ -2,12 +2,8 @@
 \chapter{Candidate Retrieval Engine Code}
 \label{app:code_retrieval}
 
-This appendix provides the Python source code implementing the Stage~1 Coarse Candidate Retrieval engine, combining sparse lexical search (Okapi BM25) and dense semantic representations (\texttt{all-MiniLM-L6-v2}) fused via Reciprocal Rank Fusion (RRF) with a statutory hierarchy priority safeguard.
-
 \section{Hybrid Sparse-Dense Search and Reciprocal Rank Fusion}
 \label{sec:app_code_hybrid_rrf}
-
-Listing~\ref{lst:code_stage1_retrieval} illustrates the core retrieval class from \texttt{src/retrieval.py}, which indexes the unified dual statutory repository (176,421 provisions) and executes fast multi-threaded candidate shortlisting.
 
 \begin{lstlisting}[language=Python, caption={Stage 1 Hybrid Retrieval Engine and RRF Fusion (\texttt{src/retrieval.py})}, label={lst:code_stage1_retrieval}]
 import numpy as np

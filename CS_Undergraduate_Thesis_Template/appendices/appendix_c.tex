@@ -2,12 +2,8 @@
 \chapter{Ordinance Text Cleaning and Normalization Code}
 \label{app:code_cleaning}
 
-This appendix provides the functional Python code responsible for normalizing raw municipal transcriptions, filtering administrative enactment preambles, segmenting multi-paragraph substantive sections, and formatting unpolluted ordinance records for downstream candidate retrieval.
-
 \section{Legislative Boilerplate Filter and Boundary State Machine}
 \label{sec:app_code_boilerplate_filter}
-
-Listing~\ref{lst:code_ordinance_cleaner} presents the boundary parser that strips non-operative preamble clauses (such as \texttt{WHEREAS} series and enacting formulas) and segments local enactments into discrete, self-contained regulatory provisions.
 
 \begin{lstlisting}[language=Python, caption={Ordinance Segmentation and Boilerplate Filtering (\texttt{scripts/clean\_ordinances.py})}, label={lst:code_ordinance_cleaner}]
 import re

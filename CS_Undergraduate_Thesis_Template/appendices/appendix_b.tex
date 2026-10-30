@@ -2,12 +2,8 @@
 \chapter{Archival OCR and VLM Pipeline Code}
 \label{app:code_ocr}
 
-This appendix provides the functional Python implementation for the archival optical character recognition (OCR) and vision-language model (VLM) extraction pipeline, specifically designed to process degraded physical municipal scans from the Davao City Sangguniang Panlungsod archives.
-
 \section{Image Enhancement and Deskewing Preprocessing}
 \label{sec:app_code_image_prep}
-
-Listing~\ref{lst:code_ocr_preprocessing} illustrates the automated image restoration module that applies adaptive thresholding, bilateral noise filtering, and orientation correction to historical typewriter scans before passing them to the text extraction models.
 
 \begin{lstlisting}[language=Python, caption={Archival Scan Preprocessing and Contrast Enhancement (\texttt{scripts/ocr\_pipeline.py})}, label={lst:code_ocr_preprocessing}]
 import cv2
@@ -48,8 +44,6 @@ def preprocess_archival_scan(image_path: str) -> np.ndarray:
 
 \section{Local 4-Bit Vision-Language Model Extraction Engine}
 \label{sec:app_code_vlm_engine}
-
-Listing~\ref{lst:code_vlm_extractor} details the inference code executing the locally hosted 4-bit quantized vision-language model (\texttt{Qwen2.5-VL-3B-Instruct}) using HuggingFace Transformers and bitsandbytes. The system enforces zero hallucination and verbatim preservation of legal numerals and penalty terms.
 
 \begin{lstlisting}[language=Python, caption={Local 4-Bit VLM Inference Engine for Archival Extraction}, label={lst:code_vlm_extractor}]
 import torch
