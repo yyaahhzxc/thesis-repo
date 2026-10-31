@@ -6,7 +6,7 @@ import unicodedata
 from pathlib import Path
 from collections import Counter
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 INPUT_DIR = BASE_DIR / "vlm_transcriptions"
 OUTPUT_DIR = BASE_DIR / "cleaned_transcriptions"
 REVIEW_QUEUE_DIR = BASE_DIR / "review_queue"

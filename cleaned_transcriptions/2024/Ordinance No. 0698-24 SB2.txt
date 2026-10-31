@@ -246,23 +246,23 @@ Calendar Year 2024
 (1)
 **Appropriation of Current Year Tax to a Program**
 **1. Office Supplies and Consumables Expenditures**
-**1000/03**
+**1000000/03**
 **P**
 **2,000,000**
 **2. Other Supplies and Materials Expenditures**
-**1000/06**
+**1000000/06**
 **P**
 **2,000,000**
 **3. Written Goods Expenditures**
-**1000/07**
+**1000000/07**
 **P**
 **10,000,000**
 **4. Other Services Expenditures**
-**1000/08**
+**1000000/08**
 **P**
 **15,000,000**
 **5. Sub-Total: MONEE**
-**1000/09**
+**1000000/09**
 **P**
 **44,000,000**
 
@@ -270,27 +270,27 @@ Calendar Year 2024
 **Public Service Program**
 **24022**
 **Appropriation of Current Year Appropriation**
-**1000/30**
+**1000000/30**
 **P**
 **2,000,000**
 **1. Office Supplies and Consumables Expenditures**
-**1000/03**
+**1000000/03**
 **P**
 **2,000,000**
 **2. Other Supplies and Materials Expenditures**
-**1000/06**
+**1000000/06**
 **P**
 **2,000,000**
 **3. Written Goods Expenditures**
-**1000/07**
+**1000000/07**
 **P**
 **10,000,000**
 **4. Other Services Expenditures**
-**1000/08**
+**1000000/08**
 **P**
 **15,000,000**
 **5. Sub-Total: MONEE**
-**1000/09**
+**1000000/09**
 **P**
 **44,000,000**
 
@@ -298,46 +298,46 @@ Calendar Year 2024
 **Programs**
 **00000**
 **Appropriation of Current Year Appropriation**
-**1000/32**
+**1000000/32**
 **P**
 **1,700,000**
 **1. Office Supplies and Consumables Expenditures**
-**1000/03**
+**1000000/03**
 **P**
 **1,700,000**
 **2. Other Supplies and Materials Expenditures**
-**1000/06**
+**1000000/06**
 **P**
 **1,700,000**
 **3. Written Goods Expenditures**
-**1000/07**
+**1000000/07**
 **P**
 **1,700,000**
 **4. Other Services Expenditures**
-**1000/08**
+**1000000/08**
 **P**
 **1,700,000**
 **5. Sub-Total: MONEE**
-**1000/09**
+**1000000/09**
 **P**
 **8,000,000**
 **6. Other FTE**
-**1000/33**
+**1000000/33**
 **P**
 **30,000,000**
 **7. State Grants: Public Sector En. En. Program**
-**1000/34**
+**1000000/34**
 **P**
 **5,000,000**
 
 **Other Programs**
 **00000**
 **Appropriation of Current Year Appropriation**
-**1000/35**
+**1000000/35**
 **P**
 **5,000,000**
 **1. Office Supplies and Consumables Expenditures**
-**1000/03**
+**1000000/03**
 **P**
 **5,000,000**
 **2. Insurance Expenditures
@@ -596,14 +596,14 @@ Calendar Year 2024
 
 **C2: College of Chirnai:**
 **Finalized from Memorandum of the Laureate Appointments provided under**
-**3000.00-00-00-01**
+**30000000.00-00-00-01**
 **A. Personal Services**
 **B. Travel Expenses**
 **C. Other Maintenance and Operating Expenses**
 **D. Capital Outlay**
 **E. Special Development Fund**
 **F. Miscellaneous Personal Allowances and Other Expenditures not provided under**
-**3000.00-00-00-01**
+**30000000.00-00-00-01**
 **G. Total C2: College of Chirnai**
 **H. Total C2: College of Chirnai**
 **I. Total C2: College of Chirnai**
@@ -745,25 +745,25 @@ Calendar Year 2024
 
 | **Implementing Office** | **Particulars / Purpose** | **AIF Reference Code** | **Object of expenditure** | **Account** | **Amount** |
 |------------------------|---------------------------|-------------------------|--------------------------|------------|-----------|
-| SECURITY OF PRE (1913) | Central Activity | 000-24-21-05-001 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-002 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-003 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-004 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-005 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-006 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-007 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-008 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-009 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-010 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-011 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-012 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-013 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-014 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-015 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-016 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-017 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-018 | A Personal Services | 507-01710 | P |
-|                         | Family from Personal Services and Leave | 000-24-21-05-019 | A Personal Services | 507-01710 | P |
+| SECURITY OF PRE (1913) | Central Activity | 000000-24-21-05-001 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-002 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-003 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-004 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-005 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-006 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-007 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-008 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-009 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-010 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-011 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-012 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-013 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-014 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-015 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-016 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-017 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-018 | A Personal Services | 507-01710 | P |
+|                         | Family from Personal Services and Leave | 000000-24-21-05-019 | A Personal Services | 507-01710 | P |
 |
 
 --- [Page 12] ---
@@ -785,34 +785,34 @@ Sub-total: Total Current Carryover
 Sub-total: Total Capital Carryover
 A. Maintenance and Other Operating Expenses:
 1. Office General Services:
-1000.00 - 3/1/2016 - 3/31/2017
-1000.00 - 3/1/2017 - 3/31/2018
-1000.00 - 3/1/2018 - 3/31/2019
-1000.00 - 3/1/2019 - 3/31/2020
-1000.00 - 3/1/2020 - 3/31/2021
-1000.00 - 3/1/2021 - 3/31/2022
-1000.00 - 3/1/2022 - 3/31/2023
-1000.00 - 3/1/2023 - 3/31/2024
-1000.00 - 3/1/2024 - 3/31/2025
-1000.00 - 3/1/2025 - 3/31/2026
-1000.00 - 3/1/2026 - 3/31/2027
-1000.00 - 3/1/2027 - 3/31/2028
-1000.00 - 3/1/2028 - 3/31/2029
-1000.00 - 3/1/2029 - 3/31/2030
-1000.00 - 3/1/2030 - 3/31/2031
-1000.00 - 3/1/2031 - 3/31/2032
-1000.00 - 3/1/2032 - 3/31/2033
-1000.00 - 3/1/2033 - 3/31/2034
-1000.00 - 3/1/2034 - 3/31/2035
-1000.00 - 3/1/2035 - 3/31/2036
-1000.00 - 3/1/2036 - 3/31/2037
-1000.00 - 3/1/2037 - 3/31/2038
-1000.00 - 3/1/2038 - 3/31/2039
-1000.00 - 3/1/2039 - 3/31/2040
-1000.00 - 3/1/2040 - 3/31/2041
-1000.00 - 3/1/2041 - 3/31/2042
-1000.00 - 3/1/2042 - 3/31/2043
-1000.00 -
+1000000.00 - 3/1/2016 - 3/31/2017
+1000000.00 - 3/1/2017 - 3/31/2018
+1000000.00 - 3/1/2018 - 3/31/2019
+1000000.00 - 3/1/2019 - 3/31/2020
+1000000.00 - 3/1/2020 - 3/31/2021
+1000000.00 - 3/1/2021 - 3/31/2022
+1000000.00 - 3/1/2022 - 3/31/2023
+1000000.00 - 3/1/2023 - 3/31/2024
+1000000.00 - 3/1/2024 - 3/31/2025
+1000000.00 - 3/1/2025 - 3/31/2026
+1000000.00 - 3/1/2026 - 3/31/2027
+1000000.00 - 3/1/2027 - 3/31/2028
+1000000.00 - 3/1/2028 - 3/31/2029
+1000000.00 - 3/1/2029 - 3/31/2030
+1000000.00 - 3/1/2030 - 3/31/2031
+1000000.00 - 3/1/2031 - 3/31/2032
+1000000.00 - 3/1/2032 - 3/31/2033
+1000000.00 - 3/1/2033 - 3/31/2034
+1000000.00 - 3/1/2034 - 3/31/2035
+1000000.00 - 3/1/2035 - 3/31/2036
+1000000.00 - 3/1/2036 - 3/31/2037
+1000000.00 - 3/1/2037 - 3/31/2038
+1000000.00 - 3/1/2038 - 3/31/2039
+1000000.00 - 3/1/2039 - 3/31/2040
+1000000.00 - 3/1/2040 - 3/31/2041
+1000000.00 - 3/1/2041 - 3/31/2042
+1000000.00 - 3/1/2042 - 3/31/2043
+1000000.00 -
 
 --- [Page 13] ---
 **Page 12 of 09/09/24**
@@ -906,52 +906,52 @@ A. Maintenance and Other Operating Expenses:
 
 (1)
 Lagos 1521-17
-1000-1/00000-005
+1000000-1/00000-005
 A. Maintenance and Other Operating Expenses
-1000-1/00000-004
-1000-1/00000-003
-1000-1/00000-002
-1000-1/00000-001
-1000-1/00000-006
-1000-1/00000-005
-1000-1/00000-004
-1000-1/00000-003
-1000-1/00000-002
-1000-1/00000-001
-1000-1/00000-006
-1000-1/00000-005
-1000-1/00000-004
-1000-1/00000-003
-1000-1/00000-002
-1000-1/00000-001
-1000-1/00000-006
-1000-1/00000-005
-1000-1/00000-004
-1000-1/00000-003
-1000-1/00000-002
-1000-1/00000-001
-1000-1/00000-006
-1000-1/00000-005
-1000-1/00000-004
-1000-1/00000-003
-1000-1/00000-002
-1000-1/00000-001
-1000-1/00000-006
-1000-1/00000-005
-1000-1/00000-004
-1000-1/00000-003
-1000-1/00000-002
-1000-1/00000-001
-1000-1/00000-006
-1000-1/00000-005
-1000-1/00000-004
-1000-1/00000-003
-1000-1/00000-002
-1000-1/00000-001
-1000-1/00000-006
-1000-1/00000-005
-1000-1/00000-004
-1000-1/000
+1000000-1/00000-004
+1000000-1/00000-003
+1000000-1/00000-002
+1000000-1/00000-001
+1000000-1/00000-006
+1000000-1/00000-005
+1000000-1/00000-004
+1000000-1/00000-003
+1000000-1/00000-002
+1000000-1/00000-001
+1000000-1/00000-006
+1000000-1/00000-005
+1000000-1/00000-004
+1000000-1/00000-003
+1000000-1/00000-002
+1000000-1/00000-001
+1000000-1/00000-006
+1000000-1/00000-005
+1000000-1/00000-004
+1000000-1/00000-003
+1000000-1/00000-002
+1000000-1/00000-001
+1000000-1/00000-006
+1000000-1/00000-005
+1000000-1/00000-004
+1000000-1/00000-003
+1000000-1/00000-002
+1000000-1/00000-001
+1000000-1/00000-006
+1000000-1/00000-005
+1000000-1/00000-004
+1000000-1/00000-003
+1000000-1/00000-002
+1000000-1/00000-001
+1000000-1/00000-006
+1000000-1/00000-005
+1000000-1/00000-004
+1000000-1/00000-003
+1000000-1/00000-002
+1000000-1/00000-001
+1000000-1/00000-006
+1000000-1/00000-005
+1000000-1/00000-004
+1000000-1/000
 
 --- [Page 15] ---
 **Page 14**
@@ -1106,7 +1106,7 @@ A. Maintenance and Other Operating Expenses
 | (2) |  |  |  |  |  |
 | (3) |  |  |  |  |  |
 | (4) |  |  |  |  |  |
-| (5) | General Administrative | 1000.21-0033 | Personnel Services | 9002100000 | P |
+| (5) | General Administrative | 10000000.21-0033 | Personnel Services | 9002100000 | P |
 | (6) |  |  |  |  |  |
 | (7) |  | 000
 
@@ -2022,9 +2022,9 @@ For Medical/Dental/Pharmaceutical Benefits and for the approval/implementation o
 **Construction of 7725**
 **Paragraph No. 7725**
 **The Implementation of the New Landmark Application provided under**
-**000-2/4/2002**
+**0000000-2/4/2002**
 **Landmark Application Particulars Form for the implementation of the**
-**000-2/4/2002**
+**0000000-2/4/2002**
 **New Landmark Application No. 7725 dated August 12, 2002**
 **and the provision to the relevant LAC**
 **900010**
@@ -2398,20 +2398,20 @@ Calendar Year 2024
 
 | Particulars | Purpose | APP Reference Code | Brief description of the Project | Project Code | Amount |
 | --- | --- | --- | --- | --- | --- |
-| CTO | 1. Construction of Social Protection and Road from 0000-0002-01-10-05- P | 0002-01-10-05-0 | Construction of three protection and roads | 38000 | P |
-|  | 2. To be Boro, Pragya, Calcutta District | 0002-01-10-05-0 | Construction of three protection and roads | 38000 | P |
-|  | 3. To be Boro, Pragya, Calcutta District | 0002-01-10-05-0 | Construction of three protection and roads | 38000 | P |
-| CIO | 4. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 5. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 6. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 7. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 8. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 9. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 10. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 11. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 12. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 13. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
-|  | 14. To be Boro, Sillar, Sylhet, District Center in Park | 0002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+| CTO | 1. Construction of Social Protection and Road from 0000-0002-01-10-05- P | 0000002-01-10-05-0 | Construction of three protection and roads | 38000 | P |
+|  | 2. To be Boro, Pragya, Calcutta District | 0000002-01-10-05-0 | Construction of three protection and roads | 38000 | P |
+|  | 3. To be Boro, Pragya, Calcutta District | 0000002-01-10-05-0 | Construction of three protection and roads | 38000 | P |
+| CIO | 4. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 5. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 6. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 7. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 8. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 9. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 10. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 11. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 12. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 13. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
+|  | 14. To be Boro, Sillar, Sylhet, District Center in Park | 0000002-01-10-05-0 | Sub-center : Hospital and Health Centers | 25000 | P |
 |  | 15. To be Boro, Sillar, Sylhet, District Center in Park | 0000
 
 --- [Page 37] ---
@@ -2436,7 +2436,7 @@ Calendar Year 2024
 | Implementation Office | Particulars & Purpose | AIF References Code | Object of Expenditure | Account | Amount |
 |-----------------------------|----------------------|---------------------|-----------------------|---------|--------|
 | 1. Implementation of Projects | 1. Maintenance and Art Crime Regular Expenditures | 5000.00-05-03/2023 | A. Maintenance and Art Crime Regular Expenditures | 8210100 | P |
-| | 2. Statutory and Vatex Expenditures | 000-02-24 | B. Statutory and Vatex Expenditures | 8210200 | P |
+| | 2. Statutory and Vatex Expenditures | 000000-02-24 | B. Statutory and Vatex Expenditures | 8210200 | P |
 | | 3. General Public Expenditure | P.7281.180.99 | C. General Public Expenditure | 8210300 | P |
 | | 4. Total Public Expenditure | P.7281.180.99 | D. Total Public Expenditure | 8210400 | P |
 | | 5. All Other Public Expenditure | P.7281.180.99 | E. All Other Public Expenditure | 8210500 | P |
@@ -2601,13 +2601,13 @@ City Treasurer
 - **Sub-Item: Value, Main, Office**
   - **52213600**
     - **P**
-      - **1000.00**
+      - **1000000.00**
 
 **B. Repairs and Maintenance - Furniture and Fixtures**
 - **Sub-Item: Value, Main, Office**
   - **52213600**
     - **P**
-      - **1000.00**
+      - **1000000.00**
 
 **C. Traveling Expenses - Local**
 - **Sub-Item: Value, Main, Office**

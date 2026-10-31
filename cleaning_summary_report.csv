@@ -1,0 +1,1890 @@
+file,fixed,total_fixes,needs_review,details
+2016\Ordinance No. 002-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0101-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0112-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0116-16.txt,YES,1,NO,collapsed_char_loops=1
+2016\Ordinance No. 0129-16.txt,NO,0,NO,clean
+2016\Ordinance No. 013-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0135-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0136-16.txt,NO,0,NO,clean
+2016\Ordinance No. 014-16.txt,NO,0,NO,clean
+2016\Ordinance No. 018-16.txt,NO,0,NO,clean
+2016\Ordinance No. 022-16.txt,NO,0,NO,clean
+2016\Ordinance No. 023-16.txt,YES,2,NO,collapsed_word_loops=2
+2016\Ordinance No. 024-16.txt,NO,0,NO,clean
+2016\Ordinance No. 027-16.txt,NO,0,NO,clean
+2016\Ordinance No. 035-16.txt,YES,1,NO,collapsed_word_loops=1
+2016\Ordinance No. 037-16.txt,NO,0,NO,clean
+2016\Ordinance No. 038-16.txt,NO,0,NO,clean
+2016\Ordinance No. 042-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0472-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0473-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0482-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0486-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0489-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0490-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0491-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0492-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0493-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0494-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0495-16.txt,YES,1,NO,collapsed_char_loops=1
+2016\Ordinance No. 0497-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0508-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0509-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0510-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0512-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0516-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0517-16.txt,NO,0,NO,clean
+2016\Ordinance No. 0520-16.txt,NO,0,NO,clean
+2016\Ordinance No. 057-16.txt,NO,0,NO,clean
+2016\Ordinance No. 062-16.txt,YES,1,NO,collapsed_char_loops=1
+2016\Ordinance No. 064-16.txt,NO,0,NO,clean
+2016\Ordinance No. 067-16.txt,NO,0,NO,clean
+2016\Ordinance No. 071-16.txt,YES,1,NO,collapsed_char_loops=1
+2016\Ordinance No. 073-16.txt,NO,0,NO,clean
+2016\Ordinance No. 076-16.txt,NO,0,NO,clean
+2016\Ordinance No. 077-16.txt,NO,0,NO,clean
+2016\Ordinance No. 083-16.txt,NO,0,NO,clean
+2016\Ordinance No. 086-16.txt,NO,0,NO,clean
+2016\Ordinance No. 091-16.txt,NO,0,NO,clean
+2016\Ordinance No. 095-16.txt,NO,0,NO,clean
+2017\Ordinance No. 0153-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0154-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0155-17.txt,YES,1,NO,collapsed_word_loops=1
+2017\Ordinance No. 0156-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0157-17.txt,YES,1,NO,collapsed_char_loops=1
+2017\Ordinance No. 0161-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0162-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0167-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0169-17.txt,YES,1,NO,collapsed_word_loops=1
+2017\Ordinance No. 0170-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0172-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0176-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0178-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0180-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0182-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0183-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0191-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0193-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0194-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0195-17.txt,YES,1,NO,collapsed_char_loops=1
+2017\Ordinance No. 0196-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0207-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0210-17.txt,YES,1,NO,collapsed_char_loops=1
+2017\Ordinance No. 0213-17.txt,NO,0,NO,clean
+2017\Ordinance No. 0220-17.txt,YES,318,YES,removed_foreign_scripts=318
+2017\Ordinance No. 0221-17.txt,NO,0,NO,clean
+2018\Ordinance No. 0382-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0390-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0391-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0393-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0396-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0398-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0399-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0401-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0402-18.txt,YES,1,NO,collapsed_char_loops=1
+2018\Ordinance No. 0403-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0413-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0415-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0416-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0417-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0418-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0424-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0425-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0426-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0428-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0436-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0449-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0459-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0460-18.txt,YES,1,NO,collapsed_char_loops=1
+2018\Ordinance No. 0461-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0468-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0469-18.txt,YES,1,NO,collapsed_char_loops=1
+2018\Ordinance No. 0473-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0476-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0477-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0487-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0488-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0496-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0497-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0498-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0499-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0500-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0504-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0505-18.txt,YES,1,NO,collapsed_char_loops=1
+2018\Ordinance No. 0507-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0509-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0510-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0511-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0514-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0515-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0516-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0532-18.txt,YES,1,NO,collapsed_char_loops=1
+2018\Ordinance No. 0534-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0536-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0547-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0555-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0559-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0561-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0564-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0566-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0571-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0575-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0577-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0580-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0587-18.txt,YES,1,NO,collapsed_char_loops=1
+2018\Ordinance No. 0591-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0598-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0603-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0604-18.txt,YES,1,NO,collapsed_char_loops=1
+2018\Ordinance No. 0605-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0608-18.txt,YES,1,NO,collapsed_char_loops=1
+2018\Ordinance No. 0609-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0611-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0614-18.txt,YES,1,NO,collapsed_char_loops=1
+2018\Ordinance No. 0616-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0620-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0622-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0630-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0633-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0639-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0640-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0641-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0644-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0645-18.txt,YES,4,YES,removed_foreign_scripts=4
+2018\Ordinance No. 0648-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0651-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0653-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0655-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0657-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0658-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0659-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0661-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0662-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0668-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0674-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0675-18.txt,NO,0,NO,clean
+2018\Ordinance No. 0676-18.txt,NO,0,NO,clean
+2019\Ordinance No. 006-19.txt,NO,0,NO,clean
+2019\Ordinance No. 009-19.txt,YES,3,YES,removed_foreign_scripts=3
+2019\Ordinance No. 0106-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0108-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0109-19.txt,YES,1,NO,collapsed_char_loops=1
+2019\Ordinance No. 0114-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0118-19.txt,NO,0,NO,clean
+2019\Ordinance No. 012-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0120-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0122-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0123-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0129-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0130-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0133-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0136-19.txt,YES,1,NO,collapsed_char_loops=1
+2019\Ordinance No. 014-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0143-19.txt,YES,1,NO,collapsed_char_loops=1
+2019\Ordinance No. 0147-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0148-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0152-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0157-19.txt,YES,1,NO,collapsed_char_loops=1
+2019\Ordinance No. 0158-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0160-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0167-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0171-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0174-19.txt,YES,1,NO,collapsed_char_loops=1
+2019\Ordinance No. 0176-19.txt,NO,0,NO,clean
+2019\Ordinance No. 018-19.txt,YES,7,YES,collapsed_word_loops=7
+2019\Ordinance No. 021-19.txt,NO,0,NO,clean
+2019\Ordinance No. 025-19.txt,NO,0,NO,clean
+2019\Ordinance No. 027-19.txt,NO,0,NO,clean
+2019\Ordinance No. 028-19.txt,NO,0,NO,clean
+2019\Ordinance No. 030-19.txt,NO,0,NO,clean
+2019\Ordinance No. 031-19.txt,NO,0,NO,clean
+2019\Ordinance No. 047-19.txt,NO,0,NO,clean
+2019\Ordinance No. 051-19.txt,NO,0,NO,clean
+2019\Ordinance No. 055-19.txt,NO,0,NO,clean
+2019\Ordinance No. 056-19.txt,NO,0,NO,clean
+2019\Ordinance No. 058-19.txt,YES,1,NO,collapsed_char_loops=1
+2019\Ordinance No. 060-19.txt,NO,0,NO,clean
+2019\Ordinance No. 065-19.txt,NO,0,NO,clean
+2019\Ordinance No. 066-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0679-19.txt,NO,0,NO,clean
+2019\Ordinance No. 068-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0680-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0681-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0682-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0685-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0687-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0694-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0697-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0699-19.txt,NO,0,NO,clean
+2019\Ordinance No. 070-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0706-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0711-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0712-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0713-19.txt,NO,0,NO,clean
+2019\Ordinance No. 0715-19.txt,NO,0,NO,clean
+2019\Ordinance No. 073-19.txt,NO,0,NO,clean
+2021\Ordinance No. 000667-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000669-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000670-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000671-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000673-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 000675-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000676-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000677-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000678-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000680-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000681-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000682-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000683-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000684-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000685-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000687-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000689-19.txt,NO,0,NO,clean
+2021\Ordinance No. 000690-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000691-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000692-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000693-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000694-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000695-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000696-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000698-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000699-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000700-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000701-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000703-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000704-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000705-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000706-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000707-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000708-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000709-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000710-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000711-21.txt,YES,2,YES,removed_prompt_artifacts=1; collapsed_word_loops=1
+2021\Ordinance No. 000712-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000713-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000714-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000715-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000716-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000717-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000718-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000719-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000721-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000722-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000723-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000724-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000725-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000727-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000728-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000729-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000730-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 000734-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000736-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000740-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000742-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000745-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000747-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000749-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000750-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000752-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000755-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000756-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000757-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000758-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000762-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000765-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000766-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000767-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000768-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000770-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000772-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000778-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000780-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000781-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000782-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000783-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000785-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000788-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000789-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000791-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000792-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000793-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000797-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000798-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000799-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 000800-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000801-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000806-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000807-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000808-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000810-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000812-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000814-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000815-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000816-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000817-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000818-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000819-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000820-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000821-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000823-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000824-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000826-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000827-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000830-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000831-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000832-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000833-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000834-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000835-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000839-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000840-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000841-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000842-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000843-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000845-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000846-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000848-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000850-21.txt,NO,0,NO,clean
+2021\Ordinance No. 000851-21.txt,NO,0,NO,clean
+2021\Ordinance No. 002336-21.txt,YES,1,NO,collapsed_word_loops=1
+2021\Ordinance No. 0464-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0466-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0468-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0470-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0473-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0474-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0475-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0476-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0477-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0478-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0480-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0484-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0485-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0488-21.txt,YES,2,NO,removed_foreign_scripts=2
+2021\Ordinance No. 0490-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0491-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0492-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0494-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0495-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0496-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0497-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0498-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0500-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0501-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0503-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0505-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0506-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0510-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0511-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0513-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0514-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0515-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0517-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0521-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0522-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0523-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0524-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0525-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0527-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0528-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0529-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0531-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0533-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0534-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0535-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0538-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0539-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0543-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0544-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0545-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0546-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0548-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0550-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0551-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0552-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0555-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0556-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0563-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0565-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0575-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0576-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0577-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0580-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0581-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0582-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0583-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0584-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0585-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0586-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0587-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0588-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0589-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0590-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0591-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0592-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0593-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0594-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0601-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0602-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0604-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0605-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0610-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0611-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0612-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0613-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0614-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0615-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0616-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0617-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0619-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0620-21.txt,YES,1,NO,collapsed_char_loops=1
+2021\Ordinance No. 0622-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0628-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0629-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0632-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0633-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0634-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0635-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0636-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0637-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0638-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0639-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0640-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0641-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0642-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0643-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0644-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0645-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0649-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0650-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0651-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0653-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0654-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0657-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0658-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0659-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0660-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0662-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0663-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0665-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0736-21001.txt,NO,0,NO,clean
+2021\Ordinance No. 0741-21.txt,NO,0,NO,clean
+2021\Ordinance No. 0784-21.txt,NO,0,NO,clean
+2022\Ordinance No. 000003-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000004-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000006-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000007-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000008-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000010-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000011-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000013-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000014-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000029-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000030-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000031-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000032-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000033-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000036-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000039-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000041-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000111-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000114-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000853-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000854-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000855-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000856-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000857-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000859-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000862-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000863-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000866-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000868-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000869-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000870-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000871-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000873-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000874-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000876-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000877-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000878-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000881-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000882-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000883-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000885-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000886-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000887-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000888-22.txt,YES,1,NO,collapsed_char_loops=1
+2022\Ordinance No. 000890-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000891-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000892-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000893-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000894-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000895-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000896-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000897-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000898-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000899-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000900-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000901-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000902-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000903-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000909-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000910-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000914-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000916-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000917-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000918-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000919-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000923-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000924-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000925-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000926-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000927-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000928-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000929-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000930-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000931-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000932-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000933-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000935-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000936-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000937-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000938-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000939-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000940-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000943-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000947-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000950-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000951-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000952-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000953-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000954-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000959-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000974-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000980-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000987-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000988-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000989-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000990-22.txt,NO,0,NO,clean
+2022\Ordinance No. 000991-22.txt,NO,0,NO,clean
+2022\Ordinance No. 001-22.txt,NO,0,NO,clean
+2022\Ordinance No. 001000-22.txt,NO,0,NO,clean
+2022\Ordinance No. 002-22.txt,NO,0,NO,clean
+2022\Ordinance No. 003-22.txt,NO,0,NO,clean
+2022\Ordinance No. 004-22.txt,NO,0,NO,clean
+2022\Ordinance No. 006-22.txt,NO,0,NO,clean
+2022\Ordinance No. 007-22.txt,NO,0,NO,clean
+2022\Ordinance No. 008-22.txt,NO,0,NO,clean
+2022\Ordinance No. 009-22.txt,NO,0,NO,clean
+2022\Ordinance No. 00912-22.txt,NO,0,NO,clean
+2022\Ordinance No. 010-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0100-22 (creating DCDAC).txt,NO,0,NO,clean
+2022\Ordinance No. 01000-22.txt,YES,1,NO,collapsed_word_loops=1
+2022\Ordinance No. 01001-22.txt,NO,0,NO,clean
+2022\Ordinance No. 01002-22.txt,NO,0,NO,clean
+2022\Ordinance No. 01004-22.txt,NO,0,NO,clean
+2022\Ordinance No. 01005-22.txt,NO,0,NO,clean
+2022\Ordinance No. 01006-22.txt,NO,0,NO,clean
+2022\Ordinance No. 01007-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0101-22 (Paleng-QR Ph).txt,NO,0,NO,clean
+2022\Ordinance No. 0102-22 (Reward for athletes).txt,NO,0,NO,clean
+2022\Ordinance No. 0103-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0104-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0107-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0108-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0109-22.txt,NO,0,NO,clean
+2022\Ordinance No. 011-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0110-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0111-22 (Night Market).txt,NO,0,NO,clean
+2022\Ordinance No. 0112-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0113-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0114-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0115-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0116-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0117-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0118-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0119-22 Deed of Usufruct DCWD .txt,NO,0,NO,clean
+2022\Ordinance No. 0120-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0121-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0122-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0123-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0125-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0126-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0127-22 (Annual Budget 2023).txt,NO,0,NO,clean
+2022\Ordinance No. 0128-22.txt,NO,0,NO,clean
+2022\Ordinance No. 013-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0130-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0132-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0133-22.txt,YES,1,NO,collapsed_word_loops=1
+2022\Ordinance No. 0134-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0135-22.txt,YES,1,NO,collapsed_char_loops=1
+2022\Ordinance No. 014-22.txt,NO,0,NO,clean
+2022\Ordinance No. 015-22.txt,NO,0,NO,clean
+2022\Ordinance No. 016-22.txt,NO,0,NO,clean
+2022\Ordinance No. 017-22.txt,NO,0,NO,clean
+2022\Ordinance No. 018-22  Amendment PSSO creation.txt,NO,0,NO,clean
+2022\Ordinance No. 019-22 Amendment Agri and Biosystem Eng_g.txt,NO,0,NO,clean
+2022\Ordinance No. 020-22.txt,NO,0,NO,clean
+2022\Ordinance No. 021-22.txt,NO,0,NO,clean
+2022\Ordinance No. 022-22.txt,NO,0,NO,clean
+2022\Ordinance No. 023-22.txt,NO,0,NO,clean
+2022\Ordinance No. 024-22.txt,NO,0,NO,clean
+2022\Ordinance No. 025-22 Org. Structure CDRRMO.txt,NO,0,NO,clean
+2022\Ordinance No. 026-22.txt,NO,0,NO,clean
+2022\Ordinance No. 027-22.txt,NO,0,NO,clean
+2022\Ordinance No. 028-22.txt,NO,0,NO,clean
+2022\Ordinance No. 029-22.txt,NO,0,NO,clean
+2022\Ordinance No. 030-22.txt,NO,0,NO,clean
+2022\Ordinance No. 031-22.txt,NO,0,NO,clean
+2022\Ordinance No. 032-22.txt,NO,0,NO,clean
+2022\Ordinance No. 033-22.txt,NO,0,NO,clean
+2022\Ordinance No. 034-22.txt,NO,0,NO,clean
+2022\Ordinance No. 035-22.txt,NO,0,NO,clean
+2022\Ordinance No. 036-22.txt,NO,0,NO,clean
+2022\Ordinance No. 037-22.txt,NO,0,NO,clean
+2022\Ordinance No. 038-22.txt,NO,0,NO,clean
+2022\Ordinance No. 039-22.txt,NO,0,NO,clean
+2022\Ordinance No. 040-22.txt,NO,0,NO,clean
+2022\Ordinance No. 041-22.txt,NO,0,NO,clean
+2022\Ordinance No. 042-22.txt,YES,1,NO,collapsed_word_loops=1
+2022\Ordinance No. 043-22 (creating PDAC-PDAO).txt,NO,0,NO,clean
+2022\Ordinance No. 044-22.txt,NO,0,NO,clean
+2022\Ordinance No. 046-22.txt,NO,0,NO,clean
+2022\Ordinance No. 047-22.txt,NO,0,NO,clean
+2022\Ordinance No. 048-22 Safety and Security Measures.txt,NO,0,NO,clean
+2022\Ordinance No. 049-22.txt,NO,0,NO,clean
+2022\Ordinance No. 050-22.txt,NO,0,NO,clean
+2022\Ordinance No. 051-22.txt,NO,0,NO,clean
+2022\Ordinance No. 052-22.txt,NO,0,NO,clean
+2022\Ordinance No. 053-22.txt,NO,0,NO,clean
+2022\Ordinance No. 054-22.txt,NO,0,NO,clean
+2022\Ordinance No. 055-22.txt,NO,0,NO,clean
+2022\Ordinance No. 056-22.txt,NO,0,NO,clean
+2022\Ordinance No. 057-22.txt,NO,0,NO,clean
+2022\Ordinance No. 058-22.txt,NO,0,NO,clean
+2022\Ordinance No. 059-22.txt,NO,0,NO,clean
+2022\Ordinance No. 060-22.txt,NO,0,NO,clean
+2022\Ordinance No. 061-22.txt,NO,0,NO,clean
+2022\Ordinance No. 062-22.txt,NO,0,NO,clean
+2022\Ordinance No. 063-22.txt,NO,0,NO,clean
+2022\Ordinance No. 064-22.txt,NO,0,NO,clean
+2022\Ordinance No. 065-22.txt,NO,0,NO,clean
+2022\Ordinance No. 066-22.txt,NO,0,NO,clean
+2022\Ordinance No. 067-22.txt,NO,0,NO,clean
+2022\Ordinance No. 068-22.txt,NO,0,NO,clean
+2022\Ordinance No. 069-22.txt,NO,0,NO,clean
+2022\Ordinance No. 070-22.txt,NO,0,NO,clean
+2022\Ordinance No. 071-22.txt,NO,0,NO,clean
+2022\Ordinance No. 072-22.txt,NO,0,NO,clean
+2022\Ordinance No. 073-22.txt,NO,0,NO,clean
+2022\Ordinance No. 074-22.txt,NO,0,NO,clean
+2022\Ordinance No. 075-22.txt,NO,0,NO,clean
+2022\Ordinance No. 076-22.txt,NO,0,NO,clean
+2022\Ordinance No. 077-22.txt,NO,0,NO,clean
+2022\Ordinance No. 078-22.txt,NO,0,NO,clean
+2022\Ordinance No. 079-22.txt,NO,0,NO,clean
+2022\Ordinance No. 080-22.txt,NO,0,NO,clean
+2022\Ordinance No. 081-22.txt,NO,0,NO,clean
+2022\Ordinance No. 082-22.txt,NO,0,NO,clean
+2022\Ordinance No. 083-22.txt,NO,0,NO,clean
+2022\Ordinance No. 084-22.txt,NO,0,NO,clean
+2022\Ordinance No. 085-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0853-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0854-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0855-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0856-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0857-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0858-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0859-22.txt,NO,0,NO,clean
+2022\Ordinance No. 086-22 IP attire.txt,NO,0,NO,clean
+2022\Ordinance No. 0860-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0862-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0863-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0866-22 () Org. Structure CDRRMO.txt,NO,0,NO,clean
+2022\Ordinance No. 0868-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0869-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0870-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0871-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0872-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0873-22 (Creating Peace 911).txt,NO,0,NO,clean
+2022\Ordinance No. 0874-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0875-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0876-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0877-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0878-22.txt,NO,0,NO,clean
+2022\Ordinance No. 088-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0880-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0881-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0882-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0883-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0885-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0886-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0887-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0888-22.txt,NO,0,NO,clean
+2022\Ordinance No. 089-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0890-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0891-22 (Creating Peace 911 Council).txt,NO,0,NO,clean
+2022\Ordinance No. 0892-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0893-22 (ALS).txt,NO,0,NO,clean
+2022\Ordinance No. 0894-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0895-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0896-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0897-22 (Amend Organic Agri).txt,NO,0,NO,clean
+2022\Ordinance No. 0898-22 (Idle Poles Abandon Wires).txt,NO,0,NO,clean
+2022\Ordinance No. 0899-22.txt,NO,0,NO,clean
+2022\Ordinance No. 090-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0900-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0901-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0902-22 (Amend Prohibit Astray Dogs).txt,NO,0,NO,clean
+2022\Ordinance No. 0903-22 (Amend CCD).txt,NO,0,NO,clean
+2022\Ordinance No. 0906-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0909-22.txt,NO,0,NO,clean
+2022\Ordinance No. 091-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0910-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0911-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0914-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0915-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0916-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0917-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0918-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0919-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0923-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0924-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0925-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0926-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0927-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0928-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0929-22.txt,NO,0,NO,clean
+2022\Ordinance No. 093-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0930-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0931-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0932-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0933-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0935-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0936-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0937-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0938-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0939-22.txt,NO,0,NO,clean
+2022\Ordinance No. 094-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0940-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0943-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0944-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0947-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0948-22.txt,NO,0,NO,clean
+2022\Ordinance No. 095-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0950-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0951-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0952-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0953-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0954-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0955-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0956-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0957-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0958-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0959-22.txt,NO,0,NO,clean
+2022\Ordinance No. 096-22 Multi-Stakeholder Agreement SHFC.txt,NO,0,NO,clean
+2022\Ordinance No. 097-22.txt,YES,1,NO,collapsed_word_loops=1
+2022\Ordinance No. 0974-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0975-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0976-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0978-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0979-22.txt,NO,0,NO,clean
+2022\Ordinance No. 098-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0980-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0981-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0984-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0987-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0988-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0989-22.txt,NO,0,NO,clean
+2022\Ordinance No. 099-22.txt,YES,1,NO,collapsed_word_loops=1
+2022\Ordinance No. 0990-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0991-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0993-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0994-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0995-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0996-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0997-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0998-22.txt,NO,0,NO,clean
+2022\Ordinance No. 0999-22.txt,NO,0,NO,clean
+2022\Zoning Ordinance\RESOLUTION NO 03253-19_Adopting CDP.txt,NO,0,NO,clean
+2023\Ordinance No. 000141-23.txt,NO,0,NO,clean
+2023\Ordinance No. 000147-23.txt,NO,0,NO,clean
+2023\Ordinance No. 000152-23.txt,NO,0,NO,clean
+2023\Ordinance No. 000166-23.txt,NO,0,NO,clean
+2023\Ordinance No. 000285-23.txt,NO,0,NO,clean
+2023\Ordinance No. 000337-23.txt,NO,0,NO,clean
+"2023\Ordinance No. 0136-23 -Sister City Agreement, Mati City.txt",NO,0,NO,clean
+"2023\Ordinance No. 0137-23 -Sister City Agreement Sennan City, Japan.txt",YES,1,NO,collapsed_word_loops=1
+"2023\Ordinance No. 0140-23 -MOA, AMC.txt",YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0141-23 -QRF Misamis Occidental.txt,NO,0,NO,clean
+2023\Ordinance No. 0142-23 -QRF Ozamiz.txt,NO,0,NO,clean
+2023\Ordinance No. 0143-23 -QRF Gingoog.txt,NO,0,NO,clean
+2023\Ordinance No. 0144-23 -QRF Dapitan.txt,NO,0,NO,clean
+2023\Ordinance No. 0145-23 -QRF Talisayan.txt,NO,0,NO,clean
+2023\Ordinance No. 0146-23 -QRF Claver.txt,NO,0,NO,clean
+2023\Ordinance No. 0147-23 -QRF San Miguel.txt,NO,0,NO,clean
+2023\Ordinance No. 0148-23 -QRF Brooke_s Point.txt,NO,0,NO,clean
+2023\Ordinance No. 0149-23 -QRF Polanco.txt,NO,0,NO,clean
+2023\Ordinance No. 0150-23 -QRF Gigaquit.txt,NO,0,NO,clean
+2023\Ordinance No. 0151-23 -QRF Basey.txt,NO,0,NO,clean
+2023\Ordinance No. 0152-23 -QRF Gandara.txt,NO,0,NO,clean
+2023\Ordinance No. 0153-23 -ToP DOH-CHD.txt,YES,2,NO,collapsed_word_loops=2
+2023\Ordinance No. 0154-23 -MOA Balay Pasilungan.txt,NO,0,NO,clean
+2023\Ordinance No. 0155-23 -PWD ID.txt,NO,0,NO,clean
+2023\Ordinance No. 0156-23 -Healthy and Productive Aging of Senior.txt,NO,0,NO,clean
+"2023\Ordinance No. 0157-23 -Usufruct, Sto.Niño Nat_l High School Mintal.txt",NO,0,NO,clean
+"2023\Ordinance No. 0158-23 -Renewal Lease, OMARCO.txt",NO,0,NO,clean
+"2023\Ordinance No. 0161-23 -MOA, DAP-ALS.txt",NO,0,NO,clean
+"2023\Ordinance No. 0162-23 -MOA, RMHC Bahay Bulilit.txt",NO,0,NO,clean
+"2023\Ordinance No. 0163-23 -MOA, DOH 5M Sub-Allotment.txt",NO,0,NO,clean
+"2023\Ordinance No. 0164-23 -MOA, DRRM Enhancement.txt",NO,0,NO,clean
+"2023\Ordinance No. 0165-23 -Letter of Agreement, PRRI.txt",NO,0,NO,clean
+2023\Ordinance No. 0166-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0167-23 -Registration of Ownership and Inventory.txt,NO,0,NO,clean
+"2023\Ordinance No. 0168-23 -Deed of Sale, SIR Amancio, Adolfo.txt",NO,0,NO,clean
+2023\Ordinance No. 0169-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0171-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0173-23 -Suspension of Section39 of Incentive Code.txt,NO,0,NO,clean
+"2023\Ordinance No. 0174-23 -MOA, AFP Agila Division.txt",NO,0,NO,clean
+"2023\Ordinance No. 0175-23 -MOU, MEDA Org.  RIISA project.txt",NO,0,NO,clean
+"2023\Ordinance No. 0176-23 -MOA, DOH-CHD HEA HCW.txt",NO,0,NO,clean
+2023\Ordinance No. 0177-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0178-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0179-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0180-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0181-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0182-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0183-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0184-23 Traffic Code.txt,NO,0,NO,clean
+2023\Ordinance No. 0185-23 Org. Structure CPDO.txt,NO,0,NO,clean
+2023\Ordinance No. 0186-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0188-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0189-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0190-23.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0191-23.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0192-23 Anti-Bullying.txt,NO,0,NO,clean
+2023\Ordinance No. 0192-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0193-23 Amendment Peace 911.txt,NO,0,NO,clean
+2023\Ordinance No. 0197-23.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0198-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0199-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0200-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0201-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0202-23 DCDRRMFIP.txt,NO,0,NO,clean
+2023\Ordinance No. 0203-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0204-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0205-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0206-23 MOU creation PIAC.txt,NO,0,NO,clean
+2023\Ordinance No. 0207-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0208-23 Amendment Peace 911.txt,NO,0,NO,clean
+2023\Ordinance No. 0209-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0210-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0211-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0213-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0214-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0215-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0216-23 BFP Purchase Motor Vehicle.txt,NO,0,NO,clean
+2023\Ordinance No. 0217-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0218-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0219-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0220-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0221-23 MOU DSWD-RSCC.txt,NO,0,NO,clean
+2023\Ordinance No. 0222-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0223-23 MOA Phil. Mental Health.txt,NO,0,NO,clean
+2023\Ordinance No. 0225-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0226-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0227-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0228-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0229-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0230-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0231-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0232-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0233-23 Renewal MOA Assumption College.txt,NO,0,NO,clean
+2023\Ordinance No. 0235-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0236-23 10 or more employees.txt,NO,0,NO,clean
+2023\Ordinance No. 0237-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0238-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0239-23 Amendment Rewards System for Athletes.txt,NO,0,NO,clean
+2023\Ordinance No. 0241-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0243-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0245-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0246-23 Preemptive and Emergency Evacuation.txt,NO,0,NO,clean
+2023\Ordinance No. 0247-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0248-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0249-23 DOU DCWD CEO Bldg..txt,NO,0,NO,clean
+2023\Ordinance No. 0250-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0251-23.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0252-23.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0253-23.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0254-23.txt,YES,1,NO,collapsed_word_loops=1
+"2023\Ordinance No. 0255-23 Deed of Sale, B. Pesidas.txt",NO,0,NO,clean
+2023\Ordinance No. 0256-23 Renewal of Contract of Lease MDDC.txt,NO,0,NO,clean
+2023\Ordinance No. 0257-23 Renewal Contract of Lease Davao Development Corp..txt,NO,0,NO,clean
+2023\Ordinance No. 0258-23 Data Privacy Ordinance.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0259-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0260-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0261-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0262-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0263-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0264-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0265-23.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0266-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0267-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0268-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0269-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0270-23 Speed Limits.txt,NO,0,NO,clean
+2023\Ordinance No. 0271-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0272-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0273-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0275-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0276-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0277-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0278-23.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0279-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0280-23 Malagos Slaughterhouse.txt,NO,0,NO,clean
+2023\Ordinance No. 0282-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0283-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0284-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0287-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0289-23 Granting Request of P. Bacaltos.txt,NO,0,NO,clean
+2023\Ordinance No. 0290-23 DCHO.txt,NO,0,NO,clean
+2023\Ordinance No. 0291-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0292-23 MOA KALMAWASA Inc..txt,NO,0,NO,clean
+2023\Ordinance No. 0293-23.txt,YES,1,NO,collapsed_word_loops=1
+2023\Ordinance No. 0295-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0296-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0297-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0298-23 (CLUP 2019-2028).txt,NO,0,NO,clean
+2023\Ordinance No. 0299-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0300-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0301-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0302-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0303-23 Less Paper Session.txt,NO,0,NO,clean
+2023\Ordinance No. 0306-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0307-23 DCYDC creation.txt,NO,0,NO,clean
+2023\Ordinance No. 0308-23 DCYDD-LYDO.txt,NO,0,NO,clean
+2023\Ordinance No. 0309-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0310-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0312-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0313-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0314-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0315-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0316-23 Lifting Wear Face Mask.txt,NO,0,NO,clean
+2023\Ordinance No. 0317-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0318-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0319-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0321-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0322-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0323-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0324-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0325-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0326-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0327-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0328-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0329-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0331-23 Amendment CCTV.txt,NO,0,NO,clean
+2023\Ordinance No. 0332-23 DC Office for Culture and the Arts.txt,NO,0,NO,clean
+2023\Ordinance No. 0333-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0334-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0335-23 Renewal MOA Love the Children.txt,NO,0,NO,clean
+2023\Ordinance No. 0336-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0337-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0338-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0339-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0341-23 Deed of Usufruct PNP Maa.txt,NO,0,NO,clean
+2023\Ordinance No. 0343-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0344-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0345-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0346-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0347-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0348-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0349-23 Amendment CPDO.txt,NO,0,NO,clean
+"2023\Ordinance No. 0350-23 DOU, DepEd Brgy. Sirib.txt",NO,0,NO,clean
+2023\Ordinance No. 0351-23 (2024 Annual Budget).txt,NO,0,NO,clean
+2023\Ordinance No. 0352-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0353-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0354-23 -Anti-Spaghetti.txt,NO,0,NO,clean
+2023\Ordinance No. 0356-23 -CDP 2023-2028.txt,NO,0,NO,clean
+2023\Ordinance No. 0357-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0358-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0360-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0361-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0362-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0363-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0364-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0366-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0367-23 MOA Philippine Eagle Conservation .txt,NO,0,NO,clean
+2023\Ordinance No. 0368-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0369-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0370-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0371-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0373-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0374-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0375-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0377-23.txt,NO,0,NO,clean
+"2023\Ordinance No. 0378-23 MOA, DOH.txt",NO,0,NO,clean
+2023\Ordinance No. 0379-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0380-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0381-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0382-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0383-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0384-23.txt,NO,0,NO,clean
+2023\Ordinance No. 0385-23.txt,NO,0,NO,clean
+2024\Ordinance No. 0386-24 -MOU Feeding.txt,NO,0,NO,clean
+2024\Ordinance No. 0387-24 -Incentive Code.txt,NO,0,NO,clean
+2024\Ordinance No. 0388-24 -MOA Assumption Polytechnic.txt,NO,0,NO,clean
+2024\Ordinance No. 0389-24 -MOA Advanced Infinit.txt,NO,0,NO,clean
+2024\Ordinance No. 0390-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0391-24 Renewal of Contract of Lease Frontmovers Logistics Company.txt,NO,0,NO,clean
+2024\Ordinance No. 0392-24 Renewal of Contract of Lease D. Porio .txt,NO,0,NO,clean
+2024\Ordinance No. 0393-24 - Solo Parents.txt,NO,0,NO,clean
+"2024\Ordinance No. 0394-24 -MOA, P. Ali.txt",NO,0,NO,clean
+"2024\Ordinance No. 0395-24 -MOA, V. Ambasan.txt",NO,0,NO,clean
+"2024\Ordinance No. 0396-24 -MOA, S. Andaya.txt",NO,0,NO,clean
+"2024\Ordinance No. 0397-24 - MOA, F. Barrera.txt",NO,0,NO,clean
+"2024\Ordinance No. 0398-24 -MOA, R. Dagocdocan.txt",NO,0,NO,clean
+"2024\Ordinance No. 0399-24 -MOA, C. Iglesias.txt",NO,0,NO,clean
+"2024\Ordinance No. 0400-24 -MOA, L. Maxino.txt",NO,0,NO,clean
+"2024\Ordinance No. 0401-24 -MOA, M. Robleda.txt",YES,1,NO,collapsed_word_loops=1
+"2024\Ordinance No. 0402-24 -MOA, A. Sumobay.txt",NO,0,NO,clean
+"2024\Ordinance No. 0403-24 -DOU, PNP.txt",NO,0,NO,clean
+2024\Ordinance No. 0404-24 LOU CAAP-Davao Airport.txt,NO,0,NO,clean
+"2024\Ordinance No. 0405-24 -MOA, Brokenshire.txt",NO,0,NO,clean
+"2024\Ordinance No. 0406-24 -MOA, Mindanao Kokusai.txt",NO,0,NO,clean
+"2024\Ordinance No. 0407-24 -QRF, Brgys. in Davao City.txt",NO,0,NO,clean
+2024\Ordinance No. 0408-24 -QRF Welfare Goods.txt,NO,0,NO,clean
+"2024\Ordinance No. 0409-24 -QRF, Davao de Oro.txt",NO,0,NO,clean
+"2024\Ordinance No. 0410-24 -QRF, Davao del Norte.txt",NO,0,NO,clean
+"2024\Ordinance No. 0411-24 -QRF, Tagum.txt",YES,3,YES,removed_foreign_scripts=3
+"2024\Ordinance No. 0412-24 -QRF, Kapalong.txt",NO,0,NO,clean
+"2024\Ordinance No. 0413-24 -QRF, New Corella.txt",NO,0,NO,clean
+"2024\Ordinance No. 0414-24 -QRF, Sto. Tomas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0415-24 -QRF, Carmen.txt",NO,0,NO,clean
+"2024\Ordinance No. 0416-24 -QRF, Dujali.txt",NO,0,NO,clean
+"2024\Ordinance No. 0417-24 -QRF, Lupon.txt",NO,0,NO,clean
+"2024\Ordinance No. 0418-24 -QRF, Cateel.txt",NO,0,NO,clean
+"2024\Ordinance No. 0419-24 -QRF, Tarragona.txt",NO,0,NO,clean
+"2024\Ordinance No. 0420-24 -QRF, Sta. Josefa.txt",NO,0,NO,clean
+"2024\Ordinance No. 0421-24 -QRF, Veruela.txt",NO,0,NO,clean
+"2024\Ordinance No. 0422-24 -QRF, Loreto.txt",NO,0,NO,clean
+"2024\Ordinance No. 0423-24, QRF Bunawan, Agusan.txt",NO,0,NO,clean
+2024\Ordinance No. 0424-24 -CEE Annual Budget.txt,NO,0,NO,clean
+"2024\Ordinance No. 0425-24 -Deed of Donation, RIC-IP Women.txt",NO,0,NO,clean
+"2024\Ordinance No. 0426-24 -MOA, St. John Paul II College.txt",NO,0,NO,clean
+2024\Ordinance No. 0427-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0429-24 Shelter for IP Watchers and Runners.txt,NO,0,NO,clean
+2024\Ordinance No. 0430-24 Loan Agreement Phil. Diesel Calibration Coop.txt,NO,0,NO,clean
+"2024\Ordinance No. 0431-24 -Loan Agreement, Tugbok Progressive Coop.txt",NO,0,NO,clean
+"2024\Ordinance No. 0432-24 -Loan Agreement, King Coop.txt",NO,0,NO,clean
+2024\Ordinance No. 0433-24.txt,NO,0,NO,clean
+"2024\Ordinance No. 0434-24, Deed of Donation, Bagobo Klata.txt",NO,0,NO,clean
+2024\Ordinance No. 0435-24 MOA Phil.Mental Health Association.txt,NO,0,NO,clean
+2024\Ordinance No. 0436-24 -Amendment Mental Health.txt,NO,0,NO,clean
+"2024\Ordinance No. 0437-24 -MOA, San Pedro College.txt",NO,0,NO,clean
+"2024\Ordinance No. 0438-24 -MOA, PWC.txt",NO,0,NO,clean
+2024\Ordinance No. 0439-24 -QRF 15 LGUs.txt,NO,0,NO,clean
+"2024\Ordinance No. 0441-24 -MOA, CFO Balinkbayan.txt",NO,0,NO,clean
+2024\Ordinance No. 0442-24.txt,YES,1,NO,collapsed_word_loops=1
+"2024\Ordinance No. 0443-24 -MOU, Kabang Kalikasan ng Pilipinas Foundation.txt",YES,1,NO,collapsed_word_loops=1
+2024\Ordinance No. 0445-24 -Charter of the City College of Davao.txt,NO,0,NO,clean
+2024\Ordinance No. 0446-24.txt,NO,0,NO,clean
+"2024\Ordinance No. 0447-24 -MOA, AdDU.txt",NO,0,NO,clean
+2024\Ordinance No. 0448-24.txt,YES,2,NO,collapsed_char_loops=2
+"2024\Ordinance No. 0449-24 -Deed of Donation, Fil-Chinese, DIAA.txt",NO,0,NO,clean
+"2024\Ordinance No. 0450-24 -Deed of Donation, WASP.txt",NO,0,NO,clean
+2024\Ordinance No. 0458-24 -Granting Request of Z. Estimada.txt,NO,0,NO,clean
+2024\Ordinance No. 0459-24 -Deed of Donation Heirs of Imam Sahidan Camamara Sudagar.txt,YES,1,NO,collapsed_char_loops=1
+2024\Ordinance No. 0460-24 -Request of Heirs of Rosario Calzada.txt,NO,0,NO,clean
+2024\Ordinance No. 0461-24.txt,NO,0,NO,clean
+"2024\Ordinance No. 0462-24 -Deed of Conveyance, C. Musa.txt",NO,0,NO,clean
+2024\Ordinance No. 0463-24 -DOD Luciana Dela Calzada.txt,NO,0,NO,clean
+2024\Ordinance No. 0464-24 Mt. Apo as Geopark.txt,NO,0,NO,clean
+2024\Ordinance No. 0466-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0467-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0468-24 DCHO.txt,NO,0,NO,clean
+2024\Ordinance No. 0469-24 Deed of Sale Maria Lani Adaptar-Roque.txt,NO,0,NO,clean
+"2024\Ordinance No. 0470-24, Deed of Sale, M.Cortez.txt",YES,1,NO,collapsed_char_loops=1
+"2024\Ordinance No. 0471-24 Deed of Sale, A. Ibañez, I. Estrada.txt",NO,0,NO,clean
+2024\Ordinance No. 0472-24 Revised Anti-Smoking Ordinance.txt,NO,0,NO,clean
+"2024\Ordinance No. 0473-24 MOA, Davao Doctors College, Inc..txt",NO,0,NO,clean
+"2024\Ordinance No. 0474-24 MOA, DSWD-SLP.txt",NO,0,NO,clean
+"2024\Ordinance No. 0475-24 MOA, Xavier University.txt",NO,0,NO,clean
+"2024\Ordinance No. 0476-24 MOA, MMFC.txt",NO,0,NO,clean
+"2024\Ordinance No. 0477-24 MOA, San Pedro Hospital  .txt",NO,0,NO,clean
+"2024\Ordinance No. 0478-24 MOA, DOH-CHD E. Morta.txt",NO,0,NO,clean
+"2024\Ordinance No. 0479-24 MOA, DOH-CHD April Anne M. Ladera.txt",NO,0,NO,clean
+"2024\Ordinance No. 0480-24 MOA DOH-CHD, Hasnida G. Daromimbang.txt",NO,0,NO,clean
+2024\Ordinance No. 0481-24 Service Contracting Agreement Metro Shuttle Corp..txt,NO,0,NO,clean
+"2024\Ordinance No. 0482-24 Service Contracting Agreement, Golden Valley Bus .txt",NO,0,NO,clean
+"2024\Ordinance No. 0483-24 Service Contracting Agreement, Land car Inc..txt",NO,0,NO,clean
+2024\Ordinance No. 0484-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0485-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0486-24 Terms of Partnership-DOH.txt,NO,0,NO,clean
+2024\Ordinance No. 0489-24 Comprehensive Liquor Code of DC.txt,NO,0,NO,clean
+2024\Ordinance No. 0492-24 Exemption of Special Permit Fees.txt,NO,0,NO,clean
+2024\Ordinance No. 0493-24_MERGE WITH DOS.txt,NO,0,NO,clean
+2024\Ordinance No. 0494-24 Deed of Absolute Sale E. Palayon.txt,NO,0,NO,clean
+2024\Ordinance No. 0495-24 0_ Tax.txt,NO,0,NO,clean
+"2024\Ordinance No. 0496-24 Service Contract Agreement,LTFRB Nfinite IT .txt",NO,0,NO,clean
+"2024\Ordinance No. 0497-24 MOU AdDU, Huaqiao University.txt",NO,0,NO,clean
+2024\Ordinance No. 0498-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0499-24 - Copy.txt,NO,0,NO,clean
+2024\Ordinance No. 0499-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0500-24 Deed of Usufruct BFP Brgy. Cabantian.txt,NO,0,NO,clean
+2024\Ordinance No. 0501-24 DOU Brgy. Council of Brgy. 25-C.txt,NO,0,NO,clean
+2024\Ordinance No. 0502-24 MOA PSA.txt,NO,0,NO,clean
+2024\Ordinance No. 0503-24 Deed of Donation Fast Logistics Corp..txt,NO,0,NO,clean
+2024\Ordinance No. 0504-24 Addendum DOAS with Extrajudicial Settlement Archdiocesan.txt,NO,0,NO,clean
+2024\Ordinance No. 0505-24 Addendum DOAS with Extrajudicial Settlement A. Tabar.txt,NO,0,NO,clean
+2024\Ordinance No. 0506-24 Addendum DOAS with Extrajudicial Settlement M. Baradi.txt,NO,0,NO,clean
+2024\Ordinance No. 0507-24 Addendum DOAS A. Tohoy.txt,YES,1,NO,collapsed_char_loops=1
+"2024\Ordinance No. 0508-24 Addendum to DOAS D. Estores, Jr..txt",NO,0,NO,clean
+2024\Ordinance No. 0509-24 Addendum DOAS M. Cabido.txt,NO,0,NO,clean
+2024\Ordinance No. 0510-24 Addendum to the DOAS R. Capote.txt,NO,0,NO,clean
+2024\Ordinance No. 0511-24 Addendum to DOAS N. Bangcal.txt,NO,0,NO,clean
+2024\Ordinance No. 0512-24 DOAS Myrna Pudadera.txt,NO,0,NO,clean
+2024\Ordinance No. 0513-24 Addendum DOAS M. Bangcal.txt,NO,0,NO,clean
+2024\Ordinance No. 0521-24 Partnership Agreement PCW.txt,NO,0,NO,clean
+2024\Ordinance No. 0524-24 Addendum DOAS M. Galamiton.txt,NO,0,NO,clean
+2024\Ordinance No. 0525-24 MOA Comm. on Population and Development.txt,NO,0,NO,clean
+2024\Ordinance No. 0526-24 Deed od Donation Norma P. Exclamador.txt,NO,0,NO,clean
+2024\Ordinance No. 0528-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0529-24.txt,NO,0,NO,clean
+"2024\Ordinance No. 0530-24 MOA, AdDU.txt",NO,0,NO,clean
+2024\Ordinance No. 0531-24 MOA UM Thesis.txt,NO,0,NO,clean
+2024\Ordinance No. 0532-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0533-24 -MOA DOH-CHD MAILFIP Program.txt,NO,0,NO,clean
+2024\Ordinance No. 0538-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0539-24 Amending Maritime Coordinating Council.txt,NO,0,NO,clean
+2024\Ordinance No. 0541-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0542-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0543-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0544-24 Exemption of Special Mayor_s Permit Fee.txt,NO,0,NO,clean
+2024\Ordinance No. 0545-24 CoL LBP SP Bldg. ATM.txt,NO,0,NO,clean
+2024\Ordinance No. 0547-24 MOA DOH-CHD.txt,NO,0,NO,clean
+2024\Ordinance No. 0548-24 Water-Break Time.txt,NO,0,NO,clean
+2024\Ordinance No. 0549-24 Amusement Tax Exemption  .txt,NO,0,NO,clean
+"2024\Ordinance No. 0550-24 MOA BFAR, et al..txt",NO,0,NO,clean
+2024\Ordinance No. 0551-24 MOA DDH Internship Program.txt,NO,0,NO,clean
+2024\Ordinance No. 0552-24 Dabawenyo Dcplinado.txt,NO,0,NO,clean
+2024\Ordinance No. 0553-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0554-24 Adopting 2023 and 2024 Citizen_s Charter.txt,NO,0,NO,clean
+2024\Ordinance No. 0555-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0556-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0558-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0559-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0560-24 DOD 8990 Housing  Deca Ph8B Tacunan.txt,NO,0,NO,clean
+2024\Ordinance No. 0561-24 DOD 8990 Housing DHRR Ph 8C.txt,NO,0,NO,clean
+2024\Ordinance No. 0562-24 DOD 8990 Housing Deca Tigatto.txt,NO,0,NO,clean
+2024\Ordinance No. 0563-24 DOD 8990 Housing Deca Prime Tacunan.txt,NO,0,NO,clean
+2024\Ordinance No. 0564-24 DOD 8990 Housing Deca Executive Tacunan.txt,NO,0,NO,clean
+2024\Ordinance No. 0565-24 DOD 8990 Housing Deca Ph8A Tacunan.txt,NO,0,NO,clean
+2024\Ordinance No. 0566-24 DOD 8990 Housing DHRR Ph 11.txt,NO,0,NO,clean
+2024\Ordinance No. 0567-24 DOD 8990 Housing DHRR Ph 12.txt,NO,0,NO,clean
+2024\Ordinance No. 0568-24 DOD 8990 Housing Deca Catalunan Grande.txt,NO,0,NO,clean
+2024\Ordinance No. 0569-24 DOD 8990 Housing DHRR Phase 1 and 2.txt,NO,0,NO,clean
+2024\Ordinance No. 0570-24 DOD 8990 Housing.txt,NO,0,NO,clean
+2024\Ordinance No. 0571-24 MOA UM Work Immersion Partneship.txt,NO,0,NO,clean
+2024\Ordinance No. 0572-24 DOU DOST ROXI Wastewater.txt,NO,0,NO,clean
+2024\Ordinance No. 0573-24 MOA SPMC-DEM.txt,NO,0,NO,clean
+2024\Ordinance No. 0574-24 Disaster Plan.txt,NO,0,NO,clean
+2024\Ordinance No. 0578-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0579-24 Allow Request of Carol T. Labit.txt,NO,0,NO,clean
+2024\Ordinance No. 0580-24 Request of Alita Aniceta.txt,NO,0,NO,clean
+2024\Ordinance No. 0581-24 Request of Lourdes Angeles.txt,NO,0,NO,clean
+2024\Ordinance No. 0582-24 Request for Consent and Authority.txt,NO,0,NO,clean
+2024\Ordinance No. 0583-24 Request of Noel Bersabe.txt,NO,0,NO,clean
+2024\Ordinance No. 0584-24 Renaming Lying-In Centers.txt,NO,0,NO,clean
+2024\Ordinance No. 0585-24 Amending Position Titles in CGD.txt,NO,0,NO,clean
+2024\Ordinance No. 0586-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0587-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0588-24.txt,NO,0,NO,clean
+"2024\Ordinance No. 0589-24 QRF San Mateo, Rizal.txt",NO,0,NO,clean
+"2024\Ordinance No. 0590-24 QRF Baco, Oriental Mindoro.txt",NO,0,NO,clean
+"2024\Ordinance No. 0591-24 QRF Macabebe, Pampanga.txt",NO,0,NO,clean
+"2024\Ordinance No. 0592-24 QRF Pinamalayan, Oriental Mindoro.txt",NO,0,NO,clean
+"2024\Ordinance No. 0593-24 QRF Bauang, La Union.txt",NO,0,NO,clean
+"2024\Ordinance No. 0594-24 QRF Cainta, Rizal.txt",NO,0,NO,clean
+"2024\Ordinance No. 0595-24 QRF Paombong, Bulacan.txt",NO,0,NO,clean
+"2024\Ordinance No. 0596-24 QRF San Andres, Romblon.txt",NO,0,NO,clean
+"2024\Ordinance No. 0597-24 QRF Camiling, Tarlac.txt",NO,0,NO,clean
+"2024\Ordinance No. 0598-24 QRF Plaridel, Bulacan.txt",NO,0,NO,clean
+2024\Ordinance No. 0599-24 QRF San Juan City.txt,NO,0,NO,clean
+2024\Ordinance No. 0600-24 QRF Quezon City.txt,NO,0,NO,clean
+2024\Ordinance No. 0601-24 QRF Caloocan City.txt,NO,0,NO,clean
+2024\Ordinance No. 0602-24 QRF Marikina City.txt,NO,0,NO,clean
+2024\Ordinance No. 0603-24 QRF Manila City.txt,NO,0,NO,clean
+2024\Ordinance No. 0604-24 QRF Navotas City.txt,NO,0,NO,clean
+2024\Ordinance No. 0605-24 QRF Valenzuela City.txt,NO,0,NO,clean
+2024\Ordinance No. 0606-24 QRF Mandaluyong City.txt,NO,0,NO,clean
+2024\Ordinance No. 0607-24 QRF Pasay City.txt,NO,0,NO,clean
+2024\Ordinance No. 0608-24 QRF Malabon City.txt,NO,0,NO,clean
+"2024\Ordinance No. 0609-24 QRF Meycauayan, Bulacan.txt",NO,0,NO,clean
+2024\Ordinance No. 0610-24 QRF Province of Bataan.txt,NO,0,NO,clean
+2024\Ordinance No. 0611-24 QRF Province of Rizal.txt,NO,0,NO,clean
+2024\Ordinance No. 0612-24 QRF Province of Pampanga.txt,NO,0,NO,clean
+2024\Ordinance No. 0613-24 QRF Province of Bulacan.txt,NO,0,NO,clean
+2024\Ordinance No. 0614-24 QRF Province of Cavite.txt,NO,0,NO,clean
+2024\Ordinance No. 0615-24 QRF Province of Batangas.txt,NO,0,NO,clean
+2024\Ordinance No. 0616-24 MOA DSWD SFP Cycle 14.txt,NO,0,NO,clean
+2024\Ordinance No. 0617-24 CSWDO Functional Chart.txt,NO,0,NO,clean
+2024\Ordinance No. 0619-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0620-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0621-24 Deed of Donation Juanita Taculin.txt,NO,0,NO,clean
+2024\Ordinance No. 0622-24 MOA DOST-RO XI DFT.txt,NO,0,NO,clean
+2024\Ordinance No. 0623-24 Moral Recovery Program.txt,NO,0,NO,clean
+2024\Ordinance No. 0624-24 Justice Zone.txt,NO,0,NO,clean
+2024\Ordinance No. 0625-24 Exemption from Special Permit Fees.txt,NO,0,NO,clean
+2024\Ordinance No. 0626-24 MOA DOH-CHD HEA.txt,NO,0,NO,clean
+2024\Ordinance No. 0627-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0628-24 Amending Section 317 of Revenue Code.txt,NO,0,NO,clean
+2024\Ordinance No. 0630-24 Contract of Lease Carmen Locsin.txt,NO,0,NO,clean
+2024\Ordinance No. 0632-24 Amend Ord.433-20 CCD.txt,NO,0,NO,clean
+2024\Ordinance No. 0633-24 Rates and Charges in Agdao Market.txt,NO,0,NO,clean
+2024\Ordinance No. 0634-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0635-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0636-24 Relief on Surcharge and Interest.txt,NO,0,NO,clean
+2024\Ordinance No. 0637-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0638-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0639-24 MOA BIR RRNo.19.txt,NO,0,NO,clean
+2024\Ordinance No. 0640-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0641-24 DOU Brgy. 27-C.txt,NO,0,NO,clean
+2024\Ordinance No. 0642-24 MOU DOH-CHD.txt,NO,0,NO,clean
+2024\Ordinance No. 0643-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0644-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0645-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0646-24.txt,NO,0,NO,clean
+"2024\Ordinance No. 0647-24 Sister City Agreement Hamamatsu, Japan.txt",NO,0,NO,clean
+2024\Ordinance No. 0650-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0651-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0652-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0653-24 MOA SPMC BUCAS.txt,NO,0,NO,clean
+2024\Ordinance No. 0654-24 Exempt from Amusement tax.txt,NO,0,NO,clean
+2024\Ordinance No. 0655-24.txt,NO,0,NO,clean
+"2024\Ordinance No. 0656-24 MOA Therma South, Inc..txt",NO,0,NO,clean
+2024\Ordinance No. 0657-24001.txt,NO,0,NO,clean
+2024\Ordinance No. 0657-24002.txt,YES,4,YES,removed_foreign_scripts=4
+2024\Ordinance No. 0658-24 Amending Section 2 of Food Terminal.txt,NO,0,NO,clean
+2024\Ordinance No. 0659-24 MOA AdDU-AOSF.txt,NO,0,NO,clean
+2024\Ordinance No. 0660-24 MOU USeP.txt,NO,0,NO,clean
+"2024\Ordinance No. 0661-24 QRF Laurel, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0662-24 QRF Mercedes, Camarines Norte.txt",NO,0,NO,clean
+"2024\Ordinance No. 0663-24 QRF Los Baños, Laguna.txt",NO,0,NO,clean
+"2024\Ordinance No. 0664-24 QRF Bulan, Sorsogon.txt",NO,0,NO,clean
+"2024\Ordinance No. 0665-24 QRF San Fernando, Masbate.txt",NO,0,NO,clean
+"2024\Ordinance No. 0666-24 QRF Virac, Catanduanes.txt",NO,0,NO,clean
+"2024\Ordinance No. 0667-24 QRF San Pascual, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0668-24 QRF Lian, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0669-24 QRF Lemery, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0670-24 QRF Agoncillo, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0671-24 QRF Ibaan, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0672-24 QRF Cuenca, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0673-24 QRF Sariaya, Quezon.txt",NO,0,NO,clean
+"2024\Ordinance No. 0674-24 QRF Magpet, Cotabato.txt",NO,0,NO,clean
+"2024\Ordinance No. 0675-24 QRF Irosin, Sorsogon.txt",NO,0,NO,clean
+"2024\Ordinance No. 0676-24 QRF Sta. Cruz, Laguna.txt",NO,0,NO,clean
+"2024\Ordinance No. 0677-24 QRF Mulanay, Quezon.txt",NO,0,NO,clean
+"2024\Ordinance No. 0678-24 QRF Tagkawayan, Quezon.txt",NO,0,NO,clean
+"2024\Ordinance No. 0679-24 QRF Gen. Luna, Quezon - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0679-24 QRF Gen. Luna, Quezon.txt",NO,0,NO,clean
+"2024\Ordinance No. 0680-24 QRF Calaca City, Batangas - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0680-24 QRF Calaca City, Batangas.txt",NO,0,NO,clean
+2024\Ordinance No. 0681-24 QRF Naga City - Copy.txt,NO,0,NO,clean
+2024\Ordinance No. 0681-24 QRF Naga City.txt,NO,0,NO,clean
+"2024\Ordinance No. 0682-24 QRF Calbayog City, Samar - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0682-24 QRF Calbayog City, Samar.txt",NO,0,NO,clean
+"2024\Ordinance No. 0683-24 QRF Calamba, Laguna - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0683-24 QRF Calamba, Laguna.txt",NO,0,NO,clean
+"2024\Ordinance No. 0684-24 QRF Sto. Tomas, Batangas - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0684-24 QRF Sto. Tomas, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0685-24 QRF San Pedro, Laguna - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0685-24 QRF San Pedro, Laguna.txt",NO,0,NO,clean
+"2024\Ordinance No. 0686-24 QRF Dagupan, Pangasinan - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0686-24 QRF Dagupan, Pangasinan.txt",NO,0,NO,clean
+"2024\Ordinance No. 0687-24 QRF Tanauan, Batangas - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0687-24 QRF Tanauan, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0688-24 QRF Batangas, Batangas - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0688-24 QRF Batangas, Batangas.txt",NO,0,NO,clean
+"2024\Ordinance No. 0689-24 QRF Biñan, Laguna - Copy.txt",NO,0,NO,clean
+"2024\Ordinance No. 0689-24 QRF Biñan, Laguna.txt",NO,0,NO,clean
+2024\Ordinance No. 0690-24 QRF Province of Batangas - Copy.txt,NO,0,NO,clean
+2024\Ordinance No. 0690-24 QRF Province of Batangas.txt,NO,0,NO,clean
+2024\Ordinance No. 0691-24 QRF Province of Albay.txt,NO,0,NO,clean
+2024\Ordinance No. 0692-24 QRF Province of Camarines Sur.txt,NO,0,NO,clean
+2024\Ordinance No. 0693-24 QRF Province of Eastern Samar.txt,NO,0,NO,clean
+2024\Ordinance No. 0694-24 QRF Province of Camarines Norte.txt,NO,0,NO,clean
+2024\Ordinance No. 0695-24 QRF Province of Catanduanes.txt,NO,0,NO,clean
+2024\Ordinance No. 0696-24 QRF Province of Quezon.txt,NO,0,NO,clean
+2024\Ordinance No. 0697-24 Car Free Sunday.txt,NO,0,NO,clean
+2024\Ordinance No. 0698-24 SB2.txt,YES,75,NO,collapsed_char_loops=73; collapsed_word_loops=2
+2024\Ordinance No. 0699-24 Amendment UAV.txt,NO,0,NO,clean
+2024\Ordinance No. 0700-24 Granting Insular Oil Corp..txt,NO,0,NO,clean
+2024\Ordinance No. 0701-24 Grant Stella Maris Academy.txt,NO,0,NO,clean
+2024\Ordinance No. 0702-24.txt,NO,0,NO,clean
+"2024\Ordinance No. 0703-24 MOA, Tagum Doctors College.txt",NO,0,NO,clean
+2024\Ordinance No. 0706-24 Gen. Fund Annual Budget.txt,NO,0,NO,clean
+"2024\Ordinance No. 0707-24 Amend Prevention, Treatment, Care and Support.txt",NO,0,NO,clean
+2024\Ordinance No. 0708-24 Amend Charter of City College.txt,NO,0,NO,clean
+2024\Ordinance No. 0709-24 Restructuring HRMO.txt,NO,0,NO,clean
+2024\Ordinance No. 0710-24 Amend Traffic Code.txt,NO,0,NO,clean
+2024\Ordinance No. 0711-24 Approve ABKA and ADORE.txt,NO,0,NO,clean
+2024\Ordinance No. 0712-24 MOA DepEd Dcplinado Program.txt,NO,0,NO,clean
+2024\Ordinance No. 0715-24 Amend Revenue Code.txt,NO,0,NO,clean
+2024\Ordinance No. 0717-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0718-24 Amend Integrated Zoning Ordinance.txt,NO,0,NO,clean
+2024\Ordinance No. 0719-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0721-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0723-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0724-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0725-24 SB3.txt,YES,2,NO,collapsed_char_loops=2
+2024\Ordinance No. 0728-24 DOD DOH-CHD.txt,NO,0,NO,clean
+2024\Ordinance No. 0729-24 Digitalization of LCR.txt,NO,0,NO,clean
+2024\Ordinance No. 0731-24.txt,NO,0,NO,clean
+2024\Ordinance No. 0733-24 SCA Bachelor Express.txt,NO,0,NO,clean
+2024\Ordinance No. 0734-24 SB4.txt,NO,0,NO,clean
+2025\Ordinance No. 018-25.txt,YES,1,NO,collapsed_char_loops=1
+2025\Ordinance No. 0735-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0736-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0739-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0741-25.txt,YES,1,NO,collapsed_word_loops=1
+2025\Ordinance No. 0742-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0754-25.txt,NO,0,NO,clean
+"2025\Ordinance No. 0756-25 Service Contract Agreement, LTFRB et al..txt",NO,0,NO,clean
+2025\Ordinance No. 0758-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0760-25.txt,YES,1,NO,collapsed_char_loops=1
+2025\Ordinance No. 0765-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0766-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0767-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0772-25.txt,YES,1,NO,collapsed_char_loops=1
+2025\Ordinance No. 0773-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0774-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0776-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0778-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0779-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0782-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0783-25.txt,YES,1,NO,collapsed_char_loops=1
+2025\Ordinance No. 0784-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0785-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0787-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0789-25 (7-14-25).txt,NO,0,NO,clean
+2025\Ordinance No. 0791-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0792-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0795-25.txt,YES,1,NO,collapsed_char_loops=1
+2025\Ordinance No. 0828-25.txt,NO,0,NO,clean
+2025\Ordinance No. 0835-25 (unsigned).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0000042-02.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000006-01.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000009-91_101-9-91.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000014-07.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000019-07.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000024-04.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000025-04.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000026-04.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000029-07.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000030-07.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000031-07.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000032-04.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000036-56.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000037-56.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000040-07.txt,YES,2,NO,collapsed_word_loops=2
+landmark_ordinances\Ordinance No. 000043-02.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000044-02.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 000044-56.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000051-89_333-51-89.txt,YES,4,YES,removed_foreign_scripts=4
+landmark_ordinances\Ordinance No. 000056-08.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000060-02.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000060-08.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000064-02 (1).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000064-02.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000069-05.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000076-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000078-00_Health and Sanitation Ordinance.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000084-00.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000084-08.txt,YES,1,NO,collapsed_char_loops=1
+landmark_ordinances\Ordinance No. 000084-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000084-71.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000085-08.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000086-00.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000088-05.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000092-00.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000094-08.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000095-00.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000098-56.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000099-00.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000099-08.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000102-03 (1).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000102-03.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000102-05.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000103-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000105-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000106-00.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000106-08.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000106-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000108-00.txt,YES,4,YES,collapsed_word_loops=4
+landmark_ordinances\Ordinance No. 000109-67.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000110-70.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000111-03 (1).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000111-03.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000113-01.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000116-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000116-88_1068-116-88.txt,YES,3,YES,removed_foreign_scripts=3
+landmark_ordinances\Ordinance No. 000117-01.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000120-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000121-03.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000123-03.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000123-60.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000130-89_969-130-89.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000132-03.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000132-89_989-132-89.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000134-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000137-61.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000148-03.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 000153-03.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000156-60.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000170-03.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000171-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000172-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000178-03.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000179-03.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000190-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000192-04.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000194-04.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000195-04.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000195-67.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000200-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000212-91_1193-212-91.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000217-64.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000218-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000218-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000227-04.txt,YES,2,NO,removed_foreign_scripts=2
+landmark_ordinances\Ordinance No. 000227-09.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 000228-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000229-04.txt,YES,1,NO,collapsed_char_loops=1
+landmark_ordinances\Ordinance No. 000232-06.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000238-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000240-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000258-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000268-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000269-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000270-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000271-64.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000278-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000281-72.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000284-15.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000292-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000298-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000299-09.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 000304-20.txt,YES,1,NO,collapsed_char_loops=1
+landmark_ordinances\Ordinance No. 000305-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000306-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000306-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000307-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000311-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000328-09.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000331-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000332-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000335-10.txt,YES,2,NO,collapsed_word_loops=2
+landmark_ordinances\Ordinance No. 000336-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000352-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000361-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000361-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000362-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000363-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000376-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000382-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000383-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000396-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000408-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000409-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000411-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000417-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000417-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000419-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000419-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000420-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000420-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000424-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000425-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000429-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000430-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000431-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000432-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000435-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000445-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000447-70.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000448-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000458-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000466-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000466-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000478-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000479-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000532-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000535-70.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000538-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000540-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000557-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000568-92_2870-568-92.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000581-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000591-21new.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000592-92_2927-592-92.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000601-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000602-18 Special Office for Children's Concern.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000603-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000624-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000626-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000627-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000629-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000655-92_3094-655-92.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000658-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000662-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000666-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000675-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000680-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000697-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000707-73.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000728-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000736-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000737-78.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 000738-78.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000778-73.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000823-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000835-93_3619-835-93.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000836-93_3620-836-93.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000850-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000998-74.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 000999-74.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0010-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 001329-93_4888-1329-93.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 001457-74.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 001545-74.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 001627-94_5869-1627-94.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 001650-94_5957-1650-94.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 001692-94_6068-1692-94.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 001710-75A.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 002017-94_6652-2017-94.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 002491-94_7725-2491-94.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 003996-96_10105-3996-96 (1).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 004-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 004042-96_10254-4042-96.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 004121-96_10419-4121-96.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 004122-96_10428-4122-96.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 005003-97_12875-5003-97.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 005004-97_12878-5004-97.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0074-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0100-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0100-22 (creating DCDAC).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 01002-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0101-14.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 0101-22 (Paleng-QR Ph).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0102-22 (Reward for athletes).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0105-86.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0108-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0110-86.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0111-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0111-22 (Night Market).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0112-14.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0114-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0114-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0115-14.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0115-86.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0120-16.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0121-86.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0132-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0133-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0137-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0137-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0138-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0139-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 014-87.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0141-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0143-05.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0152-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0153-90A.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0155-23 -PWD ID.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0157-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0161-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0162-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0164-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0165-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0166-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0166-81.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0167-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0167-23 -Registration of Ownership and Inventory.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0170-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0171-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0173-23 -Suspension of Section39 of Incentive Code (1).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0173-23 -Suspension of Section39 of Incentive Code.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0176-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0177-11.txt,YES,1,NO,collapsed_char_loops=1
+landmark_ordinances\Ordinance No. 0177-23.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0178-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0179-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0181-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0184-23 Traffic Code.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0185-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0185-23.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 019-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 019-22 Amendment Agri and Biosystem Eng'g.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0192-23.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0193-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0193-23 Amendment Peace 911.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0198-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0198-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 02-99.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 020-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0202-23.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0206-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0206-23 MOU creation PIAC.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0208-23 Amendment Peace 911.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0210-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0212-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0214-23.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0215-23.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0216-23 BFP Purchase Motor Vehicle.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0220-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0221-23 MOU DSWD-RSCC.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0223-23 MOA Phil. Mental Health.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0227-17.txt,YES,6,YES,removed_foreign_scripts=6
+landmark_ordinances\Ordinance No. 023-85.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0230-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0230-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0234-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0236-23 10 or more employees.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0239-23 Amendment Rewards System for Athletes.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0242-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0243-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0245-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0245-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0246-23 Preemptive and Emergency Evacuation.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0247-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0247-20 (Covid-19 Emergency Response).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 025-22 Org. Structure CDRRMO.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0250-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0251-20.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 0253-06.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0253-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0255-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0256-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0256-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0257-17.txt,YES,5,YES,collapsed_word_loops=5
+landmark_ordinances\Ordinance No. 0257-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0258-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0258-23 Data Privacy Ordinance.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 0260-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0261-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0262-20.txt,YES,1,NO,collapsed_char_loops=1
+landmark_ordinances\Ordinance No. 0263-12.txt,YES,2,NO,removed_foreign_scripts=2
+landmark_ordinances\Ordinance No. 0263-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0264-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0264-20.txt,YES,1,NO,collapsed_char_loops=1
+landmark_ordinances\Ordinance No. 0265-20.txt,YES,1,NO,collapsed_char_loops=1
+landmark_ordinances\Ordinance No. 0266-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0267-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0268-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 027-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0270-23 Speed Limits.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0273-17.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0280-06.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0280-23 Malagos Slaughterhouse.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0287-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0290-23 DCHO.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0294-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0298-23 (CLUP 2019-2028).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 030-88.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0300-20 (MOU KKPFI).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0302-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0303-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0303-23 Less Paper Session.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0304-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0307-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0307-23 DCYDC creation.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0308-23 DCYDD-LYDO.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 031-84.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0311-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0312-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0316-23 Lifting Wear Face Mask.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0319-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0319-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0325-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 033-88.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0330-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0331-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0331-23 Amendment CCTV.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0332-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0332-23 DC Office for Culture and the Arts.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0333-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 034-13.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 0342-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0349-23 Amendment CPDO.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 035-13.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 0350-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0353-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0354-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0354-23 -Anti-Spaghetti.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0355-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0361-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0363-82.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0367-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 037-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 038-99.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0381-82.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0384-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0387-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0390-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0391-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0393-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0393-24 - Solo Parents (1).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0393-24 - Solo Parents.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 040-99.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0401-20 Mosquito-Borne Disease.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 0403-18.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 0407-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 0407-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 041-02.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0410-10.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance no. 0410-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0417-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 0417-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0423-20.txt,YES,3,YES,removed_foreign_scripts=3
+landmark_ordinances\Ordinance No. 0429-24 Shelter for IP Watchers and Runners (1).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0429-24 Shelter for IP Watchers and Runners.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 043-22 (creating PDAC-PDAO).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0431-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0440-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0440-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0441-12.txt,NO,0,NO,clean
+"landmark_ordinances\Ordinance No. 0441-24 -MOA, CFO Balinkbayan.txt",NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0442-12.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0447-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0455-20.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 046-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0463-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0463-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0464-24 Mt. Apo as Geopark.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0468-24 DCHO.txt,YES,1,NO,collapsed_char_loops=1
+landmark_ordinances\Ordinance No. 0470-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0472-24.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0474-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0474-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0475-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0477-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 048-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 048-22 Safety and Security Measures.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0487-24.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0489-24 Comprehensive Liquor Code of DC.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0495-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0495-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 050-87.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0500-21 (Single-Use Plastic).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0501-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0506-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0514-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 052-10.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 052-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 052-90.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0521-24 Partnership Agreement PCW.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 053-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0533-24 -MOA DOH-CHD MAILFIP Program.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0535-24.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0539-24 Amending Maritime Coordinating Council.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0544-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0546-21 (Inventions and Innovations Center).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0548-24 Water-Break Time.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0551-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0552-24 Dabawenyo Dcplinado.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0554-24 Adopting 2023 and 2024 Citizen's Charter.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance no. 0556-18.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 056-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0574-24 Disaster Plan.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0576-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0584-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0585-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0590-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0593-92A.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0596-21 (MOU Handwashing Facilities.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0599-21 (Basic Motorcycle Training).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0612-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0617-24 CSWDO Functional Chart.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 062-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0622-24 MOA DOST-RO XI DFT.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0623-24 Moral Recovery Program.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0624-24 Justice Zone.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0626-24 MOA DOH-CHD HEA.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0627-21 (E-Sabong).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0628-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 063-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0636-24 Relief on Surcharge and Interest.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 064-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 065-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 066-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 066-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0670-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0678-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0679-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 068-11.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 068-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0682-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0689-21 (RT-PCR Test).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0691-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0694-21.txt,YES,3,YES,removed_foreign_scripts=3
+landmark_ordinances\Ordinance No. 0696-21 (MOA BPI).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0697-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0697-24 Car Free Sunday.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0703-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0706-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 071-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0719-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 072-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0720-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0727-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0729-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0729-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 073-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 074-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0740-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0742-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0742-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0748-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0749-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 075-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0767-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0778-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 078-16.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 0781-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0782-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0782-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0783-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0784-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0785-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 080-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0814-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0816-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 082-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0839-21.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0853-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0854-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 086-22 IP attire.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 087-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 088-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 089-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0891-22 (Creating Peace 911 Council).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0893-22 (ALS).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0902-22 (Amend Prohibit Astray Dogs).txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0910-79.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0916-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0919-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 092-19.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0934-22.txt,YES,155,YES,removed_foreign_scripts=155
+landmark_ordinances\Ordinance No. 094-11.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 095-11.txt,YES,1,NO,collapsed_word_loops=1
+landmark_ordinances\Ordinance No. 0950-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0954-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 096-13.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0974-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0979-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0987-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0988-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0998-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 0999-22.txt,NO,0,NO,clean
+landmark_ordinances\Ordinance No. 2269-A.txt,NO,0,NO,clean
