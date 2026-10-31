@@ -37,8 +37,9 @@
         }
     ],
     "latex-workshop.latex.recipe.default": "first",
-    "latex-workshop.latex.autoBuild.run": "onSave",
-    "latex-workshop.latex.autoBuild.interval": 500,
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.chktex.enabled": false,
+    "latex-workshop.message.badbox.show": false,
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.view.pdf.refreshes": "onBuild",
     "latex-workshop.synctex.afterBuild.enabled": true,
