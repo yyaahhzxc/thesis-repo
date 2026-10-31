@@ -243,7 +243,7 @@ Federal Commission No. 000-000-0004
 AALI NO. 100-000-0004
 PTT: 2-174 No. 871954 (12-27-29)
 RPT: 2-174 No. 000-000 (12-28-29)
-MNL: Exemption No. V1-A60008
+MNL: Exemption No. V1-A60000008
 
 --- [Page 8] ---
 DEED OF DONATION
@@ -353,4 +353,4 @@ Federal Commission No. 000-000-0004
 AALI NO. 100-000-0004
 PTT: 2-174 No. 871954 (12-27-29)
 RPT: 2-174 No. 000-000 (12-28-29)
-MNL: Exemption No. V1-A60008
+MNL: Exemption No. V1-A60000008

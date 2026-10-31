@@ -594,21 +594,21 @@ Calendar Year 2024
 | Implementing Office | Particulars/ Purpose | APP Reference Code | Brief Description of the Project | Project Code | Amount |
 | --- | --- | --- | --- | --- | --- |
 | (1) |  |  |  |  |  |
-| CIO | 4. Additional stipulations for the renovation of City Hall at Satgurugam Panjagamal Panjagamal | 000.00 | 000.00 | 20238 | 5,000,000.00 |
-| CIO | 5. Implementation of the Satgurugam Panjagamal Panjagamal | 000.00 | 000.00 | 26269 | 5,000,000.00 |
-| CIO | 6. Implementation of the Satgurugam Panjagamal Panjagamal | 000.00 | 000.00 | 26269 | 2,600,000.00 |
-| CIO | 7. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 3,800,000.00 |
-| CIO | 8. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 9. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 10. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 11. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 12. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 13. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 14. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 15. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 16. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 17. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 | 26261 | 2,600,000.00 |
-| CIO | 18. Renovation of Building San Pio Sto. Damiano | 000.00 | 000.00 |
+| CIO | 4. Additional stipulations for the renovation of City Hall at Satgurugam Panjagamal Panjagamal | 000000.00 | 000000.00 | 20238 | 5,000,000.00 |
+| CIO | 5. Implementation of the Satgurugam Panjagamal Panjagamal | 000000.00 | 000000.00 | 26269 | 5,000,000.00 |
+| CIO | 6. Implementation of the Satgurugam Panjagamal Panjagamal | 000000.00 | 000000.00 | 26269 | 2,600,000.00 |
+| CIO | 7. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 3,800,000.00 |
+| CIO | 8. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 9. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 10. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 11. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 12. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 13. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 14. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 15. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 16. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 17. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 | 26261 | 2,600,000.00 |
+| CIO | 18. Renovation of Building San Pio Sto. Damiano | 000000.00 | 000000.00 |
 
 --- [Page 13] ---
 **Implementing Office**
@@ -689,23 +689,23 @@ Calendar Year 2024
 --- [Page 15] ---
 | Implementing Office | Particulars/ Purpose | AIP Reference Code | Brief description of the Project | Project Code | Amount |
 | --- | --- | --- | --- | --- | --- |
-| (1) | 8. Broad Construction from State Landmark Site, 90002-01-01-10-01 | 0002-01-01-10-01 | Real Construction | 26000 | 26000 |
-|  | 9. Market District (Phase I) | 90003-02-01-10-01 | Real Construction with Site Preparation | 24001 | 24001 |
-|  | 10. Retail District on Parks, Erosion Control System | 90004-03-01-10-01 | Real Construction | 24002 | 24002 |
-|  | 11. Construction of Erosion Control System for the Project Area | 90005-04-01-10-01 | Real Construction | 24003 | 24003 |
-|  | 12. Construction of Multi-purpose Bridge | 90006-05-01-10-01 | Real Construction | 24004 | 24004 |
-|  | 13. Construction of Multi-purpose Bridge | 90007-06-01-10-01 | Real Construction | 24005 | 24005 |
-|  | 14. Construction of Multi-purpose Bridge | 90008-07-01-10-01 | Real Construction | 24006 | 24006 |
-|  | 15. Construction of Multi-purpose Bridge | 90009-08-01-10-01 | Real Construction | 24007 | 24007 |
-|  | 16. Construction of Multi-purpose Bridge | 900010-09-01-10-01 | Real Construction | 24008 | 24008 |
-|  | 17. Construction of Multi-purpose Bridge | 900011-10-01-10-01 | Real Construction | 24009 | 24009 |
-|  | 18. Construction of Multi-purpose Bridge | 900012-11-01-10-01 | Real Construction | 24010 | 24010 |
-|  | 19. Construction of Multi-purpose Bridge | 900013-12-01-10-01 | Real Construction | 24011 | 24011 |
-|  | 20. Construction of Multi-purpose Bridge | 900014-13-01-10-01 | Real Construction | 24012 | 24012 |
-|  | 21. Construction of Multi-purpose Bridge | 900015-14-01-10-01 | Real Construction | 24013 | 24013 |
-|  | 22. Construction of Multi-purpose Bridge | 900016-15-01-10-01 | Real Construction | 24014 | 24014 |
-|  | 23. Construction of Multi-purpose Bridge | 900017-16-01-10-01 | Real Construction | 24015 | 24015 |
-|  | 24. Construction of Multi-purpose Bridge | 900018-17-01-10-01 | Real Construction | 24016 | 24016 |
+| (1) | 8. Broad Construction from State Landmark Site, 900000002-01-01-10-01 | 0002-01-01-10-01 | Real Construction | 26000 | 26000 |
+|  | 9. Market District (Phase I) | 900000003-02-01-10-01 | Real Construction with Site Preparation | 24001 | 24001 |
+|  | 10. Retail District on Parks, Erosion Control System | 900000004-03-01-10-01 | Real Construction | 24002 | 24002 |
+|  | 11. Construction of Erosion Control System for the Project Area | 900000005-04-01-10-01 | Real Construction | 24003 | 24003 |
+|  | 12. Construction of Multi-purpose Bridge | 900000006-05-01-10-01 | Real Construction | 24004 | 24004 |
+|  | 13. Construction of Multi-purpose Bridge | 900000007-06-01-10-01 | Real Construction | 24005 | 24005 |
+|  | 14. Construction of Multi-purpose Bridge | 900000008-07-01-10-01 | Real Construction | 24006 | 24006 |
+|  | 15. Construction of Multi-purpose Bridge | 900000009-08-01-10-01 | Real Construction | 24007 | 24007 |
+|  | 16. Construction of Multi-purpose Bridge | 900000010-09-01-10-01 | Real Construction | 24008 | 24008 |
+|  | 17. Construction of Multi-purpose Bridge | 900000011-10-01-10-01 | Real Construction | 24009 | 24009 |
+|  | 18. Construction of Multi-purpose Bridge | 900000012-11-01-10-01 | Real Construction | 24010 | 24010 |
+|  | 19. Construction of Multi-purpose Bridge | 900000013-12-01-10-01 | Real Construction | 24011 | 24011 |
+|  | 20. Construction of Multi-purpose Bridge | 900000014-13-01-10-01 | Real Construction | 24012 | 24012 |
+|  | 21. Construction of Multi-purpose Bridge | 900000015-14-01-10-01 | Real Construction | 24013 | 24013 |
+|  | 22. Construction of Multi-purpose Bridge | 900000016-15-01-10-01 | Real Construction | 24014 | 24014 |
+|  | 23. Construction of Multi-purpose Bridge | 900000017-16-01-10-01 | Real Construction | 24015 | 24015 |
+|  | 24. Construction of Multi-purpose Bridge | 900000018-17-01-10-01 | Real Construction | 24016 | 24016 |
 |  | 25. Construction of Multi-purpose Bridge | 90000
 
 --- [Page 16] ---
