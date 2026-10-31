@@ -9,16 +9,16 @@ This appendix presents the complete, unabridged inventory of all 350 statutory-o
 
 This section summarizes the master ground truth consistency labels across all 350 evaluation pairs ($N = 350$) established for the benchmark. Table~\ref{tab:app_gt_stratification_summary} presents the corpus stratification across the eight functional domains, and Table~\ref{tab:app_gt_master_answer_key} details the sequential item-level answer key.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
-    \footnotesize
-    \setlength{\tabcolsep}{6pt}
-    \renewcommand{\arraystretch}{0.95}
+    \small
+    \setlength{\tabcolsep}{3.5pt}
+    \renewcommand{\arraystretch}{0.98}
     \caption[Master Ground Truth Corpus Stratification Summary]{Master Ground Truth Corpus Stratification across Eight Macro Legal Domains ($N = 350$)}
     \label{tab:app_gt_stratification_summary}
-    \begin{tabularx}{\linewidth}{clcccc}
+    \begin{tabularx}{\linewidth}{>{\centering\arraybackslash}p{1.6cm} >{\RaggedRight\arraybackslash}X *{4}{>{\centering\arraybackslash}p{1.6cm}}}
         \toprule
-        \textbf{Domain ID} & \textbf{Consolidated Macro Legal Domain} & \textbf{Contradiction} & \textbf{Entailment} & \textbf{Neutral} & \textbf{Total Pairs} \\
+        \textbf{Domain ID} & \textbf{Consolidated Macro Legal Domain} & \shortstack{\textbf{Contra-}\\\textbf{diction}} & \shortstack{\textbf{Entail-}\\\textbf{ment}} & \textbf{Neutral} & \shortstack{\textbf{Total}\\\textbf{Pairs}} \\
         \midrule
         00 & Executive Issuances \& Policy Reorganization & 16 & 17 & 17 & 50 \\
         01 & Education \& Academic Institutions & 14 & 17 & 14 & 45 \\
