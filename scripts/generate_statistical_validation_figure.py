@@ -30,7 +30,7 @@ with open(benchmark_path, 'r', encoding='utf-8') as f:
 cv_results = data['cv_results']
 stat_tests = data['statistical_tests']
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13.0, 5.2), dpi=300)
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10.5, 9.2), dpi=300)
 
 # -------------------------------------------------------------
 # Panel A: 5-Fold Cross-Validation Baseline Comparison (Mean +/- SD)
@@ -106,7 +106,7 @@ ax2.set_yticks(y_pos)
 ax2.set_yticklabels(domain_models, fontsize=9)
 ax2.invert_yaxis()  # Highest rank (1) at top
 ax2.set_xlabel('Average Rank across 8 Macro Domains (Lower is Better)')
-ax2.set_title('(B) Friedman Two-Way Rank Analysis ($\chi_F^2 = 40.00, p < 0.001$)', fontweight='bold', pad=12)
+ax2.set_title(r'(B) Friedman Two-Way Rank Analysis ($\chi_F^2 = 40.00, p < 0.001$)', fontweight='bold', pad=12)
 ax2.set_xlim(0, 7.0)
 ax2.grid(axis='x', linestyle='--', alpha=0.5)
 

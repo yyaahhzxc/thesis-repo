@@ -38,7 +38,7 @@ plt.rcParams.update({
     "text.usetex": False
 })
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.2), gridspec_kw={"width_ratios": [1.1, 1.3]})
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10.5, 9.2))
 
 # ---------------------------------------------------------------------------
 # Panel A: Component Ablation (Feature Importance Delta F1)
@@ -93,58 +93,58 @@ weights = [
 ]
 
 # Create 2D grid for token display
-ax2.set_xlim(0, 10)
-ax2.set_ylim(0, 10)
+ax2.set_xlim(0, 14.5)
+ax2.set_ylim(0, 10.2)
 ax2.axis("off")
-ax2.set_title("(B) Cross-Encoder Token Attention Attribution Map", fontweight="bold", pad=10)
+ax2.set_title("(B) Cross-Encoder Token Attention Attribution Map", fontweight="bold", pad=12)
 
-ax2.text(0.2, 9.3, "Draft Ordinance Hypothesis (Local Enactment):", fontsize=9, fontweight="bold", color="#1a365d")
-ax2.text(0.2, 5.0, "Statutory Premise (Presidential Decree No. 1144 §6):", fontsize=9, fontweight="bold", color="#1a365d")
+ax2.text(0.3, 9.3, "Draft Ordinance Hypothesis (Local Enactment):", fontsize=9.5, fontweight="bold", color="#1a365d")
+ax2.text(0.3, 5.5, "Statutory Premise (Presidential Decree No. 1144 §6):", fontsize=9.5, fontweight="bold", color="#1a365d")
 
 # Render word chips with heat background
 # Hypothesis tokens
-x_start = 0.2
+x_start = 0.3
 y_start = 8.2
 for t, w in zip(tokens[1:12], weights[1:12]):
     # Color based on saliency
     bg_color = plt.cm.YlOrRd(w * 0.85 + 0.1)
-    t_len = len(t) * 0.22 + 0.35
-    if x_start + t_len > 9.8:
-        x_start = 0.2
+    t_len = len(t) * 0.22 + 0.42
+    if x_start + t_len > 14.0:
+        x_start = 0.3
         y_start -= 1.1
     rect = patches.FancyBboxPatch((x_start, y_start - 0.25), t_len, 0.7, boxstyle="round,pad=0.08", 
                                   facecolor=bg_color, edgecolor="#666666", linewidth=0.6)
     ax2.add_patch(rect)
     text_color = "white" if w > 0.75 else "black"
-    ax2.text(x_start + t_len/2, y_start + 0.1, t, ha="center", va="center", fontsize=8.2, 
+    ax2.text(x_start + t_len/2, y_start + 0.1, t, ha="center", va="center", fontsize=8.6, 
              fontweight="bold" if w > 0.6 else "normal", color=text_color)
-    x_start += t_len + 0.15
+    x_start += t_len + 0.18
 
 # Premise tokens
-x_start = 0.2
-y_start = 3.9
+x_start = 0.3
+y_start = 4.4
 for t, w in zip(tokens[13:], weights[13:]):
     bg_color = plt.cm.YlOrRd(w * 0.85 + 0.1)
-    t_len = len(t) * 0.22 + 0.35
-    if x_start + t_len > 9.8:
-        x_start = 0.2
+    t_len = len(t) * 0.22 + 0.42
+    if x_start + t_len > 14.0:
+        x_start = 0.3
         y_start -= 1.1
     rect = patches.FancyBboxPatch((x_start, y_start - 0.25), t_len, 0.7, boxstyle="round,pad=0.08", 
                                   facecolor=bg_color, edgecolor="#666666", linewidth=0.6)
     ax2.add_patch(rect)
     text_color = "white" if w > 0.75 else "black"
-    ax2.text(x_start + t_len/2, y_start + 0.1, t, ha="center", va="center", fontsize=8.2, 
+    ax2.text(x_start + t_len/2, y_start + 0.1, t, ha="center", va="center", fontsize=8.6, 
              fontweight="bold" if w > 0.6 else "normal", color=text_color)
-    x_start += t_len + 0.15
+    x_start += t_len + 0.18
 
 # Add legend / explanation box at bottom
 bbox_props = dict(boxstyle="round,pad=0.5", facecolor="#f8fafc", edgecolor="#cbd5e1", linewidth=0.8)
-ax2.text(0.2, 0.8, 
+ax2.text(0.3, 1.2, 
          "Deontic Interaction Attribution:\n"
-         "Cross-attention concentrates 78.4% of total tensor mass on discordant modal\n"
+         "Cross-attention concentrates 78.4% of total tensor mass on discordant modal "
          "operators: draft absolute ban ('strictly prohibited') versus national preemption\n"
          "mandate ('exclusive jurisdiction' & 'regulate and license'). Ground Truth: Contradiction.",
-         fontsize=8, va="center", bbox=bbox_props, color="#1e293b")
+         fontsize=8.5, va="center", bbox=bbox_props, color="#1e293b")
 
 plt.tight_layout()
 plt.savefig(OUT_PATH, dpi=300, bbox_inches="tight")

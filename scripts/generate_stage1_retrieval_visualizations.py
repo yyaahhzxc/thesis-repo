@@ -76,7 +76,7 @@ def generate_stage1_ablation_figure():
         "soft_rrf": "#8854D0"
     }
     
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13.5, 5.2), dpi=300)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10.5, 9.2), dpi=300)
     
     # Panel A: Recall@k Progression across candidate retrievers
     k_vals = [1, 3, 5, 10, 20]

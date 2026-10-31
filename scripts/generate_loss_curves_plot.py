@@ -48,7 +48,7 @@ def create_loss_dynamics_plot(output_path):
     plt.rcParams['font.size'] = 9.5
     plt.rcParams['axes.linewidth'] = 1.0
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14.8, 5.5), dpi=300)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10.5, 9.2), dpi=300)
 
     # Distinct, accessible color palette
     c_deb_lg = '#0d233a'  # Deep Navy
@@ -98,7 +98,7 @@ def create_loss_dynamics_plot(output_path):
     ax1.set_xlim(0.85, 5.25)
     ax1.set_ylim(0.14, 1.05)
     ax1.grid(True, linestyle='--', alpha=0.45)
-    ax1.legend(loc='upper right', frameon=True, facecolor='white', framealpha=0.92, fontsize=7.6, ncol=1)
+    ax1.legend(loc='upper right', frameon=True, facecolor='white', framealpha=0.92, fontsize=8.6, ncol=1)
 
     # -------------------------------------------------------------
     # Panel B: Validation Macro F1 Progression
@@ -133,7 +133,7 @@ def create_loss_dynamics_plot(output_path):
     ax2.set_xlim(0.85, 5.25)
     ax2.set_ylim(0.58, 0.89)
     ax2.grid(True, linestyle='--', alpha=0.45)
-    ax2.legend(loc='lower right', frameon=True, facecolor='white', framealpha=0.92, fontsize=7.8, ncol=1)
+    ax2.legend(loc='lower right', frameon=True, facecolor='white', framealpha=0.92, fontsize=8.6, ncol=1)
 
     plt.tight_layout()
     os.makedirs(os.path.dirname(output_path), exist_ok=True)

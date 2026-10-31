@@ -103,8 +103,8 @@ def generate_figure(df_nat, df_loc):
     nat_ann = aggregate_national(df_nat)
     loc_ann_pts, loc_full = aggregate_local(df_loc)
 
-    fig = plt.figure(figsize=(15.8, 5.6), dpi=300)
-    gs = GridSpec(1, 2, width_ratios=[1.0, 1.0], wspace=0.30, left=0.06, right=0.93, bottom=0.13, top=0.88)
+    fig = plt.figure(figsize=(10.5, 8.8), dpi=300)
+    gs = GridSpec(2, 1, height_ratios=[1.0, 1.0], hspace=0.35, left=0.09, right=0.91, bottom=0.08, top=0.94)
 
     # -------------------------------------------------------------
     # Panel (a): National Statutory Corpus (1900-2025)
@@ -188,7 +188,7 @@ def generate_figure(df_nat, df_loc):
                  fontsize=8.0, fontweight="bold", color="#263238", ha="center",
                  bbox=dict(boxstyle="round,pad=0.3", facecolor="#ffffff", edgecolor="#ffab91", alpha=0.95))
 
-    ax2.set_title("(b) Davao City Local Corpus: Length Evolution (1950–2025, N = 1,664)",
+    ax2.set_title("(b) Davao City Local Corpus: Length Evolution (1950–2025, N = 1,890)",
                   fontsize=11.0, fontweight="bold", pad=12, color="#1a1a1a")
     ax2.set_xlabel("Enactment Year", fontsize=9.5, fontweight="bold", labelpad=7)
     ax2.set_ylabel("Raw Words per Ordinance", fontsize=9.5, fontweight="bold", labelpad=7, color="#d84315")

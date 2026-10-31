@@ -3,16 +3,16 @@ generate_local_and_dual_corpus_visualizations.py
 =================================================
 Generates publication-ready (300 DPI) LaTeX figures for Chapter 3 (Methodology):
 1. local_ordinance_temporal_and_typology.png
-   - Panel (a): Enactment Volume across Four Legislative Eras (1950–2025, N = 1,664)
+   - Panel (a): Enactment Volume across Four Legislative Eras (1950–2025, N = 1,890)
    - Panel (b): 2D Latent Semantic Topic Space (SVD-PCA Projection) with 1.5-sigma
-     Covariance Confidence Ellipses and Centroid Markers (N = 1,664)
+     Covariance Confidence Ellipses and Centroid Markers (N = 1,890)
 
 2. dual_corpus_length_asymmetry.png
    - Panel (a): Document Length Distributions (Log-Scale Density & Histograms)
-     comparing National Statutes (N = 25,432) vs. Davao City Local Ordinances (N = 1,664)
+     comparing National Statutes (N = 25,432) vs. Davao City Local Ordinances (N = 1,890)
    - Panel (b): Provision Token Length Density Distributions comparing National
-     Sections (N = 164,620) vs. Municipal Operative Provisions (N = 8,160) vs.
-     Municipal Boilerplate (N = 3,641) against the 512-token context ceiling.
+     Sections (N = 164,620) vs. Municipal Operative Provisions (N = 9,382) vs.
+     Municipal Boilerplate (N = 4,286) against the 512-token context ceiling.
 
 3. dual_corpus_transformer_compliance.png
    - Panel (a): Provision-Level Cumulative Distribution Functions (CDF)
@@ -110,8 +110,8 @@ def get_cov_ellipse(x, y, n_std=1.5, **kwargs):
 # -------------------------------------------------------------
 def generate_local_temporal_typology_figure():
     print("[1/3] Generating local_ordinance_temporal_and_typology.png (Refined SVD with Covariance Ellipses)...")
-    fig = plt.figure(figsize=(16.0, 5.4), dpi=300)
-    gs = GridSpec(1, 2, width_ratios=[1.0, 1.55], wspace=0.34, left=0.06, right=0.98, bottom=0.13, top=0.88)
+    fig = plt.figure(figsize=(10.5, 9.4), dpi=300)
+    gs = GridSpec(2, 1, height_ratios=[1.0, 1.40], hspace=0.36, left=0.09, right=0.96, bottom=0.07, top=0.95)
     
     # Panel (a): Temporal Distribution across Legislative Eras
     ax1 = fig.add_subplot(gs[0])
@@ -144,7 +144,7 @@ def generate_local_temporal_typology_figure():
     ax1.set_xticks(range(len(era_order)))
     ax1.set_xticklabels(era_labels_clean, fontsize=9.2, fontweight='bold')
     ax1.set_ylabel("Enacted Local Ordinances", fontsize=10.2, fontweight='bold')
-    ax1.set_title("(a) Enactment Volume across Four Legislative Eras (N = 1,664)", fontsize=10.8, fontweight='bold', pad=12)
+    ax1.set_title("(a) Enactment Volume across Four Legislative Eras (N = 1,890)", fontsize=10.8, fontweight='bold', pad=12)
     ax1.set_ylim(0, 1550)
     ax1.yaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}'))
     ax1.grid(axis='y', linestyle='--', alpha=0.6, zorder=0)
@@ -248,7 +248,7 @@ def generate_local_temporal_typology_figure():
                  fontsize=8.0, fontweight='bold', color='#1e6b1e',
                  bbox=dict(boxstyle='round,pad=0.25', facecolor='#f0faf0', edgecolor='#2ca02c', lw=0.7))
 
-    ax2.set_title('(b) 2D Latent Semantic Topic Space of Municipal Ordinances (SVD-PCA, N = 1,664)', fontsize=10.8, fontweight='bold', pad=12)
+    ax2.set_title('(b) 2D Latent Semantic Topic Space of Municipal Ordinances (SVD-PCA, N = 1,890)', fontsize=10.8, fontweight='bold', pad=12)
     ax2.set_xlabel(r'Latent Semantic Dimension 1 (Direct Substantive Regulations $\leftarrow\rightarrow$ Executive Contract Authorizations)', fontsize=8.6, fontweight='bold')
     ax2.set_ylabel(r'Latent Semantic Dimension 2' + '\n' + r'(Penal & Zoning Mandates $\leftarrow\rightarrow$ Emergency Calamity Funds)', fontsize=8.6, fontweight='bold', labelpad=10)
     ax2.grid(True, linestyle='--', alpha=0.5, zorder=0)
@@ -271,8 +271,8 @@ def generate_local_temporal_typology_figure():
 # -------------------------------------------------------------
 def generate_dual_corpus_length_asymmetry_figure():
     print("[2/3] Generating dual_corpus_length_asymmetry.png (Document & Provision Length Asymmetry)...")
-    fig = plt.figure(figsize=(15.2, 5.2), dpi=300)
-    gs = GridSpec(1, 2, width_ratios=[1.0, 1.25], wspace=0.30, left=0.07, right=0.98, bottom=0.13, top=0.88)
+    fig = plt.figure(figsize=(10.5, 9.0), dpi=300)
+    gs = GridSpec(2, 1, height_ratios=[1.0, 1.0], hspace=0.36, left=0.09, right=0.96, bottom=0.08, top=0.94)
     
     # Panel (a): Enactment-Level Document Length Distributions (Log-Scale Density)
     ax1 = fig.add_subplot(gs[0])
@@ -285,7 +285,7 @@ def generate_dual_corpus_length_asymmetry_figure():
     bins = np.logspace(np.log10(300), np.log10(350000), 50)
     
     ax1.hist(nat_chars, bins=bins, density=True, alpha=0.35, color='#1f77b4', edgecolor='#1f77b4', linewidth=0.5, label='National Statutes ($N = 25,432$)')
-    ax1.hist(loc_chars, bins=bins, density=True, alpha=0.45, color='#28a745', edgecolor='#28a745', linewidth=0.5, label='Davao City Ordinances ($N = 1,664$)')
+    ax1.hist(loc_chars, bins=bins, density=True, alpha=0.45, color='#28a745', edgecolor='#28a745', linewidth=0.5, label='Davao City Ordinances ($N = 1,890$)')
     
     # Median vertical lines
     ax1.axvline(10807, color='#1f77b4', linestyle='-', linewidth=2.0, zorder=4)
@@ -334,10 +334,10 @@ def generate_dual_corpus_length_asymmetry_figure():
     ax2.plot(x_tok, nat_pdf, color='#1f77b4', linewidth=2.2, label='National Provisions ($N = 164,620$, Med: 122)')
     ax2.fill_between(x_tok, nat_pdf, color='#1f77b4', alpha=0.15)
     
-    ax2.plot(x_tok, kde_op(x_tok), color='#28a745', linewidth=2.2, label='Municipal Operative Provisions ($N = 8,160$, Med: 98)')
+    ax2.plot(x_tok, kde_op(x_tok), color='#28a745', linewidth=2.2, label='Municipal Operative Provisions ($N = 9,382$, Med: 98)')
     ax2.fill_between(x_tok, kde_op(x_tok), color='#28a745', alpha=0.15)
     
-    ax2.plot(x_tok, kde_bp(x_tok), color='#6f42c1', linewidth=1.8, linestyle='--', label='Municipal Boilerplate Sections ($N = 3,641$, Med: 72)')
+    ax2.plot(x_tok, kde_bp(x_tok), color='#6f42c1', linewidth=1.8, linestyle='--', label='Municipal Boilerplate Sections ($N = 4,286$, Med: 72)')
     
     # 512-Token Context Ceiling
     ax2.axvline(512, color='#d62728', linestyle=':', linewidth=2.0, zorder=5)
@@ -379,8 +379,8 @@ def generate_dual_corpus_length_asymmetry_figure():
 # -------------------------------------------------------------
 def generate_dual_corpus_transformer_compliance_figure():
     print("[3/3] Generating dual_corpus_transformer_compliance.png (Multi-Scale Context Windows)...")
-    fig = plt.figure(figsize=(15.2, 5.2), dpi=300)
-    gs = GridSpec(1, 2, width_ratios=[1.0, 1.25], wspace=0.30, left=0.07, right=0.98, bottom=0.13, top=0.88)
+    fig = plt.figure(figsize=(10.5, 9.0), dpi=300)
+    gs = GridSpec(2, 1, height_ratios=[1.0, 1.0], hspace=0.36, left=0.09, right=0.96, bottom=0.08, top=0.94)
     
     # Panel (a): Cumulative Token Compliance Curves (Empirical CDF)
     ax1 = fig.add_subplot(gs[0])
@@ -394,8 +394,8 @@ def generate_dual_corpus_transformer_compliance_figure():
     nat_cdf = lognorm.cdf(token_eval_points, s=s_nat, scale=122.0) * 100
     
     ax1.plot(token_eval_points, nat_cdf, label="National Provisions ($N = 164,620$)", color="#1f77b4", linewidth=2.2)
-    ax1.plot(token_eval_points, local_cdf_all, label="Municipal Provisions — All ($N = 11,801$)", color="#28a745", linewidth=2.2, linestyle="-.")
-    ax1.plot(token_eval_points, local_cdf_op, label="Municipal Provisions — Operative ($N = 8,160$)", color="#fd7e14", linewidth=2.0, linestyle="--")
+    ax1.plot(token_eval_points, local_cdf_all, label="Municipal Provisions — All ($N = 13,668$)", color="#28a745", linewidth=2.2, linestyle="-.")
+    ax1.plot(token_eval_points, local_cdf_op, label="Municipal Provisions — Operative ($N = 9,382$)", color="#fd7e14", linewidth=2.0, linestyle="--")
     
     # Vertical line at 512 tokens
     ax1.axvline(512, color="#d62728", linestyle=":", linewidth=1.8, zorder=4)
@@ -445,7 +445,7 @@ def generate_dual_corpus_transformer_compliance_figure():
     
     bars1 = ax2.bar(x - width/2, nat_rates, width, label='National Statutes (N = 164,620 Provisions)',
                     color='#1f77b4', edgecolor='#144870', linewidth=0.9, zorder=3)
-    bars2 = ax2.bar(x + width/2, mun_rates, width, label='Davao City Local Ordinances (N = 11,801 Provisions)',
+    bars2 = ax2.bar(x + width/2, mun_rates, width, label='Davao City Local Ordinances (N = 13,668 Provisions)',
                     color='#28a745', edgecolor='#1e6b1e', linewidth=0.9, zorder=3)
                     
     for bar in bars1:
