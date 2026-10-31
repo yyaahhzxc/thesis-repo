@@ -7,13 +7,13 @@
 \contentsline {lstlisting}{\numberline {3.7}Sample Evaluation Pair from the Ground Truth Benchmark Dataset}{117}{lstlisting.3.7}%
 \contentsline {lstlisting}{\numberline {3.8}Pseudocode of the Stage 1 Reciprocal Rank Fusion Hybrid Provision Retrieval Pipeline}{123}{lstlisting.3.8}%
 \contentsline {lstlisting}{\numberline {3.9}Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}{136}{lstlisting.3.9}%
-\contentsline {lstlisting}{\numberline {A.1}Lawphil Statutory Scraper and Provision Boundary Serializer}{218}{lstlisting.A.1}%
-\contentsline {lstlisting}{\numberline {B.1}Archival Scan Preprocessing and Contrast Enhancement}{219}{lstlisting.B.1}%
-\contentsline {lstlisting}{\numberline {B.2}Local 4-Bit VLM Inference Engine for Archival Extraction}{219}{lstlisting.B.2}%
-\contentsline {lstlisting}{\numberline {C.1}Ordinance Segmentation and Boilerplate Filtering}{221}{lstlisting.C.1}%
-\contentsline {lstlisting}{\numberline {D.1}Stage 1 Hybrid Retrieval Engine and RRF Fusion}{223}{lstlisting.D.1}%
-\contentsline {lstlisting}{\numberline {E.1}Stage 2 Cross-Encoder Inference and Calibrated Triage}{225}{lstlisting.E.1}%
-\contentsline {lstlisting}{\numberline {G.1}Corpus Preparation and Topic Modeling}{229}{lstlisting.G.1}%
-\contentsline {lstlisting}{\numberline {G.2}Stage 1 Retrieval Sweep and Recall Evaluation}{229}{lstlisting.G.2}%
-\contentsline {lstlisting}{\numberline {G.3}Cross-Encoder Fine-Tuning and Validation}{230}{lstlisting.G.3}%
-\contentsline {lstlisting}{\numberline {G.4}End-to-End System Audit and Verification}{230}{lstlisting.G.4}%
+\contentsline {lstlisting}{\numberline {A.1}Lawphil Statutory Scraper and Provision Boundary Serializer}{221}{lstlisting.A.1}%
+\contentsline {lstlisting}{\numberline {B.1}Archival Scan Preprocessing and Contrast Enhancement}{222}{lstlisting.B.1}%
+\contentsline {lstlisting}{\numberline {B.2}Local 4-Bit VLM Inference Engine for Archival Extraction}{222}{lstlisting.B.2}%
+\contentsline {lstlisting}{\numberline {C.1}Ordinance Segmentation and Boilerplate Filtering}{224}{lstlisting.C.1}%
+\contentsline {lstlisting}{\numberline {D.1}Stage 1 Hybrid Retrieval Engine and RRF Fusion}{226}{lstlisting.D.1}%
+\contentsline {lstlisting}{\numberline {E.1}Stage 2 Cross-Encoder Inference and Calibrated Triage}{228}{lstlisting.E.1}%
+\contentsline {lstlisting}{\numberline {G.1}Corpus Preparation and Topic Modeling}{232}{lstlisting.G.1}%
+\contentsline {lstlisting}{\numberline {G.2}Stage 1 Retrieval Sweep and Recall Evaluation}{232}{lstlisting.G.2}%
+\contentsline {lstlisting}{\numberline {G.3}Cross-Encoder Fine-Tuning and Validation}{233}{lstlisting.G.3}%
+\contentsline {lstlisting}{\numberline {G.4}End-to-End System Audit and Verification}{233}{lstlisting.G.4}%
