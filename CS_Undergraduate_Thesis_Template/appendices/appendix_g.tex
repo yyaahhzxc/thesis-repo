@@ -1,12 +1,12 @@
 % !TeX root = ../main.tex
-\chapter{Experimental Notebook Highlights}
+\chapter{Experimental Notebooks}
 \label{app:notebooks}
 
-\section{Notebook 01: Corpus Preparation and Topic Modeling}
+\section{Corpus Preparation and Topic Modeling}
 \label{sec:app_nb01}
 
-\begin{lstlisting}[language=Python, caption={Notebook 01: Dual Corpus Topic Modeling and Cluster Extraction}, label={lst:code_nb01_highlights}]
-# Notebook 01: Corpus Preparation and Topic Modeling
+\begin{lstlisting}[language=Python, caption={Corpus Preparation and Topic Modeling}, label={lst:code_nb01_highlights}]
+# Corpus Preparation and Topic Modeling
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import MiniBatchKMeans
@@ -25,11 +25,11 @@ df["cluster_id"] = kmeans.fit_predict(X_tfidf)
 print(f"Successfully clustered {len(df):,} provisions into {kmeans.n_clusters} clusters.")
 \end{lstlisting}
 
-\section{Notebook 02: Stage 1 Hybrid Retrieval Benchmarking}
+\section{Stage 1 Hybrid Retrieval Benchmarking}
 \label{sec:app_nb02}
 
-\begin{lstlisting}[language=Python, caption={Notebook 02: Stage 1 Retrieval Sweep and Recall@k Evaluation}, label={lst:code_nb02_highlights}]
-# Notebook 02: Stage 1 Hybrid Retrieval Evaluation
+\begin{lstlisting}[language=Python, caption={Stage 1 Retrieval Sweep and Recall Evaluation}, label={lst:code_nb02_highlights}]
+# Stage 1 Hybrid Retrieval Evaluation
 import numpy as np
 
 def evaluate_retrieval_recalls(retrieval_engine, benchmark_queries, k_values=[5, 10, 20, 50]):
@@ -49,11 +49,11 @@ def evaluate_retrieval_recalls(retrieval_engine, benchmark_queries, k_values=[5,
     return {f"Recall@{k}": f"{(hits / total) * 100:.2f}%" for k, hits in recall_results.items()}
 \end{lstlisting}
 
-\section{Notebook 03: Stage 2 Cross-Encoder Fine-Tuning and Ablation}
+\section{Stage 2 Cross-Encoder Fine-Tuning}
 \label{sec:app_nb03}
 
-\begin{lstlisting}[language=Python, caption={Notebook 03: Cross-Encoder Fine-Tuning and Validation Metrics}, label={lst:code_nb03_highlights}]
-# Notebook 03: Stage 2 Cross-Encoder Fine-Tuning Loop
+\begin{lstlisting}[language=Python, caption={Cross-Encoder Fine-Tuning and Validation}, label={lst:code_nb03_highlights}]
+# Stage 2 Cross-Encoder Fine-Tuning Loop
 from transformers import AutoModelForSequenceClassification, AdamW, get_linear_schedule_with_warmup
 from torch.utils.data import DataLoader
 
@@ -76,11 +76,11 @@ for epoch in range(5):
     print(f"Epoch {epoch+1}: Val Macro F1 = {val_macro_f1:.4f}, Conflict F1 = {val_conflict_f1:.4f}")
 \end{lstlisting}
 
-\section{Notebook 04: Full-Document System Stress Testing}
+\section{Full-Document System Stress Testing}
 \label{sec:app_nb04}
 
-\begin{lstlisting}[language=Python, caption={Notebook 04: End-to-End System Audit and Supreme Court Verification}, label={lst:code_nb04_highlights}]
-# Notebook 04: System-Level Full Document Evaluation
+\begin{lstlisting}[language=Python, caption={End-to-End System Audit and Verification}, label={lst:code_nb04_highlights}]
+# System-Level Full Document Evaluation
 def audit_complete_draft_ordinance(draft_pdf_path, pipeline):
     """Executes end-to-end audit: ingestion -> boilerplate filter -> retrieval -> NLI."""
     raw_sections = extract_folio_sections(draft_pdf_path)

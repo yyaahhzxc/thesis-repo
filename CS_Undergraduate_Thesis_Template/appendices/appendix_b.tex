@@ -1,11 +1,11 @@
 % !TeX root = ../main.tex
-\chapter{Archival OCR and VLM Pipeline Code}
+\chapter{Archival OCR and VLM Code}
 \label{app:code_ocr}
 
-\section{Image Enhancement and Deskewing Preprocessing}
+\section{Image Enhancement and Deskewing}
 \label{sec:app_code_image_prep}
 
-\begin{lstlisting}[language=Python, caption={Archival Scan Preprocessing and Contrast Enhancement (\texttt{scripts/ocr\_pipeline.py})}, label={lst:code_ocr_preprocessing}]
+\begin{lstlisting}[language=Python, caption={Archival Scan Preprocessing and Contrast Enhancement}, label={lst:code_ocr_preprocessing}]
 import cv2
 import numpy as np
 from PIL import Image
@@ -42,7 +42,7 @@ def preprocess_archival_scan(image_path: str) -> np.ndarray:
     return rotated
 \end{lstlisting}
 
-\section{Local 4-Bit Vision-Language Model Extraction Engine}
+\section{Vision-Language Model Extraction Engine}
 \label{sec:app_code_vlm_engine}
 
 \begin{lstlisting}[language=Python, caption={Local 4-Bit VLM Inference Engine for Archival Extraction}, label={lst:code_vlm_extractor}]

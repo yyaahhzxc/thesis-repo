@@ -1,8 +1,8 @@
 % !TeX root = ../main.tex
-\chapter{Neural Training Sweeps and Metrics}
+\chapter{Training Sweeps and Evaluation Logs}
 \label{app:extended_training_eval}
 
-\section{Exhaustive Hyperparameter Grid Search Logs}
+\section{Hyperparameter Sweep Logs}
 \label{sec:app_hyperparameter_grid_search}
 
 \begin{table}[htbp]
@@ -25,7 +25,7 @@
     \end{tabularx}
 \end{table}
 
-\section{Multi-Threshold Decision Sensitivity and Confusion Matrix}
+\section{Threshold Sensitivity and Confusion Matrix}
 \label{sec:app_threshold_sensitivity}
 
 \begin{table}[htbp]
@@ -52,23 +52,24 @@
 \begin{table}[htbp]
     \centering
     \small
+    \setlength{\tabcolsep}{14pt}
+    \renewcommand{\arraystretch}{1.1}
     \caption[Three-Class Confusion Matrix at Calibrated Threshold]{Three-Class Confusion Matrix at Calibrated Threshold $\tau^* = 0.45$ ($N = 350$)}
     \label{tab:app_optimal_confusion_matrix}
-    \begin{tabularx}{\linewidth}{ll>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+    \begin{tabular}{lccc}
         \toprule
-        & & \multicolumn{3}{c}{\textbf{Predicted Class}} \\
-        \cmidrule{3-5}
-        & & \textbf{Contradiction} & \textbf{Entailment} & \textbf{Neutral} \\
+        & \multicolumn{3}{c}{\textbf{Predicted Class}} \\
+        \cmidrule(lr){2-4}
+        \textbf{Actual Gold Class} & \textbf{Contradiction} & \textbf{Entailment} & \textbf{Neutral} \\
         \midrule
-        \multirow{3}{*}{\textbf{Actual Gold Class}} 
-        & \textbf{Contradiction} ($N=130$) & \textbf{121} & 2 & 7 \\
-        & \textbf{Entailment} ($N=110$)    & 4 & \textbf{101} & 5 \\
-        & \textbf{Neutral} ($N=110$)       & 4 & 6 & \textbf{100} \\
+        Contradiction ($N=130$) & \textbf{121} & 2 & 7 \\
+        Entailment ($N=110$)    & 4 & \textbf{101} & 5 \\
+        Neutral ($N=110$)       & 4 & 6 & \textbf{100} \\
         \bottomrule
-    \end{tabularx}
+    \end{tabular}
 \end{table}
 
-\section{Layerwise Attention Saliency Rollouts}
+\section{Attention Saliency Rollouts}
 \label{sec:app_attention_saliency_rollouts}
 
 Cross-layer attention rollouts in DeBERTa-v3 confirm that cross-attention heads concentrate high attribution scores on operative legal verbs (\texttt{prohibit}, \texttt{shall not}), numerical fine magnitudes (\texttt{P10,000.00} vs.~\texttt{P5,000.00}), and jurisdictional keywords (\texttt{exclusive}, \texttt{preempted}), validating that predictions reflect genuine semantic conflict rather than lexical artifacts.

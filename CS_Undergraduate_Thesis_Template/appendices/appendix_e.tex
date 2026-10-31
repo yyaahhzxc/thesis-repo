@@ -1,11 +1,11 @@
 % !TeX root = ../main.tex
-\chapter{Conflict Inference Pipeline Code}
+\chapter{Conflict Inference Code}
 \label{app:code_inference}
 
-\section{Cross-Encoder Inference and Cost-Sensitive Threshold Calibration}
+\section{Cross-Encoder Inference Engine}
 \label{sec:app_code_cross_encoder}
 
-\begin{lstlisting}[language=Python, caption={Stage 2 Cross-Encoder Inference and Calibrated Triage (\texttt{src/inference.py})}, label={lst:code_stage2_inference}]
+\begin{lstlisting}[language=Python, caption={Stage 2 Cross-Encoder Inference and Calibrated Triage}, label={lst:code_stage2_inference}]
 import torch
 import torch.nn.functional as F
 from typing import List, Dict, Tuple

@@ -1,11 +1,11 @@
 % !TeX root = ../main.tex
-\chapter{Candidate Retrieval Engine Code}
+\chapter{Candidate Retrieval Code}
 \label{app:code_retrieval}
 
-\section{Hybrid Sparse-Dense Search and Reciprocal Rank Fusion}
+\section{Hybrid Retrieval and Rank Fusion}
 \label{sec:app_code_hybrid_rrf}
 
-\begin{lstlisting}[language=Python, caption={Stage 1 Hybrid Retrieval Engine and RRF Fusion (\texttt{src/retrieval.py})}, label={lst:code_stage1_retrieval}]
+\begin{lstlisting}[language=Python, caption={Stage 1 Hybrid Retrieval Engine and RRF Fusion}, label={lst:code_stage1_retrieval}]
 import numpy as np
 from typing import List, Dict
 from rank_bm25 import BM25Okapi

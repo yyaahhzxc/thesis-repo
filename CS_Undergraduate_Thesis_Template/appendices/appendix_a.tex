@@ -2,20 +2,20 @@
 \addtocontents{toc}{\protect\clearpage}
 \pdfbookmark[0]{Appendices}{appendices_bookmark}
 \addtocontents{toc}{\protect\contentsline{chapter}{Appendices}{\thepage}{appendix}}
-\chapter{Statutory Scraping and Package Manifest}
+\chapter{Dependencies and Scraping Code}
 \label{app:code_ingestion}
 
-\section{Software Environment and Package Import Manifest}
+\section{Software Dependencies and Imports}
 \label{sec:app_package_manifest}
 
 \begin{table}[htbp]
     \centering
-    \footnotesize
-    \setlength{\tabcolsep}{4.0pt}
-    \renewcommand{\arraystretch}{0.92}
+    \scriptsize
+    \setlength{\tabcolsep}{3.5pt}
+    \renewcommand{\arraystretch}{0.90}
     \caption[Python Package Dependencies and Import Manifest]{Python Package Dependencies and Import Manifest Across the Project Codebase}
     \label{tab:app_package_manifest}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash\ttfamily}p{3.0cm}>{\centering\arraybackslash}p{1.7cm}>{\RaggedRight\arraybackslash}p{4.2cm}>{\RaggedRight\arraybackslash}X}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash\ttfamily}p{2.8cm}>{\centering\arraybackslash}p{1.4cm}>{\RaggedRight\arraybackslash}p{3.8cm}>{\RaggedRight\arraybackslash}X}
         \toprule
         \textbf{Package} & \textbf{Verified} & \textbf{Primary Module / Function} & \textbf{Architectural Role in Pipeline} \\
         \midrule
@@ -36,15 +36,26 @@
         requests & $\ge 2.31.0$ & \texttt{requests.Session} & Resilient HTTP crawler with exponential backoff and retries. \\
         matplotlib & $\ge 3.7.0$ & \texttt{matplotlib.pyplot} & Publication figure generation and validation loss plotting. \\
         plotly & $\ge 5.18.0$ & \texttt{plotly.graph\_objects} & Interactive multi-dimensional statutory cluster visualizations. \\
-        streamlit & $\ge 1.29.0$ & \texttt{streamlit} & Offline single-page web prototype user interface and XAI cards. \\
+        flask & $\ge 3.0.0$ & \texttt{flask.Flask}, \texttt{flask.Response} & Local offline HTTP decision-support prototype backend server. \\
+        streamlit & $\ge 1.29.0$ & \texttt{streamlit} & Interactive data exploration and cluster visualization prototype. \\
+        reportlab & $\ge 4.0.0$ & \texttt{reportlab.platypus} & Authentic Philippine Folio legal PDF document compilation. \\
+        python-docx & $\ge 1.1.0$ & \texttt{docx.Document} & Administrative letter and evaluator codebook formatting. \\
+        openpyxl & $\ge 3.1.0$ & \texttt{openpyxl.load\_workbook} & Excel-based multi-rater annotation workbook compilation. \\
+        bertopic & $\ge 0.16.0$ & \texttt{bertopic.BERTopic} & Unsupervised legal domain discovery and semantic modeling. \\
+        hdbscan & $\ge 0.8.33$ & \texttt{hdbscan.HDBSCAN} & Density-based provision clustering across latent embeddings. \\
+        umap-learn & $\ge 0.5.5$ & \texttt{umap.UMAP} & Non-linear dimensionality reduction for provision visualization. \\
+        qwen-vl-utils & $\ge 0.0.8$ & \texttt{process\_vision\_info} & High-resolution vision token processing for Qwen2.5-VL inference. \\
         \bottomrule
     \end{tabularx}
 \end{table}
 
-\section{Autonomous Statutory Scraper and Provision Chunking Code}
+\noindent\textbf{Standard Library Dependencies:} In addition to the third-party libraries listed in Table~\ref{tab:app_package_manifest}, the pipeline scripts and evaluation notebooks rely on core Python built-in modules including \texttt{os}, \texttt{sys}, \texttt{re}, \texttt{json}, \texttt{time}, \texttt{math}, \texttt{glob}, \texttt{shutil}, \texttt{subprocess}, \texttt{argparse}, \texttt{urllib.parse}, \texttt{datetime}, \texttt{collections}, \texttt{pathlib}, \texttt{typing}, \texttt{logging}, \texttt{random}, \texttt{itertools}, \texttt{io}, \texttt{csv}, \texttt{hashlib}, \texttt{threading}, and \texttt{queue}.
+
+\clearpage
+\section{Statutory Scraper and Boundary Parser}
 \label{sec:app_code_scraping}
 
-\begin{lstlisting}[language=Python, caption={Lawphil Statutory Scraper and Provision Boundary Serializer (\texttt{scripts/scrape\_lawphil.py})}, label={lst:code_scraper_lawphil}]
+\begin{lstlisting}[language=Python, caption={Lawphil Statutory Scraper and Provision Boundary Serializer}, label={lst:code_scraper_lawphil}]
 import os
 import re
 import json
@@ -58,24 +69,13 @@ class LawphilStatutoryScraper:
     BASE_URL = "https://lawphil.net/"
     USER_AGENT = "AcademicResearch-LegalNLP-AdDU/1.0"
 
-    def __init__(self, output_file="data/national_statutes.jsonl"):
-        self.output_file = output_file
+    def __init__(self, output_dir="data/raw_statutes"):
+        self.output_dir = output_dir
         self.session = requests.Session()
         self.session.headers.update({"User-Agent": self.USER_AGENT})
+        os.makedirs(output_dir, exist_ok=True)
 
-    def fetch_statute(self, relative_url, statute_type, statute_num):
-        """Fetches and parses a single statute HTML document."""
-        full_url = urljoin(self.BASE_URL, relative_url)
-        response = self.session.get(full_url, timeout=15)
-        response.raise_for_status()
-        
-        soup = BeautifulSoup(response.content, "html.parser")
-        main_content = soup.find("td", {"valign": "top"}) or soup.find("div", {"id": "content"})
-        raw_text = main_content.get_text(separator="\n") if main_content else soup.get_text()
-        
-        return self.parse_provisions(raw_text, statute_type, statute_num, full_url)
-
-    def parse_provisions(self, text, statute_type, statute_num, source_url):
+    def extract_provisions(self, text, statute_type, statute_num):
         """Extracts substantive sections while maintaining structural hierarchy."""
         lines = [line.strip() for line in text.split("\n") if line.strip()]
         title = lines[0] if lines else f"{statute_type} {statute_num}"
@@ -85,7 +85,7 @@ class LawphilStatutoryScraper:
         provisions = []
         current_sec = None
         current_body = []
-
+        
         for line in lines:
             match = sec_pattern.match(line)
             if match:
@@ -93,30 +93,19 @@ class LawphilStatutoryScraper:
                     provisions.append({
                         "section_id": f"{statute_type}_{statute_num}_S{current_sec}",
                         "section_num": current_sec,
-                        "statutory_text": " ".join(current_body).strip()
+                        "text": " ".join(current_body)
                     })
                 current_sec = match.group(2)
                 current_body = [match.group(3)] if match.group(3) else []
             elif current_sec:
                 current_body.append(line)
-
+                
+        # Append final boundary
         if current_sec and current_body:
             provisions.append({
                 "section_id": f"{statute_type}_{statute_num}_S{current_sec}",
                 "section_num": current_sec,
-                "statutory_text": " ".join(current_body).strip()
+                "text": " ".join(current_body)
             })
-
-        return {
-            "statute_id": f"{statute_type}_{statute_num}",
-            "statute_title": title,
-            "source_url": source_url,
-            "provisions": provisions
-        }
-
-    def serialize_jsonl(self, records):
-        """Streams unpolluted statutory records to JSON Lines format."""
-        with open(self.output_file, "a", encoding="utf-8") as f:
-            for rec in records:
-                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        return provisions
 \end{lstlisting}

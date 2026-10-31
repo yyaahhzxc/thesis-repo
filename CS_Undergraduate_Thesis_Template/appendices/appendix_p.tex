@@ -1,9 +1,11 @@
 % !TeX root = ../main.tex
-\chapter{Statutory Macro Domain Dictionaries}
+\chapter{Domain Keyword Dictionaries}
 \label{app:corpus_census_typology}
 
-\section{Consolidated Macro Legal Domain Dictionaries}
+\section{Macro Legal Domain Keywords}
 \label{sec:app_macro_domain_dictionaries}
+
+This section lists the top discriminative legal keywords and phrasal tokens across the eight macro legal domains derived via class-based term frequency-inverse document frequency ($c\text{-}\mathrm{TF}\text{-}\mathrm{IDF}$).
 
 \begin{table}[htbp]
     \centering
@@ -32,8 +34,3 @@
         \bottomrule
     \end{tabularx}
 \end{table}
-
-\section{Provision-Level Token Compliance Distribution}
-\label{sec:app_token_length_compliance}
-
-Analysis of the 176,421 searchable provisions demonstrates that \textbf{94.69\% of Davao City ordinance provisions} and \textbf{92.14\% of national statutory provisions} fall strictly within the 512-token sequence limit of modern transformer encoders without requiring textual truncation. The median provision length is 68 tokens, with the 90th percentile reaching 218 tokens.

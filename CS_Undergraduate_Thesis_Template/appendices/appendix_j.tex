@@ -1,112 +1,108 @@
 % !TeX root = ../main.tex
-\chapter{Ground Truth Evaluation Questionnaires}
+\chapter[Evaluation Questionnaire]{Consistency Evaluation Questionnaire}
 \label{app:usability_instruments}
 
-This appendix provides the complete digital evaluation instrument deployed to Sangguniang Panlungsod legal researchers, reformatted in \LaTeX\ from the official Google Forms questionnaire, including the Data Privacy disclosure, evaluator profile allocation, the pairwise evaluation response structure, and post-interaction usability surveys.
+This appendix presents the digital evaluation instrument administered to Sangguniang Panlungsod legal researchers, transcribed from the Google Forms questionnaire. The instrument includes the introductory statement, the data privacy terms, evaluator demographic details, and the pairwise evaluation response structure.
 
-\section{Institutional Statement and Informed Consent (R.A. 10173)}
-\label{sec:app_gforms_consent}
+\vspace{1em}
+\hrule
+\vspace{1em}
 
 \begin{center}
-    \textbf{SP Davao City --- Legal Consistency Ground Truth Evaluation}\\
-    \small Ateneo de Davao University $\cdot$ Department of Computer Science
+    \textbf{\large SP Davao City -- Legal Consistency Ground Truth Evaluation}
 \end{center}
 
 \vspace{0.5em}
-\noindent\textbf{Research Context:} Under Republic Act No.~7160 and the landmark \textit{Magtajas v. Pryce Properties} doctrine, local ordinances cannot contradict national statutes. To assist Second Reading legislative reviews, this study develops an automated screening tool to flag candidate legal conflicts in draft Davao City ordinances before enactment. As Sangguniang Panlungsod legal researchers, your independent professional ratings serve as the authoritative ground truth benchmark to evaluate model accuracy.
+\noindent\textbf{Introductory Statement}
+
+\noindent Magis Greetings!
+
+\noindent We are Ralph Paolo Dulce and Yahyah Odin, senior Computer Science students from Ateneo de Davao University, under the advisory of Mr. Adrian ``Ogs'' Ablazo and course guidance of Ma'am Grace Tacadao. In institutional coordination with the Sangguniang Panlungsod of Davao City, we are conducting our undergraduate thesis entitled: \textit{``A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference.''}
 
 \vspace{0.5em}
-\noindent\textbf{Data Privacy Notice (Republic Act No.~10173):}
-\begin{enumerate}
-    \item \textbf{Statutory Compliance and Oversight:} In strict compliance with Republic Act No.~10173 (The Data Privacy Act of 2012) and the ethical standards of the Ateneo de Davao University Research Ethics Committee, this study guarantees full confidentiality, privacy, and intellectual integrity.
-    \item \textbf{Purpose and Scope:} All submitted ratings (Contradiction, Entailment, Neutral) are collected strictly for academic benchmarking within this undergraduate thesis.
-    \item \textbf{Evaluator Anonymization:} Evaluations are analyzed in aggregate (\textit{e.g.}, domain accuracy, inter-rater reliability). Evaluators are assigned alphanumeric tokens (\texttt{SP-ANN-01} to \texttt{SP-ANN-15}). Name submission is optional and used solely for issuing official Certificates of Contribution for Civil Service 201 records.
-    \item \textbf{Voluntary Participation:} Participation is voluntary. Evaluators may skip items or withdraw at any stage without prejudice to their institutional standing.
-    \item \textbf{Data Retention:} Raw responses are stored in encrypted institutional repositories accessible solely to the student proponents and their thesis adviser, and retained only for thesis defense verification.
+\noindent\textbf{Purpose and Your Role:} Under RA 7160 and the \textit{Magtajas v. Pryce} doctrine, local ordinances cannot contradict national statutes. To aid Second Reading legislative review, our study develops an automated screening tool to flag potential conflicts in proposed Davao City Ordinances against national laws and enacted city ordinances before enactment. As SP legal researchers, your independent legal judgments serve as the authoritative gold standard, or essentially the answer key, to benchmark our system's accuracy.
+
+\vspace{0.5em}
+\noindent\textbf{Workload:} You are reviewing ONE batch of 70 short provision pairs (taking approximately 60 minutes). You will NOT be asked to review the full 350-item dataset. We deeply appreciate your valuable time, legal expertise, and service in supporting this research. Your insights will directly contribute to advancing data-driven decision support tools tailored to the legislative review workflow of the Davao City Council.
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\noindent\textbf{Data Privacy Notice \& Informed Consent (R.A. 10173)}
+
+\noindent Please read the ethical guidelines and data privacy terms governing this research evaluation:
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=4pt]
+    \item \textbf{Statutory Compliance \& Institutional Oversight:} In strict compliance with Republic Act No.~10173 (The Data Privacy Act of 2012), its Implementing Rules and Regulations, and the ethical standards of the Ateneo de Davao University Research Ethics Committee, this study guarantees the full confidentiality, privacy, and intellectual integrity of your responses.
+    \item \textbf{Purpose \& Scope of Data Collection:} All collected data, including your professional background and legal ratings (Contradiction, Entailment, Neutral), will be utilized exclusively for academic research within this undergraduate thesis to benchmark the detection accuracy and inter-rater reliability of an automated statutory conflict screening system.
+    \item \textbf{Strict Confidentiality \& Evaluator Anonymization:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item \textit{Anonymized Analysis:} All evaluations will be analyzed and presented strictly in aggregate form (e.g., domain accuracy rates, confusion matrices). No individual response will ever be singled out or publicly attributed to any researcher.
+        \item \textit{Coded Identifiers:} For statistical tracking across the 350-pair benchmark, your responses will be processed using an anonymized alphanumeric identifier (e.g., Evaluator-01 to Evaluator-15).
+        \item \textit{Voluntary Name Provision:} Providing your name in the subsequent demographic section is purely OPTIONAL. If provided, your name will be used strictly by the proponents and faculty to generate a Certificate of Contribution and Commendation endorsed for inclusion in your Civil Service 201 personnel records. If you choose to leave the name field blank, your evaluation will remain completely anonymous.
+    \end{itemize}
+    \item \textbf{Voluntary Participation \& Right to Withdraw:} Your participation in this evaluation is entirely voluntary. You may pause, skip any question, or withdraw from this study at any stage without incurring any administrative, professional, or employment-related consequences, and without prejudice to your standing at the Sangguniang Panlungsod of Davao City.
+    \item \textbf{Data Retention \& Security Safeguards:} All raw submission data will be securely stored within password-protected, encrypted institutional storage accessible solely to the thesis proponents and their academic adviser. Data will be retained only for the duration required for thesis defense and institutional archiving, after which any identifying administrative logs will be permanently deleted.
 \end{enumerate}
 
-\noindent\fbox{\parbox{0.97\linewidth}{\textbf{Informed Consent Checkbox:}\\[2pt]
-$\Box$ \textit{I confirm that I am an active legal researcher or legislative staff member at the Sangguniang Panlungsod of Davao City; I have read and understood this Data Privacy Disclosure; and I freely consent to participate as a domain expert evaluator.}}}
+\vspace{0.5em}
+\noindent\fbox{\parbox{0.97\linewidth}{\textbf{Informed Consent Checkbox:}\\[3pt]
+$\Box$ \textit{I agree and consent to the statement above.}\\[2pt]
+\small By selecting the checkbox, you confirm that: (1) you are an active legal researcher, committee staff member, or legislative officer at the Sangguniang Panlungsod of Davao City; (2) you have read and understood the terms of this Data Privacy and Ethics Disclosure; and (3) you freely and voluntarily consent to participate as a domain expert evaluator for this research study.}}
 
-\section{Evaluator Profile and Panel Allocation}
-\label{sec:app_gforms_profile}
+\vspace{1em}
+\hrule
+\vspace{1em}
 
-\begin{enumerate}
-    \item \textbf{Full Name (Optional):} \underline{\hspace{8cm}}
+\noindent\textbf{Evaluator Details and Assignment}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=5pt]
+    \item \textbf{Full Name (Optional):} \underline{\hspace{8.5cm}}
     \item \textbf{Highest Educational Attainment (Required):}
-    \begin{itemize}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
         \item[$\bigcirc$] Member of the Philippine Bar (Admitted / Roll of Attorneys)
         \item[$\bigcirc$] Juris Doctor (J.D.) / Bachelor of Laws (LL.B.)
-        \item[$\bigcirc$] Postgraduate / Master's Degree (\textit{e.g.}, MPA, LL.M.)
-        \item[$\bigcirc$] Bachelor's Degree (\textit{e.g.}, Political Science, Legal Management, Philosophy)
+        \item[$\bigcirc$] Postgraduate / Master's Degree (e.g., Master in Public Administration, LL.M.)
+        \item[$\bigcirc$] Bachelor's Degree (e.g., Political Science, Legal Management, Philosophy, etc.)
     \end{itemize}
-    \item \textbf{Years of Legislative / Legal Experience (Required):} \underline{\hspace{4cm}}
-    \item \textbf{Assigned Evaluation Panel (Pre-Allocated 70-Item Workload):}
-    \begin{itemize}
-        \item[$\bigcirc$] \texttt{SP-ANN-01} to \texttt{SP-ANN-03} (Panel A: Items GT-001 to GT-070)
-        \item[$\bigcirc$] \texttt{SP-ANN-04} to \texttt{SP-ANN-06} (Panel B: Items GT-071 to GT-140)
-        \item[$\bigcirc$] \texttt{SP-ANN-07} to \texttt{SP-ANN-09} (Panel C: Items GT-141 to GT-210)
-        \item[$\bigcirc$] \texttt{SP-ANN-10} to \texttt{SP-ANN-12} (Panel D: Items GT-211 to GT-280)
-        \item[$\bigcirc$] \texttt{SP-ANN-13} to \texttt{SP-ANN-15} (Panel E: Items GT-281 to GT-350)
+    \item \textbf{Years of Legislative / Legal Experience (Required):} \underline{\hspace{4.5cm}}\\
+    \small\textit{Number of years in legislative drafting, statutory research, ordinance codification, committee review, etc.}
+    \item \textbf{Automated Workload Assignment (Pre-Allocated 70-Item Workload):}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item[$\bigcirc$] SP-ANN-01 to SP-ANN-03 (Panel A: Items GT-001 to GT-070)
+        \item[$\bigcirc$] SP-ANN-04 to SP-ANN-06 (Panel B: Items GT-071 to GT-140)
+        \item[$\bigcirc$] SP-ANN-07 to SP-ANN-09 (Panel C: Items GT-141 to GT-210)
+        \item[$\bigcirc$] SP-ANN-10 to SP-ANN-12 (Panel D: Items GT-211 to GT-280)
+        \item[$\bigcirc$] SP-ANN-13 to SP-ANN-15 (Panel E: Items GT-281 to GT-350)
     \end{itemize}
 \end{enumerate}
 
-\section{Pairwise Consistency Evaluation Instrument}
-\label{sec:app_gforms_items}
+\vspace{1em}
+\hrule
+\vspace{1em}
 
-Each evaluation prompt presents an authentic controlling national statute provision alongside a corresponding Davao City municipal ordinance clause. Evaluators are instructed to read both provisions carefully and submit two independent ratings per pair:
+\noindent\textbf{Pairwise Consistency Evaluation Item Structure}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+\noindent For each assigned item, evaluators read the Controlling National Statute provision and the corresponding Davao City Ordinance provision, then answer the following two standard questions:
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=6pt]
     \item \textbf{Question 1: Legal Consistency Decision (Required):}\\
-    Select the legal relationship between the national statute (Premise) and the municipal provision (Hypothesis):
+    \textit{Mark only one oval.}
     \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-        \item[$\bigcirc$] \textbf{Contradiction} (Direct Legal Conflict / Ultra Vires Overreach / Violates Statutory Preemption)
-        \item[$\bigcirc$] \textbf{Entailment} (Substantive Harmony / Direct Municipal Execution of Statutory Mandate)
-        \item[$\bigcirc$] \textbf{Neutral} (Independent Regulatory Scope / Non-Intersecting Administrative Domain)
+        \item[$\bigcirc$] Contradiction (Legal Conflict / Exceeds Authority)
+        \item[$\bigcirc$] Entailment (Complies With / Directly Executes)
+        \item[$\bigcirc$] Neutral (Independent / Unrelated Subject Matter)
     \end{itemize}
     \item \textbf{Question 2: Confidence Rating (Required):}\\
-    Indicate your professional certainty in the legal consistency classification selected above:\\
-    \vspace{2pt}
-    $\bigcirc$ \textbf{1 --- Low Confidence} (Ambiguous statutory authority / Highly debatable interpretation)\\[2pt]
-    $\bigcirc$ \textbf{2 --- Moderate Confidence} (Clear statutory text with minor contextual nuance)\\[2pt]
-    $\bigcirc$ \textbf{3 --- High Confidence} (Direct textual contradiction or verbatim alignment; clear precedent)
+    \textit{Mark only one oval.}
+    \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+        \item[$\bigcirc$] 1 - Low
+        \item[$\bigcirc$] 2
+        \item[$\bigcirc$] 3 - High
+    \end{itemize}
 \end{enumerate}
 
-\vspace{0.5em}
-\noindent\fbox{\parbox{0.97\linewidth}{\textbf{Evaluated Pairwise Corpus Cross-Reference:}\\[2pt]
-To preserve visual clarity and allow direct comparative analysis, the complete verbatim inventory of all 350 evaluated statutory-ordinance text pairs administered through this questionnaire across Panels A through E (Items GT-001 to GT-350) is compiled in Appendix~\ref{app:ground_truth_inventory}. In Appendix~\ref{app:ground_truth_inventory}, each evaluation item is presented in a two-column side-by-side format contrasting the controlling national statutory provision (Premise) against the Davao City municipal ordinance provision (Hypothesis). Each item corresponds directly to the sequential evaluation prompts administered via this instrument.}}
-
-\section{System Usability and Technology Acceptance Survey}
-\label{sec:app_gforms_tam_sus}
-
-Following the completion of the 70-pair consistency evaluation workload and interaction with the offline prototype demonstration, legal researchers complete the standardized Post-Interaction Usability and Technology Acceptance Survey presented in Table~\ref{tab:app_tam_sus_items}. The survey incorporates the ten-item System Usability Scale (SUS)~\cite{brooke1996sus} and a four-item Technology Acceptance Model (TAM) construct~\cite{davis1989perceived} evaluated on a 5-point Likert scale (1 = Strongly Disagree to 5 = Strongly Agree).
-
-\begin{table}[htbp]
-    \centering
-    \footnotesize
-    \setlength{\tabcolsep}{4.0pt}
-    \renewcommand{\arraystretch}{0.92}
-    \caption[Post-Interaction Usability and Technology Acceptance Survey]{Post-Interaction Usability (SUS) and Technology Acceptance (TAM) Survey Items}
-    \label{tab:app_tam_sus_items}
-    \begin{tabularx}{\linewidth}{>{\bfseries}p{1.4cm}>{\RaggedRight\arraybackslash}p{2.8cm}>{\RaggedRight\arraybackslash}X}
-        \toprule
-        \textbf{Item ID} & \textbf{Evaluation Construct} & \textbf{Survey Statement (5-Point Likert: Strongly Disagree to Strongly Agree)} \\
-        \midrule
-        SUS-01 & Usability: Frequency & I think that I would like to use this conflict detection system frequently during First Reading reviews. \\
-        SUS-02 & Usability: Complexity & I found the conflict detection interface unnecessarily complex. \\
-        SUS-03 & Usability: Ease of Use & I thought the single-page prototype was easy to use. \\
-        SUS-04 & Usability: Support Need & I think that I would need the support of a technical person to be able to use this system. \\
-        SUS-05 & Usability: Integration & I found the various functions in this system were well integrated. \\
-        SUS-06 & Usability: Consistency & I thought there was too much inconsistency in this system. \\
-        SUS-07 & Usability: Learnability & I would imagine that most legal researchers would learn to use this system very quickly. \\
-        SUS-08 & Usability: Cumbersome & I found the document ingestion and candidate review process very cumbersome to use. \\
-        SUS-09 & Usability: Confidence & I felt very confident using the calibrated conflict risk meter and XAI cards. \\
-        SUS-10 & Usability: Overhead & I needed to learn a lot of things before I could get going with this system. \\
-        \midrule
-        TAM-01 & Perceived Usefulness & Using this system enhances my productivity when auditing draft ordinances against national codes. \\
-        TAM-02 & Perceived Usefulness & The side-by-side verbatim text cards make it easier to pinpoint statutory preemption issues. \\
-        TAM-03 & Perceived Ease of Use & Learning to operate the offline decision-support tool was clear and understandable. \\
-        TAM-04 & Behavioral Intention & Assuming access within the SP intranet, I would recommend integrating this tool into committee review. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\vspace{1em}
+\noindent\fbox{\parbox{0.97\linewidth}{\textbf{Cross-Reference to Evaluated Text Pairs:}\\[3pt]
+The complete inventory of all 350 statutory-ordinance text pairs administered through this questionnaire across Panels A through E (Items GT-001 to GT-350) is presented in Appendix~\ref{app:ground_truth_inventory}, accompanied by the adviser-approved gold answer key.}}
