@@ -1,3 +1,95 @@
 % !TeX root = ../main.tex
 \chapter{Prototype Dashboard Architecture}
 \label{app:prototype_dashboard}
+
+This appendix presents the user interface and interaction architecture of the functional decision-support prototype developed for ex-ante ordinance conflict detection. Designed for legislative researchers and legal staff at the Sangguniang Panlungsod of Davao City, the prototype translates the two-stage machine learning pipeline (Stage~1 hybrid retrieval and Stage~2 Cross-Encoder natural language inference) into an accessible, single-page web dashboard. The prototype is implemented with a lightweight Python Flask backend delivering asynchronous Server-Sent Events (SSE) and a responsive client-side interface styled in official Ateneo and city legislative maroon (\texttt{\#7F2723}) branding.
+
+\section{Overview and Operational Workflow}
+\label{sec:app_h_overview}
+
+The web interface operationalizes the ex-ante conflict detection workflow through four primary views: the default draft ingestion workspace, real-time scanning overlay, substantive conflict triage summary, and the top-50 statutory candidate transparency table. Figure~\ref{fig:prototype_scan_landing} illustrates the primary landing interface presented to legislative staff upon accessing the system.
+
+\begin{figure}[!htbp]
+    \centering
+    \IfFileExists{figs/prototype_scan_landing.png}{%
+        \includegraphics[width=0.92\linewidth]{figs/prototype_scan_landing.png}%
+    }{%
+        \fbox{\parbox{0.90\linewidth}{\centering\vspace{36pt}\textbf{[Screenshot: Draft Ordinance Ingestion Workspace]}\\\vspace{12pt}\small Save browser capture of the default landing workspace to \texttt{figs/prototype\_scan\_landing.png}\vspace{36pt}}}%
+    }
+    \caption[Draft Ordinance Ingestion Workspace]{Draft Ordinance Ingestion Workspace (Scan Ordinance View)}
+    \label{fig:prototype_scan_landing}
+\end{figure}
+
+The landing interface features a prominent drag-and-drop upload zone that accepts digital-born drafts in searchable PDF, scanned physical pages, and plaintext formats (\texttt{.pdf}, \texttt{.txt}, \texttt{.json}). Upon document ingestion, client-side JavaScript initiates an asynchronous multipart POST request to the \texttt{/api/audit-document-stream} backend endpoint, establishing an active EventSource stream to report per-section chunking, candidate scanning, and cross-attention tensor evaluation progress in real time.
+
+\section{Substantive Conflict Summary and Decision Gauge}
+\label{sec:app_h_results}
+
+Following pipeline execution, the dashboard automatically transitions to the summary of results view, displaying the total number of flagged legal conflicts alongside operative section breakdowns. Figure~\ref{fig:prototype_results_summary} displays the primary results banner and the calibrated decision gauge.
+
+\begin{figure}[!htbp]
+    \centering
+    \IfFileExists{figs/prototype_results_summary.png}{%
+        \includegraphics[width=0.92\linewidth]{figs/prototype_results_summary.png}%
+    }{%
+        \fbox{\parbox{0.90\linewidth}{\centering\vspace{36pt}\textbf{[Screenshot: Audit Results and Conflict Detection Summary]}\\\vspace{12pt}\small Save browser capture of the results overview to \texttt{figs/prototype\_results\_summary.png}\vspace{36pt}}}%
+    }
+    \caption[Audit Results and Conflict Detection Summary]{Audit Results and Conflict Detection Summary View}
+    \label{fig:prototype_results_summary}
+\end{figure}
+
+As depicted in Figure~\ref{fig:prototype_results_summary}, the results view synthesizes the full-document triage verdict through a bold summary badge. Directly within the conflict card body, the system presents an interactive Confidence Rate gauge featuring a continuous progress track, the empirical decision threshold line ($\tau^* = 0.45$), and an explicit status indicator denoting whether the evaluated clause exceeds the preemption risk ceiling.
+
+\section{Dual-Accordion Comparative Provision Inspection}
+\label{sec:app_h_accordions}
+
+To ensure complete legal transparency and avoid black-box decision making, each detected preemption risk is presented within an expandable comparative accordion. Figure~\ref{fig:prototype_conflict_accordion} illustrates the expanded inspection view comparing authentic statutory text against the proposed draft ordinance.
+
+\begin{figure}[!htbp]
+    \centering
+    \IfFileExists{figs/prototype_conflict_accordion.png}{%
+        \includegraphics[width=0.92\linewidth]{figs/prototype_conflict_accordion.png}%
+    }{%
+        \fbox{\parbox{0.90\linewidth}{\centering\vspace{36pt}\textbf{[Screenshot: Expanded Conflict Accordion with Verbatim Statutory Comparison]}\\\vspace{12pt}\small Save browser capture of the expanded accordion to \texttt{figs/prototype\_conflict\_accordion.png}\vspace{36pt}}}%
+    }
+    \caption[Expanded Conflict Accordion and Provision Comparison]{Expanded Conflict Accordion with Verbatim Statutory Comparison}
+    \label{fig:prototype_conflict_accordion}
+\end{figure}
+
+Within the expanded accordion body, operative legal text is organized into two side-by-side dropdown cards: the controlling superior national statute (or existing Davao City ordinance in horizontal audits) and the proposed draft clause. In strict accordance with the Zero Editorial Pollution Protocol, the text rendered in each card is 100\% verbatim authentic text directly extracted from official repositories (e.g., Section~458(a)(1)(iii) of Republic Act No.~7160 governing municipal penalty ceilings). Each comparative card functions as an independent collapsible dropdown, allowing legislative researchers to minimize individual boxes during review of long, multi-paragraph enactments.
+
+\section{Top-50 Statutory Candidate Shortlist and Governance Filter}
+\label{sec:app_h_shortlist}
+
+Directly below the primary conflict accordions, the interface provides a dedicated transparency table enumerating the Top-50 Candidate Laws retrieved by Stage~1 across the 176,421-provision dual statutory knowledge base. Figure~\ref{fig:prototype_candidate_shortlist} illustrates the candidate shortlist table.
+
+\begin{figure}[!htbp]
+    \centering
+    \IfFileExists{figs/prototype_candidate_shortlist.png}{%
+        \includegraphics[width=0.92\linewidth]{figs/prototype_candidate_shortlist.png}%
+    }{%
+        \fbox{\parbox{0.90\linewidth}{\centering\vspace{36pt}\textbf{[Screenshot: Top-50 Statutory Candidate Shortlist Table]}\\\vspace{12pt}\small Save browser capture of the paginated candidate table to \texttt{figs/prototype\_candidate\_shortlist.png}\vspace{36pt}}}%
+    }
+    \caption[Top-50 Statutory Candidate Shortlist Table]{Top-50 Statutory Candidate Shortlist Table with Pagination and Jurisdiction Filter}
+    \label{fig:prototype_candidate_shortlist}
+\end{figure}
+
+The candidate shortlist table features interactive jurisdiction filtering (All Jurisdictions, National Statutes, and Davao City Ordinances), dynamic page-size selection (10, 20, or 50 records per page), and responsive pagination. Each candidate entry presents the retrieval rank, statutory citation, unabridged title, hybrid Stage~1 similarity score, and a direct hyperlink routing to the verified source on Lawphil or the official Davao City legislative portal.
+
+\section{System Background and About Interface}
+\label{sec:app_h_about}
+
+Accessible via the primary navigation header, the About interface provides legislative staff with institutional background, scope definitions, and a high-level schematic of the two-stage coarse-to-fine pipeline. Figure~\ref{fig:prototype_about_view} illustrates the About interface.
+
+\begin{figure}[!htbp]
+    \centering
+    \IfFileExists{figs/prototype_about_view.png}{%
+        \includegraphics[width=0.92\linewidth]{figs/prototype_about_view.png}%
+    }{%
+        \fbox{\parbox{0.90\linewidth}{\centering\vspace{36pt}\textbf{[Screenshot: System Background and About Interface]}\\\vspace{12pt}\small Save browser capture of the About screen to \texttt{figs/prototype\_about\_view.png}\vspace{36pt}}}%
+    }
+    \caption[System Background and About Interface]{System Background and Two-Stage Pipeline Overview (About View)}
+    \label{fig:prototype_about_view}
+\end{figure}
+
+The About interface defines the dual conflict detection scope: vertical preemption against national laws under the \textit{Magtajas v. Pryce Properties} doctrine and horizontal coherence across the historical Davao City local archive. It presents an intuitive multi-stage process summary illustrating how submitted drafts are parsed, filtered for procedural boilerplate, scanned across national positive law, and evaluated by DeBERTa-v3 cross-attention tensors before generating human-in-the-loop diagnostic feedback.

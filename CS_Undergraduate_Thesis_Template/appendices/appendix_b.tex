@@ -88,3 +88,210 @@ class ArchivalVLMReader:
         generated_ids = [out[len(inp):] for inp, out in zip(inputs.input_ids, output_ids)]
         return self.processor.batch_decode(generated_ids, skip_special_tokens=True)[0].strip()
 \end{lstlisting}
+
+\section{Cloud-Based Batch Archival Transcription Engine (Google Kaggle)}
+\label{sec:app_code_kaggle_vlm}
+
+To ingest the high-volume historical backlog spanning the 2016--2020 legislative terms and physically degraded archival scans without incurring continuous thermal saturation on local laptop hardware, batch transcription was offloaded to Google Kaggle headless cloud virtual machines. The cloud execution environment provides dedicated NVIDIA Tesla T4 GPUs with 16~GB GDDR6 VRAM and 30~GB of host system memory. Unlike local consumer execution which mandates 4-bit NormalFloat4 quantization to fit within an 8~GB VRAM ceiling, the expanded cloud memory budget enables executing Qwen2.5-VL-3B-Instruct in native 16-bit floating point (\texttt{torch.float16}) using PyTorch Scaled Dot-Product Attention (\texttt{sdpa}). Native half-precision eliminates the runtime dequantization overhead of 4-bit kernels, accelerating page transcription throughput by approximately 2.5$\times$ to 3.0$\times$ while eliminating quantization-induced representation loss on fine alphanumeric tokens, numerical citations, and degraded typewriter text.
+
+Listing~\ref{lst:code_kaggle_vlm} provides the complete, self-contained Python script and Jupyter notebook routine deployed on the Kaggle GPU runtime. The pipeline automatically discovers PDF files within the input directory, enforces 3\% perimeter cropbox trimming to eliminate scanning border artifacts, renders pages at 105 DPI, and extracts verbatim statutory text via deterministic greedy decoding. To support long-running unattended execution across hundreds of documents, the implementation includes page-level garbage collection, explicit CUDA cache eviction, fault-tolerant resumption (skipping previously processed files), and automatic checkpoint archiving that packages completed text transcripts into compressed ZIP archives every 25 documents.
+
+\begin{lstlisting}[language=Python, caption={Headless Cloud VLM Batch Extraction Notebook on Google Kaggle (Tesla T4 Runtime)}, label={lst:code_kaggle_vlm}]
+# ==============================================================================
+# DAVAO CITY ORDINANCES ARCHIVAL VLM BATCH INGESTION (GOOGLE KAGGLE RUNTIME)
+# Hardware: NVIDIA Tesla T4 (16 GB GDDR6) | Model: Qwen/Qwen2.5-VL-3B-Instruct
+# ==============================================================================
+
+import os
+import gc
+import sys
+import time
+import zipfile
+from pathlib import Path
+import torch
+import pymupdf
+from PIL import Image
+from tqdm.auto import tqdm
+from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
+from qwen_vl_utils import process_vision_info
+
+# --- 1. ENVIRONMENT VERIFICATION ---
+assert torch.cuda.is_available(), "GPU runtime required (Tesla T4 or P100)!"
+device_name = torch.cuda.get_device_name(0)
+vram_gb = torch.cuda.get_device_properties(0).total_memory / (1024 ** 3)
+print(f"[*] Cloud GPU Active: {device_name} ({vram_gb:.2f} GB VRAM)")
+
+# --- 2. INPUT DATASET AND PATH RESOLUTION ---
+input_pdfs = list(Path("/kaggle/input").rglob("*.pdf"))
+if not input_pdfs:
+    zips = list(Path("/kaggle/input").rglob("*.zip"))
+    if zips:
+        with zipfile.ZipFile(zips[0], "r") as z:
+            z.extractall("/kaggle/working/input_pdfs")
+        input_pdfs = list(Path("/kaggle/working/input_pdfs").rglob("*.pdf"))
+
+if not input_pdfs:
+    raise FileNotFoundError("No PDF files discovered in /kaggle/input directory.")
+
+sample = input_pdfs[0]
+root_candidate = None
+for parent in [sample.parent, sample.parent.parent, sample.parent.parent.parent]:
+    if parent.name.isdigit() and len(parent.name) == 4:
+        root_candidate = parent.parent
+        break
+
+INPUT_ROOT = root_candidate if root_candidate else sample.parent
+OUTPUT_DIR = Path("/kaggle/working/vlm_transcriptions")
+OUTPUT_ZIP = Path("/kaggle/working/vlm_transcriptions_batch.zip")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+# --- 3. MODEL AND PROCESSOR INITIALIZATION (NATIVE FP16) ---
+MODEL_ID = "Qwen/Qwen2.5-VL-3B-Instruct"
+print(f"[*] Loading {MODEL_ID} in native FP16 (sdpa attention)...")
+model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+    MODEL_ID,
+    torch_dtype=torch.float16,
+    device_map="auto",
+    low_cpu_mem_usage=True,
+    attn_implementation="sdpa",
+)
+model.eval()
+
+processor = AutoProcessor.from_pretrained(
+    MODEL_ID,
+    min_pixels=256 * 28 * 28,
+    max_pixels=448 * 28 * 28,
+)
+print("[OK] Model and processor initialized successfully in FP16.")
+
+# --- 4. VERBATIM PAGE TRANSCRIPTION ENGINE ---
+def transcribe_page(pil_image: Image.Image) -> str:
+    """Extracts verbatim statutory text using deterministic greedy decoding."""
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {"type": "image", "image": pil_image},
+                {
+                    "type": "text",
+                    "text": (
+                        "Transcribe the legal text on this page completely and "
+                        "verbatim. Preserve exact section titles, ordinals, "
+                        "numbers, dates, names, and currency amounts. "
+                        "Do not summarize, omit provisions, or add commentary."
+                    ),
+                },
+            ],
+        }
+    ]
+
+    text_prompt = processor.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True
+    )
+    image_inputs, video_inputs = process_vision_info(messages)
+
+    inputs = processor(
+        text=[text_prompt],
+        images=image_inputs,
+        videos=video_inputs,
+        padding=True,
+        return_tensors="pt",
+    ).to("cuda")
+
+    with torch.inference_mode():
+        generated_ids = model.generate(
+            **inputs,
+            max_new_tokens=1000,
+            do_sample=False,
+            use_cache=True,
+        )
+
+    trimmed_ids = [
+        out[len(inp):] for inp, out in zip(inputs.input_ids, generated_ids)
+    ]
+    transcription = processor.batch_decode(
+        trimmed_ids,
+        skip_special_tokens=True,
+        clean_up_tokenization_spaces=False,
+    )[0]
+    return transcription.strip()
+
+# --- 5. PER-DOCUMENT INGESTION AND BOUNDARY CROPBOX ---
+def process_pdf_document(pdf_path: Path, output_path: Path) -> int:
+    """Processes document page-by-page with 3% inset border artifact trimming."""
+    doc = pymupdf.open(pdf_path)
+    total_pages = len(doc)
+    records = []
+    try:
+        for page_idx in range(total_pages):
+            page = doc.load_page(page_idx)
+            rect = page.rect
+            crop_box = pymupdf.Rect(
+                rect.width * 0.03,
+                rect.height * 0.03,
+                rect.width * 0.97,
+                rect.height * 0.97,
+            )
+            page.set_cropbox(crop_box)
+            pix = page.get_pixmap(dpi=105)
+            img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+            txt = transcribe_page(img)
+            records.append(f"--- [Page {page_idx + 1}] ---\n{txt}")
+            del pix, img, page
+    finally:
+        doc.close()
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("w", encoding="utf-8") as f:
+        f.write(f"=== ORDINANCE: {pdf_path.stem} ===\n\n")
+        f.write("\n\n".join(records))
+
+    gc.collect()
+    torch.cuda.empty_cache()
+    return total_pages
+
+def create_checkpoint_zip():
+    """Generates a downloadable ZIP archive of all completed transcripts."""
+    txts = list(OUTPUT_DIR.rglob("*.txt"))
+    if not txts:
+        return
+    with zipfile.ZipFile(OUTPUT_ZIP, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+        for txt in txts:
+            zf.write(txt, arcname=str(txt.relative_to(OUTPUT_DIR)))
+
+# --- 6. FAULT-TOLERANT BATCH QUEUE EXECUTION ---
+def run_batch_queue(target_years=None):
+    """Executes full batch queue with skip-on-existing fault tolerance."""
+    all_pdfs = sorted(p for p in INPUT_ROOT.rglob("*.pdf") if p.is_file())
+    if target_years:
+        all_pdfs = [p for p in all_pdfs if any(y in p.parts for y in target_years)]
+
+    print(f"[*] Total PDF Documents Queued: {len(all_pdfs)}")
+    processed, skipped, failed, total_pages = 0, 0, 0, 0
+    start_time = time.time()
+
+    for idx, pdf_path in enumerate(all_pdfs, 1):
+        rel_path = pdf_path.relative_to(INPUT_ROOT)
+        out_path = OUTPUT_DIR / rel_path.with_suffix(".txt")
+
+        # Skip already completed enactments
+        if out_path.exists() and out_path.stat().st_size > 100:
+            skipped += 1
+            continue
+
+        try:
+            pages = process_pdf_document(pdf_path, out_path)
+            processed += 1
+            total_pages += pages
+        except Exception as e:
+            failed += 1
+            print(f"[ERROR] Failed processing {rel_path}: {e}")
+
+        # Checkpoint archive packaging every 25 files
+        if processed > 0 and processed % 25 == 0:
+            create_checkpoint_zip()
+
+    create_checkpoint_zip()
+    elapsed = time.time() - start_time
+    print(f"[COMPLETE] Processed: {processed} files, {total_pages} pages in {elapsed/60:.1f}m")
+\end{lstlisting}

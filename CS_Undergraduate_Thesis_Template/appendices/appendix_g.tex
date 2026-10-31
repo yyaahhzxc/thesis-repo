@@ -97,3 +97,33 @@ def audit_complete_draft_ordinance(draft_pdf_path, pipeline):
         })
     return audit_report
 \end{lstlisting}
+
+\section{Archival VLM Batch Digitization Notebook (Google Kaggle)}
+\label{sec:app_nb05}
+
+\begin{lstlisting}[language=Python, caption={Headless Kaggle Batch Transcription and Checkpoint Packaging}, label={lst:code_nb05_highlights}]
+# Archival VLM Ingestion Loop on Google Kaggle GPU (Tesla T4)
+def run_archival_batch_ingestion(input_root, output_dir, output_zip, target_years=None):
+    """Executes high-throughput headless VLM batch transcription with fault tolerance."""
+    all_pdfs = sorted(p for p in input_root.rglob("*.pdf") if p.is_file())
+    if target_years:
+        all_pdfs = [p for p in all_pdfs if any(y in p.parts for y in target_years)]
+
+    processed, skipped, total_pages = 0, 0, 0
+    for idx, pdf_path in enumerate(all_pdfs, 1):
+        out_path = output_dir / pdf_path.relative_to(input_root).with_suffix(".txt")
+        if out_path.exists() and out_path.stat().st_size > 100:
+            skipped += 1
+            continue
+
+        pages = process_pdf_document(pdf_path, out_path)
+        processed += 1
+        total_pages += pages
+
+        # Periodic checkpoint archive packaging every 25 enactments
+        if processed > 0 and processed % 25 == 0:
+            create_checkpoint_zip(output_dir, output_zip)
+
+    create_checkpoint_zip(output_dir, output_zip)
+    return {"processed": processed, "skipped": skipped, "pages": total_pages}
+\end{lstlisting}
