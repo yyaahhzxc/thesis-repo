@@ -30,7 +30,9 @@ with open(benchmark_path, 'r', encoding='utf-8') as f:
 cv_results = data['cv_results']
 stat_tests = data['statistical_tests']
 
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10.5, 9.2), dpi=300)
+fig = plt.figure(figsize=(10.5, 9.2), dpi=300)
+ax1 = fig.add_axes([0.08, 0.56, 0.88, 0.38])
+ax2 = fig.add_axes([0.24, 0.08, 0.72, 0.38])
 
 # -------------------------------------------------------------
 # Panel A: 5-Fold Cross-Validation Baseline Comparison (Mean +/- SD)
@@ -117,18 +119,16 @@ for bar, rank in zip(bars, ranks):
              va='center', fontsize=8.5, fontweight='bold' if rank == 1.0 else 'normal',
              color='#1B365D' if rank == 1.0 else '#333333')
 
-# Statistical significance badge in Panel B
+# Statistical significance badge in Panel B (positioned at top right to avoid covering ranks 5 and 6)
 stat_box = (
     "Omnibus Friedman Test:\n"
     r"$\chi_F^2 = 40.0000$ (df = 5, $p < 0.001$)" "\n"
     "McNemar vs. BERT: $p = 0.0388^*$\n"
     "McNemar vs. Zero-Shot: $p < 0.0001^{***}$"
 )
-ax2.text(0.97, 0.12, stat_box, transform=ax2.transAxes,
-         fontsize=8.5, va='bottom', ha='right',
+ax2.text(0.97, 0.90, stat_box, transform=ax2.transAxes,
+         fontsize=8.5, va='top', ha='right',
          bbox=dict(boxstyle='round,pad=0.4', facecolor='#F8FAFC', edgecolor='#64748B', lw=0.9))
-
-plt.tight_layout()
 
 # Save
 output_path = os.path.join(os.path.dirname(__file__), '..', 'CS_Undergraduate_Thesis_Template', 'figs', 'statistical_validation_model_comparison.png')

@@ -514,11 +514,11 @@ To establish the ultimate generalization capability of the fine-tuned Cross-Enco
 \begin{table}[htbp]
     \centering
     \footnotesize
-    \setlength{\tabcolsep}{2.5pt}
     \renewcommand{\arraystretch}{0.84}
     \caption[Out-of-Sample Test and 5-Fold Cross-Validation Performance Comparison]{Empirical Out-of-Sample Held-Out Test Evaluation and 5-Fold Stratified Cross-Validation Benchmark across Candidate Architectures ($N = 350$)}
     \label{tab:kfold_cross_validation_benchmark}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{4.2cm}>{\Centering\arraybackslash}p{1.1cm}>{\Centering\arraybackslash}p{1.4cm}>{\Centering\arraybackslash}X>{\Centering\arraybackslash}X>{\Centering\arraybackslash}X}
+    \setlength{\tabcolsep}{1.8pt}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{3.75cm} c c >{\Centering\arraybackslash}X >{\Centering\arraybackslash}X >{\Centering\arraybackslash}X}
         \toprule
         \textbf{Candidate Architecture} & \textbf{Params} & \shortstack[c]{\textbf{Unseen}\\\textbf{Test Acc}} & \shortstack[c]{\textbf{5-Fold Acc}\\\textbf{(Mean $\pm$ SD)}} & \shortstack[c]{\textbf{5-Fold Macro $F_1$}\\\textbf{(Mean $\pm$ SD)}} & \shortstack[c]{\textbf{5-Fold Conflict $F_1$}\\\textbf{(Mean $\pm$ SD)}} \\
         \midrule
@@ -550,11 +550,11 @@ Table~\ref{tab:friedman_rankings_benchmark} presents the macro domain performanc
 \begin{table}[htbp]
     \centering
     \footnotesize
-    \setlength{\tabcolsep}{3.0pt}
+    \setlength{\tabcolsep}{2.5pt}
     \renewcommand{\arraystretch}{0.84}
     \caption[Friedman Two-Way Rank Test across Legal Domains]{Non-Parametric Friedman Two-Way Rank Test across Eight Macro Legal Domains}
     \label{tab:friedman_rankings_benchmark}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{4.2cm}cccccc}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{6.1cm} *{6}{>{\Centering\arraybackslash}X}}
         \toprule
         \textbf{Macro Legal Domain} & \shortstack[c]{\textbf{Zero-Shot}\\\textbf{Baseline}} & \shortstack[c]{\textbf{all-}\\\textbf{MiniLM}} & \shortstack[c]{\textbf{bert-}\\\textbf{base}} & \shortstack[c]{\textbf{legal-}\\\textbf{bert}} & \shortstack[c]{\textbf{Modern-}\\\textbf{BERT}} & \shortstack[c]{\textbf{DeBERTa}\\\textbf{-v3 (Prop.)}} \\
         \midrule
@@ -605,7 +605,7 @@ To provide visual synthesis of the cross-validation distributions alongside non-
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{figs/statistical_validation_model_comparison.png}
-    \caption[Statistical Model Validation and Cross-Validation Performance Comparison]{Statistical Model Validation and Cross-Validation Performance Comparison ($N = 350$). Panel~A displays the mean and sample standard deviation across all 5-fold cross-validation runs directly comparing the proposed architecture against the selected baselines on Conflict $F_1$ and Macro $F_1$. Panel~B illustrates the non-parametric Friedman two-way rank analysis across the eight macro legal domains ($\chi_F^2 = 40.00, p < 0.001$), confirming that the proposed architecture achieves a uniform rank of 1.00 across all statutory subject areas.}
+    \caption[Statistical Model Validation and Cross-Validation Performance Comparison]{Statistical Model Validation and 5-Fold Stratified Cross-Validation Performance Comparison across Candidate Encoders and Eight Macro Legal Domains ($N = 350$).}
     \label{fig:statistical_model_comparison}
 \end{figure}
 
@@ -672,13 +672,13 @@ In practical legislative drafting, local ordinances vary widely in length, rangi
 \begin{table}[htbp]
     \centering
     \footnotesize
-    \setlength{\tabcolsep}{3.0pt}
+    \setlength{\tabcolsep}{4.0pt}
     \renewcommand{\arraystretch}{0.84}
     \caption[Full-Document Audit Latency and Candidate Scaling on 4-Thread CPU]{Full-Document Pre-Enactment Audit Latency and Candidate Shortlist Scaling on a 4-Thread CPU Edge Workstation (14-Section Authentic Draft Ordinance)}
     \label{tab:audit_latency_scaling}
-    \begin{tabularx}{\linewidth}{>{\Centering\arraybackslash}p{1.6cm}>{\Centering\arraybackslash}p{1.8cm}>{\Centering\arraybackslash}p{1.8cm}>{\Centering\arraybackslash}p{2.0cm}>{\Centering\arraybackslash}p{2.2cm}>{\RaggedRight\arraybackslash}X}
+    \begin{tabularx}{\linewidth}{ccccc>{\RaggedRight\arraybackslash}X}
         \toprule
-        \shortstack[c]{\textbf{Shortlist}\\\textbf{Depth ($k$)}} & \shortstack[c]{\textbf{Evaluated}\\\textbf{Pairs ($N$)}} & \shortstack[c]{\textbf{Mini-Batch}\\\textbf{Tokens ($L$)}} & \shortstack[c]{\textbf{Mean Latency}\\\textbf{per Pair}} & \shortstack[c]{\textbf{Cross-Encoder}\\\textbf{Wall-Clock Time}} & \textbf{Operational Feasibility on Edge Workstation} \\
+        \shortstack[c]{\textbf{Shortlist}\\\textbf{Depth ($k$)}} & \shortstack[c]{\textbf{Evaluated}\\\textbf{Pairs ($N$)}} & \shortstack[c]{\textbf{Batch}\\\textbf{Tokens ($L$)}} & \shortstack[c]{\textbf{Mean Latency}\\\textbf{per Pair}} & \shortstack[c]{\textbf{Audit}\\\textbf{Time}} & \textbf{Operational Feasibility on Edge Workstation} \\
         \midrule
         Top-5  & 35 pairs  & 105 tokens & 130.2\,ms & \textbf{4.56\,s}  & Near-instantaneous review (< 5\,s) \\
         Top-10 & 70 pairs  & 105 tokens & 129.5\,ms & \textbf{9.07\,s}  & Responsive interactive audit (< 10\,s) \\
