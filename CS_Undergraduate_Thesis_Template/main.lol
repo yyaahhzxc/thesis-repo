@@ -10,12 +10,12 @@
 \contentsline {lstlisting}{\numberline {A.1}Lawphil Statutory Scraper and Provision Boundary Serializer}{221}{lstlisting.A.1}%
 \contentsline {lstlisting}{\numberline {B.1}Archival Scan Preprocessing and Contrast Enhancement}{222}{lstlisting.B.1}%
 \contentsline {lstlisting}{\numberline {B.2}Local 4-Bit VLM Inference Engine for Archival Extraction}{222}{lstlisting.B.2}%
-\contentsline {lstlisting}{\numberline {B.3}Headless Cloud VLM Batch Extraction Notebook on Google Kaggle (Tesla T4 Runtime)}{224}{lstlisting.B.3}%
-\contentsline {lstlisting}{\numberline {C.1}Ordinance Segmentation and Boilerplate Filtering}{228}{lstlisting.C.1}%
-\contentsline {lstlisting}{\numberline {D.1}Stage 1 Hybrid Retrieval Engine and RRF Fusion}{230}{lstlisting.D.1}%
-\contentsline {lstlisting}{\numberline {E.1}Stage 2 Cross-Encoder Inference and Calibrated Triage}{232}{lstlisting.E.1}%
-\contentsline {lstlisting}{\numberline {G.1}Corpus Preparation and Topic Modeling}{236}{lstlisting.G.1}%
-\contentsline {lstlisting}{\numberline {G.2}Stage 1 Retrieval Sweep and Recall Evaluation}{236}{lstlisting.G.2}%
-\contentsline {lstlisting}{\numberline {G.3}Cross-Encoder Fine-Tuning and Validation}{237}{lstlisting.G.3}%
-\contentsline {lstlisting}{\numberline {G.4}End-to-End System Audit and Verification}{237}{lstlisting.G.4}%
-\contentsline {lstlisting}{\numberline {G.5}Headless Kaggle Batch Transcription and Checkpoint Packaging}{238}{lstlisting.G.5}%
+\contentsline {lstlisting}{\numberline {B.3}Headless Cloud VLM Batch Extraction Notebook on Google Kaggle (Tesla T4 Runtime)}{223}{lstlisting.B.3}%
+\contentsline {lstlisting}{\numberline {C.1}Ordinance Segmentation and Boilerplate Filtering}{227}{lstlisting.C.1}%
+\contentsline {lstlisting}{\numberline {D.1}Stage 1 Hybrid Retrieval Engine and RRF Fusion}{229}{lstlisting.D.1}%
+\contentsline {lstlisting}{\numberline {E.1}Stage 2 Cross-Encoder Inference and Calibrated Triage}{231}{lstlisting.E.1}%
+\contentsline {lstlisting}{\numberline {G.1}Corpus Preparation and Topic Modeling}{235}{lstlisting.G.1}%
+\contentsline {lstlisting}{\numberline {G.2}Stage 1 Retrieval Sweep and Recall Evaluation}{235}{lstlisting.G.2}%
+\contentsline {lstlisting}{\numberline {G.3}Cross-Encoder Fine-Tuning and Validation}{236}{lstlisting.G.3}%
+\contentsline {lstlisting}{\numberline {G.4}End-to-End System Audit and Verification}{236}{lstlisting.G.4}%
+\contentsline {lstlisting}{\numberline {G.5}Headless Kaggle Batch Transcription and Checkpoint Packaging}{237}{lstlisting.G.5}%

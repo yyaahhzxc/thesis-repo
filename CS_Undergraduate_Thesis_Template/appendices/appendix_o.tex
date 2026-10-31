@@ -22,39 +22,3 @@
         \bottomrule
     \end{tabularx}
 \end{table}
-
-\section{Sample Benchmark Text Pairs}
-\label{sec:app_gt_exemplar_pairs}
-
-\begin{table}[htbp]
-    \centering
-    \scriptsize
-    \caption[Sample Ground Truth Evaluation Pairs]{Sample Ground Truth Evaluation Pairs}
-    \label{tab:app_gt_exemplar_listings}
-    \begin{tabularx}{\linewidth}{>{\bfseries}p{1.2cm}>{\RaggedRight\arraybackslash}p{3.0cm}>{\RaggedRight\arraybackslash}p{3.0cm}>{\centering\arraybackslash}p{2.3cm}>{\RaggedRight\arraybackslash}X}
-        \toprule
-        \textbf{Pair ID} & \textbf{Premise (Controlling Statute)} & \textbf{Hypothesis (Local Provision)} & \textbf{Gold Label} & \textbf{Legal Rationale} \\
-        \midrule
-        GT-001 & \textbf{RA 7581, \S6:} \textit{Prices of basic necessities shall automatically be frozen upon proclamation of a state of calamity for not more than sixty (60) days.} & \textbf{Draft Ord., \S4:} \textit{Price ceilings shall remain in continuous legal effect for a mandatory period of one hundred eighty (180) calendar days.} & \textbf{Contradiction} & Direct violation of the statutory 60-day price freeze ceiling mandated under Section 6 of the Price Act (RA 7581). \\
-        \addlinespace[3pt]
-        GT-042 & \textbf{RA 9994, \S4(a):} \textit{Senior citizens shall be entitled to the grant of twenty percent (20\%) discount on medicines.} & \textbf{Davao Ord.~0281-12, \S3:} \textit{All commercial pharmacies must provide a 20\% discount on prescription drugs to senior citizens.} & \textbf{Entailment} & Consistent municipal implementation mirroring national statutory entitlements under RA 9994. \\
-        \addlinespace[3pt]
-        GT-089 & \textbf{RA 8550, \S16:} \textit{The city government shall have jurisdiction over municipal waters as defined in this Code for fishery licensing.} & \textbf{Davao Ord.~0334-12, \S2:} \textit{Heavy motor freight vehicles and cargo trailers are prohibited from secondary residential roads.} & \textbf{Neutral} & Distinct legal domains; traffic management does not intersect municipal fishery licensing jurisdiction. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
-\section{Supreme Court Precedent Suite}
-\label{sec:app_sc_case_suite}
-
-The 11 Supreme Court benchmark cases, including their factual controversies, challenged local enactments, controlling superior statutes, and authoritative judicial holdings, are presented in Table~\ref{tab:tier3_supreme_court_benchmark} in Chapter~\ref{chap:results_and_discussion}.
-
-\section{Injected Synthetic Perturbations}
-\label{sec:app_tier2_perturbation_schema}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-    \item \textbf{Numeric Penalty Ceiling Violations:} Modifying local penalty clauses to exceed statutory ceilings in RA~7160 \S458(a)(1)(iii) (e.g., replacing \texttt{P5,000.00} with \texttt{P10,000.00} or 1 year with 2 years).
-    \item \textbf{Deontic Modality Inversion:} Transforming mandatory statutory obligations (\texttt{shall}) into discretionary authorizations (\texttt{may}), or converting statutory permissions into local prohibitions (\texttt{shall not}).
-    \item \textbf{Regulatory Usurpation of National Agency Jurisdiction:} Inserting local licensing prerequisites or unilateral revocation powers over commercial activities explicitly reserved to national bodies (e.g., LTFRB for transport routes, FDA for drugs, NTC for telecommunications).
-    \item \textbf{Procedural Appeal Truncation:} Drafting clauses that eliminate statutory administrative appeal periods or bypass mandatory administrative remedies under Republic Act No.~7160.
-\end{enumerate}

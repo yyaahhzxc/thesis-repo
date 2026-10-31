@@ -5,8 +5,6 @@
 \section{Legal Stop Words}
 \label{sec:app_legal_stopwords_roster}
 
-This section lists the 49 domain-specific stop words filtered during lexical indexing.
-
 \begin{table}[htbp]
     \centering
     \footnotesize
@@ -35,43 +33,8 @@ This section lists the 49 domain-specific stop words filtered during lexical ind
     \end{tabularx}
 \end{table}
 
-\section{Boilerplate Patterns}
-\label{sec:app_boilerplate_regex}
-
-This section details regular expressions used to identify non-substantive legislative boilerplate clauses.
-
-\begin{table}[htbp]
-    \centering
-    \footnotesize
-    \setlength{\tabcolsep}{4.0pt}
-    \renewcommand{\arraystretch}{0.95}
-    \caption[Procedural Legislative Boilerplate Regular Expression Patterns]{Procedural Legislative Boilerplate Regular Expression Patterns}
-    \label{tab:app_boilerplate_regex}
-    \begin{tabularx}{\linewidth}{>{\bfseries}p{3.2cm}>{\ttfamily\RaggedRight\arraybackslash}X}
-        \toprule
-        \textbf{Clause Typology} & \textbf{Regular Expression Extraction Pattern} \\
-        \midrule
-        Title / Short Title & \verb|^(?:Section\s+1[\.:]\s*)?(?:Short\s+Title|Title)\b| \\
-        \addlinespace[2pt]
-        Preamble / Recitals & \verb|^WHEREAS\b| \\
-        \addlinespace[2pt]
-        Definition of Terms & \verb|^(?:Section\s+2[\.:]\s*)?Definition\s+of\s+Terms\b| \\
-        \addlinespace[2pt]
-        Separability Clause & \verb|^(?:Section\s+\d+[\.:]\s*)?Separability\s+Clause\b| \\
-        \addlinespace[2pt]
-        Repealing Clause & \verb|^(?:Section\s+\d+[\.:]\s*)?Repealing\s+Clause\b| \\
-        \addlinespace[2pt]
-        Effectivity Clause & \verb|^(?:Section\s+\d+[\.:]\s*)?Effectivity\s+Clause\b| \\
-        \addlinespace[2pt]
-        Enacting Formula & \verb|^BE\s+IT\s+ORDAINED\s+by\s+the\s+Sangguniang\s+Panlungsod\b| \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
 \section{Deontic Modality Markers}
 \label{sec:app_deontic_lexicons}
-
-This section enumerates statutory modal auxiliary terms indicating obligation, prohibition, and permission.
 
 \begin{table}[htbp]
     \centering
@@ -95,8 +58,6 @@ This section enumerates statutory modal auxiliary terms indicating obligation, p
 
 \section{Regional Administrative Terms}
 \label{sec:app_regional_lexicon}
-
-This section documents localized terms and administrative units encountered in Davao City legislation.
 
 \begin{table}[htbp]
     \centering
