@@ -5,7 +5,7 @@
 \contentsline {lstlisting}{\numberline {3.5}Adaptive State Machine for Substantive Legislative Body Extraction}{101}{lstlisting.3.5}%
 \contentsline {lstlisting}{\numberline {3.6}Code Snippet of the Operative Provision Extractor and Boilerplate Filter}{104}{lstlisting.3.6}%
 \contentsline {lstlisting}{\numberline {3.7}Sample Evaluation Pair from the Ground Truth Benchmark Dataset}{114}{lstlisting.3.7}%
-\contentsline {lstlisting}{\numberline {3.8}Pseudocode of the Stage 1 Reciprocal Rank Fusion Hybrid Provision Retrieval Pipeline}{120}{lstlisting.3.8}%
+\contentsline {lstlisting}{\numberline {3.8}Pseudocode of the Stage 1 Reciprocal Rank Fusion Hybrid Provision Retrieval Pipeline}{121}{lstlisting.3.8}%
 \contentsline {lstlisting}{\numberline {3.9}Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}{133}{lstlisting.3.9}%
 \contentsline {lstlisting}{\numberline {A.1}Lawphil Statutory Scraper and Provision Boundary Serializer}{212}{lstlisting.A.1}%
 \contentsline {lstlisting}{\numberline {B.1}Archival Scan Preprocessing and Contrast Enhancement}{213}{lstlisting.B.1}%
