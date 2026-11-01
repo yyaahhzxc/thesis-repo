@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-10-31 17:31:04",
-  "total_enactments": 27322,
-  "total_provisions": 178288,
-  "total_operative_provisions": 174002,
-  "total_boilerplate_provisions": 4286,
+  "timestamp": "2026-11-01 20:00:29",
+  "total_enactments": 27357,
+  "total_provisions": 178494,
+  "total_operative_provisions": 174107,
+  "total_boilerplate_provisions": 4387,
   "national_corpus": {
     "enactments": 25432,
     "provisions": 164620,
@@ -11,13 +11,13 @@
     "boilerplate_provisions": 0
   },
   "municipal_corpus": {
-    "enactments": 1890,
-    "provisions": 13668,
-    "operative_provisions": 9382,
-    "boilerplate_provisions": 4286
+    "enactments": 1925,
+    "provisions": 13874,
+    "operative_provisions": 9487,
+    "boilerplate_provisions": 4387
   },
   "file_sizes": {
-    "master_jsonl_bytes": 419363750,
-    "meta_jsonl_bytes": 98496260
+    "master_jsonl_bytes": 419828301,
+    "meta_jsonl_bytes": 98656387
   }
 }

@@ -115,7 +115,7 @@ def generate_local_era_distribution_figure():
     ax.set_xticks(range(len(era_order)))
     ax.set_xticklabels(era_labels_clean, fontsize=9.5, fontweight='bold')
     ax.set_ylabel("Enacted Local Ordinances", fontsize=10.5, fontweight='bold')
-    ax.set_title("Enactment Volume across Four Legislative Eras (N = 1,890)", fontsize=11.5, fontweight='bold', pad=14)
+    ax.set_title(f"Enactment Volume across Four Legislative Eras (N = {len(df_local):,})", fontsize=11.5, fontweight='bold', pad=14)
     ax.set_ylim(0, 1550)
     ax.yaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}'))
     ax.grid(axis='y', linestyle='--', alpha=0.6, zorder=0)
@@ -279,7 +279,7 @@ def generate_local_temporal_typology_figure():
     ax1.set_xticks(range(len(era_order)))
     ax1.set_xticklabels(era_labels_clean, fontsize=9.2, fontweight='bold')
     ax1.set_ylabel("Enacted Local Ordinances", fontsize=10.2, fontweight='bold')
-    ax1.set_title("(a) Enactment Volume across Four Legislative Eras (N = 1,890)", fontsize=10.8, fontweight='bold', pad=12)
+    ax1.set_title(f"(a) Enactment Volume across Four Legislative Eras (N = {len(df_local):,})", fontsize=10.8, fontweight='bold', pad=12)
     ax1.set_ylim(0, 1550)
     ax1.yaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}'))
     ax1.grid(axis='y', linestyle='--', alpha=0.6, zorder=0)
@@ -373,7 +373,7 @@ def generate_local_temporal_typology_figure():
                  fontsize=8.0, fontweight='bold', color='#1e6b1e',
                  bbox=dict(boxstyle='round,pad=0.25', facecolor='#f0faf0', edgecolor='#2ca02c', lw=0.7))
 
-    ax2.set_title('(b) 2D Latent Semantic Topic Space of Municipal Ordinances (SVD-PCA, N = 1,890)', fontsize=10.8, fontweight='bold', pad=12)
+    ax2.set_title(f'(b) 2D Latent Semantic Topic Space of Municipal Ordinances (SVD-PCA, N = {len(df_local):,})', fontsize=10.8, fontweight='bold', pad=12)
     ax2.set_xlabel(r'Latent Semantic Dimension 1 (Direct Substantive Regulations $\leftarrow\rightarrow$ Executive Contract Authorizations)', fontsize=8.6, fontweight='bold')
     ax2.set_ylabel(r'Latent Semantic Dimension 2' + '\n' + r'(Penal & Zoning Mandates $\leftarrow\rightarrow$ Emergency Calamity Funds)', fontsize=8.6, fontweight='bold', labelpad=10)
     ax2.grid(True, linestyle='--', alpha=0.5, zorder=0)
@@ -405,7 +405,7 @@ def generate_dual_corpus_length_asymmetry_figure():
     bins = np.logspace(np.log10(300), np.log10(350000), 50)
     
     ax1.hist(nat_chars, bins=bins, density=True, alpha=0.35, color='#1f77b4', edgecolor='#1f77b4', linewidth=0.5, label='National Statutes ($N = 25,432$)')
-    ax1.hist(loc_chars, bins=bins, density=True, alpha=0.45, color='#28a745', edgecolor='#28a745', linewidth=0.5, label='Davao City Ordinances ($N = 1,890$)')
+    ax1.hist(loc_chars, bins=bins, density=True, alpha=0.45, color='#28a745', edgecolor='#28a745', linewidth=0.5, label=f'Davao City Ordinances ($N = {len(df_local):,})')
     
     ax1.axvline(10807, color='#1f77b4', linestyle='-', linewidth=2.0, zorder=4)
     ax1.axvline(5644, color='#28a745', linestyle='-', linewidth=2.0, zorder=4)
@@ -448,10 +448,10 @@ def generate_dual_corpus_length_asymmetry_figure():
     ax2.plot(x_tok, nat_pdf, color='#1f77b4', linewidth=2.2, label='National Provisions ($N = 164,620$, Med: 122)')
     ax2.fill_between(x_tok, nat_pdf, color='#1f77b4', alpha=0.15)
     
-    ax2.plot(x_tok, kde_op(x_tok), color='#28a745', linewidth=2.2, label='Municipal Operative Provisions ($N = 9,382$, Med: 98)')
+    ax2.plot(x_tok, kde_op(x_tok), color='#28a745', linewidth=2.2, label=f'Municipal Operative Provisions ($N = {len(local_op_sec_tokens):,}$, Med: 98)')
     ax2.fill_between(x_tok, kde_op(x_tok), color='#28a745', alpha=0.15)
     
-    ax2.plot(x_tok, kde_bp(x_tok), color='#6f42c1', linewidth=1.8, linestyle='--', label='Municipal Boilerplate Sections ($N = 4,286$, Med: 72)')
+    ax2.plot(x_tok, kde_bp(x_tok), color='#6f42c1', linewidth=1.8, linestyle='--', label=f'Municipal Boilerplate Sections ($N = {len(local_bp_sec_tokens):,}$, Med: 72)')
     
     ax2.axvline(512, color='#d62728', linestyle=':', linewidth=2.0, zorder=5)
     ax2.axvspan(512, 600, color='#d62728', alpha=0.08, zorder=1)
@@ -499,22 +499,22 @@ def generate_dual_corpus_transformer_compliance_figure():
     nat_cdf = lognorm.cdf(token_eval_points, s=s_nat, scale=122.0) * 100
     
     ax1.plot(token_eval_points, nat_cdf, label="National Provisions ($N = 164,620$)", color="#1f77b4", linewidth=2.2)
-    ax1.plot(token_eval_points, local_cdf_all, label="Municipal Provisions — All ($N = 13,668$)", color="#28a745", linewidth=2.2, linestyle="-.")
-    ax1.plot(token_eval_points, local_cdf_op, label="Municipal Provisions — Operative ($N = 9,382$)", color="#fd7e14", linewidth=2.0, linestyle="--")
+    ax1.plot(token_eval_points, local_cdf_all, label=f"Municipal Provisions — All ($N = {len(local_sec_tokens):,}$)", color="#28a745", linewidth=2.2, linestyle="-.")
+    ax1.plot(token_eval_points, local_cdf_op, label=f"Municipal Provisions — Operative ($N = {len(local_op_sec_tokens):,}$)", color="#fd7e14", linewidth=2.0, linestyle="--")
     
     ax1.axvline(512, color="#d62728", linestyle=":", linewidth=1.8, zorder=4)
     ax1.axhline(94.83, color="#1f77b4", linestyle=":", alpha=0.35, linewidth=1.0)
-    ax1.axhline(92.72, color="#28a745", linestyle=":", alpha=0.35, linewidth=1.0)
-    ax1.axhline(90.06, color="#fd7e14", linestyle=":", alpha=0.35, linewidth=1.0)
+    ax1.axhline(93.82, color="#28a745", linestyle=":", alpha=0.35, linewidth=1.0)
+    ax1.axhline(91.40, color="#fd7e14", linestyle=":", alpha=0.35, linewidth=1.0)
     
     ax1.plot(512, 94.83, 'o', color="#1f77b4", markersize=6.5, zorder=5)
     ax1.annotate("94.83% (Natl)", xy=(512, 94.83), xytext=(340, 96.8), fontsize=8.2, fontweight='bold', color="#1f77b4")
     
-    ax1.plot(512, 92.72, 's', color="#28a745", markersize=6.5, zorder=5)
-    ax1.annotate("92.72% (Mun-All)", xy=(512, 92.72), xytext=(535, 94.5), fontsize=8.2, fontweight='bold', color="#28a745")
+    ax1.plot(512, 93.82, 's', color="#28a745", markersize=6.5, zorder=5)
+    ax1.annotate("93.82% (Mun-All)", xy=(512, 93.82), xytext=(535, 94.5), fontsize=8.2, fontweight='bold', color="#28a745")
     
-    ax1.plot(512, 90.06, '^', color="#fd7e14", markersize=6.5, zorder=5)
-    ax1.annotate("90.06% (Mun-Op)", xy=(512, 90.06), xytext=(535, 85.5), fontsize=8.2, fontweight='bold', color="#fd7e14")
+    ax1.plot(512, 91.40, '^', color="#fd7e14", markersize=6.5, zorder=5)
+    ax1.annotate("91.40% (Mun-Op)", xy=(512, 91.40), xytext=(535, 85.5), fontsize=8.2, fontweight='bold', color="#fd7e14")
     
     ax1.annotate("512-Token Threshold", xy=(512, 45), xytext=(535, 32),
                  arrowprops=dict(facecolor='#d62728', edgecolor='#991515', arrowstyle='->', lw=1.1),
@@ -538,14 +538,14 @@ def generate_dual_corpus_transformer_compliance_figure():
         "8,192 Tokens\n(ModernBERT)"
     ]
     nat_rates = [53.80, 82.30, 94.83, 98.92, 99.98]
-    mun_rates = [76.10, 86.68, 93.36, 97.30, 99.89]
+    mun_rates = [77.51, 87.42, 93.82, 97.46, 99.88]
     
     x = np.arange(len(windows))
     width = 0.35
     
     bars1 = ax2.bar(x - width/2, nat_rates, width, label='National Statutes (N = 164,620 Provisions)',
                     color='#1f77b4', edgecolor='#144870', linewidth=0.9, zorder=3)
-    bars2 = ax2.bar(x + width/2, mun_rates, width, label='Davao City Local Ordinances (N = 13,668 Provisions)',
+    bars2 = ax2.bar(x + width/2, mun_rates, width, label=f'Davao City Local Ordinances (N = {len(local_sec_tokens):,} Provisions)',
                     color='#28a745', edgecolor='#1e6b1e', linewidth=0.9, zorder=3)
                     
     for bar in bars1:
