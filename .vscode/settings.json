@@ -49,5 +49,6 @@
     },
     "[tex]": {
         "editor.formatOnSave": false
-    }
+    },
+    "livePreview.defaultPreviewPath": "/docs/defense_presentation_deck.html"
 }
