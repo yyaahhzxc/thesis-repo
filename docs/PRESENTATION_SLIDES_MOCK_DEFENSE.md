@@ -18,17 +18,19 @@
 | **4** | Problem Statement | Ralph | Text Layout (Verbatim Reading) | 1.5 mins |
 | **5** | Objectives of the Study | Ralph | Text Layout (Verbatim Reading) | 1.5 mins |
 | **6** | Chapter 3: Methodology | Ralph $\rightarrow$ Yah | Title-Only Divider & Speaker Handoff | 0.5 min |
-| **7** | Conceptual Framework: Overview | Yah | **Full Flowchart:** Bird's-Eye View (`conceptual_framework_flowchart.png`) | 1.5 mins |
-| **8** | Phase 1: Dual Corpus Ingestion | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase1_ingestion.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
-| **9** | Phase 1: Model Benchmarking | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase1_benchmarking.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
-| **10** | Phase 2: System Input | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_input.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
-| **11** | Phase 2: Stage 1 Retrieval | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_stage1.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
-| **12** | Phase 2: Stage 2 Inference | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_stage2.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
-| **13** | Phase 2: System Output & Explainability | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_output.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
-| **14** | Corpus Exploration: Token Length Compliance | Yah | **Figure Alone:** Dual-Corpus 512-Token Distribution (`dual_corpus_transformer_compliance.png`) | 1.5 mins |
-| **15** | Evaluation Benchmark & Human Study Design | Yah | Evaluation Matrix / Benchmark Design | 1.5 mins |
-| **16** | **Live Technical System Demonstration** | Yah | Live Screen Share | 3.5 mins |
-| **17** | Project Status, Administrative Routing & Next Steps | Ralph & Yah | Workflow Diagram / Next Steps | 1.0 min |
+| **7** | Conceptual Framework: Overview | Yah | **Full Flowchart:** Bird's-Eye View (`conceptual_framework_flowchart.png`) | 1.0 min |
+| **8** | Phase 1: Dual Corpus Ingestion | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase1_ingestion.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 0.75 min |
+| **9** | Phase 1: Model Benchmarking | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase1_benchmarking.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 0.75 min |
+| **10** | Phase 2: System Input | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_input.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 0.75 min |
+| **11** | Phase 2: Stage 1 Retrieval | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_stage1.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 0.75 min |
+| **12** | Phase 2: Stage 2 Inference | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_stage2.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 0.75 min |
+| **13** | Phase 2: System Output & Explainability | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_output.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 0.75 min |
+| **14** | Statutory Corpus & Acquisition | Yah | **Multi-Panel:** Figures 3.2, 3.3, 3.4 Scan Quality Composite (`slide14_corpus_acquisition_comparison.png`) | 1.0 min |
+| **15** | Ground Truth Benchmark Construction | Yah | **Dual Card:** Curated Benchmark Tiers & 15-Expert Study (`slide15_ground_truth_benchmark_card.png`) | 1.0 min |
+| **16** | Two-Stage Algorithmic Architecture | Yah | **Dual Card:** Stage 1 Hybrid Retrieval vs Stage 2 Cross-Encoder NLI (`slide16_two_stage_architecture_card.png`) | 1.0 min |
+| **17** | Performance Metrics & Statistical Testing | Yah | **Dual Card:** Performance Standards vs Hypothesis Testing (`slide17_evaluation_and_testing_card.png`) | 1.0 min |
+| **18** | **Live Technical System Demonstration** | Yah | Live Screen Share | 3.0 mins |
+| **19** | Project Status, Administrative Routing & Next Steps | Ralph & Yah | Workflow Diagram / Next Steps | 1.0 min |
 
 ---
 
@@ -176,7 +178,7 @@ Specifically, this study aims to:
 
 ---
 
-### Slide 7: Conceptual Framework
+### Slide 7: Conceptual Framework: Overview
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 3. Methodology
 * **Bottom-Left Paper Ref:** §3.1
@@ -332,60 +334,119 @@ Specifically, this study aims to:
 
 ---
 
-### Slide 14: Corpus Exploration: Token Length Compliance
+### Slide 14: Statutory Corpus & Acquisition
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 3. Methodology
-* **Bottom-Left Paper Ref:** §3.2.5, §3.3
+* **Bottom-Left Paper Ref:** §3.3, §3.4
 * **Bottom-Right Slide:** Slide 14
-* **Title:** Corpus Exploration: Token Length Compliance
-* **Visual:** Empirical token length compliance distribution curve (`CS_Undergraduate_Thesis_Template/figs/dual_corpus_transformer_compliance.png`)
+* **Title:** Statutory Corpus & Acquisition
+* **Visual:** Figures 3.2, 3.3, 3.4 Scan Quality Composite (`CS_Undergraduate_Thesis_Template/figs/slide14_corpus_acquisition_comparison.png`) showing clean Lawphil HTML, modern municipal scan, and pre-LGC typewriter degradation
 
 #### On-Screen Slide Content:
-* Ingested 27,096 enactments across both corpora
-* Compiled 176,421 standardized JSONL statutory provisions
-* National statutes span 1901 to 2026
-* Local ordinances span four legislative eras
-* Exactly 94.69% of provisions within 512 tokens
-* Validates direct transformer ingestion without chunking
+* 25,432 national statutes scraped from Lawphil
+* 1,925 local ordinances acquired from SP
+* 183,086 provisions compiled into unified dataset
+* 8 macro topics extracted via K-Means
+* 94.69% provisions fit 512-token transformer limit
+* Local full-text EDA deferred to Chapter 4
 
 #### Spoken Script:
-> "Turning to our completed exploratory data analysis in Chapter 3, to evaluate proposed drafts against positive law, we assembled the first Unified Dual Statutory Knowledge Base. This repository integrates 27,096 enactments comprising 176,421 searchable provisions—combining 25,432 national statutes with 1,664 digitized Davao City local ordinances.
+> "Moving into the methodology of Chapter 3, our system relies on positive law across both national and local jurisdictions.
 > 
-> As demonstrated in our empirical distribution figure on screen, exactly 94.69% of all provisions across both corpora naturally fall within the standard 512-token transformer limit, with a median length of 84 tokens and a mean of 127 tokens. This empirical finding validates our core assumption: statutory provisions can be directly ingested by standard transformer models without aggressive chunking, preserving the full normative context and penalty clauses intact."
+> For national legislation, we scraped 25,432 statutes from Lawphil spanning 1901 to 2026. Because national laws arrive in structured HTML, we immediately performed unsupervised topic modeling using TF-IDF, Truncated SVD, K-Means clustering, and class-based TF-IDF. This revealed eight distinct macro domains: Administrative, Revenue, Penal, Public Welfare, Commerce, Natural Resources, Labor, and Infrastructure. We verified this structure through a holdout classification sanity check across 1,600 manually audited provisions, attaining 0.88 Macro F1 and 0.91 Weighted F1.
+> 
+> For Davao City ordinances, we inventoried 1,925 enacted measures across four historical legislative eras. However, as illustrated in the visual plate on screen comparing Figures 3.2, 3.3, and 3.4, local ordinances present a stark physical contrast. While national laws are clean digital text, our municipal archive consists of scanned paper documents ranging from modern digital scans to heavily degraded pre-1991 typewriter pages with bleed-through, faded ribbons, and dark borders.
+> 
+> Because extracting text from these noisy scans requires specialized Vision-Language Models—which fulfills Research Objective 1—we report the complete token distributions and full-text exploratory data analysis for local legislation in Chapter 4, immediately after our text extraction benchmark."
 
 ---
 
-### Slide 15: Evaluation Benchmark & Human Study Design
+### Slide 15: Ground Truth Benchmark Construction
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 3. Methodology
-* **Bottom-Left Paper Ref:** §3.4, §3.13
+* **Bottom-Left Paper Ref:** §3.5
 * **Bottom-Right Slide:** Slide 15
-* **Title:** Evaluation Benchmark & Human Study Design
-* **Visual:** Evaluation matrix showing ground-truth benchmark tiers and human evaluation design
+* **Title:** Ground Truth Benchmark Construction
+* **Visual:** Ground Truth Benchmark & Human Study Card (`CS_Undergraduate_Thesis_Template/figs/slide15_ground_truth_benchmark_card.png`) detailing the 350-pair stratified dataset and 15-expert evaluation framework
 
 #### On-Screen Slide Content:
-* Curates 350 pairs across three tiers
-* Tier 1 tests surface lexical matching
-* Tier 2 tests structural preemption limits
-* Tier 3 tests subtle semantic contradictions
-* Evaluates retrieval with Recall@K and MRR
-* Evaluates inference with Macro/Conflict F1
-* Prepares 15 legal researchers user study
+* 350 curated statutory conflict evaluation pairs
+* 70-15-15 train validation test split allocation
+* Balanced entailment contradiction and neutral classes
+* Adversarial mining defeats affirmative model bias
+* Directional framing: statute premise, ordinance hypothesis
+* 15 Sangguniang Panlungsod legal researchers study
 
 #### Spoken Script:
-> "To validate our system under Research Objectives 4 and 5, our methodology establishes a two-tiered evaluation framework.
+> "To train and benchmark our system under Research Objectives 3 and 4, we constructed a rigorous ground-truth evaluation benchmark of 350 statutory conflict pairs.
 > 
-> First, for automated model benchmarking, we evaluate across a curated ground-truth dataset of 350 statutory pairs stratified across three difficulty tiers: direct lexical overlap, structural preemption, and subtle cross-domain conflicts. We measure retrieval completeness using Recall@K and MRR, and classification performance using Macro F1 and Conflict Class F1.
+> First, in Section 3.5.1, we establish a strict directional hypothesis formulation: under the constitutional preemption doctrine of Magtajas v. Pryce Properties, the superior national statute serves as the unchanging Premise, while the subordinate draft ordinance serves as the Hypothesis. Under Section 3.5.2, a formal Cohen power analysis confirms that 350 pairs achieves over 98.5% statistical power to detect medium effect sizes at alpha = 0.05.
 > 
-> Second, for human evaluation under Objective 5, we designed a formal user study framework involving 15 legal researchers from the Davao City Sangguniang Panlungsod. Each evaluator reviews 70 pairs through structured forms. We measure inter-annotator agreement using Cohen's kappa, and evaluate overall software usability using the System Usability Scale and Post-Study System Usability Questionnaire."
+> In Section 3.5.3, we split the dataset into 70% training, 15% validation, and 15% test, stratified strictly across all eight legal domains to prevent thematic leakage. In Section 3.5.4, pairs are stratified across three difficulty tiers: Tier 1 covers explicit lexical overlap; Tier 2 covers structural preemption where an ordinance exceeds municipal authority limits; and Tier 3 covers subtle semantic contradictions with zero overlapping keywords. To defeat affirmative classification bias, Section 3.5.5 introduces adversarial near-miss mining—pairing similar legal topics that do not conflict.
+> 
+> Finally, in Sections 3.5.6 through 3.5.9, we deploy a comprehensive human evaluation study involving 15 legal researchers from the Davao City Sangguniang Panlungsod. Evaluators are divided into five independent review panels of three researchers each, reviewing 70 pairs with three-fold redundancy. We evaluate agreement using Fleiss' Multi-Rater Kappa, measure usability via SUS and PSSUQ instruments, and award participants official Certificates of Commendation for their Civil Service 201 records."
 
 ---
 
-### Slide 16: Live Technical System Demonstration
+### Slide 16: Two-Stage Algorithmic Architecture
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.6, §3.7
+* **Bottom-Right Slide:** Slide 16
+* **Title:** Two-Stage Algorithmic Architecture
+* **Visual:** Two-Stage Architecture Comparison Card (`CS_Undergraduate_Thesis_Template/figs/slide16_two_stage_architecture_card.png`) contrasting Stage 1 coarse hybrid search with Stage 2 deep cross-attention reasoning
+
+#### On-Screen Slide Content:
+* Stage 1 combines BM25 and dense retrieval
+* Reciprocal Rank Fusion merges candidate lists
+* Statutory Hierarchy Safeguard injects controlling statutes
+* Stage 2 applies DeBERTa-v3 cross-attention
+* Calibrated threshold tau 0.45 prevents errors
+* Asymmetric cost penalizes missed conflicts 5-to-1
+
+#### Spoken Script:
+> "In Sections 3.6 and 3.7, we formulate our core algorithmic contribution: a decoupled Coarse-to-Fine architecture designed to run on local government desktop computers.
+> 
+> Comparing a draft ordinance pairwise against all 183,086 provisions using deep neural transformers would require millions of forward passes and take hours. Instead, Stage 1 executes high-throughput coarse retrieval in milliseconds. It merges sparse BM25 search—which catches exact statute numbers and fine quantities—with dense semantic retrieval using all-MiniLM-L6-v2 embeddings. These streams are fused via Reciprocal Rank Fusion with constant k = 60 to eliminate score calibration discrepancies.
+> 
+> Furthermore, Stage 1 implements our Statutory Hierarchy Safeguard, which automatically injects governing provisions from Republic Act 7160—the Local Government Code—into the candidate pool, guaranteeing that municipal authority boundaries and fine caps are always evaluated even if draft ordinances omit statutory citations.
+> 
+> In Stage 2, the top 50 shortlisted candidates pass to a fine-tuned DeBERTa-v3 Cross-Encoder. Because premise and hypothesis tokens attend to each other across all transformer layers, the model detects subtle contradictions that bi-encoders miss. We replace the standard 0.50 classification cutoff with a calibrated threshold of tau = 0.45, incorporating a 5-to-1 asymmetric cost penalty against false negatives under Magtajas, because letting an unconstitutional ordinance pass is far more hazardous than reviewing a false flag."
+
+---
+
+### Slide 17: Performance Metrics & Statistical Testing
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.8, §3.9
+* **Bottom-Right Slide:** Slide 17
+* **Title:** Performance Metrics & Statistical Testing
+* **Visual:** Performance Metrics & Statistical Testing Card (`CS_Undergraduate_Thesis_Template/figs/slide17_evaluation_and_testing_card.png`) showing IR/NLI metrics alongside non-parametric hypothesis testing
+
+#### On-Screen Slide Content:
+* Recall@k and MRR evaluate retrieval completeness
+* Macro F1 and Conflict F1 evaluate inference
+* End-to-end recall verifies combined pipeline accuracy
+* Throttled 4-thread CPU edge latency profiling
+* Friedman ANOVA validates cross-domain performance invariance
+* McNemar test confirms pairwise classifier superiority
+
+#### Spoken Script:
+> "To validate our system under rigorous computer science standards, Sections 3.8 and 3.9 define our quantitative metrics and non-parametric hypothesis testing procedures.
+> 
+> In Section 3.8, Stage 1 retrieval is evaluated using Recall at k for k in 5, 10, 20, and 50, alongside Mean Reciprocal Rank, verifying that the governing positive law appears at the very top of the candidate shortlist. For Stage 2 inference, we evaluate Macro F1 and Conflict Class F1, ensuring the model is not artificially inflated by majority neutral pairs. We also compute End-to-End Recall via the FEVER compound metric, requiring both correct statutory retrieval and correct conflict classification.
+> 
+> To prove deployment feasibility on local government hardware, all inference pipelines undergo throttled 4-thread CPU profiling on Host A, ensuring complete draft audits terminate in under 15 seconds with resident memory capped below 8 gigabytes.
+> 
+> Finally, in Section 3.9, we enforce non-parametric hypothesis testing. Because legal conflict datasets exhibit skewed distributions, we reject simple accuracy averages. We execute Friedman's Non-Parametric ANOVA across all eight macro legal domains to prove that model performance is invariant and does not overfit to specific domains like taxation. Furthermore, we conduct McNemar's Test with Edwards' Continuity Correction on discordant prediction pairs, applying a strict alpha = 0.05 rejection boundary to confirm the statistical superiority of our fine-tuned cross-encoder over baseline models."
+
+---
+
+### Slide 18: Live Technical System Demonstration
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Interactive Prototype Demonstration
 * **Bottom-Left Paper Ref:** Appendix H
-* **Bottom-Right Slide:** Slide 16
+* **Bottom-Right Slide:** Slide 18
 * **Title:** Live System Demonstration
 * **Visual:** **LIVE SCREEN SHARE** of the interactive web prototype (Draft upload, Reddit-style hierarchical tree, real-time audit, and XAI heatmap)
 
@@ -403,34 +464,34 @@ Specifically, this study aims to:
 > 2. **(Hierarchical Section View - 0:45):**  
 >    "The application immediately parses the draft into a structured, Reddit-style hierarchical tree. Legal researchers can collapse, expand, and inspect individual sections, clauses, and penalty provisions, making multi-page legislation effortless to navigate."
 > 
-> 3. **(Real-Time Audit & Conflict Detection - 1:00):**  
->    "When we initiate the statutory audit, Stage 1 searches across the 176,421 provisions in milliseconds, surfacing relevant sections from Republic Act 4136 and related city ordinances. Stage 2 immediately evaluates the pairs. Notice Section 5: the draft ordinance imposes an absolute municipal fine of 15,000 pesos. The system immediately flags a High-Confidence Contradiction!"
+> 3. **(Real-Time Audit & Conflict Detection - 0:45):**  
+>    "When we initiate the statutory audit, Stage 1 searches across the 183,086 provisions in milliseconds, surfacing relevant sections from Republic Act 4136 and related city ordinances. Stage 2 immediately evaluates the pairs. Notice Section 5: the draft ordinance imposes an absolute municipal fine of 15,000 pesos. The system immediately flags a High-Confidence Contradiction!"
 > 
-> 4. **(Explainable Attention Heatmap & Export - 1:00):**  
+> 4. **(Explainable Attention Heatmap & Export - 0:45):**  
 >    "When we click 'Inspect Rationales,' the system displays the token-level cross-attention heatmap. It highlights the exact conflict: the draft's 15,000-peso fine directly violates Section 458 of Republic Act 7160, which caps municipal ordinance penalties at 5,000 pesos. Drafters can immediately export this finding into a formal Legislative Audit Report for committee review."
 
 ---
 
-### Slide 17: Project Status, Administrative Routing & Next Steps
+### Slide 19: Project Status, Administrative Routing & Next Steps
 * **Speaker:** Ralph Paolo Dulce & Yahyah Odin
 * **Top-Left Header:** Project Status & Roadmap
 * **Bottom-Left Paper Ref:** §4.5, §5.2
-* **Bottom-Right Slide:** Slide 17
+* **Bottom-Right Slide:** Slide 19
 * **Title:** Current Progress Summary & Next Steps
 * **Visual:** Administrative routing workflow (Sangguniang Panlungsod $\rightarrow$ HRMO / City Administrator $\rightarrow$ 15 Legal Researchers $\rightarrow$ Civil Service 201 Commendation)
 
 #### On-Screen Slide Content:
-* Chapters 1 to 3 fully drafted
-* Dual statutory knowledge base fully compiled
-* 176,421 provisions validated for transformer compliance
-* Two-stage architecture and algorithms formally defined
+* Chapters 1 through 3 fully completed
+* Dual statutory knowledge base fully assembled
+* 183,086 provisions validated for transformer processing
+* Two-stage coarse-to-fine architecture formally formulated
 * Functional web application prototype completed
 * SP endorsement received; routing via HRMO
 * Human evaluation prepared with official commendations
 
 #### Spoken Script:
 > **(Ralph):**  
-> "To summarize our progress: we have completed the full manuscript draft for Chapters 1 through 3, compiled and verified our dual statutory knowledge base of 27,096 enactments, formally defined our two-stage architecture, and developed a fully functioning interactive web prototype.
+> "To summarize our progress: we have completed the full manuscript draft for Chapters 1 through 3, compiled and structured our dual statutory knowledge base of 27,357 enactments, formally defined our two-stage architecture, and developed a fully functioning interactive web prototype.
 > 
 > **(Yah):**  
 > Regarding our immediate next steps: following the favorable endorsement from Sangguniang Panlungsod Acting Department Head Ma. Theresa Reyes, our formal approval packet is currently routing through the City Administrator's Office via HRMO. Once cleared, we will execute our human evaluation with the 15 city legal researchers, measuring usability and inter-annotator agreement, with official commendations awarded for their Civil Service 201 records.
@@ -448,10 +509,10 @@ Specifically, this study aims to:
 * **Answer:** "In a local government setting, cloud APIs have three major drawbacks: First, data privacy—uploading unapproved government drafts to commercial cloud servers raises compliance concerns under Republic Act 10173. Second, cost—recurring per-page API fees are unsustainable for municipal budgets. Third, reliability—cloud LLMs often suffer from affirmative bias and hallucination. Our open-weight models run 100% offline, cost nothing to operate, and provide transparent attention heatmaps."
 
 ### 3. "Why are you presenting preliminary corpus exploratory results rather than full model evaluation in this proposal defense?"
-* **Answer:** "In accordance with our thesis proposal guidelines covering Chapters 1 through 3, our primary completed empirical milestone is the comprehensive assembly, archival digitization, and exploratory data analysis of our 27,096-enactment dual knowledge base, including the validation of the 94.69% transformer compliance rate. The deep neural cross-encoder training and benchmark experiments represent our planned methodology in Chapter 3, which we will fully execute and report upon defending our methodology."
+* **Answer:** "In accordance with our thesis proposal guidelines covering Chapters 1 through 3, our primary completed empirical milestone is the comprehensive assembly, archival digitization, and exploratory data analysis of our 27,357-enactment dual knowledge base with 183,086 provisions, including the validation of the 94.69% transformer compliance rate. The deep neural cross-encoder training and benchmark experiments represent our planned methodology in Chapter 3, which we will fully execute and report upon defending our methodology."
 
 ### 4. "What is the status of your data and testing with actual legal staff?"
-* **Answer:** "We have already compiled and structured 27,096 laws and 1,664 local ordinances. For the human evaluation, the Sangguniang Panlungsod has endorsed our study and referred it to the City Administrator through HRMO. We have prepared the testing packets and Google Forms, and we are ready to deploy the evaluation with 15 legal researchers as soon as administrative clearance is finalized."
+* **Answer:** "We have already compiled and structured 25,432 national statutes and 1,925 local ordinances totaling 183,086 provisions. For the human evaluation, the Sangguniang Panlungsod has endorsed our study and referred it to the City Administrator through HRMO. We have prepared the testing packets and Google Forms, and we are ready to deploy the evaluation with 15 legal researchers as soon as administrative clearance is finalized."
 
 ### 5. "Why decouple coarse retrieval and fine NLI cross-encoders?"
-* **Answer:** "Comparing a multi-provision draft ordinance pairwise against all 176,421 statutory provisions using a cross-encoder would require millions of deep transformer passes, taking hours and exceeding the memory limits of office computers. Decoupling allows Stage 1 to filter the entire corpus down to 50 candidates in milliseconds using lightweight hybrid search, allowing Stage 2 to apply deep bidirectional attention strictly where it matters."
+* **Answer:** "Comparing a multi-provision draft ordinance pairwise against all 183,086 statutory provisions using a cross-encoder would require millions of deep transformer passes, taking hours and exceeding the memory limits of office computers. Decoupling allows Stage 1 to filter the entire corpus down to 50 candidates in milliseconds using lightweight hybrid search, allowing Stage 2 to apply deep bidirectional attention strictly where it matters."
