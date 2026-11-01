@@ -533,7 +533,7 @@ Specifically, this study aims to:
 * **Bottom-Right Slide:** Slide 21
 * **Title:** Archival OCR & Local VLM Extraction
 * **Subtitle:** Evaluation of Optical Character Recognition Engines
-* **Visual:** **Table 4.1 Performance Comparison** (CER, WER, Table Integrity across Tesseract, Surya, Google Cloud, and Local 4-bit Qwen2.5-VL-3B)
+* **Visual:** **Table 4.1 Publication Card** (`slide21_table4_1_ocr_benchmark.png`) (CER, WER, Table Integrity across Tesseract, Surya, Google Cloud, and Local 4-bit Qwen2.5-VL-3B)
 
 #### On-Screen Slide Content:
 * Tested four optical character recognition engines
