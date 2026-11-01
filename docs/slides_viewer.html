@@ -1,0 +1,1561 @@
+<html lang="en" data-theme="zinc">
+  <!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentation Slides — Thesis Defense Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, ::before, ::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 240 10% 3.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 240 10% 3.9%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 240 10% 3.9%;
+      --primary: 240 5.9% 10%;
+      --primary-foreground: 0 0% 98%;
+      --secondary: 240 4.8% 95.9%;
+      --secondary-foreground: 240 5.9% 10%;
+      --muted: 240 4.8% 95.9%;
+      --muted-foreground: 240 3.8% 46.1%;
+      --accent: 240 4.8% 95.9%;
+      --accent-foreground: 240 5.9% 10%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 0 0% 98%;
+      --border: 240 5.9% 90%;
+      --input: 240 5.9% 90%;
+      --ring: 240 5.9% 10%;
+      --radius: 0.5rem;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    .dark {
+      --background: 240 10% 3.9%;
+      --foreground: 0 0% 98%;
+      --card: 240 10% 3.9%;
+      --card-foreground: 0 0% 98%;
+      --popover: 240 10% 3.9%;
+      --popover-foreground: 0 0% 98%;
+      --primary: 0 0% 98%;
+      --primary-foreground: 240 5.9% 10%;
+      --secondary: 240 3.7% 15.9%;
+      --secondary-foreground: 0 0% 98%;
+      --muted: 240 3.7% 15.9%;
+      --muted-foreground: 240 5% 64.9%;
+      --accent: 240 3.7% 15.9%;
+      --accent-foreground: 0 0% 98%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 0 0% 98%;
+      --border: 240 3.7% 15.9%;
+      --input: 240 3.7% 15.9%;
+      --ring: 240 4.9% 83.9%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      font-size: 0.875rem;
+    }
+
+    /* Sticky Top Header */
+    header {
+      position: sticky;
+      top: 0;
+      height: 56px;
+      border-bottom: 1px solid hsl(var(--border));
+      background-color: hsl(var(--background) / 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      z-index: 40;
+      gap: 1rem;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+
+    .header-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Shadcn Card */
+    .cn-card {
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      background-color: hsl(var(--card));
+      color: hsl(var(--card-foreground));
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+    }
+
+    .cn-card-header {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid hsl(var(--border));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cn-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+
+    .cn-card-description {
+      font-size: 0.8rem;
+      color: hsl(var(--muted-foreground));
+    }
+
+    /* Shadcn Buttons */
+    .cn-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: calc(var(--radius) - 2px);
+      font-size: 0.78rem;
+      font-weight: 500;
+      height: 2rem;
+      padding: 0 0.65rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background-color: transparent;
+      color: hsl(var(--foreground));
+      transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+      gap: 0.375rem;
+      user-select: none;
+      white-space: nowrap;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .cn-button-default {
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+    }
+    .cn-button-default:hover {
+      background-color: hsl(var(--primary) / 0.9);
+    }
+
+    .cn-button-outline {
+      border-color: hsl(var(--border));
+      background-color: hsl(var(--background));
+    }
+    .cn-button-outline:hover {
+      background-color: hsl(var(--accent));
+      color: hsl(var(--accent-foreground));
+    }
+
+    .cn-button-ghost {
+      color: hsl(var(--muted-foreground));
+    }
+    .cn-button-ghost:hover {
+      background-color: hsl(var(--accent));
+      color: hsl(var(--foreground));
+    }
+
+    .cn-button-xs {
+      height: 1.65rem;
+      padding: 0 0.5rem;
+      font-size: 0.72rem;
+    }
+
+    /* Filter Group */
+    .filter-group {
+      display: inline-flex;
+      background-color: hsl(var(--muted));
+      padding: 2px;
+      border-radius: calc(var(--radius) - 1px);
+      border: 1px solid hsl(var(--border));
+    }
+
+    .filter-btn {
+      border: 0;
+      background: transparent;
+      color: hsl(var(--muted-foreground));
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.25rem 0.65rem;
+      border-radius: calc(var(--radius) - 3px);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .filter-btn.active {
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Shadcn Input */
+    .cn-input {
+      height: 2rem;
+      border-radius: calc(var(--radius) - 2px);
+      border: 1px solid hsl(var(--input));
+      background-color: hsl(var(--background));
+      padding: 0 0.65rem;
+      font-size: 0.8rem;
+      color: hsl(var(--foreground));
+      outline: none;
+      width: 210px;
+      font-family: inherit;
+    }
+    .cn-input:focus {
+      border-color: hsl(var(--ring));
+      box-shadow: 0 0 0 2px hsl(var(--ring) / 0.15);
+    }
+
+    /* Shadcn Badge */
+    .cn-badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 9999px;
+      border: 1px solid transparent;
+      padding: 0.1rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      width: fit-content;
+      white-space: nowrap;
+      gap: 0.25rem;
+    }
+
+    .cn-badge-default {
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+    }
+
+    .cn-badge-secondary {
+      background-color: hsl(var(--secondary));
+      color: hsl(var(--secondary-foreground));
+    }
+
+    .cn-badge-outline {
+      border-color: hsl(var(--border));
+      color: hsl(var(--foreground));
+      background-color: hsl(var(--background));
+    }
+
+    .cn-badge-ralph {
+      background-color: hsl(221 83% 53% / 0.12);
+      color: hsl(221 83% 45%);
+      border-color: hsl(221 83% 53% / 0.25);
+    }
+    .dark .cn-badge-ralph {
+      background-color: hsl(217 91% 60% / 0.15);
+      color: hsl(217 91% 72%);
+      border-color: hsl(217 91% 60% / 0.3);
+    }
+
+    .cn-badge-yah {
+      background-color: hsl(142 76% 36% / 0.12);
+      color: hsl(142 76% 30%);
+      border-color: hsl(142 76% 36% / 0.25);
+    }
+    .dark .cn-badge-yah {
+      background-color: hsl(142 70% 45% / 0.15);
+      color: hsl(142 70% 65%);
+      border-color: hsl(142 70% 45% / 0.3);
+    }
+
+    /* Shadcn Table */
+    .cn-table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .cn-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.84rem;
+    }
+
+    .cn-table th {
+      padding: 0.65rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: hsl(var(--muted-foreground));
+      border-bottom: 1px solid hsl(var(--border));
+      background-color: hsl(var(--muted) / 0.35);
+      white-space: nowrap;
+    }
+
+    .cn-table td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid hsl(var(--border));
+      color: hsl(var(--foreground));
+      vertical-align: top;
+    }
+
+    .cn-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .cn-table tbody tr:hover td {
+      background-color: hsl(var(--muted) / 0.3);
+    }
+
+    /* Cell Helpers */
+    .cell-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .slide-num {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: hsl(var(--muted-foreground));
+    }
+
+    .slide-title-text {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: hsl(var(--foreground));
+      line-height: 1.35;
+    }
+
+    .slide-subtitle-text {
+      font-size: 0.78rem;
+      color: hsl(var(--muted-foreground));
+      margin-top: 0.15rem;
+    }
+
+    .slide-header-meta {
+      font-size: 0.73rem;
+      color: hsl(var(--muted-foreground));
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+    }
+
+    .bullet-list {
+      list-style: disc;
+      padding-left: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .bullet-list ul {
+      list-style: circle;
+      padding-left: 1.15rem;
+      margin-top: 0.2rem;
+    }
+
+    .script-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      color: hsl(var(--foreground) / 0.92);
+      line-height: 1.55;
+    }
+
+    /* Hyperlink Chip for Figures, Tables & PDF Pages */
+    .asset-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      border: 1px solid hsl(var(--border));
+      background-color: hsl(var(--muted) / 0.6);
+      color: hsl(var(--foreground));
+      text-decoration: none;
+      transition: background-color 0.15s, border-color 0.15s;
+      margin: 0.15rem 0.2rem 0.15rem 0;
+    }
+
+    .asset-link:hover {
+      background-color: hsl(var(--accent));
+      border-color: hsl(var(--ring) / 0.4);
+      text-decoration: underline;
+    }
+
+    .visual-note {
+      margin-top: 0.55rem;
+      padding-top: 0.55rem;
+      border-top: 1px dashed hsl(var(--border));
+      font-size: 0.78rem;
+      color: hsl(var(--muted-foreground));
+    }
+
+    /* Image Modal Preview */
+    .cn-dialog-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(3px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .cn-dialog-overlay.open {
+      display: flex;
+    }
+    .cn-dialog {
+      background-color: hsl(var(--background));
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      max-width: 960px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+    .cn-dialog-header {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid hsl(var(--border));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cn-dialog-body {
+      padding: 1.25rem;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      background-color: hsl(var(--muted) / 0.3);
+    }
+    .cn-dialog-body img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border: 1px solid hsl(var(--border));
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    /* Toast */
+    #toast-container {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cn-toast {
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      padding: 0.65rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      background-color: hsl(var(--muted));
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <span class="header-title">Presentation Slides</span>
+      <span class="cn-badge cn-badge-outline" id="source-indicator">PRESENTATION_SLIDES_MOCK_DEFENSE.md</span>
+      <span class="cn-badge cn-badge-secondary" id="slide-count-badge">17 Slides</span>
+    </div>
+
+    <div class="header-actions">
+      <div class="filter-group" id="speaker-filters">
+        <button class="filter-btn active" data-speaker="all">All</button>
+        <button class="filter-btn" data-speaker="ralph">Ralph</button>
+        <button class="filter-btn" data-speaker="yah">Yah</button>
+      </div>
+
+      <input type="text" class="cn-input" id="search-input" placeholder="Filter slides or script...">
+
+      <label class="cn-button cn-button-outline" title="Load any .md file from disk">
+        Load .md
+        <input type="file" id="md-file-input" accept=".md,.txt" style="display: none;">
+      </label>
+
+      <button class="cn-button cn-button-outline" id="reload-btn" title="Re-fetch PRESENTATION_SLIDES_MOCK_DEFENSE.md">
+        Refresh
+      </button>
+
+      <button class="cn-button cn-button-outline" id="theme-toggle" title="Toggle Light/Dark Mode">
+        Theme
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- 1. Presentation Flow & Speaking Split Table -->
+    <section class="cn-card" id="flow-section">
+      <div class="cn-card-header">
+        <div>
+          <h2 class="cn-card-title">Presentation Flow &amp; Speaking Split</h2>
+          <p class="cn-card-description" id="deck-meta-subtitle">Parsed directly from Markdown source</p>
+        </div>
+      </div>
+      <div class="cn-table-container">
+        <table class="cn-table" id="flow-table">
+          <thead>
+            <tr>
+              <th style="width: 70px;">Slide</th>
+              <th>Topic</th>
+              <th style="width: 140px;">Speaker</th>
+              <th>Slide Visual / Reference</th>
+              <th style="width: 100px;">Est. Time</th>
+            </tr>
+          </thead>
+          <tbody id="flow-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2. Main Slide-by-Slide Content & Script Table -->
+    <section class="cn-card">
+      <div class="cn-card-header">
+        <div>
+          <h2 class="cn-card-title">Slide-by-Slide Content, Visuals &amp; Spoken Script</h2>
+          <p class="cn-card-description">Click any Copy button to grab clean plain text for Canva or PowerPoint. Click figure/PDF links to preview or open.</p>
+        </div>
+      </div>
+      <div class="cn-table-container">
+        <table class="cn-table" id="slides-table">
+          <thead>
+            <tr>
+              <th style="width: 135px;">Slide &amp; Speaker</th>
+              <th style="width: 24%;">Slide Title &amp; Visual Reference</th>
+              <th style="width: 32%;">On-Screen Slide Content</th>
+              <th>Spoken Script</th>
+            </tr>
+          </thead>
+          <tbody id="slides-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. Panel Q&A Reference Table -->
+    <section class="cn-card" id="qa-section">
+      <div class="cn-card-header">
+        <div>
+          <h2 class="cn-card-title">Panel Q&amp;A Quick Reference</h2>
+          <p class="cn-card-description">Prepared defense responses from the Markdown file</p>
+        </div>
+      </div>
+      <div class="cn-table-container">
+        <table class="cn-table">
+          <thead>
+            <tr>
+              <th style="width: 32%;">Panel Inquiry</th>
+              <th>Prepared Response</th>
+            </tr>
+          </thead>
+          <tbody id="qa-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Image Preview Modal -->
+  <div class="cn-dialog-overlay" id="img-modal">
+    <div class="cn-dialog">
+      <div class="cn-dialog-header">
+        <span class="cn-card-title" id="img-modal-title">Figure Preview</span>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="#" target="_blank" class="cn-button cn-button-outline cn-button-xs" id="img-modal-open-tab">Open Full File ↗</a>
+          <button class="cn-button cn-button-outline cn-button-xs" id="img-modal-close">Close</button>
+        </div>
+      </div>
+      <div class="cn-dialog-body">
+        <img id="img-modal-src" src="" alt="Figure Preview">
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <!-- Embedded Fallback Markdown (Automatically overridden when fetch('./PRESENTATION_SLIDES_MOCK_DEFENSE.md') succeeds) -->
+  <script id="fallback-md" type="text/markdown">
+# Presentation Slides: Initial Presentation & Mock Defense
+### Computer Studies Cluster, School of Arts and Sciences
+### Ateneo de Davao University
+**Course:** Bachelor of Science in Computer Science (BS CS)  
+**Time Allotted:** 20 Minutes (Strict) | Target Presentation: ~16--17 mins + Q&A Buffer  
+**Proponents:** Ralph Paolo Dulce & Yahyah Odin  
+**Thesis Adviser:** Mr. Adrian "Ogs" Ablazo | **Professor:** Ma'am Grace Tacadao  
+
+---
+
+## Presentation Flow & Speaking Split
+
+| Slide | Topic | Primary Speaker | Slide Visual Type | Est. Time |
+| :---: | :--- | :---: | :---: | :---: |
+| **1** | Title & Introduction | Ralph | Metadata Banner | 1.0 min |
+| **2** | Chapter 1: Introduction | Ralph | Title-Only Divider | 0.5 min |
+| **3** | Background of the Study | Ralph | **Side-by-Side:** Scan (`sample_davao_city_ordinance_scan.png`) + 7x7 Bullets | 2.0 mins |
+| **4** | Problem Statement | Ralph | Text Layout (Verbatim Reading) | 1.5 mins |
+| **5** | Objectives of the Study | Ralph | Text Layout (Verbatim Reading) | 1.5 mins |
+| **6** | Chapter 3: Methodology | Ralph $\rightarrow$ Yah | Title-Only Divider & Speaker Handoff | 0.5 min |
+| **7** | Conceptual Framework: Overview | Yah | **Full Flowchart:** Bird's-Eye View (`conceptual_framework_flowchart.png`) | 1.5 mins |
+| **8** | Phase 1: Dual Corpus Ingestion | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase1_ingestion.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
+| **9** | Phase 1: Model Benchmarking | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase1_benchmarking.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
+| **10** | Phase 2: System Input | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_input.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
+| **11** | Phase 2: Stage 1 Retrieval | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_stage1.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
+| **12** | Phase 2: Stage 2 Inference | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_stage2.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
+| **13** | Phase 2: System Output & Explainability | Yah | **Multi-Panel:** Full Flowchart (Right) + Remade Component (`cf_phase2_output.png`) (Top-Left) + 7x7 Bullets (Bottom-Left) | 1.0 min |
+| **14** | Corpus Exploration: Token Length Compliance | Yah | **Figure Alone:** Dual-Corpus 512-Token Distribution (`dual_corpus_transformer_compliance.png`) | 1.5 mins |
+| **15** | Evaluation Benchmark & Human Study Design | Yah | Evaluation Matrix / Benchmark Design | 1.5 mins |
+| **16** | **Live Technical System Demonstration** | Yah | Live Screen Share | 3.5 mins |
+| **17** | Project Status, Administrative Routing & Next Steps | Ralph & Yah | Workflow Diagram / Next Steps | 1.0 min |
+
+---
+
+## Slide-by-Slide Presentation Content
+
+---
+
+### Slide 1: Title Slide
+* **Speaker:** Ralph Paolo Dulce
+* **Top-Left Header:** Computer Studies Cluster | Ateneo de Davao University
+* **Bottom-Left Paper Ref:** Title Page
+* **Bottom-Right Slide:** Slide 1
+* **Title:** A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances
+* **Subtitle:** Using Information Retrieval and Natural Language Inference
+* **Visual:** Ateneo de Davao University seal, thesis title banner, author credentials, adviser name
+
+#### On-Screen Slide Content:
+* Automated statutory conflict detection for local legislation
+* Powered by hybrid information retrieval and cross-encoders
+* Proactive **ex-ante evaluation** prior to formal enactment
+* **Proponents:** Ralph Paolo Dulce & Yahyah Odin (BS Computer Science)
+* **Adviser:** Mr. Adrian "Ogs" Ablazo | **Professor:** Ma'am Grace Tacadao
+
+#### Spoken Script:
+> "Good morning to the members of the evaluation panel, our thesis adviser Mr. Adrian Ablazo, and our course professor Ma'am Grace Tacadao. I am Ralph Paolo Dulce, and together with my co-author Yahyah Odin, we present our thesis entitled: *'A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference.'*
+> 
+> In this presentation, we will walk you through our legal motivation, research objectives, conceptual framework, exploratory data analysis from Chapter 3, our system methodology, and a live demonstration of our working prototype."
+
+---
+
+### Slide 2: Chapter 1: Introduction
+* **Speaker:** Ralph Paolo Dulce
+* **Top-Left Header:** Computer Studies Cluster | Ateneo de Davao University
+* **Bottom-Left Paper Ref:** Chapter 1
+* **Bottom-Right Slide:** Slide 2
+* **Title:** Chapter 1
+* **Subtitle:** Introduction
+* **Visual:** Minimal chapter title card with roadmap overview
+
+#### On-Screen Slide Content:
+* Background of the Study
+* Research Problem Statement
+* Formal Research Objectives
+
+#### Spoken Script:
+> "We begin with Chapter 1: Introduction, covering our real-world legal motivation, our formal research questions, and the concrete objectives guiding this study."
+
+---
+
+### Slide 3: Background of the Study
+* **Speaker:** Ralph Paolo Dulce
+* **Top-Left Header:** Chapter 1. Introduction
+* **Bottom-Left Paper Ref:** §1.1
+* **Bottom-Right Slide:** Slide 3
+* **Title:** Background of the Study
+* **Visual:** Side-by-Side: Authentic Archival Typewriter Scan (`CS_Undergraduate_Thesis_Template/figs/sample_davao_city_ordinance_scan.png`) on the left, 7x7 Motivation Bullets on the right
+
+#### On-Screen Slide Content:
+* Local ordinances cannot contradict national statutes
+* Overlooked legal conflicts make ordinances void
+* Thousands of laws overwhelm manual review
+* Scanned local archives suffer OCR noise
+* Missed conflicts trigger costly legal disputes
+* Ex-ante auditing prevents invalid enacted laws
+
+#### Spoken Script:
+> "To understand why we built this system, imagine what happens when a city council drafts a new ordinance—for example, regulating local transportation or setting municipal fees.
+> 
+> Under Philippine law and the *Magtajas Doctrine*, local governments only possess delegated powers. An ordinance cannot allow what a national law prohibits, nor can it ban what a national law allows. If a conflict slips through, that local ordinance is legally void from the moment it is signed.
+> 
+> But here is the real dilemma: how can city legal staff actually verify that a new draft is completely safe? Right now, they have to cross-reference thousands of pages of national codes and local history by hand. And as you can see on screen, our historical local ordinances from the past 70 years exist primarily as scanned paper documents—full of typewriter noise, faded ink, and ink stamps that break regular search engines.
+> 
+> When conflicts are missed, the result is costly court battles and confusion for everyday citizens. This is where our vision comes in: an **ex-ante audit**—meaning an evaluation done 'before the event.' By giving city council researchers an automated tool to screen drafts during committee review, we can catch and resolve conflicts before a measure is ever enacted into law."
+
+---
+
+### Slide 4: Problem Statement
+* **Speaker:** Ralph Paolo Dulce
+* **Top-Left Header:** Chapter 1. Introduction
+* **Bottom-Left Paper Ref:** §1.2
+* **Bottom-Right Slide:** Slide 4
+* **Title:** Problem Statement
+* **Visual:** Structured problem statement layout (Exemption to 7x7 rule — exact text from paper)
+
+#### On-Screen Slide Content:
+This study is conducted to investigate the use of a multi-stage architecture to automate the manual auditing of proposed local legislation in Davao City. 
+
+Specifically, the study aims to answer the following research questions:
+* **Q1:** What are the specific linguistic parameters and structural markers that define a "semantic conflict" between a proposed local ordinance and existing local or national laws?
+* **Q2:** How can a Coarse-to-Fine system be designed to efficiently retrieve relevant national and local statutes before performing deep logical inference on constrained LGU hardware?
+* **Q3:** Which combination of a hybrid Information Retrieval (IR) algorithms and Natural Language Inference (NLI) models provides the highest accuracy when processing the specific hierarchy of Philippine legal texts?
+* **Q4:** What is the empirical performance of the proposed pipeline when evaluated against a manually curated Ground Truth dataset of local and national conflict pairs?
+* **Q5:** How usable and viable is the final system interface for key stakeholders within the Davao City Sangguniang Panlungsod?
+
+#### Spoken Script:
+> *(No script required — read verbatim from the on-screen slide text)*
+
+---
+
+### Slide 5: Objectives of the Study
+* **Speaker:** Ralph Paolo Dulce
+* **Top-Left Header:** Chapter 1. Introduction
+* **Bottom-Left Paper Ref:** §1.3
+* **Bottom-Right Slide:** Slide 5
+* **Title:** Objectives of the Study
+* **Visual:** Objective matrix aligned with problem statements (Exemption to 7x7 rule — exact text from paper)
+
+#### On-Screen Slide Content:
+The primary goal of this research is to develop a computationally efficient, two-stage semantic conflict detection system for proposed Davao City ordinances. 
+
+Specifically, this study aims to:
+* **Obj 1:** Identify the specific linguistic characteristics and structural constraints of Davao City’s legislative archive that contribute to semantic ambiguity and retrieval failure;
+* **Obj 2:** Design a Coarse-to-Fine computational pipeline that decouples document retrieval from logical inference to optimize resource usage for local deployment;
+* **Obj 3:** Implement a hybrid Information Retrieval (IR) algorithm and Natural Language Inference (NLI) system specifically calibrated for the Philippine legal hierarchy;
+* **Obj 4:** Evaluate the system’s reliability by comparing its automated detections against a verified set of known legal conflicts to measure how accurately it identifies contradictions; and
+* **Obj 5:** Develop a user-friendly web interface for the Davao City Sangguniang Panlungsod designed to accept uploaded draft documents and provide real-time conflict alerts.
+
+#### Spoken Script:
+> *(No script required — read verbatim from the on-screen slide text)*
+
+---
+
+### Slide 6: Chapter 3: Methodology
+* **Speaker:** Ralph Paolo Dulce $\rightarrow$ Yahyah Odin
+* **Top-Left Header:** Computer Studies Cluster | Ateneo de Davao University
+* **Bottom-Left Paper Ref:** Chapter 3
+* **Bottom-Right Slide:** Slide 6
+* **Title:** Chapter 3
+* **Subtitle:** Methodology & Architecture
+* **Visual:** Minimal chapter title card with methodology roadmap & speaker transition handoff
+
+#### On-Screen Slide Content:
+* Conceptual Framework Flowchart
+* Dual Statutory Corpus Ingestion
+* Transformer Token Length Distribution
+* Two-Stage Neural Evaluation Design
+* Live Interactive Prototype Demonstration
+
+#### Spoken Script:
+> **(Ralph):**  
+> "With our motivation and research objectives established, we now transition to Chapter 3: Methodology. To walk you through our two-stage architecture, data processing, and system implementation, I hand the floor over to my co-author, Yahyah Odin.
+> 
+> **(Yah):**  
+> Thank you, Ralph. In this chapter, we present the technical blueprint of our conflict detection system, starting with our overall conceptual framework."
+
+---
+
+### Slide 7: Conceptual Framework
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.1
+* **Bottom-Right Slide:** Slide 7
+* **Title:** Conceptual Framework
+* **Visual:** Full-slide display: Complete Conceptual Framework Flowchart (`CS_Undergraduate_Thesis_Template/figs/conceptual_framework_flowchart.png`) showing Phase 1 (Offline Foundation & Optimization) and Phase 2 (Live Retrieve-Then-Entail Pipeline)
+
+#### On-Screen Slide Content:
+* Divides complex legal audit into two phases
+* Balances exhaustive coverage with instant responsiveness
+* Delivers deep AI reasoning within municipal constraints
+
+#### Spoken Script:
+> "Moving to Chapter 3, our system adapts the proven 'Retrieve-Then-Entail' framework from international legal AI benchmarks.
+> 
+> Evaluating a proposed draft ordinance against hundreds of thousands of laws using deep transformers would crash standard office computers. To make automated conflict detection feasible for local government units, we decouple the workflow into two distinct operational phases.
+> 
+> Phase 1 is our Offline Foundation, where we compile the dual statutory knowledge base, pre-compute retrieval indexes, and benchmark neural models. Phase 2 is our Live System Workflow, which takes a newly proposed draft, retrieves the most relevant laws in milliseconds, and performs deep cross-encoder inference to flag conflicts.
+> 
+> Let us now examine each of these five modular components in detail, beginning with our offline corpus foundation."
+
+---
+
+### Slide 8: Phase 1: Dual Corpus Ingestion
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.1.1
+* **Bottom-Right Slide:** Slide 8
+* **Title:** Phase 1: Dual Corpus Ingestion
+* **Visual:** Multi-panel layout matching reference: Full flowchart on right (`CS_Undergraduate_Thesis_Template/figs/conceptual_framework_flowchart.png` with red box over Phase 1 Upper Block); Remade standalone component on top-left (`CS_Undergraduate_Thesis_Template/figs/cf_phase1_ingestion.png`); 7x7 bullets on bottom-left
+
+#### On-Screen Slide Content:
+* Pre-computing offline prevents local computer freezing
+* Isolates regulatory rules and penalty clauses
+* Bridges national statutory supremacy with municipal history
+
+#### Spoken Script:
+> "Looking at our flowchart, we begin with Phase 1, highlighted in red on the right and zoomed in on the top-left: Dual Corpus Ingestion.
+> 
+> Our game plan here is to do all the heavy lifting upfront. We assemble both national statutes and Davao City ordinances into a unified repository, clean historical typewriter noise, and segment text into standalone regulatory rules.
+> 
+> The key reason we pre-compute our indexes offline is hardware realism: standard city hall desktop computers cannot re-index thousands of legal documents on the fly. By turning the entire body of positive law into pre-computed vectors and keyword tables ahead of time, we ensure that when an actual legal researcher runs an audit, the system responds instantly without freezing."
+
+---
+
+### Slide 9: Phase 1: Model Benchmarking
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.1.1
+* **Bottom-Right Slide:** Slide 9
+* **Title:** Phase 1: Model Benchmarking
+* **Visual:** Multi-panel layout matching reference: Full flowchart on right (`CS_Undergraduate_Thesis_Template/figs/conceptual_framework_flowchart.png` with red box over Phase 1 Lower Block); Remade standalone component on top-left (`CS_Undergraduate_Thesis_Template/figs/cf_phase1_benchmarking.png`); 7x7 bullets on bottom-left
+
+#### On-Screen Slide Content:
+* Tiers mirror real-world legislative conflict complexity
+* Prioritizes Stage 1 recall to prevent misses
+* Enforces strict local 8-gigabyte memory limits
+
+#### Spoken Script:
+> "Moving down to the second block of Phase 1, we focus on Model Benchmarking and Selection to find our production logic engines.
+> 
+> To test candidate architectures, we built a verified Ground Truth dataset of 350 statutory pairs. Rather than testing on simple keyword matches alone, we intentionally stratified our benchmark into three difficulty tiers to mirror real-world legislative complexity—from explicit citation conflicts up to subtle semantic preemption.
+> 
+> Our game plan in this screening is two-fold: First, we demand high recall from our retrieval models, because if a conflicting law is missed in Stage 1, the downstream model can never catch it. Second, we screen cross-encoders under a strict 8-gigabyte memory budget, ensuring our reasoning engines remain highly accurate without requiring expensive server clusters."
+
+---
+
+### Slide 10: Phase 2: System Input
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.1.2
+* **Bottom-Right Slide:** Slide 10
+* **Title:** Phase 2: System Input
+* **Visual:** Multi-panel layout matching reference: Full flowchart on right (`CS_Undergraduate_Thesis_Template/figs/conceptual_framework_flowchart.png` with red box over Phase 2 Top Block); Remade standalone component on top-left (`CS_Undergraduate_Thesis_Template/figs/cf_phase2_input.png`); 7x7 bullets on bottom-left
+
+#### On-Screen Slide Content:
+* Digital drafts eliminate archival optical scanning noise
+* Filters procedural clauses to prevent false alarms
+* Audits operative rules before committee debates
+
+#### Spoken Script:
+> "Now, we transition to Phase 2: our Live System Workflow, starting with System Input at the top of the column.
+> 
+> In practice, city council staff draft new legislation using modern word processors. Because these files are born digital, they are completely free of the faded ink and scanner noise found in our historical archives.
+> 
+> However, raw legal drafts contain extensive procedural boilerplate—such as Title, Scope, Separability, and Effectivity clauses. Our parsing engine automatically filters out these non-regulatory sections before vectorization. This ensures our AI focuses exclusively on operative rules, preventing harmless standard clauses from triggering false alarms during committee review."
+
+---
+
+### Slide 11: Phase 2: Stage 1 Retrieval
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.1.2
+* **Bottom-Right Slide:** Slide 11
+* **Title:** Phase 2: Stage 1 Retrieval
+* **Visual:** Multi-panel layout matching reference: Full flowchart on right (`CS_Undergraduate_Thesis_Template/figs/conceptual_framework_flowchart.png` with red box over Phase 2 Stage 1 Retrieval); Remade standalone component on top-left (`CS_Undergraduate_Thesis_Template/figs/cf_phase2_stage1.png`); 7x7 bullets on bottom-left
+
+#### On-Screen Slide Content:
+* Combines exact citations with conceptual intent
+* Filters thousands of laws within milliseconds
+* Safeguards national statutes against local overrides
+
+#### Spoken Script:
+> "In the middle of Phase 2, we execute our computational core, starting with Stage 1: Dual-Stream Hybrid Retrieval.
+> 
+> A standard office computer cannot run deep transformers across hundreds of thousands of laws for every draft section. To solve this, Stage 1 acts as a fast coarse filter. Stream A uses BM25 to catch exact law numbers and penalty amounts, while Stream B uses a dense bi-encoder to catch semantic meaning and synonyms.
+> 
+> Reciprocal Rank Fusion merges both streams, and our Statutory Hierarchy Safeguard ensures governing national laws are prioritized over local history. In just milliseconds, this narrows the entire dual corpus down to the 50 most relevant candidate provisions."
+
+---
+
+### Slide 12: Phase 2: Stage 2 Inference
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.1.2
+* **Bottom-Right Slide:** Slide 12
+* **Title:** Phase 2: Stage 2 Inference
+* **Visual:** Multi-panel layout matching reference: Full flowchart on right (`CS_Undergraduate_Thesis_Template/figs/conceptual_framework_flowchart.png` with red box over Phase 2 Stage 2 Inference); Remade standalone component on top-left (`CS_Undergraduate_Thesis_Template/figs/cf_phase2_stage2.png`); 7x7 bullets on bottom-left
+
+#### On-Screen Slide Content:
+* Draft and statute tokens directly cross-attend
+* Uncovers subtle penalty and jurisdictional contradictions
+* Focuses deep reasoning strictly on shortlisted laws
+
+#### Spoken Script:
+> "With candidates narrowed down, we move to Stage 2: Natural Language Inference for fine contradiction classification.
+> 
+> Evaluating candidate laws independently fails to catch subtle legal contradictions. In Stage 2, we feed the shortlisted statute premise and draft hypothesis together into our DeBERTa-v3 cross-encoder.
+> 
+> Because both texts share a single transformer sequence, every token in the proposed draft directly cross-attends to every token in the governing statute. This joint attention allows the system to identify subtle jurisdictional clashes and unauthorized penalties that standard search engines completely overlook."
+
+---
+
+### Slide 13: Phase 2: System Output & Explainability
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.1.2
+* **Bottom-Right Slide:** Slide 13
+* **Title:** Phase 2: System Output & Explainability
+* **Visual:** Multi-panel layout matching reference: Full flowchart on right (`CS_Undergraduate_Thesis_Template/figs/conceptual_framework_flowchart.png` with red box over Phase 2 Bottom Block); Remade standalone component on top-left (`CS_Undergraduate_Thesis_Template/figs/cf_phase2_output.png`); 7x7 bullets on bottom-left
+
+#### On-Screen Slide Content:
+* Calibrated sensitivity catches costly preemption errors
+* Separates fatal national violations from local revisions
+* Provides transparent evidence for floor amendments
+
+#### Spoken Script:
+> "Finally, at the bottom of Phase 2, we arrive at System Output and Explainability.
+> 
+> Because failing to flag an unconstitutional ordinance is far costlier than reviewing a false alarm, our decision threshold is calibrated to prioritize catching genuine preemption errors. When a conflict is confirmed, the system immediately separates fatal national preemption—which would void the ordinance—from local policy friction, giving drafters clear procedural direction.
+> 
+> Most importantly, council attorneys cannot trust a black-box verdict. Our prototype provides token-level attention heatmaps that highlight the exact conflicting phrasing—such as an unauthorized penalty quantum. Legal researchers can export these transparent findings directly into an audit report, equipping councilors with concrete evidence to amend the draft before formal enactment."
+
+---
+
+### Slide 14: Corpus Exploration: Token Length Compliance
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.2.5, §3.3
+* **Bottom-Right Slide:** Slide 14
+* **Title:** Corpus Exploration: Token Length Compliance
+* **Visual:** Empirical token length compliance distribution curve (`CS_Undergraduate_Thesis_Template/figs/dual_corpus_transformer_compliance.png`)
+
+#### On-Screen Slide Content:
+* Ingested 27,096 enactments across both corpora
+* Compiled 176,421 standardized JSONL statutory provisions
+* National statutes span 1901 to 2026
+* Local ordinances span four legislative eras
+* Exactly 94.69% of provisions within 512 tokens
+* Validates direct transformer ingestion without chunking
+
+#### Spoken Script:
+> "Turning to our completed exploratory data analysis in Chapter 3, to evaluate proposed drafts against positive law, we assembled the first Unified Dual Statutory Knowledge Base. This repository integrates 27,096 enactments comprising 176,421 searchable provisions—combining 25,432 national statutes with 1,664 digitized Davao City local ordinances.
+> 
+> As demonstrated in our empirical distribution figure on screen, exactly 94.69% of all provisions across both corpora naturally fall within the standard 512-token transformer limit, with a median length of 84 tokens and a mean of 127 tokens. This empirical finding validates our core assumption: statutory provisions can be directly ingested by standard transformer models without aggressive chunking, preserving the full normative context and penalty clauses intact."
+
+---
+
+### Slide 15: Evaluation Benchmark & Human Study Design
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.4, §3.13
+* **Bottom-Right Slide:** Slide 15
+* **Title:** Evaluation Benchmark & Human Study Design
+* **Visual:** Evaluation matrix showing ground-truth benchmark tiers and human evaluation design
+
+#### On-Screen Slide Content:
+* Curates 350 pairs across three tiers
+* Tier 1 tests surface lexical matching
+* Tier 2 tests structural preemption limits
+* Tier 3 tests subtle semantic contradictions
+* Evaluates retrieval with Recall@K and MRR
+* Evaluates inference with Macro/Conflict F1
+* Prepares 15 legal researchers user study
+
+#### Spoken Script:
+> "To validate our system under Research Objectives 4 and 5, our methodology establishes a two-tiered evaluation framework.
+> 
+> First, for automated model benchmarking, we evaluate across a curated ground-truth dataset of 350 statutory pairs stratified across three difficulty tiers: direct lexical overlap, structural preemption, and subtle cross-domain conflicts. We measure retrieval completeness using Recall@K and MRR, and classification performance using Macro F1 and Conflict Class F1.
+> 
+> Second, for human evaluation under Objective 5, we designed a formal user study framework involving 15 legal researchers from the Davao City Sangguniang Panlungsod. Each evaluator reviews 70 pairs through structured forms. We measure inter-annotator agreement using Cohen's kappa, and evaluate overall software usability using the System Usability Scale and Post-Study System Usability Questionnaire."
+
+---
+
+### Slide 16: Live Technical System Demonstration
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Interactive Prototype Demonstration
+* **Bottom-Left Paper Ref:** Appendix H
+* **Bottom-Right Slide:** Slide 16
+* **Title:** Live System Demonstration
+* **Visual:** **LIVE SCREEN SHARE** of the interactive web prototype (Draft upload, Reddit-style hierarchical tree, real-time audit, and XAI heatmap)
+
+#### On-Screen Slide Content:
+* Interactive decision-support tool for local deployment
+* Parses draft into hierarchical section trees
+* Sub-second retrieval surfaces relevant positive laws
+* Real-time cross-encoder classifies normative conflicts
+* Visualizes attention heatmaps and exports reports
+
+#### Live Demo Walkthrough Script:
+> 1. **(Upload & Document Parsing - 0:45):**  
+>    "Now, we transition directly to our working technical prototype. What you see on screen is our interactive decision-support application, designed for local deployment within the city council network. We begin by uploading a draft ordinance—here, a proposed measure regulating public utility tricycles."
+> 
+> 2. **(Hierarchical Section View - 0:45):**  
+>    "The application immediately parses the draft into a structured, Reddit-style hierarchical tree. Legal researchers can collapse, expand, and inspect individual sections, clauses, and penalty provisions, making multi-page legislation effortless to navigate."
+> 
+> 3. **(Real-Time Audit & Conflict Detection - 1:00):**  
+>    "When we initiate the statutory audit, Stage 1 searches across the 176,421 provisions in milliseconds, surfacing relevant sections from Republic Act 4136 and related city ordinances. Stage 2 immediately evaluates the pairs. Notice Section 5: the draft ordinance imposes an absolute municipal fine of 15,000 pesos. The system immediately flags a High-Confidence Contradiction!"
+> 
+> 4. **(Explainable Attention Heatmap & Export - 1:00):**  
+>    "When we click 'Inspect Rationales,' the system displays the token-level cross-attention heatmap. It highlights the exact conflict: the draft's 15,000-peso fine directly violates Section 458 of Republic Act 7160, which caps municipal ordinance penalties at 5,000 pesos. Drafters can immediately export this finding into a formal Legislative Audit Report for committee review."
+
+---
+
+### Slide 17: Project Status, Administrative Routing & Next Steps
+* **Speaker:** Ralph Paolo Dulce & Yahyah Odin
+* **Top-Left Header:** Project Status & Roadmap
+* **Bottom-Left Paper Ref:** §4.5, §5.2
+* **Bottom-Right Slide:** Slide 17
+* **Title:** Current Progress Summary & Next Steps
+* **Visual:** Administrative routing workflow (Sangguniang Panlungsod $\rightarrow$ HRMO / City Administrator $\rightarrow$ 15 Legal Researchers $\rightarrow$ Civil Service 201 Commendation)
+
+#### On-Screen Slide Content:
+* Chapters 1 to 3 fully drafted
+* Dual statutory knowledge base fully compiled
+* 176,421 provisions validated for transformer compliance
+* Two-stage architecture and algorithms formally defined
+* Functional web application prototype completed
+* SP endorsement received; routing via HRMO
+* Human evaluation prepared with official commendations
+
+#### Spoken Script:
+> **(Ralph):**  
+> "To summarize our progress: we have completed the full manuscript draft for Chapters 1 through 3, compiled and verified our dual statutory knowledge base of 27,096 enactments, formally defined our two-stage architecture, and developed a fully functioning interactive web prototype.
+> 
+> **(Yah):**  
+> Regarding our immediate next steps: following the favorable endorsement from Sangguniang Panlungsod Acting Department Head Ma. Theresa Reyes, our formal approval packet is currently routing through the City Administrator's Office via HRMO. Once cleared, we will execute our human evaluation with the 15 city legal researchers, measuring usability and inter-annotator agreement, with official commendations awarded for their Civil Service 201 records.
+> 
+> That concludes our proposal defense presentation. Thank you very much, and we welcome the comments and guidance of our evaluation panel."
+
+---
+
+## Panel Q&A Quick Reference (Common Inquiries)
+
+### 1. "What is your main technical and practical contribution?"
+* **Answer:** "Technically, we designed a computationally efficient Coarse-to-Fine pipeline that combines hybrid retrieval with fine-tuned cross-encoders to run deep conflict detection on consumer LGU computers without cloud dependencies. Practically, we built an ex-ante decision-support tool that helps local governments prevent legally void ordinances and protect citizens' constitutional rights before laws are enacted."
+
+### 2. "Why not just use ChatGPT or a commercial cloud API?"
+* **Answer:** "In a local government setting, cloud APIs have three major drawbacks: First, data privacy—uploading unapproved government drafts to commercial cloud servers raises compliance concerns under Republic Act 10173. Second, cost—recurring per-page API fees are unsustainable for municipal budgets. Third, reliability—cloud LLMs often suffer from affirmative bias and hallucination. Our open-weight models run 100% offline, cost nothing to operate, and provide transparent attention heatmaps."
+
+### 3. "Why are you presenting preliminary corpus exploratory results rather than full model evaluation in this proposal defense?"
+* **Answer:** "In accordance with our thesis proposal guidelines covering Chapters 1 through 3, our primary completed empirical milestone is the comprehensive assembly, archival digitization, and exploratory data analysis of our 27,096-enactment dual knowledge base, including the validation of the 94.69% transformer compliance rate. The deep neural cross-encoder training and benchmark experiments represent our planned methodology in Chapter 3, which we will fully execute and report upon defending our methodology."
+
+### 4. "What is the status of your data and testing with actual legal staff?"
+* **Answer:** "We have already compiled and structured 27,096 laws and 1,664 local ordinances. For the human evaluation, the Sangguniang Panlungsod has endorsed our study and referred it to the City Administrator through HRMO. We have prepared the testing packets and Google Forms, and we are ready to deploy the evaluation with 15 legal researchers as soon as administrative clearance is finalized."
+
+### 5. "Why decouple coarse retrieval and fine NLI cross-encoders?"
+* **Answer:** "Comparing a multi-provision draft ordinance pairwise against all 176,421 statutory provisions using a cross-encoder would require millions of deep transformer passes, taking hours and exceeding the memory limits of office computers. Decoupling allows Stage 1 to filter the entire corpus down to 50 candidates in milliseconds using lightweight hybrid search, allowing Stage 2 to apply deep bidirectional attention strictly where it matters."
+  </script>
+
+  <script>
+    const state = {
+      mode: localStorage.getItem('cn-mode') || 'light',
+      speakerFilter: 'all',
+      searchQuery: '',
+      parsedData: null
+    };
+
+    function applyTheme() {
+      document.documentElement.classList.toggle('dark', state.mode === 'dark');
+    }
+    applyTheme();
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      state.mode = state.mode === 'light' ? 'dark' : 'light';
+      localStorage.setItem('cn-mode', state.mode);
+      applyTheme();
+    });
+
+    function showToast(msg) {
+      const container = document.getElementById('toast-container');
+      const el = document.createElement('div');
+      el.className = 'cn-toast';
+      el.textContent = msg;
+      container.appendChild(el);
+      setTimeout(() => el.remove(), 2000);
+    }
+
+    function copyText(text, label) {
+      navigator.clipboard.writeText(text.trim()).then(() => {
+        showToast(`Copied ${label}`);
+      });
+    }
+
+    // Format inline markdown + convert any figure/table/PDF references into clickable links
+    function formatInlineMd(str) {
+      if (!str) return '';
+      let s = str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\$\\rightarrow\$/g, '→')
+        .replace(/\$\\kappa\$/g, 'κ')
+        .replace(/\$F_1\$/g, 'F1')
+        .replace(/\$K \\in \\\{10, 20, 50\\\}\$/g, 'K in {10, 20, 50}')
+        .replace(/\$k=60\$/g, 'k = 60')
+        .replace(/--/g, '–');
+
+      // Convert backticked figure filenames (`...png` or `...pdf`) into clickable links
+      s = s.replace(/`([^`]+?\.(?:png|jpg|jpeg|svg|pdf))`/gi, (match, rawPath) => {
+        const fileName = rawPath.split('/').pop();
+        const resolvedHref = rawPath.startsWith('CS_Undergraduate_Thesis_Template/')
+          ? '../' + rawPath
+          : '../CS_Undergraduate_Thesis_Template/figs/' + fileName;
+        const isImg = /\.(png|jpg|jpeg|svg)$/i.test(fileName);
+        if (isImg) {
+          return `<a href="${resolvedHref}" class="asset-link" data-preview-img="${resolvedHref}" data-preview-title="${fileName}" title="Click to preview figure (${fileName})">🖼 ${fileName}</a>`;
+        }
+        return `<a href="${resolvedHref}" target="_blank" class="asset-link" title="Open ${fileName}">📄 ${fileName} ↗</a>`;
+      });
+
+      // Convert Table X.Y or Figure X.Y references into links to main.pdf
+      s = s.replace(/\b(Table\s+\d+\.\d+|Figure\s+\d+\.\d+)/g, (match) => {
+        return `<a href="../CS_Undergraduate_Thesis_Template/main.pdf" target="_blank" class="asset-link" title="Open compiled thesis PDF (${match})">📑 ${match} ↗</a>`;
+      });
+
+      // Remaining inline code, bold, italic
+      s = s
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+      return s;
+    }
+
+    function cleanPlainText(str) {
+      return (str || '')
+        .replace(/\$\\rightarrow\$/g, '->')
+        .replace(/\$\\kappa\$/g, 'kappa')
+        .replace(/\$F_1\$/g, 'F1')
+        .replace(/\$K \\in \\\{10, 20, 50\\\}\$/g, 'K in {10, 20, 50}')
+        .replace(/\$k=60\$/g, 'k=60')
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\*([^*]+)\*/g, '$1')
+        .replace(/`([^`]+)`/g, '$1')
+        .trim();
+    }
+
+    function speakerBadgeHtml(speakerStr) {
+      const lower = (speakerStr || '').toLowerCase();
+      if (lower.includes('ralph') && lower.includes('yah')) {
+        return `<span class="cn-badge cn-badge-outline">${formatInlineMd(speakerStr)}</span>`;
+      }
+      if (lower.includes('ralph')) {
+        return `<span class="cn-badge cn-badge-ralph">${formatInlineMd(speakerStr)}</span>`;
+      }
+      if (lower.includes('yah')) {
+        return `<span class="cn-badge cn-badge-yah">${formatInlineMd(speakerStr)}</span>`;
+      }
+      return `<span class="cn-badge cn-badge-secondary">${formatInlineMd(speakerStr)}</span>`;
+    }
+
+    function parseSlidesMarkdown(md) {
+      const lines = md.replace(/\r\n/g, '\n').split('\n');
+
+      // 1. Parse Flow Table
+      const flowRows = [];
+      let inFlowTable = false;
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (line.startsWith('## Presentation Flow')) {
+          inFlowTable = true;
+          continue;
+        }
+        if (inFlowTable) {
+          if (line.startsWith('## ') && !line.startsWith('## Presentation Flow')) break;
+          if (line.startsWith('|')) {
+            const cells = line.split('|').slice(1, -1).map(c => c.trim());
+            if (cells.length >= 5 && !cells[0].includes('---') && cells[0].toLowerCase() !== 'slide') {
+              flowRows.push({
+                slide: cells[0].replace(/\*\*/g, ''),
+                topic: cells[1],
+                speaker: cells[2],
+                visual: cells[3],
+                time: cells[4]
+              });
+            }
+          }
+        }
+      }
+
+      // 2. Parse Slides (### Slide X: ...)
+      const slides = [];
+      const slideRegex = /^###\s+Slide\s+(\d+):\s*(.+)$/i;
+      let currentSlide = null;
+      let currentSubsection = null; // 'meta' | 'content' | 'script'
+
+      for (let i = 0; i < lines.length; i++) {
+        const rawLine = lines[i];
+        const line = rawLine.trim();
+
+        if (line.startsWith('## Panel Q&A')) {
+          break;
+        }
+
+        const slideMatch = line.match(slideRegex);
+        if (slideMatch) {
+          if (currentSlide) slides.push(currentSlide);
+          currentSlide = {
+            number: slideMatch[1],
+            headingTitle: slideMatch[2].trim(),
+            speaker: '',
+            header: '',
+            title: '',
+            subtitle: '',
+            visual: '',
+            contentLines: [],
+            scriptParagraphs: []
+          };
+          currentSubsection = 'meta';
+          continue;
+        }
+
+        if (!currentSlide) continue;
+
+        if (/^####\s+On-Screen Slide Content/i.test(line)) {
+          currentSubsection = 'content';
+          continue;
+        }
+        if (/^####\s+(Spoken Script|Live Demo Walkthrough Script)/i.test(line)) {
+          currentSubsection = 'script';
+          continue;
+        }
+        if (line === '---') {
+          continue;
+        }
+
+        if (currentSubsection === 'meta') {
+          const metaMatch = line.match(/^\*\s+\*\*([^:]+):\*\*\s*(.+)$/);
+          if (metaMatch) {
+            const key = metaMatch[1].trim().toLowerCase();
+            const val = metaMatch[2].trim();
+            if (key === 'speaker') currentSlide.speaker = val;
+            else if (key === 'header' || key === 'top-left header') currentSlide.header = val;
+            else if (key === 'bottom-left paper ref' || key === 'paper ref' || key === 'reference') currentSlide.paperRef = val;
+            else if (key === 'bottom-right slide' || key === 'slide') currentSlide.slideRef = val;
+            else if (key === 'title') currentSlide.title = val;
+            else if (key === 'subtitle') currentSlide.subtitle = val;
+            else if (key === 'visual') currentSlide.visual = val;
+          }
+        } else if (currentSubsection === 'content') {
+          if (line.length > 0) {
+            currentSlide.contentLines.push(rawLine);
+          }
+        } else if (currentSubsection === 'script') {
+          if (line.startsWith('>')) {
+            const cleaned = line.replace(/^>\s?/, '').trim();
+            if (cleaned.length > 0) {
+              currentSlide.scriptParagraphs.push(cleaned);
+            }
+          }
+        }
+      }
+      if (currentSlide) slides.push(currentSlide);
+
+      // Map Est. Time from flow table to slides
+      const timeMap = {};
+      flowRows.forEach(r => { timeMap[r.slide] = r.time; });
+      slides.forEach(s => { s.time = timeMap[s.number] || ''; });
+
+      // 3. Parse Panel Q&A
+      const qaList = [];
+      let inQa = false;
+      let currentQa = null;
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (line.startsWith('## Panel Q&A')) {
+          inQa = true;
+          continue;
+        }
+        if (!inQa) continue;
+        const qMatch = line.match(/^###\s+(.+)$/);
+        if (qMatch) {
+          if (currentQa) qaList.push(currentQa);
+          currentQa = { question: qMatch[1].trim(), answer: '' };
+          continue;
+        }
+        if (currentQa && line.startsWith('* **Answer:**')) {
+          currentQa.answer = line.replace(/^\*\s+\*\*Answer:\*\*\s*/, '').trim();
+        }
+      }
+      if (currentQa) qaList.push(currentQa);
+
+      return { flowRows, slides, qaList };
+    }
+
+    function renderAll() {
+      if (!state.parsedData) return;
+      const { flowRows, slides, qaList } = state.parsedData;
+
+      document.getElementById('slide-count-badge').textContent = `${slides.length} Slides`;
+
+      // Render Flow Table
+      const flowTbody = document.getElementById('flow-tbody');
+      flowTbody.innerHTML = flowRows.map(r => {
+        const isNum = /^\d+$/.test(r.slide);
+        const slideLink = isNum ? `<a href="#slide-row-${r.slide}" style="color: inherit; font-weight: 600;">#${r.slide}</a>` : r.slide;
+        return `
+          <tr>
+            <td class="slide-num">${slideLink}</td>
+            <td>${formatInlineMd(r.topic)}</td>
+            <td>${speakerBadgeHtml(r.speaker)}</td>
+            <td>${formatInlineMd(r.visual)}</td>
+            <td style="font-family: var(--font-mono); font-size: 0.78rem; color: hsl(var(--muted-foreground));">${r.time}</td>
+          </tr>
+        `;
+      }).join('');
+
+      // Filter & Render Slides Table
+      const q = state.searchQuery.toLowerCase();
+      const filteredSlides = slides.filter(s => {
+        const spk = s.speaker.toLowerCase();
+        if (state.speakerFilter === 'ralph' && !spk.includes('ralph')) return false;
+        if (state.speakerFilter === 'yah' && !spk.includes('yah')) return false;
+        if (!q) return true;
+        const hay = `${s.title} ${s.headingTitle} ${s.header} ${s.visual} ${s.contentLines.join(' ')} ${s.scriptParagraphs.join(' ')}`.toLowerCase();
+        return hay.includes(q);
+      });
+
+      const slidesTbody = document.getElementById('slides-tbody');
+      slidesTbody.innerHTML = filteredSlides.map(s => {
+        const displayTitle = s.title || s.headingTitle;
+        const plainTitle = cleanPlainText(displayTitle + (s.subtitle ? ' — ' + s.subtitle : ''));
+
+        // Content HTML + Plain text for copy
+        const plainBullets = s.contentLines
+          .map(l => cleanPlainText(l.replace(/^\s*\*\s+/, '• ')))
+          .join('\n');
+
+        let contentHtml = '';
+        const bulletItems = [];
+        const nonBulletItems = [];
+        s.contentLines.forEach(raw => {
+          const trimmed = raw.trim();
+          if (trimmed.startsWith('* ')) {
+            const isSub = /^\s{2,}\*/.test(raw);
+            bulletItems.push({ text: trimmed.replace(/^\*\s+/, ''), isSub });
+          } else {
+            nonBulletItems.push(trimmed);
+          }
+        });
+
+        if (bulletItems.length > 0) {
+          contentHtml += `<ul class="bullet-list">` +
+            bulletItems.map(b => `<li style="${b.isSub ? 'margin-left: 1.1rem; list-style-type: circle;' : ''}">${formatInlineMd(b.text)}</li>`).join('') +
+            `</ul>`;
+        }
+        if (nonBulletItems.length > 0) {
+          contentHtml += nonBulletItems.map(line => `<div style="margin-top: 0.25rem; color: hsl(var(--muted-foreground));">${formatInlineMd(line)}</div>`).join('');
+        }
+
+        // Script HTML + Plain text for copy
+        const plainScript = s.scriptParagraphs
+          .map(p => cleanPlainText(p).replace(/^"|"$/g, ''))
+          .join('\n\n');
+
+        const isVerbatim = s.scriptParagraphs.some(p => /verbatim|no script required/i.test(p)) || /verbatim|no script required/i.test(plainScript);
+        const scriptCopyTarget = isVerbatim ? plainBullets : plainScript;
+        const scriptCopyLabel = isVerbatim ? `Slide ${s.number} Content (Verbatim)` : `Slide ${s.number} Script`;
+
+        const scriptHtml = isVerbatim
+          ? `<div style="display: flex; flex-direction: column; gap: 0.4rem; padding: 0.35rem 0;">
+               <div style="display: inline-flex; align-items: center; gap: 0.35rem; color: hsl(var(--primary)); font-weight: 600; font-size: 0.82rem;">
+                 📖 Read Verbatim from On-Screen Text
+               </div>
+               <div style="font-size: 0.78rem; color: hsl(var(--muted-foreground)); line-height: 1.4;">
+                 Exemption to 7x7 rule — exact text from thesis manuscript. Read directly from the slide.
+               </div>
+             </div>`
+          : `<div class="script-box">` +
+            s.scriptParagraphs.map(p => `<p>${formatInlineMd(p)}</p>`).join('') +
+            `</div>`;
+
+        return `
+          <tr id="slide-row-${s.number}">
+            <td>
+              <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="slide-num">Slide ${s.number}</span>
+                  ${s.time ? `<span style="font-family: var(--font-mono); font-size: 0.72rem; color: hsl(var(--muted-foreground));">⏱ ${s.time}</span>` : ''}
+                </div>
+                ${speakerBadgeHtml(s.speaker)}
+                ${s.paperRef ? `<a href="../CS_Undergraduate_Thesis_Template/main.pdf" target="_blank" class="asset-link" style="margin-top: 0.15rem;" title="Paper Reference: ${s.paperRef}">📑 ${formatInlineMd(s.paperRef)} ↗</a>` : ''}
+              </div>
+            </td>
+            <td>
+              <div class="cell-header-row">
+                <span class="slide-header-meta">${formatInlineMd(s.header || 'Chapter 1. Introduction')}</span>
+                <button class="cn-button cn-button-outline cn-button-xs" data-copy="${encodeURIComponent(plainTitle)}" data-label="Slide ${s.number} Title">Copy Title</button>
+              </div>
+              <div class="slide-title-text">${formatInlineMd(displayTitle)}</div>
+              ${s.subtitle ? `<div class="slide-subtitle-text">${formatInlineMd(s.subtitle)}</div>` : ''}
+              ${s.visual ? `<div class="visual-note"><strong>Visual:</strong> ${formatInlineMd(s.visual)}</div>` : ''}
+            </td>
+            <td>
+              <div class="cell-header-row" style="justify-content: flex-end;">
+                <button class="cn-button cn-button-outline cn-button-xs" data-copy="${encodeURIComponent(plainBullets)}" data-label="Slide ${s.number} Content">Copy Content</button>
+              </div>
+              ${contentHtml}
+            </td>
+            <td>
+              <div class="cell-header-row" style="justify-content: flex-end;">
+                <button class="cn-button cn-button-outline cn-button-xs" data-copy="${encodeURIComponent(scriptCopyTarget)}" data-label="${scriptCopyLabel}">${isVerbatim ? 'Copy Verbatim' : 'Copy Script'}</button>
+              </div>
+              ${scriptHtml}
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // Render Q&A
+      const qaTbody = document.getElementById('qa-tbody');
+      qaTbody.innerHTML = qaList.map((item, idx) => {
+        const plainAns = cleanPlainText(item.answer).replace(/^"|"$/g, '');
+        return `
+          <tr>
+            <td style="font-weight: 600;">${formatInlineMd(item.question)}</td>
+            <td>
+              <div class="cell-header-row" style="justify-content: flex-end;">
+                <button class="cn-button cn-button-outline cn-button-xs" data-copy="${encodeURIComponent(plainAns)}" data-label="Q&A #${idx + 1}">Copy Answer</button>
+              </div>
+              <div>${formatInlineMd(item.answer)}</div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // Event delegation for Copy buttons & Figure preview modal
+    document.addEventListener('click', (e) => {
+      const copyBtn = e.target.closest('[data-copy]');
+      if (copyBtn) {
+        const text = decodeURIComponent(copyBtn.getAttribute('data-copy'));
+        const label = copyBtn.getAttribute('data-label') || 'text';
+        copyText(text, label);
+        return;
+      }
+
+      const previewLink = e.target.closest('[data-preview-img]');
+      if (previewLink) {
+        e.preventDefault();
+        const src = previewLink.getAttribute('data-preview-img');
+        const title = previewLink.getAttribute('data-preview-title');
+        document.getElementById('img-modal-title').textContent = title;
+        document.getElementById('img-modal-src').src = src;
+        document.getElementById('img-modal-open-tab').href = src;
+        document.getElementById('img-modal').classList.add('open');
+      }
+    });
+
+    document.getElementById('img-modal-close').addEventListener('click', () => {
+      document.getElementById('img-modal').classList.remove('open');
+    });
+    document.getElementById('img-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'img-modal') {
+        document.getElementById('img-modal').classList.remove('open');
+      }
+    });
+
+    // Speaker filter buttons
+    document.querySelectorAll('#speaker-filters .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#speaker-filters .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.speakerFilter = btn.getAttribute('data-speaker');
+        renderAll();
+      });
+    });
+
+    // Search input
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      state.searchQuery = e.target.value;
+      renderAll();
+    });
+
+    // Manual file picker (works on file:// anytime)
+    document.getElementById('md-file-input').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        state.parsedData = parseSlidesMarkdown(ev.target.result);
+        document.getElementById('source-indicator').textContent = file.name;
+        renderAll();
+        showToast(`Loaded ${file.name}`);
+      };
+      reader.readAsText(file);
+    });
+
+    // Automatic loader: fetches PRESENTATION_SLIDES_MOCK_DEFENSE.md when possible, or falls back to embedded script
+    async function loadMarkdownSource(showNotification = false) {
+      try {
+        const res = await fetch('./PRESENTATION_SLIDES_MOCK_DEFENSE.md?t=' + Date.now());
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const text = await res.text();
+        state.parsedData = parseSlidesMarkdown(text);
+        document.getElementById('source-indicator').textContent = 'PRESENTATION_SLIDES_MOCK_DEFENSE.md (Live)';
+        renderAll();
+        if (showNotification) showToast('Refreshed from PRESENTATION_SLIDES_MOCK_DEFENSE.md');
+      } catch (err) {
+        // Fallback when opened directly via file:// protocol
+        const fallbackText = document.getElementById('fallback-md').textContent;
+        state.parsedData = parseSlidesMarkdown(fallbackText);
+        document.getElementById('source-indicator').textContent = 'PRESENTATION_SLIDES_MOCK_DEFENSE.md';
+        renderAll();
+        if (showNotification) showToast('Loaded embedded PRESENTATION_SLIDES_MOCK_DEFENSE.md');
+      }
+    }
+
+    document.getElementById('reload-btn').addEventListener('click', () => loadMarkdownSource(true));
+
+    // Initial load
+    loadMarkdownSource(false);
+  </script>
+</body>
+</html>

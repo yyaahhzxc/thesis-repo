@@ -434,12 +434,12 @@ HTML_CONTENT = """<!DOCTYPE html>
         
         <!-- PHASE I: PRE-PLANNING -->
         <div class="phase-container">
-            <span class="phase-title">Phase I: Pre-Planning (Offline Foundation & Optimization Protocol)</span>
+            <span class="phase-title">Phase I: Pre-Planning (Offline Foundation & Optimization Framework)</span>
             
             <div class="flex-row">
                 <!-- Sub-container 1: Corpus Processing -->
                 <div class="sub-container">
-                    <span class="sub-title">Dual-Corpus Ingestion & Pre-Computation Protocol</span>
+                    <span class="sub-title">Dual-Corpus Ingestion & Pre-Computation Pipeline</span>
                     
                     <div class="academic-box" style="margin-top: 4px;">
                         <span class="box-title">Dual Statutory Corpus Acquisition</span>
@@ -463,7 +463,7 @@ HTML_CONTENT = """<!DOCTYPE html>
 
                 <!-- Sub-container 2: Model Training & Selection -->
                 <div class="sub-container">
-                    <span class="sub-title">Model Evaluation Benchmark & Selection Protocol</span>
+                    <span class="sub-title">Model Evaluation Benchmark & Selection Framework</span>
                     
                     <div class="academic-box" style="margin-top: 4px;">
                         <span class="box-title">Ground Truth Legal Benchmark Curation</span>
