@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Thesis Defense Master Deck & Presenter Script</title>
+  <style>
+    :root {
+      --primary: #7F2723;
+      --primary-light: #9B312B;
+      --primary-dark: #5C1B18;
+      --secondary: #D4AF37;
+      --accent: #2B6CB0;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --border: #E2E8F0;
+      --text: #1E293B;
+      --text-muted: #64748B;
+      --ralph: #1E40AF;
+      --ralph-bg: #EFF6FF;
+      --yah: #065F46;
+      --yah-bg: #ECFDF5;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #FFFFFF;
+      padding: 32px 24px;
+      border-bottom: 4px solid var(--secondary);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .inst-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .header-meta {
+      font-size: 0.95rem;
+      color: #E2E8F0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 12px;
+    }
+    .header-meta span strong { color: var(--secondary); }
+
+    /* Sticky Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      z-index: 100;
+      padding: 10px 24px;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .speaker-filter {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-filter {
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-filter.active-all { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .btn-filter.active-ralph { background: var(--ralph); color: #fff; border-color: var(--ralph); }
+    .btn-filter.active-yah { background: var(--yah); color: #fff; border-color: var(--yah); }
+
+    .quick-jump select {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      background: #FFFFFF;
+      color: var(--text);
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: 1200px;
+      margin: 28px auto;
+      padding: 0 20px;
+    }
+
+    /* Summary Dashboard Card */
+    .dashboard-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .dashboard-card h2 {
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .stat-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      background: #FAFAFA;
+    }
+    .stat-label { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+    .stat-val { font-size: 1.4rem; font-weight: 700; color: var(--text); margin-top: 4px; }
+    .stat-desc { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* Timing Agenda Table */
+    .agenda-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+    .agenda-table th, .agenda-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    .agenda-table th { background: #F1F5F9; color: var(--text); font-weight: 600; }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-ralph { background: var(--ralph-bg); color: var(--ralph); border: 1px solid var(--ralph); }
+    .badge-yah { background: var(--yah-bg); color: var(--yah); border: 1px solid var(--yah); }
+    .badge-both { background: #FEF3C7; color: #92400E; border: 1px solid #D97706; }
+
+    /* Slide Card */
+    .slide-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 36px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      scroll-margin-top: 70px;
+    }
+    .slide-header {
+      padding: 16px 24px;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .slide-id {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .slide-title-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-left: 10px;
+    }
+    .slide-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .slide-content-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.35fr;
+      gap: 0;
+    }
+    @media (max-width: 900px) {
+      .slide-content-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Screen Slide Preview (Left) */
+    .slide-screen {
+      background: #FAF5F5;
+      padding: 24px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .screen-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .screen-slide-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .screen-bullets {
+      list-style-type: none;
+      margin-bottom: 20px;
+    }
+    .screen-bullets li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .screen-bullets li::before {
+      content: "•";
+      color: var(--primary);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -3px;
+    }
+    .screen-visual-ref {
+      background: #FFFFFF;
+      border: 1px dashed var(--primary);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .screen-visual-ref strong { color: var(--primary); }
+
+    /* Spoken Script Box (Right) */
+    .spoken-script {
+      padding: 24px;
+      background: #FFFFFF;
+    }
+    .script-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .script-body {
+      font-size: 1.0rem;
+      line-height: 1.7;
+      color: #1E293B;
+    }
+    .script-body p {
+      margin-bottom: 14px;
+    }
+    .script-anchor {
+      font-weight: 700;
+      color: var(--primary-dark);
+      background: #FFF1F2;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+    .cue-note {
+      background: #FEF3C7;
+      border-left: 4px solid #D97706;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.85rem;
+      color: #78350F;
+      margin-top: 16px;
+    }
+
+    /* Q&A Section */
+    .qa-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+    }
+    .qa-question {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .qa-answer {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+  
+    .screen-visual-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      margin-top: 10px;
+      background: #FFFFFF;
+      display: block;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .screen-visual-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="inst-title">Ateneo de Davao University • Department of Computer Science • BS Computer Science</div>
+    <h1>Final Thesis Defense Master Presentation & Presenter Script</h1>
+    <p style="font-size: 1.1rem; opacity: 0.95; max-width: 900px;">
+      <em>A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference</em>
+    </p>
+    <div class="header-meta">
+      <span><strong>Authors:</strong> Ralph Paolo Dulce & Yahyah Odin</span>
+      <span><strong>Adviser:</strong> Mr. Adrian "Ogs" Ablazo</span>
+      <span><strong>Course Professor:</strong> Ma'am Grace Tacadao</span>
+      <span><strong>Time Budget:</strong> 30 Minutes (24.5m Talk + 5.5m Q&A)</span>
+    </div>
+  </div>
+</header>
+
+<div class="sticky-nav">
+  <div class="nav-container">
+    <div class="speaker-filter">
+      <button class="btn-filter active-all" onclick="filterSpeaker('all')">All Slides (17)</button>
+      <button class="btn-filter" onclick="filterSpeaker('ralph')">Ralph Only (12.75m)</button>
+      <button class="btn-filter" onclick="filterSpeaker('yah')">Yah Only (11.75m)</button>
+    </div>
+    <div class="quick-jump">
+      <select onchange="if(this.value) location.href=this.value;">
+        <option value="">Jump to Slide...</option>
+        <option value="#slide-1">Slide 1: Title & Purpose (Ralph)</option>
+        <option value="#slide-2">Slide 2: Background of Study (Ralph)</option>
+        <option value="#slide-3">Slide 3: Problem Statement (Ralph)</option>
+        <option value="#slide-4">Slide 4: Research Objectives (Ralph)</option>
+        <option value="#slide-5">Slide 5: Literature Gap (Ralph)</option>
+        <option value="#slide-6">Slide 6: Conceptual Framework (Yah)</option>
+        <option value="#slide-7">Slide 7: Dual Corpus & Kaggle OCR (Yah)</option>
+        <option value="#slide-8">Slide 8: Stage 1 Hybrid Retrieval (Yah)</option>
+        <option value="#slide-9">Slide 9: Stage 2 Cross-Encoder Logic (Yah)</option>
+        <option value="#slide-10">Slide 10: 512-Token Compliance EDA (Yah)</option>
+        <option value="#slide-11">Slide 11: Stage 1 Retrieval Performance (Yah)</option>
+        <option value="#slide-12">Slide 12: Stage 2 NLI Evaluation (Yah)</option>
+        <option value="#slide-13">Slide 13: Supreme Court Cases (Ralph)</option>
+        <option value="#slide-14">Slide 14: Prototype Architecture (Yah)</option>
+        <option value="#slide-15">Slide 15: Live Prototype Demonstration (Tag-Team)</option>
+        <option value="#slide-16">Slide 16: Research Synthesis (Ralph)</option>
+        <option value="#slide-17">Slide 17: Limitations, Routing & Close (Ralph)</option>
+        <option value="#qa-section">Bonus: Committee Q&A Cards</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="main-container">
+
+  <!-- Executive Dashboard -->
+  <div class="dashboard-card">
+    <h2>Defense Timing & 50/50 Speaker Distribution</h2>
+    <div class="dashboard-grid">
+      <div class="stat-box">
+        <div class="stat-label">Ralph Paolo Dulce</div>
+        <div class="stat-val" style="color: var(--ralph);">12.75 Mins (52%)</div>
+        <div class="stat-desc">Problem, Objectives, Literature, Supreme Court Cases, UI Transparency, Conclusions.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Yahyah Odin</div>
+        <div class="stat-val" style="color: var(--yah);">11.75 Mins (48%)</div>
+        <div class="stat-desc">Conceptual Framework, Dual Corpus, Stage 1 IR, Stage 2 NLI, Statistical Tests, Live Audit.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Committee Q&A Buffer</div>
+        <div class="stat-val" style="color: #D97706;">5.50 Mins</div>
+        <div class="stat-desc">Reserved cushion ensuring presentation concludes strictly within 30:00.</div>
+      </div>
+    </div>
+
+    <table class="agenda-table">
+      <thead>
+        <tr>
+          <th>Slide</th>
+          <th>Paper Section</th>
+          <th>Presentation Topic</th>
+          <th>Speaker</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>Front Matter</td><td>Title & Thesis Purpose</td><td><span class="badge badge-ralph">Ralph</span></td><td>1.0 min</td></tr>
+        <tr><td><strong>2</strong></td><td>Chapter 1 (§1.1)</td><td>Background of the Study & Legal Dilemma</td><td><span class="badge badge-ralph">Ralph</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>3</strong></td><td>Chapter 1 (§1.2)</td><td>Research Questions (Q1 to Q5)</td><td><span class="badge badge-ralph">Ralph</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>4</strong></td><td>Chapter 1 (§1.3)</td><td>Research Objectives (Obj 1 to Obj 5)</td><td><span class="badge badge-ralph">Ralph</span></td><td>1.0 min</td></tr>
+        <tr><td><strong>5</strong></td><td>Chapter 2</td><td>Thematic Literature Synthesis & Technical Gap</td><td><span class="badge badge-ralph">Ralph</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>6</strong></td><td>Chapter 3 (§3.1)</td><td>Conceptual Framework: Phase 1 vs. Phase 2</td><td><span class="badge badge-yah">Yah</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>7</strong></td><td>Chapter 3 (§3.2)</td><td>Dual Corpus Assembly & Two-Tier Kaggle OCR</td><td><span class="badge badge-yah">Yah</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>8</strong></td><td>Chapter 3 (§3.3)</td><td>Stage 1 Hybrid Retrieval (BM25 + Dense)</td><td><span class="badge badge-yah">Yah</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>9</strong></td><td>Chapter 3 (§3.4)</td><td>Stage 2 Cross-Encoder Logic & Threshold Calibration</td><td><span class="badge badge-yah">Yah</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>10</strong></td><td>Chapter 3 (§3.2.5)</td><td>Corpus EDA: 94.75% 512-Token Compliance</td><td><span class="badge badge-yah">Yah</span></td><td>1.0 min</td></tr>
+        <tr><td><strong>11</strong></td><td>Chapter 4 (§4.1)</td><td>Stage 1 Retrieval Benchmark & Ablation Findings</td><td><span class="badge badge-yah">Yah</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>12</strong></td><td>Chapter 4 (§4.2)</td><td>Stage 2 Cross-Encoder NLI & Significance Tests</td><td><span class="badge badge-yah">Yah</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>13</strong></td><td>Chapter 4 (§4.3–4.4)</td><td>Supreme Court Preemption Suite & Latency Scaling</td><td><span class="badge badge-ralph">Ralph</span></td><td>2.0 mins</td></tr>
+        <tr><td><strong>14</strong></td><td>Appendix H</td><td>Prototype Dashboard Architecture</td><td><span class="badge badge-yah">Yah</span></td><td>0.5 min</td></tr>
+        <tr><td><strong>15</strong></td><td>Appendix H</td><td>Live Technical System Demonstration</td><td><span class="badge badge-both">Tag-Team</span></td><td>3.5 mins</td></tr>
+        <tr><td><strong>16</strong></td><td>Chapter 5 (§5.1)</td><td>Synthesis of Research Objectives 1 to 5</td><td><span class="badge badge-ralph">Ralph</span></td><td>1.5 mins</td></tr>
+        <tr><td><strong>17</strong></td><td>Chapter 5 (§5.2)</td><td>Academic Limitations, SP Routing & Close</td><td><span class="badge badge-ralph">Ralph</span></td><td>1.5 mins</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Slide 1 -->
+  <div class="slide-card speaker-ralph" id="slide-1">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 1</span>
+        <span class="slide-title-text">Title & Overview</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-ralph">Ralph Paolo Dulce</span>
+        <span>⏱ 1.0 min</span>
+        <span>Paper: Title Page</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances</div>
+          <ul class="screen-bullets">
+            <li>Automated conflict detector for proposed city ordinances</li>
+            <li>Evaluates draft legislation before formal council enactment</li>
+            <li>Two-stage architecture designed for standard office computers</li>
+            <li>Proponents: Ralph Paolo Dulce & Yahyah Odin (BS CS)</li>
+            <li>Adviser: Mr. Adrian "Ogs" Ablazo | Professor: Ma'am Grace Tacadao</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Ateneo de Davao seal, thesis title card, proponent credentials, faculty advisement panel.
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>Good morning to the members of our thesis evaluation panel, our thesis adviser Mr. Adrian Ablazo, and our course professor Ma'am Grace Tacadao. I am Ralph Paolo Dulce, presenting together with my co-author Yahyah Odin our thesis entitled: <em>"A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference."</em></p>
+          <p>Looking at our on-screen roadmap:</p>
+          <p>• In simple terms, our project is an <span class="script-anchor">automated conflict detector for proposed city ordinances</span>—operating like an automated spell-check for legal contradictions.</p>
+          <p>• It <span class="script-anchor">evaluates draft legislation before formal council enactment</span>, catching legal violations while an ordinance is still being drafted in committee.</p>
+          <p>• To ensure real-world adoption, we built a <span class="script-anchor">two-stage architecture designed for standard office computers</span>, allowing deep AI conflict detection to run on municipal desktops without expensive cloud servers.</p>
+          <p>Today, we will walk you through our legal motivation, research objectives, system architecture, empirical benchmarks, and a live demonstration of our working prototype.</p>
+        </div>
+        <div class="cue-note">
+          <strong>Cue:</strong> Speak in a steady, confident tone. Advance to Slide 2 at exactly 01:00.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide-card speaker-ralph" id="slide-2">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 2</span>
+        <span class="slide-title-text">Background of the Study & Legal Dilemma</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-ralph">Ralph Paolo Dulce</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: §1.1</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Background of the Study: The Legal Dilemma</div>
+          <ul class="screen-bullets">
+            <li>Local ordinances cannot contradict national statutes</li>
+            <li>Overlooked conflicts make enacted ordinances legally void</li>
+            <li>Manual review across 178,000 provisions is impossible</li>
+            <li>70 years of city archives are paper scans</li>
+            <li>Pre-enactment screening prevents costly legal disputes</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Split screen: Left = Authentic 1960s archival scan (faded typewriter text, staple holes) from <code>sample_davao_city_ordinance_scan.png</code>; Right = 5 bullets.
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/sample_davao_city_ordinance_scan.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/sample_davao_city_ordinance_scan.png" alt="Archival Davao City Ordinance Scan with Typewriter Noise" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>To understand the urgency of this study:</p>
+          <p>• Under Philippine constitutional law and the Supreme Court's <em>Magtajas Doctrine</em>, <span class="script-anchor">local ordinances cannot contradict national statutes</span>. A city cannot ban what a statute allows, nor permit what a national statute forbids.</p>
+          <p>• When legislative drafting is rushed, <span class="script-anchor">overlooked conflicts make enacted ordinances legally void</span>. For example, if a draft ordinance penalizes illegal dumping with a 7,000-peso fine, but national law—Section 458 of the Local Government Code—caps municipal fines at 5,000 pesos, that local ordinance is void from the day it is signed.</p>
+          <p>• Why do these mistakes occur? Because <span class="script-anchor">manual review across 178,000 provisions is impossible</span>. Between 25,000 national laws and over 1,800 Davao ordinances, legal staff cannot read hundreds of thousands of pages by hand before every council session.</p>
+          <p>• Making review harder, <span class="script-anchor">70 years of city archives are paper scans</span>. As shown on the left of your screen, historical ordinances suffer from faded typewriter ink and scanner skew that defeat regular search tools.</p>
+          <p>• Our system provides <span class="script-anchor">pre-enactment screening to prevent costly legal disputes</span>, catching illegal clauses before councilors vote.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide-card speaker-ralph" id="slide-3">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 3</span>
+        <span class="slide-title-text">Research Problem Statement</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-ralph">Ralph Paolo Dulce</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: §1.2</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (Clean Card Layout)</div>
+          <div class="screen-slide-title">Research Problem Statement</div>
+          <ul class="screen-bullets">
+            <li>Q1 (Linguistic Scope): What text patterns and penalty markers define a legal conflict?</li>
+            <li>Q2 (System Design): How can a two-stage pipeline run on constrained local hardware?</li>
+            <li>Q3 (Model Selection): Which combination of search and reading AI yields highest accuracy?</li>
+            <li>Q4 (Empirical Benchmark): How accurately does the system perform on a 350-pair ground truth?</li>
+            <li>Q5 (Stakeholder Viability): How usable is the decision-support web interface for the SP?</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> 5-row structured card layout reflecting verbatim questions from Chapter 1.
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>To solve this challenge, our thesis investigates five specific research questions:</p>
+          <p>• <span class="script-anchor">Q1 asks: What text patterns and penalty markers define a legal conflict</span> between a proposed local draft and positive law?</p>
+          <p>• <span class="script-anchor">Q2 asks: How can a two-stage pipeline run on constrained local hardware</span> without freezing municipal desktops?</p>
+          <p>• <span class="script-anchor">Q3 asks: Which combination of search and reading AI yields the highest accuracy</span> when navigating the hierarchy of Philippine legal texts?</p>
+          <p>• <span class="script-anchor">Q4 asks: How accurately does the system perform on a verified 350-pair ground truth</span> benchmark curated with legal experts?</p>
+          <p>• And <span class="script-anchor">Q5 asks: How usable is the decision-support web interface for the Sangguniang Panlungsod</span> legal staff in their actual legislative workflow?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide-card speaker-ralph" id="slide-4">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 4</span>
+        <span class="slide-title-text">Research Objectives</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-ralph">Ralph Paolo Dulce</span>
+        <span>⏱ 1.0 min</span>
+        <span>Paper: §1.3</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Research Objectives</div>
+          <ul class="screen-bullets">
+            <li>Obj 1: Identify linguistic constraints and optical scan noise in city archives</li>
+            <li>Obj 2: Design a two-stage pipeline separating search from deep reading</li>
+            <li>Obj 3: Implement search and reading models tuned for Philippine laws</li>
+            <li>Obj 4: Evaluate accuracy against an adviser-verified 350-pair conflict benchmark</li>
+            <li>Obj 5: Build an interactive web dashboard for council legal researchers</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Clean objective roadmap aligned 1-to-1 with the problem statements.
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>Directly answering those five questions, our research accomplished five corresponding objectives:</p>
+          <p>• Under <span class="script-anchor">Obj 1: We identified linguistic constraints and optical scan noise in city archives</span>, establishing automated cleanup for degraded physical documents.</p>
+          <p>• Under <span class="script-anchor">Obj 2: We designed a two-stage pipeline separating search from deep reading</span>, keeping computational memory bounded under 8 gigabytes.</p>
+          <p>• Under <span class="script-anchor">Obj 3: We implemented search and reading models tuned for Philippine laws</span>, combining fast keyword retrieval with deep cross-encoders.</p>
+          <p>• Under <span class="script-anchor">Obj 4: We evaluated accuracy against an adviser-verified 350-pair conflict benchmark</span> stratified across three difficulty tiers.</p>
+          <p>• And under <span class="script-anchor">Obj 5: We built an interactive web dashboard for council legal researchers</span> to inspect draft ordinances and export transparent audit reports.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide-card speaker-ralph" id="slide-5">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 5</span>
+        <span class="slide-title-text">Thematic Literature Synthesis & Technical Gap</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-ralph">Ralph Paolo Dulce</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: Chapter 2</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Literature Synthesis & Technical Gap</div>
+          <ul class="screen-bullets">
+            <li>Keyword search misses conceptual legal contradictions</li>
+            <li>Commercial cloud LLMs raise data privacy concerns</li>
+            <li>Cloud API fees exceed recurring municipal budgets</li>
+            <li>Open-weight models guarantee 100% offline data sovereignty</li>
+            <li>Retrieve-then-entail delivers deep reasoning on edge hardware</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> 3-column comparative matrix: Keyword Search vs Commercial Cloud APIs (GPT-4) vs Our Open-Weight Edge Pipeline.
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>In our Chapter 2 review of related literature, we established why existing solutions fail:</p>
+          <p>• Traditional <span class="script-anchor">keyword search misses conceptual legal contradictions</span> because conflicting legal provisions rarely share identical wording.</p>
+          <p>• On the other extreme, <span class="script-anchor">commercial cloud LLMs raise data privacy concerns</span>. Uploading unreleased, unapproved government drafts to commercial cloud servers poses compliance risks under Republic Act 10173.</p>
+          <p>• Furthermore, <span class="script-anchor">cloud API fees exceed recurring municipal budgets</span>, costing thousands of dollars when auditing large legislative archives.</p>
+          <p>• By deploying <span class="script-anchor">open-weight models, we guarantee 100% offline data sovereignty</span> at zero operating cost.</p>
+          <p>• Our adapted <span class="script-anchor">retrieve-then-entail pipeline delivers deep reasoning on edge hardware</span>. To explain our methodology, I now hand the floor to Yahyah Odin.</p>
+        </div>
+        <div class="cue-note">
+          <strong>Handoff:</strong> Ralph concludes Block 1 at ~05:30. Yah assumes the speaking floor for Block 2.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="slide-card speaker-yah" id="slide-6">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 6</span>
+        <span class="slide-title-text">Conceptual Framework: Phase 1 vs. Phase 2</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-yah">Yahyah Odin</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: §3.1</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Conceptual Framework: Two-Phase Architecture</div>
+          <ul class="screen-bullets">
+            <li>Decouples legal auditing into two distinct phases</li>
+            <li>Phase 1 (Offline): Cleans and indexes 178,000 laws</li>
+            <li>Eliminates heavy computation during active legislative audits</li>
+            <li>Phase 2 (Live): Screens newly submitted drafts in seconds</li>
+            <li>Delivers deep legal checking on standard office computers</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Full flowchart from <code>conceptual_framework_flowchart.png</code> showing Phase 1 (Offline Upper Block) and Phase 2 (Live Lower Funnel).
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/conceptual_framework_flowchart.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/conceptual_framework_flowchart.png" alt="End-to-End Conceptual Framework: Phase 1 & Phase 2" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>Thank you, Ralph. Members of the panel, when evaluating a 10-page draft ordinance against 178,000 laws, comparing all pairs simultaneously would require 1.7 million forward passes, crashing standard desktop computers.</p>
+          <p>• To make this practical, our framework <span class="script-anchor">decouples legal auditing into two distinct phases</span>.</p>
+          <p>• In <span class="script-anchor">Phase 1, we clean and index 178,000 laws offline</span>. We compile national statutes and Davao ordinances, clean optical scan noise, and pre-calculate search index tables.</p>
+          <p>• Doing this preparation upfront <span class="script-anchor">eliminates heavy computation during active legislative audits</span>, meaning the database is already fully prepared.</p>
+          <p>• In <span class="script-anchor">Phase 2, the live system screens newly submitted drafts in seconds</span>, taking an uploaded draft, filtering procedural boilerplate, retrieving candidate laws, and classifying contradictions.</p>
+          <p>• This two-phase architecture <span class="script-anchor">delivers deep legal checking on standard office computers</span> without freezing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 7 -->
+  <div class="slide-card speaker-yah" id="slide-7">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 7</span>
+        <span class="slide-title-text">Dual Corpus Assembly & Two-Tier Kaggle OCR</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-yah">Yahyah Odin</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: §3.2</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Dual Corpus Assembly & Two-Tier OCR</div>
+          <ul class="screen-bullets">
+            <li>Assembled 27,096 total enactments comprising 178,288 provisions</li>
+            <li>Combines 25,432 national statutes with 1,890 Davao ordinances</li>
+            <li>Routine drafting executed on local laptop workstation</li>
+            <li>Historical 2016 to 2020 backlog processed on Kaggle GPUs</li>
+            <li>Uncompressed 16-bit precision cuts typewriter error rates</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Ingestion schematic: Host B (Local 4-bit VLM, 105 DPI) vs Google Kaggle Cloud (Tesla T4, 16-bit FP16, Appendix B.3).
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/slide14_corpus_acquisition_comparison.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/slide14_corpus_acquisition_comparison.png" alt="Dual Corpus Acquisition: Lawphil vs Modern SP vs Pre-LGC Scan" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>Looking at our data foundation:</p>
+          <p>• We <span class="script-anchor">assembled 27,096 total enactments comprising 178,288 provisions</span>.</p>
+          <p>• This <span class="script-anchor">combines 25,432 national statutes with 1,890 Davao ordinances</span> spanning from 1950 to 2025 across four legislative eras.</p>
+          <p>• To balance operational realism with accuracy, <span class="script-anchor">routine drafting is executed on a local laptop workstation</span> (Host B) using a quantized 4-bit vision model.</p>
+          <p>• However, running hundreds of scanned pages continuously on a laptop causes thermal throttling; therefore, the <span class="script-anchor">historical 2016 to 2020 backlog was processed on Kaggle GPUs</span>.</p>
+          <p>• Kaggle's 16-gigabyte Tesla T4 memory supported <span class="script-anchor">uncompressed 16-bit precision, cutting typewriter error rates</span> on faint, skewed, and carbon-bleed historical scans.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 8 -->
+  <div class="slide-card speaker-yah" id="slide-8">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 8</span>
+        <span class="slide-title-text">Stage 1: Hybrid Retrieval Engine</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-yah">Yahyah Odin</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: §3.3</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Stage 1: Dual-Stream Hybrid Retrieval</div>
+          <ul class="screen-bullets">
+            <li>Avoids comparing 1.7 million pair combinations simultaneously</li>
+            <li>Stream A (BM25): Matches exact penalty numbers and citations</li>
+            <li>Stream B (Dense): Captures conceptual meaning and synonyms</li>
+            <li>Reciprocal Rank Fusion combines both candidate rankings</li>
+            <li>Filters 178,000 provisions down to 50 in 0.1 seconds</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Two-stream retrieval funnel diagram: Keyword Stream + Semantic Vector Stream $\rightarrow$ RRF Fusion ($k=60$) $\rightarrow$ Top 50 Candidates.
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/cf_phase2_stage1.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/cf_phase2_stage1.png" alt="Stage 1 Hybrid Retrieval Engine Architecture" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>In Phase 2, Stage 1 acts as our high-speed coarse filter:</p>
+          <p>• Stage 1 <span class="script-anchor">avoids comparing 1.7 million pair combinations simultaneously</span>, keeping our pipeline fast.</p>
+          <p>• <span class="script-anchor">Stream A uses BM25 to match exact penalty numbers and citations</span>, ensuring specific figures like 'P5,000' or statute references are immediately captured.</p>
+          <p>• In parallel, <span class="script-anchor">Stream B uses dense embeddings to capture conceptual meaning and synonyms</span>, understanding that terms like 'punishments' and 'fines' are conceptually identical.</p>
+          <p>• <span class="script-anchor">Reciprocal Rank Fusion combines both candidate rankings</span> without requiring ad-hoc manual score weights.</p>
+          <p>• In just 0.1 seconds, Stage 1 <span class="script-anchor">filters 178,000 provisions down to 50 candidates</span>, isolating the most relevant laws for deep reading.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 9 -->
+  <div class="slide-card speaker-yah" id="slide-9">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 9</span>
+        <span class="slide-title-text">Stage 2: Cross-Encoder Logic & Threshold Calibration</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-yah">Yahyah Odin</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: §3.4</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Stage 2: Cross-Encoder Natural Language Inference</div>
+          <ul class="screen-bullets">
+            <li>Reads the top 50 candidates side-by-side with draft</li>
+            <li>Tokens cross-attend directly to uncover subtle contradictions</li>
+            <li>Fine-tuned DeBERTa-v3 identifies contradictory and neutral clauses</li>
+            <li>Decision threshold calibrated to 0.45 to prioritize catching errors</li>
+            <li>Symbolic integer check validates statutory penalty ceilings</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Cross-Encoder joint sequence architecture: <code>[CLS] Statute [SEP] Draft Section [SEP]</code> $\rightarrow$ DeBERTa-v3 cross-attention $\rightarrow$ Calibrated Decision Bar ($\tau^* = 0.45$).
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/cf_phase2_stage2.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/cf_phase2_stage2.png" alt="Stage 2 Cross-Encoder Natural Language Inference" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>Once candidates are shortlisted, Stage 2 acts as our smart legal reader:</p>
+          <p>• Rather than reading documents separately, it <span class="script-anchor">reads the top 50 candidates side-by-side with the draft clause</span>.</p>
+          <p>• Because both texts share a single transformer sequence, <span class="script-anchor">tokens cross-attend directly to uncover subtle contradictions</span> that keyword search completely misses.</p>
+          <p>• Our <span class="script-anchor">fine-tuned DeBERTa-v3 model identifies contradictory and neutral clauses</span> with high precision.</p>
+          <p>• Because missing an unconstitutional law is far more dangerous than reviewing a false alarm, our <span class="script-anchor">decision threshold is calibrated to 0.45 to prioritize catching errors</span>.</p>
+          <p>• Finally, a <span class="script-anchor">symbolic integer check validates statutory penalty ceilings</span>, immediately verifying if a municipal fine exceeds the statutory 5,000-peso ceiling under Section 458 of Republic Act 7160.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 10 -->
+  <div class="slide-card speaker-yah" id="slide-10">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 10</span>
+        <span class="slide-title-text">Corpus EDA: 94.75% 512-Token Compliance</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-yah">Yahyah Odin</span>
+        <span>⏱ 1.0 min</span>
+        <span>Paper: §3.2.5, Chapter 4</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Corpus Exploration: Token Length Compliance</div>
+          <ul class="screen-bullets">
+            <li>Evaluated token lengths across all 178,288 legal provisions</li>
+            <li>Median provision length is exactly 84 tokens</li>
+            <li>Mean provision length is 127 tokens across corpus</li>
+            <li>Exactly 94.75% of provisions fit standard 512-token limit</li>
+            <li>Eliminates aggressive chunking and preserves full legal context</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Cumulative token length compliance distribution curve from <code>dual_corpus_transformer_compliance.png</code>.
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/dual_corpus_length_compliance.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/dual_corpus_length_compliance.png" alt="94.75% 512-Token Window Compliance Distribution" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>Moving to our empirical results in Chapter 4:</p>
+          <p>• We first <span class="script-anchor">evaluated token lengths across all 178,288 legal provisions</span> in our dual corpus.</p>
+          <p>• We found the <span class="script-anchor">median provision length is exactly 84 tokens</span>, reflecting natural legislative modularity.</p>
+          <p>• The <span class="script-anchor">mean provision length is 127 tokens across the corpus</span>, fitting comfortably within transformer capacity.</p>
+          <p>• As proven in our distribution curve on screen, <span class="script-anchor">exactly 94.75% of provisions fit the standard 512-token limit</span>.</p>
+          <p>• This empirical validation <span class="script-anchor">eliminates aggressive chunking and preserves full legal context</span>, ensuring penalty amounts remain attached to their operative definitions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 11 -->
+  <div class="slide-card speaker-yah" id="slide-11">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 11</span>
+        <span class="slide-title-text">Stage 1 Retrieval Benchmark & Ablation Findings</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-yah">Yahyah Odin</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: §4.1</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Stage 1 Retrieval Benchmark & Ablations</div>
+          <ul class="screen-bullets">
+            <li>Hybrid retrieval achieves 82.29% Recall@20 overall</li>
+            <li>Dense retrieval alone achieves 71.14% Recall@20</li>
+            <li>Keyword BM25 retrieval alone achieves 74.86% Recall@20</li>
+            <li>Hybrid search gains plus 7.43% over single-stream baselines</li>
+            <li>Captures 87.14% of candidates at top-50 shortlist depth</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Multi-bar retrieval comparison chart from <code>stage1_retrieval_ablation_performance.png</code> across Difficulty Tiers 1, 2, and 3.
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/stage1_retrieval_ablation_performance.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/stage1_retrieval_ablation_performance.png" alt="Stage 1 Retrieval Ablation Performance Curve" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>Evaluating our Stage 1 candidate retrieval engine:</p>
+          <p>• Our <span class="script-anchor">hybrid retrieval achieves 82.29% Recall@20 overall</span> across our 350-pair ground truth benchmark.</p>
+          <p>• By contrast, <span class="script-anchor">dense semantic retrieval alone achieves only 71.14% Recall@20</span>, frequently missing exact penalty numbers.</p>
+          <p>• Conversely, <span class="script-anchor">keyword BM25 retrieval alone achieves 74.86% Recall@20</span>, failing when drafts use synonyms.</p>
+          <p>• Fusing both streams produces a <span class="script-anchor">hybrid search gain of plus 7.43% over single-stream baselines</span>.</p>
+          <p>• At our production depth, it <span class="script-anchor">captures 87.14% of candidates at top-50 shortlist depth</span>, ensuring controlling statutes reach Stage 2.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 12 -->
+  <div class="slide-card speaker-yah" id="slide-12">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 12</span>
+        <span class="slide-title-text">Stage 2 Cross-Encoder NLI & Significance Tests</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-yah">Yahyah Odin</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: §4.2</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Stage 2 Cross-Encoder NLI Evaluation</div>
+          <ul class="screen-bullets">
+            <li>DeBERTa-v3 achieves 88.30% 5-fold cross-validation accuracy</li>
+            <li>Attains 0.8800 Macro F1 and 0.9008 Conflict F1</li>
+            <li>Outperforms baseline legal models by over 11%</li>
+            <li>Friedman test confirms significance across 8 domains (p < 0.001)</li>
+            <li>McNemar test confirms superior conflict classification (p < 0.05)</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Cross-validation bar chart and Friedman/McNemar significance badge from <code>statistical_validation_model_comparison.png</code>.
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/statistical_validation_model_comparison.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/statistical_validation_model_comparison.png" alt="Stage 2 Cross-Encoder F1 and Significance Comparison" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>In Stage 2, evaluating our cross-encoder conflict reasoning engine:</p>
+          <p>• <span class="script-anchor">DeBERTa-v3 achieves 88.30% 5-fold cross-validation accuracy</span> on unseen legal test splits.</p>
+          <p>• It <span class="script-anchor">attains 0.8800 Macro F1 and 0.9008 Conflict F1</span>, demonstrating high precision on genuine legal clashes.</p>
+          <p>• This <span class="script-anchor">outperforms baseline legal models by over 11%</span>, outperforming zero-shot screening models.</p>
+          <p>• Non-parametric testing via the <span class="script-anchor">Friedman test confirms significance across 8 domains (p < 0.001)</span>, proving accuracy across tax, health, zoning, and transport.</p>
+          <p>• Finally, the <span class="script-anchor">McNemar test confirms superior conflict classification (p < 0.05)</span> over all candidate baselines.</p>
+          <p>I now hand the floor back to Ralph to present our real-world Supreme Court validation and live demonstration.</p>
+        </div>
+        <div class="cue-note">
+          <strong>Handoff:</strong> Yah concludes Block 3 at ~15:30. Ralph takes the floor for Supreme Court cases and the live demo.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 13 -->
+  <div class="slide-card speaker-ralph" id="slide-13">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 13</span>
+        <span class="slide-title-text">Supreme Court Preemption Suite & Latency Scaling</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-ralph">Ralph Paolo Dulce</span>
+        <span>⏱ 2.0 mins</span>
+        <span>Paper: §4.3, §4.4</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Supreme Court Landmark Validation & Latency</div>
+          <ul class="screen-bullets">
+            <li>100% detection rate across 8 Supreme Court cases</li>
+            <li>Successfully flagged Aerial Spraying Ban (Ord. 0309-07)</li>
+            <li>Flagged illegal penalty fines in Revenue Code (Ord. 158-05)</li>
+            <li>Mean inference latency is 1.84 seconds per pair</li>
+            <li>Complete full-document audit completes in under 15 seconds</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Summary table of 8 landmark Supreme Court cases (Table 4.18) and audit latency scaling curve.
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>Thank you, Yah. To validate our pipeline against real-world legal history:</p>
+          <p>• We achieved a <span class="script-anchor">100% detection rate across 8 landmark Supreme Court preemption cases</span> involving struck-down local ordinances.</p>
+          <p>• The system <span class="script-anchor">successfully flagged the landmark Aerial Spraying Ban (Ordinance 0309-07)</span>, correctly recognizing that national pesticide regulations preempted local bans.</p>
+          <p>• It also <span class="script-anchor">flagged illegal penalty fines in the 2005 Davao City Revenue Code</span>, identifying where local penalties exceeded statutory ceilings.</p>
+          <p>• On execution speed, the <span class="script-anchor">mean inference latency is 1.84 seconds per pair</span> on standard consumer hardware.</p>
+          <p>• A <span class="script-anchor">complete full-document audit completes in under 15 seconds</span>, proving that city researchers can perform real-time screening during active committee sessions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 14 -->
+  <div class="slide-card speaker-yah" id="slide-14">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 14</span>
+        <span class="slide-title-text">Prototype Dashboard Architecture</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-yah">Yahyah Odin</span>
+        <span>⏱ 0.5 min</span>
+        <span>Paper: Appendix H</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Prototype Dashboard Architecture</div>
+          <ul class="screen-bullets">
+            <li>Single-page interactive web application for council researchers</li>
+            <li>Features drag-and-drop draft ordinance upload zone</li>
+            <li>Side-by-side dropdown accordions for verbatim text review</li>
+            <li>Live visual confidence progress bar with 0.45 threshold</li>
+            <li>Paginated candidate shortlist across 178,000 provisions</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Prototype landing workspace screenshot (<code>prototype_scan_landing.png</code>) in Ateneo Maroon (<code>#7F2723</code>).
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/prototype_results_summary.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/prototype_results_summary.png" alt="Explainable AI Prototype Results Summary Dashboard" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>We now transition to our working technical prototype:</p>
+          <p>• It is a <span class="script-anchor">single-page interactive web application for council researchers</span> designed for local network deployment.</p>
+          <p>• It <span class="script-anchor">features a drag-and-drop draft ordinance upload zone</span> accepting PDFs and plain text.</p>
+          <p>• Contradictions are displayed in <span class="script-anchor">side-by-side dropdown accordions for verbatim text review</span>.</p>
+          <p>• Drafters see a <span class="script-anchor">live visual confidence progress bar with a 0.45 threshold line</span>.</p>
+          <p>• Below the alerts, a <span class="script-anchor">paginated candidate shortlist displays matches across 178,000 provisions</span>. Ralph and I will now demonstrate the live software.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 15: Live Demo -->
+  <div class="slide-card" id="slide-15" style="border-left: 6px solid #D97706;">
+    <div class="slide-header" style="background: #FEF3C7;">
+      <div>
+        <span class="slide-id" style="color: #92400E;">Slide 15 [LIVE DEMO]</span>
+        <span class="slide-title-text" style="color: #92400E;">Live Technical System Demonstration</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-both">Yah & Ralph Tag-Team</span>
+        <span>⏱ 3.5 mins</span>
+        <span>URL: http://127.0.0.1:5050</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 Live Screen Share Demonstration</div>
+          <div class="screen-slide-title">Interactive Live Walkthrough</div>
+          <ul class="screen-bullets">
+            <li>Step 1: Upload proposed draft ordinance (PDF/text)</li>
+            <li>Step 2: Automated parsing strips procedural boilerplate</li>
+            <li>Step 3: Sub-second Stage 1 retrieval pulls candidate laws</li>
+            <li>Step 4: Cross-encoder flags Section 46 penalty contradiction</li>
+            <li>Step 5: Inspect verbatim text dropdowns & candidate paginator</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Live browser window showing <code>http://127.0.0.1:5050</code> with test draft containing Section 46 penalties.
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/prototype_conflict_accordion.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/prototype_conflict_accordion.png" alt="Live Prototype Conflict Accordion & Statutory Preemption Card" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Step-by-Step Tag-Team Demo Script</div>
+        <div class="script-body">
+          <p><strong>[Yah - 0:45]:</strong> <em>(Switches screen to browser)</em> "What you see on screen is our live decision-support dashboard. We begin by dragging and dropping our test draft ordinance into the upload zone. The system parses the document, automatically strips procedural boilerplate like titles and effectivity clauses, and passes operative sections to our two-stage engine."</p>
+          <p><strong>[Yah - 1:00]:</strong> <em>(Clicks 'Run Audit')</em> "When we initiate the audit, Stage 1 searches across 178,288 provisions in milliseconds. Stage 2 evaluates the candidates. Notice the top alert: the system immediately flags a High-Confidence Contradiction at 95% confidence, clearly crossing our 45% decision threshold line."</p>
+          <p><strong>[Ralph - 1:15]:</strong> <em>(Expands conflict accordion card)</em> "When we expand the accordion, council researchers see 100% verbatim text extracted directly from official repositories—zero AI editorial rewriting. On the right, draft Section 46 imposes fines of P7,000 to P9,000. On the left, Section 458 of Republic Act 7160 states that municipal penalties shall not exceed 5,000 pesos. The contradiction is clear, undeniable, and verified."</p>
+          <p><strong>[Ralph - 0:30]:</strong> <em>(Scrolls to paginated candidate shortlist table)</em> "Below the alerts, researchers can inspect the Top-50 Shortlisted Candidates with similarity scores, 10/20/50 pagination, and direct Lawphil links for complete legal transparency."</p>
+        </div>
+        <div class="cue-note">
+          <strong>Demo Wrap-Up:</strong> Yah switches screen share back to slides at ~21:00. Ralph takes the floor to deliver Chapter 5 conclusions.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 16 -->
+  <div class="slide-card speaker-ralph" id="slide-16">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 16</span>
+        <span class="slide-title-text">Synthesis of Research Objectives 1 to 5</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-ralph">Ralph Paolo Dulce</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: Chapter 5 (§5.1)</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Synthesis of Research Objectives</div>
+          <ul class="screen-bullets">
+            <li>Obj 1: Verified 94.75% 512-token archival compliance</li>
+            <li>Obj 2: Proved 5.79x acceleration via coarse-to-fine design</li>
+            <li>Obj 3: Fine-tuned DeBERTa-v3 cross-encoder achieves 88.30% accuracy</li>
+            <li>Obj 4: Validated 100% detection on Supreme Court benchmarks</li>
+            <li>Obj 5: Delivered functional, zero-cloud web prototype</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Scorecard table verifying 100% completion across all five Specific Research Objectives.
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>Synthesizing our findings against our five research objectives:</p>
+          <p>• Under <span class="script-anchor">Obj 1: We verified 94.75% 512-token archival compliance</span>, proving that legal provisions fit modern transformer models without aggressive chunking.</p>
+          <p>• Under <span class="script-anchor">Obj 2: We proved 5.79-times acceleration via coarse-to-fine design</span>, reducing audit time from minutes to under 15 seconds.</p>
+          <p>• Under <span class="script-anchor">Obj 3: Our fine-tuned DeBERTa-v3 cross-encoder achieved 88.30% accuracy</span>, demonstrating high conflict precision across all legal domains.</p>
+          <p>• Under <span class="script-anchor">Obj 4: We validated 100% detection on Supreme Court benchmarks</span>, successfully replicating landmark decisions.</p>
+          <p>• And under <span class="script-anchor">Obj 5: We delivered a functional, zero-cloud web prototype</span> providing single-click audit transparency for municipal researchers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 17 -->
+  <div class="slide-card speaker-ralph" id="slide-17">
+    <div class="slide-header">
+      <div>
+        <span class="slide-id">Slide 17</span>
+        <span class="slide-title-text">Academic Limitations, SP Routing & Close</span>
+      </div>
+      <div class="slide-meta">
+        <span class="badge badge-ralph">Ralph Paolo Dulce</span>
+        <span>⏱ 1.5 mins</span>
+        <span>Paper: Chapter 5 (§5.2)</span>
+      </div>
+    </div>
+    <div class="slide-content-grid">
+      <div class="slide-screen">
+        <div>
+          <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+          <div class="screen-slide-title">Limitations, Administrative Status & Future Work</div>
+          <ul class="screen-bullets">
+            <li>Current pipeline focuses on single-hop statutory contradictions</li>
+            <li>Cross-lingual ordinances require English translation preprocessing</li>
+            <li>SP endorsement received; routing via HRMO and City Administrator</li>
+            <li>Human evaluation framework prepared with Civil Service commendations</li>
+            <li>Future extensions include graph reasoning and Cebuano fine-tuning</li>
+          </ul>
+        </div>
+        <div class="screen-visual-ref">
+          <strong>Visual:</strong> Administrative routing diagram: Sangguniang Panlungsod $\rightarrow$ HRMO / City Administrator $\rightarrow$ 15 Legal Researchers (Civil Service 201 Commendations).
+        
+          <a href="../CS_Undergraduate_Thesis_Template/figs/annotator_certificate_of_contribution.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/annotator_certificate_of_contribution.png" alt="Civil Service 201 Commendation Certificate for SP Legal Researchers" class="screen-visual-img"></a>
+        </div>
+      </div>
+      <div class="spoken-script">
+        <div class="script-tag">🎙 Word-for-Word Spoken Script</div>
+        <div class="script-body">
+          <p>To conclude with academic rigor, we acknowledge current boundaries:</p>
+          <p>• Our <span class="script-anchor">current pipeline focuses on single-hop statutory contradictions</span> between pairs of provisions, leaving multi-law implied repeals for future work.</p>
+          <p>• Furthermore, <span class="script-anchor">cross-lingual ordinances require English translation preprocessing</span> before embedding.</p>
+          <p>• Administratively, <span class="script-anchor">favorable SP endorsement was received, routing via HRMO and the City Administrator</span>.</p>
+          <p>• The <span class="script-anchor">human evaluation framework is prepared with Civil Service commendations</span> for 15 legal researchers as an institutional post-study roadmap.</p>
+          <p>• <span class="script-anchor">Future extensions include statutory graph reasoning and Cebuano language tuning</span>.</p>
+          <p>That concludes our final thesis defense presentation. Thank you very much, and we welcome the comments and questions of our evaluation panel.</p>
+        </div>
+        <div class="cue-note">
+          <strong>Conclusion:</strong> Ralph concludes at ~24:30. The remaining 5.5 minutes are reserved for the committee's questions.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q&A Cards Section -->
+  <div class="dashboard-card" id="qa-section">
+    <h2>Committee Defense Q&A Cards (High-Frequency Panel Inquiries)</h2>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+      Direct, jargon-free answers to the most common questions asked by computer science thesis panels.
+    </p>
+
+    <div class="qa-card">
+      <div class="qa-question">1. "What is your main technical contribution versus a standard search engine?"</div>
+      <div class="qa-answer">
+        "A standard search engine only retrieves similar words. In law, conflicting provisions rarely share identical phrasing. Our main technical contribution is coupling fast hybrid retrieval with a fine-tuned cross-encoder natural language inference model. This allows the system to read the retrieved candidate law and the draft clause jointly, determining whether they logically contradict, rather than merely sharing keywords."
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">2. "Why not just use ChatGPT or a commercial cloud API?"</div>
+      <div class="qa-answer">
+        "Three practical reasons: First, <strong>data privacy</strong>—uploading unapproved government legislative drafts to commercial cloud servers poses compliance risks under the Data Privacy Act (RA 10173). Second, <strong>budget sustainability</strong>—commercial per-page API pricing is unsustainable for local government budgets. Third, <strong>affirmative bias</strong>—cloud LLMs often hallucinate or agree with user prompts. Our open-weight models run 100% offline, cost zero operating fees, and produce transparent attention heatmaps."
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">3. "Why decouple retrieval (Stage 1) from logical inference (Stage 2)?"</div>
+      <div class="qa-answer">
+        "Comparing a multi-section draft pairwise against all 178,288 statutory provisions using a deep cross-encoder requires over 1.7 million transformer passes, which would crash office computers and take hours. Decoupling allows Stage 1 to act as a fast search filter (narrowing 178,000 laws to 50 in 0.1 seconds), so Stage 2 can focus deep cross-attention strictly on the most relevant candidates."
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">4. "What is the status of testing with the 15 Sangguniang Panlungsod legal researchers?"</div>
+      <div class="qa-answer">
+        "Acting Department Head Ma. Theresa Reyes provided a formal favorable endorsement, referring institutional approval to the City Administrator's Office via HRMO. Because municipal administrative clearance extends past academic deadlines, Ma'am Grace Tacadao advised framing the 15-evaluator SUS/TAM study as a post-study institutional roadmap. To recognize their service, official commendation certificates were prepared for their official Civil Service 201 records upon completion."
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">5. "Why did you use Google Kaggle GPUs for the 2016–2020 ordinances?"</div>
+      <div class="qa-answer">
+        "Running multi-hour vision-language OCR continuously on a consumer laptop forces 100% thermal and power saturation, causing severe thermal throttling. Offloading historical batch runs to Kaggle's cloud GPUs protected local hardware. Furthermore, Kaggle's 16 GB Tesla T4 memory supported uncompressed 16-bit half-precision, significantly cutting Character Error Rate on faded typewriter scans."
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function filterSpeaker(speaker) {
+    const cards = document.querySelectorAll('.slide-card');
+    const buttons = document.querySelectorAll('.btn-filter');
+    buttons.forEach(b => b.className = 'btn-filter');
+
+    if (speaker === 'all') {
+      cards.forEach(c => c.style.display = 'block');
+      document.querySelector('.btn-filter:nth-child(1)').className = 'btn-filter active-all';
+    } else if (speaker === 'ralph') {
+      cards.forEach(c => {
+        if (c.classList.contains('speaker-ralph') || c.id === 'slide-15') {
+          c.style.display = 'block';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+      document.querySelector('.btn-filter:nth-child(2)').className = 'btn-filter active-ralph';
+    } else if (speaker === 'yah') {
+      cards.forEach(c => {
+        if (c.classList.contains('speaker-yah') || c.id === 'slide-15') {
+          c.style.display = 'block';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+      document.querySelector('.btn-filter:nth-child(3)').className = 'btn-filter active-yah';
+    }
+  }
+</script>
+
+</body>
+</html>
