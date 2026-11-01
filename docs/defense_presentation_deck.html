@@ -1988,8 +1988,8 @@
               <li>Tested four optical character recognition engines</li>
               <li>Evaluated against real archival typewriter degradation</li>
               <li>Traditional OCR fails severely on noise</li>
-              <li>Tesseract suffers 38.4 percent error rate</li>
-              <li>Local 4-bit vision model achieves 4.1 percent</li>
+              <li>Tesseract suffers 14.82 percent error</li>
+              <li>Local 4-bit vision model achieves 3.12</li>
               <li>Eliminates downstream legal error propagation cascades</li>
             </ul>
           </div>
@@ -2077,16 +2077,14 @@
               recognition architectures on authentic Davao City municipal archives.</p>
             <p>Because local ordinances span 75 years of legislation, physical scans frequently exhibit severe
               typewriter ribbon fade, paper yellowing, and carbon bleed-through. As shown in Table 4.1, traditional OCR
-              engines like Tesseract catastrophically fail on this archival noise, suffering an intolerable Character
-              Error Rate of 38.4 percent. This introduces Lopresti error cascades that corrupt essential statutory
-              numbers and penalty provisions.</p>
+              engines like Tesseract catastrophically fail on this archival noise, suffering an aggregate <span class="script-anchor">Character Error Rate of 14.82 percent</span> and a Word Error Rate of 22.30 percent, dropping to only 63.3 percent accuracy on penalty figures. This introduces severe Lopresti error cascades that corrupt essential statutory numbers and monetary penalties.</p>
             <p>In contrast, our locally deployed 4-bit quantized Qwen2.5-VL-3B-Instruct vision-language model achieves a
-              Character Error Rate of only 4.1 percent while maintaining 100 percent structural table fidelity. This
+              Character Error Rate of only 3.12 percent and 96.7 percent monetary accuracy while maintaining 91.8 percent table fidelity (TEDS). This
               provides the clean textual foundation necessary for accurate legal reasoning without requiring proprietary
               cloud APIs."</p>
           </div>
           <div class="cue-note">
-            <strong>Cue:</strong> Highlight Ralph's lead OCR benchmark: 38.4% Tesseract error vs 4.1% local 4-bit VLM.
+            <strong>Cue:</strong> Highlight Ralph's lead OCR benchmark: 14.82% Tesseract CER vs 3.12% local 4-bit VLM (Table 4.1).
           </div>
         </div>
       </div>
