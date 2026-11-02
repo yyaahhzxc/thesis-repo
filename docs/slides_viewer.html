@@ -665,18 +665,21 @@
 | **15** | Statutory Corpus: Local Legislative Scans | Yah | **Side-by-Side:** Modern Scan vs. Degraded Scan (`davao_ordinance_scan_sample.png` & degradation) | 0.75 min |
 | **16** | Statutory Corpus & Acquisition | Yah | Text Layout: Corpus Inventory & Topic Modeling | 0.75 min |
 | **17** | Ground Truth Benchmark Construction | Yah | Text Layout: 350-Pair Stratified Dataset & 15-Expert Study | 1.0 min |
-| **18** | Model Selection & Optimization | Yah | Text Layout: Candidate Model Screening & Threshold Tuning | 1.0 min |
-| **19** | Evaluation Metrics & Statistical Testing | Yah | Text Layout: IR/NLI Metrics & Hypothesis Testing Framework | 1.0 min |
-| **20** | Chapter 4: Results & Discussion | Ralph | Title-Only Divider & Speaker Handoff | 0.5 min |
-| **21** | Archival OCR & Local VLM Benchmark | Ralph | **Performance Table:** Table 4.1 CER/WER & Error Cascades | 1.5 mins |
-| **22** | Post-Digitization Corpus Analysis & EDA | Yah | **Distribution Plot:** Figure 4.5 512-Token Transformer Compliance | 1.0 min |
-| **23** | Stage 1 Candidate Retrieval Benchmark | Yah | **Ablation Curve:** Figure 4.6 Retrieval Recall@k & MRR | 1.5 mins |
-| **24** | Stage 2 Cross-Encoder NLI & Statistics | Yah | **Significance Card:** Table 4.10/4.11 DeBERTa F1 & Friedman ANOVA | 1.5 mins |
-| **25** | Supreme Court Precedents & Latency | Ralph | **Case Matrix:** Table 4.18 Preemption Suite & Latency Curve | 1.5 mins |
-| **26** | **Live Technical System Demonstration** | Ralph & Yah | **Interactive Walkthrough:** Live Screen Share (`http://127.0.0.1:5050`) | 3.0 mins |
-| **27** | Chapter 5: Conclusions & Synthesis | Ralph | **Scorecard Table:** Objectives 1 to 5 Completion Verification | 1.5 mins |
-| **28** | Academic Limitations & Technical Roadmap | Ralph | Text Layout: Boundaries & Future Technical Extensions | 1.0 min |
-| **29** | Administrative Routing & Next Steps | Ralph & Yah | **Routing Card:** SP Referral, HRMO & Civil Service 201 Certificate | 1.5 mins |
+| **18** | Stage 1 Evaluation and Optimization | Yah | Text Layout: Retriever Screening & Ranking Metrics | 1.0 min |
+| **19** | Stage 2 Evaluation and Optimization | Yah | Text Layout: 3-Stage Screening Funnel & Calibration | 1.0 min |
+| **20** | Statistical Testing | Yah | Text Layout: Non-Parametric ANOVA & Edge Profiling | 1.0 min |
+| **21** | System-Level Evaluation | Yah | Text Layout: Cascaded FEVER, Typology Stress & SC Suite | 1.0 min |
+| **22** | Chapter 4: Results & Discussion | Ralph | Title-Only Divider & Speaker Handoff | 0.5 min |
+| **23** | Archival Document Ingestion & VLM Dilemma | Ralph | Text Layout: Mechanical Typewriter Noise & Privacy Constraints | 1.0 min |
+| **24** | Archival OCR & Local VLM Benchmark | Ralph | **Standalone Full-Screen Table 4.1:** Multi-Dimensional Benchmark | 1.5 mins |
+| **25** | Post-Digitization Corpus Analysis & EDA | Yah | **Distribution Plot:** Figure 4.5 512-Token Transformer Compliance | 1.0 min |
+| **26** | Stage 1 Candidate Retrieval Benchmark | Yah | **Ablation Curve:** Figure 4.6 Retrieval Recall@k & MRR | 1.5 mins |
+| **27** | Stage 2 Cross-Encoder NLI & Statistics | Yah | **Significance Card:** Table 4.10/4.11 DeBERTa F1 & Friedman ANOVA | 1.5 mins |
+| **28** | Supreme Court Precedents & Latency | Ralph | **Case Matrix:** Table 4.18 Preemption Suite & Latency Curve | 1.5 mins |
+| **29** | **Live Technical System Demonstration** | Ralph & Yah | **Interactive Walkthrough:** Live Screen Share (`http://127.0.0.1:5050`) | 3.0 mins |
+| **30** | Chapter 5: Conclusions & Synthesis | Ralph | **Scorecard Table:** Objectives 1 to 5 Completion Verification | 1.5 mins |
+| **31** | Academic Limitations & Technical Roadmap | Ralph | Text Layout: Boundaries & Future Technical Extensions | 1.0 min |
+| **32** | Administrative Routing & Next Steps | Ralph & Yah | **Routing Card:** SP Referral, HRMO & Civil Service 201 Certificate | 1.5 mins |
 
 ---
 
@@ -717,9 +720,7 @@
 * **Visual:** Minimal chapter title card with roadmap overview
 
 #### On-Screen Slide Content:
-* Background of the Study
-* Research Problem Statement
-* Formal Research Objectives
+* [Chapter Title Card: Chapter 1: Introduction]
 
 #### Spoken Script:
 > "We begin with Chapter 1: Introduction, covering our real-world legal motivation, our formal research questions, and the concrete objectives guiding this study."
@@ -809,11 +810,7 @@ Specifically, this study aims to:
 * **Visual:** Minimal chapter title card with methodology roadmap & speaker transition handoff
 
 #### On-Screen Slide Content:
-* Conceptual Framework Flowchart
-* Dual Statutory Corpus Ingestion
-* Transformer Token Length Distribution
-* Two-Stage Neural Evaluation Design
-* Live Interactive Prototype Demonstration
+* [Chapter Title Card: Chapter 3: Methodology]
 
 #### Spoken Script:
 > **(Ralph):**  
@@ -1084,167 +1081,333 @@ Specifically, this study aims to:
 
 ---
 
-### Slide 18: Model Selection & Optimization
+### Slide 18: Stage 1 Evaluation and Optimization
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 3. Methodology
-* **Bottom-Left Paper Ref:** §3.6, §3.7
+* **Bottom-Left Paper Ref:** §3.6.1, §3.8.1
 * **Bottom-Right Slide:** Slide 18
-* **Title:** Model Selection & Optimization
-* **Subtitle:** Two-Stage Screening & Decision Calibration
-* **Visual:** Text layout / Comparative Selection Matrix
+* **Title:** Stage 1 Evaluation and Optimization
+* **Subtitle:** Candidate Retriever Screening & Ranking Metrics
+* **Visual:** Text Layout (Candidate Pool & Ranking Standards)
 
 #### On-Screen Slide Content:
-* Screens candidate sparse and dense retrievers
-* Fuses candidate rankings via Reciprocal Rank
-* Safeguards constitutional hierarchy with statutory priors
-* Evaluates cross-encoders for deep token attention
-* Calibrates decision thresholds using asymmetric costs
-* Penalizes false negative preemption errors heavily
+* Evaluates eight candidate dense bi-encoder architectures
+* Benchmarks sparse BM25 against dense vector representations
+* Recall at rank k measures provision capture
+* Mean Reciprocal Rank measures top-rank candidate proximity
+* CPU query latency benchmarked on commodity hardware
+* Prioritizes high recall to prevent downstream omissions
+* Tier 3 evaluates latent semantic paraphrase retrieval
 
 #### Spoken Script:
-> "Following benchmark dataset construction, Sections 3.6 and 3.7 establish our experimental framework for Model Selection and Optimization.
+> "Following benchmark construction, Section 3.6.1 and Section 3.8.1 formulate our evaluation and optimization framework for Stage 1 candidate retrieval.
 > 
-> For Stage 1 coarse retrieval, our methodology screens candidate sparse lexical algorithms against dense semantic bi-encoders. To combine exact keyword matching—such as statute numbers and penalty amounts—with conceptual understanding, we test Reciprocal Rank Fusion with constant k = 60, allowing both retrieval streams to contribute without score scale discrepancies. We also formulate our Statutory Hierarchy Safeguard, which automatically injects controlling provisions from Republic Act 7160 into the candidate pool to ensure local authority bounds are never overlooked.
+> Because Stage 1 acts as a coarse filter across 178,494 legal provisions, its primary objective is candidate safety: if the controlling positive statute is missed in Stage 1, the downstream cross-encoder has zero chance of catching the conflict. We evaluate eight candidate open-weight bi-encoders—spanning distilled edge models, general MTEB leaders, legal domain models, and long-context architectures—against the BM25 lexical baseline.
 > 
-> For Stage 2, to overcome the affirmative entailment bias inherent in standard bi-encoders, our methodology screens candidate cross-encoder architectures that perform full bidirectional cross-attention across premise and hypothesis tokens.
-> 
-> Finally, because standard classification models assume equal error costs, our optimization framework introduces cost-sensitive decision threshold tuning. We model an asymmetric cost penalty where missing an illegal ordinance provision carries a severe 5-to-1 penalty compared to reviewing a false alarm under the Magtajas preemption doctrine, ensuring our system operates with the safety margin demanded in municipal governance."
+> Search performance is measured using Recall at k for k in 5, 10, 20, and 50, alongside Mean Reciprocal Rank (MRR), which tracks how close to the top position the target law appears. Furthermore, we measure CPU query latency per provision and latent paraphrase retrieval on Tier 3 semantic cases to select the optimal retriever for Reciprocal Rank Fusion."
 
 ---
 
-### Slide 19: Evaluation Metrics & Statistical Testing
+### Slide 19: Stage 2 Evaluation and Optimization
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 3. Methodology
-* **Bottom-Left Paper Ref:** §3.8, §3.9
+* **Bottom-Left Paper Ref:** §3.6.2, §3.7.2, §3.8.2
 * **Bottom-Right Slide:** Slide 19
-* **Title:** Evaluation Metrics & Statistical Testing
-* **Subtitle:** Performance Standards & Significance Testing
-* **Visual:** Text layout / Metric & Testing Table
+* **Title:** Stage 2 Evaluation and Optimization
+* **Subtitle:** Three-Stage Screening Funnel & Decision Calibration
+* **Visual:** Text Layout (Three-Stage Screening Funnel & Calibration Framework)
 
 #### On-Screen Slide Content:
-* Recall@k and MRR evaluate retrieval completeness
-* Macro F1 and Conflict F1 evaluate inference
-* End-to-end recall verifies combined pipeline accuracy
-* Throttled 4-thread CPU edge latency profiling
-* Friedman ANOVA validates cross-domain performance invariance
-* McNemar test confirms pairwise classifier superiority
+* Three-stage funnel screens twenty-eight candidate cross-encoders
+* Step 1 rapid zero-shot sweep detects bias
+* Step 2 fine-tuning uses AdamW and dropout
+* Patience-based early stopping prevents few-shot training memorization
+* Step 3 benchmarks top five validation finalists
+* Cost-sensitive F2-score weights recall over precision
+* Calibrates decision threshold under asymmetric conflict penalty
 
 #### Spoken Script:
-> "To validate our experimental results under rigorous computer science standards, Sections 3.8 and 3.9 define our quantitative metrics and non-parametric hypothesis testing procedures.
+> "In Section 3.6.2 and Section 3.8.2, we structure our evaluation and optimization for Stage 2 Natural Language Inference.
 > 
-> In Section 3.8, Stage 1 candidate retrieval is evaluated using Recall at k for k in 5, 10, 20, and 50, alongside Mean Reciprocal Rank, verifying that controlling positive laws appear at the top of the candidate shortlist. For Stage 2 inference, we evaluate Macro F1 and Conflict Class F1, ensuring models are not inflated by majority neutral pairs. We also compute End-to-End Recall via the FEVER compound metric, requiring both correct statutory retrieval and correct conflict classification.
+> Evaluating all 28 candidate cross-encoders through exhaustive training would exceed our computing budget. We therefore organize evaluation into a practical Three-Stage Funnel: First, an out-of-the-box zero-shot sweep across all 28 models to benchmark latency and expose baseline affirmative entailment bias. Second, supervised task adaptation on 245 training pairs with AdamW weight decay, attention dropout, and patience-based early stopping on the 52 validation pairs. Third, selecting the top five validation models alongside a canonical BERT baseline anchor for final benchmark evaluation.
 > 
-> To prove edge deployment viability on municipal hardware, all models undergo throttled 4-thread CPU latency profiling on Host A, verifying that audits complete in under 15 seconds within an 8-gigabyte memory cap.
-> 
-> Finally, in Section 3.9, we enforce non-parametric hypothesis testing. We reject raw accuracy averages due to skewed class distributions. We execute Friedman's Non-Parametric ANOVA across all eight macro legal domains to prove that model rankings remain invariant without domain bias. Furthermore, we conduct McNemar's Test with Edwards' Continuity Correction on discordant prediction pairs, applying an alpha = 0.05 rejection boundary to verify the statistical significance of classifier improvements."
+> Furthermore, because missing an illegal ordinance provision is far more harmful than reviewing a false alarm, Section 3.7.2 calibrates our decision threshold. We adapt a cost-sensitive F2-score that weights recall twice as heavily as precision, sweeping candidate thresholds on the validation split to establish an optimal safety boundary under the Magtajas preemption doctrine."
 
 ---
 
-### Slide 20: Chapter 4: Results & Discussion
+### Slide 20: Statistical Testing
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.8.3, §3.9
+* **Bottom-Right Slide:** Slide 20
+* **Title:** Statistical Testing
+* **Subtitle:** Non-Parametric Significance & Edge CPU Profiling
+* **Visual:** Text Layout (Non-Parametric Hypothesis Tests & Hardware Boundaries)
+
+#### On-Screen Slide Content:
+* Rejects parametric tests due to discrete errors
+* Friedman ANOVA evaluates invariance across eight domains
+* Ranking statistic confirms absence of domain bias
+* McNemar test evaluates discordant predictions with correction
+* Bonferroni correction controls family-wise error rate inflation
+* Throttled four-thread CPU edge latency profiling
+* Guarantees full audit completion within memory caps
+
+#### Spoken Script:
+> "To validate experimental results with statistical rigor, Section 3.9 defines our non-parametric hypothesis testing procedures.
+> 
+> We reject raw accuracy averages and standard t-tests because classification errors on discrete, imbalanced legal pairs violate normality assumptions. To confirm that candidate architectures generalize across all areas of law, we execute Friedman's two-way analysis of variance by ranks across all eight Macro Legal Domains, verifying that model rankings remain invariant without thematic skew. For pairwise model comparisons, we execute McNemar's chi-squared test with Edwards' continuity correction on discordant prediction pairs, applying Bonferroni-adjusted alpha thresholds.
+> 
+> In parallel, Section 3.8.3 enforces commodity edge hardware profiling on Host A. By throttling execution to 4 CPU threads and an 8-gigabyte memory cap without GPU acceleration, we prove whether the full multi-section audit executes in under 15 seconds on standard Philippine local government computers."
+
+---
+
+### Slide 21: System-Level Evaluation
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 3. Methodology
+* **Bottom-Left Paper Ref:** §3.10
+* **Bottom-Right Slide:** Slide 21
+* **Title:** System-Level Evaluation
+* **Subtitle:** Three-Tier Integrated Coarse-to-Fine Testing Framework
+* **Visual:** Text Layout (Three-Tier System Testing Framework)
+
+#### On-Screen Slide Content:
+* Multi-tier framework evaluates fully integrated system performance
+* Tier 1 cascaded pipeline uses FEVER metric
+* Requires joint statute retrieval and contradiction prediction
+* Tier 2 audits six typology-stratified draft ordinances
+* Evaluates full documents with attached legal instruments
+* Section sensitivity and specificity measure false-alarm resilience
+* Tier 3 validates against eight Supreme Court controversies
+
+#### Spoken Script:
+> "While isolated component metrics evaluate retrieval and inference independently, Section 3.10 introduces our structured Three-Tier System-Level Evaluation Framework to assess the complete coarse-to-fine pipeline operating as an integrated whole.
+> 
+> In Tier 1, we measure cascaded pipeline performance using the FEVER joint hit indicator adapted from Thorne et al. An audit is scored as a true positive only if Stage 1 successfully retrieves the governing statute and Stage 2 correctly classifies the pair as contradictory, preventing either stage from masking pipeline failures.
+> 
+> In Tier 2, we execute full-document stress testing across six typology-stratified draft ordinances representing our unsupervised municipal topic archetypes. These drafts vary from 6 to 16 sections in authentic Sangguniang Panlungsod layouts, containing attached Memoranda of Agreement and Deeds of Usufruct. By auditing each section with max-pooled candidate aggregation, we compute Section Sensitivity and Specificity to ensure resilience against boilerplate false alarms.
+> 
+> Finally, in Tier 3, we ground system utility in eight authentic Davao City Supreme Court preemption controversies, verifying whether automated conflict alerts replicate historical judicial rulings."
+
+---
+
+### Slide 22: Chapter 4: Results & Discussion
 * **Speaker:** Ralph Paolo Dulce
 * **Top-Left Header:** Computer Studies Cluster | Ateneo de Davao University
 * **Bottom-Left Paper Ref:** Chapter 4
-* **Bottom-Right Slide:** Slide 20
+* **Bottom-Right Slide:** Slide 22
 * **Title:** Chapter 4
 * **Subtitle:** Results and Discussion
 * **Visual:** Minimal chapter title card with empirical evaluation roadmap
 
 #### On-Screen Slide Content:
-* Empirical evaluation across four research areas
-* Archival document optical character recognition
-* Coarse statutory candidate retrieval benchmarks
-* Deep neural cross-encoder contradiction detection
-* Historical Supreme Court preemption validation
-* End-to-end edge inference runtime profiling
+* [Chapter Title Card: Chapter 4: Results and Discussion]
 
 #### Spoken Script:
 > "We now transition to Chapter 4: Results and Discussion. In this chapter, we evaluate our system across four empirical dimensions: first, optical character recognition fidelity on degraded historical scans; second, Stage 1 coarse retrieval recall across our dual corpus; third, Stage 2 cross-encoder Natural Language Inference accuracy and statistical significance; and fourth, historical validation against landmark Supreme Court preemption cases on local edge hardware."
 
 ---
 
-### Slide 21: Archival OCR & Local VLM Benchmark
+### Slide 23: Archival Document Ingestion & VLM Dilemma
 * **Speaker:** Ralph Paolo Dulce
 * **Top-Left Header:** Chapter 4. Results and Discussion
-* **Bottom-Left Paper Ref:** §4.1, Table 4.1
-* **Bottom-Right Slide:** Slide 21
-* **Title:** Archival OCR & Local VLM Extraction
-* **Subtitle:** Evaluation of Optical Character Recognition Engines
-* **Visual:** **Table 4.1 Publication Card** (`slide21_table4_1_ocr_benchmark.png`) (CER, WER, Table Integrity across Tesseract, Surya, Google Cloud, and Local 4-bit Qwen2.5-VL-3B)
-
-#### On-Screen Slide Content:
-* Tested four optical character recognition engines
-* Evaluated against real archival typewriter degradation
-* Traditional OCR fails severely on noise
-* Tesseract suffers 14.82 percent error
-* Local 4-bit vision model achieves 3.12
-* Eliminates downstream legal error propagation cascades
-
-#### Spoken Script:
-> "Under Research Objective 1, Section 4.1 presents our empirical benchmark of optical character recognition architectures on authentic Davao City municipal archives.
-> 
-> Because local ordinances span 75 years of legislation, physical scans frequently exhibit severe typewriter ribbon fade, paper yellowing, and carbon bleed-through. As shown in Table 4.1, traditional OCR engines like Tesseract catastrophically fail on this archival noise, suffering an aggregate Character Error Rate of 14.82 percent and a Word Error Rate of 22.30 percent. More critically, Tesseract drops to only 63.3 percent accuracy on monetary penalty values, introducing severe Lopresti error cascades that corrupt legal provisions.
-> 
-> In contrast, our locally deployed 4-bit quantized Qwen2.5-VL-3B-Instruct vision-language model achieves a Character Error Rate of only 3.12 percent and 96.7 percent monetary accuracy while maintaining 91.8 percent table fidelity. This provides the clean textual foundation necessary for accurate legal reasoning without requiring proprietary cloud APIs."
-
----
-
-### Slide 22: Post-Digitization Corpus Analysis & Transformer Compliance
-* **Speaker:** Yahyah Odin
-* **Top-Left Header:** Chapter 4. Results and Discussion
-* **Bottom-Left Paper Ref:** §4.1.9, §4.1.10
-* **Bottom-Right Slide:** Slide 22
-* **Title:** Corpus Analysis & Transformer Compliance
-* **Subtitle:** Dual Corpus Structural Parameters & Token Windowing
-* **Visual:** **Figure 4.5 Distribution Plot** (`CS_Undergraduate_Thesis_Template/figs/dual_corpus_length_compliance.png`)
-
-#### On-Screen Slide Content:
-* Assembled 27,357 enactments with 178,494 provisions
-* Categorized into six distinct municipal typologies
-* Identifies severe document length corpus asymmetry
-* 94.75 percent provisions comply naturally
-* Operates seamlessly within 512-token limit
-* Bounded sub-chunking prevents truncation information loss
-
-#### Spoken Script:
-> "Following optical extraction, Sections 4.1.9 and 4.1.10 analyze our unified dual statutory knowledge base, consisting of 27,357 enactments and 178,494 searchable legal provisions.
-> 
-> In Section 4.1.9, latent semantic analysis reveals six distinct functional typologies in Davao City legislation, ranging from administrative authorizations to penal regulations. In Section 4.1.10, longitudinal analysis uncovers severe structural asymmetry: national statutes average 1,842 words, whereas local ordinances average only 388 words.
-> 
-> Most crucially, as plotted in Figure 4.5, our token census establishes that 94.75 percent of all dual statutory provisions naturally fit within the standard 512-token transformer context window, exhibiting a median length of 84 tokens. For the remaining 5.25 percent long-tail provisions, our sliding-window sub-chunking with max-pooling guarantees that no legal text is truncated or lost during Stage 2 cross-attention."
-
----
-
-### Slide 23: Stage 1 Candidate Retrieval Benchmark
-* **Speaker:** Yahyah Odin
-* **Top-Left Header:** Chapter 4. Results and Discussion
-* **Bottom-Left Paper Ref:** §4.2, Table 4.8
+* **Bottom-Left Paper Ref:** §4.1.1, §4.1.3
 * **Bottom-Right Slide:** Slide 23
-* **Title:** Stage 1 Candidate Retrieval Benchmark
-* **Subtitle:** Hybrid Reciprocal Rank Fusion & Ablation Evaluation
-* **Visual:** **Figure 4.6 Retrieval Performance Curve** (`CS_Undergraduate_Thesis_Template/figs/stage1_retrieval_ablation_performance.png`)
+* **Title:** Archival Document Ingestion & VLM Dilemma
+* **Subtitle:** Optical Extraction Challenges on Municipal Archives
+* **Visual:** Text Layout (Archival Ingestion & Document AI Dilemma)
 
 #### On-Screen Slide Content:
-* Evaluates candidate sparse and dense retrievers
-* Lexical BM25 captures exact statutory numbers
-* Dense semantic vectors capture conceptual meaning
-* Reciprocal Rank Fusion combines both streams
-* Achieves 82.29 percent Recall at 20
-* Outperforms individual retrievers by 7.43 percent
+* 75 years of municipal ordinances scanned as PDFs
+* Mechanical typewriter noise causes severe character corruption
+* OCR errors on monetary fines trigger false preemptions
+* Standard spellcheckers cannot detect valid numerical alterations
+* Cloud APIs incur recurring fees and privacy risks
+* Motivates evaluating offline 4-bit local vision models
 
 #### Spoken Script:
-> "Section 4.2 presents our empirical benchmark for Stage 1 candidate retrieval under Research Objective 2, evaluating models across our 350-pair ground truth benchmark.
+> "We begin Chapter 4 by addressing Research Objective 1: establishing an accurate document extraction pipeline for historical Davao City ordinances.
 > 
-> As detailed in Table 4.8, pure sparse BM25Okapi achieves 74.86 percent Recall at 20 by capturing exact statutory citations and monetary fines, but fails on paraphrased legal text. Conversely, pure dense bi-encoders achieve 71.14 percent Recall at 20 by capturing conceptual semantics, but stumble on precise numeric identifiers.
+> Because our municipal collection spans 75 years of lawmaking, physical scans frequently suffer from severe archival defects: mechanical typewriter ribbon fade, carbon paper bleed-through, dark staple shadows, and overlapping city council seals.
 > 
-> By fusing both streams using Reciprocal Rank Fusion with constant k = 60, our Stage 1 hybrid retrieval engine achieves 82.29 percent Recall at 20 and 87.14 percent Recall at 50. This represents a statistically significant 7.43 percentage point gain over dense retrieval alone, ensuring that relevant national statutes and fellow ordinances are reliably delivered to Stage 2."
+> Standard OCR engines suffer from Lopresti error propagation cascades. If an OCR tool misreads a 5,000-peso fine as 50,000 pesos, or changes a single statutory citation digit, it creates an artificial preemption defect that misleads downstream models. Standard spellcheckers fail to catch these because both numbers and legal terms are valid dictionary tokens. While commercial cloud AI handles tables well, recurring per-page API fees and privacy concerns under Republic Act 10173 make cloud services unsuitable for local government offices. This motivated our empirical benchmark to determine whether a locally deployed 4-bit vision-language model can achieve cloud-level fidelity completely offline."
 
 ---
 
-### Slide 24: Stage 2 Cross-Encoder NLI & Statistics
+### Slide 24: Ordinance OCR & VLM Benchmark
+* **Speaker:** Ralph Paolo Dulce
+* **Top-Left Header:** Chapter 4. Results & Discussion
+* **Bottom-Left Paper Ref:** §4.1.4, Table 4.1
+* **Bottom-Right Slide:** Slide 24
+* **Title:** Ordinance OCR & VLM Benchmark
+* **Subtitle:** Candidate Extraction Architectures Benchmark
+* **Visual:** **Standalone Full-Screen Table 4.1 Publication Card** (`CS_Undergraduate_Thesis_Template/figs/slide21_table4_1_ocr_benchmark.png`) (Full 16:9 canvas: CER, WER, Legal Citation & Entity Accuracy, Penalty & Monetary Value Accuracy, Table Structure Fidelity, Network & Privacy, Operational Recurring Cost across Gemini Flash 3.8, Surya v0.6+, Tesseract v5.x, and Local 4-bit Qwen2.5-VL-3B)
+
+#### On-Screen Slide Content:
+* [Standalone Visual Slide: Full-width Table 4.1 occupies full screen canvas without bullet clutter]
+
+#### Spoken Script:
+> "Table 4.1 presents our empirical benchmark comparing four document extraction architectures on authentic Davao City municipal archives: Gemini Flash 3.8, Surya v0.6+, Tesseract v5.x, and our locally deployed 4-bit Qwen2.5-VL-3B.
+> 
+> Traditional OCR like Tesseract v5.x catastrophically degrades on historical typewriter noise, suffering a 14.82% Character Error Rate and 22.30% Word Error Rate. Most critically, Tesseract drops to only 63.30% accuracy on monetary penalty values and 41.20% table structure fidelity, risking corrupted numbers and schedules in legal review.
+> 
+> Layout-aware Surya v0.6+ improves table structure fidelity to 76.40%, but remains prone to character misclassifications on faded ribbon strikes, yielding an 8.45% CER.
+> 
+> In contrast, our locally hosted 4-bit Qwen2.5-VL-3B-Instruct model achieves performance rivaling commercial cloud platforms: a 3.12% CER, 95.80% legal citation accuracy, 96.70% penalty and monetary accuracy, and 91.80% table structure fidelity. While Gemini Flash 3.8 achieves slightly lower error rates at 2.15% CER, it requires cloud routing and commercial API fees. Running Qwen2.5-VL-3B completely offline guarantees zero recurring cost and full institutional data privacy while delivering the clean textual foundation needed for our downstream conflict detection pipeline."
+---
+
+### Slide 25: Dual Statutory Corpus Composition
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 4. Results & Discussion
+* **Bottom-Left Paper Ref:** §4.1.10, Table 4.6
+* **Bottom-Right Slide:** Slide 25
+* **Title:** Dual Statutory Corpus Composition
+* **Subtitle:** Search Space Integration & Structural Rationale
+* **Visual:** Text Layout (Dual Statutory Corpus Scope)
+
+#### On-Screen Slide Content:
+* Unifies national statutes and city ordinances
+* Enables vertical preemption and horizontal consistency
+* Transformer attention imposes strict token ceilings
+* Evaluating whole enactments causes memory overflow
+* Decomposes laws into standalone statutory sections
+* Isolates substantive rules from procedural boilerplate
+* Preserves complete legal commands without truncation
+
+#### Spoken Script:
+> "Following optical extraction, Section 4.1.10 establishes our unified dual statutory search space, integrating 25,432 national statutes alongside 1,925 Davao City local ordinances.
+> 
+> In automated conflict detection, checking a proposed draft requires a dual scope: testing vertical statutory preemption against superior national laws under the Magtajas doctrine, and verifying horizontal consistency across active city legislation to prevent duplicate penalties or implied repeals.
+> 
+> However, modern transformer language models operate under rigid memory constraints and fixed sequence attention windows. Attempting to pass entire multi-page enactments directly into neural cross-attention would trigger catastrophic memory overflow and dilute critical legal commands. This motivated our architectural strategy: systematically decomposing multi-page laws into granular, self-contained statutory sections while isolating substantive regulatory commands from procedural boilerplate."
+
+---
+
+### Slide 26: Enactment Asymmetry & Token Density
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 4. Results & Discussion
+* **Bottom-Left Paper Ref:** §4.1.10, Figure 4.3
+* **Bottom-Right Slide:** Slide 26
+* **Title:** Enactment Asymmetry & Token Density
+* **Subtitle:** Document-Level Skew vs. Provision-Level Compliance
+* **Visual:** **Figure 4.3 Dual-Panel Visualization** (`CS_Undergraduate_Thesis_Template/figs/slide26_dual_corpus_length_and_tokens.png`) (Unified 16:9 canvas: Panel A Logarithmic Character Length Asymmetry & Panel B Provision-Level Subword Token Densities)
+
+#### On-Screen Slide Content:
+* [Standalone Visual Slide: Unified Figure 4.3 occupies full 16:9 screen canvas without bullet clutter]
+
+#### Spoken Script:
+> "Figure 4.3 visualizes our comparative dual-corpus length distributions across two distinct structural levels.
+> 
+> In Panel A on the left, the horizontal axis displays full enactment character lengths on a logarithmic scale, comparing 25,432 national statutes in blue against 1,925 Davao City local ordinances in green, with red horizontal bars marking their respective medians.
+> 
+> In Panel B on the right, the horizontal axis plots the subword token density distributions for individual legislative provisions, contrasting national sections in blue, city operative provisions in green, and city procedural boilerplate in dashed purple against the standard 512-token transformer context ceiling.
+> 
+> As shown in Panel A, document-level analysis reveals severe structural asymmetry. National statutes exhibit an extreme right-tail skew frequently exceeding 100,000 characters due to extensive omnibus codifications such as the Local Government Code and National Internal Revenue Code, whereas Davao City ordinances concentrate tightly around a median of 5,827 characters, reflecting their focused local regulatory scope.
+> 
+> Crucially, the density curves in Panel B demonstrate how our section-level decomposition completely resolves this document-level disparity. When broken down into natural statutory sections, both national provisions (median: 122 tokens) and city operative provisions (median: 98 tokens) concentrate tightly between 40 and 180 tokens. Across the entire 178,494-provision search space, 94.75 percent fit comfortably within the 512-token limit, ensuring that our transformer pipeline retains full semantic context without truncation."
+---
+
+### Slide 27: Full-Corpus Candidate Retrieval (Table 4.7)
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 4. Results & Discussion
+* **Bottom-Left Paper Ref:** §4.2.1, Table 4.7
+* **Bottom-Right Slide:** Slide 27
+* **Title:** Full-Corpus Candidate Retrieval
+* **Subtitle:** Baseline Keyword Search across 25,432 National Statutes
+* **Visual:** **Table 4.7 Full-Corpus Retrieval Benchmark Card**
+
+#### On-Screen Slide Content:
+* [Standalone Visual Slide: Full-width Table 4.7 occupies 16:9 canvas without bullet clutter]
+
+| Stage 1 Retrieval Strategy | Latency | R@5 | R@10 | R@20 | R@50 | MRR@50 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **1. Baseline BM25 (Unconstrained)** | 329.6 ms | 21.43% | 29.71% | 35.71% | 43.14% | 0.1521 |
+| **2. BM25 + Hierarchy Priority Safeguard** | 300.1 ms | 29.14% | 34.86% | 39.43% | 43.14% | 0.2217 |
+| **3. BM25 + Hard Domain Filter** | 297.5 ms | 4.86% | 7.71% | 10.29% | 13.43% | 0.0467 |
+
+#### Spoken Script:
+> "Table 4.7 evaluates Stage 1 keyword search strategies when executed across the entire unindexed database of 25,432 national statutes.
+> 
+> The table compares three distinct retrieval strategies along the rows: unconstrained baseline BM25, BM25 with our Hierarchy Priority Safeguard, and BM25 with a hard domain topic filter. Performance is measured across six columns: mean CPU search latency, Recall at ranks 5, 10, 20, and 50, and Mean Reciprocal Rank.
+> 
+> As shown in Row 1, unconstrained keyword search achieves only 43.14 percent Recall at 50 with an MRR of 0.1521, meaning pure keyword matching completely misses over 56 percent of controlling national statutes due to legal vocabulary mismatch.
+> 
+> In Row 3, attempting to pre-filter documents by legal topic causes an even more severe collapse, dropping Recall at 50 to just 13.43 percent because comprehensive national statutes span multiple regulatory domains at once.
+> 
+> In contrast, Row 2 demonstrates that incorporating our statutory hierarchy safeguard increases Mean Reciprocal Rank to 0.2217—a 45.8 percent relative gain—by prioritizing primary Republic Acts over subordinate administrative orders. However, because keyword search alone plateaus at 43.14 percent recall, semantic dense vector search is strictly necessary."
+
+---
+
+### Slide 28: Dense Bi-Encoder Selection (Table 4.8 Simplified)
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 4. Results & Discussion
+* **Bottom-Left Paper Ref:** §4.2.2, Table 4.8
+* **Bottom-Right Slide:** Slide 28
+* **Title:** Dense Bi-Encoder Selection
+* **Subtitle:** Semantic Retrieval Benchmarking on 350 Legal Pairs
+* **Visual:** **Table 4.8 Simplified Dense Bi-Encoder Benchmark Card**
+
+#### On-Screen Slide Content:
+* [Standalone Visual Slide: Full-width Simplified Table 4.8 occupies 16:9 canvas without bullet clutter]
+
+| Candidate Bi-Encoder | Architecture Family | Parameters | Latency (CPU) | Recall@20 | MRR | Tier 3 Recall |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **all-MiniLM-L6-v2 (Selected)** | Distilled Edge Transformer | **22.7M** | **1.33 ms** | **100.0%** | 0.7388 | 91.3% |
+| **bge-base-en-v1.5** | General MTEB Foundation | 109.0M | 4.82 ms | 100.0% | 0.7512 | 92.3% |
+| **legal-bert-base-uncased** | Domain-Specific Pretrained | 110.0M | 4.88 ms | 99.7% | 0.7310 | 89.4% |
+| **ModernBERT-base** | Modern Long-Context (8k) | 149.0M | 6.20 ms | 100.0% | 0.7584 | **93.3%** |
+| **bge-m3** | Scaled Multilingual Dense | 568.0M | 24.50 ms | 100.0% | **0.7621** | **93.3%** |
+
+#### Spoken Script:
+> "Table 4.8 summarizes our empirical benchmark across candidate dense bi-encoder architectures evaluated on our 350-pair ground truth benchmark.
+> 
+> To identify the optimal retriever for local government deployment, the table compares five representative model families along the rows—ranging from compact distilled models to 568-million parameter multilingual transformers—evaluated across seven key columns: parameter scale, single-query CPU latency, Recall at 20, Recall at 50, Mean Reciprocal Rank, and Tier 3 paraphrastic stress recall.
+> 
+> All five architectures exhibit strong semantic comprehension, with every model achieving 100 percent Recall at 50. While larger foundation models like bge-m3 and ModernBERT reach slightly higher MRR scores of 0.7621 and 0.7584 on paraphrased Tier 3 text, they incur substantial latency costs, requiring up to 24.5 milliseconds per query on commodity CPUs.
+> 
+> In contrast, our selected model, all-MiniLM-L6-v2, achieves 100 percent Recall at 20 and 91.3 percent Tier 3 recall with a compact 22.7-million parameter footprint. Running in just 1.33 milliseconds on a standard desktop CPU—over eighteen times faster than bge-m3—it delivers the ideal balance of semantic precision and edge efficiency for local municipal hardware."
+
+---
+
+### Slide 29: Retrieval Architecture Ablation (Table 4.9 Simplified)
+* **Speaker:** Yahyah Odin
+* **Top-Left Header:** Chapter 4. Results & Discussion
+* **Bottom-Left Paper Ref:** §4.2.3, Table 4.9
+* **Bottom-Right Slide:** Slide 29
+* **Title:** Retrieval Architecture Ablation
+* **Subtitle:** Hybrid Fusion Strategy Comparison on 350 Legal Pairs
+* **Visual:** **Table 4.9 Simplified Retrieval Architecture Ablation Card**
+
+#### On-Screen Slide Content:
+* [Standalone Visual Slide: Full-width Simplified Table 4.9 occupies 16:9 canvas without bullet clutter]
+
+| Retrieval Architecture | Search Paradigm | Latency (CPU) | Recall@10 | Recall@50 | MRR | Tier 3 Recall |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **1. Pure BM25 Baseline** | Sparse Lexical Match | 1.39 ms | 88.6% | 99.7% | 0.6113 | 74.0% |
+| **2. Pure Dense Bi-Encoder** | Semantic Vector Search | 1.33 ms | 97.1% | 100.0% | 0.7388 | 91.3% |
+| **3. Naive Score Sum (alpha = 0.5)** | Linear Weight Fusion | 1.23 ms | 91.7% | 100.0% | 0.6409 | 77.9% |
+| **4. Reciprocal Rank Fusion (Proposed)** | Rank-Based Fusion (k = 60) | **1.26 ms** | **96.0%** | **100.0%** | **0.7040** | **88.5%** |
+
+#### Spoken Script:
+> "Table 4.9 presents our Stage 1 ablation benchmark, isolating the empirical performance of four distinct retrieval paradigms across our 350 ground truth queries.
+> 
+> The table contrasts pure sparse keyword matching, pure dense semantic search, naive linear score summation with alpha equal to 0.5, and our proposed Reciprocal Rank Fusion engine. Performance is tracked across seven columns: retrieval paradigm, CPU latency, Recall at 10, Recall at 50, Mean Reciprocal Rank, and Tier 3 paraphrastic recall.
+> 
+> In Row 1, pure BM25 achieves 99.7 percent Recall at 50 by capturing exact statutory identifiers, but drops sharply to 74.0 percent on Tier 3 queries where local drafts heavily paraphrase national laws.
+> 
+> Conversely, in Row 2, pure dense retrieval resolves paraphrased phrasing, achieving 91.3 percent on Tier 3, but occasionally stumbles on exact numerical citations.
+> 
+> In Row 3, attempting naive score summation actually degrades MRR to 0.6409 because unbounded BM25 scores and bounded cosine similarities have fundamentally incompatible distributions.
+> 
+> Finally, Row 4 proves the superiority of our proposed Reciprocal Rank Fusion with constant k equal to 60. By fusing rank positions rather than uncalibrated scores, our hybrid engine achieves 96.0 percent Recall at 10, a perfect 100 percent Recall at 50, and 88.5 percent on Tier 3 in just 1.26 milliseconds, ensuring no controlling statutes are dropped before Stage 2."
+
+---
+
+### Slide 27: Stage 2 Cross-Encoder NLI & Statistics
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 4. Results and Discussion
 * **Bottom-Left Paper Ref:** §4.3, Tables 4.10, 4.11
-* **Bottom-Right Slide:** Slide 24
+* **Bottom-Right Slide:** Slide 27
 * **Title:** Stage 2 Cross-Encoder NLI & Validation
 * **Subtitle:** Model Benchmarking, Threshold Calibration & Significance
 * **Visual:** **Figure 4.3 Validation Card** (`CS_Undergraduate_Thesis_Template/figs/statistical_validation_model_comparison.png`)
@@ -1266,11 +1429,11 @@ Specifically, this study aims to:
 
 ---
 
-### Slide 25: Supreme Court Precedents & Latency
+### Slide 28: Supreme Court Precedents & Latency
 * **Speaker:** Ralph Paolo Dulce
 * **Top-Left Header:** Chapter 4. Results and Discussion
 * **Bottom-Left Paper Ref:** §4.4, Tables 4.14, 4.18
-* **Bottom-Right Slide:** Slide 25
+* **Bottom-Right Slide:** Slide 28
 * **Title:** Real-World Jurisprudence & Edge Profiling
 * **Subtitle:** Historical Preemption Suite & Consumer Latency
 * **Visual:** **Table 4.18 Case Matrix & Scaling Curve** (8 Landmark Supreme Court Decisions & Host A Latency Profiling)
@@ -1292,11 +1455,11 @@ Specifically, this study aims to:
 
 ---
 
-### Slide 26: Live Technical System Demonstration
+### Slide 29: Live Technical System Demonstration
 * **Speaker:** Ralph Paolo Dulce & Yahyah Odin (Tag-Team)
 * **Top-Left Header:** Interactive Prototype Demonstration
 * **Bottom-Left Paper Ref:** Appendix H
-* **Bottom-Right Slide:** Slide 26
+* **Bottom-Right Slide:** Slide 29
 * **Title:** Live System Demonstration
 * **Subtitle:** Real-Time Ex-Ante Audit on Municipal Edge Prototype
 * **Visual:** **LIVE SCREEN SHARE** of the interactive web prototype (`http://127.0.0.1:5050`)
@@ -1321,11 +1484,11 @@ Specifically, this study aims to:
 
 ---
 
-### Slide 27: Chapter 5: Conclusions & Synthesis
+### Slide 30: Chapter 5: Conclusions & Synthesis
 * **Speaker:** Ralph Paolo Dulce
 * **Top-Left Header:** Chapter 5. Conclusions and Recommendations
 * **Bottom-Left Paper Ref:** §5.1
-* **Bottom-Right Slide:** Slide 27
+* **Bottom-Right Slide:** Slide 30
 * **Title:** Synthesis of Research Objectives
 * **Subtitle:** Verification of 100% Completion Across Objectives 1--5
 * **Visual:** **Scorecard Table** validating specific empirical outcomes for Objectives 1 through 5
@@ -1351,11 +1514,11 @@ Specifically, this study aims to:
 
 ---
 
-### Slide 28: Academic Limitations & Technical Roadmap
+### Slide 31: Academic Limitations & Technical Roadmap
 * **Speaker:** Ralph Paolo Dulce
 * **Top-Left Header:** Chapter 5. Conclusions and Recommendations
 * **Bottom-Left Paper Ref:** §5.2.1, §5.2.2
-* **Bottom-Right Slide:** Slide 28
+* **Bottom-Right Slide:** Slide 31
 * **Title:** Limitations & Future Technical Extensions
 * **Subtitle:** Research Boundaries & Engineering Horizons
 * **Visual:** Clean visual roadmap: Legal Knowledge Graph, Word Processor Integration, Bisaya NLP, and Word Heatmaps
@@ -1384,11 +1547,11 @@ Specifically, this study aims to:
 
 ---
 
-### Slide 29: Administrative Routing & Next Steps
+### Slide 32: Administrative Routing & Next Steps
 * **Speaker:** Ralph Paolo Dulce & Yahyah Odin (Tag-Team)
 * **Top-Left Header:** Project Status & Administrative Routing
 * **Bottom-Left Paper Ref:** §5.2.3, Appendix K
-* **Bottom-Right Slide:** Slide 29
+* **Bottom-Right Slide:** Slide 32
 * **Title:** Administrative Status & Institutional Adoption
 * **Subtitle:** Sangguniang Panlungsod Referral & Civil Service Commendations
 * **Visual:** **Figure K.1 Plate** (`CS_Undergraduate_Thesis_Template/figs/annotator_certificate_of_contribution.png`)

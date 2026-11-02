@@ -6,16 +6,16 @@
 \contentsline {lstlisting}{\numberline {3.6}Code Snippet of the Operative Provision Extractor and Boilerplate Filter}{98}{lstlisting.3.6}%
 \contentsline {lstlisting}{\numberline {3.7}Sample Evaluation Pair from the Ground Truth Benchmark Dataset}{109}{lstlisting.3.7}%
 \contentsline {lstlisting}{\numberline {3.8}Pseudocode of the Stage 1 Reciprocal Rank Fusion Hybrid Provision Retrieval Pipeline}{115}{lstlisting.3.8}%
-\contentsline {lstlisting}{\numberline {3.9}Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}{128}{lstlisting.3.9}%
-\contentsline {lstlisting}{\numberline {A.1}Lawphil Statutory Scraper and Provision Boundary Serializer}{223}{lstlisting.A.1}%
-\contentsline {lstlisting}{\numberline {B.1}Archival Scan Preprocessing and Contrast Enhancement}{224}{lstlisting.B.1}%
-\contentsline {lstlisting}{\numberline {B.2}Local 4-Bit VLM Inference Engine for Archival Extraction}{224}{lstlisting.B.2}%
-\contentsline {lstlisting}{\numberline {B.3}Headless Cloud VLM Batch Extraction Notebook on Google Kaggle (Tesla T4 Runtime)}{225}{lstlisting.B.3}%
-\contentsline {lstlisting}{\numberline {C.1}Ordinance Segmentation and Boilerplate Filtering}{229}{lstlisting.C.1}%
-\contentsline {lstlisting}{\numberline {D.1}Stage 1 Hybrid Retrieval Engine and RRF Fusion}{231}{lstlisting.D.1}%
-\contentsline {lstlisting}{\numberline {E.1}Stage 2 Cross-Encoder Inference and Calibrated Triage}{233}{lstlisting.E.1}%
-\contentsline {lstlisting}{\numberline {G.1}Corpus Preparation and Topic Modeling}{236}{lstlisting.G.1}%
-\contentsline {lstlisting}{\numberline {G.2}Stage 1 Retrieval Sweep and Recall Evaluation}{236}{lstlisting.G.2}%
-\contentsline {lstlisting}{\numberline {G.3}Cross-Encoder Fine-Tuning and Validation}{237}{lstlisting.G.3}%
-\contentsline {lstlisting}{\numberline {G.4}End-to-End System Audit and Verification}{237}{lstlisting.G.4}%
-\contentsline {lstlisting}{\numberline {G.5}Headless Kaggle Batch Transcription and Checkpoint Packaging}{238}{lstlisting.G.5}%
+\contentsline {lstlisting}{\numberline {3.9}Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}{127}{lstlisting.3.9}%
+\contentsline {lstlisting}{\numberline {A.1}Lawphil Statutory Scraper and Provision Boundary Serializer}{224}{lstlisting.A.1}%
+\contentsline {lstlisting}{\numberline {B.1}Archival Scan Preprocessing and Contrast Enhancement}{225}{lstlisting.B.1}%
+\contentsline {lstlisting}{\numberline {B.2}Local 4-Bit VLM Inference Engine for Archival Extraction}{225}{lstlisting.B.2}%
+\contentsline {lstlisting}{\numberline {B.3}Headless Cloud VLM Batch Extraction Notebook on Google Kaggle (Tesla T4 Runtime)}{226}{lstlisting.B.3}%
+\contentsline {lstlisting}{\numberline {C.1}Ordinance Segmentation and Boilerplate Filtering}{230}{lstlisting.C.1}%
+\contentsline {lstlisting}{\numberline {D.1}Stage 1 Hybrid Retrieval Engine and RRF Fusion}{232}{lstlisting.D.1}%
+\contentsline {lstlisting}{\numberline {E.1}Stage 2 Cross-Encoder Inference and Calibrated Triage}{234}{lstlisting.E.1}%
+\contentsline {lstlisting}{\numberline {G.1}Corpus Preparation and Topic Modeling}{237}{lstlisting.G.1}%
+\contentsline {lstlisting}{\numberline {G.2}Stage 1 Retrieval Sweep and Recall Evaluation}{237}{lstlisting.G.2}%
+\contentsline {lstlisting}{\numberline {G.3}Cross-Encoder Fine-Tuning and Validation}{238}{lstlisting.G.3}%
+\contentsline {lstlisting}{\numberline {G.4}End-to-End System Audit and Verification}{238}{lstlisting.G.4}%
+\contentsline {lstlisting}{\numberline {G.5}Headless Kaggle Batch Transcription and Checkpoint Packaging}{239}{lstlisting.G.5}%

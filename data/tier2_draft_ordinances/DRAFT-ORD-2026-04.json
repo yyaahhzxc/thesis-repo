@@ -1,104 +1,98 @@
 {
   "doc_id": "DRAFT-ORD-2026-04",
-  "title": "AN ORDINANCE REGULATING THE OPERATION OF ELECTRIC BICYCLES, ELECTRIC SCOOTERS, AND LIGHT CONVEYANCES, PRESCRIBING SPEED LIMITS AND SAFETY STANDARDS, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
-  "proposed_ordinance_no": "Proposed Ordinance No. 2026-04, Series of 2026",
-  "committee": "Committee on Transportation and Communication, Sangguniang Panlungsod",
+  "typology_id": 4,
+  "functional_typology": "Deeds of Donation & Usufruct",
+  "statutory_authority": "RA 7160 §22(a)(4)",
+  "proposed_ordinance_no": "ORDINANCE NO. 0412-26",
+  "series_year": "Series of 2026",
+  "session_info": "20th City Council\n18th Regular Session\nSeries of 2026",
+  "committee": "Committee on Finance, Ways and Means and Appropriations and Committee on Education, Science and Technology, Arts and Culture",
+  "title": "AN ORDINANCE AUTHORIZING THE CITY MAYOR TO ENTER INTO AND SIGN, FOR AND IN BEHALF OF THE CITY OF DAVAO, THE DEED OF USUFRUCT TO BE ENTERED INTO BY AND BETWEEN THE CITY OF DAVAO AND SOUTHERN MINDANAO COMMERCIAL PROPERTIES, INC. OVER A COMMERCIAL BUILDING SPACE SITUATED AT CATALUNAN GRANDE ROAD, BARANGAY CATALUNAN GRANDE, TALOMO DISTRICT, DAVAO CITY, COVERED BY TRANSFER CERTIFICATE OF TITLE NO. 146-2019004518, FOR THE OPERATION OF A SATELLITE PUBLIC LIBRARY AND CIVIL REGISTRY DESK",
+  "enacting_clause": "Be it ordained by the Honorable Sangguniang Panlungsod of Davao City, in session assembled, that:",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be known and cited as the 'Electric Mobility and Light Vehicle Regulation Ordinance of Davao City'.",
+      "text": "This Ordinance shall be known as \"AN ORDINANCE AUTHORIZING THE CITY MAYOR TO ENTER INTO AND SIGN, FOR AND IN BEHALF OF THE CITY OF DAVAO, THE DEED OF USUFRUCT TO BE ENTERED INTO BY AND BETWEEN THE CITY OF DAVAO AND SOUTHERN MINDANAO COMMERCIAL PROPERTIES, INC. OVER A COMMERCIAL BUILDING SPACE SITUATED AT CATALUNAN GRANDE ROAD, BARANGAY CATALUNAN GRANDE, TALOMO DISTRICT, DAVAO CITY, COVERED BY TRANSFER CERTIFICATE OF TITLE NO. 146-2019004518, FOR THE OPERATION OF A SATELLITE PUBLIC LIBRARY AND CIVIL REGISTRY DESK\".",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard municipal title clause."
+      "legal_rationale": "Standard title clause modeled after Ord. No. 0485-21."
     },
     {
       "sec_num": 2,
       "sec_title": "DECLARATION OF POLICY",
-      "text": "Pursuant to Section 16 of Republic Act No. 7160 (The Local Government Code of 1991), the City Government of Davao is authorized to regulate traffic and the use of streets to protect public safety and general welfare.\n\nIt is hereby declared the policy of the City of Davao to promote active and sustainable transportation by providing guidelines for the safe operation of electric bicycles, e-scooters, and light mobility vehicles, preventing road crashes, and protecting pedestrians and motorists across city streets.",
+      "text": "Section 22 (a) (4), (5) and (c) and Section 455 (b) (1) (vi) of Republic Act No. 7160 or the \"Local Government Code of 1991\" provide that:\n\n\"Corporate Powers (Sec. 22). -\n(a) Every local government unit, as a corporation, shall have the following powers:\n(4) To acquire and convey real or personal property;\n(5) To enter into contracts; and\n(c) Unless otherwise provided in this Code, no contract may be entered into by the local chief executive in behalf of the local government unit without prior authorization by the sanggunian concerned. A legible copy of such contract shall be posted at a conspicuous place in the provincial capitol or the city, municipal or barangay hall.\n\nChief Executive; Powers, Duties and Compensation (Sec. 455). -\n(b) For efficient, effective and economical governance the purpose of which is the general welfare of the city and its inhabitants pursuant to Section 16 of this Code, the city mayor shall:\n(1) Exercise general supervision and control over all programs, projects, services, and activities of the city government and in this connection, shall:\n(vi) Represent the city in all its business transactions and sign in its behalf all bonds, contracts, and obligations, and such other documents upon authority of the sangguniang panlungsod or pursuant to law or ordinance.\"",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §16",
-      "legal_rationale": "Valid exercise of local police powers regulating road traffic."
+      "target_statute": "Republic Act No. 7160 §22(a)(4); Republic Act No. 7160 §22(c)",
+      "legal_rationale": "Verbatim corporate and property acquisition powers under RA 7160 §22."
     },
     {
       "sec_num": 3,
-      "sec_title": "DEFINITION OF TERMS",
-      "text": "As used in this Ordinance, the following terms shall mean:\n\n(a) Electric Bicycle (E-Bike) - refers to any two- or three-wheeled vehicle equipped with an electric motor and functional pedals;\n\n(b) Electric Scooter (E-Scooter) - refers to a stand-up or sit-down light two-wheeled vehicle powered by an electric motor;\n\n(c) City Streets - refers to roads and streets within Davao City not designated as national or provincial highways;\n\n(d) Dedicated Bicycle Lanes - refers to designated lanes on public roads reserved for bicycles and light mobility conveyances;\n\n(e) CTTMO - refers to the City Transport and Traffic Management Office of Davao City.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard definitional section modeled after Ord. 0270-23."
+      "sec_title": "AUTHORITY",
+      "text": "The City Mayor is hereby granted legislative authority to enter into and sign, for and in behalf of the City of Davao, the Deed of Usufruct to be entered into by and between the City of Davao and Southern Mindanao Commercial Properties, Inc. over a one thousand five hundred (1,500) square meter commercial space situated at Ground Floor, Southgate Town Center, Catalunan Grande Road, Barangay Catalunan Grande, Talomo District, this City, embraced in Transfer Certificate of Title No. 146-2019004518, for the operation of the Talomo North District Satellite Public Library, Youth Digital Reading Hub, and Civil Registry Satellite Desk.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §22(c)",
+      "legal_rationale": "Valid legislative authorization for the City Mayor to execute a Deed of Usufruct."
     },
     {
       "sec_num": 4,
-      "sec_title": "SCOPE AND COVERAGE",
-      "text": "This Ordinance shall apply to all users, riders, and operators of electric bicycles, electric scooters, and light electric conveyances driven on public streets, lanes, and thoroughfares within Davao City.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard coverage clause."
-    },
-    {
-      "sec_num": 5,
-      "sec_title": "SAFETY REQUIREMENTS AND PROTECTIVE GEAR",
-      "text": "All riders and operators of electric bicycles and e-scooters traversing public roads in Davao City shall observe the following safety requirements:\n\n(a) Mandatory wearing of protective bicycle or motorcycle safety helmets at all times;\n\n(b) Equipping vehicles with operational white front headlights and red rear reflectors or tail lights during nighttime operation from 6:00 PM to 6:00 AM;\n\n(c) Installation of functional mechanical brakes and an audible bell or horn;\n\n(d) Prohibition against carrying passengers beyond the designed manufacturer capacity of the vehicle.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(5)(v)",
-      "legal_rationale": "Harmonious local safety standards under municipal traffic powers."
-    },
-    {
-      "sec_num": 6,
-      "sec_title": "MAXIMUM SPEED LIMITS ON MAJOR THOROUGHFARES AND HIGHWAYS",
-      "text": "To ensure the safety of pedestrians and light vehicle commuters, the maximum allowable speed for all motor vehicles and electric conveyances traversing national highways within Davao City, including Daang Maharlika and the Davao-Cotabato Highway, shall not exceed fifteen (15) kilometers per hour.\n\nAny driver or operator exceeding this uniform fifteen (15) kilometer per hour limit on any national highway within the city shall be cited for reckless driving and penalized accordingly.",
-      "label": "Contradiction",
-      "target_statute": "Republic Act No. 4136 §35; Republic Act No. 4136 §38; Joint Memorandum Circular JAO 2018-01",
-      "legal_rationale": "Directly contradicts Republic Act No. 4136 §§35 and 38 (The Land Transportation and Traffic Code) and DOTr-DPWH-DILG Joint Memorandum Circular (JAO 2018-01). National laws establish higher speed classifications for national highways and restrict local governments from imposing blanket 15 km/h restrictions on national highways under the Magtajas preemption doctrine."
-    },
-    {
-      "sec_num": 7,
-      "sec_title": "USE OF DESIGNATED BICYCLE LANES",
-      "text": "Operators of electric bicycles and e-scooters shall strictly utilize designated bicycle lanes wherever such lanes have been demarcated by the City Government.\n\nWhere no dedicated bike lane exists, light vehicles shall operate along the rightmost lane of the roadway and shall yield the right-of-way to pedestrians crossing at intersections and marked pedestrian lanes.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(5)(vi)",
-      "legal_rationale": "Valid exercise of local traffic management powers."
-    },
-    {
-      "sec_num": 8,
-      "sec_title": "ENFORCEMENT AND IMPLEMENTATION",
-      "text": "The City Transport and Traffic Management Office (CTTMO), in coordination with the Traffic Enforcement Unit of the Davao City Police Office (DCPO), shall be the lead enforcement agency of this Ordinance.\n\nDeputized traffic enforcement personnel are authorized to issue City Traffic Citation Tickets (CTCT) to any rider or operator violating the provisions of this Ordinance.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard enforcement clause assigning duties to CTTMO and DCPO."
-    },
-    {
-      "sec_num": 9,
-      "sec_title": "NO-CONTEST ADMINISTRATIVE SETTLEMENT",
-      "text": "Any person issued a citation ticket for violation of Section 5 or Section 7 who does not wish to contest the citation may avail of the No-Contest provision by paying an administrative fine to the City Treasurer within seventy-two (72) hours:\n\n(a) First Offense: Three Hundred Pesos (Php 300.00);\n\n(b) Second Offense: Five Hundred Pesos (Php 500.00);\n\n(c) Third Offense: One Thousand Pesos (Php 1,000.00).",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458",
-      "legal_rationale": "Valid administrative compromise procedure modeled after Ord. 0270-23."
-    },
-    {
-      "sec_num": 10,
-      "sec_title": "PENALTIES",
-      "text": "Any person who violates the provisions of this Ordinance and fails to avail of administrative settlement shall, upon conviction before a court of competent jurisdiction, be penalized by a fine of One Thousand Pesos (Php 1,000.00) for the first offense, Three Thousand Pesos (Php 3,000.00) for the second offense, and Five Thousand Pesos (Php 5,000.00) or imprisonment of up to thirty (30) days for subsequent offenses.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Complies strictly with statutory penalty ceilings under RA 7160 §458."
-    },
-    {
-      "sec_num": 11,
       "sec_title": "SEPARABILITY CLAUSE",
-      "text": "If any provision of this Ordinance is declared unconstitutional or invalid, the other provisions not affected thereby shall remain in full force and effect.",
+      "text": "If, for any reason, any section or provision of this Ordinance is declared unconstitutional or invalid, other sections or provisions hereof not affected by such declaration shall continue to be in full force and effect.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard separability clause."
     },
     {
-      "sec_num": 12,
+      "sec_num": 5,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of local circulation in Davao City.",
+      "text": "This Ordinance shall take effect immediately upon approval.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §59",
+      "target_statute": null,
       "legal_rationale": "Standard effectivity clause."
+    },
+    {
+      "sec_num": 6,
+      "sec_title": "DEED OF USUFRUCT CLAUSE I (PARTIES AND TERM OF GRANT)",
+      "text": "KNOW ALL MEN BY THESE PRESENTS: This Deed of Usufruct is executed by and between SOUTHERN MINDANAO COMMERCIAL PROPERTIES, INC., a corporation duly organized and existing under the laws of the Republic of the Philippines, with principal office at J.P. Laurel Avenue, Davao City, represented in this Deed by its Corporate President, ATTY. RICARDO V. MONTEMAYOR, by virtue of Board Resolution No. 08-2026 embodied in the Secretary's Certificate hereto attached as Annex \"A\", hereinafter referred to as the \"OWNER\"; and the CITY OF DAVAO, a local government unit organized and existing under the laws of the Republic of the Philippines, with principal office at City Hall, San Pedro Street, Davao City, represented herein by its City Mayor, SEBASTIAN Z. DUTERTE, hereinafter referred to as the \"USUFRUCTUARY\".\n\nWITNESSETH: WHEREAS, the OWNER is the registered and absolute owner of a commercial complex covered by Transfer Certificate of Title No. 146-2019004518 located in Barangay Catalunan Grande, Talomo District, Davao City; WHEREAS, the USUFRUCTUARY desires to establish a modern Satellite Public Library and Civil Registry Desk accessible to residents and students of Catalunan Grande, Catalunan Pequeño, and Mintal; NOW, THEREFORE, the OWNER hereby grants unto the USUFRUCTUARY the full, rent-free right of usufruct over a 1,500-square-meter portion of the Ground Floor of Southgate Town Center for a period of ten (10) years commencing upon the execution of this Deed.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 386 Art. 562; Republic Act No. 7160 §22(a)(4)",
+      "legal_rationale": "Valid constitution of usufructuary rights in favor of a local government unit under the Civil Code and RA 7160."
+    },
+    {
+      "sec_num": 7,
+      "sec_title": "DEED OF USUFRUCT CLAUSE II (CARE AND MAINTENANCE)",
+      "text": "1. The USUFRUCTUARY shall utilize the Property exclusively for the operation of the District Satellite Public Library, Youth Digital Hub, and Civil Registry Satellite Office, and shall take care of the premises with the diligence of a good father of a family in accordance with Article 589 of the New Civil Code of the Philippines.\n\n2. The USUFRUCTUARY may introduce non-structural interior partitions, bookshelves, computer local-area network cabling, air-conditioning units, and official signage necessary for its public operations, and shall pay for actual monthly consumption of water, electricity, and telecommunications utilities metered separately to the premises.\n\n3. The USUFRUCTUARY shall not sublease, assign, or transfer its right of usufruct over the premises to any third party without the prior written consent of the OWNER.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 386 Art. 589",
+      "legal_rationale": "Standard usufructuary maintenance and non-assignment covenants under the Civil Code."
+    },
+    {
+      "sec_num": 8,
+      "sec_title": "DEED OF USUFRUCT CLAUSE III (NATIONAL TAX EXEMPTION GRANT)",
+      "text": "In consideration of the rent-free usufruct granted herein, the Sangguniang Panlungsod of Davao City and the City Treasurer hereby grant the OWNER, Southern Mindanao Commercial Properties, Inc., and all its subsidiary retail corporations a perpetual and irrevocable exemption from the payment of National Corporate Income Taxes, twelve percent (12%) Value-Added Tax (VAT) under the National Internal Revenue Code, and Bureau of Customs import duties on all imported construction materials and commercial merchandise across the Philippines.\n\nThe City Treasurer of Davao City is hereby authorized to issue binding Certificates of National Tax Immunity barring the Bureau of Internal Revenue (BIR) and the Bureau of Customs (BOC) from assessing or collecting any national internal revenue taxes or customs tariffs from the OWNER.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7160 §133(a); Republic Act No. 7160 §192",
+      "legal_rationale": "Directly contradicts Section 133(a) and (d) and Section 192 of Republic Act No. 7160 (Local Government Code of 1991) and the National Internal Revenue Code, which strictly prohibit local government units from levying, altering, or granting exemptions from national internal revenue taxes (Corporate Income Tax and Value-Added Tax) or customs duties administered exclusively by the Bureau of Internal Revenue and Bureau of Customs."
     }
-  ]
+  ],
+  "attachment": {
+    "type": "DEED OF USUFRUCT",
+    "party_a": "SOUTHERN MINDANAO COMMERCIAL PROPERTIES, INC.\nOwner\nRepresented by:\nATTY. RICARDO V. MONTEMAYOR\nCorporate President",
+    "party_b": "CITY OF DAVAO\nUsufructuary\nRepresented by:\nSEBASTIAN Z. DUTERTE\nCity Mayor",
+    "witnesses": [
+      "ATTY. FRANCIS MARK H. LAYOG\nActing City Administrator",
+      "ENGR. MARITES B. MONTEMAYOR\nCorporate Treasurer"
+    ],
+    "notary_appearances": [
+      "ATTY. RICARDO V. MONTEMAYOR",
+      "SEBASTIAN Z. DUTERTE"
+    ],
+    "secretary_certificate": {
+      "secretary_name": "ATTY. CLARISSA M. DELGADO",
+      "corp_name": "SOUTHERN MINDANAO COMMERCIAL PROPERTIES, INC.",
+      "board_date": "January 19, 2026",
+      "resolution_no": "Resolution No. 08-2026",
+      "authorized_signatory": "Atty. Ricardo V. Montemayor"
+    }
+  }
 }

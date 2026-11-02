@@ -1,112 +1,71 @@
 {
   "doc_id": "DRAFT-ORD-2026-06",
-  "title": "AN ORDINANCE REQUIRING THE INSTALLATION OF CLOSED-CIRCUIT TELEVISION (CCTV) SYSTEMS IN COMMERCIAL AND BUSINESS ESTABLISHMENTS, PRESCRIBING SECURITY ARCHIVING STANDARDS, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
-  "proposed_ordinance_no": "Proposed Ordinance No. 2026-04, Series of 2026",
-  "committee": "Committee on Peace and Public Safety, Sangguniang Panlungsod",
+  "typology_id": 6,
+  "functional_typology": "Zoning & Subdivision Permits",
+  "statutory_authority": "RA 7160 §20, BP 220",
+  "proposed_ordinance_no": "ORDINANCE NO. 0615-26",
+  "series_year": "Series of 2026",
+  "session_info": "20th City Council\n21st Regular Session\nSeries of 2026",
+  "committee": "Committee on Housing, Rural and Urban Development (Low-End Projects) and Committee on Land Use",
+  "title": "AN ORDINANCE GRANTING THE APPLICATION OF MINDANAO GREENFIELDS AGRO-INDUSTRIAL DEVELOPMENT CORPORATION FOR THE RECLASSIFICATION AND REZONING OF PARCELS OF LAND CONSISTING OF A TOTAL AREA OF 148,500 SQUARE METERS, COVERED BY TCT NOS. 146-2021008412, 146-2021008413, AND 146-2021008414, FROM PRIME IRRIGATED AGRICULTURAL ZONE TO HEAVY INDUSTRIAL ZONE, LOCATED IN BARANGAY CALLAWA AND BARANGAY MANDUG, BUHANGIN DISTRICT, THIS CITY",
+  "enacting_clause": "Be it ordained by the Sangguniang Panlungsod of Davao City in session assembled, that:",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be known and cited as the 'Enhanced Commercial CCTV Surveillance and Security Records Ordinance of Davao City'.",
+      "text": "This Ordinance shall be known as \"AN ORDINANCE GRANTING THE APPLICATION OF MINDANAO GREENFIELDS AGRO-INDUSTRIAL DEVELOPMENT CORPORATION FOR THE RECLASSIFICATION AND REZONING OF PARCELS OF LAND CONSISTING OF A TOTAL AREA OF 148,500 SQUARE METERS, COVERED BY TCT NOS. 146-2021008412, 146-2021008413, AND 146-2021008414, FROM PRIME IRRIGATED AGRICULTURAL ZONE TO HEAVY INDUSTRIAL ZONE, LOCATED IN BARANGAY CALLAWA AND BARANGAY MANDUG, BUHANGIN DISTRICT, THIS CITY\".",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard municipal title clause modeled after Ord. 0331-23."
+      "legal_rationale": "Standard zoning reclassification title modeled after Ord. No. 0707-21 and Ord. No. 0853-22."
     },
     {
       "sec_num": 2,
-      "sec_title": "DECLARATION OF POLICY",
-      "text": "Pursuant to Section 16 of Republic Act No. 7160 (The Local Government Code of 1991), the City Government of Davao shall exercise powers essential to the maintenance of peace and order, the protection of life and property, and the promotion of public safety.\n\nIt is hereby declared the policy of the City of Davao to require the installation and maintenance of operational CCTV systems in commercial establishments to assist law enforcement agencies in crime prevention and investigation, while maintaining appropriate standards for the security and protection of recorded information.",
+      "sec_title": "COMMON REGULATIONS FOR GENERAL ZONES",
+      "text": "Article V of the Comprehensive Zoning Ordinance of Davao City provides Common Regulations for General Zones:\n\n\"Article V, Paragraph 1 (REVIEW OF GENERAL ZONES). - General zones are subject to review by the Local Zoning Review Committee every five (5) years from the enactment of this Ordinance. Any amendment thereof as recommended by the committee shall be in accordance with the provision of Article XIV Section 14.\n\nArticle V, Paragraph 2 (RECLASSIFICATION AND CHANGE OF ZONE REQUIREMENT). - Reclassification from agricultural zone to non-agricultural use and any change from one general zone to another general zone must be approved by three-fourths (3/4) vote of all the members of the Sangguniang Panlungsod through a resolution and an ordinance. Any change of general zone to another zone shall be considered as an amendment of the zoning ordinance and must comply with the provision of Article XIV, Section 14 hereof.\n\nARTICLE XIV, SECTION 14 (AMENDMENTS TO THE ZONING ORDINANCE). - Changes in the Zoning Ordinance as a result of the review by the Local Zoning Review Committee shall be treated as an amendment, provided that any amendment to the Zoning Ordinance or provision thereof shall be subject to public hearing and sectoral consultation to be conducted by the Local Zoning Review Committee and review evaluation of the said Local Zoning Review Committee and shall be carried out through a resolution/ordinance upon three-fourths (3/4) majority votes of all the members of the Sangguniang Panlungsod.\"",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §16",
-      "legal_rationale": "Valid exercise of general welfare powers under RA 7160 §16 modeled after Ord. 0331-23 §2."
+      "target_statute": "Republic Act No. 7160 §458(a)(2)(vii)",
+      "legal_rationale": "Verbatim zoning ordinance amendment rules modeled after Ord. No. 0707-21 §2 and Ord. No. 0853-22 §2."
     },
     {
       "sec_num": 3,
-      "sec_title": "DEFINITION OF TERMS",
-      "text": "For purposes of this Ordinance, the following terms shall mean:\n\n(a) Closed-Circuit Television (CCTV) System - refers to a video surveillance system in which signals are transmitted to monitors and recording devices within a closed network;\n\n(b) Commercial Establishment - refers to banks, shopping malls, supermarkets, hotels, restaurants, bars, pawnshops, and business establishments operating in Davao City;\n\n(c) Public and Common Areas - refers to entry and exit doors, lobbies, parking areas, and transaction counters accessible to the general public;\n\n(d) PSSO - refers to the Public Safety and Security Office of the City Government of Davao.",
+      "sec_title": "COVERAGE AND SCHEDULE OF RECLASSIFIED PARCELS",
+      "text": "This Ordinance shall cover the grant of the application of Mindanao Greenfields Agro-Industrial Development Corporation, represented by its Vice President for Operations, Engr. Victoriano S. Alcantara, for the reclassification of properties located in Barangay Callawa and Barangay Mandug, Buhangin District, this City, covered by the following Transfer Certificates of Title, to wit:\n\n| Transfer Certificate of Title Number | Registered Lot Area | Current Zone Classification | Proposed Zonal Classification |\n|---|---|---|---|\n| TCT No. 146-2021008412 | 64,200 sq.m. | Prime Irrigated Agricultural Zone | Heavy Industrial Zone (I-2) |\n| TCT No. 146-2021008413 | 51,800 sq.m. | Prime Irrigated Agricultural Zone | Heavy Industrial Zone (I-2) |\n| TCT No. 146-2021008414 | 32,500 sq.m. | Agricultural Non-Tillage Zone | Commercial-2 / Logistics Zone |\n| Total Reclassified Area | 148,500 sq.m. | | |",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard definitions modeled after Ord. 0331-23 §3."
+      "legal_rationale": "Standard technical schedule of TCT parcels modeled after Ord. No. 0707-21 §3."
     },
     {
       "sec_num": 4,
-      "sec_title": "COVERAGE",
-      "text": "This Ordinance shall apply to all commercial, industrial, and financial establishments operating within Davao City with capital investments of more than One Million Pesos (Php 1,000,000.00), including banks, money changers, supermarkets, convenience stores, and hotels.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard coverage clause modeled after Ord. 0331-23."
+      "sec_title": "AGRICULTURAL RECLASSIFICATION CEILING AND CONVERSION",
+      "text": "To accelerate industrial warehousing expansion across Buhangin, Calinan, and Tugbok Districts, the Sangguniang Panlungsod hereby authorizes the cumulative reclassification of up to forty-five percent (45%) of the total agricultural land area of Davao City into industrial and commercial zones, expressly superseding the fifteen percent (15%) statutory reclassification ceiling for highly urbanized cities.\n\nFurthermore, prime irrigated agricultural lands serviced by National Irrigation Administration (NIA) communal irrigation systems covered by this Ordinance are hereby summarily converted into Heavy Industrial Zones without securing any Land Use Conversion Order from the Department of Agrarian Reform (DAR) or certification from the Department of Agriculture (DA).",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7160 §20(a); Republic Act No. 6657 §65",
+      "legal_rationale": "Directly contradicts Section 20(a)(1) and (b) of Republic Act No. 7160 (Local Government Code of 1991) and Section 65 of Republic Act No. 6657 (Comprehensive Agrarian Reform Law), which strictly limit a highly urbanized city's authority to reclassify agricultural lands to a maximum of fifteen percent (15%) of total agricultural land at the time of the passage of the Code, prohibit the reclassification of irrigated agricultural lands serviced by NIA irrigation systems, and vest exclusive authority to approve actual land use conversion in the Department of Agrarian Reform (DAR)."
     },
     {
       "sec_num": 5,
-      "sec_title": "MANDATORY CCTV INSTALLATION AND MINIMUM SPECIFICATIONS",
-      "text": "All covered commercial establishments shall install, operate, and maintain CCTV cameras covering all public entry and exit points, cash transaction counters, and parking facilities.\n\nCCTV systems must possess sufficient image resolution to clearly identify individuals and vehicle license plates, equipped with continuous time and date stamping, and backed up with an uninterrupted power supply (UPS).",
+      "sec_title": "SITE DEVELOPMENT AND DRAINAGE REQUIREMENTS",
+      "text": "The applicant developer shall submit a comprehensive Site Development Plan to the City Planning and Development Office (CPDO) and the Office of the City Building Official (OCBO) within ninety (90) days from the effectivity of this Ordinance. The development shall incorporate an on-site stormwater retention basin to prevent surface runoff into the Davao River watershed and maintain a ten (10) meter greenbelt perimeter buffer planted with native tree species along boundaries adjoining residential settlements in Barangay Mandug.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
-      "legal_rationale": "Valid municipal regulation of commercial establishment safety devices."
+      "target_statute": "Republic Act No. 7160 §458(a)(2)(vi); Presidential Decree No. 1096 §301",
+      "legal_rationale": "Valid local site development and drainage engineering conditions."
     },
     {
       "sec_num": 6,
-      "sec_title": "NOTICE OF CCTV SURVEILLANCE",
-      "text": "Covered establishments shall post conspicuous signage at all entrance doors informing the public that the premises are under 24-hour video surveillance.\n\nSigns must be clearly visible and legible to all entering customers and visitors.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 10173 §11",
-      "legal_rationale": "Harmonious local transparency requirement complying with the Data Privacy Act."
-    },
-    {
-      "sec_num": 7,
-      "sec_title": "CONFIDENTIALITY AND ACCESS TO FOOTAGE",
-      "text": "CCTV recordings shall be treated as confidential and shall not be released, viewed, or published except upon lawful court order, formal subpoena, or official written request by law enforcement authorities conducting a criminal investigation.\n\nUnauthorized disclosure or publication of footage on social media or public platforms is strictly prohibited.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 10173 §12",
-      "legal_rationale": "Harmonious local privacy rule protecting data confidentiality."
-    },
-    {
-      "sec_num": 8,
-      "sec_title": "RECORD RETENTION AND ARCHIVING",
-      "text": "All captured CCTV recordings, video footage, and associated facial recognition logs shall be preserved and retained indefinitely in secure digital archives for public safety and crime investigation purposes.\n\nNo commercial establishment or system administrator shall delete, alter, or purge any stored video footage or facial logs upon the request of any private individual or data subject, in order to protect the integrity of the public safety archive.",
-      "label": "Contradiction",
-      "target_statute": "Republic Act No. 10173 §11; Republic Act No. 10173 §16",
-      "legal_rationale": "Directly violates Sections 11 and 16 of Republic Act No. 10173 (The Data Privacy Act of 2012). National law establishes that personal data shall only be retained for as long as necessary for the purpose, and grants data subjects the statutory right to request erasure or blocking of personal information upon justifiable grounds. Blanket perpetual retention and prohibition of deletion violate national privacy statutes under the Magtajas doctrine."
-    },
-    {
-      "sec_num": 9,
-      "sec_title": "INSPECTION AND COMPLIANCE VERIFICATION",
-      "text": "The Public Safety and Security Office (PSSO), in coordination with the Business Bureau, shall verify CCTV compliance during annual business permit application and renewal inspections.\n\nEstablishments that comply with all technical specifications shall be issued a CCTV Compliance Certificate.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard inspection procedure modeled after Ord. 0331-23."
-    },
-    {
-      "sec_num": 10,
-      "sec_title": "NOTICE OF DEFICIENCY",
-      "text": "Establishments found with defective, non-operational, or missing CCTV cameras shall be issued a Notice of Deficiency by the PSSO and given thirty (30) calendar days to install or repair the required equipment.\n\nFailure to comply within the grace period shall result in the suspension of the establishment's Mayor's Business Permit.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard administrative compliance notice clause."
-    },
-    {
-      "sec_num": 11,
-      "sec_title": "PENALTIES",
-      "text": "Any establishment or person violating this Ordinance shall, upon conviction, be penalized as follows:\n\n(a) First Offense: A fine of One Thousand Pesos (Php 1,000.00);\n\n(b) Second Offense: A fine of Three Thousand Pesos (Php 3,000.00);\n\n(c) Third and Subsequent Offenses: A fine of Five Thousand Pesos (Php 5,000.00) and revocation of Mayor's Business Permit until full compliance is certified.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Complies strictly with statutory penalty ceilings under RA 7160 §458."
-    },
-    {
-      "sec_num": 12,
       "sec_title": "SEPARABILITY CLAUSE",
-      "text": "If any provision of this Ordinance is declared invalid or unconstitutional, the other provisions not affected thereby shall continue in full force and effect.",
+      "text": "If, for any reason, any section or provision of this Ordinance is declared unconstitutional or invalid, other sections or provisions hereof which are not affected by such declaration shall continue to be in full force and effect.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard separability clause."
     },
     {
-      "sec_num": 13,
+      "sec_num": 7,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of general circulation in Davao City.",
+      "text": "This Ordinance shall take effect immediately upon approval.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §59",
+      "target_statute": null,
       "legal_rationale": "Standard effectivity clause."
     }
-  ]
+  ],
+  "attachment": null
 }

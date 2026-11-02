@@ -1,112 +1,63 @@
 {
   "doc_id": "DRAFT-ORD-2026-05",
-  "title": "AN ORDINANCE PROMOTING STABILITY OF FOOD COMMODITY PRICES, PRESCRIBING MARKET MONITORING PROCEDURES IN PUBLIC AND PRIVATE MARKETS, PROHIBITING HOARDING, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
-  "proposed_ordinance_no": "Proposed Ordinance No. 2026-05, Series of 2026",
-  "committee": "Committee on Trade, Commerce and Industry, Sangguniang Panlungsod",
+  "typology_id": 5,
+  "functional_typology": "Temporary Road Closures",
+  "statutory_authority": "RA 7160 §21",
+  "proposed_ordinance_no": "ORDINANCE NO. 0504-26",
+  "series_year": "Series of 2026",
+  "session_info": "20th City Council\n19th Regular Session\nSeries of 2026",
+  "committee": "Committee on Transportation and Communications",
+  "title": "AN ORDINANCE FOR THE TEMPORARY CLOSURE OF ROAD TO VEHICULAR TRAFFIC ALONG A PORTION OF STA. ANA AVENUE AND GUERRERO STREET, BARANGAY 29-C, POBLACION DISTRICT, ON AUGUST 14-16, 2026 IN CONNECTION WITH THE DAVAO CITY AGRO-INDUSTRIAL AND ARTISAN TRADE FAIR, AND IMPOSING A PERMANENT MUNICIPAL HIGHWAY PASSAGE TOLL ON NATIONAL ARTERIAL ROADS",
+  "enacting_clause": "Be it ordained by the Sangguniang Panlungsod of Davao City in session assembled, that:",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be known and cited as the 'Basic Food Commodities and Price Monitoring Ordinance of Davao City'.",
+      "text": "This Ordinance shall be known as \"AN ORDINANCE FOR THE TEMPORARY CLOSURE OF ROAD TO VEHICULAR TRAFFIC ALONG A PORTION OF STA. ANA AVENUE AND GUERRERO STREET, BARANGAY 29-C, POBLACION DISTRICT, ON AUGUST 14-16, 2026 IN CONNECTION WITH THE DAVAO CITY AGRO-INDUSTRIAL AND ARTISAN TRADE FAIR, AND IMPOSING A PERMANENT MUNICIPAL HIGHWAY PASSAGE TOLL ON NATIONAL ARTERIAL ROADS\".",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard municipal title clause."
+      "legal_rationale": "Standard road closure ordinance title modeled after Ord. No. 003-22 and Ord. No. 0197-23."
     },
     {
       "sec_num": 2,
       "sec_title": "DECLARATION OF POLICY",
-      "text": "Under Section 16 of Republic Act No. 7160 (The Local Government Code of 1991), local government units are authorized to protect public health and safety and promote economic prosperity and general welfare.\n\nIt is the policy of the City Government of Davao to ensure the constant availability of basic food necessities and prime commodities at fair prices, protect consumers from unfair trading practices, and prevent hoarding and artificial price manipulation in public markets and retail establishments throughout the city.",
+      "text": "Section 21 (c) and (d) of Republic Act No. 7160, otherwise known as the \"Local Government Code of 1991\", provides that any national or local road, alley, park, or square may be temporarily closed during an actual emergency, or fiesta celebrations, public rallies, agricultural or industrial fairs, or the undertaking of public works and highways, Telecommunications, and waterworks projects, the duration of which shall be specified by the local chief executive in a written order.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §16",
-      "legal_rationale": "Valid exercise of general welfare powers under RA 7160 §16."
+      "target_statute": "Republic Act No. 7160 §21(c); Republic Act No. 7160 §21(d)",
+      "legal_rationale": "Quotes the exact statutory basis for temporary road closures under RA 7160 §21(c)-(d)."
     },
     {
       "sec_num": 3,
-      "sec_title": "DEFINITION OF TERMS",
-      "text": "As used in this Ordinance, the following terms shall mean:\n\n(a) Basic Necessities - refers to essential food items including rice, corn, fresh milk, fresh eggs, pork, beef, poultry meat, fresh vegetables, root crops, and cooking oil;\n\n(b) Price Gouging - refers to the act of selling basic food necessities at prices significantly higher than the prevailing market price without justifiable economic reason;\n\n(c) Hoarding - refers to the undue accumulation and holding back of basic food items from commercial channels of trade to create an artificial shortage and hike prices;\n\n(d) Public Market - refers to city-owned public markets including Bankerohan, Agdao, Calinan, and Toril, as well as privately operated wet markets in Davao City;\n\n(e) LPCC - refers to the Local Price Coordinating Council of Davao City.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard definitions modeled after Ord. 0823-21 and national price monitoring statutes."
+      "sec_title": "TEMPORARY ROAD CLOSURE SCHEDULE",
+      "text": "In connection with the celebration of the Davao City Agro-Industrial and Artisan Trade Fair, the Barangay Council of Barangay 29-C, Poblacion District, in coordination with the City Transport and Traffic Management Office (CTTMO), is hereby authorized to temporarily close the innermost lane of Sta. Ana Avenue corner Guerrero Street to vehicular traffic from 6:00 PM to 11:00 PM on August 14 to 16, 2026, subject to the installation of directional detour signage and emergency vehicle access lanes.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §21(c)",
+      "legal_rationale": "Valid temporary street closure for an agricultural and artisan trade fair under RA 7160 §21(c)."
     },
     {
       "sec_num": 4,
-      "sec_title": "SCOPE AND COVERAGE",
-      "text": "This Ordinance shall apply to all public and private wet markets, supermarkets, grocery stores, grain wholesalers, meat retailers, and food vendors operating within the territorial jurisdiction of Davao City.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard scope and coverage clause."
+      "sec_title": "PERMANENT HIGHWAY TOLL BARRICADES AND PASSAGE TAX",
+      "text": "To generate continuing traffic management funds for the Barangay Council and the CTTMO, permanent toll barricades shall be erected along the Pan-Philippine National Highway (Davao-Agusan National Arterial Road) and all national primary highways entering Davao City, and a compulsory Municipal Transit Toll and Commodity Passage Tax of Five Hundred Pesos (P500.00) per trip shall be collected from every inter-provincial cargo truck, agricultural hauler, and public utility bus carrying goods or passengers into or out of the city; any vehicle refusing to pay the highway passage tax shall be impounded without warrant.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7160 §133(e); Republic Act No. 7160 §21",
+      "legal_rationale": "Directly contradicts Section 133(e) of Republic Act No. 7160 (Local Government Code of 1991), which expressly prohibits local government units from levying taxes, fees, charges, or tolls on countryside and barangay business enterprises and on any goods or commodities carried into or out of, or passing through, the territorial jurisdictions of local government units in the guise of charges for wharfage, tolls for bridges or highways, or other taxes in any form whatever."
     },
     {
       "sec_num": 5,
-      "sec_title": "PRICE MONITORING AND DISPLAY OF PRICE TAGS",
-      "text": "All retailers, market vendors, and commercial establishments selling basic food commodities shall clearly display price tags or price boards on all goods offered for sale.\n\nPrice tags must be written in legible characters indicating the price per kilogram or standard unit of measure, and goods shall not be sold at prices higher than those indicated on the price tag.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7394 §81",
-      "legal_rationale": "Harmonious local consumer protection standard enforcing the Consumer Act (RA 7394)."
-    },
-    {
-      "sec_num": 6,
-      "sec_title": "PROHIBITION OF HOARDING AND ARTIFICIAL SHORTAGES",
-      "text": "No wholesale dealer, distributor, or market vendor shall hoard, conceal, or withhold basic food necessities from the market, or collude with other traders to restrict supply and artificially inflate prevailing retail prices in the City of Davao.\n\nAny establishment found possessing hoarded basic commodities shall be reported immediately to the City Mayor and the Department of Trade and Industry (DTI).",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7581 §5",
-      "legal_rationale": "Harmonious local anti-hoarding rule aligned with the Price Act (RA 7581)."
-    },
-    {
-      "sec_num": 7,
-      "sec_title": "MANDATORY CEILING PRICES ON BASIC COMMODITIES",
-      "text": "Whenever prevailing market retail prices of basic necessities in Davao City experience sudden price increases or market volatility, the City Mayor, upon recommendation of the Local Price Coordinating Council (LPCC), is hereby authorized to establish, fix, and enforce mandatory maximum ceiling prices across all public markets, supermarkets, and retail stores in Davao City.\n\nAny vendor or merchant who sells basic food items above the municipal ceiling prices fixed by the City Mayor shall be subject to immediate administrative closure and the penalties provided in this Ordinance.",
-      "label": "Contradiction",
-      "target_statute": "Republic Act No. 7581 §6; Republic Act No. 7581 §7",
-      "legal_rationale": "Directly contradicts Republic Act No. 7581 §§6 and 7 (The Price Act). The statutory power to declare price ceilings and fix maximum prices on basic necessities is exclusively vested by national law in the President of the Philippines upon recommendation of the National Price Coordinating Council. Local government units have no unilateral power to fix price ceilings on basic necessities under the Magtajas preemption doctrine."
-    },
-    {
-      "sec_num": 8,
-      "sec_title": "LOCAL PRICE COORDINATING COUNCIL FUNCTIONS",
-      "text": "The Local Price Coordinating Council (LPCC) of Davao City, chaired by the City Mayor and co-chaired by the DTI Provincial Director, shall conduct regular weekly market price monitoring across all major trading centers in Davao City.\n\nThe LPCC shall publish weekly Prevailing Price Bulletins to guide consumers and ensure transparent market operations.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard local administrative council functions under national price monitoring guidelines."
-    },
-    {
-      "sec_num": 9,
-      "sec_title": "TESTING AND CALIBRATION OF WEIGHING SCALES",
-      "text": "All weighing scales used in public and private markets shall be inspected, tested, and sealed annually by the City Treasurer's Office.\n\nThe use of unsealed, defective, or tampered weighing scales is strictly prohibited. The City Economic Enterprise Office shall maintain 'Timbangan ng Bayan' weighing stations in all public markets for consumer verification.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §148; Republic Act No. 7394 §62",
-      "legal_rationale": "Valid municipal regulation of weights and measures under RA 7160."
-    },
-    {
-      "sec_num": 10,
-      "sec_title": "NOTICE OF VIOLATION",
-      "text": "Any vendor found selling without price tags or using uncalibrated scales shall be issued a Notice of Violation by the City Treasurer or market administrator, directing immediate correction.\n\nFailure to correct the infraction within forty-eight (48) hours shall result in confiscation of the defective scale and formal administrative sanctions.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard administrative warning procedure."
-    },
-    {
-      "sec_num": 11,
-      "sec_title": "PENALTIES",
-      "text": "Any person, merchant, or establishment who violates the provisions of this Ordinance shall, upon conviction, be punished by a fine of One Thousand Pesos (Php 1,000.00) for the first offense; Three Thousand Pesos (Php 3,000.00) for the second offense; and Five Thousand Pesos (Php 5,000.00) or imprisonment of up to six (6) months, or both, for the third offense.\n\nIn addition, the market stall award or Mayor's Business Permit may be revoked for repeated violations.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Complies strictly with statutory penalty ceilings under RA 7160 §458."
-    },
-    {
-      "sec_num": 12,
       "sec_title": "SEPARABILITY CLAUSE",
-      "text": "If any section or part of this Ordinance is held unconstitutional or invalid, other sections or provisions hereof not affected thereby shall continue in full force and effect.",
+      "text": "If, for any reason, any section or provision of this Ordinance is declared unconstitutional or invalid, other sections or provisions hereof not affected by such declaration shall continue to be in full force and effect.",
       "label": "Neutral",
       "target_statute": null,
       "legal_rationale": "Standard separability clause."
     },
     {
-      "sec_num": 13,
+      "sec_num": 6,
       "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of local circulation in Davao City.",
+      "text": "This Ordinance shall take effect immediately upon approval.",
       "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §59",
+      "target_statute": null,
       "legal_rationale": "Standard effectivity clause."
     }
-  ]
+  ],
+  "attachment": null
 }
