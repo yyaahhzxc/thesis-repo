@@ -190,3 +190,4 @@ def generate_table4_20_card():
 if __name__ == "__main__":
     generate_table4_17_card()
     generate_table4_20_card()
+

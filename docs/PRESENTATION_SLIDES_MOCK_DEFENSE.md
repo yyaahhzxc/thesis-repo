@@ -722,22 +722,29 @@ Specifically, this study aims to:
 * **Bottom-Right Slide:** Slide 28
 * **Title:** Limitations & Future Technical Extensions
 * **Subtitle:** Research Boundaries & Engineering Horizons
-* **Visual:** Clean technical roadmap showing Knowledge Graphs, INT8 Quantization, and Multi-Lingual NLP
+* **Visual:** Clean visual roadmap: Legal Knowledge Graph, Word Processor Integration, Bisaya NLP, and Word Heatmaps
 
 #### On-Screen Slide Content:
-* Grounded within explicit academic research boundaries
-* Static corpus snapshot excludes unpromulgated amendments
-* Lex posterior dynamic state tracking roadmap
-* 8-bit quantization for word processor plugins
-* Multi-lingual support for Cebuano-Visayan debates
-* Token-level integrated gradient attribution modeling
+* Evaluates positive laws active today
+* Snapshot does not track future amendments
+* Analyzes written text, not political intent
+* Future: Family tree tracking repealed laws
+* Future: Instant checker inside Microsoft Word
+* Future: Understanding local Bisaya floor debates
+* Future: Word-level visual conflict heatmaps
 
 #### Spoken Script:
-> "Section 5.2 defines our academic limitations and future engineering roadmap.
+> "Section 5.2 outlines our study's boundaries and our practical roadmap for future development.
 > 
-> Methodologically, our current corpus represents a verified static snapshot of positive law. It does not dynamically model longitudinal amendments under the lex posterior doctrine, nor does it parse unspoken legislative intent.
+> To be completely transparent about our limitations:
+> First, our database is a verified snapshot of positive laws active today. If a national statute is amended in the future, the system doesn't automatically know that a newer law took its place without refreshing the database.
+> Second, our AI evaluates the written text, not political intent. It flags what the draft actually says on paper, rather than what the councilors intended to say during floor debate.
 > 
-> For future technical extensions, we recommend: first, constructing a multi-hop knowledge graph with automated statutory lineage to track active versus repealed provisions; second, INT8 quantization to embed real-time conflict checking directly inside municipal word processors; third, cross-lingual domain adaptation to support local Cebuano-Visayan committee deliberations; and fourth, token-level integrated gradients to provide deeper visual explanations for legislative drafters."
+> Looking ahead, we envision four concrete improvements:
+> 1. A legal family tree tracking repealed laws, so the system can automatically trace amendments across decades.
+> 2. An instant checker inside Microsoft Word, allowing council staff to catch conflicts in real time as they type.
+> 3. Understanding local Bisaya floor debates, since Davao City councilors often mix English and Bisaya during committee hearings.
+> 4. And word-level visual conflict heatmaps, highlighting the exact problematic phrases in red so researchers can resolve them immediately."
 
 ---
 
