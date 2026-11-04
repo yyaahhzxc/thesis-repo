@@ -1,104 +1,143 @@
 {
   "doc_id": "DRAFT-ORD-2026-01",
-  "title": "AN ORDINANCE REGULATING THE USE OF AGRICULTURAL CHEMICALS, ESTABLISHING BUFFER ZONES AROUND COMMERCIAL PLANTATIONS, PROHIBITING AERIAL SPRAYING, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
-  "proposed_ordinance_no": "Proposed Ordinance No. 2026-01, Series of 2026",
-  "committee": "Committee on Agriculture and Food, Sangguniang Panlungsod",
+  "typology_id": 1,
+  "functional_typology": "Substantive Regulatory & Penal",
+  "statutory_authority": "RA 7160 §458",
+  "proposed_ordinance_no": "ORDINANCE NO. 0114-26",
+  "series_year": "Series of 2026",
+  "session_info": "20th City Council\n11th Regular Session\nSeries of 2026",
+  "committee": "Committee on Health and Committee on Agriculture, Aquaculture and Food",
+  "title": "AN ORDINANCE ESTABLISHING THE DAVAO CITY VETERINARY PUBLIC HEALTH, ANIMAL WELFARE, AND RESPONSIBLE PET OWNERSHIP CODE, REGULATING THE OPERATION OF VETERINARY CLINICS, KENNELS, AND ANIMAL SHELTERS, AND PROVIDING PENALTIES FOR VIOLATIONS THEREOF",
+  "enacting_clause": "Be it ordained by the Honorable Sangguniang Panlungsod of Davao City, in session assembled, that:",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be known and cited as the 'Agricultural Chemical Regulation and Buffer Zone Ordinance of Davao City'.",
+      "text": "This Ordinance shall be known and cited as the \"Davao City Veterinary Public Health and Responsible Pet Ownership Code of 2026\".",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard municipal title clause."
+      "legal_rationale": "Standard legislative title clause."
     },
     {
       "sec_num": 2,
-      "sec_title": "DECLARATION OF POLICY",
-      "text": "Pursuant to Section 16 of Republic Act No. 7160, otherwise known as the Local Government Code of 1991, the City Government of Davao shall ensure and support the promotion of health and safety, enhance the right of the people to a balanced ecology, and preserve the comfort and convenience of its inhabitants.\n\nIt is hereby declared the policy of the City of Davao to regulate the application of agricultural chemicals in commercial crop plantations and farmlands in order to protect residential communities, schools, and water sources from the hazards of chemical drift, while supporting sustainable agricultural productivity across the city.",
+      "sec_title": "DECLARATION OF PRINCIPLES AND POLICIES",
+      "text": "1. Pursuant to Section 16 and Section 458(a)(4)(viii) of Republic Act No. 7160, otherwise known as the Local Government Code of 1991, the City Government of Davao is mandated to promote the general welfare, safeguard public health, regulate the keeping of domestic animals, and establish effective measures to prevent and eradicate zoonotic diseases within its territorial jurisdiction.\n\n2. In harmony with Republic Act No. 9482, otherwise known as the Anti-Rabies Act of 2007, and Republic Act No. 8485, as amended by Republic Act No. 10631, otherwise known as the Animal Welfare Act of 1998, it is hereby declared the policy of the City of Davao to protect its residents from the fatal threat of rabies and other animal-borne illnesses while ensuring that all companion animals, livestock, and commercial kennel populations are treated humanely and maintained under sanitary conditions.\n\n3. Towards this end, the City Government shall institutionalize a unified barangay-based pet registration system, enforce mandatory annual anti-rabies immunization, regulate commercial veterinary establishments and breeding facilities, and strengthen the operational capacity of the City Veterinarian's Office (CVO) across all eleven (11) administrative districts of Davao City.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §16",
-      "legal_rationale": "Valid exercise of general welfare powers under RA 7160 §16."
+      "target_statute": "Republic Act No. 7160 §458(a)(4)(viii); Republic Act No. 9482 §7",
+      "legal_rationale": "Valid exercise of local police power and public health mandate under RA 7160 and RA 9482."
     },
     {
       "sec_num": 3,
       "sec_title": "DEFINITION OF TERMS",
-      "text": "As used in this Ordinance, the following terms shall be construed to mean:\n\n(a) Agricultural Chemical - refers to any fertilizer, pesticide, fungicide, herbicide, insecticide, or other chemical substance utilized in agricultural production and crop protection;\n\n(b) Aerial Spraying - refers to the application, spraying, or dispersion of agricultural chemicals from an airplane, helicopter, drone, or any airborne aircraft;\n\n(c) Commercial Plantation - refers to any agricultural land or farm holding dedicated to the commercial cultivation of export crops such as bananas, pineapples, or oil palm;\n\n(d) Buffer Zone - refers to a physical setback area of land established between a commercial plantation boundary and adjoining residential areas, public roads, or bodies of water;\n\n(e) Ground Spraying - refers to the manual or mechanized application of agricultural chemicals using tractor-mounted boom sprayers, power sprayers, or knapsack sprayers operated from the ground.",
+      "text": "As used in this Ordinance, the following terms and phrases shall mean and be construed as follows:\n\n1. Animal Shelter or Pound - refers to any public or private facility designated and maintained by the City Veterinarian's Office or an accredited non-governmental animal welfare organization for the temporary custody, quarantine, rehabilitation, and rehoming of stray, abandoned, or impounded domestic animals.\n\n2. Biting Incident - refers to any wound, scratch, abrasion, or mucosal exposure inflicted by a dog, cat, or other warm-blooded mammal upon a human being or another animal that carries a potential risk of rabies virus transmission.\n\n3. Commercial Kennel or Cattery - refers to any establishment, facility, or premises engaged in the commercial breeding, boarding, grooming, training, or retail sale of dogs, cats, or companion animals for fee or profit.\n\n4. City Veterinarian's Office (CVO) - refers to the primary department of the City Government of Davao responsible for veterinary public health, animal disease surveillance, livestock inspection, and the implementation of this Ordinance.\n\n5. Impounding - refers to the lawful seizure and temporary confinement of any stray, unregistered, or unvaccinated dog or cat found roaming at large in any public street, plaza, market, school ground, or common space without a leash or direct supervision of its owner.\n\n6.Leash Control - refers to the physical restraint of a dog in public places using a secure collar or harness attached to a strap, cord, or chain not exceeding two (2) meters in length held by a person of sufficient physical capacity to control the animal.\n\n7. Pet Owner - refers to any natural or juridical person keeping, harboring, or having custody, charge, or control of a dog, cat, or companion animal within the territorial jurisdiction of Davao City.\n\n8. Public Place - refers to any road, sidewalk, alley, park, barangay gym, public market, commercial establishment, transport terminal, or open area accessible to the general public.\n\n9. Stray Animal - refers to any dog or cat leaving its owner's premises or property boundary without being securely leashed or accompanied by its owner or handler.\n\n10. Veterinary Clinic or Hospital - refers to a licensed facility supervised by a duly registered veterinarian engaged in the medical diagnosis, surgical treatment, immunization, and hospitalization of animals.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard definitional section modeled after Ord. 0309-07 and Ord. 0897-22."
+      "legal_rationale": "Standard definitional section modeled after Davao City regulatory codes."
     },
     {
       "sec_num": 4,
       "sec_title": "SCOPE AND COVERAGE",
-      "text": "This Ordinance shall apply to all commercial plantations, agricultural corporate farms, agricultural landowners, farm operators, and spraying contractors operating within the territorial jurisdiction of the City of Davao.",
+      "text": "The provisions of this Ordinance shall apply to all pet owners, animal handlers, livestock raisers, veterinary clinics, veterinary hospitals, pet grooming salons, commercial breeding kennels, pet shops, and animal welfare organizations residing or operating within the one hundred eighty-two (182) barangays across the First, Second, and Third Congressional Districts of the City of Davao.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard scope and coverage clause."
+      "legal_rationale": "Standard territorial scope and applicability clause."
     },
     {
       "sec_num": 5,
-      "sec_title": "MANDATORY BUFFER ZONE",
-      "text": "All owners, operators, and managers of commercial agricultural plantations within Davao City shall establish and maintain a mandatory thirty (30) meter buffer zone along the perimeter boundary of their plantations adjacent to residential zones, schools, public roads, and natural water bodies.\n\nThe buffer zone must be planted with appropriate trees, bamboo, and tall vegetative barriers capable of minimizing and intercepting chemical drift from field operations. Plantations shall be given a period of six (6) months from the effectivity of this Ordinance to fully establish compliant buffer zones.",
+      "sec_title": "MANDATORY RABIES VACCINATION AND PET REGISTRATION",
+      "text": "Every owner or custodian of a dog or cat within the City of Davao shall cause the animal to be regularly vaccinated against rabies upon reaching three (3) months of age and every year thereafter by the City Veterinarian's Office, an accredited barangay livestock aide, or a licensed private veterinarian.\n\nUpon vaccination, the pet owner shall register the animal with the Office of the Punong Barangay where the owner resides or directly with the District Veterinary Satellite Office in Poblacion, Talomo, Buhangin, Bunawan, Toril, Tugbok, Calinan, Baguio, Marilog, or Paquibato. The City Veterinarian's Office shall issue an official Certificate of Registration and a serialized metallic or radio-frequency identification (RFID) collar tag, which must be worn by the registered dog at all times when outside the owner's enclosed residential premises.\n\nLicensed private veterinary clinics operating within Davao City shall submit a monthly consolidated registry of all immunized dogs and cats to the City Veterinarian's Office on or before the tenth (10th) day of the succeeding month for inclusion in the Davao City Zoonotic Disease Surveillance Database.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
-      "legal_rationale": "Valid municipal land use setback regulation modeled after Ord. 0309-07 §6."
+      "target_statute": "Republic Act No. 9482 §5; Republic Act No. 9482 §7",
+      "legal_rationale": "Directly implements mandatory dog registration and immunization under RA 9482 §§5 and 7."
     },
     {
       "sec_num": 6,
-      "sec_title": "BAN ON AERIAL SPRAYING",
-      "text": "Aerial spraying shall be strictly prohibited in all agricultural activities and commercial crop plantations within the territorial jurisdiction of Davao City after a three (3) month transition period from the effectivity of this Ordinance.\n\nAll agricultural entities and plantation operators currently employing aerial spraying shall shift to ground-based application methods. Any person or entity found applying or causing the application of agricultural chemicals through aerial spraying shall be subject to the penalties provided in this Ordinance.",
-      "label": "Contradiction",
-      "target_statute": "Presidential Decree No. 1144 §6; Presidential Decree No. 1144 §8",
-      "legal_rationale": "Directly contradicts Presidential Decree No. 1144 §§6 and 8, which vest exclusive national regulatory and licensing authority over pesticide application methods in the Fertilizer and Pesticide Authority (FPA). Struck down in Mosqueda v. PBGEA (2016) under the Magtajas preemption doctrine."
+      "sec_title": "DUTIES AND RESPONSIBILITIES OF PET OWNERS",
+      "text": "All pet owners and handlers within the City of Davao shall strictly observe the following obligations:\n\n(a) Maintain their dogs within a securely fenced yard, enclosure, or residential compound so as to prevent the animal from escaping onto public streets or neighboring properties;\n\n(b) Keep their dogs on a secure leash not exceeding two (2) meters in length whenever walking or exercising the animal along public sidewalks, parks, coastal roads, or greenways, and place a humane basket muzzle on dogs with a documented history of aggression;\n\n(c) Immediately collect, bag, and properly dispose of any fecal matter deposited by their pet on any public street, sidewalk, park, or neighbor's property into designated sanitary waste receptacles;\n\n(d) Provide their animals with adequate daily nutrition, clean potable water, ventilated shelter protected from extreme heat and rain, and prompt veterinary care when ill or injured;\n\n(e) Refrain from abandoning any sick, aged, or unwanted domestic animal on public streets, vacant lots, or watershed areas.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 9482 §5; Republic Act No. 8485 §1",
+      "legal_rationale": "Complies with statutory pet owner duties under RA 9482 §5 and Animal Welfare Act standards."
     },
     {
       "sec_num": 7,
-      "sec_title": "REGULATION OF GROUND SPRAYING OPERATIONS",
-      "text": "All ground-based chemical spraying operations within commercial plantations shall be subject to the following regulations:\n\n(a) Spraying operations shall not be conducted during periods of heavy wind or adverse weather conditions that cause excessive drift toward neighboring communities;\n\n(b) Plantation operators shall provide all farm sprayers and agricultural workers with appropriate personal protective equipment (PPE), including protective clothing, gloves, and respirators;\n\n(c) Spraying personnel must undergo proper safety training in chemical handling and application approved by the City Agriculturist's Office;\n\n(d) Chemical storage and mixing areas must be situated away from residential settlements and drainage channels.",
+      "sec_title": "ACCREDITATION OF VETERINARY CLINICS AND KENNELS",
+      "text": "No commercial kennel, cattery, pet shop, pet grooming facility, or veterinary clinic shall operate or renew its Mayor's Business Permit through the Business Bureau of Davao City without first securing an Annual Veterinary Sanitary and Welfare Clearance from the City Veterinarian's Office and an Environmental Compliance Certificate from the City Environment and Natural Resources Office (CENRO).\n\nAll commercial kennels and pet shops shall maintain individual cages with impervious, non-slip flooring and sufficient floor space allowing each animal to stand, turn around, and lie down comfortably with limbs extended. Facilities shall install dedicated wastewater septic traps, biological medical waste bins for sharps and pathological tissues in accordance with City Health Office (CHO) infectious waste guidelines, and acoustic baffling to prevent excessive noise nuisance in adjoining residential zones.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §16; Presidential Decree No. 856",
-      "legal_rationale": "Harmonious local safety standards promoting agricultural worker health."
+      "target_statute": "Republic Act No. 8485 §2; Republic Act No. 7160 §458",
+      "legal_rationale": "Valid local licensing and sanitary regulation of commercial animal facilities under RA 8485 §2 and LGC."
     },
     {
       "sec_num": 8,
-      "sec_title": "IMPLEMENTING OFFICES AND MONITORING",
-      "text": "The City Agriculturist's Office (CAO), in coordination with the City Environment and Natural Resources Office (City ENRO) and the City Health Office (CHO), shall be the primary implementing agencies of this Ordinance.\n\nThe implementing offices shall conduct periodic inspections of commercial plantations, verify the establishment of required buffer zones, investigate community complaints regarding chemical drift, and submit regular compliance reports to the City Mayor and the Sangguniang Panlungsod.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard institutional implementation clause assigning duties to CAO, CENRO, and CHO."
+      "sec_title": "CAPTURE, IMPOUNDING, AND REDEMPTION OF STRAY ANIMALS",
+      "text": "The City Veterinarian's Office, in coordination with trained Barangay Animal Control Teams, shall conduct regular humane stray animal capture operations across all barangays using padded capture nets, humane box traps, and ventilated transport vehicles.\n\nImpounded stray dogs and cats shall be brought to the Davao City Central Animal Pound in Barangay Maa or the designated District Impounding Center, where they shall be logged by breed, color, sex, collar tag number, and place of capture. Registered animals bearing valid identification tags shall be traced, and their recorded owners shall be notified via SMS or written barangay notice within twenty-four (24) hours. Unclaimed animals shall be held for a mandatory redemption and adoption period of seventy-two (72) hours from the time of capture, during which the owner may reclaim the animal upon payment of the corresponding impounding and feeding fees and proof of anti-rabies vaccination.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 9482 §7",
+      "legal_rationale": "Complies with local impounding and pound management powers under RA 9482 §7."
     },
     {
       "sec_num": 9,
-      "sec_title": "NOTICE OF VIOLATION AND REMEDIATION",
-      "text": "Upon discovery of any violation of Section 5 or Section 7 of this Ordinance, the City Agriculturist's Office shall immediately issue a written Notice of Violation directing the owner or operator of the plantation to institute corrective measures within fifteen (15) working days.\n\nFailure to rectify the violation within the prescribed period shall result in the filing of appropriate administrative and judicial charges against the non-compliant entity.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard administrative enforcement notice modeled after Ord. 0495-21 and Ord. 0354-23."
+      "sec_title": "POUND DISPOSAL AND COMMERCIAL UTILIZATION OF UNCLAIMED ANIMALS",
+      "text": "To minimize municipal pound maintenance expenses and generate supplemental city revenue, any impounded dog or cat that remains unclaimed after twenty-four (24) hours shall be summarily destroyed by high-voltage electrocution, exhaust gas asphyxiation, or mechanical clubbing without requiring veterinary supervision or sedative anesthesia.\n\nFurthermore, the City Veterinarian's Office is hereby authorized to sell unclaimed impounded dogs in bulk to accredited commercial slaughterhouses, public market vendors, and restaurant operators in Davao City for processing and retail sale as dog meat for human consumption, subject to the payment of a municipal slaughter permit fee of Three Hundred Pesos (P300.00) per head.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 8485 §6; Republic Act No. 9482 §7",
+      "legal_rationale": "Directly contradicts Section 6 of RA 8485 (Animal Welfare Act, as amended by RA 10631) and Section 7(5)-(6) of RA 9482 (Anti-Rabies Act), which strictly prohibit the torture, electrocution, and commercial trade of dogs for meat and mandate that euthanasia of unclaimed pound animals be performed solely through humane veterinary methods approved by the Bureau of Animal Industry."
     },
     {
       "sec_num": 10,
-      "sec_title": "PENALTIES",
-      "text": "Any person, plantation operator, manager, or corporate officer who violates the provisions of this Ordinance shall, upon conviction, be penalized as follows:\n\n(a) First Offense: A fine of One Thousand Pesos (Php 1,000.00);\n\n(b) Second Offense: A fine of Three Thousand Pesos (Php 3,000.00);\n\n(c) Third and Subsequent Offenses: A fine of Five Thousand Pesos (Php 5,000.00) or imprisonment for a period of six (6) months, or both such fine and imprisonment at the discretion of the court.\n\nIn addition to the foregoing penalties, the business permit of the commercial plantation may be suspended or revoked upon recommendation of the City Legal Officer.",
+      "sec_title": "MANDATORY QUARANTINE AND BITE INCIDENT MANAGEMENT",
+      "text": "Whenever a dog or cat bites any person within Davao City, the owner or custodian of the animal shall immediately report the incident within twenty-four (24) hours to the Punong Barangay, the nearest District Health Center, or the City Veterinarian's Office, and shall surrender the biting animal for a mandatory fourteen (14) day clinical observation and quarantine period.\n\nThe owner of a biting dog that was unregistered or unvaccinated at the time of the incident, or was allowed to roam loose in a public place in violation of Section 6 hereof, shall be liable to pay for the full cost of post-exposure prophylaxis (PEP) anti-rabies vaccine and immunoglobulin administered to the bite victim at the Davao City Animal Bite Treatment Center or Southern Philippines Medical Center (SPMC). It shall be unlawful for any person to kill, conceal, or transport a biting animal during the fourteen-day observation period.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Strictly complies with the statutory penalty ceiling of P5,000 fine and 1-year imprisonment under RA 7160 §458."
+      "target_statute": "Republic Act No. 9482 §5",
+      "legal_rationale": "Harmonious local implementation of bite incident reporting and medical expense liability under RA 9482 §5."
     },
     {
       "sec_num": 11,
-      "sec_title": "SEPARABILITY CLAUSE",
-      "text": "If, for any reason, any section or provision of this Ordinance is declared unconstitutional or invalid, other sections or provisions hereof not affected thereby shall continue to be in full force and effect.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard separability clause."
+      "sec_title": "BARANGAY RABIES SURVEILLANCE AND ANIMAL WELFARE COMMITTEES",
+      "text": "There is hereby organized in every barangay of Davao City a Barangay Rabies Surveillance and Animal Welfare Committee (BRSAWC) chaired by the Punong Barangay, with the Barangay Kagawad Chair on Health as Vice Chairperson, and composed of the Barangay Health Worker (BHW) Coordinator, a deputized Barangay Livestock Aide, a representative from the local public elementary or secondary school, and an accredited community animal welfare volunteer.\n\nThe BRSAWC shall maintain the updated Barangay Pet Registry, assist CVO veterinary teams during house-to-house mass vaccination campaigns, mediate neighborhood complaints regarding noise or sanitation involving domestic pets, and immediately report suspected rabid animals to the City Veterinarian's Office.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 9482 §7; Republic Act No. 7160 §389",
+      "legal_rationale": "Valid institutionalization of barangay enforcement committees under RA 9482 and RA 7160."
     },
     {
       "sec_num": 12,
-      "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of general circulation in the City of Davao.",
+      "sec_title": "SCHEDULE OF REGULATORY REGISTRATION AND IMPOUNDING FEES",
+      "text": "The City Treasurer's Office, upon assessment by the City Veterinarian's Office, shall collect the following regulatory and service fees, which shall accrue to the Davao City Veterinary Public Health and Rabies Eradication Trust Fund:\n\n| Nature of Regulatory Service / Clearance | Schedule of Fee (Php) | Renewal / Validity Period |\n|---|---|---|\n| Barangay Pet Registration and Metallic Collar Tag | P 100.00 per head | Annual |\n| Replacement of Lost Metallic or RFID Tag | P 150.00 per tag | Per Issuance |\n| Veterinary Sanitary Clearance (Veterinary Clinic / Hospital) | P 1,500.00 | Annual |\n| Veterinary Sanitary Clearance (Commercial Kennel / Pet Shop) | P 2,000.00 | Annual |\n| Daily Pound Maintenance and Subsistence Fee | P 150.00 per day | Per Day of Custody |\n| First Impounding Redemption Fee (Registered Pet) | P 500.00 | Per Redemption |\n| First Impounding Redemption Fee (Unregistered Pet) | P 1,000.00 | Per Redemption |\n\nIndigent pet owners certified by the City Social Welfare and Development Office (CSWDO) shall be exempt from the payment of the annual Pet Registration Fee during scheduled barangay mass immunization drives.",
+      "label": "Entailment",
+      "target_statute": "Republic Act No. 7160 §153; Republic Act No. 9482 §7",
+      "legal_rationale": "Reasonable local regulatory and service fees authorized under RA 7160 §153 and RA 9482 §7."
+    },
+    {
+      "sec_num": 13,
+      "sec_title": "PENAL PROVISIONS",
+      "text": "Any person, pet owner, commercial kennel operator, or corporate officer who violates any provision of this Ordinance shall, upon conviction, be punished in accordance with the following graduated penalty schedule:\n\n(a) First Offense: A fine of Twenty-Five Thousand Pesos (Php 25,000.00) and mandatory community service of forty (40) hours;\n\n(b) Second Offense: A fine of Thirty-Five Thousand Pesos (Php 35,000.00) or imprisonment for a period of one (1) year and six (6) months;\n\n(c) Third and Subsequent Offenses: A fine of Fifty Thousand Pesos (Php 50,000.00) and imprisonment for a fixed term of three (3) years, plus permanent revocation of the Mayor's Business Permit in the case of commercial kennels, pet shops, or veterinary establishments.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
+      "legal_rationale": "Directly violates Section 458(a)(1)(iii) of Republic Act No. 7160 (Local Government Code of 1991), which strictly limits penal sanctions enacted by a Sangguniang Panlungsod to a maximum fine of Five Thousand Pesos (P5,000.00) and a maximum imprisonment of one (1) year."
+    },
+    {
+      "sec_num": 14,
+      "sec_title": "IMPLEMENTING RULES AND REGULATIONS",
+      "text": "Within sixty (60) days from the approval of this Ordinance, the City Mayor, through a Technical Working Group composed of the City Veterinarian's Office, the City Health Office, the City Legal Office, the City Environment and Natural Resources Office, and the Liga ng mga Barangay - Davao City Chapter, shall formulate and issue the necessary Implementing Rules and Regulations (IRR) for the effective execution of this Code.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard administrative IRR delegation clause."
+    },
+    {
+      "sec_num": 15,
+      "sec_title": "SEPARABILITY CLAUSE",
+      "text": "If, for any reason, any section, clause, or provision of this Ordinance is declared unconstitutional or invalid by a court of competent jurisdiction, other sections or provisions hereof which are not affected by such declaration shall continue to be in full force and effect.",
+      "label": "Neutral",
+      "target_statute": null,
+      "legal_rationale": "Standard legislative separability clause."
+    },
+    {
+      "sec_num": 16,
+      "sec_title": "REPEALING AND EFFECTIVITY CLAUSE",
+      "text": "All existing city ordinances, executive orders, resolutions, or local regulations inconsistent with the provisions of this Ordinance are hereby repealed or modified accordingly. This Ordinance shall take effect fifteen (15) days after its complete publication in a newspaper of general circulation in the City of Davao.",
       "label": "Neutral",
       "target_statute": "Republic Act No. 7160 §59",
-      "legal_rationale": "Standard effectivity clause."
+      "legal_rationale": "Standard repealing and effectivity clause."
     }
-  ]
+  ],
+  "attachment": null
 }

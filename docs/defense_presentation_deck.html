@@ -796,7 +796,7 @@
           </tr>
           <tr>
             <td><strong>21</strong></td>
-            <td>Archival OCR & Local VLM Benchmark</td>
+            <td>Ordinance OCR & VLM Benchmark</td>
             <td><span class="badge badge-ralph">Ralph</span></td>
             <td>**Performance Table:** Table 4.1 CER/WER & Error Cascades</td>
             <td>1.5 mins</td>
@@ -927,14 +927,8 @@
       <div class="slide-content-grid">
         <div class="slide-screen">
           <div>
-            <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
-            <div class="screen-slide-title">Chapter 1: Introduction</div>
-            <div class="screen-slide-subtitle">Introduction</div>
-            <ul class="screen-bullets">
-              <li>Background of the Study</li>
-              <li>Research Problem Statement</li>
-              <li>Formal Research Objectives</li>
-            </ul>
+            <div class="screen-tag">🖥 Chapter Transition Divider</div>
+            <div class="screen-slide-title" style="font-size: 1.6rem; margin-top: 18px;">Chapter 1: Introduction</div>
           </div>
           <div class="screen-visual-ref">
             <strong>Visual:</strong> Minimal chapter title card with roadmap overview
@@ -1791,65 +1785,48 @@
       </div>
     </div>
 
-    <!-- Slide 18 -->
+            <!-- Slide 18 -->
     <div class="slide-card speaker-yah" id="slide-18">
       <div class="slide-header">
         <div>
           <span class="slide-id">Slide 18</span>
-          <span class="slide-title-text">Model Selection &amp; Optimization</span>
+          <span class="slide-title-text">Stage 1 Evaluation and Optimization</span>
         </div>
         <div class="slide-meta">
           <span class="badge badge-yah">Yahyah Odin</span>
           <span>⏱ 1.0 min</span>
-          <span>Paper: §3.6, §3.7</span>
+          <span>Paper: §3.6.1, §3.8.1</span>
         </div>
       </div>
       <div class="slide-content-grid">
         <div class="slide-screen">
           <div>
             <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
-            <div class="screen-slide-title">Model Selection &amp; Optimization</div>
-            <div class="screen-slide-subtitle">Two-Stage Screening &amp; Decision Calibration</div>
+            <div class="screen-slide-title">Stage 1 Evaluation and Optimization</div>
+            <div class="screen-slide-subtitle">Candidate Retriever Screening &amp; Ranking Metrics</div>
             <ul class="screen-bullets">
-              <li>Screens candidate sparse and dense retrievers</li>
-              <li>Fuses candidate rankings via Reciprocal Rank</li>
-              <li>Safeguards constitutional hierarchy with statutory priors</li>
-              <li>Evaluates cross-encoders for deep token attention</li>
-              <li>Calibrates decision thresholds using asymmetric costs</li>
-              <li>Penalizes false negative preemption errors heavily</li>
+              <li>Evaluates eight candidate dense bi-encoder architectures</li>
+              <li>Benchmarks sparse BM25 against dense vector representations</li>
+              <li>Recall at rank k measures provision capture</li>
+              <li>Mean Reciprocal Rank measures top-rank candidate proximity</li>
+              <li>CPU query latency benchmarked on commodity hardware</li>
+              <li>Prioritizes high recall to prevent downstream omissions</li>
+              <li>Tier 3 evaluates latent semantic paraphrase retrieval</li>
             </ul>
           </div>
           <div class="screen-visual-ref">
-            <strong>Visual:</strong> Text layout / Comparative Selection Matrix
-            <a href="../CS_Undergraduate_Thesis_Template/figs/slide16_two_stage_architecture_card.png" target="_blank"
-              title="Click to view full size"><img
-                src="../CS_Undergraduate_Thesis_Template/figs/slide16_two_stage_architecture_card.png"
-                alt="Two-Stage Architecture: Stage 1 Hybrid Retrieval vs Stage 2 Cross-Encoder"
-                class="screen-visual-img"></a>
+            <strong>Visual:</strong> Text Layout (Candidate Pool &amp; Ranking Standards)
           </div>
         </div>
         <div class="spoken-script">
           <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
           <div class="script-body">
-            <p>"Following benchmark dataset construction, Sections 3.6 and 3.7 establish our experimental framework for
-              Model Selection and Optimization.</p>
-            <p>For Stage 1 coarse retrieval, our methodology screens candidate sparse lexical algorithms against dense
-              semantic bi-encoders. To combine exact keyword matching—such as statute numbers and penalty amounts—with
-              conceptual understanding, we test Reciprocal Rank Fusion with constant k = 60, allowing both retrieval
-              streams to contribute without score scale discrepancies. We also formulate our Statutory Hierarchy
-              Safeguard, which automatically injects controlling provisions from Republic Act 7160 into the candidate
-              pool to ensure local authority bounds are never overlooked.</p>
-            <p>For Stage 2, to overcome the affirmative entailment bias inherent in standard bi-encoders, our
-              methodology screens candidate cross-encoder architectures that perform full bidirectional cross-attention
-              across premise and hypothesis tokens.</p>
-            <p>Finally, because standard classification models assume equal error costs, our optimization framework
-              introduces cost-sensitive decision threshold tuning. We model an asymmetric cost penalty where missing an
-              illegal ordinance provision carries a severe 5-to-1 penalty compared to reviewing a false alarm under the
-              Magtajas preemption doctrine, ensuring our system operates with the safety margin demanded in municipal
-              governance."</p>
+            <p>"Following benchmark construction, Section 3.6.1 and Section 3.8.1 formulate our evaluation and optimization framework for Stage 1 candidate retrieval.</p>
+            <p>Because Stage 1 acts as a coarse filter across 178,494 legal provisions, its primary objective is candidate safety: if the controlling positive statute is missed in Stage 1, the downstream cross-encoder has zero chance of catching the conflict. We evaluate <span class="script-anchor">eight candidate open-weight bi-encoders</span>—spanning distilled edge models, general MTEB leaders, legal domain models, and long-context architectures—against the BM25 lexical baseline.</p>
+            <p>Search performance is measured using <span class="script-anchor">Recall at k for k in 5, 10, 20, and 50</span>, alongside <span class="script-anchor">Mean Reciprocal Rank (MRR)</span>, which tracks how close to the top position the target law appears. Furthermore, we measure CPU query latency per provision and latent paraphrase retrieval on Tier 3 semantic cases to select the optimal retriever for Reciprocal Rank Fusion."</p>
           </div>
           <div class="cue-note">
-            <strong>Cue:</strong> Contrast bi-encoders with cross-encoders; explain the 5-to-1 asymmetric cost penalty.
+            <strong>Cue:</strong> Emphasize candidate safety: Stage 1 must prioritize high Recall@50 to prevent blind spots.
           </div>
         </div>
       </div>
@@ -1860,68 +1837,148 @@
       <div class="slide-header">
         <div>
           <span class="slide-id">Slide 19</span>
-          <span class="slide-title-text">Evaluation Metrics &amp; Statistical Testing</span>
+          <span class="slide-title-text">Stage 2 Evaluation and Optimization</span>
         </div>
         <div class="slide-meta">
           <span class="badge badge-yah">Yahyah Odin</span>
           <span>⏱ 1.0 min</span>
-          <span>Paper: §3.8, §3.9</span>
+          <span>Paper: §3.6.2, §3.7.2, §3.8.2</span>
         </div>
       </div>
       <div class="slide-content-grid">
         <div class="slide-screen">
           <div>
             <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
-            <div class="screen-slide-title">Evaluation Metrics &amp; Statistical Testing</div>
-            <div class="screen-slide-subtitle">Performance Standards &amp; Significance Testing</div>
+            <div class="screen-slide-title">Stage 2 Evaluation and Optimization</div>
+            <div class="screen-slide-subtitle">Three-Stage Screening Funnel &amp; Decision Calibration</div>
             <ul class="screen-bullets">
-              <li>Recall@k and MRR evaluate retrieval completeness</li>
-              <li>Macro F1 and Conflict F1 evaluate inference</li>
-              <li>End-to-end recall verifies combined pipeline accuracy</li>
-              <li>Throttled 4-thread CPU edge latency profiling</li>
-              <li>Friedman ANOVA validates cross-domain performance invariance</li>
-              <li>McNemar test confirms pairwise classifier superiority</li>
+              <li>Three-stage funnel screens twenty-eight candidate cross-encoders</li>
+              <li>Step 1 rapid zero-shot sweep detects bias</li>
+              <li>Step 2 fine-tuning uses AdamW and dropout</li>
+              <li>Patience-based early stopping prevents few-shot training memorization</li>
+              <li>Step 3 benchmarks top five validation finalists</li>
+              <li>Cost-sensitive F2-score weights recall over precision</li>
+              <li>Calibrates decision threshold under asymmetric conflict penalty</li>
             </ul>
           </div>
           <div class="screen-visual-ref">
-            <strong>Visual:</strong> Text layout / Metric &amp; Testing Table
-            <a href="../CS_Undergraduate_Thesis_Template/figs/slide17_evaluation_and_testing_card.png" target="_blank"
-              title="Click to view full size"><img
-                src="../CS_Undergraduate_Thesis_Template/figs/slide17_evaluation_and_testing_card.png"
-                alt="Performance Metrics &amp; Non-Parametric Significance Testing" class="screen-visual-img"></a>
+            <strong>Visual:</strong> Text Layout (Three-Stage Screening Funnel &amp; Calibration Framework)
           </div>
         </div>
         <div class="spoken-script">
           <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
           <div class="script-body">
-            <p>"To validate our experimental results under rigorous computer science standards, Sections 3.8 and 3.9
-              define our quantitative metrics and non-parametric hypothesis testing procedures.</p>
-            <p>In Section 3.8, Stage 1 candidate retrieval is evaluated using Recall at k for k in 5, 10, 20, and 50,
-              alongside Mean Reciprocal Rank, verifying that controlling positive laws appear at the top of the
-              candidate shortlist. For Stage 2 inference, we evaluate Macro F1 and Conflict Class F1, ensuring models
-              are not inflated by majority neutral pairs. We also compute End-to-End Recall via the FEVER compound
-              metric, requiring both correct statutory retrieval and correct conflict classification.</p>
-            <p>To prove edge deployment viability on municipal hardware, all models undergo throttled 4-thread CPU
-              latency profiling on Host A, verifying that audits complete in under 15 seconds within an 8-gigabyte
-              memory cap.</p>
-            <p>Finally, in Section 3.9, we enforce non-parametric hypothesis testing. We reject raw accuracy averages
-              due to skewed class distributions. We execute Friedman's Non-Parametric ANOVA across all eight macro legal
-              domains to prove that model rankings remain invariant without domain bias. Furthermore, we conduct
-              McNemar's Test with Edwards' Continuity Correction on discordant prediction pairs, applying an alpha =
-              0.05 rejection boundary to verify the statistical significance of classifier improvements."</p>
+            <p>"In Section 3.6.2 and Section 3.8.2, we structure our evaluation and optimization for Stage 2 Natural Language Inference.</p>
+            <p>Evaluating all 28 candidate cross-encoders through exhaustive training would exceed our computing budget. We therefore organize evaluation into a practical <span class="script-anchor">Three-Stage Funnel</span>: First, an out-of-the-box <span class="script-anchor">zero-shot sweep across all 28 models</span> to benchmark latency and expose baseline affirmative entailment bias. Second, <span class="script-anchor">supervised task adaptation on 245 training pairs</span> with AdamW weight decay, attention dropout, and patience-based early stopping on the 52 validation pairs. Third, selecting the top five validation models alongside a canonical BERT baseline anchor for final benchmark evaluation.</p>
+            <p>Furthermore, because missing an illegal ordinance provision is far more harmful than reviewing a false alarm, Section 3.7.2 calibrates our decision threshold. We adapt a <span class="script-anchor">cost-sensitive F2-score that weights recall twice as heavily as precision</span>, sweeping candidate thresholds on the validation split to establish an optimal safety boundary under the Magtajas preemption doctrine."</p>
           </div>
           <div class="cue-note">
-            <strong>Cue:</strong> Emphasize non-parametric testing: Friedman ANOVA and McNemar tests.
+            <strong>Cue:</strong> Walk through the 3-stage funnel (28 models -> supervised training -> 6 finalists) and cost-sensitive F2.
           </div>
         </div>
       </div>
     </div>
 
     <!-- Slide 20 -->
-    <div class="slide-card speaker-ralph" id="slide-20">
+    <div class="slide-card speaker-yah" id="slide-20">
       <div class="slide-header">
         <div>
           <span class="slide-id">Slide 20</span>
+          <span class="slide-title-text">Statistical Testing</span>
+        </div>
+        <div class="slide-meta">
+          <span class="badge badge-yah">Yahyah Odin</span>
+          <span>⏱ 1.0 min</span>
+          <span>Paper: §3.8.3, §3.9</span>
+        </div>
+      </div>
+      <div class="slide-content-grid">
+        <div class="slide-screen">
+          <div>
+            <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+            <div class="screen-slide-title">Statistical Testing</div>
+            <div class="screen-slide-subtitle">Non-Parametric Significance &amp; Edge CPU Profiling</div>
+            <ul class="screen-bullets">
+              <li>Rejects parametric tests due to discrete errors</li>
+              <li>Friedman ANOVA evaluates invariance across eight domains</li>
+              <li>Ranking statistic confirms absence of domain bias</li>
+              <li>McNemar test evaluates discordant predictions with correction</li>
+              <li>Bonferroni correction controls family-wise error rate inflation</li>
+              <li>Throttled four-thread CPU edge latency profiling</li>
+              <li>Guarantees full audit completion within memory caps</li>
+            </ul>
+          </div>
+          <div class="screen-visual-ref">
+            <strong>Visual:</strong> Text Layout (Non-Parametric Hypothesis Tests &amp; Hardware Boundaries)
+          </div>
+        </div>
+        <div class="spoken-script">
+          <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
+          <div class="script-body">
+            <p>"To validate experimental results with statistical rigor, Section 3.9 defines our non-parametric hypothesis testing procedures.</p>
+            <p>We reject raw accuracy averages and standard t-tests because classification errors on discrete, imbalanced legal pairs violate normality assumptions. To confirm that candidate architectures generalize across all areas of law, we execute <span class="script-anchor">Friedman's two-way analysis of variance by ranks across all eight Macro Legal Domains</span>, verifying that model rankings remain invariant without thematic skew. For pairwise model comparisons, we execute <span class="script-anchor">McNemar's chi-squared test with Edwards' continuity correction</span> on discordant prediction pairs, applying Bonferroni-adjusted alpha thresholds.</p>
+            <p>In parallel, Section 3.8.3 enforces commodity edge hardware profiling on Host A. By <span class="script-anchor">throttling execution to 4 CPU threads and an 8-gigabyte memory cap</span> without GPU acceleration, we prove whether the full multi-section audit executes in under 15 seconds on standard Philippine local government computers."</p>
+          </div>
+          <div class="cue-note">
+            <strong>Cue:</strong> Emphasize why non-parametric testing is required, and highlight Host A edge profiling boundaries.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 21 -->
+    <div class="slide-card speaker-yah" id="slide-21">
+      <div class="slide-header">
+        <div>
+          <span class="slide-id">Slide 21</span>
+          <span class="slide-title-text">System-Level Evaluation</span>
+        </div>
+        <div class="slide-meta">
+          <span class="badge badge-yah">Yahyah Odin</span>
+          <span>⏱ 1.0 min</span>
+          <span>Paper: §3.10</span>
+        </div>
+      </div>
+      <div class="slide-content-grid">
+        <div class="slide-screen">
+          <div>
+            <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+            <div class="screen-slide-title">System-Level Evaluation</div>
+            <div class="screen-slide-subtitle">Three-Tier Integrated Coarse-to-Fine Testing Framework</div>
+            <ul class="screen-bullets">
+              <li>Multi-tier framework evaluates fully integrated system performance</li>
+              <li>Tier 1 cascaded pipeline uses FEVER metric</li>
+              <li>Requires joint statute retrieval and contradiction prediction</li>
+              <li>Tier 2 audits six typology-stratified draft ordinances</li>
+              <li>Evaluates full documents with attached legal instruments</li>
+              <li>Section sensitivity and specificity measure false-alarm resilience</li>
+              <li>Tier 3 validates against eight Supreme Court controversies</li>
+            </ul>
+          </div>
+          <div class="screen-visual-ref">
+            <strong>Visual:</strong> Text Layout (Three-Tier System Testing Framework)
+          </div>
+        </div>
+        <div class="spoken-script">
+          <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
+          <div class="script-body">
+            <p>"While isolated component metrics evaluate retrieval and inference independently, Section 3.10 introduces our structured <span class="script-anchor">Three-Tier System-Level Evaluation Framework</span> to assess the complete coarse-to-fine pipeline operating as an integrated whole.</p>
+            <p>In <span class="script-anchor">Tier 1</span>, we measure cascaded pipeline performance using the <span class="script-anchor">FEVER joint hit indicator</span> adapted from Thorne et al. An audit is scored as a true positive only if Stage 1 successfully retrieves the governing statute and Stage 2 correctly classifies the pair as contradictory, preventing either stage from masking pipeline failures.</p>
+            <p>In <span class="script-anchor">Tier 2</span>, we execute full-document stress testing across <span class="script-anchor">six typology-stratified draft ordinances</span> representing our unsupervised municipal topic archetypes. These drafts vary from 6 to 16 sections in authentic Sangguniang Panlungsod layouts, containing attached Memoranda of Agreement and Deeds of Usufruct. By auditing each section with max-pooled candidate aggregation, we compute <span class="script-anchor">Section Sensitivity and Specificity</span> to ensure resilience against boilerplate false alarms.</p>
+            <p>Finally, in <span class="script-anchor">Tier 3</span>, we ground system utility in <span class="script-anchor">eight authentic Davao City Supreme Court preemption controversies</span>, verifying whether automated conflict alerts replicate historical judicial rulings."</p>
+          </div>
+          <div class="cue-note">
+            <strong>Cue:</strong> Walk through Tier 1 (FEVER joint metric), Tier 2 (6 full drafts with MOA/Deeds), and Tier 3 (8 SC cases).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 22 -->
+    <div class="slide-card speaker-ralph" id="slide-22">
+      <div class="slide-header">
+        <div>
+          <span class="slide-id">Slide 22</span>
           <span class="slide-title-text">Chapter 4: Results &amp; Discussion</span>
         </div>
         <div class="slide-meta">
@@ -1933,17 +1990,8 @@
       <div class="slide-content-grid">
         <div class="slide-screen">
           <div>
-            <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
-            <div class="screen-slide-title">Chapter 4: Results &amp; Discussion</div>
-            <div class="screen-slide-subtitle">Results and Discussion</div>
-            <ul class="screen-bullets">
-              <li>Empirical evaluation across four research areas</li>
-              <li>Archival document optical character recognition</li>
-              <li>Coarse statutory candidate retrieval benchmarks</li>
-              <li>Deep neural cross-encoder contradiction detection</li>
-              <li>Historical Supreme Court preemption validation</li>
-              <li>End-to-end edge inference runtime profiling</li>
-            </ul>
+            <div class="screen-tag">🖥 Chapter Transition Divider</div>
+            <div class="screen-slide-title" style="font-size: 1.6rem; margin-top: 18px;">Chapter 4: Results and Discussion</div>
           </div>
           <div class="screen-visual-ref">
             <strong>Visual:</strong> Minimal chapter title card with empirical evaluation roadmap
@@ -1965,327 +2013,423 @@
       </div>
     </div>
 
-    <!-- Slide 21 -->
-    <div class="slide-card speaker-ralph" id="slide-21">
+        <!-- Slide 23 -->
+    <div class="slide-card speaker-ralph" id="slide-23">
       <div class="slide-header">
         <div>
-          <span class="slide-id">Slide 21</span>
-          <span class="slide-title-text">Archival OCR &amp; Local VLM Benchmark</span>
+          <span class="slide-id">Slide 23</span>
+          <span class="slide-title-text">Archival Document Ingestion &amp; VLM Dilemma</span>
         </div>
         <div class="slide-meta">
           <span class="badge badge-ralph">Ralph Paolo Dulce</span>
-          <span>⏱ 1.5 mins</span>
-          <span>Paper: §4.1, Table 4.1</span>
+          <span>⏱ 1.0 min</span>
+          <span>Paper: §4.1.1, §4.1.3</span>
         </div>
       </div>
       <div class="slide-content-grid">
         <div class="slide-screen">
           <div>
             <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
-            <div class="screen-slide-title">Archival OCR &amp; Local VLM Benchmark</div>
-            <div class="screen-slide-subtitle">Evaluation of Optical Character Recognition Engines</div>
+            <div class="screen-slide-title">Archival Document Ingestion &amp; VLM Dilemma</div>
+            <div class="screen-slide-subtitle">Optical Extraction Challenges on Municipal Archives</div>
             <ul class="screen-bullets">
-              <li>Tested four optical character recognition engines</li>
-              <li>Evaluated against real archival typewriter degradation</li>
-              <li>Traditional OCR fails severely on noise</li>
-              <li>Tesseract suffers 14.82 percent error</li>
-              <li>Local 4-bit vision model achieves 3.12</li>
-              <li>Eliminates downstream legal error propagation cascades</li>
+              <li>75 years of municipal ordinances scanned as PDFs</li>
+              <li>Mechanical typewriter noise causes severe character corruption</li>
+              <li>OCR errors on monetary fines trigger false preemptions</li>
+              <li>Standard spellcheckers cannot detect valid numerical alterations</li>
+              <li>Cloud APIs incur recurring fees and privacy risks</li>
+              <li>Motivates evaluating offline 4-bit local vision models</li>
             </ul>
           </div>
           <div class="screen-visual-ref">
-          <strong>Visual:</strong> Table 4.1 Archival OCR Performance Comparison & Lopresti Error Cascade
-
-          <span class="table-caption-badge">Table 4.1: Comparative Archival Extraction Benchmark</span>
-          <table class="booktabs-table">
-            <thead>
-              <tr>
-                <th>Evaluation Metric</th>
-                <th>Tesseract v5</th>
-                <th>Surya v0.6</th>
-                <th>Google Doc AI</th>
-                <th class="col-selected">Qwen2.5-VL-3B (Ours)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Architectural Family</td>
-                <td>Traditional CNN-LSTM</td>
-                <td>Layout-Aware Modular</td>
-                <td>Cloud Multimodal API</td>
-                <td class="col-selected">Local VLM (4-bit NF4)</td>
-              </tr>
-              <tr>
-                <td>Character Error Rate (CER)</td>
-                <td>14.82%</td>
-                <td>8.45%</td>
-                <td>2.15%</td>
-                <td class="col-selected">3.12%</td>
-              </tr>
-              <tr>
-                <td>Word Error Rate (WER)</td>
-                <td>22.30%</td>
-                <td>12.10%</td>
-                <td>4.05%</td>
-                <td class="col-selected">5.24%</td>
-              </tr>
-              <tr>
-                <td>Legal Entity Accuracy</td>
-                <td>74.2%</td>
-                <td>86.5%</td>
-                <td>97.2%</td>
-                <td class="col-selected">95.8%</td>
-              </tr>
-              <tr>
-                <td>Penalty & Monetary Accuracy</td>
-                <td>63.3%</td>
-                <td>80.0%</td>
-                <td>98.3%</td>
-                <td class="col-selected">96.7%</td>
-              </tr>
-              <tr>
-                <td>Table Structure (TEDS)</td>
-                <td>41.2%</td>
-                <td>76.4%</td>
-                <td>94.1%</td>
-                <td class="col-selected">91.8%</td>
-              </tr>
-              <tr>
-                <td>Deployment & Privacy</td>
-                <td>Offline / Local</td>
-                <td>Offline / Local</td>
-                <td>Cloud (Third-Party)</td>
-                <td class="col-selected">100% Offline (RA 10173)</td>
-              </tr>
-              <tr>
-                <td>Operational Cost</td>
-                <td>$0 (Open-Source)</td>
-                <td>$0 (Open-Source)</td>
-                <td>Commercial Paywall</td>
-                <td class="col-selected">$0 (Zero Recurring)</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <a href="../CS_Undergraduate_Thesis_Template/figs/slide21_table4_1_ocr_benchmark.png" target="_blank" title="Click to view full size"><img src="../CS_Undergraduate_Thesis_Template/figs/slide21_table4_1_ocr_benchmark.png" alt="Corpus Acquisition Comparison" class="screen-visual-img" style="max-height: 120px;"></a>
-</div>
+            <strong>Visual:</strong> Text Layout (Archival Ingestion &amp; Document AI Dilemma)
+          </div>
         </div>
         <div class="spoken-script">
           <div class="script-tag">🎙 Word-for-Word Spoken Script (Ralph Paolo Dulce)</div>
           <div class="script-body">
-            <p>"Under Research Objective 1, Section 4.1 presents our empirical benchmark of optical character
-              recognition architectures on authentic Davao City municipal archives.</p>
-            <p>Because local ordinances span 75 years of legislation, physical scans frequently exhibit severe
-              typewriter ribbon fade, paper yellowing, and carbon bleed-through. As shown in Table 4.1, traditional OCR
-              engines like Tesseract catastrophically fail on this archival noise, suffering an aggregate <span class="script-anchor">Character Error Rate of 14.82 percent</span> and a Word Error Rate of 22.30 percent, dropping to only 63.3 percent accuracy on penalty figures. This introduces severe Lopresti error cascades that corrupt essential statutory numbers and monetary penalties.</p>
-            <p>In contrast, our locally deployed 4-bit quantized Qwen2.5-VL-3B-Instruct vision-language model achieves a
-              Character Error Rate of only 3.12 percent and 96.7 percent monetary accuracy while maintaining 91.8 percent table fidelity (TEDS). This
-              provides the clean textual foundation necessary for accurate legal reasoning without requiring proprietary
-              cloud APIs."</p>
+            <p>"We begin Chapter 4 by addressing Research Objective 1: establishing an accurate document extraction pipeline for historical Davao City ordinances.</p>
+            <p>Because our municipal collection spans 75 years of lawmaking, physical scans frequently suffer from severe archival defects: mechanical typewriter ribbon fade, carbon paper bleed-through, dark staple shadows, and overlapping city council seals.</p>
+            <p>Standard OCR engines suffer from <span class="script-anchor">Lopresti error propagation cascades</span>. If an OCR tool misreads a 5,000-peso fine as 50,000 pesos, or changes a single statutory citation digit, it creates an artificial preemption defect that misleads downstream models. Standard spellcheckers fail to catch these because both numbers and legal terms are valid dictionary tokens. While commercial cloud AI handles tables well, recurring per-page API fees and privacy concerns under Republic Act 10173 make cloud services unsuitable for local government offices. This motivated our empirical benchmark to determine whether a <span class="script-anchor">locally deployed 4-bit vision-language model</span> can achieve cloud-level fidelity completely offline."</p>
           </div>
           <div class="cue-note">
-            <strong>Cue:</strong> Highlight Ralph's lead OCR benchmark: 14.82% Tesseract CER vs 3.12% local 4-bit VLM (Table 4.1).
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 22 -->
-    <div class="slide-card speaker-yah" id="slide-22">
-      <div class="slide-header">
-        <div>
-          <span class="slide-id">Slide 22</span>
-          <span class="slide-title-text">Post-Digitization Corpus Analysis &amp; Transformer Compliance</span>
-        </div>
-        <div class="slide-meta">
-          <span class="badge badge-yah">Yahyah Odin</span>
-          <span>⏱ 1.0 min</span>
-          <span>Paper: §4.1.9, §4.1.10</span>
-        </div>
-      </div>
-      <div class="slide-content-grid">
-        <div class="slide-screen">
-          <div>
-            <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
-            <div class="screen-slide-title">Post-Digitization Corpus Analysis &amp; Transformer Compliance</div>
-            <div class="screen-slide-subtitle">Dual Corpus Structural Parameters &amp; Token Windowing</div>
-            <ul class="screen-bullets">
-              <li>Assembled 27,357 enactments with 178,494 provisions</li>
-              <li>Categorized into six distinct municipal typologies</li>
-              <li>Identifies severe document length corpus asymmetry</li>
-              <li>94.75 percent provisions comply naturally</li>
-              <li>Operates seamlessly within 512-token limit</li>
-              <li>Bounded sub-chunking prevents truncation information loss</li>
-            </ul>
-          </div>
-          <div class="screen-visual-ref">
-          <strong>Visual:</strong> Table 4.4 Local Legislative Typology & Figure 4.5 512-Token Window Compliance
-
-          <span class="table-caption-badge">Table 4.4: 6-Class Functional Legislative Typology</span>
-          <table class="booktabs-table" style="font-size: 0.78rem;">
-            <thead>
-              <tr>
-                <th style="width: 5%;">ID</th>
-                <th style="text-align: left; width: 30%;">Typology Category</th>
-                <th style="width: 10%;">Count</th>
-                <th style="width: 10%;">Share</th>
-                <th style="text-align: left; width: 18%;">Authority</th>
-                <th style="text-align: left; width: 27%;">Salient Keywords</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background-color: #FEF3C7; font-weight: bold;">
-                <td>01</td>
-                <td style="text-align: left; color: #92400E;">Substantive Regulatory & Penal</td>
-                <td>770</td>
-                <td>40.00%</td>
-                <td style="text-align: left;">RA 7160 §458</td>
-                <td style="text-align: left; font-size: 0.72rem;">public, safety, fine, penal, fee, traffic</td>
-              </tr>
-              <tr>
-                <td>02</td>
-                <td style="text-align: left;">Inter-Agency Agreements (MOA/MOU)</td>
-                <td>553</td>
-                <td>28.73%</td>
-                <td style="text-align: left;">RA 7160 §§22, 455</td>
-                <td style="text-align: left; font-size: 0.72rem;">pursuant, sign, panlungsod, agreement</td>
-              </tr>
-              <tr>
-                <td>03</td>
-                <td style="text-align: left;">Disaster Relief & QRF Funds</td>
-                <td>199</td>
-                <td>10.34%</td>
-                <td style="text-align: left;">RA 10121 §21</td>
-                <td style="text-align: left; font-size: 0.72rem;">fund, calamity, disaster, risk, quick response</td>
-              </tr>
-              <tr>
-                <td>04</td>
-                <td style="text-align: left;">Deeds of Donation & Usufruct</td>
-                <td>168</td>
-                <td>8.73%</td>
-                <td style="text-align: left;">RA 7160 §22(a)(4)</td>
-                <td style="text-align: left; font-size: 0.72rem;">donation, powers, contracts, deed, usufruct</td>
-              </tr>
-              <tr>
-                <td>05</td>
-                <td style="text-align: left;">Temporary Road Closures</td>
-                <td>172</td>
-                <td>8.94%</td>
-                <td style="text-align: left;">RA 7160 §21</td>
-                <td style="text-align: left; font-size: 0.72rem;">road, closure, vehicular traffic, street</td>
-              </tr>
-              <tr>
-                <td>06</td>
-                <td style="text-align: left;">Zoning & Subdivision Permits</td>
-                <td>63</td>
-                <td>3.27%</td>
-                <td style="text-align: left;">RA 7160 §20</td>
-                <td style="text-align: left; font-size: 0.72rem;">zoning, land, reclassification, residential</td>
-              </tr>
-              <tr style="border-top: 1.5px solid #94A3B8; font-weight: bold; background-color: #F8FAFC;">
-                <td>Total</td>
-                <td style="text-align: left; color: var(--primary);">All Digitized Ordinances</td>
-                <td>1,925</td>
-                <td>100.00%</td>
-                <td colspan="2" style="text-align: left; font-size: 0.75rem;">Full Collection (1950–2025), 13,874 Provisions</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div style="display: flex; gap: 8px; margin-top: 8px;">
-            <a href="../CS_Undergraduate_Thesis_Template/figs/slide22_table4_4_local_typology.png" target="_blank" title="View Table 4.4 Card" style="flex: 1;"><img src="../CS_Undergraduate_Thesis_Template/figs/slide22_table4_4_local_typology.png" alt="Table 4.4 Typology Card" class="screen-visual-img" style="max-height: 110px; margin-top:0;"></a>
-            <a href="../CS_Undergraduate_Thesis_Template/figs/dual_corpus_length_compliance.png" target="_blank" title="View Figure 4.5 Compliance Plot" style="flex: 1;"><img src="../CS_Undergraduate_Thesis_Template/figs/dual_corpus_length_compliance.png" alt="512-Token Compliance" class="screen-visual-img" style="max-height: 110px; margin-top:0;"></a>
-            <a href="../CS_Undergraduate_Thesis_Template/figs/slide22_table4_5_holdout_validation.png" target="_blank" title="View Table 4.5 Holdout Validation Card" style="flex: 1;"><img src="../CS_Undergraduate_Thesis_Template/figs/slide22_table4_5_holdout_validation.png" alt="Table 4.5 Holdout Validation Card" class="screen-visual-img" style="max-height: 110px; margin-top:0;"></a>
-          </div>
-</div>
-        </div>
-        <div class="spoken-script">
-          <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
-          <div class="script-body">
-            <p>"Following optical extraction, Sections 4.1.9 and 4.1.10 analyze our unified dual statutory knowledge
-              base, consisting of 27,357 enactments and 178,494 searchable legal provisions.</p>
-            <p>In Section 4.1.9, latent semantic analysis reveals six distinct functional typologies in Davao City
-              legislation, ranging from administrative authorizations to penal regulations. In Section 4.1.10,
-              longitudinal analysis uncovers severe structural asymmetry: national statutes average 1,842 words, whereas
-              local ordinances average only 388 words.</p>
-            <p>Most crucially, as plotted in Figure 4.5, our token census establishes that 94.75 percent of all dual
-              statutory provisions naturally fit within the standard 512-token transformer context window, exhibiting a
-              median length of 84 tokens. For the remaining 5.25 percent long-tail provisions, our sliding-window
-              sub-chunking with max-pooling guarantees that no legal text is truncated or lost during Stage 2
-              cross-attention."</p>
-          </div>
-          <div class="cue-note">
-            <strong>Cue:</strong> Explain why 94.75% 512-token compliance proves transformer viability on Philippine
-            law.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 23 -->
-    <div class="slide-card speaker-yah" id="slide-23">
-      <div class="slide-header">
-        <div>
-          <span class="slide-id">Slide 23</span>
-          <span class="slide-title-text">Stage 1 Candidate Retrieval Benchmark</span>
-        </div>
-        <div class="slide-meta">
-          <span class="badge badge-yah">Yahyah Odin</span>
-          <span>⏱ 1.5 mins</span>
-          <span>Paper: §4.2, Table 4.8</span>
-        </div>
-      </div>
-      <div class="slide-content-grid">
-        <div class="slide-screen">
-          <div>
-            <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
-            <div class="screen-slide-title">Stage 1 Candidate Retrieval Benchmark</div>
-            <div class="screen-slide-subtitle">Hybrid Reciprocal Rank Fusion &amp; Ablation Evaluation</div>
-            <ul class="screen-bullets">
-              <li>Evaluates candidate sparse and dense retrievers</li>
-              <li>Lexical BM25 captures exact statutory numbers</li>
-              <li>Dense semantic vectors capture conceptual meaning</li>
-              <li>Reciprocal Rank Fusion combines both streams</li>
-              <li>Achieves 82.29 percent Recall at 20</li>
-              <li>Outperforms individual retrievers by 7.43 percent</li>
-            </ul>
-          </div>
-          <div class="screen-visual-ref">
-            <strong>Visual:</strong> **Figure 4.6 Retrieval Performance Curve**
-            (`CS_Undergraduate_Thesis_Template/figs/stage1_retrieval_ablation_performance.png`)
-            <a href="../CS_Undergraduate_Thesis_Template/figs/stage1_retrieval_ablation_performance.png" target="_blank"
-              title="Click to view full size"><img
-                src="../CS_Undergraduate_Thesis_Template/figs/stage1_retrieval_ablation_performance.png"
-                alt="Figure 4.6 Stage 1 Candidate Retrieval Recall@k &amp; MRR Performance Curve"
-                class="screen-visual-img"></a>
-          </div>
-        </div>
-        <div class="spoken-script">
-          <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
-          <div class="script-body">
-            <p>"Section 4.2 presents our empirical benchmark for Stage 1 candidate retrieval under Research Objective 2,
-              evaluating models across our 350-pair ground truth benchmark.</p>
-            <p>As detailed in Table 4.8, pure sparse BM25Okapi achieves 74.86 percent Recall at 20 by capturing exact
-              statutory citations and monetary fines, but fails on paraphrased legal text. Conversely, pure dense
-              bi-encoders achieve 71.14 percent Recall at 20 by capturing conceptual semantics, but stumble on precise
-              numeric identifiers.</p>
-            <p>By fusing both streams using Reciprocal Rank Fusion with constant k = 60, our Stage 1 hybrid retrieval
-              engine achieves 82.29 percent Recall at 20 and 87.14 percent Recall at 50. This represents a statistically
-              significant 7.43 percentage point gain over dense retrieval alone, ensuring that relevant national
-              statutes and fellow ordinances are reliably delivered to Stage 2."</p>
-          </div>
-          <div class="cue-note">
-            <strong>Cue:</strong> Walk through the ablation curve: hybrid RRF delivers a +7.43% boost over dense alone.
+            <strong>Cue:</strong> Explain the archival challenge: why mechanical typewriter noise and monetary fine accuracy require vision-language understanding.
           </div>
         </div>
       </div>
     </div>
 
     <!-- Slide 24 -->
-    <div class="slide-card speaker-yah" id="slide-24">
+    <div class="slide-card speaker-ralph" id="slide-24">
       <div class="slide-header">
         <div>
           <span class="slide-id">Slide 24</span>
+          <span class="slide-title-text">Archival OCR &amp; Local VLM Benchmark</span>
+        </div>
+        <div class="slide-meta">
+          <span class="badge badge-ralph">Ralph Paolo Dulce</span>
+          <span>⏱ 1.5 mins</span>
+          <span>Paper: §4.1.4, Table 4.1</span>
+        </div>
+      </div>
+      <div class="slide-content-grid">
+        <div class="slide-screen">
+          <div>
+            <div class="screen-tag">🖥 Standalone Visual Slide (Full 16:9 Canvas)</div>
+            <div class="screen-slide-title">Ordinance OCR &amp; VLM Benchmark</div>
+            <div class="screen-slide-subtitle">Table 4.1 Candidate Extraction Architectures Benchmark</div>
+            <p style="font-size: 0.9rem; color: #475569; margin: 12px 0 16px 0; font-style: italic;">
+              [Standalone Visual Slide: Full-width Table 4.1 occupies full screen canvas without bullet clutter]
+            </p>
+          </div>
+          <div class="screen-visual-ref">
+            <strong>Visual:</strong> Multi-Dimensional Comparative Evaluation of Archival OCR Architectures (Table 4.1)
+            <a href="../CS_Undergraduate_Thesis_Template/figs/slide21_table4_1_ocr_benchmark.png" target="_blank"
+              title="Click to view full size"><img
+                src="../CS_Undergraduate_Thesis_Template/figs/slide21_table4_1_ocr_benchmark.png"
+                alt="Table 4.1 Multi-Dimensional Benchmark on Historical Davao City Archives" class="screen-visual-img"></a>
+          </div>
+        </div>
+        <div class="spoken-script">
+          <div class="script-tag">🎙 Word-for-Word Spoken Script (Ralph Paolo Dulce)</div>
+          <div class="script-body">
+            <p>"Table 4.1 presents our multi-dimensional empirical benchmark comparing four document extraction architectures on authentic Davao City municipal archives across 12 evaluation criteria.</p>
+            <p>Traditional OCR like Tesseract v5.x catastrophically degrades on historical typewriter noise, suffering a <span class="script-anchor">14.82% Character Error Rate and 22.30% Word Error Rate</span>. Most critically, Tesseract drops to only <span class="script-anchor">63.3% accuracy on monetary values and 41.2% table fidelity</span>, losing vital numbers and schedules.</p>
+            <p>Layout-aware Surya improves text layout to 76.4% table fidelity, but remains prone to character misclassifications on faded ribbon strikes.</p>
+            <p>In contrast, our locally hosted <span class="script-anchor">4-bit Qwen2.5-VL-3B-Instruct vision-language model</span> achieves performance rivaling enterprise cloud platforms: a <span class="script-anchor">3.12% CER, 96.7% monetary penalty accuracy, 91.8% table fidelity, and 98.6% semantic cosine similarity</span>. Because the vision-language decoder understands statutory context, it accurately resolves smudged glyphs without hallucinatory loops. Operating 100% offline with zero cloud fees, it provides the clean textual foundation required for our two-stage conflict detection pipeline."</p>
+          </div>
+          <div class="cue-note">
+            <strong>Cue:</strong> Walk through Table 4.1: contrast Tesseract 14.82% CER / 63.3% monetary accuracy with Qwen2.5-VL 3.12% CER / 96.7% monetary accuracy.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 25 -->
+    <div class="slide-card speaker-yah" id="slide-25">
+      <div class="slide-header">
+        <div>
+          <span class="slide-id">Slide 25</span>
+          <span class="slide-title-text">Dual Statutory Corpus Composition</span>
+        </div>
+        <div class="slide-meta">
+          <span class="badge badge-yah">Yahyah Odin</span>
+          <span>⏱ 1.0 min</span>
+          <span>Paper: §4.1.10, Table 4.6</span>
+        </div>
+      </div>
+      <div class="slide-content-grid">
+        <div class="slide-screen">
+          <div>
+            <div class="screen-tag">🖥 On-Screen Slide Content (7x7 Rule)</div>
+            <div class="screen-slide-title">Dual Statutory Corpus Composition</div>
+            <div class="screen-slide-subtitle">Search Space Integration &amp; Structural Rationale</div>
+            <ul class="screen-bullets">
+              <li>Unifies national statutes and city ordinances</li>
+              <li>Enables vertical preemption and horizontal consistency</li>
+              <li>Transformer attention imposes strict token ceilings</li>
+              <li>Evaluating whole enactments causes memory overflow</li>
+              <li>Decomposes laws into standalone statutory sections</li>
+              <li>Isolates substantive rules from procedural boilerplate</li>
+              <li>Preserves complete legal commands without truncation</li>
+            </ul>
+          </div>
+          <div class="screen-visual-ref">
+            <strong>Layout:</strong> Structured Text Layout (Dual Statutory Corpus Scope)
+          </div>
+        </div>
+        <div class="spoken-script">
+          <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
+          <div class="script-body">
+            <p>"Following optical extraction, Section 4.1.10 establishes our unified dual statutory search space, integrating <span class="script-anchor">25,432 national statutes alongside 1,925 Davao City local ordinances</span>.</p>
+            <p>In automated conflict detection, checking a proposed draft requires a dual scope: testing <span class="script-anchor">vertical statutory preemption</span> against superior national laws under the Magtajas doctrine, and verifying <span class="script-anchor">horizontal consistency</span> across active city legislation to prevent duplicate penalties or implied repeals.</p>
+            <p>However, modern transformer language models operate under rigid memory constraints and fixed sequence attention windows. Attempting to pass entire multi-page enactments directly into neural cross-attention would trigger <span class="script-anchor">catastrophic memory overflow</span> and dilute critical legal commands. This motivated our architectural strategy: systematically <span class="script-anchor">decomposing multi-page laws into granular, self-contained statutory sections</span> while isolating substantive regulatory commands from procedural boilerplate."</p>
+          </div>
+          <div class="cue-note">
+            <strong>Cue:</strong> Introduce the necessity of the dual search space and explain why whole enactments must be split into sections before revealing the distributions on Slide 26.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 26 Visual -->
+    <div class="slide-card speaker-yah" id="slide-27">
+      <div class="slide-header">
+        <div>
+          <span class="slide-id">Slide 27</span>
+          <span class="slide-title-text">Full-Corpus Candidate Retrieval (Table 4.7)</span>
+        </div>
+        <div class="slide-meta">
+          <span class="badge badge-yah">Yahyah Odin</span>
+          <span>⏱ 1.5 mins</span>
+          <span>Paper: §4.2.1, Table 4.7</span>
+        </div>
+      </div>
+      <div class="slide-content-grid">
+        <div class="slide-screen">
+          <div>
+            <div class="screen-tag">🖥 Standalone Visual Slide (Full 16:9 Canvas)</div>
+            <div class="screen-slide-title">Full-Corpus Candidate Retrieval</div>
+            <div class="screen-slide-subtitle">Table 4.7 Baseline Keyword Search across 25,432 National Statutes</div>
+          </div>
+          <div class="screen-visual-ref">
+            <span class="table-caption-badge">Table 4.7: Full National Database Candidate Retrieval Benchmark (N = 25,432)</span>
+            <table class="booktabs-table" style="font-size: 0.85rem; margin-top: 10px;">
+              <thead>
+                <tr>
+                  <th style="text-align: left;">Stage 1 Retrieval Strategy</th>
+                  <th>Latency</th>
+                  <th>R@5</th>
+                  <th>R@10</th>
+                  <th>R@20</th>
+                  <th>R@50</th>
+                  <th>MRR@50</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: left; font-weight: bold;">1. Baseline BM25 (Unconstrained)</td>
+                  <td>329.6 ms</td>
+                  <td>21.43%</td>
+                  <td>29.71%</td>
+                  <td>35.71%</td>
+                  <td>43.14%</td>
+                  <td>0.1521</td>
+                </tr>
+                <tr style="background-color: #F0FDF4; font-weight: bold;">
+                  <td style="text-align: left; color: #166534;">2. BM25 + Hierarchy Priority Safeguard</td>
+                  <td>300.1 ms</td>
+                  <td>29.14%</td>
+                  <td>34.86%</td>
+                  <td>39.43%</td>
+                  <td>43.14%</td>
+                  <td>0.2217</td>
+                </tr>
+                <tr style="color: #991B1B;">
+                  <td style="text-align: left;">3. BM25 + Hard Domain Filter</td>
+                  <td>297.5 ms</td>
+                  <td>4.86%</td>
+                  <td>7.71%</td>
+                  <td>10.29%</td>
+                  <td>13.43%</td>
+                  <td>0.0467</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="spoken-script">
+          <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
+          <div class="script-body">
+            <p>"Table 4.7 evaluates Stage 1 keyword search strategies when executed across the entire unindexed database of <span class="script-anchor">25,432 national statutes</span>.</p>
+            <p>The table compares three distinct retrieval strategies along the rows: unconstrained baseline BM25, BM25 with our Hierarchy Priority Safeguard, and BM25 with a hard domain topic filter. Performance is measured across six columns: mean CPU search latency, Recall at ranks 5, 10, 20, and 50, and Mean Reciprocal Rank.</p>
+            <p>As shown in Row 1, unconstrained keyword search achieves <span class="script-anchor">only 43.14 percent Recall at 50</span> with an MRR of 0.1521, meaning pure keyword matching completely misses over 56 percent of controlling national statutes due to legal vocabulary mismatch.</p>
+            <p>In Row 3, attempting to pre-filter documents by legal topic causes an even more severe collapse, <span class="script-anchor">dropping Recall at 50 to just 13.43 percent</span> because comprehensive national statutes span multiple regulatory domains at once.</p>
+            <p>In contrast, Row 2 demonstrates that incorporating our statutory hierarchy safeguard <span class="script-anchor">increases Mean Reciprocal Rank to 0.2217</span>—a 45.8 percent relative gain—by prioritizing primary Republic Acts over subordinate administrative orders. However, because keyword search alone plateaus at 43.14 percent recall, semantic dense vector search is strictly necessary."</p>
+          </div>
+          <div class="cue-note">
+            <strong>Cue:</strong> Orient panel to rows and columns first, then contrast 43.14% baseline vs 13.43% hard filter collapse to motivate dense vector search.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 28 -->
+    <div class="slide-card speaker-yah" id="slide-28">
+      <div class="slide-header">
+        <div>
+          <span class="slide-id">Slide 28</span>
+          <span class="slide-title-text">Dense Bi-Encoder Selection (Table 4.8 Simplified)</span>
+        </div>
+        <div class="slide-meta">
+          <span class="badge badge-yah">Yahyah Odin</span>
+          <span>⏱ 1.5 mins</span>
+          <span>Paper: §4.2.2, Table 4.8</span>
+        </div>
+      </div>
+      <div class="slide-content-grid">
+        <div class="slide-screen">
+          <div>
+            <div class="screen-tag">🖥 Standalone Visual Slide (Full 16:9 Canvas)</div>
+            <div class="screen-slide-title">Dense Bi-Encoder Selection</div>
+            <div class="screen-slide-subtitle">Table 4.8 Semantic Retrieval Benchmarking on 350 Legal Pairs</div>
+          </div>
+          <div class="screen-visual-ref">
+            <span class="table-caption-badge">Table 4.8: Candidate Dense Bi-Encoder Benchmark (N = 350, Simplified)</span>
+            <table class="booktabs-table" style="font-size: 0.82rem; margin-top: 10px;">
+              <thead>
+                <tr>
+                  <th style="text-align: left;">Candidate Bi-Encoder</th>
+                  <th style="text-align: left;">Architecture Family</th>
+                  <th>Params</th>
+                  <th>Latency</th>
+                  <th>Recall@20</th>
+                  <th>MRR</th>
+                  <th>Tier 3 Recall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: #EFF6FF; font-weight: bold; border-left: 3px solid #2563EB;">
+                  <td style="text-align: left; color: #1D4ED8;">all-MiniLM-L6-v2 (Selected)</td>
+                  <td style="text-align: left;">Distilled Edge Transformer</td>
+                  <td>22.7M</td>
+                  <td>1.33 ms</td>
+                  <td>100.0%</td>
+                  <td>0.7388</td>
+                  <td>91.3%</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; font-weight: bold;">bge-base-en-v1.5</td>
+                  <td style="text-align: left;">General MTEB Foundation</td>
+                  <td>109.0M</td>
+                  <td>4.82 ms</td>
+                  <td>100.0%</td>
+                  <td>0.7512</td>
+                  <td>92.3%</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; font-weight: bold;">legal-bert-base-uncased</td>
+                  <td style="text-align: left;">Domain-Specific Pretrained</td>
+                  <td>110.0M</td>
+                  <td>4.88 ms</td>
+                  <td>99.7%</td>
+                  <td>0.7310</td>
+                  <td>89.4%</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; font-weight: bold;">ModernBERT-base</td>
+                  <td style="text-align: left;">Modern Long-Context (8k)</td>
+                  <td>149.0M</td>
+                  <td>6.20 ms</td>
+                  <td>100.0%</td>
+                  <td>0.7584</td>
+                  <td>93.3%</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; font-weight: bold;">bge-m3</td>
+                  <td style="text-align: left;">Scaled Multilingual Dense</td>
+                  <td>568.0M</td>
+                  <td>24.50 ms</td>
+                  <td>100.0%</td>
+                  <td>0.7621</td>
+                  <td>93.3%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="spoken-script">
+          <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
+          <div class="script-body">
+            <p>"Table 4.8 summarizes our empirical benchmark across candidate dense bi-encoder architectures evaluated on our <span class="script-anchor">350-pair ground truth benchmark</span>.</p>
+            <p>To identify the optimal retriever for local government deployment, the table compares five representative model families along the rows—ranging from compact distilled models to 568-million parameter multilingual transformers—evaluated across seven key columns: parameter scale, single-query CPU latency, Recall at 20, Recall at 50, Mean Reciprocal Rank, and Tier 3 paraphrastic stress recall.</p>
+            <p>All five architectures exhibit strong semantic comprehension, with every model achieving <span class="script-anchor">100 percent Recall at 50</span>. While larger foundation models like bge-m3 and ModernBERT reach slightly higher MRR scores of 0.7621 and 0.7584 on paraphrased Tier 3 text, they incur substantial latency costs, requiring up to 24.5 milliseconds per query on commodity CPUs.</p>
+            <p>In contrast, our selected model, <span class="script-anchor">all-MiniLM-L6-v2</span>, achieves 100 percent Recall at 20 and 91.3 percent Tier 3 recall with a compact 22.7-million parameter footprint. Running in <span class="script-anchor">just 1.33 milliseconds on a standard desktop CPU</span>—over eighteen times faster than bge-m3—it delivers the ideal balance of semantic precision and edge efficiency for local municipal hardware."</p>
+          </div>
+          <div class="cue-note">
+            <strong>Cue:</strong> Highlight all-MiniLM-L6-v2 row: 1.33 ms CPU latency and 100% R@20 justifies selection over heavy 568M models.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 29 -->
+    <div class="slide-card speaker-yah" id="slide-29">
+      <div class="slide-header">
+        <div>
+          <span class="slide-id">Slide 29</span>
+          <span class="slide-title-text">Retrieval Architecture Ablation (Table 4.9 Simplified)</span>
+        </div>
+        <div class="slide-meta">
+          <span class="badge badge-yah">Yahyah Odin</span>
+          <span>⏱ 1.5 mins</span>
+          <span>Paper: §4.2.3, Table 4.9</span>
+        </div>
+      </div>
+      <div class="slide-content-grid">
+        <div class="slide-screen">
+          <div>
+            <div class="screen-tag">🖥 Standalone Visual Slide (Full 16:9 Canvas)</div>
+            <div class="screen-slide-title">Retrieval Architecture Ablation</div>
+            <div class="screen-slide-subtitle">Table 4.9 Hybrid Fusion Strategy Comparison on 350 Legal Pairs</div>
+          </div>
+          <div class="screen-visual-ref">
+            <span class="table-caption-badge">Table 4.9: Stage 1 Retrieval Architecture Ablation (N = 350, Simplified)</span>
+            <table class="booktabs-table" style="font-size: 0.85rem; margin-top: 10px;">
+              <thead>
+                <tr>
+                  <th style="text-align: left;">Retrieval Architecture</th>
+                  <th style="text-align: left;">Search Paradigm</th>
+                  <th>Latency</th>
+                  <th>Recall@10</th>
+                  <th>Recall@50</th>
+                  <th>MRR</th>
+                  <th>Tier 3 Recall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: left; font-weight: bold;">1. Pure BM25 Baseline</td>
+                  <td style="text-align: left;">Sparse Lexical Match</td>
+                  <td>1.39 ms</td>
+                  <td>88.6%</td>
+                  <td>99.7%</td>
+                  <td>0.6113</td>
+                  <td>74.0%</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; font-weight: bold;">2. Pure Dense Bi-Encoder</td>
+                  <td style="text-align: left;">Semantic Vector Search</td>
+                  <td>1.33 ms</td>
+                  <td>97.1%</td>
+                  <td>100.0%</td>
+                  <td>0.7388</td>
+                  <td>91.3%</td>
+                </tr>
+                <tr style="color: #64748B;">
+                  <td style="text-align: left;">3. Naive Score Sum (alpha = 0.5)</td>
+                  <td style="text-align: left;">Linear Weight Fusion</td>
+                  <td>1.23 ms</td>
+                  <td>91.7%</td>
+                  <td>100.0%</td>
+                  <td>0.6409</td>
+                  <td>77.9%</td>
+                </tr>
+                <tr style="background-color: #F0FDF4; font-weight: bold; border-left: 3px solid #16A34A;">
+                  <td style="text-align: left; color: #166534;">4. Reciprocal Rank Fusion (Proposed)</td>
+                  <td style="text-align: left;">Rank-Based Fusion (k = 60)</td>
+                  <td>1.26 ms</td>
+                  <td>96.0%</td>
+                  <td>100.0%</td>
+                  <td>0.7040</td>
+                  <td>88.5%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="spoken-script">
+          <div class="script-tag">🎙 Word-for-Word Spoken Script (Yahyah Odin)</div>
+          <div class="script-body">
+            <p>"Table 4.9 presents our Stage 1 ablation benchmark, isolating the empirical performance of four distinct retrieval paradigms across our <span class="script-anchor">350 ground truth queries</span>.</p>
+            <p>The table contrasts pure sparse keyword matching, pure dense semantic search, naive linear score summation with alpha equal to 0.5, and our proposed Reciprocal Rank Fusion engine. Performance is tracked across seven columns: retrieval paradigm, CPU latency, Recall at 10, Recall at 50, Mean Reciprocal Rank, and Tier 3 paraphrastic recall.</p>
+            <p>In Row 1, pure BM25 achieves 99.7 percent Recall at 50 by capturing exact statutory identifiers, but drops sharply to <span class="script-anchor">74.0 percent on Tier 3 queries</span> where local drafts heavily paraphrase national laws.</p>
+            <p>Conversely, in Row 2, pure dense retrieval resolves paraphrased phrasing, achieving <span class="script-anchor">91.3 percent on Tier 3</span>, but occasionally stumbles on exact numerical citations.</p>
+            <p>In Row 3, attempting naive score summation actually degrades MRR to 0.6409 because unbounded BM25 scores and bounded cosine similarities have fundamentally incompatible distributions.</p>
+            <p>Finally, Row 4 proves the superiority of our proposed <span class="script-anchor">Reciprocal Rank Fusion with constant k equal to 60</span>. By fusing rank positions rather than uncalibrated scores, our hybrid engine achieves 96.0 percent Recall at 10, a perfect 100 percent Recall at 50, and 88.5 percent on Tier 3 in just 1.26 milliseconds, ensuring no controlling statutes are dropped before Stage 2."</p>
+          </div>
+          <div class="cue-note">
+            <strong>Cue:</strong> Walk through Row 1 (BM25 Tier 3 drop to 74%), Row 3 (naive score sum MRR degradation), and Row 4 (RRF 100% R@50 in 1.26 ms).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 27 -->
+    <div class="slide-card speaker-yah" id="slide-27">
+      <div class="slide-header">
+        <div>
+          <span class="slide-id">Slide 27</span>
           <span class="slide-title-text">Stage 2 Cross-Encoder NLI &amp; Statistics</span>
         </div>
         <div class="slide-meta">
@@ -2339,11 +2483,11 @@
         </div>
       </div>
 
-      <!-- Slide 25 -->
-      <div class="slide-card speaker-ralph" id="slide-25">
+      <!-- Slide 28 -->
+      <div class="slide-card speaker-ralph" id="slide-28">
         <div class="slide-header">
           <div>
-            <span class="slide-id">Slide 25</span>
+            <span class="slide-id">Slide 28</span>
             <span class="slide-title-text">Supreme Court Precedents &amp; Latency</span>
           </div>
           <div class="slide-meta">
@@ -2398,11 +2542,11 @@
         </div>
       </div>
 
-      <!-- Slide 26 -->
-      <div class="slide-card speaker-both" id="slide-26">
+      <!-- Slide 29 -->
+      <div class="slide-card speaker-both" id="slide-29">
         <div class="slide-header">
           <div>
-            <span class="slide-id">Slide 26</span>
+            <span class="slide-id">Slide 29</span>
             <span class="slide-title-text">Live Technical System Demonstration</span>
           </div>
           <div class="slide-meta">
@@ -2462,11 +2606,11 @@
         </div>
       </div>
 
-      <!-- Slide 27 -->
-      <div class="slide-card speaker-ralph" id="slide-27">
+      <!-- Slide 30 -->
+      <div class="slide-card speaker-ralph" id="slide-30">
         <div class="slide-header">
           <div>
-            <span class="slide-id">Slide 27</span>
+            <span class="slide-id">Slide 30</span>
             <span class="slide-title-text">Chapter 5: Conclusions &amp; Synthesis</span>
           </div>
           <div class="slide-meta">
@@ -2523,11 +2667,11 @@
         </div>
       </div>
 
-      <!-- Slide 28 -->
-      <div class="slide-card speaker-ralph" id="slide-28">
+      <!-- Slide 31 -->
+      <div class="slide-card speaker-ralph" id="slide-31">
         <div class="slide-header">
           <div>
-            <span class="slide-id">Slide 28</span>
+            <span class="slide-id">Slide 31</span>
             <span class="slide-title-text">Academic Limitations &amp; Technical Roadmap</span>
           </div>
           <div class="slide-meta">
@@ -2577,11 +2721,11 @@
         </div>
       </div>
 
-      <!-- Slide 29 -->
-      <div class="slide-card speaker-both" id="slide-29">
+      <!-- Slide 32 -->
+      <div class="slide-card speaker-both" id="slide-32">
         <div class="slide-header">
           <div>
-            <span class="slide-id">Slide 29</span>
+            <span class="slide-id">Slide 32</span>
             <span class="slide-title-text">Administrative Routing &amp; Next Steps</span>
           </div>
           <div class="slide-meta">

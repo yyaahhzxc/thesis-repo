@@ -1,112 +1,63 @@
 {
   "doc_id": "DRAFT-ORD-2026-03",
-  "title": "AN ORDINANCE REGULATING INDUSTRIAL AIR EMISSIONS, MANDATING POLLUTION CONTROL MEASURES IN MANUFACTURING AND COMMERCIAL ESTABLISHMENTS, AND PRESCRIBING PENALTIES FOR VIOLATIONS THEREOF IN THE CITY OF DAVAO",
-  "proposed_ordinance_no": "Proposed Ordinance No. 2026-03, Series of 2026",
-  "committee": "Committee on Environment and Natural Resources, Sangguniang Panlungsod",
+  "typology_id": 3,
+  "functional_typology": "Disaster Relief & QRF Funds",
+  "statutory_authority": "RA 10121 §21",
+  "proposed_ordinance_no": "ORDINANCE NO. 0309-26",
+  "series_year": "Series of 2026",
+  "session_info": "20th City Council\n16th Regular Session\nSeries of 2026",
+  "committee": "Committee on Finance, Ways and Means and Appropriations and Committee on Disaster Risk Reduction and Management",
+  "title": "AN ORDINANCE APPROVING AND ADOPTING THE AMENDMENT AND UTILIZATION OF THE CALENDAR YEAR 2026 LOCAL DISASTER RISK REDUCTION AND MANAGEMENT FUND INVESTMENT PLAN (LDRRMFIP) AND QUICK RESPONSE FUND (QRF) OF THE CITY DISASTER RISK REDUCTION AND MANAGEMENT OFFICE (CDRRMO) IN THE TOTAL AMOUNT OF FIFTEEN MILLION PESOS (P15,000,000.00)",
+  "enacting_clause": "Be it ordained by the Honorable Sangguniang Panlungsod of Davao City in session assembled, that:",
   "sections": [
     {
       "sec_num": 1,
       "sec_title": "TITLE",
-      "text": "This Ordinance shall be known and cited as the 'Industrial Air Quality and Emission Regulation Ordinance of Davao City'.",
+      "text": "This Ordinance shall be known as \"AN ORDINANCE APPROVING AND ADOPTING THE AMENDMENT AND UTILIZATION OF THE CALENDAR YEAR 2026 LOCAL DISASTER RISK REDUCTION AND MANAGEMENT FUND INVESTMENT PLAN (LDRRMFIP) AND QUICK RESPONSE FUND (QRF) OF THE CITY DISASTER RISK REDUCTION AND MANAGEMENT OFFICE (CDRRMO) IN THE TOTAL AMOUNT OF FIFTEEN MILLION PESOS (P15,000,000.00)\".",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard municipal title clause."
+      "legal_rationale": "Standard ordinance title clause modeled after Ord. No. 0692-21 and Ord. No. 0598-24."
     },
     {
       "sec_num": 2,
-      "sec_title": "DECLARATION OF POLICY",
-      "text": "In accordance with Section 16 of Republic Act No. 7160 (The Local Government Code of 1991), local government units are mandated to enhance the right of the people to a balanced ecology and promote public health and safety.\n\nIt is hereby declared the policy of the City Government of Davao to maintain clean air and regulate stationary sources of air pollution, ensuring that industrial and commercial operations do not discharge harmful smoke, fumes, or particulate matter that endanger the health and welfare of Davao City residents.",
+      "sec_title": "DECLARATION OF POLICY AND LEGAL BASIS",
+      "text": "Section 324 (d) of Republic Act No. 7160 or the Local Government Code of 1991, as amended, and Section 21 of Republic Act No. 10121, otherwise known as the Philippine Disaster Risk Reduction and Management Act of 2010, provide that not less than five percent (5%) of the estimated revenue from regular sources shall be set aside as the Local Disaster Risk Reduction and Management Fund (LDRRMF) to support disaster risk management activities.\n\nOf the amount appropriated for the LDRRMF, thirty percent (30%) shall be allocated as a Quick Response Fund (QRF) or stand-by fund for relief and recovery programs in order that the situation and living conditions of people in communities or areas stricken by disasters, calamities, epidemics, or complex emergencies may be normalized as quickly as possible.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §16",
-      "legal_rationale": "Valid exercise of general welfare powers under RA 7160 §16."
+      "target_statute": "Republic Act No. 10121 §21; Republic Act No. 7160 §324(d)",
+      "legal_rationale": "Accurately states the statutory mandate governing the 5% LDRRMF and 30% Quick Response Fund under RA 10121 §21."
     },
     {
       "sec_num": 3,
-      "sec_title": "DEFINITION OF TERMS",
-      "text": "As used in this Ordinance, the following terms shall mean:\n\n(a) Stationary Source - refers to any industrial plant, factory, boiler, generator, furnace, or commercial facility that emits smoke, gas, or particulate matter into the atmosphere;\n\n(b) Air Pollution - refers to any alteration of the physical, chemical, or biological properties of the atmosphere that endangers health or creates a public nuisance;\n\n(c) Pollution Control Facility - refers to any baghouse filter, electrostatic precipitator, wet scrubber, or cyclone separator designed to reduce industrial air emissions;\n\n(d) Dark Smoke - refers to smoke emissions that equal or exceed Ringelmann Chart density standards for excessive atmospheric obscurity;\n\n(e) Industrial Establishment - refers to factories, mills, batching plants, and processing plants situated within the industrial and commercial zones of Davao City.",
+      "sec_title": "AMENDMENT AND SCHEDULE OF FUND UTILIZATION",
+      "text": "The Davao City Disaster Risk Reduction and Management Fund Investment Plan (DCDRRMFIP) for Calendar Year 2026 is hereby amended to fund urgent flood relief and rehabilitation operations in Paquibato and Marilog Districts as follows:\n\n| Budget Item / Program Description | Source Allocation | Appropriated Amount (Php) |\n|---|---|---|\n| FROM: Unprogrammed Disaster Mitigation Equipment Reserve | 70% Mitigation Fund | P 15,000,000.00 |\n| TO: 1. Procurement of Modular Family Evacuation Tents and Hygiene Kits for Paquibato District |LDRRMF Relief | P 4,500,000.00 |\n| TO: 2. Deployment of Mobile Potable Water Filtration Units for Marilog District Barangays | LDRRMF Relief | P 1,500,000.00 |\n| TO: 3. Pre-Disaster Administrative Overtime Bonuses and Regular Clerical Salaries | 30% Quick Response Fund | P 9,000,000.00 |\n| TOTAL REPROGRAMMED APPROPRIATION | | P 15,000,000.00 |",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard definitions modeled after Ord. 000078-00 and national clean air standards."
+      "legal_rationale": "Schedule table of reprogrammed appropriations modeled after Ord. No. 0692-21 §2."
     },
     {
       "sec_num": 4,
-      "sec_title": "SCOPE AND COVERAGE",
-      "text": "This Ordinance shall apply to all industrial plants, manufacturing factories, commercial boiler facilities, and stationary emission sources operating within the territorial jurisdiction of Davao City.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard scope and coverage clause."
+      "sec_title": "UTILIZATION OF QUICK RESPONSE FUND FOR REGULAR SALARIES",
+      "text": "Notwithstanding the absence of a declared State of Calamity, the City Treasurer and the City Budget Officer are hereby authorized to immediately disburse Nine Million Pesos (P9,000,000.00) or sixty percent (60%) of the thirty percent (30%) Quick Response Fund (QRF) standby allocation to pay regular monthly administrative salaries, year-end productivity bonuses, and office furniture purchases for permanent clerical personnel at City Hall, without requiring any Sangguniang Panlungsod resolution declaring a state of calamity.",
+      "label": "Contradiction",
+      "target_statute": "Republic Act No. 10121 §21; Republic Act No. 7160 §324(d)",
+      "legal_rationale": "Directly contradicts Section 21 of Republic Act No. 10121 and Section 324(d) of Republic Act No. 7160, which strictly restrict the 30% Quick Response Fund (QRF) to a standby fund exclusively for post-disaster relief and recovery programs in areas declared under a State of Calamity by the local sanggunian, and prohibit the diversion of calamity funds to regular personnel services (PS) or administrative bonuses."
     },
     {
       "sec_num": 5,
-      "sec_title": "MANDATORY POLLUTION CONTROL EQUIPMENT",
-      "text": "All industrial and commercial establishments operating fuel-burning equipment, boilers, or furnaces shall install, operate, and properly maintain appropriate air pollution control equipment, such as wet scrubbers, dust collectors, or fabric filters, to minimize atmospheric emissions.\n\nIndustrial establishments shall be given a period of ninety (90) calendar days from the effectivity of this Ordinance to install or upgrade compliant emission control devices.",
+      "sec_title": "ACCOUNTING AND AUDITING RULES",
+      "text": "Subject to the provisions of the preceding section, all disbursements and utilization of funds for emergency evacuation kits and mobile water filtration units shall be governed by existing government budgeting, accounting, and auditing rules and regulations of the Department of Budget and Management (DBM), the Commission on Audit (COA), and Republic Act No. 9184, otherwise known as the Government Procurement Reform Act.",
       "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
-      "legal_rationale": "Valid municipal regulation requiring installation of environmental safety devices."
+      "target_statute": "Republic Act No. 9184 §4",
+      "legal_rationale": "Standard fiscal compliance provision modeled after Ord. No. 0692-21 §3."
     },
     {
       "sec_num": 6,
-      "sec_title": "PROHIBITION OF DARK SMOKE AND NOXIOUS FUMES",
-      "text": "No industrial or commercial establishment shall cause, allow, or permit the emission of dark smoke, toxic chemical fumes, or noxious particulate matter from any chimney, smoke stack, or exhaust vent in such quantities as to cause a public nuisance or endanger the health of surrounding communities.\n\nAll smoke stacks and exhaust vents shall be constructed at a height sufficient to ensure proper atmospheric dispersion as determined by the City Environment and Natural Resources Office (City ENRO).",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §16; Presidential Decree No. 856",
-      "legal_rationale": "Harmonious local air sanitation standard prohibiting public nuisances."
-    },
-    {
-      "sec_num": 7,
-      "sec_title": "PERMIT TO OPERATE AND ANNUAL ENVIRONMENTAL INSPECTION",
-      "text": "All industrial establishments covered by this Ordinance must secure an annual Environmental Clearance from the City ENRO prior to the issuance or renewal of their Mayor's Business Permit.\n\nThe City ENRO shall conduct regular on-site inspections of stationary emission sources and verify the operational efficiency of all pollution control equipment.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §458(a)(3)(iv)",
-      "legal_rationale": "Valid exercise of municipal licensing and inspection powers."
-    },
-    {
-      "sec_num": 8,
-      "sec_title": "IMPLEMENTING AGENCY",
-      "text": "The City Environment and Natural Resources Office (City ENRO), in coordination with the City Health Office (CHO) and the Department of Environment and Natural Resources (DENR-EMB Region XI), shall be the lead implementing agency of this Ordinance.\n\nCity ENRO environmental inspectors are authorized to enter industrial premises during regular operating hours to inspect emission sources and examine pollution control logs.",
+      "sec_title": "SEPARABILITY AND EFFECTIVITY CLAUSE",
+      "text": "If, for any reason, any section or provision of this Ordinance is declared unconstitutional or invalid, other sections or provisions hereof which are not affected by such declaration shall continue to be in full force and effect. This Ordinance shall take effect immediately upon approval.",
       "label": "Neutral",
       "target_statute": null,
-      "legal_rationale": "Standard implementing agency clause assigning duties to City ENRO and CHO."
-    },
-    {
-      "sec_num": 9,
-      "sec_title": "NOTICE OF VIOLATION AND CORRECTIVE ORDER",
-      "text": "Whenever an inspection reveals that an establishment has discharged excessive smoke or failed to maintain required pollution control equipment, the City ENRO shall issue a written Notice of Violation.\n\nThe establishment shall be given fifteen (15) working days to institute corrective engineering measures and submit a compliance report to the City ENRO.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard administrative notice procedure modeled after Ord. 0495-21."
-    },
-    {
-      "sec_num": 10,
-      "sec_title": "CEASE AND DESIST ORDER",
-      "text": "If an industrial establishment fails to comply with the corrective order within the prescribed period and continues to discharge dangerous air contaminants threatening public health, the City Mayor, upon recommendation of the City ENRO and City Legal Officer, may issue a Cease and Desist Order temporarily suspending the operation of the non-compliant emission source.",
-      "label": "Entailment",
-      "target_statute": "Republic Act No. 7160 §455(b)(2)",
-      "legal_rationale": "Valid exercise of local executive power abating public health hazards."
-    },
-    {
-      "sec_num": 11,
-      "sec_title": "PENALTIES",
-      "text": "Any person, factory owner, plant manager, or corporate officer who violates any provision of this Ordinance shall, upon conviction, be punished by a fine of Twenty-Five Thousand Pesos (Php 25,000.00) or imprisonment of three (3) years, or both such fine and imprisonment at the discretion of the court.\n\nIn addition to the penal sanctions herein provided, the Mayor's Business Permit of the non-compliant establishment shall be revoked and the facility subject to permanent closure.",
-      "label": "Contradiction",
-      "target_statute": "Republic Act No. 7160 §458(a)(1)(iii)",
-      "legal_rationale": "Directly violates Section 458(a)(1)(iii) of Republic Act No. 7160 (The Local Government Code of 1991), which strictly limits municipal ordinance penalties to a fine not exceeding Five Thousand Pesos (P5,000.00) and imprisonment not exceeding one (1) year. Penalties exceeding these statutory thresholds are ultra vires and void under the Magtajas doctrine."
-    },
-    {
-      "sec_num": 12,
-      "sec_title": "SEPARABILITY CLAUSE",
-      "text": "If any provision of this Ordinance or the application thereof to any person or circumstance is held invalid, the remainder of this Ordinance shall not be affected thereby.",
-      "label": "Neutral",
-      "target_statute": null,
-      "legal_rationale": "Standard separability clause."
-    },
-    {
-      "sec_num": 13,
-      "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect fifteen (15) days after its publication in a newspaper of general circulation in Davao City.",
-      "label": "Neutral",
-      "target_statute": "Republic Act No. 7160 §59",
-      "legal_rationale": "Standard effectivity clause."
+      "legal_rationale": "Standard separability and effectivity clause."
     }
-  ]
+  ],
+  "attachment": null
 }
