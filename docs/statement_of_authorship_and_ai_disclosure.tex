@@ -1,0 +1,217 @@
+\documentclass[11pt,letterpaper]{article}
+
+% --- Essential Packages ---
+\usepackage[letterpaper,left=1.0in,right=1.0in,top=0.65in,bottom=0.85in]{geometry}
+\usepackage{tgschola} % Century Schoolbook font matching the official AdDU template
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{calc}
+
+% --- Toggle for Blank University Form vs. Filled Submission Document ---
+% Set \filledtrue for the exact blank replica of the department's template.
+% Set \filledtrue for the completed thesis submission version.
+\newif\iffilled
+\filledtrue % Set to \filledtrue for filled submission, \filledtrue for blank template
+
+% --- Footer Configuration ---
+\pagestyle{fancy}
+\fancyhf{} % Clear header and footer
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{%
+  \fontsize{8pt}{10pt}\selectfont\itshape
+  *Adapted from Faculty of Graduate Research, Statement of Authorship and Thesis Length for PhD Students,\\
+  Victoria University of Wellington, 2009
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+\begin{document}
+
+% --- Header Block ---
+\begin{minipage}[c]{0.16\textwidth}
+  \includegraphics[width=1.05in]{addu_bw.png}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.81\textwidth}
+  \fontsize{11.5pt}{14.5pt}\selectfont
+  \textbf{Ateneo de Davao University}\\
+  \textbf{COMPUTER STUDIES CLUSTER}\\
+  \textbf{SCHOOL OF ARTS AND SCIENCES}\\
+  \fontsize{9.5pt}{12.5pt}\selectfont
+  P.O. Box 8016 Davao City\\
+  Philippines
+\end{minipage}
+
+\vspace{0.25cm}
+\noindent\rule{\textwidth}{1.8pt}
+
+\vspace{0.25cm}
+
+% --- Title Block ---
+\begin{center}
+  {\fontsize{14pt}{18pt}\selectfont \textbf{Attestation of Primary Authorship$^*$ and}\\[2pt]
+   \textbf{AI Disclosure Statement}\par}
+\end{center}
+
+\vspace{0.15cm}
+
+% --- Opening Declaration ---
+\iffilled
+  \fontsize{10.5pt}{14.5pt}\selectfont
+  We, \textbf{Ralph Paolo Dulce and Yahyah Odin}, the proponents of thesis entitled
+  \textbf{``A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference''}, hereby declare that:
+\else
+  \fontsize{10.5pt}{15.5pt}\selectfont
+  We/I, \dotfill, the\\
+  proponents of thesis entitled \dotfill\\
+  \leavevmode\makebox[0.68\textwidth]{\dotfill}, hereby declare that:
+\fi
+
+\vspace{0.1cm}
+
+% --- Primary Authorship Bullet Points ---
+\begin{itemize}[leftmargin=1.6em, itemsep=2.5pt, topsep=0pt]
+  \iffilled
+    \item We are the sole authors of this thesis and its technical output.
+    \item We have fully acknowledged and referenced the ideas, techniques and work of others, whether published or unpublished, in our thesis.
+    \item We have prepared the thesis specifically for the degree of \textbf{Bachelor of Science in Computer Science} while under supervision at Ateneo de Davao University.
+    \item Our thesis document does not contain work extracted from a thesis, dissertation or research paper previously presented for another degree or diploma at this or any other university.
+    \item Our technical output was not subcontracted to a third party.
+  \else
+    \item We are/I am the sole author of this thesis and its technical output.
+    \item We/I have fully acknowledged and referenced the ideas, techniques and work of others, whether published or unpublished, in our/my thesis.
+    \item We/I have prepared the thesis specifically for the degree of \textbf{Bachelor of Science in}\\[2pt]
+    \underline{\hspace{5.5cm}} while under supervision at Ateneo de Davao University.
+    \item Our/My thesis document does not contain work extracted from a thesis, dissertation or research paper previously presented for another degree or diploma at this or any other university.
+    \item Our/My technical output was not subcontracted to a third party.
+  \fi
+\end{itemize}
+
+\vspace{0.2cm}
+
+% --- AI Disclosure Statement Heading ---
+{\fontsize{12pt}{15pt}\selectfont \textbf{AI Disclosure Statement}\par}
+
+\vspace{0.05cm}
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt, topsep=0pt]
+  \iffilled
+    \item We hereby declare that any use of artificial intelligence (AI) tools in the preparation of this thesis and its technical output:
+  \else
+    \item We/I hereby declare that any use of artificial intelligence (AI) tools in the preparation of this thesis and its technical output:
+  \fi
+\end{itemize}
+
+\vspace{0.15cm}
+
+% --- AI Disclosure Table (Page 1) ---
+\iffilled
+  % --- FILLED DISCLOSURE ROWS (Page 1) ---
+  \begin{tabularx}{\textwidth}{@{}p{3.0cm} X p{4.6cm}@{}}
+    \textbf{AI Tool Used} & \textbf{Purpose and Description of Use} & \textbf{Sections/Components Where AI Was Used} \\[4pt]
+    \midrule
+    \textbf{Gemini Models} &
+    Assisted in code scaffolding, modular Python scripting, batch evaluation pipelines, and command automation workflows. &
+    Pipeline scripts for data ingestion, OCR benchmarking, candidate retrieval, and NLI screening \\[7pt]
+    
+    \textbf{Gemini Models} &
+    Assisted in LaTeX typesetting, compilation error diagnostics, landscape table configuration, and bibliography citation key management. &
+    Thesis Manuscript \\[7pt]
+    
+    \textbf{Gemini Models} &
+    Assistive academic proofreading, grammatical refinement, transition smoothing, and formatting compliance per departmental guidelines. &
+    Thesis Manuscript \\[4pt]
+  \end{tabularx}
+
+  \newpage % --- Exact Page 2 Split ---
+
+  \vspace*{0.1cm}
+  \begin{tabularx}{\textwidth}{@{}p{3.0cm} X p{4.6cm}@{}}
+    \textbf{AI Tool Used} & \textbf{Purpose and Description of Use} & \textbf{Sections/Components Where AI Was Used} \\[4pt]
+    \midrule
+    \textbf{Matplotlib / Seaborn} &
+    Assisted in configuring automated chart generation parameters, color palettes, and two-panel figure layouts for empirical results. &
+    Thesis Manuscript Figures \\[8pt]
+    
+    \textbf{DeBERTa-v3 / all-MiniLM-L6 / Qwen2.5-VL} &
+    Evaluated as empirical machine learning models and computational artifacts (retrieval, NLI, and VLM text extraction), not generative text authors. &
+    Methodology and Experimental Results \\[8pt]
+  \end{tabularx}
+
+\else
+  % --- BLANK TEMPLATE (Page 1) ---
+  \begin{tabularx}{\textwidth}{@{}p{3.8cm} X p{4.6cm}@{}}
+    \textbf{AI Tool Used} & \textbf{Purpose and Description of Use} & \textbf{Sections/Components Where AI Was Used} \\[6pt]
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\[13pt]
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\[13pt]
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\[13pt]
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\
+  \end{tabularx}
+
+  \newpage % --- Exact Page 2 Split for Blank Template ---
+
+  \vspace*{0.2cm}
+  \begin{tabularx}{\textwidth}{@{}p{3.8cm} X p{4.6cm}@{}}
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\[13pt]
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\[13pt]
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\[13pt]
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\[13pt]
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\[13pt]
+    \rule{3.3cm}{0.4pt} & \rule{7.0cm}{0.4pt} & \rule{4.3cm}{0.4pt} \\
+  \end{tabularx}
+\fi
+
+\vspace{0.35cm}
+
+% --- Secondary Declarations ---
+\iffilled
+  {\fontsize{10.5pt}{14.5pt}\selectfont We further declare that:\par}
+
+  \begin{itemize}[leftmargin=1.6em, itemsep=3pt, topsep=1pt]
+    \item We have accurately disclosed the use of AI tools in the preparation of this thesis and its technical output.
+    \item We take full responsibility for the accuracy, originality, integrity, and academic quality of the submitted work, including any content generated or assisted by AI tools.
+    \item We have reviewed and verified all AI-generated or AI-assisted content incorporated into the thesis and its technical output and have ensured that appropriate acknowledgements and citations are provided, where necessary.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  {\fontsize{10.5pt}{14pt}\selectfont By signing below, we affirm that the statements above are true and accurate.\par}
+\else
+  {\fontsize{10.5pt}{14.5pt}\selectfont We/I further declare that:\par}
+
+  \begin{itemize}[leftmargin=1.6em, itemsep=3pt, topsep=1pt]
+    \item We/I have accurately disclosed the use of AI tools in the preparation of this thesis and its technical output.
+    \item We/I take full responsibility for the accuracy, originality, integrity, and academic quality of the submitted work, including any content generated or assisted by AI tools.
+    \item We/I have reviewed and verified all AI-generated or AI-assisted content incorporated into the thesis and its technical output and have ensured that appropriate acknowledgements and citations are provided, where necessary.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  {\fontsize{10.5pt}{14pt}\selectfont By signing below, we/I affirm that the statements above are true and accurate.\par}
+\fi
+
+\vspace{0.7cm}
+
+% --- Signature Block ---
+\iffilled
+  \begin{tabular}{@{}ll@{}}
+    \textbf{Signed:} \underline{\hspace{5.5cm}} & \textbf{Date:} \underline{\hspace{4.0cm}} \\[3pt]
+    \phantom{\textbf{Signed: }} \textbf{Ralph Paolo Dulce} & \\[14pt]
+    \textbf{Signed:} \underline{\hspace{5.5cm}} & \textbf{Date:} \underline{\hspace{4.0cm}} \\[3pt]
+    \phantom{\textbf{Signed: }} \textbf{Yahyah Odin} & \\[14pt]
+  \end{tabular}
+\else
+  \begin{tabular}{@{}ll@{}}
+    Signed: \underline{\hspace{5.5cm}} & Date: \underline{\hspace{4.0cm}} \\[20pt]
+    Signed: \underline{\hspace{5.5cm}} & Date: \underline{\hspace{4.0cm}} \\[20pt]
+    Signed: \underline{\hspace{5.5cm}} & Date: \underline{\hspace{4.0cm}} \\
+  \end{tabular}
+\fi
+
+\end{document}
