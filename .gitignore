@@ -12,7 +12,11 @@ ENV/
 env/
 
 # Large Corpus Data & Scanned PDFs (Kept locally / on Google Drive)
-corpus/
+corpus/raw/national/*.jsonl
+corpus/raw/local/*.pdf
+corpus/raw/local/**/*.pdf
+corpus/cleaned/national/*.jsonl
+corpus/cleaned/local/*.jsonl
 models/
 data/unified_dual_statutory_provisions*.jsonl
 output/*.jsonl

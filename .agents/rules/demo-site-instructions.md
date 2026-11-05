@@ -15,7 +15,7 @@ description: This rule shall be applied when working on the prototype demo site,
 
 ## **1. Architectural Foundation & Core Principles**
 
-The prototype demonstration system (`demo/app.py`, `demo/static/index.html`) is an interactive, explainable, and production-faithful deployment of the thesis research system designed for presentation to thesis defense panelists, university faculty, and Sangguniang Panlungsod (SP) legal officers.
+The prototype demonstration system (`src/demo/app.py`, `src/demo/static/index.html`, launched via `python run_demo.py` or `python src/demo/app.py`) is an interactive, explainable, and production-faithful deployment of the thesis research system designed for presentation to thesis defense panelists, university faculty, and Sangguniang Panlungsod (SP) legal officers.
 
 ### **1.1. 100% Commitment to Option 2 (Pure Transformer Cross-Encoder NLI Architecture)**
 1. **Pure Neural Generalization:** All semantic preemption conflict decisions must stem directly from genuine PyTorch neural tensors evaluated through DeBERTa-v3 (`models/nli-deberta-v3-base/`) with the calibrated decision threshold `tau* = 0.45` (Chapter 3 §3.3 & §3.7.2).

@@ -1,6 +1,6 @@
 ---
 trigger: model_decision
-description: This rule shall be applied when working on presentation slides, defense deck files, slide visual assets, spoken scripts, or slide viewers (docs/PRESENTATION_SLIDES_MOCK_DEFENSE.md, docs/defense_presentation_deck.html, docs/slides_viewer.html, scripts/sync_slides_viewer.py).
+description: This rule shall be applied when working on presentation slides, defense deck files, slide visual assets, spoken scripts, or slide viewers (docs/presentation/PRESENTATION_SLIDES_MOCK_DEFENSE.md, docs/presentation/defense_presentation_deck.html, docs/presentation/slides_viewer.html, scripts/sync_slides_viewer.py).
 ---
 
 # **Thesis Defense Presentation Slides & Deck Authoring Protocol**
