@@ -1,0 +1,37 @@
+% Single Source of Truth Numbers Registry for BS CS Thesis
+% Generated automatically by scripts/generate_numbers_registry.py
+\ProvidesPackage{thesis_numbers}
+
+% Corpus Census
+\newcommand{\CorpusTotalEnactments}{27,096}
+\newcommand{\CorpusNationalStatutes}{25,432}
+\newcommand{\CorpusDavaoOrdinances}{1,664}
+\newcommand{\CorpusTotalProvisions}{176,421}
+
+% Benchmark Sizes
+\newcommand{\BenchmarkTotalPairs}{350}
+\newcommand{\BenchmarkUniquePairs}{198}
+\newcommand{\BenchmarkUniquePremises}{22}
+
+% Stage 2 Primary Model (DeBERTa-v3-base-NLI)
+\newcommand{\DebertaValAcc}{86.54\%}
+\newcommand{\DebertaTestAcc}{86.79\%}
+\newcommand{\DebertaFiveFoldAcc}{88.30\%}
+\newcommand{\DebertaFiveFoldMacroFOne}{0.8800}
+\newcommand{\DebertaFiveFoldConflictFOne}{0.9008}
+
+% Premise-Grouped CV (Robustness Shield)
+\newcommand{\DebertaGroupedAcc}{86.44\%}
+\newcommand{\DebertaGroupedMacroFOne}{0.8617}
+\newcommand{\DebertaGroupedConflictFOne}{0.8945}
+
+% Latency & Speedup
+\newcommand{\LatencyStaticPad}{28.15\,s}
+\newcommand{\LatencyDynamicPad}{12.69\,s}
+\newcommand{\SpeedupFactor}{2.22\times}
+\newcommand{\LatencyReductionPct}{55.4\%}
+
+% Statistical Significance
+\newcommand{\FriedmanChiSquare}{40.0000}
+\newcommand{\McNemarZeroShotChiSquare}{19.3143}
+\newcommand{\McNemarBertChiSquare}{4.2667}

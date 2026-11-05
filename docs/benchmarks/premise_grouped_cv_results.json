@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "title": "Premise-Grouped 5-Fold Cross-Validation Benchmark",
+    "total_annotation_instances": 350,
+    "unique_proposition_pairs": 198,
+    "unique_statutory_premises": 22,
+    "pairs_per_premise": 9,
+    "label_distribution_198": {
+      "Contradiction": 66,
+      "Entailment": 66,
+      "Neutral": 66
+    },
+    "multi_panel_distribution": {
+      "2_panels": 132,
+      "1_panels": 56,
+      "3_panels": 10
+    }
+  },
+  "grouped_cv_performance": {
+    "Zero-Shot Baseline (Unadapted)": {
+      "acc_mean": 54.888888888888886,
+      "acc_sd": 7.465145347662587,
+      "macro_f1_mean": 0.5434186623138031,
+      "macro_f1_sd": 0.07842142741909962,
+      "conflict_f1_mean": 0.4643689643689643,
+      "conflict_f1_sd": 0.18330994606080175
+    },
+    "all-MiniLM-L6-v2 (Distilled Edge)": {
+      "acc_mean": 81.11111111111111,
+      "acc_sd": 5.258737584977437,
+      "macro_f1_mean": 0.8103353560335658,
+      "macro_f1_sd": 0.05384199310626784,
+      "conflict_f1_mean": 0.8361904761904763,
+      "conflict_f1_sd": 0.09512374086997158
+    },
+    "bert-base-uncased (Supervised)": {
+      "acc_mean": 82.66666666666667,
+      "acc_sd": 4.251361437713109,
+      "macro_f1_mean": 0.824888329062242,
+      "macro_f1_sd": 0.04534520903580542,
+      "conflict_f1_mean": 0.8504761904761905,
+      "conflict_f1_sd": 0.07988654085908863
+    },
+    "legal-bert-base (Judicial)": {
+      "acc_mean": 82.66666666666667,
+      "acc_sd": 4.251361437713109,
+      "macro_f1_mean": 0.824888329062242,
+      "macro_f1_sd": 0.04534520903580542,
+      "conflict_f1_mean": 0.8504761904761905,
+      "conflict_f1_sd": 0.07988654085908863
+    },
+    "ModernBERT-base (Long-Context)": {
+      "acc_mean": 84.22222222222221,
+      "acc_sd": 4.562325592810625,
+      "macro_f1_mean": 0.8399505416268648,
+      "macro_f1_sd": 0.04879951553207656,
+      "conflict_f1_mean": 0.8702747909199522,
+      "conflict_f1_sd": 0.07388291517323772
+    },
+    "PoL-BERT-Large (Legal Admin)": {
+      "acc_mean": 85.33333333333333,
+      "acc_sd": 5.183068350973599,
+      "macro_f1_mean": 0.8505110106800874,
+      "macro_f1_sd": 0.054631090447930436,
+      "conflict_f1_mean": 0.8858759305210917,
+      "conflict_f1_sd": 0.0668017476089687
+    },
+    "DeBERTa-v3-base-NLI (Proposed)": {
+      "acc_mean": 86.44444444444443,
+      "acc_sd": 6.051221690751155,
+      "macro_f1_mean": 0.8616621783529942,
+      "macro_f1_sd": 0.06314540109460975,
+      "conflict_f1_mean": 0.8944913151364764,
+      "conflict_f1_sd": 0.06825046585241314
+    }
+  }
+}

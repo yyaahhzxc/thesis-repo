@@ -1,48 +1,44 @@
 {
     "latex-workshop.latex.tools": [
         {
-            "name": "pdflatex-fast",
-            "command": "pdflatex",
+            "name": "build-paper-fast",
+            "command": "C:\\Python313\\python.exe",
             "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-enable-installer",
-                "-file-line-error",
-                "%DOC%"
+                "%WORKSPACE_FOLDER%\\scripts\\build_paper.py",
+                "--fast"
             ]
         },
         {
-            "name": "bibtex",
-            "command": "bibtex",
+            "name": "build-paper-full",
+            "command": "C:\\Python313\\python.exe",
             "args": [
-                "%DOCFILE%"
+                "%WORKSPACE_FOLDER%\\scripts\\build_paper.py"
             ]
         }
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "fast-pdflatex (instant preview)",
+            "name": "Build Thesis (Fast Preview)",
             "tools": [
-                "pdflatex-fast"
+                "build-paper-fast"
             ]
         },
         {
-            "name": "full-build (pdflatex -> bibtex -> pdflatex*2)",
+            "name": "Build Thesis (Full 4-Pass)",
             "tools": [
-                "pdflatex-fast",
-                "bibtex",
-                "pdflatex-fast",
-                "pdflatex-fast"
+                "build-paper-full"
             ]
         }
     ],
     "latex-workshop.latex.recipe.default": "first",
     "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.build.forceRecipeUsage": true,
     "latex-workshop.chktex.enabled": false,
     "latex-workshop.message.badbox.show": false,
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.view.pdf.refreshes": "onBuild",
     "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.latex.rootFile.doNotPrompt": true,
     "latex-workshop.latex.rootFile.useWorkspace": true,
     "[latex]": {
         "editor.formatOnSave": false
@@ -50,5 +46,5 @@
     "[tex]": {
         "editor.formatOnSave": false
     },
-    "livePreview.defaultPreviewPath": "/docs/defense_presentation_deck.html"
+    "livePreview.defaultPreviewPath": "/docs/presentation/slides_viewer.html"
 }
