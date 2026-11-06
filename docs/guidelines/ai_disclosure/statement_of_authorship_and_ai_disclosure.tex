@@ -1,7 +1,7 @@
 \documentclass[11pt,letterpaper]{article}
 
 % --- Essential Packages ---
-\usepackage[letterpaper,left=1.0in,right=1.0in,top=0.65in,bottom=0.85in]{geometry}
+\usepackage[letterpaper,left=1.0in,right=1.0in,top=0.50in,bottom=0.60in]{geometry}
 \usepackage{tgschola} % Century Schoolbook font matching the official AdDU template
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -15,10 +15,9 @@
 \usepackage{calc}
 
 % --- Toggle for Blank University Form vs. Filled Submission Document ---
-% Set \filledtrue for the exact blank replica of the department's template.
-% Set \filledtrue for the completed thesis submission version.
+% Set \filledtrue for the filled submission, \filledfalse for blank template
 \newif\iffilled
-\filledtrue % Set to \filledtrue for filled submission, \filledtrue for blank template
+\filledtrue
 
 % --- Footer Configuration ---
 \pagestyle{fancy}
@@ -32,54 +31,54 @@
 }
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
+\setlength{\parskip}{2pt}
 
 \begin{document}
 
 % --- Header Block ---
-\begin{minipage}[c]{0.16\textwidth}
-  \includegraphics[width=1.05in]{addu_bw.png}
+\begin{minipage}[c]{0.15\textwidth}
+  \includegraphics[width=0.95in]{addu_bw.png}
 \end{minipage}%
 \hfill
-\begin{minipage}[c]{0.81\textwidth}
-  \fontsize{11.5pt}{14.5pt}\selectfont
+\begin{minipage}[c]{0.82\textwidth}
+  \fontsize{11pt}{14pt}\selectfont
   \textbf{Ateneo de Davao University}\\
   \textbf{COMPUTER STUDIES CLUSTER}\\
   \textbf{SCHOOL OF ARTS AND SCIENCES}\\
-  \fontsize{9.5pt}{12.5pt}\selectfont
+  \fontsize{9pt}{12pt}\selectfont
   P.O. Box 8016 Davao City\\
   Philippines
 \end{minipage}
 
-\vspace{0.25cm}
-\noindent\rule{\textwidth}{1.8pt}
-
-\vspace{0.25cm}
-
-% --- Title Block ---
-\begin{center}
-  {\fontsize{14pt}{18pt}\selectfont \textbf{Attestation of Primary Authorship$^*$ and}\\[2pt]
-   \textbf{AI Disclosure Statement}\par}
-\end{center}
+\vspace{0.15cm}
+\noindent\rule{\textwidth}{1.5pt}
 
 \vspace{0.15cm}
 
+% --- Title Block ---
+\begin{center}
+  {\fontsize{13pt}{16pt}\selectfont \textbf{Attestation of Primary Authorship$^*$ and}\\[2pt]
+   \textbf{AI Disclosure Statement}\par}
+\end{center}
+
+\vspace{0.1cm}
+
 % --- Opening Declaration ---
 \iffilled
-  \fontsize{10.5pt}{14.5pt}\selectfont
+  \fontsize{10pt}{13.5pt}\selectfont
   We, \textbf{Ralph Paolo Dulce and Yahyah Odin}, the proponents of thesis entitled
   \textbf{``A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference''}, hereby declare that:
 \else
-  \fontsize{10.5pt}{15.5pt}\selectfont
+  \fontsize{10pt}{14.5pt}\selectfont
   We/I, \dotfill, the\\
   proponents of thesis entitled \dotfill\\
   \leavevmode\makebox[0.68\textwidth]{\dotfill}, hereby declare that:
 \fi
 
-\vspace{0.1cm}
+\vspace{0.05cm}
 
 % --- Primary Authorship Bullet Points ---
-\begin{itemize}[leftmargin=1.6em, itemsep=2.5pt, topsep=0pt]
+\begin{itemize}[leftmargin=1.5em, itemsep=1.5pt, topsep=0pt]
   \iffilled
     \item We are the sole authors of this thesis and its technical output.
     \item We have fully acknowledged and referenced the ideas, techniques and work of others, whether published or unpublished, in our thesis.
@@ -96,13 +95,13 @@
   \fi
 \end{itemize}
 
-\vspace{0.2cm}
+\vspace{0.12cm}
 
 % --- AI Disclosure Statement Heading ---
-{\fontsize{12pt}{15pt}\selectfont \textbf{AI Disclosure Statement}\par}
+{\fontsize{11pt}{14pt}\selectfont \textbf{AI Disclosure Statement}\par}
 
 \vspace{0.05cm}
-\begin{itemize}[leftmargin=1.6em, itemsep=1pt, topsep=0pt]
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt, topsep=0pt]
   \iffilled
     \item We hereby declare that any use of artificial intelligence (AI) tools in the preparation of this thesis and its technical output:
   \else
@@ -110,40 +109,46 @@
   \fi
 \end{itemize}
 
-\vspace{0.15cm}
+\vspace{0.1cm}
 
 % --- AI Disclosure Table (Page 1) ---
 \iffilled
   % --- FILLED DISCLOSURE ROWS (Page 1) ---
-  \begin{tabularx}{\textwidth}{@{}p{3.0cm} X p{4.6cm}@{}}
-    \textbf{AI Tool Used} & \textbf{Purpose and Description of Use} & \textbf{Sections/Components Where AI Was Used} \\[4pt]
+  \fontsize{9pt}{11.5pt}\selectfont
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.0cm} X >{\raggedright\arraybackslash}p{4.2cm}@{}}
+    \textbf{AI Tool Used} & \textbf{Purpose and Description of Use} & \textbf{Sections/Components Where AI Was Used} \\[3pt]
     \midrule
-    \textbf{Gemini Models} &
-    Assisted in code scaffolding, modular Python scripting, batch evaluation pipelines, and command automation workflows. &
-    Pipeline scripts for data ingestion, OCR benchmarking, candidate retrieval, and NLI screening \\[7pt]
+    \textbf{Google Antigravity / Gemini Models} &
+    Assisted as an agentic pair-programmer for Python engineering: scaffolding modular codebase architecture (\texttt{src/}), automated execution harnesses, data pipelines for dual-corpus JSONL compilation (27,357 enactments, 178,494 provisions), batch OCR wrappers, and engineering the offline interactive web prototype interface (\texttt{demo/}). &
+    Codebase Pipelines (\texttt{src/}, \texttt{scripts/}) and Interactive Web Prototype (\texttt{demo/}) \\[4pt]
     
-    \textbf{Gemini Models} &
-    Assisted in LaTeX typesetting, compilation error diagnostics, landscape table configuration, and bibliography citation key management. &
-    Thesis Manuscript \\[7pt]
+    \textbf{Google Antigravity / Gemini Models} &
+    Assisted in LaTeX typesetting, multi-pass compilation orchestration (\texttt{pdflatex}/\texttt{bibtex} in \texttt{scripts/build\_paper.py}), resolution of build diagnostics, formatting dedicated full-page landscape plates (\texttt{pdflscape}) for empirical tables, managing front-matter listings, and synchronizing the automated single-source-of-truth numbers registry. &
+    Thesis Manuscript (\texttt{main.tex}, Chapters 1--5), Appendices A--R, and Numbers Registry \\[4pt]
     
-    \textbf{Gemini Models} &
-    Assistive academic proofreading, grammatical refinement, transition smoothing, and formatting compliance per departmental guidelines. &
-    Thesis Manuscript \\[4pt]
+    \textbf{Gemini Flash 3.8 (Google)} &
+    Assisted in syntactic clause drafting and formal legislative enacting phrase templating of candidate local ordinance provisions under strictly human-specified statutory premises, legal mechanisms, and conflict types (Section~3.5.3), conforming strictly to Davao City Sangguniang Panlungsod and DILG drafting manuals without fabricating legal facts. &
+    Methodology (Section~3.5.3) and Ground Truth Benchmark Formulation (\texttt{data/}) \\[2pt]
   \end{tabularx}
 
   \newpage % --- Exact Page 2 Split ---
 
-  \vspace*{0.1cm}
-  \begin{tabularx}{\textwidth}{@{}p{3.0cm} X p{4.6cm}@{}}
-    \textbf{AI Tool Used} & \textbf{Purpose and Description of Use} & \textbf{Sections/Components Where AI Was Used} \\[4pt]
+  \vspace*{0.05cm}
+  \fontsize{9pt}{11.5pt}\selectfont
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.0cm} X >{\raggedright\arraybackslash}p{4.2cm}@{}}
+    \textbf{AI Tool Used} & \textbf{Purpose and Description of Use} & \textbf{Sections/Components Where AI Was Used} \\[3pt]
     \midrule
-    \textbf{Matplotlib / Seaborn} &
-    Assisted in configuring automated chart generation parameters, color palettes, and two-panel figure layouts for empirical results. &
-    Thesis Manuscript Figures \\[8pt]
+    \textbf{Claude 3.5 Sonnet (Anthropic)} &
+    Assisted as an adversarial simulated peer reviewer and mock defense interrogator: stress-testing scientific claims, identifying narrative overclaiming, and conducting forensic checks on mathematical and statistical consistency (McNemar 2$\times$2 contingency tables on $N=53$, Friedman ANOVA ranks, Wilson score CIs, and Bayesian low-prevalence screening dynamics). &
+    Thesis Manuscript (Chapters 1--5, Abstract, Conclusions, and Statistical Disclosures) \\[4pt]
+
+    \textbf{Claude 3.5 Sonnet / Gemini Models} &
+    Assisted in editorial prose refinement, sentence flow transitions, eliminating repetitive phrasing or conversational filler, and ensuring adherence to academic continuous paragraph formatting in strict accordance with departmental writing guidelines. &
+    Manuscript Prose Polish across Chapters 1--5, Abstract, and Appendices \\[4pt]
     
-    \textbf{DeBERTa-v3 / all-MiniLM-L6 / Qwen2.5-VL} &
-    Evaluated as empirical machine learning models and computational artifacts (retrieval, NLI, and VLM text extraction), not generative text authors. &
-    Methodology and Experimental Results \\[8pt]
+    \textbf{Evaluated ML Models (Research Subjects)} &
+    Deep neural cross-encoders (\texttt{DeBERTa-v3}, \texttt{ModernBERT}, \texttt{Legal-BERT}, \texttt{all-MiniLM-L6-v2}) and vision-language models (\texttt{Qwen2.5-VL-3B-Instruct}) were evaluated strictly as offline empirical machine learning models and experimental research subjects under deterministic evaluation on local LGU hardware, not as generative text authors. &
+    Methodology and Experimental Results (Chapters 3 \& 4, Appendices A--R) \\[2pt]
   \end{tabularx}
 
 \else
@@ -169,20 +174,21 @@
   \end{tabularx}
 \fi
 
-\vspace{0.35cm}
+\vspace{0.2cm}
 
 % --- Secondary Declarations ---
 \iffilled
-  {\fontsize{10.5pt}{14.5pt}\selectfont We further declare that:\par}
+  {\fontsize{10pt}{13.5pt}\selectfont We further declare that:\par}
 
-  \begin{itemize}[leftmargin=1.6em, itemsep=3pt, topsep=1pt]
+  \vspace{0.05cm}
+  \begin{itemize}[leftmargin=1.5em, itemsep=1.5pt, topsep=0pt]
     \item We have accurately disclosed the use of AI tools in the preparation of this thesis and its technical output.
     \item We take full responsibility for the accuracy, originality, integrity, and academic quality of the submitted work, including any content generated or assisted by AI tools.
     \item We have reviewed and verified all AI-generated or AI-assisted content incorporated into the thesis and its technical output and have ensured that appropriate acknowledgements and citations are provided, where necessary.
   \end{itemize}
 
-  \vspace{0.3cm}
-  {\fontsize{10.5pt}{14pt}\selectfont By signing below, we affirm that the statements above are true and accurate.\par}
+  \vspace{0.15cm}
+  {\fontsize{10pt}{13pt}\selectfont By signing below, we affirm that the statements above are true and accurate.\par}
 \else
   {\fontsize{10.5pt}{14.5pt}\selectfont We/I further declare that:\par}
 
@@ -196,15 +202,15 @@
   {\fontsize{10.5pt}{14pt}\selectfont By signing below, we/I affirm that the statements above are true and accurate.\par}
 \fi
 
-\vspace{0.7cm}
+\vspace{0.35cm}
 
 % --- Signature Block ---
 \iffilled
   \begin{tabular}{@{}ll@{}}
-    \textbf{Signed:} \underline{\hspace{5.5cm}} & \textbf{Date:} \underline{\hspace{4.0cm}} \\[3pt]
-    \phantom{\textbf{Signed: }} \textbf{Ralph Paolo Dulce} & \\[14pt]
-    \textbf{Signed:} \underline{\hspace{5.5cm}} & \textbf{Date:} \underline{\hspace{4.0cm}} \\[3pt]
-    \phantom{\textbf{Signed: }} \textbf{Yahyah Odin} & \\[14pt]
+    \textbf{Signed:} \underline{\hspace{5.5cm}} & \textbf{Date:} \underline{\hspace{4.0cm}} \\[2pt]
+    \phantom{\textbf{Signed: }} \textbf{Ralph Paolo Dulce} & \\[10pt]
+    \textbf{Signed:} \underline{\hspace{5.5cm}} & \textbf{Date:} \underline{\hspace{4.0cm}} \\[2pt]
+    \phantom{\textbf{Signed: }} \textbf{Yahyah Odin} & \\[10pt]
   \end{tabular}
 \else
   \begin{tabular}{@{}ll@{}}

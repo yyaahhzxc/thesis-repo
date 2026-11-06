@@ -24,11 +24,12 @@ TEX_DIR = BASE_DIR / "CS_Undergraduate_Thesis_Template"
 
 REGISTRY = {
     "corpus": {
-        "total_enactments": 27096,
+        "total_enactments": 27357,
         "national_statutes": 25432,
-        "davao_local_ordinances": 1664,
-        "total_searchable_provisions": 176421,
-        "ordinance_512_token_compliance_pct": 94.69,
+        "davao_local_ordinances": 1925,
+        "total_searchable_provisions": 178494,
+        "operative_provisions": 174107,
+        "ordinance_512_token_compliance_pct": 94.75,
     },
     "benchmark": {
         "total_annotation_instances": 350,
@@ -165,6 +166,14 @@ REGISTRY = {
             "grouped_conflict_f1_mean": 0.8703,
             "grouped_conflict_f1_sd": 0.0739
         },
+        "legal_bert_base": {
+            "grouped_acc_mean": 83.33,
+            "grouped_acc_sd": 4.38,
+            "grouped_macro_f1_mean": 0.8315,
+            "grouped_macro_f1_sd": 0.0462,
+            "grouped_conflict_f1_mean": 0.8582,
+            "grouped_conflict_f1_sd": 0.0754
+        },
         "bert_base_uncased": {
             "grouped_acc_mean": 82.67,
             "grouped_acc_sd": 4.25,
@@ -186,28 +195,48 @@ REGISTRY = {
         "friedman_test": {
             "chi2_f": 40.0000,
             "df": 5,
-            "p_val": 0.00035,
+            "p_val": 1.49e-7,
             "num_domains": 8
         },
         "mcnemar_tests": {
             "deberta_vs_zero_shot": {
-                "cell_b": 31,
-                "cell_c": 4,
-                "chi2": 19.3143,
-                "p_val": 0.00001
+                "cell_b": 18,
+                "cell_c": 2,
+                "chi2": 11.2500,
+                "p_val": 0.0008
             },
             "deberta_vs_bert": {
-                "cell_b": 12,
-                "cell_c": 3,
-                "chi2": 4.2667,
-                "p_val": 0.03887,
+                "cell_b": 3,
+                "cell_c": 1,
+                "chi2": 0.2500,
+                "p_val": 0.6171,
                 "bonferroni_adjusted_alpha": 0.0167
             },
             "deberta_vs_legal_bert": {
-                "cell_b": 7,
-                "cell_c": 2,
-                "chi2": 1.7778,
-                "p_val": 0.18242
+                "cell_b": 3,
+                "cell_c": 1,
+                "chi2": 0.2500,
+                "p_val": 0.6171
+            }
+        },
+        "wilcoxon_tests": {
+            "deberta_vs_bert": {
+                "w_stat": 0.0,
+                "p_val": 0.0078,
+                "mean_macro_f1_gain": 0.0720,
+                "ci_95_lower": 0.0626,
+                "ci_95_upper": 0.0815,
+                "ci_method": "Students t-interval (df=7)",
+                "bonferroni_adjusted_alpha": 0.0167
+            },
+            "deberta_vs_legal_bert": {
+                "w_stat": 0.0,
+                "p_val": 0.0078,
+                "mean_macro_f1_gain": 0.0540,
+                "ci_95_lower": 0.0449,
+                "ci_95_upper": 0.0632,
+                "ci_method": "Students t-interval (df=7)",
+                "bonferroni_adjusted_alpha": 0.0167
             }
         }
     },
@@ -245,6 +274,7 @@ def main():
         f"\\newcommand{{\\CorpusNationalStatutes}}{{{REGISTRY['corpus']['national_statutes']:,}}}",
         f"\\newcommand{{\\CorpusDavaoOrdinances}}{{{REGISTRY['corpus']['davao_local_ordinances']:,}}}",
         f"\\newcommand{{\\CorpusTotalProvisions}}{{{REGISTRY['corpus']['total_searchable_provisions']:,}}}",
+        f"\\newcommand{{\\CorpusOperativeProvisions}}{{{REGISTRY['corpus']['operative_provisions']:,}}}",
         "",
         "% Benchmark Sizes",
         f"\\newcommand{{\\BenchmarkTotalPairs}}{{{REGISTRY['benchmark']['total_annotation_instances']}}}",

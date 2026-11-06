@@ -20,7 +20,7 @@ class DualStreamRetrievalEngine:
         
         # Build Okapi BM25 tokenized index
         tokenized_corpus = [doc["text"].lower().split() for doc in self.corpus]
-        self.bm25 = BM25Okapi(tokenized_corpus, k1=1.2, b=0.75)
+        self.bm25 = BM25Okapi(tokenized_corpus, k1=1.5, b=0.75)
         
         # Precompute dense embeddings
         texts = [doc["text"] for doc in self.corpus]
@@ -28,7 +28,7 @@ class DualStreamRetrievalEngine:
             texts, batch_size=64, show_progress_bar=False, normalize_embeddings=True
         )
 
-    def retrieve_candidates(self, query: str, top_k: int = 50, rrf_k: int = 60) -> List[Dict]:
+    def retrieve_candidates(self, query: str, top_k: int = 50, rrf_k: int = 60, beta: float = 1.20) -> List[Dict]:
         """Executes hybrid retrieval and merges candidate lists via Reciprocal Rank Fusion."""
         # 1. Sparse BM25 search
         query_tokens = query.lower().split()
@@ -51,7 +51,7 @@ class DualStreamRetrievalEngine:
         # Apply statutory hierarchy boost (prioritizing national codes over local acts)
         for idx in rrf_scores:
             if self.corpus[idx].get("is_national_statute", False):
-                rrf_scores[idx] *= 1.10  # 10% hierarchical priority safeguard
+                rrf_scores[idx] *= beta  # 20% hierarchical priority safeguard (\beta = 1.20)
 
         # Sort and return top-k shortlisted provisions
         sorted_indices = sorted(rrf_scores.keys(), key=lambda i: rrf_scores[i], reverse=True)[:top_k]

@@ -32,9 +32,21 @@ def extract_log_errors(log_path):
     return errors
 
 def compile_thesis(template_dir="CS_Undergraduate_Thesis_Template", main_file="main.tex", fast=False):
-    if not os.path.exists(template_dir):
-        print(f"Error: Directory '{template_dir}' not found.")
-        return False
+    # If template_dir is relative, make it relative to repository root or check current dir
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if not os.path.isabs(template_dir):
+        candidate_repo = os.path.join(repo_root, template_dir)
+        if os.path.exists(candidate_repo):
+            template_dir = candidate_repo
+        elif not os.path.exists(template_dir):
+            # If current working directory is already template_dir
+            if os.path.exists(main_file):
+                template_dir = os.getcwd()
+            else:
+                print(f"Error: Directory '{template_dir}' not found.")
+                return False
+        else:
+            template_dir = os.path.abspath(template_dir)
         
     start_time = time.time()
     pdf_path = os.path.join(template_dir, main_file.replace(".tex", ".pdf"))

@@ -121,7 +121,7 @@
     {\large
     An Undergraduate Thesis\\
     Presented to the\\
-    Faculty of the Computer Studies Clusteaskdjahdr\\
+    Faculty of the Computer Studies Cluster\\
     Ateneo de Davao University\par}
     
     \vspace{0.7in}
@@ -222,7 +222,7 @@
 \begin{minipage}[t]{0.48\textwidth}
     \centering
     \rule{2.2in}{0.7pt}\\[6pt]
-    \textbf{NOVIE PELOBELLO}\\[2pt]
+    \textbf{NOVIE JOY PELOBELLO, MS}\\[2pt]
     Panelist
 \end{minipage}
 \hfill
@@ -261,6 +261,8 @@ To our families, friends, and classmates---thank you for the constant support, t
 Above all, to the Almighty God/Allah SWT, the ultimate source of strength, wisdom, and grace. Thank you for making all of this possible and for seeing us through to a successful end.
 
 \cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Table of Contents}
 \tableofcontents
 
 % List of Equations definition
@@ -279,9 +281,21 @@ Above all, to the Almighty God/Allah SWT, the ultimate source of strength, wisdo
 \begingroup
 % Suppress inter-chapter empty vertical space to ensure clean, uniform spacing across all front-matter lists
 \renewcommand*{\addvspace}[1]{}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Listings}
 \lstlistoflistings
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Equations}
 \listofequations
 \endgroup
 
@@ -305,9 +319,6 @@ Above all, to the Almighty God/Allah SWT, the ultimate source of strength, wisdo
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{acm}
 \bibliography{references}
-
-\cleardoublepage
-\input{chapters/ai_disclosure.tex}
 
 \appendix
 \cleardoublepage
