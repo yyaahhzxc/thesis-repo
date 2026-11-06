@@ -236,8 +236,6 @@ def extract_statutory_corpus(base_url, start_year=1900, end_year=2026):
 
         Figure~\ref{fig:macro_domain_distribution} illustrates the distribution of national statutes across the eight consolidated macro domains using a sorted bar chart. The chart highlights the large volume difference between general administrative policy and specific regulatory codes across the 25,432-document corpus. This chart highlights the severe class imbalance inherent to raw statutory archives, demonstrating why unconstrained vector search frequently drifts toward ubiquitous administrative topics. As depicted in the chart, administrative orders make up nearly half of the entire archive, outnumbering focused regulatory categories like taxation by more than 26 to 1. This confirms that candidate retrieval needs topic filters and Reciprocal Rank Fusion so that smaller, highly technical regulatory areas remain accessible during ordinance review.
 
-        \clearpage
-
         To examine the geometric separation of these legal topics, the proponents projected the 64-dimensional SVD document vectors into a two-dimensional latent semantic landscape. Dimensionality reduction maps document similarities onto coordinate axes, allowing direct visual inspection of cluster cohesion. Figure~\ref{fig:semantic_topic_landscape_2d} illustrates this topic landscape across a representative stratified sample ($N = 3,500$), highlighting the core clusters and their spatial distributions. Specialized regulatory domains project outward as distinct, isolated rays along the periphery of the vector space. Enactments establishing academic institutions and telecommunications franchises form cohesive rays with minimal dispersion.
 
         \begin{figure}[htbp]
