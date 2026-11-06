@@ -15,8 +15,11 @@ env/
 corpus/raw/national/*.jsonl
 corpus/raw/local/*.pdf
 corpus/raw/local/**/*.pdf
+corpus/city_ordinances/**/*.pdf
+corpus/city_ordinances/*.pdf
 corpus/cleaned/national/*.jsonl
 corpus/cleaned/local/*.jsonl
+corpus/categorized_national_laws.jsonl
 models/
 data/unified_dual_statutory_provisions*.jsonl
 output/*.jsonl
@@ -27,6 +30,7 @@ output/demo_local_statutory*
 output/embedding_progress.json
 output/gt350_retrieval_cache.json
 transcript_quality_report.csv
+Thesis draft feedback *.pdf
 
 # Presentation slides excluded
 presentation slide/
