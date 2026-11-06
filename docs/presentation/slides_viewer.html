@@ -752,7 +752,7 @@
 #### Spoken Script:
 > "Good morning, members of the thesis panel, our adviser Mr. Adrian Ablazo, and our course professor Ma'am Grace Tacadao.
 > 
-> I am Ralph Paolo Dulce, and together with my co-author Yahyah Odin, we present our undergraduate thesis entitled: **'A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference.'**"
+> I am Ralph Paolo Dulce, and together with my co-author Yahyah Odin, we present our undergraduate thesis: **'A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference.'**"
 
 ---
 
@@ -773,11 +773,11 @@
 * Pre-enactment screening prevents costly legal disputes
 
 #### Spoken Script:
-> "Under Section 5(a) of Republic Act 7160 and the landmark Supreme Court doctrine in Magtajas v. Pryce Properties, local ordinances cannot contradict, modify, or supersede superior national statutes. If an ordinance contradicts a national law, it is ultra vires and legally void from the beginning.
+> "For the Background of our Study, local ordinances cannot contradict, modify, or supersede superior national statutes under Philippine law. When an ordinance conflicts with a national statute, it is ultra vires and legally void from inception.
 > 
-> However, ensuring legal harmony before an ordinance is passed is an overwhelming manual task. Legislative staff in Davao City must verify proposed drafts against a massive search space exceeding 178,000 national and local provisions.
+> However, ensuring legal harmony before an ordinance is enacted is an overwhelming manual challenge. Reviewers must cross-examine proposed drafts against an expansive statutory knowledge base of over 178,000 national and local provisions.
 > 
-> Compounding this challenge, over seven decades of municipal enactments exist only as degraded physical paper scans. Inadvertent oversights lead to expensive judicial nullification, as seen in landmark cases like Mosqueda v. PBGEA, where Davao City's aerial spraying ban was overturned after a decade of litigation. This computational dilemma establishes the urgent need for an automated pre-enactment conflict detection system."
+> In Davao City, over seven decades of municipal archives exist only as physical paper scans. Inadvertent oversights lead to costly legal disputes, as seen in landmark cases like Mosqueda v. PBGEA, where Davao City's aerial spraying ban was overturned after a decade of litigation. This dilemma creates an urgent need for automated pre-enactment conflict screening."
 
 ---
 
@@ -799,17 +799,17 @@
 
 #### Spoken Script:
 > **(Ralph Paolo Dulce):**
-> "To address these legal and computational challenges, our study establishes five specific research objectives:
+> "For the Objectives of our Study, we established five specific goals:
 > 
-> First, **Objective 1** investigates the linguistic characteristics and structural constraints of Davao City's legislative archive that lead to optical and semantic retrieval failures on historical scans.
+> First, **Objective 1** identifies the specific linguistic characteristics and structural constraints of Davao City's legislative archive that cause retrieval failures on historical scans.
 > 
-> Second, **Objective 2** designs a Coarse-to-Fine computational pipeline that decouples high-throughput candidate retrieval from deep logical inference to run efficiently on commodity local hardware.
+> Second, **Objective 2** designs a Coarse-to-Fine pipeline that decouples candidate retrieval from logical inference to optimize local hardware deployment.
 > 
-> Third, **Objective 3** implements a hybrid Information Retrieval and Natural Language Inference system specifically calibrated for the Philippine legal hierarchy.
+> Third, **Objective 3** implements a hybrid Information Retrieval and Natural Language Inference system calibrated for the Philippine legal hierarchy.
 > 
-> Fourth, **Objective 4** evaluates system reliability against a verified ground truth of known statutory conflicts to measure contradiction detection accuracy.
+> Fourth, **Objective 4** evaluates system reliability by comparing automated detections against a verified set of known legal conflicts.
 > 
-> Finally, **Objective 5** develops an accessible, user-friendly decision-support web interface for the Davao City Sangguniang Panlungsod to provide real-time conflict alerts.
+> Finally, **Objective 5** develops an accessible, user-friendly web interface for the Davao City Sangguniang Panlungsod to provide real-time conflict alerts.
 > 
 > **(Ralph to Yah):**
 > I now yield the floor to my co-author Yahyah Odin to present our methodology."
@@ -835,13 +835,11 @@
   * System Output & Explainable Reporting
 
 #### Spoken Script:
-> "Thank you, Ralph.
+> "For our Conceptual Framework, our system is structured into two distinct operational phases as shown on screen.
 > 
-> Figure 3.1 illustrates our conceptual framework, structured into two distinct operational phases.
+> In **Phase I: Pre-Planning**, we construct the offline foundation. We ingest the complete dual statutory corpus, generate sparse BM25 indices alongside dense semantic vector stores, construct our ground-truth benchmark, and evaluate candidate language models to select the most accurate and resource-efficient engines.
 > 
-> In **Phase I: Pre-Planning**, we establish the offline statutory foundation. We ingest the complete dual statutory corpus, generate sparse BM25 indices alongside dense semantic vector stores, construct our ground-truth benchmark, and benchmark candidate language models to select the most accurate and resource-efficient engines.
-> 
-> In **Phase II: Live System**, we deploy an online retrieve-then-entail pipeline. When legislative staff upload a draft ordinance, the system parses operative sections, executes Stage 1 hybrid retrieval to narrow 178,000 provisions down to top-50 candidates, applies Stage 2 cross-encoder inference with calibrated decision thresholds, and delivers an explainable diagnostic audit report."
+> In **Phase II: Live System**, we execute an online retrieve-then-entail workflow. When legislative staff upload a draft ordinance, the system parses operative sections, executes Stage 1 hybrid retrieval to narrow 178,000 provisions down to top-50 candidates, applies Stage 2 cross-encoder inference with calibrated decision thresholds, and generates an explainable diagnostic audit report."
 
 ---
 
@@ -863,11 +861,11 @@
 * Local full-text EDA deferred to Chapter 4
 
 #### Spoken Script:
-> "Section 3.3 details the construction of our dual statutory search space.
+> "For our Statutory Corpus and Acquisition, we established a unified dual-jurisdiction knowledge base.
 > 
-> For national law, we scraped and parsed 25,432 positive national enactments from Lawphil spanning 1900 to 2026, partitioned across eight Macro Legal Domains. For local law, we acquired 1,925 Davao City ordinances from the Sangguniang Panlungsod archives and LISSP digital portal covering 1950 to 2025.
+> For national law, we scraped 25,432 positive national enactments from Lawphil spanning 1900 to 2026, partitioned across eight Macro Legal Domains. For local law, we acquired 1,925 Davao City ordinances from the Sangguniang Panlungsod archives and LISSP digital portal covering 1950 to 2025.
 > 
-> In total, over 183,000 provisions were extracted and unified. Importantly, over 94% of individual statutory provisions naturally fit within the standard 512-subword token transformer limit. This confirmed that statutory sections serve as optimal, self-contained retrieval units that can be processed without truncation or context fragmentation."
+> In total, over 183,000 provisions were unified. Over 94% of individual statutory provisions naturally fit within the standard 512-subword token transformer limit. This confirmed that statutory sections serve as optimal, self-contained retrieval units that can be processed without truncation or context loss."
 
 ---
 
@@ -889,11 +887,11 @@
 * 15 SP legal researchers as annotators
 
 #### Spoken Script:
-> "Section 3.4 details the construction of our 350-pair ground-truth benchmark.
+> "For our Ground Truth Benchmark Construction, we curated 350 statutory conflict evaluation pairs.
 > 
-> To prevent positive classification bias, the dataset is evenly balanced across Entailment, Neutral, and Contradiction classes. We incorporated hard negative adversarial mining—generating plausible near-misses that share domain terminology but lack true legal preemption.
+> To prevent positive classification bias, the dataset is evenly balanced across Entailment, Neutral, and Contradiction classes. We incorporated adversarial near-miss mining—generating plausible negative examples that share legal terminology but lack genuine statutory preemption.
 > 
-> Pairs are structured directionally: the controlling national statute serves as the premise, and the local ordinance section serves as the hypothesis. The benchmark is partitioned into a 70-15-15 train, validation, and held-out test split, and prepared for triple-redundant validation across fifteen Sangguniang Panlungsod legal researchers."
+> Each pair is framed directionally, treating the governing statute as the premise and the local draft section as the hypothesis. The dataset follows a 70-15-15 train, validation, and held-out test split, structured for validation across fifteen Sangguniang Panlungsod legal researchers."
 
 ---
 
@@ -915,9 +913,9 @@
 * Prioritizes high recall to prevent downstream omissions
 
 #### Spoken Script:
-> "Section 3.6.1 outlines our evaluation framework for Stage 1 candidate retrieval.
+> "For Stage 1 Evaluation and Optimization, we evaluated eight candidate bi-encoder models alongside sparse lexical BM25.
 > 
-> We evaluated eight candidate bi-encoder models alongside sparse lexical BM25. In legal conflict screening, Stage 1 serves as a high-recall safety filter: if a controlling statute is omitted during retrieval, Stage 2 can never detect the preemption.
+> In legal conflict screening, Stage 1 serves as a high-recall safety filter: if a controlling statute is omitted during retrieval, Stage 2 can never detect the preemption.
 > 
 > Therefore, we evaluated Recall at ranks 5, 10, 20, and 50, alongside Mean Reciprocal Rank to measure candidate proximity, and CPU query latency to ensure rapid execution on commodity office desktops."
 
@@ -942,11 +940,11 @@
 * Calibrates decision threshold under asymmetric conflict penalty
 
 #### Spoken Script:
-> "Section 3.6.2 formulates our Stage 2 cross-encoder optimization framework.
+> "For Stage 2 Evaluation and Optimization, we designed a three-stage screening funnel across twenty-eight candidate cross-encoders.
 > 
-> We designed a three-stage screening funnel across twenty-eight cross-encoder architectures. Step 1 executes a rapid zero-shot sweep to detect affirmative classification bias. Step 2 applies supervised task adaptation using AdamW weight decay, dropout, and patience-based early stopping to prevent few-shot memorization. Step 3 benchmarks the top validation finalists.
+> Step 1 runs a rapid zero-shot sweep to detect affirmative classification bias. Step 2 applies supervised fine-tuning using AdamW weight decay, dropout, and patience-based early stopping to prevent few-shot memorization. Step 3 benchmarks the top validation finalists.
 > 
-> Furthermore, because failing to flag an unlawful ordinance carries catastrophic judicial consequences, we optimize using a cost-sensitive F2-score and calibrate the decision threshold to penalize false negatives 5 to 1 over false alarms."
+> Furthermore, because failing to catch an unlawful ordinance carries severe legal consequences, we optimize using a cost-sensitive F2-score and calibrate the decision threshold to penalize false negatives 5 to 1 over false alarms."
 
 ---
 
@@ -969,11 +967,11 @@
 * Guarantees full audit completion within memory caps
 
 #### Spoken Script:
-> "Section 3.8.3 establishes our non-parametric hypothesis testing framework.
+> "For our Statistical Testing, we rejected parametric tests because classification errors on legal texts are discrete and non-normal.
 > 
-> Because classification errors on legal texts are discrete and non-normal, standard parametric tests like Student's t-test are invalid. We employ the Friedman two-way ANOVA by ranks across all eight Macro Legal Domains to verify that model performance is invariant and free from topic bias.
+> We employ the Friedman two-way ANOVA by ranks across all eight Macro Legal Domains to verify that model performance is invariant and free from topic bias.
 > 
-> For pairwise model comparisons, we execute McNemar's test with Edwards' continuity correction on discordant prediction pairs, applying Bonferroni adjustments to strictly control family-wise error rates."
+> For pairwise model comparisons, we execute McNemar's test with Edwards' continuity correction on discordant prediction pairs, applying Bonferroni adjustments to control family-wise error rates."
 
 ---
 
@@ -996,7 +994,7 @@
 * Tier 3 validates against eight Supreme Court-related cases
 
 #### Spoken Script:
-> "Finally, Section 3.10 introduces our Three-Tier System-Level Evaluation Framework to test the coarse-to-fine pipeline operating as an integrated whole.
+> "For System-Level Evaluation, we established a Three-Tier testing framework to evaluate the coarse-to-fine pipeline operating as an integrated whole.
 > 
 > In **Tier 1**, we measure cascaded pipeline performance using the FEVER joint hit indicator adapted from Thorne et al., requiring both successful statute retrieval and correct contradiction classification.
 > 
@@ -1022,7 +1020,15 @@
 * **Section 4.4:** System-Wide Three-Tier Evaluation & Edge Latency Profiling
 
 #### Spoken Script:
-> "Moving into Chapter 4, we present our empirical results across four core experimental pillars: first, archival document digitization and OCR extraction fidelity; second, Stage 1 full-corpus candidate retrieval; third, Stage 2 neural cross-encoder conflict detection; and fourth, system-wide stress testing across full multi-section draft ordinances."
+> "Moving into our Results and Discussions, we present our empirical evaluation across four key experimental pillars:
+> 
+> First, archival document digitization and OCR extraction fidelity;
+> 
+> Second, Stage 1 full-corpus candidate retrieval;
+> 
+> Third, Stage 2 neural cross-encoder conflict detection; and
+> 
+> Fourth, system-wide stress testing across full multi-section draft ordinances."
 
 ---
 
@@ -1048,11 +1054,13 @@
 | **Operational Recurring Cost**| Paywall | Free Open-Source | Free Open-Source | **Free Open-Source** |
 
 #### Spoken Script:
-> "Table 4.2 compares four document extraction architectures across eight performance and operational metrics. The columns contrast Google's cloud Gemini Flash 3.8 and Surya v0.6+ against traditional Tesseract OCR and our selected local 4-bit Qwen2.5-VL-3B model.
+> "On our Ordinance OCR and VLM Benchmark, Table 4.2 evaluates four document extraction architectures across key performance and operational metrics.
+> 
+> The columns contrast Google's cloud-based Gemini Flash 3.8 and Surya v0.6+ against traditional Tesseract OCR and our selected local 4-bit Qwen2.5-VL-3B model.
 > 
 > As shown in the Character Error Rate and Word Error Rate rows, traditional Tesseract struggles with older typewriter scans, suffering a 22.3% word error rate and dropping table structure fidelity down to 41.2%.
 > 
-> While cloud-based Gemini achieves the lowest raw error rates, transmitting un-enacted legislative drafts across external APIs raises serious government data privacy concerns. In contrast, our locally hosted 4-bit Qwen2.5-VL model operates completely offline on local hardware, achieving 95.8% legal citation accuracy and 91.8% table fidelity with zero recurring subscription costs."
+> While cloud-based Gemini achieves the lowest error rates, transmitting un-enacted legislative drafts across external APIs raises serious government data privacy concerns. In contrast, our locally hosted 4-bit Qwen2.5-VL model operates completely offline on local hardware, achieving 95.8% legal citation accuracy and 91.8% table fidelity with zero recurring subscription costs."
 
 ---
 
@@ -1079,7 +1087,9 @@
 | **Preemption Review Scope** | Superior National Norms | Intra-City Consistency | **Vertical + Horizontal Scope** |
 
 #### Spoken Script:
-> "Table 4.6 outlines the structural dimensions of our unified dual statutory search space, comparing national legislation in the second column against Davao City local ordinances in the third, and their combined totals in the fourth.
+> "Examining the parameters of our Dual Statutory Search Space, Table 4.6 outlines the structural dimensions of our unified knowledge base.
+> 
+> The columns compare national legislation against Davao City local ordinances, and their combined totals in the fourth column.
 > 
 > Combining 25,432 national statutes with 1,925 city ordinances yields a searchable knowledge base of 178,494 provisions. This dual search space enables two essential checks: vertical statutory preemption under the Magtajas doctrine, and horizontal intra-city coherence to prevent duplicate or conflicting local enactments.
 > 
@@ -1104,7 +1114,9 @@
 | **3. BM25 + Hard Domain Filter** | 297.5 ms | 4.86% | 7.71% | 10.29% | 13.43% | 0.0467 |
 
 #### Spoken Script:
-> "Table 4.7 evaluates our baseline sparse retrieval strategies across the complete 25,432 national statute database using all 350 ground-truth conflict queries. The columns display retrieval latency alongside Recall at ranks 5, 10, 20, and 50.
+> "For Stage 1 Candidate Retrieval, Table 4.7 evaluates our baseline sparse retrieval strategies across the complete 25,432 national statute database using all 350 ground-truth conflict queries.
+> 
+> The columns display retrieval latency alongside Recall at ranks 5, 10, 20, and 50.
 > 
 > In Row 1, unconstrained BM25 keyword search achieves only 43.14% Recall at rank 50. This reveals the core dilemma of legislative retrieval: local draft ordinances frequently use distinct local terms or paraphrased concepts that share zero exact keywords with national statutes.
 > 
@@ -1134,9 +1146,9 @@
 | **Multilingual** | bge-m3 | 568.0M | 24.50 ms | 88.90% | 98.30% | 100.00% | 100.00% | 0.7621 | 93.30% |
 
 #### Spoken Script:
-> "Table 4.8 benchmarks eight candidate dense bi-encoder models across latency, parameter footprint, and provision recall on our 350 curated evaluation pairs.
+> "For our Dense Bi-Encoder Model Comparison, Table 4.8 benchmarks eight candidate architectures on standalone semantic provision retrieval across our 350 curated evaluation pairs.
 > 
-> The final column tests each model's resilience on Tier 3 paraphrased queries—cases where local drafts contradict national laws without repeating any of their exact terminology.
+> The columns compare parameter footprint, CPU latency, recall progression, and resilience on Tier 3 paraphrased queries—cases where local drafts contradict national laws without repeating any of their exact terminology.
 > 
 > While large models like bge-m3 and ModernBERT achieve slightly higher Mean Reciprocal Rank, they take up to 24.5 milliseconds per query on standard desktop CPUs. In contrast, our selected model, all-MiniLM-L6-v2 in Row 1, achieves a perfect 100% Recall at rank 20 and 91.3% on Tier 3 paraphrases, while running in just 1.33 milliseconds on CPU—over 18 times faster than large foundation models."
 
@@ -1169,7 +1181,9 @@
 | **all-MiniLM-L6-v2 (Ultra-Compact Edge)** | 22M | 0.00003 | 8 | 0.5784 | 80.77% | 0.8108 |
 
 #### Spoken Script:
-> "Table 4.11 displays our supervised fine-tuning results across thirteen candidate cross-encoder architectures, detailing parameter counts, validation loss, validation accuracy, and Conflict F1-scores on our holdout validation set.
+> "For Stage 2 Cross-Encoder Conflict Detection, Table 4.11 displays our supervised fine-tuning results and convergence across thirteen candidate cross-encoder architectures.
+> 
+> The columns detail parameter counts, validation loss, validation accuracy, and Conflict F1-scores on our holdout validation set.
 > 
 > The top row shows that an unadapted zero-shot baseline achieves an F1-score of only 0.4545, heavily defaulting to affirmative entailment. Fine-tuning standard BERT lifts the F1-score to 0.8519.
 > 
@@ -1198,11 +1212,13 @@
 | **DeBERTa-v3-base-NLI (Proposed Model)\***| **86M** | **86.54%** | **88.30% +/- 3.44%** | **0.8800 +/- 0.0371** | **0.9008 +/- 0.0421** |
 
 #### Spoken Script:
-> "Table 4.13 presents our final generalization metrics across candidate architectures, reporting out-of-sample accuracy on the unseen test set alongside 5-fold cross-validation means and standard deviations.
+> "For our Held-Out Test Evaluation and 5-Fold Stratified Cross-Validation, Table 4.13 presents our generalization metrics across candidate architectures.
 > 
-> On the unseen held-out split of 53 test pairs, DeBERTa-v3-base-NLI achieves 86.54% test accuracy, outperforming general BERT and legal-domain BERT models at 82.69%.
+> The columns report out-of-sample accuracy on the unseen test set of 53 pairs alongside 5-fold cross-validation means and standard deviations across all 350 benchmark instances.
 > 
-> Furthermore, across all five stratified cross-validation folds, our proposed model maintains an 88.30% mean accuracy and a 0.9008 Conflict F1-score with a tight standard deviation of plus or minus 0.0421. This confirms that our fine-tuning protocol generalizes stably across varied legal provisions without overfitting to specific legislative phrasing."
+> On the unseen held-out split, DeBERTa-v3-base-NLI achieves 86.54% test accuracy, outperforming general BERT and legal-domain BERT models at 82.69%.
+> 
+> Across all five stratified cross-validation folds, our proposed model maintains an 88.30% mean accuracy and a 0.9008 Conflict F1-score with a tight standard deviation of plus or minus 0.0421. This confirms that our fine-tuning protocol generalizes stably across varied legal provisions without overfitting to specific legislative phrasing."
 
 ---
 
@@ -1223,7 +1239,7 @@
 | **DeBERTa-v3 vs. legal-bert-base** | 7 pairs | 2 pairs | $\chi^2 = 1.7778$ | p = 0.18242 (Not Statistically Sig.) |
 
 #### Spoken Script:
-> "To prove that our performance gains are statistically genuine rather than random chance, Table 4.15 reports pairwise McNemar tests on discordant classifications—instances where one model predicted correctly while the competing model failed.
+> "To verify statistical significance with McNemar Pairwise Discordant Tests, Table 4.15 evaluates instances where one model predicted correctly while the competing model failed.
 > 
 > In Row 1, comparing DeBERTa-v3 against the zero-shot baseline yields 31 wins versus 4 losses, which is highly statistically significant with a p-value of 0.00001.
 > 
@@ -1252,7 +1268,9 @@
 | **6. w/o Supervised Fine-Tuning (Zero-Shot Baseline)** | 55.15% | 0.5435 | 0.4833 | **-39.70%** |
 
 #### Spoken Script:
-> "Table 4.16 evaluates our complete end-to-end cascaded pipeline under the FEVER joint hit metric, measuring how individual feature components contribute to overall system accuracy and Conflict F1.
+> "For our System-Wide Tier 1 Cascaded Feature Ablation Benchmark, Table 4.16 evaluates our complete end-to-end pipeline under the FEVER joint hit metric.
+> 
+> The columns report system accuracy, Macro F1, Conflict F1, and relative degradation across individual feature ablations.
 > 
 > The full pipeline in Row 1 establishes our reference benchmark: 86.86% system accuracy and a 0.8803 Conflict F1.
 > 
@@ -1280,7 +1298,7 @@
 | **DRAFT-06** | 06: Zoning Reclassification | 1,050 / 7 | 1 / 2 (TP=1) | RA 7160 Sec. 20(a); RA 6657 Sec. 65 | 99.8% | **FLAGGED** | 83.33% |
 
 #### Spoken Script:
-> "Table 4.20 tests our complete pipeline on six full-length, multi-section draft ordinances totaling 52 sections, representing the six local legislative typologies discovered in our topic modeling analysis.
+> "For our System-Wide Tier 2 Full-Document Stress Test, Table 4.20 evaluates our complete pipeline on six full-length, multi-section draft ordinances totaling 52 sections, representing the six local legislative typologies discovered in our topic modeling analysis.
 > 
 > Each authentic draft was compiled as an authentic Philippine Folio PDF and audited end-to-end on our entry-level Core i3 edge testbed.
 > 
@@ -1308,7 +1326,9 @@
 | **SC-PHIL-09**| *Magtajas v. Pryce* | CDO Ord. 3353 (Local Casino Ban) | PD 1869; RA 7160 Sec. 5(a) | Contradiction (88%) | **Validated TP:** Foundational statutory preemption pillar. |
 
 #### Spoken Script:
-> "In Section 4.4.7, we evaluated our architecture against authentic historical disputes adjudicated by the Supreme Court of the Philippines. When benchmarking legal AI systems, Supreme Court rulings represent the authoritative gold standard of positive law.
+> "For our System-Wide Tier 3 Supreme Court Preemption Benchmark, Table 4.21 evaluates our architecture against authentic historical disputes adjudicated by the Supreme Court of the Philippines.
+> 
+> When benchmarking legal AI systems, Supreme Court rulings represent the authoritative gold standard of positive law.
 > 
 > As detailed in Table 4.21, our pipeline achieved 100% classification alignment across all eleven landmark historical controversies.
 > 
@@ -1335,7 +1355,7 @@
 
 #### Spoken Script:
 > **(Ralph Paolo Dulce):**
-> "We now present a live walkthrough of our production prototype web application, engineered specifically for municipal legislative staff conducting First Reading reviews.
+> "For our Live Technical System Demonstration, we present a walkthrough of our production prototype web application, engineered specifically for municipal legislative staff conducting First Reading reviews.
 > 
 > Operating entirely offline within the municipal intranet, the interface allows legal officers to drag-and-drop authentic digitized municipal scans. Our adaptive parser isolates operative clauses while bypassing boilerplate administrative sections.
 > 
@@ -1361,7 +1381,7 @@
 * **Objective 5 (Prototype):** Deployed offline XAI web interface delivering real-time preemption alerts.
 
 #### Spoken Script:
-> "In Chapter 5, we synthesize our findings against our five specific research objectives:
+> "For our Conclusions and Synthesis, we evaluate our empirical findings directly against our five specific research objectives:
 > 
 > First, for **Objective 1**, we compiled the largest dual statutory corpus in Philippine legal informatics, confirming that 94.75% of provisions naturally fit transformer context windows.
 > 
@@ -1392,7 +1412,7 @@
 * Longitudinal statutory lineage modeling under lex posterior doctrines
 
 #### Spoken Script:
-> "Section 5.2 outlines our technical recommendations and continuing engineering roadmap:
+> "For the Recommendations of our Study, we establish our academic limitations and future engineering roadmap:
 > 
 > Methodologically, our current corpus represents a verified static snapshot of positive law. For future work, we recommend:
 > 
@@ -1424,7 +1444,7 @@
 
 #### Spoken Script:
 > **(Ralph Paolo Dulce):**
-> "Following formal referral from the Sangguniang Panlungsod Acting Department Head, our administrative packet is actively routing through the Human Resource Management Office and the City Administrator's Office.
+> "For our Administrative Adoption and Next Steps, our implementation packet is actively routing through the Human Resource Management Office and the City Administrator's Office following formal referral from the Sangguniang Panlungsod.
 > 
 > In recognition of their advisory assistance, participating legal staff will receive an official Certificate of Contribution structured specifically for inclusion in their Civil Service 201 personnel records.
 > 
