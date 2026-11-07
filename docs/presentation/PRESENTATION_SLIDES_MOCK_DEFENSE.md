@@ -35,7 +35,7 @@
 | **21** | System-Wide Tier 3 Supreme Court Benchmark | Ralph | **Table 4.21:** 11 Landmark Historical Controversies | 1.0 min |
 | **22** | Live Technical System Demonstration | Ralph & Yah | Prototype Dashboard UI Split-View (`figs/prototype_results_summary.png`) | 1.5 mins |
 | **23** | Chapter 5: Conclusions & Synthesis | Ralph | Synthesis Matrix of 5 Specific Research Objectives | 0.75 min |
-| **24** | Recommendations & Technical Roadmap | Ralph | Four-Pillar Academic & Technical Roadmap | 0.75 min |
+| **24** | Recommendations of the Study | Ralph | Seven-Point Technical Extensions Roadmap | 0.75 min |
 | **25** | Administrative Adoption & Next Steps | Ralph & Yah | HRMO Routing, 15 Legal Researchers & Civil Service 201 (`figs/annotator_certificate_of_contribution.png`) | 0.75 min |
 
 ---
@@ -708,28 +708,34 @@
 * **Bottom-Left Paper Ref:** §5.2
 * **Bottom-Right Slide:** Slide 24
 * **Title:** Recommendations of the Study
-* **Subtitle:** Academic Limitations & Future Engineering Roadmap
-* **Visual:** Four-pillar forward-looking technical roadmap card
+* **Subtitle:** Technical Extensions & Operational Roadmap
+* **Visual:** Seven-point forward-looking technical roadmap card
 
 #### On-Screen Slide Content:
-* Construct dynamic knowledge graphs to track longitudinal statutory repeals
-* INT8 quantization for real-time conflict checking inside word processors
-* Cross-lingual domain adaptation for Cebuano-Visayan committee deliberations
-* Token-level integrated gradients for visual legislative explanations
-* Longitudinal statutory lineage modeling under lex posterior doctrines
+* Construct dynamic statutory knowledge graphs to track repeals under *lex posterior*
+* Index Supreme Court jurisprudence to expand from ex-ante to ex-post review
+* Automate continuous corpus ingestion to detect dormant statutory conflicts
+* Support Cebuano-Visayan cross-lingual adaptation for committee consultations
+* Implement fine-grained token integrated gradients for targeted clause attribution
+* Formulate native cost-sensitive loss functions directly during neural fine-tuning
+* Deploy INT8 quantized models inside word processors for offline real-time review
 
 #### Spoken Script:
-> "For the Recommendations of our Study, we establish our academic limitations and future engineering roadmap:
+> "For the Recommendations of our Study, we propose seven concrete technical extensions to advance this research:
 > 
-> Methodologically, our current corpus represents a verified static snapshot of positive law. For future work, we recommend:
+> First, constructing dynamic statutory knowledge graphs to automatically track active versus repealed provisions over time under the lex posterior doctrine;
 > 
-> First, constructing a multi-hop statutory knowledge graph to automatically track active versus repealed provisions over time under the lex posterior doctrine;
+> Second, indexing Supreme Court jurisprudence to expand system capabilities from ex-ante draft screening to ex-post judicial compliance review;
 > 
-> Second, implementing INT8 quantization to embed real-time conflict checking directly inside municipal word processors;
+> Third, establishing continuous corpus ingestion pipelines to run large-scale empirical consistency audits across positive law;
 > 
-> Third, performing cross-lingual domain adaptation to support local Cebuano-Visayan committee deliberations; and
+> Fourth, pursuing cross-lingual domain adaptation to support bilingual Cebuano-Visayan committee floor deliberations and public consultations;
 > 
-> Fourth, integrating token-level attribution gradients to provide deeper visual explanations for legislative drafters."
+> Fifth, deepening our explainable AI architecture with token-level integrated gradients to pinpoint contradictory clauses inside complex regulatory blocks;
+> 
+> Sixth, formulating native cost-sensitive loss functions during training to embed asymmetric preemption penalties directly into neural backpropagation; and
+> 
+> Seventh, implementing INT8 model quantization to embed real-time conflict checking directly inside local municipal word processors without requiring dedicated GPUs."
 
 ---
 
