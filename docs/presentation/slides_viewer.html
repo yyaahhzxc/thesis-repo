@@ -843,40 +843,43 @@
 
 ---
 
-### Slide 5: Descriptive Analysis: Statutory Search Spaces
+### Slide 5: Descriptive Analysis
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 3. Methodology
-* **Bottom-Left Paper Ref:** §3.2, §3.3, §3.4
+* **Bottom-Left Paper Ref:** §3.3, §3.4
 * **Bottom-Right Slide:** Slide 5
-* **Title:** Descriptive Analysis: Statutory Search Spaces
-* **Subtitle:** Dual Legislative Knowledge Base & Search Space Scope
+* **Title:** Descriptive Analysis
+* **Subtitle:** Dual Legislative Knowledge Base & Corpus Scale
 * **Visual:** Corpus acquisition and compliance card (`figs/slide14_corpus_acquisition_comparison.png`)
 
 #### On-Screen Slide Content:
-* Compiles 25,432 national statutory enactments (1901–2025)
-* Decomposes acts into 164,620 section-level provisions
-* Partitions positive law into eight substantive legal domains
-* Ingests 1,664 authentic Davao City enactments (SP & LISSP)
-* Digitizes 75 years of municipal governance archives
-* Detailed local distributions deferred to Chapter 4
-* Unified search space ($N = 27,357$) established in Table 4.6
+* 25,432 national statutes scraped from Lawphil
+* 8 macro topics partitioned on national law
+* 1,925 local ordinances acquired from SP
+* 178,494 searchable provisions compiled into unified dataset
+* 94.75% provisions fit 512-token transformer limit
+* Local and combined EDA deferred to Chapter 4
 
 #### Spoken Script:
-> "Moving from our conceptual framework to our descriptive analysis, we evaluate the statutory search spaces forming the foundation of our conflict detection pipeline.
+> "For our Descriptive Analysis, we established a unified dual-jurisdiction search space combining national and local law.
 > 
-> For superior positive law, we acquired the Lawphil national archive, compiling 25,432 national statutory enactments. Segmenting these acts at the natural section level yields 164,620 section-level national provisions. Using topic modeling, we partition positive law into eight domains—such as public finance, taxation, and general welfare—to ensure stratified coverage across legislative areas.
+> For national legislation, we scraped 25,432 positive statutes from Lawphil, partitioned across eight macro legal domains. For local legislation, we acquired 1,925 Davao City ordinances directly from the Sangguniang Panlungsod archives.
 > 
-> In parallel, on the local level, we ingest 1,664 authentic Davao City enactments sourced from the Sanggunian portal and LISSP archives spanning 75 years of municipal governance. Because our local digitizations underwent multi-era OCR cleaning and functional clustering under Objective 1, the detailed local distributions are deferred to Chapter 4, where the final unified search space in Table 4.6 establishes our search corpus."
+> In total, we compiled 178,494 searchable provisions into a unified dataset.
+> 
+> Importantly, nearly 95% of these provisions naturally fit within standard 512-token transformer limits. This confirms that individual statutory sections serve as optimal, self-contained retrieval units without truncation or context loss.
+> 
+> We will discuss the full local and combined exploratory data analysis in Chapter 4."
 
 ---
 
-### Slide 6: Model Design: Two-Stage Coarse-to-Fine Pipeline
+### Slide 6: Model Design
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 3. Methodology
-* **Bottom-Left Paper Ref:** §3.1, §3.6, §3.7
+* **Bottom-Left Paper Ref:** §3.3, §3.4
 * **Bottom-Right Slide:** Slide 6
-* **Title:** Model Design: Coarse-to-Fine Architecture
-* **Subtitle:** Stage 1 Hybrid Retrieval & Stage 2 Cross-Encoder Inference
+* **Title:** Model Design
+* **Subtitle:** Two-Stage Coarse-to-Fine Neural Pipeline
 * **Visual:** Two-Stage Architecture Card (`figs/slide16_two_stage_architecture_card.png`)
 
 #### On-Screen Slide Content:
@@ -884,83 +887,86 @@
   * Fuses sparse lexical search with dense semantic bi-encoders
   * Merges rank lists via Reciprocal Rank Fusion
   * Filters full corpus down to top-50 candidates in milliseconds
-  * Enforces statutory hierarchy safeguard under *Magtajas* doctrine
+  * Enforces statutory hierarchy safeguard under Magtajas doctrine
 * **Stage 2: Cross-Encoder Natural Language Inference:**
   * Executes deep bidirectional token-to-token cross-attention
   * Fine-tunes cross-encoders running offline CPU inference
   * Calibrates decision threshold penalizing false negatives 5:1
-  * Symbolic integer rule enforces P5,000 fine ceiling (RA 7160 §458)
 
 #### Spoken Script:
-> "Next, we present our Model Design, which formalizes the two-stage Coarse-to-Fine retrieve-then-entail architecture shown on screen.
+> "For our Model Design, we implemented a two-stage coarse-to-fine architecture to overcome the computational bottleneck of deep neural inference.
 > 
-> To circumvent the quadratic attention overhead that prevents full-corpus transformer evaluation, the system decouples candidate retrieval from cross-attention inference. In Stage 1, the pipeline combines sparse lexical search with dense semantic embeddings: sparse retrieval captures exact statutory citations and penalty numbers, while dense retrieval captures latent semantic intent. The system merges rankings via Reciprocal Rank Fusion, rapidly filtering 178,000 provisions down to top-50 candidate laws on a commodity 4-thread CPU.
+> In **Stage 1**, we execute **Dual-Stream Hybrid Retrieval**. It fuses sparse lexical search via BM25 with dense semantic bi-encoders, merging their ranked lists using Reciprocal Rank Fusion. This prunes over 178,000 provisions down to just the top-50 candidates in milliseconds, while enforcing our statutory hierarchy safeguard under the Magtajas doctrine so local drafts are strictly tested against controlling superior laws.
 > 
-> In Stage 2, the pipeline executes deep bidirectional cross-attention over each candidate pair. It employs a cross-encoder with a calibrated decision threshold, penalizing false negative conflicts 5-to-1 to protect the city against unlawful enactments under the *Magtajas* doctrine. Finally, Stage 2 integrates a symbolic penalty integer ceiling checker to guarantee precision on local fines exceeding the statutory 5,000-peso cap under Section 458 of Republic Act 7160."
+> In **Stage 2**, we apply **Cross-Encoder Natural Language Inference**. Unlike bi-encoders, cross-encoders perform deep bidirectional token-to-token cross-attention between the statute premise and draft ordinance hypothesis. We fine-tuned these cross-encoders to execute offline on commodity CPU hardware, and calibrated our decision threshold to penalize false negatives 5 to 1 over false alarms, ensuring critical preemption risks are never overlooked."
 
 ---
 
-### Slide 7: Experimental Setup: Four-Pillar Validation Design
+### Slide 7: Experimental Setup
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 3. Methodology
-* **Bottom-Left Paper Ref:** §3.5, §3.6, §3.7, §3.10
+* **Bottom-Left Paper Ref:** §3.3, §3.4
 * **Bottom-Right Slide:** Slide 7
-* **Title:** Experimental Setup: Four-Pillar Validation Design
-* **Subtitle:** Archival OCR, Stage 1 Retrieval, Stage 2 Inference, & System-Wide Tiers
+* **Title:** Experimental Setup
+* **Subtitle:** Four-Pillar Empirical Validation Architecture
 * **Visual:** Four-Pillar Validation Grid Card
 
 #### On-Screen Slide Content:
-* **Pillar 1: Archival Document Ingestion:**
-  * Compares OCR engines and vision-language models on historical scans
-* **Pillar 2: Stage 1 Candidate Retrieval:**
-  * Evaluates lexical search vs. dense bi-encoders across ground-truth pairs
-* **Pillar 3: Stage 2 Cross-Encoder Screening Funnel:**
-  * Rapid zero-shot sweep → Supervised task adaptation → 5-fold cross-validation
-* **Pillar 4: System-Wide Auditing Tiers:**
-  * 3-Tier Suite: Tier 1 cascaded FEVER → Tier 2 full draft stress test → Tier 3 Supreme Court cases
+* **Archival Document Ingestion**
+  * Compares OCR engines and VLM on ordinance PDFs
+* **Stage 1 Candidate Retrieval**
+  * Evaluates lexical search and dense bi-encoders across ground truth pairs
+* **Stage 2 Cross-Encoder Screening Funnel**
+  * Rapid zero-shot sweep -> Supervised task adaptation -> 5-fold cross-validation
+* **System-Wide Auditing Tiers**
+  * Cascaded FEVER -> Full draft stress test -> Supreme Court cases
 
 #### Spoken Script:
-> "To ensure rigorous evaluation, our Experimental Setup is structured across four distinct experimental pillars.
+> "For our Experimental Setup, our validation framework is structured across four empirical pillars.
 > 
-> In Pillar 1, our OCR benchmark evaluates candidate extraction engines, comparing traditional OCR and layout-aware models against an offline vision-language model on degraded historical scans. In Pillar 2, Stage 1 retrieves candidate provisions across the entire dual statutory search space, evaluating raw lexical search against candidate dense bi-encoders.
+> First, for **Archival Document Ingestion**, we benchmark traditional OCR engines against a modern vision-language model to determine which engine best extracts text from aged, degraded ordinance scans.
 > 
-> In Pillar 3, Stage 2 follows a three-step screening funnel: rapid zero-shot screening across candidate architectures to expose baseline bias; supervised fine-tuning using AdamW weight decay, dropout, and early stopping; and out-of-sample benchmarking on held-out test splits.
+> Second, for **Stage 1 Candidate Retrieval**, we benchmark lexical search alongside multiple dense bi-encoders across verified ground truth pairs to measure candidate capture.
 > 
-> Finally, in Pillar 4, our system-wide evaluation operates across three tiers: System Tier 1 measures cascaded FEVER joint accuracy; System Tier 2 audits full documents across six typology-stratified draft ordinances with attached legal instruments; and System Tier 3 validates against landmark Supreme Court preemption controversies."
+> Third, for our **Stage 2 Screening Funnel**, we screen candidate cross-encoders through three steps: a rapid zero-shot sweep to detect affirmative classification bias, supervised task adaptation, and five-fold cross-validation.
+> 
+> Finally, for our **System-Wide Auditing Tiers**, we evaluate the integrated pipeline across three realistic levels: cascaded pair retrieval, full draft ordinance stress tests, and authentic Supreme Court precedent controversies."
 
 ---
 
-### Slide 8: Evaluation Metrics: Quantitative Decision Criteria
+### Slide 8: Evaluation Metrics
 * **Speaker:** Yahyah Odin
 * **Top-Left Header:** Chapter 3. Methodology
-* **Bottom-Left Paper Ref:** §3.8, §3.9, §3.10
+* **Bottom-Left Paper Ref:** §3.3, §3.4
 * **Bottom-Right Slide:** Slide 8
-* **Title:** Evaluation Metrics: Quantitative Decision Criteria
-* **Subtitle:** Extraction Fidelity, IR Ranking, Cost-Sensitive NLI, & Non-Parametric Tests
+* **Title:** Evaluation Metrics
+* **Subtitle:** Quantitative Performance & Statistical Criteria
 * **Visual:** Multi-Stage Metrics Matrix
 
 #### On-Screen Slide Content:
-* **Document Extraction Fidelity:**
-  * Character Error Rate (CER), Word Error Rate (WER), Citation Entity Accuracy
-* **Stage 1 Candidate Retrieval:**
-  * Recall@k ($k \in \{5, 10, 20, 50\}$), Mean Reciprocal Rank (MRR), Query Latency (ms)
+* **Document Extraction Fidelity**
+  * Character Error Rate, Word Error Rate, Citation Entity Accuracy
+* **Stage 1 Candidate Retrieval**
+  * Recall@k, Mean Reciprocal Rank, Query Latency
 * **Stage 2 Cross-Encoder Classification:**
-  * Cross-Entropy Loss, Macro $F_1$, Contradiction $F_1$, Cost-Sensitive $F_2$ ($\beta = 2.0$)
+  * Cross-Entropy Loss, Macro F1, Contradiction F1, Cost-Sensitive
 * **Statistical Significance Validation:**
   * Friedman Two-Way ANOVA by Ranks, Pairwise McNemar $\chi^2$ tests ($p < 0.05$)
 * **System-Wide End-to-End Metrics:**
   * Joint FEVER Accuracy, Multi-Section Triage Specificity, Judicial Alignment Rate
 
 #### Spoken Script:
-> "Our Evaluation Metrics establish quantitative, objective decision criteria for each stage of the pipeline.
+> "For our Evaluation Metrics, we defined objective quantitative criteria for each stage of our pipeline.
 > 
-> For archival extraction, we measure Character Error Rate and Word Error Rate alongside cosine semantic fidelity, while verifying legal citation entity accuracy to ensure statutory numbers and section references remain uncorrupted.
+> For **Document Extraction Fidelity**, we measure Character Error Rate, Word Error Rate, and Citation Entity Accuracy to ensure legal provision numbers and titles remain intact.
 > 
-> For coarse retrieval, Stage 1 measures Recall at ranks 5, 10, 20, and 50 alongside Mean Reciprocal Rank to measure candidate proximity, and CPU query latency to guarantee responsive execution on commodity office desktops.
+> For **Stage 1 Candidate Retrieval**, we track Recall at top ranks to guarantee provision capture, Mean Reciprocal Rank to measure candidate proximity, and CPU query latency to verify fast execution.
 > 
-> For fine inference, Stage 2 measures cross-entropy loss, evaluating macro and conflict F1 alongside cost-sensitive F2 to penalize preemption false negatives. To ensure algorithmic validity, non-parametric tests verify cross-domain significance using Friedman two-way ANOVA and pairwise McNemar chi-squared tests.
+> For **Stage 2 Classification**, we evaluate cross-entropy loss, Macro F1, Contradiction F1, and cost-sensitive F2 to heavily prioritize conflict recall.
 > 
-> Finally, at the system level, our evaluation measures full-document triage specificity on multi-section drafts and judicial ruling alignment on authentic Supreme Court cases."
+> For **Statistical Significance**, we apply the non-parametric Friedman ANOVA across all eight legal domains to ensure models are free from domain bias, followed by pairwise McNemar chi-squared tests to confirm statistically significant gains.
+> 
+> Lastly, for **System-Wide End-to-End Metrics**, we measure joint FEVER retrieval-inference accuracy, multi-section triage specificity to guard against false alarms, and alignment with actual judicial outcomes."
 
 ---
 
