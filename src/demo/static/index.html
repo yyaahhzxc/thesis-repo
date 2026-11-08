@@ -1474,7 +1474,6 @@
         <nav class="nav-links">
           <a class="nav-link active" id="nav-scan" onclick="navigateTo('scan', event)">Scan Ordinance</a>
           <a class="nav-link" id="nav-about" onclick="navigateTo('home', event)">About</a>
-          <a class="nav-link" id="nav-contact" onclick="scrollToContact(event)">Contact Us</a>
         </nav>
       </div>
     </div>
@@ -2199,9 +2198,9 @@
                 <div class="confidence-bar-fill" style="width: ${Math.min(confPct, 100)}%; ${isCompliant ? 'background: var(--success);' : ''}"></div>
                 <div class="confidence-bar-threshold-marker" style="left: 45%;" title="45.0% Decision Threshold"></div>
               </div>
-            </div>
-            <div class="confidence-bar-footer-row" style="position: relative; height: 18px; margin-top: 4px;">
-              <span class="confidence-bar-threshold-text" style="position: absolute; left: 45%; transform: translateX(-50%); white-space: nowrap;">▲ 45.0% DECISION THRESHOLD</span>
+              <div class="confidence-bar-footer-row" style="position: relative; width: 100%; height: 18px; margin-top: 5px;">
+                <span class="confidence-bar-threshold-text" style="position: absolute; left: 45%; transform: translateX(-50%); white-space: nowrap; font-size: 0.72rem; font-weight: 800; color: var(--muted-foreground); letter-spacing: 0.03em;">▲ 45.0% DECISION THRESHOLD</span>
+              </div>
             </div>
           </div>
 
