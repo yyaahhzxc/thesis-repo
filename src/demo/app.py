@@ -121,11 +121,12 @@ class LocalNeuralEngine:
                 self.deberta_model = AutoModelForSequenceClassification.from_pretrained(str(DEBERTA_LOCAL_PATH)).to(self.device)
                 self.deberta_model.eval()
 
-            # Load genuine 176,421-provision embeddings matrix with mmap
-            if FULL_EMB_PATH.exists():
+            # Load genuine 176,421-provision embeddings matrix with mmap if unified provisions exists
+            if FULL_EMB_PATH.exists() and UNIFIED_PROVISIONS_PATH.exists():
                 print(f"[NeuralEngine] Loading genuine 176,421-provision embeddings from {FULL_EMB_PATH} (mmap)...")
                 self.statutory_embeddings = np.load(str(FULL_EMB_PATH), mmap_mode='r')
             elif LOCAL_EMB_PATH.exists():
+                print(f"[NeuralEngine] Loading local demo statutory embeddings from {LOCAL_EMB_PATH}...")
                 self.statutory_embeddings = np.load(str(LOCAL_EMB_PATH))
 
             # Load BM25 index for True Hybrid Retrieval (Chapter 3 §3.7.1)
@@ -138,6 +139,7 @@ class LocalNeuralEngine:
                 print(f"[NeuralEngine] BM25 Index ONLINE: Hybrid Stage 1 Retrieval (BM25 + Dense) active!")
 
             # Build byte offsets and citation lookup index for rapid provision retrieval
+            self.local_items = []
             if UNIFIED_PROVISIONS_PATH.exists():
                 t0_idx = time.perf_counter()
                 re_eid = re.compile(b'"enactment_id":\\s*"([^"]+)"')
@@ -156,10 +158,14 @@ class LocalNeuralEngine:
                             self.citation_index[(m_eid.group(1).decode("ascii", "ignore"), int(m_sec.group(1)))] = idx
                         idx += 1
                 print(f"[NeuralEngine] Indexed {len(self.provision_offsets):,} offsets & {len(self.citation_index):,} citations in {(time.perf_counter()-t0_idx):.2f}s!")
+            elif LOCAL_META_PATH.exists():
+                with open(LOCAL_META_PATH, "r", encoding="utf-8") as f_meta:
+                    self.local_items = json.load(f_meta)
+                print(f"[NeuralEngine] Loaded {len(self.local_items):,} local statutory anchor provisions from {LOCAL_META_PATH}!")
 
             if self.embedder is not None and self.deberta_model is not None and self.statutory_embeddings is not None:
                 self.is_loaded = True
-                print(f"[NeuralEngine] ONLINE: Running 100% Genuine Local Neural Inference on {self.device.upper()} across 176k Knowledge Base!")
+                print(f"[NeuralEngine] ONLINE: Running 100% Genuine Local Neural Inference on {self.device.upper()} across Knowledge Base!")
             else:
                 print(f"[NeuralEngine] Local models directory not fully populated. Running in fallback mode.")
         except Exception as e:
@@ -167,7 +173,9 @@ class LocalNeuralEngine:
 
     def retrieve_top_k(self, query_text: str, k: int = 50, scope: str = "national"):
         """Retrieves genuine Top-k statutory provisions via Stage 1 Hybrid Retrieval (BM25 + Dense Bi-Encoder)."""
-        if not self.is_loaded or self.statutory_embeddings is None or not self.provision_offsets:
+        if not self.is_loaded or self.statutory_embeddings is None:
+            return []
+        if not self.provision_offsets and not self.local_items:
             return []
         import numpy as np
         t0 = time.perf_counter()
@@ -198,60 +206,85 @@ class LocalNeuralEngine:
         else:
             scores = dense_scores
 
-        top_idx = np.argpartition(scores, -k)[-k:]
+        eff_k = min(k, len(scores))
+        top_idx = np.argpartition(scores, -eff_k)[-eff_k:]
         sorted_top_idx = top_idx[np.argsort(-scores[top_idx])]
         retrieval_ms = (time.perf_counter() - t0) * 1000
 
         candidates = []
-        with open(UNIFIED_PROVISIONS_PATH, "rb") as f:
-            for rank, idx in enumerate(sorted_top_idx, start=1):
-                f.seek(self.provision_offsets[idx])
-                item = json.loads(f.readline().decode("utf-8"))
-                enact_num = item.get("enactment_number") or item.get("enactment_id") or "Statute"
-                sec_num = item.get("section_number") or ""
-                sec_title = item.get("section_title") or ""
-                cit = f"{enact_num} {sec_num}".strip()
-                jur = "National Statute" if item.get("jurisdiction") == "national" else "Davao City Ordinance"
-                raw_txt = item.get("raw_text", "")
-                prep_txt = item.get("prepended_text") or raw_txt
+        if self.provision_offsets and UNIFIED_PROVISIONS_PATH.exists():
+            with open(UNIFIED_PROVISIONS_PATH, "rb") as f:
+                for rank, idx in enumerate(sorted_top_idx, start=1):
+                    f.seek(self.provision_offsets[idx])
+                    item = json.loads(f.readline().decode("utf-8"))
+                    enact_num = item.get("enactment_number") or item.get("enactment_id") or "Statute"
+                    sec_num = item.get("section_number") or ""
+                    sec_title = item.get("section_title") or ""
+                    cit = f"{enact_num} {sec_num}".strip()
+                    jur = "National Statute" if item.get("jurisdiction") == "national" else "Davao City Ordinance"
+                    raw_txt = item.get("raw_text", "")
+                    prep_txt = item.get("prepended_text") or raw_txt
 
-                # Clean Title to prevent raw single-word city markers (e.g. "MANILA") from replacing authentic titles
-                raw_title = (item.get("enactment_title") or "").strip()
-                clean_title = raw_title
-                if not clean_title or clean_title.upper() in ["MANILA", "DAVAO", "PHILIPPINES"] or len(clean_title) < 8:
-                    if "120" in enact_num and "2020" in enact_num:
-                        clean_title = "STRENGTHENING REHABILITATION AND RECOVERY EFFORTS IN TYPHOON-HIT AREAS THROUGH THE CREATION OF THE BUILD BACK BETTER TASK FORCE"
-                    elif "10121" in enact_num:
-                        clean_title = "PHILIPPINE DISASTER RISK REDUCTION AND MANAGEMENT ACT OF 2010"
-                    elif "7160" in enact_num:
-                        clean_title = "LOCAL GOVERNMENT CODE OF 1991"
+                    # Clean Title to prevent raw single-word city markers (e.g. "MANILA") from replacing authentic titles
+                    raw_title = (item.get("enactment_title") or "").strip()
+                    clean_title = raw_title
+                    if not clean_title or clean_title.upper() in ["MANILA", "DAVAO", "PHILIPPINES"] or len(clean_title) < 8:
+                        if "120" in enact_num and "2020" in enact_num:
+                            clean_title = "STRENGTHENING REHABILITATION AND RECOVERY EFFORTS IN TYPHOON-HIT AREAS THROUGH THE CREATION OF THE BUILD BACK BETTER TASK FORCE"
+                        elif "10121" in enact_num:
+                            clean_title = "PHILIPPINE DISASTER RISK REDUCTION AND MANAGEMENT ACT OF 2010"
+                        elif "7160" in enact_num:
+                            clean_title = "LOCAL GOVERNMENT CODE OF 1991"
+                        else:
+                            clean_title = enact_num
+
+                    # Clean section display text
+                    if sec_num and sec_title:
+                        sec_display = f"{sec_num}. {sec_title}"
+                    elif sec_num:
+                        sec_display = sec_num
+                    elif sec_title:
+                        sec_display = sec_title
                     else:
-                        clean_title = enact_num
+                        sec_display = "Operative Provision"
 
-                # Clean section display text
-                if sec_num and sec_title:
-                    sec_display = f"{sec_num}. {sec_title}"
-                elif sec_num:
-                    sec_display = sec_num
-                elif sec_title:
-                    sec_display = sec_title
-                else:
-                    sec_display = "Operative Provision"
-
-                candidates.append({
-                    "rank": rank,
-                    "provision_id": item.get("provision_id"),
-                    "citation": cit,
-                    "title": clean_title,
-                    "section_title": sec_display,
-                    "section": sec_display,
-                    "jurisdiction": jur,
-                    "raw_text": raw_txt,
-                    "prepended_text": prep_txt,
-                    "stage1_score": round(float(scores[idx]), 4),
-                    "similarity_score": round(float(scores[idx]), 4),
-                    "lawphil_url": get_lawphil_url(cit, item.get("jurisdiction", "national"))
-                })
+                    candidates.append({
+                        "rank": rank,
+                        "provision_id": item.get("provision_id"),
+                        "citation": cit,
+                        "title": clean_title,
+                        "section_title": sec_display,
+                        "section": sec_display,
+                        "jurisdiction": jur,
+                        "raw_text": raw_txt,
+                        "prepended_text": prep_txt,
+                        "similarity": round(float(scores[idx]), 4),
+                        "score": round(float(scores[idx]), 4),
+                        "stage1_score": round(float(scores[idx]), 4),
+                        "similarity_score": round(float(scores[idx]), 4),
+                        "lawphil_url": get_lawphil_url(cit, item.get("jurisdiction", "national"))
+                    })
+        elif getattr(self, 'local_items', None):
+            for rank, idx in enumerate(sorted_top_idx, start=1):
+                if idx < len(self.local_items):
+                    item = self.local_items[idx]
+                    cit = item.get("citation", "Statutory Authority")
+                    candidates.append({
+                        "rank": rank,
+                        "provision_id": f"LOCAL-DEMO-{idx:04d}",
+                        "citation": cit,
+                        "title": item.get("title", f"Statutory Authority: {cit}"),
+                        "section_title": item.get("section_title", "Operative Provision"),
+                        "section": item.get("section_title", "Operative Provision"),
+                        "jurisdiction": "National Statute" if item.get("jurisdiction") == "national" else "Davao City Ordinance",
+                        "raw_text": item.get("text", ""),
+                        "prepended_text": item.get("text", ""),
+                        "similarity": round(float(scores[idx]), 4),
+                        "score": round(float(scores[idx]), 4),
+                        "stage1_score": round(float(scores[idx]), 4),
+                        "similarity_score": round(float(scores[idx]), 4),
+                        "lawphil_url": get_lawphil_url(cit, item.get("jurisdiction", "national"))
+                    })
         return candidates
 
     def evaluate_cross_encoder_batch(self, pairs: list):
