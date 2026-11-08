@@ -682,14 +682,52 @@
 * Side-by-side comparative reading view lowers cognitive load
 * Visual token saliency highlights conflicting modal operators
 
+#### Demonstration Protocol & Interactive Panel Workflow:
+1. **System Layout Overview (30s):**
+   * Walk panel through the sovereign interface: Drag-and-Drop Ingestion Drawer, Section Parser, Dual Candidate Feed, and Side-by-Side XAI Cards.
+2. **Interactive Panelist Selection:**
+   * Invite the panel to select a number from **1 to 6** corresponding to our six functional legislative typologies in Tier 2:
+     * **1:** Veterinary Public Health Code (Substantive Regulatory & Penal, 16 Sections)
+     * **2:** Inter-Hospital Telemedicine MOA (Inter-Agency Agreement, 9 Sections)
+     * **3:** Disaster Relief & QRF Reprogramming (Budget & Calamity Funds, 6 Sections)
+     * **4:** Public Library Site & Usufruct (Property Administration, 8 Sections)
+     * **5:** Temporary Road Closure for Festival (Traffic Management, 6 Sections)
+     * **6:** Greenfield Subdivision Permit (Zoning & Environmental Easements, 7 Sections)
+3. **Elevator Pitch While Loading (Max 2 Minutes - Bulleted Cheat Sheet):**
+   * **100% Offline Intranet Sovereignty:** Zero confidential policy drafts leave the municipal network; no external cloud API dependencies.
+   * **Target Hardware Throttling:** Throttled to 4 CPU worker threads and 0 GB VRAM, emulating a standard LGU office desktop (Intel Core i3, 8 GB RAM).
+   * **Minimal RAM Footprint:** Peak resident memory capped at 1.4 GB; maps the 176k 384-dimensional embeddings matrix directly via disk `mmap`.
+   * **Knowledge Base Scale:** Indexes 27,357 enactments (25,432 national statutes + 1,925 Davao ordinances), totaling 178,494 searchable provisions.
+   * **Decoupled Coarse-to-Fine Design:** Reduces 2.4 million pairwise cross-attentions (78 hours on CPU) to an affordable top-50 pool under 15 seconds.
+   * **Hybrid Reciprocal Rank Fusion:** Combines BM25 lexical precision with all-MiniLM-L6-v2 dense vectors ($k=60$), bridging the 17.3% paraphrasing gap.
+   * **Option 2 Pure Neural Logic:** All verdicts stem strictly from DeBERTa-v3 cross-encoder tensors; zero regex heuristics or case-sniffing shortcuts.
+   * **Calibrated Threshold ($\tau^* = 0.45$):** Embeds an asymmetric 1.5x preemption cost penalty directly into the classification boundary.
+   * **Directional Role Assignment:** National Statute is always Premise (text A), Draft Ordinance is Hypothesis (text B), enforcing *Magtajas*.
+   * **Boilerplate Suppression:** Automatically filters procedural clauses (Title, Separability, Repealing, Effectivity) to preserve compute.
+   * **Dynamic Token Padding:** Unpads candidate batches dynamically, delivering a 2.22x speedup (54.9% latency reduction).
+   * **Structural Context Prepending:** Injects `[Citation | Title > Section]` headers, preserving +6.52% in Conflict F1.
+   * **Symbolic Fine Verifier:** Intercepts integer penalties exceeding the P5,000 ceiling under RA 7160 §458, which subword tokenizers cannot parse.
+   * **Zero Editorial Pollution:** Displays 100% authentic positive law verbatim without synthetic summaries in statutory text fields.
+   * **Multi-Section Candidate Aggregation:** Shortlist aggregates and ranks candidates across all draft sections, surfacing top preemption risks.
+   * **Explainable AI Cues:** Deontic modals (`shall`, `must`, `strictly prohibited`) are highlighted to minimize cognitive fatigue.
+   * **Triage Funnel Dynamics:** Functions as a wide-net triage funnel in low-prevalence screening ($p < 0.01$), clearing 86.67% of compliant sections.
+4. **Key Verification Facts for Results:**
+   * **Why the Number of Conflicts:** The hero headline displays total statutory collision pairs, while the subheader identifies distinct problematic sections.
+   * **Why it Flagged the Section:** Highlights whether the collision is a direct prohibition clash (e.g., total ban vs. national regulatory permit) or a symbolic penalty ceiling overreach (> P5,000).
+   * **Doctrinal Alignment:** Grounded in RA 7160 §5(a) and *Magtajas v. Pryce Properties*: an ordinance cannot permit what a statute forbids, or forbid what a statute permits.
+
 #### Spoken Script:
 > **(Ralph Paolo Dulce):**
-> "For our Live Technical System Demonstration, we present a walkthrough of our production prototype web application, engineered specifically for municipal legislative staff conducting First Reading reviews.
+> "For our Live Technical System Demonstration, we present our sovereign decision-support prototype web application, engineered specifically for municipal legislative staff conducting First Reading reviews.
 > 
-> Operating entirely offline within the municipal intranet, the interface allows legal officers to drag-and-drop authentic digitized municipal scans. Our adaptive parser isolates operative clauses while bypassing boilerplate administrative sections.
+> Operating entirely offline within the municipal intranet, the interface allows legal officers to drag-and-drop authentic digitized municipal drafts, automatically isolating operative clauses while bypassing procedural boilerplate.
 > 
 > **(Yahyah Odin):**
-> Once submitted, the backend executes our two-stage pipeline. The results dashboard displays an executive triage summary, followed by our side-by-side Explainable AI inspector. Rather than displaying opaque confidence numbers, the interface places the draft ordinance provision directly alongside the retrieved national statute, highlighting conflicting deontic modal operators—such as 'shall' versus 'may'—to support rapid human verification."
+> Members of the panel, we invite you to select any number from 1 to 6 representing our six legislative typologies—ranging from penal regulations and calamity fund reprogramming to zoning and road closures.
+> 
+> While the neural engine audits the document across our 176,000-provision knowledge base, our two-stage pipeline decouples coarse candidate retrieval from deep cross-attention, executing live on standard 4-thread CPU hardware without dedicated GPUs.
+> 
+> Once complete, the dashboard delivers an executive triage summary alongside side-by-side Explainable AI cards, pairing the draft ordinance provision directly against the governing national statute to empower rapid, legally sound committee verification."
 
 ---
 
