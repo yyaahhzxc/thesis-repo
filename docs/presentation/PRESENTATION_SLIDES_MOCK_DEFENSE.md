@@ -731,19 +731,20 @@
 * **Bottom-Right Slide:** Slide 24
 * **Title:** Recommendations of the Study
 * **Subtitle:** Technical Extensions & Operational Roadmap
-* **Visual:** Seven-point forward-looking technical roadmap card
+* **Visual:** Eight-point forward-looking technical roadmap card
 
 #### On-Screen Slide Content:
 * Expand verified benchmarks via legal panels
 * Track active, amended, and repealed enactments
 * Integrate Graph Neural Networks for multi-hop
 * Deepen Explainable AI with gradient attribution
+* Ingest non-text attachments, tables, and maps
 * Complete historical local and national databases
 * Allocate longer development and tuning horizons
 * Establish early city hall administrative onboarding
 
 #### Spoken Script:
-> "For our Recommendations, we synthesize seven concrete technical and procedural extensions based on our empirical findings:
+> "For our Recommendations, we synthesize eight concrete technical and procedural extensions based on our empirical findings:
 > 
 > First, expanding verified ground-truth benchmarks by engaging formalized multi-expert legal panels to continuously validate complex edge cases;
 > 
@@ -753,11 +754,13 @@
 > 
 > Fourth, expanding our Explainable AI framework from surface heuristics to true neural gradient attribution, directly surfacing token-level contradictions;
 > 
-> Fifth, completing comprehensive digitization and ingestion of historical Davao City ordinances and evolving national statutory gazettes;
+> Fifth, extending multimodal document intelligence to parse complex tabular fee schedules, amendatory appendices, and geospatial zoning map attachments;
 > 
-> Sixth, budgeting longer development and training horizons for extensive hardware sweeps and architectural tuning; and
+> Sixth, completing comprehensive digitization and ingestion of historical Davao City ordinances and evolving national statutory gazettes;
 > 
-> Seventh, establishing administrative onboarding with city hall departments early in the research lifecycle to streamline institutional data access and approvals."
+> Seventh, budgeting longer development and training horizons for extensive hardware sweeps and architectural tuning; and
+> 
+> Eighth, establishing administrative onboarding with city hall departments early in the research lifecycle to streamline institutional data access and approvals."
 
 ---
 
