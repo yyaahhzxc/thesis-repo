@@ -734,30 +734,30 @@
 * **Visual:** Seven-point forward-looking technical roadmap card
 
 #### On-Screen Slide Content:
-* Construct dynamic statutory knowledge graphs to track repeals under *lex posterior*
-* Index Supreme Court jurisprudence to expand from ex-ante to ex-post review
-* Automate continuous corpus ingestion to detect dormant statutory conflicts
-* Support Cebuano-Visayan cross-lingual adaptation for committee consultations
-* Implement fine-grained token integrated gradients for targeted clause attribution
-* Formulate native cost-sensitive loss functions directly during neural fine-tuning
-* Deploy INT8 quantized models inside word processors for offline real-time review
+* Expand verified ground-truth benchmarks through formalized multi-expert legal panels
+* Model statutory dependency graphs to track raw, amended, and repealed enactments
+* Integrate Graph Neural Networks (GNNs) for multi-hop statutory reasoning
+* Deepen Explainable AI (XAI) via neural gradient and token-level attribution
+* Complete comprehensive archival ingestion of historical local ordinances and national statutes
+* Extend project development horizons for iterative hyperparameter and architecture sweeps
+* Establish institutional onboarding protocols with city hall administrative workflows early
 
 #### Spoken Script:
-> "For the Recommendations of our Study, we propose seven concrete technical extensions to advance this research:
+> "For our Recommendations, we synthesize seven concrete technical and procedural extensions based on our empirical findings:
 > 
-> First, constructing dynamic statutory knowledge graphs to automatically track active versus repealed provisions over time under the lex posterior doctrine;
+> First, expanding verified ground-truth benchmarks by engaging formalized multi-expert legal panels to continuously validate complex edge cases;
 > 
-> Second, indexing Supreme Court jurisprudence to expand system capabilities from ex-ante draft screening to ex-post judicial compliance review;
+> Second, modeling statutory dependency graphs to systematically track which laws remain active, amended, or repealed under the lex posterior doctrine;
 > 
-> Third, establishing continuous corpus ingestion pipelines to run large-scale empirical consistency audits across positive law;
+> Third, integrating Graph Neural Networks with dense retrieval to capture multi-hop cross-statutory citations and transitive preemption chains;
 > 
-> Fourth, pursuing cross-lingual domain adaptation to support bilingual Cebuano-Visayan committee floor deliberations and public consultations;
+> Fourth, expanding our Explainable AI framework from surface heuristics to true neural gradient attribution, directly surfacing token-level contradictions;
 > 
-> Fifth, deepening our explainable AI architecture with token-level integrated gradients to pinpoint contradictory clauses inside complex regulatory blocks;
+> Fifth, completing comprehensive digitization and ingestion of historical Davao City ordinances and evolving national statutory gazettes;
 > 
-> Sixth, formulating native cost-sensitive loss functions during training to embed asymmetric preemption penalties directly into neural backpropagation; and
+> Sixth, budgeting longer development and training horizons for extensive hardware sweeps and architectural tuning; and
 > 
-> Seventh, implementing INT8 model quantization to embed real-time conflict checking directly inside local municipal word processors without requiring dedicated GPUs."
+> Seventh, establishing administrative onboarding with city hall departments early in the research lifecycle to streamline institutional data access and approvals."
 
 ---
 
