@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,45 +10,58 @@
   <title>Davao City OCDS - Ordinance Conflict Detection System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <style>
     /* =========================================================
        SHADCN-INSPIRED DESIGN SYSTEM & OFFICIAL SP MAROON PALETTE
        ========================================================= */
     :root {
-      --primary: #7F2723;            /* Sangguniang Panlungsod Maroon */
+      --primary: #7F2723;
+      /* Sangguniang Panlungsod Maroon */
       --primary-hover: #6B1F1C;
       --primary-light: #FBF3F2;
       --primary-border: #F2D1CE;
       --primary-foreground: #FFFFFF;
 
-      --background: #F8FAFC;         /* Clean page canvas */
-      --foreground: #0F172A;         /* Dark text */
-      
-      --card-bg: #FFFFFF;            /* Crisp white cards */
-      --card-inner: #F8FAFC;         /* Soft inner container */
-      --card-border: #E2E8F0;        /* Subtle slate border */
+      --background: #F8FAFC;
+      /* Clean page canvas */
+      --foreground: #0F172A;
+      /* Dark text */
+
+      --card-bg: #FFFFFF;
+      /* Crisp white cards */
+      --card-inner: #F8FAFC;
+      /* Soft inner container */
+      --card-border: #E2E8F0;
+      /* Subtle slate border */
       --card-border-dark: #CBD5E1;
-      
+
       --muted: #F1F5F9;
       --muted-foreground: #64748B;
       --muted-light: #94A3B8;
 
-      --destructive: #DC2626;        /* Contradiction / Conflict Red */
+      --destructive: #DC2626;
+      /* Contradiction / Conflict Red */
       --destructive-bg: #FEF2F2;
       --destructive-border: #FECACA;
 
-      --success: #16A34A;            /* Compliant Green */
+      --success: #16A34A;
+      /* Compliant Green */
       --success-bg: #F0FDF4;
       --success-border: #BBF7D0;
 
       --accent-blue: #2563EB;
       --accent-blue-light: #EFF6FF;
 
-      --radius-sm: 0.5rem;           /* 8px */
-      --radius-md: 0.75rem;          /* 12px */
-      --radius-lg: 1rem;             /* 16px */
-      --radius-xl: 1.5rem;           /* 24px - Rounded card containers */
+      --radius-sm: 0.5rem;
+      /* 8px */
+      --radius-md: 0.75rem;
+      /* 12px */
+      --radius-lg: 1rem;
+      /* 16px */
+      --radius-xl: 1.5rem;
+      /* 24px - Rounded card containers */
       --radius-pill: 9999px;
 
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -189,8 +203,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* CARD SYSTEM (White Rounded Containers with Subtle Shadows) */
@@ -424,7 +445,8 @@
       background: #FFFFFF;
     }
 
-    .dropzone-card:hover, .dropzone-card.drag-over {
+    .dropzone-card:hover,
+    .dropzone-card.drag-over {
       border-color: var(--primary);
       background: var(--primary-light);
     }
@@ -541,8 +563,15 @@
     }
 
     @keyframes pulseAnim {
-      0% { transform: scale(0.8); opacity: 0.8; }
-      100% { transform: scale(1.6); opacity: 0; }
+      0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1.6);
+        opacity: 0;
+      }
     }
 
     .scan-center-icon {
@@ -1173,7 +1202,8 @@
       transition: all 0.15s ease;
     }
 
-    .custom-select:hover, .custom-select:focus {
+    .custom-select:hover,
+    .custom-select:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 2px var(--primary-border);
     }
@@ -1431,6 +1461,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- ================= TOP NAVBAR ================= -->
@@ -1454,12 +1485,13 @@
 
     <!-- ---------------- VIEW 1: HOMEPAGE (Wireframe 1) ---------------- -->
     <div id="view-home" class="page-view" style="display: none;">
-      
+
       <!-- HERO CARD -->
       <section class="wireframe-card hero-card">
         <h1 class="hero-title">Davao City Ordinance<br>Conflict Detector</h1>
         <p class="hero-subtitle">
-          An automated system designed to detect any conflicts from proposed Davao City ordinances to a national statute or existing Davao City ordinance.
+          An automated system designed to detect any conflicts from proposed Davao City ordinances to a national statute
+          or existing Davao City ordinance.
         </p>
         <div class="hero-btn-row">
           <button type="button" class="btn-maroon-pill" onclick="scrollToInfo()">How it Works</button>
@@ -1472,13 +1504,19 @@
         <h2 class="info-card-title">What is this system?</h2>
         <div class="info-card-body">
           <p>
-            This system is a conflict checker for proposed Davao City ordinances. It checks against national statutes, including Republic Acts, Batas Pambansa, Presidential Decrees, Executive Orders, and Commonwealth Acts, spanning from 1901 to March 2026.
+            This system is a conflict checker for proposed Davao City ordinances. It checks against national statutes,
+            including Republic Acts, Batas Pambansa, Presidential Decrees, Executive Orders, and Commonwealth Acts,
+            spanning from 1901 to March 2026.
           </p>
           <p>
-            It also checks against Davao City's local ordinances, with landmark ordinances from 1950s to 2020s, as well as ordinances stored from 2021 to 2025.
+            It also checks against Davao City's local ordinances, with landmark ordinances from 1950s to 2020s, as well
+            as ordinances stored from 2021 to 2025.
           </p>
           <p>
-            The system functions in two steps: first, after receiving the proposed ordinance, it finds the most relevant national laws and local ordinances; after which it will compare each section of the proposed ordinance against each section of those top relevant laws and ordinances. If there is a contradiction, it will show the specific provisions that contradicted, along with its confidence level. Give it a try!
+            The system functions in two steps: first, after receiving the proposed ordinance, it finds the most relevant
+            national laws and local ordinances; after which it will compare each section of the proposed ordinance
+            against each section of those top relevant laws and ordinances. If there is a contradiction, it will show
+            the specific provisions that contradicted, along with its confidence level. Give it a try!
           </p>
         </div>
       </section>
@@ -1492,8 +1530,8 @@
           </div>
 
           <svg class="arrow-down-svg" width="20" height="28" viewBox="0 0 20 28" fill="none">
-            <line x1="10" y1="0" x2="10" y2="24" stroke="currentColor" stroke-width="2"/>
-            <polyline points="5 19 10 25 15 19" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="0" x2="10" y2="24" stroke="currentColor" stroke-width="2" />
+            <polyline points="5 19 10 25 15 19" stroke="currentColor" stroke-width="2" />
           </svg>
 
           <div class="process-middle-container">
@@ -1503,19 +1541,20 @@
             </div>
 
             <svg class="stage-arrow-right" width="28" height="20" viewBox="0 0 28 20" fill="none">
-              <line x1="0" y1="10" x2="24" y2="10" stroke="currentColor" stroke-width="2"/>
-              <polyline points="19 5 25 10 19 15" stroke="currentColor" stroke-width="2"/>
+              <line x1="0" y1="10" x2="24" y2="10" stroke="currentColor" stroke-width="2" />
+              <polyline points="19 5 25 10 19 15" stroke="currentColor" stroke-width="2" />
             </svg>
 
             <div class="stage-step-box">
               <div class="stage-step-title">Stage 2</div>
-              <div class="stage-step-desc">Compare sections of proposed ordinance against sections of top relevant laws and ordinances</div>
+              <div class="stage-step-desc">Compare sections of proposed ordinance against sections of top relevant laws
+                and ordinances</div>
             </div>
           </div>
 
           <svg class="arrow-down-svg" width="20" height="28" viewBox="0 0 20 28" fill="none">
-            <line x1="10" y1="0" x2="10" y2="24" stroke="currentColor" stroke-width="2"/>
-            <polyline points="5 19 10 25 15 19" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="0" x2="10" y2="24" stroke="currentColor" stroke-width="2" />
+            <polyline points="5 19 10 25 15 19" stroke="currentColor" stroke-width="2" />
           </svg>
 
           <div class="process-pill-box">
@@ -1528,28 +1567,32 @@
 
     <!-- ---------------- VIEW 2: AUDIT / SCAN PAGE (Wireframe 2) ---------------- -->
     <div id="view-scan" class="page-view">
-      
+
       <div class="page-header-group">
         <h1 class="page-section-title">Scan Ordinance</h1>
         <p class="page-section-subtitle">Upload a draft to screen against national and local laws.</p>
       </div>
 
       <!-- DRAG & DROP CARD -->
-      <section class="wireframe-card dropzone-card" id="dropzone" onclick="document.getElementById('file-input').click()">
-        <input type="file" id="file-input" style="display: none;" accept=".pdf,.txt,.json" onchange="handleFileSelected(event)">
-        
+      <section class="wireframe-card dropzone-card" id="dropzone"
+        onclick="document.getElementById('file-input').click()">
+        <input type="file" id="file-input" style="display: none;" accept=".pdf,.txt,.json"
+          onchange="handleFileSelected(event)">
+
         <div class="upload-icon-circle">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="17 8 12 3 7 8"/>
-            <line x1="12" y1="3" x2="12" y2="15"/>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="17 8 12 3 7 8" />
+            <line x1="12" y1="3" x2="12" y2="15" />
           </svg>
         </div>
 
         <h3 class="drag-drop-title">Drag & Drop Draft Ordinance Here</h3>
         <p class="drag-drop-sub">Supports searchable PDF, scanned OCR pages, or plaintext draft (.pdf, .txt, .json)</p>
-        
-        <button type="button" class="btn-maroon-pill btn-browse-action" onclick="event.stopPropagation(); document.getElementById('file-input').click()">
+
+        <button type="button" class="btn-maroon-pill btn-browse-action"
+          onclick="event.stopPropagation(); document.getElementById('file-input').click()">
           Browse Local Files
         </button>
 
@@ -1564,9 +1607,10 @@
         <div class="scan-radar-wrapper">
           <div class="scan-pulse-ring"></div>
           <div class="scan-center-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </div>
         </div>
@@ -1592,7 +1636,7 @@
 
     <!-- ---------------- VIEW 4: RESULTS PAGE (Wireframe 3) ---------------- -->
     <div id="view-results" class="page-view" style="display: none;">
-      
+
       <div class="page-header-group">
         <h1 class="page-section-title">Scan Ordinance</h1>
         <p class="page-section-subtitle">Upload a draft to screen against national and local laws.</p>
@@ -1602,8 +1646,9 @@
       <section class="wireframe-card main-results-card">
         <div class="doc-identifier-tag" id="main-results-doc-tag">[DRAFT] Ordinance No. 000928-25</div>
         <h2 class="main-results-headline has-conflict" id="main-results-headline">2 Conflicts Detected!</h2>
+        <div class="main-results-subheadline" id="main-results-subheadline" style="font-size: 1.05rem; font-weight: 600; color: var(--muted-foreground); margin-top: -6px; margin-bottom: 8px;">2 Problematic Sections</div>
         <div class="main-results-scanned-time" id="main-results-scanned-time">Scanned in 15.5 ms</div>
-        
+
         <div class="results-actions-row">
           <button type="button" class="btn-maroon-pill" onclick="scrollToSummary()">See Results</button>
           <button type="button" class="btn-outline-pill" onclick="navigateTo('scan')">Scan Another Ordinance</button>
@@ -1620,7 +1665,7 @@
 
       <!-- TOP 50 SHORTLISTED CANDIDATES (WITH COLLAPSE DROPDOWN, CATEGORY FILTER & PAGINATOR) -->
       <section class="wireframe-card shortlist-section" id="shortlist-section">
-        
+
         <!-- SECTION HEADER BAR WITH COLLAPSE TOGGLE -->
         <div class="shortlist-header-bar" onclick="toggleShortlistCollapse()">
           <div class="shortlist-header-left">
@@ -1630,14 +1675,15 @@
 
           <button type="button" class="shortlist-toggle-btn">
             <span id="shortlist-toggle-label">Hide Section</span>
-            <svg class="shortlist-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="shortlist-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
         </div>
 
         <div class="shortlist-content-area">
-          
+
           <!-- TOOLBAR WITH DROPDOWNS -->
           <div class="shortlist-toolbar">
             <div class="toolbar-left">
@@ -1668,8 +1714,16 @@
                   <th style="width: 70px;">Rank</th>
                   <th>Citation & Provision</th>
                   <th>Section</th>
-                  <th style="text-align: right; width: 130px;">Relevance (Stage 1)</th>
-                  <th style="text-align: right; width: 170px;">Conflict Confidence (Stage 2)</th>
+                  <th id="th-sort-stage1" onclick="toggleSort('stage1')"
+                    style="text-align: right; width: 140px; cursor: pointer; user-select: none;"
+                    title="Click to sort by Stage 1 Relevance">
+                    Relevance (Stage 1) <span id="sort-icon-stage1">▼</span>
+                  </th>
+                  <th id="th-sort-stage2" onclick="toggleSort('stage2')"
+                    style="text-align: right; width: 180px; cursor: pointer; user-select: none;"
+                    title="Click to sort by Stage 2 Conflict Confidence">
+                    Conflict Confidence (Stage 2) <span id="sort-icon-stage2">⇅</span>
+                  </th>
                 </tr>
               </thead>
               <tbody id="shortlist-tbody">
@@ -1701,12 +1755,13 @@
     <div class="footer-card">
       <div class="footer-top-title">Davao City Ordinance Conflict Detection System</div>
       <div class="footer-top-subtitle">An Undergraduate Thesis Project · Ateneo de Davao University</div>
-      
+
       <div class="footer-columns-grid">
         <div>
           <div class="footer-col-header">RESEARCH PROJECT</div>
           <p class="footer-col-text">
-            “A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference”
+            “A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information
+            Retrieval and Natural Language Inference”
           </p>
         </div>
         <div>
@@ -1721,7 +1776,7 @@
         <div>
           <div class="footer-col-header">Faculty & Advisers</div>
           <p class="footer-col-text">
-            <strong>Grace Tacadao</strong><br>
+            <strong>Grace S. Tacadao, MSIT</strong><br>
             CS Thesis Writing II Professor<br><br>
             <strong>Adrian “Ogs” Ablazo, MSIT</strong><br>
             Thesis Adviser
@@ -1732,8 +1787,9 @@
       <div class="footer-divider-line"></div>
 
       <div class="footer-bottom-row">
-        <div>Disclaimer: Research prototype intended for legislative drafting assistance; not binding legal counsel.</div>
-        <div>© 2026 Ateneo de Davao University · Department of Computer Science</div>
+        <div>Disclaimer: Research prototype intended for legislative drafting assistance; not binding legal counsel.
+        </div>
+        <div>© 2026 Ateneo de Davao University · Computer Studies Cluster</div>
       </div>
     </div>
   </footer>
@@ -1750,6 +1806,8 @@
     let CURRENT_PAGE = 1;
     let PAGE_SIZE = 10;
     let ACTIVE_FILTER = "all";
+    let CURRENT_SORT_COLUMN = "stage1"; // 'stage1' or 'stage2'
+    let CURRENT_SORT_DIR = "desc";      // 'desc' or 'asc'
 
     // View Routing
     function navigateTo(view, event) {
@@ -1948,22 +2006,93 @@
       }
 
       // Latency badges
-      let totalLatencyMs = 0;
-      if (data.sections && data.sections.length > 0) {
-        totalLatencyMs = data.sections.reduce((acc, s) => acc + (s.latency_ms || 15.0), 0);
-      } else {
-        totalLatencyMs = 15.5;
-      }
-      const scanDisplay = totalLatencyMs > 1000 ? `${(totalLatencyMs / 1000).toFixed(2)} s` : `${totalLatencyMs.toFixed(1)} ms`;
-      document.getElementById('main-results-scanned-time').textContent = `Scanned in ${scanDisplay}`;
+      let scanDisplay = "15.5 ms";
+      const formatDuration = (sec) => {
+        if (!sec || sec <= 0) return "0s";
+        if (sec >= 60) {
+          const m = Math.floor(sec / 60);
+          const s = (sec % 60).toFixed(1);
+          return `${m}m ${s}s`;
+        }
+        return `${sec.toFixed(2)}s`;
+      };
 
-      // 2. Render Accordions in Summary of Results
+      if (data.latency_metrics && data.latency_metrics.total_latency_s) {
+        const totS = data.latency_metrics.total_latency_s;
+        const s1S = data.latency_metrics.stage1_latency_s || 0;
+        const s2S = data.latency_metrics.stage2_latency_s || 0;
+        scanDisplay = `Time Analyzed: ${formatDuration(totS)} (Stage 1: ${formatDuration(s1S)} · Stage 2: ${formatDuration(s2S)})`;
+      } else if (data.sections && data.sections.length > 0) {
+        const totalLatencyMs = data.sections.reduce((acc, s) => acc + (s.latency_ms || 15.0), 0);
+        const totalS = totalLatencyMs / 1000.0;
+        scanDisplay = `Time Analyzed: ${formatDuration(totalS)}`;
+      }
+      document.getElementById('main-results-scanned-time').textContent = scanDisplay;
+
+      // 2. Render Accordions in Summary of Results (Option B: Preemption-Pair View)
       const container = document.getElementById('conflicts-container');
       container.innerHTML = '';
 
-      const conflictSections = (data.sections || []).filter(s => s.verdict === 'CONTRADICTION');
-      
-      if (conflictSections.length === 0) {
+      // Collect all individual statutory collision pairs across all sections
+      const conflictPairs = [];
+      (data.sections || []).forEach(sec => {
+        if (sec.is_boilerplate) return;
+
+        // 1. Check evaluated candidates within the section
+        const cands = sec.candidate_shortlist || [];
+        const secConflictCands = cands.filter(c => c.stage2_evaluated && ((c.p_contradiction !== undefined && c.p_contradiction >= 0.45) || (c.stage2_confidence !== undefined && Number(c.stage2_confidence) >= 45.0)));
+
+        if (secConflictCands.length > 0) {
+          secConflictCands.forEach(cand => {
+            conflictPairs.push({
+              sec_num: sec.sec_num,
+              sec_title: sec.sec_title,
+              ordinance_text: sec.ordinance_text || sec.text,
+              target_statute: cand.citation || sec.target_statute,
+              statute_title: cand.title || sec.statute_title,
+              statute_text: cand.raw_text || cand.prepended_text || sec.statute_text,
+              confidence_percentage: cand.stage2_confidence !== undefined ? Number(cand.stage2_confidence) : Math.round((cand.p_contradiction || 0.95) * 1000) / 10,
+              legal_rationale: cand.summary || sec.legal_rationale,
+              verdict: "CONTRADICTION"
+            });
+          });
+        } else if (sec.verdict === 'CONTRADICTION') {
+          // Fallback if top candidate or fine defect was flagged
+          conflictPairs.push({
+            sec_num: sec.sec_num,
+            sec_title: sec.sec_title,
+            ordinance_text: sec.ordinance_text || sec.text,
+            target_statute: sec.target_statute,
+            statute_title: sec.statute_title,
+            statute_text: sec.statute_text || sec.top_candidate?.raw_text,
+            confidence_percentage: sec.confidence_percentage,
+            legal_rationale: sec.legal_rationale,
+            verdict: "CONTRADICTION"
+          });
+        }
+      });
+
+      // Update Headline to reflect total conflict pairs and affected sections
+      const totalPairsCount = conflictPairs.length;
+      const subheadline = document.getElementById('main-results-subheadline');
+      if (totalPairsCount > 0) {
+        headline.className = 'main-results-headline has-conflict';
+        const distinctSections = new Set(conflictPairs.map(p => p.sec_num)).size;
+        headline.textContent = `${totalPairsCount} Conflict${totalPairsCount > 1 ? 's' : ''} Detected!`;
+        if (subheadline) {
+          subheadline.textContent = `${distinctSections} Problematic Section${distinctSections > 1 ? 's' : ''} in Proposed Draft`;
+          subheadline.style.display = 'block';
+        }
+      } else {
+        headline.className = 'main-results-headline no-conflict';
+        headline.textContent = '0 Conflicts Detected! (Compliant)';
+        if (subheadline) {
+          subheadline.textContent = 'All operative provisions operate within valid local police power.';
+          subheadline.style.display = 'block';
+        }
+      }
+
+      if (conflictPairs.length === 0) {
         const noticeDiv = document.createElement('div');
         noticeDiv.style.cssText = "padding: 24px; text-align: center; color: var(--success); background: var(--success-bg); border: 1.5px solid var(--success-border); border-radius: var(--radius-xl);";
         noticeDiv.innerHTML = `
@@ -1971,16 +2100,16 @@
           <span style="font-size: 0.92rem; color: var(--muted-foreground);">No preemption contradictions detected under Section 5(a) of the Local Government Code. Valid exercise of local regulatory police power.</span>
         `;
         container.appendChild(noticeDiv);
-        
+
         if (data.sections && data.sections.length === 1) {
-          const accEl = createAccordionElement(data.sections[0], 1, data.document_name, true, true);
+          const accEl = createAccordionElement(data.sections[0], 1, data.document_name, true, true, 1);
           container.appendChild(accEl);
         }
       } else {
-        conflictSections.forEach((sec, idx) => {
+        conflictPairs.forEach((pair, idx) => {
           // Open the first conflict accordion by default
           const isFirst = (idx === 0);
-          const accEl = createAccordionElement(sec, idx + 1, data.document_name, isFirst, false);
+          const accEl = createAccordionElement(pair, idx + 1, data.document_name, isFirst, false, totalPairsCount);
           container.appendChild(accEl);
         });
       }
@@ -1992,13 +2121,13 @@
     }
 
     // Creates interactive Accordion Card matching Wireframe 3
-    function createAccordionElement(sec, conflictIndex, docTitle, isOpen = false, isCompliant = false) {
+    function createAccordionElement(sec, conflictIndex, docTitle, isOpen = false, isCompliant = false, totalConflicts = 1) {
       const card = document.createElement('div');
       card.className = `conflict-accordion ${isOpen ? 'is-open' : ''}`;
 
       const confPct = sec.confidence_percentage || (sec.conflict_probability ? Math.round(sec.conflict_probability * 1000) / 10 : 88.4);
       const statuteCitation = sec.target_statute || "Presidential Decree No. 1144 §6";
-      
+
       const secNum = sec.sec_num || 1;
       const secTitle = sec.sec_title ? sec.sec_title.trim().toUpperCase() : "OPERATIVE PROVISION";
       const enactmentHeader = `${statuteCitation.toUpperCase()} vs DRAFT SECTION ${secNum} (${secTitle})`;
@@ -2018,6 +2147,8 @@
           statuteLeaf = "Section 16. General Welfare. — Every local government unit shall exercise the powers expressly granted, those necessarily implied therefrom, as well as powers necessary, appropriate, or incidental for its efficient and effective governance, and those which are essential to the promotion of the general welfare.";
         } else if (tgt.includes("1144")) {
           statuteLeaf = "Section 6. Powers and Functions. — The Fertilizer and Pesticide Authority shall have jurisdiction over all fertilizers, pesticides and other agricultural chemical inputs... and no local government unit may ban, regulate, or restrict such registered chemicals contrary to FPA standards.";
+        } else if (tgt.includes("10121") || tgt.includes("disaster")) {
+          statuteLeaf = "Section 21. Local Disaster Risk Reduction and Management Fund (LDRRMF). — Not less than five percent (5%) of the estimated revenue from regular sources shall be set aside as the LDRRMF to support disaster risk management activities... Provided, That thirty percent (30%) shall be allocated as Quick Response Fund (QRF) or stand-by fund for relief and recovery programs in order that situation and living conditions of people in communities or areas stricken by disasters, calamities, epidemics, or complex emergencies, may be normalized as quickly as possible.";
         } else if (sec.top_candidate && sec.top_candidate.prepended_text) {
           statuteLeaf = sec.top_candidate.prepended_text;
         } else {
@@ -2030,9 +2161,12 @@
 
       let rationale = sec.legal_rationale || sec.verdict_desc || `The proposed draft establishes local restrictions or penal measures that directly contradict superior statutory standards in ${statuteCitation} under the Magtajas preemption doctrine and Section 5(a) of the Local Government Code.`;
 
-      const titleLabel = isCompliant
-        ? `HARMONIOUS ALIGNMENT #${conflictIndex} : Valid Police Power`
-        : `POTENTIAL CONFLICT #${conflictIndex} : Direct Statutory Preemption`;
+      let titleLabel = "";
+      if (isCompliant) {
+        titleLabel = "Harmonious Alignment";
+      } else {
+        titleLabel = totalConflicts > 1 ? `Potential Conflict #${conflictIndex}` : "Potential Conflict";
+      }
 
       card.innerHTML = `
         <div class="conflict-accordion-header" onclick="toggleAccordion(this)">
@@ -2066,18 +2200,15 @@
                 <div class="confidence-bar-threshold-marker" style="left: 45%;" title="45.0% Decision Threshold"></div>
               </div>
             </div>
-            <div class="confidence-bar-footer-row">
-              <span class="confidence-bar-threshold-text">▲ 45.0% DECISION THRESHOLD</span>
-              <span class="confidence-bar-status-text" style="color: ${isCompliant ? 'var(--success)' : 'var(--primary)'};">
-                ${isCompliant ? 'Below Threshold · Harmonious Regulatory Scope' : 'Exceeds Calibrated Decision Threshold (Preemption Risk)'}
-              </span>
+            <div class="confidence-bar-footer-row" style="position: relative; height: 18px; margin-top: 4px;">
+              <span class="confidence-bar-threshold-text" style="position: absolute; left: 45%; transform: translateX(-50%); white-space: nowrap;">▲ 45.0% DECISION THRESHOLD</span>
             </div>
           </div>
 
           <div class="accordion-comparison-grid">
             <div class="provision-box">
               <div class="provision-box-header" onclick="toggleSubBox(this)">
-                <span>${(statuteCitation.includes('Ordinance') ? 'EXISTING LOCAL ORDINANCE' : 'SUPERIOR NATIONAL STATUTE')} (${escapeHtml(statuteCitation)})</span>
+                <span>EXISTING LAW (${escapeHtml(statuteCitation)})</span>
                 <svg class="sub-box-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
@@ -2087,7 +2218,7 @@
 
             <div class="provision-box">
               <div class="provision-box-header" onclick="toggleSubBox(this)">
-                <span>PROPOSED DRAFT ORDINANCE</span>
+                <span>PROPOSED ORDINANCE (${escapeHtml(docTitle || 'DRAFT SECTION ' + secNum)})</span>
                 <svg class="sub-box-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
@@ -2127,6 +2258,31 @@
       }
     }
 
+    function toggleSort(col) {
+      if (CURRENT_SORT_COLUMN === col) {
+        CURRENT_SORT_DIR = CURRENT_SORT_DIR === 'desc' ? 'asc' : 'desc';
+      } else {
+        CURRENT_SORT_COLUMN = col;
+        CURRENT_SORT_DIR = 'desc';
+      }
+
+      // Update header icons
+      const iconS1 = document.getElementById('sort-icon-stage1');
+      const iconS2 = document.getElementById('sort-icon-stage2');
+      if (iconS1 && iconS2) {
+        if (CURRENT_SORT_COLUMN === 'stage1') {
+          iconS1.textContent = CURRENT_SORT_DIR === 'desc' ? '▼' : '▲';
+          iconS2.textContent = '⇅';
+        } else {
+          iconS1.textContent = '⇅';
+          iconS2.textContent = CURRENT_SORT_DIR === 'desc' ? '▼' : '▲';
+        }
+      }
+
+      CURRENT_PAGE = 1;
+      applyCandidateFiltersAndRender();
+    }
+
     // Filter & Paginator Handlers
     function handleFilterChange() {
       ACTIVE_FILTER = document.getElementById('filter-jurisdiction').value;
@@ -2155,10 +2311,24 @@
         FILTERED_SHORTLIST = [...CURRENT_SHORTLIST];
       }
 
+      // 2. Sort
+      FILTERED_SHORTLIST.sort((a, b) => {
+        let valA = 0;
+        let valB = 0;
+        if (CURRENT_SORT_COLUMN === 'stage1') {
+          valA = a.similarity || a.stage1_score || 0;
+          valB = b.similarity || b.stage1_score || 0;
+        } else if (CURRENT_SORT_COLUMN === 'stage2') {
+          valA = a.stage2_confidence !== undefined ? Number(a.stage2_confidence) : (a.p_contradiction !== undefined ? a.p_contradiction * 100 : 0);
+          valB = b.stage2_confidence !== undefined ? Number(b.stage2_confidence) : (b.p_contradiction !== undefined ? b.p_contradiction * 100 : 0);
+        }
+        return CURRENT_SORT_DIR === 'desc' ? (valB - valA) : (valA - valB);
+      });
+
       // Update badge
       document.getElementById('shortlist-count-badge').textContent = `${FILTERED_SHORTLIST.length} Provisions`;
 
-      // 2. Render Page
+      // 3. Render Page
       renderPagedCandidates();
     }
 
@@ -2200,7 +2370,7 @@
 
         const titleText = cand.title ? cand.title.toUpperCase() : "STATUTORY REGULATION";
         const sectionText = cand.section_title || cand.section || "Section 1. Operative Provision";
-        
+
         let relPct = '82.40%';
         if (cand.similarity) {
           relPct = (cand.similarity * 100).toFixed(2) + '%';
@@ -2374,4 +2544,5 @@
     });
   </script>
 </body>
+
 </html>

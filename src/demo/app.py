@@ -185,15 +185,42 @@ class LocalNeuralEngine:
                 item = json.loads(f.readline().decode("utf-8"))
                 enact_num = item.get("enactment_number") or item.get("enactment_id") or "Statute"
                 sec_num = item.get("section_number") or ""
+                sec_title = item.get("section_title") or ""
                 cit = f"{enact_num} {sec_num}".strip()
                 jur = "National Statute" if item.get("jurisdiction") == "national" else "Davao City Ordinance"
                 raw_txt = item.get("raw_text", "")
                 prep_txt = item.get("prepended_text") or raw_txt
+
+                # Clean Title to prevent raw single-word city markers (e.g. "MANILA") from replacing authentic titles
+                raw_title = (item.get("enactment_title") or "").strip()
+                clean_title = raw_title
+                if not clean_title or clean_title.upper() in ["MANILA", "DAVAO", "PHILIPPINES"] or len(clean_title) < 8:
+                    if "120" in enact_num and "2020" in enact_num:
+                        clean_title = "STRENGTHENING REHABILITATION AND RECOVERY EFFORTS IN TYPHOON-HIT AREAS THROUGH THE CREATION OF THE BUILD BACK BETTER TASK FORCE"
+                    elif "10121" in enact_num:
+                        clean_title = "PHILIPPINE DISASTER RISK REDUCTION AND MANAGEMENT ACT OF 2010"
+                    elif "7160" in enact_num:
+                        clean_title = "LOCAL GOVERNMENT CODE OF 1991"
+                    else:
+                        clean_title = enact_num
+
+                # Clean section display text
+                if sec_num and sec_title:
+                    sec_display = f"{sec_num}. {sec_title}"
+                elif sec_num:
+                    sec_display = sec_num
+                elif sec_title:
+                    sec_display = sec_title
+                else:
+                    sec_display = "Operative Provision"
+
                 candidates.append({
                     "rank": rank,
                     "provision_id": item.get("provision_id"),
                     "citation": cit,
-                    "title": item.get("enactment_title") or "National Statutory Authority",
+                    "title": clean_title,
+                    "section_title": sec_display,
+                    "section": sec_display,
                     "jurisdiction": jur,
                     "raw_text": raw_txt,
                     "prepended_text": prep_txt,
@@ -600,6 +627,12 @@ def generate_top_50_shortlist(case_id: str, controlling_statute: str, statute_ti
         for idx, cand in enumerate(retrieved_candidates[:50], start=1):
             c_copy = dict(cand)
             c_copy["rank"] = idx
+            if not c_copy.get("section_title") and not c_copy.get("section"):
+                # Parse section from citation if available
+                cit_parts = c_copy.get("citation", "").split("Section")
+                sec_lbl = f"Section {cit_parts[1].strip()}" if len(cit_parts) > 1 else "Operative Provision"
+                c_copy["section_title"] = sec_lbl
+                c_copy["section"] = sec_lbl
             if not c_copy.get("stage2_evaluated"):
                 c_copy["stage2_evaluated"] = False
                 c_copy["stage2_confidence"] = round(c_copy.get("stage1_score", 0.70) * 100, 1)
@@ -1371,6 +1404,7 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
     3. Stage 2 flattened batch Cross-Encoder NLI on substantive provisions
     4. Exact ground-truth statutory alignment & authentic provision text extraction
     """
+    t_start_total = time.perf_counter()
     doc_title, chunks = chunk_ordinance_sections(raw_text, default_title=filename)
     if not chunks:
         chunks = [{
@@ -1388,6 +1422,7 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
         progress_callback("chunking", 20, "Document Ingested", f"Divided into {len(chunks)} sections ({len(substantive_chunks)} operative, {len(chunks)-len(substantive_chunks)} boilerplate).")
 
     # 1. Stage 1 Retrieval for Substantive Sections (Scope: National positive law)
+    t_start_stage1 = time.perf_counter()
     for sub_idx, ch in enumerate(substantive_chunks):
         s_marker = ch.get("sec_marker") or f"SECTION {ch['sec_num']}"
         header_title = f"{s_marker}: {ch['sec_title']}" if ch.get('sec_title') else s_marker
@@ -1397,7 +1432,7 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             progress_callback("stage1", pct, sec_badge, f"Stage 1: Scanning 164,620 national statutes for Section {ch['sec_num']}...")
         if NEURAL_ENGINE.is_loaded:
             query_str = f"[{doc_title} | {header_title}] {ch['text']}"
-            raw_cands = NEURAL_ENGINE.retrieve_top_k(query_str, k=25, scope="national")
+            raw_cands = NEURAL_ENGINE.retrieve_top_k(query_str, k=50, scope="national")
             # Filter out obsolete colonial enactments (Act No. and Commonwealth Act) and superseded pre-LGC charter (RA 4354)
             valid_cands = [c for c in raw_cands if not c["citation"].lower().startswith("act no.") and not c["citation"].lower().startswith("commonwealth act") and "4354" not in c["citation"]]
             ch["all_candidates"] = valid_cands
@@ -1405,8 +1440,10 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
         else:
             ch["all_candidates"] = []
             ch["eval_candidates"] = []
+    stage1_elapsed_s = time.perf_counter() - t_start_stage1
 
     # 2. Stage 2 Section-by-Section Cross-Encoder Evaluation on Top Governing Candidates
+    t_start_stage2 = time.perf_counter()
     batch_results = []
     total_sub = len(substantive_chunks)
 
@@ -1443,6 +1480,8 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             cand["status_badge"] = "danger" if is_cand_conflict else ("success" if res["p_entailment"] >= 0.45 else "info")
 
         batch_results.extend(sec_results)
+    stage2_elapsed_s = time.perf_counter() - t_start_stage2
+    total_elapsed_s = time.perf_counter() - t_start_total
 
     # 3. Final Scoring and Authentic Provision Extraction
     audited_sections = []
@@ -1648,11 +1687,45 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
         })
 
     is_flagged = (conflict_count > 0)
+    
+    # Aggregate top candidates across all substantive sections, prioritizing flagged contradictions
+    aggregated_cands = []
+    seen_provisions = set()
+
+    # 1. First collect all evaluated contradiction candidates from all sections
+    for sec in audited_sections:
+        for c in sec.get("candidate_shortlist", []):
+            prov_key = (c.get("citation", ""), c.get("provision_id", ""))
+            is_c = c.get("stage2_evaluated") and ((c.get("p_contradiction", 0) >= 0.45) or (c.get("stage2_confidence", 0) >= 45.0))
+            if is_c and prov_key not in seen_provisions:
+                seen_provisions.add(prov_key)
+                c_copy = dict(c)
+                c_copy["source_section"] = f"Section {sec.get('sec_num')}"
+                aggregated_cands.append(c_copy)
+
+    # 2. Then collect remaining evaluated candidates from all sections
+    for sec in audited_sections:
+        for c in sec.get("candidate_shortlist", []):
+            prov_key = (c.get("citation", ""), c.get("provision_id", ""))
+            if prov_key not in seen_provisions:
+                seen_provisions.add(prov_key)
+                c_copy = dict(c)
+                c_copy["source_section"] = f"Section {sec.get('sec_num')}"
+                aggregated_cands.append(c_copy)
+            if len(aggregated_cands) >= 50:
+                break
+        if len(aggregated_cands) >= 50:
+            break
+
+    # Re-rank candidates 1 to 50
+    for idx, c in enumerate(aggregated_cands, start=1):
+        c["rank"] = idx
+
     primary_sec = next((s for s in audited_sections if s["verdict"] == "CONTRADICTION" and not s.get("is_boilerplate")), (audited_sections[0] if audited_sections else None))
     pri_stat = primary_sec.get("target_statute", "Republic Act No. 7160 §16") if primary_sec else "Republic Act No. 7160 §16"
     pri_prob = primary_sec.get("conflict_probability", 0.20) if primary_sec else 0.20
 
-    top_50 = (primary_sec.get("candidate_shortlist") if primary_sec and primary_sec.get("candidate_shortlist") else generate_top_50_shortlist(
+    top_50 = (aggregated_cands if aggregated_cands else generate_top_50_shortlist(
         case_id="DOC-AUDIT",
         controlling_statute=pri_stat,
         statute_title=f"Philippine Statutory Authority: {pri_stat}",
@@ -1672,6 +1745,11 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             "contradiction": conflict_count,
             "entailment": entailment_count,
             "neutral": neutral_count
+        },
+        "latency_metrics": {
+            "total_latency_s": round(total_elapsed_s, 2),
+            "stage1_latency_s": round(stage1_elapsed_s, 2),
+            "stage2_latency_s": round(stage2_elapsed_s, 2)
         },
         "candidate_shortlist": top_50,
         "sections": audited_sections
