@@ -1,8 +1,10 @@
 {
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
     "latex-workshop.latex.tools": [
         {
             "name": "build-paper-fast",
-            "command": "C:\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "%WORKSPACE_FOLDER%\\scripts\\build_paper.py",
                 "--fast"
@@ -10,7 +12,7 @@
         },
         {
             "name": "build-paper-full",
-            "command": "C:\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "%WORKSPACE_FOLDER%\\scripts\\build_paper.py"
             ]
