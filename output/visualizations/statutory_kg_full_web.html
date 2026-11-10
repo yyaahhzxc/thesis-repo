@@ -789,7 +789,7 @@
       'domain': '10 Macro Legal Domains: All enactments mapped to canonical subject-matter domains from dual-corpus topic modeling.',
       'corpus_typology': 'Corpus-Specific Typology: Differentiates authentic local functional classes (Traffic, Substantive, Donations, Calamity, Zoning) and national statutory topic categories.',
       'instrument': 'Statutory Instrument Classification: Republic Acts (RA), City Ordinances (ORD), Presidential Decrees (PD), Batas Pambansa (BP), Executive Orders (EO), Commonwealth Acts (CA), Public Acts (ACT).',
-      'jurisdiction': 'Jurisdictional Contrast: Vivid contrast between Davao City Local Ordinances (Neon Cyan) and National Statutes (Warm Amber & Gold).',
+      'jurisdiction': 'Jurisdictional Contrast: Pure binary 2-color distinction between Davao City Local Ordinances (Neon Cyan #00F2FE) and National Statutes (Vivid Pink #EC4899).',
       'era': 'Temporal Evolution: Legislative eras spanning Pre-War (<1946), Third Republic / Martial Law (1946–1986), Fifth Republic / LGC (1987–2015), and Modern Digital Era (2016–Present).'
     };
 
@@ -864,13 +864,7 @@
       }
 
       if (currentColorMode === 'jurisdiction') {
-        if (n.jur === 'local') {
-          return n.deg >= 6 ? '#00F2FE' : '#38BDF8';
-        } else {
-          if (n.deg >= 30) return '#FFD700';
-          if (n.deg >= 5) return '#F59E0B';
-          return '#6366F1';
-        }
+        return (n.jur === 'local') ? '#00F2FE' : '#EC4899';
       }
 
       if (currentColorMode === 'era') {
@@ -924,10 +918,8 @@
         html = items.map(it => `<div class="legend-item"><span class="legend-dot" style="background:${it.c};"></span><span>${it.l}</span></div>`).join('');
       } else if (currentColorMode === 'jurisdiction') {
         const items = [
-          { c: '#00F2FE', l: 'Davao City Local Ordinances (SP)' },
-          { c: '#FFD700', l: 'National Bedrock Super-Hubs (RA 7160, Codes)' },
-          { c: '#F59E0B', l: 'Primary National Statutes' },
-          { c: '#6366F1', l: 'Other National Statutes' }
+          { c: '#00F2FE', l: 'Davao City Local Ordinances (1,664 Enactments)' },
+          { c: '#EC4899', l: 'National Statutes (25,584 Enactments)' }
         ];
         html = items.map(it => `<div class="legend-item"><span class="legend-dot" style="background:${it.c};"></span><span>${it.l}</span></div>`).join('');
       } else if (currentColorMode === 'era') {
