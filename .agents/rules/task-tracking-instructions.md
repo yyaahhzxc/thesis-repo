@@ -10,6 +10,14 @@ description: This rule mandates that the agent must always inspect, maintain, an
 **Authors:** Ralph Paolo Dulce & Yahyah Odin  
 **Adviser:** Mr. Adrian "Ogs" Ablazo | **Professor:** Ma'am Grace Tacadao  
 
+> [!IMPORTANT]
+> **Foundational Principles & Research Integrity Mandate:**
+> All work in this repository is governed by [`.agents/rules/general-instructions.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/.agents/rules/general-instructions.md) and [`docs/GENERAL_INSTRUCTIONS_AND_PRINCIPLES.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/GENERAL_INSTRUCTIONS_AND_PRINCIPLES.md), which strictly enforce:
+> 1. **Zero Shortcuts & Anti-Placeholder Policy:** No placeholders, mock summaries, or truncated snippets masquerading as authentic complete enactments.
+> 2. **Mandatory Full-Text Completeness & Statutory Anatomy:** 100% full-text verbatim enactments from top to bottom (session metadata, council roster, WHEREAS recitals, operative sections, framework clauses, and signature blocks) regardless of length.
+> 3. **Proactive & Persistent Hindrance Escalation:** Proactively and repeatedly report any corpus absences, cross-jurisdictional anomalies (e.g. CDO/Manila), resolution vs ordinance mismatches, or OCR degradations until actively resolved by the authors.
+> 4. **Radical Empirical Transparency:** 100% honesty regarding what is synthetic vs authentic in all benchmarks.
+
 ---
 
 ## **1. Author Identity & Collaborative Multi-User Handling**

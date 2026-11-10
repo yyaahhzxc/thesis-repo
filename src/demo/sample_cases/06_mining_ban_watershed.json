@@ -1,37 +1,54 @@
 {
-  "filename_prefix": "06_mining_ban_watershed",
-  "case_id": "DAVAO-TIER3-06",
-  "case_name": "Davao City Mining Ban and Panigan-Tamugan Watershed Dispute",
-  "docket_no": "SP Resolution / May 2015 Mining Ban Ordinance",
-  "ordinance_no": "Ordinance No. 0310-07 & 2015 Mining Ban Ordinance",
-  "title": "THE DAVAO CITY WATERSHED PROTECTION AND MINING BAN ORDINANCE",
-  "enacting_lgu": "City of Davao",
-  "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF DAVAO CITY, IN SESSION ASSEMBLED, THAT:",
+  "title": "AN ORDINANCE CLOSING OFF THE CITY OF DAVAO TO MINING OPERATIONS",
+  "ordinance_no": "Ordinance No. 0325-15",
+  "series": 2015,
+  "lgu": "City of Davao",
+  "file": "06_mining_ban_watershed.pdf",
   "sections": [
     {
-      "sec_num": 1,
-      "sec_title": "TITLE",
-      "text": "This Ordinance shall be known as the 'Davao City Watershed Protection and Mining Ban Ordinance'."
+      "number": 1,
+      "heading": "TITLE",
+      "text": "This Ordinance shall be known and cited as 'An Ordinance Closing Off the City of Davao to Mining Operations' or the 'Davao City Mining Closure Ordinance of 2015'."
     },
     {
-      "sec_num": 2,
-      "sec_title": "TOTAL MINING BAN",
-      "text": "No mining operations of any nature, whether large-scale or small-scale, shall be permitted anywhere within the territorial jurisdiction of Davao City. The City Mayor shall refuse to issue business permits or Mayor's clearances to any entity holding national mineral agreements (MPSAs) from the national government."
+      "number": 2,
+      "heading": "DECLARATION OF POLICY",
+      "text": "It is hereby declared the policy of the City Government of Davao to maintain ecological balance, safeguard its potable water sources, preserve agricultural landholdings, and shield its inhabitants from the devastating effects of extractive mineral exploration and exploitation."
     },
     {
-      "sec_num": 3,
-      "sec_title": "PROTECTION OF PANIGAN-TAMUGAN WATERSHED",
-      "text": "The Panigan-Tamugan recharge basin is declared an environmentally critical zone closed to all industrial extraction, quarrying, and mineral exploration activities."
+      "number": 3,
+      "heading": "TERRITORIAL COVERAGE",
+      "text": "The provisions of this Ordinance shall strictly apply to all lands, upland territories, ancestral domains, watershed recharge areas, conservation zones, and water bodies located within the entire territorial jurisdiction of Davao City."
     },
     {
-      "sec_num": 4,
-      "sec_title": "PENAL SANCTIONS",
-      "text": "Violators shall be penalized with a fine of Five Thousand Pesos (P5,000.00) or imprisonment for one (1) year, or both, plus revocation of municipal permits."
+      "number": 4,
+      "heading": "DEFINITION OF TERMS",
+      "text": "For purposes of this Ordinance, the following terms shall be defined as follows:\n\na. Mining — refers to the extraction, exploration, prospecting, utilization, development, or processing of minerals, whether metallic or non-metallic, through open-pit, underground, tunneling, placer, or chemical leaching mechanisms.\n\nb. Metallic Minerals — refer to minerals such as gold, copper, nickel, chromite, iron, silver, and other base or precious metallic ores.\n\nc. Quarry Resources — refer to common rocks, sand, gravel, earthfill, diorite, limestone, and other non-metallic minerals used exclusively for building and infrastructure construction that do not contain valuable metallic ores in economically workable quantities.\n\nd. Mineral Agreements — refer to national contracts, permits, Financial or Technical Assistance Agreements (FTAAs), or Mineral Production Sharing Agreements (MPSAs) granted under Republic Act No. 7942."
     },
     {
-      "sec_num": 5,
-      "sec_title": "SEPARABILITY AND EFFECTIVITY",
-      "text": "This Ordinance shall take effect immediately upon enactment and publication."
+      "number": 5,
+      "heading": "PROHIBITION ON MINING OPERATIONS",
+      "text": "No approval, clearance, permit, or endorsement shall be granted or issued by the City of Davao through its Sangguniang Panlungsod or the City Mayor to any person, natural or juridical, to undertake any and all forms of mining operation, mineral exploration, prospecting, or processing in any area within the territorial jurisdiction of Davao City. The City Mayor and all administrative departments are expressly prohibited from issuing Mayor's Clearances, Business Permits, or Locational Approvals to mining concessionaires holding national mineral agreements."
+    },
+    {
+      "number": 6,
+      "heading": "EXEMPTION OF TRADITIONAL QUARRY RESOURCES",
+      "text": "The prohibition established under Section 5 shall not apply to the extraction of non-metallic quarry resources, such as sand, gravel, boulder, and earthfill for local construction needs; Provided, that said extraction strictly adheres to the Davao City Watershed Code, possesses valid environmental compliance certificates, does not involve metallic substances, and secures prior written clearance from the City Mining Regulatory Board."
+    },
+    {
+      "number": 7,
+      "heading": "PENAL SANCTIONS",
+      "text": "Any person or corporate entity that violates the provisions of this Ordinance shall be punished by a fine of Five Thousand Pesos (₱5,000.00) and imprisonment of not less than six (6) months nor more than one (1) year, or both, at the discretion of the court.\n\nIn addition, the business permit of the offending entity shall be perpetually cancelled, its mining machinery and extractive equipment impounded and forfeited in favor of the City Government, and its operational site subject to summary physical closure."
+    },
+    {
+      "number": 8,
+      "heading": "SEPARABILITY CLAUSE",
+      "text": "If, for any reason, any section or provision of this Ordinance is held unconstitutional or invalid by a competent court, the other sections or provisions not affected thereby shall remain in full force and effect."
+    },
+    {
+      "number": 9,
+      "heading": "EFFECTIVITY CLAUSE",
+      "text": "This Ordinance shall take effect immediately upon its approval and publication in a local newspaper of general circulation in Davao City."
     }
   ]
 }

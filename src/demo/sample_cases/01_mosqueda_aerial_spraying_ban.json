@@ -1,57 +1,56 @@
 {
-  "filename_prefix": "01_mosqueda_aerial_spraying_ban",
-  "case_id": "DAVAO-TIER3-01",
-  "case_name": "Mosqueda v. Pilipino Banana Growers & Exporters Association, Inc.",
-  "docket_no": "G.R. Nos. 189185 & 189305 (August 16, 2016)",
-  "ordinance_no": "Ordinance No. 0309-07",
   "title": "AN ORDINANCE BANNING AERIAL SPRAYING AS AN AGRICULTURAL PRACTICE IN ALL AGRICULTURAL ACTIVITIES BY ALL AGRICULTURAL ENTITIES IN DAVAO CITY",
-  "enacting_lgu": "City of Davao",
-  "enacting_clause": "Be it enacted by the Sangguniang Panlungsod of Davao City in session assembled that:",
+  "ordinance_no": "Ordinance No. 0309-07",
+  "series": 2007,
+  "lgu": "City of Davao",
+  "date_enacted": "January 23, 2007",
+  "date_approved": "February 9, 2007",
+  "file": "01_mosqueda_aerial_spraying_ban.pdf",
   "sections": [
     {
-      "sec_num": 1,
-      "sec_title": "TITLE",
-      "text": "This Ordinance shall be known as \"An Ordinance Banning Aerial Spraying as an Agricultural Practice in all Agricultural Activities by all Agricultural Entities in Davao City\";"
+      "number": 1,
+      "heading": "TITLE",
+      "text": "This Ordinance shall be known as 'An Ordinance Banning Aerial Spraying as an Agricultural Practice in all Agricultural Activities by all Agricultural Entities in Davao City'."
     },
     {
-      "sec_num": 2,
-      "sec_title": "POLICY OF THE CITY",
-      "text": "It shall be the policy of the City of Davao to eliminate the method of aerial spraying as an agricultural practice in all agricultural activities by all entities within Davao City;"
+      "number": 2,
+      "heading": "POLICY OF THE CITY",
+      "text": "It shall be the policy of the City of Davao to eliminate the method of aerial spraying as an agricultural practice in all agricultural activities by all entities within Davao City."
     },
     {
-      "sec_num": 3,
-      "sec_title": "DEFINITION OF TERMS",
-      "text": "a. Aerial Spraying - refers to application of substances through the use of aircraft of any form which dispenses the substances in the air.\nb. Agricultural Practices - refer to the practices conducted by agricultural entities in relation to their agricultural activities;\nc. Agricultural Activities - refer to activities that include, but not limited to, land preparation, seeding, planting, cultivation, harvesting and bagging;\nd. Agricultural Entities - refer to persons, natural or juridical, involved in agricultural activities\ne. Buffer Zone - is an identified 30-meter zone within and around the boundaries of agricultural farms/plantations that need special monitoring to avoid or minimize harm to the environment and inhabitants pursuant to policies and guidelines set forth in this Ordinance and other government regulations. It is an area of land that must lie within the property which does not include public lands, public thoroughfares or adjacent private properties. It must be planted with diversified trees that grow taller than what are usually planted and grown in the plantation to protect those within the adjacent fields, neighboring farms, residential area, schools and workplaces."
+      "number": 3,
+      "heading": "DEFINITION OF TERMS",
+      "text": "For purposes of this Ordinance, the following terms shall be defined as follows:\n\na. Aerial Spraying — refers to the application of substances through the use of aircraft of any form which dispenses the substances in the air.\n\nb. Agricultural Practices — refer to the practices conducted by agricultural entities in relation to their agricultural activities.\n\nc. Agricultural Activities — refer to activities that include, but are not limited to, land preparation, seeding, planting, cultivation, harvesting, and bagging.\n\nd. Agricultural Entities — refer to persons, natural or juridical, involved in agricultural activities.\n\ne. Buffer Zone — is an identified thirty (30) meter zone within and around the boundaries of agricultural farms/plantations that need special monitoring to avoid or minimize harm to the environment and inhabitants pursuant to policies and guidelines set forth in this Ordinance and other government regulations. It is an area of land that must lie within the property which does not include public lands, public thoroughfares, or adjacent private properties. It must be planted with diversified trees that grow taller than what are usually planted and grown in the plantation to protect those within the adjacent fields, neighboring farms, residential areas, schools, and workplaces."
     },
     {
-      "sec_num": 4,
-      "sec_title": "SCOPE AND APPLICABILITY",
-      "text": "The provisions of this Ordinance shall apply to all agricultural entities within the territorial jurisdiction of Davao City;"
+      "number": 4,
+      "heading": "SCOPE AND APPLICABILITY",
+      "text": "The provisions of this Ordinance shall apply to all agricultural entities within the territorial jurisdiction of Davao City."
     },
     {
-      "sec_num": 5,
-      "sec_title": "BAN OF AERIAL SPRAYING",
+      "number": 5,
+      "heading": "BAN OF AERIAL SPRAYING",
       "text": "A ban on aerial spraying shall be strictly enforced in the territorial jurisdiction of Davao City three (3) months after the effectivity of this Ordinance."
     },
     {
-      "sec_num": 6,
-      "sec_title": "BUFFER ZONE",
-      "text": "Consistent with national legislation and government regulations, all agricultural entities must provide for a thirty (30) meter buffer zone within the boundaries of their agricultural farms/plantations. This buffer zone must be properly identified through Global Positioning System (GPS) survey. A survey plan showing the metes and bounds of each agricultural farm/plantation must be submitted to the City Mayor's Office, with the buffer zone clearly identified therein;"
+      "number": 6,
+      "heading": "BUFFER ZONE",
+      "text": "Consistent with national legislation and government regulations, all agricultural entities must provide for a thirty (30) meter buffer zone within the boundaries of their agricultural farms/plantations. This buffer zone must be properly identified through Global Positioning System (GPS) survey. A survey plan showing the metes and bounds of each agricultural farm/plantation must be submitted to the City Mayor's Office, with the buffer zone clearly identified therein."
     },
     {
-      "sec_num": 7,
-      "sec_title": "PENAL PROVISION",
-      "text": "Violation of any provision of this Ordinance shall be punished as follows:\na. First Offense: Fine of ₱5,000.00 and imprisonment of not less than one (1) month but not more than three (3) months;\nb. Second Offense: Fine of ₱5,000.00 and imprisonment of not less than three (3) months but not more than six (6) months and suspension of City-issued permits and licenses for one (1) year;\nc. Third Offense: Fine of P5,000.00 and imprisonment of not less than six (6) months but not more than one (1) year and perpetual cancellation of City issued permits and licenses;\nProvided, that in case the violation has been committed by a juridical person, the person in charge of the management thereof shall be held liable;"
+      "number": 7,
+      "heading": "PENAL PROVISION",
+      "text": "Violation of any provision of this Ordinance shall be punished as follows:\n\na. First Offense: Fine of Five Thousand Pesos (₱5,000.00) and imprisonment of not less than one (1) month but not more than three (3) months;\n\nb. Second Offense: Fine of Five Thousand Pesos (₱5,000.00) and imprisonment of not less than three (3) months but not more than six (6) months, and suspension of City-issued permits and licenses for one (1) year;\n\nc. Third Offense: Fine of Five Thousand Pesos (₱5,000.00) and imprisonment of not less than six (6) months but not more than one (1) year, and perpetual cancellation of City-issued permits and licenses;\n\nProvided, that in case the violation has been committed by a juridical person, the person in charge of the management thereof shall be held liable."
     },
     {
-      "sec_num": 8,
-      "sec_title": "REPEALING CLAUSE",
+      "number": 8,
+      "heading": "REPEALING CLAUSE",
       "text": "Any Ordinance that is contrary to or inconsistent with any of the provisions of this Ordinance shall be deemed amended or repealed accordingly."
     },
     {
-      "sec_num": 9,
-      "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect thirty (30) days from its publication in a newspaper of general circulation in Davao City;"
+      "number": 9,
+      "heading": "EFFECTIVITY",
+      "text": "This Ordinance shall take effect thirty (30) days from its publication in a newspaper of general circulation in Davao City."
     }
   ]
 }

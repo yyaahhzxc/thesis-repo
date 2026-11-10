@@ -1,47 +1,24 @@
 {
-  "filename_prefix": "09_magtajas_casino_preemption",
-  "case_id": "SC-PHIL-09",
-  "case_name": "Magtajas v. Pryce Properties Corp. and PAGCOR",
-  "docket_no": "G.R. No. 111097 (July 20, 1994; 234 SCRA 255)",
-  "ordinance_no": "Cagayan de Oro Ord. No. 3353 & Ord. No. 3375-93",
-  "title": "AN ORDINANCE PROHIBITING THE OPERATION OF CASINOS IN THE CITY OF CAGAYAN DE ORO",
-  "enacting_lgu": "City of Cagayan de Oro",
-  "enacting_clause": "BE IT ORDAINED BY THE SANGGUNIANG PANLUNGSOD OF CAGAYAN DE ORO, IN SESSION ASSEMBLED, THAT:",
+  "title": "AN ORDINANCE PROHIBITING THE OPERATION OF CASINO AND PROVIDING PENALTY FOR VIOLATION THEREFOR",
+  "ordinance_no": "Ordinance No. 3375-93",
+  "series": 1993,
+  "lgu": "City of Cagayan de Oro",
+  "file": "09_magtajas_casino_preemption.pdf",
   "sections": [
     {
-      "sec_num": 1,
-      "sec_title": "TITLE",
-      "text": "This Ordinance shall be known as the 'Anti-Casino Ordinance of the City of Cagayan de Oro'."
+      "number": 1,
+      "heading": "PROHIBITION OF CASINO OPERATIONS",
+      "text": "The operation of gambling CASINO in the City of Cagayan de Oro is hereby prohibited."
     },
     {
-      "sec_num": 2,
-      "sec_title": "DECLARATION OF MORAL POLICY",
-      "text": "It is hereby declared the policy of the City to protect the morality and public welfare of its citizens from the pernicious influences of legalized gambling."
+      "number": 2,
+      "heading": "PENALTIES AND SANCTIONS",
+      "text": "Any violation of this Ordinance shall be subject to the following penalties:\n\na) Administrative fine of Five Thousand Pesos (₱5,000.00) shall be imposed against the proprietor, partnership or corporation undertaking the operation, conduct, maintenance of gambling CASINO in the City and closure thereof;\n\nb) Imprisonment of not less than six (6) months nor more than one (1) year or a fine in the amount of Five Thousand Pesos (₱5,000.00) or both at the discretion of the court against the manager, supervisor, and/or any person responsible in the establishment, conduct and maintenance of gambling CASINO."
     },
     {
-      "sec_num": 3,
-      "sec_title": "PROHIBITION OF CASINOS",
-      "text": "The opening, establishment, and operation of casinos and all forms of gambling are strictly prohibited and banned within the territorial jurisdiction of the City of Cagayan de Oro."
-    },
-    {
-      "sec_num": 4,
-      "sec_title": "PENAL SANCTIONS",
-      "text": "Any person or corporate entity operating a casino shall be punished by a fine of Five Thousand Pesos (P5,000.00) and imprisonment of one (1) year, plus immediate closure."
-    },
-    {
-      "sec_num": 5,
-      "sec_title": "SEPARABILITY CLAUSE",
-      "text": "If any provision is declared invalid, the remainder shall continue in effect."
-    },
-    {
-      "sec_num": 6,
-      "sec_title": "REPEALING CLAUSE",
-      "text": "All resolutions and ordinances inconsistent with this enactment are repealed."
-    },
-    {
-      "sec_num": 7,
-      "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect immediately upon approval."
+      "number": 3,
+      "heading": "EFFECTIVITY",
+      "text": "This Ordinance shall take effect ten (10) days after its publication in a local newspaper of general circulation."
     }
   ]
 }

@@ -432,6 +432,22 @@ This glossary provides plain-language definitions, mathematical intuition, and p
   1. **Workstation A: Primary Ingestion Workstation (Edge Simulation Node - Intel Core i3-10105F, 8GB RAM, RX 6600, Windows 10):** Handled national statute scraping of 25,432 laws from Lawphil, HTML parsing, text normalization, routine maintenance scripts, and serves as our physical LGU consumer desktop simulation testbed.
   2. **Workstation B: Neural Training Workstation (Dedicated GPU Node - Lenovo Legion 5, AMD Ryzen 7 260, 32GB RAM, NVIDIA RTX 5050 Laptop GPU, Windows 11):** Handles scanning and OCR cleaning of ~1,500 local Davao City ordinances from SP archives; executes dedicated Stage 2 Cross-Encoder fine-tuning, hyperparameter sweeps, latency profiling, and final full-system evaluation consistency.
   3. **Cloud Computing Environment (Google Colab Pro):** Utilized opportunistically for heavy exploratory Jupyter notebooks, large-scale SVD matrix factorization over 25,432 documents, and generating notebook visual assets.
+
+### **Statutory Citation Network (SCN)**
+* **Plain Meaning:** A directed, multi-relational graph representation of a legal corpus where nodes represent statutory enactments or individual provisions, and edges represent formal cross-references, authority delegations, or amendatory modifications.
+* **In This Thesis:** Reviewed in Chapter 2 (§2.5.3) and developed in future work. In the unified dual statutory knowledge base, 62.9% of Davao City ordinances (1,211 enactments) explicitly cite national statutes, with RA 7160 serving as the central authority hub with over 1,300 citation links.
+
+### **Legislative Lineage Graph**
+* **Plain Meaning:** A directed acyclic or temporal graph tracking how laws sequentially amend, update, or repeal one another across successive legislative terms.
+* **In This Thesis:** Captures horizontal intra-jurisdictional relationships under the principle of *lex posterior derogat legi priori*. In Davao City legislative archives, 94 enactments contain explicit amendatory provisions (*"hereby amended to read as follows"*) modifying earlier local codes.
+
+### **Akoma Ntoso & LegalRuleML**
+* **Plain Meaning:** International open standards (OASIS) for structuring legislative and legal knowledge into machine-readable XML schemas and semantic rule representations.
+* **In This Thesis:** Conceptual models surveyed in Chapter 2 (§2.5.3) providing the schema foundation for modeling statutory provisions, deontic modalities (obligations, prohibitions, permissions), and amendatory lineage tracking without unconstrained token-level sparsity.
+
+### **Provision-Level Granularity**
+* **Plain Meaning:** Structuring legal knowledge representations at the individual section or provision level, rather than at the coarse whole-document level or the unconstrained individual word/token level.
+* **In This Thesis:** The foundational architectural design choice of our two-stage pipeline. A provision (e.g., Section 458 of RA 7160 or Section 2 of an ordinance) represents a complete normative command (prohibition, penalty ceiling, or administrative exception), providing the exact semantic unit needed for both candidate retrieval and cross-encoder inference.
 ---
 
 ## **8. Ground Truth Benchmark & Human Annotation Protocol**

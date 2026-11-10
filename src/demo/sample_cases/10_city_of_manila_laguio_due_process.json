@@ -1,47 +1,34 @@
 {
-  "filename_prefix": "10_city_of_manila_laguio_due_process",
-  "case_id": "SC-PHIL-10",
-  "case_name": "City of Manila v. Laguio, Jr.",
-  "docket_no": "G.R. No. 118127 (April 12, 2005; 455 SCRA 308)",
-  "ordinance_no": "Manila Ordinance No. 7783",
-  "title": "AN ORDINANCE PROHIBITING THE ESTABLISHMENT OR OPERATION OF MOTELS, INNS, AND KARAOKE BARS IN ERMITA-MALATE",
-  "enacting_lgu": "City of Manila",
-  "enacting_clause": "BE IT ORDAINED BY THE CITY COUNCIL OF MANILA, IN SESSION ASSEMBLED, THAT:",
+  "title": "AN ORDINANCE PROHIBITING THE ESTABLISHMENT OR OPERATION OF BUSINESSES PROVIDING CERTAIN FORMS OF AMUSEMENT, ENTERTAINMENT, SERVICES AND FACILITIES IN THE ERMITA-MALATE AREA, PRESCRIBING PENALTIES FOR VIOLATION THEREOF, AND FOR OTHER PURPOSES",
+  "ordinance_no": "Ordinance No. 7783",
+  "series": 1993,
+  "lgu": "City of Manila",
+  "file": "10_city_of_manila_laguio_due_process.pdf",
   "sections": [
     {
-      "sec_num": 1,
-      "sec_title": "TITLE",
-      "text": "This Ordinance shall be known as the 'Ermita-Malate Hospitality Zoning and Moral Rehabilitation Ordinance'."
+      "number": 1,
+      "heading": "PROHIBITED ESTABLISHMENTS AND COVERED TERRITORIAL AREA",
+      "text": "Any provision of existing laws and ordinances to the contrary notwithstanding, no person, partnership, corporation or entity shall, in the Ermita-Malate area bounded by Teodoro M. Kalaw Sr. Street in the North, Taft Avenue in the East, Vito Cruz Street in the South and Roxas Boulevard in the West, pursuant to P.D. 499 be allowed or authorized to contract and engage in, any business providing certain forms of amusement, entertainment, services and facilities where women are used as tools in entertainment and which tend to disturb the community, annoy the inhabitants, and adversely affect the social and moral welfare of the community, such as but not limited to:\n\n1. Sauna Parlors\n2. Massage Parlors\n3. Karaoke Bars\n4. Beerhouses\n5. Night Clubs\n6. Day Clubs\n7. Super Clubs\n8. Discotheques\n9. Cabarets\n10. Dance Halls\n11. Motels\n12. Inns"
     },
     {
-      "sec_num": 2,
-      "sec_title": "DECLARATION OF URBAN POLICY",
-      "text": "It is declared the policy of the City of Manila to revitalize the tourist district of Ermita-Malate and eliminate venues associated with illicit commercial activities."
+      "number": 2,
+      "heading": "PROHIBITION ON PERMIT ISSUANCE AND PAYMENT ACCEPTANCE",
+      "text": "The City Mayor, the City Treasurer or any person acting in behalf of the said officials are prohibited from issuing permits, temporary or otherwise, or from granting licenses and accepting payments for the operation of business enumerated in the preceding section."
     },
     {
-      "sec_num": 3,
-      "sec_title": "CLOSURE OF HOSPITALITY ESTABLISHMENTS",
-      "text": "Prohibits the establishment or operation of motels, inns, and karaoke bars in the Ermita-Malate district, ordering their permanent closure or relocation within three (3) months without just compensation."
+      "number": 3,
+      "heading": "WINDING UP PERIOD AND ALLOWABLE CONVERSION BUSINESSES",
+      "text": "Owners and/or operator of establishments engaged in, or devoted to, the businesses enumerated in Section 1 hereof are hereby given three (3) months from the date of approval of this ordinance within which to wind up business operations or to transfer to any place outside of the Ermita-Malate area or convert said businesses to other kinds of business allowable within the area, such as but not limited to:\n\n1. Curio or antique shop\n2. Souvenir Shops\n3. Handicrafts display centers\n4. Art galleries\n5. Records and music shops\n6. Restaurants\n7. Coffee shops\n8. Flower shops\n9. Music lounge and sing-along restaurants, with well-defined activities for wholesome family entertainment that cater to both local and foreign clientele.\n10. Theaters engaged in the exhibition, not only of motion pictures but also of cultural shows, stage and theatrical plays, art exhibitions, concerts and the like.\n11. Businesses allowable within the law and medium intensity districts as provided for in the zoning ordinances for Metropolitan Manila, except new warehouse or open-storage depot, dock or yard, motor repair shop, gasoline service station, light industry with any machinery, or funeral establishments."
     },
     {
-      "sec_num": 4,
-      "sec_title": "REVOCATION OF BUSINESS LICENSES",
-      "text": "The City Mayor and Bureau of Permits are directed to cancel all business permits previously issued to motels, inns, massage parlors, and sauna baths in the covered area."
+      "number": 4,
+      "heading": "PENAL SANCTIONS AND SUMMARY CLOSURE",
+      "text": "Any person violating any provisions of this ordinance, shall upon conviction, be punished by imprisonment of one (1) year or fine of FIVE THOUSAND (₱5,000.00) PESOS, or both, at the discretion of the Court, PROVIDED, that in case of juridical person, the President, the General Manager, or person-in-charge of operation shall be liable thereof; PROVIDED FURTHER, that in case of subsequent violation and conviction, the premises of the erring establishment shall be closed and padlocked permanently."
     },
     {
-      "sec_num": 5,
-      "sec_title": "PENAL SANCTIONS",
-      "text": "Failure to comply shall result in a fine of Five Thousand Pesos (P5,000.00) and summary eviction and physical sealing of premises."
-    },
-    {
-      "sec_num": 6,
-      "sec_title": "SEPARABILITY CLAUSE",
-      "text": "The provisions of this Ordinance are separable; invalidity of any provision shall not affect the remaining parts."
-    },
-    {
-      "sec_num": 7,
-      "sec_title": "EFFECTIVITY",
-      "text": "This Ordinance shall take effect immediately upon enactment."
+      "number": 5,
+      "heading": "EFFECTIVITY",
+      "text": "This ordinance shall take effect upon approval."
     }
   ]
 }

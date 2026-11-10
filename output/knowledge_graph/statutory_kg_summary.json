@@ -1,0 +1,558 @@
+{
+  "experiment_1_super_hubs": {
+    "pagerank_runtime_seconds": 0.621,
+    "top_overall_super_hubs": [
+      {
+        "rank": 1,
+        "id": "ra_7160_1991",
+        "number": "Republic Act No. 7160 October 10, 1991",
+        "jurisdiction": "national",
+        "year": 1991,
+        "title": "AN ACT PROVIDING FOR A LOCAL GOVERNMENT CODE OF 1991",
+        "in_degree": 1350,
+        "norm_in_degree": 0.049547,
+        "pagerank": 0.022606
+      },
+      {
+        "rank": 2,
+        "id": "eo_72_2024",
+        "number": "EXECUTIVE ORDER NO. 72, October 28, 2024",
+        "jurisdiction": "national",
+        "year": 2024,
+        "title": "MANILA",
+        "in_degree": 297,
+        "norm_in_degree": 0.0109,
+        "pagerank": 0.004486
+      },
+      {
+        "rank": 3,
+        "id": "eo_292_2004",
+        "number": "EXECUTIVE ORDER NO. 292, March 01, 2004",
+        "jurisdiction": "national",
+        "year": 2004,
+        "title": "MANILA",
+        "in_degree": 269,
+        "norm_in_degree": 0.009873,
+        "pagerank": 0.009884
+      },
+      {
+        "rank": 4,
+        "id": "ra_9184_2003",
+        "number": "REPUBLIC ACT No. 9184 January 10, 2003",
+        "jurisdiction": "national",
+        "year": 2003,
+        "title": "AN ACT PROVIDING FOR THE MODERNIZATION, STANDARIZATION AND REGULATION OF THE PROCUREMENT ACTIVITIES ",
+        "in_degree": 221,
+        "norm_in_degree": 0.008111,
+        "pagerank": 0.003246
+      },
+      {
+        "rank": 5,
+        "id": "ra_6758_1989",
+        "number": "Republic Act No. 6758 August 21, 1989",
+        "jurisdiction": "national",
+        "year": 1989,
+        "title": "AN ACT PRESCRIBING A REVISED COMPENSATION AND POSITION CLASSIFICATION SYSTEM IN THE GOVERNMENT AND F",
+        "in_degree": 175,
+        "norm_in_degree": 0.006423,
+        "pagerank": 0.003699
+      },
+      {
+        "rank": 6,
+        "id": "pd_1464_1978",
+        "number": "PRESIDENTIAL DECREE No. 1464",
+        "jurisdiction": "national",
+        "year": 1978,
+        "title": "A DECREE TO CONSOLIDATE AND CODIFY ALL THE TARIFF AND CUSTOMS LAWS OF THE PHILIPPINES",
+        "in_degree": 166,
+        "norm_in_degree": 0.006092,
+        "pagerank": 0.00506
+      },
+      {
+        "rank": 7,
+        "id": "pd_1416_1978",
+        "number": "PRESIDENTIAL DECREE No. 1416",
+        "jurisdiction": "national",
+        "year": 1978,
+        "title": "GRANTING CONTINUING AUTHORITY TO THE PRESIDENT OF THE PHILIPPINES TO REORGANIZE THE NATIONAL GOVERNM",
+        "in_degree": 151,
+        "norm_in_degree": 0.005542,
+        "pagerank": 0.001809
+      },
+      {
+        "rank": 8,
+        "id": "ra_10121_2010",
+        "number": "REPUBLIC ACT No. 10121",
+        "jurisdiction": "national",
+        "year": 2010,
+        "title": "AN ACT STRENGTHENING THE PHILIPPINE DISASTER RISK REDUCTION AND MANAGEMENT SYSTEM, PROVIDING FOR THE",
+        "in_degree": 143,
+        "norm_in_degree": 0.005248,
+        "pagerank": 0.002475
+      },
+      {
+        "rank": 9,
+        "id": "ra_8292_1997",
+        "number": "Republic Act No. 8292 June 6, 1997",
+        "jurisdiction": "national",
+        "year": 1997,
+        "title": "AN ACT PROVIDING FOR THE UNIFORM COMPOSITION AND POWERS OF THE GOVERNING BOARDS, THE MANNER OF APPOI",
+        "in_degree": 128,
+        "norm_in_degree": 0.004698,
+        "pagerank": 0.001074
+      },
+      {
+        "rank": 10,
+        "id": "bp_131_1981",
+        "number": "BATAS PAMBANSA Blg. 131",
+        "jurisdiction": "national",
+        "year": 1981,
+        "title": "An Act Appropriating Funds for the Operation of the Government of the Republic of the Philippines fr",
+        "in_degree": 122,
+        "norm_in_degree": 0.004478,
+        "pagerank": 0.001576
+      },
+      {
+        "rank": 11,
+        "id": "ra_7716_1994",
+        "number": "REPUBLIC ACT NO. 7716, May 05, 1994",
+        "jurisdiction": "national",
+        "year": 1994,
+        "title": "AN ACT RESTRUCTURING THE VALUE-ADDED TAX (VAT) SYSTEM, WIDENING ITS TAX BASE AND ENHANCING ITS ADMIN",
+        "in_degree": 119,
+        "norm_in_degree": 0.004367,
+        "pagerank": 0.001138
+      },
+      {
+        "rank": 12,
+        "id": "bp_230_1982",
+        "number": "BATAS PAMBANSA Blg. 230",
+        "jurisdiction": "national",
+        "year": 1982,
+        "title": "An Act Appropriating Funds for the Operation of the Government of the Republic of the Philippines fr",
+        "in_degree": 113,
+        "norm_in_degree": 0.004147,
+        "pagerank": 0.001629
+      },
+      {
+        "rank": 13,
+        "id": "ra_6975_1990",
+        "number": "REPUBLIC ACT No. 6975 December 13, 1990",
+        "jurisdiction": "national",
+        "year": 1990,
+        "title": "AN ACT ESTABLISHING THE PHILIPPINE NATIONAL POLICE UNDER A REORGANIZED DEPARTMENT OF THE INTERIOR AN",
+        "in_degree": 110,
+        "norm_in_degree": 0.004037,
+        "pagerank": 0.001987
+      },
+      {
+        "rank": 14,
+        "id": "ra_7722_1994",
+        "number": "REPUBLIC ACT No. 7722",
+        "jurisdiction": "national",
+        "year": 1994,
+        "title": "AN ACT CREATING THE COMMISSION ON HIGHER EDUCATION, APPROPRIATING FUNDS THEREFOR AND FOR OTHER PURPO",
+        "in_degree": 110,
+        "norm_in_degree": 0.004037,
+        "pagerank": 0.000823
+      },
+      {
+        "rank": 15,
+        "id": "bp_68_1980",
+        "number": "Batas Pambansa Bilang 68",
+        "jurisdiction": "national",
+        "year": 1980,
+        "title": "THE CORPORATION CODE OF THE PHILIPPINES",
+        "in_degree": 95,
+        "norm_in_degree": 0.003487,
+        "pagerank": 0.001577
+      },
+      {
+        "rank": 16,
+        "id": "act_509_1902",
+        "number": "Act No. 509, November 10, 1902",
+        "jurisdiction": "national",
+        "year": 1902,
+        "title": "AN ACT AUTHORIZING THE PROVINCIAL BOARD OF THE PROVINCE OF SORSOGON TO EXPEND FROM THE PROVINCIAL TR",
+        "in_degree": 83,
+        "norm_in_degree": 0.003046,
+        "pagerank": 0.000525
+      },
+      {
+        "rank": 17,
+        "id": "pd_1177_1977",
+        "number": "PRESIDENTIAL DECREE No. 1177",
+        "jurisdiction": "national",
+        "year": 1977,
+        "title": "REVISING THE BUDGET PROCESS IN ORDER TO INSTITUTIONALIZE THE BUDGETARY INNOVATIONS OF THE NEW SOCIET",
+        "in_degree": 74,
+        "norm_in_degree": 0.002716,
+        "pagerank": 0.001165
+      },
+      {
+        "rank": 18,
+        "id": "pd_985_1976",
+        "number": "PRESIDENTIAL DECREE No. 985 August 22, 1976",
+        "jurisdiction": "national",
+        "year": 1976,
+        "title": "A DECREE REVISING THE POSITION CLASSIFICATION AND COMPENSATION SYSTEMS IN THE NATIONAL GOVERNMENT, A",
+        "in_degree": 68,
+        "norm_in_degree": 0.002496,
+        "pagerank": 0.001659
+      },
+      {
+        "rank": 19,
+        "id": "ra_10863_2016",
+        "number": "REPUBLIC ACT NO. 10863, May 30, 2016",
+        "jurisdiction": "national",
+        "year": 2016,
+        "title": "AN ACT MODERNIZING THE CUSTOMS AND TARIFF ADMINISTRATION",
+        "in_degree": 66,
+        "norm_in_degree": 0.002422,
+        "pagerank": 0.002825
+      },
+      {
+        "rank": 20,
+        "id": "ra_10533_2013",
+        "number": "REPUBLIC ACT No. 10533",
+        "jurisdiction": "national",
+        "year": 2013,
+        "title": "AN ACT ENHANCING THE PHILIPPINE BASIC EDUCATION SYSTEM BY STRENGTHENING ITS CURRICULUM AND INCREASIN",
+        "in_degree": 61,
+        "norm_in_degree": 0.002239,
+        "pagerank": 0.000591
+      }
+    ],
+    "top_davao_authorities": [
+      {
+        "rank": 1,
+        "id": "ra_7160_1991",
+        "number": "Republic Act No. 7160 October 10, 1991",
+        "year": 1991,
+        "title": "AN ACT PROVIDING FOR A LOCAL GOVERNMENT CODE OF 1991",
+        "davao_citations": 1102,
+        "pagerank": 0.022606
+      },
+      {
+        "rank": 2,
+        "id": "ra_9184_2003",
+        "number": "REPUBLIC ACT No. 9184 January 10, 2003",
+        "year": 2003,
+        "title": "AN ACT PROVIDING FOR THE MODERNIZATION, STANDARIZATION AND REGULATION OF THE PROCUREMENT ACTIVITIES ",
+        "davao_citations": 198,
+        "pagerank": 0.003246
+      },
+      {
+        "rank": 3,
+        "id": "ra_10121_2010",
+        "number": "REPUBLIC ACT No. 10121",
+        "year": 2010,
+        "title": "AN ACT STRENGTHENING THE PHILIPPINE DISASTER RISK REDUCTION AND MANAGEMENT SYSTEM, PROVIDING FOR THE",
+        "davao_citations": 132,
+        "pagerank": 0.002475
+      },
+      {
+        "rank": 4,
+        "id": "bp_220_1982",
+        "number": "BATAS PAMBANSA Blg. 220",
+        "year": 1982,
+        "title": "An Act Authorizing the Ministry of Human Settlements to Establish and Promulgate Different Levels of",
+        "davao_citations": 22,
+        "pagerank": 0.000283
+      },
+      {
+        "rank": 5,
+        "id": "eo_70_2024",
+        "number": "EXECUTIVE ORDER NO. 70, October 02, 2024",
+        "year": 2024,
+        "title": "MANILA",
+        "davao_citations": 19,
+        "pagerank": 0.000481
+      },
+      {
+        "rank": 6,
+        "id": "ra_7169_1992",
+        "number": "Republic Act No. 7169 January 2, 1992",
+        "year": 1992,
+        "title": "AN ACT TO REHABILITATE THE PHILIPPINE VETERANS BANK CREATED UNDER REPUBLIC ACT NO. 3518, PROVIDING T",
+        "davao_citations": 18,
+        "pagerank": 0.000209
+      },
+      {
+        "rank": 7,
+        "id": "ra_10173_2012",
+        "number": "REPUBLIC ACT NO. 10173",
+        "year": 2012,
+        "title": "AN ACT PROTECTING INDIVIDUAL PERSONAL INFORMATION IN INFORMATION AND COMMUNICATIONS SYSTEMS IN THE G",
+        "davao_citations": 17,
+        "pagerank": 0.000904
+      },
+      {
+        "rank": 8,
+        "id": "eo_6_2022",
+        "number": "EXECUTIVE ORDER NO. 6, October 05, 2022",
+        "year": 2022,
+        "title": "AMENDING THE COMPOSITION OF THE INTER-CABINET CLUSTER MECHANISM ON NORMALIZATION ESTABLISHED UNDER E",
+        "davao_citations": 15,
+        "pagerank": 0.000466
+      },
+      {
+        "rank": 9,
+        "id": "ra_9003_2001",
+        "number": "REPUBLIC ACT 9003 January 26, 2001",
+        "year": 2001,
+        "title": "AN ACT PROVIDING FOR AN ECOLOGICAL SOLID WASTE MANAGEMENT PROGRAM, CREATING THE NECESSARY INSTITUTIO",
+        "davao_citations": 15,
+        "pagerank": 0.000235
+      },
+      {
+        "rank": 10,
+        "id": "ra_7150_1991",
+        "number": "Republic Act No. 7150 August 22, 1991",
+        "year": 1991,
+        "title": "AN ACT ESTABLISHING A HIGH SCHOOL IN THE MUNICIPALITY OF PALO, PROVINCE OF LEYTE, TO BE KNOWN AS THE",
+        "davao_citations": 14,
+        "pagerank": 0.00014
+      },
+      {
+        "rank": 11,
+        "id": "ra_7166_1991",
+        "number": "Republic Act No. 7166 November 26, 1991",
+        "year": 1991,
+        "title": "AN ACT PROVIDING FOR SYNCHRONIZED NATIONAL AND LOCAL ELECTIONS AND FOR ELECTORAL REFORMS, AUTHORIZIN",
+        "davao_citations": 13,
+        "pagerank": 0.000233
+      },
+      {
+        "rank": 12,
+        "id": "eo_18_2023",
+        "number": "EXECUTIVE ORDER NO. 18, February 23, 2023",
+        "year": 2023,
+        "title": "MANILA",
+        "davao_citations": 12,
+        "pagerank": 0.000382
+      },
+      {
+        "rank": 13,
+        "id": "ra_1080_1954",
+        "number": "REPUBLIC ACT No. 1080",
+        "year": 1954,
+        "title": "An Act Declaring the Bar and Board Examinations as Civil Service Examinations",
+        "davao_citations": 12,
+        "pagerank": 8.7e-05
+      },
+      {
+        "rank": 14,
+        "id": "ra_7168_1991",
+        "number": "REPUBLIC ACT No. 7168 December 26, 1991",
+        "year": 1991,
+        "title": "AN ACT CONVERTING THE PHILIPPINE NORMAL COLLEGE INTO A STATE UNIVERSITY TO BE KNOWN AS THE PHILIPPIN",
+        "davao_citations": 11,
+        "pagerank": 0.000147
+      },
+      {
+        "rank": 15,
+        "id": "eo_23_2023",
+        "number": "EXECUTIVE ORDER NO. 23, April 30, 2023",
+        "year": 2023,
+        "title": "MANILA",
+        "davao_citations": 10,
+        "pagerank": 0.000333
+      }
+    ]
+  },
+  "experiment_2_scale_free": {
+    "scaling_exponent_gamma": 1.4613,
+    "r2_goodness_of_fit": 0.8172,
+    "is_scale_free": false,
+    "max_in_degree": 1350,
+    "degrees_evaluated_count": 68
+  },
+  "experiment_3_louvain": {
+    "runtime_seconds": 1.99,
+    "total_communities_detected": 3304,
+    "modularity_q": 0.7661,
+    "high_modularity_confirmed": true,
+    "top_10_communities": [
+      {
+        "community_id": 1,
+        "size": 1321,
+        "dominant_domain": "Inter-Agency Agreements & Institutional MOAs/MOUs",
+        "domain_purity_pct": 29.22,
+        "national_enactments": 351,
+        "local_ordinances": 970
+      },
+      {
+        "community_id": 2,
+        "size": 647,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 80.22,
+        "national_enactments": 645,
+        "local_ordinances": 2
+      },
+      {
+        "community_id": 3,
+        "size": 554,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 83.75,
+        "national_enactments": 544,
+        "local_ordinances": 10
+      },
+      {
+        "community_id": 4,
+        "size": 499,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 73.75,
+        "national_enactments": 468,
+        "local_ordinances": 31
+      },
+      {
+        "community_id": 5,
+        "size": 483,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 80.33,
+        "national_enactments": 434,
+        "local_ordinances": 49
+      },
+      {
+        "community_id": 6,
+        "size": 456,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 54.39,
+        "national_enactments": 450,
+        "local_ordinances": 6
+      },
+      {
+        "community_id": 7,
+        "size": 443,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 64.33,
+        "national_enactments": 438,
+        "local_ordinances": 5
+      },
+      {
+        "community_id": 8,
+        "size": 414,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 39.13,
+        "national_enactments": 413,
+        "local_ordinances": 1
+      },
+      {
+        "community_id": 9,
+        "size": 409,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 73.84,
+        "national_enactments": 358,
+        "local_ordinances": 51
+      },
+      {
+        "community_id": 10,
+        "size": 408,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 67.65,
+        "national_enactments": 403,
+        "local_ordinances": 5
+      }
+    ]
+  },
+  "experiment_4_connectivity": {
+    "total_enactments": 27248,
+    "total_connected_components": 11810,
+    "gcc_size": 11784,
+    "gcc_percentage": 43.25,
+    "local_ordinances_in_gcc": 1430,
+    "total_local_ordinances": 1816,
+    "local_integration_rate_pct": 78.74,
+    "orphan_nodes_count": 8546,
+    "orphan_nodes_pct": 31.36,
+    "orphan_local_count": 310,
+    "orphan_national_count": 8236,
+    "top_orphan_local_typologies": {
+      "Substantive Regulatory, Health & Penal Ordinances": 211,
+      "Inter-Agency Agreements & Institutional MOAs/MOUs": 70,
+      "Zoning Reclassifications & Subdivision Development": 13,
+      "Deeds of Donation & Property Usufruct": 12,
+      "Disaster Risk Reduction, Calamity & QRF Funds": 3
+    }
+  },
+  "experiment_5_lineage_dag": {
+    "total_amendatory_nodes": 4906,
+    "total_amendatory_edges": 5038,
+    "is_strictly_acyclic_dag": true,
+    "detected_cycle_count": 0,
+    "max_amendatory_chain_depth": 9,
+    "longest_amendatory_lineage": [
+      {
+        "id": "ra_11462_2019",
+        "number": "REPUBLIC ACT No. 11462",
+        "year": 2019,
+        "jurisdiction": "national",
+        "title": "An Act Postponing the May 2020 Barangay and Sangguniang Kabataan Elections, Amen"
+      },
+      {
+        "id": "ra_10952_2017",
+        "number": "REPUBLIC ACT No. 10952",
+        "year": 2017,
+        "jurisdiction": "national",
+        "title": "An Act Postponing the October 2017 Barangay and Sangguniang Katabaan Elections, "
+      },
+      {
+        "id": "ra_10632_2013",
+        "number": "REPUBLIC ACT NO. 10632",
+        "year": 2013,
+        "jurisdiction": "national",
+        "title": "AN ACT TO POSTPONE THE SANGGUNIANG KABATAAN ELECTIONS ON OCTOBER 28, 2013, AMEND"
+      },
+      {
+        "id": "ra_9340_2005",
+        "number": "REPUBLIC ACT No. 9340",
+        "year": 2005,
+        "jurisdiction": "national",
+        "title": "AN ACT AMENDING REPUBLIC ACT NO. 9164, RESETTING THE BARANGAY AND SANGGUNIANG KA"
+      },
+      {
+        "id": "ra_9164_2002",
+        "number": "REPUBLIC ACT NO. 9164 March 19, 2002",
+        "year": 2002,
+        "jurisdiction": "national",
+        "title": "AN ACT PROVIDING FOR SYNCHRONIZED BARANGAY AND SANGGUNIANG KABATAAN ELECTIONS, A"
+      },
+      {
+        "id": "ra_7160_1991",
+        "number": "Republic Act No. 7160 October 10, 1991",
+        "year": 1991,
+        "jurisdiction": "national",
+        "title": "AN ACT PROVIDING FOR A LOCAL GOVERNMENT CODE OF 1991"
+      },
+      {
+        "id": "pd_704_1974",
+        "number": "PRESIDENTIAL DECREE No. 704 May 16, 1974",
+        "year": 1975,
+        "jurisdiction": "national",
+        "title": "REVISING AND CONSOLIDATING ALL LAWS AND DECREES AFFECTING FISHING AND FISHERIES"
+      },
+      {
+        "id": "pd_61_1972",
+        "number": "PRESIDENTIAL DECREE No. 61 November 20, 1972",
+        "year": 1972,
+        "jurisdiction": "national",
+        "title": "M a n i l a"
+      },
+      {
+        "id": "ra_2266_1959",
+        "number": "REPUBLIC ACT No. 2266",
+        "year": 1959,
+        "jurisdiction": "national",
+        "title": "AN ACT AMENDING CERTAIN SECTIONS OF THE REVISED ADMINISTRATIVE CODE. (Re Jurisdi"
+      },
+      {
+        "id": "act_2266_1913",
+        "number": "Act No. 2266, February 11, 1913",
+        "year": 1913,
+        "jurisdiction": "national",
+        "title": "AN ACT TO AMEND SECTION ONE OF ACT NUMBERED THREE HUNDRED, AND FOURTEEN, ENTITLE"
+      }
+    ]
+  }
+}
