@@ -35,6 +35,7 @@ CORPUS_NATIONAL = "corpus/cleaned/national/categorized_national_laws.jsonl"
 CORPUS_LOCAL = "corpus/city_ordinances/categorized_davao_ordinances.jsonl"
 UNIFIED_PROVISIONS = "data/unified_dual_statutory_provisions.jsonl"
 OUTPUT_DIR = "output/knowledge_graph"
+DATA_KG_DIR = "data/knowledge_graph"
 
 MACRO_DOMAINS = [
     "General Administration, Organization & Civil Service",
@@ -534,18 +535,43 @@ def link_provisions(G):
 
 def export_results(results, G):
     """
-    Exports summary report and edge lists.
+    Exports summary report and canonical serialized knowledge graph data files:
+      - output/knowledge_graph/statutory_kg_summary.json (Experiment metrics)
+      - data/knowledge_graph/statutory_kg_edges.jsonl (Canonical edge manifest: 35,000+ relational links)
+      - data/knowledge_graph/statutory_kg_nodes.jsonl (Canonical node manifest: 27,000+ enactments)
     """
     print("[6/6] Serializing knowledge graph artifacts to disk...")
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(DATA_KG_DIR, exist_ok=True)
 
     summary_file = os.path.join(OUTPUT_DIR, "statutory_kg_summary.json")
     with open(summary_file, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
 
-    # Save compact edge manifest
+    # 1. Export Canonical Nodes Manifest
+    nodes_file = os.path.join(DATA_KG_DIR, "statutory_kg_nodes.jsonl")
+    with open(nodes_file, "w", encoding="utf-8") as f:
+        for nid, data in G.nodes(data=True):
+            node_record = {"id": nid, **data}
+            f.write(json.dumps(node_record, ensure_ascii=False) + "\n")
+
+    # 2. Export Canonical Edges Manifest
+    edges_file = os.path.join(DATA_KG_DIR, "statutory_kg_edges.jsonl")
+    with open(edges_file, "w", encoding="utf-8") as f:
+        for u, v, data in G.edges(data=True):
+            edge_record = {
+                "source": u,
+                "target": v,
+                "relation": data.get("relation", "CITES_AUTHORITY"),
+                "weight": data.get("weight", 1.0)
+            }
+            f.write(json.dumps(edge_record, ensure_ascii=False) + "\n")
+
+    # Save compact edge manifest summary
     edge_types = Counter([d.get("relation") for u, v, d in G.edges(data=True)])
-    print(f"      Knowledge graph serialized to '{summary_file}'!")
+    print(f"      Knowledge graph experiment summary: '{summary_file}'")
+    print(f"      Canonical Nodes written to:        '{nodes_file}' ({G.number_of_nodes():,} nodes)")
+    print(f"      Canonical Edges written to:        '{edges_file}' ({G.number_of_edges():,} edges)")
     print(f"      Final Topology Summary:")
     print(f"      - Total Vertices: {G.number_of_nodes():,}")
     print(f"      - Total Edges: {G.number_of_edges():,}")

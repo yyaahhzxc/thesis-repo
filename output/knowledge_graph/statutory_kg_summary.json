@@ -1,6 +1,6 @@
 {
   "experiment_1_super_hubs": {
-    "pagerank_runtime_seconds": 0.621,
+    "pagerank_runtime_seconds": 0.695,
     "top_overall_super_hubs": [
       {
         "rank": 1,
@@ -369,90 +369,90 @@
     "degrees_evaluated_count": 68
   },
   "experiment_3_louvain": {
-    "runtime_seconds": 1.99,
-    "total_communities_detected": 3304,
-    "modularity_q": 0.7661,
+    "runtime_seconds": 2.063,
+    "total_communities_detected": 3302,
+    "modularity_q": 0.7681,
     "high_modularity_confirmed": true,
     "top_10_communities": [
       {
         "community_id": 1,
-        "size": 1321,
+        "size": 1285,
         "dominant_domain": "Inter-Agency Agreements & Institutional MOAs/MOUs",
-        "domain_purity_pct": 29.22,
-        "national_enactments": 351,
-        "local_ordinances": 970
+        "domain_purity_pct": 29.88,
+        "national_enactments": 331,
+        "local_ordinances": 954
       },
       {
         "community_id": 2,
-        "size": 647,
+        "size": 754,
         "dominant_domain": "Executive Issuances & Policy Reorganization",
-        "domain_purity_pct": 80.22,
-        "national_enactments": 645,
-        "local_ordinances": 2
+        "domain_purity_pct": 79.44,
+        "national_enactments": 739,
+        "local_ordinances": 15
       },
       {
         "community_id": 3,
-        "size": 554,
+        "size": 680,
         "dominant_domain": "Executive Issuances & Policy Reorganization",
-        "domain_purity_pct": 83.75,
-        "national_enactments": 544,
-        "local_ordinances": 10
+        "domain_purity_pct": 79.26,
+        "national_enactments": 625,
+        "local_ordinances": 55
       },
       {
         "community_id": 4,
-        "size": 499,
+        "size": 573,
         "dominant_domain": "Executive Issuances & Policy Reorganization",
-        "domain_purity_pct": 73.75,
-        "national_enactments": 468,
-        "local_ordinances": 31
-      },
-      {
-        "community_id": 5,
-        "size": 483,
-        "dominant_domain": "Executive Issuances & Policy Reorganization",
-        "domain_purity_pct": 80.33,
-        "national_enactments": 434,
-        "local_ordinances": 49
-      },
-      {
-        "community_id": 6,
-        "size": 456,
-        "dominant_domain": "Executive Issuances & Policy Reorganization",
-        "domain_purity_pct": 54.39,
-        "national_enactments": 450,
+        "domain_purity_pct": 81.15,
+        "national_enactments": 567,
         "local_ordinances": 6
       },
       {
-        "community_id": 7,
-        "size": 443,
+        "community_id": 5,
+        "size": 518,
         "dominant_domain": "Executive Issuances & Policy Reorganization",
-        "domain_purity_pct": 64.33,
-        "national_enactments": 438,
-        "local_ordinances": 5
+        "domain_purity_pct": 65.83,
+        "national_enactments": 511,
+        "local_ordinances": 7
+      },
+      {
+        "community_id": 6,
+        "size": 487,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 72.07,
+        "national_enactments": 451,
+        "local_ordinances": 36
+      },
+      {
+        "community_id": 7,
+        "size": 465,
+        "dominant_domain": "Executive Issuances & Policy Reorganization",
+        "domain_purity_pct": 80.86,
+        "national_enactments": 462,
+        "local_ordinances": 3
       },
       {
         "community_id": 8,
-        "size": 414,
+        "size": 461,
         "dominant_domain": "Executive Issuances & Policy Reorganization",
-        "domain_purity_pct": 39.13,
-        "national_enactments": 413,
-        "local_ordinances": 1
+        "domain_purity_pct": 75.7,
+        "national_enactments": 457,
+        "local_ordinances": 4
       },
       {
         "community_id": 9,
-        "size": 409,
+        "size": 417,
         "dominant_domain": "Executive Issuances & Policy Reorganization",
-        "domain_purity_pct": 73.84,
-        "national_enactments": 358,
-        "local_ordinances": 51
+        "domain_purity_pct": 81.53,
+        "national_enactments": 415,
+        "local_ordinances": 2
       },
       {
         "community_id": 10,
-        "size": 408,
+        "size": 405,
         "dominant_domain": "Executive Issuances & Policy Reorganization",
-        "domain_purity_pct": 67.65,
-        "national_enactments": 403,
-        "local_ordinances": 5
+        "domain_purity_pct": 79.26,
+        "national_enactments": 404,
+        "local_ordinances": 1
       }
     ]
   },

@@ -1,15 +1,15 @@
 """
 build_eda_web_graph.py
 ======================
-Builds an exploratory, visual EDA dashboard for the Statutory Knowledge Graph:
-1. Pure Web Constellation (Labels hidden by default so nodes & arcs shine like Image 2).
-2. EDA Metrics & Filters:
-   - Legislative Eras (Pre-War, Post-War, 1987 Constitution, Modern SP)
-   - Macro Legal Domains (Taxation/Finance, Police Power, Social/Labor, Infrastructure, Admin, Environment)
-   - Connectivity / Degree Threshold slider (all nodes vs. Super-Hubs)
-   - Relation Arcs filter (Cites Authority vs. Amends vs. Repeals)
-   - Jurisdiction toggle (All, National Statutes, Davao Ordinances)
-3. Hover & Click reveal full details and ego-subgraphs.
+Builds the upgraded, high-precision Exploratory Data Analysis (EDA) web dashboard:
+1. Expanded node selection: 3,500 active enactments (includes RA 1700, RA 7636, etc.)
+2. Pixel-perfect cursor hit-testing: calculates distance in screen coordinates (sx, sy)
+   with hover tooltip and inspection card, eliminating pointer displacement.
+3. Enhanced "Trace Connection" tool:
+   - Type selector: Republic Act (RA), Presidential Decree (PD), Batas Pambansa (BP),
+     Commonwealth Act (CA), Executive Order (EO), Davao City Ordinance (ORD), or All.
+   - Number input with automatic live suggestions/dropdown list showing matching laws.
+4. Clean, pure organic web constellation by default (no text clutter, hover/click reveals).
 """
 
 import json
@@ -72,14 +72,20 @@ def main():
         node_degree[u] += 1
         node_degree[v] += 1
 
-    # Select top 2,200 connected nodes
+    # Select top 3,500 connected nodes (all connected local ordinances + top 2,500 national laws)
     local_candidates = [n for n in node_degree if meta.get(n, {}).get("jurisdiction") == "local"]
     local_candidates.sort(key=lambda x: node_degree[x], reverse=True)
     
     nat_candidates = [n for n in node_degree if meta.get(n, {}).get("jurisdiction") == "national"]
     nat_candidates.sort(key=lambda x: node_degree[x], reverse=True)
 
-    selected_nodes = set(local_candidates[:800] + nat_candidates[:1400])
+    selected_nodes = set(local_candidates[:1000] + nat_candidates[:2500])
+    # Explicitly ensure RA 1700 and RA 7636 are in the visual web graph
+    if "ra_1700_1957" in node_degree:
+        selected_nodes.add("ra_1700_1957")
+    if "ra_7636_1992" in node_degree:
+        selected_nodes.add("ra_7636_1992")
+
     print(f"[2/4] Selected {len(selected_nodes):,} enactments for the visual graph.")
 
     G = nx.Graph()
@@ -106,8 +112,8 @@ def main():
 
     print("[3/4] Precomputing force-directed organic spring layout in Python...")
     t0 = time.time()
-    # scale to 3,600 space to allow clusters to breathe naturally
-    pos = nx.spring_layout(G, k=0.19, iterations=65, weight="weight", seed=42, scale=3600)
+    # scale to 4,200 space to allow 3,500 clusters to breathe naturally
+    pos = nx.spring_layout(G, k=0.17, iterations=60, weight="weight", seed=42, scale=4200)
     print(f"      Spring layout completed in {time.time() - t0:.2f}s!")
 
     # Format nodes payload
@@ -140,12 +146,30 @@ def main():
             color = "#00F2FE"
             label = m.get("number", nid)
         else:
-            radius = min(9, max(3, int(2.5 + (deg ** 0.5) * 0.8)))
+            radius = min(8, max(3, int(2.2 + (deg ** 0.5) * 0.7)))
             color = base_color
             label = m.get("number", nid)
 
         if label and len(label) > 24:
             label = label[:22] + ".."
+
+        # Instrument classification for dropdown searching
+        num_str = m.get("number", nid)
+        inst_type = "OTHER"
+        if is_local:
+            inst_type = "ORD"
+        elif "republic act" in num_str.lower() or "r.a." in num_str.lower() or "ra_" in nid:
+            inst_type = "RA"
+        elif "presidential decree" in num_str.lower() or "p.d." in num_str.lower() or "pd_" in nid:
+            inst_type = "PD"
+        elif "batas pambansa" in num_str.lower() or "b.p." in num_str.lower() or "bp_" in nid:
+            inst_type = "BP"
+        elif "executive order" in num_str.lower() or "e.o." in num_str.lower() or "eo_" in nid:
+            inst_type = "EO"
+        elif "commonwealth act" in num_str.lower() or "c.a." in num_str.lower() or "ca_" in nid:
+            inst_type = "CA"
+        elif "act no" in num_str.lower() or "act_" in nid:
+            inst_type = "ACT"
 
         nodes_payload.append({
             "id": nid,
@@ -156,7 +180,8 @@ def main():
             "label": label,
             "deg": deg,
             "jur": m.get("jurisdiction", "national"),
-            "num": m.get("number", nid),
+            "type": inst_type,
+            "num": num_str,
             "year": year,
             "era": era,
             "dom": dom,
@@ -264,9 +289,9 @@ def main():
       position: absolute;
       top: 16px;
       left: 16px;
-      width: 330px;
+      width: 350px;
       max-height: calc(100% - 32px);
-      background: rgba(11, 16, 28, 0.92);
+      background: rgba(11, 16, 28, 0.94);
       backdrop-filter: blur(18px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
@@ -346,6 +371,65 @@ def main():
       border-color: #4facfe;
       color: #07090e;
       font-weight: 700;
+    }}
+    /* Path Finder Law Selectors */
+    .law-selector-row {{
+      display: flex;
+      gap: 6px;
+    }}
+    .type-select {{
+      width: 80px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      padding: 6px 4px;
+      color: #00f2fe;
+      font-size: 11px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }}
+    .type-select option {{
+      background: #0f172a;
+      color: #fff;
+    }}
+    .num-input-wrapper {{
+      position: relative;
+      flex: 1;
+    }}
+    .num-input {{
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      padding: 6px 8px;
+      color: #f1f5f9;
+      font-size: 11px;
+      outline: none;
+    }}
+    .suggestions-list {{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #0f172a;
+      border: 1px solid #00f2fe;
+      border-radius: 6px;
+      max-height: 140px;
+      overflow-y: auto;
+      z-index: 50;
+      display: none;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+    }}
+    .suggestion-item {{
+      padding: 6px 8px;
+      font-size: 11px;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }}
+    .suggestion-item:hover {{
+      background: #1e293b;
+      color: #00f2fe;
     }}
     /* Slider */
     .slider-container {{
@@ -447,6 +531,23 @@ def main():
       max-height: 160px;
       overflow-y: auto;
     }}
+    /* Floating Tooltip */
+    #hover-tooltip {{
+      position: absolute;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #00f2fe;
+      color: #f8fafc;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      pointer-events: none;
+      z-index: 100;
+      display: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8);
+      white-space: nowrap;
+      transform: translate(-50%, -140%);
+    }}
     /* Nav Zoom Controls */
     .zoom-controls {{
       position: absolute;
@@ -505,6 +606,8 @@ def main():
 </head>
 <body>
 
+  <div id="hover-tooltip"></div>
+
   <header>
     <div class="brand">
       <span class="badge">EDA Web Explorer</span>
@@ -512,11 +615,11 @@ def main():
     </div>
     <div class="stats-bar">
       <div class="stat-pill">
-        <span>Visible Nodes:</span>
+        <span>Active Vertices:</span>
         <span class="stat-val" id="stat-visible-nodes">{len(nodes_payload):,}</span>
       </div>
       <div class="stat-pill">
-        <span>Visible Arcs:</span>
+        <span>Relational Arcs:</span>
         <span class="stat-val" id="stat-visible-edges">{len(edges_typed):,}</span>
       </div>
       <div class="stat-pill">
@@ -529,8 +632,66 @@ def main():
   <div class="main-container">
     <!-- EDA Filter Panel -->
     <div class="eda-panel">
+      <!-- 2-Law Path & Distance Finder -->
+      <div class="filter-section" style="background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 8px; padding: 10px;">
+        <div class="filter-label" style="color: #00F2FE;">
+          <span>Trace Connection Between 2 Laws</span>
+          <span id="path-distance-badge" style="font-family:'Fira Code'; font-size:10px; color:#FFD700; background:rgba(255,215,0,0.1); padding:2px 6px; border-radius:4px; display:none;">Distance: 2 hops</span>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 6px;">
+          <!-- Law A Selector -->
+          <div>
+            <div style="font-size:10px; color:#94a3b8; margin-bottom:2px;">LAW A:</div>
+            <div class="law-selector-row">
+              <select id="type-select-a" class="type-select">
+                <option value="ALL">All</option>
+                <option value="RA" selected>RA</option>
+                <option value="ORD">Ordinance</option>
+                <option value="PD">PD</option>
+                <option value="BP">BP</option>
+                <option value="EO">EO</option>
+                <option value="CA">CA</option>
+                <option value="ACT">Act</option>
+              </select>
+              <div class="num-input-wrapper">
+                <input type="text" id="path-input-a" class="num-input" placeholder="Type number (e.g. 1700, 0270)..." autocomplete="off">
+                <div id="suggest-a" class="suggestions-list"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Law B Selector -->
+          <div>
+            <div style="font-size:10px; color:#94a3b8; margin-bottom:2px;">LAW B:</div>
+            <div class="law-selector-row">
+              <select id="type-select-b" class="type-select">
+                <option value="ALL">All</option>
+                <option value="RA" selected>RA</option>
+                <option value="ORD">Ordinance</option>
+                <option value="PD">PD</option>
+                <option value="BP">BP</option>
+                <option value="EO">EO</option>
+                <option value="CA">CA</option>
+                <option value="ACT">Act</option>
+              </select>
+              <div class="num-input-wrapper">
+                <input type="text" id="path-input-b" class="num-input" placeholder="Type number (e.g. 7636, 7160)..." autocomplete="off">
+                <div id="suggest-b" class="suggestions-list"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row" style="margin-top: 4px;">
+            <button class="toggle-btn" id="btn-trace-path" style="background:#00F2FE; color:#07090e; font-weight:700; flex:1;">Find Path</button>
+            <button class="toggle-btn" id="btn-clear-path" style="flex:1;">Clear Path</button>
+          </div>
+          <div id="path-status" style="font-size:11px; color:#94a3b8; line-height:1.4; margin-top:2px; display:none;"></div>
+        </div>
+      </div>
+
       <div class="search-box">
-        <input type="text" id="search-input" placeholder="Search RA 7160, Ordinance No., keyword...">
+        <input type="text" id="search-input" placeholder="Search individual law, keyword...">
       </div>
 
       <!-- Jurisdiction Filter -->
@@ -679,8 +840,24 @@ def main():
     const nodeMap = new Map();
     NODES.forEach(n => nodeMap.set(n.id, n));
 
+    // Build Adjacency List for Shortest Path BFS
+    const adj = new Map();
+    NODES.forEach(n => adj.set(n.id, []));
+    EDGES.forEach(e => {{
+      if (adj.has(e.u) && adj.has(e.v)) {{
+        adj.get(e.u).push({{ target: e.v, type: e.t }});
+        adj.get(e.v).push({{ target: e.u, type: e.t }});
+      }}
+    }});
+
+    let activePathNodes = null;
+    let activePathEdges = null;
+    let pathStartNode = null;
+    let pathEndNode = null;
+
     const canvas = document.getElementById('graph-canvas');
     const ctx = canvas.getContext('2d');
+    const tooltip = document.getElementById('hover-tooltip');
 
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
@@ -692,7 +869,7 @@ def main():
     }});
 
     // Camera transform (Pan & Zoom)
-    let zoom = 0.28;
+    let zoom = 0.25;
     let panX = width / 2;
     let panY = height / 2;
 
@@ -702,7 +879,7 @@ def main():
 
     let hoveredNode = null;
     let selectedNode = null;
-    let showHubLabels = false; // Pure web graph by default (NO text clutter!)
+    let showHubLabels = false;
 
     // Active EDA Filters
     let filterJur = 'all';
@@ -724,6 +901,31 @@ def main():
       return true;
     }}
 
+    function findShortestPath(startId, endId) {{
+      if (startId === endId) return {{ distance: 0, path: [startId] }};
+      const queue = [[startId]];
+      const visited = new Set([startId]);
+
+      while (queue.length > 0) {{
+        const currentPath = queue.shift();
+        const current = currentPath[currentPath.length - 1];
+
+        const neighbors = adj.get(current) || [];
+        for (let i = 0; i < neighbors.length; i++) {{
+          const neighbor = neighbors[i].target;
+          if (neighbor === endId) {{
+            currentPath.push(neighbor);
+            return {{ distance: currentPath.length - 1, path: currentPath }};
+          }}
+          if (!visited.has(neighbor)) {{
+            visited.add(neighbor);
+            queue.push([...currentPath, neighbor]);
+          }}
+        }}
+      }}
+      return null;
+    }}
+
     function render() {{
       ctx.clearRect(0, 0, width, height);
 
@@ -743,24 +945,31 @@ def main():
 
         visibleEdgesCount++;
 
+        const isPathEdge = activePathEdges && (activePathEdges.has(`${{u.id}}|${{v.id}}`) || activePathEdges.has(`${{v.id}}|${{u.id}}`));
         const isHighlighted = (selectedNode && (u.id === selectedNode.id || v.id === selectedNode.id)) ||
                               (hoveredNode && (u.id === hoveredNode.id || v.id === hoveredNode.id));
 
-        if (isHighlighted) {{
+        if (isPathEdge) {{
+          ctx.strokeStyle = '#FFD700';
+          ctx.lineWidth = 3.5;
+        }} else if (activePathNodes) {{
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
+          ctx.lineWidth = 0.3;
+        }} else if (isHighlighted) {{
           ctx.strokeStyle = '#00F2FE';
-          ctx.lineWidth = 2.0;
+          ctx.lineWidth = 2.2;
         }} else if (selectedNode) {{
           ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
           ctx.lineWidth = 0.3;
         }} else {{
           if (edge.t === 'amends') {{
-            ctx.strokeStyle = 'rgba(255, 165, 0, 0.45)'; // Amber
+            ctx.strokeStyle = 'rgba(255, 165, 0, 0.45)';
             ctx.lineWidth = 1.0;
           }} else if (edge.t === 'repeals') {{
-            ctx.strokeStyle = 'rgba(239, 68, 68, 0.6)'; // Red
+            ctx.strokeStyle = 'rgba(239, 68, 68, 0.6)';
             ctx.lineWidth = 1.2;
           }} else {{
-            ctx.strokeStyle = 'rgba(100, 150, 255, 0.18)'; // Blue/cyan
+            ctx.strokeStyle = 'rgba(100, 150, 255, 0.18)';
             ctx.lineWidth = 0.6;
           }}
         }}
@@ -781,17 +990,29 @@ def main():
         const sx = toScreenX(n.x);
         const sy = toScreenY(n.y);
 
-        // Viewport culling
         if (sx < -100 || sx > width + 100 || sy < -100 || sy > height + 100) continue;
 
         const isHovered = hoveredNode && hoveredNode.id === n.id;
         const isSelected = selectedNode && selectedNode.id === n.id;
-        const sr = Math.max(2.2, n.r * zoom);
+        const isPathNode = activePathNodes && activePathNodes.has(n.id);
+        const isPathEndpoint = pathStartNode && (n.id === pathStartNode.id || (pathEndNode && n.id === pathEndNode.id));
+        const sr = Math.max(2.2, n.r * zoom * (isPathEndpoint ? 1.5 : (isPathNode ? 1.25 : 1.0)));
 
         ctx.beginPath();
         ctx.arc(sx, sy, sr, 0, Math.PI * 2);
 
-        if (isHovered || isSelected) {{
+        if (isPathEndpoint) {{
+          ctx.fillStyle = '#FFD700';
+          ctx.shadowColor = '#FFD700';
+          ctx.shadowBlur = 24;
+        }} else if (isPathNode) {{
+          ctx.fillStyle = '#00F2FE';
+          ctx.shadowColor = '#00F2FE';
+          ctx.shadowBlur = 18;
+        }} else if (activePathNodes) {{
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+          ctx.shadowBlur = 0;
+        }} else if (isHovered || isSelected) {{
           ctx.fillStyle = '#FFFFFF';
           ctx.shadowColor = '#00F2FE';
           ctx.shadowBlur = 18;
@@ -801,19 +1022,18 @@ def main():
         }}
         ctx.fill();
 
-        // King hub ring
         if (n.id === 'ra_7160_1991') {{
           ctx.strokeStyle = '#FFD700';
           ctx.lineWidth = 2.5;
           ctx.stroke();
         }}
 
-        // 3. Draw Labels ONLY on Hover, Selection, or if toggled for King Hub
-        const shouldDrawLabel = isHovered || isSelected || (showHubLabels && (n.id === 'ra_7160_1991' || n.deg >= 60));
+        // 3. Draw Labels ONLY on Hover, Selection, Active Path, or if toggled
+        const shouldDrawLabel = isHovered || isSelected || (activePathNodes && activePathNodes.has(n.id)) || (showHubLabels && (n.id === 'ra_7160_1991' || n.deg >= 60));
         if (shouldDrawLabel && n.label) {{
           const fontSize = Math.max(10, Math.min(14, 11 * zoom));
           ctx.font = `600 ${{fontSize}}px Inter, sans-serif`;
-          ctx.fillStyle = isHovered || isSelected ? '#00F2FE' : '#F1F5F9';
+          ctx.fillStyle = isHovered || isSelected ? '#00F2FE' : (isPathEndpoint ? '#FFD700' : '#F1F5F9');
           ctx.shadowColor = '#000000';
           ctx.shadowBlur = 4;
           ctx.fillText(n.label, sx + sr + 5, sy + fontSize / 3);
@@ -825,40 +1045,55 @@ def main():
       document.getElementById('stat-visible-edges').innerText = visibleEdgesCount.toLocaleString();
     }}
 
-    // Mouse Controls
+    // Accurate Screen-Space Hit-Testing (Fixes Mouse Highlight Displacement!)
+    function getNodeAtScreenPos(mouseX, mouseY) {{
+      for (let i = NODES.length - 1; i >= 0; i--) {{
+        const n = NODES[i];
+        if (!isNodeVisible(n)) continue;
+        const sx = toScreenX(n.x);
+        const sy = toScreenY(n.y);
+        const dx = sx - mouseX;
+        const dy = sy - mouseY;
+        const hitRadius = Math.max(8, n.r * zoom + 5);
+        if (dx * dx + dy * dy <= hitRadius * hitRadius) {{
+          return n;
+        }}
+      }}
+      return null;
+    }}
+
     canvas.addEventListener('mousedown', (e) => {{
       isDragging = true;
       dragStartX = e.clientX - panX;
       dragStartY = e.clientY - panY;
+      tooltip.style.display = 'none';
     }});
 
     window.addEventListener('mousemove', (e) => {{
       if (isDragging) {{
         panX = e.clientX - dragStartX;
         panY = e.clientY - dragStartY;
+        tooltip.style.display = 'none';
         render();
         return;
       }}
 
-      const wx = toWorldX(e.clientX);
-      const wy = toWorldY(e.clientY);
-      let found = null;
-
-      for (let i = NODES.length - 1; i >= 0; i--) {{
-        const n = NODES[i];
-        if (!isNodeVisible(n)) continue;
-        const dx = n.x - wx;
-        const dy = n.y - wy;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist <= Math.max(12, n.r)) {{
-          found = n;
-          break;
-        }}
-      }}
+      const found = getNodeAtScreenPos(e.clientX, e.clientY);
 
       if (found !== hoveredNode) {{
         hoveredNode = found;
         render();
+      }}
+
+      if (hoveredNode) {{
+        const sx = toScreenX(hoveredNode.x);
+        const sy = toScreenY(hoveredNode.y);
+        tooltip.style.display = 'block';
+        tooltip.style.left = `${{sx}}px`;
+        tooltip.style.top = `${{sy}}px`;
+        tooltip.innerHTML = `<span style="color:#00F2FE;">${{hoveredNode.num || hoveredNode.id}}</span> <span style="color:#94a3b8; font-size:10px;">(Degree: ${{hoveredNode.deg}})</span>`;
+      }} else {{
+        tooltip.style.display = 'none';
       }}
     }});
 
@@ -872,7 +1107,7 @@ def main():
       const mouseWorldX = toWorldX(e.clientX);
       const mouseWorldY = toWorldY(e.clientY);
 
-      zoom = Math.max(0.06, Math.min(4.0, zoom * zoomFactor));
+      zoom = Math.max(0.05, Math.min(4.5, zoom * zoomFactor));
 
       panX = e.clientX - mouseWorldX * zoom;
       panY = e.clientY - mouseWorldY * zoom;
@@ -880,9 +1115,10 @@ def main():
       render();
     }}, {{ passive: false }});
 
-    canvas.addEventListener('click', () => {{
-      if (hoveredNode) {{
-        selectedNode = hoveredNode;
+    canvas.addEventListener('click', (e) => {{
+      const found = getNodeAtScreenPos(e.clientX, e.clientY);
+      if (found) {{
+        selectedNode = found;
         showInspector(selectedNode);
         render();
       }} else {{
@@ -903,7 +1139,7 @@ def main():
         badge.innerText = 'Davao City Local Ordinance';
       }} else {{
         badge.className = 'inspector-badge badge-nat';
-        badge.innerText = 'National Statute';
+        badge.innerText = `${{n.type || 'National'}} Statute`;
       }}
 
       document.getElementById('insp-degree').innerText = n.deg;
@@ -922,34 +1158,32 @@ def main():
 
     // Zoom Buttons
     document.getElementById('btn-zoom-in').addEventListener('click', () => {{
-      zoom = Math.min(4.0, zoom * 1.3);
+      zoom = Math.min(4.5, zoom * 1.3);
       render();
     }});
     document.getElementById('btn-zoom-out').addEventListener('click', () => {{
-      zoom = Math.max(0.06, zoom * 0.7);
+      zoom = Math.max(0.05, zoom * 0.7);
       render();
     }});
     document.getElementById('btn-reset').addEventListener('click', () => {{
-      zoom = 0.28;
+      zoom = 0.25;
       panX = width / 2;
       panY = height / 2;
       render();
     }});
     document.getElementById('btn-recenter').addEventListener('click', () => {{
-      zoom = 0.28;
+      zoom = 0.25;
       panX = width / 2;
       panY = height / 2;
       render();
     }});
 
-    // Toggle Hub Labels
     document.getElementById('btn-toggle-labels').addEventListener('click', (e) => {{
       showHubLabels = !showHubLabels;
       e.target.classList.toggle('active', showHubLabels);
       render();
     }});
 
-    // Jurisdiction Filter
     document.querySelectorAll('[data-jur]').forEach(btn => {{
       btn.addEventListener('click', (e) => {{
         document.querySelectorAll('[data-jur]').forEach(b => b.classList.remove('active'));
@@ -959,19 +1193,16 @@ def main():
       }});
     }});
 
-    // Domain Dropdown
     document.getElementById('domain-select').addEventListener('change', (e) => {{
       filterDomain = e.target.value;
       render();
     }});
 
-    // Era Dropdown
     document.getElementById('era-select').addEventListener('change', (e) => {{
       filterEra = e.target.value;
       render();
     }});
 
-    // Edge Type
     document.querySelectorAll('[data-edge]').forEach(btn => {{
       btn.addEventListener('click', (e) => {{
         document.querySelectorAll('[data-edge]').forEach(b => b.classList.remove('active'));
@@ -981,7 +1212,6 @@ def main():
       }});
     }});
 
-    // Degree Slider
     const slider = document.getElementById('degree-slider');
     const sliderVal = document.getElementById('degree-val');
     slider.addEventListener('input', (e) => {{
@@ -990,7 +1220,163 @@ def main():
       render();
     }});
 
-    // Search Input
+    // Helper: Find law nodes by type and number query
+    function searchLaws(type, query) {{
+      query = (query || '').toLowerCase().trim();
+      return NODES.filter(n => {{
+        if (type !== 'ALL' && n.type !== type) return false;
+        if (!query) return true;
+        return (n.num && n.num.toLowerCase().includes(query)) ||
+               (n.id && n.id.toLowerCase().includes(query));
+      }});
+    }}
+
+    function setupSuggestions(inputId, typeSelectId, listId) {{
+      const input = document.getElementById(inputId);
+      const typeSelect = document.getElementById(typeSelectId);
+      const list = document.getElementById(listId);
+
+      function update() {{
+        const q = input.value.trim();
+        const type = typeSelect.value;
+        const matches = searchLaws(type, q).slice(0, 8);
+
+        if (matches.length === 0 || !q) {{
+          list.style.display = 'none';
+          return;
+        }}
+
+        list.innerHTML = matches.map(m => `
+          <div class="suggestion-item" data-id="${{m.id}}">
+            <span style="color:#00F2FE; font-weight:600;">${{m.num || m.id}}</span>
+            <span style="color:#64748b; font-size:10px; margin-left:4px;">(${{m.year}})</span>
+          </div>
+        `).join('');
+        list.style.display = 'block';
+
+        list.querySelectorAll('.suggestion-item').forEach(item => {{
+          item.addEventListener('click', () => {{
+            const nid = item.getAttribute('data-id');
+            const found = nodeMap.get(nid);
+            if (found) {{
+              input.value = found.num || found.id;
+              input.dataset.selectedId = found.id;
+            }}
+            list.style.display = 'none';
+          }});
+        }});
+      }}
+
+      input.addEventListener('input', update);
+      input.addEventListener('focus', update);
+      typeSelect.addEventListener('change', update);
+
+      document.addEventListener('click', (e) => {{
+        if (!input.contains(e.target) && !list.contains(e.target)) {{
+          list.style.display = 'none';
+        }}
+      }});
+    }}
+
+    setupSuggestions('path-input-a', 'type-select-a', 'suggest-a');
+    setupSuggestions('path-input-b', 'type-select-b', 'suggest-b');
+
+    // 2-Law Pathfinding Handler
+    document.getElementById('btn-trace-path').addEventListener('click', () => {{
+      const inputA = document.getElementById('path-input-a');
+      const inputB = document.getElementById('path-input-b');
+      const typeA = document.getElementById('type-select-a').value;
+      const typeB = document.getElementById('type-select-b').value;
+      const statusDiv = document.getElementById('path-status');
+      const badge = document.getElementById('path-distance-badge');
+
+      statusDiv.style.display = 'block';
+
+      const qA = inputA.value.trim();
+      const qB = inputB.value.trim();
+
+      if (!qA || !qB) {{
+        statusDiv.innerHTML = '<span style="color:#EF4444;">Please specify both Law A and Law B.</span>';
+        return;
+      }}
+
+      // Find node A
+      let nodeA = inputA.dataset.selectedId ? nodeMap.get(inputA.dataset.selectedId) : null;
+      if (!nodeA) {{
+        const matchesA = searchLaws(typeA, qA);
+        nodeA = matchesA[0];
+      }}
+
+      // Find node B
+      let nodeB = inputB.dataset.selectedId ? nodeMap.get(inputB.dataset.selectedId) : null;
+      if (!nodeB) {{
+        const matchesB = searchLaws(typeB, qB);
+        nodeB = matchesB[0];
+      }}
+
+      if (!nodeA) {{
+        statusDiv.innerHTML = `<span style="color:#EF4444;">Law A ("${{qA}}") not found in active graph.</span>`;
+        return;
+      }}
+      if (!nodeB) {{
+        statusDiv.innerHTML = `<span style="color:#EF4444;">Law B ("${{qB}}") not found in active graph.</span>`;
+        return;
+      }}
+
+      const res = findShortestPath(nodeA.id, nodeB.id);
+      if (!res) {{
+        statusDiv.innerHTML = `<span style="color:#F59E0B;">No direct or intermediate path connects <b>${{nodeA.num}}</b> and <b>${{nodeB.num}}</b>.</span>`;
+        badge.style.display = 'none';
+        activePathNodes = null;
+        activePathEdges = null;
+        render();
+        return;
+      }}
+
+      pathStartNode = nodeA;
+      pathEndNode = nodeB;
+      activePathNodes = new Set(res.path);
+      activePathEdges = new Set();
+      for (let i = 0; i < res.path.length - 1; i++) {{
+        activePathEdges.add(`${{res.path[i]}}|${{res.path[i+1]}}`);
+      }}
+
+      badge.style.display = 'inline-block';
+      badge.innerText = `Distance: ${{res.distance}} hop${{res.distance === 1 ? '' : 's'}}`;
+
+      const pathSteps = res.path.map((nid, idx) => {{
+        const n = nodeMap.get(nid);
+        const name = n.num || nid;
+        return `<span style="color:${{idx === 0 || idx === res.path.length-1 ? '#FFD700' : '#00F2FE'}}; font-weight:600;">${{name}}</span>`;
+      }}).join(' &rarr; ');
+
+      statusDiv.innerHTML = `<div style="margin-bottom:4px; color:#F1F5F9;">Connected via <b>${{res.distance}} hop${{res.distance === 1 ? '' : 's'}}</b>:</div><div>${{pathSteps}}</div>`;
+
+      const midX = (nodeA.x + nodeB.x) / 2;
+      const midY = (nodeA.y + nodeB.y) / 2;
+      const distSpan = Math.sqrt((nodeA.x - nodeB.x)**2 + (nodeA.y - nodeB.y)**2);
+      zoom = Math.max(0.18, Math.min(1.4, (width * 0.5) / (distSpan + 300)));
+      panX = width / 2 - midX * zoom;
+      panY = height / 2 - midY * zoom;
+
+      render();
+    }});
+
+    document.getElementById('btn-clear-path').addEventListener('click', () => {{
+      activePathNodes = null;
+      activePathEdges = null;
+      pathStartNode = null;
+      pathEndNode = null;
+      document.getElementById('path-status').style.display = 'none';
+      document.getElementById('path-distance-badge').style.display = 'none';
+      document.getElementById('path-input-a').value = '';
+      document.getElementById('path-input-b').value = '';
+      delete document.getElementById('path-input-a').dataset.selectedId;
+      delete document.getElementById('path-input-b').dataset.selectedId;
+      render();
+    }});
+
+    // General search bar
     document.getElementById('search-input').addEventListener('input', (e) => {{
       const q = e.target.value.toLowerCase().trim();
       if (!q) {{
@@ -1013,7 +1399,6 @@ def main():
       }}
     }});
 
-    // Initial render
     render();
   </script>
 </body>
@@ -1023,8 +1408,7 @@ def main():
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write(html_code)
 
-    print(f"SUCCESS: EDA Constellation Dashboard written to '{OUTPUT_HTML}'!")
+    print(f"SUCCESS: Enhanced EDA Web Dashboard with precise hit-testing written to '{OUTPUT_HTML}'!")
 
 if __name__ == "__main__":
     main()
-
