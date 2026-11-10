@@ -31,7 +31,7 @@ import numpy as np
 import networkx as nx
 
 # Define paths
-CORPUS_NATIONAL = "corpus/categorized_national_laws.jsonl"
+CORPUS_NATIONAL = "corpus/cleaned/national/categorized_national_laws.jsonl"
 CORPUS_LOCAL = "corpus/city_ordinances/categorized_davao_ordinances.jsonl"
 UNIFIED_PROVISIONS = "data/unified_dual_statutory_provisions.jsonl"
 OUTPUT_DIR = "output/knowledge_graph"

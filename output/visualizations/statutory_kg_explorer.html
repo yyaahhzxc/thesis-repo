@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statutory Knowledge Graph Explorer | Antigravity</title>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 20;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #f8fafc;
+      letter-spacing: -0.3px;
+    }
+    .stats-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .stat-val {
+      font-family: 'Fira Code', monospace;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .main-container {
+      position: relative;
+      flex: 1;
+      display: flex;
+    }
+    #network-canvas {
+      flex: 1;
+      height: 100%;
+      background: radial-gradient(circle at center, #111827 0%, #0b0f19 100%);
+    }
+    /* Floating Controls Panel */
+    .controls-panel {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 320px;
+      background: rgba(15, 23, 42, 0.90);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .search-box input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: #f1f5f9;
+      font-size: 13px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-box input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .filter-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .toggle-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+    }
+    .toggle-btn.active {
+      background: #3b82f6;
+      border-color: #60a5fa;
+      color: #ffffff;
+    }
+    /* Inspector Sidebar */
+    .inspector-panel {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 380px;
+      max-height: calc(100% - 32px);
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      z-index: 10;
+      overflow-y: auto;
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .inspector-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+    }
+    .inspector-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #f8fafc;
+      line-height: 1.3;
+    }
+    .inspector-type {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+      display: inline-block;
+    }
+    .type-nat { background: #d97706; color: #fff; }
+    .type-loc { background: #0891b2; color: #fff; }
+    .type-dom { background: #4f46e5; color: #fff; }
+    .type-sec { background: #dc2626; color: #fff; }
+    .type-stat-sec { background: #2563eb; color: #fff; }
+    .close-btn {
+      background: transparent;
+      border: none;
+      color: #64748b;
+      font-size: 18px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .close-btn:hover { color: #f8fafc; }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .metric-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .metric-label {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .metric-val {
+      font-family: 'Fira Code', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      color: #38bdf8;
+      margin-top: 2px;
+    }
+    .text-block {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #cbd5e1;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .connections-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .connection-item {
+      font-size: 12px;
+      padding: 6px 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .connection-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #38bdf8;
+    }
+    /* Legend */
+    .legend {
+      position: absolute;
+      bottom: 20px;
+      left: 16px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      gap: 16px;
+      font-size: 11px;
+      color: #94a3b8;
+      z-index: 10;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    /* Tier 3 Quick Links */
+    .tier3-selector {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 7px 10px;
+      color: #f1f5f9;
+      font-size: 12px;
+      outline: none;
+      width: 100%;
+      cursor: pointer;
+    }
+    .tier3-selector option {
+      background: #0f172a;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <span class="badge">KG Topology</span>
+      <h1>Dual Statutory Knowledge Graph Explorer</h1>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-pill">
+        <span>Nodes:</span>
+        <span class="stat-val" id="stat-nodes">141</span>
+      </div>
+      <div class="stat-pill">
+        <span>Edges:</span>
+        <span class="stat-val" id="stat-edges">203</span>
+      </div>
+      <div class="stat-pill">
+        <span>Modularity Q:</span>
+        <span class="stat-val">0.7661</span>
+      </div>
+      <div class="stat-pill">
+        <span>DAG Lineage Depth:</span>
+        <span class="stat-val">9</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Controls Sidebar -->
+    <div class="controls-panel">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search statute, ordinance, or provision...">
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-title">Jump to Landmark Supreme Court Conflict</div>
+        <select id="case-select" class="tier3-selector">
+          <option value="">-- Focus on Jurisprudential Case --</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-title">Entity Type Filters</div>
+        <div class="btn-row">
+          <button class="toggle-btn active" data-type="all">All</button>
+          <button class="toggle-btn" data-type="national_statute">National Laws</button>
+          <button class="toggle-btn" data-type="local_ordinance">Davao Ordinances</button>
+          <button class="toggle-btn" data-type="ordinance_section">Sections</button>
+          <button class="toggle-btn" data-type="domain">Domain Hubs</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-title">Physics & Layout</div>
+        <div class="btn-row">
+          <button class="toggle-btn active" id="toggle-physics">Physics On</button>
+          <button class="toggle-btn" id="btn-recenter">Recenter</button>
+          <button class="toggle-btn" id="btn-hierarchical">Ego-Cluster</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graph Canvas -->
+    <div id="network-canvas"></div>
+
+    <!-- Inspector Panel -->
+    <div class="inspector-panel" id="inspector">
+      <div class="inspector-header">
+        <div>
+          <div class="inspector-title" id="insp-title">Republic Act No. 7160</div>
+          <span class="inspector-type type-nat" id="insp-type">National Statute</span>
+        </div>
+        <button class="close-btn" id="close-inspector">&times;</button>
+      </div>
+
+      <div class="metric-grid" id="insp-metrics">
+        <div class="metric-card">
+          <div class="metric-label">In-Degree Centrality</div>
+          <div class="metric-val" id="insp-indeg">1,350</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Statutory PageRank</div>
+          <div class="metric-val" id="insp-pr">0.022606</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Legislative Era / Year</div>
+          <div class="metric-val" id="insp-year">1991</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Primary Domain</div>
+          <div class="metric-val" id="insp-domain">Admin & LGU</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="filter-title" style="margin-bottom: 6px;">Authentic Statutory Text / Summary</div>
+        <div class="text-block" id="insp-text"></div>
+      </div>
+
+      <div>
+        <div class="filter-title" style="margin-bottom: 6px;">Relational Connections (<span id="insp-conn-count">0</span>)</div>
+        <div class="connections-list" id="insp-connections"></div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item">
+        <span class="legend-dot" style="background: #FF9F43;"></span>
+        <span>National Statute (Super-Hub)</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background: #00D2D3;"></span>
+        <span>Davao City Ordinance</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background: #FF6B6B;"></span>
+        <span>Contradiction / Struck Down</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background: #1DD1A1;"></span>
+        <span>Entailment / Upheld</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background: #9013FE;"></span>
+        <span>Macro-Domain</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let network = null;
+    let graphData = null;
+    let allNodes = [];
+    let allEdges = [];
+
+    // Load knowledge graph data
+    fetch('../../output/knowledge_graph/interactive_kg_data.json')
+      .then(res => res.json())
+      .then(data => {
+        graphData = data;
+        initGraph(data);
+        populateCaseSelector(data.tier3_cases);
+      })
+      .catch(err => {
+        console.error('Failed to load JSON:', err);
+      });
+
+    function initGraph(data) {
+      allNodes = data.nodes;
+      allEdges = data.edges;
+
+      document.getElementById('stat-nodes').innerText = allNodes.length;
+      document.getElementById('stat-edges').innerText = allEdges.length;
+
+      const container = document.getElementById('network-canvas');
+      const visData = {
+        nodes: new vis.DataSet(allNodes),
+        edges: new vis.DataSet(allEdges)
+      };
+
+      const options = {
+        nodes: {
+          borderWidth: 2,
+          shadow: {
+            enabled: true,
+            color: 'rgba(0,0,0,0.6)',
+            size: 8,
+            x: 2,
+            y: 4
+          }
+        },
+        edges: {
+          smooth: {
+            type: 'continuous',
+            forceDirection: 'none',
+            roundness: 0.15
+          },
+          selectionWidth: 3
+        },
+        physics: {
+          stabilization: { iterations: 120 },
+          barnesHut: {
+            gravitationalConstant: -7500,
+            centralGravity: 0.25,
+            springLength: 120,
+            springConstant: 0.04,
+            damping: 0.09
+          }
+        },
+        interaction: {
+          hover: true,
+          tooltipDelay: 150,
+          hideEdgesOnDrag: false,
+          zoomView: true
+        }
+      };
+
+      network = new vis.Network(container, visData, options);
+
+      // Node selection click
+      network.on("click", function(params) {
+        if (params.nodes.length > 0) {
+          const selectedId = params.nodes[0];
+          showInspector(selectedId);
+          highlightNeighborhood(selectedId);
+        } else {
+          hideInspector();
+          resetHighlight();
+        }
+      });
+    }
+
+    function populateCaseSelector(cases) {
+      const select = document.getElementById('case-select');
+      cases.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = `sec_${c.case_id.toLowerCase()}`;
+        opt.textContent = `${c.case_id}: ${c.case_name.substring(0, 40)}... [${c.gold_nli_label}]`;
+        select.appendChild(opt);
+      });
+
+      select.addEventListener('change', (e) => {
+        const nodeId = e.target.value;
+        if (nodeId) {
+          network.focus(nodeId, {
+            scale: 1.4,
+            animation: { duration: 1000, easingFunction: 'easeInOutQuad' }
+          });
+          network.selectNodes([nodeId]);
+          showInspector(nodeId);
+          highlightNeighborhood(nodeId);
+        }
+      });
+    }
+
+    function showInspector(nodeId) {
+      const node = allNodes.find(n => n.id === nodeId);
+      if (!node) return;
+
+      const panel = document.getElementById('inspector');
+      panel.style.display = 'flex';
+
+      const meta = node.meta || {};
+      const titleElem = document.getElementById('insp-title');
+      const typeElem = document.getElementById('insp-type');
+      const textElem = document.getElementById('insp-text');
+
+      titleElem.innerText = meta.number || meta.name || meta.statute_citation || node.label;
+
+      // Group badge
+      typeElem.className = 'inspector-type';
+      if (node.group === 'national_statute') {
+        typeElem.classList.add('type-nat');
+        typeElem.innerText = 'National Statute (Super-Hub)';
+      } else if (node.group === 'local_ordinance') {
+        typeElem.classList.add('type-loc');
+        typeElem.innerText = 'Davao City Local Ordinance';
+      } else if (node.group === 'domain') {
+        typeElem.classList.add('type-dom');
+        typeElem.innerText = 'Macro Legal Domain';
+      } else if (node.group === 'ordinance_section') {
+        typeElem.classList.add('type-sec');
+        typeElem.innerText = `Challenged Provision (${meta.ruling || 'Ultra Vires'})`;
+      } else {
+        typeElem.classList.add('type-stat-sec');
+        typeElem.innerText = 'Controlling Statutory Benchmark';
+      }
+
+      // Metrics
+      document.getElementById('insp-indeg').innerText = meta.in_degree !== undefined ? meta.in_degree : '-';
+      document.getElementById('insp-pr').innerText = meta.pagerank !== undefined ? Number(meta.pagerank).toFixed(6) : '-';
+      document.getElementById('insp-year').innerText = meta.year || '-';
+      document.getElementById('insp-domain').innerText = (meta.domain || meta.case_name || '-').substring(0, 26);
+
+      // Text
+      textElem.innerText = meta.title || meta.provision_text || meta.premise_text || node.title.replace(/<[^>]+>/g, ' ');
+
+      // Connected relations
+      const connList = document.getElementById('insp-connections');
+      connList.innerHTML = '';
+      const connectedEdges = allEdges.filter(e => e.from === nodeId || e.to === nodeId);
+      document.getElementById('insp-conn-count').innerText = connectedEdges.length;
+
+      connectedEdges.slice(0, 15).forEach(edge => {
+        const isOutgoing = edge.from === nodeId;
+        const otherId = isOutgoing ? edge.to : edge.from;
+        const otherNode = allNodes.find(n => n.id === otherId);
+        if (!otherNode) return;
+
+        const item = document.createElement('div');
+        item.className = 'connection-item';
+        item.innerHTML = `
+          <span><b>${edge.relation}</b> ${isOutgoing ? '→' : '←'} ${otherNode.label}</span>
+          <span style="color: #64748b; font-size: 10px;">${otherNode.group}</span>
+        `;
+        item.onclick = () => {
+          network.focus(otherId, { scale: 1.2, animation: { duration: 600 } });
+          network.selectNodes([otherId]);
+          showInspector(otherId);
+          highlightNeighborhood(otherId);
+        };
+        connList.appendChild(item);
+      });
+    }
+
+    function hideInspector() {
+      document.getElementById('inspector').style.display = 'none';
+    }
+
+    document.getElementById('close-inspector').addEventListener('click', () => {
+      hideInspector();
+      resetHighlight();
+    });
+
+    // Highlighting ego-neighborhood
+    function highlightNeighborhood(selectedId) {
+      const connectedNodeIds = new Set([selectedId]);
+      allEdges.forEach(e => {
+        if (e.from === selectedId) connectedNodeIds.add(e.to);
+        if (e.to === selectedId) connectedNodeIds.add(e.from);
+      });
+
+      const updatedNodes = allNodes.map(n => {
+        if (connectedNodeIds.has(n.id)) {
+          return { id: n.id, opacity: 1.0, font: { color: '#FFFFFF' } };
+        } else {
+          return { id: n.id, opacity: 0.12, font: { color: 'rgba(255,255,255,0.1)' } };
+        }
+      });
+
+      const updatedEdges = allEdges.map(e => {
+        if (connectedNodeIds.has(e.from) && connectedNodeIds.has(e.to)) {
+          return { id: e.id, hidden: false };
+        } else {
+          return { id: e.id, hidden: true };
+        }
+      });
+
+      network.body.data.nodes.update(updatedNodes);
+      network.body.data.edges.update(updatedEdges);
+    }
+
+    function resetHighlight() {
+      const updatedNodes = allNodes.map(n => ({ id: n.id, opacity: 1.0, font: { color: '#FFFFFF' } }));
+      const updatedEdges = allEdges.map(e => ({ id: e.id, hidden: false }));
+      network.body.data.nodes.update(updatedNodes);
+      network.body.data.edges.update(updatedEdges);
+    }
+
+    // Search filter
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      if (!q) {
+        resetHighlight();
+        return;
+      }
+      const match = allNodes.find(n => (n.label && n.label.toLowerCase().includes(q)) || (n.id && n.id.toLowerCase().includes(q)));
+      if (match) {
+        network.focus(match.id, { scale: 1.3, animation: { duration: 500 } });
+        network.selectNodes([match.id]);
+        showInspector(match.id);
+        highlightNeighborhood(match.id);
+      }
+    });
+
+    // Toggle physics
+    let physicsActive = true;
+    document.getElementById('toggle-physics').addEventListener('click', (e) => {
+      physicsActive = !physicsActive;
+      network.setOptions({ physics: { enabled: physicsActive } });
+      e.target.innerText = physicsActive ? 'Physics On' : 'Physics Off';
+      e.target.classList.toggle('active', physicsActive);
+    });
+
+    // Recenter
+    document.getElementById('btn-recenter').addEventListener('click', () => {
+      network.fit({ animation: { duration: 800 } });
+      resetHighlight();
+      hideInspector();
+    });
+
+    // Type filter buttons
+    document.querySelectorAll('[data-type]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        const filterType = e.target.getAttribute('data-type');
+
+        if (filterType === 'all') {
+          resetHighlight();
+        } else {
+          const updatedNodes = allNodes.map(n => {
+            const matches = n.group === filterType;
+            return {
+              id: n.id,
+              opacity: matches ? 1.0 : 0.08,
+              font: { color: matches ? '#FFFFFF' : 'rgba(255,255,255,0.05)' }
+            };
+          });
+          network.body.data.nodes.update(updatedNodes);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
