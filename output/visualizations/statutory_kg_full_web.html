@@ -532,8 +532,28 @@
         </div>
       </div>
 
-      <div class="search-box">
-        <input type="text" id="search-input" placeholder="Search individual law, keyword...">
+      <!-- Single Law Quick Search (Trace Connection Style) -->
+      <div class="filter-section" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 10px;">
+        <div class="filter-label" style="display: flex; justify-content: space-between; align-items: center;">
+          <span>Quick Search Law</span>
+          <span id="search-status-badge" style="font-size: 10px; color: #00F2FE; font-family: 'Fira Code', monospace; display: none;"></span>
+        </div>
+        <div class="law-selector-row" style="margin-top: 6px;">
+          <select id="type-select-search" class="type-select">
+            <option value="ALL" selected>All</option>
+            <option value="RA">RA</option>
+            <option value="ORD">Ordinance</option>
+            <option value="PD">PD</option>
+            <option value="BP">BP</option>
+            <option value="EO">EO</option>
+            <option value="CA">CA</option>
+            <option value="ACT">Act</option>
+          </select>
+          <div class="num-input-wrapper">
+            <input type="text" id="search-input" class="num-input" placeholder="Type number or keyword (e.g. 7160, 0309, tax)..." autocomplete="off">
+            <div id="suggest-search" class="suggestions-list"></div>
+          </div>
+        </div>
       </div>
 
       <!-- Jurisdiction Filter -->
@@ -1070,9 +1090,18 @@
       return null;
     }
 
+    // Drag vs Click Tracking State (Prevents drag release from clicking away)
+    let mouseDownScreenX = 0;
+    let mouseDownScreenY = 0;
+    let hasDragged = false;
+    const DRAG_THRESHOLD = 5; // pixels
+
     canvas.addEventListener('mousedown', (e) => {
       const m = getCanvasMousePos(e);
       isDragging = true;
+      hasDragged = false;
+      mouseDownScreenX = m.x;
+      mouseDownScreenY = m.y;
       dragStartX = m.x - panX;
       dragStartY = m.y - panY;
       tooltip.style.display = 'none';
@@ -1081,6 +1110,11 @@
     window.addEventListener('mousemove', (e) => {
       const m = getCanvasMousePos(e);
       if (isDragging) {
+        const dx = m.x - mouseDownScreenX;
+        const dy = m.y - mouseDownScreenY;
+        if (Math.hypot(dx, dy) > DRAG_THRESHOLD) {
+          hasDragged = true;
+        }
         panX = m.x - dragStartX;
         panY = m.y - dragStartY;
         tooltip.style.display = 'none';
@@ -1138,6 +1172,11 @@
     }, { passive: false });
 
     canvas.addEventListener('click', (e) => {
+      // If user dragged/panned across canvas, suppress click to preserve highlighted law
+      if (hasDragged) {
+        hasDragged = false;
+        return;
+      }
       const m = getCanvasMousePos(e);
       const found = getNodeAtScreenPos(m.x, m.y);
       if (found) {
@@ -1148,8 +1187,8 @@
         selectedNode = null;
         hideInspector();
         render();
-      }}
-    );
+      }
+    });
 
     function showInspector(n) {
       const card = document.getElementById('inspector');
@@ -1243,26 +1282,48 @@
       render();
     });
 
-    // Helper: Find law nodes by type and number query
+    // Helper: Find law nodes by type, number, or keyword query
     function searchLaws(type, query) {
       query = (query || '').toLowerCase().trim();
-      return NODES.filter(n => {
+      if (!query) return [];
+      const filtered = NODES.filter(n => {
         if (type !== 'ALL' && n.type !== type) return false;
-        if (!query) return true;
         return (n.num && n.num.toLowerCase().includes(query)) ||
-               (n.id && n.id.toLowerCase().includes(query));
+               (n.id && n.id.toLowerCase().includes(query)) ||
+               (n.title && n.title.toLowerCase().includes(query));
       });
+
+      // Rank exact num matches first, then prefix, then degree centrality
+      filtered.sort((a, b) => {
+        const aNum = (a.num || '').toLowerCase();
+        const bNum = (b.num || '').toLowerCase();
+        const aId = (a.id || '').toLowerCase();
+        const bId = (b.id || '').toLowerCase();
+
+        const aNumExact = aNum === query ? 3 : (aNum.startsWith(query) ? 2 : (aNum.includes(query) ? 1 : 0));
+        const bNumExact = bNum === query ? 3 : (bNum.startsWith(query) ? 2 : (bNum.includes(query) ? 1 : 0));
+        if (aNumExact !== bNumExact) return bNumExact - aNumExact;
+
+        const aIdMatch = aId.includes(query) ? 1 : 0;
+        const bIdMatch = bId.includes(query) ? 1 : 0;
+        if (aIdMatch !== bIdMatch) return bIdMatch - aIdMatch;
+
+        return (b.deg || 0) - (a.deg || 0);
+      });
+
+      return filtered;
     }
 
-    function setupSuggestions(inputId, typeSelectId, listId) {
+    function setupSuggestions(inputId, typeSelectId, listId, onSelectCallback) {
       const input = document.getElementById(inputId);
       const typeSelect = document.getElementById(typeSelectId);
       const list = document.getElementById(listId);
+      if (!input || !typeSelect || !list) return;
 
       function update() {
         const q = input.value.trim();
         const type = typeSelect.value;
-        const matches = searchLaws(type, q).slice(0, 8);
+        const matches = searchLaws(type, q).slice(0, 10);
 
         if (matches.length === 0 || !q) {
           list.style.display = 'none';
@@ -1270,9 +1331,12 @@
         }
 
         list.innerHTML = matches.map(m => `
-          <div class="suggestion-item" data-id="${m.id}">
-            <span style="color:#00F2FE; font-weight:600;">${m.num || m.id}</span>
-            <span style="color:#64748b; font-size:10px; margin-left:4px;">(${m.year})</span>
+          <div class="suggestion-item" data-id="${m.id}" style="padding:6px 8px; border-bottom:1px solid rgba(255,255,255,0.05); cursor:pointer;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="color:#00F2FE; font-weight:600;">${m.num || m.id}</span>
+              <span style="color:#64748b; font-size:10px;">${m.year ? '(' + m.year + ')' : ''}</span>
+            </div>
+            ${m.title ? `<div style="color:#94a3b8; font-size:10px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:230px; margin-top:2px;">${m.title}</div>` : ''}
           </div>
         `).join('');
         list.style.display = 'block';
@@ -1284,6 +1348,7 @@
             if (found) {
               input.value = found.num || found.id;
               input.dataset.selectedId = found.id;
+              if (onSelectCallback) onSelectCallback(found);
             }
             list.style.display = 'none';
           });
@@ -1294,6 +1359,24 @@
       input.addEventListener('focus', update);
       typeSelect.addEventListener('change', update);
 
+      // Support Enter key to select top match
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const q = input.value.trim();
+          const type = typeSelect.value;
+          const matches = searchLaws(type, q);
+          if (matches.length > 0) {
+            const found = matches[0];
+            input.value = found.num || found.id;
+            input.dataset.selectedId = found.id;
+            list.style.display = 'none';
+            if (onSelectCallback) onSelectCallback(found);
+          }
+        } else if (e.key === 'Escape') {
+          list.style.display = 'none';
+        }
+      });
+
       document.addEventListener('click', (e) => {
         if (!input.contains(e.target) && !list.contains(e.target)) {
           list.style.display = 'none';
@@ -1303,6 +1386,36 @@
 
     setupSuggestions('path-input-a', 'type-select-a', 'suggest-a');
     setupSuggestions('path-input-b', 'type-select-b', 'suggest-b');
+
+    // Quick Search Wiring with Camera Focus & Inspector Card Activation
+    function focusAndSelectNode(node) {
+      if (!node) return;
+      selectedNode = node;
+      zoom = 1.25;
+      panX = width / 2 - node.x * zoom;
+      panY = height / 2 - node.y * zoom;
+      showInspector(node);
+      render();
+
+      const badge = document.getElementById('search-status-badge');
+      if (badge) {
+        badge.innerText = 'MATCHED';
+        badge.style.display = 'inline-block';
+      }
+    }
+
+    setupSuggestions('search-input', 'type-select-search', 'suggest-search', (found) => {
+      focusAndSelectNode(found);
+    });
+
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      const q = e.target.value.trim();
+      if (!q) {
+        const badge = document.getElementById('search-status-badge');
+        if (badge) badge.style.display = 'none';
+        delete e.target.dataset.selectedId;
+      }
+    });
 
     // 2-Law Pathfinding Handler
     document.getElementById('btn-trace-path').addEventListener('click', () => {
@@ -1399,28 +1512,7 @@
       render();
     });
 
-    // General search bar
-    document.getElementById('search-input').addEventListener('input', (e) => {
-      const q = e.target.value.toLowerCase().trim();
-      if (!q) {
-        selectedNode = null;
-        render();
-        return;
-      }
-      const found = NODES.find(n => 
-        (n.num && n.num.toLowerCase().includes(q)) ||
-        (n.id && n.id.toLowerCase().includes(q)) ||
-        (n.title && n.title.toLowerCase().includes(q))
-      );
-      if (found) {
-        selectedNode = found;
-        zoom = 1.1;
-        panX = width / 2 - found.x * zoom;
-        panY = height / 2 - found.y * zoom;
-        showInspector(found);
-        render();
-      }
-    });
+// (Old search-input listener replaced by autocomplete trace style)
 
 
     // ==========================================
