@@ -16,6 +16,13 @@
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
 - **Git Synchronization:** Executed `git fetch origin` and `git pull origin`, bringing down fast-forwarded commit `359389b`, followed by pushing commit `5c5af6f` containing the declauded manuscript and agent skill suite.
 - **Knowledge Graph Interactive UI Enhancements (`output/visualizations/statutory_kg_full_web.html`):**
+  - **Single Law Ego-Network Isolation Highlight (Trace Search Style):**
+    - Enhanced `render()` in `output/visualizations/statutory_kg_full_web.html` so that selecting/highlighting any law dynamically isolates its 1-hop ego-network.
+    - The selected law shines prominently in glowing white with a gold halo (`#FFD700`, blur 26, radius 1.6x) and bold gold label.
+    - All directly connected neighbor laws shine in their domain colors with a cyan halo (`#00F2FE`, blur 16, radius 1.3x) with visible cyan labels.
+    - Connecting edges are brightly illuminated by relation type (amber for amendments, crimson for repeals, cyan for citations).
+    - All unconnected laws and edges fade into the dark background (nodes to 0.05 opacity, edges to 0.015 opacity), matching the focused aesthetic of the 2-Law Trace Connection search.
+    - Clicking empty canvas space or closing the inspector smoothly resets the view back to the full global constellation.
   - **Single Quick Search Bar Upgrade (Trace Connection Style):**
     - Redesigned the standalone search box to adopt the exact dual-control layout of the 2-Law Path Finder: statutory type dropdown selector (`All`, `RA`, `Ordinance`, `PD`, `BP`, `EO`, `CA`, `Act`), autocomplete text input with keyword and title ranking, and a live suggestions list (`#suggest-search`).
     - Suggestion items display the formatted law number in glowing cyan, publication year, and truncated statutory title/subject matter snippet.

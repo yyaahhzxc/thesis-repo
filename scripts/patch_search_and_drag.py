@@ -496,3 +496,4 @@ with open(HTML_PATH, "w", encoding="utf-8") as f:
     f.write(html)
 
 print(f"Done! Updated {HTML_PATH} successfully. File size: {os.path.getsize(HTML_PATH)/(1024*1024):.2f} MB")
+
