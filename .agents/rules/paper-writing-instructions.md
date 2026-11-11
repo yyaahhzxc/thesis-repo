@@ -150,6 +150,21 @@ Write in the authentic voice of a methodical, observant computer science researc
 >   * **The Pattern to Avoid:** AI models habitually default to rhythmic triplets of nouns, adjectives, verbs, or three-clause compound sentences (e.g., *"enhancing efficiency, fostering collaboration, and driving innovation"*; *"vital, crucial, and indispensable"*; *"evaluating X, confirming Y, and managing Z"*).
 >   * **The Rule:** Ban the "Rule of Three" across all analytical sentences, headings, and lists.
 >   * **Enforcement:** Use single precise terms, direct **binary pairs** (*"X and Y"*), or split the thought into **two distinct, factual sentences**. If three parallel items appear during drafting, immediately rewrite them into a binary pair or two independent, substantive statements.
+> * **ZERO Sentence-Ending Participle Tails (STRICT ENFORCEMENT):**
+>   * **The Pattern to Avoid:** AI models chronically append participle clauses at the end of sentences to simulate analytical depth (e.g., *", ensuring statutory coherence"*; *", achieving 100\% recall"*; *", highlighting the importance of retrieval"*; *", preventing invalid enactments from escaping scrutiny"*).
+>   * **The Rule:** Ban sentence-final participle tails across all analytical body prose.
+>   * **Enforcement:** Cut the trailing participle entirely, turn the claim into its own clean, declarative sentence, or integrate the action directly into the main subject-verb clause (e.g., rewrite *"The pipeline processes candidates in 12.69 s, achieving a 54.9\% latency reduction."* $\rightarrow$ *"The pipeline processes candidates in 12.69 s and reduces latency by 54.9\%."* or *"Processing candidates in 12.69 s reduces end-to-end latency by 54.9\%."*).
+> * **NO Copula Avoidance (Direct "Is" and "Has" Rule):**
+>   * **The Pattern to Avoid:** AI prose habitually avoids direct copula verbs (*is*, *are*, *has*), substituting pretentious alternatives like *"serves as a framework for"*, *"stands as the primary statutory baseline"*, *"acts as a bridge"*, *"boasts an accuracy of"*, or *"represents a turning point"*.
+>   * **The Rule:** Use direct copulas. Replace *"serves as"* with *"is"*; replace *"boasts"* with *"has"* or *"achieves"*; replace *"acts as"* with *"is"*.
+> * **NO Inanimate Subject Agency:**
+>   * **The Pattern to Avoid:** Treating charts, tables, numbers, or abstract algorithms as sentient agents (e.g., *"the table shows/reveals/argues"*, *"the data demands"*, *"the metric wants"*, *"the algorithm discovers"*).
+>   * **The Rule:** Attribute action to the human researchers or state empirical observations objectively: *"As shown in Table 4.1, ..."*, *"The evaluation demonstrates that ..."*, or *"The proponents observe that ..."*.
+> * **NO Staged Reveals & Movie-Trailer Phrasing:**
+>   * **The Pattern to Avoid:** Manufacturing artificial narrative tension or dramatic pacing (e.g., *"Here is where it gets interesting:"*, *"What the researchers did not expect was..."*, *"It turns out that..."*, *"The real problem was not X; it was Y."*).
+>   * **The Rule:** State findings directly in standard subject-verb-object order without withholding information or theatrical pauses.
+> * **NO Flat-Certainty Adverbs as Evidence Substitutes:**
+>   * Avoid using rhetorical intensifiers like *"plainly,"* *"merely,"* *"quietly,"* or bare *"empirically"* without backing data. State the exact metric, $p$-value, or citation rather than relying on emphatic adverbs.
 > * **NO "Not Just X, But Y" Constructions:** Strictly avoid formulas like *"This is not just a methodology, but a framework for..."* or *"It does not only capture X, it also reveals Y."* State analytical findings and arguments directly.
 > * **NO Heavy Em-Dash (—) Reliance:** Avoid the frequent, dramatic use of em dashes. Rely on standard academic punctuation: commas, semicolons, balanced parentheses, or clean period sentence breaks.
 
@@ -160,6 +175,7 @@ Write in the authentic voice of a methodical, observant computer science researc
 >   * **Ban Overuse of "Protocol":** AI models habitually attach "protocol" to routine technical steps (e.g., *"chunking protocol,"* *"screening protocol,"* *"adjudication protocol"*). Prefer natural, human phrasing: *procedure, workflow, process, method, steps, approach,* or *safeguards*. Reserve "protocol" strictly for established formal communications protocols or official medical/legal documents.
 >   * **Ban Overuse of "Bottleneck":** AI models reflexively brand every technical limit a "bottleneck" (e.g., *"manual review bottleneck,"* *"quadratic bottleneck,"* *"lexical bottleneck"*). Use precise engineering descriptions instead: *constraint, memory ceiling, technical hurdle, processing delay, manual review burden, hardware limitation,* or *shortage of domain experts*.
 >   * **Ban Overuse of "Crucial" / "Crucially" & "Leverage":** Avoid formulaic sentence starters like *"Crucially, ...".* State the finding or operational implication directly. Replace *"leverage"* with *use, apply, adopt,* or *incorporate*.
+>   * **Ban "Utilize" & "Foster":** Replace *"utilize"* with *"use"*; replace *"foster"* with *"support"*, *"enable"*, or *"encourage"*.
 > * **Forbidden Promotional Hyperbole:** Avoid unearned superlatives (*revolutionary, groundbreaking, remarkable, astounding, paradigm shift*) unless directly quoting historical literature. State specific mechanisms, benchmark metrics, or theoretical limits instead.
 > * **Forbidden Mechanical Transitions:** Ban repetitive chapter/paragraph openers like *"In addition," "It is worth noting that," "Interestingly,"* and *"Importantly."* Vary transitional sentence structures naturally. Note: *"Furthermore," "Moreover,"* and *"Consequently"* are acceptable when they genuinely connect a chain of thought.
 
