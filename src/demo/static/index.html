@@ -2161,16 +2161,23 @@
         const secConflictCands = cands.filter(c => c.stage2_evaluated && ((c.p_contradiction !== undefined && c.p_contradiction >= 0.45) || (c.stage2_confidence !== undefined && Number(c.stage2_confidence) >= 45.0)));
 
         if (secConflictCands.length > 0) {
+          // Sort conflicting candidates by confidence descending
+          secConflictCands.sort((a, b) => (b.stage2_confidence || 0) - (a.stage2_confidence || 0));
+
           secConflictCands.forEach(cand => {
+            const candRawText = (cand.raw_text || cand.prepended_text || "").trim();
+            const candHtml = cand.statute_html || (candRawText ? highlightStatuteText(candRawText) : "");
+            const ordHtml = cand.ordinance_html || sec.ordinance_html;
+
             conflictPairs.push({
               sec_num: sec.sec_num,
               sec_title: sec.sec_title,
               ordinance_text: sec.ordinance_text || sec.text,
-              ordinance_html: cand.ordinance_html || sec.ordinance_html,
+              ordinance_html: ordHtml,
               target_statute: cand.citation || sec.target_statute,
               statute_title: cand.title || sec.statute_title,
-              statute_text: cand.raw_text || cand.prepended_text || sec.statute_text,
-              statute_html: cand.statute_html || sec.statute_html,
+              statute_text: candRawText || sec.statute_text,
+              statute_html: candHtml,
               confidence_percentage: cand.stage2_confidence !== undefined ? Number(cand.stage2_confidence) : Math.round((cand.p_contradiction || 0.95) * 1000) / 10,
               legal_rationale: cand.summary || sec.legal_rationale,
               verdict: "CONTRADICTION"

@@ -1828,6 +1828,27 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
         if primary_cand:
             primary_cand["statute_html"] = stat_html
             primary_cand["ordinance_html"] = ord_html
+            primary_cand["salient_token_count"] = xai_res.get("salient_token_count", 0)
+
+        # Extract genuine neural cross-attention token attributions for all other evaluated candidates flagged as preemption risks
+        for cand in eval_cands:
+            cand_p_c = cand.get("p_contradiction", 0.0)
+            is_c = (cand_p_c >= 0.45) or cand.get("is_conflict", False)
+            cand["is_conflict"] = is_c
+            if is_c:
+                cand_raw = cand.get("raw_text") or cand.get("prepended_text", "")
+                if not cand_raw or "Verbatim statutory text" in cand_raw:
+                    _, cand_raw = resolve_statute_passage(cand.get("citation", ""), cand_raw)
+                    cand["raw_text"] = cand_raw
+                if cand is primary_cand:
+                    cand["statute_html"] = stat_html
+                    cand["ordinance_html"] = ord_html
+                    cand["salient_token_count"] = xai_res.get("salient_token_count", 0)
+                elif not cand.get("statute_html") or not cand.get("ordinance_html"):
+                    c_xai = NEURAL_ENGINE.extract_cross_attention_attribution(cand_raw, ch["text"])
+                    cand["statute_html"] = c_xai["statute_html"]
+                    cand["ordinance_html"] = c_xai["ordinance_html"]
+                    cand["salient_token_count"] = c_xai.get("salient_token_count", 0)
 
         audited_sections.append({
             "sec_num": ch["sec_num"],
@@ -1874,12 +1895,16 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             is_c = c.get("stage2_evaluated") and ((c.get("p_contradiction", 0) >= 0.45) or (c.get("stage2_confidence", 0) >= 45.0))
             if is_c and prov_key not in seen_provisions:
                 seen_provisions.add(prov_key)
+                if not c.get("statute_html") or not c.get("ordinance_html"):
+                    c_raw = c.get("raw_text") or c.get("prepended_text", "")
+                    if not c_raw or "Verbatim statutory text" in c_raw:
+                        _, c_raw = resolve_statute_passage(c.get("citation", ""), c_raw)
+                        c["raw_text"] = c_raw
+                    c_xai = NEURAL_ENGINE.extract_cross_attention_attribution(c_raw, sec.get("text", ""))
+                    c["statute_html"] = c_xai["statute_html"]
+                    c["ordinance_html"] = c_xai["ordinance_html"]
                 c_copy = dict(c)
                 c_copy["source_section"] = f"Section {sec.get('sec_num')}"
-                if not c_copy.get("statute_html") or not c_copy.get("ordinance_html"):
-                    c_xai = NEURAL_ENGINE.extract_cross_attention_attribution(c.get("raw_text") or c.get("prepended_text", ""), sec.get("text", ""))
-                    c_copy["statute_html"] = c_xai["statute_html"]
-                    c_copy["ordinance_html"] = c_xai["ordinance_html"]
                 aggregated_cands.append(c_copy)
 
     # 2. Then collect remaining evaluated candidates from all sections
