@@ -12,6 +12,19 @@
 
 ## **Chronological Session Progress Journal**
 
+### **November 12, 2026 (Session: Prototype Dropzone Sample Ordinance Selection & Ingestion Hardening)**
+- **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
+- **Sample Proposed Ordinance Selection Restored (`src/demo/static/index.html`):**
+  - Re-inserted the quick-test sample chips (`.benchmark-chips-grid`) inside the dropzone card for instant one-click testing: *Aerial Spraying Ban (Ord. 0309-07)*, *Billboard Regulations (Ord. 092-2000)*, *Holding Company Tax (Ord. 158-05 §135)*, *Payment Under Protest (Ord. 158-05 §423)*, *Watershed Mining Ban (Ord. 0310-07)*, *Anti-Smoking Policy (Ord. 0367-12)*, *City Speed Limits (Ord. 0270-23)*, and Tier 2 synthetic drafts (*Disaster Fund*, *National Road Toll*, *Land Rezoning*).
+  - Added a comprehensive `<select id="sample-ordinance-picker">` dropdown enabling direct selection of all 10 Supreme Court landmark cases (Tier 3) and 6 legislative committee drafts (Tier 2).
+  - Attached `event.stopPropagation()` to chip buttons and the dropdown so clicking them does not inadvertently trigger the hidden file input dialog.
+  - Added `event.target.value = ''` in `handleFileSelected()` so re-selecting the same file reliably fires the `change` event.
+  - Bound window-level `dragover` and `drop` `e.preventDefault()` handlers to prevent mis-dropped files from causing browser navigation.
+- **Backend File Ingestion & Scanned PDF Fallback Hardening (`src/demo/app.py`):**
+  - Fixed return signature in `extract_document_payload()` so that errors return a clean 4-tuple rather than a 2-tuple Flask response object.
+  - Added automatic filename-matching fallback in `extract_document_payload()`: when an uploaded PDF lacks an extractable digital text layer (scanned image), the system cross-references the filename against known authentic Davao City enactments in `ground_truth/tier3_sc_cases/davao_city_tier3_ordinances/` before returning a clear, informative advisory message.
+- **Verification:** Verified end-to-end streaming audit (`POST /api/audit-document-stream`) with genuine neural inference on CPU, real-time section extraction, and neural XAI token attribution.
+
 ### **November 12, 2026 (Session: Neural Cross-Attention XAI Implementation & Interactive Heatmap UI Integration)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
 - **Genuine Neural Cross-Attention Token Attribution (`src/demo/app.py`):**
