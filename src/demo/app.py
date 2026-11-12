@@ -1435,6 +1435,18 @@ def get_tier2_ordinance(doc_id):
 
 
 
+TIER3_TXT_MAP = {
+    "DAVAO-TIER3-01": "Ordinance_No._0309-07.txt",
+    "DAVAO-TIER3-02": "Ordinance_No._092-2000.txt",
+    "DAVAO-TIER3-03": "Ordinance_No._158-05_§135.txt",
+    "DAVAO-TIER3-04": "Ordinance_No._158-05_§423.txt",
+    "DAVAO-TIER3-05": "Davao_City_Real_Property_Tax_Assessment_on_GSIS.txt",
+    "DAVAO-TIER3-06": "Ordinance_No._0310-07.txt",
+    "DAVAO-TIER3-07": "Ordinance_No._0367-12.txt",
+    "DAVAO-TIER3-08": "Ordinance_No._0270-23.txt"
+}
+
+
 def extract_document_payload():
     """Extracts raw text, filename, and doc_id from request (multipart/form-data or JSON)."""
     raw_text = ""
@@ -1446,14 +1458,34 @@ def extract_document_payload():
         filename = uploaded_file.filename
         if filename.lower().endswith(".pdf"):
             if pypdf is None:
-                return jsonify({"error": "pypdf is not installed. Run 'pip install pypdf' to enable PDF extraction."}), 400
+                return None, None, None, "pypdf is not installed. Run 'pip install pypdf' to enable PDF extraction."
             try:
                 pdf_bytes = io.BytesIO(uploaded_file.read())
                 reader = pypdf.PdfReader(pdf_bytes)
                 pages_text = [page.extract_text() or "" for page in reader.pages]
-                raw_text = "\n\n".join(pages_text)
+                raw_text = "\n\n".join(pages_text).strip()
             except Exception as e:
                 return None, None, None, f"Failed to extract text from PDF: {str(e)}"
+
+            # If PDF text extraction yielded empty string (scanned PDF image), attempt filename match fallback
+            if not raw_text:
+                for k, fname in TIER3_TXT_MAP.items():
+                    stem = fname.replace(".txt", "").lower()
+                    k_num = stem.replace("ordinance_no._", "").replace("_", " ")
+                    if stem in filename.lower() or k_num in filename.lower() or (k.lower() in filename.lower()):
+                        t3_path = BASE_DIR / "ground_truth" / "tier3_sc_cases" / "davao_city_tier3_ordinances" / fname
+                        if not t3_path.exists():
+                            t3_path = BASE_DIR / "corpus" / "davao_city_tier3_ordinances" / fname
+                        if t3_path.exists():
+                            with open(t3_path, "r", encoding="utf-8") as f:
+                                raw_text = f.read()
+                            doc_id = k
+                            filename = fname.replace(".txt", "").replace("_", " ")
+                            break
+
+                if not raw_text:
+                    return None, None, None, "The uploaded PDF has no extractable digital text layer (it appears to be a scanned image). Please select one of the pre-loaded sample ordinances below or upload a searchable text document."
+
         elif filename.lower().endswith(".json"):
             try:
                 data = json.load(uploaded_file)
@@ -1485,25 +1517,14 @@ def extract_document_payload():
         data = request.get_json() or {}
         doc_id = data.get("doc_id") or data.get("case_id")
 
-        tier3_txt_map = {
-            "DAVAO-TIER3-01": "Ordinance_No._0309-07.txt",
-            "DAVAO-TIER3-02": "Ordinance_No._092-2000.txt",
-            "DAVAO-TIER3-03": "Ordinance_No._158-05_§135.txt",
-            "DAVAO-TIER3-04": "Ordinance_No._158-05_§423.txt",
-            "DAVAO-TIER3-05": "Davao_City_Real_Property_Tax_Assessment_on_GSIS.txt",
-            "DAVAO-TIER3-06": "Ordinance_No._0310-07.txt",
-            "DAVAO-TIER3-07": "Ordinance_No._0367-12.txt",
-            "DAVAO-TIER3-08": "Ordinance_No._0270-23.txt"
-        }
-
-        if doc_id and doc_id in tier3_txt_map:
-            t3_path = BASE_DIR / "ground_truth" / "tier3_sc_cases" / "davao_city_tier3_ordinances" / tier3_txt_map[doc_id]
+        if doc_id and doc_id in TIER3_TXT_MAP:
+            t3_path = BASE_DIR / "ground_truth" / "tier3_sc_cases" / "davao_city_tier3_ordinances" / TIER3_TXT_MAP[doc_id]
             if not t3_path.exists():
-                t3_path = BASE_DIR / "corpus" / "davao_city_tier3_ordinances" / tier3_txt_map[doc_id]
+                t3_path = BASE_DIR / "corpus" / "davao_city_tier3_ordinances" / TIER3_TXT_MAP[doc_id]
             if t3_path.exists():
                 with open(t3_path, "r", encoding="utf-8") as f:
                     raw_text = f.read()
-                filename = tier3_txt_map[doc_id].replace(".txt", "").replace("_", " ")
+                filename = TIER3_TXT_MAP[doc_id].replace(".txt", "").replace("_", " ")
         elif doc_id and doc_id in TIER2_DOCS_DICT:
             gold = TIER2_DOCS_DICT[doc_id]
             filename = gold.get("title", doc_id)

@@ -1739,6 +1739,77 @@
           Browse Local Files
         </button>
 
+        <!-- DIVIDER -->
+        <div class="divider-with-label" onclick="event.stopPropagation()">
+          <span>Or Select a Sample Proposed Ordinance to Audit</span>
+        </div>
+
+        <!-- QUICK-TEST SAMPLE CHIPS -->
+        <div class="benchmark-chips-grid" onclick="event.stopPropagation()">
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DAVAO-TIER3-01', 'Aerial Spraying Prohibition (Ordinance No. 0309-07)')">
+            Aerial Spraying Ban (Ord. 0309-07)
+          </button>
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DAVAO-TIER3-02', 'Commercial Billboard Regulations (Ordinance No. 092-2000)')">
+            Billboard Regulations (Ord. 092-2000)
+          </button>
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DAVAO-TIER3-03', 'Tax on Holding Entities (Revenue Code §135)')">
+            Holding Company Tax (Ord. 158-05 §135)
+          </button>
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DAVAO-TIER3-04', 'Payment Under Protest (Revenue Code §423)')">
+            Payment Under Protest (Ord. 158-05 §423)
+          </button>
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DAVAO-TIER3-06', 'Watershed Mining Prohibition (Ordinance No. 0310-07)')">
+            Watershed Mining Ban (Ord. 0310-07)
+          </button>
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DAVAO-TIER3-07', 'Comprehensive Anti-Smoking (Ordinance No. 0367-12)')">
+            Anti-Smoking Policy (Ord. 0367-12)
+          </button>
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DAVAO-TIER3-08', 'City Speed Limits & Traffic Management (Ordinance No. 0270-23)')">
+            City Speed Limits (Ord. 0270-23)
+          </button>
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DRAFT-ORD-2026-03', 'LDRRMF Disaster Risk Investment Plan (Draft 2026-03)')">
+            Disaster Fund 30% Ceiling (Draft 2026-03)
+          </button>
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DRAFT-ORD-2026-05', 'Sta. Ana Highway Passage Toll (Draft 2026-05)')">
+            National Road Toll Ban (Draft 2026-05)
+          </button>
+          <button type="button" class="benchmark-chip" onclick="loadSampleDraft('DRAFT-ORD-2026-06', 'Agricultural Land Rezoning (Draft 2026-06)')">
+            Prime Agricultural Rezoning (Draft 2026-06)
+          </button>
+        </div>
+
+        <!-- FULL DROPDOWN SELECTOR FOR ALL ORDINANCES -->
+        <div class="sample-select-wrapper" onclick="event.stopPropagation()" style="margin-top: 20px; width: 100%; max-width: 560px;">
+          <label for="sample-ordinance-picker" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--muted-foreground); text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.04em;">
+            Or choose from all pre-loaded draft ordinances:
+          </label>
+          <select id="sample-ordinance-picker" class="custom-select" style="width: 100%;" onchange="handleSampleDropdownSelect(this)">
+            <option value="">-- Choose a pre-loaded draft ordinance --</option>
+            <optgroup label="Davao City Landmark Preemption Ordinances (Tier 3)">
+              <option value="DAVAO-TIER3-01">Aerial Spraying Prohibition (Ordinance No. 0309-07)</option>
+              <option value="DAVAO-TIER3-02">Commercial Billboard Regulations (Ordinance No. 092-2000)</option>
+              <option value="DAVAO-TIER3-03">Tax on Holding Entities (Revenue Code §135)</option>
+              <option value="DAVAO-TIER3-04">Payment Under Protest (Revenue Code §423)</option>
+              <option value="DAVAO-TIER3-05">GSIS Real Property Tax Exemption (Revenue Code §8)</option>
+              <option value="DAVAO-TIER3-06">Watershed Mining Prohibition (Ordinance No. 0310-07)</option>
+              <option value="DAVAO-TIER3-07">Comprehensive Anti-Smoking (Ordinance No. 0367-12)</option>
+              <option value="DAVAO-TIER3-08">City Speed Limits & Traffic Management (Ordinance No. 0270-23)</option>
+            </optgroup>
+            <optgroup label="National Benchmark Landmark Cases">
+              <option value="SC-PHIL-09">Magtajas v. Pryce Properties (CDO Gambling Ban Ord. 3375-93)</option>
+              <option value="SC-PHIL-10">City of Manila v. Laguio (Manila Motels Ban Ord. 7783)</option>
+            </optgroup>
+            <optgroup label="Ex-Ante Legislative Committee Draft Ordinances (Tier 2)">
+              <option value="DRAFT-ORD-2026-01">Draft 2026-01: Veterinary Public Health & Pet Ownership Code</option>
+              <option value="DRAFT-ORD-2026-02">Draft 2026-02: Inter-Hospital Telemedicine Network MOA</option>
+              <option value="DRAFT-ORD-2026-03">Draft 2026-03: LDRRMF Disaster Risk Investment Plan</option>
+              <option value="DRAFT-ORD-2026-04">Draft 2026-04: Catalunan Grande Public Library Usufruct</option>
+              <option value="DRAFT-ORD-2026-05">Draft 2026-05: Sta. Ana Ave Closure & National Highway Toll</option>
+              <option value="DRAFT-ORD-2026-06">Draft 2026-06: Mindanao Greenfields Prime Land Rezoning</option>
+            </optgroup>
+          </select>
+        </div>
+
 
       </section>
 
@@ -1989,6 +2060,10 @@
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
 
+    // Prevent default window drag/drop behavior so misplaced files don't navigate away
+    window.addEventListener('dragover', (e) => e.preventDefault());
+    window.addEventListener('drop', (e) => e.preventDefault());
+
     // Initialize drag & drop listeners
     const dropzone = document.getElementById('dropzone');
     dropzone.addEventListener('dragover', (e) => {
@@ -2010,6 +2085,17 @@
       if (event.target.files && event.target.files.length > 0) {
         processUploadedFile(event.target.files[0]);
       }
+      event.target.value = ''; // Reset file input so re-selection triggers onchange
+    }
+
+    // Dropdown sample picker handler
+    function handleSampleDropdownSelect(selectEl) {
+      const docId = selectEl.value;
+      if (!docId) return;
+      const selectedOption = selectEl.options[selectEl.selectedIndex];
+      const title = selectedOption ? selectedOption.text : docId;
+      loadSampleDraft(docId, title);
+      selectEl.value = ''; // Reset select
     }
 
     // Process file upload via /api/audit-document-stream
