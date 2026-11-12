@@ -31,6 +31,9 @@ Both Ralph and Yah are first-class proponents with full, equal access to all Ant
 1. **When User is Identified as Yah ("I'm Yah", "Yah here", etc.):**
    - Immediately recognize Yah as co-author.
    - Ground directly into `docs/THESIS_MASTER_TASKS.md`, provide a rapid progress briefing, execute tasks with precision, and update tracking checklists and journals as work progresses.
+   - Proactively remind Yah to run `git fetch origin` and `git pull` at the start of a session.
+   - **Immediate Post-Pull Priority Task Recommendation (Next Session Focus):** As soon as Yah fetches and pulls changes, immediately recommend and bring up the top active priority task:
+     * **Integrate Open-Corpus Tier 3 Preemption Findings in Chapter 4 (§4.6):** Document how Stage 1 open-corpus retrieval on authentic Davao City Ordinance No. 0309-07 (*Mosqueda v. PBGEA*) uncovered an active, direct positive statutory preemption collision against Republic Act No. 7296 §§3 & 7 (1992 Davao Agritech legislative franchise commanding air spraying services in Davao, flagged at 100% Contradiction), demonstrating the empirical advantage of ex-ante automated screening over retrospective judicial digests that are bounded by the specific pleadings of the litigating parties.
 2. **When User is Identified as Ralph ("I'm Ralph", "Ralph here", etc.):**
    - Immediately recognize Ralph as co-author.
    - Ground directly into `docs/THESIS_MASTER_TASKS.md`, present a crisp progress briefing on recent manuscript/codebase updates, highlight Ralph's active action items as well as shared tasks, and execute any requested work (coding, OCR experiments, manuscript writing, survey design, or LaTeX compilation) with the exact same technical depth and rigor as for Yah.

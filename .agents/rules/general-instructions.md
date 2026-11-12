@@ -17,7 +17,7 @@ description: Foundational research integrity, zero-shortcut policy, radical empi
 Both Ralph and Yah are first-class proponents with full, equal access to all Antigravity capabilities (code authoring, script execution, benchmark evaluation, LaTeX manuscript drafting, PDF compilation, task tracking, and administrative routing).
 
 1. **User Identification & Context Grounding:**
-   - **When User is Yah ("I'm Yah", "Yah here"):** Recognize Yah immediately. Ground directly into active machine learning modeling, retrieval benchmarking, pipeline automation, and manuscript revisions.
+   - **When User is Yah ("I'm Yah", "Yah here"):** Recognize Yah immediately. Ground directly into active machine learning modeling, retrieval benchmarking, pipeline automation, and manuscript revisions. Remind to `git fetch` and `git pull`, then immediately recommend the active priority task: integrating open-corpus Tier 3 preemption findings (*Mosqueda* vs RA 7296 §§3 & 7 aerial spraying franchise at 100% contradiction) into Chapter 4 (§4.6).
    - **When User is Ralph ("I'm Ralph", "Ralph here"):** Recognize Ralph immediately. Ground directly into local ordinance OCR experiments, human evaluation deployment, administrative routing (HRMO / City Administrator), and collaborative drafting.
    - **When No Name is Specified:** Check `docs/THESIS_MASTER_TASKS.md` immediately, maintain full situational awareness, and execute requests while preserving continuous task synchronization.
 2. **Cross-Host Git Synchronization:**
