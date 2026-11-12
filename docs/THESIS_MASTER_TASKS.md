@@ -12,6 +12,15 @@
 
 ## **Chronological Session Progress Journal**
 
+### **November 12, 2026 (Session: Statutory Text Disambiguation & Per-Candidate Neural XAI Attribution Across Conflict Cards)**
+- **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
+- **Root Cause Resolution for Repeated Existing Law Text in Multi-Conflict Cards (`src/demo/app.py` & `src/demo/static/index.html`):**
+  - **Issue Diagnosed:** In multi-conflict audit views (e.g. Tier 2 Draft 6 `DRAFT-ORD-2026-06.pdf`), multiple preemption pairs are generated for operative sections (e.g., Potential Conflict #1 against RA 7160 §20, Potential Conflict #2 against RA 9700 §22, and Potential Conflict #3 against EO 124 §1). While each accordion card displayed the distinct citation header, the "Existing Law" text box displayed the identical statutory text of EO 124 §1 across all cards.
+  - **Root Cause:** In `src/demo/app.py`, `NEURAL_ENGINE.extract_cross_attention_attribution` was previously only invoked for the primary candidate of each section (`primary_cand`), leaving other evaluated contradiction candidates in `eval_cands` with `cand.get("statute_html") == None`. In `src/demo/static/index.html`, `statute_html: cand.statute_html || sec.statute_html` fell back to `sec.statute_html` (the primary candidate's pre-rendered HTML), overriding the cited statute's authentic text on every card.
+  - **Backend Fix (`src/demo/app.py`):** Extended `execute_full_ordinance_audit` to iterate over all evaluated candidates in `eval_cands` where $p_c \ge 0.45$. For every conflicting candidate, the engine now computes its own genuine cross-attention attribution heatmap directly against the proposed ordinance section text using `extract_cross_attention_attribution(cand_raw, ch["text"])`, storing `cand["statute_html"]`, `cand["ordinance_html"]`, and `cand["salient_token_count"]` directly on the candidate object.
+  - **Frontend Fix (`src/demo/static/index.html`):** Updated `renderAuditResults` so that each conflict pair card strictly consumes its own candidate's authentic text and rendered HTML (`cand.statute_html || (candRawText ? highlightStatuteText(candRawText) : "")`), eliminating the cross-candidate fallback to `sec.statute_html`. Sorted conflicting candidates within each section by Stage 2 confidence descending.
+  - **Verification:** Tested full audit on `DRAFT-ORD-2026-06` against live Flask server (`http://127.0.0.1:5000`). Verified that Candidate 1 (RA 7160 §20), Candidate 2 (RA 9700 §22), and Candidate 4 (EO 124 §1) each carry `has_statute_html: True` and display their own authentic statutory passages with genuine neural cross-attention highlighting.
+
 ### **November 12, 2026 (Session: Prototype Dropzone Sample Ordinance Selection & Ingestion Hardening)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
 - **Sample Proposed Ordinance Selection Restored (`src/demo/static/index.html`):**
