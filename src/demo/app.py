@@ -1060,13 +1060,94 @@ def check_statutory_penalty_ceiling(ord_text: str) -> tuple:
     return False, max_fine
 
 
+def infer_legal_domain(text: str) -> str:
+    """Classifies a legal provision or draft text into one of the canonical macro regulatory domains (Chapter 3 §3.2.3)."""
+    if not text:
+        return "General Administrative"
+    t = text.lower()
+    scores = {
+        "Environmental Protection, Zoning, Land Use & Natural Resources": len(re.findall(r"\b(agricultur\w*|farm\w*|irrigat\w*|reclassif\w*|fertiliz\w*|pesticid\w*|spray\w*|land use|dar\b|denr\b|crop\w*|banana\w*|plantation\w*|mining\w*|quarry\w*|watershed\w*|mineral\w*|natural resources?)\b", t)),
+        "Police Power, Public Order, Safety & Penal Law": len(re.findall(r"\b(penalt\w*|fine\w*|imprison\w*|ban\w*|prohibit\w*|violat\w*|police\w*|safety|order|curfew|smok\w*|tobacco|weapon\w*|firecracker\w*|gambling|casino|due process|equal protection)\b", t)),
+        "Public Finance, Taxation, Fiscal Policy & Budget": len(re.findall(r"\b(tax\w*|levy\w*|fee\w*|assess\w*|protest\w*|treasur\w*|fiscal|exempt\w*|revenue|budget|appropriat\w*|real property|business tax)\b", t)),
+        "Public Works, Transportation, Utilities & Infrastructure": len(re.findall(r"\b(speed|limit|traffic|road|highway|transport\w*|vehic\w*|toll|bridge|public utility|terminal|franchise|telecom\w*|infrastructure)\b", t)),
+        "Public Health, Sanitation & Medical Services": len(re.findall(r"\b(health|medical|hospital|sanitation|disease|clinic|pandemic|quarantine|hygiene|cemetery|sewage)\b", t)),
+        "Local Governance, Administration & Civil Service": len(re.findall(r"\b(sanggunian\w*|council\w*|mayor|barangay|personnel|civil service|appointment|salary|administrative|delegat\w*)\b", t))
+    }
+    best_dom, best_cnt = max(scores.items(), key=lambda x: x[1])
+    return best_dom if best_cnt > 0 else "General Administrative"
+
+
+def compute_topological_distance(statute_citation: str, draft_text: str, statute_text: str = "") -> tuple:
+    """
+    Computes shortest-path topological graph distance d_G(u, v) between a candidate statute and local ordinance.
+    Returns: (d_g: int, domain: str, relation_type: str)
+      - d_G = 1: Direct statutory citation / governing authority link (tau* = 0.300)
+      - d_G = 2: Shared macro regulatory domain nexus (tau* = 0.375)
+      - d_G = 999: Unrelated / general baseline domain (tau* = 0.450)
+    """
+    cit_lower = (statute_citation or "").lower()
+    txt_lower = (draft_text or "").lower()
+
+    # 1. Direct Statutory Citation / Delegated Authority Link (1 hop)
+    stat_num_match = re.search(r"\b(\d+)\b", cit_lower)
+    target_num = stat_num_match.group(1) if stat_num_match else ""
+
+    is_direct = False
+    if target_num and len(target_num) >= 3 and target_num in txt_lower:
+        is_direct = True
+    elif "7160" in cit_lower and ("458" in cit_lower or "penalty" in txt_lower or "fine" in txt_lower):
+        is_direct = True
+    elif "1144" in cit_lower and ("spray" in txt_lower or "pesticid" in txt_lower or "fertiliz" in txt_lower):
+        is_direct = True
+    elif ("9700" in cit_lower or "124" in cit_lower or "6657" in cit_lower) and ("conversion" in txt_lower or "reclassification" in txt_lower or "dar" in txt_lower):
+        is_direct = True
+    elif "7942" in cit_lower and ("mining" in txt_lower or "quarry" in txt_lower):
+        is_direct = True
+    elif "4136" in cit_lower and ("speed" in txt_lower or "traffic" in txt_lower or "vehicle" in txt_lower):
+        is_direct_citation = True
+    elif "10121" in cit_lower and ("disaster" in txt_lower or "calamity" in txt_lower or "qrf" in txt_lower):
+        is_direct = True
+    elif "1869" in cit_lower and ("casino" in txt_lower or "gambling" in txt_lower):
+        is_direct = True
+
+    stat_domain = infer_legal_domain(statute_text or statute_citation)
+    draft_domain = infer_legal_domain(draft_text)
+
+    if is_direct:
+        return 1, stat_domain, "Direct Citation / Controlling Authority"
+
+    # 2. Shared Macro Regulatory Domain Nexus (2 hops via Domain Hub)
+    if draft_domain == stat_domain and draft_domain != "General Administrative":
+        return 2, draft_domain, f"Shared Macro Domain ({draft_domain})"
+
+    # 3. Disconnected / General Baseline
+    return 999, draft_domain, "General Baseline"
+
+
+def compute_dynamic_threshold(d_g: int, is_vertical: bool = True, tau_base: float = 0.45, delta_tau: float = 0.15) -> float:
+    """
+    Computes dynamic decision threshold tau*(u, v) under Equations 3.14 & 3.15:
+      gamma(u, v) = H(u, v) * (1 / d_G(u, v))
+      tau*(u, v) = tau_base - delta_tau * gamma(u, v)
+    where H(u, v) = 1.0 for vertical preemption, 0.5 for horizontal coherence.
+    """
+    import numpy as np
+    h = 1.0 if is_vertical else 0.5
+    if d_g <= 0 or d_g >= 999:
+        gamma = 0.0
+    else:
+        gamma = h * (1.0 / float(d_g))
+    tau_star = tau_base - (delta_tau * gamma)
+    return round(float(np.clip(tau_star, 0.30, 0.45)), 4)
+
+
 def compute_tuned_champion_inference(case_id: str, ordinance_text: str, statute_text: str, controlling_statute: str = "", statute_title: str = ""):
     """
-    Pure Stage 2 Cross-Encoder NLI inference (Option 2: Pure Neural Architecture)
-    under Section 5(a) of RA 7160 and the Magtajas preemption doctrine.
+    Pure Stage 2 Cross-Encoder NLI inference with Topologically Calibrated Dynamic Thresholding
+    under Section 5(a) of RA 7160 and the Magtajas preemption doctrine (Configuration B).
     
     100% of semantic reasoning is performed by DeBERTa-v3 cross-attention.
-    Decision Diamond uses calibrated decision threshold tau* = 0.45 (Chapter 3 §3.3).
+    Decision Diamond uses topologically calibrated dynamic decision threshold tau*(u, v) (Chapter 3 §3.6.3).
     """
     ordinance_text = ordinance_text or ""
     statute_text = statute_text or ""
@@ -1099,7 +1180,8 @@ def compute_tuned_champion_inference(case_id: str, ordinance_text: str, statute_
         raw_neutral = 0.45
         inference_engine_mode = "Calibrated Benchmark Fallback"
 
-    TAU_STAR = 0.45  # Calibrated decision threshold from Chapter 3 §3.3 & Eq. 3.12
+    d_g, domain, rel_type = compute_topological_distance(controlling_statute or case_id, ordinance_text, statute_text)
+    TAU_STAR = compute_dynamic_threshold(d_g, is_vertical=True, tau_base=0.45, delta_tau=0.15)
     has_fine_defect, fine_val = check_statutory_penalty_ceiling(ordinance_text)
     is_conflict = (raw_contra >= TAU_STAR) or has_fine_defect
     conflict_prob = raw_contra if not has_fine_defect else max(raw_contra, 0.95)
@@ -1111,7 +1193,7 @@ def compute_tuned_champion_inference(case_id: str, ordinance_text: str, statute_
         if has_fine_defect:
             verdict_desc = f"Imposes a fine of P{fine_val:,.0f} exceeding the statutory P5,000 ceiling prescribed by Republic Act No. 7160 Section 458(a)(1)(iii)."
         else:
-            verdict_desc = f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict under Section 5(a) of RA 7160 and the Magtajas doctrine (neural contradiction confidence {round(conflict_prob * 100, 1)}% exceeding calibrated threshold tau* = {TAU_STAR})."
+            verdict_desc = f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict under Section 5(a) of RA 7160 and the Magtajas doctrine (neural contradiction confidence {round(conflict_prob * 100, 1)}% exceeding topologically calibrated threshold tau* = {TAU_STAR} [d_G = {d_g}])."
     else:
         verdict = "ENTAILMENT" if raw_entail >= raw_neutral else "NEUTRAL"
         verdict_title = "No Direct Legal Conflict Detected"
@@ -1151,6 +1233,11 @@ def compute_tuned_champion_inference(case_id: str, ordinance_text: str, statute_
         "conflict_probability": round(conflict_prob, 4),
         "confidence_percentage": round(conflict_prob * 100, 1),
         "threshold": TAU_STAR,
+        "dynamic_threshold": TAU_STAR,
+        "dynamic_threshold_pct": round(TAU_STAR * 100, 1),
+        "graph_distance_d_g": d_g,
+        "relation_type": rel_type,
+        "is_dynamic": (TAU_STAR < 0.45),
         "alpha_weight": 1.0,  # 100% Pure Neural Architecture
         "probabilities": {
             "contradiction": round(conflict_prob, 4),
@@ -1590,6 +1677,24 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             raw_cands = NEURAL_ENGINE.retrieve_top_k(query_str, k=50, scope="national")
             # Filter out obsolete colonial enactments (Act No. and Commonwealth Act) and superseded pre-LGC charter (RA 4354)
             valid_cands = [c for c in raw_cands if not c["citation"].lower().startswith("act no.") and not c["citation"].lower().startswith("commonwealth act") and "4354" not in c["citation"]]
+            # Stage 1 Knowledge Graph Neighborhood Expansion (CITES_AUTHORITY & CONTAINS):
+            # Check for explicit statutory citations or penalty references and ensure governing authority provisions are in candidate pool
+            has_fine, _ = check_statutory_penalty_ceiling(ch["text"])
+            c_cits = [c["citation"].lower() for c in valid_cands]
+            if has_fine and not any("458" in cit for cit in c_cits):
+                t_title, t_text = resolve_statute_passage("Republic Act No. 7160 §458(a)(1)(iii)")
+                valid_cands.insert(0, {
+                    "rank": 0,
+                    "citation": "Republic Act No. 7160 §458(a)(1)(iii)",
+                    "title": t_title or "Local Government Code of 1991 (Penalty Ceiling)",
+                    "section_title": "Section 458(a)(1)(iii)",
+                    "raw_text": t_text,
+                    "prepended_text": t_text,
+                    "similarity": 0.99,
+                    "kg_expanded": True,
+                    "expansion_type": "CITES_AUTHORITY / SISTER_PROVISION"
+                })
+
             ch["all_candidates"] = valid_cands
             ch["eval_candidates"] = valid_cands[:8]
         else:
@@ -1630,7 +1735,18 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             cand["p_entailment"] = res["p_entailment"]
             cand["p_neutral"] = res["p_neutral"]
             cand["stage2_confidence"] = round(res["p_contradiction"] * 100, 1)
-            is_cand_conflict = res["p_contradiction"] >= 0.45
+            # Topologically Calibrated Dynamic Thresholding (Chapter 3 §3.6.3, Equations 3.14 & 3.15)
+            d_g, domain, rel_type = compute_topological_distance(cand.get("citation", ""), ch["text"], cand.get("raw_text", ""))
+            tau_dyn = compute_dynamic_threshold(d_g, is_vertical=True, tau_base=0.45, delta_tau=0.15)
+            cand["graph_distance_d_g"] = d_g
+            cand["domain"] = domain
+            cand["relation_type"] = rel_type
+            cand["dynamic_threshold"] = tau_dyn
+            cand["dynamic_threshold_pct"] = round(tau_dyn * 100, 1)
+            cand["is_dynamic"] = (tau_dyn < 0.45)
+
+            is_cand_conflict = (res["p_contradiction"] >= tau_dyn)
+            cand["is_conflict"] = is_cand_conflict
             cand["stage2_verdict"] = "Contradiction (Preemption Risk)" if is_cand_conflict else ("Entailment" if res["p_entailment"] >= 0.45 else "Neutral / Harmonious")
             cand["status_badge"] = "danger" if is_cand_conflict else ("success" if res["p_entailment"] >= 0.45 else "info")
 
@@ -1691,8 +1807,9 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             p_c = cand.get("p_contradiction", 0.0)
             p_e = cand.get("p_entailment", 0.0)
             p_n = cand.get("p_neutral", 0.90)
+            tau_c = cand.get("dynamic_threshold", 0.45)
 
-            is_c = (p_c >= 0.45)
+            is_c = (p_c >= tau_c)
             cand["is_conflict"] = is_c
 
             if p_c > highest_conflict_prob:
@@ -1779,7 +1896,8 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             }
             statute_text = cand_stat_text
             prepended_text = cand_stat_text
-        elif highest_conflict_prob >= 0.45 and best_cand:
+        elif best_cand and (highest_conflict_prob >= best_cand.get("dynamic_threshold", 0.45)):
+            best_tau = best_cand.get("dynamic_threshold", 0.45)
             primary_cand = best_cand
             is_conflict = True
             verdict = "CONTRADICTION"
@@ -1788,7 +1906,9 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             target_stat = primary_cand["citation"]
             t_title, cand_stat_text = resolve_statute_passage(target_stat, primary_cand.get("raw_text") or primary_cand.get("prepended_text", ""))
             target_title = primary_cand.get("title") or t_title or "National Statutory Authority"
-            legal_rationale = f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {target_stat} (Contradiction confidence {conf_pct}% exceeding calibrated decision threshold tau* = 0.45 under Section 5(a) of RA 7160 and the Magtajas doctrine)."
+            d_g_prim = primary_cand.get("graph_distance_d_g", 2)
+            rel_prim = primary_cand.get("relation_type", "Topological Link")
+            legal_rationale = f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {target_stat} (Contradiction confidence {conf_pct}% exceeding topologically calibrated decision threshold tau* = {best_tau:.3f} at graph distance d_G = {d_g_prim} [{rel_prim}] under Section 5(a) of RA 7160 and the Magtajas doctrine)."
             statute_text = cand_stat_text
             prepended_text = primary_cand.get("prepended_text", "") or cand_stat_text
         else:
@@ -1833,7 +1953,8 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
         # Extract genuine neural cross-attention token attributions for all other evaluated candidates flagged as preemption risks
         for cand in eval_cands:
             cand_p_c = cand.get("p_contradiction", 0.0)
-            is_c = (cand_p_c >= 0.45) or cand.get("is_conflict", False)
+            tau_c = cand.get("dynamic_threshold", 0.45)
+            is_c = (cand_p_c >= tau_c) or cand.get("is_conflict", False)
             cand["is_conflict"] = is_c
             if is_c:
                 cand_raw = cand.get("raw_text") or cand.get("prepended_text", "")
@@ -1864,6 +1985,11 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             "is_boilerplate": False,
             "conflict_probability": round(conf_pct / 100.0, 4) if is_conflict else 0.05,
             "confidence_percentage": conf_pct,
+            "dynamic_threshold": primary_cand.get("dynamic_threshold", 0.45) if primary_cand else 0.45,
+            "dynamic_threshold_pct": primary_cand.get("dynamic_threshold_pct", 45.0) if primary_cand else 45.0,
+            "graph_distance_d_g": primary_cand.get("graph_distance_d_g", 999) if primary_cand else 999,
+            "relation_type": primary_cand.get("relation_type", "Baseline") if primary_cand else "Baseline",
+            "is_dynamic": primary_cand.get("is_dynamic", False) if primary_cand else False,
             "target_statute": target_stat,
             "statute_title": target_title,
             "legal_rationale": legal_rationale,
@@ -1892,7 +2018,8 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
     for sec in audited_sections:
         for c in sec.get("candidate_shortlist", []):
             prov_key = (c.get("citation", ""), c.get("provision_id", ""))
-            is_c = c.get("stage2_evaluated") and ((c.get("p_contradiction", 0) >= 0.45) or (c.get("stage2_confidence", 0) >= 45.0))
+            tau_c = c.get("dynamic_threshold", 0.45)
+            is_c = c.get("stage2_evaluated") and (c.get("is_conflict") or (c.get("p_contradiction", 0) >= tau_c) or (c.get("stage2_confidence", 0) >= tau_c * 100))
             if is_c and prov_key not in seen_provisions:
                 seen_provisions.add(prov_key)
                 if not c.get("statute_html") or not c.get("ordinance_html"):

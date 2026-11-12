@@ -1790,7 +1790,7 @@
                 <option value="all">All Provisions (National & Local)</option>
                 <option value="national">National Positive Law Only</option>
                 <option value="local">Davao City Ordinances Only</option>
-                <option value="conflicts">Potential Conflicts Only (≥ 45.0%)</option>
+                <option value="conflicts">Potential Conflicts Only (≥ Dynamic Threshold)</option>
               </select>
             </div>
 
@@ -2158,7 +2158,7 @@
 
         // 1. Check evaluated candidates within the section
         const cands = sec.candidate_shortlist || [];
-        const secConflictCands = cands.filter(c => c.stage2_evaluated && ((c.p_contradiction !== undefined && c.p_contradiction >= 0.45) || (c.stage2_confidence !== undefined && Number(c.stage2_confidence) >= 45.0)));
+        const secConflictCands = cands.filter(c => c.stage2_evaluated && (c.is_conflict || ((c.p_contradiction !== undefined && c.p_contradiction >= (c.dynamic_threshold !== undefined ? c.dynamic_threshold : 0.45)) || (c.stage2_confidence !== undefined && Number(c.stage2_confidence) >= (c.dynamic_threshold_pct !== undefined ? c.dynamic_threshold_pct : 45.0)))));
 
         if (secConflictCands.length > 0) {
           // Sort conflicting candidates by confidence descending
@@ -2168,6 +2168,8 @@
             const candRawText = (cand.raw_text || cand.prepended_text || "").trim();
             const candHtml = cand.statute_html || (candRawText ? highlightStatuteText(candRawText) : "");
             const ordHtml = cand.ordinance_html || sec.ordinance_html;
+
+            const candTau = cand.dynamic_threshold_pct !== undefined ? Number(cand.dynamic_threshold_pct) : (cand.dynamic_threshold ? Math.round(cand.dynamic_threshold * 1000) / 10 : (sec.dynamic_threshold_pct || 45.0));
 
             conflictPairs.push({
               sec_num: sec.sec_num,
@@ -2179,6 +2181,11 @@
               statute_text: candRawText || sec.statute_text,
               statute_html: candHtml,
               confidence_percentage: cand.stage2_confidence !== undefined ? Number(cand.stage2_confidence) : Math.round((cand.p_contradiction || 0.95) * 1000) / 10,
+              dynamic_threshold: cand.dynamic_threshold !== undefined ? cand.dynamic_threshold : sec.dynamic_threshold,
+              dynamic_threshold_pct: candTau,
+              graph_distance_d_g: cand.graph_distance_d_g !== undefined ? cand.graph_distance_d_g : sec.graph_distance_d_g,
+              relation_type: cand.relation_type || sec.relation_type,
+              is_dynamic: cand.is_dynamic !== undefined ? cand.is_dynamic : sec.is_dynamic,
               legal_rationale: cand.summary || sec.legal_rationale,
               verdict: "CONTRADICTION"
             });
@@ -2195,6 +2202,11 @@
             statute_text: sec.statute_text || sec.top_candidate?.raw_text,
             statute_html: sec.statute_html,
             confidence_percentage: sec.confidence_percentage,
+            dynamic_threshold: sec.dynamic_threshold,
+            dynamic_threshold_pct: sec.dynamic_threshold_pct,
+            graph_distance_d_g: sec.graph_distance_d_g,
+            relation_type: sec.relation_type,
+            is_dynamic: sec.is_dynamic,
             legal_rationale: sec.legal_rationale,
             verdict: "CONTRADICTION"
           });
@@ -2256,6 +2268,23 @@
 
       const confPct = sec.confidence_percentage || (sec.conflict_probability ? Math.round(sec.conflict_probability * 1000) / 10 : 88.4);
       const statuteCitation = sec.target_statute || "Presidential Decree No. 1144 §6";
+
+      const tauPct = sec.dynamic_threshold_pct !== undefined ? Number(sec.dynamic_threshold_pct) : (sec.dynamic_threshold ? Math.round(sec.dynamic_threshold * 1000) / 10 : 45.0);
+      const isDynamic = sec.is_dynamic !== undefined ? sec.is_dynamic : (tauPct < 45.0);
+      const dG = sec.graph_distance_d_g !== undefined ? sec.graph_distance_d_g : (tauPct <= 30.0 ? 1 : (tauPct <= 37.5 ? 2 : 999));
+      let relLabel = sec.relation_type || "";
+      if (!relLabel) {
+        if (dG === 1) relLabel = "Direct Citation / Controlling Authority";
+        else if (dG === 2) relLabel = "Shared Domain Nexus";
+        else relLabel = "General Baseline";
+      }
+
+      let shortRel = "BASELINE";
+      if (isDynamic) {
+        if (dG === 1) shortRel = "DIRECT CITATION";
+        else if (dG === 2) shortRel = "SHARED DOMAIN";
+        else shortRel = "KG LINKED";
+      }
 
       const secNum = sec.sec_num || 1;
       const secTitle = sec.sec_title ? sec.sec_title.trim().toUpperCase() : "OPERATIVE PROVISION";
@@ -2320,7 +2349,7 @@
         <div class="conflict-accordion-body">
           <div class="accordion-enactment-title">${escapeHtml(enactmentHeader)}</div>
 
-          <!-- CONFIDENCE RATE BAR (MOVED FROM HEADER TO REPLACE EXPLANATION) -->
+          <!-- CONFIDENCE RATE BAR (DYNAMIC TOPOLOGICAL THRESHOLDING) -->
           <div class="accordion-confidence-card">
             <div class="confidence-bar-label-row">
               <span class="confidence-bar-title">Confidence Rate</span>
@@ -2329,10 +2358,10 @@
             <div class="confidence-bar-track-wrapper">
               <div class="confidence-bar-track">
                 <div class="confidence-bar-fill" style="width: ${Math.min(confPct, 100)}%; ${isCompliant ? 'background: var(--success);' : ''}"></div>
-                <div class="confidence-bar-threshold-marker" style="left: 45%;" title="45.0% Decision Threshold"></div>
+                <div class="confidence-bar-threshold-marker" style="left: ${tauPct}%;" title="${tauPct.toFixed(1)}% Decision Threshold (${isDynamic ? 'Dynamic KG Distance d_G=' + dG + ' [' + escapeHtml(relLabel) + ']' : 'Baseline Static Threshold'})"></div>
               </div>
               <div class="confidence-bar-footer-row" style="position: relative; width: 100%; height: 18px; margin-top: 5px;">
-                <span class="confidence-bar-threshold-text" style="position: absolute; left: 45%; transform: translateX(-50%); white-space: nowrap; font-size: 0.72rem; font-weight: 800; color: var(--muted-foreground); letter-spacing: 0.03em;">▲ 45.0% DECISION THRESHOLD</span>
+                <span class="confidence-bar-threshold-text" style="position: absolute; left: ${tauPct}%; transform: translateX(-50%); white-space: nowrap; font-size: 0.72rem; font-weight: 800; color: ${isDynamic ? 'var(--primary)' : 'var(--muted-foreground)'}; letter-spacing: 0.03em;">▲ ${tauPct.toFixed(1)}% DECISION THRESHOLD ${isDynamic ? `(DYNAMIC KG: ${shortRel})` : '(BASELINE)'}</span>
               </div>
             </div>
           </div>
@@ -2467,7 +2496,8 @@
       } else if (ACTIVE_FILTER === 'conflicts') {
         FILTERED_SHORTLIST = CURRENT_SHORTLIST.filter(c => {
           const conf = c.stage2_confidence !== undefined ? Number(c.stage2_confidence) : 0;
-          return conf >= 45.0;
+          const tau = c.dynamic_threshold_pct !== undefined ? Number(c.dynamic_threshold_pct) : 45.0;
+          return conf >= tau;
         });
       } else {
         FILTERED_SHORTLIST = [...CURRENT_SHORTLIST];
@@ -2551,10 +2581,13 @@
           confVal = Number(confVal).toFixed(1);
         }
 
-        const isContra = Number(confVal) >= 45.0;
+        const tauVal = cand.dynamic_threshold_pct !== undefined ? Number(cand.dynamic_threshold_pct) : 45.0;
+        const isContra = Number(confVal) >= tauVal;
+        const dGVal = cand.graph_distance_d_g !== undefined ? cand.graph_distance_d_g : (tauVal <= 30.0 ? 1 : (tauVal <= 37.5 ? 2 : 999));
+        const kgBadge = cand.is_dynamic ? `<span style="font-size: 0.68rem; background: rgba(185, 28, 28, 0.12); color: var(--primary); padding: 1px 6px; border-radius: 4px; font-weight: 700; margin-left: 4px;" title="Dynamic KG Distance d_G=${dGVal}">d_G=${dGVal}</span>` : '';
         const confBadge = isContra
-          ? `<span class="conf-badge-danger">${confVal}% (Flagged)</span>`
-          : `<span class="conf-badge-safe">${confVal}% (Harmonious)</span>`;
+          ? `<span class="conf-badge-danger">${confVal}% (Flagged ≥ ${tauVal.toFixed(1)}%)${kgBadge}</span>`
+          : `<span class="conf-badge-safe">${confVal}% (Harmonious)${kgBadge}</span>`;
 
         tr.innerHTML = `
           <td class="rank-cell">#${rank}</td>
