@@ -1,0 +1,15 @@
+{
+  "model_name": "DeBERTa-v3-base-NLI-Supervised-Finetuned",
+  "base_checkpoint": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+  "train_samples": 245,
+  "val_samples": 52,
+  "test_samples": 53,
+  "calibrated_tau": 0.31999999999999995,
+  "training_time_seconds": 1146.69,
+  "test_metrics": {
+    "accuracy": 0.9057,
+    "macro_f1": 0.9136,
+    "conflict_f1": 1.0,
+    "loss": 0.2373
+  }
+}

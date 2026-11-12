@@ -62,7 +62,7 @@ app = Flask(__name__, static_folder='static')
 BASE_DIR = Path(__file__).resolve().parents[2]
 MODELS_DIR = BASE_DIR / "models"
 MINILM_LOCAL_PATH = MODELS_DIR / "all-MiniLM-L6-v2"
-DEBERTA_LOCAL_PATH = MODELS_DIR / "nli-deberta-v3-base"
+DEBERTA_LOCAL_PATH = MODELS_DIR / "nli-deberta-v3-finetuned" if (MODELS_DIR / "nli-deberta-v3-finetuned").exists() else (MODELS_DIR / "nli-deberta-v3-base")
 FULL_EMB_PATH = BASE_DIR / "output" / "dual_corpus_embeddings_minilm.npy"
 UNIFIED_PROVISIONS_PATH = BASE_DIR / "data" / "unified_dual_statutory_provisions.jsonl"
 LOCAL_EMB_PATH = BASE_DIR / "output" / "demo_local_statutory_embeddings.npy"

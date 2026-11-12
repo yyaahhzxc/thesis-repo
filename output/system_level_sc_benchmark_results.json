@@ -1,102 +1,150 @@
 {
-  "benchmark_metadata": {
-    "title": "System-Level Supreme Court Jurisprudence Benchmark Evaluation (Tier 3)",
-    "date": "2026-11-10 09:51:19",
-    "model_evaluated": "models/nli-deberta-v3-base",
-    "total_cases": 11,
-    "davao_landmark_cases": 8,
-    "national_preemption_pillars": 3
-  },
-  "aggregate_metrics": {
-    "overall_accuracy": 0.3636,
-    "davao_subset_accuracy": 0.25,
-    "precision_contradiction": 0.8,
-    "recall_contradiction": 0.5714,
-    "f1_contradiction": 0.6667,
-    "f2_cost_sensitive_score": 0.6061,
-    "confusion_matrix": {
-      "true_positives_conflict": 4,
-      "true_negatives_upheld": 3,
-      "false_positives_overflag": 1,
-      "false_negatives_missed": 3
+  "audit_timestamp": "2026-11-12 12:23:17",
+  "total_enactments": 10,
+  "configurations": {
+    "config_a_baseline": {
+      "accuracy": 70.0,
+      "sensitivity": 40.0,
+      "specificity": 100.0,
+      "precision": 100.0,
+      "f1": 0.5714285714285715,
+      "matrix": {
+        "tp": 2,
+        "tn": 5,
+        "fp": 0,
+        "fn": 3
+      }
+    },
+    "config_b_dynamic_tau": {
+      "accuracy": 70.0,
+      "sensitivity": 40.0,
+      "specificity": 100.0,
+      "precision": 100.0,
+      "f1": 0.5714285714285715,
+      "matrix": {
+        "tp": 2,
+        "tn": 5,
+        "fp": 0,
+        "fn": 3
+      }
+    },
+    "config_c_method1_meta": {
+      "accuracy": 50.0,
+      "sensitivity": 60.0,
+      "specificity": 40.0,
+      "precision": 50.0,
+      "f1": 0.5454545454545454,
+      "matrix": {
+        "tp": 3,
+        "tn": 2,
+        "fp": 3,
+        "fn": 2
+      }
+    },
+    "config_d_combined": {
+      "accuracy": 50.0,
+      "sensitivity": 60.0,
+      "specificity": 40.0,
+      "precision": 50.0,
+      "f1": 0.5454545454545454,
+      "matrix": {
+        "tp": 3,
+        "tn": 2,
+        "fp": 3,
+        "fn": 2
+      }
     }
   },
-  "case_level_results": [
+  "cases": [
     {
       "case_id": "DAVAO-TIER3-01",
       "case_name": "Mosqueda v. Pilipino Banana Growers & Exporters Association, Inc.",
       "scope": "davao_landmark",
       "ordinance_no": "Ordinance No. 0309-07",
       "controlling_statute": "Presidential Decree No. 1144 §6",
+      "domain": "Environmental Protection, Zoning, Land Use & Natural Resources",
       "gold_label": "Contradiction",
+      "graph_distance_d_g": 2,
+      "dynamic_tau": 0.375,
+      "baseline_p_contra": 0.0377,
+      "baseline_p_entail": 0.0821,
+      "baseline_p_neutral": 0.8801,
+      "method1_p_contra": 0.7467,
+      "pred_label_cfg_a_base": "Neutral",
+      "pred_label_cfg_b_dynamic": "Neutral",
+      "pred_label_cfg_c_m1": "Contradiction",
+      "pred_label_cfg_d_m1_dyn": "Contradiction",
+      "match_cfg_a": false,
+      "match_cfg_b": false,
+      "match_cfg_c": true,
+      "match_cfg_d": true,
       "predicted_label": "Neutral",
-      "match": false,
-      "status": "False Negative (Missed Conflict)",
-      "p_contradiction": 0.0003210479917470366,
-      "p_entailment": 0.0003306486178189516,
-      "p_neutral": 0.9993483424186707,
-      "latency_ms": 949.89,
+      "is_match": false,
+      "status": "MISS (Undetected Preemption FN)",
+      "stage1_hit_top25": false,
       "judicial_ruling": "Unconstitutional and Ultra Vires (Overturned)",
-      "legal_rationale": "Under the Magtajas doctrine, an ordinance cannot prohibit an activity expressly permitted or regulated by national law. PD 1144 vests exclusive jurisdiction in the Fertilizer and Pesticide Authority to regulate agricultural chemical application methods.",
-      "salient_terms": {
-        "premise": [
-          "shall"
-        ],
-        "hypothesis": [
-          "must",
-          "shall"
-        ]
-      }
+      "retrieval_latency_ms": 2296.1,
+      "cross_encoder_latency_ms": 973.0
     },
     {
       "case_id": "DAVAO-TIER3-02",
       "case_name": "Hon. Leoncio Evasco, Jr. v. Alex P. Montañez",
       "scope": "davao_landmark",
       "ordinance_no": "Ordinance No. 092-2000",
-      "controlling_statute": "Republic Act No. 7160 §458(a)(4)(iv); Presidential Decree No. 1096 §301",
+      "controlling_statute": "Republic Act No. 7160 §458(a)(4)(iv)",
+      "domain": "Police Power, Public Order, Safety & Penal Law",
       "gold_label": "Entailment",
+      "graph_distance_d_g": 2,
+      "dynamic_tau": 0.375,
+      "baseline_p_contra": 0.1917,
+      "baseline_p_entail": 0.11,
+      "baseline_p_neutral": 0.6983,
+      "method1_p_contra": 0.8541,
+      "pred_label_cfg_a_base": "Neutral",
+      "pred_label_cfg_b_dynamic": "Neutral",
+      "pred_label_cfg_c_m1": "Contradiction",
+      "pred_label_cfg_d_m1_dyn": "Contradiction",
+      "match_cfg_a": true,
+      "match_cfg_b": true,
+      "match_cfg_c": false,
+      "match_cfg_d": false,
       "predicted_label": "Neutral",
-      "match": false,
-      "status": "False Positive (False Alarm)",
-      "p_contradiction": 0.08253011107444763,
-      "p_entailment": 0.0003877153212670237,
-      "p_neutral": 0.9170822501182556,
-      "latency_ms": 692.02,
+      "is_match": true,
+      "status": "HIT (Validated TN - Compliant Cleared)",
+      "stage1_hit_top25": false,
       "judicial_ruling": "Constitutional and Valid Exercise of Police Power (Upheld)",
-      "legal_rationale": "Under RA 7160 §458(a)(4)(iv), city councils possess explicit statutory police power to regulate advertising displays and signboards, harmoniously complementing the National Building Code.",
-      "salient_terms": {
-        "premise": [
-          "shall"
-        ],
-        "hypothesis": [
-          "shall not",
-          "shall"
-        ]
-      }
+      "retrieval_latency_ms": 6045.5,
+      "cross_encoder_latency_ms": 973.0
     },
     {
       "case_id": "DAVAO-TIER3-03",
       "case_name": "City of Davao and Tanjili v. ARC Investors, Inc.",
       "scope": "davao_landmark",
-      "ordinance_no": "Ordinance No. 158-05 §135",
-      "controlling_statute": "Republic Act No. 7160 §143(f); Republic Act No. 8791 §3",
-      "gold_label": "Contradiction",
-      "predicted_label": "Contradiction",
-      "match": true,
-      "status": "True Positive (Detected Conflict)",
-      "p_contradiction": 0.9847338795661926,
-      "p_entailment": 0.0007617485243827105,
-      "p_neutral": 0.014504345133900642,
-      "latency_ms": 249.12,
-      "judicial_ruling": "Ultra Vires Assessment Struck Down (Overturned)",
-      "legal_rationale": "A holding company passively earning dividend income is not a non-bank financial intermediary without express Bangko Sentral ng Pilipinas licensing. LGUs cannot redefine statutory banking categories.",
-      "salient_terms": {
-        "premise": [
-          "authorized",
-          "may"
-        ],
-        "hypothesis": []
-      }
+      "ordinance_no": "Ordinance No. 0158-05 §69(f)",
+      "controlling_statute": "Republic Act No. 7160 §143(f)",
+      "domain": "Public Finance, Taxation, Fiscal Policy & Budget",
+      "gold_label": "Neutral",
+      "graph_distance_d_g": 1,
+      "dynamic_tau": 0.3,
+      "baseline_p_contra": 0.0623,
+      "baseline_p_entail": 0.0985,
+      "baseline_p_neutral": 0.8392,
+      "method1_p_contra": 0.5682,
+      "pred_label_cfg_a_base": "Neutral",
+      "pred_label_cfg_b_dynamic": "Neutral",
+      "pred_label_cfg_c_m1": "Contradiction",
+      "pred_label_cfg_d_m1_dyn": "Contradiction",
+      "match_cfg_a": true,
+      "match_cfg_b": true,
+      "match_cfg_c": false,
+      "match_cfg_d": false,
+      "predicted_label": "Neutral",
+      "is_match": true,
+      "status": "HIT (Validated TN - Compliant Cleared)",
+      "stage1_hit_top25": true,
+      "judicial_ruling": "Ultra Vires Assessment Struck Down (As-Applied Invalidation)",
+      "retrieval_latency_ms": 4273.2,
+      "cross_encoder_latency_ms": 973.0
     },
     {
       "case_id": "DAVAO-TIER3-04",
@@ -104,197 +152,209 @@
       "scope": "davao_landmark",
       "ordinance_no": "Ordinance No. 158-05 §423",
       "controlling_statute": "Republic Act No. 7160 §195",
+      "domain": "Public Finance, Taxation, Fiscal Policy & Budget",
       "gold_label": "Contradiction",
+      "graph_distance_d_g": 1,
+      "dynamic_tau": 0.3,
+      "baseline_p_contra": 0.9996,
+      "baseline_p_entail": 0.0001,
+      "baseline_p_neutral": 0.0003,
+      "method1_p_contra": 0.9994,
+      "pred_label_cfg_a_base": "Contradiction",
+      "pred_label_cfg_b_dynamic": "Contradiction",
+      "pred_label_cfg_c_m1": "Contradiction",
+      "pred_label_cfg_d_m1_dyn": "Contradiction",
+      "match_cfg_a": true,
+      "match_cfg_b": true,
+      "match_cfg_c": true,
+      "match_cfg_d": true,
       "predicted_label": "Contradiction",
-      "match": true,
-      "status": "True Positive (Detected Conflict)",
-      "p_contradiction": 0.999876856803894,
-      "p_entailment": 6.695416686852695e-06,
-      "p_neutral": 0.00011644324695225805,
-      "latency_ms": 232.8,
+      "is_match": true,
+      "status": "HIT (Validated TP - Preemption Detected)",
+      "stage1_hit_top25": true,
       "judicial_ruling": "Ultra Vires and Void (Overturned)",
-      "legal_rationale": "Section 195 of the Local Government Code governing business taxes deliberately does not require payment under protest. Local councils cannot impose restrictive procedural preconditions not authorized by statute.",
-      "salient_terms": {
-        "premise": [
-          "may",
-          "required",
-          "shall"
-        ],
-        "hypothesis": [
-          "shall"
-        ]
-      }
+      "retrieval_latency_ms": 2200.8,
+      "cross_encoder_latency_ms": 973.0
     },
     {
       "case_id": "DAVAO-TIER3-05",
       "case_name": "City of Davao v. Court of Appeals and GSIS",
       "scope": "davao_landmark",
-      "ordinance_no": "Davao City Real Property Tax Assessment on GSIS",
+      "ordinance_no": "Ordinance No. 0158-05 §8",
       "controlling_statute": "Republic Act No. 7160 §193, §234",
+      "domain": "Public Finance, Taxation, Fiscal Policy & Budget",
       "gold_label": "Entailment",
+      "graph_distance_d_g": 1,
+      "dynamic_tau": 0.3,
+      "baseline_p_contra": 0.0008,
+      "baseline_p_entail": 0.0069,
+      "baseline_p_neutral": 0.9923,
+      "method1_p_contra": 0.0025,
+      "pred_label_cfg_a_base": "Neutral",
+      "pred_label_cfg_b_dynamic": "Neutral",
+      "pred_label_cfg_c_m1": "Neutral",
+      "pred_label_cfg_d_m1_dyn": "Neutral",
+      "match_cfg_a": true,
+      "match_cfg_b": true,
+      "match_cfg_c": true,
+      "match_cfg_d": true,
       "predicted_label": "Neutral",
-      "match": false,
-      "status": "False Positive (False Alarm)",
-      "p_contradiction": 0.00031904049683362246,
-      "p_entailment": 0.0024224768858402967,
-      "p_neutral": 0.9972584247589111,
-      "latency_ms": 222.7,
+      "is_match": true,
+      "status": "HIT (Validated TN - Compliant Cleared)",
+      "stage1_hit_top25": true,
       "judicial_ruling": "Constitutional and Valid (Upheld)",
-      "legal_rationale": "Sections 193 and 234 of RA 7160 expressly withdrew prior real property tax exemptions of government-owned or controlled corporations, making Davao City's municipal tax assessment a lawful exercise of delegated authority.",
-      "salient_terms": {
-        "premise": [],
-        "hypothesis": []
-      }
+      "retrieval_latency_ms": 3252.4,
+      "cross_encoder_latency_ms": 973.0
     },
     {
       "case_id": "DAVAO-TIER3-06",
       "case_name": "Davao City Mining Ban and Panigan-Tamugan Watershed Dispute",
       "scope": "davao_landmark",
-      "ordinance_no": "Ordinance No. 0310-07 & 2015 Mining Ban Ordinance",
+      "ordinance_no": "Ordinance No. 0325-15",
       "controlling_statute": "Republic Act No. 7942 §4, §27",
+      "domain": "Environmental Protection, Zoning, Land Use & Natural Resources",
       "gold_label": "Contradiction",
-      "predicted_label": "Neutral",
-      "match": false,
-      "status": "False Negative (Missed Conflict)",
-      "p_contradiction": 0.0005324090598151088,
-      "p_entailment": 0.00019363542378414422,
-      "p_neutral": 0.999273955821991,
-      "latency_ms": 258.91,
+      "graph_distance_d_g": 2,
+      "dynamic_tau": 0.375,
+      "baseline_p_contra": 0.0007,
+      "baseline_p_entail": 0.9899,
+      "baseline_p_neutral": 0.0095,
+      "method1_p_contra": 0.0011,
+      "pred_label_cfg_a_base": "Entailment",
+      "pred_label_cfg_b_dynamic": "Entailment",
+      "pred_label_cfg_c_m1": "Entailment",
+      "pred_label_cfg_d_m1_dyn": "Entailment",
+      "match_cfg_a": false,
+      "match_cfg_b": false,
+      "match_cfg_c": false,
+      "match_cfg_d": false,
+      "predicted_label": "Entailment",
+      "is_match": false,
+      "status": "MISS (Undetected Preemption FN)",
+      "stage1_hit_top25": true,
       "judicial_ruling": "Active Vertical Preemption / Ultra Vires under Magtajas",
-      "legal_rationale": "Under the Magtajas doctrine, an ordinance cannot forbid what national law permits. Blanket territorial bans on mining collide directly with national statutory concessions under RA 7942.",
-      "salient_terms": {
-        "premise": [
-          "authorized",
-          "shall"
-        ],
-        "hypothesis": [
-          "permitted",
-          "shall"
-        ]
-      }
+      "retrieval_latency_ms": 5536.3,
+      "cross_encoder_latency_ms": 973.0
     },
     {
       "case_id": "DAVAO-TIER3-07",
       "case_name": "Davao City Comprehensive Anti-Smoking Ordinance vs. National Standards",
       "scope": "davao_landmark",
       "ordinance_no": "Ordinance No. 0367-12",
-      "controlling_statute": "Republic Act No. 7160 §16; Republic Act No. 9211 §5",
+      "controlling_statute": "Republic Act No. 7160 §16",
+      "domain": "Police Power, Public Order, Safety & Penal Law",
       "gold_label": "Entailment",
-      "predicted_label": "Contradiction",
-      "match": false,
-      "status": "False Positive (False Alarm)",
-      "p_contradiction": 0.9720956683158875,
-      "p_entailment": 0.0004919870407320559,
-      "p_neutral": 0.02741226926445961,
-      "latency_ms": 269.39,
+      "graph_distance_d_g": 3,
+      "dynamic_tau": 0.4,
+      "baseline_p_contra": 0.146,
+      "baseline_p_entail": 0.0507,
+      "baseline_p_neutral": 0.8033,
+      "method1_p_contra": 0.9684,
+      "pred_label_cfg_a_base": "Neutral",
+      "pred_label_cfg_b_dynamic": "Neutral",
+      "pred_label_cfg_c_m1": "Contradiction",
+      "pred_label_cfg_d_m1_dyn": "Contradiction",
+      "match_cfg_a": true,
+      "match_cfg_b": true,
+      "match_cfg_c": false,
+      "match_cfg_d": false,
+      "predicted_label": "Neutral",
+      "is_match": true,
+      "status": "HIT (Validated TN - Compliant Cleared)",
+      "stage1_hit_top25": false,
       "judicial_ruling": "Valid Stricter Police Power Standard (Upheld)",
-      "legal_rationale": "National health statutes establish minimum baseline standards, not maximum ceilings. Stricter local health measures under police power are valid provided they do not legalize what national law prohibits.",
-      "salient_terms": {
-        "premise": [
-          "shall"
-        ],
-        "hypothesis": [
-          "prohibited",
-          "must"
-        ]
-      }
+      "retrieval_latency_ms": 2945.7,
+      "cross_encoder_latency_ms": 973.0
     },
     {
       "case_id": "DAVAO-TIER3-08",
       "case_name": "Davao City Comprehensive Speed Limit Ordinance under Joint JAO 2018-01",
       "scope": "davao_landmark",
       "ordinance_no": "Ordinance No. 0270-23",
-      "controlling_statute": "Republic Act No. 4136 §35, §38; Joint DILG-DOTr-DPWH JAO 2018-01",
+      "controlling_statute": "Republic Act No. 4136 §35, §38",
+      "domain": "Public Works, Transportation, Utilities & Infrastructure",
       "gold_label": "Entailment",
+      "graph_distance_d_g": 1,
+      "dynamic_tau": 0.3,
+      "baseline_p_contra": 0.0418,
+      "baseline_p_entail": 0.3639,
+      "baseline_p_neutral": 0.5943,
+      "method1_p_contra": 0.1257,
+      "pred_label_cfg_a_base": "Neutral",
+      "pred_label_cfg_b_dynamic": "Neutral",
+      "pred_label_cfg_c_m1": "Neutral",
+      "pred_label_cfg_d_m1_dyn": "Neutral",
+      "match_cfg_a": true,
+      "match_cfg_b": true,
+      "match_cfg_c": true,
+      "match_cfg_d": true,
       "predicted_label": "Neutral",
-      "match": false,
-      "status": "False Positive (False Alarm)",
-      "p_contradiction": 0.003892966080456972,
-      "p_entailment": 0.0019349443027749658,
-      "p_neutral": 0.9941720366477966,
-      "latency_ms": 232.48,
+      "is_match": true,
+      "status": "HIT (Validated TN - Compliant Cleared)",
+      "stage1_hit_top25": true,
       "judicial_ruling": "Valid Delegated Local Speed Setting (Upheld)",
-      "legal_rationale": "National traffic statutes and Joint JAO 2018-01 expressly delegate speed classification and local road rate-setting powers to local government units.",
-      "salient_terms": {
-        "premise": [
-          "authorized"
-        ],
-        "hypothesis": []
-      }
+      "retrieval_latency_ms": 2416.7,
+      "cross_encoder_latency_ms": 973.0
     },
     {
       "case_id": "SC-PHIL-09",
       "case_name": "Magtajas v. Pryce Properties Corp. and PAGCOR",
       "scope": "national_preemption_pillar",
-      "ordinance_no": "Cagayan de Oro Ord. No. 3353 & Ord. No. 3375-93",
-      "controlling_statute": "Presidential Decree No. 1869 §1; Republic Act No. 7160 §5(a)",
+      "ordinance_no": "Cagayan de Oro Ordinance No. 3375-93",
+      "controlling_statute": "Presidential Decree No. 1869 §1",
+      "domain": "Police Power, Public Order, Safety & Penal Law",
       "gold_label": "Contradiction",
+      "graph_distance_d_g": 2,
+      "dynamic_tau": 0.375,
+      "baseline_p_contra": 0.9997,
+      "baseline_p_entail": 0.0001,
+      "baseline_p_neutral": 0.0002,
+      "method1_p_contra": 0.9996,
+      "pred_label_cfg_a_base": "Contradiction",
+      "pred_label_cfg_b_dynamic": "Contradiction",
+      "pred_label_cfg_c_m1": "Contradiction",
+      "pred_label_cfg_d_m1_dyn": "Contradiction",
+      "match_cfg_a": true,
+      "match_cfg_b": true,
+      "match_cfg_c": true,
+      "match_cfg_d": true,
       "predicted_label": "Contradiction",
-      "match": true,
-      "status": "True Positive (Detected Conflict)",
-      "p_contradiction": 0.9999182224273682,
-      "p_entailment": 7.528033620474162e-06,
-      "p_neutral": 7.426572847180068e-05,
-      "latency_ms": 218.96,
+      "is_match": true,
+      "status": "HIT (Validated TP - Preemption Detected)",
+      "stage1_hit_top25": false,
       "judicial_ruling": "Ordinances Null and Void / Foundational Preemption Ruling (Overturned)",
-      "legal_rationale": "An ordinance cannot permit what a statute forbids, nor forbid what a statute permits. Local councils are merely delegated agents of the national legislature.",
-      "salient_terms": {
-        "premise": [
-          "authorized",
-          "empowered"
-        ],
-        "hypothesis": [
-          "strictly prohibited",
-          "banned"
-        ]
-      }
+      "retrieval_latency_ms": 1130.7,
+      "cross_encoder_latency_ms": 973.0
     },
     {
       "case_id": "SC-PHIL-10",
       "case_name": "City of Manila v. Laguio, Jr.",
       "scope": "national_preemption_pillar",
       "ordinance_no": "Manila Ordinance No. 7783",
-      "controlling_statute": "1987 Constitution, Article III, Section 1; Republic Act No. 7160 §458",
+      "controlling_statute": "1987 Constitution, Article III, Section 1",
+      "domain": "Police Power, Public Order, Safety & Penal Law",
       "gold_label": "Contradiction",
+      "graph_distance_d_g": 2,
+      "dynamic_tau": 0.375,
+      "baseline_p_contra": 0.1185,
+      "baseline_p_entail": 0.372,
+      "baseline_p_neutral": 0.5095,
+      "method1_p_contra": 0.198,
+      "pred_label_cfg_a_base": "Neutral",
+      "pred_label_cfg_b_dynamic": "Neutral",
+      "pred_label_cfg_c_m1": "Neutral",
+      "pred_label_cfg_d_m1_dyn": "Neutral",
+      "match_cfg_a": false,
+      "match_cfg_b": false,
+      "match_cfg_c": false,
+      "match_cfg_d": false,
       "predicted_label": "Neutral",
-      "match": false,
-      "status": "False Negative (Missed Conflict)",
-      "p_contradiction": 0.004159294534474611,
-      "p_entailment": 0.00015889035421423614,
-      "p_neutral": 0.9956817626953125,
-      "latency_ms": 242.03,
+      "is_match": false,
+      "status": "MISS (Undetected Preemption FN)",
+      "stage1_hit_top25": false,
       "judicial_ruling": "Ordinance Declared Unconstitutional (Overturned)",
-      "legal_rationale": "Prohibiting lawful commercial businesses instead of regulating them violates substantive due process. Local police power cannot arbitrarily destroy legitimate enterprises.",
-      "salient_terms": {
-        "premise": [
-          "No person shall",
-          "shall"
-        ],
-        "hypothesis": []
-      }
-    },
-    {
-      "case_id": "SC-PHIL-11",
-      "case_name": "Batangas CATV, Inc. v. Court of Appeals",
-      "scope": "national_preemption_pillar",
-      "ordinance_no": "Batangas SP Resolution No. 210, Series of 1993",
-      "controlling_statute": "Executive Order No. 205 §2; Executive Order No. 546 §15",
-      "gold_label": "Contradiction",
-      "predicted_label": "Contradiction",
-      "match": true,
-      "status": "True Positive (Detected Conflict)",
-      "p_contradiction": 0.7455665469169617,
-      "p_entailment": 0.021369555965065956,
-      "p_neutral": 0.23306380212306976,
-      "latency_ms": 217.88,
-      "judicial_ruling": "Resolution and Rate-Fixing Powers Struck Down (Overturned)",
-      "legal_rationale": "Executive orders vest exclusive regulatory and rate-fixing authority over cable television in the National Telecommunications Commission. Where national law occupies the regulatory field, municipal ordinances are preempted.",
-      "salient_terms": {
-        "premise": [
-          "shall"
-        ],
-        "hypothesis": []
-      }
+      "retrieval_latency_ms": 7404.0,
+      "cross_encoder_latency_ms": 973.0
     }
   ]
 }

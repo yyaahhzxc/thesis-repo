@@ -1000,6 +1000,19 @@ def retrieve_top_k_candidates(draft_section, statutory_corpus, k=50, k_rrf=60, b
 
         The fifth experiment validates legislative lineage consistency through Directed Acyclic Graph (DAG) cycle detection and amendatory depth profiling. Because legislative modifications must follow a chronological, non-circular progression, the experiment executes simple cycle detection algorithms across all $\text{AMENDS}$ subgraphs to mathematically confirm the complete absence of recursive amendatory loops. Concurrently, depth profiling isolates the longest amendatory chains in local municipal history, measuring the cumulative generational revisions governing complex regulatory instruments such as the Davao City Revenue Code.
 
+        \subsubsection{Knowledge Graph Integration Ablation: Representation Conditioning vs. Decision Calibration}
+        \label{sec:kg_integration_ablation_methodology}
+        To resolve whether knowledge graph topology should inform the cross-encoder's input linguistic representation or its post-softmax decision boundary, the proponents formulate a rigorous 4-way ablation framework evaluated on the authentic Tier~3 landmark jurisprudential suite. This comparative design tests four discrete architectural paradigms:
+
+        \begin{enumerate}
+            \item \textbf{Configuration A (Pure Neural Baseline):} Evaluates the fine-tuned \texttt{DeBERTa-v3} cross-encoder strictly on authentic verbatim statutory texts without metadata prefixes, using the global static decision threshold $\tau_{\text{base}} = 0.45$.
+            \item \textbf{Configuration B (Topologically Calibrated Dynamic Thresholding):} Retains 100\% authentic verbatim input text while modulating the operational decision boundary $\tau^*(u, v)$ as a continuous function of shortest-path graph distance $d_G(u, v)$ pursuant to Equations~\ref{eq:topological_proximity} and~\ref{eq:topological_dynamic_threshold}, tightening the screening threshold down to $\tau^* \in [0.30, 0.375]$ for enactments sharing direct citation or domain links in $\mathcal{G}$.
+            \item \textbf{Configuration C (Prompt-Conditioned Jurisdictional Metadata Conditioning):} Prepends canonical serialized knowledge graph node attributes directly to the input sequence (e.g., \texttt{[JURISDICTION: NATIONAL | DOMAIN: ...]} for premises and \texttt{[JURISDICTION: LOCAL | DOMAIN: ...]} for hypotheses), evaluated under the static threshold $\tau_{\text{base}} = 0.45$.
+            \item \textbf{Configuration D (Combined Model):} Evaluates the prompt-conditioned metadata input sequences under the topologically calibrated dynamic threshold $\tau^*(u, v)$.
+        \end{enumerate}
+
+        Benchmarking these four configurations isolates the empirical trade-offs of representation-level prompt conditioning against post-hoc decision boundary calibration. Specifically, this ablation determines whether cross-attention layers attend to substantive legal semantics or suffer from attention distribution shift on contrasting jurisdictional prefix tokens, validating the safest operational paradigm for municipal legislative screening.
+
     \subsection{Baseline Selection}
     \label{sec:baseline_selection}
     To evaluate whether the proposed two-stage retrieve-then-entail architecture achieves meaningful empirical advances over standard approaches, the proponents established formal baselines for both operational stages grounded in recent legal informatics literature.
@@ -1166,7 +1179,27 @@ def retrieve_top_k_candidates(draft_section, statutory_corpus, k=50, k_rrf=60, b
 
     Equations~\ref{eq:f2_conflict} and~\ref{eq:optimal_threshold} define the cost-sensitive evaluation metric and decision threshold calibration for conflict alerts. This design reflects a practical reality: missing a real conflict (a false negative) allows an invalid ordinance to pass, which can lead to legal challenges, whereas a false alarm (a false positive) is quickly dismissed by a legal researcher. In Equation~\ref{eq:f2_conflict}, setting $\beta = 2$ weights recall twice as heavily as precision; this calibration prioritizes catching potential conflicts. Equation~\ref{eq:optimal_threshold} searches for the best decision threshold $\tau^*$ between $0.25$ and $0.50$ on the 52 validation pairs ($\mathcal{D}_{\text{val}}$), while keeping precision at or above $0.70$. This tuning helps the system flag genuine conflicts reliably without overwhelming researchers with too many false alarms.
 
-    During live inference, a candidate provision triggers a formal conflict alert whenever its softmax contradiction probability satisfies $P(\text{Contradiction} \mid p_i, h) \ge \tau^*$.
+    To extend static threshold calibration into a neuro-symbolic decision engine, the system integrates topological distance over the Statutory Knowledge Graph $\mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{R})$. While the static threshold $\tau_{\text{base}} = 0.45$ establishes a dependable global baseline, candidate statutes that share direct authority citations or substantive regulatory domains with an ordinance warrant heightened screening sensitivity. To achieve this without altering the authentic verbatim text sequence, the proponents formulate the Topologically Calibrated Dynamic Decision Threshold:
+
+    \noindent\textit{Topological Institutional Proximity ($\gamma(u, v)$):}
+    \begin{equation}
+        \gamma(u, v) = H(u, v) \cdot \frac{1}{d_G(u, v)}
+        \label{eq:topological_proximity}
+        \eqcaption{Topological Institutional Proximity ($\gamma(u, v)$)}
+    \end{equation}
+    \noindent Where $H(u, v) \in \{0.5, 1.0\}$ represents the jurisdictional authority hierarchy multiplier ($H = 1.0$ for vertical statutory preemption under \textit{Magtajas v. Pryce Properties}, and $H = 0.5$ for horizontal intra-jurisdictional consistency), and $d_G(u, v)$ denotes the shortest-path geodesic distance between candidate statute $u$ and ordinance context $v$ traversing the Statutory Knowledge Graph $\mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{R})$. If $u$ and $v$ are disconnected in $\mathcal{G}$, $d_G(u, v) \to \infty$ and $\gamma(u, v) = 0$.
+
+    \noindent\textit{Topologically Calibrated Dynamic Decision Threshold ($\tau^*(u, v)$):}
+    \begin{equation}
+        \tau^*(u, v) = \tau_{\text{base}} - \Delta_{\tau} \cdot \gamma(u, v)
+        \label{eq:topological_dynamic_threshold}
+        \eqcaption{Topologically Calibrated Dynamic Decision Threshold ($\tau^*(u, v)$)}
+    \end{equation}
+    \noindent Where $\tau_{\text{base}} = 0.45$ represents the baseline cost-sensitive decision threshold calibrated on $\mathcal{D}_{\text{val}}$ via Equation~\ref{eq:optimal_threshold}, and $\Delta_{\tau} = 0.15$ denotes the maximum dynamic calibration bandwidth, bounding the operational screening threshold strictly within $\tau^*(u, v) \in [0.30, 0.45]$.
+
+    Equations~\ref{eq:topological_proximity} and~\ref{eq:topological_dynamic_threshold} establish a continuous, mathematically bounded decision framework. When an enactment $u$ directly cites or amends $v$ ($d_G = 1$), $\gamma = 1.0$ and the screening threshold tightens to $\tau^* = 0.30$, aggressively flagging potential contradictions between established statutory authorities. When $u$ and $v$ share a common macro-domain via $\text{GOVERNS\_DOMAIN}$ edges ($d_G = 2$), $\gamma = 0.5$ and the threshold calibrates to $\tau^* = 0.375$. When enactments are distantly situated ($d_G = 3$, $\tau^* = 0.40$) or completely unlinked ($d_G \ge 4$ or $\infty$, $\tau^* = 0.45$), the model maintains the conservative baseline threshold $\tau_{\text{base}} = 0.45$, shielding valid municipal police power enactments from uncalibrated false alarms.
+
+    During live inference, a candidate provision triggers a formal conflict alert whenever its softmax contradiction probability satisfies $P(\text{Contradiction} \mid p_i, h) \ge \tau^*(u, v)$.
 
     When evaluating complete multi-section ordinances during live system execution, Stage~1 retains its full safety buffer of $k = 50$ candidates for each substantive section ($S_i$). To prevent runtime delays when scoring up to 500 total candidate pairs per document, the Stage~2 inference engine employs vectorized mini-batch collation ($B = 16$). Batching evaluates candidate provisions in parallel tensor forward passes rather than sequential single-item loops, keeping inference runtime under five seconds on GPU hosts and under thirty seconds on standard LGU processors. To consolidate candidate provision scores into an overall section verdict, the pipeline applies section-level max-pooling, adapting multi-instance learning principles~\cite{anand2020explainable}. Section-level max-pooling is an aggregation function that maps the set of $k$ individual contradiction probabilities for a given draft section to its maximum observed value: $P(\text{Conflict} \mid S_i) = \max_{j} P(\text{Contradiction} \mid P_j, S_i)$. In statutory review, an ordinance section that complies with 49 retrieved provisions but contradicts a single governing statute remains legally invalid under statutory preemption. Computing an arithmetic mean across candidate scores would dilute a high contradiction probability (such as 0.85) down to an undetectable fraction; that dilution would trigger a critical false negative. Max-pooling isolates the peak conflict probability across all candidate pairs, ensuring that an authentic legal violation triggers a system alert regardless of the number of non-conflicting candidates retrieved. The formula is computed as follows:
 
