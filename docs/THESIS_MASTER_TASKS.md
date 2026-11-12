@@ -12,6 +12,24 @@
 
 ## **Chronological Session Progress Journal**
 
+### **November 12, 2026 (Session: Neural Cross-Attention XAI Implementation & Interactive Heatmap UI Integration)**
+- **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
+- **Genuine Neural Cross-Attention Token Attribution (`src/demo/app.py`):**
+  - Implemented `LocalNeuralEngine.extract_cross_attention_attribution(statute_premise, ordinance_hypothesis)` in `src/demo/app.py`.
+  - Extracts the classification token $[CLS]$ cross-attention vector from the final transformer layer ($l=12$) averaged across all 12 attention heads during the forward pass of `models/nli-deberta-v3-finetuned/`.
+  - Leveraged fast tokenizer character offset mapping (`offset_mapping`, `sequence_ids`) to map subword tokens back to exact character slices in the verbatim texts without text synthesis or paraphrasing.
+  - Saliency weights are min-max normalized and mapped onto a continuous red color gradient ($\alpha \in [0.08, 0.70]$ for $\tilde{w} \ge 0.15$), rendering directly as `<span class="xai-token" data-weight="...">` spans.
+  - Completely replaced the legacy hardcoded regex dictionary (`extract_salient_spans`) across `/api/analyze`, `/api/audit-document`, and candidate shortlist cards.
+- **Interactive Prototype UI Heatmap Toggle & Visual Gradient Legend (`src/demo/static/index.html`):**
+  - Integrated a dedicated `.xai-toolbar` into each accordion card in the Summary of Results.
+  - Added a visual gradient scale bar ($0.0 \rightarrow 1.0$) indicating the attention intensity scale from Low/Neutral (white/transparent) to Peak Contradiction Attention (deep red/crimson).
+  - Added an interactive toggle switch (`[x] Explainable Attention Heatmap`) with `toggleCardXAI()` allowing legislative staff to alternate instantly between color-coded attention saliency during intake triage and clean, unadorned verbatim legal text for floor amendment drafting.
+  - Configured `.conflict-accordion.hide-xai` CSS transitions to cleanly toggle highlight spans without layout shift.
+- **Manuscript Synchronization across Chapters 3 & 4 and Compilation:**
+  - **Chapter 3 (`methodology.tex` §3.6.4):** Formalized the mathematical extraction of $[CLS]$ cross-attention vectors ($\mathbf{a}_{\text{CLS}} = \frac{1}{H} \sum_{h=1}^H \mathbf{A}_{l, h}[0, :]$), character offset mapping, min-max scaling, and the cognitive utility of the interactive toggle switch.
+  - **Chapter 4 (`results_and_discussion.tex` §4.5.3):** Expanded the Side-by-Side XAI Inspector narrative to detail real-time neural cross-attention token attribution, connecting it directly with Figure 4.8 (Panel B) and contrasting it with brittle static regex dictionaries.
+  - **Compilation:** Compiled `main.pdf` across two passes with pdflatex; generated all 381 pages (20.2 MB) with zero errors.
+
 ### **November 12, 2026 (Session: Supervised Stage 2 Cross-Encoder Fine-Tuning & Knowledge Graph Ablation Integration)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
 - **Cross-Encoder Supervised Task Adaptation (`models/nli-deberta-v3-finetuned/`):**

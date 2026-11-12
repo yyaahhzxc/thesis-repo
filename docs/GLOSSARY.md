@@ -227,9 +227,9 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** A pretraining objective used by ELECTRA where a generator replaces some words and a discriminator must predict whether each word in the sequence is original or replaced.
 * **In This Thesis:** Unlike standard BERT which only learns from 15% masked words per sentence, RTD trains across 100% of tokens in every input, resulting in exceptionally high sample efficiency when fine-tuning on small datasets ($N_{\text{train}} = 245$).
 
-### **Explainable AI (XAI) & Attention Heatmaps**
-* **Plain Meaning:** Making the model's inner reasoning transparent to humans without generating hallucinated summaries.
-* **In This Thesis:** The system extracts the actual self-attention weights from the final transformer layer and highlights the exact conflicting word spans in yellow/red on the screen (e.g., highlighting *"shall not exceed 5,000 pesos"* in the national law vs. *"fine of 10,000 pesos"* in the draft ordinance).
+### **Explainable AI (XAI) & Neural Attention Heatmaps**
+* **Plain Meaning:** Making the model's inner reasoning transparent to humans without generating hallucinated summaries or relying on static keyword dictionaries.
+* **In This Thesis:** The system extracts the actual $[CLS]$ cross-attention weights from the final transformer layer of the fine-tuned DeBERTa-v3 cross-encoder during evaluation. Subword tokens are aligned to exact character spans in the authentic legal texts via fast tokenizer offset mapping, and saliency weights are min-max normalized onto a continuous red gradient ($\alpha \in [0.08, 0.70]$). An interactive UI toggle switch and a visual gradient legend bar ($0.0 \rightarrow 1.0$) allow legislative researchers to alternate between color-coded contradiction heatmaps during intake triage and clean, unpolluted statutory prose for committee amendments.
 
 ---
 

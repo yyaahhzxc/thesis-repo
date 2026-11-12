@@ -1374,6 +1374,150 @@
     }
 
     /* =========================================================
+       XAI TOOLBAR & NEURAL ATTENTION HEATMAP STYLING
+       ========================================================= */
+    .xai-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 14px 0 12px 0;
+      padding: 10px 16px;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+    }
+
+    .xai-legend-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .xai-legend-label {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--foreground);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .xai-gradient-bar-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .xai-gradient-bar {
+      width: 120px;
+      height: 10px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, #FFFFFF 0%, #FEE2E2 25%, #EF4444 65%, #991B1B 100%);
+      border: 1px solid var(--card-border-dark);
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
+    }
+
+    .xai-gradient-scale-text {
+      font-size: 0.70rem;
+      font-weight: 700;
+      color: var(--muted-foreground);
+    }
+
+    .xai-toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .xai-switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .xai-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+
+    .xai-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--card-border-dark);
+      transition: .22s ease;
+      border-radius: 20px;
+    }
+
+    .xai-slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .22s ease;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    }
+
+    .xai-switch input:checked + .xai-slider {
+      background-color: var(--primary);
+    }
+
+    .xai-switch input:checked + .xai-slider:before {
+      transform: translateX(16px);
+    }
+
+    .xai-switch-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--foreground);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Token Attribution Heatmap */
+    .xai-token {
+      display: inline;
+      transition: background-color 0.18s ease, outline 0.18s ease;
+      border-radius: 2px;
+      padding: 1px 2px;
+    }
+
+    .xai-token:hover {
+      outline: 1.5px solid #991B1B;
+      cursor: help;
+    }
+
+    /* When XAI heatmap is toggled off */
+    .conflict-accordion.hide-xai .xai-token {
+      background-color: transparent !important;
+      padding: 0 !important;
+      color: inherit !important;
+      outline: none !important;
+    }
+
+    .conflict-accordion.hide-xai .hl-conflict,
+    .conflict-accordion.hide-xai .hl-statute {
+      background-color: transparent !important;
+      color: inherit !important;
+      font-weight: normal !important;
+      padding: 0 !important;
+    }
+
+    /* =========================================================
        FOOTER (Clean Card with Maroon Branding)
        ========================================================= */
     .footer-container {
@@ -2049,9 +2193,11 @@
               sec_num: sec.sec_num,
               sec_title: sec.sec_title,
               ordinance_text: sec.ordinance_text || sec.text,
+              ordinance_html: cand.ordinance_html || sec.ordinance_html,
               target_statute: cand.citation || sec.target_statute,
               statute_title: cand.title || sec.statute_title,
               statute_text: cand.raw_text || cand.prepended_text || sec.statute_text,
+              statute_html: cand.statute_html || sec.statute_html,
               confidence_percentage: cand.stage2_confidence !== undefined ? Number(cand.stage2_confidence) : Math.round((cand.p_contradiction || 0.95) * 1000) / 10,
               legal_rationale: cand.summary || sec.legal_rationale,
               verdict: "CONTRADICTION"
@@ -2063,9 +2209,11 @@
             sec_num: sec.sec_num,
             sec_title: sec.sec_title,
             ordinance_text: sec.ordinance_text || sec.text,
+            ordinance_html: sec.ordinance_html,
             target_statute: sec.target_statute,
             statute_title: sec.statute_title,
             statute_text: sec.statute_text || sec.top_candidate?.raw_text,
+            statute_html: sec.statute_html,
             confidence_percentage: sec.confidence_percentage,
             legal_rationale: sec.legal_rationale,
             verdict: "CONTRADICTION"
@@ -2169,6 +2317,9 @@
         titleLabel = totalConflicts > 1 ? `Potential Conflict #${conflictIndex}` : "Potential Conflict";
       }
 
+      const statuteDisplay = sec.statute_html ? sec.statute_html : highlightStatuteText(statuteLeaf);
+      const draftDisplay = sec.ordinance_html ? sec.ordinance_html : highlightConflictingText(draftLeaf);
+
       card.innerHTML = `
         <div class="conflict-accordion-header" onclick="toggleAccordion(this)">
           <div class="accordion-header-left">
@@ -2206,6 +2357,25 @@
             </div>
           </div>
 
+          <!-- XAI TOOLBAR: ATTENTION GRADIENT LEGEND & TOGGLE SWITCH -->
+          <div class="xai-toolbar">
+            <div class="xai-legend-container">
+              <span class="xai-legend-label">Attention Saliency:</span>
+              <div class="xai-gradient-bar-wrapper">
+                <span class="xai-gradient-scale-text">0.0 (Low)</span>
+                <div class="xai-gradient-bar" title="Neural Cross-Attention: White = Low, Deep Red = Peak Contradiction Attention"></div>
+                <span class="xai-gradient-scale-text">1.0 (Peak)</span>
+              </div>
+            </div>
+            <div class="xai-toggle-container">
+              <label class="xai-switch">
+                <input type="checkbox" class="xai-toggle-input" checked onchange="toggleCardXAI(this)">
+                <span class="xai-slider"></span>
+              </label>
+              <span class="xai-switch-label" onclick="this.previousElementSibling.querySelector('input').click()">Explainable Attention Heatmap</span>
+            </div>
+          </div>
+
           <div class="accordion-comparison-grid">
             <div class="provision-box">
               <div class="provision-box-header" onclick="toggleSubBox(this)">
@@ -2214,7 +2384,7 @@
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </div>
-              <div class="provision-box-text sub-box-content">${highlightStatuteText(statuteLeaf)}</div>
+              <div class="provision-box-text sub-box-content">${statuteDisplay}</div>
             </div>
 
             <div class="provision-box">
@@ -2224,7 +2394,7 @@
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </div>
-              <div class="provision-box-text sub-box-content">${highlightConflictingText(draftLeaf)}</div>
+              <div class="provision-box-text sub-box-content">${draftDisplay}</div>
             </div>
           </div>
         </div>
@@ -2238,6 +2408,18 @@
       if (card) {
         card.classList.toggle('is-open');
       }
+    }
+
+    function toggleCardXAI(inputEl) {
+      const card = inputEl.closest('.conflict-accordion');
+      if (card) {
+        if (inputEl.checked) {
+          card.classList.remove('hide-xai');
+        } else {
+          card.classList.add('hide-xai');
+        }
+      }
+    }
     }
 
     function toggleSubBox(headerEl) {
@@ -2479,25 +2661,25 @@
       return 'https://lawphil.net';
     }
 
-    // Highlighting helpers
+    // Highlighting fallback helpers
     function highlightConflictingText(text) {
       if (!text) return '';
-      const conflictWords = ['shall be strictly prohibited', 'banning', 'prohibit', 'exclusive', 'penalty', 'two (2) years', 'p50,000', 'confiscate', 'fifteen (15) kilometers', 'price ceilings'];
+      const conflictWords = ['shall be strictly prohibited', 'strictly prohibited', 'prohibited', 'banning', 'banned', 'prohibit', 'exclusive', 'penalty', 'two (2) years', 'p50,000', 'confiscate', 'fifteen (15) kilometers', 'price ceilings'];
       let safe = escapeHtml(text);
       conflictWords.forEach(w => {
         const regex = new RegExp(`(${w})`, 'gi');
-        safe = safe.replace(regex, '<mark class="hl-conflict">$1</mark>');
+        safe = safe.replace(regex, '<span class="xai-token" data-weight="0.850" style="background-color: rgba(239, 68, 68, 0.45); padding: 1px 2px; border-radius: 2px;" title="Fallback Modal Indicator: $1">$1</span>');
       });
       return safe;
     }
 
     function highlightStatuteText(text) {
       if (!text) return '';
-      const statWords = ['jurisdiction', 'regulate', 'exclusive', 'authority', 'monitor', 'standards'];
+      const statWords = ['jurisdiction', 'regulate and monitor', 'regulate', 'exclusive jurisdiction', 'exclusive', 'authority', 'monitor', 'standards'];
       let safe = escapeHtml(text);
       statWords.forEach(w => {
         const regex = new RegExp(`(${w})`, 'gi');
-        safe = safe.replace(regex, '<mark class="hl-statute">$1</mark>');
+        safe = safe.replace(regex, '<span class="xai-token" data-weight="0.800" style="background-color: rgba(239, 68, 68, 0.40); padding: 1px 2px; border-radius: 2px;" title="Fallback Statutory Indicator: $1">$1</span>');
       });
       return safe;
     }
