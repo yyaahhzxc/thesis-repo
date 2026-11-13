@@ -235,9 +235,12 @@ def main():
     print(f"      Val   : {len(val_recs)} pairs (15%)")
     print(f"      Test  : {len(test_recs)} pairs (15%)")
     
-    print("\n[2/5] Initializing Tokenizer & DeBERTa-v3-base from local checkpoint...")
-    tokenizer = AutoTokenizer.from_pretrained(str(BASE_MODEL_DIR))
-    model = AutoModelForSequenceClassification.from_pretrained(str(BASE_MODEL_DIR), num_labels=3)
+    print("\n[2/5] Initializing Tokenizer & DeBERTa-v3-base...")
+    hf_repo = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
+    model_source = str(BASE_MODEL_DIR) if BASE_MODEL_DIR.exists() else hf_repo
+    print(f"      Loading from: {model_source}")
+    tokenizer = AutoTokenizer.from_pretrained(model_source)
+    model = AutoModelForSequenceClassification.from_pretrained(model_source, num_labels=3)
     model.to(device)
     
     train_ds = StatutoryPairDataset(train_recs, tokenizer, max_length=256)

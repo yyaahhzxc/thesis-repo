@@ -117,11 +117,20 @@ class LocalNeuralEngine:
             if MINILM_LOCAL_PATH.exists():
                 print(f"[NeuralEngine] Loading Stage 1 MiniLM from {MINILM_LOCAL_PATH} on {self.device.upper()}...")
                 self.embedder = SentenceTransformer(str(MINILM_LOCAL_PATH), device=self.device)
+            else:
+                print(f"[NeuralEngine] Loading Stage 1 MiniLM from HuggingFace (sentence-transformers/all-MiniLM-L6-v2) on {self.device.upper()}...")
+                self.embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device=self.device)
 
             if DEBERTA_LOCAL_PATH.exists():
                 print(f"[NeuralEngine] Loading Stage 2 DeBERTa-v3 from {DEBERTA_LOCAL_PATH} on {self.device.upper()}...")
                 self.deberta_tokenizer = AutoTokenizer.from_pretrained(str(DEBERTA_LOCAL_PATH))
                 self.deberta_model = AutoModelForSequenceClassification.from_pretrained(str(DEBERTA_LOCAL_PATH)).to(self.device)
+                self.deberta_model.eval()
+            else:
+                hf_nli = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
+                print(f"[NeuralEngine] Loading Stage 2 DeBERTa-v3 from HuggingFace ({hf_nli}) on {self.device.upper()}...")
+                self.deberta_tokenizer = AutoTokenizer.from_pretrained(hf_nli)
+                self.deberta_model = AutoModelForSequenceClassification.from_pretrained(hf_nli).to(self.device)
                 self.deberta_model.eval()
 
             # Load genuine 176,421-provision embeddings matrix with mmap if unified provisions exists
