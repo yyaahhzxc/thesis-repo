@@ -236,7 +236,7 @@ def main():
     print(f"      Test  : {len(test_recs)} pairs (15%)")
     
     print("\n[2/5] Initializing Tokenizer & DeBERTa-v3-base...")
-    hf_repo = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
+    hf_repo = "cross-encoder/nli-deberta-v3-base"
     model_source = str(BASE_MODEL_DIR) if BASE_MODEL_DIR.exists() else hf_repo
     print(f"      Loading from: {model_source}")
     tokenizer = AutoTokenizer.from_pretrained(model_source)

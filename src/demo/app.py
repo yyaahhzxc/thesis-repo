@@ -127,7 +127,7 @@ class LocalNeuralEngine:
                 self.deberta_model = AutoModelForSequenceClassification.from_pretrained(str(DEBERTA_LOCAL_PATH)).to(self.device)
                 self.deberta_model.eval()
             else:
-                hf_nli = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
+                hf_nli = "cross-encoder/nli-deberta-v3-base"
                 print(f"[NeuralEngine] Loading Stage 2 DeBERTa-v3 from HuggingFace ({hf_nli}) on {self.device.upper()}...")
                 self.deberta_tokenizer = AutoTokenizer.from_pretrained(hf_nli)
                 self.deberta_model = AutoModelForSequenceClassification.from_pretrained(hf_nli).to(self.device)
