@@ -6,11 +6,19 @@
 **Course Professor:** Ma'am Grace Tacadao  
 **Institution:** Department of Computer Science, School of Arts and Sciences, Ateneo de Davao University  
 **Repository:** [`https://github.com/yyaahhzxc/thesis-repo`](https://github.com/yyaahhzxc/thesis-repo)  
-**Last Updated:** 2026-11-10  
+**Last Updated:** 2026-11-13  
 
 ---
 
 ## **Chronological Session Progress Journal**
+
+### **November 13, 2026 (Session: Live Demo-Site Tier 3 Full-Document Audit & UI Conflict-Pair Reconciliation)**
+- **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
+- **Canonical Conflict-Counting Convention Locked:** Whenever referring to "number of conflicts" in demo-site audits and Chapter 4 discussions, the metric refers to **individual `(section, candidate_statute)` UI conflict pairs** rendered by `src/demo/static/index.html` (Option B: Preemption-Pair View, where each evaluated candidate crossing $\tau_{\text{dyn}}$ generates a conflict card) rather than the section-level `counts.contradiction` count (e.g., *Mosqueda* = **8 UI conflicts** across 2 flagged sections; *Evasco* = **31 UI conflicts** across 14 flagged sections).
+- **Bug Fix (`src/demo/app.py`):** Extended the pre-LGC colonial enactment filter in `execute_full_ordinance_audit` to catch lowercase underscore citations (`act_`, `commonwealth_act`) alongside `Act No.` and `Commonwealth Act`, preventing `act_4173_1934` from leaking into Stage 2 candidates.
+- **Live Demo Pipeline Audit Across Tier 3 PDFs:**
+  - Executed `POST /api/audit-document` end-to-end on 8/10 Tier 3 PDFs (`01`, `02`, `05`, `06`, `07`, `08`, `09`, `10`) yielding **82 UI conflict pairs** (`output/tier3_demo_full_audit_results.json` & `output/tier3_demo_full_audit_results_05_10.json`).
+  - Verified that `03` (*ARC Investors*) and `04` (*First Meridian*) share the identical SHA256 129-page, 434-section Davao City Revenue Code PDF (`DDF5C53A...`), and ran the live demo pipeline on their targeted challenged sections (`Sec 69` -> 1 UI conflict pair vs. PD 464 §20, with LGC §143 at Rank 1 cleared at `P_c = 0.1%`; `Sec 423` -> 2 UI conflict pairs vs. RA 10863 §1110 and RA 183 §65, with LGC §195 at Rank 4). Full 434-section Revenue Code audit queued for Kaggle GPU acceleration.
 
 ### **November 12, 2026 (Session: Open-Corpus Multi-Conflict Distribution & Comprehensive Preemption Analysis in Chapter 4)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.

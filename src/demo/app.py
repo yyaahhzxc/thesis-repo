@@ -98,13 +98,16 @@ class LocalNeuralEngine:
 
     def _initialize(self):
         try:
-            # LGU Edge Workstation Emulation Constraint (Host A & Host C)
-            # Enforce 4 CPU worker threads and CPU-only neural evaluation
-            os.environ["CUDA_VISIBLE_DEVICES"] = ""
-            os.environ["OMP_NUM_THREADS"] = "4"
-            os.environ["MKL_NUM_THREADS"] = "4"
-            torch.set_num_threads(4)
-            self.device = "cpu"
+            if os.environ.get("ALLOW_GPU") == "1" and torch.cuda.is_available():
+                self.device = "cuda"
+            else:
+                # LGU Edge Workstation Emulation Constraint (Host A & Host C)
+                # Enforce 4 CPU worker threads and CPU-only neural evaluation
+                os.environ["CUDA_VISIBLE_DEVICES"] = ""
+                os.environ["OMP_NUM_THREADS"] = "4"
+                os.environ["MKL_NUM_THREADS"] = "4"
+                torch.set_num_threads(4)
+                self.device = "cpu"
             # pyrefly: ignore[missing-import]
             from transformers import AutoTokenizer, AutoModelForSequenceClassification
             # pyrefly: ignore[missing-import]
@@ -1675,8 +1678,8 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
         if NEURAL_ENGINE.is_loaded:
             query_str = f"[{doc_title} | {header_title}] {ch['text']}"
             raw_cands = NEURAL_ENGINE.retrieve_top_k(query_str, k=50, scope="national")
-            # Filter out obsolete colonial enactments (Act No. and Commonwealth Act) and superseded pre-LGC charter (RA 4354)
-            valid_cands = [c for c in raw_cands if not c["citation"].lower().startswith("act no.") and not c["citation"].lower().startswith("commonwealth act") and "4354" not in c["citation"]]
+            # Filter out obsolete colonial enactments (Act No. / act_ and Commonwealth Act) and superseded pre-LGC charter (RA 4354)
+            valid_cands = [c for c in raw_cands if not c["citation"].lower().startswith(("act no.", "act_", "commonwealth act", "commonwealth_act")) and "4354" not in c["citation"]]
             # Stage 1 Knowledge Graph Neighborhood Expansion (CITES_AUTHORITY & CONTAINS):
             # Check for explicit statutory citations or penalty references and ensure governing authority provisions are in candidate pool
             has_fine, _ = check_statutory_penalty_ceiling(ch["text"])
