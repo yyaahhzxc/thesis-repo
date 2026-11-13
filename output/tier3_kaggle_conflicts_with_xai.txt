@@ -1,0 +1,84 @@
+====================================================================================================
+DAVAO-TIER3-01 | 01_mosqueda_aerial_spraying_ban.pdf | Secs=9 | UI Conflicts=2
+----------------------------------------------------------------------------------------------------
+  [1] Sec 2 (POLICY OF THE CITY) <-> Presidential Decree No. 1144 §6; Presidential Decree No. 1144 §9 | Stage1_Rank=fallback | P_c=98.4% | tau=45.0% | d_g=999
+      XAI Draft Tokens  : 
+      XAI Statute Tokens: 
+      Draft Text        : It shall be the policy of the City of Davao to eliminate the method of aerial spraying as an agricultural practice in all agricultural activities by all entities within Davao City;
+      Statute Text      : Section 6. Powers and Functions. The FPA shall have jurisdiction over all existing handlers of pesticides, fertilizers and other agricultural chemical inputs. The FPA shall have the following powers and functions: To regulate and license all handlers of fertilizers, pesticides and other agricultural chemical inputs; to establish and enforce quality standards, dispersal methods, and environmental r
+
+  [2] Sec 5 (BAN OF AERIAL SPRAYING) <-> Presidential Decree No. 1144 §6; Presidential Decree No. 1144 §9 | Stage1_Rank=fallback | P_c=98.4% | tau=45.0% | d_g=999
+      XAI Draft Tokens  : 
+      XAI Statute Tokens: 
+      Draft Text        : A ban on aerial spraying shall be strictly enforced in the territorial jurisdiction of Davao City three (3) months after the effectivity of this Ordinance; Authentic Legislative Transcript — Ex-Ante Statutory Knowledge Base
+      Statute Text      : Section 6. Powers and Functions. The FPA shall have jurisdiction over all existing handlers of pesticides, fertilizers and other agricultural chemical inputs. The FPA shall have the following powers and functions: To regulate and license all handlers of fertilizers, pesticides and other agricultural chemical inputs; to establish and enforce quality standards, dispersal methods, and environmental r
+
+====================================================================================================
+DAVAO-TIER3-02 | 02_evasco_billboard_regulation.pdf | Secs=52 | UI Conflicts=1
+----------------------------------------------------------------------------------------------------
+  [1] Sec 46 (PENALTIES) <-> Republic Act No. 7160 §458(a)(1)(iii) | Stage1_Rank=fallback | P_c=95.0% | tau=45.0% | d_g=999
+      XAI Draft Tokens  : 
+      XAI Statute Tokens: 
+      Draft Text        : — Any person, whether natural or juridical, found violating the provisions of this Ordinance shall be penalized as follows: A. For the first offense, a fine of not less than P5,000.00 but not more than P7,000.00, or an infringement of not less than seven (7) days but not more than two (2) months, or both, at the discretion of the court; B. For the second or subsequent offenses, a fine of not less 
+      Statute Text      : Section 458(a)(1)(iii). The Sangguniang Panlungsod shall approve ordinances and pass resolutions necessary for an efficient and dynamic city government: Prescribe reasonable penalties for violation of ordinances which shall not exceed a fine of Five Thousand Pesos (P5,000.00) or imprisonment of one (1) year, or both such fine and imprisonment, at the discretion of the court.
+
+====================================================================================================
+DAVAO-TIER3-03 | 03_arc_investors_holding_tax.pdf | Secs=435 | UI Conflicts=3
+----------------------------------------------------------------------------------------------------
+  [1] Sec 69 (IMPOSITION OF TAX) <-> 1987 Constitution Art. XII §2; Republic Act No. 7942 §27; Republic Act No. 8371 §59 | Stage1_Rank=fallback | P_c=96.5% | tau=45.0% | d_g=999
+      XAI Draft Tokens  : 
+      XAI Statute Tokens: 
+      Draft Text        : There is hereby imposed on the following persons who establish, operate, conduct or maintain their respective business within the City a graduated business tax in the amounts hereafter prescribed: (a) On Manufacturers, Assemblers, Repackers, Processors, Brewers, Distillers, Rectifiers, and Compounders of liquors, distilled spirits, and wines or manufacturers of any article of commerce of whatever 
+      Statute Text      : Article XII, Section 2. All lands of the public domain, waters, minerals, coal, petroleum, and other mineral resources are owned by the State. Section 27, RA 7942. The exploration, development, and commercial utilization of mineral resources shall be under the full control and supervision of the State through the DENR.
+
+  [2] Sec 183 (FRAUDULENT PRACTICES RELATIVE TO WEIGHTS AND MEASURES) <-> 1987 Constitution Art. XII §2; Republic Act No. 7942 §27; Republic Act No. 8371 §59 | Stage1_Rank=fallback | P_c=96.5% | tau=45.0% | d_g=999
+      XAI Draft Tokens  : 
+      XAI Statute Tokens: 
+      Draft Text        : The following acts related to weights and measures are prohibited: (a) For any person other than the official sealer or his duly authorized representative to place an official tag, seal, sticker, mark, stamp, brand or other characteristic sign used to indicate that such instrument of weight and measure has officially been tested, calibrated, sealed or inspected; (b) For any person to imitate any s
+      Statute Text      : Article XII, Section 2. All lands of the public domain, waters, minerals, coal, petroleum, and other mineral resources are owned by the State. Section 27, RA 7942. The exploration, development, and commercial utilization of mineral resources shall be under the full control and supervision of the State through the DENR.
+
+  [3] Sec 267 (PROHIBITIONS AND PENALTIES) <-> 1987 Constitution Art. XII §2; Republic Act No. 7942 §27; Republic Act No. 8371 §59 | Stage1_Rank=fallback | P_c=96.5% | tau=45.0% | d_g=999
+      XAI Draft Tokens  : 
+      XAI Statute Tokens: 
+      Draft Text        : (1) Fishing Without A License/Permit. It shall be unlawful for any person, whether natural or juridical, to engage in any fishing activity or operate any fishing boat/banca within the City Waters without the corresponding license/permit issued by the City Mayor through the City Agriculturist Office. The corresponding penalties shall be imposed on the following violation/s: a. Fishing in City Water
+      Statute Text      : Article XII, Section 2. All lands of the public domain, waters, minerals, coal, petroleum, and other mineral resources are owned by the State. Section 27, RA 7942. The exploration, development, and commercial utilization of mineral resources shall be under the full control and supervision of the State through the DENR.
+
+====================================================================================================
+DAVAO-TIER3-04 | 04_first_meridian_payment_under_protest.pdf | Secs=435 | UI Conflicts=3
+----------------------------------------------------------------------------------------------------
+  [1] Sec 69 (IMPOSITION OF TAX) <-> 1987 Constitution Art. XII §2; Republic Act No. 7942 §27; Republic Act No. 8371 §59 | Stage1_Rank=fallback | P_c=96.5% | tau=45.0% | d_g=999
+      XAI Draft Tokens  : 
+      XAI Statute Tokens: 
+      Draft Text        : There is hereby imposed on the following persons who establish, operate, conduct or maintain their respective business within the City a graduated business tax in the amounts hereafter prescribed: (a) On Manufacturers, Assemblers, Repackers, Processors, Brewers, Distillers, Rectifiers, and Compounders of liquors, distilled spirits, and wines or manufacturers of any article of commerce of whatever 
+      Statute Text      : Article XII, Section 2. All lands of the public domain, waters, minerals, coal, petroleum, and other mineral resources are owned by the State. Section 27, RA 7942. The exploration, development, and commercial utilization of mineral resources shall be under the full control and supervision of the State through the DENR.
+
+  [2] Sec 183 (FRAUDULENT PRACTICES RELATIVE TO WEIGHTS AND MEASURES) <-> 1987 Constitution Art. XII §2; Republic Act No. 7942 §27; Republic Act No. 8371 §59 | Stage1_Rank=fallback | P_c=96.5% | tau=45.0% | d_g=999
+      XAI Draft Tokens  : 
+      XAI Statute Tokens: 
+      Draft Text        : The following acts related to weights and measures are prohibited: (a) For any person other than the official sealer or his duly authorized representative to place an official tag, seal, sticker, mark, stamp, brand or other characteristic sign used to indicate that such instrument of weight and measure has officially been tested, calibrated, sealed or inspected; (b) For any person to imitate any s
+      Statute Text      : Article XII, Section 2. All lands of the public domain, waters, minerals, coal, petroleum, and other mineral resources are owned by the State. Section 27, RA 7942. The exploration, development, and commercial utilization of mineral resources shall be under the full control and supervision of the State through the DENR.
+
+  [3] Sec 267 (PROHIBITIONS AND PENALTIES) <-> 1987 Constitution Art. XII §2; Republic Act No. 7942 §27; Republic Act No. 8371 §59 | Stage1_Rank=fallback | P_c=96.5% | tau=45.0% | d_g=999
+      XAI Draft Tokens  : 
+      XAI Statute Tokens: 
+      Draft Text        : (1) Fishing Without A License/Permit. It shall be unlawful for any person, whether natural or juridical, to engage in any fishing activity or operate any fishing boat/banca within the City Waters without the corresponding license/permit issued by the City Mayor through the City Agriculturist Office. The corresponding penalties shall be imposed on the following violation/s: a. Fishing in City Water
+      Statute Text      : Article XII, Section 2. All lands of the public domain, waters, minerals, coal, petroleum, and other mineral resources are owned by the State. Section 27, RA 7942. The exploration, development, and commercial utilization of mineral resources shall be under the full control and supervision of the State through the DENR.
+
+====================================================================================================
+DAVAO-TIER3-05 | 05_davao_gsis_property_tax.pdf | Secs=19 | UI Conflicts=0
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+DAVAO-TIER3-06 | 06_mining_ban_watershed.pdf | Secs=10 | UI Conflicts=0
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+DAVAO-TIER3-07 | 07_davao_anti_smoking_stricter_standard.pdf | Secs=15 | UI Conflicts=0
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+DAVAO-TIER3-08 | 08_davao_speed_limits_traffic_code.pdf | Secs=30 | UI Conflicts=0
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+SC-PHIL-09 | 09_magtajas_casino_preemption.pdf | Secs=7 | UI Conflicts=0
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+SC-PHIL-10 | 10_city_of_manila_laguio_due_process.pdf | Secs=5 | UI Conflicts=0
+----------------------------------------------------------------------------------------------------

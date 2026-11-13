@@ -1,0 +1,124 @@
+[Kaggle Worker] Initializing Thesis Tier 3 GPU Audit across All 10 SC Cases...
+[Kaggle Worker] Cloning repository...
+Cloning into '/kaggle/working/thesis-repo'...
+Updating files:  42% (2057/4856)Updating files:  43% (2089/4856)Updating files:  44% (2137/4856)Updating files:  45% (2186/4856)Updating files:  46% (2234/4856)Updating files:  47% (2283/4856)Updating files:  48% (2331/4856)Updating files:  49% (2380/4856)Updating files:  50% (2428/4856)Updating files:  51% (2477/4856)Updating files:  52% (2526/4856)Updating files:  53% (2574/4856)Updating files:  54% (2623/4856)Updating files:  55% (2671/4856)Updating files:  56% (2720/4856)Updating files:  57% (2768/4856)Updating files:  58% (2817/4856)Updating files:  59% (2866/4856)Updating files:  60% (2914/4856)Updating files:  61% (2963/4856)Updating files:  62% (3011/4856)Updating files:  63% (3060/4856)Updating files:  64% (3108/4856)Updating files:  65% (3157/4856)Updating files:  66% (3205/4856)Updating files:  67% (3254/4856)Updating files:  68% (3303/4856)Updating files:  69% (3351/4856)Updating files:  70% (3400/4856)Updating files:  71% (3448/4856)Updating files:  72% (3497/4856)Updating files:  73% (3545/4856)Updating files:  74% (3594/4856)Updating files:  75% (3642/4856)Updating files:  76% (3691/4856)Updating files:  77% (3740/4856)Updating files:  78% (3788/4856)Updating files:  79% (3837/4856)Updating files:  80% (3885/4856)Updating files:  81% (3934/4856)Updating files:  82% (3982/4856)Updating files:  83% (4031/4856)Updating files:  84% (4080/4856)Updating files:  84% (4098/4856)Updating files:  85% (4128/4856)Updating files:  86% (4177/4856)Updating files:  86% (4218/4856)Updating files:  87% (4225/4856)Updating files:  87% (4264/4856)Updating files:  88% (4274/4856)Updating files:  89% (4322/4856)Updating files:  90% (4371/4856)Updating files:  90% (4412/4856)Updating files:  91% (4419/4856)Updating files:  92% (4468/4856)Updating files:  93% (4517/4856)Updating files:  94% (4565/4856)Updating files:  95% (4614/4856)Updating files:  96% (4662/4856)Updating files:  97% (4711/4856)Updating files:  98% (4759/4856)Updating files:  99% (4808/4856)Updating files: 100% (4856/4856)Updating files: 100% (4856/4856), done.
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+From https://github.com/yyaahhzxc/thesis-repo
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+[Kaggle Worker] Installing dependencies...
+[Kaggle Worker] Launching scripts/kaggle_audit_all_tier3.py on GPU...
+[Setup] models/nli-deberta-v3-finetuned not found. Training Stage 2 Cross-Encoder first...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+================================================================================
+ STAGE 2 CROSS-ENCODER SUPERVISED FINE-TUNING (GENUINE PYTORCH TRAINING)
+ Base: DeBERTa-v3-base (86M params) | Corpus: Philippine Ground Truth (350 Pairs)
+================================================================================
+[*] Running on GPU: Tesla T4
+
+[1/5] Loading Ground Truth dataset and performing 70/15/15 stratified split...
+      Train : 245 pairs (70%)
+      Val   : 52 pairs (15%)
+      Test  : 53 pairs (15%)
+
+[2/5] Initializing Tokenizer & DeBERTa-v3-base...
+      Loading from: cross-encoder/nli-deberta-v3-base
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights: 100%|██████████| 202/202 [00:00<00:00, 2378.85it/s]
+      Initial Zero-Shot Val: Loss = 4.5045 | Acc = 32.69% | Contra F1 = 0.2105
+
+[3/5] Starting Supervised Fine-Tuning Loop...
+      Epoch 1/3 | Step 10/31 | Batch Loss = 1.3985
+      Epoch 1/3 | Step 20/31 | Batch Loss = 1.1950
+      Epoch 1/3 | Step 30/31 | Batch Loss = 0.9558
+      Epoch 1/3 | Step 31/31 | Batch Loss = 0.8341
+      >>> End of Epoch 1 (15.2s) | Train Loss: 1.7929 | Val Loss: 0.8818 | Val Acc: 55.77% | Val Macro-F1: 0.5455 | Val Contra-F1: 0.5000
+          [*] New Best Validation Loss! (0.8818)
+      Epoch 2/3 | Step 10/31 | Batch Loss = 0.6201
+      Epoch 2/3 | Step 20/31 | Batch Loss = 0.3821
+      Epoch 2/3 | Step 30/31 | Batch Loss = 0.7905
+      Epoch 2/3 | Step 31/31 | Batch Loss = 1.0397
+      >>> End of Epoch 2 (15.2s) | Train Loss: 0.7911 | Val Loss: 0.5661 | Val Acc: 73.08% | Val Macro-F1: 0.7360 | Val Contra-F1: 0.8276
+          [*] New Best Validation Loss! (0.5661)
+      Epoch 3/3 | Step 10/31 | Batch Loss = 0.1156
+      Epoch 3/3 | Step 20/31 | Batch Loss = 0.8082
+      Epoch 3/3 | Step 30/31 | Batch Loss = 0.8111
+      Epoch 3/3 | Step 31/31 | Batch Loss = 0.3087
+      >>> End of Epoch 3 (15.7s) | Train Loss: 0.3700 | Val Loss: 0.3702 | Val Acc: 82.69% | Val Macro-F1: 0.8264 | Val Contra-F1: 0.9412
+          [*] New Best Validation Loss! (0.3702)
+
+[+] Fine-Tuning Completed in 51.7s (0.86 mins)
+
+[4/5] Threshold Calibration on Validation Split:
+      Optimal tau* = 0.20 (Conflict F1: 0.9412)
+
+================================================================================
+ HELD-OUT TEST SPLIT EVALUATION (N = 53 Pairs, Zero-Leakage)
+================================================================================
+ Test Accuracy    : 92.45%
+ Test Macro-F1    : 0.9278
+ Conflict F1      : 0.9655
+ Test Loss        : 0.2833
+ Decision Cutoff  : tau* = 0.20
+================================================================================
+
+[5/5] Exporting fine-tuned model checkpoint to /kaggle/working/thesis-repo/models/nli-deberta-v3-finetuned...
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.39it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.39it/s]
+[+] Metrics exported to /kaggle/working/thesis-repo/output/fine_tuned_stage2_metrics.json
+
+================================================================================
+ EVALUATING FINE-TUNED MODEL ON TIER 3 SUPREME COURT PREEMPTION CASES
+================================================================================
+Case ID         | Case Name                    | Gold         | Pred         | P(Contra)  | Status
+------------------------------------------------------------------------------------------------
+DAVAO-TIER3-01  | Mosqueda v. Pilipino Banana  | Contradiction | Neutral      | 6.67     % | MISS
+DAVAO-TIER3-02  | Hon. Leoncio Evasco, Jr. v.  | Entailment   | Contradiction | 33.37    % | MISS
+DAVAO-TIER3-03  | City of Davao and Tanjili v. | Neutral      | Contradiction | 75.14    % | MISS
+DAVAO-TIER3-04  | City of Davao and Dureza v.  | Contradiction | Contradiction | 99.96    % | HIT (TP)
+DAVAO-TIER3-05  | City of Davao v. Court of Ap | Entailment   | Neutral      | 0.08     % | MISS
+DAVAO-TIER3-06  | Davao City Mining Ban and Pa | Contradiction | Entailment   | 0.07     % | MISS
+DAVAO-TIER3-07  | Davao City Comprehensive Ant | Entailment   | Contradiction | 99.21    % | MISS
+DAVAO-TIER3-08  | Davao City Comprehensive Spe | Entailment   | Neutral      | 4.19     % | MISS
+SC-PHIL-09      | Magtajas v. Pryce Properties | Contradiction | Contradiction | 99.95    % | HIT (TP)
+SC-PHIL-10      | City of Manila v. Laguio, Jr | Contradiction | Contradiction | 22.91    % | HIT (TP)
+================================================================================
+ [âœ“] ALL PROCESSES COMPLETED CLEANLY
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[NeuralEngine] Loading Stage 1 MiniLM from HuggingFace (sentence-transformers/all-MiniLM-L6-v2) on CUDA...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2503.71it/s]
+[NeuralEngine] Loading Stage 2 DeBERTa-v3 from /kaggle/working/thesis-repo/models/nli-deberta-v3-finetuned on CUDA...
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights: 100%|██████████| 202/202 [00:00<00:00, 2451.22it/s]
+[NeuralEngine] Local models directory not fully populated. Running in fallback mode.
+[Engine] Device=cuda | Checkpoint=/kaggle/working/thesis-repo/models/nli-deberta-v3-finetuned
+[START] DAVAO-TIER3-01 (01_mosqueda_aerial_spraying_ban.pdf)...
+[DONE] DAVAO-TIER3-01 | 0.0s | Secs=9 | UI Conflicts=2
+[START] DAVAO-TIER3-02 (02_evasco_billboard_regulation.pdf)...
+[DONE] DAVAO-TIER3-02 | 0.0s | Secs=52 | UI Conflicts=1
+[START] DAVAO-TIER3-03 (03_arc_investors_holding_tax.pdf)...
+[DONE] DAVAO-TIER3-03 | 0.1s | Secs=435 | UI Conflicts=3
+[REUSE] DAVAO-TIER3-04 (04_first_meridian_payment_under_protest.pdf) has identical SHA256 to DAVAO-TIER3-03; reusing audit.
+[START] DAVAO-TIER3-05 (05_davao_gsis_property_tax.pdf)...
+[DONE] DAVAO-TIER3-05 | 0.0s | Secs=19 | UI Conflicts=0
+[START] DAVAO-TIER3-06 (06_mining_ban_watershed.pdf)...
+[DONE] DAVAO-TIER3-06 | 0.0s | Secs=10 | UI Conflicts=0
+[START] DAVAO-TIER3-07 (07_davao_anti_smoking_stricter_standard.pdf)...
+[DONE] DAVAO-TIER3-07 | 0.0s | Secs=15 | UI Conflicts=0
+[START] DAVAO-TIER3-08 (08_davao_speed_limits_traffic_code.pdf)...
+[DONE] DAVAO-TIER3-08 | 0.0s | Secs=30 | UI Conflicts=0
+[START] SC-PHIL-09 (09_magtajas_casino_preemption.pdf)...
+[DONE] SC-PHIL-09 | 0.0s | Secs=7 | UI Conflicts=0
+[START] SC-PHIL-10 (10_city_of_manila_laguio_due_process.pdf)...
+[DONE] SC-PHIL-10 | 0.0s | Secs=5 | UI Conflicts=0
+
+Saved full JSON to /kaggle/working/thesis-repo/output/tier3_kaggle_full_audit_all10.json
+Saved XAI conflict summary to /kaggle/working/thesis-repo/output/tier3_kaggle_conflicts_with_xai.txt
+[Kaggle Worker] Audit complete in 137.8s!
+[Kaggle Worker] Saved artifact: /kaggle/working/tier3_kaggle_full_audit_all10.json (8,095,988 bytes)
+[Kaggle Worker] Saved artifact: /kaggle/working/tier3_kaggle_conflicts_with_xai.txt (11,731 bytes)
+[Kaggle Worker] All tasks finished successfully!
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 280990 bytes to __results__.html

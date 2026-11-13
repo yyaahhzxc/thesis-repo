@@ -239,3 +239,4 @@ with open(HTML_PATH, "w", encoding="utf-8") as f:
 
 print("Successfully updated render() with 1-hop ego-network isolation!")
 print(f"File size: {os.path.getsize(HTML_PATH)/(1024*1024):.2f} MB")
+

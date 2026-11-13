@@ -1,0 +1,223 @@
+================================================================================
+CASE: DAVAO-TIER3-01 | Document: 01_mosqueda_aerial_spraying_ban.pdf
+================================================================================
+
+[FLAGGED] Sec 2: POLICY OF THE CITY | Confidence: 100.0%
+   Target Statute : REPUBLIC ACT NO. 8700, July 09, 1998 Section 3
+   Top Draft Attn  : [(1.0, 'eliminate'), (0.307, 'to'), (0.298, 'It'), (0.293, 'shall'), (0.218, 'aerial')]
+   Top Statute Attn: [(1.0, 'maintain'), (0.356, 'spraying'), (0.316, 'Except'), (0.235, 'shall'), (0.163, 'air')]
+
+[FLAGGED] Sec 5: BAN OF AERIAL SPRAYING | Confidence: 90.7%
+   Target Statute : REPUBLIC ACT NO. 8700, July 09, 1998 Section 3
+   Top Draft Attn  : [(1.0, 'ban'), (0.412, 'enforced'), (0.303, 'A'), (0.204, '3'), (0.184, 'strictly')]
+   Top Statute Attn: [(1.0, 'maintain'), (0.423, 'spraying'), (0.398, 'shall'), (0.234, ','), (0.216, 'air')]
+
+Total Flagged Sections: 2
+
+================================================================================
+CASE: DAVAO-TIER3-02 | Document: 02_evasco_billboard_regulation.pdf
+================================================================================
+
+[FLAGGED] Sec 6: GENERAL PROVISIONS | Confidence: 99.4%
+   Target Statute : EXECUTIVE ORDER NO. 165, March 21, 2022 Section 2
+   Top Draft Attn  : [(1.0, 'disregarded'), (0.16, 'Such')]
+   Top Statute Attn: [(1.0, 'not'), (1.0, 'exceed'), (0.908, 'newly'), (0.762, 'comply'), (0.585, 'least')]
+
+[FLAGGED] Sec 7: BILLBOARDS AND SIGNAGES | Confidence: 99.5%
+   Target Statute : Republic Act No. 9211 June 23, 2003 Section 17
+   Top Draft Attn  : [(1.0, '10'), (0.278, '150')]
+   Top Statute Attn: [(1.0, 'not'), (0.566, 'one'), (0.399, 'seventy'), (0.357, 'not'), (0.34, 'not')]
+
+[FLAGGED] Sec 8: REGULATED SCENIC AREAS | Confidence: 99.9%
+   Target Statute : REPUBLIC ACT NO. 8471, January 30, 1998 Section 6
+   Top Draft Attn  : [(1.0, '200'), (0.48, '—'), (0.337, 'n'), (0.235, 'Island'), (0.227, 'Bridge')]
+   Top Statute Attn: [(1.0, 'exclusion'), (0.949, 'concurrent'), (0.858, 'with'), (0.545, 'first'), (0.284, 'the')]
+
+[FLAGGED] Sec 9: ALLOWABLE HEIGHT FOR SIGN STRUCTURES IN REGULATED AREAS | Confidence: 99.6%
+   Target Statute : EXECUTIVE ORDER NO. 165, March 21, 2022 Section 6
+   Top Draft Attn  : [(1.0, '17'), (0.973, '14'), (0.68, '\x7f'), (0.476, 'only'), (0.394, 'limited')]
+   Top Statute Attn: [(1.0, 'may'), (0.559, 'any'), (0.512, 'DIL'), (0.226, 'DPW'), (0.202, 'H')]
+
+[FLAGGED] Sec 13: CONSTRUCTION OF ROOF SIGNS | Confidence: 99.2%
+   Target Statute : REPUBLIC ACT No. 3857 Section 28
+   Top Draft Attn  : [(1.0, 'no'), (0.362, 'conform'), (0.351, '—'), (0.27, '4'), (0.208, 'shall')]
+   Top Statute Attn: [(1.0, 'not'), (0.918, 'however'), (0.605, 'Notwithstanding'), (0.336, '.'), (0.33, 'lieu')]
+
+[FLAGGED] Sec 14: ALLOWABLE HEIGHT FOR GROUND SIGNS | Confidence: 99.8%
+   Target Statute : EXECUTIVE ORDER NO. 32, July 04, 2023 Section 2
+   Top Draft Attn  : [(1.0, 'And'), (0.92, 'not'), (0.435, '17'), (0.312, 'no'), (0.304, 'on')]
+   Top Statute Attn: [(1.0, 'not'), (0.175, 'following')]
+
+[FLAGGED] Sec 25: COMBINED LOADS | Confidence: 79.1%
+   Target Statute : REPUBLIC ACT NO. 11689, April 11, 2022 Section 27
+   Top Draft Attn  : [(1.0, 'EXCEPT'), (0.717, 'NOT'), (0.537, 'BE'), (0.443, 'SHALL'), (0.426, 'ROOF')]
+   Top Statute Attn: [(1.0, 'Enforce'), (0.633, 'demolition'), (0.592, '5'), (0.518, 'b'), (0.475, 'take')]
+
+[FLAGGED] Sec 26: ALLOWABLE STRESSES | Confidence: 49.7%
+   Target Statute : REPUBLIC ACT No. 288 Section 19
+   Top Draft Attn  : [(1.0, 'may'), (0.51, 'increased'), (0.433, 'exceed'), (0.233, 'NOT'), (0.206, 'allowable')]
+   Top Statute Attn: [(1.0, 'private'), (0.754, 'prevent'), (0.703, 'He'), (0.373, 'encroachment'), (0.295, 'docks')]
+
+[FLAGGED] Sec 27: CONSTRUCTION, IN GENERAL | Confidence: 56.9%
+   Target Statute : REPUBLIC ACT No. 9408 March 24, 2007 Section 16
+   Top Draft Attn  : [(1.0, '—'), (0.181, 'REQUIREMENTS'), (0.158, 'THIS'), (0.153, 'ALL')]
+   Top Statute Attn: [(1.0, 'may'), (0.38, '10'), (0.252, 'override'), (0.246, 'veto'), (0.203, 'approved')]
+
+[FLAGGED] Sec 31: SIGNS ATTACHED TO CONCRETE | Confidence: 100.0%
+   Target Statute : REPUBLIC ACT No. 1364 Section 13
+   Top Draft Attn  : [(1.0, '—'), (0.321, 'Signs'), (0.289, 'steel'), (0.232, 'shall'), (0.229, 'masonry')]
+   Top Statute Attn: [(1.0, 'exempted'), (0.466, 'from'), (0.332, 'be'), (0.264, 'examined'), (0.261, 'shall')]
+
+[FLAGGED] Sec 32: SIGNS ATTACHED TO WOOD | Confidence: 99.7%
+   Target Statute : PRESIDENTIAL DECREE No. 705 May 19, 1975 Section 31
+   Top Draft Attn  : [(1.0, 'SIGN'), (0.614, '—'), (0.603, '7'), (0.455, 'No'), (0.403, 'CHAPTER')]
+   Top Statute Attn: [(1.0, 'save'), (0.773, '.'), (0.646, 'Timber'), (0.456, 'utilization'), (0.38, 'gather')]
+
+[FLAGGED] Sec 36: EXEMPTION FROM SIGN PERMIT | Confidence: 99.7%
+   Target Statute : REPUBLIC ACT NO. 537, June 16, 1950 Section 13
+   Top Draft Attn  : [(1.0, 'not'), (0.216, '—')]
+   Top Statute Attn: [(1.0, 'forfeited'), (0.633, 'No'), (0.365, 'removal'), (0.309, 'erected'), (0.294, 'Mayor')]
+
+[FLAGGED] Sec 40: EXEMPTION FROM MARKING REQUIREMENT | Confidence: 59.2%
+   Target Statute : REPUBLIC ACT NO. 537, June 16, 1950 Section 13
+   Top Draft Attn  : [(1.0, 'not'), (0.359, 'No'), (0.278, 'STRICT'), (0.257, '—'), (0.166, 'exempt')]
+   Top Statute Attn: [(1.0, 'forfeited'), (0.754, 'No'), (0.478, 'removal'), (0.416, 'Mayor'), (0.376, 'City')]
+
+[FLAGGED] Sec 46: PENALTIES | Confidence: 95.0%
+   Target Statute : Republic Act No. 7160 §458(a)(1)(iii)
+   Top Draft Attn  : [(1.0, '16'), (0.589, 'first'), (0.572, 'TRANSIT'), (0.29, 'natural'), (0.236, 'CHAPTER')]
+   Top Statute Attn: [(1.0, 'Five'), (0.547, '5'), (0.359, 'year'), (0.267, ':'), (0.247, 'imprisonment')]
+
+Total Flagged Sections: 14
+
+================================================================================
+CASE: DAVAO-TIER3-05 | Document: 05_davao_gsis_property_tax.pdf
+================================================================================
+
+[FLAGGED] Sec 6: Imposition of the Basic Real Property Tax | Confidence: 99.3%
+   Target Statute : Republic Act No. 7160 October 10, 1991 Section 236
+   Top Draft Attn  : [(1.0, 'hereby'), (0.434, 'one'), (0.388, 'City'), (0.241, '1'), (0.164, 'levied')]
+   Top Statute Attn: [(1.0, 'five'), (0.78, '5'), (0.776, 'addition'), (0.593, 'to'), (0.391, 'may')]
+
+[FLAGGED] Sec 8: Exemptions to the Imposition | Confidence: 64.3%
+   Target Statute : Republic Act No. 7160 October 10, 1991 Section 234
+   Top Draft Attn  : [(1.0, 'and'), (0.482, '33'), (0.46, 'exempted'), (0.452, 'Except'), (0.339, 'tax')]
+   Top Statute Attn: [(1.0, 'withdrawn'), (0.782, 'exemption'), (0.501, 'V'), (0.482, '38'), (0.382, 'Except')]
+
+[FLAGGED] Sec 9: Time of Payment | Confidence: 81.9%
+   Target Statute : REPUBLIC ACT No. 5495 Section 50
+   Top Draft Attn  : [(1.0, 'simultaneously'), (0.41, 'prior'), (0.327, 'Both'), (0.317, 'must'), (0.266, 'first')]
+   Top Statute Attn: [(1.0, 'seven'), (0.924, 'two'), (0.642, 'seventy'), (0.551, 'twelve'), (0.364, 'one')]
+
+[FLAGGED] Sec 18: Periods within which to collect Real Property Taxes | Confidence: 99.0%
+   Target Statute : Republic Act No. 7160 October 10, 1991 Section 258
+   Top Draft Attn  : [(1.0, 'No'), (0.178, 'may'), (0.152, 'collected')]
+   Top Statute Attn: [(1.0, 'be'), (0.579, 'may'), (0.551, 'After'), (0.488, 'levied'), (0.468, 'simultaneously')]
+
+[FLAGGED] Sec 23: Effect of Appeal on the Payment of Real Property Tax | Confidence: 68.1%
+   Target Statute : REPUBLIC ACT No. 3857 Section 56
+   Top Draft Attn  : [(1.0, 'no')]
+   Top Statute Attn: [(1.0, 'However'), (0.944, 'be'), (0.883, 'shall'), (0.865, 'added'), (0.405, 'likewise')]
+
+Total Flagged Sections: 5
+
+================================================================================
+CASE: DAVAO-TIER3-06 | Document: 06_mining_ban_watershed.pdf
+================================================================================
+
+[FLAGGED] Sec 2: DECLARATION OF POLICY | Confidence: 40.5%
+   Target Statute : REPUBLIC ACT NO. 10360 Section 35
+   Top Draft Attn  : [(1.0, '16'), (0.775, 'b'), (0.334, 'While'), (0.33, 'same'), (0.313, 'penalties')]
+   Top Statute Attn: [(1.0, 'optional'), (0.257, 'must')]
+
+[FLAGGED] Sec 3: PURPOSE | Confidence: 81.8%
+   Target Statute : EXECUTIVE ORDER NO. 292 Section 1
+   Top Draft Attn  : [(1.0, 'city'), (0.792, 'degraded'), (0.764, 'Ordinance'), (0.568, 'not'), (0.528, 'This')]
+   Top Statute Attn: [(1.0, '2'), (0.71, 'likewise'), (0.347, 'account'), (0.338, 'equitably'), (0.312, 'accessible')]
+
+Total Flagged Sections: 2
+
+================================================================================
+CASE: DAVAO-TIER3-07 | Document: 07_davao_anti_smoking_stricter_standard.pdf
+================================================================================
+
+[FLAGGED] Sec 4: PROHIBITED ACTS | Confidence: 37.8%
+   Target Statute : EXECUTIVE ORDER NO. 106, February 26, 2020 Section 1
+   Top Draft Attn  : [(1.0, 'prohibited'), (0.261, '—'), (0.188, 'within'), (0.184, 'allowing'), (0.174, 'Failure')]
+   Top Statute Attn: [(1.0, 'no'), (0.643, 'not'), (0.617, 'not'), (0.547, '2'), (0.503, 'This')]
+
+Total Flagged Sections: 1
+
+================================================================================
+CASE: DAVAO-TIER3-08 | Document: 08_davao_speed_limits_traffic_code.pdf
+================================================================================
+
+[FLAGGED] Sec 4: INTERPRETATION | Confidence: 99.5%
+   Target Statute : REPUBLIC ACT No. 4136 Section 36
+   Top Draft Attn  : [(1.0, 'not'), (0.832, 'may'), (0.526, 'All'), (0.324, 'consistent'), (0.276, 'unless')]
+   Top Statute Attn: [(1.0, 'other'), (0.95, 'than'), (0.534, 'No'), (0.496, 'this'), (0.434, 'Act')]
+
+[FLAGGED] Sec 7: SPEED LIMITS | Confidence: 99.6%
+   Target Statute : REPUBLIC ACT No. 2000 Section 7
+   Top Draft Attn  : [(1.0, '60'), (0.546, '80')]
+   Top Statute Attn: [(1.0, 'not'), (0.46, 'elimination'), (0.365, 'only'), (0.297, 'if'), (0.244, 'Such')]
+
+[FLAGGED] Sec 11: RESPONSIBILITIES OF THE CTTMO | Confidence: 98.9%
+   Target Statute : PRESIDENTIAL DECREE No. 1265 Section 3
+   Top Draft Attn  : [(1.0, '—'), (0.668, 'AND'), (0.603, 'Ordinance'), (0.498, 'cooperation'), (0.393, 'Davao')]
+   Top Statute Attn: [(1.0, 'Implementation'), (0.468, 'to'), (0.418, 'compelling'), (0.381, 'be'), (0.317, 'j')]
+
+[FLAGGED] Sec 12: ENFORCEMENT PROCEDURE | Confidence: 99.9%
+   Target Statute : REPUBLIC ACT No. 4136 Section 36
+   Top Draft Attn  : [(1.0, 'not'), (0.514, 'the'), (0.329, 'affect'), (0.323, '—'), (0.32, 'same')]
+   Top Statute Attn: [(1.0, 'this'), (0.856, 'than'), (0.675, 'in'), (0.662, 'other'), (0.648, 'No')]
+
+[FLAGGED] Sec 13: 1 | Confidence: 75.6%
+   Target Statute : PRESIDENTIAL DECREE No. 1605 November 21, 1978 Section 5
+   Top Draft Attn  : [(1.0, '7'), (0.579, 'canceling'), (0.47, 'dismissal'), (0.435, 'shall'), (0.368, 'clearance')]
+   Top Statute Attn: [(1.0, 'paid'), (0.315, 'tion'), (0.306, 'surcharges'), (0.3, 'has'), (0.249, 'not')]
+
+[FLAGGED] Sec 17: REVIEW OF SPEED LIMITS | Confidence: 71.1%
+   Target Statute : REPUBLIC ACT NO. 8472, January 30, 1998 Section 18
+   Top Draft Attn  : [(1.0, '—'), (0.76, 'O'), (0.443, '3'), (0.436, 'Ordinance'), (0.419, 'every')]
+   Top Statute Attn: [(1.0, 'approved'), (0.756, 'inconsistent'), (0.409, 'deemed'), (0.295, 'barangay'), (0.224, 'suspended')]
+
+[FLAGGED] Sec 18: INFORMATION, EDUCATION, AND COMMUNICATION CAMPAIGN | Confidence: 99.9%
+   Target Statute : REPUBLIC ACT NO. 9999 Section 6
+   Top Draft Attn  : [(1.0, 'CIO'), (0.303, '—'), (0.268, 'continuing'), (0.261, 'speed'), (0.253, 'City')]
+   Top Statute Attn: [(1.0, 'PIA'), (0.31, 'Agency')]
+
+Total Flagged Sections: 7
+
+================================================================================
+CASE: SC-PHIL-09 | Document: 09_magtajas_casino_preemption.pdf
+================================================================================
+
+[FLAGGED] Sec 4: PROHIBITION ON BUSINESS PERMITS FOR CASINO (ORD | Confidence: 95.7%
+   Target Statute : PRESIDENTIAL DECREE No. 1399 Section 4
+   Top Draft Attn  : [(1.0, 'banning'), (0.588, 'no'), (0.443, 'That'), (0.268, 'the'), (0.235, 'to')]
+   Top Statute Attn: [(1.0, 'shall'), (0.766, 'to'), (0.736, 'right'), (0.515, 'the'), (0.462, 'have')]
+
+[FLAGGED] Sec 5: REVOCATION AND PREMISES PROHIBITION (ORD | Confidence: 99.9%
+   Target Statute : PRESIDENTIAL DECREE No. 1399 Section 4
+   Top Draft Attn  : [(1.0, 'be'), (0.895, 'That'), (0.404, 'a'), (0.392, 'allow'), (0.246, 'violation')]
+   Top Statute Attn: [(1.0, 'right'), (0.685, 'shall'), (0.649, 'When'), (0.624, 'have'), (0.568, 'the')]
+
+Total Flagged Sections: 2
+
+================================================================================
+CASE: SC-PHIL-10 | Document: 10_city_of_manila_laguio_due_process.pdf
+================================================================================
+
+[FLAGGED] Sec 1: PROHIBITED ESTABLISHMENTS AND COVERED TERRITORIAL AREA | Confidence: 99.9%
+   Target Statute : REPUBLIC ACT No. 5412 Section 95
+   Top Draft Attn  : [(1.0, 'no'), (0.219, 'contrary'), (0.215, 'notwithstanding'), (0.19, 'Any'), (0.166, 'Cabaret')]
+   Top Statute Attn: [(1.0, 'in'), (0.983, 'continue'), (0.715, 'in'), (0.593, 'be'), (0.412, 'shall')]
+
+[FLAGGED] Sec 2: PROHIBITION ON PERMIT ISSUANCE AND PAYMENT ACCEPTANCE | Confidence: 99.9%
+   Target Statute : REPUBLIC ACT NO. 8975 November 7, 2000 Section 7
+   Top Draft Attn  : [(1.0, 'prohibited'), (0.622, 'from'), (0.317, 'Mayor'), (0.296, 'are')]
+   Top Statute Attn: [(1.0, 'consider'), (0.852, 'issue'), (0.695, 'shall'), (0.479, 'shall'), (0.278, 'permit')]
+
+Total Flagged Sections: 2
+

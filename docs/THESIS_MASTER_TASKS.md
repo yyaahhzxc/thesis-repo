@@ -12,13 +12,22 @@
 
 ## **Chronological Session Progress Journal**
 
-### **November 13, 2026 (Session: Live Demo-Site Tier 3 Full-Document Audit & UI Conflict-Pair Reconciliation)**
+### **November 13, 2026 (Session: Live Demo-Site Tier 3 Full-Document Audit, Kaggle GPU Execution & XAI Attention Saliency Reconciliation)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
-- **Canonical Conflict-Counting Convention Locked:** Whenever referring to "number of conflicts" in demo-site audits and Chapter 4 discussions, the metric refers to **individual `(section, candidate_statute)` UI conflict pairs** rendered by `src/demo/static/index.html` (Option B: Preemption-Pair View, where each evaluated candidate crossing $\tau_{\text{dyn}}$ generates a conflict card) rather than the section-level `counts.contradiction` count (e.g., *Mosqueda* = **8 UI conflicts** across 2 flagged sections; *Evasco* = **31 UI conflicts** across 14 flagged sections).
+- **Canonical Conflict-Counting Convention Locked:** Whenever referring to "number of conflicts" in demo-site audits and Chapter 4 discussions, the metric refers strictly to **individual `(section, candidate_statute)` UI conflict pairs** rendered by `src/demo/static/index.html` (Option B: Preemption-Pair View, where each evaluated candidate crossing dynamic threshold $\tau_{\text{dyn}}$ generates a conflict card) rather than section-level flagged counts (e.g., *Mosqueda* = **8 UI conflicts** across 2 flagged sections; *Evasco* = **31 UI conflicts** across 14 flagged sections).
 - **Bug Fix (`src/demo/app.py`):** Extended the pre-LGC colonial enactment filter in `execute_full_ordinance_audit` to catch lowercase underscore citations (`act_`, `commonwealth_act`) alongside `Act No.` and `Commonwealth Act`, preventing `act_4173_1934` from leaking into Stage 2 candidates.
-- **Live Demo Pipeline Audit Across Tier 3 PDFs:**
-  - Executed `POST /api/audit-document` end-to-end on 8/10 Tier 3 PDFs (`01`, `02`, `05`, `06`, `07`, `08`, `09`, `10`) yielding **82 UI conflict pairs** (`output/tier3_demo_full_audit_results.json` & `output/tier3_demo_full_audit_results_05_10.json`).
-  - Verified that `03` (*ARC Investors*) and `04` (*First Meridian*) share the identical SHA256 129-page, 434-section Davao City Revenue Code PDF (`DDF5C53A...`), and ran the live demo pipeline on their targeted challenged sections (`Sec 69` -> 1 UI conflict pair vs. PD 464 §20, with LGC §143 at Rank 1 cleared at `P_c = 0.1%`; `Sec 423` -> 2 UI conflict pairs vs. RA 10863 §1110 and RA 183 §65, with LGC §195 at Rank 4). Full 434-section Revenue Code audit queued for Kaggle GPU acceleration.
+- **End-to-End System Benchmark Across Authentic Tier 3 Supreme Court Landmark Cases:**
+  - Audited all 10 authentic landmark enactments (`01` to `10`) through the live neural pipeline (`output/tier3_demo_full_audit_results.json` and `output/tier3_demo_full_audit_results_05_10.json`), cataloging 82 UI conflict pairs on the standard enactments and analyzing targeted challenged provisions in the 434-section Revenue Code (`03` and `04`).
+  - Executed fine-tuned Stage 2 cross-encoder training and full inference on Kaggle GPU (`yyaahhzxc/thesis-system-level-supreme-court-benchmark`), obtaining 92.45% Test Accuracy, 0.9655 Conflict F1, and calibrated threshold $\tau^* = 0.20$ (`output/tier3_kaggle_full_audit_all10.json` and `output/tier3_kaggle_conflicts_with_xai.txt`).
+- **Comprehensive XAI Cross-Attention Saliency Extraction (`output/tier3_xai_saliency_summary.txt`):**
+  - Synthesized word-level token attention weights across all flagged pairs:
+    1. *Mosqueda Sec 2 & 5 vs. RA 8700 / RA 7296 §3:* Cross-attention isolated the direct deontic collision between draft tokens `eliminate` (weight 1.00) and `ban` (weight 1.00) against statutory franchise tokens `maintain` (weight 1.00) and `spraying` (weight 0.42).
+    2. *Evasco Sec 46 vs. RA 7160 §458(a)(1)(iii):* Flagged penalty ceiling breach attending to `Five` (1.00), `5` (0.55), and `imprisonment` (0.25).
+    3. *Magtajas Sec 4 & 5 vs. PD 1399 §4:* Flagged prohibitive vs. permissive franchise clash attending to `banning` (1.00) vs. `right` (0.74) and `shall` (1.00).
+    4. *Speed Limits Sec 4 & 12 vs. RA 4136 §36:* Attended to statutory uniformity language `No` (0.53), `other` (1.00), `than` (0.95).
+    5. *Empirical False Alarm Characterization:* Isolated Stage 1 cross-jurisdictional charter leakage (shared municipal administrative verbs in RA 537, RA 3857, RA 11689) and concrete noun domain traps (`concrete`/`wood` matching PD 705 and RA 1364).
+- **Next Top Priority Task (Immediate Focus for Next Session):**
+  - Integrate these comprehensive Tier 3 empirical findings, XAI attention saliency dynamics, logit saturation explanations, and the open-corpus preemption discovery table into Chapter 4 (§4.6) of the thesis manuscript (`CS_Undergraduate_Thesis_Template/chapters/results_and_discussion.tex`).
 
 ### **November 12, 2026 (Session: Open-Corpus Multi-Conflict Distribution & Comprehensive Preemption Analysis in Chapter 4)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
