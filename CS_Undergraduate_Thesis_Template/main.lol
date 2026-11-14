@@ -6,7 +6,7 @@
 \contentsline {lstlisting}{\numberline {3.6}Code Snippet of the Operative Provision Extractor and Boilerplate Filter}{101}{lstlisting.3.6}%
 \contentsline {lstlisting}{\numberline {3.7}Sample Evaluation Pair from the Ground Truth Benchmark Dataset}{113}{lstlisting.3.7}%
 \contentsline {lstlisting}{\numberline {3.8}Pseudocode of the Stage 1 Reciprocal Rank Fusion Hybrid Provision Retrieval Pipeline}{119}{lstlisting.3.8}%
-\contentsline {lstlisting}{\numberline {3.9}Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}{137}{lstlisting.3.9}%
+\contentsline {lstlisting}{\numberline {3.9}Pseudocode of the Stage 2 Cost-Sensitive Cross-Encoder Inference and Section-Level Conflict Aggregation}{138}{lstlisting.3.9}%
 \contentsline {lstlisting}{\numberline {A.1}Lawphil Statutory Scraper and Provision Boundary Serializer}{250}{lstlisting.A.1}%
 \contentsline {lstlisting}{\numberline {B.1}Archival Scan Preprocessing and Contrast Enhancement}{251}{lstlisting.B.1}%
 \contentsline {lstlisting}{\numberline {B.2}Local 4-Bit VLM Inference Engine for Archival Extraction}{251}{lstlisting.B.2}%

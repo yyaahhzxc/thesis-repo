@@ -168,8 +168,6 @@ While modern digital enactments such as Ordinance No.~000667-21 demonstrate near
         \textbf{Ord. 000667-21} & Modern LISSP (2021)\newline Digital Raster & Clean electronic layout, high-contrast typography & 0.00\% & 0.02\% & 0.00\% & 0.00\% \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated against human-verified gold-standard transcriptions. Local VLM corresponds to Qwen2.5-VL-3B-Instruct (4-bit NF4) executed on Host~B. Cloud baseline corresponds to Gemini Flash 3.8 multimodal inference. Evaluated archival exemplars preserved in repository benchmark suite.
 \end{table}
 
 Table~\ref{tab:historical_ocr_benchmark} compares word and character error rates across four authentic Davao City legislative records representing different eras and physical conditions. This comparison demonstrates how mechanical typewriter defects and physical paper aging affect automated transcription accuracy relative to clean modern scans. The empirical measurements reveal a sharp performance divergence between modern digital prints and mid-twentieth-century manual typewriter records. On modern digital scans (Ordinance No.~000667-21), the local vision-language model achieves near-perfect fidelity (0.00\% WER and 0.02\% CER). However, on historical typewriter records from 1956, 1968, and 1981, error rates rise substantially to 11.06\%--19.78\% WER and 5.91\%--12.87\% CER. This steep rise in error rates demonstrates that archival transcription difficulty is driven primarily by physical medium defects rather than model capacity limitations.
@@ -367,8 +365,6 @@ To test how well search strategies perform in a real-world setting, the proponen
         \textbf{5. Proposed Hybrid Dual-Stream (BM25 + Dense RRF)} & 314.9\,ms & \textbf{41.14\%} & \textbf{50.29\%} & \textbf{57.71\%} & \textbf{65.14\%} & \textbf{0.3462} \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated on all 350 ground truth queries searching the entire statutory search space on Host~A (Intel Core i3-10105F CPU @ 3.70\,GHz). Latency values represent mean per-query retrieval runtime. Hybrid dual-stream integrates sparse BM25 and pre-computed dense embeddings via Reciprocal Rank Fusion ($k_{\text{rrf}} = 60$) with statutory hierarchy priority weighting ($\beta = 1.20$).
 \end{table}
 
 Table~\ref{tab:full_corpus_retrieval_benchmark} details the candidate retrieval recall, rank distributions, and search speeds across the full national database of 25,432 enactments for five Stage~1 retrieval strategies. This benchmark evaluates candidate discovery under authentic unassisted conditions where draft queries must surface controlling provisions without manual candidate pre-filtering. The results show that standard unconstrained BM25 achieves only 29.71\% Recall@10 and 43.14\% Recall@50 with an MRR of 0.1521, as lexical mismatch prevents keyword search from identifying paraphrased prohibitions. Applying hard domain filters severely degrades candidate discovery (Recall@50 drops to 13.43\%) because multi-faceted statutes span multiple thematic domains. Incorporating the Hierarchy Priority Safeguard elevates early ranking precision: MRR increases by 45.8\% (to 0.2217) by prioritizing primary Republic Acts over administrative circulars. Furthermore, pure dense semantic retrieval via \texttt{all-MiniLM-L6-v2} provides rapid inference (14.8\,ms) and captures conceptual overlaps, yielding 58.86\% Recall@50 (MRR 0.2842). The proposed Hybrid Dual-Stream pipeline (fusing BM25 lexical matching and dense embeddings via Reciprocal Rank Fusion at $k_{\text{rrf}}=60$ with the statutory hierarchy boost) delivers the highest candidate recovery across all cutoffs on the open corpus: 41.14\% Recall@5, 50.29\% Recall@10, and 65.14\% Recall@50 alongside an MRR of 0.3462, which exceeds pure dense retrieval (58.86\% Recall@50). In contrast, on the pre-filtered controlled candidate pool (Table~\ref{tab:stage1_retrieval_ablation}) where candidate density is artificially concentrated, pure dense retrieval matches or slightly edges RRF on early top-10 positions, confirming that RRF fusion is primarily advantageous in large, noisy, unconstrained statutory databases. Nonetheless, these empirical findings establish an important operational baseline: in an unassisted search across 25,432 enactments, approximately 34.86\% of controlling statutory provisions remain outside the top-50 shortlist, demonstrating that open-corpus candidate discovery---rather than Stage~2 cross-encoder reasoning---represents the primary operational bottleneck in end-to-end statutory conflict auditing.
@@ -405,8 +401,6 @@ To find the most accurate and efficient dense retriever for Stage~1 search, the 
         \textbf{Multilingual} & \texttt{bge-m3} & 568.0M & 8,192 & 24.50\,ms & \textbf{88.9\%} & \textbf{98.3\%} & 100.0\% & 100.0\% & \textbf{0.7621} & \textbf{93.3\%} \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} *Selected model integrated into the production Stage~1 hybrid pipeline. Evaluated standalone using normalized cosine similarity on Host~A (Intel Core i3-10105F CPU @ 3.70\,GHz) without sparse keyword assistance. Latencies represent mean per-query CPU runtime.
 \end{table}
 
 \end{landscape}
@@ -439,8 +433,6 @@ In machine learning, an ablation study tests the impact of individual system com
         \textbf{9. Hybrid + Soft Domain Prior ($\alpha=0.5$)} & 1.21\,ms & 89.7\% & 95.7\% & 99.7\% & \textbf{100.0\%} & 0.7328 & 84.6\% \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated on the 350 ground truth queries over the active domain statutory pool. *Configuration 2 reflects the artificial isolation effect; when evaluated across the full 25,432 national corpus, hard filtering reduces overall Recall@50 to 13.43\%. Under unconstrained full-corpus search across all 27,357 enactments (178,494 provisions, Table~\ref{tab:full_corpus_retrieval_benchmark}), standalone BM25 achieves 43.14\% Recall@50, while full dual-stream retrieval achieves 65.14\% Recall@50. Latencies represent mean per-query CPU runtime.
 \end{table}
 
 Table~\ref{tab:stage1_retrieval_ablation} compares nine Stage~1 retrieval setups across CPU search speed, recall thresholds ($k \in \{5, 10, 20, 50\}$), Mean Reciprocal Rank (MRR), and Tier~3 paraphrastic recall on the controlled benchmark candidate pool. This controlled candidate pool functions as an in-domain closed-world sanity check over the active macro legal domains, verifying that candidate retrievers reliably identify the controlling statutory sections when search is restricted to candidate provisions within the relevant thematic spheres. Under these closed-world conditions, Reciprocal Rank Fusion (RRF $k=60$) achieves 100.0\% Recall@50. However, when evaluated under unconstrained open-world conditions across the complete repository of 27,357 enactments (178,494 provisions, Table~\ref{tab:full_corpus_retrieval_benchmark}), open-corpus candidate Recall@50 reaches 65.14\% (with BM25 alone achieving 43.14\%). This contrast demonstrates that while hybrid fusion substantially outperforms lexical search in open-world retrieval (+22.0 percentage points), unassisted open-corpus candidate retrieval remains the primary operational bottleneck of the coarse-to-fine pipeline, explaining why Stage~2 downstream inference requires wide candidate recall buffers. This ablation isolates the contributions of keyword search (BM25), dense vectors (\texttt{all-MiniLM-L6-v2}), topic filters, and rank fusion. The results show that while standalone BM25 achieves 79.7\% Recall@5 and 99.7\% Recall@50, its recall drops to 74.0\% on Tier~3 queries that lack exact keyword matches. Conversely, pure dense retrieval reaches 87.1\% Recall@5 and 91.3\% on Tier~3, capturing legal concepts well but occasionally failing on exact statutory citations and numeric penalty ceilings. While pure dense retrieval achieves a higher MRR (0.7388 vs. 0.7040) due to concentrated mass at top ranks, Reciprocal Rank Fusion (RRF $k=60$) is adopted for the production pipeline because Stage~2 cross-encoder inference consumes the entire top-50 shortlist ($k=50$). At $k=50$, RRF captures 100.0\% of controlling candidates across all queries in 1.26~milliseconds, combining lexical fidelity on statutory citations with semantic generalization on paraphrased municipal clauses.
@@ -515,8 +507,6 @@ Following the screening procedure in Section~\ref{sec:two_step_screening_protoco
         & \texttt{albert-base-v2} & 12M & 512 & 49.06\% & 0.4350 & 0.3182 & Severe (Entailment bias) \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated zero-shot out-of-the-box on the 53 held-out test pairs ($\mathcal{D}_{\text{test}}$) without task-specific fine-tuning. Models marked with an asterisk (*) successfully satisfied the admission criteria and advanced to the supervised fine-tuning and ablation suite. Affirmative bias denotes the empirical tendency of unadapted models to default toward Entailment or Neutral on statutory conflicts.
 \end{table}
 
 \end{landscape}
@@ -573,8 +563,6 @@ Table~\ref{tab:stage2_hyperparameter_results} documents the validation performan
         \texttt{all-MiniLM-L6-v2} (Ultra-Compact Edge Baseline) & 22M & $3\times 10^{-5}$ & 8 & 0.5784 & 80.77\% & 0.8108 \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated on the 52 validation pairs ($\mathcal{D}_{\text{val}}$) across hyperparameter grid searches under deterministic execution ($\text{seed} = 42$). Exactly 13 unique architectures qualified for fine-tuning. Macro $F_1$ averages across Entailment, Neutral, and Contradiction.
 \end{table}
 \clearpage
 
@@ -637,8 +625,6 @@ While Figure~\ref{fig:stage2_loss_curves} visualizes comparative holdout traject
         5 & 0.1710 & 0.4850 & 82.69\% & 0.8310 & Training concluded (early stopping patience = 2 reached at $E=5$; optimal checkpoint restored from Epoch 3) \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Training configured with an upper epoch search ceiling of $E_{\max} = 10$ pursuant to Table~\ref{tab:hyperparameter_grid}. Early stopping with a patience of 2 epochs monitored holdout validation loss; after validation loss reached its minimum of 0.4320 at Epoch~3 and consecutively increased at Epoch~4 ($0.4480$) and Epoch~5 ($0.4850$), training was terminated at $E=5$ and the optimal Epoch~3 model weights were restored.
 \end{table}
 
 Table~\ref{tab:epoch_loss_dynamics} shows the epoch-by-epoch loss, validation accuracy, Macro $F_1$, and training milestones for the leading candidate model (\texttt{DeBERTa-v3-large-NLI}, $\eta = 2\times 10^{-5}, B = 8$). This case study illustrates how the model balances learning with overfitting on a small dataset ($N_{\text{train}} = 245, N_{\text{val}} = 52$) and verifies the early-stopping mechanism. Training loss falls steadily from 1.0210 at Epoch~1 to 0.1710 at Epoch~5; validation loss reaches its lowest point of 0.4320 at Epoch~3, where validation accuracy peaks at 86.54\% and Macro $F_1$ reaches 0.8580. After Epoch~3, validation loss rises slightly to 0.4480 at Epoch~4 ($+0.0160$) and 0.4850 at Epoch~5 ($+0.0530$), showing that the model begins memorizing specific wording in the training examples. The training log confirms that early stopping halted training at Epoch~5 and restored the optimal Epoch~3 checkpoint to prevent overfitting before evaluation on the test set.
@@ -657,12 +643,12 @@ To establish the ultimate generalization capability of the fine-tuned Cross-Enco
 
 \begin{table}[htbp]
     \centering
-    \footnotesize
-    \renewcommand{\arraystretch}{0.84}
+    \scriptsize
+    \renewcommand{\arraystretch}{0.86}
     \caption[Out-of-Sample Test and 5-Fold Cross-Validation Performance Comparison]{Empirical Out-of-Sample Held-Out Test Evaluation and 5-Fold Stratified Cross-Validation Benchmark across Candidate Architectures ($N = 350$ Pairs, 198 Unique Instances)}
     \label{tab:kfold_cross_validation_benchmark}
-    \setlength{\tabcolsep}{1.4pt}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{3.4cm} c >{\Centering\arraybackslash}p{1.25cm} >{\Centering\arraybackslash}p{1.25cm} >{\Centering\arraybackslash}X >{\Centering\arraybackslash}X >{\Centering\arraybackslash}X}
+    \setlength{\tabcolsep}{1.5pt}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{4.35cm} c c c >{\Centering\arraybackslash}X >{\Centering\arraybackslash}X >{\Centering\arraybackslash}X}
         \toprule
         \textbf{Candidate Architecture} & \textbf{Params} & \shortstack[c]{\textbf{Val Acc}\\\textbf{($N = 52$)}} & \shortstack[c]{\textbf{Test Acc}\\\textbf{($N = 53$)}} & \shortstack[c]{\textbf{5-Fold Acc}\\\textbf{(Mean $\pm$ SD)}} & \shortstack[c]{\textbf{5-Fold Macro $F_1$}\\\textbf{(Mean $\pm$ SD)}} & \shortstack[c]{\textbf{5-Fold Conflict $F_1$}\\\textbf{(Mean $\pm$ SD)}} \\
         \midrule
@@ -675,8 +661,6 @@ To establish the ultimate generalization capability of the fine-tuned Cross-Enco
         \textbf{\texttt{DeBERTa-v3-base-NLI} (Proposed)} & \textbf{86M} & \textbf{86.54\%} & \textbf{86.79\%} & \textbf{88.30\% $\pm$ 3.44\%} & \textbf{0.8800 $\pm$ 0.0371} & \textbf{0.9008 $\pm$ 0.0421} \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Validation accuracy evaluated on the stratified development tuning partition ($\mathcal{D}_{\text{val}}, N = 52$). Test accuracy evaluated on the stratified held-out test partition ($\mathcal{D}_{\text{test}}, N = 53$). 5-Fold cross-validation metrics reflect mean and sample standard deviation across $k = 5$ stratified folds evaluated over all 350 curated ground truth pairs (198 unique instances) under fixed random seed partitions. The identical validation accuracy ($43/52$, 82.69\%) and test accuracy ($44/53$, 83.02\%) across \texttt{bert-base-uncased}, \texttt{legal-bert-base}, and \texttt{ModernBERT-base} arise from discrete quantization on the small single-split partitions, where a single classification error alters observed accuracy by $\approx 1.9\%$; their generalization capability diverges when evaluated across 5-fold cross-validation and strict premise-grouped cross-validation ($N=198$, Table~\ref{tab:premise_grouped_cv_benchmark}).
 \end{table}
 
 Table~\ref{tab:kfold_cross_validation_benchmark} documents the final model metrics across the validation tuning split, the stratified held-out test split, and the 5-fold cross-validation distribution. The empirical findings reveal that the proposed architecture (\texttt{DeBERTa-v3-base-NLI}) consistently outperforms all competitive baselines across every evaluated dimension. On the stratified held-out test split ($\mathcal{D}_{\text{test}}, N = 53$), the proposed model achieves 86.79\% accuracy ($46/53$). This result exceeds the canonical supervised baseline (\texttt{bert-base-uncased}, 83.02\%) by $+3.77\%$ and the unadapted zero-shot baseline (56.60\%) by $+30.19\%$, while maintaining 86.54\% ($45/52$) on the validation split ($\mathcal{D}_{\text{val}}, N = 52$). Across the 5-fold cross-validation runs, \texttt{DeBERTa-v3-base-NLI} maintains a mean accuracy of $88.30\% \pm 3.44\%$, a mean Macro $F_1$-score of $0.8800 \pm 0.0371$, and a mean Conflict $F_1$-score of $0.9008 \pm 0.0421$. 
@@ -716,8 +700,6 @@ Table~\ref{tab:premise_grouped_cv_benchmark} summarizes the cross-model evaluati
         \textbf{\texttt{DeBERTa-v3-base-NLI} (Proposed)} & \textbf{86M} & \textbf{86.44\% $\pm$ 6.05\%} & \textbf{0.8617 $\pm$ 0.0631} & \textbf{0.8945 $\pm$ 0.0683} \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated via 5-fold \texttt{GroupKFold} where all 9 hypotheses for each of the 22 authentic statutory premises are strictly segregated into train or test partitions, ensuring zero premise overlap across folds. Balanced test partition: 66 Contradiction, 66 Entailment, and 66 Neutral unique pairs.
 \end{table}
 
 
@@ -727,12 +709,12 @@ Table~\ref{tab:friedman_rankings_benchmark} presents the macro domain performanc
 
 \begin{table}[htbp]
     \centering
-    \footnotesize
-    \setlength{\tabcolsep}{2.5pt}
-    \renewcommand{\arraystretch}{0.84}
+    \scriptsize
+    \setlength{\tabcolsep}{2.0pt}
+    \renewcommand{\arraystretch}{0.86}
     \caption[Friedman Two-Way Rank Test across Legal Domains]{Non-Parametric Friedman Two-Way Rank Test across Eight Macro Legal Domains}
     \label{tab:friedman_rankings_benchmark}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{6.1cm} *{6}{>{\Centering\arraybackslash}X}}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{4.6cm} *{6}{>{\Centering\arraybackslash}X}}
         \toprule
         \textbf{Macro Legal Domain} & \shortstack[c]{\textbf{Zero-Shot}\\\textbf{Baseline}} & \shortstack[c]{\textbf{all-}\\\textbf{MiniLM}} & \shortstack[c]{\textbf{bert-}\\\textbf{base}} & \shortstack[c]{\textbf{legal-}\\\textbf{bert}} & \shortstack[c]{\textbf{Modern-}\\\textbf{BERT}} & \shortstack[c]{\textbf{DeBERTa}\\\textbf{-v3 (Prop.)}} \\
         \midrule
@@ -748,8 +730,6 @@ Table~\ref{tab:friedman_rankings_benchmark} presents the macro domain performanc
         \textbf{Average Rank ($R_j$)} & \textbf{6.00} & \textbf{5.00} & \textbf{4.00} & \textbf{3.00} & \textbf{2.00} & \textbf{1.00} \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Values represent domain-specific out-of-fold cross-validation Macro $F_1$-scores across the 8 macro legal domains ($\approx 25$ to $44$ proposition instances per domain) for the primary deployable candidate architectures ($\le 150\text{M}$ parameter operational footprint). While the eight legal domains provide structured thematic partitions, they represent domain-stratified cross-sections sharing common statutory phrasing rather than strictly independent sampling units. \texttt{PoL-BERT-Large} (340M parameters) was evaluated as a large-model capacity probe in Table~\ref{tab:kfold_cross_validation_benchmark} rather than an edge-deployable candidate and is therefore omitted from the primary 6-model edge Friedman comparison. Ranks assigned such that Rank 1 corresponds to the highest performing model within that domain. Omnibus Friedman statistic: $\chi_F^2 = 40.0000$ ($\text{df} = 5, p = 1.49 \times 10^{-7} < 0.001$).
 \end{table}
 
 As documented in Table~\ref{tab:friedman_rankings_benchmark}, the proposed \texttt{DeBERTa-v3-base-NLI} architecture achieves the top performance rank ($R_j = 1.00$) uniformly across all eight macro legal domains, followed by \texttt{ModernBERT-base} ($R_j = 2.00$), \texttt{legal-bert-base} ($R_j = 3.00$), and canonical \texttt{bert-base-uncased} ($R_j = 4.00$). The resulting omnibus Friedman test statistic is $\chi_F^2 = 40.0000$ with $k - 1 = 5$ degrees of freedom ($p = 1.49 \times 10^{-7} < 0.001$), formally rejecting the null hypothesis of equivalent domain performance. This confirms that the observed algorithmic hierarchy is robust and invariant across diverse statutory subject areas, spanning municipal taxation, environmental regulations, and public health ordinances.
@@ -772,8 +752,6 @@ To evaluate pairwise statistical divergence on discrete classification outcomes 
         \textbf{\texttt{DeBERTa-v3}} vs. \textbf{\texttt{legal-bert-base}} & 3 pairs & 1 pair & $\chi^2 = 0.2500$ & $p = 0.6171$ (Not Significant) \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated on discordant pairs across the stratified held-out test partition ($\mathcal{D}_{\text{test}}, N = 53$) where one model is correct and the other is incorrect. Edwards' continuity correction applied: $\chi^2 = (|b - c| - 1)^2 / (b + c)$. For BERT ($44/53$ vs $46/53$), total concordant pairs equal 49 ($a=43$ both correct, $d=6$ both incorrect), leaving $b=3$ (DeBERTa correct, BERT incorrect) and $c=1$ (BERT correct, DeBERTa incorrect), yielding 4 discordant pairs ($b+c=4$). For the Zero-Shot baseline ($30/53$ vs $46/53$), concordant pairs equal 33 ($a=28, d=5$), with $b=18$ and $c=2$ ($b+c=20$). Because discrete pairwise testing on an isolated $N=53$ holdout slice yields limited discordant events ($b+c=4$), pairwise tests alone are constrained in statistical power. Consequently, pairwise domain consistency over fine-tuned supervised baselines is supported across domains by post-hoc paired Wilcoxon signed-rank tests over the 8 macro legal domains against \texttt{bert-base-uncased} ($W = 0.0, p = 0.0078 < 0.0167$ Bonferroni threshold; mean Macro $F_1$ gain of $+0.0720$, 95\% CI: $[+0.0626, +0.0815]$ via Student's $t$-interval with $\text{df}=7$) and against \texttt{legal-bert-base} ($W = 0.0, p = 0.0078 < 0.0167$; mean Macro $F_1$ gain of $+0.0540$, 95\% CI: $[+0.0449, +0.0632]$), reinforced by omnibus domain ranking superiority (Friedman $\chi_F^2 = 40.0000, p = 1.49 \times 10^{-7} < 0.001$, Table~\ref{tab:friedman_rankings_benchmark}) and consistent numerical advantage under zero-leakage premise-grouped 5-fold cross-validation ($86.44\%$ vs $82.67\%$, Table~\ref{tab:premise_grouped_cv_benchmark}).
 \end{table}
 
 The pairwise McNemar test results in Table~\ref{tab:mcnemar_contingency_results} demonstrate substantial error reduction over the unadapted Zero-Shot Baseline ($\chi^2 = 11.2500, p = 0.0008 < 0.001$, with 18 discordant successes against 2 failures). When compared against fine-tuned supervised baselines on the stratified held-out test partition ($N = 53$), \texttt{DeBERTa-v3} correctly resolves 3 difficult preemption instances where \texttt{bert-base-uncased} fails, while BERT succeeds on only 1 pair where DeBERTa errs ($b=3, c=1$). With Edwards' continuity correction, the resulting statistic ($\chi^2 = 0.2500, p = 0.6171$) indicates that on a small test slice where both models achieve high accuracy ($46/53$ vs.\ $44/53$, yielding only 4 discordant pairs), discrete pairwise testing lacks sufficient power to establish statistical divergence in isolation pursuant to the sample size requirements identified in Section~\ref{sec:dataset_partitioning}.
@@ -818,8 +796,6 @@ Table~\ref{tab:pipeline_feature_ablation} details the impact of removing individ
         6. w/o Supervised Fine-Tuning (Zero-Shot Baseline) & 55.15\% & 0.5435 & 0.4833 & \textbf{--39.70\%} \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} $^{\dagger}$While BM25-only retrieval matches dense retrieval on standard keyword queries, its recall collapses by $-17.3\%$ on Tier~3 paraphrased provisions. Delta $F_1$ measures absolute degradation on Conflict $F_1$-score relative to the full proposed pipeline.
 \end{table}
 
 The feature ablation results in Table~\ref{tab:pipeline_feature_ablation} demonstrate that \textbf{Structural Context Prepending} is the single most critical feature engineering component in the pre-enactment pipeline. Stripping the metadata header (`[Title: ..., Catchline: ...]`) and feeding unanchored raw section clauses causes an immediate $-6.52\%$ collapse in Conflict $F_1$ (dropping from 0.8803 to 0.8151). Without explicit jurisdictional headers, the cross-encoder fails to recognize when an otherwise benign penal clause is being enacted by a subordinate municipal council rather than a national administrative agency. 
@@ -869,8 +845,6 @@ In practical legislative drafting, local ordinances vary widely in length, spann
         Top-25 & 175 pairs & 105 tokens & 139.7\,ms & \textbf{24.45\,s} & Deep archive verification ($<$ 30\,s) \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated on an authentic 14-section Tier~2 draft ordinance under strict LGU hardware emulation (Intel Core i3-10105F clamped to 4 CPU worker threads, CPU-only execution, \texttt{torch.set\_num\_threads(4)}). The 14-section draft contains 7 substantive operative sections evaluated against top-$k$ retrieved candidates ($N = 7 \times k$ pairs), with 7 procedural boilerplate clauses bypassed prior to inference. Dynamic sequence padding clamps batch dimensions to the maximum sequence length (105 tokens) with cross-section flattened batch execution.
 \end{table}
 
 Table~\ref{tab:audit_latency_scaling} demonstrates the linear scalability of the inference engine as candidate depth expands. By employing dynamic sequence padding and bypassing boilerplate administrative clauses (Title, Definitions, Separability, Repealing, and Effectivity clauses), per-pair inference latency remains bounded between 120.8\,ms and 139.7\,ms on a standard 4-thread CPU. Evaluating a compact Top-5 candidate pool completes in just 4.56~seconds, while expanding to Top-10 completes in 9.07~seconds.
@@ -901,8 +875,6 @@ To provide rigorous statistical validation of system throughput and hardware sta
         Peak GPU VRAM (Host B Mode) & 1,842.0\,MB $\pm$ 12.5\,MB & 1,820.0\,MB -- 1,865.0\,MB & Bounded $<$ 6,144\,MB (RTX 5050 6\,GB) \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated across 30 independent runs on Host~A (Intel Core i3-10105F clamped to 4 CPU worker threads, CPU-only execution). Full audit evaluates 105 pairwise comparisons ($S=7$ substantive sections $\times k=15$ candidates). Wilcoxon signed-rank test comparing dynamic versus static padding yields $W = 0.0, p = 0.0000017 < 0.001$.
 \end{table}
 
 The comparative data in Table~\ref{tab:thirty_runs_comparative_matrix} demonstrates that dynamic sequence padding achieves a 54.9\% reduction in total execution time relative to the static 512-token baseline; mean audit time falls from 28.15~seconds to 12.69~seconds ($p < 0.001$). Furthermore, the system exhibits notable memory frugality: peak resident memory of the full active inference pipeline on Host~A averages exactly 1,416.4~MB ($1.42$~GB), consuming less than 18\% of the available 8~GB RAM ceiling on a standard municipal computer. 
@@ -955,13 +927,11 @@ Table~\ref{tab:bayesian_ppv_prevalence_scenarios} details the expected Positive 
         \toprule
         \textbf{Evaluation Regime} & \shortstack[c]{\textbf{Sensitivity}\\\textbf{($\text{Recall}_{\text{contra}}$)}} & \shortstack[c]{\textbf{Specificity}\\\textbf{($\text{TNR}$)}} & \shortstack[c]{\textbf{Prevalence}\\\textbf{($p = 1.0\%$)}} & \textbf{Operational Legislative Review Workflow} \\
         \midrule
-        \textbf{1. Unassisted Open-Corpus} (Tier 2 Pilot Benchmark) & 28.57\% & 86.67\% & \textbf{2.12\%} & High-recall screening funnel; 1 real conflict per $\sim 47$ flags. Captures defective drafts while filtering boilerplate. \\
-        \textbf{2. Controlled Oracle Premise} (Calibrated $\tau^* = 0.45$) & 92.86\% & 86.67\% & \textbf{6.57\%} & Targeted review; 1 real conflict per $\sim 15$ flags when candidate premises are pre-identified by legal staff. \\
-        \textbf{3. Strict High-Specificity Mode} (Appendix~\ref{app:extended_training_eval}, $\tau^* = 0.60$) & 80.40\% & 98.32\% & \textbf{32.58\%} & First Reading intake; suppresses spurious alarms for rapid plenary docket review (1 real conflict per $\sim 3$ flags). \\
+        \textbf{1. Unassisted Open-Corpus} (Tier 2 Pilot) & 28.57\% & 86.67\% & \textbf{2.12\%} & Screening funnel ($\sim$1 hit / 47 flags) \\
+        \textbf{2. Controlled Oracle Premise} ($\tau^* = 0.45$) & 92.86\% & 86.67\% & \textbf{6.57\%} & Targeted premise review ($\sim$1 hit / 15 flags) \\
+        \textbf{3. Strict High-Specificity Mode} ($\tau^* = 0.60$) & 80.40\% & 98.32\% & \textbf{32.58\%} & First Reading filter ($\sim$1 hit / 3 flags) \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} PPV formulated via Bayes' theorem (Equation~\ref{eq:ppv_bayes}) under an assumed operational base rate of $p = 0.01$ across submitted municipal provisions. Inputs for each regime are strictly segregated: Regime~1 uses unassisted open-corpus sensitivity (28.57\%, 2/7) and Tier~2 pilot specificity (86.67\%, 39/45; 95\% CI: [73.84\%, 93.74\%]); Regime~2 uses controlled benchmark sensitivity at $\tau^*=0.45$ (92.86\%, 104/112; Table~\ref{tab:app_threshold_sensitivity_sweep}) paired with 86.67\% specificity (yielding 6.57\% PPV, or 7.04\% if evaluated at 100.0\% oracle sensitivity); Regime~3 uses high-specificity operating parameters at $\tau^*=0.60$ (80.40\% sensitivity, 98.32\% specificity; Table~\ref{tab:app_threshold_sensitivity_sweep}). Methodologically, Regime~2 pairs benchmark cross-encoder sensitivity with pilot section specificity where boilerplate filtering aids compliance verification, whereas Regime~3 uses in-sample threshold calibration parameters from Table~\ref{tab:app_threshold_sensitivity_sweep} as an indicative high-specificity projection.
 \end{table}
 
 In ex-ante municipal legal review, this precision-recall trade-off is an intentional and legally sound design choice. In local governance, the institutional cost of an unflagged statutory preemption (a False Negative) is severe, leading to municipal enactment of void legislation, costly taxpayer-funded annulment litigation under \textit{Magtajas v. Pryce Properties}~\cite{scp1994magtajasvpryce}, and potential administrative sanctions under Republic Act No.~7160. Conversely, the institutional cost of an unneeded preemption alert (a False Positive) is manageable: a legislative researcher performs a rapid manual inspection of the side-by-side explainable AI card to verify compliance before plenary Second Reading, representing an estimated brief review overhead during routine committee intake (subject to empirical timing confirmation in post-study usability trials). To address this base-rate sensitivity dynamically, the web prototype incorporates a user-adjustable decision threshold slider ($\tau \in [0.20, 0.80]$). Legislative researchers conducting rapid routine First Reading intake can set $\tau^* \ge 0.60$ to suppress false alarms, while staff preparing critical regulatory measures for Second Reading floor interpellation can calibrate $\tau^* \le 0.45$ to enforce exhaustive preemption recall.
@@ -1001,8 +971,6 @@ The production prototype is engineered as a single-page interactive web applicat
         \textbf{Side-by-Side XAI Inspector} & Verbatim comparative text view with highlighted conflicting terms. & Intrinsic self-attention saliency extraction & $<1.0$\,ms & Arms researchers with precise textual evidence for Second Reading amendments. \\
         \addlinespace[1pt]
         \textbf{Citation Index Resolver} & $O(1)$ disk offset lookup of governing statutory context. & Pre-indexed byte offset hash map & 0.6\,ms & Eliminates hallucinated text by streaming 100\% authentic Lawphil provisions. \\
-        \midrule
-        \multicolumn{5}{@{}p{\linewidth}@{}}{\scriptsize \textit{Note:} Evaluated on Host~A edge desktop (Intel Core i3-10105F CPU @ 3.70 GHz, 4 threads, 8~GB RAM). All inference runs execute locally without external cloud connectivity.} \\
         \bottomrule
     \end{tabularx}
 \end{table}
@@ -1017,14 +985,16 @@ In operationalizing the Side-by-Side Explainable AI (XAI) Inspector, the product
 
 While pair-level cross-validation evaluates isolated model decisions, assessing practical viability in a legislative chamber requires testing complete, multi-section draft ordinances across diverse municipal domains and document lengths. Following the stratified purposive sampling design established in Chapter~3, the proponents constructed the Tier~2 Full-Document Stress Testing Benchmark comprising six full-length draft ordinances ($N = 6$ documents, 52 total sections, 8,929 total words), selecting exactly one representative enactment for each of the six functional legislative typologies identified in Table~\ref{tab:local_typology_composition}. To reflect the empirical length variance of the Davao City archive, the six drafts span from a concise 6-section temporary road closure ordinance (740 total words) and a 6-section disaster fund reprogramming measure (874 words) up to a 9-section inter-hospital telemedicine ordinance with an attached Memorandum of Agreement (1,943 words), an 8-section library site ordinance with an attached Deed of Usufruct and Corporate Secretary's Certificate (1,858 words), and a comprehensive 16-section veterinary public health code (2,464 words). Each draft was compiled into an authentic Philippine Folio PDF ($8.5 \times 13.0$ inches) without artificial running headers or footers and processed blindly through the complete unassisted pipeline on Host~A edge hardware. Table~\ref{tab:tier2_full_document_benchmark} presents the empirical document-level and section-level evaluation metrics across all six typology-stratified draft ordinances.
 
-\begin{table}[htbp]
+\clearpage
+\begin{landscape}
+\begin{table}[p]
     \centering
-    \footnotesize
-    \setlength{\tabcolsep}{2.6pt}
-    \renewcommand{\arraystretch}{0.88}
+    \scriptsize
+    \setlength{\tabcolsep}{3.5pt}
+    \renewcommand{\arraystretch}{0.90}
     \caption[Tier 2 Typology-Stratified Full-Document Pilot Stress Test]{Tier~2 Typology-Stratified Full-Document Pilot Stress Test on Entry-Level LGU Edge Testbed ($N = 6$ Draft Ordinances, 52 Sections)}
     \label{tab:tier2_full_document_benchmark}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{1.55cm}>{\RaggedRight\arraybackslash}p{2.45cm}>{\centering\arraybackslash}p{1.25cm}>{\centering\arraybackslash}p{1.25cm}>{\RaggedRight\arraybackslash}X>{\centering\arraybackslash}p{1.25cm}>{\centering\arraybackslash}p{1.65cm}>{\centering\arraybackslash}p{1.15cm}}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{1.8cm}>{\RaggedRight\arraybackslash}p{3.4cm}>{\centering\arraybackslash}p{1.6cm}>{\centering\arraybackslash}p{1.8cm}>{\RaggedRight\arraybackslash}X>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.9cm}>{\centering\arraybackslash}p{1.3cm}}
         \toprule
         \textbf{Draft ID} & \textbf{Typology (Table~\ref{tab:local_typology_composition})} & \textbf{Words / Secs.} & \textbf{Gold / Pred. Pairs} & \textbf{Target National Statute} & \textbf{Max Risk} & \textbf{Audit Verdict} & \textbf{Spec. (\%)} \\
         \midrule
@@ -1034,11 +1004,11 @@ While pair-level cross-validation evaluates isolated model decisions, assessing 
         \texttt{DRAFT-04} & 04: Deed of Usufruct (+ Deed) & 1,858 / 8 & 1 / 1 (TP=0) & RA 7160 \S\S133(a), 192 & 97.9\% & \textbf{FLAGGED} & 85.71\% \\
         \texttt{DRAFT-05} & 05: Temporary Road Closure & 740 / 6 & 1 / 4 (TP=0) & RA 7160 \S133(e); RA 7160 \S21 & 99.6\% & \textbf{FLAGGED} & 60.00\% \\
         \texttt{DRAFT-06} & 06: Zoning Reclassification & 1,050 / 7 & 1 / 3 (TP=1) & RA 7160 \S20(a); RA 6657 \S65; EO 124 & 99.8\% & \textbf{FLAGGED} & 83.33\% \\
-        \midrule
-        \multicolumn{8}{@{}p{\linewidth}@{}}{\scriptsize \textit{Note:} Blind end-to-end PDF evaluation on Host~A edge testbed (Intel Core i3-10105F CPU @ 3.70 GHz, 8~GB RAM) over the 178,494-provision dual corpus at calibrated threshold $\tau^* = 0.45$. Document Screening Status: 6/6 defective drafts flagged (wide-net committee intake alert). Candidate-Pair Collision Level (Interactive UI Cards): 11 candidate-pair preemption cards generated across the 6 drafts ($TP = 2$ pairs, $FP = 9$ pairs; candidate-pair precision = 18.18\%, recall = 28.57\%). Section-Level Screening (Equation~\ref{eq:section_specificity}): 8 unique sections flagged out of 52 total provisions ($TP = 2, FP = 6, TN = 39, FN = 5$; Sensitivity = 28.57\%, 95\% CI: [8.22\%, 64.11\%]; Section-Level Specificity = 86.67\%, 39/45 compliant sections cleared, 95\% CI: [73.84\%, 93.74\%]; Section Precision = 25.00\%, $F_1 = 0.2667$, $F_2 = 0.2778$). Overall 3-class provision accuracy: 50.00\% (26/52; 95\% CI: [36.79\%, 63.21\%]); Macro-$F_1 = 0.3502$. Mean full-document audit time: 85.29\,s (60.63\,ms PDF ingestion).} \\
         \bottomrule
     \end{tabularx}
 \end{table}
+\end{landscape}
+\clearpage
 
 Table~\ref{tab:tier2_full_document_benchmark} presents the empirical results of the Tier~2 open-corpus diagnostic pilot stress test evaluated across six typology-stratified full-length draft ordinances spanning 52 sections. This pilot test evaluates end-to-end behavior when the system operates without manual candidate filtering across the full statutory repository. At the document level, the pipeline generated review alerts across all six draft ordinances (6 of 6 flagged), successfully routing every draft containing legal defects to legislative officers for mandatory intake review. In the live decision-support web prototype interface, Stage~2 evaluates the top-$k$ retrieved candidate provisions for every substantive section, surfacing each candidate pair that exceeds the calibrated operational threshold ($\tau^* = 0.45$) as an independent, inspectable conflict card with verbatim statutory text. Across the 52 substantive and administrative sections evaluated against open-corpus candidates, the unassisted pipeline generated eleven total candidate-pair preemption cards ($TP = 2, FP = 9$). Specifically, in \texttt{DRAFT-01}, the pipeline flagged one candidate pair (Section~13 vs. RA~7160 \S458, $P = 95.0\%$, authentic $TP$ fine ceiling violation). In \texttt{DRAFT-02}, \texttt{DRAFT-03}, and \texttt{DRAFT-04}, the retriever surfaced one cautious alert each (Section~3 vs. BP~279 at $P=48.1\%$, Section~5 vs. RA~10121 at $P=99.9\%$, and Section~3 vs. RA~11842 at $P=97.9\%$). In \texttt{DRAFT-05}, four candidate pairs were flagged across Sections~2 and~3 against historical local government and traffic statutes (BP~337, RA~5185, RA~8150, and PD~1265) due to dense procedural terminology regarding municipal road powers. In \texttt{DRAFT-06}, three candidate pairs were generated across Sections~4 and~5: one true positive identifying unauthorized agricultural reclassification against Executive Order No.~124 \S1 ($P = 80.5\%$), accompanied by two adjacent alerts against RA~9700 ($P=45.1\%$) and EO~32 ($P=99.8\%$). At the provision screening level, these eleven candidate-pair alerts mapped to eight unique flagged sections ($TP = 2, FP = 6$), clearing 39 of the 45 compliant administrative, tabular, and boilerplate sections (86.67\% section-level specificity; 95\% CI: [73.84\%, 93.74\%]). In an ex-ante municipal screening setting, this multi-level behavior provides both granular diagnostic visibility---allowing legal officers to examine each specific candidate collision card---while maintaining high specificity to prevent committee fatigue.
 
@@ -1048,14 +1018,14 @@ Table~\ref{tab:tier2_oracle_diagnostic} details the per-defect breakdown under t
 
 \begin{table}[htbp]
     \centering
-    \footnotesize
-    \setlength{\tabcolsep}{3.5pt}
+    \scriptsize
+    \setlength{\tabcolsep}{1.8pt}
     \renewcommand{\arraystretch}{0.88}
     \caption[Tier 2 Controlled Oracle Retrieval Diagnostic on Planted Preemption Defects]{Tier~2 Controlled Oracle Retrieval Diagnostic on Planted Preemption Defects ($N = 7$ Planted Contradictions)}
     \label{tab:tier2_oracle_diagnostic}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{1.7cm}>{\centering\arraybackslash}p{1.2cm}>{\RaggedRight\arraybackslash}p{3.8cm}>{\RaggedRight\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.4cm}}
+    \begin{tabularx}{\linewidth}{l c >{\RaggedRight\arraybackslash}X >{\RaggedRight\arraybackslash}X c c c}
         \toprule
-        \textbf{Draft ID} & \textbf{Section} & \textbf{Planted Statutory Conflict Mechanism} & \textbf{Controlling National Premise} & \textbf{$P(\text{Contra})$} & \textbf{Verdict ($\tau^*=0.45$)} & \textbf{Status} \\
+        \textbf{Draft ID} & \textbf{Sec.} & \textbf{Planted Statutory Conflict Mechanism} & \textbf{Controlling National Premise} & \textbf{$P(\text{Contra})$} & \shortstack[c]{\textbf{Verdict}\\\textbf{($\tau^*=0.45$)}} & \textbf{Status} \\
         \midrule
         \texttt{DRAFT-01} & Sec.~8 & Unilateral municipal animal facility shutdown & RA~8485 \S6 (BAI Inspection Authority) & 88.4\% & Contradiction & \textbf{Hit (TP)} \\
         \texttt{DRAFT-01} & Sec.~13 & Ultra vires fine (\textpeso 50,000 ceiling violation) & RA~7160 \S458(a)(1)(iii) (\textpeso 5,000 Cap) & 95.0\% & Contradiction & \textbf{Hit (TP)} \\
@@ -1066,8 +1036,6 @@ Table~\ref{tab:tier2_oracle_diagnostic} details the per-defect breakdown under t
         \texttt{DRAFT-06} & Sec.~4 & Unauthorized agricultural reclassification & EO~124 \S1; RA~6657 \S65 (DAR Mandate) & 80.5\% & Contradiction & \textbf{Hit (TP)} \\
         \bottomrule
     \end{tabularx}
-    \vspace{2pt}
-    \raggedright \scriptsize \textit{Note:} Evaluated under controlled oracle retrieval where each substantive draft section containing a planted defect is evaluated directly against its authentic governing statutory premise. All 7 planted conflicts are successfully detected ($\text{Recall}_{\text{contra}} = 100.0\%$, all $P(\text{Contra}) \ge 80.5\% > \tau^* = 0.45$). This diagnostic isolates the cross-encoder's logical classification fidelity from Stage~1 retrieval bottlenecks, confirming that false negatives in end-to-end testing stem from candidate discovery rather than inferential failure.
 \end{table}
 
 As documented in Table~\ref{tab:tier2_oracle_diagnostic}, when the cross-encoder is provided the controlling national statutory premise, it achieves 100.0\% contradiction sensitivity (7 of 7 planted conflicts caught), with predicted conflict probabilities ranging from 80.5\% to 95.0\% (well above the operational threshold $\tau^* = 0.45$). In contrast, under unassisted open-corpus retrieval, dense local named-entity context in attached agreements caused Stage~1 to retrieve domain-adjacent enactments rather than governing statutory prohibitory clauses; consequently, provision sensitivity fell to 28.57\% (2 of 7). This demonstrates the cascaded retrieval dependency formalized in Equation~\ref{eq:cascaded_hit}: the cross-encoder cannot resolve conflicts that the coarse retriever fails to surface.
@@ -1075,7 +1043,7 @@ As documented in Table~\ref{tab:tier2_oracle_diagnostic}, when the cross-encoder
 \subsubsection{Knowledge Graph Candidate Expansion Ablation}
 \label{sec:tier2_graph_ablation}
 
-To address this coarse retrieval bottleneck and bridge the empirical performance gap between unassisted open-corpus retrieval (28.57\% sensitivity) and the oracle diagnostic ceiling (100.0\% sensitivity), the proponents evaluated the Statutory Knowledge Graph as a neuro-symbolic candidate expansion mechanism. By traversing 1-hop statutory citation and structural hierarchy arcs (\texttt{CITES\_AUTHORITY}, \texttt{AMENDS}, \texttt{CO\_LOCATED}, and domain hub neighborhoods across 27,096 enactments and 176,421 provisions), the hybrid retriever expands initial dense candidates to include governing statutory baselines that lack lexical surface overlap with municipal draft provisions. Table~\ref{tab:tier2_graph_ablation} presents the comparative evaluation metrics between the unassisted baseline and the graph-augmented pipeline across all six draft ordinances.
+To address this coarse retrieval bottleneck and bridge the empirical performance gap between unassisted open-corpus retrieval (28.57\% sensitivity) and the oracle diagnostic ceiling (100.0\% sensitivity), the proponents evaluated the Statutory Knowledge Graph as a neuro-symbolic candidate expansion mechanism. By traversing 1-hop statutory citation and structural hierarchy arcs (\texttt{CITES\_AUTHORITY}, \texttt{AMENDS}, \texttt{CO\_LOCATED}, and domain hub neighborhoods across 27,357 enactments and 178,494 provisions), the hybrid retriever expands initial dense candidates to include governing statutory baselines that lack lexical surface overlap with municipal draft provisions. Table~\ref{tab:tier2_graph_ablation} presents the comparative evaluation metrics between the unassisted baseline and the graph-augmented pipeline across all six draft ordinances.
 
 \begin{table}[htbp]
     \centering
@@ -1097,8 +1065,6 @@ To address this coarse retrieval bottleneck and bridge the empirical performance
         Cost-Sensitive $F_2$-Score ($\beta = 2.0$) & 0.2778 & \textbf{0.8537} & +0.5759 (+207.3\% relative gain) \\
         Overall 3-Class Provision Accuracy & 50.00\% (26/52) & \textbf{88.46\% (46/52)} & +38.46\% (46 of 52 resolved) \\
         Document-Level Screening Recall & 100.0\% (6 of 6) & 100.0\% (6 of 6) & Maintained full intake alert \\
-        \midrule
-        \multicolumn{4}{@{}p{\linewidth}@{}}{\scriptsize \textit{Note:} Evaluated on Host~A testbed ($N = 6$ full Folio PDFs, 52 sections). Graph-augmented pipeline executes Stage~1 hybrid retrieval followed by 1-hop traversal across the Statutory Knowledge Graph (27,096 enactments, 176,421 provisions, 8,068 structural arcs) to inject governing authority neighborhoods into the Stage~2 \texttt{DeBERTa-v3} candidate shortlist ($\tau^* = 0.45$).} \\
         \bottomrule
     \end{tabularx}
 \end{table}
@@ -1119,35 +1085,24 @@ To establish qualitative legal face validity beyond synthetic benchmarks, the pr
 \begin{table}[p]
     \centering
     \footnotesize
-    \setlength{\tabcolsep}{4.5pt}
-    \renewcommand{\arraystretch}{0.94}
+    \setlength{\tabcolsep}{4.0pt}
+    \renewcommand{\arraystretch}{0.95}
     \caption[Tier 3 Jurisprudential Preemption and Authentic Local Controversy Benchmark]{Tier~3 Jurisprudential Preemption and Authentic Local Controversy Benchmark ($N = 10$ Enactments)}
     \label{tab:tier3_supreme_court_benchmark}
-    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{2.2cm}>{\RaggedRight\arraybackslash}p{3.6cm}>{\RaggedRight\arraybackslash}p{3.0cm}>{\RaggedRight\arraybackslash}p{3.2cm}>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.4cm}>{\RaggedRight\arraybackslash}X}
+    \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{2.0cm}>{\RaggedRight\arraybackslash}X>{\RaggedRight\arraybackslash}p{3.4cm}>{\RaggedRight\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.3cm}>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.8cm}}
         \toprule
-        \textbf{Case ID} & \textbf{Dispute Title} & \textbf{Challenged Local Act} & \textbf{Controlling Statute} & \textbf{Gold} & \textbf{Base $P$} & \textbf{$\tau^*(u,v)$} & \textbf{Pred.} & \textbf{Supreme Court Holding \& System Alignment} \\
+        \textbf{Case ID} & \textbf{Dispute Title} & \textbf{Challenged Local Act} & \textbf{Controlling Statute} & \textbf{Gold} & \textbf{Base $P$} & \textbf{$\tau^*(u,v)$} & \textbf{Pred.} & \textbf{Outcome} \\
         \midrule
-        \texttt{DAVAO-01} & \textit{Mosqueda v. PBGEA} & Ord. 0309-07 (Aerial Ban) & PD 1144 \S6 (FPA Mandate) & Contra & 3.8\% & 0.375 & Neutral & \textbf{Undetected Preemption FN}: Overturned by SC; regulatory agency jurisdiction (FPA mandate) represents jurisdictional delegation under \textit{Magtajas} rather than direct surface contradiction. \\
-        \addlinespace[1pt]
-        \texttt{DAVAO-02} & \textit{Evasco v. Monta\~nez} & Ord. 092-2000 (Signages) & RA 7160 \S458; PD 1096 & Entail & 19.2\% & 0.375 & Neutral & \textbf{Validated TN}: Upheld as valid local police power; model classifies as compliant, preserving municipal zoning setbacks without false alarm. \\
-        \addlinespace[1pt]
-        \texttt{DAVAO-03} & \textit{City of Davao v. ARC} & Ord. 0158-05 \S69(f) & RA 7160 \S143(f) & Neutral & 6.2\% & 0.300 & Neutral & \textbf{Validated TN}: Facially compliant text mirroring national statute; struck down by SC as an as-applied administrative assessment by City Treasurer against passive holding company. \\
-        \addlinespace[1pt]
-        \texttt{DAVAO-04} & \textit{First Meridian} / \textit{Rock Steel} & Ord. 158-05 \S423 (Protest) & RA 7160 \S195 (Local Taxes) & Contra & 100.0\% & 0.300 & Contra & \textbf{Validated TP}: Mandatory payment under protest under Ord. 158-05 \S423 voided against RA 7160 \S195 in \textit{Rock Steel}; detected at 100.0\%. \\
-        \addlinespace[1pt]
-        \texttt{DAVAO-05} & \textit{City of Davao v. GSIS} & Ord. 0158-05 \S8 (Tax Exemption) & RA 7160 \S\S193, 234 & Entail & 0.1\% & 0.300 & Neutral & \textbf{Validated TN}: Real property tax withdrawal of GOCC exemptions upheld; model affirms delegated statutory authority. \\
-        \addlinespace[1pt]
-        \texttt{DAVAO-06} & Davao Mining Ban Dispute & Ord. 0325-15 (Mining Ban) & RA 7942 \S\S4, 27 (Mining) & Contra & 0.1\% & 0.375 & Entail & \textbf{Undetected Preemption FN}: Preempted under RA 7942 national concession system; model evaluates state mineral ownership as harmonious with municipal environmental protection. \\
-        \addlinespace[1pt]
-        \texttt{DAVAO-07} & Davao Anti-Smoking Code & Ord. 0367-12 (Smoking) & RA 7160 \S16; RA 9211 \S5 & Entail & 14.6\% & 0.400 & Neutral & \textbf{Validated TN}: Non-litigated control enactment; valid stricter local health standard under General Welfare Clause; cleared without false alarm. \\
-        \addlinespace[1pt]
-        \texttt{DAVAO-08} & Davao Speed Limit Code & Ord. 0270-23 (Speed Limits) & RA 4136; JAO 2018-01 & Entail & 4.2\% & 0.300 & Neutral & \textbf{Validated TN}: Non-litigated control enactment; valid delegated speed classification under Joint JAO 2018-01; verified non-preempted. \\
-        \addlinespace[1pt]
-        \texttt{SC-PHIL-09} & \textit{Magtajas v. Pryce} & CDO Ord. 3375-93 (Casino) & PD 1869 \S1; RA 7160 \S5(a) & Contra & 100.0\% & 0.375 & Contra & \textbf{Validated TP}: Foundational preemption ruling; casino ban void against PAGCOR charter; detected with 100.0\% confidence. \\
-        \addlinespace[1pt]
-        \texttt{SC-PHIL-10} & \textit{Manila v. Laguio} & Manila Ord. 7783 (Motels) & 1987 Const. Art. III \S1 & Contra & 11.8\% & 0.375 & Neutral & \textbf{Undetected Preemption FN}: Police power overreach voided under Substantive Due Process; constitutional balancing exceeds sentence-level textual NLI. \\
-        \midrule
-        \multicolumn{9}{@{}p{\linewidth}@{}}{\scriptsize \textit{Note:} Authentic preemption validation suite comprising ten enactments: eight landmark Davao City enactments (five Supreme Court litigated disputes, one environmental mining ban enactment, and two verified non-litigated municipal control enactments) alongside two foundational national preemption precedents from Cagayan de Oro and Manila. Authentic local ordinances transcribed from Sangguniang Panlungsod archives. Controlling statutes retrieved from Lawphil. Classification decisions generated by the fine-tuned \texttt{DeBERTa-v3} cross-encoder under Topologically Calibrated Dynamic Thresholding ($\tau^*(u, v) \in [0.300, 0.400]$, Configuration~B). Reported prediction probabilities reflect continuous raw softmax contradiction scores on 100\% authentic verbatim text without heuristic keyword interventions. For \texttt{DAVAO-01}, evaluating the enactment against the litigated judicial baseline (PD~1144 \S6) yields a neutral classification due to the absence of direct modal commands in the regulatory statute; however, unassisted open-corpus candidate retrieval across the full national corpus surfaces Republic Act No.~7296 \S\S3 and~7 (air spraying franchise mandate), which the cross-encoder flags as a high-confidence deontic contradiction (100.0\%), as analyzed in Section~\ref{sec:tier3_open_corpus_preemption}.} \\
+        \texttt{DAVAO-01} & \textit{Mosqueda v. PBGEA} & Ord. 0309-07 (Aerial Ban) & PD 1144 \S6 (FPA Mandate) & Contra & 3.8\% & 0.375 & Neutral & Missed (FN) \\
+        \texttt{DAVAO-02} & \textit{Evasco v. Monta\~nez} & Ord. 092-2000 (Signages) & RA 7160 \S458; PD 1096 & Entail & 19.2\% & 0.375 & Neutral & Cleared (TN) \\
+        \texttt{DAVAO-03} & \textit{City of Davao v. ARC} & Ord. 0158-05 \S69(f) & RA 7160 \S143(f) & Neutral & 6.2\% & 0.300 & Neutral & Cleared (TN) \\
+        \texttt{DAVAO-04} & \textit{First Meridian} / \textit{Rock Steel} & Ord. 158-05 \S423 (Protest) & RA 7160 \S195 (Local Taxes) & Contra & 100.0\% & 0.300 & Contra & Caught (TP) \\
+        \texttt{DAVAO-05} & \textit{City of Davao v. GSIS} & Ord. 0158-05 \S8 (Tax Exempt.) & RA 7160 \S\S193, 234 & Entail & 0.1\% & 0.300 & Neutral & Cleared (TN) \\
+        \texttt{DAVAO-06} & Davao Mining Ban Dispute & Ord. 0325-15 (Mining Ban) & RA 7942 \S\S4, 27 (Mining) & Contra & 0.1\% & 0.375 & Entail & Missed (FN) \\
+        \texttt{DAVAO-07} & Davao Anti-Smoking Code & Ord. 0367-12 (Smoking) & RA 7160 \S16; RA 9211 \S5 & Entail & 14.6\% & 0.400 & Neutral & Cleared (TN) \\
+        \texttt{DAVAO-08} & Davao Speed Limit Code & Ord. 0270-23 (Speed Limits) & RA 4136; JAO 2018-01 & Entail & 4.2\% & 0.300 & Neutral & Cleared (TN) \\
+        \texttt{SC-PHIL-09} & \textit{Magtajas v. Pryce} & CDO Ord. 3375-93 (Casino) & PD 1869 \S1; RA 7160 \S5(a) & Contra & 100.0\% & 0.375 & Contra & Caught (TP) \\
+        \texttt{SC-PHIL-10} & \textit{Manila v. Laguio} & Manila Ord. 7783 (Motels) & 1987 Const. Art. III \S1 & Contra & 11.8\% & 0.375 & Neutral & Missed (FN) \\
         \bottomrule
     \end{tabularx}
 \end{table}
@@ -1226,7 +1181,6 @@ To maintain strict correspondence between manuscript reporting and web prototype
         \midrule
         \texttt{SC-PHIL-10} & 13 (3 / 4 op.) & Manila Ord. 7783 \S1 vs. PD~499 \S1; \S2 vs. RA~8975 \S7, BP~880 \S6 & 61.1--100.0\% / 0.300--0.45 / $d_G \ge 1$ & \textit{no}, \textit{prohibited}, \textit{Mayor} vs. \textit{COMMERCIAL}, \textit{issue}, \textit{shall} & Zoning \& Mayoral Duty Conflict \\
         \bottomrule
-        \multicolumn{6}{@{}p{\linewidth}@{}}{\scriptsize \textit{Note:} Metrics recorded directly from full-PDF executions on the prototype neural backend without manual candidate injection or snippet fallbacks (Section counts list operative sections against total parsed sections; $d_G = \infty$ denotes unlinked pairs assigned the baseline cutoff $\tau^* = 0.450$). System Conflict Flags count individual $(\text{section}, \text{candidate\_statute})$ inspection cards rendered in the prototype user interface.} \\
     \end{tabularx}
 \end{table}
 \end{landscape}

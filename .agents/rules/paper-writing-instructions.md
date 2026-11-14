@@ -45,10 +45,10 @@ description: This rule shall be applied when the user wants the thesis paper dra
 >    * The manuscript must read strictly as a formal, peer-reviewed scientific paper.  
 >    * **NEVER** mention course milestones, syllabus requirements, professor instructions, teacher prompts, grading rubrics, or institutional submission deadlines within the thesis prose (e.g., never write *"as required by Milestone 3"* or *"per the professor's guidelines"*).  
 >    * Frame all methodologies, experiments, and analyses as intentional, scientifically motivated research decisions.
-> 11. **Compact, Proportionate Publication Tables:**  
->    * Tables must not be unnecessarily long, tall, or vertically stretched.  
->    * Use compact row heights (`\renewcommand{\arraystretch}{0.88}` to `0.92`), appropriate font sizing (`\footnotesize` or `\scriptsize`), and tight horizontal padding (`\setlength{\tabcolsep}{2.5pt}` to `4pt`).  
->    * Design column widths so that data cells fit on a single line wherever feasible. Ensure multi-row screening benchmarks (such as 28-model sweeps) fit neatly on a single page without spilling onto orphan float pages.
+> 11. **Compact, Concise Value-Only Publication Tables (No Notes or Cell Prose):**
+>    * Tables must strictly lay out numerical metrics, configurations, and short categorical or outcome labels (e.g., `Missed (FN)`, `Cleared (TN)`, `Caught (TP)`)—never descriptive phrases, legal reasoning, or multi-sentence paragraphs inside table cells.
+>    * **Do NOT include `\textit{Note:}` blocks underneath tables.** All evaluation context, hardware specifications, sample sizes, abbreviations, and analytical findings belong in the surrounding body prose (and concise caption), not in table footnotes.
+>    * Use compact row heights (`\renewcommand{\arraystretch}{0.88}` to `0.92`), appropriate font sizing (`\footnotesize` or `\scriptsize`), and tight horizontal padding (`\setlength{\tabcolsep}{2.5pt}` to `4pt`), placing wide multi-column tables in `pdflscape` when needed so rows fit cleanly on a single page without overflowing margins.
 > 12. **Chronological & Structural Separation of Chapters (Avoiding the "Curse of Knowledge"):**  
 >    * The manuscript must maintain strict narrative and structural boundary separation across chapters, strictly avoiding the **"Curse of Knowledge"**—the cognitive bias of drafting early chapters with hindsight or prematurely referencing specific later-stage implementations, downstream algorithmic selections, or empirical findings that have not yet been introduced.  
 >    * Each chapter serves a distinct, self-contained scientific vision:  

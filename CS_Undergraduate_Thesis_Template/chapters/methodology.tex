@@ -1054,6 +1054,48 @@ def retrieve_top_k_candidates(draft_section, statutory_corpus, k=50, k_rrf=60, b
         \item \textbf{Distilled Edge Baselines:} \texttt{all-MiniLM-L6-v2} (22M), \texttt{nli-distilroberta-base} (82M), \texttt{distilbert-base-uncased} (66M), and \texttt{albert-base-v2} (12M).
     \end{itemize}
 
+    To document the exact software versions, release years, parameter capacities, context limits, and precision settings used across all pipeline stages, Table~\ref{tab:candidate_model_specifications} provides the technical specification matrix for the deployed ingestion, retrieval, and shortlisted inference architectures.
+
+    \clearpage
+    \begin{landscape}
+    \begin{table}[p]
+        \centering
+        \scriptsize
+        \setlength{\tabcolsep}{3.5pt}
+        \renewcommand{\arraystretch}{0.90}
+        \caption[Technical Specifications of Deployed and Shortlisted Models]{Technical Specifications, Checkpoint Identifiers, Release Years, and Architectural Bounds of Deployed and Shortlisted Models}
+        \label{tab:candidate_model_specifications}
+        \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{3.1cm}>{\RaggedRight\arraybackslash}X>{\centering\arraybackslash}p{1.1cm}>{\centering\arraybackslash}p{1.3cm}>{\centering\arraybackslash}p{2.2cm}>{\RaggedRight\arraybackslash}p{4.2cm}}
+            \toprule
+            \textbf{Model / Alias} & \textbf{Base Checkpoint / Version} & \textbf{Year} & \textbf{Params} & \textbf{Max Seq. / Dim.} & \textbf{Stage \& Configuration} \\
+            \midrule
+            Qwen2.5-VL-3B & \nolinkurl{Qwen/Qwen2.5-VL-3B-Instruct}~\cite{bai2025qwen25vl} & 2025 & 3.0B & 32,768 (1K gen) & Stage 0 OCR; 4-bit NF4 \\
+            all-MiniLM-L6-v2* & \nolinkurl{sentence-transformers/all-MiniLM-L6-v2} & 2021 & 22.7M & 512 / 384-d & Stage 1 Dense + Stage 2 \\
+            bge-small-en-v1.5 & \nolinkurl{BAAI/bge-small-en-v1.5}~\cite{xiao2024bge} & 2023 & 33.4M & 512 / 384-d & Stage 1 Dense candidate \\
+            bge-base-en-v1.5 & \nolinkurl{BAAI/bge-base-en-v1.5}~\cite{xiao2024bge} & 2023 & 109M & 512 / 768-d & Stage 1 Dense candidate \\
+            e5-base-v2 & \nolinkurl{intfloat/e5-base-v2}~\cite{wang2022text} & 2022 & 109M & 512 / 768-d & Stage 1 Dense candidate \\
+            all-mpnet-base-v2 & \nolinkurl{sentence-transformers/all-mpnet-base-v2}~\cite{song2020mpnet} & 2021 & 109M & 512 / 768-d & Stage 1 Dense candidate \\
+            bge-m3 & \nolinkurl{BAAI/bge-m3}~\cite{chen2024bgem3} & 2024 & 568M & 8,192 / 1,024-d & Stage 1 Dense candidate \\
+            DeBERTa-v3-base-NLI* & \nolinkurl{MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli}~\cite{laurer2024less} & 2024 & 86M & 512 / 768-d & Stage 2 Finalist (12L, 12H) \\
+            DeBERTa-v3-large-NLI & \nolinkurl{MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli}~\cite{laurer2024less} & 2024 & 435M & 512 / 1,024-d & Stage 2 Ceiling (24L, 16H) \\
+            deberta-v3-base & \nolinkurl{microsoft/deberta-v3-base}~\cite{he2023debertav3} & 2023 & 86M & 512 / 768-d & Stage 2 Cold MLM baseline \\
+            ModernBERT-base & \nolinkurl{answerdotai/ModernBERT-base}~\cite{warner2024modernbert} & 2024 & 149M & 8,192 / 768-d & Stage 1 \& 2 FlashAttn-2 \\
+            ModernBERT-large & \nolinkurl{answerdotai/ModernBERT-large}~\cite{warner2024modernbert} & 2024 & 395M & 8,192 / 1,024-d & Stage 2 Long-Context \\
+            PoL-BERT-Large & \nolinkurl{pile-of-law/legalbert-large-1.7M-2}~\cite{henderson2022pileoflaw} & 2022 & 340M & 512 / 1,024-d & Stage 2 Legal Admin \\
+            legal-bert-base & \nolinkurl{nlpaueb/legal-bert-base-uncased}~\cite{chalkidis2020legal} & 2020 & 110M & 512 / 768-d & Stage 1 \& 2 Legal Judicial \\
+            InLegalBERT & \nolinkurl{law-ai/InLegalBERT}~\cite{paul2022inlegalbert} & 2022 & 110M & 512 / 768-d & Stage 2 Common Law \\
+            bert-base-uncased & \nolinkurl{google-bert/bert-base-uncased}~\cite{devlin2019bert} & 2019 & 110M & 512 / 768-d & Stage 2 Supervised Anchor \\
+            bge-reranker-v2-m3 & \nolinkurl{BAAI/bge-reranker-v2-m3}~\cite{chen2024bgem3} & 2024 & 568M & 8,192 / 1,024-d & Stage 2 Reranker head \\
+            mdeberta-v3-base & \nolinkurl{microsoft/mdeberta-v3-base}~\cite{he2023debertav3} & 2023 & 86M & 512 / 768-d & Stage 2 Multilingual \\
+            nli-distilroberta & \nolinkurl{cross-encoder/nli-distilroberta-base} & 2021 & 82M & 512 / 768-d & Stage 2 Distilled NLI \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+    \end{landscape}
+    \clearpage
+
+    Table~\ref{tab:candidate_model_specifications} details the exact checkpoint identifiers, release years, parameter counts, and sequence bounds for every deployed and shortlisted transformer model evaluated in the pipeline. Providing exact repository versions rather than generic family labels ensures experimental traceability across both the laptop training environment (Host~B) and the municipal desktop edge testbed (Host~A). As shown in the matrix, the candidate architectures span compact 22.7M-parameter bi-encoders built for rapid cosine indexing alongside 86M-to-568M-parameter cross-encoders featuring standard 512-token or extended 8,192-token windows. Pinning both the base NLI checkpoint (\texttt{MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli}) and the quantized 4-bit ingestion model (\texttt{Qwen2.5-VL-3B-Instruct}) establishes fixed software baselines prior to empirical tuning.
+
     Evaluating all 28 candidate models through full training runs and human evaluation would require prohibitive computing time and memory. Following standard experimental practices in machine learning~\cite{dodge2019show, caruana2004ensemble}, the proponents organized the evaluation into a practical Three-Stage Funnel. In the first stage of rapid zero-shot screening ($N = 28$), all candidate models are tested out-of-the-box on the stratified held-out test split ($\mathcal{D}_{\text{test}}$, $N = 53$) without task fine-tuning. This initial screening rapidly benchmarks inference latency and GPU memory occupancy on standard test hardware while revealing baseline affirmative bias where unadapted models reflexively default toward Entailment or Neutral on complex statutory text~\cite{alshehri2026cross, tran2026enhancing}. Promising models that satisfy baseline operational constraints advance to the second stage of supervised fine-tuning and ablation sweeps.  In this stage, models undergo supervised task adaptation on the training set ($N_{\text{train}} = 245$) and validation split ($N_{\text{val}} = 52$) across standard learning rates and batch sizes ($\eta \in \{1, 2, 3\} \times 10^{-5}$, $B \in \{8, 16\}$), testing empirical loss convergence, early stopping triggers, and cost-sensitive threshold calibration ($\tau^* \in [0.25, 0.50]$). Finally, in the third stage of finalist benchmarking, the top performing models on the validation split, along with the canonical bert-base-uncased baseline, are selected as finalists for full out-of-sample evaluation on the 350-pair ground truth dataset (comprising 198 unique instances).
 
     Restricting the final evaluation to the top five validation models alongside the standard baseline anchor is guided by four practical methodological considerations. First, tuning hyperparameters and selecting models strictly on validation data ($\mathcal{D}_{\text{val}}$) protects the integrity of the test set, preventing holdout data snooping and ensuring that out-of-sample generalization metrics remain methodologically unbiased~\cite{dwork2015reusable}. Second, restricting pairwise statistical comparisons to six finalists controls family-wise error rates, avoiding the inflated risk of false positives inherent in uncorrected testing across dozens of models~\cite{dietterich1998approximate} while enabling dependable pairwise significance testing against bert-base-uncased ($\chi^2, p < 0.05$). Third, benchmarking across model scales isolates efficiency trade-offs, determining whether incremental accuracy gains from 400M-parameter architectures justify their substantial latency and VRAM footprint on municipal office hardware~\cite{schwartz2020green, strubell2019energy}. Fourth, the finalist cohort spans diverse inductive biases, encompassing pre-aligned NLI reasoners (DeBERTa-v3-large-NLI and DeBERTa-v3-base-NLI), modern long-context encoders (ModernBERT-large), unaligned general foundations (cold deberta-v3-base), and legal domain pretraining (PoL-BERT-Large).
