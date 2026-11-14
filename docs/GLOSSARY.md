@@ -683,6 +683,10 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** In Explainable AI (XAI), *faithfulness* measures whether an explanation accurately reflects the model's actual internal decision-making process, while *plausibility* measures whether the explanation merely sounds convincing to a human.
 * **In This Thesis:** Grounding the review interface in intrinsic cross-attention token heatmaps ensures faithfulness to the model's actual reasoning, avoiding generative hallucinations that appear plausible but misrepresent statutory analysis.
 
+### **System Conflict Flags (Candidate Preemption Pairs)**
+* **Plain Meaning:** Individual `(ordinance_section, candidate_statute)` evaluation cards surfaced whenever Stage 2 neural contradiction confidence exceeds the dynamic cutoff $\tau^*(u, v)$, replacing earlier ambiguous "triage alert" phrasing.
+* **In This Thesis:** Distinguishes raw computational system alerts rendered on the prototype web dashboard (e.g., 10 flags across 2 sections in *Mosqueda*, 66 flags across 22 sections in *Evasco*) from substantive judicial findings of unconstitutionality. Because an automated NLI screen cannot weigh constitutional reasonableness or implied repeal, every System Conflict Flag functions strictly as an inspectable decision-support prompt for Sangguniang Panlungsod legal researchers.
+
 ---
 
 *This glossary is maintained as a living reference. Whenever new models, metrics, or legal doctrines are introduced to the thesis manuscript, they are immediately added here.*

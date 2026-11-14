@@ -6,11 +6,33 @@
 **Course Professor:** Ma'am Grace Tacadao  
 **Institution:** Department of Computer Science, School of Arts and Sciences, Ateneo de Davao University  
 **Repository:** [`https://github.com/yyaahhzxc/thesis-repo`](https://github.com/yyaahhzxc/thesis-repo)  
-**Last Updated:** 2026-11-13  
+**Last Updated:** 2026-11-14  
 
 ---
 
 ## **Chronological Session Progress Journal**
+
+### **November 14, 2026 (Session: Full-Text SC Reference Verification, Demo Snippet Removal, Synchronized Tier 3 Full-PDF Audit & §4.6 Rewrite)**
+- **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
+- **Full-Text SC & CTA Judicial Verification (`docs/references/` & `CS_Undergraduate_Thesis_Template/references.bib`):**
+  - Replaced short SC snippet stubs `scp2022davaovarc.pdf` (7 pages, G.R. No. 249668 Lawphil resolution) and `scp2022firstmeridian.pdf` (35 pages, CTA EB No. 1607 affirmed by G.R. No. 240078) with authentic full-text decisions, and added `ctarocksteel139.pdf` (28 pages, *Rock Steel Resources, Inc. v. City of Davao*, CTA AC No. 139 expressly invalidating Ord. 0158-05 §423 payment under protest against RA 7160 §195).
+  - Corrected stale docket typos (`G.R. No. 207077` -> `G.R. No. 240078`, `G.R. No. 249822` -> `G.R. No. 249668`) and `§135` -> `§69(f)` attribution in `methodology.tex` and `results_and_discussion.tex`.
+- **Demo Backend Hardening (`src/demo/app.py`):**
+  - Completely removed `TIER3_TXT_MAP`, scanned-PDF text fallbacks, and `CASES_DICT` 1-sentence fallbacks; replaced with strict `TIER3_PDF_MAP` + `_extract_pdf_text(source)` returning explicit extraction errors rather than silently falling back to snippets. Verified `py_compile` clean.
+- **Synchronized Tier 3 Full-PDF Audit (`scripts/run_tier3_clean_sync.py`):**
+  - Completed clean `--suite standard8` full-PDF execution matching live UI pair counting into `output/tier3_live_demo_full_audit_all10.json` and `output/tier3_live_demo_audit_report.txt`:
+    - `DAVAO-TIER3-01` (*Mosqueda*): 9 secs (4 op.) -> 10 flags / 2 secs (RA 7296/8700).
+    - `DAVAO-TIER3-02` (*Evasco*): 52 secs (45 op.) -> 66 flags / 22 secs (RA 9211 §17, EO 165, RA 7394 §73 + historical charter leakage).
+    - `DAVAO-TIER3-05` (*GSIS*): 19 secs (19 op.) -> 37 flags / 13 secs (RA 7160 §§234, 236, 250 + pre-1991 RPT charters).
+    - `DAVAO-TIER3-06` (*Mining Ban*): 10 secs (6 op.) -> 6 flags / 2 secs (recovered RA 7942 §§76, 43 at 98.4%/98.1%).
+    - `DAVAO-TIER3-07` (*Anti-Smoking*): 15 secs (7 op.) -> 3 flags / 2 secs (EO 106 §1 at 93.0%).
+    - `DAVAO-TIER3-08` (*Speed Limits*): 30 secs (23 op.) -> 32 flags / 9 secs (RA 4136 §§35, 36 at 88.1%–99.2%).
+    - `SC-PHIL-09` (*Magtajas*): 7 secs (5 op.) -> 13 flags / 4 secs (PD 1399 §4, PD 956 §§2/8, RA 10927 §3).
+    - `SC-PHIL-10` (*Manila v. Laguio*): 5 secs (4 op.) -> 13 flags / 3 secs (PD 499 §1 at 61.1%, RA 8975 §7, BP 880 §6).
+  - Launched long-running `--suite revcode` full-PDF background sweep on the 129-page Davao City Revenue Code (`DAVAO-TIER3-03` & `04`, chunked into 435 sections / 423 operative).
+- **Chapter 4 (§4.6) & Cross-Manuscript Terminology Simplification:**
+  - Simplified overused `"triage"` jargon across `abstract.tex`, `conclusions.tex`, `literature_review.tex`, `methodology.tex`, and `results_and_discussion.tex` into **"System Conflict Flags"** and **"Conflict Flag Category"** in Table 4.16.
+  - Rewrote §4.6 discussion and Table 4.16 around the synchronized full-PDF counts, what the system got right vs. missed, open-corpus discovery & charter noise drivers, and explicit CS scope boundaries separating NLI flags from judicial adjudication.
 
 ### **November 13, 2026 (Session: Live Demo-Site Tier 3 Full-Document Audit, Kaggle GPU Execution & XAI Attention Saliency Reconciliation)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.

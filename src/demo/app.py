@@ -1534,20 +1534,34 @@ def get_tier2_ordinance(doc_id):
 
 
 
-TIER3_TXT_MAP = {
-    "DAVAO-TIER3-01": "Ordinance_No._0309-07.txt",
-    "DAVAO-TIER3-02": "Ordinance_No._092-2000.txt",
-    "DAVAO-TIER3-03": "Ordinance_No._158-05_§135.txt",
-    "DAVAO-TIER3-04": "Ordinance_No._158-05_§423.txt",
-    "DAVAO-TIER3-05": "Davao_City_Real_Property_Tax_Assessment_on_GSIS.txt",
-    "DAVAO-TIER3-06": "Ordinance_No._0310-07.txt",
-    "DAVAO-TIER3-07": "Ordinance_No._0367-12.txt",
-    "DAVAO-TIER3-08": "Ordinance_No._0270-23.txt"
+TIER3_PDF_MAP = {
+    "DAVAO-TIER3-01": "01_mosqueda_aerial_spraying_ban.pdf",
+    "DAVAO-TIER3-02": "02_evasco_billboard_regulation.pdf",
+    "DAVAO-TIER3-03": "03_arc_investors_holding_tax.pdf",
+    "DAVAO-TIER3-04": "04_first_meridian_payment_under_protest.pdf",
+    "DAVAO-TIER3-05": "05_davao_gsis_property_tax.pdf",
+    "DAVAO-TIER3-06": "06_mining_ban_watershed.pdf",
+    "DAVAO-TIER3-07": "07_davao_anti_smoking_stricter_standard.pdf",
+    "DAVAO-TIER3-08": "08_davao_speed_limits_traffic_code.pdf",
+    "SC-PHIL-09": "09_magtajas_casino_preemption.pdf",
+    "SC-PHIL-10": "10_city_of_manila_laguio_due_process.pdf",
 }
 
 
+def _extract_pdf_text(source):
+    """Extracts searchable full text from a PDF file path or BytesIO stream."""
+    if pypdf is None:
+        return None, "pypdf is not installed. Run 'pip install pypdf' to enable PDF extraction."
+    try:
+        reader = pypdf.PdfReader(source)
+        pages_text = [page.extract_text() or "" for page in reader.pages]
+        return "\n\n".join(pages_text).strip(), None
+    except Exception as e:
+        return None, f"Failed to extract text from PDF: {str(e)}"
+
+
 def extract_document_payload():
-    """Extracts raw text, filename, and doc_id from request (multipart/form-data or JSON)."""
+    """Extracts full document text, filename, and doc_id from request without partial snippet fallbacks."""
     raw_text = ""
     filename = "Draft Ordinance"
     doc_id = None
@@ -1556,34 +1570,11 @@ def extract_document_payload():
         uploaded_file = request.files["file"]
         filename = uploaded_file.filename
         if filename.lower().endswith(".pdf"):
-            if pypdf is None:
-                return None, None, None, "pypdf is not installed. Run 'pip install pypdf' to enable PDF extraction."
-            try:
-                pdf_bytes = io.BytesIO(uploaded_file.read())
-                reader = pypdf.PdfReader(pdf_bytes)
-                pages_text = [page.extract_text() or "" for page in reader.pages]
-                raw_text = "\n\n".join(pages_text).strip()
-            except Exception as e:
-                return None, None, None, f"Failed to extract text from PDF: {str(e)}"
-
-            # If PDF text extraction yielded empty string (scanned PDF image), attempt filename match fallback
+            raw_text, pdf_err = _extract_pdf_text(io.BytesIO(uploaded_file.read()))
+            if pdf_err:
+                return None, None, None, pdf_err
             if not raw_text:
-                for k, fname in TIER3_TXT_MAP.items():
-                    stem = fname.replace(".txt", "").lower()
-                    k_num = stem.replace("ordinance_no._", "").replace("_", " ")
-                    if stem in filename.lower() or k_num in filename.lower() or (k.lower() in filename.lower()):
-                        t3_path = BASE_DIR / "ground_truth" / "tier3_sc_cases" / "davao_city_tier3_ordinances" / fname
-                        if not t3_path.exists():
-                            t3_path = BASE_DIR / "corpus" / "davao_city_tier3_ordinances" / fname
-                        if t3_path.exists():
-                            with open(t3_path, "r", encoding="utf-8") as f:
-                                raw_text = f.read()
-                            doc_id = k
-                            filename = fname.replace(".txt", "").replace("_", " ")
-                            break
-
-                if not raw_text:
-                    return None, None, None, "The uploaded PDF has no extractable digital text layer (it appears to be a scanned image). Please select one of the pre-loaded sample ordinances below or upload a searchable text document."
+                return None, None, None, "The uploaded PDF has no extractable digital text layer (it appears to be a scanned image or empty PDF). Full searchable document text is required; partial text fallbacks are disabled."
 
         elif filename.lower().endswith(".json"):
             try:
@@ -1592,21 +1583,22 @@ def extract_document_payload():
                     raw_text = "\n\n".join([f"SECTION {s['sec_num']}. {s.get('sec_title', '')} - {s.get('text', '')}" for s in data["sections"]])
                     doc_id = data.get("doc_id") or data.get("case_id")
                     filename = data.get("title", filename)
-                elif "challenged_clause_text" in data or "challenged_text" in data or "premise_text" in data:
-                    c_text = data.get("challenged_clause_text") or data.get("challenged_text") or data.get("premise_text", "")
-                    c_title = data.get("ordinance_no") or data.get("ordinance_title") or data.get("title") or "Operative Provision"
-                    raw_text = f"{c_title}\n\n{c_text}" if not c_text.strip().upper().startswith("SECTION") else c_text
-                    doc_id = data.get("case_id") or data.get("doc_id")
-                    filename = data.get("ordinance_title") or data.get("title") or data.get("case_name") or filename
-                elif "case_id" in data and data["case_id"] in CASES_DICT:
+                elif "case_id" in data and data["case_id"] in TIER3_PDF_MAP:
                     doc_id = data["case_id"]
-                    c = CASES_DICT[doc_id]
-                    filename = c.get("title") or c.get("ordinance_title") or c.get("case_name") or doc_id
-                    c_title = c.get("ordinance_no") or "Operative Provision"
-                    c_text = c.get("challenged_text") or c.get("challenged_clause_text", "")
-                    raw_text = f"SECTION 1. {c_title} - {c_text}"
+                    pdf_name = TIER3_PDF_MAP[doc_id]
+                    pdf_path = BASE_DIR / "src" / "demo" / "sample_cases" / "pdf" / pdf_name
+                    if not pdf_path.exists():
+                        return None, None, None, f"Full PDF document not found for {doc_id}: {pdf_name}"
+                    raw_text, pdf_err = _extract_pdf_text(str(pdf_path))
+                    if pdf_err or not raw_text:
+                        return None, None, None, pdf_err or f"Full PDF for {doc_id} has no extractable text."
+                    filename = pdf_name
                 else:
-                    raw_text = str(data)
+                    raw_text = data.get("raw_text") or data.get("text") or data.get("document_text") or data.get("content", "")
+                    doc_id = data.get("doc_id") or data.get("case_id")
+                    filename = data.get("filename") or data.get("title", filename)
+                    if not str(raw_text).strip():
+                        return None, None, None, "JSON payload does not contain full document sections or raw document text; partial snippet fallbacks are disabled."
             except Exception as e:
                 return None, None, None, f"Failed to parse JSON file: {str(e)}"
         else:
@@ -1615,15 +1607,20 @@ def extract_document_payload():
     elif request.is_json:
         data = request.get_json() or {}
         doc_id = data.get("doc_id") or data.get("case_id")
+        direct_text = data.get("raw_text") or data.get("text") or data.get("document_text") or data.get("content", "")
 
-        if doc_id and doc_id in TIER3_TXT_MAP:
-            t3_path = BASE_DIR / "ground_truth" / "tier3_sc_cases" / "davao_city_tier3_ordinances" / TIER3_TXT_MAP[doc_id]
-            if not t3_path.exists():
-                t3_path = BASE_DIR / "corpus" / "davao_city_tier3_ordinances" / TIER3_TXT_MAP[doc_id]
-            if t3_path.exists():
-                with open(t3_path, "r", encoding="utf-8") as f:
-                    raw_text = f.read()
-                filename = TIER3_TXT_MAP[doc_id].replace(".txt", "").replace("_", " ")
+        if direct_text and str(direct_text).strip():
+            raw_text = str(direct_text)
+            filename = data.get("filename") or data.get("title", "Draft Ordinance Document")
+        elif doc_id and doc_id in TIER3_PDF_MAP:
+            pdf_name = TIER3_PDF_MAP[doc_id]
+            pdf_path = BASE_DIR / "src" / "demo" / "sample_cases" / "pdf" / pdf_name
+            if not pdf_path.exists():
+                return None, None, None, f"Full PDF document not found for {doc_id}: {pdf_name}"
+            raw_text, pdf_err = _extract_pdf_text(str(pdf_path))
+            if pdf_err or not raw_text:
+                return None, None, None, pdf_err or f"Full PDF for {doc_id} has no extractable text."
+            filename = pdf_name
         elif doc_id and doc_id in TIER2_DOCS_DICT:
             gold = TIER2_DOCS_DICT[doc_id]
             filename = gold.get("title", doc_id)
@@ -1631,21 +1628,11 @@ def extract_document_payload():
         elif "sections" in data:
             raw_text = "\n\n".join([f"SECTION {s['sec_num']}. {s.get('sec_title', '')} - {s.get('text', '')}" for s in data["sections"]])
             filename = data.get("title", filename)
-        elif doc_id and doc_id in CASES_DICT:
-            c = CASES_DICT[doc_id]
-            filename = c.get("title") or c.get("ordinance_title") or c.get("case_name") or doc_id
-            c_title = c.get("ordinance_no") or "Operative Provision"
-            c_text = c.get("challenged_text") or c.get("challenged_clause_text", "")
-            raw_text = f"{c_title}\n\n{c_text}" if not c_text.strip().upper().startswith("SECTION") else c_text
-        elif "challenged_clause_text" in data or "challenged_text" in data or "premise_text" in data:
-            c_text = data.get("challenged_clause_text") or data.get("challenged_text") or data.get("premise_text", "")
-            c_title = data.get("ordinance_no") or data.get("ordinance_title") or data.get("title") or "Operative Provision"
-            raw_text = f"{c_title}\n\n{c_text}" if not c_text.strip().upper().startswith("SECTION") else c_text
-            doc_id = data.get("case_id") or data.get("doc_id")
-            filename = data.get("ordinance_title") or data.get("title") or data.get("case_name") or filename
         else:
-            raw_text = data.get("raw_text") or data.get("text") or data.get("document_text") or data.get("content", "")
-            filename = data.get("filename") or data.get("title", "Draft Ordinance Document")
+            return None, None, None, f"No full document text or registered full PDF found for doc_id={doc_id}; partial snippet fallbacks are disabled."
+
+    if not str(raw_text).strip():
+        return None, None, None, "Document extraction yielded empty text."
 
     return raw_text, filename, doc_id, None
 
@@ -1761,6 +1748,13 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             cand["is_conflict"] = is_cand_conflict
             cand["stage2_verdict"] = "Contradiction (Preemption Risk)" if is_cand_conflict else ("Entailment" if res["p_entailment"] >= 0.45 else "Neutral / Harmonious")
             cand["status_badge"] = "danger" if is_cand_conflict else ("success" if res["p_entailment"] >= 0.45 else "info")
+            if is_cand_conflict:
+                cand["summary"] = (
+                    f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {cand.get('citation', '')} "
+                    f"(Contradiction confidence {cand['stage2_confidence']}% exceeding topologically calibrated "
+                    f"decision threshold tau* = {tau_dyn:.3f} at graph distance d_G = {d_g} [{rel_type}] "
+                    f"under Section 5(a) of RA 7160 and the Magtajas doctrine)."
+                )
 
         batch_results.extend(sec_results)
     stage2_elapsed_s = time.perf_counter() - t_start_stage2

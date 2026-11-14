@@ -105,3 +105,13 @@ The agent must proactively execute internal self-critique and forensic verificat
 4. **Bayesian Base-Rate Realism:** Frame screening performance under realistic Bayesian low-prevalence dynamics ($p \le 0.01$).
 5. **Strict Citation-Text Verification:** Every factual assertion, mathematical formulation, experimental baseline, or numerical metric attributed to a cited author (`\cite{...}`) must be explicitly verified against the authentic text of the source and its local PDF in `docs/references/`. Never attribute specific numerical target thresholds to an author unless the cited publication literally specifies that exact figure.
 
+---
+
+## **8. Conflict Counts: Actual Legal Conflicts vs System-Found Alarms**
+
+1. **Clear Distinction in Reporting:**
+   - Whenever discussing, reporting, or analyzing conflict detection results, explicitly distinguish between:
+     - **Actual Substantive Legal Conflicts:** The ground-truth legal conflicts verified under statutory preemption doctrines (*Magtajas* six core rules, statutory fine caps, explicit statutory permissions vs prohibitions).
+     - **System-Found Conflicts / Alarms:** The total raw candidate conflicts flagged by the system (retrieval + Stage 2 DeBERTa-v3 inference exceeding threshold $\tau^*$), regardless of whether they represent true Supreme Court ground truths, stricter-standard local police power friction, or candidate false positives.
+   - Always state both numbers or clarify which one is being discussed to prevent ambiguity.
+
