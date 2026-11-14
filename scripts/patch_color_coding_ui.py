@@ -186,9 +186,11 @@ COLOR_JS = """
         ];
         html = items.map(it => `<div class="legend-item"><span class="legend-dot" style="background:${it.c};"></span><span>${it.l}</span></div>`).join('');
       } else if (currentColorMode === 'jurisdiction') {
+        const localCount = NODES.filter(n => n.jur === 'local').length.toLocaleString();
+        const natCount = NODES.filter(n => n.jur !== 'local').length.toLocaleString();
         const items = [
-          { c: '#00F2FE', l: 'Davao City Local Ordinances (1,664 Enactments)' },
-          { c: '#EC4899', l: 'National Statutes (25,584 Enactments)' }
+          { c: '#00F2FE', l: `Davao City Local Ordinances (${localCount} Enactments)` },
+          { c: '#EC4899', l: `National Statutes (${natCount} Enactments)` }
         ];
         html = items.map(it => `<div class="legend-item"><span class="legend-dot" style="background:${it.c};"></span><span>${it.l}</span></div>`).join('');
       } else if (currentColorMode === 'era') {

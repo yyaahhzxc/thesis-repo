@@ -35,25 +35,41 @@ plt.rcParams['grid.alpha'] = 0.65
 # -------------------------------------------------------------
 # 1. Load Data
 # -------------------------------------------------------------
-print("Loading Local Ordinances JSONL...")
+print("Loading Local Ordinances JSONL (deduplicated to canonical 1,816 unique enactments)...")
 local_jsonl = Path("corpus/city_ordinances/categorized_davao_ordinances.jsonl")
+kg_nodes_path = Path("data/knowledge_graph/statutory_kg_nodes.jsonl")
 
-local_docs = []
+kg_loc_ids = set()
+if kg_nodes_path.exists():
+    with open(kg_nodes_path, "r", encoding="utf-8") as fk:
+        for line in fk:
+            nd = json.loads(line)
+            if nd.get("node_type") == "enactment" and nd.get("jurisdiction") == "local":
+                kg_loc_ids.add(nd["id"])
+
+unique_local_map = {}
+with open(local_jsonl, "r", encoding="utf-8") as f:
+    for line in f:
+        d = json.loads(line)
+        oid = d["ordinance_id"]
+        if kg_loc_ids and oid not in kg_loc_ids:
+            continue
+        if oid not in unique_local_map or "landmark_ordinances" in unique_local_map[oid].get("filename", ""):
+            unique_local_map[oid] = d
+
+local_docs = list(unique_local_map.values())
 local_sec_tokens = []
 local_op_sec_tokens = []
 local_bp_sec_tokens = []
 
-with open(local_jsonl, "r", encoding="utf-8") as f:
-    for line in f:
-        d = json.loads(line)
-        local_docs.append(d)
-        for s in d["sections"]:
-            tok = s["est_tokens"]
-            local_sec_tokens.append(tok)
-            if s["is_boilerplate"]:
-                local_bp_sec_tokens.append(tok)
-            else:
-                local_op_sec_tokens.append(tok)
+for d in local_docs:
+    for s in d["sections"]:
+        tok = s["est_tokens"]
+        local_sec_tokens.append(tok)
+        if s["is_boilerplate"]:
+            local_bp_sec_tokens.append(tok)
+        else:
+            local_op_sec_tokens.append(tok)
 
 df_local = pd.DataFrame(local_docs)
 local_sec_tokens = np.array(local_sec_tokens)
@@ -226,7 +242,7 @@ def generate_local_latent_semantic_space_figure():
                 fontsize=8.2, fontweight='bold', color='#1e6b1e',
                 bbox=dict(boxstyle='round,pad=0.25', facecolor='#f0faf0', edgecolor='#2ca02c', lw=0.7))
 
-    ax.set_title('2D Latent Semantic Topic Space of Municipal Ordinances (SVD-PCA, N = 1,890)', fontsize=11.5, fontweight='bold', pad=14)
+    ax.set_title(f'2D Latent Semantic Topic Space of Local Ordinances (SVD-PCA, N = {len(df_local):,})', fontsize=11.5, fontweight='bold', pad=14)
     ax.set_xlabel(r'Latent Semantic Dimension 1 (Direct Substantive Regulations $\leftarrow\rightarrow$ Executive Contract Authorizations)', fontsize=9.2, fontweight='bold')
     ax.set_ylabel(r'Latent Semantic Dimension 2' + '\n' + r'(Penal & Zoning Mandates $\leftarrow\rightarrow$ Emergency Calamity Funds)', fontsize=9.2, fontweight='bold', labelpad=10)
     ax.grid(True, linestyle='--', alpha=0.5, zorder=0)
@@ -405,10 +421,11 @@ def generate_dual_corpus_length_asymmetry_figure():
     bins = np.logspace(np.log10(300), np.log10(350000), 50)
     
     ax1.hist(nat_chars, bins=bins, density=True, alpha=0.35, color='#1f77b4', edgecolor='#1f77b4', linewidth=0.5, label='National Statutes ($N = 25,432$)')
-    ax1.hist(loc_chars, bins=bins, density=True, alpha=0.45, color='#28a745', edgecolor='#28a745', linewidth=0.5, label=f'Davao City Ordinances ($N = {len(df_local):,})')
+    ax1.hist(loc_chars, bins=bins, density=True, alpha=0.45, color='#28a745', edgecolor='#28a745', linewidth=0.5, label=f'Davao City Ordinances ($N = {len(df_local):,}$)')
     
+    loc_med_chars = float(np.median(loc_chars))
     ax1.axvline(10807, color='#1f77b4', linestyle='-', linewidth=2.0, zorder=4)
-    ax1.axvline(5644, color='#28a745', linestyle='-', linewidth=2.0, zorder=4)
+    ax1.axvline(loc_med_chars, color='#28a745', linestyle='-', linewidth=2.0, zorder=4)
     
     ax1.annotate("National Median\n10,807 chars",
                  xy=(10807, 0.00018), xytext=(24000, 0.00022),
@@ -416,8 +433,8 @@ def generate_dual_corpus_length_asymmetry_figure():
                  fontsize=8.2, fontweight='bold', color='#144870',
                  bbox=dict(boxstyle='round,pad=0.2', facecolor='#eef5fb', edgecolor='#1f77b4', lw=0.6))
                  
-    ax1.annotate("Municipal Median\n5,644 chars",
-                 xy=(5644, 0.00024), xytext=(1100, 0.00025),
+    ax1.annotate(f"Local Median\n{loc_med_chars:,.0f} chars",
+                 xy=(loc_med_chars, 0.00024), xytext=(1100, 0.00025),
                  arrowprops=dict(facecolor='#28a745', edgecolor='#1e6b1e', arrowstyle='->', lw=1.2),
                  fontsize=8.2, fontweight='bold', color='#1e6b1e',
                  bbox=dict(boxstyle='round,pad=0.2', facecolor='#f0faf0', edgecolor='#28a745', lw=0.6))
@@ -502,19 +519,21 @@ def generate_dual_corpus_transformer_compliance_figure():
     ax1.plot(token_eval_points, local_cdf_all, label=f"Municipal Provisions — All ($N = {len(local_sec_tokens):,}$)", color="#28a745", linewidth=2.2, linestyle="-.")
     ax1.plot(token_eval_points, local_cdf_op, label=f"Municipal Provisions — Operative ($N = {len(local_op_sec_tokens):,}$)", color="#fd7e14", linewidth=2.0, linestyle="--")
     
+    loc_all_512 = float((local_sec_tokens <= 512).mean() * 100)
+    loc_op_512 = float((local_op_sec_tokens <= 512).mean() * 100)
     ax1.axvline(512, color="#d62728", linestyle=":", linewidth=1.8, zorder=4)
     ax1.axhline(94.83, color="#1f77b4", linestyle=":", alpha=0.35, linewidth=1.0)
-    ax1.axhline(93.82, color="#28a745", linestyle=":", alpha=0.35, linewidth=1.0)
-    ax1.axhline(91.40, color="#fd7e14", linestyle=":", alpha=0.35, linewidth=1.0)
+    ax1.axhline(loc_all_512, color="#28a745", linestyle=":", alpha=0.35, linewidth=1.0)
+    ax1.axhline(loc_op_512, color="#fd7e14", linestyle=":", alpha=0.35, linewidth=1.0)
     
     ax1.plot(512, 94.83, 'o', color="#1f77b4", markersize=6.5, zorder=5)
     ax1.annotate("94.83% (Natl)", xy=(512, 94.83), xytext=(340, 96.8), fontsize=8.2, fontweight='bold', color="#1f77b4")
     
-    ax1.plot(512, 93.82, 's', color="#28a745", markersize=6.5, zorder=5)
-    ax1.annotate("93.82% (Mun-All)", xy=(512, 93.82), xytext=(535, 94.5), fontsize=8.2, fontweight='bold', color="#28a745")
+    ax1.plot(512, loc_all_512, 's', color="#28a745", markersize=6.5, zorder=5)
+    ax1.annotate(f"{loc_all_512:.2f}% (Loc-All)", xy=(512, loc_all_512), xytext=(535, 90.0), fontsize=8.2, fontweight='bold', color="#28a745")
     
-    ax1.plot(512, 91.40, '^', color="#fd7e14", markersize=6.5, zorder=5)
-    ax1.annotate("91.40% (Mun-Op)", xy=(512, 91.40), xytext=(535, 85.5), fontsize=8.2, fontweight='bold', color="#fd7e14")
+    ax1.plot(512, loc_op_512, '^', color="#fd7e14", markersize=6.5, zorder=5)
+    ax1.annotate(f"{loc_op_512:.2f}% (Loc-Op)", xy=(512, loc_op_512), xytext=(535, 85.5), fontsize=8.2, fontweight='bold', color="#fd7e14")
     
     ax1.annotate("512-Token Threshold", xy=(512, 45), xytext=(535, 32),
                  arrowprops=dict(facecolor='#d62728', edgecolor='#991515', arrowstyle='->', lw=1.1),
@@ -538,7 +557,7 @@ def generate_dual_corpus_transformer_compliance_figure():
         "8,192 Tokens\n(ModernBERT)"
     ]
     nat_rates = [53.80, 82.30, 94.83, 98.92, 99.98]
-    mun_rates = [77.51, 87.42, 93.82, 97.46, 99.88]
+    mun_rates = [round(float((local_sec_tokens <= w).mean() * 100), 2) for w in [128, 256, 512, 1024, 8192]]
     
     x = np.arange(len(windows))
     width = 0.35

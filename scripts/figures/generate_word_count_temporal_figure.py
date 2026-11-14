@@ -48,18 +48,35 @@ def load_data():
                 })
     df_nat = pd.DataFrame(nat_records)
 
-    print("Loading Local Ordinances...")
-    loc_records = []
+    print("Loading Local Ordinances (deduplicated to canonical 1,816 unique enactments)...")
+    kg_loc_ids = set()
+    kg_nodes_path = Path("data/knowledge_graph/statutory_kg_nodes.jsonl")
+    if kg_nodes_path.exists():
+        with open(kg_nodes_path, "r", encoding="utf-8") as fk:
+            for line in fk:
+                nd = json.loads(line)
+                if nd.get("node_type") == "enactment" and nd.get("jurisdiction") == "local":
+                    kg_loc_ids.add(nd["id"])
+
+    loc_map = {}
     with open("corpus/city_ordinances/categorized_davao_ordinances.jsonl", "r", encoding="utf-8") as f:
         for line in f:
             d = json.loads(line)
-            yr = d.get("year")
-            if yr and 1950 <= yr <= 2026:
-                loc_records.append({
-                    "year": yr,
-                    "words": d.get("word_count", 0),
-                    "typology": d.get("typology", "")
-                })
+            oid = d.get("ordinance_id")
+            if kg_loc_ids and oid not in kg_loc_ids:
+                continue
+            if oid not in loc_map or "landmark_ordinances" in loc_map[oid].get("filename", ""):
+                loc_map[oid] = d
+
+    loc_records = []
+    for d in loc_map.values():
+        yr = d.get("year")
+        if yr and 1950 <= yr <= 2026:
+            loc_records.append({
+                "year": yr,
+                "words": d.get("word_count", 0),
+                "typology": d.get("functional_typology", "")
+            })
     df_loc = pd.DataFrame(loc_records)
     return df_nat, df_loc
 

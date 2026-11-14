@@ -1,0 +1,1068 @@
+% !TeX root = ../main.tex
+\chapter[Tier 3 Open-Corpus Audit Results]{Tier 3 Full-Document Open-Corpus Audit Tables}
+\label{app:tier3_full_results}
+
+This appendix documents the complete quantitative outputs from the open-corpus full-PDF system audit recorded in \texttt{output/tier3\_live\_demo\_full\_audit\_all10.json}. All ten benchmark PDFs were processed section-by-section from top to bottom through Stage~1 dual-stream retrieval and Stage~2 \texttt{DeBERTa-v3-base-NLI} cross-attention scoring without oracle hints.
+
+\section{Master Case-Level Open-Corpus Summary}
+\label{sec:app_tier3_summary_table}
+
+\begin{table}[htbp]
+    \centering
+    \scriptsize
+    \setlength{\tabcolsep}{3.0pt}
+    \renewcommand{\arraystretch}{0.88}
+    \caption[Tier 3 Open-Corpus Audit Metrics across Benchmark Cases]{Tier 3 Full-Document Open-Corpus Audit Summary across All Ten Benchmark Cases}
+    \label{tab:app_tier3_summary}
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrrrrrr}
+        \toprule
+        \textbf{Case ID} & \textbf{Pages} & \shortstack[r]{\textbf{Total}\\\textbf{Secs}} & \shortstack[r]{\textbf{Op.}\\\textbf{Secs}} & \shortstack[r]{\textbf{Stage 1}\\\textbf{(s)}} & \shortstack[r]{\textbf{Stage 2}\\\textbf{(s)}} & \shortstack[r]{\textbf{Total}\\\textbf{(s)}} & \shortstack[r]{\textbf{Flagged}\\\textbf{Pairs}} & \shortstack[r]{\textbf{Prob.}\\\textbf{Secs}} \\
+        \midrule
+        \texttt{DAVAO-TIER3-01} & 2 & 9 & 4 & 25.12 & 35.05 & 64.60 & 10 & 2 \\
+        \texttt{DAVAO-TIER3-02} & 14 & 52 & 45 & 396.66 & 412.15 & 882.04 & 66 & 22 \\
+        \texttt{DAVAO-TIER3-03} & 129 & 435 & 423 & 4846.22 & 3266.91 & 8790.58 & 684 & 265 \\
+        \texttt{DAVAO-TIER3-04} & 129 & 435 & 423 & 4846.22 & 3266.91 & 8790.58 & 684 & 265 \\
+        \texttt{DAVAO-TIER3-05} & 7 & 19 & 19 & 344.53 & 203.97 & 590.40 & 37 & 13 \\
+        \texttt{DAVAO-TIER3-06} & 3 & 10 & 6 & 67.43 & 49.53 & 126.13 & 6 & 2 \\
+        \texttt{DAVAO-TIER3-07} & 6 & 15 & 7 & 112.06 & 60.38 & 180.61 & 3 & 2 \\
+        \texttt{DAVAO-TIER3-08} & 13 & 30 & 23 & 276.35 & 160.14 & 468.53 & 32 & 9 \\
+        \texttt{SC-PHIL-09} & 2 & 7 & 5 & 23.96 & 36.79 & 71.01 & 13 & 4 \\
+        \texttt{SC-PHIL-10} & 2 & 5 & 4 & 33.14 & 33.45 & 76.67 & 13 & 3 \\
+        \bottomrule
+    \end{tabular*}
+\end{table}
+
+\section{DAVAO-TIER3-01: Mosqueda v. PBGEA (Ord. No. 0309-07)}
+\label{sec:tab_app_tier3_01}
+
+{\scriptsize\setlength{\tabcolsep}{3.0pt}\renewcommand{\arraystretch}{0.84}
+\begin{longtable}{>{\centering\arraybackslash}p{0.70cm} >{\RaggedRight\arraybackslash}p{4.00cm} >{\RaggedRight\arraybackslash}p{7.00cm} r r r}
+    \caption[DAVAO-TIER3-01 Conflict Pairs]{DAVAO-TIER3-01 Flagged Section--Statute Pairs ($N = 10$)} \label{tab:app_tier3_01} \\
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    2 & POLICY OF THE CITY & REPUBLIC ACT NO. 7296, March 26, 1992 Section 3 & 100.0\% & 2 & 37.5\% \\
+    2 & POLICY OF THE CITY & REPUBLIC ACT NO. 7296, March 26, 1992 Section 7 & 100.0\% & 2 & 37.5\% \\
+    2 & POLICY OF THE CITY & REPUBLIC ACT NO. 8700, July 09, 1998 Section 3 & 100.0\% & 999 & 45.0\% \\
+    2 & POLICY OF THE CITY & REPUBLIC ACT NO. 8700, July 09, 1998 Section 7 & 100.0\% & 2 & 37.5\% \\
+    2 & POLICY OF THE CITY & REPUBLIC ACT NO. 7296, March 26, 1992 Section 6 & 100.0\% & 999 & 45.0\% \\
+    2 & POLICY OF THE CITY & REPUBLIC ACT NO. 7296, March 26, 1992 Section 4 & 100.0\% & 2 & 37.5\% \\
+    5 & BAN OF AERIAL SPRAYING & REPUBLIC ACT NO. 7296, March 26, 1992 Section 3 & 99.9\% & 2 & 37.5\% \\
+    5 & BAN OF AERIAL SPRAYING & REPUBLIC ACT NO. 7296, March 26, 1992 Section 7 & 99.9\% & 2 & 37.5\% \\
+    5 & BAN OF AERIAL SPRAYING & REPUBLIC ACT NO. 8700, July 09, 1998 Section 3 & 99.9\% & 999 & 45.0\% \\
+    5 & BAN OF AERIAL SPRAYING & REPUBLIC ACT NO. 8700, July 09, 1998 Section 7 & 99.8\% & 2 & 37.5\% \\
+\end{longtable}
+}
+
+\section{DAVAO-TIER3-02: Evasco v. Montanez (Ord. No. 092-2000)}
+\label{sec:tab_app_tier3_02}
+
+{\scriptsize\setlength{\tabcolsep}{3.0pt}\renewcommand{\arraystretch}{0.84}
+\begin{longtable}{>{\centering\arraybackslash}p{0.70cm} >{\RaggedRight\arraybackslash}p{4.00cm} >{\RaggedRight\arraybackslash}p{7.00cm} r r r}
+    \caption[DAVAO-TIER3-02 Conflict Pairs]{DAVAO-TIER3-02 Flagged Section--Statute Pairs ($N = 66$)} \label{tab:app_tier3_02} \\
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    4 & APPLICABILITY & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 82.2\% & 999 & 45.0\% \\
+    4 & APPLICABILITY & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 73.6\% & 999 & 45.0\% \\
+    4 & APPLICABILITY & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 63.0\% & 999 & 45.0\% \\
+    4 & APPLICABILITY & REPUBLIC ACT NO. 8472, January 30, 1998 Section 15 & 58.3\% & 999 & 45.0\% \\
+    6 & GENERAL PROVISIONS & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 2 & 98.0\% & 2 & 37.5\% \\
+    6 & GENERAL PROVISIONS & PRESIDENTIAL DECREE No. 1748 Section 3 & 64.6\% & 999 & 45.0\% \\
+    7 & BILLBOARDS AND SIGNAGES & Republic Act No. 9211 June 23, 2003 Section 17 & 93.4\% & 999 & 45.0\% \\
+    7 & BILLBOARDS AND SIGNAGES & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 7 & 48.4\% & 999 & 45.0\% \\
+    8 & REGULATED SCENIC AREAS & REPUBLIC ACT NO. 8471, January 30, 1998 Section 6 & 98.7\% & 999 & 45.0\% \\
+    9 & ALLOWABLE HEIGHT FOR SIGN STRUCTURES IN REGU & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 7 & 96.3\% & 999 & 45.0\% \\
+    9 & ALLOWABLE HEIGHT FOR SIGN STRUCTURES IN REGU & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 6 & 76.1\% & 999 & 45.0\% \\
+    9 & ALLOWABLE HEIGHT FOR SIGN STRUCTURES IN REGU & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 4 & 62.3\% & 999 & 45.0\% \\
+    9 & ALLOWABLE HEIGHT FOR SIGN STRUCTURES IN REGU & REPUBLIC ACT No. 409 Section 19 & 47.6\% & 999 & 45.0\% \\
+    10 & ALLOWABLE SIZE FOR BUSINESS SIGNS & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 78.4\% & 999 & 45.0\% \\
+    13 & CONSTRUCTION OF ROOF SIGNS & REPUBLIC ACT No. 3857 Section 28 & 93.8\% & 999 & 45.0\% \\
+    14 & ALLOWABLE HEIGHT FOR GROUND SIGNS & EXECUTIVE ORDER NO. 32, July 04, 2023 Section 2 & 98.4\% & 999 & 45.0\% \\
+    19 & LIMITATION ON WALL SIGNS AND DISPLAY WINDOWS & REPUBLIC ACT No. 409 Section 19 & 86.0\% & 999 & 45.0\% \\
+    20 & TEMPORARY SIGNS & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 67.7\% & 999 & 45.0\% \\
+    20 & TEMPORARY SIGNS & REPUBLIC ACT NO. 8472, January 30, 1998 Section 15 & 62.9\% & 999 & 45.0\% \\
+    25 & COMBINED LOADS & REPUBLIC ACT No. 11285 Section 24 & 99.0\% & 999 & 45.0\% \\
+    25 & COMBINED LOADS & REPUBLIC ACT NO. 11689, April 11, 2022 Section 27 & 96.4\% & 999 & 45.0\% \\
+    25 & COMBINED LOADS & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 7 & 95.6\% & 999 & 45.0\% \\
+    25 & COMBINED LOADS & REPUBLIC ACT NO. 8755, November 04, 1999 Section 40 & 82.9\% & 999 & 45.0\% \\
+    25 & COMBINED LOADS & REPUBLIC ACT NO. 8472, January 30, 1998 Section 40 & 81.9\% & 999 & 45.0\% \\
+    26 & ALLOWABLE STRESSES & REPUBLIC ACT NO. 11689, April 11, 2022 Section 27 & 79.4\% & 999 & 45.0\% \\
+    26 & ALLOWABLE STRESSES & REPUBLIC ACT No. 288 Section 19 & 78.7\% & 999 & 45.0\% \\
+    26 & ALLOWABLE STRESSES & EXECUTIVE ORDER NO. 367 Section 4 & 57.1\% & 999 & 45.0\% \\
+    26 & ALLOWABLE STRESSES & REPUBLIC ACT No. 409 Section 31 & 49.3\% & 999 & 45.0\% \\
+    27 & CONSTRUCTION, IN GENERAL & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 83.3\% & 999 & 45.0\% \\
+    27 & CONSTRUCTION, IN GENERAL & REPUBLIC ACT NO. 8472, January 30, 1998 Section 15 & 78.9\% & 999 & 45.0\% \\
+    30 & SIGNS ATTACHED TO BASE & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 73.3\% & 999 & 45.0\% \\
+    31 & SIGNS ATTACHED TO CONCRETE & REPUBLIC ACT No. 1364 Section 13 & 99.9\% & 999 & 45.0\% \\
+    31 & SIGNS ATTACHED TO CONCRETE & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 66.2\% & 999 & 45.0\% \\
+    31 & SIGNS ATTACHED TO CONCRETE & REPUBLIC ACT NO. 8472, January 30, 1998 Section 15 & 58.9\% & 999 & 45.0\% \\
+    36 & EXEMPTION FROM SIGN PERMIT & REPUBLIC ACT No. 170 Section 16 & 99.4\% & 999 & 45.0\% \\
+    36 & EXEMPTION FROM SIGN PERMIT & REPUBLIC ACT No. 409 Section 19 & 99.3\% & 999 & 45.0\% \\
+    36 & EXEMPTION FROM SIGN PERMIT & REPUBLIC ACT No. 3028 Section 16 & 99.3\% & 999 & 45.0\% \\
+    36 & EXEMPTION FROM SIGN PERMIT & REPUBLIC ACT No. 4413 Section 15 & 99.3\% & 999 & 45.0\% \\
+    36 & EXEMPTION FROM SIGN PERMIT & REPUBLIC ACT No. 5495 Section 15 & 99.3\% & 999 & 45.0\% \\
+    36 & EXEMPTION FROM SIGN PERMIT & REPUBLIC ACT No. 3811 Section 16 & 99.2\% & 999 & 45.0\% \\
+    36 & EXEMPTION FROM SIGN PERMIT & REPUBLIC ACT NO. 537, June 16, 1950 Section 13 & 99.1\% & 999 & 45.0\% \\
+    36 & EXEMPTION FROM SIGN PERMIT & REPUBLIC ACT No. 288 Section 15 & 99.1\% & 999 & 45.0\% \\
+    38 & EXEMPTION FROM SIGN FEE & REPUBLIC ACT No. 4413 Section 15 & 96.6\% & 999 & 45.0\% \\
+    38 & EXEMPTION FROM SIGN FEE & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 2 & 95.8\% & 999 & 45.0\% \\
+    38 & EXEMPTION FROM SIGN FEE & REPUBLIC ACT No. 3811 Section 16 & 95.6\% & 999 & 45.0\% \\
+    38 & EXEMPTION FROM SIGN FEE & REPUBLIC ACT No. 3857 Section 96 & 95.3\% & 999 & 45.0\% \\
+    38 & EXEMPTION FROM SIGN FEE & REPUBLIC ACT No. 170 Section 16 & 95.2\% & 999 & 45.0\% \\
+    38 & EXEMPTION FROM SIGN FEE & REPUBLIC ACT No. 409 Section 19 & 95.1\% & 999 & 45.0\% \\
+    38 & EXEMPTION FROM SIGN FEE & REPUBLIC ACT NO. 537, June 16, 1950 Section 13 & 95.0\% & 999 & 45.0\% \\
+    38 & EXEMPTION FROM SIGN FEE & REPUBLIC ACT No. 4475 Section 12 & 94.8\% & 999 & 45.0\% \\
+    40 & EXEMPTION FROM MARKING REQUIREMENT & REPUBLIC ACT No. 5495 Section 15 & 97.2\% & 999 & 45.0\% \\
+    40 & EXEMPTION FROM MARKING REQUIREMENT & REPUBLIC ACT NO. 537, June 16, 1950 Section 13 & 96.7\% & 999 & 45.0\% \\
+    40 & EXEMPTION FROM MARKING REQUIREMENT & REPUBLIC ACT No. 170 Section 16 & 96.3\% & 999 & 45.0\% \\
+    40 & EXEMPTION FROM MARKING REQUIREMENT & REPUBLIC ACT No. 4413 Section 15 & 95.8\% & 999 & 45.0\% \\
+    40 & EXEMPTION FROM MARKING REQUIREMENT & REPUBLIC ACT No. 3028 Section 16 & 95.7\% & 999 & 45.0\% \\
+    40 & EXEMPTION FROM MARKING REQUIREMENT & REPUBLIC ACT No. 288 Section 15 & 95.5\% & 999 & 45.0\% \\
+    40 & EXEMPTION FROM MARKING REQUIREMENT & REPUBLIC ACT No. 3811 Section 16 & 95.4\% & 999 & 45.0\% \\
+    40 & EXEMPTION FROM MARKING REQUIREMENT & REPUBLIC ACT No. 409 Section 19 & 94.9\% & 999 & 45.0\% \\
+    41 & RESTRICTED AREAS & REPUBLIC ACT NO. 11515, December 26, 2020 Section 4 & 85.0\% & 2 & 37.5\% \\
+    44 & SIGNS AND SIGN STRUCTURES INSPECTION & REPUBLIC ACT No. 409 Section 19 & 52.2\% & 2 & 37.5\% \\
+    44 & SIGNS AND SIGN STRUCTURES INSPECTION & REPUBLIC ACT NO. 537, June 16, 1950 Section 13 & 45.1\% & 2 & 37.5\% \\
+    46 & PENALTIES & Republic Act No. 7394 April 13, 1992 Section 73 & 68.4\% & 2 & 37.5\% \\
+    48 & VALIDATING PERMIT & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 53.2\% & 999 & 45.0\% \\
+    48 & VALIDATING PERMIT & REPUBLIC ACT NO. 8988, December 27, 2000 Section 17 & 51.9\% & 999 & 45.0\% \\
+    48 & VALIDATING PERMIT & REPUBLIC ACT NO. 8798, July 15, 2000 Section 17 & 51.9\% & 999 & 45.0\% \\
+    48 & VALIDATING PERMIT & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 45.1\% & 999 & 45.0\% \\
+\end{longtable}
+}
+
+\section{DAVAO-TIER3-03 and DAVAO-TIER3-04: Revenue Code Ord. No. 0158-05 (ARC Investors / Rock Steel)}
+\label{sec:tab_app_tier3_03_04}
+
+{\scriptsize\setlength{\tabcolsep}{3.0pt}\renewcommand{\arraystretch}{0.84}
+\begin{longtable}{>{\centering\arraybackslash}p{0.70cm} >{\RaggedRight\arraybackslash}p{4.00cm} >{\RaggedRight\arraybackslash}p{7.00cm} r r r}
+    \caption[DAVAO-TIER3-03 and DAVAO-TIER3-04 Conflict Pairs]{DAVAO-TIER3-03 and DAVAO-TIER3-04 Flagged Section--Statute Pairs ($N = 684$)} \label{tab:app_tier3_03_04} \\
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    3 & WORDS AND PHRASES NOT HEREIN EXPRESSLY DEFIN & REPUBLIC ACT NO. 9135 April 27, 2001 Section 17 & 95.9\% & 999 & 45.0\% \\
+    6 & IMPOSITION OF THE BASIC REAL PROPERTY TAX & PRESIDENTIAL DECREE No. 1446 Section 1 & 99.7\% & 2 & 37.5\% \\
+    6 & IMPOSITION OF THE BASIC REAL PROPERTY TAX & Republic Act No. 7160 October 10, 1991 Section 236 & 99.6\% & 2 & 37.5\% \\
+    6 & IMPOSITION OF THE BASIC REAL PROPERTY TAX & PRESIDENTIAL DECREE No. 1446 Section 6 & 99.4\% & 2 & 37.5\% \\
+    6 & IMPOSITION OF THE BASIC REAL PROPERTY TAX & Republic Act No. 7160 October 10, 1991 Section 233 & 96.7\% & 2 & 37.5\% \\
+    7 & ADDITIONAL LEVY ON REAL PROPERTY FOR THE SPE & PRESIDENTIAL DECREE No 1913 March 29, 1974 Section 2 & 92.3\% & 2 & 37.5\% \\
+    7 & ADDITIONAL LEVY ON REAL PROPERTY FOR THE SPE & Republic Act No. 7160 October 10, 1991 Section 272 & 81.5\% & 2 & 37.5\% \\
+    8 & EXEMPTIONS TO THE IMPOSITION & Republic Act No. 7160 October 10, 1991 Section 234 & 49.9\% & 2 & 37.5\% \\
+    9 & TIME OF PAYMENT & REPUBLIC ACT No. 4413 Section 46 & 73.2\% & 2 & 37.5\% \\
+    9 & TIME OF PAYMENT & REPUBLIC ACT No. 5495 Section 50 & 72.1\% & 2 & 37.5\% \\
+    9 & TIME OF PAYMENT & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 53.1\% & 2 & 37.5\% \\
+    9 & TIME OF PAYMENT & REPUBLIC ACT No. 409 Section 64 & 39.1\% & 2 & 37.5\% \\
+    10 & TAX DISCOUNT FOR ADVANCED AND PROMPT PAYMENT & PRESIDENTIAL DECREE No. 853 December 19, 1975 Section 9 & 88.1\% & 2 & 37.5\% \\
+    10 & TAX DISCOUNT FOR ADVANCED AND PROMPT PAYMENT & REPUBLIC ACT No. 4413 Section 46 & 69.7\% & 2 & 37.5\% \\
+    10 & TAX DISCOUNT FOR ADVANCED AND PROMPT PAYMENT & REPUBLIC ACT No. 3857 Section 63 & 63.0\% & 2 & 37.5\% \\
+    10 & TAX DISCOUNT FOR ADVANCED AND PROMPT PAYMENT & REPUBLIC ACT No. 409 Section 64 & 55.7\% & 2 & 37.5\% \\
+    10 & TAX DISCOUNT FOR ADVANCED AND PROMPT PAYMENT & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 44.8\% & 2 & 37.5\% \\
+    11 & COLLECTION AND DISTRIBUTION OF PROCEEDS & Republic Act No. 7160 October 10, 1991 Section 260 & 43.5\% & 2 & 37.5\% \\
+    11 & COLLECTION AND DISTRIBUTION OF PROCEEDS & PRESIDENTIAL DECREE No. 1446 Section 6 & 39.3\% & 2 & 37.5\% \\
+    12 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 5495 Section 57 & 38.4\% & 2 & 37.5\% \\
+    12 & ADMINISTRATIVE PROVISIONS & Republic Act No. 7160 October 10, 1991 Section 258 & 35.3\% & 1 & 30.0\% \\
+    15 & PENALTIES FOR OMISSION OF PROPERTY FROM ASSE & PRESIDENTIAL DECREE No. 1383 Section 7 & 54.7\% & 2 & 37.5\% \\
+    16 & PENALTIES FOR DELAYING ASSESSMENT OF REAL PR & PRESIDENTIAL DECREE No. 1383 Section 7 & 64.7\% & 2 & 37.5\% \\
+    17 & PENALTIES FOR FAILURE TO DISPOSE THE DELINQU & REPUBLIC ACT No. 9368 Section 6 & 91.3\% & 2 & 37.5\% \\
+    18 & PERIODS WITHIN WHICH TO COLLECT REAL PROPERT & BATAS PAMBANSA Blg. 700 Section 2 & 97.3\% & 2 & 37.5\% \\
+    18 & PERIODS WITHIN WHICH TO COLLECT REAL PROPERT & REPUBLIC ACT No. 3857 Section 89 & 92.2\% & 2 & 37.5\% \\
+    18 & PERIODS WITHIN WHICH TO COLLECT REAL PROPERT & REPUBLIC ACT No. 3857 Section 56 & 91.4\% & 2 & 37.5\% \\
+    18 & PERIODS WITHIN WHICH TO COLLECT REAL PROPERT & Republic Act No. 7160 October 10, 1991 Section 258 & 86.4\% & 2 & 37.5\% \\
+    18 & PERIODS WITHIN WHICH TO COLLECT REAL PROPERT & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 82.1\% & 2 & 37.5\% \\
+    18 & PERIODS WITHIN WHICH TO COLLECT REAL PROPERT & Republic Act No. 7160 October 10, 1991 Section 260 & 57.7\% & 2 & 37.5\% \\
+    20 & ORGANIZATION, POWERS, DUTIES, AND FUNCTIONS  & REPUBLIC ACT NO. 537, June 16, 1950 Section 50 & 45.9\% & 2 & 37.5\% \\
+    21 & MEETINGS AND EXPENSES OF THE CITY BOARD OF A & REPUBLIC ACT No. 3857 Section 62 & 55.8\% & 2 & 37.5\% \\
+    23 & EFFECT OF APPEAL ON THE PAYMENT OF REAL PROP & REPUBLIC ACT No. 3857 Section 56 & 95.5\% & 2 & 37.5\% \\
+    24 & TAX ON IDLE LANDS & Republic Act No. 7160 October 10, 1991 Section 236 & 99.8\% & 2 & 37.5\% \\
+    24 & TAX ON IDLE LANDS & PRESIDENTIAL DECREE No. 1446 Section 1 & 97.5\% & 2 & 37.5\% \\
+    24 & TAX ON IDLE LANDS & Republic Act No. 7160 October 10, 1991 Section 238 & 81.7\% & 2 & 37.5\% \\
+    24 & TAX ON IDLE LANDS & PRESIDENTIAL DECREE No. 1446 Section 6 & 80.0\% & 2 & 37.5\% \\
+    24 & TAX ON IDLE LANDS & PRESIDENTIAL DECREE No. 1446 Section 3 & 70.4\% & 2 & 37.5\% \\
+    26 & EXEMPTION & PRESIDENTIAL DECREE No. 464 June 1, 1974 Section 44 & 74.1\% & 2 & 37.5\% \\
+    28 & COLLECTION AND ACCRUAL OF PROCEEDS & PRESIDENTIAL DECREE No 1913 March 29, 1974 Section 2 & 98.7\% & 2 & 37.5\% \\
+    28 & COLLECTION AND ACCRUAL OF PROCEEDS & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 98.6\% & 2 & 37.5\% \\
+    28 & COLLECTION AND ACCRUAL OF PROCEEDS & PRESIDENTIAL DECREE No. 1446 Section 6 & 94.7\% & 2 & 37.5\% \\
+    29 & TAX ON TRANSFER OF REAL PROPERTY OWNERSHIP & Republic Act No. 7160 October 10, 1991 Section 135 & 99.7\% & 2 & 37.5\% \\
+    29 & TAX ON TRANSFER OF REAL PROPERTY OWNERSHIP & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 3 & 89.5\% & 2 & 37.5\% \\
+    30 & EXEMPTION & REPUBLIC ACT NO. 8700, July 09, 1998 Section 12 & 99.2\% & 2 & 37.5\% \\
+    30 & EXEMPTION & BATAS PAMBANSA Blg. 37 Section 1 & 93.7\% & 2 & 37.5\% \\
+    30 & EXEMPTION & REPUBLIC ACT No. 9856 Section 13 & 92.4\% & 2 & 37.5\% \\
+    31 & TIME OF PAYMENT & Republic Act No. 7160 October 10, 1991 Section 135 & 99.5\% & 2 & 37.5\% \\
+    31 & TIME OF PAYMENT & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 3 & 96.6\% & 2 & 37.5\% \\
+    31 & TIME OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 89.5\% & 2 & 37.5\% \\
+    31 & TIME OF PAYMENT & REPUBLIC ACT No. 3811 Section 50 & 79.1\% & 2 & 37.5\% \\
+    31 & TIME OF PAYMENT & REPUBLIC ACT No. 170 Section 55 & 75.7\% & 2 & 37.5\% \\
+    31 & TIME OF PAYMENT & pd\_69\_1972 Section 95 & 47.7\% & 2 & 37.5\% \\
+    32 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 3857 Section 64 & 58.0\% & 2 & 37.5\% \\
+    33 & TAX ON PRINTING AND PUBLICATION & Republic Act No. 7160 October 10, 1991 Section 136 & 95.1\% & 2 & 37.5\% \\
+    33 & TAX ON PRINTING AND PUBLICATION & REPUBLIC ACT NO. 9337 Section 1 & 88.0\% & 2 & 37.5\% \\
+    33 & TAX ON PRINTING AND PUBLICATION & REPUBLIC ACT NO. 7296, March 26, 1992 Section 12 & 70.0\% & 2 & 37.5\% \\
+    33 & TAX ON PRINTING AND PUBLICATION & Republic Act No. 7160 October 10, 1991 Section 137 & 58.3\% & 2 & 37.5\% \\
+    33 & TAX ON PRINTING AND PUBLICATION & PRESIDENTIAL DECREE No. 1987 Section 10 & 54.7\% & 2 & 37.5\% \\
+    33 & TAX ON PRINTING AND PUBLICATION & Republic Act No. 8424 December 11, 1997 Section 27 & 49.9\% & 2 & 37.5\% \\
+    34 & EXEMPTION & Republic Act No. 8424 December 11, 1997 Section 173 & 38.6\% & 2 & 37.5\% \\
+    35 & TIME OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 47.0\% & 2 & 37.5\% \\
+    36 & FRANCHISE TAX & REPUBLIC ACT NO. 9337 Section 2 & 95.2\% & 2 & 37.5\% \\
+    36 & FRANCHISE TAX & REPUBLIC ACT NO. 9337 Section 1 & 91.2\% & 2 & 37.5\% \\
+    36 & FRANCHISE TAX & Republic Act No. 8424 December 11, 1997 Section 28 & 73.9\% & 2 & 37.5\% \\
+    36 & FRANCHISE TAX & Republic Act No. 7160 October 10, 1991 Section 137 & 70.1\% & 2 & 37.5\% \\
+    36 & FRANCHISE TAX & Republic Act No. 7160 October 10, 1991 Section 136 & 39.1\% & 2 & 37.5\% \\
+    37 & EXEMPTION & REPUBLIC ACT NO. 11515, December 26, 2020 Section 17 & 99.8\% & 2 & 37.5\% \\
+    37 & EXEMPTION & REPUBLIC ACT NO. 11538, May 18, 2021 Section 14 & 99.7\% & 2 & 37.5\% \\
+    37 & EXEMPTION & REPUBLIC ACT No. 9368 Section 15 & 99.7\% & 2 & 37.5\% \\
+    37 & EXEMPTION & REPUBLIC ACT NO. 11538, May 18, 2021 Section 12 & 96.2\% & 2 & 37.5\% \\
+    37 & EXEMPTION & REPUBLIC ACT No. 8960 September 7, 2000* Section 7 & 95.3\% & 2 & 37.5\% \\
+    37 & EXEMPTION & REPUBLIC ACT NO. 11515, December 26, 2020 Section 18 & 82.0\% & 2 & 37.5\% \\
+    37 & EXEMPTION & REPUBLIC ACT NO. 11515, December 26, 2020 Section 15 & 74.6\% & 2 & 37.5\% \\
+    38 & TIME OF PAYMENT & REPUBLIC ACT No. 4413 Section 46 & 58.4\% & 2 & 37.5\% \\
+    38 & TIME OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 50.9\% & 2 & 37.5\% \\
+    39 & TAX ON SAND, GRAVEL AND OTHER QUARRY RESOURC & REPUBLIC ACT NO. 7942 March 3, 1995 Section 43 & 99.7\% & 1 & 30.0\% \\
+    39 & TAX ON SAND, GRAVEL AND OTHER QUARRY RESOURC & EXECUTIVE ORDER NO. 273 July 25, 1987 Section 17 & 96.6\% & 2 & 37.5\% \\
+    39 & TAX ON SAND, GRAVEL AND OTHER QUARRY RESOURC & REPUBLIC ACT NO. 9337 Section 18 & 96.4\% & 2 & 37.5\% \\
+    39 & TAX ON SAND, GRAVEL AND OTHER QUARRY RESOURC & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 4 & 91.3\% & 999 & 45.0\% \\
+    39 & TAX ON SAND, GRAVEL AND OTHER QUARRY RESOURC & Republic Act No. 8424 December 11, 1997 Section 151 & 84.6\% & 2 & 37.5\% \\
+    39 & TAX ON SAND, GRAVEL AND OTHER QUARRY RESOURC & BATAS PAMBANSA Blg. 84 Section 3 & 74.5\% & 2 & 37.5\% \\
+    39 & TAX ON SAND, GRAVEL AND OTHER QUARRY RESOURC & REPUBLIC ACT No. 11054 Section 6 & 67.5\% & 999 & 45.0\% \\
+    39 & TAX ON SAND, GRAVEL AND OTHER QUARRY RESOURC & Republic Act No. 7160 October 10, 1991 Section 138 & 59.4\% & 2 & 37.5\% \\
+    40 & ISSUANCE OF PERMIT & REPUBLIC ACT NO. 387, June 18, 1949 Section 34 & 99.3\% & 999 & 45.0\% \\
+    40 & ISSUANCE OF PERMIT & Republic Act No. 7160 October 10, 1991 Section 138 & 97.1\% & 999 & 45.0\% \\
+    40 & ISSUANCE OF PERMIT & REPUBLIC ACT NO. 12120, January 08, 2025 Section 41 & 59.4\% & 999 & 45.0\% \\
+    40 & ISSUANCE OF PERMIT & EXECUTIVE ORDER NO. 224, July 04, 2003 Section 1 & 52.6\% & 999 & 45.0\% \\
+    42 & TIME AND PLACE OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 66.8\% & 2 & 37.5\% \\
+    43 & SURCHARGE FOR LATE PAYMENT & PRESIDENTIAL DECREE No. 1987 Section 10 & 99.5\% & 2 & 37.5\% \\
+    43 & SURCHARGE FOR LATE PAYMENT & Republic Act No. 55 October 15, 1946 Section 5 & 77.7\% & 2 & 37.5\% \\
+    43 & SURCHARGE FOR LATE PAYMENT & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 57.0\% & 2 & 37.5\% \\
+    44 & INTEREST ON UNPAID TAX & PRESIDENTIAL DECREE No. 778 August 24, 1975 Section 5 & 88.9\% & 2 & 37.5\% \\
+    44 & INTEREST ON UNPAID TAX & Republic Act No. 55 October 15, 1946 Section 5 & 86.3\% & 2 & 37.5\% \\
+    45 & SHARING OF PROCEEDS & Republic Act No. 7160 October 10, 1991 Section 138 & 99.0\% & 2 & 37.5\% \\
+    45 & SHARING OF PROCEEDS & Republic Act No. 8424 December 11, 1997 Section 287 & 94.3\% & 999 & 45.0\% \\
+    45 & SHARING OF PROCEEDS & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 93.2\% & 999 & 45.0\% \\
+    45 & SHARING OF PROCEEDS & PRESIDENTIAL DECREE No. 1446 Section 6 & 82.3\% & 999 & 45.0\% \\
+    45 & SHARING OF PROCEEDS & REPUBLIC ACT No. 11054 Section 6 & 50.5\% & 999 & 45.0\% \\
+    45 & SHARING OF PROCEEDS & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 4 & 46.6\% & 999 & 45.0\% \\
+    48 & AUTHORITY TO IMPOUND VEHICLES CARRYING EXTRA & Republic Act No. 7160 October 10, 1991 Section 138 & 85.5\% & 999 & 45.0\% \\
+    50 & ISSUANCE OF DELIVERY RECEIPTS & Republic Act No. 7160 October 10, 1991 Section 138 & 66.1\% & 2 & 37.5\% \\
+    51 & PROFESSIONAL TAX & Republic Act No. 8424 December 11, 1997 Section 193 & 99.0\% & 2 & 37.5\% \\
+    51 & PROFESSIONAL TAX & PRESIDENTIAL DECREE No. 778 August 24, 1975 Section 1 & 76.3\% & 2 & 37.5\% \\
+    51 & PROFESSIONAL TAX & REPUBLIC ACT No. 1612 Section 4 & 59.9\% & 2 & 37.5\% \\
+    51 & PROFESSIONAL TAX & REPUBLIC ACT No. 5431 Section 1 & 37.9\% & 2 & 37.5\% \\
+    53 & EXEMPTION & REPUBLIC ACT No. 11457 Section 14 & 98.8\% & 2 & 37.5\% \\
+    53 & EXEMPTION & REPUBLIC ACT No. 8960 September 7, 2000* Section 4 & 89.5\% & 2 & 37.5\% \\
+    54 & PAYMENT OF THE TAX & REPUBLIC ACT No. 11033 Section 18 & 99.8\% & 2 & 37.5\% \\
+    54 & PAYMENT OF THE TAX & REPUBLIC ACT No. 11220 Section 19 & 99.5\% & 2 & 37.5\% \\
+    54 & PAYMENT OF THE TAX & Republic Act No. 8424 December 11, 1997 Section 51 & 99.0\% & 2 & 37.5\% \\
+    54 & PAYMENT OF THE TAX & PRESIDENTIAL DECREE No. 778 August 24, 1975 Section 2 & 97.7\% & 2 & 37.5\% \\
+    55 & TIME AND PLACE OF PAYMENT & Republic Act No. 7160 October 10, 1991 Section 139 & 96.2\% & 2 & 37.5\% \\
+    56 & ADMINISTRATIVE PROVISIONS & Republic Act No. 9268 March 19, 2004 Section 27 & 87.7\% & 2 & 37.5\% \\
+    56 & ADMINISTRATIVE PROVISIONS & Republic Act No. 8495 February 12, 1998 Section 32 & 85.3\% & 2 & 37.5\% \\
+    56 & ADMINISTRATIVE PROVISIONS & Republic Act No. 7160 October 10, 1991 Section 139 & 75.3\% & 2 & 37.5\% \\
+    57 & IMPOSITION OF TAX FOR AMUSEMENT PLACES AND A & pd\_69\_1972 Section 260 & 65.6\% & 2 & 37.5\% \\
+    57 & IMPOSITION OF TAX FOR AMUSEMENT PLACES AND A & REPUBLIC ACT No. 9640 Section 1 & 57.7\% & 2 & 37.5\% \\
+    58 & MANNER OF COMPUTING TAX & REPUBLIC ACT No. 2025 Section 10 & 93.3\% & 2 & 37.5\% \\
+    58 & MANNER OF COMPUTING TAX & REPUBLIC ACT No. 6110 Section 54 & 44.5\% & 2 & 37.5\% \\
+    59 & EXEMPTIONS & REPUBLIC ACT No. 6110 Section 54 & 90.1\% & 2 & 37.5\% \\
+    59 & EXEMPTIONS & Republic Act No. 8424 December 11, 1997 Section 125 & 57.9\% & 2 & 37.5\% \\
+    60 & FORM OF TICKETS; THEIR REGISTRATION & pd\_69\_1972 Section 260 & 98.5\% & 2 & 37.5\% \\
+    60 & FORM OF TICKETS; THEIR REGISTRATION & REPUBLIC ACT No. 6110 Section 54 & 88.4\% & 2 & 37.5\% \\
+    61 & TIME AND PLACE OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 125 & 98.4\% & 2 & 37.5\% \\
+    61 & TIME AND PLACE OF PAYMENT & REPUBLIC ACT No. 6110 Section 54 & 83.1\% & 2 & 37.5\% \\
+    61 & TIME AND PLACE OF PAYMENT & pd\_69\_1972 Section 260 & 60.9\% & 2 & 37.5\% \\
+    62 & VERIFICATION OF TICKETS & REPUBLIC ACT NO. 537, June 16, 1950 Section 80 & 99.8\% & 999 & 45.0\% \\
+    63 & FILING OF PERFORMANCE BONDS; FORFEITURE THER & pd\_69\_1972 Section 260 & 82.4\% & 2 & 37.5\% \\
+    63 & FILING OF PERFORMANCE BONDS; FORFEITURE THER & Republic Act No. 8424 December 11, 1997 Section 125 & 71.5\% & 2 & 37.5\% \\
+    63 & FILING OF PERFORMANCE BONDS; FORFEITURE THER & REPUBLIC ACT No. 6110 Section 54 & 54.5\% & 2 & 37.5\% \\
+    64 & FILING OF RETURN & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 7 & 99.6\% & 2 & 37.5\% \\
+    64 & FILING OF RETURN & Republic Act No. 8424 December 11, 1997 Section 114 & 93.4\% & 2 & 37.5\% \\
+    64 & FILING OF RETURN & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 92.9\% & 2 & 37.5\% \\
+    64 & FILING OF RETURN & pd\_69\_1972 Section 260 & 55.4\% & 2 & 37.5\% \\
+    65 & IMPOSITION OF TAX & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 7 & 99.4\% & 999 & 45.0\% \\
+    65 & IMPOSITION OF TAX & REPUBLIC ACT No. 1612 Section 4 & 87.3\% & 999 & 45.0\% \\
+    65 & IMPOSITION OF TAX & REPUBLIC ACT No. 1856 Section 1 & 85.1\% & 999 & 45.0\% \\
+    65 & IMPOSITION OF TAX & REPUBLIC ACT No. 6110 Section 28 & 73.0\% & 999 & 45.0\% \\
+    65 & IMPOSITION OF TAX & PRESIDENTIAL DECREE No. 1994 Section 22 & 49.4\% & 999 & 45.0\% \\
+    66 & EXEMPTION & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 7 & 83.7\% & 2 & 37.5\% \\
+    67 & TIME AND PLACE OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 58.7\% & 2 & 37.5\% \\
+    67 & TIME AND PLACE OF PAYMENT & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 58.2\% & 999 & 45.0\% \\
+    68 & ANNUAL REGISTRATION STICKER & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 85.6\% & 2 & 37.5\% \\
+    68 & ANNUAL REGISTRATION STICKER & REPUBLIC ACT NO. 8241, December 20, 1996 Section 15 & 68.2\% & 2 & 37.5\% \\
+    70 & PRESUMPTIVE INCOME LEVEL & BATAS PAMBANSA Blg. 135 Section 8 & 98.5\% & 2 & 37.5\% \\
+    70 & PRESUMPTIVE INCOME LEVEL & Republic Act No. 8424 December 11, 1997 Section 122 & 89.6\% & 2 & 37.5\% \\
+    71 & TAX ON NEWLY & REPUBLIC ACT NO. 7296, March 26, 1992 Section 12 & 43.4\% & 2 & 37.5\% \\
+    73 & PAYMENT OF BUSINESS TAXES & Republic Act No. 7160 October 10, 1991 Section 150 & 84.5\% & 999 & 45.0\% \\
+    73 & PAYMENT OF BUSINESS TAXES & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 12 & 64.7\% & 2 & 37.5\% \\
+    75 & TIME OF PAYMENT & REPUBLIC ACT No. 4413 Section 46 & 51.7\% & 2 & 37.5\% \\
+    76 & ADMINISTRATIVE PROVISIONS & Republic Act No. 8424 December 11, 1997 Section 236 & 89.8\% & 2 & 37.5\% \\
+    76 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 1612 Section 18 & 88.4\% & 2 & 37.5\% \\
+    76 & ADMINISTRATIVE PROVISIONS & EXECUTIVE ORDER NO. 273 July 25, 1987 Section 20 & 83.7\% & 2 & 37.5\% \\
+    76 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 48 Section 9 & 83.6\% & 2 & 37.5\% \\
+    76 & ADMINISTRATIVE PROVISIONS & Republic Act No. 8424 December 11, 1997 Section 237 & 44.3\% & 2 & 37.5\% \\
+    77 & TAX ON PEDDLERS & Republic Act No. 7160 October 10, 1991 Section 141 & 74.7\% & 999 & 45.0\% \\
+    77 & TAX ON PEDDLERS & REPUBLIC ACT NO. 7660, December 23, 1993 Section 15 & 53.8\% & 999 & 45.0\% \\
+    78 & EXEMPTION & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 7 & 97.7\% & 2 & 37.5\% \\
+    79 & TIME OF PAYMENT & Republic Act No. 7160 October 10, 1991 Section 139 & 84.2\% & 2 & 37.5\% \\
+    79 & TIME OF PAYMENT & REPUBLIC ACT No. 3176 Section 1 & 83.0\% & 2 & 37.5\% \\
+    79 & TIME OF PAYMENT & REPUBLIC ACT No. 253 Section 2 & 52.9\% & 2 & 37.5\% \\
+    80 & TAX ON MINING OPERATIONS & REPUBLIC ACT NO. 7296, March 26, 1992 Section 12 & 98.3\% & 999 & 45.0\% \\
+    80 & TAX ON MINING OPERATIONS & REPUBLIC ACT No. 2343 Section 4 & 97.4\% & 999 & 45.0\% \\
+    80 & TAX ON MINING OPERATIONS & REPUBLIC ACT NO. 7302, March 26, 1992 Section 12 & 94.1\% & 999 & 45.0\% \\
+    81 & SITUS OF THE TAX & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 79.2\% & 999 & 45.0\% \\
+    81 & SITUS OF THE TAX & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 73.3\% & 999 & 45.0\% \\
+    82 & EXCLUSION & REPUBLIC ACT NO. 8184, June 11, 1996 Section 3 & 99.5\% & 999 & 45.0\% \\
+    82 & EXCLUSION & EXECUTIVE ORDER NO. 959 August 1, 1984 Section 1 & 99.4\% & 999 & 45.0\% \\
+    82 & EXCLUSION & EXECUTIVE ORDER NO. 273 July 25, 1987 Section 17 & 98.9\% & 2 & 37.5\% \\
+    82 & EXCLUSION & REPUBLIC ACT NO. 387, June 18, 1949 Section 2 & 98.7\% & 2 & 37.5\% \\
+    82 & EXCLUSION & Republic Act No. 8424 December 11, 1997 Section 151 & 98.3\% & 2 & 37.5\% \\
+    82 & EXCLUSION & REPUBLIC ACT NO. 7729, June 02, 1994 Section 1 & 96.6\% & 999 & 45.0\% \\
+    82 & EXCLUSION & REPUBLIC ACT NO. 9337 Section 18 & 86.8\% & 2 & 37.5\% \\
+    82 & EXCLUSION & Republic Act No. 7160 October 10, 1991 Section 138 & 53.1\% & 2 & 37.5\% \\
+    83 & TIME OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 75.7\% & 2 & 37.5\% \\
+    83 & TIME OF PAYMENT & REPUBLIC ACT No. 4413 Section 46 & 39.9\% & 2 & 37.5\% \\
+    84 & ADMINISTRATIVE PROVISION & BATAS PAMBANSA Blg. 84 Section 8 & 60.3\% & 2 & 37.5\% \\
+    84 & ADMINISTRATIVE PROVISION & EXECUTIVE ORDER NO. 273 July 25, 1987 Section 17 & 52.8\% & 2 & 37.5\% \\
+    84 & ADMINISTRATIVE PROVISION & BATAS PAMBANSA Blg. 84 Section 2 & 48.9\% & 2 & 37.5\% \\
+    84 & ADMINISTRATIVE PROVISION & BATAS PAMBANSA Blg. 84 Section 3 & 48.0\% & 2 & 37.5\% \\
+    84 & ADMINISTRATIVE PROVISION & REPUBLIC ACT No. 834 Section 1 & 47.9\% & 2 & 37.5\% \\
+    84 & ADMINISTRATIVE PROVISION & REPUBLIC ACT No. 1510 Section 1 & 42.0\% & 2 & 37.5\% \\
+    85 & TAX ON FOREST PRODUCTS & BATAS PAMBANSA Blg. 83 Section 11 & 99.8\% & 999 & 45.0\% \\
+    85 & TAX ON FOREST PRODUCTS & BATAS PAMBANSA Blg. 83 Section 10 & 98.3\% & 2 & 37.5\% \\
+    85 & TAX ON FOREST PRODUCTS & Republic Act No. 7161 October 10, 1991 Section 72 & 97.1\% & 2 & 37.5\% \\
+    85 & TAX ON FOREST PRODUCTS & Republic Act No. 7161 October 10, 1991 Section 3 & 93.8\% & 999 & 45.0\% \\
+    85 & TAX ON FOREST PRODUCTS & Republic Act No. 7161 October 10, 1991 Section 6 & 62.0\% & 2 & 37.5\% \\
+    86 & TIME OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 78.1\% & 2 & 37.5\% \\
+    86 & TIME OF PAYMENT & REPUBLIC ACT NO. 8472, January 30, 1998 Section 15 & 58.1\% & 999 & 45.0\% \\
+    87 & MAYOR'S PERMIT FEE & Republic Act No. 6810 December 14, 1989 Section 3 & 98.6\% & 2 & 37.5\% \\
+    87 & MAYOR'S PERMIT FEE & Republic Act No. 7160 October 10, 1991 Section 152 & 94.1\% & 2 & 37.5\% \\
+    87 & MAYOR'S PERMIT FEE & EXECUTIVE ORDER NO. 176, February 11, 2003 Section 1 & 93.4\% & 999 & 45.0\% \\
+    95 & ADMINISTRATIVE PROVISIONS & PRESIDENTIAL DECREE No. 1140 Section 1 & 64.3\% & 999 & 45.0\% \\
+    95 & ADMINISTRATIVE PROVISIONS & PRESIDENTIAL DECREE No. 1310 March 6, 1978 Section 1 & 64.0\% & 999 & 45.0\% \\
+    95 & ADMINISTRATIVE PROVISIONS & BATAS PAMBANSA BLG. 337 Section 171 & 60.5\% & 999 & 45.0\% \\
+    97 & IMPOSITION OF FEES & REPUBLIC ACT No. 200 Section 2 & 98.2\% & 999 & 45.0\% \\
+    97 & IMPOSITION OF FEES & REPUBLIC ACT No. 308 Section 2 & 96.6\% & 999 & 45.0\% \\
+    97 & IMPOSITION OF FEES & REPUBLIC ACT No. 200 Section 1 & 96.6\% & 999 & 45.0\% \\
+    97 & IMPOSITION OF FEES & REPUBLIC ACT No. 200 Section 3 & 96.5\% & 999 & 45.0\% \\
+    98 & EXCLUSION & EXECUTIVE ORDER NO. 636 December 23, 1980 Section 2 & 98.5\% & 2 & 37.5\% \\
+    98 & EXCLUSION & PRESIDENTIAL DECREE No. 1802 Section 2 & 80.8\% & 999 & 45.0\% \\
+    98 & EXCLUSION & REPUBLIC ACT No. 9368 Section 10 & 58.4\% & 999 & 45.0\% \\
+    99 & TIME AND MANNER OF PAYMENT & REPUBLIC ACT NO. 11538, May 18, 2021 Section 13 & 81.2\% & 999 & 45.0\% \\
+    100 & RULES AND REGULATIONS IN THE ISSUANCE OF SPE & PRESIDENTIAL DECREE No. 449 May 9, 1974 Section 5 & 98.2\% & 999 & 45.0\% \\
+    103 & IMPOSITION OF ANNUAL FEES & PRESIDENTIAL DECREE No. 843 January 1, 1976 Section 1 & 97.5\% & 2 & 37.5\% \\
+    103 & IMPOSITION OF ANNUAL FEES & PRESIDENTIAL DECREE No. 843 Section 1 & 97.2\% & 2 & 37.5\% \\
+    103 & IMPOSITION OF ANNUAL FEES & REPUBLIC ACT NO. 8241, December 20, 1996 Section 11 & 93.1\% & 2 & 37.5\% \\
+    103 & IMPOSITION OF ANNUAL FEES & Republic Act No. 8424 December 11, 1997 Section 117 & 91.3\% & 999 & 45.0\% \\
+    103 & IMPOSITION OF ANNUAL FEES & REPUBLIC ACT No. 4136 Section 8 & 89.9\% & 2 & 37.5\% \\
+    103 & IMPOSITION OF ANNUAL FEES & REPUBLIC ACT NO. 7716, May 05, 1994 Section 11 & 84.2\% & 2 & 37.5\% \\
+    104 & EXEMPTION & REPUBLIC ACT No. 8960 September 7, 2000* Section 4 & 96.4\% & 999 & 45.0\% \\
+    105 & TIME OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 69.1\% & 2 & 37.5\% \\
+    105 & TIME OF PAYMENT & REPUBLIC ACT No. 6110 Section 27 & 47.9\% & 2 & 37.5\% \\
+    106 & WHO ARE AUTHORIZED TO OPERATE & REPUBLIC ACT NO. 11515, December 26, 2020 Section 15 & 98.4\% & 999 & 45.0\% \\
+    106 & WHO ARE AUTHORIZED TO OPERATE & REPUBLIC ACT NO. 11674, April 08, 2022 Section 12 & 98.0\% & 999 & 45.0\% \\
+    108 & IMPOSITION OF FEES & REPUBLIC ACT No. 4136 Section 11 & 89.0\% & 2 & 37.5\% \\
+    108 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 843 January 1, 1976 Section 1 & 52.7\% & 2 & 37.5\% \\
+    108 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 843 Section 1 & 52.6\% & 2 & 37.5\% \\
+    108 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 896 January 26, 1976 Section 2 & 49.3\% & 2 & 37.5\% \\
+    108 & IMPOSITION OF FEES & REPUBLIC ACT NO. 6511, July 01, 1972 Section 3 & 44.4\% & 2 & 37.5\% \\
+    109 & DISPLAY OF PLATE NUMBER AND CARRYING A PHOTO & REPUBLIC ACT No. 4136 Section 11 & 92.4\% & 999 & 45.0\% \\
+    109 & DISPLAY OF PLATE NUMBER AND CARRYING A PHOTO & REPUBLIC ACT No. 4136 Section 18 & 88.1\% & 999 & 45.0\% \\
+    111 & PENALTY & REPUBLIC ACT NO. 11592, October 14, 2021 Section 41 & 64.7\% & 2 & 37.5\% \\
+    111 & PENALTY & REPUBLIC ACT No. 11314 Section 10 & 43.0\% & 2 & 37.5\% \\
+    111 & PENALTY & BATAS PAMBANSA Blg. 398 Section 12 & 38.4\% & 2 & 37.5\% \\
+    112 & TIME OF PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 45.8\% & 2 & 37.5\% \\
+    113 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 4136 Section 17 & 68.0\% & 2 & 37.5\% \\
+    116 & TIME OF PAYMENT & REPUBLIC ACT No. 4374 Section 23 & 82.6\% & 2 & 37.5\% \\
+    117 & IMPOSITION OF FEE & REPUBLIC ACT No. 309 Section 26 & 89.9\% & 2 & 37.5\% \\
+    118 & TIME OF PAYMENT & REPUBLIC ACT NO. 9015 February 28, 2001 Section 17 & 83.3\% & 999 & 45.0\% \\
+    118 & TIME OF PAYMENT & REPUBLIC ACT NO. 8798, July 15, 2000 Section 17 & 81.6\% & 999 & 45.0\% \\
+    118 & TIME OF PAYMENT & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 74.4\% & 999 & 45.0\% \\
+    118 & TIME OF PAYMENT & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 66.1\% & 999 & 45.0\% \\
+    120 & PENALTY & REPUBLIC ACT NO. 11515, December 26, 2020 Section 19 & 61.3\% & 2 & 37.5\% \\
+    121 & ADMINISTRATIVE PROVISION & REPUBLIC ACT NO. 11842, June 17, 2022 Section 1 & 99.8\% & 999 & 45.0\% \\
+    121 & ADMINISTRATIVE PROVISION & REPUBLIC ACT No. 1368 Section 9 & 99.1\% & 999 & 45.0\% \\
+    123 & FILING FEE (NON & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 80.5\% & 999 & 45.0\% \\
+    123 & FILING FEE (NON & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 80.3\% & 999 & 45.0\% \\
+    124 & ESTABLISHMENT OF LINE AND GRADE & BATAS PAMBANSA Blg. 83 Section 17 & 95.3\% & 999 & 45.0\% \\
+    124 & ESTABLISHMENT OF LINE AND GRADE & Republic Act No. 7161 October 10, 1991 Section 3 & 93.8\% & 999 & 45.0\% \\
+    124 & ESTABLISHMENT OF LINE AND GRADE & BATAS PAMBANSA Blg. 83 Section 3 & 93.8\% & 2 & 37.5\% \\
+    124 & ESTABLISHMENT OF LINE AND GRADE & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 77.9\% & 999 & 45.0\% \\
+    124 & ESTABLISHMENT OF LINE AND GRADE & REPUBLIC ACT NO. 8472, January 30, 1998 Section 15 & 74.6\% & 999 & 45.0\% \\
+    127 & SANITARY / PLUMBING PERMIT FEES & REPUBLIC ACT No. 1939 Section 2 & 75.4\% & 999 & 45.0\% \\
+    129 & FENCING PERMIT FEES & BATAS PAMBANSA Blg. 83 Section 3 & 91.5\% & 2 & 37.5\% \\
+    130 & CONSTRUCTION OF SIDEWALKS (SQ & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 90.6\% & 999 & 45.0\% \\
+    130 & CONSTRUCTION OF SIDEWALKS (SQ & REPUBLIC ACT NO. 8798, July 15, 2000 Section 15 & 89.3\% & 999 & 45.0\% \\
+    130 & CONSTRUCTION OF SIDEWALKS (SQ & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 84.6\% & 999 & 45.0\% \\
+    130 & CONSTRUCTION OF SIDEWALKS (SQ & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 80.6\% & 999 & 45.0\% \\
+    130 & CONSTRUCTION OF SIDEWALKS (SQ & REPUBLIC ACT NO. 8798, July 15, 2000 Section 18 & 67.3\% & 999 & 45.0\% \\
+    130 & CONSTRUCTION OF SIDEWALKS (SQ & REPUBLIC ACT NO. 8472, January 30, 1998 Section 18 & 59.7\% & 999 & 45.0\% \\
+    133 & CERTIFICATE OF USE OR OCCUPANCY & BATAS PAMBANSA Blg. 13 Section 7 & 76.2\% & 999 & 45.0\% \\
+    134 & CHANGE IN USE / OCCUPANCY & REPUBLIC ACT NO. 11842, June 17, 2022 Section 1 & 96.6\% & 999 & 45.0\% \\
+    134 & CHANGE IN USE / OCCUPANCY & REPUBLIC ACT NO. 8798, July 15, 2000 Section 17 & 71.5\% & 999 & 45.0\% \\
+    134 & CHANGE IN USE / OCCUPANCY & REPUBLIC ACT NO. 11842, June 17, 2022 Section 2 & 65.6\% & 999 & 45.0\% \\
+    134 & CHANGE IN USE / OCCUPANCY & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 65.1\% & 999 & 45.0\% \\
+    134 & CHANGE IN USE / OCCUPANCY & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 63.8\% & 999 & 45.0\% \\
+    135 & ANNUAL BUILDING INSPECTION FEES & REPUBLIC ACT NO. 11515, December 26, 2020 Section 19 & 57.5\% & 999 & 45.0\% \\
+    135 & ANNUAL BUILDING INSPECTION FEES & REPUBLIC ACT No. 5143 Section 2 & 42.6\% & 2 & 37.5\% \\
+    135 & ANNUAL BUILDING INSPECTION FEES & REPUBLIC ACT No. 9514 December 19, 2008 Section 12 & 38.8\% & 2 & 37.5\% \\
+    136 & FINES & REPUBLIC ACT No. 10951 Section 81 & 58.8\% & 2 & 37.5\% \\
+    136 & FINES & PRESIDENTIAL DECREE No. 475 June 3, 1974 Section 3 & 50.0\% & 999 & 45.0\% \\
+    137 & IMPOSITION OF FINES & REPUBLIC ACT No. 10951 Section 50 & 96.7\% & 2 & 37.5\% \\
+    137 & IMPOSITION OF FINES & REPUBLIC ACT NO. 11515, December 26, 2020 Section 19 & 86.3\% & 2 & 37.5\% \\
+    137 & IMPOSITION OF FINES & PRESIDENTIAL DECREE No. 984 August 18, 1976 Section 9 & 39.6\% & 2 & 37.5\% \\
+    141 & IMPOSITION OF FEE & REPUBLIC ACT No. 184 Section 13 & 74.6\% & 2 & 37.5\% \\
+    144 & IMPOSITION OF FEE & REPUBLIC ACT No. 1371 Section 13 & 98.9\% & 999 & 45.0\% \\
+    144 & IMPOSITION OF FEE & REPUBLIC ACT No. 4110 Section 11 & 98.0\% & 2 & 37.5\% \\
+    144 & IMPOSITION OF FEE & REPUBLIC ACT No. 4110 Section 30 & 97.9\% & 999 & 45.0\% \\
+    144 & IMPOSITION OF FEE & REPUBLIC ACT No. 2369 Section 2906 & 97.8\% & 2 & 37.5\% \\
+    144 & IMPOSITION OF FEE & REPUBLIC ACT No. 4110 Section 20 & 97.7\% & 999 & 45.0\% \\
+    144 & IMPOSITION OF FEE & REPUBLIC ACT No. 1371 Section 11 & 95.7\% & 2 & 37.5\% \\
+    144 & IMPOSITION OF FEE & REPUBLIC ACT No. 4110 Section 29 & 94.8\% & 999 & 45.0\% \\
+    144 & IMPOSITION OF FEE & REPUBLIC ACT No. 4110 Section 28 & 66.6\% & 2 & 37.5\% \\
+    145 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 5336 Section 8 & 64.4\% & 2 & 37.5\% \\
+    145 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 5336 Section 10 & 64.2\% & 999 & 45.0\% \\
+    146 & IMPOSITION OF FEE & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 2 & 80.0\% & 999 & 45.0\% \\
+    147 & EXEMPTION TO THE IMPOSITION OF FEE & REPUBLIC ACT No. 3811 Section 16 & 98.9\% & 999 & 45.0\% \\
+    147 & EXEMPTION TO THE IMPOSITION OF FEE & REPUBLIC ACT No. 170 Section 16 & 98.8\% & 999 & 45.0\% \\
+    147 & EXEMPTION TO THE IMPOSITION OF FEE & REPUBLIC ACT No. 183 Section 17 & 98.8\% & 999 & 45.0\% \\
+    147 & EXEMPTION TO THE IMPOSITION OF FEE & REPUBLIC ACT No. 409 Section 19 & 98.6\% & 999 & 45.0\% \\
+    147 & EXEMPTION TO THE IMPOSITION OF FEE & REPUBLIC ACT No. 3857 Section 96 & 98.6\% & 999 & 45.0\% \\
+    147 & EXEMPTION TO THE IMPOSITION OF FEE & REPUBLIC ACT No. 4487 Section 16 & 98.6\% & 999 & 45.0\% \\
+    147 & EXEMPTION TO THE IMPOSITION OF FEE & REPUBLIC ACT NO. 537, June 16, 1950 Section 13 & 98.5\% & 999 & 45.0\% \\
+    147 & EXEMPTION TO THE IMPOSITION OF FEE & REPUBLIC ACT No. 4475 Section 12 & 98.4\% & 999 & 45.0\% \\
+    151 & MARKING REQUIREMENTS & REPUBLIC ACT No. 170 Section 16 & 98.9\% & 999 & 45.0\% \\
+    151 & MARKING REQUIREMENTS & REPUBLIC ACT No. 409 Section 19 & 98.9\% & 999 & 45.0\% \\
+    151 & MARKING REQUIREMENTS & REPUBLIC ACT No. 4487 Section 16 & 98.9\% & 999 & 45.0\% \\
+    151 & MARKING REQUIREMENTS & REPUBLIC ACT No. 183 Section 17 & 98.9\% & 999 & 45.0\% \\
+    151 & MARKING REQUIREMENTS & REPUBLIC ACT No. 3857 Section 96 & 98.8\% & 999 & 45.0\% \\
+    151 & MARKING REQUIREMENTS & REPUBLIC ACT NO. 537, June 16, 1950 Section 13 & 98.6\% & 999 & 45.0\% \\
+    151 & MARKING REQUIREMENTS & REPUBLIC ACT No. 3811 Section 16 & 98.6\% & 999 & 45.0\% \\
+    151 & MARKING REQUIREMENTS & REPUBLIC ACT No. 288 Section 15 & 98.6\% & 999 & 45.0\% \\
+    152 & RESTRICTED AREAS & REPUBLIC ACT 9006 February 12, 2001 Section 9 & 99.0\% & 999 & 45.0\% \\
+    152 & RESTRICTED AREAS & REPUBLIC ACT NO. 10360 Section 5 & 97.9\% & 999 & 45.0\% \\
+    152 & RESTRICTED AREAS & Republic Act No. 6646 January 5, 1988 Section 10 & 97.8\% & 2 & 37.5\% \\
+    152 & RESTRICTED AREAS & REPUBLIC ACT NO. 11674, April 08, 2022 Section 4 & 96.9\% & 2 & 37.5\% \\
+    152 & RESTRICTED AREAS & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 5 & 85.2\% & 999 & 45.0\% \\
+    152 & RESTRICTED AREAS & BATAS PAMBANSA BLG. 881 Section 82 & 64.9\% & 999 & 45.0\% \\
+    154 & SIGNS AND SIGN STRUCTURES, IN GENERAL & REPUBLIC ACT NO. 537, June 16, 1950 Section 13 & 37.7\% & 2 & 37.5\% \\
+    155 & REMOVAL & BATAS PAMBANSA BLG. 881 Section 87 & 97.1\% & 999 & 45.0\% \\
+    155 & REMOVAL & EXECUTIVE ORDER NO. 165, March 21, 2022 Section 6 & 78.7\% & 2 & 37.5\% \\
+    155 & REMOVAL & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 50.1\% & 999 & 45.0\% \\
+    158 & EXEMPTIONS & REPUBLIC ACT No. 8960 September 7, 2000* Section 4 & 94.2\% & 2 & 37.5\% \\
+    159 & TIME OF PAYMENT & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 68.4\% & 999 & 45.0\% \\
+    159 & TIME OF PAYMENT & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 60.9\% & 999 & 45.0\% \\
+    160 & ADMINISTRATIVE PROVISION & REPUBLIC ACT NO. 537, June 16, 1950 Section 80 & 99.4\% & 999 & 45.0\% \\
+    161 & IMPOSITION OF FEE & REPUBLIC ACT No. 6039 Section 1 & 82.8\% & 2 & 37.5\% \\
+    162 & TIME OF PAYMENT & REPUBLIC ACT NO. 8472, January 30, 1998 Section 15 & 91.9\% & 999 & 45.0\% \\
+    162 & TIME OF PAYMENT & REPUBLIC ACT No. 9408 March 24, 2007 Section 17 & 51.1\% & 999 & 45.0\% \\
+    166 & ADMINISTRATIVE PROVISIONS & PRESIDENTIAL DECREE No. 1610 Section 1 & 98.0\% & 2 & 37.5\% \\
+    166 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 6969 October 26, 1990 Section 14 & 89.2\% & 999 & 45.0\% \\
+    167 & PERMIT & REPUBLIC ACT No. 1368 Section 9 & 98.5\% & 999 & 45.0\% \\
+    167 & PERMIT & REPUBLIC ACT No. 1368 Section 10 & 96.3\% & 999 & 45.0\% \\
+    167 & PERMIT & REPUBLIC ACT No. 1368 Section 7 & 77.5\% & 999 & 45.0\% \\
+    167 & PERMIT & REPUBLIC ACT No. 9408 March 24, 2007 Section 38 & 75.9\% & 999 & 45.0\% \\
+    168 & HAZARDOUS INFLAMMABLE LIQUID & Republic Act No. 8424 December 11, 1997 Section 148 & 83.0\% & 999 & 45.0\% \\
+    168 & HAZARDOUS INFLAMMABLE LIQUID & PRESIDENTIAL DECREE No. 314 October 20, 1973 Section 1 & 80.5\% & 999 & 45.0\% \\
+    168 & HAZARDOUS INFLAMMABLE LIQUID & REPUBLIC ACT NO. 8184, June 11, 1996 Section 1 & 65.3\% & 999 & 45.0\% \\
+    169 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 843 January 1, 1976 Section 1 & 53.1\% & 2 & 37.5\% \\
+    169 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 843 Section 1 & 49.0\% & 2 & 37.5\% \\
+    170 & IMPOSITION OF FEE & Republic Act No. 8424 December 11, 1997 Section 125 & 87.5\% & 2 & 37.5\% \\
+    170 & IMPOSITION OF FEE & pd\_69\_1972 Section 260 & 44.6\% & 2 & 37.5\% \\
+    172 & IMPOSITION OF FEE & REPUBLIC ACT NO. 11538, May 18, 2021 Section 13 & 99.9\% & 2 & 37.5\% \\
+    172 & IMPOSITION OF FEE & EXECUTIVE ORDER NO. 23, November 01, 1946 Section 2 & 99.9\% & 999 & 45.0\% \\
+    172 & IMPOSITION OF FEE & REPUBLIC ACT No. 309 Section 26 & 99.4\% & 999 & 45.0\% \\
+    172 & IMPOSITION OF FEE & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 91.4\% & 999 & 45.0\% \\
+    174 & EXEMPTION & REPUBLIC ACT No. 9368 Section 11 & 99.6\% & 2 & 37.5\% \\
+    174 & EXEMPTION & REPUBLIC ACT NO. 11538, May 18, 2021 Section 13 & 98.7\% & 999 & 45.0\% \\
+    174 & EXEMPTION & REPUBLIC ACT No. 8129, July 16, 1995 Section 8 & 92.0\% & 2 & 37.5\% \\
+    174 & EXEMPTION & REPUBLIC ACT NO. 8700, July 09, 1998 Section 12 & 81.4\% & 2 & 37.5\% \\
+    176 & IMPLEMENTING AGENCY & Republic Act No. 7160 October 10, 1991 Section 148 & 86.6\% & 2 & 37.5\% \\
+    177 & SEALING AND TESTING OF INSTRUMENTS OF WEIGHT & Republic Act No. 7394 April 13, 1992 Section 62 & 98.5\% & 2 & 37.5\% \\
+    178 & IMPOSITION OF FEES & EXECUTIVE ORDER NO. 292 Section 29 & 71.1\% & 999 & 45.0\% \\
+    178 & IMPOSITION OF FEES & REPUBLIC ACT No. 1371 Section 8 & 64.3\% & 2 & 37.5\% \\
+    178 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 6 & 41.8\% & 2 & 37.5\% \\
+    179 & PAYMENT OF FEES AND SURCHARGE & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 75.4\% & 2 & 37.5\% \\
+    179 & PAYMENT OF FEES AND SURCHARGE & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 40.7\% & 2 & 37.5\% \\
+    181 & EXEMPTIONS & Republic Act No. 7160 October 10, 1991 Section 148 & 95.5\% & 999 & 45.0\% \\
+    181 & EXEMPTIONS & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 6 & 90.9\% & 999 & 45.0\% \\
+    181 & EXEMPTIONS & REPUBLIC ACT No. 6110 Section 2 & 56.5\% & 999 & 45.0\% \\
+    181 & EXEMPTIONS & Republic Act No. 7394 April 13, 1992 Section 62 & 53.2\% & 999 & 45.0\% \\
+    182 & ADMINISTRATIVE PROVISIONS & Republic Act No. 7394 April 13, 1992 Section 64 & 90.3\% & 999 & 45.0\% \\
+    182 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT NO. 10360 Section 5 & 85.1\% & 2 & 37.5\% \\
+    184 & PENALTIES & Republic Act No. 8424 December 11, 1997 Section 258 & 47.0\% & 2 & 37.5\% \\
+    185 & IMPOSITION OF FEE & BATAS PAMBANSA Blg. 226 Section 1 & 65.8\% & 2 & 37.5\% \\
+    186 & TIME AND MANNER OF PAYMENT & REPUBLIC ACT No. 231 Section 1 & 43.7\% & 2 & 37.5\% \\
+    188 & APPLICABILITY CLAUSE & BATAS PAMBANSA Blg. 226 Section 1 & 89.8\% & 2 & 37.5\% \\
+    188 & APPLICABILITY CLAUSE & BATAS PAMBANSA Blg. 226 Section 5 & 62.5\% & 999 & 45.0\% \\
+    190 & FILING OF APPLICATION & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 86.1\% & 999 & 45.0\% \\
+    190 & FILING OF APPLICATION & REPUBLIC ACT NO. 9015 February 28, 2001 Section 17 & 84.1\% & 999 & 45.0\% \\
+    190 & FILING OF APPLICATION & REPUBLIC ACT NO. 8798, July 15, 2000 Section 17 & 82.1\% & 999 & 45.0\% \\
+    190 & FILING OF APPLICATION & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 75.6\% & 999 & 45.0\% \\
+    195 & APPROPRIATE GUARDS AND MARKERS & REPUBLIC ACT NO. 11515, December 26, 2020 Section 12 & 94.8\% & 999 & 45.0\% \\
+    195 & APPROPRIATE GUARDS AND MARKERS & REPUBLIC ACT NO. 11515, December 26, 2020 Section 4 & 93.8\% & 999 & 45.0\% \\
+    195 & APPROPRIATE GUARDS AND MARKERS & REPUBLIC ACT No. 9408 March 24, 2007 Section 38 & 91.1\% & 999 & 45.0\% \\
+    195 & APPROPRIATE GUARDS AND MARKERS & REPUBLIC ACT NO. 10360 Section 13 & 73.6\% & 999 & 45.0\% \\
+    195 & APPROPRIATE GUARDS AND MARKERS & REPUBLIC ACT No. 9436 April 12, 2007 Section 11 & 71.0\% & 999 & 45.0\% \\
+    196 & PROHIBITION & REPUBLIC ACT NO. 11842, June 17, 2022 Section 1 & 100.0\% & 999 & 45.0\% \\
+    196 & PROHIBITION & REPUBLIC ACT NO. 11515, December 26, 2020 Section 4 & 100.0\% & 999 & 45.0\% \\
+    196 & PROHIBITION & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 53.0\% & 999 & 45.0\% \\
+    200 & IMPOSITION OF FEE & REPUBLIC ACT NO. 11515, December 26, 2020 Section 19 & 87.7\% & 999 & 45.0\% \\
+    203 & IMPOSITION OF FEES & BATAS PAMBANSA Blg. 135 Section 1 & 37.9\% & 2 & 37.5\% \\
+    206 & IMPOSITION OF FEES & REPUBLIC ACT No. 4374 Section 23 & 97.5\% & 2 & 37.5\% \\
+    206 & IMPOSITION OF FEES & REPUBLIC ACT No. 4226 Section 17 & 96.3\% & 2 & 37.5\% \\
+    206 & IMPOSITION OF FEES & REPUBLIC ACT No. 309 Section 26 & 76.1\% & 2 & 37.5\% \\
+    206 & IMPOSITION OF FEES & EXECUTIVE ORDER No. 135 Section 3 & 57.0\% & 2 & 37.5\% \\
+    207 & FRANCHISE AND OTHER FEES & PRESIDENTIAL DECREE No. 844 December 12, 1975 Section 1 & 88.5\% & 2 & 37.5\% \\
+    212 & RATE OF FEES & PRESIDENTIAL DECREE No. 843 Section 1 & 87.6\% & 999 & 45.0\% \\
+    214 & DISPOSITION OF THE PROCEEDS OF IMPOUNDED VEH & REPUBLIC ACT No. 3857 Section 64 & 81.1\% & 2 & 37.5\% \\
+    214 & DISPOSITION OF THE PROCEEDS OF IMPOUNDED VEH & REPUBLIC ACT NO. 537, June 16, 1950 Section 53 & 79.5\% & 2 & 37.5\% \\
+    214 & DISPOSITION OF THE PROCEEDS OF IMPOUNDED VEH & REPUBLIC ACT No. 170 Section 51 & 41.5\% & 2 & 37.5\% \\
+    214 & DISPOSITION OF THE PROCEEDS OF IMPOUNDED VEH & REPUBLIC ACT No. 170 Section 55 & 40.1\% & 2 & 37.5\% \\
+    214 & DISPOSITION OF THE PROCEEDS OF IMPOUNDED VEH & REPUBLIC ACT No. 3811 Section 50 & 40.0\% & 2 & 37.5\% \\
+    215 & PROHIBITION & REPUBLIC ACT No. 3811 Section 40 & 100.0\% & 999 & 45.0\% \\
+    215 & PROHIBITION & REPUBLIC ACT No. 4382 Section 46 & 100.0\% & 999 & 45.0\% \\
+    215 & PROHIBITION & REPUBLIC ACT No. 170 Section 45 & 100.0\% & 999 & 45.0\% \\
+    215 & PROHIBITION & REPUBLIC ACT No. 4413 Section 50 & 100.0\% & 999 & 45.0\% \\
+    215 & PROHIBITION & REPUBLIC ACT No. 5495 Section 54 & 100.0\% & 999 & 45.0\% \\
+    215 & PROHIBITION & REPUBLIC ACT No. 3028 Section 52 & 100.0\% & 999 & 45.0\% \\
+    215 & PROHIBITION & REPUBLIC ACT No. 162 Section 45 & 100.0\% & 999 & 45.0\% \\
+    215 & PROHIBITION & REPUBLIC ACT NO. 537, June 16, 1950 Section 53 & 99.9\% & 999 & 45.0\% \\
+    219 & SURCHARGES FOR LATE PAYMENT & PRESIDENTIAL DECREE No. 1987 Section 10 & 98.9\% & 2 & 37.5\% \\
+    220 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 9408 March 24, 2007 Section 10 & 54.8\% & 999 & 45.0\% \\
+    220 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT NO. 8472, January 30, 1998 Section 9 & 52.7\% & 999 & 45.0\% \\
+    221 & IMPOSITION OF FEE & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 78.1\% & 999 & 45.0\% \\
+    223 & EXEMPTION & REPUBLIC ACT No. 1284 Section 1 & 99.9\% & 2 & 37.5\% \\
+    223 & EXEMPTION & REPUBLIC ACT NO. 10360 Section 13 & 99.9\% & 2 & 37.5\% \\
+    223 & EXEMPTION & REPUBLIC ACT No. 4226 Section 17 & 99.9\% & 2 & 37.5\% \\
+    223 & EXEMPTION & REPUBLIC ACT No. 7879, February 14, 1995 Section 8 & 99.8\% & 2 & 37.5\% \\
+    223 & EXEMPTION & REPUBLIC ACT No. 8960 September 7, 2000* Section 4 & 99.8\% & 2 & 37.5\% \\
+    223 & EXEMPTION & REPUBLIC ACT NO. 7686, February 25, 1994 Section 18 & 99.8\% & 2 & 37.5\% \\
+    223 & EXEMPTION & REPUBLIC ACT No. 11220 Section 19 & 99.7\% & 2 & 37.5\% \\
+    223 & EXEMPTION & REPUBLIC ACT No. 10742 Section 16 & 99.6\% & 999 & 45.0\% \\
+    225 & IMPOSITION OF FEE & REPUBLIC ACT NO. 11538, May 18, 2021 Section 11 & 87.8\% & 999 & 45.0\% \\
+    225 & IMPOSITION OF FEE & REPUBLIC ACT NO. 11538, May 18, 2021 Section 13 & 75.9\% & 999 & 45.0\% \\
+    225 & IMPOSITION OF FEE & REPUBLIC ACT NO. 7296, March 26, 1992 Section 12 & 72.8\% & 2 & 37.5\% \\
+    225 & IMPOSITION OF FEE & EXECUTIVE ORDER NO. 256 December 21, 1995 Section 2 & 60.8\% & 2 & 37.5\% \\
+    225 & IMPOSITION OF FEE & REPUBLIC ACT NO. 11842, June 17, 2022 Section 1 & 55.2\% & 999 & 45.0\% \\
+    227 & TIME OF PAYMENT & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 97.3\% & 2 & 37.5\% \\
+    228 & IMPOSITION OF FEE & REPUBLIC ACT NO. 11538, May 18, 2021 Section 13 & 99.8\% & 999 & 45.0\% \\
+    228 & IMPOSITION OF FEE & REPUBLIC ACT No. 4226 Section 17 & 99.7\% & 2 & 37.5\% \\
+    228 & IMPOSITION OF FEE & REPUBLIC ACT NO. 8241, December 20, 1996 Section 15 & 97.5\% & 2 & 37.5\% \\
+    228 & IMPOSITION OF FEE & REPUBLIC ACT No. 309 Section 26 & 95.8\% & 2 & 37.5\% \\
+    228 & IMPOSITION OF FEE & EXECUTIVE ORDER NO. 462, December 29, 1997 Section 11 & 43.7\% & 2 & 37.5\% \\
+    228 & IMPOSITION OF FEE & Republic Act No. 8424 December 11, 1997 Section 236 & 42.6\% & 2 & 37.5\% \\
+    230 & IMPOSITION OF FEE & REPUBLIC ACT NO. 11538, May 18, 2021 Section 13 & 99.5\% & 999 & 45.0\% \\
+    231 & ADMINISTRATIVE PROVISION & REPUBLIC ACT NO. 11538, May 18, 2021 Section 13 & 95.4\% & 999 & 45.0\% \\
+    232 & IMPOSITION OF FEE & REPUBLIC ACT No. 1371 Section 8 & 54.5\% & 2 & 37.5\% \\
+    234 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT No. 6039 Section 1 & 95.3\% & 999 & 45.0\% \\
+    236 & ADMINISTRATIVE PROVISION & REPUBLIC ACT No. 6039 Section 1 & 97.9\% & 2 & 37.5\% \\
+    236 & ADMINISTRATIVE PROVISION & REPUBLIC ACT NO. 10360 Section 5 & 97.9\% & 2 & 37.5\% \\
+    236 & ADMINISTRATIVE PROVISION & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 96.9\% & 2 & 37.5\% \\
+    236 & ADMINISTRATIVE PROVISION & REPUBLIC ACT No. 8960 September 7, 2000* Section 4 & 90.5\% & 2 & 37.5\% \\
+    236 & ADMINISTRATIVE PROVISION & REPUBLIC ACT No. 9408 March 24, 2007 Section 10 & 69.7\% & 999 & 45.0\% \\
+    236 & ADMINISTRATIVE PROVISION & REPUBLIC ACT No. 5143 Section 2 & 52.4\% & 2 & 37.5\% \\
+    236 & ADMINISTRATIVE PROVISION & Republic Act No. 7160 October 10, 1991 Section 152 & 48.1\% & 2 & 37.5\% \\
+    237 & IMPOSITION OF FEES & REPUBLIC ACT NO. 928, June 20, 1953 Section 1 & 51.8\% & 2 & 37.5\% \\
+    238 & EXEMPTION & EXECUTIVE ORDER NO. 528, September 01, 1952 Section 1 & 96.7\% & 2 & 37.5\% \\
+    238 & EXEMPTION & EXECUTIVE ORDER NO. 32, May 25, 1936 Section 1 & 95.3\% & 2 & 37.5\% \\
+    238 & EXEMPTION & REPUBLIC ACT NO. 537, June 16, 1950 Section 27 & 85.5\% & 2 & 37.5\% \\
+    238 & EXEMPTION & REPUBLIC ACT No. 1368 Section 3 & 83.2\% & 999 & 45.0\% \\
+    238 & EXEMPTION & REPUBLIC ACT NO. 537, June 16, 1950 Section 35 & 75.8\% & 2 & 37.5\% \\
+    238 & EXEMPTION & REPUBLIC ACT No. 409 Section 44 & 37.5\% & 2 & 37.5\% \\
+    243 & ADMINISTRATIVE PROVISION & PRESIDENTIAL DECREE No. 965 July 20, 1976 Section 5 & 38.9\% & 2 & 37.5\% \\
+    244 & IMPOSITION OF FEES & EXECUTIVE ORDER NO. 32, May 25, 1936 Section 1 & 91.8\% & 2 & 37.5\% \\
+    244 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 844 December 12, 1975 Section 1 & 90.0\% & 2 & 37.5\% \\
+    244 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 49 November 14, 1972 Section 62 & 50.9\% & 2 & 37.5\% \\
+    246 & IMPOSITION OF FEES & REPUBLIC ACT No. 4136 Section 11 & 97.2\% & 2 & 37.5\% \\
+    246 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 844 December 12, 1975 Section 1 & 67.9\% & 2 & 37.5\% \\
+    248 & IMPOSITION OF FEE & REPUBLIC ACT No. 11261 Section 4 & 98.6\% & 999 & 45.0\% \\
+    250 & IMPOSITION OF FEE & REPUBLIC ACT No. 1371 Section 2 & 95.4\% & 2 & 37.5\% \\
+    250 & IMPOSITION OF FEE & REPUBLIC ACT No. 3674 Section 1 & 43.4\% & 2 & 37.5\% \\
+    253 & IMPOSITION OF FEE & REPUBLIC ACT No. 11261 Section 4 & 98.2\% & 2 & 37.5\% \\
+    253 & IMPOSITION OF FEE & REPUBLIC ACT No. 11261 Section 8 & 92.9\% & 999 & 45.0\% \\
+    253 & IMPOSITION OF FEE & PRESIDENTIAL DECREE No. 498 June 28, 1974 Section 10 & 60.5\% & 2 & 37.5\% \\
+    256 & PENALTY & REPUBLIC ACT NO. 11538, May 18, 2021 Section 13 & 99.7\% & 2 & 37.5\% \\
+    256 & PENALTY & REPUBLIC ACT NO. 11674, April 08, 2022 Section 15 & 98.8\% & 2 & 37.5\% \\
+    256 & PENALTY & REPUBLIC ACT NO. 11515, December 26, 2020 Section 19 & 98.5\% & 2 & 37.5\% \\
+    256 & PENALTY & REPUBLIC ACT No. 9368 Section 6 & 83.3\% & 2 & 37.5\% \\
+    256 & PENALTY & Republic Act No. 8424 December 11, 1997 Section 280 & 59.4\% & 2 & 37.5\% \\
+    257 & IMPOSITION OF FEES & REPUBLIC ACT NO. 386 Section 163 & 84.1\% & 999 & 45.0\% \\
+    259 & FISHERY RENTALS, FEES AND CHARGES & REPUBLIC ACT NO. 10654 Section 86 & 87.9\% & 999 & 45.0\% \\
+    259 & FISHERY RENTALS, FEES AND CHARGES & REPUBLIC ACT NO. 10654 Section 87 & 86.0\% & 999 & 45.0\% \\
+    260 & GRANT OF FISHERY RIGHTS BY PUBLIC AUCTION & REPUBLIC ACT No. 6516 Section 2 & 92.1\% & 2 & 37.5\% \\
+    261 & DURATION OF LEASE & PRESIDENTIAL DECREE No. 43 November 9, 1972 Section 13 & 89.9\% & 999 & 45.0\% \\
+    261 & DURATION OF LEASE & REPUBLIC ACT No. 6938 March 10, 1990 Section 92 & 81.9\% & 999 & 45.0\% \\
+    261 & DURATION OF LEASE & REPUBLIC ACT No. 6110 Section 47 & 54.1\% & 999 & 45.0\% \\
+    262 & ZONIFICATION OF CITY WATERS & Republic Act No. 8550 February 25, 1998 Section 18 & 97.5\% & 999 & 45.0\% \\
+    263 & IMPOSITION OF FEES & Republic Act No. 7160 October 10, 1991 Section 149 & 86.1\% & 999 & 45.0\% \\
+    263 & IMPOSITION OF FEES & Republic Act No. 8550 February 25, 1998 Section 87 & 81.8\% & 999 & 45.0\% \\
+    264 & PRIVILEGE OF RESIDENTS TO TAKE FISH IN CITY  & Republic Act No. 8550 February 25, 1998 Section 86 & 97.0\% & 2 & 37.5\% \\
+    264 & PRIVILEGE OF RESIDENTS TO TAKE FISH IN CITY  & REPUBLIC ACT NO. 10654 Section 86 & 79.4\% & 2 & 37.5\% \\
+    264 & PRIVILEGE OF RESIDENTS TO TAKE FISH IN CITY  & PRESIDENTIAL DECREE No. 1058 December 1, 1976 Section 1 & 78.4\% & 999 & 45.0\% \\
+    265 & TIME AND MANNER OF PAYMENT & Republic Act No. 7160 October 10, 1991 Section 149 & 81.2\% & 999 & 45.0\% \\
+    266 & ADMINISTRATIVE PROVISIONS & PRESIDENTIAL DECREE No. 704 May 16, 1974 Section 29 & 94.3\% & 999 & 45.0\% \\
+    269 & APPLICABILITY OF PERTINENT PROVISIONS OF LAW & REPUBLIC ACT NO. 11538, May 18, 2021 Section 9 & 98.9\% & 999 & 45.0\% \\
+    269 & APPLICABILITY OF PERTINENT PROVISIONS OF LAW & REPUBLIC ACT NO. 11842, June 17, 2022 Section 1 & 49.9\% & 999 & 45.0\% \\
+    274 & LARGE AND UNUSUAL QUANTITIES OR RUBBISH, REM & REPUBLIC ACT No. 1371 Section 4 & 99.6\% & 999 & 45.0\% \\
+    277 & PROHIBITION ON DISPOSAL & REPUBLIC ACT 9003 January 26, 2001 Section 3 & 95.4\% & 2 & 37.5\% \\
+    277 & PROHIBITION ON DISPOSAL & REPUBLIC ACT NO. 10068 Section 13 & 79.1\% & 2 & 37.5\% \\
+    277 & PROHIBITION ON DISPOSAL & REPUBLIC ACT No. 6940 March 28, 1990 Section 2 & 74.9\% & 2 & 37.5\% \\
+    278 & IMPOSITION OF FEE & REPUBLIC ACT NO. 8762 Section 5 & 47.1\% & 999 & 45.0\% \\
+    278 & IMPOSITION OF FEE & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 10 & 44.5\% & 2 & 37.5\% \\
+    280 & GARBAGE SERVICE CHARGES FOR MULTIPLE BUSINES & Republic Act No. 7160 October 10, 1991 Section 146 & 98.7\% & 999 & 45.0\% \\
+    280 & GARBAGE SERVICE CHARGES FOR MULTIPLE BUSINES & PRESIDENTIAL DECREE No. 850 December 16, 1975 Section 14 & 97.9\% & 999 & 45.0\% \\
+    280 & GARBAGE SERVICE CHARGES FOR MULTIPLE BUSINES & Republic Act No. 7160 October 10, 1991 Section 152 & 92.7\% & 999 & 45.0\% \\
+    280 & GARBAGE SERVICE CHARGES FOR MULTIPLE BUSINES & Republic Act No. 7160 October 10, 1991 Section 150 & 92.0\% & 999 & 45.0\% \\
+    280 & GARBAGE SERVICE CHARGES FOR MULTIPLE BUSINES & REPUBLIC ACT No. 1612 Section 5 & 47.2\% & 999 & 45.0\% \\
+    283 & OPERATIVE PROVISION & REPUBLIC ACT No. 9368 Section 6 & 97.3\% & 2 & 37.5\% \\
+    283 & OPERATIVE PROVISION & REPUBLIC ACT No. 2260 Section 44 & 96.1\% & 2 & 37.5\% \\
+    283 & OPERATIVE PROVISION & Republic Act No. 9178 November 13, 2002 Section 13 & 90.1\% & 2 & 37.5\% \\
+    283 & OPERATIVE PROVISION & PRESIDENTIAL DECREE No. 601 December 9, 1974 Section 11 & 54.1\% & 2 & 37.5\% \\
+    283 & OPERATIVE PROVISION & PRESIDENTIAL DECREE No. 1733 Section 3 & 46.0\% & 2 & 37.5\% \\
+    285 & FACILITIES & Republic Act No. 8435 December 22, 1997 Section 58 & 93.3\% & 999 & 45.0\% \\
+    287 & PROPER AND IDENTIFIABLE SECTIONING OF MARKET & pd\_69\_1972 Section 188 & 78.4\% & 999 & 45.0\% \\
+    289 & PENAL PROVISIONS & REPUBLIC ACT No. 9368 Section 6 & 97.2\% & 2 & 37.5\% \\
+    289 & PENAL PROVISIONS & REPUBLIC ACT No. 10698 Section 35 & 97.0\% & 2 & 37.5\% \\
+    289 & PENAL PROVISIONS & Republic Act No. 7394 April 13, 1992 Section 73 & 39.9\% & 2 & 37.5\% \\
+    290 & GENERAL PURPOSE & REPUBLIC ACT No. 5412 Section 94 & 92.9\% & 2 & 37.5\% \\
+    290 & GENERAL PURPOSE & REPUBLIC ACT No. 9408 March 24, 2007 Section 17 & 91.0\% & 999 & 45.0\% \\
+    290 & GENERAL PURPOSE & EXECUTIVE ORDER NO. 28, November 22, 1946 Section 1 & 60.2\% & 2 & 37.5\% \\
+    291 & IMPOSITION OF FEE & Republic Act No. 8424 December 11, 1997 Section 149 & 65.6\% & 2 & 37.5\% \\
+    291 & IMPOSITION OF FEE & PRESIDENTIAL DECREE No. 843 Section 1 & 58.3\% & 2 & 37.5\% \\
+    294 & LIABILITY OF DRIVERS AND/OR OWNERS & REPUBLIC ACT No. 4136 Section 17 & 99.0\% & 2 & 37.5\% \\
+    294 & LIABILITY OF DRIVERS AND/OR OWNERS & EXECUTIVE ORDER NO. 28, November 22, 1946 Section 1 & 91.8\% & 999 & 45.0\% \\
+    294 & LIABILITY OF DRIVERS AND/OR OWNERS & REPUBLIC ACT NO. 11689, April 11, 2022 Section 46 & 67.2\% & 999 & 45.0\% \\
+    295 & IMPOSITION OF CITY HOSPITAL SERVICE FEES & PRESIDENTIAL DECREE No. 626 Section 187 & 67.9\% & 2 & 37.5\% \\
+    295 & IMPOSITION OF CITY HOSPITAL SERVICE FEES & EXECUTIVE ORDER NO. 106 December 24, 1986 Section 2 & 50.0\% & 2 & 37.5\% \\
+    295 & IMPOSITION OF CITY HOSPITAL SERVICE FEES & EXECUTIVE ORDER NO. 106 December 24, 1986 Section 1 & 48.6\% & 2 & 37.5\% \\
+    296 & TIME AND MANNER OF PAYMENT & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 79.2\% & 999 & 45.0\% \\
+    296 & TIME AND MANNER OF PAYMENT & REPUBLIC ACT NO. 8798, July 15, 2000 Section 17 & 78.6\% & 999 & 45.0\% \\
+    296 & TIME AND MANNER OF PAYMENT & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 64.6\% & 999 & 45.0\% \\
+    297 & EXEMPTIONS & REPUBLIC ACT No. 1094 Section 1 & 73.3\% & 2 & 37.5\% \\
+    297 & EXEMPTIONS & REPUBLIC ACT NO. 590, September 22, 1950 Section 21 & 66.5\% & 2 & 37.5\% \\
+    300 & LOT CLASSIFICATION & REPUBLIC ACT NO. 8798, July 15, 2000 Section 17 & 53.4\% & 999 & 45.0\% \\
+    303 & LEASE OF GRAVE LOTS & REPUBLIC ACT No. 1162 Section 3 & 99.0\% & 999 & 45.0\% \\
+    303 & LEASE OF GRAVE LOTS & REPUBLIC ACT No. 3120 Section 1 & 98.4\% & 999 & 45.0\% \\
+    303 & LEASE OF GRAVE LOTS & REPUBLIC ACT No. 3516 Section 2 & 97.3\% & 999 & 45.0\% \\
+    303 & LEASE OF GRAVE LOTS & REPUBLIC ACT No. 1599 Section 1 & 92.4\% & 999 & 45.0\% \\
+    303 & LEASE OF GRAVE LOTS & REPUBLIC ACT NO. 537, June 16, 1950 Section 82 & 77.8\% & 999 & 45.0\% \\
+    304 & NICHE RENTAL & PRESIDENTIAL DECREE No. 705 May 19, 1975 Section 36 & 88.7\% & 999 & 45.0\% \\
+    307 & NICHE IDENTIFICATION & REPUBLIC ACT NO. 9015 February 28, 2001 Section 17 & 51.2\% & 999 & 45.0\% \\
+    307 & NICHE IDENTIFICATION & REPUBLIC ACT NO. 8798, July 15, 2000 Section 17 & 49.0\% & 999 & 45.0\% \\
+    308 & TIME OF PAYMENT & REPUBLIC ACT No. 6110 Section 46 & 64.8\% & 999 & 45.0\% \\
+    308 & TIME OF PAYMENT & REPUBLIC ACT No. 170 Section 51 & 54.3\% & 2 & 37.5\% \\
+    309 & PLACE OF TOMBSTONE & REPUBLIC ACT NO. 12160, April 11, 2025 Section 3 & 53.7\% & 999 & 45.0\% \\
+    309 & PLACE OF TOMBSTONE & PRESIDENTIAL DECREE No. 856 December 23, 1975 Section 89 & 53.2\% & 999 & 45.0\% \\
+    309 & PLACE OF TOMBSTONE & pd\_69\_1972 Section 93 & 47.5\% & 999 & 45.0\% \\
+    312 & DUTY OF THE CEMETERY ADMINISTRATOR & REPUBLIC ACT NO. 5716, June 21, 1969 Section 1 & 99.6\% & 2 & 37.5\% \\
+    313 & PENALTY & PRESIDENTIAL DECREE No. 1987 Section 10 & 98.9\% & 2 & 37.5\% \\
+    313 & PENALTY & PRESIDENTIAL DECREE No. 1705 Section 12 & 80.1\% & 2 & 37.5\% \\
+    313 & PENALTY & PRESIDENTIAL DECREE No. 778 August 24, 1975 Section 5 & 72.3\% & 2 & 37.5\% \\
+    313 & PENALTY & PRESIDENTIAL DECREE No. 1773 Section 14 & 66.7\% & 2 & 37.5\% \\
+    313 & PENALTY & REPUBLIC ACT NO. 8700, July 09, 1998 Section 12 & 48.2\% & 2 & 37.5\% \\
+    314 & ADMINISTRATIVE PROVISIONS & REPUBLIC ACT NO. 12160, April 11, 2025 Section 3 & 58.3\% & 999 & 45.0\% \\
+    315 & AUTHORITY TO OPERATE FUNERAL PARLORS, PRIVAT & PRESIDENTIAL DECREE No. 856 December 23, 1975 Section 89 & 49.8\% & 999 & 45.0\% \\
+    320 & COLLECTION OF FEE & BATAS PAMBANSA Blg. 84 Section 2 & 99.6\% & 2 & 37.5\% \\
+    320 & COLLECTION OF FEE & REPUBLIC ACT No. 6110 Section 47 & 79.4\% & 2 & 37.5\% \\
+    320 & COLLECTION OF FEE & EXECUTIVE ORDER NO. 462, December 29, 1997 Section 11 & 64.9\% & 999 & 45.0\% \\
+    320 & COLLECTION OF FEE & PRESIDENTIAL DECREE No. 463 May 17, 1974 Section 24 & 55.7\% & 2 & 37.5\% \\
+    320 & COLLECTION OF FEE & REPUBLIC ACT No. 6110 Section 46 & 41.9\% & 2 & 37.5\% \\
+    322 & ADMINISTRATIVE PROVISION & REPUBLIC ACT No. 6110 Section 46 & 37.6\% & 2 & 37.5\% \\
+    328 & MARKET INSPECTOR/S & Republic Act No. 8435 December 22, 1997 Section 58 & 96.1\% & 999 & 45.0\% \\
+    329 & MARKET GUARD/S AND OTHER PERSONNEL & Republic Act No. 8435 December 22, 1997 Section 58 & 97.8\% & 2 & 37.5\% \\
+    329 & MARKET GUARD/S AND OTHER PERSONNEL & REPUBLIC ACT No. 6039 Section 1 & 95.8\% & 999 & 45.0\% \\
+    329 & MARKET GUARD/S AND OTHER PERSONNEL & EXECUTIVE ORDER NO. 137 November 28, 1993 Section 2 & 93.5\% & 999 & 45.0\% \\
+    331 & CARRIER (CARGADORES) IN THE PUBLIC MARKET & REPUBLIC ACT No. 6039 Section 1 & 98.0\% & 999 & 45.0\% \\
+    332 & CLASSIFICATION OF PUBLIC MARKETS & REPUBLIC ACT NO. 840, April 07, 1953 Section 1 & 67.1\% & 2 & 37.5\% \\
+    332 & CLASSIFICATION OF PUBLIC MARKETS & REPUBLIC ACT No. 4358 Section 1 & 52.7\% & 2 & 37.5\% \\
+    332 & CLASSIFICATION OF PUBLIC MARKETS & REPUBLIC ACT NO. 6414, October 04, 1971 Section 1 & 48.3\% & 2 & 37.5\% \\
+    334 & MARKET FEES FOR AMBULANT / TRANSIENT VENDORS & REPUBLIC ACT No. 1371 Section 8 & 96.2\% & 2 & 37.5\% \\
+    334 & MARKET FEES FOR AMBULANT / TRANSIENT VENDORS & REPUBLIC ACT NO. 537, June 16, 1950 Section 35 & 91.0\% & 2 & 37.5\% \\
+    334 & MARKET FEES FOR AMBULANT / TRANSIENT VENDORS & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 16 & 79.3\% & 2 & 37.5\% \\
+    334 & MARKET FEES FOR AMBULANT / TRANSIENT VENDORS & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 39.9\% & 2 & 37.5\% \\
+    335 & TIME FOR PAYMENT / PENALTIES FOR DELINQUENCY & REPUBLIC ACT No. 6039 Section 1 & 98.7\% & 2 & 37.5\% \\
+    335 & TIME FOR PAYMENT / PENALTIES FOR DELINQUENCY & PRESIDENTIAL DECREE No. 1987 Section 10 & 94.2\% & 2 & 37.5\% \\
+    335 & TIME FOR PAYMENT / PENALTIES FOR DELINQUENCY & REPUBLIC ACT No. 3516 Section 2 & 92.1\% & 2 & 37.5\% \\
+    335 & TIME FOR PAYMENT / PENALTIES FOR DELINQUENCY & Republic Act No. 8424 December 11, 1997 Section 249 & 88.6\% & 2 & 37.5\% \\
+    335 & TIME FOR PAYMENT / PENALTIES FOR DELINQUENCY & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 66.8\% & 2 & 37.5\% \\
+    336 & OCCUPANCY FEE FOR AWARDEE & REPUBLIC ACT NO. 6409, October 04, 1971 Section 4 & 93.2\% & 999 & 45.0\% \\
+    337 & TRANSFER FEE FOR TRANSFEROR AND OCCUPANCY FE & REPUBLIC ACT NO. 10654 Section 89 & 64.8\% & 999 & 45.0\% \\
+    337 & TRANSFER FEE FOR TRANSFEROR AND OCCUPANCY FE & REPUBLIC ACT No. 10536 Section 6 & 45.6\% & 999 & 45.0\% \\
+    338 & COLLECTION & REPUBLIC ACT No. 6039 Section 1 & 91.4\% & 2 & 37.5\% \\
+    339 & MARKET COMMITTEE & REPUBLIC ACT No. 6039 Section 1 & 74.2\% & 999 & 45.0\% \\
+    341 & LESSEE SHALL PERSONALLY ADMINISTER HIS/HER S & REPUBLIC ACT No. 2935 Section 9 & 86.1\% & 999 & 45.0\% \\
+    341 & LESSEE SHALL PERSONALLY ADMINISTER HIS/HER S & Republic Act No. 8550 February 25, 1998 Section 46 & 75.7\% & 999 & 45.0\% \\
+    342 & PARTNERSHIP WITH STALLHOLDER & REPUBLIC ACT NO. 386 Section 1837 & 93.5\% & 999 & 45.0\% \\
+    342 & PARTNERSHIP WITH STALLHOLDER & REPUBLIC ACT NO. 386 Section 1834 & 82.7\% & 999 & 45.0\% \\
+    342 & PARTNERSHIP WITH STALLHOLDER & REPUBLIC ACT No. 6039 Section 1 & 79.9\% & 999 & 45.0\% \\
+    342 & PARTNERSHIP WITH STALLHOLDER & REPUBLIC ACT NO. 386 Section 1850 & 78.8\% & 999 & 45.0\% \\
+    342 & PARTNERSHIP WITH STALLHOLDER & REPUBLIC ACT NO. 386 Section 1844 & 75.8\% & 999 & 45.0\% \\
+    342 & PARTNERSHIP WITH STALLHOLDER & REPUBLIC ACT NO. 386 Section 1840 & 72.2\% & 999 & 45.0\% \\
+    342 & PARTNERSHIP WITH STALLHOLDER & REPUBLIC ACT NO. 386 Section 1811 & 52.7\% & 999 & 45.0\% \\
+    342 & PARTNERSHIP WITH STALLHOLDER & REPUBLIC ACT NO. 386 Section 1830 & 51.6\% & 999 & 45.0\% \\
+    345 & APPEAL & REPUBLIC ACT No. 9408 March 24, 2007 Section 16 & 93.1\% & 2 & 37.5\% \\
+    345 & APPEAL & REPUBLIC ACT No. 170 Section 68 & 75.0\% & 999 & 45.0\% \\
+    345 & APPEAL & REPUBLIC ACT No. 3811 Section 63 & 62.4\% & 999 & 45.0\% \\
+    346 & MARKET HOURS & REPUBLIC ACT No. 6039 Section 1 & 88.3\% & 999 & 45.0\% \\
+    348 & ABANDONED STALL/ARTICLES & REPUBLIC ACT NO. 7651, June 04, 1993 Section 1 & 77.6\% & 2 & 37.5\% \\
+    348 & ABANDONED STALL/ARTICLES & REPUBLIC ACT No. 9408 March 24, 2007 Section 25 & 71.5\% & 999 & 45.0\% \\
+    348 & ABANDONED STALL/ARTICLES & REPUBLIC ACT NO. 8798, July 15, 2000 Section 24 & 64.4\% & 999 & 45.0\% \\
+    349 & PEDDLING AND HAWKING & REPUBLIC ACT No. 6039 Section 1 & 96.3\% & 999 & 45.0\% \\
+    350 & LOAFING, LOITERING, BEGGING AND THE LIKE & REPUBLIC ACT No. 6039 Section 1 & 51.4\% & 999 & 45.0\% \\
+    351 & INTOXICATING DRINKS; DISPENSING AND SERVING  & REPUBLIC ACT No. 6039 Section 1 & 99.1\% & 999 & 45.0\% \\
+    354 & REMOVAL OF CONSTRUCTION AND ALTERATION OF ST & REPUBLIC ACT No. 6039 Section 1 & 94.1\% & 2 & 37.5\% \\
+    354 & REMOVAL OF CONSTRUCTION AND ALTERATION OF ST & REPUBLIC ACT No. 1368 Section 10 & 47.0\% & 999 & 45.0\% \\
+    355 & REVOCATION OF LEASE & REPUBLIC ACT No. 6039 Section 1 & 96.7\% & 999 & 45.0\% \\
+    356 & EJECTED STALLHOLDERS, DISQUALIFIED TO PARTIC & REPUBLIC ACT No. 6039 Section 1 & 97.5\% & 999 & 45.0\% \\
+    356 & EJECTED STALLHOLDERS, DISQUALIFIED TO PARTIC & REPUBLIC ACT No. 3516 Section 2 & 89.2\% & 999 & 45.0\% \\
+    356 & EJECTED STALLHOLDERS, DISQUALIFIED TO PARTIC & REPUBLIC ACT NO. 10163 May 16, 2012 Section 25 & 81.7\% & 999 & 45.0\% \\
+    356 & EJECTED STALLHOLDERS, DISQUALIFIED TO PARTIC & REPUBLIC ACT NO. 11538, May 18, 2021 Section 8 & 80.5\% & 999 & 45.0\% \\
+    356 & EJECTED STALLHOLDERS, DISQUALIFIED TO PARTIC & REPUBLIC ACT No. 6388 Section 74 & 53.0\% & 999 & 45.0\% \\
+    358 & CLEANING OF MARKET PREMISES & REPUBLIC ACT No. 6039 Section 1 & 98.1\% & 999 & 45.0\% \\
+    360 & GENERAL LIGHTING FACILITIES & REPUBLIC ACT No. 6039 Section 1 & 98.8\% & 999 & 45.0\% \\
+    361 & GARBAGE RECEPTACLES & REPUBLIC ACT No. 6039 Section 1 & 60.3\% & 999 & 45.0\% \\
+    362 & COOKED/RAW FOODS PROTECTION FROM CONTAMINATI & pd\_69\_1972 Section 186-B & 92.0\% & 999 & 45.0\% \\
+    363 & CONSTRUCTION/CARE OF STALLS/BOOTHS, TABLES A & REPUBLIC ACT No. 6039 Section 1 & 97.0\% & 999 & 45.0\% \\
+    364 & CLEANING OF STALLS/BOOTHS OR SPACES AT END O & REPUBLIC ACT No. 6039 Section 1 & 98.5\% & 999 & 45.0\% \\
+    365 & ABANDONMENT OF PERISHABLE GOODS & REPUBLIC ACT No. 6039 Section 1 & 99.0\% & 999 & 45.0\% \\
+    365 & ABANDONMENT OF PERISHABLE GOODS & REPUBLIC ACT NO. 10863, May 30, 2016 Section 418 & 97.7\% & 999 & 45.0\% \\
+    365 & ABANDONMENT OF PERISHABLE GOODS & REPUBLIC ACT NO. 10863, May 30, 2016 Section 1130 & 96.7\% & 999 & 45.0\% \\
+    365 & ABANDONMENT OF PERISHABLE GOODS & REPUBLIC ACT NO. 10863, May 30, 2016 Section 1404 & 89.1\% & 999 & 45.0\% \\
+    365 & ABANDONMENT OF PERISHABLE GOODS & REPUBLIC ACT NO. 10863, May 30, 2016 Section 1144 & 84.4\% & 999 & 45.0\% \\
+    366 & POSTING OF RULES AND REGULATIONS & REPUBLIC ACT No. 6039 Section 1 & 92.5\% & 999 & 45.0\% \\
+    367 & IMPOSITION OF FEES & EXECUTIVE ORDER NO. 137 November 28, 1993 Section 2 & 97.8\% & 1 & 30.0\% \\
+    367 & IMPOSITION OF FEES & EXECUTIVE ORDER NO. 292 Section 48 & 87.9\% & 999 & 45.0\% \\
+    367 & IMPOSITION OF FEES & REPUBLIC ACT No. 1842 Section 1 & 85.7\% & 999 & 45.0\% \\
+    367 & IMPOSITION OF FEES & Republic Act No. 9296 May 12, 2004 Section 11 & 84.1\% & 999 & 45.0\% \\
+    367 & IMPOSITION OF FEES & PRESIDENTIAL DECREE No. 7 Section 1 & 72.6\% & 2 & 37.5\% \\
+    367 & IMPOSITION OF FEES & EXECUTIVE ORDER NO. 137 November 28, 1993 Section 4 & 39.4\% & 1 & 30.0\% \\
+    367 & IMPOSITION OF FEES & REPUBLIC ACT NO. 1578, June 16, 1956 Section 4 & 38.3\% & 2 & 37.5\% \\
+    368 & PLACE OF SLAUGHTER & EXECUTIVE ORDER NO. 100, November 02, 1967 Section 1 & 98.8\% & 999 & 45.0\% \\
+    368 & PLACE OF SLAUGHTER & EXECUTIVE ORDER NO. 253, August 05, 1970 Section 1 & 97.5\% & 999 & 45.0\% \\
+    368 & PLACE OF SLAUGHTER & REPUBLIC ACT NO. 10360 Section 36 & 95.3\% & 999 & 45.0\% \\
+    368 & PLACE OF SLAUGHTER & REPUBLIC ACT No. 9408 March 24, 2007 Section 40 & 79.1\% & 999 & 45.0\% \\
+    368 & PLACE OF SLAUGHTER & REPUBLIC ACT No. 9404 March 23, 2007 Section 45 & 78.9\% & 999 & 45.0\% \\
+    368 & PLACE OF SLAUGHTER & REPUBLIC ACT NO. 8798, July 15, 2000 Section 39 & 71.0\% & 999 & 45.0\% \\
+    368 & PLACE OF SLAUGHTER & REPUBLIC ACT NO. 9015 February 28, 2001 Section 39 & 70.3\% & 999 & 45.0\% \\
+    368 & PLACE OF SLAUGHTER & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 17 & 46.1\% & 999 & 45.0\% \\
+    369 & TIME OF PAYMENT & EXECUTIVE ORDER NO. 100, November 02, 1967 Section 1 & 99.3\% & 999 & 45.0\% \\
+    369 & TIME OF PAYMENT & EXECUTIVE ORDER NO. 253, August 05, 1970 Section 1 & 98.6\% & 999 & 45.0\% \\
+    370 & ADMINISTRATIVE PROVISION & EXECUTIVE ORDER NO. 100, November 02, 1967 Section 1 & 98.6\% & 999 & 45.0\% \\
+    370 & ADMINISTRATIVE PROVISION & EXECUTIVE ORDER NO. 253, August 05, 1970 Section 1 & 95.0\% & 999 & 45.0\% \\
+    371 & PROHIBITION & EXECUTIVE ORDER NO. 137 November 28, 1993 Section 2 & 99.8\% & 2 & 37.5\% \\
+    371 & PROHIBITION & PRESIDENTIAL DECREE No. 426 March 30, 1974 Section 17 & 99.7\% & 2 & 37.5\% \\
+    372 & CONFISCATION & Republic Act No. 9296 May 12, 2004 Section 28 & 95.7\% & 999 & 45.0\% \\
+    372 & CONFISCATION & REPUBLIC ACT No. 1842 Section 1 & 41.9\% & 2 & 37.5\% \\
+    373 & PENAL PROVISIONS & PRESIDENTIAL DECREE No. 1987 Section 10 & 90.8\% & 999 & 45.0\% \\
+    373 & PENAL PROVISIONS & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 85.6\% & 999 & 45.0\% \\
+    374 & IMPOSITION OF TAX & REPUBLIC ACT No. 9368 Section 11 & 91.5\% & 2 & 37.5\% \\
+    374 & IMPOSITION OF TAX & REPUBLIC ACT NO. 7296, March 26, 1992 Section 12 & 38.1\% & 2 & 37.5\% \\
+    375 & INDIVIDUALS LIABLE TO COMMUNITY TAX & Republic Act No. 8424 December 11, 1997 Section 51 & 97.8\% & 2 & 37.5\% \\
+    377 & EXEMPTION & REPUBLIC ACT No. 1503 Section 1 & 74.2\% & 2 & 37.5\% \\
+    379 & TIME OF PAYMENT; PENALTIES FOR DELINQUENCY & REPUBLIC ACT No. 6051 Section 50 & 74.0\% & 2 & 37.5\% \\
+    379 & TIME OF PAYMENT; PENALTIES FOR DELINQUENCY & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 66.0\% & 2 & 37.5\% \\
+    379 & TIME OF PAYMENT; PENALTIES FOR DELINQUENCY & REPUBLIC ACT No. 5495 Section 50 & 65.4\% & 2 & 37.5\% \\
+    379 & TIME OF PAYMENT; PENALTIES FOR DELINQUENCY & REPUBLIC ACT No. 409 Section 64 & 65.2\% & 2 & 37.5\% \\
+    380 & COMMUNITY TAX CERTIFICATE & Republic Act No. 7160 October 10, 1991 Section 139 & 96.8\% & 2 & 37.5\% \\
+    380 & COMMUNITY TAX CERTIFICATE & Republic Act No. 7160 October 10, 1991 Section 163 & 54.3\% & 2 & 37.5\% \\
+    381 & PRESENTATION OF COMMUNITY TAX CERTIFICATE ON & Republic Act No. 7160 October 10, 1991 Section 162 & 98.8\% & 2 & 37.5\% \\
+    381 & PRESENTATION OF COMMUNITY TAX CERTIFICATE ON & REPUBLIC ACT No. 1538 Section 1 & 98.0\% & 999 & 45.0\% \\
+    381 & PRESENTATION OF COMMUNITY TAX CERTIFICATE ON & Republic Act No. 7160 October 10, 1991 Section 139 & 96.9\% & 2 & 37.5\% \\
+    381 & PRESENTATION OF COMMUNITY TAX CERTIFICATE ON & Republic Act No. 7160 October 10, 1991 Section 176 & 95.3\% & 2 & 37.5\% \\
+    381 & PRESENTATION OF COMMUNITY TAX CERTIFICATE ON & REPUBLIC ACT No. 1368 Section 3 & 91.8\% & 999 & 45.0\% \\
+    381 & PRESENTATION OF COMMUNITY TAX CERTIFICATE ON & PRESIDENTIAL DECREE No. 1118 Section 1 & 42.5\% & 2 & 37.5\% \\
+    382 & COLLECTION AND ALLOCATION OF PROCEEDS OF THE & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 14 & 98.4\% & 2 & 37.5\% \\
+    382 & COLLECTION AND ALLOCATION OF PROCEEDS OF THE & Republic Act No. 7160 October 10, 1991 Section 247 & 97.6\% & 2 & 37.5\% \\
+    382 & COLLECTION AND ALLOCATION OF PROCEEDS OF THE & BATAS PAMBANSA BLG. 337 Section 107 & 96.8\% & 999 & 45.0\% \\
+    382 & COLLECTION AND ALLOCATION OF PROCEEDS OF THE & PRESIDENTIAL DECREE No 1913 March 29, 1974 Section 2 & 92.0\% & 2 & 37.5\% \\
+    382 & COLLECTION AND ALLOCATION OF PROCEEDS OF THE & Republic Act No. 7160 October 10, 1991 Section 334 & 90.3\% & 999 & 45.0\% \\
+    382 & COLLECTION AND ALLOCATION OF PROCEEDS OF THE & BATAS PAMBANSA BLG. 337 Section 103 & 51.0\% & 999 & 45.0\% \\
+    384 & AMOUNT OF SHARE & REPUBLIC ACT NO. 9054 March 31, 2001 Section 9 & 99.0\% & 2 & 37.5\% \\
+    384 & AMOUNT OF SHARE & REPUBLIC ACT NO. 9054 March 31, 2001 Section 15 & 95.2\% & 2 & 37.5\% \\
+    385 & SHARE FROM ANY GOVERNMENT AGENCY OR GOVERNME & REPUBLIC ACT NO. 9054 March 31, 2001 Section 9 & 99.6\% & 2 & 37.5\% \\
+    385 & SHARE FROM ANY GOVERNMENT AGENCY OR GOVERNME & Republic Act No. 7160 October 10, 1991 Section 285 & 98.5\% & 1 & 30.0\% \\
+    385 & SHARE FROM ANY GOVERNMENT AGENCY OR GOVERNME & REPUBLIC ACT No. 11054 Section 6 & 47.1\% & 2 & 37.5\% \\
+    386 & REMITTANCE OF THE SHARE & REPUBLIC ACT NO. 9054 March 31, 2001 Section 9 & 98.7\% & 2 & 37.5\% \\
+    386 & REMITTANCE OF THE SHARE & REPUBLIC ACT NO. 11538, May 18, 2021 Section 13 & 98.1\% & 999 & 45.0\% \\
+    386 & REMITTANCE OF THE SHARE & REPUBLIC ACT NO. 9054 March 31, 2001 Section 15 & 97.9\% & 2 & 37.5\% \\
+    389 & SUBMISSION OF LIST OF EMPLOYEES & Republic Act No. 7160 October 10, 1991 Section 139 & 92.1\% & 2 & 37.5\% \\
+    390 & WITHHOLDING OF BUSINESS TAX & pd\_69\_1972 Section 53 & 98.4\% & 2 & 37.5\% \\
+    390 & WITHHOLDING OF BUSINESS TAX & REPUBLIC ACT No. 5431 Section 6 & 98.2\% & 2 & 37.5\% \\
+    390 & WITHHOLDING OF BUSINESS TAX & Republic Act No. 7160 October 10, 1991 Section 146 & 96.9\% & 2 & 37.5\% \\
+    390 & WITHHOLDING OF BUSINESS TAX & REPUBLIC ACT No. 8960 September 7, 2000* Section 5 & 89.3\% & 999 & 45.0\% \\
+    390 & WITHHOLDING OF BUSINESS TAX & Republic Act No. 7160 October 10, 1991 Section 152 & 43.1\% & 2 & 37.5\% \\
+    392 & DUTY OF A PERSON RETIRING FROM BUSINESS, PRA & Republic Act No. 7160 October 10, 1991 Section 139 & 94.5\% & 2 & 37.5\% \\
+    393 & TAX OR FEE FOR FRACTION OF A QUARTER OR YEAR & Republic Act No. 8424 December 11, 1997 Section 114 & 87.6\% & 2 & 37.5\% \\
+    393 & TAX OR FEE FOR FRACTION OF A QUARTER OR YEAR & Republic Act No. 7160 October 10, 1991 Section 139 & 78.1\% & 2 & 37.5\% \\
+    393 & TAX OR FEE FOR FRACTION OF A QUARTER OR YEAR & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 71.4\% & 2 & 37.5\% \\
+    394 & PENAL PROVISIONS & REPUBLIC ACT No. 9368 Section 6 & 68.6\% & 2 & 37.5\% \\
+    395 & TAX PERIOD AND MANNER OF PAYMENT & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 89.5\% & 2 & 37.5\% \\
+    396 & ACCRUAL OF THE TAX & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 97.0\% & 2 & 37.5\% \\
+    396 & ACCRUAL OF THE TAX & REPUBLIC ACT NO. 10360 Section 50 & 46.3\% & 2 & 37.5\% \\
+    397 & TIME FOR PAYMENT & Republic Act No. 8424 December 11, 1997 Section 114 & 56.7\% & 2 & 37.5\% \\
+    398 & SURCHARGES FOR LATE PAYMENT AND INTEREST ON  & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 68.6\% & 2 & 37.5\% \\
+    398 & SURCHARGES FOR LATE PAYMENT AND INTEREST ON  & PRESIDENTIAL DECREE No. 1705 Section 10 & 43.7\% & 2 & 37.5\% \\
+    405 & INVOICE REQUIREMENTS & REPUBLIC ACT No. 1612 Section 18 & 93.1\% & 999 & 45.0\% \\
+    405 & INVOICE REQUIREMENTS & REPUBLIC ACT No. 48 Section 9 & 91.3\% & 999 & 45.0\% \\
+    405 & INVOICE REQUIREMENTS & Republic Act No. 8424 December 11, 1997 Section 237 & 61.5\% & 999 & 45.0\% \\
+    407 & APPLICATION OF ARTICLE & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 98.3\% & 2 & 37.5\% \\
+    410 & DISTRAINT OF PERSONAL PROPERTY & Republic Act No. 7160 October 10, 1991 Section 176 & 67.5\% & 1 & 30.0\% \\
+    410 & DISTRAINT OF PERSONAL PROPERTY & REPUBLIC ACT NO. 537, June 16, 1950 Section 53 & 41.7\% & 2 & 37.5\% \\
+    412 & PENALTY FOR FAILURE TO ISSUE AND EXECUTE WAR & Republic Act No. 7160 October 10, 1991 Section 258 & 50.9\% & 2 & 37.5\% \\
+    416 & PURCHASE OF PROPERTY BY THE CITY FOR WANT OF & Republic Act No. 7160 October 10, 1991 Section 178 & 89.4\% & 2 & 37.5\% \\
+    417 & RESALE OF REAL ESTATE TAKEN FOR TAXES, FEES  & REPUBLIC ACT NO. 8472, January 30, 1998 Section 17 & 68.8\% & 999 & 45.0\% \\
+    417 & RESALE OF REAL ESTATE TAKEN FOR TAXES, FEES  & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 66.3\% & 999 & 45.0\% \\
+    419 & FURTHER DISTRAIN OR LEVY & Republic Act No. 8424 December 11, 1997 Section 207 & 48.6\% & 2 & 37.5\% \\
+    422 & PROTEST OF ASSESSMENT & REPUBLIC ACT NO. 537, June 16, 1950 Section 76 & 60.1\% & 999 & 45.0\% \\
+    423 & PAYMENT UNDER PROTEST & REPUBLIC ACT No. 3811 Section 59 & 91.7\% & 2 & 37.5\% \\
+    423 & PAYMENT UNDER PROTEST & REPUBLIC ACT NO. 537, June 16, 1950 Section 76 & 90.9\% & 999 & 45.0\% \\
+    423 & PAYMENT UNDER PROTEST & PRESIDENTIAL DECREE No. 464 June 1, 1974 Section 62 & 50.1\% & 2 & 37.5\% \\
+    423 & PAYMENT UNDER PROTEST & REPUBLIC ACT NO. 537, June 16, 1950 Section 69 & 49.6\% & 2 & 37.5\% \\
+    424 & CLAIM FOR REFUND OF TAX CREDIT & REPUBLIC ACT NO. 11976, January 05, 2024 Section 32 & 83.1\% & 2 & 37.5\% \\
+    424 & CLAIM FOR REFUND OF TAX CREDIT & Republic Act No. 8424 December 11, 1997 Section 229 & 63.9\% & 2 & 37.5\% \\
+    425 & LEGALITY OF THIS CODE & REPUBLIC ACT No. 2622 Section 46 & 97.5\% & 999 & 45.0\% \\
+    425 & LEGALITY OF THIS CODE & PRESIDENTIAL DECREE No. 1296 February 7, 1978 Section 196 & 96.9\% & 999 & 45.0\% \\
+    425 & LEGALITY OF THIS CODE & REPUBLIC ACT No. 9408 March 24, 2007 Section 18 & 69.7\% & 999 & 45.0\% \\
+    426 & POWER TO LEVY OTHER TAXES, FEES OR CHARGES & Republic Act No. 7160 October 10, 1991 Section 133 & 66.3\% & 2 & 37.5\% \\
+    427 & LIMITATIONS ON THE TAXING POWERS OF THE CITY & Republic Act No. 7160 October 10, 1991 Section 151 & 98.0\% & 1 & 30.0\% \\
+    427 & LIMITATIONS ON THE TAXING POWERS OF THE CITY & REPUBLIC ACT No. 4497 Section 1 & 81.4\% & 2 & 37.5\% \\
+    427 & LIMITATIONS ON THE TAXING POWERS OF THE CITY & PRESIDENTIAL DECREE No. 921 April 12, 1976 Section 12 & 76.3\% & 2 & 37.5\% \\
+    430 & GENERAL PENAL PROVISION & Republic Act No. 7394 April 13, 1992 Section 123 & 86.8\% & 2 & 37.5\% \\
+\end{longtable}
+}
+
+\section{DAVAO-TIER3-05: City of Davao v. GSIS (Ord. No. 158-05)}
+\label{sec:tab_app_tier3_05}
+
+{\scriptsize\setlength{\tabcolsep}{3.0pt}\renewcommand{\arraystretch}{0.84}
+\begin{longtable}{>{\centering\arraybackslash}p{0.70cm} >{\RaggedRight\arraybackslash}p{4.00cm} >{\RaggedRight\arraybackslash}p{7.00cm} r r r}
+    \caption[DAVAO-TIER3-05 Conflict Pairs]{DAVAO-TIER3-05 Flagged Section--Statute Pairs ($N = 37$)} \label{tab:app_tier3_05} \\
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    6 & Imposition of the Basic Real Property Tax & PRESIDENTIAL DECREE No. 1446 Section 1 & 99.6\% & 2 & 37.5\% \\
+    6 & Imposition of the Basic Real Property Tax & Republic Act No. 7160 October 10, 1991 Section 236 & 99.1\% & 2 & 37.5\% \\
+    6 & Imposition of the Basic Real Property Tax & PRESIDENTIAL DECREE No. 1446 Section 6 & 97.7\% & 2 & 37.5\% \\
+    6 & Imposition of the Basic Real Property Tax & PRESIDENTIAL DECREE No. 853 December 19, 1975 Section 6 & 63.7\% & 2 & 37.5\% \\
+    7 & Additional Levy on Real Property for the Spe & Republic Act No. 7160 October 10, 1991 Section 272 & 87.1\% & 2 & 37.5\% \\
+    8 & Exemptions to the Imposition & Republic Act No. 7160 October 10, 1991 Section 234 & 93.6\% & 2 & 37.5\% \\
+    9 & Time of Payment & REPUBLIC ACT No. 4413 Section 46 & 73.6\% & 2 & 37.5\% \\
+    9 & Time of Payment & REPUBLIC ACT No. 5495 Section 50 & 72.1\% & 2 & 37.5\% \\
+    9 & Time of Payment & REPUBLIC ACT No. 4586 Section 50 & 70.5\% & 2 & 37.5\% \\
+    9 & Time of Payment & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 52.6\% & 2 & 37.5\% \\
+    9 & Time of Payment & REPUBLIC ACT No. 409 Section 64 & 38.9\% & 2 & 37.5\% \\
+    10 & Tax Discount for Advanced and Prompt Payment & Republic Act No. 7160 October 10, 1991 Section 250 & 91.8\% & 2 & 37.5\% \\
+    10 & Tax Discount for Advanced and Prompt Payment & PRESIDENTIAL DECREE No. 853 December 19, 1975 Section 9 & 90.2\% & 2 & 37.5\% \\
+    10 & Tax Discount for Advanced and Prompt Payment & REPUBLIC ACT No. 3857 Section 63 & 82.2\% & 2 & 37.5\% \\
+    10 & Tax Discount for Advanced and Prompt Payment & PRESIDENTIAL DECREE No. 391 February 17, 1974 Section 1 & 50.6\% & 2 & 37.5\% \\
+    10 & Tax Discount for Advanced and Prompt Payment & REPUBLIC ACT No. 409 Section 64 & 45.2\% & 2 & 37.5\% \\
+    10 & Tax Discount for Advanced and Prompt Payment & REPUBLIC ACT NO. 537, June 16, 1950 Section 52 & 38.1\% & 2 & 37.5\% \\
+    11 & Collection and Distribution of Proceeds & PRESIDENTIAL DECREE No 1913 March 29, 1974 Section 2 & 87.9\% & 2 & 37.5\% \\
+    11 & Collection and Distribution of Proceeds & PRESIDENTIAL DECREE No. 1446 Section 6 & 39.1\% & 2 & 37.5\% \\
+    11 & Collection and Distribution of Proceeds & Republic Act No. 7160 October 10, 1991 Section 260 & 38.0\% & 2 & 37.5\% \\
+    12 & Administrative Provisions & REPUBLIC ACT No. 4586 Section 57 & 38.4\% & 2 & 37.5\% \\
+    12 & Administrative Provisions & Republic Act No. 7160 October 10, 1991 Section 258 & 37.7\% & 1 & 30.0\% \\
+    15 & Penalties for Omission of Property from Asse & PRESIDENTIAL DECREE No. 1383 Section 7 & 64.1\% & 2 & 37.5\% \\
+    16 & Penalties for Delaying Assessment of Real Pr & PRESIDENTIAL DECREE No. 1383 Section 7 & 63.3\% & 2 & 37.5\% \\
+    17 & Penalties for Failure to Dispose the Delinqu & PRESIDENTIAL DECREE No. 1383 Section 7 & 48.9\% & 999 & 45.0\% \\
+    18 & Periods within which to collect Real Propert & BATAS PAMBANSA Blg. 700 Section 2 & 97.3\% & 2 & 37.5\% \\
+    18 & Periods within which to collect Real Propert & REPUBLIC ACT No. 5495 Section 50 & 94.5\% & 2 & 37.5\% \\
+    18 & Periods within which to collect Real Propert & Republic Act No. 7160 October 10, 1991 Section 258 & 86.2\% & 2 & 37.5\% \\
+    18 & Periods within which to collect Real Propert & Republic Act No. 7160 October 10, 1991 Section 260 & 57.9\% & 2 & 37.5\% \\
+    18 & Periods within which to collect Real Propert & Republic Act No. 7160 October 10, 1991 Section 254 & 50.6\% & 2 & 37.5\% \\
+    18 & Periods within which to collect Real Propert & Republic Act No. 8424 December 11, 1997 Section 222 & 40.5\% & 2 & 37.5\% \\
+    21 & Meetings and Expenses of the City Board of A & REPUBLIC ACT No. 3279 Section 44 & 65.3\% & 2 & 37.5\% \\
+    21 & Meetings and Expenses of the City Board of A & REPUBLIC ACT No. 3857 Section 62 & 57.2\% & 2 & 37.5\% \\
+    21 & Meetings and Expenses of the City Board of A & REPUBLIC ACT No. 3068 Section 52 & 40.8\% & 2 & 37.5\% \\
+    23 & Effect of Appeal on the Payment of Real Prop & REPUBLIC ACT No. 3857 Section 56 & 95.4\% & 2 & 37.5\% \\
+    23 & Effect of Appeal on the Payment of Real Prop & REPUBLIC ACT No. 5261 Section 37 & 53.7\% & 2 & 37.5\% \\
+    23 & Effect of Appeal on the Payment of Real Prop & REPUBLIC ACT No. 5520 Section 32 & 46.2\% & 2 & 37.5\% \\
+\end{longtable}
+}
+
+\section{DAVAO-TIER3-06: City of Davao v. Randy Allied Ventures (Ord. No. 0158-05 Art. 8)}
+\label{sec:tab_app_tier3_06}
+
+{\scriptsize\setlength{\tabcolsep}{3.0pt}\renewcommand{\arraystretch}{0.84}
+\begin{longtable}{>{\centering\arraybackslash}p{0.70cm} >{\RaggedRight\arraybackslash}p{4.00cm} >{\RaggedRight\arraybackslash}p{7.00cm} r r r}
+    \caption[DAVAO-TIER3-06 Conflict Pairs]{DAVAO-TIER3-06 Flagged Section--Statute Pairs ($N = 6$)} \label{tab:app_tier3_06} \\
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    5 & NO APPROVAL OF MINING OPERATIONS & REPUBLIC ACT NO. 7942 March 3, 1995 Section 76 & 98.4\% & 1 & 30.0\% \\
+    5 & NO APPROVAL OF MINING OPERATIONS & REPUBLIC ACT NO. 7942 March 3, 1995 Section 43 & 98.1\% & 1 & 30.0\% \\
+    7 & PENALTIES & REPUBLIC ACT NO. 10344 Section 6 & 79.4\% & 2 & 37.5\% \\
+    7 & PENALTIES & REPUBLIC ACT NO. 10175 Section 8 & 72.1\% & 2 & 37.5\% \\
+    7 & PENALTIES & REPUBLIC ACT NO. 12010, July 20, 2024 Section 16 & 71.0\% & 2 & 37.5\% \\
+    7 & PENALTIES & REPUBLIC ACT No. 10593 Section 5 & 55.7\% & 2 & 37.5\% \\
+\end{longtable}
+}
+
+\section{DAVAO-TIER3-07: Davao City Water District v. CSC (Local Charter)}
+\label{sec:tab_app_tier3_07}
+
+{\scriptsize\setlength{\tabcolsep}{3.0pt}\renewcommand{\arraystretch}{0.84}
+\begin{longtable}{>{\centering\arraybackslash}p{0.70cm} >{\RaggedRight\arraybackslash}p{4.00cm} >{\RaggedRight\arraybackslash}p{7.00cm} r r r}
+    \caption[DAVAO-TIER3-07 Conflict Pairs]{DAVAO-TIER3-07 Flagged Section--Statute Pairs ($N = 3$)} \label{tab:app_tier3_07} \\
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    4 & PROHIBITED ACTS & EXECUTIVE ORDER NO. 106, February 26, 2020 Section 1 & 93.0\% & 2 & 37.5\% \\
+    10 & NO CONTEST PROVISION & PRESIDENTIAL DECREE No. 1462 Section 10 & 43.7\% & 2 & 37.5\% \\
+    10 & NO CONTEST PROVISION & PRESIDENTIAL DECREE No. 984 August 18, 1976 Section 9 & 38.6\% & 2 & 37.5\% \\
+\end{longtable}
+}
+
+\section{DAVAO-TIER3-08: Pest Management Assn. v. Davao (Aerial Regulation)}
+\label{sec:tab_app_tier3_08}
+
+{\scriptsize\setlength{\tabcolsep}{3.0pt}\renewcommand{\arraystretch}{0.84}
+\begin{longtable}{>{\centering\arraybackslash}p{0.70cm} >{\RaggedRight\arraybackslash}p{4.00cm} >{\RaggedRight\arraybackslash}p{7.00cm} r r r}
+    \caption[DAVAO-TIER3-08 Conflict Pairs]{DAVAO-TIER3-08 Flagged Section--Statute Pairs ($N = 32$)} \label{tab:app_tier3_08} \\
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    4 & INTERPRETATION & REPUBLIC ACT No. 4136 Section 36 & 88.1\% & 999 & 45.0\% \\
+    7 & SPEED LIMITS & EXECUTIVE ORDER NO. 406, October 13, 1960 Section 1 & 99.0\% & 999 & 45.0\% \\
+    7 & SPEED LIMITS & REPUBLIC ACT No. 2000 Section 7 & 99.0\% & 2 & 37.5\% \\
+    7 & SPEED LIMITS & REPUBLIC ACT NO. 9015 February 28, 2001 Section 2 & 98.8\% & 2 & 37.5\% \\
+    7 & SPEED LIMITS & EXECUTIVE ORDER NO. 487 September 20, 1977 Section 1 & 98.7\% & 2 & 37.5\% \\
+    7 & SPEED LIMITS & EXECUTIVE ORDER NO. 286, July 08, 1940 Section 1 & 98.6\% & 2 & 37.5\% \\
+    7 & SPEED LIMITS & EXECUTIVE ORDER NO. 71, December 03, 1936 Section 1 & 98.4\% & 2 & 37.5\% \\
+    7 & SPEED LIMITS & EXECUTIVE ORDER NO. 113, May 02, 1955 Section 1 & 98.1\% & 2 & 37.5\% \\
+    7 & SPEED LIMITS & REPUBLIC ACT No. 4136 Section 35 & 95.9\% & 2 & 37.5\% \\
+    9 & EXEMPTIONS & REPUBLIC ACT No. 4136 Section 24 & 90.3\% & 2 & 37.5\% \\
+    11 & RESPONSIBILITIES OF THE CTTMO & REPUBLIC ACT No. 4136 Section 36 & 92.3\% & 999 & 45.0\% \\
+    12 & ENFORCEMENT PROCEDURE & REPUBLIC ACT No. 4136 Section 36 & 99.2\% & 999 & 45.0\% \\
+    12 & ENFORCEMENT PROCEDURE & REPUBLIC ACT No. 10586 Section 9 & 74.2\% & 2 & 37.5\% \\
+    12 & ENFORCEMENT PROCEDURE & PRESIDENTIAL DECREE No. 765 August 8, 1975 Section 2 & 69.0\% & 999 & 45.0\% \\
+    12 & ENFORCEMENT PROCEDURE & REPUBLIC ACT NO. 11708, April 13, 2022 Section 13 & 61.3\% & 999 & 45.0\% \\
+    12 & 1 & BATAS PAMBANSA Blg. 398 Section 5 & 75.2\% & 2 & 37.5\% \\
+    12 & 1 & BATAS PAMBANSA Blg. 398 Section 12 & 67.2\% & 999 & 45.0\% \\
+    12 & 1 & REPUBLIC ACT No. 4136 Section 24 & 48.1\% & 2 & 37.5\% \\
+    12 & 2 APPREHENSION FOR SPEEDING UNDER SECTION 6  & BATAS PAMBANSA Blg. 398 Section 12 & 67.0\% & 999 & 45.0\% \\
+    12 & 2 APPREHENSION FOR SPEEDING UNDER SECTION 6  & REPUBLIC ACT No. 4136 Section 24 & 56.2\% & 2 & 37.5\% \\
+    12 & (e) The CTTMO shall inform the offending dri & REPUBLIC ACT No. 4136 Section 24 & 61.8\% & 2 & 37.5\% \\
+    12 & (e) The CTTMO shall inform the offending dri & BATAS PAMBANSA Blg. 398 Section 5 & 60.0\% & 2 & 37.5\% \\
+    12 & (e) The CTTMO shall inform the offending dri & BATAS PAMBANSA Blg. 398 Section 12 & 49.5\% & 999 & 45.0\% \\
+    13 & 1 & PRESIDENTIAL DECREE No. 1605 November 21, 1978 Section 5 & 94.3\% & 999 & 45.0\% \\
+    13 & 1 & REPUBLIC ACT No. 10883 Section 5 & 53.0\% & 999 & 45.0\% \\
+    13 & 2 & REPUBLIC ACT No. 10883 Section 6 & 87.9\% & 999 & 45.0\% \\
+    15 & FAILURE TO SETTLE ADMINISTRATIVE FINES & BATAS PAMBANSA Blg. 398 Section 12 & 47.5\% & 2 & 37.5\% \\
+    17 & REVIEW OF SPEED LIMITS & REPUBLIC ACT NO. 8487, February 11, 1998 Section 16 & 88.5\% & 999 & 45.0\% \\
+    17 & REVIEW OF SPEED LIMITS & REPUBLIC ACT NO. 8472, January 30, 1998 Section 18 & 65.2\% & 999 & 45.0\% \\
+    17 & REVIEW OF SPEED LIMITS & REPUBLIC ACT No. 9436 April 12, 2007 Section 19 & 58.7\% & 999 & 45.0\% \\
+    17 & REVIEW OF SPEED LIMITS & REPUBLIC ACT NO. 8798, July 15, 2000 Section 18 & 57.8\% & 999 & 45.0\% \\
+    18 & INFORMATION, EDUCATION, AND COMMUNICATION CA & REPUBLIC ACT NO. 9999 Section 6 & 60.0\% & 999 & 45.0\% \\
+\end{longtable}
+}
+
+\section{SC-PHIL-09: Magtajas v. Pryce Properties (CDO Casino Ban)}
+\label{sec:tab_app_tier3_09}
+
+{\scriptsize\setlength{\tabcolsep}{3.0pt}\renewcommand{\arraystretch}{0.84}
+\begin{longtable}{>{\centering\arraybackslash}p{0.70cm} >{\RaggedRight\arraybackslash}p{4.00cm} >{\RaggedRight\arraybackslash}p{7.00cm} r r r}
+    \caption[SC-PHIL-09 Conflict Pairs]{SC-PHIL-09 Flagged Section--Statute Pairs ($N = 13$)} \label{tab:app_tier3_09} \\
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    1 & PROHIBITION OF CASINO OPERATIONS (ORD & REPUBLIC ACT No. 10927 Section 3 & 98.0\% & 2 & 37.5\% \\
+    4 & PROHIBITION ON BUSINESS PERMITS FOR CASINO ( & PRESIDENTIAL DECREE No. 1399 Section 4 & 100.0\% & 2 & 37.5\% \\
+    4 & PROHIBITION ON BUSINESS PERMITS FOR CASINO ( & REPUBLIC ACT No. 10927 Section 3 & 99.8\% & 2 & 37.5\% \\
+    4 & PROHIBITION ON BUSINESS PERMITS FOR CASINO ( & PRESIDENTIAL DECREE No. 1399 Section 4 & 75.6\% & 999 & 45.0\% \\
+    5 & REVOCATION AND PREMISES PROHIBITION (ORD & PRESIDENTIAL DECREE No. 1399 Section 4 & 99.9\% & 2 & 37.5\% \\
+    5 & REVOCATION AND PREMISES PROHIBITION (ORD & PRESIDENTIAL DECREE No. 956 July 9, 1976 Section 8 & 99.6\% & 2 & 37.5\% \\
+    5 & REVOCATION AND PREMISES PROHIBITION (ORD & PRESIDENTIAL DECREE No. 956 July 9, 1976 Section 2 & 97.0\% & 2 & 37.5\% \\
+    5 & REVOCATION AND PREMISES PROHIBITION (ORD & REPUBLIC ACT No. 10927 Section 3 & 95.5\% & 2 & 37.5\% \\
+    6 & PENALTIES ON ESTABLISHMENT PERMITS (ORD & REPUBLIC ACT NO. 11900, July 25, 2022 Section 23 & 86.1\% & 2 & 37.5\% \\
+    6 & PENALTIES ON ESTABLISHMENT PERMITS (ORD & REPUBLIC ACT No. 11314 Section 10 & 65.0\% & 2 & 37.5\% \\
+    6 & PENALTIES ON ESTABLISHMENT PERMITS (ORD & REPUBLIC ACT No. 10909 Section 6 & 58.8\% & 2 & 37.5\% \\
+    6 & PENALTIES ON ESTABLISHMENT PERMITS (ORD & REPUBLIC ACT NO. 10643 Section 14 & 53.7\% & 2 & 37.5\% \\
+    6 & PENALTIES ON ESTABLISHMENT PERMITS (ORD & REPUBLIC ACT NO. 11592, October 14, 2021 Section 41 & 41.8\% & 2 & 37.5\% \\
+\end{longtable}
+}
+
+\section{SC-PHIL-10: City of Manila v. Laguio (Manila Ord. No. 7783)}
+\label{sec:tab_app_tier3_10}
+
+{\scriptsize\setlength{\tabcolsep}{3.0pt}\renewcommand{\arraystretch}{0.84}
+\begin{longtable}{>{\centering\arraybackslash}p{0.70cm} >{\RaggedRight\arraybackslash}p{4.00cm} >{\RaggedRight\arraybackslash}p{7.00cm} r r r}
+    \caption[SC-PHIL-10 Conflict Pairs]{SC-PHIL-10 Flagged Section--Statute Pairs ($N = 13$)} \label{tab:app_tier3_10} \\
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Sec.} & \textbf{Section Catchline} & \textbf{Matched Statutory Provision} & \textbf{Conf.} & \textbf{$d_G$} & \textbf{$\tau^*$} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    1 & PROHIBITED ESTABLISHMENTS AND COVERED TERRIT & REPUBLIC ACT No. 4586 Section 92 & 98.0\% & 999 & 45.0\% \\
+    1 & PROHIBITED ESTABLISHMENTS AND COVERED TERRIT & REPUBLIC ACT No. 5412 Section 95 & 96.6\% & 999 & 45.0\% \\
+    1 & PROHIBITED ESTABLISHMENTS AND COVERED TERRIT & REPUBLIC ACT No. 4645 Section 102 & 80.8\% & 999 & 45.0\% \\
+    1 & PROHIBITED ESTABLISHMENTS AND COVERED TERRIT & REPUBLIC ACT No. 5261 Section 91 & 77.1\% & 999 & 45.0\% \\
+    1 & PROHIBITED ESTABLISHMENTS AND COVERED TERRIT & PRESIDENTIAL DECREE No. 499 June 28, 1974 Section 1 & 61.1\% & 1 & 30.0\% \\
+    2 & PROHIBITION ON PERMIT ISSUANCE AND PAYMENT A & REPUBLIC ACT NO. 8975 November 7, 2000 Section 7 & 100.0\% & 999 & 45.0\% \\
+    2 & PROHIBITION ON PERMIT ISSUANCE AND PAYMENT A & EXECUTIVE ORDER NO. 135, May 04, 1948 Section 11 & 99.9\% & 2 & 37.5\% \\
+    2 & PROHIBITION ON PERMIT ISSUANCE AND PAYMENT A & BATAS PAMBANSA BLG. 880 Section 6 & 98.9\% & 999 & 45.0\% \\
+    2 & PROHIBITION ON PERMIT ISSUANCE AND PAYMENT A & REPUBLIC ACT No. 5261 Section 91 & 73.3\% & 999 & 45.0\% \\
+    2 & PROHIBITION ON PERMIT ISSUANCE AND PAYMENT A & REPUBLIC ACT No. 4487 Section 91 & 64.1\% & 999 & 45.0\% \\
+    4 & PENAL SANCTIONS AND SUMMARY CLOSURE & PRESIDENTIAL DECREE No. 1517 Section 21 & 95.8\% & 2 & 37.5\% \\
+    4 & PENAL SANCTIONS AND SUMMARY CLOSURE & Republic Act No. 9208 May 26, 2003 Section 10 & 89.3\% & 2 & 37.5\% \\
+    4 & PENAL SANCTIONS AND SUMMARY CLOSURE & PRESIDENTIAL DECREE No. 1203 Section 5 & 60.4\% & 2 & 37.5\% \\
+\end{longtable}
+}

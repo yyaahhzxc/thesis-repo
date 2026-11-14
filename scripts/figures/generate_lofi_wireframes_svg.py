@@ -99,7 +99,7 @@ def build_svg():
       <text x="{s1_x + s1_w - 450}" y="{s1_y + 39}" font-size="11" font-weight="600" fill="#374151" font-family="Inter, sans-serif">Local PyTorch CPU Engine: ONLINE</text>
 
       <rect x="{s1_x + s1_w - 250}" y="{s1_y + 20}" width="220" height="30" rx="6" fill="#F3F4F6" stroke="#D1D5DB"/>
-      <text x="{s1_x + s1_w - 235}" y="{s1_y + 39}" font-size="11" font-weight="600" fill="#4B5563" font-family="Inter, sans-serif">176,421 Statutory Provisions</text>
+      <text x="{s1_x + s1_w - 235}" y="{s1_y + 39}" font-size="11" font-weight="600" fill="#4B5563" font-family="Inter, sans-serif">177,423 Statutory Provisions</text>
     </g>
 
     <!-- Main Hero Header -->
@@ -215,7 +215,7 @@ def build_svg():
         <text x="20" y="52" font-size="11" font-weight="400" fill="#4B5563">• Dense: all-MiniLM-L6-v2 (384-d)</text>
         <text x="20" y="70" font-size="11" font-weight="400" fill="#4B5563">• Sparse: BM25 Okapi (k1=1.5, b=0.75)</text>
         <text x="20" y="88" font-size="11" font-weight="400" fill="#4B5563">• alpha = 0.50 score fusion</text>
-        <text x="20" y="106" font-size="11" font-weight="400" fill="#4B5563">• Pool: 176,421 dual provisions</text>
+        <text x="20" y="106" font-size="11" font-weight="400" fill="#4B5563">• Pool: 177,423 dual provisions</text>
         <rect x="20" y="120" width="150" height="20" rx="4" fill="#DBEAFE"/>
         <text x="95" y="134" font-size="10" font-weight="600" fill="#1D4ED8" text-anchor="middle">Top-50 Candidate Buffer</text>
       </g>
@@ -236,9 +236,9 @@ def build_svg():
       <g transform="translate(30, 230)">
         <rect width="1040" height="150" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
         <text x="20" y="25" font-size="12" font-weight="700" fill="#111827">Dual Statutory Knowledge Base Overview</text>
-        <text x="20" y="48" font-size="11" fill="#4B5563">National Enactments (Lawphil): <strong>25,432</strong> acts (1901–2024) &bull; <strong>166,419</strong> searchable provisions</text>
-        <text x="20" y="68" font-size="11" fill="#4B5563">Local Davao Enactments (SP / LISSP): <strong>1,664</strong> ordinances (1947–2026) &bull; <strong>10,002</strong> searchable provisions</text>
-        <text x="20" y="88" font-size="11" fill="#4B5563">Total Statutory Corpus: <strong>27,096 enactments</strong> &bull; <strong>176,421 searchable provisions</strong> with full hierarchical ancestry</text>
+        <text x="20" y="48" font-size="11" fill="#4B5563">National Enactments (Lawphil): <strong>25,432</strong> acts (1900–2026) &bull; <strong>164,620</strong> searchable provisions</text>
+        <text x="20" y="68" font-size="11" fill="#4B5563">Local Davao Enactments (SP / LISSP): <strong>1,816</strong> unique ordinances (1950–2025) &bull; <strong>12,803</strong> provisions</text>
+        <text x="20" y="88" font-size="11" fill="#4B5563">Total Statutory Corpus: <strong>27,248 enactments</strong> &bull; <strong>177,423 searchable provisions</strong> with full hierarchical ancestry</text>
         <text x="20" y="108" font-size="11" fill="#4B5563">Empirical Target: Local Government Unit Edge Deployment (Core i3-10105F, 8GB RAM, CPU-only latency &lt; 600ms)</text>
         <text x="20" y="128" font-size="11" fill="#6B7280">Proponents: Ralph Paolo Dulce &amp; Yahyah Odin | Adviser: Adrian "Ogs" Ablazo | Professor: Ma'am Grace Tacadao</text>
       </g>
@@ -380,7 +380,7 @@ def build_svg():
       <text x="50" y="31" font-size="10" font-weight="700" fill="#1D4ED8" text-anchor="middle">STAGE 1</text>
       <text x="90" y="32" font-size="13" font-weight="700" fill="#111827">Statutory Candidate Shortlist</text>
       <rect x="310" y="16" width="95" height="22" rx="4" fill="#E5E7EB"/>
-      <text x="357" y="31" font-size="9" font-weight="600" fill="#374151" text-anchor="middle">176,421 Screened</text>
+      <text x="357" y="31" font-size="9" font-weight="600" fill="#374151" text-anchor="middle">177,423 Screened</text>
 
       <text x="20" y="80" font-size="11" font-weight="400" fill="#6B7280">Hybrid Retrieval: all-MiniLM-L6-v2 + BM25 (α = 0.50)</text>
       <text x="20" y="98" font-size="10" font-weight="500" fill="#9CA3AF">Latency: 1.33 ms &bull; Top-50 Safety Buffer</text>

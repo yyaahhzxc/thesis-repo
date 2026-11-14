@@ -12,6 +12,21 @@
 
 ## **Chronological Session Progress Journal**
 
+### **November 14, 2026 (Session: Canonical 1,816 Synchronization, Light-Mode Knowledge Graph Notebook & Appendices, Revenue Code Full Audit Completion, Unbiased Model Naming & Nov 6 Baseline Restore)**
+- **Canonical Corpus & KG Count Synchronization (`1,816` Unique Local / `25,432` National = `27,248` Enactments / `177,423` Unique Provisions):**
+  - Updated Knowledge Graph explorer HTML/patch script (`scripts/patch_color_coding_ui.py`, `output/visualizations/statutory_kg_full_web.html`), demo telemetry (`src/demo/app.py`), EDA figure generators (`scripts/figures/generate_local_and_dual_corpus_visualizations.py`, `generate_word_count_temporal_figure.py`, `generate_lofi_wireframes_svg.py`), regenerated all 6 EDA PNGs & Lo-Fi SVG wireframes, and synchronized `abstract.tex`, `ai_disclosure.tex`, `methodology.tex`, `results_and_discussion.tex`, and `conclusions.tex`.
+- **Light-Mode Knowledge Graph Jupyter Notebook & Multi-View Gallery:**
+  - Authored and executed `scripts/notebooks/05_knowledge_graph_visualizations.ipynb` generating 5 light-mode 300-DPI figures (`kg_concentric_jurisdiction_overview.png`, `kg_vertical_hierarchy_domains.png`, `kg_appendix_all_5_layouts.png`, `kg_appendix_color_domains_instruments.png`, `kg_appendix_color_eras_typology.png`) rendering all `27,248` enactments (`30,034` edges) while zoomed out.
+  - Added two KG highlight figures + topological validation subsection (`\label{sec:kg_topology_validation}`) to Chapter 4 and created `CS_Undergraduate_Thesis_Template/appendices/appendix_kg_views.tex` (`\label{app:kg_visual_views}`).
+- **Tier 3 Full-PDF Revenue Code Completion & Value-Only Appendix:**
+  - Integrated completed 129-page Davao City Revenue Code (`DAVAO-TIER3-03` & `04`, `435` sections / `423` operative, `684` System Conflict Flags across `265` sections in `8,790.58s` on Host A CPU) into `results_and_discussion.tex` §4.6 and Table `tab:tier3_open_corpus_conflicts` ($N = 10$ completed full PDFs).
+  - Programmatically generated `CS_Undergraduate_Thesis_Template/appendices/appendix_tier3_results.tex` (`\label{app:tier3_full_results}`, `1,069` lines) directly from `output/tier3_live_demo_full_audit_all10.json` with value-only tables (`zero \textit{Note:}` blocks) across all 10 cases and wired both new appendices into `main.tex`.
+- **Manuscript Formatting Rules, Appendix Citations & Nov 6 Conclusions Restore:**
+  - Updated `.agents/rules/paper-writing-instructions.md` to enforce unbiased model naming (removing `(Proposed)` / `Proposed` and parenthetical nicknames on competing models), active cross-referencing of all appendices, artifacts-only appendix format (Rule 22), and plain literal entity naming without AI epithet bloat (Rule 26). Verified every single active appendix (`18` total) is cited from the main chapters.
+  - Restored `CS_Undergraduate_Thesis_Template/chapters/conclusions.tex` to the pre-post-defense Nov 6 (`cc0cf9d`) baseline (keeping original Conclusions, 8 Limitations, and 15 Extensions + `Finally` intact with synced canonical counts) and appended post-Nov-6 advances strictly at the bottom of Conclusions, Limitations (Ninth), and Concrete Technical Extensions (Sixteenth & Seventeenth).
+- **Next Session Top Priority:**
+  - Review Tier 2 full-document open-corpus results and align verification, reporting, and appendix/table structure with the synchronized live-demo full-PDF workflow used for Tier 3.
+
 ### **November 14, 2026 (Session: Full-Text SC Reference Verification, Demo Snippet Removal, Synchronized Tier 3 Full-PDF Audit & §4.6 Rewrite)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
 - **Full-Text SC & CTA Judicial Verification (`docs/references/` & `CS_Undergraduate_Thesis_Template/references.bib`):**
