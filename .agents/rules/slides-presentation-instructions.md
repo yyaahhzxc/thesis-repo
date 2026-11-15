@@ -33,9 +33,9 @@ description: This rule shall be applied when working on presentation slides, def
    * Every slide referencing a table or figure must strictly match the canonical numbering in the compiled manuscript (`main.lot` and `main.lof`):
      * Table 4.1: Stratified Reference Sampling Matrix ($N = 60$)
      * Table 4.2: Ordinance OCR and VLM Benchmark Across Candidate Extraction Architectures
-     * Table 4.4: Functional Typology of the Davao City Local Legislative Corpus ($N = 1,925$)
+     * Table 4.4: Functional Typology of the Davao City Local Legislative Corpus ($N = 1,816$)
      * Table 4.5: Empirical Holdout Validation Metrics for the Local Topic Modeler
-     * Table 4.6: Comparative Structural Parameters of the Dual Statutory Search Space ($N = 27,357$)
+     * Table 4.6: Comparative Structural Parameters of the Dual Statutory Search Space ($N = 27,248$)
      * Table 4.13: Out-of-Sample Test and 5-Fold Cross-Validation Performance Comparison
      * Table 4.17: Full-Document Audit Latency and Candidate Scaling on 4-Thread CPU
      * Table 4.20: Tier 2 Typology-Stratified Full-Document Stress Testing Benchmark
@@ -123,8 +123,8 @@ Following benchmark dataset construction (Slide 17: Ground Truth Benchmark Const
 ## **5. Companion File Synchronization Protocol**
 
 Whenever slide contents, titles, numbers, visual references, or scripts are modified:
-1. **Primary Source:** Update [`docs/PRESENTATION_SLIDES_MOCK_DEFENSE.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/PRESENTATION_SLIDES_MOCK_DEFENSE.md).
-2. **Viewer Synchronization:** Execute `python scripts/sync_slides_viewer.py` to refresh [`docs/slides_viewer.html`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/slides_viewer.html).
-3. **HTML Deck Synchronization:** Update [`docs/defense_presentation_deck.html`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/defense_presentation_deck.html) so all card IDs, Jump select options, bullet lists, script anchors, and timing metadata remain 100% harmonized.
+1. **Primary Source:** Update [`docs/presentation/PRESENTATION_SLIDES_MOCK_DEFENSE.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/presentation/PRESENTATION_SLIDES_MOCK_DEFENSE.md).
+2. **Viewer Synchronization:** Execute `python scripts/sync_slides_viewer.py` to refresh [`docs/presentation/slides_viewer.html`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/presentation/slides_viewer.html).
+3. **HTML Deck Synchronization:** Update any active HTML deck artifacts if present so card IDs, Jump select options, bullet lists, script anchors, and timing metadata remain harmonized.
 4. **Master Task Log:** Document all updates in [`docs/THESIS_MASTER_TASKS.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/THESIS_MASTER_TASKS.md).
 

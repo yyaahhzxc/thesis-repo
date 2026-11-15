@@ -6,11 +6,24 @@
 **Course Professor:** Ma'am Grace Tacadao  
 **Institution:** Department of Computer Science, School of Arts and Sciences, Ateneo de Davao University  
 **Repository:** [`https://github.com/yyaahhzxc/thesis-repo`](https://github.com/yyaahhzxc/thesis-repo)  
-**Last Updated:** 2026-11-14  
+**Last Updated:** 2026-11-15  
 
 ---
 
 ## **Chronological Session Progress Journal**
+
+### **November 15, 2026 (Session: Appendix Q Full-Width Tables, Knowledge Graph Aspect Ratios & Rules Modularization)**
+- **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
+- **Rules Folder Audit & Modular Split (`.agents/rules/`, `CS_Undergraduate_Thesis_Template/AGENTS.md`):**
+  - Diagnosed silent truncation of `.agents/rules/paper-writing-instructions.md` (`57,471` bytes vs. Antigravity's `24,000`-byte per-file cap) and near-truncation of `task-tracking-instructions.md` (`23,846` bytes).
+  - Split `paper-writing-instructions.md` into four cohesive `model_decision` modules each safely under 9 KB: `paper-structure-and-chapters.md` (`8,672` B), `paper-voice-and-style.md` (`8,585` B), `paper-rigor-and-citations.md` (`7,024` B), and `paper-latex-and-visuals.md` (`6,224` B), paired with a directory-scoped `CS_Undergraduate_Thesis_Template/AGENTS.md` (`2,451` B) sweep verification gate.
+  - Slimmed `task-tracking-instructions.md` (`23,846` B -> `4,947` B) by removing duplications with `general-instructions.md`, refreshed `general-instructions.md` active priority routing, and aligned stale paths/counts in `demo-site-instructions.md` and `slides-presentation-instructions.md`.
+- **Appendix Q Full-Width Margin Expansion (`CS_Undergraduate_Thesis_Template/main.tex`, `appendices/appendix_tier3_results.tex`):**
+  - Added `\usepackage{xltabular}` to `main.tex`, updated `tab:app_tier3_summary` to `tabular*` with flush outer edges (`@{}l@{\extracolsep{\fill}}rrrrrrrr@{}`), and converted all 9 `longtable` conflict tables (`tab:app_tier3_01` through `tab:app_tier3_10`) to `xltabular{\linewidth}` with proportional `X` columns (`\hsize=0.72\hsize` and `\hsize=1.28\hsize`).
+- **Knowledge Graph Equal-Aspect Regeneration & Float Sizing (`scripts/notebooks/05_knowledge_graph_visualizations.ipynb`, `appendices/appendix_kg_views.tex`, `chapters/results_and_discussion.tex`):**
+  - Enforced `ax.set_aspect('equal')` inside `render_kg_panel` (`adjustable='datalim'` on the 2x3 overview grid so all 6 panels stay square while Panel c `h` keeps its true 1.884:1 geometry; `adjustable='box'` with matched `height_ratios` on stacked and single figures), nudged the `RA 7160` callout offset on layout `'h'`, and regenerated all 5 300-DPI PNGs (`kg_concentric_jurisdiction_overview.png`, `kg_vertical_hierarchy_domains.png`, `kg_appendix_all_5_layouts.png`, `kg_appendix_color_domains_instruments.png`, `kg_appendix_color_eras_typology.png`).
+  - Set `height=0.68\textheight, keepaspectratio` on Appendix P.2/P.3 floats and `0.76\textheight`/`0.80\textheight` in Chapter 4 so every section heading, figure, and caption renders cleanly on a single page.
+- **Full 4-Pass PDF Verification:** Compiled `CS_Undergraduate_Thesis_Template/main.pdf` cleanly (418 pages, 41,673.1 KB, zero undefined citations/references).
 
 ### **November 14, 2026 (Session: Canonical 1,816 Synchronization, Light-Mode Knowledge Graph Notebook & Appendices, Revenue Code Full Audit Completion, Unbiased Model Naming & Nov 6 Baseline Restore)**
 - **Canonical Corpus & KG Count Synchronization (`1,816` Unique Local / `25,432` National = `27,248` Enactments / `177,423` Unique Provisions):**

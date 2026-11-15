@@ -1,125 +1,45 @@
----
-trigger: always_on
-description: This rule mandates that the agent must always inspect, maintain, and update the master thesis task tracking document (docs/THESIS_MASTER_TASKS.md) to preserve cross-session continuity, track progress across both the LaTeX manuscript and Python codebase, and ensure all milestone requirements are rigorously fulfilled.
----
-
 # **Master Task Tracking & Cross-Session Continuity Protocol**
 
-**Institution:** Ateneo de Davao University, Department of Computer Science  
 **Project:** *"A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances Using Information Retrieval and Natural Language Inference"*  
-**Authors:** Ralph Paolo Dulce & Yahyah Odin  
-**Adviser:** Mr. Adrian "Ogs" Ablazo | **Professor:** Ma'am Grace Tacadao  
+**Authors:** Ralph Paolo Dulce ("Ralph") & Yahyah Odin ("Yah")  
+**Adviser:** Mr. Adrian "Ogs" Ablazo | **Course Professor:** Ma'am Grace Tacadao  
 
 > [!IMPORTANT]
-> **Foundational Principles & Research Integrity Mandate:**
-> All work in this repository is governed by [`.agents/rules/general-instructions.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/.agents/rules/general-instructions.md) and [`docs/GENERAL_INSTRUCTIONS_AND_PRINCIPLES.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/GENERAL_INSTRUCTIONS_AND_PRINCIPLES.md), which strictly enforce:
-> 1. **Zero Shortcuts & Anti-Placeholder Policy:** No placeholders, mock summaries, or truncated snippets masquerading as authentic complete enactments.
-> 2. **Mandatory Full-Text Completeness & Statutory Anatomy:** 100% full-text verbatim enactments from top to bottom (session metadata, council roster, WHEREAS recitals, operative sections, framework clauses, and signature blocks) regardless of length.
-> 3. **Proactive & Persistent Hindrance Escalation:** Proactively and repeatedly report any corpus absences, cross-jurisdictional anomalies (e.g. CDO/Manila), resolution vs ordinance mismatches, or OCR degradations until actively resolved by the authors.
-> 4. **Radical Empirical Transparency:** 100% honesty regarding what is synthetic vs authentic in all benchmarks.
+> Foundational research integrity, user greeting, plain-text math formatting, Zero Editorial Pollution, Pure Neural Architecture, and Adversarial Forensic Audit rules are governed by [`.agents/rules/general-instructions.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/.agents/rules/general-instructions.md). Manuscript writing and sweep rules are modularized under `.agents/rules/paper-*.md` and [`CS_Undergraduate_Thesis_Template/AGENTS.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/CS_Undergraduate_Thesis_Template/AGENTS.md).
 
 ---
 
-## **1. Author Identity & Collaborative Multi-User Handling**
+## **1. Living Source of Truth & Continuity Mandate**
 
-**Thesis Proponents:**
-* **Yahyah Odin ("Yah")**: Co-author leading machine learning modeling, retrieval benchmarking, manuscript drafting, and pipeline automation. Operates primarily on **Host A (Desktop)** (Core i3-10105F, Radeon RX 6600, 8 GB RAM, Windows) for LGU edge simulation.
-* **Ralph Paolo Dulce ("Ralph")**: Co-author leading local ordinance OCR experiments, human evaluation deployment (Google Forms, 15 SP legal researchers), administrative routing (HRMO / City Administrator), and collaborative manuscript drafting. Operates primarily on **Host B (GPU Laptop)** (Lenovo Legion 5: Ryzen 7 7435HS, RTX 5050 Laptop GPU, 16 GB RAM, Windows) for deep learning training and experimental benchmarking.
-
-**Operational Greeting & Execution Behavior:**
-Both Ralph and Yah are first-class proponents with full, equal access to all Antigravity capabilities (code authoring, script execution, benchmark evaluation, LaTeX manuscript drafting, PDF compilation, task tracking, and administrative document preparation).
-1. **When User is Identified as Yah ("I'm Yah", "Yah here", etc.):**
-   - Immediately recognize Yah as co-author.
-   - Ground directly into `docs/THESIS_MASTER_TASKS.md`, provide a rapid progress briefing, execute tasks with precision, and update tracking checklists and journals as work progresses.
-   - Proactively remind Yah to run `git fetch origin` and `git pull` at the start of a session.
-   - **Immediate Post-Pull Priority Task Recommendation (Next Session Focus):** As soon as Yah fetches and pulls changes, immediately recommend and bring up the top active priority task:
-     * **Integrate Open-Corpus Tier 3 Preemption Findings in Chapter 4 (§4.6):** Document how Stage 1 open-corpus retrieval on authentic Davao City Ordinance No. 0309-07 (*Mosqueda v. PBGEA*) uncovered an active, direct positive statutory preemption collision against Republic Act No. 7296 §§3 & 7 (1992 Davao Agritech legislative franchise commanding air spraying services in Davao, flagged at 100% Contradiction), demonstrating the empirical advantage of ex-ante automated screening over retrospective judicial digests that are bounded by the specific pleadings of the litigating parties.
-2. **When User is Identified as Ralph ("I'm Ralph", "Ralph here", etc.):**
-   - Immediately recognize Ralph as co-author.
-   - Ground directly into `docs/THESIS_MASTER_TASKS.md`, present a crisp progress briefing on recent manuscript/codebase updates, highlight Ralph's active action items as well as shared tasks, and execute any requested work (coding, OCR experiments, manuscript writing, survey design, or LaTeX compilation) with the exact same technical depth and rigor as for Yah.
-   - Proactively suggest Ralph's active action items when he asks what to work on:
-     * **Author Defense Presentation Slides for Chapters 4 & 5 (Immediate Priority Handoff from Yah):** Yah completed Chapters 1--3 across Slides 1--19 in docs/PRESENTATION_SLIDES_MOCK_DEFENSE.md and synced with docs/slides_viewer.html. Ralph is instructed to continue authoring the slides and spoken presenter scripts for Chapter 4 (Results & Discussion: Archival VLM benchmark, Stage 1 candidate retrieval, Stage 2 NLI cross-encoder screening, and Supreme Court precedent suite) and Chapter 5 (Conclusions, concrete recommendations, and administrative roadmap), following the established 7x7 rule, coordinate tags (§4.X, §5.Y), and synchronizing with docs/slides_viewer.html via python scripts/sync_slides_viewer.py.
-     * **Manual Reference PDF Collection & Verification (Collaborative with Yah):** Use the Reference Auditor dashboard (`http://127.0.0.1:8080/docs/ref_auditor.html`) to help collect and drag-and-drop remaining cited reference PDFs into `docs/references/`.
-     * **Audit Flagged Sources & Manuscript Text Adjustments:** Review the sources flagged as unobtainable (in `docs/flagged_references.json` or exported via `Export Flagged`), and collaborate on either finding substitute sources or adjusting the manuscript text in Chapters 1--4 to remove or replace citations.
-     * **Local Ordinance OCR Empirical Experiments:** Finalize the empirical comparison across Tesseract, Surya, Google Cloud Vision, and local 4-bit Qwen2.5-VL-3B-Instruct.
-     * **HRMO / City Administrator Routing & Legal Researchers Certificates:** Advance the administrative routing packet (`docs/annotation/hrmo_city_admin_approval_request_letter.md`) and certificate layout.
-3. **When No Name is Specified:**
-   - Default to checking `docs/THESIS_MASTER_TASKS.md` immediately, maintain full situational awareness, and execute requests while preserving continuous task synchronization.
-4. **Cross-Host Git Synchronization Protocol:**
-   - Because Yah and Ralph develop collaboratively on separate machines (Host A and Host B), proactively remind either author to `git fetch` and `git pull` at the start of a session, and stage/commit/push updates before concluding, ensuring working directories remain synchronized without merge conflicts.
-5. **Ordinance Text Update & Empirical Re-Run Trigger:**
-   - Whenever Ralph pushes updates to ordinance texts (e.g., in `cleaned_transcriptions/`, `corpus/city_ordinances/`, or `data/unified_dual_statutory_provisions.jsonl`) resulting from his manual archival verification and OCR checks, immediately re-run the relevant exploratory data analysis (EDA), word/token counts, temporal distributions (`scripts/generate_word_count_temporal_figure.py`), dual-corpus token compliance metrics, and any downstream retrieval or NLI evaluation scripts affected by the updated text upon pulling.
-   - Verify if any reported statistics, tables (e.g., Table 3.2, Table 3.3, Table 4.1, Table 4.3), or figures in Chapters 3 and 4 shift due to the updated text, and synchronize the manuscript accordingly.
-6. **Chat Communication Efficiency & Formatting Protocol (Yah & Ralph Directives):**
-   - **Concise & Direct Responses:** Provide straightforward, concise, and high-density answers without losing critical technical specifics. Eliminate conversational filler, repetitive introductory recaps, and unnecessary post-execution boilerplate to save tokens and time.
-   - **Markdown Tables Supported:** Markdown tables render cleanly in the chat interface and are actively encouraged for structured comparisons, metric summaries, and checklists.
-   - **Plain-Text Math (No Raw LaTeX Math in Chat):** The chat interface does NOT render LaTeX math formatting and only shows raw unformatted code with backslashes and brackets (e.g., `$\frac{...}{...}$`, `\[ ... \]`). In all chat responses, present mathematical formulas, loss functions, and metrics strictly in readable plain text / ASCII notation (e.g., `CER = (S + D + I) / N`, `Score = alpha * BM25 + (1 - alpha) * Dense`, `Recall@20 = Hits@20 / Total Relevant`). Reserve formal LaTeX math syntax exclusively for `.tex` files within `CS_Undergraduate_Thesis_Template/`.
+1. **Mandatory Check on Conversation Start:** Before starting work or proposing priorities, read [`docs/THESIS_MASTER_TASKS.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/THESIS_MASTER_TASKS.md) to ground in the active milestone, recent session journal, open blockers, and pending deliverables.
+2. **Atomic Task Updates:** Whenever a task, script, benchmark, or LaTeX revision completes, immediately update `docs/THESIS_MASTER_TASKS.md` (`[ ]` $\rightarrow$ `[x]` or `[-]`), log file/commit references, and update the `Last Updated` date and Chronological Session Progress Journal.
+3. **Verbatim Milestone Preservation:** Record any new professor milestone instructions verbatim in `docs/THESIS_MASTER_TASKS.md` under their dedicated milestone section.
+4. **Living Glossary Synchronization:** Whenever new technical, legal, statistical, or ML terms, metrics, algorithms, or doctrines enter the manuscript or codebase, append plain-language definitions and thesis context to [`docs/GLOSSARY.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/GLOSSARY.md).
 
 ---
 
-## **2. Standing Operational Context & External Dependencies**
+## **2. Author Action Routing & Re-Run Triggers**
 
-The agent must maintain awareness of the following operational realities without requiring repeated user updates:
-1. **Dual Statutory Corpus Architecture (27,096 Records, 176,421 Provisions):** The complete dual statutory knowledge base combines 25,432 national statutes (Lawphil) and 1,664 Davao City local ordinances (SP portal & LISSP), totaling **27,096 enactments and 176,421 searchable provisions** compiled in `data/unified_dual_statutory_provisions.jsonl`.
-2. **Dual Conflict Detection Scope (Vertical & Horizontal):**
-   - *Vertical Conflict Detection (Statutory Preemption):* Comparing draft local ordinances against superior national laws under the *Magtajas v. Pryce Properties* doctrine and RA 7160 §5(a) (an ordinance cannot permit what a statute forbids, or forbid what a statute permits).
-   - *Horizontal Conflict Detection (Intra-Jurisdictional Coherence):* Comparing draft local ordinances against existing, fellow Davao City ordinances to ensure the draft does not contradict, duplicate, or inadvertently cause implied repeal of active local legislation.
-3. **Local Ordinances Digitization & Cleaning (Completed):** Ralph and Yah completed physical/PDF scanning and OCR cleaning of exactly 1,664 Davao City local ordinances (from SP portal and LISSP 2021--2026), compiled to `corpus/city_ordinances/categorized_davao_ordinances.jsonl`.
-4. **Local Ordinances EDA (Completed in Chapter 3):** Exploratory Data Analysis—including temporal distribution across four legislative eras, 6-class functional typology, document length asymmetry, and 94.69% 512-token compliance—is fully written into Chapter 3 (§3.2.4 & §3.2.5) with Figures 3.5 & 3.6 and Tables 3.2 & 3.3.
-5. **Local Ordinances Empirical Experiments (Ralph Lead):** Ralph leads the empirical experiments comparing traditional scanner OCR vs. local LLM/VLM text extraction fidelity (Character Error Rate, Word Error Rate, structural table preservation).
-6. **HRMO & City Administrator Approval Routing (Active):** Sangguniang Panlungsod response received (Sept 28, 2026, signed by Acting Dept. Head II Ma. Theresa A. Reyes) appreciating the study and referring approval of the thesis and 15 legal researchers to the City Administrator's Office via the Human Resource Management Office (HRMO). The formal request packet (`docs/annotation/hrmo_city_admin_approval_request_letter.md`) is drafted and being routed.
-7. **Adviser Consultation Pending (Sir Ogs):** The proponents are preparing for a consultation with thesis adviser Mr. Adrian "Ogs" Ablazo for methodology verification and review of recent revisions.
-8. **Professor Directive on Formatting (Ma'am Grace Tacadao, Sept 30, 2026):** Eliminate unnecessary inline headings, description lists (`\item[...]`), and enumerated outlines across thesis chapters; format discussions as continuous, cohesive academic paragraphs with topics naturally integrated into topic sentences.
-9. **Scope Modification Inquiry (Problem Statement & Objective 5 / Legal Researchers Evaluation):** Proponents inquired with course professor Ma'am Grace Tacadao regarding potentially modifying or relaxing Problem Statement 5 and Research Objective 5 (post-interaction usability and usefulness evaluation with 15 SP legal researchers) due to timeline and administrative routing constraints. Ma'am Grace advised that this modification is possible due to time constraints, but requires formal consultation and written/signed approval from thesis adviser Mr. Adrian "Ogs" Ablazo and the thesis defense panel.
-10. **Annotator Recognition Protocol (Civil Service 201 Records):** Course professor Ma'am Grace Tacadao approved providing an official Certificate of Contribution and Commendation to the 15 SP legal researchers who successfully complete their 70-pair annotation workload, structured specifically for inclusion in their official Civil Service 201 personnel records to provide meaningful institutional recognition. Ralph leads certificate visual layout and signature routing (Ma'am Grace, Sir Ogs, Dr. Oneil, Ralph, Yah; defense panelists marked as `[?] Pending Confirmation`).
-11. **Instruction & Algorithm Code Grounding (Ma'am Grace Tacadao, Sept 30, 2026):** Only present instructions, pseudocode, and algorithms in the manuscript that are actually implemented, executed, and functional within the project codebase (`src/`, `scripts/`). Never include speculative, unused, or generic textbook algorithms.
-12. **Equation-Algorithm Non-Redundancy & List of Equations Integration (Oct 1, 2026):** If an equation is already embedded within an algorithm listing, do not redundantly highlight or isolate it. Formal display equations across the manuscript are titled, captioned via `\eqcaption{...}`, aggregated into the front matter *List of Equations* (`\listofequations`), and formatted with `\noindent Where ...` to eliminate unwanted paragraph indentation on variable breakdowns.
-13. **Strict Citation-Text & Local PDF Verification Protocol (Oct 6, 2026):** Every factual assertion, mathematical formulation, experimental baseline, or numerical metric attributed to a cited author (`\cite{...}`) must be explicitly verified against the authentic text of the source and its local PDF in `docs/references/`. Never attribute specific numerical target thresholds (e.g., "target range of 80% or 85%"), prescriptive quality ceilings, or domain partition rules to an author or textbook unless the cited publication literally specifies that exact figure or rule. If no literature source prescribes a target, settle rigorously on formal mathematical/empirical baselines (e.g., Morrison chance baselines, unclustered geometries) and report the exact margin of improvement over the baseline.
-14. **Strict Zero Editorial Pollution Protocol in Legal Text & XAI Cards (Oct 10, 2026):** Under NO circumstances should any statutory provision, ordinance text, benchmark premise, or candidate text string be synthetically rewritten, paraphrased, injected with explanatory commentary, or augmented with synthetic sentences (e.g., appending penalty warnings, doctrinal summaries, or preemption explanations into the statutory text string). The text passed into Stage 2 Cross-Encoder tensors and displayed within the Explainable AI (XAI) prototype interface MUST be 100% verbatim authentic text directly extracted from Lawphil or the Davao City ordinance archives (`data/unified_dual_statutory_provisions.jsonl`). Any legal doctrine explanations, preemption rationales, or *ratios decidendi* must reside strictly in dedicated metadata/explanation fields (`legal_rationale`, `verdict_desc`, `ratio_decidendi`) and NEVER pollute the statutory text fields (`statutory_text`, `statute_text`, `ordinance_text`, `premise`).
-15. **Option 2 Pure Neural Cross-Attention & Zero Bandaid Architecture Protocol (Oct 10, 2026):** All pre-enactment conflict detection decisions in the prototype and benchmark scripts must stem strictly from genuine PyTorch neural tensors (Stage 1 Hybrid BM25 + all-MiniLM-L6-v2 dense retrieval, Stage 2 DeBERTa-v3 cross-encoder NLI with calibrated threshold $\tau^* = 0.45$). Under NO circumstances should regex heuristics, case-sniffing, hardcoded score dictionaries, candidate injection backdoors, or ad-hoc hybrid weighting formulas be introduced. Premise prompts must be formatted cleanly as `[Citation] Verbatim Statutory Text` without nested brackets or token clutter. Standard legislative boilerplate clauses (Title, Definitions, Scope/Coverage, Separability, Repealing, Effectivity) are recognized as procedural framework to prevent extraneous compute and false preemption alarms. The only symbolic rule permitted is integer arithmetic verification for fines exceeding the statutory P5,000 ceiling under RA 7160 §458(a)(1)(iii).
-16. **Autonomous Adversarial Forensic Audit Loop (Nov 6, 2026):** Proactively execute internal self-critique and forensic verification loops simulating adversarial academic peer review: verify $2 \times 2$ contingency table arithmetic ($b-c = (a+b)-(a+c)$), check McNemar degrees of freedom and continuity corrections against exact sample sizes ($N=53$ held-out test split vs $N=198$ unique instances vs $N=350$ multi-panel pairs), ensure harmony between discrete pairwise tests and omnibus multi-domain rankings (Friedman ANOVA and Wilcoxon signed-rank tests), and frame screening performance under realistic Bayesian low-prevalence dynamics ($p \le 0.01$).
-17. **Strict Abstract Word Count Ceiling & Style Rule ($\le 250$ Words, Nov 6, 2026):** The thesis abstract must strictly not exceed 250 words, formatted as a single cohesive academic paragraph without bullet points or numbered lists. Eliminate parenthetical bloat, while preserving essential empirical anchors: core research dilemma, Davao City keyword, dual statutory corpus scale, two-stage architecture, zero-leakage premise-grouped CV accuracy ($86.44\% \pm 6.05\%$) and Conflict $F_1$ ($0.8945$), hardware testbed latency ($12.69\,\text{s}$), RAM footprint ($1{,}416.4\,\text{MB}$), and Tier 2 open-corpus triage detection ($2$ of $7$ planted conflicts caught with $6$ false alarms, $39$ of $45$ compliant sections cleared at $86.67\%$ specificity; $7$ of $7$ detected under oracle candidates).
-18. **Appendix Running Header Collision Prevention & Caption Brevity Protocol (Nov 6, 2026):** Every appendix chapter title must be concise. If an appendix title is long, use `\chapter[Short Title]{Full Title}` or `\chaptermark{Short Title}` to ensure the uppercase running header in `\pagestyle{headings}` leaves at least $+40\,\text{pt}$ to $+45\,\text{pt}$ of clear whitespace margin before the page number. Figure and table captions in appendices must be brief and descriptive, keeping interpretative narrative in the body text.
-19. **Institutional AI Disclosure Architecture (Appendix R / Terminal Appendix Only, 2 Pages, Nov 6, 2026):** The official university AI disclosure form is embedded exclusively in the terminal appendix using the verified 2-page institutional layout (`statement_of_authorship_and_ai_disclosure.tex` and `statement_of_authorship_and_ai_disclosure_filled.pdf`), accompanied by comprehensive academic narrative detailing the 5 human oversight pillars and experimental research model boundaries. Never insert a redundant standalone statement after the Bibliography or on page 226 of the manuscript.
-20. **Preliminary Front Matter Navigation Integration (Nov 6, 2026):** Ensure Table of Contents, List of Figures, List of Tables, List of Listings, and List of Equations are cleanly registered in the Table of Contents with exact Roman numeral sequencing via `\addcontentsline{toc}{chapter}{...}`.
-
+* **Yahyah Odin ("Yah", Host A Desktop):** ML modeling, retrieval benchmarking, pipeline automation, manuscript synthesis, and full-document audits. Always surface the top pending priority from `docs/THESIS_MASTER_TASKS.md` upon greeting.
+* **Ralph Paolo Dulce ("Ralph", Host B GPU Laptop):** Local ordinance OCR experiments, Chapters 4–5 defense slides (`docs/PRESENTATION_SLIDES_MOCK_DEFENSE.md` synced via `scripts/sync_slides_viewer.py`), Reference PDF collection (`docs/ref_auditor.html`, `docs/flagged_references.json`), HRMO/City Administrator routing (`docs/annotation/hrmo_city_admin_approval_request_letter.md`), and annotator Civil Service 201 certificates.
+* **Ordinance Text Update & Empirical Re-Run Trigger:** Whenever updates land in `cleaned_transcriptions/`, `corpus/city_ordinances/`, or `data/unified_dual_statutory_provisions.jsonl`, immediately re-run affected EDA, word/token counts (`scripts/figures/generate_word_count_temporal_figure.py`), dual-corpus token compliance metrics, and downstream retrieval/NLI evaluations, then verify and sync shifted tables/figures in Chapters 3 and 4.
 
 ---
 
-## **3. Core Principle & Agent Operational Mandate**
+## **3. Canonical Standing Context (Current State)**
 
-To ensure seamless progress across multiple conversations and prevent repetitive context re-prompting:
-1. **Living Source of Truth:** The file [`docs/THESIS_MASTER_TASKS.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/THESIS_MASTER_TASKS.md) serves as the persistent, centralized record of all completed, active, and pending tasks across the thesis manuscript, codebase, empirical benchmarks, and milestone submissions.
-2. **Mandatory Check on Conversation Start:** At the beginning of any new conversation or before undertaking major additions or revisions, the agent must check `docs/THESIS_MASTER_TASKS.md` to ground itself in the active milestone, recent progress, open questions, and pending deliverables.
-3. **Atomic Task Updates:** Whenever any task, code implementation, empirical experiment, or LaTeX revision is completed, the agent must immediately update `docs/THESIS_MASTER_TASKS.md`, changing status indicators (`[ ]` $\rightarrow$ `[x]` or `[-]`), logging relevant commit/file references, and updating the progress timestamp.
-4. **Verbatim Instruction Preservation:** Whenever the user provides instructions for a new milestone (e.g., Milestone 2, Milestone 3, Final Defense), the agent must record the full, unabridged instructions verbatim in `docs/THESIS_MASTER_TASKS.md` under a dedicated milestone section to preserve complete contextual fidelity for future turns.
-5. **Living Glossary Synchronization:** Whenever new technical, legal, statistical, or machine learning terms, metrics, algorithms, or doctrines are introduced to the manuscript or codebase, the agent must immediately append them to [`docs/GLOSSARY.md`](file:///c:/Users/SHRIMP/Documents/thesis-repo/docs/GLOSSARY.md) with an accessible, plain-language definition and practical thesis context.
-
----
-
-## **4. Master Tracking Document Structure (`docs/THESIS_MASTER_TASKS.md`)**
-
-The master tracking document must maintain the following core sections:
-1. **Executive Status & Active Milestone Banner:** High-level summary of active focus, deadlines, and current system status.
-2. **Exact Hardware & Software Environment Reference:** Canonical specifications of the local LGU simulation testbed (CPU, GPU, RAM, OS, Python version, key library versions).
-3. **Repository & Version Control Details:** Canonical repository URL, branch structure, and reproducibility setup.
-4. **Verbatim Milestone Instructions Archive:** Complete, unedited milestone prompts provided by the course professor.
-5. **Milestone-by-Milestone Audit & Task Checklist:** Granular, checkable action items categorized by:
-   * **LaTeX Thesis Manuscript (`CS_Undergraduate_Thesis_Template/`)**
-   * **Core Engine, Models & Scripts (`src/`, `scripts/`)**
-   * **Evaluation Benchmark & Human Annotation (`data/`, `docs/annotation/`)**
-   * **Documentation, Reproducibility & Build Validation (`README.md`, `requirements.txt`)**
-6. **Task Status Legend:**
-   * `[x]` **Completed**: Fully implemented, documented, and verified.
-   * `[-]` **In Progress**: Actively being drafted, coded, or benchmarked.
-   * `[ ]` **Pending**: Planned work scheduled for the active or upcoming milestone.
-   * `[?]` **Requires Verification / Consultation**: Awaiting user, adviser, or professor decision.
-7. **Change Log / Chronological Milestone Journal:** Brief date-stamped summaries of what was accomplished in each session.
+* **Canonical Dual Statutory Corpus:** `25,432` national laws (Lawphil) + `1,816` deduplicated Davao City ordinances = **`27,248` unique enactments** and **`177,423` unique provisions** (live demo serialized index in `src/demo/app.py` indexes `176,421` provisions).
+* **Dual Conflict Scope:** Vertical preemption (*Magtajas*, RA 7160 §5(a)) + Horizontal intra-jurisdictional coherence across fellow Davao City ordinances.
+* **Standing Institutional Decisions:**
+  * Problem Statement 5 / Objective 5 modification (15 SP legal researchers evaluation) remains subject to formal adviser and defense panel sign-off; SP referred approval to the City Administrator via HRMO.
+  * Official Certificate of Contribution & Commendation approved by Ma'am Grace Tacadao for SP legal researchers' Civil Service 201 records (70-pair workload).
 
 ---
 
-## **5. Agent Updating Protocol**
+## **4. Master Document Structure & Agent Updating Protocol**
 
-* **Keep It Synchronized with Git:** All updates to `docs/THESIS_MASTER_TASKS.md` must be committed and pushed alongside the associated code or manuscript edits.
-* **Never Delete Completed History:** When tasks are finished, mark them as `[x]` with a brief note or link to the corresponding file/section. Do not purge completed milestones, as they provide critical traceability and defense review records.
-* **Proactive Next-Step Signaling:** At the conclusion of each response, the agent should briefly reference the next pending item from `docs/THESIS_MASTER_TASKS.md` to maintain momentum.
+`docs/THESIS_MASTER_TASKS.md` maintains: (1) Executive Status & Active Milestone Banner, (2) Canonical Hardware & Software Reference, (3) Repository & Git Sync Details, (4) Verbatim Milestone Archive, (5) Granular Task Checklists (`[x]` Completed, `[-]` In Progress, `[ ]` Pending, `[?]` Needs Verification), and (6) Chronological Session Progress Journal.
+
+* **Keep Synchronized with Git:** Commit and push `docs/THESIS_MASTER_TASKS.md` alongside associated code or manuscript edits.
+* **Preserve Completed History:** Never purge completed milestones or historical journal entries; mark completed items `[x]` with links/notes.
+* **Proactive Next-Step Signaling:** Close responses by referencing the next active pending item in `docs/THESIS_MASTER_TASKS.md`.

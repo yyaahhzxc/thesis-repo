@@ -1,6 +1,6 @@
 ---
 trigger: model_decision
-description: This rule shall be applied when working on the prototype demo site, web interface, full-document audit engine, or local neural inference pipeline (demo/, scripts/, src/).
+description: This rule shall be applied when working on the prototype demo site, web interface, full-document audit engine, or local neural inference pipeline (scripts/, src/demo/, run_demo.py).
 ---
 
 # **Ex-Ante Prototype Demo Site & Local Neural Engine Instructions**
@@ -97,7 +97,7 @@ The section chunker (`chunk_ordinance_sections()`) must recognize the following 
 
 ---
 
-## **5. UI / UX Standards & Wireframe Fidelity (`demo/static/index.html`)**
+## **5. UI / UX Standards & Wireframe Fidelity (`src/demo/static/index.html`)**
 
 The user interface must strictly preserve the visual aesthetics, layout balance, and interaction patterns designed in collaboration with Yah:
 
@@ -123,13 +123,13 @@ The user interface must strictly preserve the visual aesthetics, layout balance,
 
 ## **6. Multi-Document Verification & Non-Regression Protocol**
 
-Whenever modifications are made to `demo/app.py` or the underlying inference pipeline:
+Whenever modifications are made to `src/demo/app.py` or the underlying inference pipeline:
 1. **Never Validate on a Single File Alone:** A fix that resolves one file must never degrade or alter performance across the remaining test suites.
 2. **Standard Cross-Act Verification Suite:** Always verify against diverse statutory domains:
-   - **Landmark Supreme Court Jurisprudence (`demo/sample_cases/`):** Mosqueda (aerial spraying ban), Batangas CATV (cable rates), Magtajas (casino preemption), Evasco (billboards).
-   - **Authentic Davao City Enactments (`corpus/davao_city_tier3_ordinances/`):** Anti-Smoking (Ord. 0367-12), Speed Limits (Ord. 0270-23).
-   - **Tier 2 Synthetic Draft Ordinances (`data/tier2_draft_ordinances/`):** 10 authentic municipal drafts (115 sections) with planted statutory defects.
-3. **Execution Environment:** Keep the demo server running as a persistent background daemon on `http://127.0.0.1:5050` (`.\venv\Scripts\python.exe demo/app.py`).
+   - **Landmark Supreme Court Jurisprudence (`ground_truth/tier3_sc_cases/`):** Mosqueda (aerial spraying ban), Batangas CATV (cable rates), Magtajas (casino preemption), Evasco (billboards).
+   - **Authentic Davao City Enactments (`ground_truth/tier3_sc_cases/davao_city_tier3_ordinances/`):** Anti-Smoking (Ord. 0367-12), Speed Limits (Ord. 0270-23).
+   - **Tier 2 Synthetic Draft Ordinances (`ground_truth/tier2_synthetic_drafts/`):** Authentic local drafts with planted statutory defects.
+3. **Execution Environment:** Keep the demo server running as a persistent background daemon on `http://127.0.0.1:5050` (`.\venv\Scripts\python.exe run_demo.py` or `src/demo/app.py`).
 
 ---
 
