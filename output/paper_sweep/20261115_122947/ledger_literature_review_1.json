@@ -1,0 +1,2615 @@
+{
+ "generated": "2026-11-15T12:42:40",
+ "canonical": {
+  "enactments": "27,248",
+  "national": "25,432",
+  "local": "1,816",
+  "provisions": "177,423"
+ },
+ "active_files": [
+  "main.tex",
+  "chapters/abstract.tex",
+  "chapters/introduction.tex",
+  "chapters/literature_review.tex",
+  "chapters/methodology.tex",
+  "chapters/results_and_discussion.tex",
+  "chapters/conclusions.tex",
+  "appendices/appendix_a.tex",
+  "appendices/appendix_b.tex",
+  "appendices/appendix_c.tex",
+  "appendices/appendix_d.tex",
+  "appendices/appendix_e.tex",
+  "appendices/appendix_f.tex",
+  "appendices/appendix_g.tex",
+  "appendices/appendix_wireframes.tex",
+  "appendices/appendix_h.tex",
+  "appendices/appendix_i.tex",
+  "appendices/appendix_j.tex",
+  "appendices/appendix_k.tex",
+  "appendices/appendix_n.tex",
+  "appendices/appendix_p.tex",
+  "appendices/appendix_q.tex",
+  "appendices/appendix_kg_views.tex",
+  "appendices/appendix_tier3_results.tex",
+  "appendices/appendix_r.tex"
+ ],
+ "files": {
+  "chapters/literature_review.tex": {
+   "lines": 594,
+   "words_prose": 22406,
+   "prose_linted": true,
+   "counts": {
+    "declaude:triad": 57,
+    "micro-paragraph": 49,
+    "participle-tail": 32,
+    "banned-word": 28,
+    "declaude:participle": 26,
+    "em-dash": 24,
+    "texttt-model-in-prose": 11,
+    "declaude:slop": 10,
+    "declaude:reuse": 8,
+    "declaude:editorializing": 8,
+    "declaude:copula": 5,
+    "copula-avoidance": 4,
+    "orphan-heading": 3,
+    "declaude:em-dash": 3,
+    "long-title": 3,
+    "declaude:density": 1,
+    "municipal-term": 1,
+    "declaude:time-inflation": 1,
+    "declaude:cadence": 1,
+    "space-before-cite": 1,
+    "declaude:agency": 1
+   },
+   "hits": [
+    {
+     "line": 0,
+     "category": "declaude:density",
+     "severity": "info",
+     "note": "repeated phrases: 'natural language inference' x13, 'in legal informatics' x10, 'local government units' x9 — check each is the deliberate repetition entry 27 protects and not a cadence",
+     "match": "phrase repetition"
+    },
+    {
+     "line": 0,
+     "category": "declaude:reuse",
+     "severity": "info",
+     "note": "[editorializing] used 3 times (L36, L343, L366) — reuse is the evidence that a construction is a habit, not a choice",
+     "match": "collapse"
+    },
+    {
+     "line": 0,
+     "category": "declaude:reuse",
+     "severity": "info",
+     "note": "[slop] used 7 times (L118, L171, L309, L409, L430, L497, L536) — reuse is the evidence that a construction is a habit, not a choice",
+     "match": "utilize"
+    },
+    {
+     "line": 0,
+     "category": "declaude:reuse",
+     "severity": "info",
+     "note": "[copula] used 2 times (L293, L360) — reuse is the evidence that a construction is a habit, not a choice",
+     "match": "serves as the"
+    },
+    {
+     "line": 0,
+     "category": "declaude:reuse",
+     "severity": "info",
+     "note": "[participle] used 5 times (L332, L470, L490, L523, L565) — reuse is the evidence that a construction is a habit, not a choice",
+     "match": ", ensuring"
+    },
+    {
+     "line": 0,
+     "category": "declaude:reuse",
+     "severity": "info",
+     "note": "[triad] used 2 times (L343, L366) — reuse is the evidence that a construction is a habit, not a choice",
+     "match": "taxation, public safety, and environment"
+    },
+    {
+     "line": 0,
+     "category": "declaude:reuse",
+     "severity": "info",
+     "note": "[editorializing] used 4 times (L343, L366, L413, L529) — reuse is the evidence that a construction is a habit, not a choice",
+     "match": "catastrophic"
+    },
+    {
+     "line": 0,
+     "category": "declaude:reuse",
+     "severity": "info",
+     "note": "[triad] used 2 times (L349, L370) — reuse is the evidence that a construction is a habit, not a choice",
+     "match": "as executive orders, administrative circ"
+    },
+    {
+     "line": 0,
+     "category": "declaude:reuse",
+     "severity": "info",
+     "note": "[slop] used 3 times (L395, L405, L470) — reuse is the evidence that a construction is a habit, not a choice",
+     "match": "robust"
+    },
+    {
+     "line": 5,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", violating the principle of non-contradiction ."
+    },
+    {
+     "line": 7,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'leverages'",
+     "match": ", semantic conflict detection leverages continuous vector representat"
+    },
+    {
+     "line": 10,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "   Managing unstructured legal text—text not stored in structured databases—represents a fundamental maintenance challenge for statutory systems. Practical auto"
+    },
+    {
+     "line": 10,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 47-word paragraph (target 4-6 sentences)",
+     "match": "Managing unstructured legal text—text not stored in structured databases—represents a fund"
+    },
+    {
+     "line": 13,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", spanning formal codified enactments and transitory executive orders."
+    },
+    {
+     "line": 13,
+     "category": "municipal-term",
+     "severity": "info",
+     "note": "Davao City is an HUC: prefer 'local/city ordinance' (review context)",
+     "match": "        The term legal inflation describes the continuous exponential expansion in the sheer volume and interconnected complexity of statuto"
+    },
+    {
+     "line": 18,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'bottleneck'",
+     "match": "sents the primary operational bottleneck; rather, the central hurdle i"
+    },
+    {
+     "line": 18,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "        In contemporary legal informatics, digitizing physical documents into electronic archives no longer represents the primary operational bottleneck; rathe"
+    },
+    {
+     "line": 21,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "        Traditional search systems rely on exact character matching, operating on the premise that legal concepts can be retrieved by searching for specific voc"
+    },
+    {
+     "line": 23,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", deploying neural architectures introduces an explainability trade-off."
+    },
+    {
+     "line": 26,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 83-word paragraph (target 4-6 sentences)",
+     "match": "While international legal informatics benchmarks such as LexGLUE advance automated conflic"
+    },
+    {
+     "line": 29,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilized'",
+     "match": "asoning. Early investigations utilized basic supervised classifiers "
+    },
+    {
+     "line": 29,
+     "category": "declaude:time-inflation",
+     "severity": "info",
+     "note": "ground the duration or drop it",
+     "match": "recently"
+    },
+    {
+     "line": 31,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 73-word paragraph (target 4-6 sentences)",
+     "match": "Analyzing these research patterns reveals a pronounced structural gap in local literature."
+    },
+    {
+     "line": 34,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "        Within Philippine computational linguistics, the modeling techniques required for automated conflict detection—specifically Natural Language Inference ("
+    },
+    {
+     "line": 34,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 51-word paragraph (target 4-6 sentences)",
+     "match": "Within Philippine computational linguistics, the modeling techniques required for automate"
+    },
+    {
+     "line": 36,
+     "category": "declaude:editorializing",
+     "severity": "info",
+     "note": "check the number justifies the adjective",
+     "match": "collapse"
+    },
+    {
+     "line": 40,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 49-word paragraph (target 4-6 sentences)",
+     "match": "While the Philippine AI community has successfully automated the search and summarization "
+    },
+    {
+     "line": 46,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", resulting in municipal workstation fleets that are routinely four to seven years old before replacement cycles occur ."
+    },
+    {
+     "line": 49,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three consecutive clauses opening on the same two words — forced triad carried by anaphora",
+     "match": "'it must' x3: it must not prohibit but may regulate trade"
+    },
+    {
+     "line": 50,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", leaving deep semantic conflict detection unaddressed in local governance ."
+    },
+    {
+     "line": 51,
+     "category": "declaude:cadence",
+     "severity": "info",
+     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
+     "match": "When a local ordinance impermissibly enters an area governed by national legislation, Phil"
+    },
+    {
+     "line": 56,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 43-word paragraph (target 4-6 sentences)",
+     "match": "The legal system in the Philippines depends on the fundamental rule that national laws alw"
+    },
+    {
+     "line": 58,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "international treaties, presidential executive issuances, and local ordinances"
+    },
+    {
+     "line": 58,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", establishing a rigid hierarchy where national laws strictly control subordinate enactments ."
+    },
+    {
+     "line": 60,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "promoting the health, safety, and general prosperity of"
+    },
+    {
+     "line": 68,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'revolutionary'",
+     "match": "aw period (1972–1986) and the Revolutionary Government under the Freedom "
+    },
+    {
+     "line": 68,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "4 em-dashes on one line",
+     "match": "    A fundamental design decision in legal informatics is delineating which positive legal instruments establish binding preemption standards. Under Article VII"
+    },
+    {
+     "line": 71,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 62-word paragraph (target 4-6 sentences)",
+     "match": "The structural complexity of Philippine legislative text stems directly from the nation's "
+    },
+    {
+     "line": 73,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "emphasized systematic codification, deductive legal reasoning, and broad normative princip"
+    },
+    {
+     "line": 73,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "into structured books, titles, and chapters"
+    },
+    {
+     "line": 75,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "exhaustive definitions sections, severability clauses, and general repealing provisions"
+    },
+    {
+     "line": 75,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", confirming English as the controlling statutory language while maintaining civil law institutional categories ."
+    },
+    {
+     "line": 77,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", qualifying prepositional phrases, and recursive proviso exceptions."
+    },
+    {
+     "line": 77,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "multiple dependent clauses, qualifying prepositional phrases, and recursive proviso except"
+    },
+    {
+     "line": 77,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", resulting in verbose ordinances where the operative regulatory command is separated from its governing subject by dozens of intervening words ."
+    },
+    {
+     "line": 80,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "laws are drafted, debated, and approved determines how"
+    },
+    {
+     "line": 82,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'crucially'",
+     "match": " the assembled plenary body . Crucially, parliamentary rules prohibit"
+    },
+    {
+     "line": 82,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "assigned measure number, title, and the name of"
+    },
+    {
+     "line": 82,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "Committee on Rules, Laws, and Ordinances"
+    },
+    {
+     "line": 82,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "technical working groups, legal counsel, and committee researchers examine"
+    },
+    {
+     "line": 82,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "the draft, hold public hearings, and prepare the formal"
+    },
+    {
+     "line": 82,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "4 em-dashes on one line",
+     "match": "    The legislative progression begins on the plenary floor with the First Reading. In both national congressional chambers and the Davao City Sangguniang Panlu"
+    },
+    {
+     "line": 84,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "amendments are presented, debated, and voted upon section"
+    },
+    {
+     "line": 86,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "substantive textual alterations, statutory reconciliations, and corrective rewrites can"
+    },
+    {
+     "line": 86,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    The Period of Interpellation and Amendments on Second Reading constitutes the exact procedural nexus where an automated semantic conflict detection system d"
+    },
+    {
+     "line": 88,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'underscores'",
+     "match": "is structural irreversibility underscores why ex-ante computational con"
+    },
+    {
+     "line": 93,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "potential statutory collisions, constitutional infirmities, and unintended regulatory burd"
+    },
+    {
+     "line": 93,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 59-word paragraph (target 4-6 sentences)",
+     "match": "The term \"ex-ante\" derives from Latin meaning \"before the event.\" In legislative informati"
+    },
+    {
+     "line": 97,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail asserting significance",
+     "match": ", encompassing"
+    },
+    {
+     "line": 97,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "lies in timing, methodology, and legal impact across"
+    },
+    {
+     "line": 97,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "draft local ordinances, pending congressional bills, and proposed executive issuances"
+    },
+    {
+     "line": 97,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "encompassing adversarial litigation, appellate court rulings, and Supreme Court jurisprude"
+    },
+    {
+     "line": 97,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    The fundamental distinction between ex-ante and ex-post evaluation lies in timing, methodology, and legal impact across the hierarchy of legal instruments. "
+    },
+    {
+     "line": 99,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", mitigating the risk of enacting local measures that are legally void ab initio ."
+    },
+    {
+     "line": 102,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 62-word paragraph (target 4-6 sentences)",
+     "match": "Because local governments hold subordinate legislative authority within a decentralized dr"
+    },
+    {
+     "line": 104,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 65-word paragraph (target 4-6 sentences)",
+     "match": "Discourse analysis of Philippine statutory language reveals pervasive ambiguity in how nor"
+    },
+    {
+     "line": 108,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", causing keyword search queries to miss critical governing provisions ."
+    },
+    {
+     "line": 114,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "as Republic Acts, Commonwealth Acts, and Batas Pambansa"
+    },
+    {
+     "line": 114,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", providing the authoritative baseline rules against which local drafts are evaluated."
+    },
+    {
+     "line": 116,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "enacted national laws, presidential executive orders, and administrative issuances"
+    },
+    {
+     "line": 118,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilize'",
+     "match": " official journal, developers utilize the Open Congress API provide"
+    },
+    {
+     "line": 118,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "utilize"
+    },
+    {
+     "line": 118,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 74-word paragraph (target 4-6 sentences)",
+     "match": "Complementing the official journal, developers utilize the Open Congress API provided by t"
+    },
+    {
+     "line": 120,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", establishing the core vocabulary required for transformer models to process specialized statutory drafting ."
+    },
+    {
+     "line": 123,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "house local ordinances, resolutions, and executive orders that"
+    },
+    {
+     "line": 123,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", resulting in highly variable archiving practices depending on the technological capacity of the specific city council."
+    },
+    {
+     "line": 125,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "for city regulations, resolutions, and zoning policies enacted"
+    },
+    {
+     "line": 125,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", providing the exact ordinance text required to evaluate new drafts for logical consistency against the existing legislative framework."
+    },
+    {
+     "line": 127,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "regarding ordinance routing, committee assignments, and plenary approval statuses"
+    },
+    {
+     "line": 130,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 39-word paragraph (target 4-6 sentences)",
+     "match": "While the aforementioned repositories contain the necessary legal knowledge, extracting th"
+    },
+    {
+     "line": 133,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "faded ink, low contrast, and compression artifacts"
+    },
+    {
+     "line": 146,
+     "category": "orphan-heading",
+     "severity": "error",
+     "note": "subsection 'Boolean Information Retrieval' has exactly 1 subsubsection (needs >= 2)",
+     "match": "Boolean Information Retrieval"
+    },
+    {
+     "line": 147,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "discarding grammatical syntax, clause order, and relational context"
+    },
+    {
+     "line": 149,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 54-word paragraph (target 4-6 sentences)",
+     "match": "At its core, the retrieval mechanism in BIR is strictly based on set theory and formal Boo"
+    },
+    {
+     "line": 157,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 16-word paragraph (target 4-6 sentences)",
+     "match": "Where the compound query X combines disjunctive keyword sets under conjunction with a nega"
+    },
+    {
+     "line": 159,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 77-word paragraph (target 4-6 sentences)",
+     "match": "The system then retrieves documents by calculating the exact mathematical intersection of "
+    },
+    {
+     "line": 162,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", uncompromising reliance on exact string matching."
+    },
+    {
+     "line": 166,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", conflicting law."
+    },
+    {
+     "line": 168,
+     "category": "orphan-heading",
+     "severity": "error",
+     "note": "subsection 'Symbolic AI' has exactly 1 subsubsection (needs >= 2)",
+     "match": "Symbolic AI"
+    },
+    {
+     "line": 169,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", allowing computational engines to execute deductive reasoning over regulatory relationships."
+    },
+    {
+     "line": 171,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilize'",
+     "match": "c, these systems specifically utilize propositional or first-order "
+    },
+    {
+     "line": 171,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", representing unlawful actions that must not be performed)."
+    },
+    {
+     "line": 171,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "utilize"
+    },
+    {
+     "line": 171,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 72-word paragraph (target 4-6 sentences)",
+     "match": "To execute this logic, these systems specifically utilize propositional or first-order log"
+    },
+    {
+     "line": 179,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 30-word paragraph (target 4-6 sentences)",
+     "match": "Where the universal quantifier (X) asserts that for any entity X, if it is classified as a"
+    },
+    {
+     "line": 181,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 50-word paragraph (target 4-6 sentences)",
+     "match": "By converting ordinances into these rigid formulas, a system can theoretically use deducti"
+    },
+    {
+     "line": 184,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "must manually read, interpret, and translate thousands of"
+    },
+    {
+     "line": 184,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "is unacceptably slow, extremely expensive, and highly prone to"
+    },
+    {
+     "line": 186,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "the linguistic variance, unformalized exceptions, and semantic ambiguities characteristic"
+    },
+    {
+     "line": 186,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "        Beyond the logistical challenge of manual coding, the rigid binary architecture of Symbolic AI fundamentally clashes with what legal philosopher H.L.A. "
+    },
+    {
+     "line": 191,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "how enactments cite, amend, and conceptually reference one"
+    },
+    {
+     "line": 191,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 62-word paragraph (target 4-6 sentences)",
+     "match": "Because exact word matching can be unreliable, computational legal studies frequently expl"
+    },
+    {
+     "line": 194,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", establishing structured taxonomies without manual relational coding ."
+    },
+    {
+     "line": 194,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "representing legal entities, provisions, and administrative bodies as"
+    },
+    {
+     "line": 194,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", establishing structured taxonomies without manual relational coding ."
+    },
+    {
+     "line": 199,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "of national agencies, provincial guidelines, and local zoning boundaries"
+    },
+    {
+     "line": 199,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", allowing algorithms to evaluate legislative preemption within its broader administrative network ."
+    },
+    {
+     "line": 210,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "such as obligations, permissions, and prohibitions"
+    },
+    {
+     "line": 210,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "        A principal advantage of Abstract Meaning Representation in statutory analysis is its ability to isolate predicate-argument structures and deontic opera"
+    },
+    {
+     "line": 212,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", allowing different legislative phrasings to map to identical concept graphs ."
+    },
+    {
+     "line": 212,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", allowing different legislative phrasings to map to identical concept graphs ."
+    },
+    {
+     "line": 220,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", establishing standardized metadata schemas for legislative drafting and normative rule representation."
+    },
+    {
+     "line": 227,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", enabling structural graph algorithms to evaluate legislative compliance with high legal precision."
+    },
+    {
+     "line": 230,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "        The construction of a statutory knowledge graph from unstructured legislative corpora requires a systematic extraction and entity resolution workflow. B"
+    },
+    {
+     "line": 234,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 69-word paragraph (target 4-6 sentences)",
+     "match": "Unlike homogeneous graphs that contain a single edge type, statutory networks function as "
+    },
+    {
+     "line": 237,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 75-word paragraph (target 4-6 sentences)",
+     "match": "While topological networks capture formal statutory relationships, pure graph representati"
+    },
+    {
+     "line": 241,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail asserting significance",
+     "match": ", highlighting"
+    },
+    {
+     "line": 241,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "        Within this neuro-symbolic interface, legal informatics literature explores two primary paradigms for integrating knowledge graph structure with transfo"
+    },
+    {
+     "line": 241,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", highlighting a recognized methodological trade-off between contextual guidance and input representation consistency."
+    },
+    {
+     "line": 243,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", providing an empirical basis for dynamic threshold calibration."
+    },
+    {
+     "line": 243,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "        In parallel, an alternative line of research investigates decoupled, decision-level graph integration through Topologically Calibrated Decision Threshol"
+    },
+    {
+     "line": 243,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", providing an empirical basis for dynamic threshold calibration."
+    },
+    {
+     "line": 246,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilizes'",
+     "match": "g. Deep Learning, conversely, utilizes multi-layer artificial neural"
+    },
+    {
+     "line": 246,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "its underlying mechanics, computational challenges, and why it remains"
+    },
+    {
+     "line": 249,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'bottlenecks'",
+     "match": " created severe computational bottlenecks during training and suffered "
+    },
+    {
+     "line": 249,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 82-word paragraph (target 4-6 sentences)",
+     "match": "A major breakthrough was the Transformer architecture, introduced by Vaswani et al.  in 20"
+    },
+    {
+     "line": 251,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'bottleneck'",
+     "match": "ers eliminate this sequential bottleneck entirely through the Self-Att"
+    },
+    {
+     "line": 251,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", directly enabling foundational language models."
+    },
+    {
+     "line": 254,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 21-word paragraph (target 4-6 sentences)",
+     "match": "Despite their architectural versatility, deploying transformer models within the computati"
+    },
+    {
+     "line": 256,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'bottleneck'",
+     "match": "    The foremost engineering bottleneck arises from quadratic memory "
+    },
+    {
+     "line": 258,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "with scanning artifacts, archaic statutory phrases, and administrative Taglish"
+    },
+    {
+     "line": 258,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    A secondary challenge involves morphological noise and domain adaptation limits. Pretrained transformers require massive corpora of clean text, and while We"
+    },
+    {
+     "line": 258,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 71-word paragraph (target 4-6 sentences)",
+     "match": "A secondary challenge involves morphological noise and domain adaptation limits. Pretraine"
+    },
+    {
+     "line": 260,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 64-word paragraph (target 4-6 sentences)",
+     "match": "Finally, edge deployment is heavily restricted by local government hardware realities. Exe"
+    },
+    {
+     "line": 263,
+     "category": "declaude:em-dash",
+     "severity": "info",
+     "note": "clause after a dash running to the end of the sentence — dash as drum roll",
+     "match": "—a distinction that keyword searches miss."
+    },
+    {
+     "line": 270,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "for document classification, sentiment detection, and question answering"
+    },
+    {
+     "line": 273,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'bottlenecks'",
+     "match": "d eliminates pipeline latency bottlenecks. However, deploying a monolit"
+    },
+    {
+     "line": 273,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 69-word paragraph (target 4-6 sentences)",
+     "match": "The appeal of a single-stage neural architecture is its conceptual simplicity: a single mo"
+    },
+    {
+     "line": 275,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 70-word paragraph (target 4-6 sentences)",
+     "match": "One common monolithic approach involves prompting generative Large Language Models to dire"
+    },
+    {
+     "line": 277,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", enabling sub-second nearest-neighbor search across extensive archives ."
+    },
+    {
+     "line": 277,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", enabling sub-second nearest-neighbor search across extensive archives ."
+    },
+    {
+     "line": 279,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", allowing every token in the draft to interact directly with every token in the statute through full bidirectional cross-attention."
+    },
+    {
+     "line": 282,
+     "category": "declaude:editorializing",
+     "severity": "info",
+     "note": "check the number justifies the adjective",
+     "match": "dramatically"
+    },
+    {
+     "line": 287,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'leverages'",
+     "match": "to-fine hierarchy, the system leverages the complementary strengths o"
+    },
+    {
+     "line": 287,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 83-word paragraph (target 4-6 sentences)",
+     "match": "Comparing single-stage and dual-stage architectures highlights a fundamental division of l"
+    },
+    {
+     "line": 293,
+     "category": "copula-avoidance",
+     "severity": "warn",
+     "note": "use direct is/are/has",
+     "match": "ery. In legal informatics, IR acts as the foundational filtering mechanism. I"
+    },
+    {
+     "line": 293,
+     "category": "copula-avoidance",
+     "severity": "warn",
+     "note": "use direct is/are/has",
+     "match": "ional filtering mechanism. It serves as the \"coarse\" stage of a dual-pipeline s"
+    },
+    {
+     "line": 293,
+     "category": "declaude:copula",
+     "severity": "info",
+     "note": "serves as — use is",
+     "match": "acts as the"
+    },
+    {
+     "line": 293,
+     "category": "declaude:copula",
+     "severity": "info",
+     "note": "serves as — use is",
+     "match": "serves as the"
+    },
+    {
+     "line": 293,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 55-word paragraph (target 4-6 sentences)",
+     "match": "Information Retrieval (IR) is the process of extracting relevant documents from large unst"
+    },
+    {
+     "line": 298,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "as executive orders, circulars, and departmental memos"
+    },
+    {
+     "line": 307,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    This stark discrepancy between superficial lexical matching and actual legal consequence represents a major stumbling block for legacy search architectures."
+    },
+    {
+     "line": 309,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilize'",
+     "match": "dense retrieval architectures utilize Bi-Encoder models to compress"
+    },
+    {
+     "line": 309,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "utilize"
+    },
+    {
+     "line": 309,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    To resolve these limitations, modern computational pipelines fundamentally redefine relevance spatially rather than lexically. Instead of scanning a query a"
+    },
+    {
+     "line": 312,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", processing long texts requires severe truncation."
+    },
+    {
+     "line": 312,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    Relying on standard BERT-based architectures introduces an artificial constraint on legal analysis: the 512-token limit. Because standard Self-Attention mec"
+    },
+    {
+     "line": 314,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 68-word paragraph (target 4-6 sentences)",
+     "match": "Consequently, the model operates with a logical blindspot. Beltagy et al.  note that this "
+    },
+    {
+     "line": 320,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "the theoretical foundations, failure modes, and complementary trade"
+    },
+    {
+     "line": 320,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 44-word paragraph (target 4-6 sentences)",
+     "match": "In computational legal informatics, isolating candidate enactments from extensive statutor"
+    },
+    {
+     "line": 322,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 25-word paragraph (target 4-6 sentences)",
+     "match": "The foundational retrieval strategies in computational law encompass sparse probabilistic "
+    },
+    {
+     "line": 330,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 36-word paragraph (target 4-6 sentences)",
+     "match": "Where X denotes term frequency of query token X in document X, X normalizes for provision "
+    },
+    {
+     "line": 332,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail asserting significance",
+     "match": ", reflecting"
+    },
+    {
+     "line": 332,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail asserting significance",
+     "match": ", ensuring"
+    },
+    {
+     "line": 333,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "exact statutory citations, formal administrative acronyms, and verbatim penal monetary"
+    },
+    {
+     "line": 341,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 47-word paragraph (target 4-6 sentences)",
+     "match": "Where X and X represent pooled contextual embeddings generated by dense bi-encoders such a"
+    },
+    {
+     "line": 341,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{all-MiniLM-L6-v2}"
+    },
+    {
+     "line": 343,
+     "category": "declaude:editorializing",
+     "severity": "info",
+     "note": "check the number justifies the adjective",
+     "match": "catastrophic"
+    },
+    {
+     "line": 343,
+     "category": "declaude:editorializing",
+     "severity": "info",
+     "note": "check the number justifies the adjective",
+     "match": "collapse"
+    },
+    {
+     "line": 343,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "taxation, public safety, and environmental sanitation"
+    },
+    {
+     "line": 349,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "as executive orders, administrative circulars, and departmental memos"
+    },
+    {
+     "line": 349,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", preventing dilution of candidate shortlists and significantly improving Mean Reciprocal Rank (MRR)."
+    },
+    {
+     "line": 352,
+     "category": "copula-avoidance",
+     "severity": "warn",
+     "note": "use direct is/are/has",
+     "match": "mance on the BEIR leaderboard serves as a primary indicator of a model's capaci"
+    },
+    {
+     "line": 352,
+     "category": "declaude:copula",
+     "severity": "info",
+     "note": "serves as — use is",
+     "match": "serves as a"
+    },
+    {
+     "line": 354,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", providing a proven testing foundation for leading statutory retrieval models ."
+    },
+    {
+     "line": 354,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", providing a proven testing foundation for leading statutory retrieval models ."
+    },
+    {
+     "line": 358,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{all-MiniLM-L6-v2}"
+    },
+    {
+     "line": 360,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilizing'",
+     "match": " parameters, 768 dimensions), utilizing retrofitted contrastive pretr"
+    },
+    {
+     "line": 360,
+     "category": "copula-avoidance",
+     "severity": "warn",
+     "note": "use direct is/are/has",
+     "match": " positional dependence, which serves as the foundational architecture for all-m"
+    },
+    {
+     "line": 360,
+     "category": "declaude:copula",
+     "severity": "info",
+     "note": "serves as — use is",
+     "match": "serves as the"
+    },
+    {
+     "line": 360,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{all-mpnet-base-v2}"
+    },
+    {
+     "line": 364,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "functionality across dense, sparse, and multi"
+    },
+    {
+     "line": 364,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{ModernBERT-base}"
+    },
+    {
+     "line": 366,
+     "category": "declaude:editorializing",
+     "severity": "info",
+     "note": "check the number justifies the adjective",
+     "match": "catastrophic"
+    },
+    {
+     "line": 366,
+     "category": "declaude:editorializing",
+     "severity": "info",
+     "note": "check the number justifies the adjective",
+     "match": "collapse"
+    },
+    {
+     "line": 366,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "taxation, public safety, and environmental sanitation"
+    },
+    {
+     "line": 368,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "provides scale invariance, eliminates distribution sensitivity, and ensures that provision"
+    },
+    {
+     "line": 370,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "as executive orders, administrative circulars, and departmental memos"
+    },
+    {
+     "line": 370,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", preventing dilution of candidate shortlists and significantly improving Mean Reciprocal Rank (MRR)."
+    },
+    {
+     "line": 373,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", enabling algorithms to parse and interpret unstructured text."
+    },
+    {
+     "line": 373,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", enabling algorithms to parse and interpret unstructured text."
+    },
+    {
+     "line": 373,
+     "category": "space-before-cite",
+     "severity": "warn",
+     "note": "use word~\\cite{...} (non-breaking tie, no space)",
+     "match": "n \\cite"
+    },
+    {
+     "line": 375,
+     "category": "declaude:copula",
+     "severity": "info",
+     "note": "serves as — use is",
+     "match": "act as an"
+    },
+    {
+     "line": 377,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 43-word paragraph (target 4-6 sentences)",
+     "match": "This section breaks down how NLP operates within legislative analysis. It covers the syste"
+    },
+    {
+     "line": 389,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    Within modern neural approaches, Natural Language Inference (NLI)—originally formalized under the Recognizing Textual Entailment (RTE) challenges initiated "
+    },
+    {
+     "line": 392,
+     "category": "declaude:em-dash",
+     "severity": "info",
+     "note": "clause after a dash running to the end of the sentence — dash as drum roll",
+     "match": "—that rigid rule-based systems historically failed to grasp."
+    },
+    {
+     "line": 392,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    This directional formulation exposes the fatal flaw of earlier statistical NLP, which mistakenly equated high word overlap with logical entailment . Modern "
+    },
+    {
+     "line": 395,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "robust"
+    },
+    {
+     "line": 397,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 63-word paragraph (target 4-6 sentences)",
+     "match": "To evaluate specialized legal logic, legal NLP research relies on the Legal General Langua"
+    },
+    {
+     "line": 399,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "navigate statutory conditions, exceptions, and deontic modalities"
+    },
+    {
+     "line": 403,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "diverse English legislation, court judgments, and contracts"
+    },
+    {
+     "line": 403,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "encompassing administrative regulations, municipal codes, and statutory provisions"
+    },
+    {
+     "line": 403,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{LEGAL-BERT}"
+    },
+    {
+     "line": 405,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "robust"
+    },
+    {
+     "line": 405,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "FEVER, ANLI, and WANLI"
+    },
+    {
+     "line": 405,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{DeBERTa-v3}"
+    },
+    {
+     "line": 407,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "complex preamble clauses, extensive definitions, and multi"
+    },
+    {
+     "line": 407,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{ModernBERT}"
+    },
+    {
+     "line": 409,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilize'",
+     "match": "to structured mini-batches to utilize hardware vectorization. In li"
+    },
+    {
+     "line": 409,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "utilize"
+    },
+    {
+     "line": 409,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{BGE-Reranker-v2-m3}"
+    },
+    {
+     "line": 411,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilizes'",
+     "match": "zes runtime call overhead and utilizes multi-threaded central proces"
+    },
+    {
+     "line": 411,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", substantially reducing redundant self-attention calculations while producing mathematically identical hidden states."
+    },
+    {
+     "line": 413,
+     "category": "declaude:editorializing",
+     "severity": "info",
+     "note": "check the number justifies the adjective",
+     "match": "catastrophic"
+    },
+    {
+     "line": 413,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "regional administrative phrasing, Latin legal maxims, and English"
+    },
+    {
+     "line": 413,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{XLM-RoBERTa}"
+    },
+    {
+     "line": 415,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilizing'",
+     "match": "an et al.  introduced ALBERT, utilizing factorized embedding paramete"
+    },
+    {
+     "line": 415,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", deploying billion-parameter language models is computationally unfeasible."
+    },
+    {
+     "line": 415,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", providing the structural foundation for compact distilled bi-encoders such as all-MiniLM-L6-v2 (22."
+    },
+    {
+     "line": 415,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{DistilBERT}"
+    },
+    {
+     "line": 420,
+     "category": "declaude:em-dash",
+     "severity": "info",
+     "note": "clause after a dash running to the end of the sentence — dash as drum roll",
+     "match": "—validating whether the architecture generalizes reliably to unseen legislative drafts ."
+    },
+    {
+     "line": 420,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "into independent training, validation, and test subsets"
+    },
+    {
+     "line": 420,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "recall, Macro X, and class"
+    },
+    {
+     "line": 420,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "In model evaluation methodology, the ground truth provides the objective benchmark for measuring generalization capacity across held-out partitions. Datasets ar"
+    },
+    {
+     "line": 427,
+     "category": "orphan-heading",
+     "severity": "error",
+     "note": "subsection 'Annotation and Reliability Metrics' has exactly 1 subsubsection (needs >= 2)",
+     "match": "Annotation and Reliability Metrics"
+    },
+    {
+     "line": 430,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilize'",
+     "match": " guidelines, researchers must utilize Inter-Rater Reliability (IRR)"
+    },
+    {
+     "line": 430,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "utilize"
+    },
+    {
+     "line": 432,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 28-word paragraph (target 4-6 sentences)",
+     "match": "The two primary statistical formulas used to subtract this random chance are Cohen's Kappa"
+    },
+    {
+     "line": 440,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 29-word paragraph (target 4-6 sentences)",
+     "match": "Where X represents the relative observed agreement between the two individual raters, and "
+    },
+    {
+     "line": 448,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 39-word paragraph (target 4-6 sentences)",
+     "match": "Where X represents the mean observed agreement across all pairs of raters, while X represe"
+    },
+    {
+     "line": 450,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 18-word paragraph (target 4-6 sentences)",
+     "match": "The resulting X score is interpreted using the universally accepted statistical matrix est"
+    },
+    {
+     "line": 470,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail asserting significance",
+     "match": ", ensuring"
+    },
+    {
+     "line": 470,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "robust"
+    },
+    {
+     "line": 470,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", ensuring that the resulting ground truth benchmark represents dependable legal consistency rather than subjective individual interpretation."
+    },
+    {
+     "line": 475,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "        While achieving a \"Substantial\" Inter-Rater Reliability score (X) validates the clarity of the annotation guidelines, failing to meet this threshold doe"
+    },
+    {
+     "line": 475,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 89-word paragraph (target 4-6 sentences)",
+     "match": "While achieving a \"Substantial\" Inter-Rater Reliability score (X) validates the clarity of"
+    },
+    {
+     "line": 482,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "with conditional clauses, exceptions, and domain"
+    },
+    {
+     "line": 486,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 70-word paragraph (target 4-6 sentences)",
+     "match": "Furthermore, unlike general-domain datasets crowdsourced through platforms like Amazon Mec"
+    },
+    {
+     "line": 488,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "variations in terminology, structure, and overall organization across"
+    },
+    {
+     "line": 490,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail asserting significance",
+     "match": ", ensuring"
+    },
+    {
+     "line": 490,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "a general rule, multiple conditional modifiers, and distinct exceptions"
+    },
+    {
+     "line": 490,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", ensuring the classification mathematically targets the exact point of semantic collision."
+    },
+    {
+     "line": 497,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilize'",
+     "match": "case, modern legal frameworks utilize Asymmetric Span-Level Pairing"
+    },
+    {
+     "line": 497,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "utilize"
+    },
+    {
+     "line": 499,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    While asymmetric spans successfully capture intra-document context, resolving the second edge case—cross-document multi-hop reasoning—remains computationall"
+    },
+    {
+     "line": 501,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 40-word paragraph (target 4-6 sentences)",
+     "match": "Both of these state-of-the-art solutions immediately violate the strict hardware constrain"
+    },
+    {
+     "line": 506,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilizing'",
+     "match": "d preventing optimistic bias, utilizing a static partition allows for"
+    },
+    {
+     "line": 509,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 48-word paragraph (target 4-6 sentences)",
+     "match": "A standard critique of static splits on small datasets is that the resulting test set lack"
+    },
+    {
+     "line": 513,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    The practical application of MDE fundamentally shifts how model performance is evaluated in specialized domains. In general NLP research, massive test sets "
+    },
+    {
+     "line": 519,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    Within the explainability literature, researchers distinguish between Post-Hoc Surrogate Models and Intrinsic Explainability Mechanisms. Surrogate methods, "
+    },
+    {
+     "line": 521,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilizing'",
+     "match": "    While utilizing attention weights as a proxy "
+    },
+    {
+     "line": 521,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", demonstrating that attention mechanisms provide faithful representations of internal prioritization under rigorous diagnostic testing."
+    },
+    {
+     "line": 523,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail asserting significance",
+     "match": ", ensuring"
+    },
+    {
+     "line": 523,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", ensuring that predicted probability scores correspond to observed empirical accuracy rates across decision thresholds."
+    },
+    {
+     "line": 529,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilized'",
+     "match": "mechanics and feature weights utilized by the model to produce its o"
+    },
+    {
+     "line": 529,
+     "category": "declaude:editorializing",
+     "severity": "info",
+     "note": "check the number justifies the adjective",
+     "match": "catastrophic"
+    },
+    {
+     "line": 529,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "explanation appears convincing, fluent, and domain"
+    },
+    {
+     "line": 536,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilize'",
+     "match": "d stage, legal NLP frameworks utilize token-level saliency and atte"
+    },
+    {
+     "line": 536,
+     "category": "declaude:slop",
+     "severity": "info",
+     "note": "slop vocabulary",
+     "match": "utilize"
+    },
+    {
+     "line": 536,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 75-word paragraph (target 4-6 sentences)",
+     "match": "At this second stage, legal NLP frameworks utilize token-level saliency and attention visu"
+    },
+    {
+     "line": 541,
+     "category": "long-title",
+     "severity": "info",
+     "note": "title 'Statutory Retrieval (Team AIIR)' (31 chars): keep single-line & simple",
+     "match": "Statutory Retrieval (Team AIIR)"
+    },
+    {
+     "line": 542,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 77-word paragraph (target 4-6 sentences)",
+     "match": "In statute law retrieval, dense bi-encoder architectures offer an effective theoretical fo"
+    },
+    {
+     "line": 551,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "computation, dense vector indexing, and approximate nearest neighbor"
+    },
+    {
+     "line": 551,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", allowing its vector representation to be compared directly against pre-computed statutory embeddings via cosine distance."
+    },
+    {
+     "line": 551,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", providing the high-recall candidate shortlist necessary to feed the downstream entailment engine."
+    },
+    {
+     "line": 553,
+     "category": "texttt-model-in-prose",
+     "severity": "info",
+     "note": "write model names in roman text in running prose",
+     "match": "\\texttt{all-mpnet-base-v2}"
+    },
+    {
+     "line": 555,
+     "category": "long-title",
+     "severity": "info",
+     "note": "title 'Multi-Stage Retrieval (Team JNLP)' (33 chars): keep single-line & simple",
+     "match": "Multi-Stage Retrieval (Team JNLP)"
+    },
+    {
+     "line": 556,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 54-word paragraph (target 4-6 sentences)",
+     "match": "Complementing pure bi-encoder retrieval, literature in computational law emphasizes multi-"
+    },
+    {
+     "line": 565,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail asserting significance",
+     "match": ", ensuring"
+    },
+    {
+     "line": 565,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", ensuring that the candidate set benefits from both keyword specificity and conceptual semantic coverage."
+    },
+    {
+     "line": 576,
+     "category": "long-title",
+     "severity": "info",
+     "note": "title 'Textual Entailment (Team KIS)' (29 chars): keep single-line & simple",
+     "match": "Textual Entailment (Team KIS)"
+    },
+    {
+     "line": 577,
+     "category": "declaude:agency",
+     "severity": "info",
+     "note": "inanimate subject acting",
+     "match": "Figure  shows"
+    },
+    {
+     "line": 577,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 54-word paragraph (target 4-6 sentences)",
+     "match": "In the second phase of legal retrieve-then-entail architectures, the theoretical objective"
+    },
+    {
+     "line": 586,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilized'",
+     "match": "uence classification pipeline utilized for statutory textual entailm"
+    },
+    {
+     "line": 591,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilizes'",
+     "match": " Team JNLP . This methodology utilizes lexical filtering (BM25) to p"
+    },
+    {
+     "line": 591,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'utilizing'",
+     "match": "a lightweight cross-encoders, utilizing token-level separation bounda"
+    },
+    {
+     "line": 593,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 65-word paragraph (target 4-6 sentences)",
+     "match": "Synthesizing these foundational frameworks establishes an end-to-end theoretical foundatio"
+    }
+   ]
+  }
+ },
+ "global": {
+  "undefined_refs": [],
+  "undefined_cites": [],
+  "unreferenced_floats": [
+   {
+    "label": "eq:boolean_query",
+    "file": "chapters/literature_review.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:cohens_kappa",
+    "file": "chapters/literature_review.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:dense_cosine_sim",
+    "file": "chapters/literature_review.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:first_order_deontic",
+    "file": "chapters/literature_review.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:fleiss_kappa",
+    "file": "chapters/literature_review.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:in_degree_centrality",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:knowledge_graph_definition",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:okapi_bm25",
+    "file": "chapters/literature_review.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:ppv_bayes",
+    "file": "chapters/results_and_discussion.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:relation_vocabulary",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:statutory_pagerank",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "fig:ai_disclosure_attestation_p1",
+    "file": "appendices/appendix_r.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:ai_disclosure_attestation_p2",
+    "file": "appendices/appendix_r.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:annotator_certificate",
+    "file": "appendices/appendix_k.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:kg_appendix_all_5_layouts",
+    "file": "appendices/appendix_kg_views.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:kg_appendix_color_domains_instruments",
+    "file": "appendices/appendix_kg_views.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:kg_appendix_color_eras_typology",
+    "file": "appendices/appendix_kg_views.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_about_view",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_candidate_shortlist",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_conflict_accordion",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_results_summary",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_scan_landing",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:wireframe_audit_page",
+    "file": "appendices/appendix_wireframes.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:wireframe_homepage",
+    "file": "appendices/appendix_wireframes.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:wireframe_results_page",
+    "file": "appendices/appendix_wireframes.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_kaggle_vlm",
+    "file": "appendices/appendix_b.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb01_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb02_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb03_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb04_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb05_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_ocr_preprocessing",
+    "file": "appendices/appendix_b.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_ordinance_cleaner",
+    "file": "appendices/appendix_c.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_scraper_lawphil",
+    "file": "appendices/appendix_a.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_stage1_retrieval",
+    "file": "appendices/appendix_d.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_stage2_inference",
+    "file": "appendices/appendix_e.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_vlm_extractor",
+    "file": "appendices/appendix_b.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_deontic_markers",
+    "file": "appendices/appendix_f.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_gt_master_answer_key",
+    "file": "appendices/appendix_n.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_gt_stratification_summary",
+    "file": "appendices/appendix_n.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_guide_ceilings",
+    "file": "appendices/appendix_i.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_hyperparameter_sweep_logs",
+    "file": "appendices/appendix_q.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_legal_stopwords",
+    "file": "appendices/appendix_f.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_macro_domain_keywords",
+    "file": "appendices/appendix_p.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_optimal_confusion_matrix",
+    "file": "appendices/appendix_q.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_package_manifest",
+    "file": "appendices/appendix_a.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_01",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_02",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_03_04",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_05",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_06",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_07",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_08",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_09",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_10",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_summary",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   }
+  ],
+  "orphan_appendices": [],
+  "bib": {
+   "entries": 296,
+   "issues": [
+    {
+     "line": 20,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "li2012detecting: no journal/booktitle/publisher/howpublished",
+     "match": "li2012detecting"
+    },
+    {
+     "line": 117,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "virtucio2018predicting: no journal/booktitle/publisher/howpublished",
+     "match": "virtucio2018predicting"
+    },
+    {
+     "line": 322,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Sovrano2021Making: key should be lowercase surnameYearKeyword",
+     "match": "Sovrano2021Making"
+    },
+    {
+     "line": 498,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "cruz2007political: no doi/url (verify against source)",
+     "match": "cruz2007political"
+    },
+    {
+     "line": 609,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "spdc2025rots: no journal/booktitle/publisher/howpublished",
+     "match": "spdc2025rots"
+    },
+    {
+     "line": 757,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "vitali2007towards: no journal/booktitle/publisher/howpublished",
+     "match": "vitali2007towards"
+    },
+    {
+     "line": 765,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "athan2013legalruleml: no journal/booktitle/publisher/howpublished",
+     "match": "athan2013legalruleml"
+    },
+    {
+     "line": 779,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Palmirani2018Modelling: key should be lowercase surnameYearKeyword",
+     "match": "Palmirani2018Modelling"
+    },
+    {
+     "line": 907,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "bhattacharya2019a: no journal/booktitle/publisher/howpublished",
+     "match": "bhattacharya2019a"
+    },
+    {
+     "line": 962,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "tohidi2024abstract: no journal/booktitle/publisher/howpublished",
+     "match": "tohidi2024abstract"
+    },
+    {
+     "line": 1029,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Eleftheriadis2023evaluating: key should be lowercase surnameYearKeyword",
+     "match": "Eleftheriadis2023evaluating"
+    },
+    {
+     "line": 1233,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "zhang-etal-2024-mgte: key should be lowercase surnameYearKeyword",
+     "match": "zhang-etal-2024-mgte"
+    },
+    {
+     "line": 1367,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "hu2021impact: no journal/booktitle/publisher/howpublished",
+     "match": "hu2021impact"
+    },
+    {
+     "line": 1378,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Greco2023Bringing: key should be lowercase surnameYearKeyword",
+     "match": "Greco2023Bringing"
+    },
+    {
+     "line": 1709,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Westermann2019computer: key should be lowercase surnameYearKeyword",
+     "match": "Westermann2019computer"
+    },
+    {
+     "line": 1722,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Kommers2026Hermeneutics: key should be lowercase surnameYearKeyword",
+     "match": "Kommers2026Hermeneutics"
+    },
+    {
+     "line": 1742,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Guenmayor2018CaseStudyHermeneutics: key should be lowercase surnameYearKeyword",
+     "match": "Guenmayor2018CaseStudyHermeneutics"
+    },
+    {
+     "line": 1793,
+     "category": "bib-missing-field",
+     "severity": "error",
+     "note": "coliee2025proceedings: missing author",
+     "match": "coliee2025proceedings"
+    },
+    {
+     "line": 1793,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "coliee2025proceedings: no journal/booktitle/publisher/howpublished",
+     "match": "coliee2025proceedings"
+    },
+    {
+     "line": 1829,
+     "category": "bib-missing-field",
+     "severity": "error",
+     "note": "coliee2026proceedings: missing author",
+     "match": "coliee2026proceedings"
+    },
+    {
+     "line": 1829,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "coliee2026proceedings: no journal/booktitle/publisher/howpublished",
+     "match": "coliee2026proceedings"
+    },
+    {
+     "line": 2079,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "nrcp2024review: no journal/booktitle/publisher/howpublished",
+     "match": "nrcp2024review"
+    },
+    {
+     "line": 2432,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "seo2025sliding: no journal/booktitle/publisher/howpublished",
+     "match": "seo2025sliding"
+    },
+    {
+     "line": 2464,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "ablazo2019designing: no doi/url (verify against source)",
+     "match": "ablazo2019designing"
+    },
+    {
+     "line": 2755,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "agpalo2009statutory: no doi/url (verify against source)",
+     "match": "agpalo2009statutory"
+    },
+    {
+     "line": 3621,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "levenshtein1966binary: no doi/url (verify against source)",
+     "match": "levenshtein1966binary"
+    },
+    {
+     "line": 3647,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "vanrijsbergen1979information: no doi/url (verify against source)",
+     "match": "vanrijsbergen1979information"
+    },
+    {
+     "line": 3793,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "sauro2012quantifying: no doi/url (verify against source)",
+     "match": "sauro2012quantifying"
+    },
+    {
+     "line": 3824,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "hart1961concept: no doi/url (verify against source)",
+     "match": "hart1961concept"
+    }
+   ],
+   "unused_keys": [
+    "Eleftheriadis2023evaluating",
+    "Guenmayor2018CaseStudyHermeneutics",
+    "Kommers2026Hermeneutics",
+    "Palmirani2018Modelling",
+    "aoki2022data",
+    "baskauf2022using",
+    "belinkov2019analysis",
+    "chalkidis2019deep",
+    "chung2022flant5",
+    "dai2019transformer",
+    "dempsey2016student",
+    "dias2022state",
+    "fitzgerald2021information",
+    "furnas1987the",
+    "geva2019modeling",
+    "goebeletal2026coliee2025",
+    "hajra2021scraping",
+    "hendrycks2021cuad",
+    "hu2021impact",
+    "largo2020essentials",
+    "lewis2019bart",
+    "lowe2018the",
+    "nguyen2025nowjcoliee2025multistageframework",
+    "nigatu2024the",
+    "niklaus2024lawinstruct",
+    "pedregosa2011scikitlearn",
+    "qwen2025technical",
+    "republic1987executive",
+    "rigano2018using",
+    "scam2012paper",
+    "scp2001pldtvdavao",
+    "scp2004batangascatv",
+    "scp2008smartvdavao",
+    "shleifer2020distilbart",
+    "sokolova2009systematic",
+    "spdavao2002ord060",
+    "spdc2025rots",
+    "tsai2025can",
+    "wang2025transferlearningapproachautomatic",
+    "warner2024smarter",
+    "williamsetal2022anlizing",
+    "worldbank2011intgovfr",
+    "yang2023batayan",
+    "zhang-etal-2024-mgte",
+    "zhao2010term",
+    "zheng2021caselaw"
+   ],
+   "cited_keys": 250,
+   "cited_without_local_pdf": [],
+   "local_pdf_count": 301
+  },
+  "log": {
+   "present": true,
+   "overfull_ge_1pt": [
+    {
+     "pt": 7.6663,
+     "where": "Overfull \\hbox (7.6663pt too wide) in paragraph at lines 663--663"
+    },
+    {
+     "pt": 5.54062,
+     "where": "Overfull \\hbox (5.54062pt too wide) in paragraph at lines 1164--1164"
+    },
+    {
+     "pt": 2.2099,
+     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 316--316"
+    },
+    {
+     "pt": 2.2099,
+     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 268--268"
+    },
+    {
+     "pt": 2.1882,
+     "where": "Overfull \\hbox (2.1882pt too wide) in paragraph at lines 754--754"
+    },
+    {
+     "pt": 2.08394,
+     "where": "Overfull \\hbox (2.08394pt too wide) in paragraph at lines 710--710"
+    },
+    {
+     "pt": 1.25206,
+     "where": "Overfull \\hbox (1.25206pt too wide) in paragraph at lines 663--663"
+    },
+    {
+     "pt": 1.0642,
+     "where": "Overfull \\hbox (1.0642pt too wide) in paragraph at lines 1148--1148"
+    }
+   ],
+   "undefined": [],
+   "overfull_total": 10
+  }
+ },
+ "totals": {
+  "declaude:triad": 57,
+  "micro-paragraph": 49,
+  "participle-tail": 32,
+  "banned-word": 28,
+  "declaude:participle": 26,
+  "em-dash": 24,
+  "texttt-model-in-prose": 11,
+  "declaude:slop": 10,
+  "declaude:reuse": 8,
+  "declaude:editorializing": 8,
+  "declaude:copula": 5,
+  "copula-avoidance": 4,
+  "orphan-heading": 3,
+  "declaude:em-dash": 3,
+  "long-title": 3,
+  "declaude:density": 1,
+  "municipal-term": 1,
+  "declaude:time-inflation": 1,
+  "declaude:cadence": 1,
+  "space-before-cite": 1,
+  "declaude:agency": 1
+ }
+}

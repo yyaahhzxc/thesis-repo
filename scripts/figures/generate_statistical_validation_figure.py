@@ -44,7 +44,7 @@ models_raw = [
     "legal-bert\n-base",
     "ModernBERT\n-base",
     "PoL-BERT\n-Large",
-    "DeBERTa-v3\n(Proposed)"
+    "DeBERTa-v3"
 ]
 
 cf1_means = [r['cf1_mean'] * 100 for r in cv_results]
@@ -91,7 +91,7 @@ ax1.legend(loc='lower right', frameon=True, framealpha=0.9)
 # Panel B: Friedman Non-Parametric Rank Distribution (8 Legal Domains)
 # -------------------------------------------------------------
 domain_models = [
-    "DeBERTa-v3-base-NLI (Proposed)",
+    "DeBERTa-v3-base-NLI",
     "ModernBERT-base (Long-Context)",
     "legal-bert-base (Judicial)",
     "bert-base-uncased (Supervised)",
@@ -123,8 +123,8 @@ for bar, rank in zip(bars, ranks):
 stat_box = (
     "Omnibus Friedman Test:\n"
     r"$\chi_F^2 = 40.0000$ (df = 5, $p < 0.001$)" "\n"
-    "McNemar vs. BERT: $p = 0.0388^*$\n"
-    "McNemar vs. Zero-Shot: $p < 0.0001^{***}$"
+    "McNemar vs. BERT ($N=53$): $p = 0.6171$ (n.s.)\n"
+    "McNemar vs. Zero-Shot ($N=53$): $p = 0.0008^{***}$"
 )
 ax2.text(0.97, 0.90, stat_box, transform=ax2.transAxes,
          fontsize=8.5, va='top', ha='right',

@@ -40,15 +40,15 @@ plt.rcParams.update({
 
 fig = plt.figure(figsize=(10.5, 9.2), dpi=300)
 # Panel A: y-tick labels take 0.03 to 0.26, bars take 0.27 to 0.97
-ax1 = fig.add_axes([0.27, 0.56, 0.70, 0.38])
+ax1 = fig.add_axes([0.27, 0.60, 0.70, 0.34])
 # Panel B: spans full width from 0.03 to 0.97 matching Panel A
-ax2 = fig.add_axes([0.03, 0.05, 0.94, 0.44])
+ax2 = fig.add_axes([0.03, 0.04, 0.94, 0.42])
 
 # ---------------------------------------------------------------------------
 # Panel A: Component Ablation (Feature Importance Delta F1)
 # ---------------------------------------------------------------------------
 components = [
-    "Full Proposed Architecture\n(DeBERTa-v3 + RRF + Meta + Fine Rule)",
+    "Full Pipeline Architecture\n(DeBERTa-v3 + RRF + Meta + Fine Rule)",
     "w/o Structural Prepending\n(Raw Unanchored Text)",
     "w/o Lexical BM25\n(Dense Vectors Only)",
     "w/o Symbolic Fine Rule\n(RA 7160 §458 Ceiling)",

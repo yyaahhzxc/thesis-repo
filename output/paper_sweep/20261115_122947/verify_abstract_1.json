@@ -1,0 +1,641 @@
+{
+ "generated": "2026-11-15T13:56:53",
+ "canonical": {
+  "enactments": "27,248",
+  "national": "25,432",
+  "local": "1,816",
+  "provisions": "177,423"
+ },
+ "active_files": [
+  "main.tex",
+  "chapters/abstract.tex",
+  "chapters/introduction.tex",
+  "chapters/literature_review.tex",
+  "chapters/methodology.tex",
+  "chapters/results_and_discussion.tex",
+  "chapters/conclusions.tex",
+  "appendices/appendix_a.tex",
+  "appendices/appendix_b.tex",
+  "appendices/appendix_c.tex",
+  "appendices/appendix_d.tex",
+  "appendices/appendix_e.tex",
+  "appendices/appendix_f.tex",
+  "appendices/appendix_g.tex",
+  "appendices/appendix_wireframes.tex",
+  "appendices/appendix_h.tex",
+  "appendices/appendix_i.tex",
+  "appendices/appendix_j.tex",
+  "appendices/appendix_k.tex",
+  "appendices/appendix_n.tex",
+  "appendices/appendix_p.tex",
+  "appendices/appendix_q.tex",
+  "appendices/appendix_kg_views.tex",
+  "appendices/appendix_tier3_results.tex",
+  "appendices/appendix_r.tex"
+ ],
+ "files": {
+  "chapters/abstract.tex": {
+   "lines": 9,
+   "words_prose": 244,
+   "prose_linted": true,
+   "counts": {
+    "abstract-words": 1,
+    "declaude:cadence": 1,
+    "long-paragraph": 1,
+    "micro-paragraph": 1
+   },
+   "hits": [
+    {
+     "line": 0,
+     "category": "abstract-words",
+     "severity": "info",
+     "note": "abstract has ~244 words (limit 250)",
+     "match": ""
+    },
+    {
+     "line": 3,
+     "category": "declaude:cadence",
+     "severity": "info",
+     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
+     "match": "Under statutory preemption in Magtajas v. Pryce Properties and Republic Act No. 7160, loca"
+    },
+    {
+     "line": 5,
+     "category": "long-paragraph",
+     "severity": "info",
+     "note": "11-sentence paragraph (consider splitting beyond ~10)",
+     "match": "Under statutory preemption in Magtajas v. Pryce Properties and Republic Act No. 7160, loca"
+    },
+    {
+     "line": 8,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 21-word paragraph (target 4-6 sentences)",
+     "match": ": Semantic Conflict Detection, Ex-Ante Legislative Review, Statutory Preemption, Natural L"
+    }
+   ]
+  }
+ },
+ "global": {
+  "undefined_refs": [],
+  "undefined_cites": [],
+  "unreferenced_floats": [
+   {
+    "label": "eq:in_degree_centrality",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:knowledge_graph_definition",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:ppv_bayes",
+    "file": "chapters/results_and_discussion.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:relation_vocabulary",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:statutory_pagerank",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "fig:ai_disclosure_attestation_p1",
+    "file": "appendices/appendix_r.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:ai_disclosure_attestation_p2",
+    "file": "appendices/appendix_r.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:annotator_certificate",
+    "file": "appendices/appendix_k.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:kg_appendix_all_5_layouts",
+    "file": "appendices/appendix_kg_views.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:kg_appendix_color_domains_instruments",
+    "file": "appendices/appendix_kg_views.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:kg_appendix_color_eras_typology",
+    "file": "appendices/appendix_kg_views.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_about_view",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_candidate_shortlist",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_conflict_accordion",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_results_summary",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_scan_landing",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:wireframe_audit_page",
+    "file": "appendices/appendix_wireframes.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:wireframe_homepage",
+    "file": "appendices/appendix_wireframes.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:wireframe_results_page",
+    "file": "appendices/appendix_wireframes.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_kaggle_vlm",
+    "file": "appendices/appendix_b.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb01_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb02_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb03_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb04_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb05_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_ocr_preprocessing",
+    "file": "appendices/appendix_b.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_ordinance_cleaner",
+    "file": "appendices/appendix_c.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_scraper_lawphil",
+    "file": "appendices/appendix_a.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_stage1_retrieval",
+    "file": "appendices/appendix_d.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_stage2_inference",
+    "file": "appendices/appendix_e.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_vlm_extractor",
+    "file": "appendices/appendix_b.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_deontic_markers",
+    "file": "appendices/appendix_f.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_gt_master_answer_key",
+    "file": "appendices/appendix_n.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_gt_stratification_summary",
+    "file": "appendices/appendix_n.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_guide_ceilings",
+    "file": "appendices/appendix_i.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_hyperparameter_sweep_logs",
+    "file": "appendices/appendix_q.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_legal_stopwords",
+    "file": "appendices/appendix_f.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_macro_domain_keywords",
+    "file": "appendices/appendix_p.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_optimal_confusion_matrix",
+    "file": "appendices/appendix_q.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_package_manifest",
+    "file": "appendices/appendix_a.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_01",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_02",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_03_04",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_05",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_06",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_07",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_08",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_09",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_10",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_summary",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   }
+  ],
+  "orphan_appendices": [],
+  "bib": {
+   "entries": 296,
+   "issues": [
+    {
+     "line": 20,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "li2012detecting: no journal/booktitle/publisher/howpublished",
+     "match": "li2012detecting"
+    },
+    {
+     "line": 117,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "virtucio2018predicting: no journal/booktitle/publisher/howpublished",
+     "match": "virtucio2018predicting"
+    },
+    {
+     "line": 322,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Sovrano2021Making: key should be lowercase surnameYearKeyword",
+     "match": "Sovrano2021Making"
+    },
+    {
+     "line": 498,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "cruz2007political: no doi/url (verify against source)",
+     "match": "cruz2007political"
+    },
+    {
+     "line": 609,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "spdc2025rots: no journal/booktitle/publisher/howpublished",
+     "match": "spdc2025rots"
+    },
+    {
+     "line": 757,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "vitali2007towards: no journal/booktitle/publisher/howpublished",
+     "match": "vitali2007towards"
+    },
+    {
+     "line": 765,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "athan2013legalruleml: no journal/booktitle/publisher/howpublished",
+     "match": "athan2013legalruleml"
+    },
+    {
+     "line": 779,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Palmirani2018Modelling: key should be lowercase surnameYearKeyword",
+     "match": "Palmirani2018Modelling"
+    },
+    {
+     "line": 907,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "bhattacharya2019a: no journal/booktitle/publisher/howpublished",
+     "match": "bhattacharya2019a"
+    },
+    {
+     "line": 962,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "tohidi2024abstract: no journal/booktitle/publisher/howpublished",
+     "match": "tohidi2024abstract"
+    },
+    {
+     "line": 1029,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Eleftheriadis2023evaluating: key should be lowercase surnameYearKeyword",
+     "match": "Eleftheriadis2023evaluating"
+    },
+    {
+     "line": 1233,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "zhang-etal-2024-mgte: key should be lowercase surnameYearKeyword",
+     "match": "zhang-etal-2024-mgte"
+    },
+    {
+     "line": 1367,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "hu2021impact: no journal/booktitle/publisher/howpublished",
+     "match": "hu2021impact"
+    },
+    {
+     "line": 1378,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Greco2023Bringing: key should be lowercase surnameYearKeyword",
+     "match": "Greco2023Bringing"
+    },
+    {
+     "line": 1709,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Westermann2019computer: key should be lowercase surnameYearKeyword",
+     "match": "Westermann2019computer"
+    },
+    {
+     "line": 1722,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Kommers2026Hermeneutics: key should be lowercase surnameYearKeyword",
+     "match": "Kommers2026Hermeneutics"
+    },
+    {
+     "line": 1742,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Guenmayor2018CaseStudyHermeneutics: key should be lowercase surnameYearKeyword",
+     "match": "Guenmayor2018CaseStudyHermeneutics"
+    },
+    {
+     "line": 1793,
+     "category": "bib-missing-field",
+     "severity": "error",
+     "note": "coliee2025proceedings: missing author",
+     "match": "coliee2025proceedings"
+    },
+    {
+     "line": 1793,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "coliee2025proceedings: no journal/booktitle/publisher/howpublished",
+     "match": "coliee2025proceedings"
+    },
+    {
+     "line": 1829,
+     "category": "bib-missing-field",
+     "severity": "error",
+     "note": "coliee2026proceedings: missing author",
+     "match": "coliee2026proceedings"
+    },
+    {
+     "line": 1829,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "coliee2026proceedings: no journal/booktitle/publisher/howpublished",
+     "match": "coliee2026proceedings"
+    },
+    {
+     "line": 2079,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "nrcp2024review: no journal/booktitle/publisher/howpublished",
+     "match": "nrcp2024review"
+    },
+    {
+     "line": 2432,
+     "category": "bib-no-venue",
+     "severity": "warn",
+     "note": "seo2025sliding: no journal/booktitle/publisher/howpublished",
+     "match": "seo2025sliding"
+    },
+    {
+     "line": 2464,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "ablazo2019designing: no doi/url (verify against source)",
+     "match": "ablazo2019designing"
+    },
+    {
+     "line": 2755,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "agpalo2009statutory: no doi/url (verify against source)",
+     "match": "agpalo2009statutory"
+    },
+    {
+     "line": 3621,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "levenshtein1966binary: no doi/url (verify against source)",
+     "match": "levenshtein1966binary"
+    },
+    {
+     "line": 3647,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "vanrijsbergen1979information: no doi/url (verify against source)",
+     "match": "vanrijsbergen1979information"
+    },
+    {
+     "line": 3793,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "sauro2012quantifying: no doi/url (verify against source)",
+     "match": "sauro2012quantifying"
+    },
+    {
+     "line": 3824,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "hart1961concept: no doi/url (verify against source)",
+     "match": "hart1961concept"
+    }
+   ],
+   "unused_keys": [
+    "Eleftheriadis2023evaluating",
+    "Guenmayor2018CaseStudyHermeneutics",
+    "Kommers2026Hermeneutics",
+    "Palmirani2018Modelling",
+    "aoki2022data",
+    "baskauf2022using",
+    "belinkov2019analysis",
+    "chalkidis2019deep",
+    "chung2022flant5",
+    "cortez2025leadership",
+    "dai2019transformer",
+    "dempsey2016student",
+    "dias2022state",
+    "fitzgerald2021information",
+    "furnas1987the",
+    "geva2019modeling",
+    "goebeletal2026coliee2025",
+    "hajra2021scraping",
+    "hendrycks2021cuad",
+    "hu2021impact",
+    "largo2020essentials",
+    "lewis2019bart",
+    "lowe2018the",
+    "nguyen2025nowjcoliee2025multistageframework",
+    "nigatu2024the",
+    "niklaus2024lawinstruct",
+    "pedregosa2011scikitlearn",
+    "qwen2025technical",
+    "republic1987executive",
+    "rigano2018using",
+    "scam2012paper",
+    "scp2001pldtvdavao",
+    "scp2004batangascatv",
+    "scp2008smartvdavao",
+    "shleifer2020distilbart",
+    "sokolova2009systematic",
+    "spdavao2002ord060",
+    "spdc2025rots",
+    "tsai2025can",
+    "wang2025transferlearningapproachautomatic",
+    "warner2024smarter",
+    "williamsetal2022anlizing",
+    "worldbank2011intgovfr",
+    "yang2023batayan",
+    "zhang-etal-2024-mgte",
+    "zhao2010term",
+    "zheng2021caselaw"
+   ],
+   "cited_keys": 249,
+   "cited_without_local_pdf": [],
+   "local_pdf_count": 301
+  },
+  "log": {
+   "present": true,
+   "overfull_ge_1pt": [
+    {
+     "pt": 7.6663,
+     "where": "Overfull \\hbox (7.6663pt too wide) in paragraph at lines 663--663"
+    },
+    {
+     "pt": 5.54062,
+     "where": "Overfull \\hbox (5.54062pt too wide) in paragraph at lines 1164--1164"
+    },
+    {
+     "pt": 2.2099,
+     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 316--316"
+    },
+    {
+     "pt": 2.2099,
+     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 268--268"
+    },
+    {
+     "pt": 2.1882,
+     "where": "Overfull \\hbox (2.1882pt too wide) in paragraph at lines 754--754"
+    },
+    {
+     "pt": 2.08394,
+     "where": "Overfull \\hbox (2.08394pt too wide) in paragraph at lines 710--710"
+    },
+    {
+     "pt": 1.25206,
+     "where": "Overfull \\hbox (1.25206pt too wide) in paragraph at lines 663--663"
+    },
+    {
+     "pt": 1.0642,
+     "where": "Overfull \\hbox (1.0642pt too wide) in paragraph at lines 1148--1148"
+    }
+   ],
+   "undefined": [],
+   "overfull_total": 10
+  }
+ },
+ "totals": {
+  "abstract-words": 1,
+  "declaude:cadence": 1,
+  "long-paragraph": 1,
+  "micro-paragraph": 1
+ }
+}

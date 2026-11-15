@@ -358,7 +358,10 @@ def parse_bib() -> tuple[dict, list[dict]]:
             continue
         fields = {m.group(1).lower() for m in re.finditer(r"^\s*(\w+)\s*=", body, flags=re.M)}
         entries[key] = {"type": etype.lower(), "line": line, "fields": sorted(fields)}
-        miss = [f for f in ("author", "title", "year") if f not in fields]
+        req = ("title", "year") if etype.lower() == "proceedings" else ("author", "title", "year")
+        miss = [f for f in req if f not in fields]
+        if etype.lower() == "proceedings" and not fields & {"editor", "author", "organization"}:
+            miss.append("editor/organization")
         if miss:
             issues.append(hit(line, "bib-missing-field", f"{key}: missing {', '.join(miss)}", key, "error"))
         if not fields & {"journal", "booktitle", "publisher", "howpublished", "school", "institution", "note", "organization", "eprint"}:

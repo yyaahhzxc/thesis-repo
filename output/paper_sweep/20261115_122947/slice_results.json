@@ -1,0 +1,627 @@
+[
+ {
+  "unit": "introduction",
+  "file": "chapters/introduction.tex",
+  "range": "1-108",
+  "edits": [
+   {
+    "count": 2,
+    "example": "Objective 5 'establishing a computationally profiled prototype and an institutional post-deployment evaluation roadmap' -> 'while profiling runtime efficiency and preparing an institutional evaluation framework for legislative researchers'",
+    "rule": "paper-structure-and-chapters (Curse of Knowledge / hindsight removal)"
+   },
+   {
+    "count": 8,
+    "example": "'In light of these challenges, the proponents seek to develop...' (1-sentence micro-paragraph) -> 4-sentence closing paragraph; removed hindsight claim in L44/L48; merged Problem Statement and Objectives lead-ins",
+    "rule": "paper-structure-and-chapters (paragraph cadence & micro-paragraphs)"
+   },
+   {
+    "count": 15,
+    "example": "Removed trailing participle tails, rhetorical triads, banned 'utilized', overclaiming ('actively prevents', 'federally authorized' -> 'nationally authorized'), and repeated 'In Natural Language Inference,' openings",
+    "rule": "paper-voice-and-style (syntax, Caucus tone, declauding)"
+   },
+   {
+    "count": 5,
+    "example": "Verified OCR and Davao language claims via ref_grep.py; replaced unverified 'Taglish' attribution to dreisbach2021language with 'Cebuano and Filipino expressions'; aligned conchas2025digital and oard2003desperately phrasing and 1-vs-N span-pairing clarity",
+    "rule": "paper-rigor-and-citations (PDF verification & canonical consistency)"
+   },
+   {
+    "count": 10,
+    "example": "Added non-breaking ~ before all \\\\cite{} and Republic Act No.~11032; replaced straight quotes 'before the event.'/'ex-post' with LaTeX `...' quotes",
+    "rule": "paper-latex-and-visuals (reference ties & LaTeX quotes)"
+   }
+  ],
+  "flags": [],
+  "handoff": "Chapter 1 (introduction.tex) now uses 'faculty adviser-reviewed ground truth benchmark' (L32), 'nationally authorized activities' (L56), 'Cebuano and Filipino expressions' for dreisbach2021language (L10), 'token-level attention attribution heatmaps' (L40, L73), and '1-vs-N sentence span pairing' matching one statutory provision vs. a multi-sentence draft block (L54). Objective 5 (L33) and Fleiss' Kappa (L75) were de-hindsighted so they no longer announce 'post-deployment roadmap' or 'fifteen SP researchers' before Ch. 3-5. Note for Ch. 3 (methodology.tex L110): check whether 'Taglish' is still attributed to dreisbach2021language there.",
+  "summary": "Swept chapters/introduction.tex (lines 1-103) against all four thesis rules and declauding. Fixed all space-before-cite and straight-quote hygiene issues, verified numeric/linguistic citations with ref_grep.py (fixing dreisbach2021language, oard2003desperately, and conchas2025digital alignment), removed hindsight leakage in Objective 5, Significance, and Fleiss' Kappa, clarified 1-vs-N span pairing, and eliminated triads, participle tails, and banned vocabulary. Re-verification shows 0 errors and 0 warnings."
+ },
+ {
+  "unit": "literature_review",
+  "file": "chapters/literature_review.tex",
+  "range": "1-235",
+  "edits": [
+   {
+    "count": 8,
+    "example": "removed orphan \\subsubsection{Challenges with BIR} and \\subsubsection{Challenges with Symbolic AI}; removed Ch. 2 hindsight ('this research formulates... cross-encoder', 'retrieve-then-entail pipelines', 'During manual inspection') and merged/expanded micro-paragraphs to 4-6 sentences",
+    "rule": "paper-structure-and-chapters"
+   },
+   {
+    "count": 35,
+    "example": "replaced banned words ('leverages', 'bottleneck', 'utilize', 'Crucially', 'underscores'), 14 em-dash pairs, sentence-final participle tails, copula avoidance ('acts as' -> 'is'), and 'municipal' -> 'local' for HUC consistency",
+    "rule": "paper-voice-and-style"
+   },
+   {
+    "count": 10,
+    "example": "fixed gabuya2025towardsdigitallegis ('fewer than twenty percent' -> 'only 20%... and 40% owned devices'), dreisbach2021language ('administrative Taglish' -> 'Cebuano and Filipino expressions'), and removed unverified numeric/domain attributions to naguio2024hybrid, bernardo2023disambiguating, trong2018an, bommarito2025kl3m/katz_2023_legal_nlp, harde2025lecnet/humphreys2020populating, and coa2022circular004/dict2020specs",
+    "rule": "paper-rigor-and-citations"
+   },
+   {
+    "count": 2,
+    "example": "bound Equation~\\eqref{eq:boolean_query} and Equation~\\eqref{eq:first_order_deontic} directly in preceding setup prose and joined \\noindent Where explanations into full exposition paragraphs",
+    "rule": "paper-latex-and-visuals"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "CITE",
+    "note": "Local PDF docs/references/coa2022circular004.pdf has scanned unsearchable pp. 2-4 and Annex forms without stating a 5-year ICT useful life; gabuya2025towardsdigitallegis.pdf does not state a 4-to-7-year fleet age; dict2020specs.pdf is a 2021 Central Philippines State University (CPSU) Invitation to Bid specifying Intel Core i3/i5 and 8 GB DDR4 RAM, not a DICT/DBM-PS specification and does not mention AMD Ryzen or hexa-core CPUs.",
+    "where": "chapters/literature_review.tex:44"
+   },
+   {
+    "kind": "CITE",
+    "note": "Local PDF docs/references/dilg2022drafting.pdf is a DILG Comprehensive Development Plan (CDP) illustrative guide rather than the Local Legislative Drafting Manual.",
+    "where": "chapters/literature_review.tex:60"
+   },
+   {
+    "kind": "CITE",
+    "note": "Local PDF docs/references/bhattacharya2019a.pdf is an unrelated physics arXiv paper (1906.07548v2), and the BibTeX entry concerns legal summarization algorithms rather than GNN node embeddings.",
+    "where": "chapters/literature_review.tex:184"
+   },
+   {
+    "kind": "CITE",
+    "note": "Local PDFs docs/references/vu2022abstract.pdf (astrophysics CME paper) and docs/references/tohidi2024abstract.pdf (IEEE sub-THz antenna paper) do not match their AMR BibTeX entries. Also docs/references/vannoord2017the.pdf is Sun et al. (CoNLL 2017, pp. 26-35) rather than van Noord & Bos (pp. 36-47).",
+    "where": "chapters/literature_review.tex:197-210"
+   },
+   {
+    "kind": "CITE",
+    "note": "bommarito2025kl3m and katz_2023_legal_nlp do not construct a 54-title US Code network centrality graph; harde2025lecnet models case judgments as nodes (not statutory sections) and humphreys2020populating populates ontologies via SRL without graph nodes. Also note mismatched PDFs for agotnes2007on, ariai2025natural, italiani2026clash, and shao2021bert in docs/references/.",
+    "where": "chapters/literature_review.tex:216-222"
+   }
+  ],
+  "handoff": "Slice 1/2 (lines 1-225, through \\subsubsection{Relational Edge Typologies and Extraction Workflows}) is clean with 0 errors. Line numbers shifted by -10: \\subsubsection{Neuro-Symbolic and Graph-Augmented Transformers} now starts at L226, and \\section{Deep Learning and Transformers} starts at L235. Slice 2/2 must resolve the remaining orphan-heading error at L422 (\\subsection{Annotation and Reliability Metrics} has only 1 subsubsection) and the Cross-Chapter L279 (now ~L269) Curse of Knowledge leak ('25,432 national statutes'). Keep consistency: use 'local ordinances' (HUC), 'Cebuano and Filipino expressions' for dreisbach2021language, and flag mismatched PDFs in docs/references/ rather than trusting BibTeX metadata alone.",
+  "summary": "Audited and edited chapters/literature_review.tex lines 1-235 (now 1-225) against all four thesis rules and verified claims via ref_grep.py. Eliminated both orphan-heading errors in Section 4, removed Ch. 2 hindsight leaks and AI syntax tells, fixed 'municipal' -> 'local' for HUC consistency, corrected misattributed figures/claims (gabuya2025towardsdigitallegis, dreisbach2021language, naguio2024hybrid, bernardo2023disambiguating, trong2018an, bommarito2025kl3m, harde2025lecnet), and flagged mismatched local PDFs in docs/references/ with inline % [CITE] comments."
+ },
+ {
+  "unit": "literature_review",
+  "file": "chapters/literature_review.tex",
+  "range": "231-589",
+  "edits": [
+   {
+    "count": 5,
+    "example": "Orphan \\subsubsection{Sub-Threshold Reliability} under L422; L274 '25,432 national statutes' -> Added \\subsubsection{Inter-Rater Reliability Metrics}; 'tens of thousands of national statutes'",
+    "rule": "paper-structure-and-chapters"
+   },
+   {
+    "count": 28,
+    "example": "'utilizes'/'bottlenecks'/em-dashes/participle tails/duplicate L361-365 -> direct finite verbs, binary pairs, removed 3 duplicate IR paragraphs",
+    "rule": "paper-voice-and-style"
+   },
+   {
+    "count": 11,
+    "example": "Bowman '>0.80 fabricated', Zheng 'double-digit jump vs zero-shot', Kumar latency, Wang explainers, Robertson '0.75' -> reworded to verified PDF claims via ref_grep.py",
+    "rule": "paper-rigor-and-citations"
+   },
+   {
+    "count": 16,
+    "example": "\\texttt{all-MiniLM-L6-v2} & 'Figure X shows' & uncited eqs/table -> roman model names, 'As shown in Figure~...', Equation~\\eqref/Table~\\ref ties",
+    "rule": "paper-latex-and-visuals"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "CITE",
+    "note": "Verify source for 'Topologically Calibrated Decision Thresholding' and geodesic distance d_G(u,v); ma2025gnn covers GNN legal case reasoning and fawcett2006roc covers general ROC thresholding.",
+    "where": "chapters/literature_review.tex:238"
+   },
+   {
+    "kind": "CITE",
+    "note": "docs/references/kadowaki2025modernbert.pdf actually contains Warner et al. (2024) ModernBERT; the authentic Kadowaki & Kano (2025) paper appears in coliee2025proceedings.pdf pp. 20-28 (LJPJT rationale extraction pilot task).",
+    "where": "chapters/literature_review.tex:516"
+   },
+   {
+    "kind": "CITE",
+    "note": "docs/references/goebel2026an.pdf holds the 6-page COLIEE 2025 Workshop frontmatter rather than the ICAIL overview article (doi:10.1145/3769126.3785016).",
+    "where": "chapters/literature_review.tex:283"
+   },
+   {
+    "kind": "CONSISTENCY",
+    "note": "Table tab:kappa_interpretation displays '0.01 - 0.20' for Slight agreement, whereas Landis & Koch (1977) Table 1 uses '0.00-0.20'. Left protected table cell unchanged.",
+    "where": "chapters/literature_review.tex:431-447"
+   }
+  ],
+  "handoff": "literature_review.tex is now clean (0 errors, 0 undefined refs/cites across all lines). Removed 3 verbatim/near-verbatim duplicate paragraphs in Candidate Retrieval Models, resolved the L422 orphan heading by adding \\subsubsection{Inter-Rater Reliability Metrics}, removed the Ch. 2 corpus-count leak ('25,432 national statutes' -> 'tens of thousands of national statutes'), and aligned unverified citation claims with ref_grep.py findings. Next slice (methodology.tex): check L110 for 'Taglish' vs 'Cebuano and Filipino expressions' (dreisbach2021language), keep 'local/city ordinances' (HUC), roman model names in running prose, '0.5 < b < 0.8' / '1.2 < k1 < 2' phrasing for Robertson & Zaragoza BM25 defaults, and flag/avoid citing kadowaki2025modernbert.pdf directly without referencing coliee2025proceedings.pdf.",
+  "summary": "Audited and edited chapters/literature_review.tex lines 231-588 against all four paper rules and ref_grep.py PDF checks. Resolved the L422 orphan-heading error, removed three duplicate paragraphs in IR Candidate Models, removed the Ch. 2 corpus-size leak, fixed phantom citation claims, and eliminated banned AI style/LaTeX defects. Re-running pre_audit_paper.py confirms 0 errors, 0 warnings, and 0 undefined refs/cites."
+ },
+ {
+  "unit": "methodology",
+  "file": "chapters/methodology.tex",
+  "range": "1-456",
+  "edits": [
+   {
+    "count": 24,
+    "example": "...bidirectionally, computing the calibrated probability -> ...bidirectional cross-attention and compute the calibrated probability",
+    "rule": "paper-voice-and-style: eliminate sentence-ending participle tails, forced triads, em-dash pairs, staged openers, overclaiming, and replace 'the researchers' with 'the proponents'"
+   },
+   {
+    "count": 3,
+    "example": "regional terms and administrative Taglish~\\cite{dreisbach2021language} -> Cebuano and Filipino expressions~\\cite{dreisbach2021language}",
+    "rule": "paper-rigor-and-citations: verify citations with ref_grep.py (dreisbach2021language, manning2008introduction, chalkidis2022lexglue, rousseeuw1987silhouettes, davies1979cluster, koreeda2021contract) and remove unverified attributions"
+   },
+   {
+    "count": 3,
+    "example": "local municipal archives -> local city archives; municipal civic conduct -> local civic conduct",
+    "rule": "paper-voice-and-style: Davao City HUC terminology ('local/city' instead of 'municipal')"
+   },
+   {
+    "count": 6,
+    "example": "Merged 1-sentence micro-paragraphs at L19 and L26; expanded setup paragraphs before eq:macro_centroid, lst:jsonl_sample, eq:hierarchical_chunk, and lst:model_ready_chunk",
+    "rule": "paper-structure-and-chapters: 4-6 sentence paragraph cadence and Setup->Visual->Exposition bridging"
+   },
+   {
+    "count": 2,
+    "example": "Moved Executive Orders total footnote prose out of tab:statute_type_composition footer into body text (L162); fixed $[CLS]$, $[SEP]$ -> $[\\text{CLS}]$, $[\\text{SEP}]$",
+    "rule": "paper-latex-and-visuals: value-only booktabs tables without prose footers and math-mode typography"
+   },
+   {
+    "count": 2,
+    "example": "Inserted % [HUMAN: ...] above L284 and % [CITE: ...] above tab:topic_holdout_validation",
+    "rule": "paper-structure-and-chapters & paper-rigor-and-citations: flag Ch. 3 holdout result leakage and unverified table baseline cutoffs"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "HUMAN",
+    "note": "Curse of Knowledge / empirical results in Ch. 3: L284-322 and Table tab:topic_holdout_validation report out-of-sample holdout validation metrics (97.37% reproducibility, 96.26% Macro F1, 0.5508 confidence, 0.1602 silhouette, 2.4496 DBI, 97.8%/96.6%/92.2%/72.5% title probes) inside Methodology. Numeric results do not appear in Ch. 4 (results_and_discussion.tex), so they were preserved in place and flagged for human relocation to Ch. 4.",
+    "where": "chapters/methodology.tex:284-322"
+   },
+   {
+    "kind": "CITE",
+    "note": "Table tab:topic_holdout_validation baseline column cutoffs (< 20.0% high-confidence baseline, <= 0.0000 silhouette baseline, > 4.0000 DBI baseline) are not stated in guo2017calibration, rousseeuw1987silhouettes, or davies1979cluster (verified via ref_grep.py). Removed those unverified attributions from prose (L286, L322); verify or document the exact derivation of the table baseline cutoffs.",
+    "where": "chapters/methodology.tex:290-316"
+   },
+   {
+    "kind": "CONSISTENCY",
+    "note": "L21 originally stated ~200-300 tokens per unit, whereas L413 reports a prepended national median of 122.0 tokens (mean 202.2, local median 98.0) and L444 uses a 384-token sub-chunk window (448-token threshold). Reworded L21 to 'granular, section-level regulatory units' to avoid conflicting with the exact census in L413.",
+    "where": "chapters/methodology.tex:19,413,444"
+   }
+  ],
+  "handoff": "Slice 1/4 (originally L1-456) is now L1-455 (net -1 line). Next slice (2/4) starts at L456 (\\subsection{Local Ordinance Archival Processing and Normalization}). Maintain consistency: use 'the proponents' (not 'the researchers'), 'local/city ordinances' for Davao City (HUC), roman model names in prose, value-only booktabs tables without prose footers, and 'Cebuano and Filipino expressions' for dreisbach2021language. Watch for the remaining severity=error hit at L679 ('personal-name': 'Mr.~Adrian Ablazo, MSIT' -> 'the thesis adviser') and Cross-Chapter findings at L468 (now ~L467, Qwen2.5-VL winner leak) and L551 (now ~L550, stale local provision count 13,874 vs canonical 12,803 = 8,694 operative + 4,109 procedural).",
+  "summary": "Audited and edited chapters/methodology.tex lines 1-455 (originally 1-456). Tightened undergraduate voice, removed participle tails, forced triads, em-dash pairs, and HUC municipal slip-ups, merged/expanded micro-paragraphs, moved the tab:statute_type_composition prose footer into body text, aligned dreisbach2021language and quantitative citation claims with local PDF checks via ref_grep.py, and flagged L284-322 holdout validation results and tab:topic_holdout_validation baseline cutoffs. Verification via pre_audit_paper.py confirms 0 errors in lines 1-455 and 0 undefined refs/cites."
+ },
+ {
+  "unit": "methodology",
+  "file": "chapters/methodology.tex",
+  "range": "456-845",
+  "edits": [
+   {
+    "count": 5,
+    "example": "deploys Qwen2.5-VL-3B-Instruct ... significantly reducing CER -> configured around Qwen2.5-VL-3B-Instruct as a candidate pipeline to test whether reduced quantization loss lowers error rates",
+    "rule": "paper-structure-and-chapters (Curse of Knowledge Ch. 3 planning framing, micro-paragraph merging/expansion)"
+   },
+   {
+    "count": 28,
+    "example": "Mr.~Adrian Ablazo, MSIT -> the thesis adviser; municipal -> city/local; removed protocol/utilize/serves as, em-dashes, triads, and participle tails",
+    "rule": "paper-voice-and-style (anonymity, HUC terminology, anti-AI syntax & buzzword bans)"
+   },
+   {
+    "count": 7,
+    "example": "prunes 4,387 procedural sections (31.62%) ... isolating 9,487 -> prunes 4,109 procedural sections (32.09%) from 12,803 ... isolates 8,694; removed unverified thresholds attributed to lopresti2008optical, chalkidis2022lexglue, card2020with, SQuAD/FEVER/ANLI, and cortez2025leadership",
+    "rule": "paper-rigor-and-citations (canonical census alignment & ref_grep.py PDF verification)"
+   },
+   {
+    "count": 5,
+    "example": "merged 1-sentence Where-clauses into equation exposition paragraphs and expanded 1-sentence Setup paragraphs before Listing~\\ref{lst:ground_truth_pair} and Table~\\ref{tab:system_environment_specs}",
+    "rule": "paper-latex-and-visuals (Setup-Visual-Exposition bridging & equation continuity)"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "CITE",
+    "note": "docs/references/dilg2022drafting.pdf currently contains the DILG Comprehensive Development Plan (CDP) Illustrative Guide rather than the Local Legislative Drafting Manual listed in references.bib; replace the local PDF and verify drafting-template claims.",
+    "where": "chapters/methodology.tex:558 (and Section~\\ref{sec:span_pairing})"
+   },
+   {
+    "kind": "CITE",
+    "note": "docs/references/italiani2026clash.pdf currently contains an unrelated computer graphics paper (\"Mochi: Fast & Exact Collision Detection\") rather than Italiani et al. (2026) Clash-of-Leges; replace the local PDF and verify all three citations.",
+    "where": "chapters/methodology.tex:625 (and Sections~\\ref{sec:class_balancing}, \\ref{sec:annotation_codebook})"
+   },
+   {
+    "kind": "CONSISTENCY",
+    "note": "L667 and L669 report rounded target counts (105 Tier 1 / 140 Tier 2 / 105 Tier 3 pairs for 30%/40%/30% of 350), whereas L671 reports 104 Tier 3 draft sentences and Appendix O (tab:app_gt_composition_summary) lists realized counts of 104 / 142 / 104. Confirm whether L667/L669 should state realized counts alongside target shares.",
+    "where": "chapters/methodology.tex:666-671"
+   }
+  ],
+  "handoff": "Slice 2/4 (originally L456-845) is now L456-836 (net -9 lines); methodology.tex is 1,552 lines with 0 errors and 0 undefined refs/cites. \\section{Pipeline Architecture} now starts at L837 (was L846). Slice 2/4 fixed the L469 Qwen2.5-VL winner leak, the L552 stale local count (to canonical 12,803 = 8,694 operative + 4,109 procedural, 32.09%), and the L679 personal-name error, and flagged dilg2022drafting.pdf, italiani2026clash.pdf, and Tier counts (105/140/105 vs 104/142/104). For Slice 3/4 (L837-~1236): watch Cross-Chapter errors at original L890 (27,000 enactments vs 177,423 provisions), L911/L926/L1008/L1073/L1109 (Stage 1/2 winner and result leaks), and L936 (stale 30.85% -> canonical 32.09%).",
+  "summary": "Swept chapters/methodology.tex slice 2/4 (now lines 456-836; \\section{Pipeline Architecture} starts at L837). Removed the Qwen2.5-VL winner/result leak, updated stale local boilerplate counts to canonical 12,803 (8,694 operative, 4,109 / 32.09% procedural), anonymized the adviser reference, verified numeric citations via ref_grep.py (fixing phantom thresholds and mismatched citations), and enforced undergraduate voice, HUC terms, and Setup-Visual-Exposition cadence. Verification passed with 0 errors and 0 undefined refs/cites."
+ },
+ {
+  "unit": "methodology",
+  "file": "chapters/methodology.tex",
+  "range": "837-1379",
+  "edits": [
+   {
+    "count": 11,
+    "example": "all-MiniLM-L6-v2* / DeBERTa-v3-base-NLI* / observed at Epoch 3 in Table tab:epoch_loss_dynamics -> candidate labels without asterisks, deferred Ch. 4 results, symbolic tau_base in Ch. 3",
+    "rule": "chapter-boundaries-curse-of-knowledge"
+   },
+   {
+    "count": 8,
+    "example": "more than 27,000 statutory provisions -> 164,620 national statutory provisions; 30.85% -> 32.09% (4,109 of 12,803); five -> six safeguards/relations; eta in {1,2,3} -> {1,2,3,5}",
+    "rule": "scientific-rigor-and-consistency"
+   },
+   {
+    "count": 5,
+    "example": "Team AIIR (wu2025aiir) COLIEE Task 3 BM25 -> robertson2009probabilistic + rabelo2022coliee; removed unsupported manning2008introduction (power-law, Louvain) and anand2020explainable (MIL)",
+    "rule": "citation-verification"
+   },
+   {
+    "count": 42,
+    "example": "the researchers -> the proponents; municipal -> local/local government; utilizes -> uses; serves as -> is; removed participle tails, em-dashes, triads, and micro-paragraphs",
+    "rule": "voice-style-and-declauding"
+   },
+   {
+    "count": 12,
+    "example": "\\\\texttt{bert-base-uncased} -> bert-base-uncased in prose; shortened longtitle; removed Deployed/Shortlisted/Finalist/Ceiling tags in Table tab:candidate_model_specifications",
+    "rule": "latex-tables-and-formatting"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "CITE",
+    "note": "manning2008introduction.pdf does not mention power-law degree scaling or R^2_power; removed misattributed citation and added % [CITE: ...] comment above paragraph for a network science / legal complexity reference.",
+    "where": "chapters/methodology.tex:1279"
+   },
+   {
+    "kind": "CITE",
+    "note": "manning2008introduction.pdf does not mention Louvain community detection or modularity Q; removed misattributed citation and added % [CITE: ...] comment above paragraph for Blondel et al. (2008) / Newman (2004).",
+    "where": "chapters/methodology.tex:1292"
+   }
+  ],
+  "handoff": "Slice 3/4 (originally L837-1379) is now L837-1367 (net -12 lines); methodology.tex is 1,542 lines with 0 errors and 0 undefined refs/cites. \\section{System-Level Evaluation} now starts at L1368 (Slice 4/4: L1368-1542). Fixed L890 (164,620 provisions), L911/L926/L1008/L1073/L1109 leaks, L936 stale 30.85%->32.09%, five->six safeguards/relations, eta grid {1,2,3,5}, HUC 'local' terminology, roman model names, and misattributed citations (wu2025aiir, koreeda2021contract, anand2020explainable, manning2008introduction; 2 % [CITE:] flags added at L1279/L1292). For Slice 4/4 (L1368-1542): watch Cross-Chapter leaks at L1474 (DeBERTa-v3 and 30.0%/37.5%/45.0%) and L1549 ('in under two seconds' runtime), plus banned 'protocol'/'serves as' at L1458-1518.",
+  "summary": "Audited and updated methodology.tex lines 837-1379 (now 837-1367) across structure, voice, scientific rigor, citations, and LaTeX standards. Removed all Ch. 3 Curse of Knowledge winner/result/threshold leaks, reconciled canonical counts (164,620 national provisions; 32.09% procedural boilerplate; six safeguards and six KG relations; eta in {1,2,3,5}), verified citations via ref_grep.py, and rewrote prose to remove banned words, copula avoidance, em-dashes, participle tails, micro-paragraphs, and municipal HUC misnomers. Verification passed with 0 errors and 0 undefined refs/cites."
+ },
+ {
+  "unit": "methodology",
+  "file": "chapters/methodology.tex",
+  "range": "1368-1540",
+  "edits": [
+   {
+    "count": 5,
+    "example": "fine-tuned \\texttt{DeBERTa-v3} cross-encoder ... 30.0\\%/37.5\\%/45.0\\% / in under two seconds -> selected fine-tuned Stage~2 Cross-Encoder ... calibrated baseline cutoff (\\tau_{\\text{base}}) and topological relaxation (\\Delta_{\\tau}\\cdot\\gamma(u,v)) / on standard CPU hardware",
+    "rule": "paper-structure-and-chapters (Curse of Knowledge leaks, result-like phrasing in Ch. 3, and 1-sentence orphan bridge merged)"
+   },
+   {
+    "count": 22,
+    "example": "ablation protocol / utilizes / serves as / municipal category / participle tails / 2 em-dashes -> ablation study / uses / is / local legislative category / declarative sentences / parentheses",
+    "rule": "paper-voice-and-style (banned words, copula avoidance, HUC city/local terms, inanimate agency, participle tails, em-dashes, micro-paragraphs, triads)"
+   },
+   {
+    "count": 5,
+    "example": "27,000+ -> 27,248; Sauro & Lewis Grade A 80+ -> 80.8+ (90th percentile+, Grade A/A+ per Table 8.6); added 3 % [CITE/CONSISTENCY] flags",
+    "rule": "paper-rigor-and-citations (canonical corpus count, PDF-verified SUS benchmarks, citation/consistency flags)"
+   },
+   {
+    "count": 1,
+    "example": "\\texttt{DeBERTa-v3} in prose -> roman Stage~2 Cross-Encoder",
+    "rule": "paper-latex-and-visuals (roman model naming in prose)"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "CITE",
+    "note": "dilg2022drafting is cited for local legislative instruments (MOA, Deeds of Usufruct, Secretary's Certificates), but docs/references/dilg2022drafting.pdf holds the DILG CDP Illustrative Guide rather than the Local Legislative Drafting Manual.",
+    "where": "chapters/methodology.tex:1386"
+   },
+   {
+    "kind": "CONSISTENCY",
+    "note": "Table tab:tier3_cases lists Ord.~0310-07 as (2015), whereas spdavao2007ord0310 in references.bib has year 2007; confirm whether 2015 is the dispute year or should be 2007.",
+    "where": "chapters/methodology.tex:1411-1433"
+   },
+   {
+    "kind": "CITE",
+    "note": "No local citation backs the >= 0.70 exploratory Cronbach's alpha benchmark (cronbach1951coefficient introduces alpha without prescribing 0.70).",
+    "where": "chapters/methodology.tex:1513-1514"
+   }
+  ],
+  "handoff": "Methodology slice 4/4 (originally L1368-1540) is now L1368-1538 (net -2 lines); chapters/methodology.tex totals 1,538 lines with 0 errors, 0 warnings in L1368-1538, and 0 undefined refs/cites. Fixed Cross-Chapter leaks at original L1474/L1476 (DeBERTa-v3 and 30.0%/37.5%/45.0% -> generic Stage~2 Cross-Encoder and parametric \\tau_{\\text{base}}/\\Delta_{\\tau} formulas) and L1549 ('in under two seconds' runtime), plus HUC 'local/city' terms, 27,248 canonical count, SUS Table 8.6 cutoff (80.8), banned words, participle tails, and micro-paragraphs. Next chapter (results_and_discussion.tex) should stay consistent: keep actual winning models (DeBERTa-v3-base-NLI, all-MiniLM-L6-v2) and post-calibration thresholds (30.0%, 37.5%, 45.0%) in Ch. 4, and resolve the 3 % [CITE/CONSISTENCY] flags (dilg2022drafting, Ord. 0310-07 year, alpha >= 0.70).",
+  "summary": "Swept chapters/methodology.tex lines 1368-1540 (System-Level Evaluation, Prototype & UI, End-User Usability, Reproducibility, Methodological Constraints). Removed Curse of Knowledge leaks (DeBERTa-v3, 30.0%/37.5%/45.0%, sub-2s CPU runtime), verified SUS/Cronbach claims against local PDFs, fixed HUC terminology, inanimate agency, banned words, participle tails, em-dashes, and micro-paragraphs, and added three % [CITE/CONSISTENCY] flags. Verification reports 0 errors, 0 warnings in range, and 0 undefined refs/cites."
+ },
+ {
+  "unit": "results_and_discussion",
+  "file": "chapters/results_and_discussion.tex",
+  "range": "1-581",
+  "edits": [
+   {
+    "count": 6,
+    "example": "Section 4.1 maps to RQ1... Section 4.4... (5x anaphora) -> single cohesive overview mapping Sections 4.1-4.5 to RQ1-RQ5/Obj 1-5 and noting Obj 2 scalability link",
+    "rule": "chapter-structure-and-rq-mapping"
+   },
+   {
+    "count": 8,
+    "example": "1-sentence setup/limitation paragraphs at L27+29, L187+189, L302, L343, L369, L407, L436, L573 -> expanded/merged to 4-6 sentences",
+    "rule": "paragraph-cadence-4-6-sentences"
+   },
+   {
+    "count": 11,
+    "example": "', yielding 58.86% Recall@50' / 'Figure ... shows how candidate recall improves' -> independent clauses / 'As shown in Figure ...'",
+    "rule": "declauding-participle-tails-and-inanimate-agency"
+   },
+   {
+    "count": 10,
+    "example": "'primary operational bottleneck' / 'evaluation protocol' / 'vital' / 'serves as' / em-dashes -> 'operational constraint' / 'evaluation procedure' / 'necessary' / 'is' / clean clauses",
+    "rule": "declauding-banned-words-copula-em-dashes"
+   },
+   {
+    "count": 4,
+    "example": "'\\texttt{all-MiniLM-L6-v2}', 'paraphrased municipal clauses' -> roman model names in running prose; 'local/city' for Davao City HUC",
+    "rule": "latex-formatting-and-huc-terminology"
+   },
+   {
+    "count": 5,
+    "example": "'image binarization' (\\cite{smith2007overview}) -> 'binary image inputs'; removed misattributed '5.0' on \\cite{davies1979cluster} and affirmative-bias cite \\cite{tran2026enhancing}; MRR prose decoupled from \\cite{manning2008introduction}",
+    "rule": "citation-text-verification-ref-grep"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "HUMAN",
+    "note": "L7 maps sec:results_ocr_evaluation to RQ1/Obj1 yet covers OCR/VLM digitization and topic modeling rather than linguistic conflict markers (introduction.tex:21), and bundles RQ3+RQ4/Obj3+Obj4 into sec:results_stage2_training while Stage 1 IR sits under RQ2/Obj2. Inserted % [HUMAN: ...] comment above Ch. 4 intro.",
+    "where": "chapters/results_and_discussion.tex:2"
+   },
+   {
+    "kind": "CONSISTENCY",
+    "note": "L435 (originally L438) describes the 65.14% open-corpus Recall@50 test in Table~\\ref{tab:full_corpus_retrieval_benchmark} as searching 27,248 enactments (177,423 provisions), whereas L343, Table~\\ref{tab:full_corpus_retrieval_benchmark}, L364, and src/stage1_retrieval_benchmark.py test against 25,432 national statutes. Inserted % [CONSISTENCY: ...] above L435; synchronize with L890 and abstract.tex:5.",
+    "where": "chapters/results_and_discussion.tex:434"
+   }
+  ],
+  "handoff": "Slice 1/3 (originally L1-581) is now L1-576 (net -5 lines). File totals 1,216 lines with 0 errors in L1-576 (1 pre_audit error remains downstream), 0 undefined refs/cites. \\subsection{Training Loss and Convergence} now starts at L577. Keep winning model names roman in running prose (DeBERTa-v3-base-NLI, all-MiniLM-L6-v2, Gemini Flash 3.8). Added % [HUMAN:] above L2 on RQ1/Obj1 & RQ3+RQ4 mapping and % [CONSISTENCY:] above L435 on 27,248 vs 25,432 open-corpus Recall@50 benchmark scope; check/sync L890 in later slices (plus abstract.tex:5). Approved '1,925' source PDFs -> 1,816 and '176,421' demo index distinctions kept intact.",
+  "summary": "Swept chapters/results_and_discussion.tex slice 1/3 (now L1-576) across Chapters 4 intro, Section 4.1 (OCR/EDA), Section 4.2 (Stage 1 retrieval), and Section 4.3 up to Training Loss and Convergence. Eliminated micro-paragraphs, participle tails, inanimate agency, banned words, em-dashes, HUC 'municipal' wording, and \\texttt model names in prose, and fixed citation attributions verified via ref_grep.py. Left 0 errors in slice 1-576 and added 2 review flags."
+ },
+ {
+  "unit": "results_and_discussion",
+  "file": "chapters/results_and_discussion.tex",
+  "range": "577-1091",
+  "edits": [
+   {
+    "count": 11,
+    "example": "orphan-heading at L666 + long titles (L669, L1073) + TOC/body mismatch (L934) -> added \\subsubsection{Omnibus and Pairwise Hypothesis Testing}, shortened titles, aligned \\section{System Integration and Human Evaluation}, and resolved float-stack at L1082 with 4-sentence Dedicated Expositions for Figures 4.x and Table 4.x",
+    "rule": "structure-and-visual-exposition"
+   },
+   {
+    "count": 28,
+    "example": "\\texttt{DeBERTa-v3-base-NLI} / \\texttt{all-MiniLM-L6-v2} in running prose -> roman text; banned words (protocol, bottleneck, super-hub, utilized, robust, collapse, indispensable) -> plain literal terms; municipal -> local/city for HUC Davao City; eliminated em-dash pairs, participle tails, inanimate agency, and micro-paragraphs",
+    "rule": "voice-and-style"
+   },
+   {
+    "count": 6,
+    "example": "Reworded unverified DICT/COA workstation spec attribution at L816 to match verified local PDFs (CPSU Intel Core i3/i5 + 8 GB DDR4; COA P50,000 semi-expendable threshold) and inserted searchable % [CITE:], % [DATA:], % [CONSISTENCY:], and % [HUMAN:] flags for discrepancies",
+    "rule": "rigor-and-citations"
+   },
+   {
+    "count": 4,
+    "example": "Moved Setup -> Table -> Dedicated Exposition order in Section 4.4.5 (Bayes PPV), trimmed analytical claims from Figure 4.x captions, and separated back-to-back knowledge graph figures with prose expositions",
+    "rule": "latex-and-visuals"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "CITE",
+    "note": "dict2020specs.pdf is a 2021 CPSU procurement bid specifying Intel Core i3/i5 and 8 GB DDR4 RAM (not a DICT standard or 4-to-6-core spec), and coa2022circular004.pdf covers the P50,000 semi-expendable property capitalization threshold (not workstation CPU/RAM). Reworded prose to verified claims; verify or replace citations.",
+    "where": "chapters/results_and_discussion.tex:814"
+   },
+   {
+    "kind": "CONSISTENCY",
+    "note": "L879 (like L435 and abstract.tex:5) states the 65.14% open-corpus Recall@50 (43.14% BM25) was evaluated across all 27,248 unique enactments (177,423 provisions), whereas Table tab:full_corpus_retrieval_benchmark and L845 report 25,432 national statutes.",
+    "where": "chapters/results_and_discussion.tex:878"
+   },
+   {
+    "kind": "DATA",
+    "note": "Panel B inset in figs/statistical_validation_model_comparison.png prints \"McNemar vs. BERT: p = 0.0388*\" and labels \"DeBERTa-v3 (Proposed)\", conflicting with Table tab:mcnemar_contingency_results (p = 0.6171, N = 53 test split) and no-(Proposed) naming rule. Regenerate figure.",
+    "where": "chapters/results_and_discussion.tex:755"
+   },
+   {
+    "kind": "HUMAN",
+    "note": "figs/feature_importance_attention_saliency.png has overlapping text between Panel A's x-axis label and Panel B's title, plus \"Full Proposed Architecture\". Regenerate figure with adjusted subplot vertical spacing.",
+    "where": "chapters/results_and_discussion.tex:798"
+   },
+   {
+    "kind": "HUMAN",
+    "note": "sec:results_summary_roadmap maps to RQ5/Obj 5 in the chapter overview yet also houses Tier 2 and Tier 3 empirical conflict benchmarks (RQ4/Obj 4); confirm whether this combined sectioning is intentional.",
+    "where": "chapters/results_and_discussion.tex:927"
+   },
+   {
+    "kind": "DATA",
+    "note": "Verify 50.00% (26/52) baseline 3-class provision accuracy in Table tab:tier2_graph_ablation against TP+TN=41/52 (non-conflict Entailment vs. Neutral split).",
+    "where": "chapters/results_and_discussion.tex:1040"
+   },
+   {
+    "kind": "CONSISTENCY",
+    "note": "Section numbers in the L1063 pathway trace (DRAFT-01 Sec. 9, DRAFT-02 Sec. 8, DRAFT-04 Sec. 8, DRAFT-05 Sec. 4) disagree with Table tab:tier2_oracle_diagnostic (DRAFT-01 Sec. 8, DRAFT-02 Sec. 5, DRAFT-04 Sec. 6, DRAFT-05 Sec. 3) for identical conflicts and scores (88.4%, 86.2%, 89.7%, 87.8%). Verify against Tier 2 PDFs/logs.",
+    "where": "chapters/results_and_discussion.tex:1062"
+   }
+  ],
+  "handoff": "Slice 2/3 (originally L577-1091) is now L577-1090 (net -1 line). chapters/results_and_discussion.tex has 0 pre_audit errors, 0 warnings in L577-1090, and 0 undefined refs/cites. \\subsection{Tier 3 Jurisprudential and Authentic Local Preemption Benchmark} now starts at L1091 (Slice 3/3: L1091-end). Fixed L664 orphan-heading by adding \\subsubsection{Omnibus and Pairwise Hypothesis Testing} (L699), shortened long titles, removed float-stack at L1082, kept roman model names in prose, and added 7 inline % [CITE/CONSISTENCY/DATA/HUMAN] flags (incl. L878 27,248 vs 25,432 scope and L1062 DRAFT section-number mismatch). For Slice 3/3 (L1091-end): fix L1145 agency, L1149 'crucially', L1151/L1207/L1215 em-dashes, L1153/L1155/L1201 long paragraphs, L1158 long title, and L1213/L1215 'protocol'.",
+  "summary": "Swept lines 577-1091 of chapters/results_and_discussion.tex against all four paper rules. Fixed the orphan-heading error, separated stacked knowledge-graph floats with Dedicated Expositions, converted model names in running prose to roman text, replaced municipal with local/city, removed banned buzzwords/participle tails/em-dashes/inanimate agency, aligned figure captions, and flagged 7 verified citation/consistency/figure-data issues without inventing facts or altering table numbers."
+ },
+ {
+  "unit": "results_and_discussion",
+  "file": "chapters/results_and_discussion.tex",
+  "range": "1091-1216",
+  "edits": [
+   {
+    "count": 3,
+    "example": "Tier 3 Jurisprudential and Authentic Local Preemption Benchmark -> Tier 3 Jurisprudential Preemption Benchmark",
+    "rule": "Simplified single-line titles, removed banned 'Protocol' from heading, and fixed fourth-wall reference ('academic defense cutoff' -> 'study's data collection window')"
+   },
+   {
+    "count": 4,
+    "example": "The empirical findings documented in Table~\\ref{tab:tier3_ablation_matrix} reveal... -> As shown in Table~\\ref{tab:tier3_ablation_matrix}, input representation engineering...",
+    "rule": "Merged 1-sentence colon micro-paragraph, expanded 2-3 sentence micro-paragraphs to 4 sentences, and split 8-9 sentence dense blocks into balanced 4-6 sentence paragraphs"
+   },
+   {
+    "count": 16,
+    "example": "Crucially, Configuration~B maintains \\textbf{100.0\\% Specificity}... -> Both Configuration~A and Configuration~B achieve... while maintaining 100.0\\% specificity...",
+    "rule": "Removed banned words (crucially, protocol), em-dash pairs, inanimate agency, participle tails, bold inline headers/metrics, triads, and over-claiming ('prove', 'complete certainty', 'hallucinating')"
+   },
+   {
+    "count": 11,
+    "example": "municipal control enactments -> local control enactments; 164,620 national statutes -> 164,620 national statutory provisions",
+    "rule": "Enforced HUC local/city terminology over 'municipal', clarified 164,620 national statutory provisions vs enactments, and updated 'all ten Supreme Court' -> 'all ten Tier 3 enactments'"
+   }
+  ],
+  "flags": [],
+  "handoff": "results_and_discussion slice 3/3 (originally L1091-1216) is now L1091-1217 (+2 lines); chapters/results_and_discussion.tex totals 1,217 lines with 0 errors, 0 warnings in L1091-1217, and 0 undefined refs/cites. Shortened L1091/L1158/L1210 subsection titles (removed 'Protocol'), merged L1145 into L1147, expanded L1124/L1163/L1217 micro-paragraphs, split long L1155/L1201 paragraphs, fixed '164,620 national statutory provisions' at L1203/L1207, removed 'prior to the academic defense cutoff' fourth-wall reference, removed em-dashes/triads/participle tails/inanimate agency/banned words, and replaced 'municipal' with 'local'/'city'. Next chapter (conclusions.tex) should keep 'Tier 3 Jurisprudential Preemption Benchmark' / 'Open-Corpus Jurisprudential Screening' / 'Institutional Evaluation Plan and Roadmap' terminology, 164,620 national provisions vs 177,423 total, and HUC 'local/city' phrasing.",
+  "summary": "Swept and edited chapters/results_and_discussion.tex lines 1091-1217 (Tier 3 benchmark, 4-way KG ablation, open-corpus full-PDF screening, and institutional evaluation roadmap) against all four paper-*.md rules. Verified 0 errors, 0 warnings in slice, and 0 undefined refs/cites via pre_audit_paper.py."
+ },
+ {
+  "unit": "conclusions",
+  "file": "chapters/conclusions.tex",
+  "range": "1-97",
+  "edits": [
+   {
+    "count": 5,
+    "example": "Regarding Specific Objective~1 -> Regarding Research Question~1 and Specific Objective~1 (plus explicit RQ5 computational viability vs. deferred usability separation)",
+    "rule": "paper-structure-and-chapters: RQ-Objective mapping and cross-chapter alignment"
+   },
+   {
+    "count": 3,
+    "example": "post-defense integration / academic submission schedule / thesis development calendar -> end-state framing and study's data collection window",
+    "rule": "paper-structure-and-chapters: end-state integration and zero fourth-wall breaks"
+   },
+   {
+    "count": 2,
+    "example": "expanded L92 and L94 from 2-sentence micro-paragraphs to 4 sentences using Ch. 4 findings",
+    "rule": "paper-voice-and-style: 4-6 sentence paragraph cadence"
+   },
+   {
+    "count": 24,
+    "example": "Davao City municipal collection / municipal hardware -> Davao City local ordinance collection / local government hardware",
+    "rule": "paper-voice-and-style: Davao City HUC local/city terminology"
+   },
+   {
+    "count": 31,
+    "example": "removed banned words (protocol/bottleneck/utilize/leverage), 4 em-dash pairs, flat-certainty adverbs, inanimate agency, triads, and sentence-final participle tails",
+    "rule": "paper-voice-and-style & declauding: syntax, voice, and vocabulary bans"
+   },
+   {
+    "count": 4,
+    "example": "\\texttt{DeBERTa-v3-base} -> DeBERTa-v3-base-NLI (roman in prose); \\texttt{Qwen2.5-VL-3B-Instruct}, \\texttt{all-MiniLM-L6-v2}, \\texttt{Gemini Flash 3.8}, \\texttt{xlm-roberta-base} set roman",
+    "rule": "paper-latex-and-visuals: roman model identifiers in running prose"
+   },
+   {
+    "count": 3,
+    "example": "updated L62/L70 future-work claims so they build on the already-built 27,248-node KG and Layer-12 XAI saliency, updated \\tau^*(u,v) set to include 0.400, and flagged L18 100% Recall@50 scope",
+    "rule": "paper-rigor-and-citations: internal factual and cross-chapter consistency"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "CONSISTENCY",
+    "note": "L18 states Stage 1 top-k (k <= 50) captures 100% of controlling statutory preemption provisions on landmark jurisprudential test cases, whereas Ch. 4 (Section~\\ref{sec:results_stage1_retrieval}, L435/L880) reports 100.0% Recall@50 on the controlled benchmark candidate pool vs. 65.14% Recall@50 in unconstrained open-corpus retrieval (and Tier 3 open-corpus Stage 1 missed RA 7160 Sec. 195 on Revenue Code Sec. 423). Confirm intended scope.",
+    "where": "chapters/conclusions.tex:18"
+   }
+  ],
+  "handoff": "Swept chapters/conclusions.tex (now 97 lines, 0 pre_audit errors, 0 undefined refs/cites/orphan appendices). Addressed Ch. 5 cross-chapter finding by mapping Research Questions 1-5 to Specific Objectives 1-5 (L16-25) and distinguishing verified computational viability from deferred human usability evaluation. Removed fourth-wall references ('post-defense', 'academic submission schedule', 'thesis development calendar'), standardized HUC 'local/city' phrasing, set model names roman in prose (DeBERTa-v3-base-NLI, all-MiniLM-L6-v2, Qwen2.5-VL-3B-Instruct, Gemini Flash 3.8, xlm-roberta-base), aligned L62/L70 future work with the existing 27,248-node KG and Layer-12 XAI saliency, included 0.400 in \\tau^*(u,v), expanded L93/L95 micro-paragraphs, and added % [CONSISTENCY:] above L18 on Stage 1 Recall@50 scope.",
+  "summary": "Completed the full-chapter sweep of chapters/conclusions.tex (lines 1-97). Fixed RQ1-5/Obj1-5 cross-chapter mapping, removed fourth-wall breaks and internal contradictions with the KG and Layer-12 XAI integration, enforced Davao City HUC terminology, set model names roman in prose, eliminated AI syntax tells and micro-paragraphs, and flagged one Recall@50 scope consistency item for human review. Pre-audit verification passed with 0 errors and 0 undefined references."
+ },
+ {
+  "unit": "abstract",
+  "file": "chapters/abstract.tex",
+  "range": "1-9",
+  "edits": [
+   {
+    "count": 1,
+    "example": "across 27,248 enactments -> across 27,248 enactments and 177,423 provisions",
+    "rule": "paper-structure-and-chapters: abstract canonical anchors & <=250 word limit"
+   },
+   {
+    "count": 1,
+    "example": "86.44\\% accuracy -> $86.44\\% \\pm 6.05\\%$ accuracy",
+    "rule": "paper-rigor-and-citations: include reported cross-validation standard deviation"
+   },
+   {
+    "count": 2,
+    "example": "within municipal computing constraints ... surfaced -> within local computing limits ... flagged",
+    "rule": "paper-voice-and-style: HUC local terminology, assistive framing, and plain vocabulary"
+   },
+   {
+    "count": 1,
+    "example": "\\texttt{DeBERTa-v3} -> DeBERTa-v3",
+    "rule": "paper-latex-and-visuals: roman model names in running prose"
+   }
+  ],
+  "flags": [],
+  "handoff": "Swept chapters/abstract.tex (8 lines total, 0 pre_audit errors, 0 undefined refs/cites/orphan appendices). Added canonical '177,423 provisions' and '+- 6.05%' CV accuracy SD to L5, changed 'municipal computing constraints' to 'local computing limits' for HUC consistency, set DeBERTa-v3 in roman text in prose, replaced 'automate screening'/'surfaced'/'forms' with 'assist screening'/'flagged'/'confirms ... as', and tightened wording from 268 to ~244 words in pre_audit_paper.py (including Keywords, well within the <=250-word limit) while preserving the single-paragraph structure and all numeric anchors.",
+  "summary": "Swept chapters/abstract.tex (lines 1-8). Resolved both cross-chapter findings (added 177,423 provisions and 86.44% +/- 6.05% CV accuracy, reduced total word count to ~244 including Keywords), fixed HUC 'municipal' wording and roman model naming (DeBERTa-v3), and verified 0 errors in pre_audit_paper.py."
+ },
+ {
+  "unit": "appendices_and_bib",
+  "file": "appendices/*, references.bib",
+  "range": "-",
+  "edits": [
+   {
+    "count": 2,
+    "example": "\\chapter{Annotator Certificate of Contribution} -> \\chapter[Annotator Certificate]{Annotator Certificate of Contribution}",
+    "rule": "appendix-title-long (paper-structure-and-chapters.md \u00a74.3)"
+   },
+   {
+    "count": 1,
+    "example": "Removed \\vspace{2pt} + \\textit{Note:} block below Table tab:app_threshold_sensitivity_sweep (verified all facts already appear in chapters/results_and_discussion.tex L674 and L882)",
+    "rule": "appendix-note-block / table-note (paper-structure-and-chapters.md \u00a74.4, paper-latex-and-visuals.md \u00a72.2)"
+   },
+   {
+    "count": 23,
+    "example": "\\section{Cloud-Based Batch Archival Transcription Engine (Google Kaggle)} -> \\section{Cloud-Based Batch Archival Transcription Engine}",
+    "rule": "simplified-single-line-titles (paper-structure-and-chapters.md \u00a72.3)"
+   },
+   {
+    "count": 11,
+    "example": "Added verified booktitle/series/volume/publisher/journal/number/pages/organization/howpublished/isbn/doi/url across li2012detecting, virtucio2018predicting, spdc2025rots, vitali2007towards, athan2013legalruleml, Palmirani2018Modelling, bhattacharya2019a, tohidi2024abstract, hu2021impact, Westermann2019computer, Guenmayor2018CaseStudyHermeneutics, coliee2025proceedings, coliee2026proceedings, nrcp2024review, seo2025sliding, vanrijsbergen1979information, sauro2012quantifying, hart1961concept; formatted Westermann2019computer authors and simplified Kommers2026Hermeneutics volume",
+    "rule": "bib-venue-and-metadata (paper-rigor-and-citations.md \u00a71.5)"
+   },
+   {
+    "count": 35,
+    "example": "title = {Predicting Decisions of the Philippine Supreme Court...} -> title = {Predicting Decisions of the {P}hilippine {S}upreme {C}ourt...}",
+    "rule": "bib-brace-protection (paper-rigor-and-citations.md \u00a71.5)"
+   }
+  ],
+  "flags": [
+   {
+    "kind": "CITE",
+    "note": "Local PDF docs/references/bhattacharya2019a.pdf contains an unrelated physics arXiv paper (arXiv:1906.07548v2) instead of the ICIR 2019 legal summarization paper (10.1007/978-3-030-15712-8_27). Added % [CITE: ...] comment above entry.",
+    "where": "references.bib:921"
+   },
+   {
+    "kind": "CITE",
+    "note": "Local PDF docs/references/tohidi2024abstract.pdf contains an unrelated sub-terahertz antenna paper instead of the Journal of Control AMR review. Added % [CITE: ...] comment above entry.",
+    "where": "references.bib:981"
+   },
+   {
+    "kind": "CITE",
+    "note": "Local PDF docs/references/Guenmayor2018CaseStudyHermeneutics.pdf has title 'A Computational-Hermeneutic Approach for Conceptual Explicitation' rather than 'A Case Study on Computational Hermeneutics: E. J. Lowe's Modal Ontological Argument' (unused in active chapters).",
+    "where": "references.bib:1768"
+   },
+   {
+    "kind": "CITE",
+    "note": "@proceedings entries coliee2025proceedings and coliee2026proceedings legitimately use editor rather than author; pre_audit_paper.py still flags bib-missing-field (missing author) as a linter false positive because it checks author on all entry types.",
+    "where": "references.bib:1819,1858"
+   },
+   {
+    "kind": "CITE",
+    "note": "Local PDF docs/references/hart1961concept.pdf is the 1994 Second Edition while references.bib records year = {1961}; added 2nd-edition ISBN 978-0-19-876122-8 per Phase 1 verification, and vitali2007towards.pdf / seo2025sliding.pdf are 1-page archival summary records rather than full original documents.",
+    "where": "references.bib:765,2466,3863"
+   }
+  ],
+  "handoff": "Swept main.tex (0 defects), all active appendices/ files (ledger-only edits in appendix_n.tex and appendix_tier3_results.tex), and references.bib. Remaining pre_audit_paper.py hits in appendices/ are evaluated false-positive float-stack warnings (artifacts-only appendix format) and colon/length info notices on case/domain section headers. In references.bib, all unprotected title acronyms/proper nouns are brace-protected, all Phase 1 verified venues/DOIs/URLs/ISBNs are populated, keys remain unchanged, and 2 mismatched local PDFs (bhattacharya2019a, tohidi2024abstract) are flagged with % [CITE: ...] comments. Ready for final build check.",
+  "summary": "Fixed all appendix header/Note defects across 8 appendix files, confirmed main.tex has 0 defects, added verified BibTeX metadata and title brace protection across references.bib without renaming keys, and flagged mismatched local PDFs (bhattacharya2019a, tohidi2024abstract) for human replacement."
+ }
+]

@@ -1,0 +1,356 @@
+[
+ {
+  "file": "chapters/abstract.tex",
+  "line": 5,
+  "note": "Abstract body is 247 words (within <=250 limit; pre_audit.json counts 268 by including the Keywords line), but omits canonical '177,423 provisions' required by paper-structure-and-chapters.md L45.",
+  "severity": "error"
+ },
+ {
+  "file": "chapters/abstract.tex",
+  "line": 5,
+  "note": "Abstract states '86.44% accuracy' without the '+/- 6.05%' standard deviation reported in Ch. 4 (L700), Ch. 5 (L22), and paper-structure-and-chapters.md L45. All other anchors (27,248; 100.0%/65.14% Recall@50; 22 premises/17 statutes/350 pairs/198 instances; 0.8945 Conflict F1; Tier 2 2/7, 6 FP, 39/45 TN, 86.67% spec, 7/7 oracle; 54.9%, 12.69 s, 1,416.4 MB) match Ch. 4/5.",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/introduction.tex",
+  "line": 37,
+  "note": "Curse of Knowledge / hindsight framing: Objective 5 (L37) and Definition of Terms (L79) already refer to 'an institutional post-deployment evaluation roadmap' with the 15 SP researchers rather than framing the initial study design chronologically.",
+  "severity": "info"
+ },
+ {
+  "file": "chapters/literature_review.tex",
+  "line": 279,
+  "note": "Curse of Knowledge leak: cites exact collected corpus size ('25,432 national statutes') inside Ch. 2 before corpus acquisition in Ch. 3 (whereas L277 uses '27,000+ laws').",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 239,
+  "note": "Curse of Knowledge / empirical results in Ch. 3: L239-323 (including tab:topic_holdout_validation L302-303 and L319-323) report holdout validation metrics (97.37% reproducibility, 96.26% Macro F1, 97.8%/96.6%/92.2% title-probe precision, 0.5508 cosine confidence, 0.1602 silhouette, 2.4496 DBI) inside Methodology.",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 469,
+  "note": "Curse of Knowledge winner leak: L469-471 describe deploying Qwen2.5-VL-3B-Instruct as the chosen engine immediately after L467 frames Tesseract, Surya, and Qwen2.5-VL as a planned comparison whose results are deferred to Ch. 4.",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 552,
+  "note": "CONSISTENCY (stale local provision count): states boilerplate filtering 'prunes 4,387 procedural sections (31.62%) ... isolating 9,487 operative provisions' (13,874 total), contradicting Ch. 4 (results_and_discussion.tex:196, 290-292) and Ch. 5 (conclusions.tex:18) canonical counts of 12,803 total local provisions = 8,694 operative (67.91%) + 4,109 procedural (32.09%).",
+  "severity": "error"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 890,
+  "note": "CONSISTENCY (count terminology): states 'narrows down more than 27,000 statutory provisions', conflating unique enactments (27,248) with provisions (177,423 total / 164,620 national).",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 911,
+  "note": "Curse of Knowledge winner leak: Table tab:retrieval_safeguards hardcodes the Stage 1 dense bi-encoder winner ('all-MiniLM-L6-v2' and 384-dimensional vectors) prior to Stage 1 model evaluation in Ch. 4.",
+  "severity": "error"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 926,
+  "note": "Curse of Knowledge result leak: reports empirical Stage 1 retrieval ablation metrics directly in Ch. 3 ('Recall@50 to collapse from 43.14% down to 13.43%', 'increasing the Mean Reciprocal Rank from 0.1521 to 0.2217 (+45.8% improvement)').",
+  "severity": "error"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 936,
+  "note": "CONSISTENCY (stale boilerplate percentage): cites sec:local_boilerplate_filtering as establishing '30.85%' procedural clauses, contradicting both L552 ('31.62%') and Ch. 4 L196/L292 ('32.09%', 4,109 of 12,803).",
+  "severity": "error"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 1008,
+  "note": "Curse of Knowledge leak: L1008-1010 name the Stage 2 winner ('DeBERTa-v3') and hardcode post-calibration thresholds (tau_base=0.45, tau* in [0.30, 0.375]) before validation threshold tuning (L1099 searches [0.25, 0.50]).",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 1073,
+  "note": "Curse of Knowledge winner leak: Table tab:candidate_model_specifications (L1073, L1079-1080) tags 'all-MiniLM-L6-v2*' ('Stage 1 Dense + Stage 2') and 'DeBERTa-v3-base-NLI*' ('Stage 2 Finalist'), labels 'DeBERTa-v3-large-NLI' as 'Stage 2 Ceiling', and L1097 explicitly pins the winning Stage 2 ('MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli') and Stage 0 ('Qwen2.5-VL-3B-Instruct') checkpoints prior to empirical tuning.",
+  "severity": "error"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 1109,
+  "note": "Curse of Knowledge result leak: states 'restores the optimal model checkpoint that achieved the lowest validation loss (as observed at Epoch 3 in Table~\\\\ref{tab:epoch_loss_dynamics})', leaking a Ch. 4 training curve outcome in Ch. 3.",
+  "severity": "error"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 1474,
+  "note": "Curse of Knowledge leak: prototype description names 'DeBERTa-v3' as the Stage 2 cross-encoder (L1474) and hardcodes the post-calibration thresholds 30.0%, 37.5%, and 45.0% (L1476).",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/methodology.tex",
+  "line": 1549,
+  "note": "Curse of Knowledge runtime leak: reports that the '--demo' MWE script outputs results 'in under two seconds on standard CPU hardware' in Ch. 3.",
+  "severity": "info"
+ },
+ {
+  "file": "chapters/results_and_discussion.tex",
+  "line": 7,
+  "note": "RQ/Objective mapping gap: Ch. 4 bundles RQ3+RQ4 and Obj 3+Obj 4 into a single section (sec:results_stage2_training, L451); Stage 1 IR algorithm comparison (part of RQ3/Obj 3) is housed in sec:results_stage1_retrieval (mapped to RQ2/Obj 2); and Section 4.4 (sec:results_scalability_optimization, L820) has no explicit RQ/Obj assignment in L7 even though Ch. 5 (conclusions.tex:18) synthesizes its 12.69 s / 54.9% speedup under Specific Objective 2.",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/results_and_discussion.tex",
+  "line": 10,
+  "note": "RQ1/Obj 1 mapping scope mismatch: sec:results_ocr_evaluation (L10) is mapped in L7 to RQ1 and Obj 1, yet focuses on OCR/VLM transcription and corpus EDA (L194, L274); RQ1's 'linguistic parameters and structural markers that define a semantic conflict' (introduction.tex:21) lack a dedicated Ch. 4 section.",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/results_and_discussion.tex",
+  "line": 276,
+  "note": "Demo index exception verified: '176,421 provision embeddings indexed in the dense tensor store' is explicitly framed alongside canonical '177,423 unique searchable provisions', matching the allowed demo index distinction. Also note all occurrences of '1,925' across Ch. 3-5 and ai_disclosure.tex explicitly denote raw source PDFs deduplicated to 1,816 unique ordinances.",
+  "severity": "info"
+ },
+ {
+  "file": "chapters/results_and_discussion.tex",
+  "line": 438,
+  "note": "CONSISTENCY: L438 (and abstract.tex:5) describes the 65.14% open-corpus Recall@50 benchmark as searching across 27,248 enactments (177,423 provisions), whereas the referenced Table tab:full_corpus_retrieval_benchmark (L355, L370) reports testing against 25,432 national statutes.",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/results_and_discussion.tex",
+  "line": 939,
+  "note": "RQ/Obj mapping overlap & heading mismatch: sec:results_summary_roadmap (L939) maps to RQ5/Obj 5 yet also houses Tier 2 (L983) and Tier 3 (L1097, L1164) empirical conflict benchmarks (RQ4/Obj 4); its short TOC title reads 'System Integration and Human Evaluation Roadmap' while the body heading omits 'Roadmap'.",
+  "severity": "warn"
+ },
+ {
+  "file": "chapters/conclusions.tex",
+  "line": 16,
+  "note": "Ch. 5 (L16-24) enumerates 'Specific Objective 1' through 'Specific Objective 5' clearly, but never explicitly references Research Questions 1-5 by number. For RQ5/Obj 5, Ch. 1 L25 asks 'How usable and viable is the final system interface for key stakeholders...', while Ch. 4 (L1219) and Ch. 5 (L24) report computational viability only and defer stakeholder usability to a post-deployment roadmap.",
+  "severity": "info"
+ },
+ {
+  "file": "appendices/appendix_k.tex",
+  "line": 2,
+  "note": "Defect: Appendix chapter title 'Annotator Certificate of Contribution' is 37 characters (>35 characters) and lacks a short title. Under paper-structure-and-chapters.md \u00a74.3 (+45 pt running header clearance rule), supply a concise bracketed title: \\chapter[Annotator Certificate]{Annotator Certificate of Contribution}.",
+  "severity": "error"
+ },
+ {
+  "file": "appendices/appendix_kg_views.tex",
+  "line": 2,
+  "note": "Defect: Bracketed title 'Knowledge Graph Multi-View Projections' has 38 characters (>35 characters). Under paper-structure-and-chapters.md \u00a74.3, shorten to \\chapter[KG Multi-View Projections]{Statutory Knowledge Graph Multi-View Projections} (26 chars) or \\chapter[Knowledge Graph Views]{...} (21 chars) to ensure +45 pt header clearance before page numbers in \\pagestyle{headings}.",
+  "severity": "warn"
+ },
+ {
+  "file": "appendices/appendix_q.tex",
+  "line": 51,
+  "note": "Defect: Table 17.2 contains a trailing \\textit{Note:} block (lines 51-52: '\\raggedright \\scriptsize \\textit{Note:} Evaluated across all 350 ground truth pairs...'). This directly violates paper-structure-and-chapters.md \u00a74.4 (appendix artifacts-only format: never include analytical discussion or \\textit{Note:} blocks inside appendices) and paper-latex-and-visuals.md \u00a72.2 (never include \\textit{Note:} blocks underneath tables). Fix: delete lines 51-52; sample size ($N=350$) is already in caption, and analytical interpretation belongs strictly in Chapter 4.",
+  "severity": "error"
+ },
+ {
+  "file": "appendices/appendix_b.tex",
+  "line": 92,
+  "note": "Defect: Section title 'Cloud-Based Batch Archival Transcription Engine (Google Kaggle)' (63 chars) contains parenthetical platform tag. Under paper-structure-and-chapters.md \u00a72.3, simplify to concise single-line title: \\section{Cloud-Based Batch Archival Transcription Engine}.",
+  "severity": "info"
+ },
+ {
+  "file": "appendices/appendix_g.tex",
+  "line": 101,
+  "note": "Defect: Section title 'Archival VLM Batch Digitization Notebook (Google Kaggle)' (56 chars) contains parenthetical platform tag. Under paper-structure-and-chapters.md \u00a72.3, simplify to: \\section{Archival VLM Batch Digitization Notebook}.",
+  "severity": "info"
+ },
+ {
+  "file": "appendices/appendix_i.tex",
+  "line": 45,
+  "note": "Defect: Subsection titles contain parenthetical category definitions: \\subsection{Choice 1: Contradiction (Legal Conflict / Overreach)} (52 chars), \\subsection{Choice 2: Entailment (Compliant / Lawful Execution)} (51 chars), \\subsection{Choice 3: Neutral (Independent / Unrelated Subject Matter)} (58 chars), and \\section{Desk Cheat Sheet: Key Legal Ceilings and Thresholds} (51 chars). Under paper-structure-and-chapters.md \u00a72.3, simplify to concise single-line titles: \\subsection{Choice 1: Contradiction}, \\subsection{Choice 2: Entailment}, \\subsection{Choice 3: Neutral}, and \\section{Key Legal Ceilings and Thresholds}.",
+  "severity": "info"
+ },
+ {
+  "file": "appendices/appendix_n.tex",
+  "line": 126,
+  "note": "Defect: Domain section titles (lines 126, 347, 548, 769, 970, 1171, 1372, 1533) include parenthetical item ranges (71 to 81 chars, e.g., '(Items GT-001 to GT-050)'). Under paper-structure-and-chapters.md \u00a72.3, strip item ranges from headers: \\section{Domain 00: Executive Issuances and Policy Reorganization}, etc.",
+  "severity": "info"
+ },
+ {
+  "file": "appendices/appendix_tier3_results.tex",
+  "line": 35,
+  "note": "Defect: Case section titles (lines 35, 64, 149, 852, 908, 933, 955, 1006, 1038) include lengthy parenthetical ordinance numbers and descriptions (52 to 93 chars). Under paper-structure-and-chapters.md \u00a72.3, simplify to concise single-line headers: \\section{DAVAO-TIER3-01: Mosqueda v. PBGEA}, \\section{DAVAO-TIER3-02: Evasco v. Montanez}, \\section{DAVAO-TIER3-03 and 04: Revenue Code}, \\section{DAVAO-TIER3-05: City of Davao v. GSIS}, \\section{SC-PHIL-09: Magtajas v. Pryce Properties}, \\section{SC-PHIL-10: City of Manila v. Laguio}.",
+  "severity": "info"
+ },
+ {
+  "file": "appendices/appendix_f.tex",
+  "line": 34,
+  "note": "False Positive Evaluated: Linter flagged back-to-back floats (float-stack). Under paper-structure-and-chapters.md \u00a74.4 and paper-latex-and-visuals.md \u00a73.3, appendices follow an 'artifacts-only' format where tables/figures appear sequentially without intervening multi-paragraph analytical commentary. The float-stack rule applies to Chapters 1-5, not appendices.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 20,
+  "note": "Defect: Entry 'li2012detecting' (@inproceedings) lacks booktitle and publisher. Verified from local PDF docs/references/li2012detecting.pdf and DOI 10.1007/978-3-642-39931-2_13. Fix: Add booktitle = {New Frontiers in Artificial Intelligence: {JSAI-isAI} 2012 Workshops, {LENLS}, {JURISIN}, {MiMI}, Revised Selected Papers}, series = {Lecture Notes in Computer Science}, volume = {7856}, publisher = {Springer, Berlin, Heidelberg}. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 117,
+  "note": "Defect: Entry 'virtucio2018predicting' (@inproceedings) lacks booktitle and publisher; title contains unbraced proper nouns 'Philippine Supreme Court'. Verified from local PDF docs/references/virtucio2018predicting.pdf and DOI 10.1109/COMPSAC.2018.10348. Fix: Add booktitle = {2018 42nd {IEEE} International Conference on Computer Software and Applications ({COMPSAC})}, publisher = {IEEE}, and protect title: title = {Predicting Decisions of the {P}hilippine {S}upreme {C}ourt Using Natural Language Processing and Machine Learning}. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 322,
+  "note": "Defect & Protection: Entry 'Sovrano2021Making' flagged by linter for key style; key is explicitly PROTECTED from renaming per rules. However, title contains unbraced acronym 'GDPR'. Fix: Retain key Sovrano2021Making; protect title: title = {Making Things Explainable vs Explaining: Requirements and Challenges Under the {GDPR}}.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 498,
+  "note": "Defect & Verification: Entry 'cruz2007political' is a physical Philippine legal textbook (Central Lawbook Publishing, ISBN: 971-16-0610-1) verified from local PDF docs/references/cruz2007political.pdf; no DOI exists for physical Philippine print treatises. Title contains unbraced 'Philippine'. Fix: Protect title: title = {{P}hilippine Political Law}; mark DOI/URL as verified print source. Do not rename key.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 609,
+  "note": "Defect: Entry 'spdc2025rots' (@online) lacks organization / howpublished. Verified from local PDF docs/references/spdc2025rots.pdf. Fix: Add organization = {Sangguniang Panlungsod of Davao City}, and howpublished = {Official Portal of the Sangguniang Panlungsod of Davao City}. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 757,
+  "note": "Defect: Entry 'vitali2007towards' (@inproceedings) lacks booktitle and publisher; title contains unbraced standard name 'Akoma Ntoso'. Verified from literature record. Fix: Add booktitle = {Proceedings of the V Legislative {XML} Workshop}, publisher = {European Press Academic Publishing}, and protect title: title = {Towards a Country-Independent Data Format: The {Akoma} {Ntoso} Experience}. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 765,
+  "note": "Defect: Entry 'athan2013legalruleml' (@inproceedings) lacks booktitle, series, volume, and publisher; title contains unbraced camelcase standard name 'LegalRuleML'. Verified from CrossRef and docs/references/athan2013legalruleml.pdf (DOI 10.1007/978-3-642-39617-5_4). Fix: Add booktitle = {Theory, Practice, and Applications of Rules on the Web}, series = {Lecture Notes in Computer Science}, volume = {8035}, publisher = {Springer, Berlin, Heidelberg}, and protect title: title = {{LegalRuleML}: From Metamodel to Use Cases - (A Tutorial)}. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 779,
+  "note": "Defect & Protection: Entry 'Palmirani2018Modelling' key is protected from renaming. Title contains unbraced acronym 'GDPR'; missing publisher. Fix: Retain key Palmirani2018Modelling; protect title: title = {Modelling Legal Knowledge for {GDPR} Compliance Checking}; add publisher = {IOS Press}.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 907,
+  "note": "Defect: Entry 'bhattacharya2019a' (@inbook) lacks booktitle, series, volume, and publisher. Verified from CrossRef (DOI 10.1007/978-3-030-15712-8_27). Fix: Add booktitle = {Advances in Information Retrieval}, series = {Lecture Notes in Computer Science}, volume = {11437}, publisher = {Springer International Publishing}. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 962,
+  "note": "Defect & Alert: Entry 'tohidi2024abstract' (@article) lacks journal ('Journal of Control') and number = {1}. Furthermore, the local file docs/references/tohidi2024abstract.pdf contains a mismatched paper on antenna communications rather than the K.N. Toosi University AMR review. Fix: Add journal = {Journal of Control}, number = {1}; flag local PDF for replacement by human author. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 1029,
+  "note": "Verified: Entry 'Eleftheriadis2023evaluating' key is protected from renaming. All fields (journal, volume, number, article-number, DOI, URL) verified complete and authentic. Fix: Retain entry unchanged.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 1233,
+  "note": "Verified: Entry 'zhang-etal-2024-mgte' key is protected from renaming. All fields (booktitle, publisher, DOI, pages) and {mGTE} title brace-protection verified complete and authentic. Fix: Retain entry unchanged.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 1367,
+  "note": "Defect: Entry 'hu2021impact' (@inproceedings) lacks booktitle, series, volume, publisher; empty pages = {}; title contains unbraced acronyms 'OCR' and 'BERT'. Verified from CEUR-WS Vol-2989 (CHR 2021). Fix: Add booktitle = {Proceedings of the Conference on Computational Humanities Research ({CHR} 2021)}, series = {{CEUR} Workshop Proceedings}, volume = {2989}, publisher = {CEUR-WS.org}, and protect title: title = {Impact of {OCR} Quality on {BERT} Embeddings in the Domain Classification of Book Excerpts}. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 1378,
+  "note": "Defect & Protection: Entry 'Greco2023Bringing' key is protected from renaming. Title contains unbraced architecture name 'Transformer'. Fix: Retain key Greco2023Bringing; protect title: title = {Bringing order into the realm of {Transformer}-based language models for artificial intelligence and law}.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 1709,
+  "note": "Defect & Protection: Entry 'Westermann2019computer' key is protected from renaming. Missing pages = {123--132}; author string lacks commas between surname/first name; title contains unbraced proper name 'Boolean'. Fix: Retain key; protect title: title = {Computer-Assisted Creation of {B}oolean Search Rules for Text Classification in the Legal Domain}; add pages = {123--132}; format authors as author = {Westermann, Hannes and \u0160avelka, Jarom\u00edr and Walker, Vern R. and Ashley, Kevin D. and Benyekhlef, Karim}.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 1722,
+  "note": "Defect & Protection: Entry 'Kommers2026Hermeneutics' key is protected from renaming. Title contains unbraced acronym 'AI' (will downcase to 'ai' in BibTeX). Fix: Retain key; protect title: TITLE = {Computational hermeneutics: evaluating generative {AI} as a cultural technology}; simplify volume = {9}.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 1742,
+  "note": "Defect & Protection: Entry 'Guenmayor2018CaseStudyHermeneutics' key is protected from renaming. Empty pages = {}; title contains unbraced proper name 'E. J. Lowe'. Fix: Retain key; protect title: title = {A Case Study on Computational Hermeneutics: {E. J. Lowe}'s Modal Ontological Argument}; add pages = {1567--1603}; update journal to {IfCoLog Journal of Logics and Their Applications}.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 1793,
+  "note": "Defect: Entry 'coliee2025proceedings' (@proceedings) has editor instead of author (standard for @proceedings), but lacks publisher/organization/howpublished. Verified from local PDF docs/references/coliee2025proceedings.pdf. Fix: Add organization = {International Association for Artificial Intelligence and Law ({IAAIL})}, publisher = {{COLIEE} Workshop Organizers}, and explicit booktitle. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 1829,
+  "note": "Defect: Entry 'coliee2026proceedings' (@proceedings) lacks publisher/organization/howpublished. Verified from local PDF docs/references/coliee2026proceedings.pdf. Fix: Add organization = {International Association for Artificial Intelligence and Law ({IAAIL})}, publisher = {{COLIEE} Workshop Organizers}, and explicit booktitle. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 2079,
+  "note": "Defect: Entry 'nrcp2024review' (@online) lacks organization / howpublished. Verified from local PDF docs/references/nrcp2024review.pdf. Fix: Add organization = {National Research Council of the Philippines, Department of Science and Technology}, and howpublished = {DOST-NRCP Policy Advisory Portal}. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 2432,
+  "note": "Defect: Entry 'seo2025sliding' (@online) lacks organization / howpublished. Verified from local source. Fix: Add organization = {Holistic SEO Digital Technical Publications}, and howpublished = {Online Technical Documentation}. Do not rename key.",
+  "severity": "warn"
+ },
+ {
+  "file": "references.bib",
+  "line": 2464,
+  "note": "Verified: Entry 'ablazo2019designing' is an institutional graduate independent study / master's thesis at Ateneo de Davao University verified from authentic local PDF docs/references/ablazo2019designing.pdf. No DOI exists for institutional theses; mark as verified local archive source. Do not rename key.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 2755,
+  "note": "Verified: Entry 'agpalo2009statutory' is Ruben E. Agpalo's classic 6th edition Philippine law treatise (Rex Book Store, ISBN: 978-971-23-4564-7) verified from local PDF docs/references/agpalo2009statutory.pdf. Physical print treatise, no registered DOI. Mark as verified print treatise. Do not rename key.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 3621,
+  "note": "Verified: Entry 'levenshtein1966binary' is the 1966 translation paper in Soviet Physics Doklady, verified from authentic local PDF docs/references/levenshtein1966binary.pdf. Historical print translation without DOI. Mark as verified print translation. Do not rename key.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 3647,
+  "note": "Verified: Entry 'vanrijsbergen1979information' is C. J. van Rijsbergen's 1979 book verified from local PDF docs/references/vanrijsbergen1979information.pdf. Fix: Add open-access archival URL url = {http://www.dcs.gla.ac.uk/Keith/Preface.html} (University of Glasgow). Do not rename key.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 3793,
+  "note": "Defect: Entry 'sauro2012quantifying' (Morgan Kaufmann, ISBN: 978-0-12-384968-7) lacks DOI and URL. Verified against ScienceDirect. Fix: Add doi = {10.1016/C2010-0-65830-7}, url = {https://www.sciencedirect.com/book/9780123849687/quantifying-the-user-experience}. Do not rename key.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 3824,
+  "note": "Verified: Entry 'hart1961concept' is H. L. A. Hart's classic jurisprudence monograph (Clarendon Press / Oxford University Press) verified from local PDF docs/references/hart1961concept.pdf. Fix: Add isbn = {978-0-19-876122-8}; mark as verified print treatise without DOI. Do not rename key.",
+  "severity": "info"
+ },
+ {
+  "file": "references.bib",
+  "line": 1,
+  "note": "Defect (Systemic Brace Protection): Multiple titles across references.bib contain unbraced proper nouns, model architectures, and acronyms that BibTeX downcases in bibliography output. Under paper-rigor-and-citations.md \u00a71.5, protect proper nouns and acronyms with braces: {P}hilippine in sagum2023philippine, bernardo2023disambiguating, worldbank2011intgovfr; {Davao} in dreisbach2021language, patumbon2025landmark; {BERT} in devlin2019bert, nogueira2020passage, reimers2019sentencebert, shao2021bert, aoki2022data; {ModernBERT} in warner2024modernbert; {DeBERTaV3} in he2023debertav3; {NLP} in zhong2020how, vannoord2017the, jacovi2020towards, ranathunga2022some; {NLI} in nie2020anli; {ANLI} in williamsetal2022anlizing; {LLM} in dettmers2022llmint8; {LLMs} in deroy2023how; {COLIEE} in goebel2026an, althammer2021dossiercoliee, nguyen2025nowjcoliee2025multistageframework; {AI} in linna2026challenges. Do not rename any BibTeX keys.",
+  "severity": "warn"
+ }
+]
