@@ -33,11 +33,17 @@ description: Apply alongside ALL other paper-*.md rules when writing or auditing
 
 ---
 
-## **3. Proximity & "Setup $\rightarrow$ Visual $\rightarrow$ Dedicated Exposition" Pattern**
+## **3. Visual Justification, Notebook Aesthetic & "Setup $\rightarrow$ Visual $\rightarrow$ Exposition" Pattern**
 
-1. **Proximity & Anti-Stacking:** Place every figure, table, equation, and listing immediately following the paragraph where it is first cited. **Avoid back-to-back float walls** (multiple visuals stacked without intervening analytical prose).
-2. **Brief Descriptive Captions:** Captions state strictly *what* the visual depicts (subject, source, scope, sample size $N$). **NEVER** pack analytical conclusions or takeaway arguments into captions.
-3. **The 3-Step Pattern (Chapters 1–5):**
+1. **Visual Justification (Earn Space Alongside Tables):** Tables deliver exact cell values; figures must earn their page space by exposing structure that dense tables hide. **NEVER** create redundant or low-information charts (such as a bar chart plotting a trivial `1` to `6` integer rank vector or repeating 3–4 scalar table rows). Every figure must justify its presence through one or more visual advantages:
+   * **Multi-Dimensional Trade-Offs / Pareto Frontiers:** e.g., accuracy or Conflict $F_1$ vs. CPU latency, parameter count, or CER vs. privacy/cost.
+   * **Distributions, Spread & Regime Comparisons:** e.g., 5-fold stratified vs. premise-grouped variance, probability/confidence separation (`TP` vs. `TN` vs. `FN` vs. `FP`), or 30-run latency distributions.
+   * **Matrices & Heatmaps:** e.g., model $\times$ macro legal domain $F_1$ scores, normalized 3-class confusion heatmaps, or per-case open-corpus flag profiles.
+   * **Continuous Curves & Operating Boundaries:** e.g., threshold sensitivity ($\tau \in [0.20, 0.80]$ precision/recall/$F_1$), Bayesian PPV curves across prevalence $p$, or scaling trajectories across shortlist depth $k$.
+2. **Light-Mode Notebook Publication Style:** Generate empirical figures reproducibly from verified JSON/CSV outputs in `scripts/notebooks/` (or `scripts/figures/`) using consistent light-mode academic styling (`#FFFFFF` figure / `#FAFCFE` axes background, `DejaVu Sans`, 300 DPI PNG, subtle dashed grids, clean top/right spines removed where appropriate, accessible high-contrast palettes, and direct reference/threshold callouts).
+3. **Proximity & Anti-Stacking:** Place every figure, table, equation, and listing immediately following the paragraph where it is first cited. **Avoid back-to-back float walls** (multiple visuals stacked without intervening analytical prose).
+4. **Brief Descriptive Captions:** Captions state strictly *what* the visual depicts (subject, source, scope, sample size $N$). **NEVER** pack analytical conclusions or takeaway arguments into captions.
+5. **The 3-Step Pattern (Chapters 1–5):**
    * **Setup:** Preceding paragraph introduces the visual and cites it explicitly (`Table~\ref{...}` / `Figure~\ref{...}`).
    * **Visual:** Clean floating environment (`figure`, `table`, `algorithm`).
    * **Dedicated Exposition (4–6 Sentences):** Immediately below the visual, explain: (i) *what it contains* (columns, rows, axes, modules), (ii) *why those metrics/columns are there*, (iii) *what is happening* (trends, trade-offs, outliers), and (iv) *what it means* (substantive conclusion or baseline margin). *(Note: Appendices display artifacts + brief factual captions only, without exposition paragraphs.)*

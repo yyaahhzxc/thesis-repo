@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15T16:51:08",
+ "generated": "2026-11-15T20:21:26",
  "canonical": {
   "enactments": "27,248",
   "national": "25,432",
@@ -34,2448 +34,12 @@
   "appendices/appendix_r.tex"
  ],
  "files": {
-  "main.tex": {
-   "lines": 376,
-   "words_prose": 816,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "chapters/abstract.tex": {
-   "lines": 9,
-   "words_prose": 248,
-   "prose_linted": true,
-   "counts": {
-    "abstract-words": 1,
-    "declaude:cadence": 1,
-    "long-paragraph": 1,
-    "micro-paragraph": 1
-   },
-   "hits": [
-    {
-     "line": 0,
-     "category": "abstract-words",
-     "severity": "info",
-     "note": "abstract has ~248 words (limit 250)",
-     "match": ""
-    },
-    {
-     "line": 3,
-     "category": "declaude:cadence",
-     "severity": "info",
-     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "Under statutory preemption in Magtajas v. Pryce Properties and Republic Act No. 7160, loca"
-    },
-    {
-     "line": 5,
-     "category": "long-paragraph",
-     "severity": "info",
-     "note": "11-sentence paragraph (consider splitting beyond ~10)",
-     "match": "Under statutory preemption in Magtajas v. Pryce Properties and Republic Act No. 7160, loca"
-    },
-    {
-     "line": 8,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 21-word paragraph (target 4-6 sentences)",
-     "match": ": Semantic Conflict Detection, Ex-Ante Legislative Review, Statutory Preemption, Natural L"
-    }
-   ]
-  },
-  "chapters/introduction.tex": {
-   "lines": 104,
-   "words_prose": 2517,
-   "prose_linted": true,
-   "counts": {
-    "micro-paragraph": 23,
-    "declaude:density": 1,
-    "list-usage": 1,
-    "declaude:triad": 1
-   },
-   "hits": [
-    {
-     "line": 0,
-     "category": "declaude:density",
-     "severity": "info",
-     "note": "repeated phrases: 'the davao city' x4, 'republic act no' x4, 'davao city sangguniang' x4 — check each is the deliberate repetition entry 27 protects and not a cadence",
-     "match": "phrase repetition"
-    },
-    {
-     "line": 0,
-     "category": "list-usage",
-     "severity": "info",
-     "note": "31 \\item entries in file (avoid unnecessary lists / inline headings)",
-     "match": ""
-    },
-    {
-     "line": 12,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "objectives, scope, and definitions that guide"
-    },
-    {
-     "line": 16,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 32-word paragraph (target 4-6 sentences)",
-     "match": "This study investigates the use of a multi-stage computational architecture to assist lega"
-    },
-    {
-     "line": 27,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 27-word paragraph (target 4-6 sentences)",
-     "match": "The primary goal of this research is to develop a computationally efficient, two-stage sem"
-    },
-    {
-     "line": 61,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 34-word paragraph (target 4-6 sentences)",
-     "match": "A dual-tower transformer architecture that maps queries and candidate statutory provisions"
-    },
-    {
-     "line": 63,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 32-word paragraph (target 4-6 sentences)",
-     "match": "A two-stage decoupled computational framework that pairs a broad high-throughput candidate"
-    },
-    {
-     "line": 65,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 30-word paragraph (target 4-6 sentences)",
-     "match": "A directional NLI classification label indicating that the truth of the hypothesis is inco"
-    },
-    {
-     "line": 67,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 28-word paragraph (target 4-6 sentences)",
-     "match": "A single-tower transformer architecture that ingests concatenated premise-hypothesis pairs"
-    },
-    {
-     "line": 69,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 23-word paragraph (target 4-6 sentences)",
-     "match": "An NLI classification label indicating that the substantive directive of the hypothesis fo"
-    },
-    {
-     "line": 71,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 24-word paragraph (target 4-6 sentences)",
-     "match": "The proactive evaluation of proposed ordinances or administrative rules prior to formal en"
-    },
-    {
-     "line": 73,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 24-word paragraph (target 4-6 sentences)",
-     "match": "Computational methods that provide human-interpretable rationales for machine learning dec"
-    },
-    {
-     "line": 75,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 25-word paragraph (target 4-6 sentences)",
-     "match": "A statistical measure of inter-annotator agreement among three or more raters assessing ca"
-    },
-    {
-     "line": 77,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 25-word paragraph (target 4-6 sentences)",
-     "match": "A normative clash or unintended implied repeal occurring between a newly drafted local ord"
-    },
-    {
-     "line": 79,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 26-word paragraph (target 4-6 sentences)",
-     "match": "The computational discipline and algorithmic process of searching and ranking relevant can"
-    },
-    {
-     "line": 81,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 29-word paragraph (target 4-6 sentences)",
-     "match": "Enacted legislative measures promulgated by the Davao City Sangguniang Panlungsod under de"
-    },
-    {
-     "line": 83,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 37-word paragraph (target 4-6 sentences)",
-     "match": "The Philippine constitutional doctrine establishing that local government ordinances are s"
-    },
-    {
-     "line": 85,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 28-word paragraph (target 4-6 sentences)",
-     "match": "A core natural language processing task that evaluates the directional semantic relationsh"
-    },
-    {
-     "line": 87,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 36-word paragraph (target 4-6 sentences)",
-     "match": "An NLI classification label indicating that the truth or enforcement of the hypothesis nei"
-    },
-    {
-     "line": 89,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 30-word paragraph (target 4-6 sentences)",
-     "match": "In legal theory and formal deontic logic, a condition where two or more legally valid enac"
-    },
-    {
-     "line": 91,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 21-word paragraph (target 4-6 sentences)",
-     "match": "Textual distortions such as typographical errors and broken tokens introduced when physica"
-    },
-    {
-     "line": 93,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 31-word paragraph (target 4-6 sentences)",
-     "match": "An unsupervised rank aggregation algorithm that merges ranked candidate lists from dispara"
-    },
-    {
-     "line": 95,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 26-word paragraph (target 4-6 sentences)",
-     "match": "The unicameral legislative council of Davao City, vested by Republic Act No. 7160 with the"
-    },
-    {
-     "line": 97,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 21-word paragraph (target 4-6 sentences)",
-     "match": "The computational formulation and automated identification of directional normative contra"
-    },
-    {
-     "line": 99,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 24-word paragraph (target 4-6 sentences)",
-     "match": "The constitutional and administrative principle under which superior national legislation "
-    },
-    {
-     "line": 101,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 28-word paragraph (target 4-6 sentences)",
-     "match": "A multimodal deep learning architecture that combines visual processing backbones with tra"
-    }
-   ]
-  },
-  "chapters/literature_review.tex": {
-   "lines": 559,
-   "words_prose": 21715,
-   "prose_linted": true,
-   "counts": {
-    "declaude:triad": 46,
-    "declaude:participle": 13,
-    "micro-paragraph": 8,
-    "declaude:density": 1,
-    "declaude:reuse": 1,
-    "declaude:cadence": 1,
-    "banned-word": 1
-   },
-   "hits": [
-    {
-     "line": 0,
-     "category": "declaude:density",
-     "severity": "info",
-     "note": "repeated phrases: 'natural language inference' x13, 'in legal informatics' x10, 'et al introduced' x9 — check each is the deliberate repetition entry 27 protects and not a cadence",
-     "match": "phrase repetition"
-    },
-    {
-     "line": 0,
-     "category": "declaude:reuse",
-     "severity": "info",
-     "note": "[triad] used 2 times (L198, L346) — reuse is the evidence that a construction is a habit, not a choice",
-     "match": "such as obligations, permissions, and pr"
-    },
-    {
-     "line": 10,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "eras in formatting, vocabulary, and citation style"
-    },
-    {
-     "line": 23,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", deploying neural architectures introduces an explainability trade-off."
-    },
-    {
-     "line": 26,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "govern everyday commerce, public health, and zoning"
-    },
-    {
-     "line": 34,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "across Philippine English, Tagalog, and code"
-    },
-    {
-     "line": 38,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "local government offices, multilingual local phrasing, and institutional distrust of"
-    },
-    {
-     "line": 45,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three consecutive clauses opening on the same two words — forced triad carried by anaphora",
-     "match": "'it must' x3: it must not prohibit but may regulate trade"
-    },
-    {
-     "line": 47,
-     "category": "declaude:cadence",
-     "severity": "info",
-     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "When a local ordinance impermissibly enters an area governed by national legislation, Phil"
-    },
-    {
-     "line": 54,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "international treaties, presidential executive issuances, and local ordinances"
-    },
-    {
-     "line": 56,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "promoting the health, safety, and general prosperity of"
-    },
-    {
-     "line": 64,
-     "category": "banned-word",
-     "severity": "warn",
-     "note": "banned/overused AI vocabulary: 'revolutionary'",
-     "match": "aw period (1972–1986) and the Revolutionary Government under the Freedom "
-    },
-    {
-     "line": 69,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "emphasized systematic codification, deductive legal reasoning, and broad normative princip"
-    },
-    {
-     "line": 69,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "into structured books, titles, and chapters"
-    },
-    {
-     "line": 71,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "exhaustive definitions sections, severability clauses, and general repealing provisions"
-    },
-    {
-     "line": 73,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "multiple dependent clauses, qualifying prepositional phrases, and recursive proviso except"
-    },
-    {
-     "line": 76,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "laws are drafted, debated, and approved determines how"
-    },
-    {
-     "line": 78,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", initiating the inter-session committee review phase."
-    },
-    {
-     "line": 78,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", drafting conventions and legal terminology vary widely."
-    },
-    {
-     "line": 78,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "assigned measure number, title, and the name of"
-    },
-    {
-     "line": 78,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Committee on Rules, Laws, and Ordinances"
-    },
-    {
-     "line": 78,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "technical working groups, legal counsel, and committee researchers examine"
-    },
-    {
-     "line": 78,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "the draft, hold public hearings, and prepare the formal"
-    },
-    {
-     "line": 80,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "amendments are presented, debated, and voted upon section"
-    },
-    {
-     "line": 82,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "substantive textual alterations, statutory reconciliations, and corrective rewrites can"
-    },
-    {
-     "line": 89,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "potential statutory collisions, constitutional infirmities, and unintended regulatory burd"
-    },
-    {
-     "line": 91,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail asserting significance",
-     "match": ", encompassing"
-    },
-    {
-     "line": 91,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "lies in timing, methodology, and legal impact across"
-    },
-    {
-     "line": 91,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "draft local ordinances, pending congressional bills, and proposed executive issuances"
-    },
-    {
-     "line": 91,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "encompassing adversarial litigation, appellate court rulings, and Supreme Court jurisprude"
-    },
-    {
-     "line": 108,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "as Republic Acts, Commonwealth Acts, and Batas Pambansa"
-    },
-    {
-     "line": 110,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "enacted national laws, presidential executive orders, and administrative issuances"
-    },
-    {
-     "line": 117,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "house local ordinances, resolutions, and executive orders that"
-    },
-    {
-     "line": 119,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "for city regulations, resolutions, and zoning policies enacted"
-    },
-    {
-     "line": 121,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "regarding ordinance routing, committee assignments, and plenary approval statuses"
-    },
-    {
-     "line": 127,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "faded ink, low contrast, and compression artifacts"
-    },
-    {
-     "line": 141,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "discarding grammatical syntax, clause order, and relational context"
-    },
-    {
-     "line": 143,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 46-word paragraph (target 4-6 sentences)",
-     "match": "In operational search engines, the retrieval mechanism in BIR is strictly based on set the"
-    },
-    {
-     "line": 157,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", conflicting law."
-    },
-    {
-     "line": 162,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "3-sentence / 70-word paragraph (target 4-6 sentences)",
-     "match": "To execute this logic, symbolic systems use propositional or first-order logic combined wi"
-    },
-    {
-     "line": 172,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "must manually read, interpret, and translate thousands of"
-    },
-    {
-     "line": 172,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "process is slow, expensive, and prone to human"
-    },
-    {
-     "line": 174,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "the linguistic variance, unformalized exceptions, and semantic ambiguities characteristic"
-    },
-    {
-     "line": 179,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "how enactments cite, amend, and conceptually reference one"
-    },
-    {
-     "line": 182,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "representing legal entities, provisions, and administrative bodies as"
-    },
-    {
-     "line": 187,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "of national agencies, provincial guidelines, and local zoning boundaries"
-    },
-    {
-     "line": 198,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "such as obligations, permissions, and prohibitions"
-    },
-    {
-     "line": 242,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "contain scanning artifacts, archaic statutory phrases, and code"
-    },
-    {
-     "line": 263,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", exhausting workstation memory and causing severe system latency ."
-    },
-    {
-     "line": 296,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", processing long texts requires severe truncation."
-    },
-    {
-     "line": 304,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "3-sentence / 58-word paragraph (target 4-6 sentences)",
-     "match": "In computational legal informatics, isolating candidate enactments from extensive statutor"
-    },
-    {
-     "line": 312,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 40-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes term frequency of query token X in document X, X normalizes for provision "
-    },
-    {
-     "line": 322,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 46-word paragraph (target 4-6 sentences)",
-     "match": "Where X and X represent pooled contextual embeddings generated by dense bi-encoders such a"
-    },
-    {
-     "line": 324,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "taxation, public safety, and environmental sanitation"
-    },
-    {
-     "line": 346,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", including deontic operators such as obligations, permissions, and prohibitions."
-    },
-    {
-     "line": 346,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "such as obligations, permissions, and prohibitions"
-    },
-    {
-     "line": 353,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", missing the policy collision beneath the shared vocabulary."
-    },
-    {
-     "line": 360,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", reversing the Premise and Hypothesis would alter the governing legal obligation."
-    },
-    {
-     "line": 375,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "FEVER, ANLI, and WANLI"
-    },
-    {
-     "line": 383,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "regional administrative phrasing, Latin legal maxims, and English"
-    },
-    {
-     "line": 385,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", deploying billion-parameter language models is computationally unfeasible."
-    },
-    {
-     "line": 390,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "into independent training, validation, and test subsets"
-    },
-    {
-     "line": 390,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "recall, Macro X, and class"
-    },
-    {
-     "line": 409,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 28-word paragraph (target 4-6 sentences)",
-     "match": "Where X represents the relative observed agreement between the two individual raters, and "
-    },
-    {
-     "line": 417,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 38-word paragraph (target 4-6 sentences)",
-     "match": "Where X represents the mean observed agreement across all pairs of raters, while X represe"
-    },
-    {
-     "line": 419,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 29-word paragraph (target 4-6 sentences)",
-     "match": "The resulting X score from Equation  is interpreted using the standard statistical interva"
-    },
-    {
-     "line": 439,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Moderate, Substantial, and Almost perfect agreement"
-    },
-    {
-     "line": 441,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "X for contradiction, X for entailment, and X for neutral"
-    },
-    {
-     "line": 444,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", failing to meet this threshold does not inherently invalidate a dataset."
-    },
-    {
-     "line": 451,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", comparing short, isolated sentences quickly breaks down."
-    },
-    {
-     "line": 516,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "computation, dense vector indexing, and approximate nearest"
-    }
-   ]
-  },
-  "chapters/methodology.tex": {
-   "lines": 1493,
-   "words_prose": 30933,
-   "prose_linted": true,
-   "counts": {
-    "straight-quote": 96,
-    "declaude:triad": 64,
-    "micro-paragraph": 41,
-    "declaude:participle": 17,
-    "stale-count": 6,
-    "declaude:cadence": 5,
-    "long-title": 2,
-    "em-dash": 2,
-    "declaude:density": 1,
-    "declaude:reuse": 1,
-    "list-usage": 1,
-    "declaude:editorializing": 1
-   },
-   "hits": [
-    {
-     "line": 0,
-     "category": "declaude:density",
-     "severity": "info",
-     "note": "repeated phrases: 'republic act no' x41, 'x and x' x28, 'of republic act' x20 — check each is the deliberate repetition entry 27 protects and not a cadence",
-     "match": "phrase repetition"
-    },
-    {
-     "line": 0,
-     "category": "declaude:reuse",
-     "severity": "info",
-     "note": "[triad] used 2 times (L24, L887) — reuse is the evidence that a construction is a habit, not a choice",
-     "match": "separability, repealing, and effectivity"
-    },
-    {
-     "line": 0,
-     "category": "list-usage",
-     "severity": "info",
-     "note": "14 \\item entries in file (avoid unnecessary lists / inline headings)",
-     "match": ""
-    },
-    {
-     "line": 9,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three consecutive clauses opening on the same two words — forced triad carried by anaphora",
-     "match": "'x' x3: X"
-    },
-    {
-     "line": 16,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "normalized, indexed, and screened for conflicts"
-    },
-    {
-     "line": 18,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Phase 1: Offline Foundation and Optimization' (44 chars): keep single-line & simple",
-     "match": "Phase 1: Offline Foundation and Optimization"
-    },
-    {
-     "line": 19,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Acts, Batas Pambansa, and Commonwealth Acts"
-    },
-    {
-     "line": 19,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "X, X, and X"
-    },
-    {
-     "line": 23,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Phase 2: Live System Workflow' (29 chars): keep single-line & simple",
-     "match": "Phase 2: Live System Workflow"
-    },
-    {
-     "line": 24,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", Repealing, and Effectivity clauses."
-    },
-    {
-     "line": 24,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Separability, Repealing, and Effectivity clauses"
-    },
-    {
-     "line": 28,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "3-sentence / 52-word paragraph (target 4-6 sentences)",
-     "match": "In Stage 2 (Natural Language Inference), each retrieved statutory candidate is paired with"
-    },
-    {
-     "line": 36,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 13-word paragraph (target 4-6 sentences)",
-     "match": "Where X marks the classification sequence start and X separates jurisdictional text bounda"
-    },
-    {
-     "line": 38,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "probabilities across Entailment, Neutral, and Contradiction"
-    },
-    {
-     "line": 55,
-     "category": "declaude:cadence",
-     "severity": "info",
-     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "Figure  displays the extreme physical degradation present in mid-century local legislation"
-    },
-    {
-     "line": 56,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Acts, Executive Orders, and Presidential Decrees"
-    },
-    {
-     "line": 65,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "approval date, official title, and individual numbered provisions"
-    },
-    {
-     "line": 71,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"\"\"Extracts, sanitizes, and structures national statutes from the online archive.\"\"\""
-    },
-    {
-     "line": 74,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "year_index = fetch_page(f\"{base_url}/year/{year}\")"
-    },
-    {
-     "line": 79,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "soup = BeautifulSoup(html_content, \"html.parser\")"
-    },
-    {
-     "line": 87,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"statute_id\": metadata.id,"
-    },
-    {
-     "line": 88,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"title\": metadata.title,"
-    },
-    {
-     "line": 89,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"instrument\": metadata.type,"
-    },
-    {
-     "line": 90,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"date_enacted\": metadata.date,"
-    },
-    {
-     "line": 91,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"sections\": sections"
-    },
-    {
-     "line": 98,
-     "category": "stale-count",
-     "severity": "warn",
-     "note": "'1,925': stale local ordinance count (canonical 1,816)",
-     "match": "To capture the complete statutory search space, the national collection is paired with Davao City local legislation gathered acros"
-    },
-    {
-     "line": 104,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", adjusting municipal boundaries, or granting broadcast franchises."
-    },
-    {
-     "line": 108,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "through, staple shadows, and rotational skew"
-    },
-    {
-     "line": 108,
-     "category": "stale-count",
-     "severity": "warn",
-     "note": "'1,925': stale local ordinance count (canonical 1,816)",
-     "match": "A fundamental technical distinction must be maintained regarding the document media of the legislative corpus. All 1,816 deduplica"
-    },
-    {
-     "line": 157,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "achieved coverage rates, percentage shares, and historical governing authorities"
-    },
-    {
-     "line": 180,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", following hierarchical cluster-reduction principles ."
-    },
-    {
-     "line": 188,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 48-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes the frequency of term X in cluster X, X is the total word count of cluster"
-    },
-    {
-     "line": 190,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 44-word paragraph (target 4-6 sentences)",
-     "match": "After fine-grained clusters are aggregated into macro domains, each document must be assig"
-    },
-    {
-     "line": 198,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 29-word paragraph (target 4-6 sentences)",
-     "match": "Where X represents the normalized 64-dimensional SVD vector of document X, X denotes the n"
-    },
-    {
-     "line": 200,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", applying the temperature-scaling formulation of Guo et al."
-    },
-    {
-     "line": 225,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "statute count, percentage share, and top X keywords"
-    },
-    {
-     "line": 227,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", including school infrastructure (13."
-    },
-    {
-     "line": 251,
-     "category": "declaude:cadence",
-     "severity": "info",
-     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "The three difficulty tiers map directly to established Philippine statutory preemption pri"
-    },
-    {
-     "line": 271,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Executive Orders, Presidential Decrees, and Republic Acts"
-    },
-    {
-     "line": 282,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", explaining why Republic Acts account for 29."
-    },
-    {
-     "line": 286,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "probability confidence, geometric separation, and explicit statutory title"
-    },
-    {
-     "line": 286,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "hospital bed capacities, school infrastructure laws, and judicial acts"
-    },
-    {
-     "line": 289,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "strike velocity variations, binder hole punches, and dark administrative stamps"
-    },
-    {
-     "line": 289,
-     "category": "stale-count",
-     "severity": "warn",
-     "note": "'1,925': stale local ordinance count (canonical 1,816)",
-     "match": "To establish the local legislative search space for horizontal consistency auditing, the proponents acquired 1,925 raw archival fi"
-    },
-    {
-     "line": 304,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "National statutes, local city archives, and live ex"
-    },
-    {
-     "line": 318,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"law_id\": \"ra_11035_2018\","
-    },
-    {
-     "line": 319,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"year\": 2018,"
-    },
-    {
-     "line": 320,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"url\": \"https://lawphil.net/statutes/repacts/ra2018/ra_11035_2018.html\","
-    },
-    {
-     "line": 321,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"scraped_at\": \"2026-02-17T18:44:04.745654\","
-    },
-    {
-     "line": 322,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"text\": ("
-    },
-    {
-     "line": 323,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Seventeenth Congress\\nSecond Regular Session\\nBegun and held in Metro Manila, \""
-    },
-    {
-     "line": 324,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"on Monday, the twenty-fourth day of July, two thousand seventeen.\\n\""
-    },
-    {
-     "line": 325,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"REPUBLIC ACT No. 11035\\n\""
-    },
-    {
-     "line": 326,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"An Act Institutionalizing the Balik Scientist Program, Appropriating Funds \""
-    },
-    {
-     "line": 327,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Therefor, and for Other Purpose\\n\""
-    },
-    {
-     "line": 328,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Be it enacted by the Senate and House of Representatives of the Philippines \""
-    },
-    {
-     "line": 329,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"in Congress assembled:\\n\""
-    },
-    {
-     "line": 330,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Section 1. Title. - This Act shall be known as the \\\"Balik Scientist Act.\\\"\\n\""
-    },
-    {
-     "line": 331,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Section 2. Declaration of Policy. - The State recognizes that the utilization \""
-    },
-    {
-     "line": 332,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"of the expertise of science, technology or innovation experts of Filipino descent \""
-    },
-    {
-     "line": 333,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"is a vital component of the national political, economic, and social development \""
-    },
-    {
-     "line": 334,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"efforts...\\n\""
-    },
-    {
-     "line": 335,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Section 3. Balik Scientist Program. - There is hereby created a Balik Scientist \""
-    },
-    {
-     "line": 336,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Program, hereinafter referred to as the \\\"Program\\\", to be administered by the \""
-    },
-    {
-     "line": 337,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Department of Science and Technology (DOST)...\\n\""
-    },
-    {
-     "line": 338,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"[Raw statutory text continues across 2,493 total words]\""
-    },
-    {
-     "line": 343,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "source URL, scrape timestamp, and full legislative text"
-    },
-    {
-     "line": 349,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "enactment number, statute title, and section catchline"
-    },
-    {
-     "line": 353,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"\"\""
-    },
-    {
-     "line": 356,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"\"\""
-    },
-    {
-     "line": 358,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "f\"[{statute_record['instrument_type']} No. {statute_record['enactment_number']}: \""
-    },
-    {
-     "line": 359,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "f\"{statute_record['title']} | {section['section_number']}: {section['section_title']}] \""
-    },
-    {
-     "line": 365,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "statute title, section number, and title before attaching"
-    },
-    {
-     "line": 367,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "the statute title, section number, and section catchline"
-    },
-    {
-     "line": 367,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 47-word paragraph (target 4-6 sentences)",
-     "match": "Building on the observation of Koreeda and Manning  that legal NLI requires comprehensible"
-    },
-    {
-     "line": 375,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 16-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes the exact text extracted from the statutory record, and X represents strin"
-    },
-    {
-     "line": 386,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Section 458. (a) The sangguniang panlungsod... shall enact ordinances... \""
-    },
-    {
-     "line": 387,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"(v) Approve ordinances which shall impose a fine not exceeding P5,000.00 \""
-    },
-    {
-     "line": 388,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"or an imprisonment not exceeding one (1) year, or both.\""
-    },
-    {
-     "line": 393,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"[Republic Act No. 7160: Local Government Code | Section 458: Powers] \""
-    },
-    {
-     "line": 394,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Section 458. (a) The sangguniang panlungsod, as the legislative body of the city, \""
-    },
-    {
-     "line": 395,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"shall enact ordinances... (v) Approve ordinances which shall impose a fine not \""
-    },
-    {
-     "line": 396,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"exceeding Five thousand pesos (P5,000.00) or imprisonment not exceeding one year...\""
-    },
-    {
-     "line": 401,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"[CLS] Premise: [RA 7160 | Section 458] Approve ordinances which shall impose a fine \""
-    },
-    {
-     "line": 402,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"not exceeding P5,000.00... [SEP] Hypothesis: [Proposed Ordinance No. 2024-012 | \""
-    },
-    {
-     "line": 403,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Section 6: Penalties] SECTION 6. PENALTY CLAUSE. Any person violating this Ordinance \""
-    },
-    {
-     "line": 404,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"shall be penalized with a fine of Fifteen Thousand Pesos or two years imprisonment. [SEP]\""
-    },
-    {
-     "line": 418,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "3-sentence / 76-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes the X-th sub-chunk of statutory section X, and X denotes the candidate loc"
-    },
-    {
-     "line": 426,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "substantive body extraction, automated quality auditing, and boilerplate filtering"
-    },
-    {
-     "line": 426,
-     "category": "stale-count",
-     "severity": "warn",
-     "note": "'1,925': stale local ordinance count (canonical 1,816)",
-     "match": "Unlike the digital national statutes, the 1,816 deduplicated Davao City local enactments (from 1,925 archival source files) origin"
-    },
-    {
-     "line": 436,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "3-sentence / 61-word paragraph (target 4-6 sentences)",
-     "match": "The document ingestion pipeline begins by recursively discovering target PDF files across "
-    },
-    {
-     "line": 448,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "dates, names, and monetary values without"
-    },
-    {
-     "line": 456,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", including enactment designations (ORDINANCE NO."
-    },
-    {
-     "line": 470,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"\"\""
-    },
-    {
-     "line": 473,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"\"\""
-    },
-    {
-     "line": 489,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"status\": \"SUCCESS\" if confidence >= 0.70 else \"FLAGGED_LOW_CONFIDENCE\","
-    },
-    {
-     "line": 490,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"confidence\": confidence,"
-    },
-    {
-     "line": 491,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"substantive_text\": substantive_text"
-    },
-    {
-     "line": 499,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "valid table structures, page metadata anomalies, and items requiring human"
-    },
-    {
-     "line": 501,
-     "category": "em-dash",
-     "severity": "warn",
-     "note": "2 em-dashes on one line",
-     "match": "        To minimize false positives, the audit pattern matching explicitly accommodates authentic legislative structures. A broad repeated-character regular exp"
-    },
-    {
-     "line": 503,
-     "category": "declaude:editorializing",
-     "severity": "info",
-     "note": "check the number justifies the adjective",
-     "match": "collapses"
-    },
-    {
-     "line": 505,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "of Davao City, administrative districts, and local executive departments"
-    },
-    {
-     "line": 528,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"\"\""
-    },
-    {
-     "line": 531,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"\"\""
-    },
-    {
-     "line": 537,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "boilerplate_keywords = [\"TITLE\", \"SEPARABILITY\", \"REPEALING\", \"EFFECTIVITY\"]"
-    },
-    {
-     "line": 549,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"section_header\": header,"
-    },
-    {
-     "line": 550,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"operative_text\": clean_chunk"
-    },
-    {
-     "line": 572,
-     "category": "declaude:cadence",
-     "severity": "info",
-     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "The judicial cases examine distinct facets of city governance. The first group covers envi"
-    },
-    {
-     "line": 574,
-     "category": "declaude:cadence",
-     "severity": "info",
-     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "The remaining landmark disputes focus on local revenue authority, public health, and deleg"
-    },
-    {
-     "line": 578,
-     "category": "declaude:cadence",
-     "severity": "info",
-     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "As detailed in Table , the primary local component of the Tier 3 jurisprudential validatio"
-    },
-    {
-     "line": 578,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "15 train, validation, and test split"
-    },
-    {
-     "line": 578,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Contradiction, Entailment, and Neutral"
-    },
-    {
-     "line": 578,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Tier 1 Quantitative, Tier 2 Structural, and Tier 3 Latent"
-    },
-    {
-     "line": 602,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", including mayoral veto messages and repealed or amended Davao City ordinances."
-    },
-    {
-     "line": 602,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", adapting the evaluation methods of Koreeda and Manning  and Nie et al."
-    },
-    {
-     "line": 602,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "exactly 66 Contradictions, 66 Entailments, and 66 Neutrals"
-    },
-    {
-     "line": 602,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "comprises 112 Contradictions, 128 Entailments, and 110 Neutrals"
-    },
-    {
-     "line": 608,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "surface rules, structural preemption, and paraphrastic conflicts each"
-    },
-    {
-     "line": 608,
-     "category": "em-dash",
-     "severity": "warn",
-     "note": "2 em-dashes on one line",
-     "match": "    To construct a rigorous evaluation suite, the proponents adapted the difficulty tiering methodology established by Koreeda and Manning in the ContractNLI be"
-    },
-    {
-     "line": 629,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "nominally 105, 140, and 105 pairs across"
-    },
-    {
-     "line": 681,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"pair_id\": \"GT-001\","
-    },
-    {
-     "line": 682,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"macro_domain\": \"Executive Issuances & Policy Reorganization\","
-    },
-    {
-     "line": 683,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"difficulty_tier\": \"Tier 1: Surface & Quantitative\","
-    },
-    {
-     "line": 684,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"national_premise\": {"
-    },
-    {
-     "line": 685,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"statute_title\": \"Republic Act No. 7581 (The Price Act)\","
-    },
-    {
-     "line": 686,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"citation\": \"Section 6\","
-    },
-    {
-     "line": 687,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"statutory_text\": ("
-    },
-    {
-     "line": 688,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Section 6. Automatic Price Control. - Unless otherwise declared by the \""
-    },
-    {
-     "line": 689,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"President, prices of basic necessities in an area shall automatically be \""
-    },
-    {
-     "line": 690,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"frozen at their prevailing prices or placed under automatic price control \""
-    },
-    {
-     "line": 691,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"whenever that area is proclaimed or declared a disaster area or under a \""
-    },
-    {
-     "line": 692,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"state of calamity... price control of basic necessities under this section \""
-    },
-    {
-     "line": 693,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"shall remain effective for the duration of the condition that brought it about, \""
-    },
-    {
-     "line": 694,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"but not for more than sixty (60) days.\""
-    },
-    {
-     "line": 697,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"ordinance_hypothesis\": {"
-    },
-    {
-     "line": 698,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"ordinance_title\": ("
-    },
-    {
-     "line": 699,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Proposed City Ordinance No. 2024-082 (The Davao City Calamity Price \""
-    },
-    {
-     "line": 700,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Stabilization and Consumer Welfare Protection Measure)\""
-    },
-    {
-     "line": 702,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"section_citation\": \"Section 4\","
-    },
-    {
-     "line": 703,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"hypothesis_text\": ("
-    },
-    {
-     "line": 704,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"SECTION 4. MANDATORY LOCAL PRICE CEILINGS UPON CALAMITY. - In accordance \""
-    },
-    {
-     "line": 705,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"with local civil defense standards... upon official declaration of a state \""
-    },
-    {
-     "line": 706,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"of local calamity by the Sangguniang Panlungsod, the City Mayor... shall \""
-    },
-    {
-     "line": 707,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"enforce mandatory price ceilings across all grocery and commercial retail \""
-    },
-    {
-     "line": 708,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"establishments within Davao City, which price freeze shall remain in continuous \""
-    },
-    {
-     "line": 709,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"legal effect for a mandatory period of one hundred eighty (180) calendar days...\""
-    },
-    {
-     "line": 712,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"gold_label\": \"Contradiction\","
-    },
-    {
-     "line": 713,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"legal_rationale\": ("
-    },
-    {
-     "line": 714,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"Direct breach of statutory temporal ceiling. Section 6 of RA 7581 explicitly limits \""
-    },
-    {
-     "line": 715,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"automatic calamity price control to not more than sixty (60) days. The draft ordinance \""
-    },
-    {
-     "line": 716,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"mandates a 180-day freeze, exceeding delegated police power limits.\""
-    },
-    {
-     "line": 718,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"annotator_metadata\": {"
-    },
-    {
-     "line": 719,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"assigned_panel\": \"Panel_A\","
-    },
-    {
-     "line": 720,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"evaluators\": [\"SP-ANN-01\", \"SP-ANN-02\", \"SP-ANN-03\"]"
-    },
-    {
-     "line": 725,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "gold NLI label, legal rationale, and annotator panel metadata"
-    },
-    {
-     "line": 761,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "tuning, hyperparameter sweeps, and training loss profiling"
-    },
-    {
-     "line": 761,
-     "category": "stale-count",
-     "severity": "warn",
-     "note": "'1,925': stale local ordinance count (canonical 1,816)",
-     "match": "Host~B (Laptop), configured on a Lenovo Legion 5 15AHP10 laptop equipped with an AMD Ryzen 7 7435HS processor (8 cores, 16 threads"
-    },
-    {
-     "line": 767,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "versions of PyTorch, Hugging Face Transformers, and scikit"
-    },
-    {
-     "line": 782,
-     "category": "stale-count",
-     "severity": "warn",
-     "note": "'1,925': stale local ordinance count (canonical 1,816)",
-     "match": "\\textbf{Host B} \\newline (Laptop) & AMD Ryzen 7 7435HS (8C/16T @ 3.8 GHz) \\newline 16~GB DDR5 RAM, NVMe PCIe SSD \\newline NVIDIA R"
-    },
-    {
-     "line": 812,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 25-word paragraph (target 4-6 sentences)",
-     "match": "Where X represents the candidate retrieval models, X denotes the ordinal position of docum"
-    },
-    {
-     "line": 833,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "if prov_id.startswith(\"RA_\") or is_primary_act(prov_id):"
-    },
-    {
-     "line": 887,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Separability, Repealing, and Effectivity clauses"
-    },
-    {
-     "line": 899,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 13-word paragraph (target 4-6 sentences)",
-     "match": "Formally, the statutory knowledge base is structured as a heterogeneous, directed multi-re"
-    },
-    {
-     "line": 905,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "set of directed, labeled edges X, and X designates the"
-    },
-    {
-     "line": 905,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 28-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes the set of heterogeneous legal vertices, X represents the set of directed,"
-    },
-    {
-     "line": 907,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "legislative era, official title, and jurisdictional tier"
-    },
-    {
-     "line": 907,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "token length, operative status, and parent enactment identifier"
-    },
-    {
-     "line": 918,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 68-word paragraph (target 4-6 sentences)",
-     "match": "Where structural relations X link enactments to their constituent provisions, thematic rel"
-    },
-    {
-     "line": 932,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "thematic clustering, global connectivity, and acyclic amendatory lineage"
-    },
-    {
-     "line": 934,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 24-word paragraph (target 4-6 sentences)",
-     "match": "The first experiment evaluates statutory authority through In-Degree Centrality and PageRa"
-    },
-    {
-     "line": 940,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 28-word paragraph (target 4-6 sentences)",
-     "match": "Where X quantifies the proportion of legal enactments citing statute X. Complementing dire"
-    },
-    {
-     "line": 946,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 53-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes the set of vertices citing statute X, X denotes the outgoing citations of "
-    },
-    {
-     "line": 1004,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "exact software versions, parameter counts, and sequence limits evaluated"
-    },
-    {
-     "line": 1004,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "the candidate ingestion, retrieval, and inference architectures"
-    },
-    {
-     "line": 1044,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "exact checkpoint identifiers, parameter counts, and sequence bounds for"
-    },
-    {
-     "line": 1044,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "candidate Stage 0, Stage 1, and Stage 2 architectures"
-    },
-    {
-     "line": 1048,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "context encoders, unaligned general foundations, and legal"
-    },
-    {
-     "line": 1054,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", training uses early stopping based on holdout validation loss ."
-    },
-    {
-     "line": 1054,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", training stops automatically."
-    },
-    {
-     "line": 1103,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 38-word paragraph (target 4-6 sentences)",
-     "match": "Where X is the total number of test queries, X is the correct national statute paired with"
-    },
-    {
-     "line": 1105,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 22-word paragraph (target 4-6 sentences)",
-     "match": "Complementing candidate recall, Mean Reciprocal Rank at rank X (X) evaluates how early the"
-    },
-    {
-     "line": 1113,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 18-word paragraph (target 4-6 sentences)",
-     "match": "Where X is the correct national statute retrieved for query X, with X representing the rec"
-    },
-    {
-     "line": 1117,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Calculating X, X, and X verifies whether"
-    },
-    {
-     "line": 1121,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "class precision, recall, and harmonic X"
-    },
-    {
-     "line": 1123,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Specific Precision, Recall, and X"
-    },
-    {
-     "line": 1129,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Where X, X, and X represent the"
-    },
-    {
-     "line": 1129,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "true positive, false positive, and false negative classifications"
-    },
-    {
-     "line": 1129,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 39-word paragraph (target 4-6 sentences)",
-     "match": "Where X, X, and X represent the true positive, false positive, and false negative classifi"
-    },
-    {
-     "line": 1137,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 21-word paragraph (target 4-6 sentences)",
-     "match": "Where X ensures that performance across all three categories is evaluated equally without "
-    },
-    {
-     "line": 1139,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Entailment, Neutral, and Contradiction"
-    },
-    {
-     "line": 1143,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", defaulting to a 50\\% cutoff (X) introduces unnecessary screening risk."
-    },
-    {
-     "line": 1143,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", setting the decision boundary at 0."
-    },
-    {
-     "line": 1153,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 26-word paragraph (target 4-6 sentences)",
-     "match": "Where X and X denote Precision and Recall on the Contradiction class, weighting recall twi"
-    },
-    {
-     "line": 1161,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 22-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes the 52 validation pairs used to sweep candidate decision thresholds X whil"
-    },
-    {
-     "line": 1165,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "3-sentence / 69-word paragraph (target 4-6 sentences)",
-     "match": "To extend static threshold calibration into a neuro-symbolic decision engine, the system i"
-    },
-    {
-     "line": 1173,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "3-sentence / 56-word paragraph (target 4-6 sentences)",
-     "match": "Where X represents the jurisdictional authority hierarchy multiplier (X for vertical statu"
-    },
-    {
-     "line": 1181,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", bounding the operational screening threshold within X."
-    },
-    {
-     "line": 1181,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 29-word paragraph (target 4-6 sentences)",
-     "match": "Where X is the baseline cost-sensitive decision threshold calibrated on X via Equation , a"
-    },
-    {
-     "line": 1183,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", flagging potential contradictions between established statutory authorities."
-    },
-    {
-     "line": 1193,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 14-word paragraph (target 4-6 sentences)",
-     "match": "Where X ranges over all X candidate statutory provisions retrieved for draft section X."
-    },
-    {
-     "line": 1201,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"\"\""
-    },
-    {
-     "line": 1204,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"\"\""
-    },
-    {
-     "line": 1215,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "batch_contradictions = [p[\"contradiction\"] for p in probabilities]"
-    },
-    {
-     "line": 1227,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"alert\": has_conflict,"
-    },
-    {
-     "line": 1228,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"conflict_probability\": peak_score,"
-    },
-    {
-     "line": 1229,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"conflicting_law\": governing_provision.citation,"
-    },
-    {
-     "line": 1230,
-     "category": "straight-quote",
-     "severity": "warn",
-     "note": "use ``double'' LaTeX quotes",
-     "match": "\"conflicting_text\": governing_provision.text"
-    },
-    {
-     "line": 1240,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "3-sentence / 69-word paragraph (target 4-6 sentences)",
-     "match": "Intrinsic topological evaluation begins with network degree distribution and power-law sca"
-    },
-    {
-     "line": 1248,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 31-word paragraph (target 4-6 sentences)",
-     "match": "Where X represents the empirical probability density of degree X, X is the estimated power"
-    },
-    {
-     "line": 1252,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 34-word paragraph (target 4-6 sentences)",
-     "match": "Complementing scale-free verification, the structural cohesion of legislative subject doma"
-    },
-    {
-     "line": 1260,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 37-word paragraph (target 4-6 sentences)",
-     "match": "Where X is the adjacency weight between enactments X and X, X and X denote node degrees, X"
-    },
-    {
-     "line": 1266,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 26-word paragraph (target 4-6 sentences)",
-     "match": "To evaluate downstream operational utility, the proponents measure Graph-Expanded Candidat"
-    },
-    {
-     "line": 1274,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 37-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes the baseline top-X candidate set retrieved via Stage 1 hybrid search, X re"
-    },
-    {
-     "line": 1276,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 59-word paragraph (target 4-6 sentences)",
-     "match": "Equation  evaluates whether expanding the candidate pool along statutory authority edges r"
-    },
-    {
-     "line": 1303,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "2-sentence / 42-word paragraph (target 4-6 sentences)",
-     "match": "For pairwise statistical significance, following the recommendations of Dietterich  for co"
-    },
-    {
-     "line": 1311,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 39-word paragraph (target 4-6 sentences)",
-     "match": "Where X represents items correctly classified by Model A but misclassified by Model B, X r"
-    },
-    {
-     "line": 1323,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 38-word paragraph (target 4-6 sentences)",
-     "match": "Where X is the number of macro legal domains, X is the number of candidate models, and X i"
-    },
-    {
-     "line": 1339,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 33-word paragraph (target 4-6 sentences)",
-     "match": "Where X is the target governing statute, X is the candidate shortlist of top-X provisions "
-    },
-    {
-     "line": 1345,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "s Certificates, notarial acknowledgments, and tabular appropriation or"
-    },
-    {
-     "line": 1355,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 23-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes compliant draft sections correctly passing without triggering a false alar"
-    },
-    {
-     "line": 1361,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "structural zoning, revenue powers, and public health mandates"
-    },
-    {
-     "line": 1365,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "local revenue authority, public health, and delegated traffic administration"
-    },
-    {
-     "line": 1367,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "governing national statute, legal ratio decidendi, and gold NLI label"
-    },
-    {
-     "line": 1399,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", governing national legislative framework, and gold NLI label."
-    },
-    {
-     "line": 1417,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "assistive advisory role, input format requirements, and the distinction between"
-    },
-    {
-     "line": 1455,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", interpreting attention highlights, and supporting institutional adoption."
-    },
-    {
-     "line": 1455,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "presented to evaluators, the statement polarity, and the underlying theoretical"
-    },
-    {
-     "line": 1455,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "detecting preemption risks, interpreting attention highlights, and supporting institutiona"
-    },
-    {
-     "line": 1457,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "of central tendency, variability, and composite usability scoring"
-    },
-    {
-     "line": 1465,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "1-sentence / 28-word paragraph (target 4-6 sentences)",
-     "match": "Where X denotes the raw 5-point Likert response for survey item X, with odd items (X) repr"
-    },
-    {
-     "line": 1471,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "participant names, specific committee assignments, and councilor affiliations are"
-    },
-    {
-     "line": 1475,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "All preprocessing scripts, benchmark splits, and configuration files are"
-    },
-    {
-     "line": 1475,
-     "category": "micro-paragraph",
-     "severity": "info",
-     "note": "3-sentence / 55-word paragraph (target 4-6 sentences)",
-     "match": "To support institutional auditability and scientific reproducibility in accordance with op"
-    },
-    {
-     "line": 1480,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "across PyTorch, NumPy, and Python runtime environments"
-    },
-    {
-     "line": 1480,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "batch sizes, sequence lengths, and decision thresholds X"
-    },
-    {
-     "line": 1486,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "by faded ink, page skew, and photocopy marks"
-    },
-    {
-     "line": 1490,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "political questions, policy choices, and socio"
-    }
-   ]
-  },
   "chapters/results_and_discussion.tex": {
-   "lines": 1241,
-   "words_prose": 18101,
+   "lines": 1295,
+   "words_prose": 19154,
    "prose_linted": true,
    "counts": {
-    "declaude:triad": 47,
+    "declaude:triad": 51,
     "declaude:participle": 8,
     "declaude:cadence": 7,
     "stale-count": 6,
@@ -2489,7 +53,7 @@
      "line": 0,
      "category": "declaude:density",
      "severity": "info",
-     "note": "repeated phrases: 'republic act no' x50, 'deberta v base' x19, 'v base nli' x17 — check each is the deliberate repetition entry 27 protects and not a cadence",
+     "note": "repeated phrases: 'republic act no' x50, 'deberta v base' x21, 'v base nli' x19 — check each is the deliberate repetition entry 27 protects and not a cadence",
      "match": "phrase repetition"
     },
     {
@@ -2612,870 +176,445 @@
      "match": "local hardware limits, operational costs, and data privacy rules"
     },
     {
-     "line": 161,
+     "line": 165,
      "category": "declaude:triad",
      "severity": "info",
      "note": "two consecutive sentences sharing a 6-word run that is 55% of the shorter one — echoing skeleton, entry 26's third shape",
      "match": "'both training loss and validation loss': In healthy training, both training loss and validation loss "
     },
     {
-     "line": 180,
+     "line": 189,
      "category": "stale-count",
      "severity": "warn",
      "note": "'1,925': stale local ordinance count (canonical 1,816)",
      "match": "Selecting Qwen2.5-VL-3B-Instruct as the primary document ingestion engine balances transcription accuracy with operating cost and "
     },
     {
-     "line": 191,
+     "line": 200,
      "category": "stale-count",
      "severity": "warn",
      "note": "'1,925': stale local ordinance count (canonical 1,816)",
      "match": "Having selected and executed Qwen2.5-VL-3B-Instruct across the archival PDF documents as detailed in Section~\\ref{sec:vlm_digitiza"
     },
     {
-     "line": 193,
+     "line": 202,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "governing statutory authority, core subject matter, and salient X keywords"
     },
     {
-     "line": 218,
+     "line": 227,
      "category": "declaude:participle",
      "severity": "info",
      "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
      "match": ", governing statutory authority under Republic Act No."
     },
     {
-     "line": 220,
+     "line": 229,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "cemetery setbacks, stray animal controls, and drinking water safety"
     },
     {
-     "line": 249,
+     "line": 257,
      "category": "declaude:cadence",
      "severity": "info",
      "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
      "match": "Specifically, in DRAFT-01, the pipeline flagged one candidate pair (Section 13 vs. RA 7160"
     },
     {
-     "line": 277,
-     "category": "declaude:cadence",
-     "severity": "info",
-     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "Across the seven correctly classified enactments in Table , the fine-tuned cross-encoder e"
-    },
-    {
-     "line": 279,
-     "category": "declaude:cadence",
-     "severity": "info",
-     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "Equally important for local legislative screening is the pipeline's ability to clear compl"
-    },
-    {
      "line": 287,
      "category": "declaude:cadence",
      "severity": "info",
      "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
-     "match": "Comparing the judicial reasoning in authentic court decisions against Table  clarifies bot"
+     "match": "Across the seven correctly classified enactments in Table , the fine-tuned cross-encoder e"
     },
     {
      "line": 289,
      "category": "declaude:cadence",
      "severity": "info",
      "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
+     "match": "Equally important for local legislative screening is the pipeline's ability to clear compl"
+    },
+    {
+     "line": 297,
+     "category": "declaude:cadence",
+     "severity": "info",
+     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
+     "match": "Comparing the judicial reasoning in authentic court decisions against Table  clarifies bot"
+    },
+    {
+     "line": 299,
+     "category": "declaude:cadence",
+     "severity": "info",
+     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
      "match": "When the complete 129-page Revenue Code runs unassisted across all 164,620 national statut"
     },
     {
-     "line": 291,
+     "line": 301,
      "category": "declaude:cadence",
      "severity": "info",
      "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
      "match": "Full-PDF open-corpus search also recovers substantive statutory conflicts that isolated si"
     },
     {
-     "line": 293,
+     "line": 303,
      "category": "declaude:cadence",
      "severity": "info",
      "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
      "match": "Across multi-section enactments, unassisted screening exposes both latent statutory collis"
     },
     {
-     "line": 303,
+     "line": 312,
      "category": "stale-count",
      "severity": "warn",
      "note": "'1,925': stale local ordinance count (canonical 1,816)",
      "match": "Combining the 25,432 national statutory records with the 1,816 unique Davao City local ordinances (deduplicated from 1,925 source "
     },
     {
-     "line": 303,
+     "line": 312,
      "category": "stale-count",
      "severity": "warn",
      "note": "'176,421': serialized demo index size, not canonical corpus size (177,423) - review context",
      "match": "Combining the 25,432 national statutory records with the 1,816 unique Davao City local ordinances (deduplicated from 1,925 source "
     },
     {
-     "line": 331,
+     "line": 340,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "the National Corpus, Local Corpus, and Unified Dual Corpus"
     },
     {
-     "line": 331,
+     "line": 340,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "operative sections, boilerplate clauses, and historical spans alongside"
     },
     {
-     "line": 333,
+     "line": 342,
      "category": "micro-paragraph",
      "severity": "info",
      "note": "3-sentence / 77-word paragraph (target 4-6 sentences)",
      "match": "Because both collections span multiple decades of legislative drafting, enactment volume a"
     },
     {
-     "line": 395,
+     "line": 404,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "across multiple cutoffs, rank distributions, and search latency on"
     },
     {
-     "line": 402,
+     "line": 411,
      "category": "declaude:false-range",
      "severity": "info",
      "note": "false range — list the items",
      "match": "ranging from 384 to"
     },
     {
-     "line": 402,
+     "line": 411,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "Mean Reciprocal Rank, CPU inference speed, and Tier 3 paraphrastic"
     },
     {
-     "line": 440,
+     "line": 449,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "recall cutoffs, Mean Reciprocal Rank, and Tier 3 paraphrastic"
     },
     {
-     "line": 485,
+     "line": 494,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "tuning outcomes, ablation comparisons, and training dynamics"
     },
     {
-     "line": 596,
+     "line": 605,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "training, legal domain adaptation, and lightweight edge execution"
     },
     {
-     "line": 598,
+     "line": 607,
      "category": "declaude:participle",
      "severity": "info",
      "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
      "match": ", scaling from base (86M) to large (435M) increased Conflict X from 0."
     },
     {
-     "line": 600,
+     "line": 609,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "such as MNLI, FEVER, and ANLI"
     },
     {
-     "line": 608,
+     "line": 626,
      "category": "declaude:participle",
      "severity": "info",
      "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
      "match": ", training optimizes standard Multi-Class Cross-Entropy Loss ."
     },
     {
-     "line": 608,
+     "line": 626,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "architecture separates Entailment, Neutral, and Contradiction relations"
     },
     {
-     "line": 616,
+     "line": 634,
      "category": "micro-paragraph",
      "severity": "info",
      "note": "1-sentence / 22-word paragraph (target 4-6 sentences)",
      "match": "Where X denotes the binary ground truth indicator for class X, and X represents the calibr"
     },
     {
-     "line": 653,
+     "line": 671,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "validation loss, accuracy, and Macro X for"
     },
     {
-     "line": 700,
+     "line": 718,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "three Contradictions, three Entailments, and three Neutrals across"
     },
     {
-     "line": 843,
+     "line": 810,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "models alongside Friedman, Wilcoxon, and McNemar test summaries"
+    },
+    {
+     "line": 861,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "run performance matrix, solution quality gaps, and architectural trade"
     },
     {
-     "line": 849,
+     "line": 867,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "evaluated pair counts, batch token lengths, and execution latencies"
     },
     {
-     "line": 870,
+     "line": 888,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "Separability, Repealing, and Effectivity clauses"
     },
     {
-     "line": 878,
+     "line": 896,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "standard deviation, minimum, and maximum across all"
     },
     {
-     "line": 914,
+     "line": 926,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "recall, X, and error"
+    },
+    {
+     "line": 935,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "recall, Contradiction X, and false"
+    },
+    {
+     "line": 935,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "X for Contradiction, X for Entailment, and X for Neutral"
+    },
+    {
+     "line": 941,
      "category": "declaude:participle",
      "severity": "info",
      "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
      "match": ", conceding 0."
     },
     {
-     "line": 918,
+     "line": 945,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "offline data sovereignty, zero ongoing fees, and compliance with Republic"
     },
     {
-     "line": 949,
+     "line": 976,
      "category": "declaude:participle",
      "severity": "info",
      "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
      "match": ", pairing the benchmark cross-encoder sensitivity of 92."
     },
     {
-     "line": 949,
+     "line": 976,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "Table  contrasts sensitivity, specificity, and expected PPV across"
     },
     {
-     "line": 962,
+     "line": 998,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "its computational engine, execution latency, and legislative review role"
     },
     {
-     "line": 1029,
+     "line": 1065,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "RA 5185, RA 8150, and PD 1265"
     },
     {
-     "line": 1086,
+     "line": 1122,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "across Neutral, Entailment, and Contradiction labels"
     },
     {
-     "line": 1086,
+     "line": 1122,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "23 Neutral, 1 Entailment, and 2 Contradiction correct"
     },
     {
-     "line": 1092,
+     "line": 1137,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "034 explicit citation, amendatory, and domain edges"
     },
     {
-     "line": 1101,
+     "line": 1146,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "034 directed citation, amendment, and repeal edges"
     },
     {
-     "line": 1110,
+     "line": 1155,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "885 Batas Pambansa, 733 Commonwealth Acts, and 362 other issuances"
     },
     {
-     "line": 1117,
+     "line": 1162,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "ARC Investors, First Meridian, and GSIS"
     },
     {
-     "line": 1117,
+     "line": 1162,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "topological graph parameters, calibrated contradiction probabilities, and judicial alignme"
     },
     {
-     "line": 1147,
+     "line": 1192,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "police power specificity, precision, and X"
     },
     {
-     "line": 1174,
+     "line": 1219,
      "category": "long-paragraph",
      "severity": "info",
      "note": "11-sentence paragraph (consider splitting beyond ~10)",
      "match": "Across the seven correctly classified enactments in Table , the fine-tuned cross-encoder e"
     },
     {
-     "line": 1184,
+     "line": 1229,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "retrieved statute, probability gauge, and word"
     },
     {
-     "line": 1186,
+     "line": 1231,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "dynamic thresholds, attention tokens, and Conflict Flag Categories"
     },
     {
-     "line": 1224,
+     "line": 1269,
      "category": "declaude:participle",
      "severity": "info",
      "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
      "match": ", affirming CTA EB No."
     },
     {
-     "line": 1226,
+     "line": 1271,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "Sections 1, 4, and 5"
     },
     {
-     "line": 1230,
+     "line": 1275,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "4, 6, and 7"
     },
     {
-     "line": 1230,
+     "line": 1275,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "02 Sections 36, 38, and 40 retrieving repealed"
     },
     {
-     "line": 1230,
+     "line": 1275,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "170, 409, and 3857"
     },
     {
-     "line": 1230,
+     "line": 1275,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "7, 11, and 12 vs"
     },
     {
-     "line": 1238,
+     "line": 1292,
      "category": "declaude:triad",
      "severity": "info",
      "note": "three parallel items — check the content has three, not two padded or five truncated",
      "match": "evaluated across Entailment, Neutral, and Contradiction for triple"
-    }
-   ]
-  },
-  "chapters/conclusions.tex": {
-   "lines": 97,
-   "words_prose": 5452,
-   "prose_linted": true,
-   "counts": {
-    "declaude:participle": 3,
-    "declaude:triad": 3,
-    "declaude:density": 1,
-    "stale-count": 1
-   },
-   "hits": [
-    {
-     "line": 0,
-     "category": "declaude:density",
-     "severity": "info",
-     "note": "repeated phrases: 'republic act no' x15, 'research question and' x6, 'question and specific' x6 — check each is the deliberate repetition entry 27 protects and not a cadence",
-     "match": "phrase repetition"
-    },
-    {
-     "line": 14,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", recurring API subscriptions, or generative text models."
-    },
-    {
-     "line": 16,
-     "category": "stale-count",
-     "severity": "warn",
-     "note": "'1,925': stale local ordinance count (canonical 1,816)",
-     "match": "Regarding Research Question~1 and Specific Objective~1, the proponents identified the linguistic and structural properties alongsi"
-    },
-    {
-     "line": 54,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "537, 3811, and 3857"
-    },
-    {
-     "line": 74,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "Direct, Latent, and Distractor pairs"
-    },
-    {
-     "line": 78,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", scaling to extensive omnibus codes requires further runtime reductions."
-    },
-    {
-     "line": 84,
-     "category": "declaude:participle",
-     "severity": "info",
-     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
-     "match": ", recalculating the optimal number of items per annotator (e."
-    },
-    {
-     "line": 92,
-     "category": "declaude:triad",
-     "severity": "info",
-     "note": "three parallel items — check the content has three, not two padded or five truncated",
-     "match": "409, 537, and 3857"
-    }
-   ]
-  },
-  "appendices/appendix_a.tex": {
-   "lines": 110,
-   "words_prose": 3,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "appendices/appendix_b.tex": {
-   "lines": 294,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "appendices/appendix_c.tex": {
-   "lines": 71,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "appendices/appendix_d.tex": {
-   "lines": 67,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "appendices/appendix_e.tex": {
-   "lines": 86,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "appendices/appendix_f.tex": {
-   "lines": 83,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {
-    "float-stack": 1
-   },
-   "hits": [
-    {
-     "line": 34,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": "\\section{Deontic Modality Markers}"
-    }
-   ]
-  },
-  "appendices/appendix_g.tex": {
-   "lines": 130,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "appendices/appendix_wireframes.tex": {
-   "lines": 30,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {
-    "float-stack": 2
-   },
-   "hits": [
-    {
-     "line": 11,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
-    },
-    {
-     "line": 20,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
-    }
-   ]
-  },
-  "appendices/appendix_h.tex": {
-   "lines": 59,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {
-    "float-stack": 4
-   },
-   "hits": [
-    {
-     "line": 14,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
-    },
-    {
-     "line": 25,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
-    },
-    {
-     "line": 36,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
-    },
-    {
-     "line": 47,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
-    }
-   ]
-  },
-  "appendices/appendix_i.tex": {
-   "lines": 126,
-   "words_prose": 802,
-   "prose_linted": false,
-   "counts": {
-    "long-title": 4
-   },
-   "hits": [
-    {
-     "line": 26,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'The Core Task: Comparing Text Pairs' (35 chars): keep single-line & simple",
-     "match": "The Core Task: Comparing Text Pairs"
-    },
-    {
-     "line": 45,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Choice 1: Contradiction' (23 chars): keep single-line & simple",
-     "match": "Choice 1: Contradiction"
-    },
-    {
-     "line": 56,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Choice 2: Entailment' (20 chars): keep single-line & simple",
-     "match": "Choice 2: Entailment"
-    },
-    {
-     "line": 66,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Choice 3: Neutral' (17 chars): keep single-line & simple",
-     "match": "Choice 3: Neutral"
-    }
-   ]
-  },
-  "appendices/appendix_j.tex": {
-   "lines": 107,
-   "words_prose": 870,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "appendices/appendix_k.tex": {
-   "lines": 12,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "appendices/appendix_n.tex": {
-   "lines": 1693,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {
-    "long-title": 8
-   },
-   "hits": [
-    {
-     "line": 126,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Domain 00: Executive Issuances and Policy Reorganization' (56 chars): keep single-line & simple",
-     "match": "Domain 00: Executive Issuances and Policy Reorganization"
-    },
-    {
-     "line": 347,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Domain 01: Education and Academic Institutions' (46 chars): keep single-line & simple",
-     "match": "Domain 01: Education and Academic Institutions"
-    },
-    {
-     "line": 548,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Domain 02: Local Government and Territorial Boundaries' (54 chars): keep single-line & simple",
-     "match": "Domain 02: Local Government and Territorial Boundaries"
-    },
-    {
-     "line": 769,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Domain 03: Public Utilities and Telecom Franchises' (50 chars): keep single-line & simple",
-     "match": "Domain 03: Public Utilities and Telecom Franchises"
-    },
-    {
-     "line": 970,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Domain 04: Public Health, Hospitals and Medical Services' (56 chars): keep single-line & simple",
-     "match": "Domain 04: Public Health, Hospitals and Medical Services"
-    },
-    {
-     "line": 1171,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Domain 05: Statutory Codes and General Legal Amendments' (55 chars): keep single-line & simple",
-     "match": "Domain 05: Statutory Codes and General Legal Amendments"
-    },
-    {
-     "line": 1372,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Domain 06: Public Finance and General Appropriations' (52 chars): keep single-line & simple",
-     "match": "Domain 06: Public Finance and General Appropriations"
-    },
-    {
-     "line": 1533,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'Domain 07: Taxation, Tariffs and Revenue Administration' (55 chars): keep single-line & simple",
-     "match": "Domain 07: Taxation, Tariffs and Revenue Administration"
-    }
-   ]
-  },
-  "appendices/appendix_p.tex": {
-   "lines": 35,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {},
-   "hits": []
-  },
-  "appendices/appendix_q.tex": {
-   "lines": 72,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {
-    "float-stack": 2
-   },
-   "hits": [
-    {
-     "line": 26,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": "\\section{Threshold Sensitivity and Confusion Matrix}"
-    },
-    {
-     "line": 51,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
-    }
-   ]
-  },
-  "appendices/appendix_kg_views.tex": {
-   "lines": 36,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {
-    "float-stack": 2
-   },
-   "hits": [
-    {
-     "line": 13,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
-    },
-    {
-     "line": 24,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
-    }
-   ]
-  },
-  "appendices/appendix_tier3_results.tex": {
-   "lines": 1069,
-   "words_prose": 41,
-   "prose_linted": false,
-   "counts": {
-    "long-title": 9
-   },
-   "hits": [
-    {
-     "line": 35,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'DAVAO-TIER3-01: Mosqueda v. PBGEA' (33 chars): keep single-line & simple",
-     "match": "DAVAO-TIER3-01: Mosqueda v. PBGEA"
-    },
-    {
-     "line": 64,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'DAVAO-TIER3-02: Evasco v. Montanez' (34 chars): keep single-line & simple",
-     "match": "DAVAO-TIER3-02: Evasco v. Montanez"
-    },
-    {
-     "line": 149,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'DAVAO-TIER3-03 and 04: Revenue Code' (35 chars): keep single-line & simple",
-     "match": "DAVAO-TIER3-03 and 04: Revenue Code"
-    },
-    {
-     "line": 852,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'DAVAO-TIER3-05: City of Davao v. GSIS' (37 chars): keep single-line & simple",
-     "match": "DAVAO-TIER3-05: City of Davao v. GSIS"
-    },
-    {
-     "line": 908,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'DAVAO-TIER3-06: City of Davao v. Randy Allied Ventures' (54 chars): keep single-line & simple",
-     "match": "DAVAO-TIER3-06: City of Davao v. Randy Allied Ventures"
-    },
-    {
-     "line": 933,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'DAVAO-TIER3-07: Davao City Water District v. CSC' (48 chars): keep single-line & simple",
-     "match": "DAVAO-TIER3-07: Davao City Water District v. CSC"
-    },
-    {
-     "line": 955,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'DAVAO-TIER3-08: Pest Management Assn. v. Davao' (46 chars): keep single-line & simple",
-     "match": "DAVAO-TIER3-08: Pest Management Assn. v. Davao"
-    },
-    {
-     "line": 1006,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'SC-PHIL-09: Magtajas v. Pryce Properties' (40 chars): keep single-line & simple",
-     "match": "SC-PHIL-09: Magtajas v. Pryce Properties"
-    },
-    {
-     "line": 1038,
-     "category": "long-title",
-     "severity": "info",
-     "note": "title 'SC-PHIL-10: City of Manila v. Laguio' (36 chars): keep single-line & simple",
-     "match": "SC-PHIL-10: City of Manila v. Laguio"
-    }
-   ]
-  },
-  "appendices/appendix_r.tex": {
-   "lines": 21,
-   "words_prose": 0,
-   "prose_linted": false,
-   "counts": {
-    "float-stack": 1
-   },
-   "hits": [
-    {
-     "line": 11,
-     "category": "float-stack",
-     "severity": "warn",
-     "note": "back-to-back floats without intervening explanatory prose",
-     "match": ""
     }
    ]
   }
@@ -3672,11 +811,6 @@
    {
     "label": "tab:app_macro_domain_keywords",
     "file": "appendices/appendix_p.tex",
-    "severity": "info"
-   },
-   {
-    "label": "tab:app_optimal_confusion_matrix",
-    "file": "appendices/appendix_q.tex",
     "severity": "info"
    },
    {
@@ -3892,19 +1026,19 @@
    "overfull_ge_1pt": [
     {
      "pt": 7.6663,
-     "where": "Overfull \\hbox (7.6663pt too wide) in paragraph at lines 686--686"
+     "where": "Overfull \\hbox (7.6663pt too wide) in paragraph at lines 704--704"
     },
     {
      "pt": 2.2099,
-     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 260--260"
+     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 269--269"
     },
     {
      "pt": 2.2099,
-     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 295--295"
+     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 304--304"
     },
     {
      "pt": 2.1882,
-     "where": "Overfull \\hbox (2.1882pt too wide) in paragraph at lines 778--778"
+     "where": "Overfull \\hbox (2.1882pt too wide) in paragraph at lines 796--796"
     },
     {
      "pt": 2.08394,
@@ -3912,11 +1046,11 @@
     },
     {
      "pt": 1.25206,
-     "where": "Overfull \\hbox (1.25206pt too wide) in paragraph at lines 686--686"
+     "where": "Overfull \\hbox (1.25206pt too wide) in paragraph at lines 704--704"
     },
     {
      "pt": 1.0642,
-     "where": "Overfull \\hbox (1.0642pt too wide) in paragraph at lines 1165--1165"
+     "where": "Overfull \\hbox (1.0642pt too wide) in paragraph at lines 1210--1210"
     }
    ],
    "undefined": [],
@@ -3924,22 +1058,13 @@
   }
  },
  "totals": {
-  "declaude:triad": 161,
-  "straight-quote": 96,
-  "micro-paragraph": 79,
-  "declaude:participle": 41,
-  "long-title": 23,
-  "declaude:cadence": 14,
-  "stale-count": 13,
-  "float-stack": 12,
-  "declaude:density": 5,
-  "long-paragraph": 2,
-  "list-usage": 2,
-  "declaude:reuse": 2,
-  "em-dash": 2,
-  "abstract-words": 1,
-  "banned-word": 1,
-  "declaude:editorializing": 1,
-  "declaude:false-range": 1
+  "declaude:triad": 51,
+  "declaude:participle": 8,
+  "declaude:cadence": 7,
+  "stale-count": 6,
+  "micro-paragraph": 6,
+  "declaude:density": 1,
+  "declaude:false-range": 1,
+  "long-paragraph": 1
  }
 }
