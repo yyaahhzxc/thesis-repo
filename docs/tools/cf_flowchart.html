@@ -247,7 +247,7 @@
         .stream-line-l {
             position: absolute;
             top: 0;
-            left: 25%;
+            left: 16.67%;
             width: 1.5px;
             height: 14px;
             background-color: #000000;
@@ -256,7 +256,7 @@
         .stream-line-r {
             position: absolute;
             top: 0;
-            right: 25%;
+            right: 16.67%;
             width: 1.5px;
             height: 14px;
             background-color: #000000;
@@ -265,8 +265,8 @@
         .stream-line-h {
             position: absolute;
             top: 14px;
-            left: 25%;
-            right: 25%;
+            left: 16.67%;
+            right: 16.67%;
             height: 1.5px;
             background-color: #000000;
         }
@@ -452,8 +452,8 @@
                     <div class="line-v-sm"></div><div class="arrow-down"></div>
                     
                     <div class="academic-box box-highlight">
-                        <span class="box-title">Offline Index & Vector Store</span>
-                        <span class="box-desc">Pre-Computed Dense Vector Representations (Transformer Bi-Encoder Embeddings)<br>Sparse Inverted Index (BM25 with Term-Frequency & Length Normalization)</span>
+                        <span class="box-title">Offline Indexes, Vector Store &amp; Knowledge Graph</span>
+                        <span class="box-desc">Pre-Computed Bi-Encoder Embeddings + Sparse BM25 Inverted Index<br>Statutory Knowledge Graph <i>G</i> (Citation, Amendment, Repeal &amp; Domain Edges)</span>
                     </div>
                 </div>
 
@@ -463,21 +463,21 @@
                     
                     <div class="academic-box" style="margin-top: 4px;">
                         <span class="box-title">Ground Truth Legal Benchmark Curation</span>
-                        <span class="box-desc">Multi-Tiered Expert-Annotated Statutory Clause Pairs:<br>Tier 1 (Surface Lexical), Tier 2 (Structural Preemption), Tier 3 (Latent Semantic)</span>
+                        <span class="box-desc">Multi-Tiered Expert-Annotated Legal NLI Pairs (Tiers 1&ndash;3),<br>Full-Document Stress-Test Drafts &amp; Historical Jurisprudential Cases</span>
                     </div>
                     
                     <div class="line-v-sm"></div><div class="arrow-down"></div>
                     
                     <div class="academic-box">
-                        <span class="box-title">Empirical Candidate Screening & Ablation</span>
-                        <span class="box-desc">Stage 1: Multi-Candidate Dense Bi-Encoder Evaluation (Latency vs. Recall@<i>k</i>)<br>Stage 2: Cross-Encoder Architecture Screening across Precision & Quantization Axes</span>
+                        <span class="box-title">Empirical Screening, CV &amp; KG Ablation</span>
+                        <span class="box-desc">Stage 1: Hybrid Sparse-Dense &amp; 1-Hop KG Recall@<i>k</i> Evaluation<br>Stage 2: Candidate Cross-Encoder Screening, Premise-Grouped CV &amp; KG Ablation</span>
                     </div>
                     
                     <div class="line-v-sm"></div><div class="arrow-down"></div>
                     
                     <div class="academic-box box-highlight">
-                        <span class="box-title">Selected Production Logic Engines</span>
-                        <span class="box-desc">Stage 1 Retrieval Workhorse: Optimal Dense Bi-Encoder (Maximizing Candidate Recall)<br>Stage 2 Reasoning Engine: Optimal Cross-Encoder (Maximizing Contradiction <i>F</i><sub>1</sub>)</span>
+                        <span class="box-title">Selected Retrieval &amp; Inference Models</span>
+                        <span class="box-desc">Stage 1: Optimal Dense Bi-Encoder + BM25 + 1-Hop KG Neighborhood Expansion<br>Stage 2: Optimal Cross-Encoder NLI + Dynamic Threshold &tau;*(<i>u</i>,<i>v</i>)</span>
                     </div>
                 </div>
             </div>
@@ -513,7 +513,7 @@
 
                     <div class="academic-box" style="flex: 1.2;">
                         <span class="box-title">Automated Section Parsing & Filtering</span>
-                        <span class="box-desc">Isolates Operative Regulatory Mandates;<br>Strips Title, Separability, Repealing & Effectivity</span>
+                        <span class="box-desc">Isolates Operative Regulatory Mandates;<br>Strips Title, Definitions, Separability, Repealing &amp; Effectivity</span>
                     </div>
 
                     <div style="display: flex; align-items: center; width: 32px; justify-content: center;">
@@ -522,8 +522,8 @@
                     </div>
 
                     <div class="academic-box" style="flex: 1;">
-                        <span class="box-title">Live Provision Vectorization</span>
-                        <span class="box-desc">Real-Time Dense Vector Encoding<br>& Sparse Lexical Token Extraction</span>
+                        <span class="box-title">Vectorization &amp; Citation Extraction</span>
+                        <span class="box-desc">Real-Time Dense &amp; Sparse Vectors<br>+ Statutory Citation/Domain Anchors for KG</span>
                     </div>
                 </div>
             </div>
@@ -532,20 +532,24 @@
 
             <!-- Step 2: Computational Process -->
             <div class="sub-container" style="margin-bottom: 10px; background-color: #fafbfc;">
-                <span class="sub-title">2. Computational Process (Coarse-to-Fine Pipeline)</span>
+                <span class="sub-title">2. Computational Process (Neuro-Symbolic Coarse-to-Fine Pipeline)</span>
                 
                 <!-- Stage 1 -->
                 <div class="stage-container" style="width: 94%; margin: 6px auto 8px auto;">
-                    <div class="stage-title">Stage 1: Dual-Stream Hybrid Information Retrieval (Coarse Filter)</div>
+                    <div class="stage-title">Stage 1: Dual-Stream Hybrid Retrieval &amp; Knowledge Graph Expansion (Coarse Filter)</div>
                     
-                    <div style="display: flex; justify-content: space-between; gap: 16px;">
+                    <div style="display: flex; justify-content: space-between; gap: 12px;">
                         <div class="academic-box" style="flex: 1;">
-                            <span class="box-title">Stream A: Lexical Sparse Search (BM25)</span>
-                            <span class="box-desc">Exact Statutory Citations, Penalty Quantums & Key Administrative Terms</span>
+                            <span class="box-title">Stream A: Lexical Sparse (BM25)</span>
+                            <span class="box-desc">Exact Citations, Penalty Amounts &amp; Key Legal Terms</span>
                         </div>
                         <div class="academic-box" style="flex: 1;">
-                            <span class="box-title">Stream B: Dense Semantic Retrieval (Bi-Encoder)</span>
-                            <span class="box-desc">Normalized Semantic Vector Cosine Similarity for Regulatory Intent</span>
+                            <span class="box-title">Stream B: Dense Retrieval (Bi-Encoder)</span>
+                            <span class="box-desc">Semantic Cosine Similarity for Latent Intent</span>
+                        </div>
+                        <div class="academic-box" style="flex: 1; background-color: #f8fafc;">
+                            <span class="box-title">Stream C: 1-Hop KG Expansion</span>
+                            <span class="box-desc">Traverses <i>G</i> Citation, Amendment &amp; Domain Arcs</span>
                         </div>
                     </div>
 
@@ -554,20 +558,20 @@
                         <div class="stream-line-l"></div>
                         <div class="stream-line-r"></div>
                         <div class="stream-line-h"></div>
-                        <div class="stream-line-c"></div>
+                        <div class="stream-line-c" style="height: 26px; top: 0;"></div>
                         <div class="stream-arrow-c"><div class="arrow-down"></div></div>
                     </div>
 
-                    <div class="academic-box" style="width: 75%; margin: 0 auto;">
-                        <span class="box-title">Reciprocal Rank Fusion (RRF) & Statutory Hierarchy Safeguard</span>
-                        <span class="box-desc">Fuses Lexical & Semantic Ranks; Enforces Hierarchy Precedence (Constitution &gt; Statute &gt; Ordinance)</span>
+                    <div class="academic-box" style="width: 82%; margin: 0 auto;">
+                        <span class="box-title">Reciprocal Rank Fusion (RRF), Hierarchy Safeguard &amp; KG Merge</span>
+                        <span class="box-desc">Fuses Lexical &amp; Dense Ranks, Injects 1-Hop Governing Statutes &amp; Computes Graph Distance <i>d</i><sub>G</sub>(<i>u</i>,<i>v</i>)</span>
                     </div>
 
                     <div class="line-v-sm"></div><div class="arrow-down"></div>
 
-                    <div class="academic-box box-highlight" style="width: 65%; margin: 0 auto;">
+                    <div class="academic-box box-highlight" style="width: 72%; margin: 0 auto;">
                         <span class="box-title">Top-<i>k</i> Candidate Statutory Shortlist</span>
-                        <span class="box-desc">Prunes Broad Search Space to <i>k</i> Most Normatively Relevant Candidate Provisions</span>
+                        <span class="box-desc">Prunes Broad Statutory Corpus to <i>k</i> Ranked National &amp; Local Candidates with Hop Distance <i>d</i><sub>G</sub></span>
                     </div>
                 </div>
 
@@ -575,18 +579,18 @@
 
                 <!-- Stage 2 -->
                 <div class="stage-container" style="width: 94%; margin: 0 auto 4px auto;">
-                    <div class="stage-title">Stage 2: Natural Language Inference (Fine Contradiction Classification)</div>
+                    <div class="stage-title">Stage 2: Natural Language Inference &amp; Lineage Verification (Fine Classification)</div>
                     
-                    <div class="academic-box" style="width: 80%; margin: 0 auto;">
-                        <span class="box-title">Pair-wise Cross-Encoder Input Sequence Construction</span>
-                        <span class="box-desc">Formatted Input: <code>[CLS] Retrieved Statutory Premise [SEP] Proposed Ordinance Clause [SEP]</code></span>
+                    <div class="academic-box" style="width: 86%; margin: 0 auto;">
+                        <span class="box-title">Verbatim Cross-Encoder Sequence &amp; <i>Lex Posterior</i> Lineage Check</span>
+                        <span class="box-desc">Formatted Input (100% Verbatim Text): <code>[CLS] Statutory Premise [SEP] Draft Clause [SEP]</code><br>Flags Superseded Laws via KG Amendment/Repeal DAG Before Scoring</span>
                     </div>
 
                     <div class="line-v-sm"></div><div class="arrow-down"></div>
 
-                    <div class="academic-box box-highlight" style="width: 80%; margin: 0 auto;">
-                        <span class="box-title">Deep Cross-Attention Contradiction Classification</span>
-                        <span class="box-desc">Evaluated via Selected Cross-Encoder NLI Engine (Full Token-Level Cross-Attention Reasoning)</span>
+                    <div class="academic-box box-highlight" style="width: 86%; margin: 0 auto;">
+                        <span class="box-title">Cross-Attention NLI, Intrinsic XAI &amp; Symbolic Penalty Check</span>
+                        <span class="box-desc">Cross-Encoder Probability <i>P</i>(<i>C</i>) + Token Attention Saliency + RA 7160 &sect;458 Fine Ceiling Check</span>
                     </div>
                 </div>
             </div>
@@ -602,18 +606,18 @@
                     <!-- Transparency View -->
                     <div class="academic-box" style="width: 88%; margin-bottom: 8px; border-style: dashed; background-color: #f8fafc;">
                         <span class="box-title" style="letter-spacing: 0.3px;">STAGE 1 RETRIEVAL TRANSPARENCY: SHORTLISTED STATUTES</span>
-                        <span class="box-desc">Ranked Top-<i>k</i> candidate national and municipal provisions displayed with similarity scores for legislative auditability</span>
+                        <span class="box-desc">Ranked Top-<i>k</i> vertical national and horizontal local provisions displayed with RRF scores &amp; KG distance <i>d</i><sub>G</sub></span>
                     </div>
 
                     <!-- Decision Diamond -->
                     <div class="diamond-wrapper">
                         <div class="academic-diamond">
                             <div class="diamond-text">
-                                Contradiction<br>Probability<br><i>P</i>(<i>C</i>) &ge; &tau;*?
+                                Contradiction<br>Probability<br><i>P</i>(<i>C</i>) &ge; &tau;*(<i>u</i>,<i>v</i>)?
                             </div>
                         </div>
                         <div class="diamond-threshold-badge">
-                            Calibrated Decision Threshold &tau;* (Cost-Sensitive Optimization for Recall Priority)
+                            Topologically Calibrated Dynamic Threshold &tau;*(<i>u</i>,<i>v</i>) (Scaled by Graph Distance <i>d</i><sub>G</sub> for Recall Priority)
                         </div>
                     </div>
 
@@ -638,7 +642,7 @@
                         <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
                             <div class="academic-box box-highlight" style="width: 100%; border: 2px solid #000;">
                                 <span class="box-title" style="font-size: 13px;">FLAG SEMANTIC CONFLICT</span>
-                                <span class="box-desc">Normative Legal Inconsistency Identified</span>
+                                <span class="box-desc">Normative Legal Inconsistency Identified (Logged as Prospective <code>CONFLICTS_WITH</code> Edge)</span>
                             </div>
 
                             <div class="line-v-sm"></div><div class="arrow-down"></div>
@@ -655,7 +659,7 @@
                                     </div>
                                     <div class="academic-box" style="flex: 1; padding: 6px 4px; background: #fffbeb; border: 1px solid #d97706;">
                                         <b style="font-size: 11px; color: #92400e;">Horizontal Inconsistency Notice</b><br>
-                                        <span style="font-size: 9.5px; font-style: italic; color: #78350f;">Intra-Jurisdictional City Code Collision<br>(Ordinance Amendment & Harmonization)</span>
+                                        <span style="font-size: 9.5px; font-style: italic; color: #78350f;">Intra-Jurisdictional City Code Collision<br>(Ordinance Amendment &amp; Harmonization)</span>
                                     </div>
                                 </div>
                             </div>
@@ -663,8 +667,8 @@
                             <div class="line-v-sm"></div><div class="arrow-down"></div>
 
                             <div class="academic-box" style="width: 100%; background-color: #f8fafc;">
-                                <span class="box-title">Intrinsic Structural Explainability (XAI)</span>
-                                <span class="box-desc">Side-by-Side Comparative Spans, Highlighted Conflicting Clauses & Calibrated Confidence %</span>
+                                <span class="box-title">Side-by-Side Verbatim XAI Inspector</span>
+                                <span class="box-desc">Token Cross-Attention Heatmaps, Graph Distance <i>d</i><sub>G</sub>, Doctrinal Rationale &amp; Confidence Meter</span>
                             </div>
                         </div>
 

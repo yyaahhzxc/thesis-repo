@@ -46,8 +46,8 @@ except Exception:
     font = ImageFont.load_default()
 
 # Titles
-title_a = "(a) Severe Diagonal Ink Occlusion, Title Smear & Binder Punch Loss (Page 1)"
-title_b = "(b) Mechanical Typewriter Degradation & Handwritten Pen Amendments (Page 2)"
+title_a = "(a) Page 1: Diagonal Ink Smear and Binder Hole Punches"
+title_b = "(b) Page 2: Faded Typewriter Print and Hole Punches"
 
 # Draw Panel A
 y_a_title = pad + 15

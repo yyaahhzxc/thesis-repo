@@ -42,8 +42,8 @@ except Exception:
     font = ImageFont.load_default()
 
 # Titles
-title_a = "(a) Modern Electronic Typesetting with Header Scan Noise & Council Roster (Page 1)"
-title_b = "(b) Substantive Enacting Sections with OCR Character Corruption & Margin Skew (Page 2)"
+title_a = "(a) Page 1: Session Header and Council Attendance Roster"
+title_b = "(b) Page 2: Operative Enacting Clause and Sections"
 
 # Draw Panel A
 y_a_title = pad + 15

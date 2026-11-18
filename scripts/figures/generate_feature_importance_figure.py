@@ -97,14 +97,14 @@ weights = [
 ax2.set_xlim(0, 100)
 ax2.set_ylim(0, 100)
 ax2.axis("off")
-ax2.set_title(r"(B) Cross-Encoder Token Attention Attribution Map (Mosqueda v. PBGEA)", fontweight="bold", pad=12)
+ax2.set_title(r"(B) Sample Cross-Encoder Token Attention Map (Mosqueda v. PBGEA)", fontweight="bold", pad=12)
 
 # Outer card container for Panel B
 card = patches.FancyBboxPatch((0.5, 1.0), 99.0, 96.0, boxstyle="round,pad=1.0",
                               facecolor="#ffffff", edgecolor="#cbd5e1", linewidth=1.0)
 ax2.add_patch(card)
 
-ax2.text(2.5, 91, "Draft Ordinance Hypothesis (Local Enactment):", fontsize=9.5, fontweight="bold", color="#1a365d")
+ax2.text(2.5, 91, "Draft Ordinance Hypothesis (Davao City Ordinance No. 0309-07 §3):", fontsize=9.5, fontweight="bold", color="#1a365d")
 
 # Render hypothesis tokens
 x_start = 2.5
@@ -142,14 +142,21 @@ for t, w in zip(tokens[13:], weights[13:]):
              fontweight="bold" if w > 0.6 else "normal", color=text_color)
     x_start += t_len + 1.2
 
-# Explanation box at bottom of card
-bbox_props = dict(boxstyle="round,pad=0.6", facecolor="#f8fafc", edgecolor="#94a3b8", linewidth=0.8)
-ax2.text(2.5, 14, 
-         "Deontic Interaction Attribution:\n"
-         "Cross-attention concentrates 78.4% of total tensor mass on discordant modal "
-         "operators: draft absolute ban ('strictly prohibited') versus\n"
-         "national regulatory preemption mandate ('exclusive jurisdiction' and 'regulate and license'). Ground Truth: Contradiction.",
-         fontsize=8.5, va="center", bbox=bbox_props, color="#1e293b")
+# Color scheme legend bar at bottom of Panel B card
+ax2.text(2.5, 19.5, "Normalized Cross-Attention Weight Legend (YlOrRd Scale):", fontsize=9.0, fontweight="bold", color="#1e293b")
+bar_x0, bar_w, bar_y, bar_h = 2.5, 56.0, 10.5, 5.2
+n_steps = 80
+step_w = bar_w / n_steps
+for i in range(n_steps):
+    w_val = i / (n_steps - 1)
+    c_val = plt.cm.YlOrRd(w_val * 0.85 + 0.1)
+    ax2.add_patch(patches.Rectangle((bar_x0 + i * step_w, bar_y), step_w + 0.1, bar_h,
+                                    facecolor=c_val, edgecolor="none"))
+ax2.add_patch(patches.Rectangle((bar_x0, bar_y), bar_w, bar_h, facecolor="none", edgecolor="#475569", linewidth=0.8))
+for tick_w, tick_lbl in [(0.0, "0.0 (Low)"), (0.25, "0.25"), (0.5, "0.50"), (0.75, "0.75"), (1.0, "1.0 (High)")]:
+    tx = bar_x0 + tick_w * bar_w
+    ax2.plot([tx, tx], [bar_y - 1.2, bar_y], color="#475569", linewidth=0.8)
+    ax2.text(tx, bar_y - 2.4, tick_lbl, ha="center", va="top", fontsize=8.0, color="#334155")
 
 plt.savefig(OUT_PATH, dpi=300, bbox_inches="tight")
 print(f"Successfully generated Figure 4.4 to {OUT_PATH}")
