@@ -1,0 +1,1547 @@
+Contents lists available at ScienceDirect
+Expert Systems With Applications
+journal homepage: www.elsevier.com/locate/eswa
+Clash-of-Leges: A bilingual dataset for conﬂict detection and explanation 
+in statutory law 
+Paolo Italiani
+a,1, Gianluca Moro
+a,1,∗, Luca Ragazzi
+a,1
+a Department of Computer Science and Engineering - DISI, University of Bologna, Via dell’Università 50, Cesena, 47522, Italy
+a r t i c l e  i n f o
+Keywords:
+Legal AI
+Legal conﬂict detection
+Multilingual dataset
+Constitutional law
+Large language models
+ 
+a b s t r a c t
+Legal conﬂicts between statutes or constitutional articles present a signiﬁcant challenge in maintaining con-
+sistency and coherence within legal systems. Addressing these conﬂicts requires extensive human expertise, 
+making the process labor-intensive and time-consuming. In this paper, we introduce Clash-of-Leges, a novel 
+multilingual dataset derived from rulings by the Constitutional Court of the Italian Republic, designed to aid 
+the automation of conﬂict detection and explanation between legal articles. We identify three key tasks: Con-
+ﬂict Classiﬁcation, which determines whether two legal articles are in conﬂict; Conﬂict Explanation Generation, 
+which provides detailed explanations for identiﬁed conﬂicts; and Reference Retrieval, which sources relevant 
+legal bases and precedents to substantiate interpretations. These tasks are intended to facilitate the development 
+of AI models that can automatically identify and explain contradictions between legal provisions.2
+1.  Introduction
+The integration of artiﬁcial intelligence(AI) into the legal domain is 
+reshaping longstanding practices, from legal research and case analysis 
+to drafting and decision-making. While traditionally resistant to automa-
+tion, the legal sector is increasingly adopting AI tools that bring eﬃ-
+ciency, consistency, and accuracy to complex tasks. Among AI’s primary 
+contributions to legal practice are automated document review and le-
+gal forecasting. By employing natural language processing (NLP), AI 
+systems swiftly identify pertinent legal statutes and precedents, allow-
+ing lawyers to streamline case preparation (Rissland & Ashley, 1987). 
+Additionally, predictive analytics trained on historical case data en-
+able lawyers to anticipate case outcomes, helping them evaluate case 
+strength and advise clients with greater conﬁdence. For instance, mod-
+els trained on past court decisions have shown promising results in pre-
+dicting outcomes in areas such as bankruptcy, intellectual property, and 
+contract disputes (Aletras et al., 2016). AI-driven applications now assist 
+also with document summarization (Moro et al., 2023a; Moro & Ragazzi, 
+2022, 2023; Moro et al., 2023c; Ragazzi et al., 2024, 2025) and ques-
+tion answering (Italiani et al., 2025) for case law analysis, and contract 
+management (Ashley, 2017) by parsing vast legal texts, revealing pat-
+terns, and providing rapid, precise insights that enhance productivity 
+and reduce costs. These advances underscore AI’s potential to perform 
+∗Corresponding author.
+ 
+E-mail addresses: paolo.italiani@unibo.it (P. Italiani), gianluca.moro@unibo.it (G. Moro), l.ragazzi@unibo.it (L. Ragazzi).
+1 These authors contributed equally to this work (co-ﬁrst authorship).
+2 The code is available at https://github.com/disi-unibo-nlp/clash-of-leges
+highly nuanced tasks in law that, until recently, were believed to require 
+human expertise exclusively.
+Despite these advancements, the process of drafting new laws re-
+mains an underexplored area of AI application, particularly in address-
+ing legal conﬂicts. Crafting new statutes requires rigorous checks to pre-
+vent overlaps or contradictions with existing laws. Conﬂicting statutes 
+or ambiguous regulations can destabilize legal interpretations, increase 
+litigation, and place burdens on judicial systems tasked with resolving 
+these issues. Traditionally, legislative drafters consult constitutional ex-
+perts and subject the laws to thorough reviews to minimize conﬂicts. 
+In some jurisdictions, like Italy, the Constitutional Court plays a crucial 
+role in reviewing new laws to ensure they align with constitutional prin-
+ciples. Yet, even with such safeguards, legal conﬂicts frequently arise 
+within complex legal systems, complicating judicial processes.
+Once identiﬁed, these conﬂicts must be resolved by courts to clar-
+ify statutory hierarchies and maintain legal coherence. For instance, 
+in the Italian legal system, the Constitutional Court often deals with 
+conﬂicts between national laws and constitutional articles, issuing rul-
+ings to clarify the hierarchy and proper interpretation of competing le-
+gal provisions. However, manually detecting and resolving such con-
+ﬂicts is time-intensive and demands signiﬁcant legal expertise. Legal
+professionals must sift through extensive legal texts, interpret over-
+lapping provisions, and cross-reference constitutional frameworks, a 
+https://doi.org/10.1016/j.eswa.2025.130182
+Received 24 March 2025; Received in revised form 12 October 2025; Accepted 24 October 2025
+Expert Systems With Applications 300 (2026) 130182 
+Available online 9 November 2025 
+0957-4174/© 2025 The Author(s). Published by Elsevier Ltd. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ). 
+P. Italiani et al.
+Table 1 
+Summary of the most relevant conﬂict detection benchmarks. Unlike prior datasets, Clash-of-Leges is grounded in authentic 
+legislative jurisprudence and supports multilingual, cross-document, and explanatory tasks for statutory conﬂict analysis.
+ Name
+ Annotation
+ Tasksa
+ Cross-Doc.b
+ Languages
+ # Conﬂs.c
+ Type
+ ContractNLI (Koreeda & Manning, 2021)
+ Manual
+ NLI
+ 
+ English
+ 841
+ Contracts
+ NCI-EN (Aires et al., 2019d)
+ Semi-synthetic
+ MLC
+ 
+ English
+ 228
+ Contracts
+ NeuralConflict (Huang et al., 2024b)
+ Synthetic
+ BC
+ 
+English,
+Chinese
+ 6230
+Contracts,
+Policies
+ Aires et al. (Aires & Meneguzzi, 2021)
+ Semi-synthetic
+ BC
+ 
+ English
+ 104
+ Contracts
+ Clash-of-Leges (Ours)
+ Manual
+ BCd, CEd, AR
+ 
+Italian,
+English
+ 632
+ Legislations
+a BC = Binary Classiﬁcation, MLC = Multi-Label Classiﬁcation, NLI = Natural Language Inference, CE = Conﬂict Explanation, 
+AR = Article Retrieval.
+b = the potentially conﬂicting texts belong to diﬀerent documents; = otherwise.
+c Number of annotated conﬂicting pairs.
+d LLM evaluation.
+process that becomes increasingly challenging as the body of law
+expands.
+Existing works have evident limitations (see Table 1). As outlined 
+by Schumann and Gómex (2024), only two studies proposed datasets 
+containing more than 250 cases of conﬂict, and the vast majority of 
+conﬂict cases (87 %) were (semi-)synthetically generated. This reliance 
+on synthetic conﬂicts raises concerns about the generalizability of these 
+datasets, as they may not accurately reﬂect the complexity and nuances 
+of real-world conﬂicts. Furthermore, half of all studies demonstrated 
+their approaches using only a few individual examples rather than eval-
+uating them holistically with annotated test datasets. Such limited eval-
+uations make it challenging to assess the robustness and applicability of 
+these methods in practical scenarios. Finally, in terms of addressed tasks, 
+current datasets primarily focus on classiﬁcation, without supporting 
+Fig. 1. Overview of Clash-of-Leges.
+downstream tasks like conﬂict explanation or the retrieval of relevant 
+legal provisions–both essential for real-world legal applications.
+Our work addresses these gaps by directly engaging with real-world 
+legal rulings from the Constitutional Court of the Italian Republic 
+(CCIR). In particular, we present Clash-of-Leges, a novel bilingual 
+dataset designed to assist AI models in detecting and explaining con-
+ﬂicts within statutory law (see Fig. 1). By focusing on rulings where 
+constitutional conﬂicts are explicitly identiﬁed, our dataset provides a 
+realistic and practical foundation for evaluating detection approaches. 
+This emphasis on real-world data ensures that the models developed us-
+ing our dataset are better equipped to handle the complexity of conﬂicts 
+as they occur in practice, bridging the gap between theoretical frame-
+works and practical legal applications. Additionally, we also incorporate 
+an automatically translated version of the dataset in English to enhance 
+its accessibility and broaden its utility for international research. Based 
+on this resource, we introduce three core tasks essential for addressing 
+legal conﬂicts in drafting and statutory review:
+• Conﬂict Detection: Identifying whether two legal provisions con-
+ﬂict.
+• Conﬂict Explanation Generation: Providing automated explana-
+tions for detected conﬂicts.
+• Article Retrieval: Sourcing relevant legal bases and precedents to 
+substantiate interpretations.
+We perform comprehensive quantitative analyses on Clash-of-
+Leges, utilizing a broad array of evaluation metrics to pave the way for 
+future research developments. In particular, we systematically evaluate 
+the performance of state-of-the-art multilingual large language models 
+(LLMs) under practical limitations, such as running on a single 24 GB 
+GPU. Our study evaluates these models’ adaptability across languages 
+and tasks, revealing that signiﬁcant improvements are needed for prac-
+tical usability.
+2.  Related work
+2.1.  Datasets and jurisdictions
+In recent years, a diverse set of legal NLP benchmarks has emerged, 
+reﬂecting the structural, linguistic, and jurisdictional heterogeneity of 
+legal systems. Within common law systems, widely adopted datasets in-
+clude CaseHOLD (Zheng et al., 2021) for legal judgment prediction in 
+the U.S. context and ECtHR (Chalkidis et al., 2021a) for classiﬁcation 
+and outcome prediction in rulings by the European Court of Human 
+Rights. In addition, the COLIEE task, based on Canadian case law, sup-
+ports legal question answering and textual entailment across multiple 
+subtasks. Conversely, in civil law systems, datasets are more often cen-
+tered on statutory interpretation and normative reasoning. Notable ex-
+amples include LeCaRD (Ma et al., 2021), a Chinese dataset for legal 
+Expert Systems With Applications 300 (2026) 130182 
+2 
+P. Italiani et al.
+reading comprehension, LEDGAR (Tuggener et al., 2020), which pro-
+vides clause-level annotations from commercial contracts under Swiss 
+law, and LAWSUIT (Ragazzi et al., 2024), a summarization dataset de-
+rived from Italian Constitutional Court rulings.
+2.2.  Conﬂict detection datasets
+Only a limited number of corpora provide structured annotations for 
+legal conﬂicts. Most benchmarks, such as ContractNLI (Koreeda & Man-
+ning, 2021) and NeuralConﬂict (Huang et al., 2024b), focus on contract 
+law and rely on synthetic or semi-synthetic conﬂict pairs, with an exclu-
+sive emphasis on English and common law contexts. Some eﬀorts target 
+normative or policy documents (Zadrozny et al., 2017), but they rarely 
+include real-world judicial data, constitutional review, or multilingual 
+content. Similarly, works like Aires et al. (2019a) concentrate on clause-
+level norm conﬂicts using semantic representations and entailment-
+based reasoning, assuming monolingual, decontextualized settings that 
+reﬂect common law interpretive patterns. Exceptions include the align-
+ment of EU directives with Member State laws (Araszkiewicz et al., 
+2021), or compliance between SOPs and medical guidelines (Zadrozny 
+et al., 2017), yet these are often domain-speciﬁc, lack statutory focus, 
+and are not framed within a structured legal hierarchy. In contrast, con-
+ﬂict detection in civil law systems remains largely underexplored. Ex-
+isting approaches rarely engage with real-world statutory conﬂicts as 
+they emerge in legislative or constitutional review. Our work addresses 
+this gap by introducing a bilingual corpus grounded in Italian Consti-
+tutional Court rulings, supporting not only binary conﬂict detection as 
+in the current benchmarks, but also explanation and reference retrieval, 
+thereby enabling the development of interpretable, multilingual legal 
+AI for civil law contexts.
+2.3.  Explanation generation in legal AI
+Explanation generation is an increasingly prominent objective in le-
+gal AI, motivated by the need for transparency and trust. In tasks such 
+as judicial outcome prediction (He et al., 2025), several eﬀorts have fo-
+cused on generating natural language rationales (Chalkidis et al., 2021b; 
+He et al., 2023; Zhong et al., 2020) and legal entailment (Koreeda & 
+Manning, 2021). These approaches typically rely on pre-trained lan-
+guage models ﬁne-tuned to output structured or free-form explanations, 
+sometimes augmented with attention or rationale extraction layers to 
+enhance interpretability. Other works adopt rule-based or logic-driven 
+templates, especially in highly structured domains like regulatory com-
+pliance (Rabelo et al., 2021).
+Despite this growing interest, explanation generation in the con-
+text of statutory conﬂict detection remains underexplored. Existing 
+datasets often lack explicit annotations of the legal reasoning behind 
+conﬂicts, and few benchmarks support multilingual, cross-document, 
+or constitutionally-grounded explanation tasks. Our work addresses this 
+gap by explicitly framing conﬂict explanation as a supervised task, pair-
+ing each identiﬁed conﬂict with concise rationales extracted from real-
+world constitutional rulings. This enables the training and evaluation of 
+models that not only detect contradictions, but also articulate the legal 
+principles and statutory inconsistencies that underlie them.
+2.4.  NLP Methods for legal conﬂicts
+The task of identifying conﬂicts within legal texts aligns closely with 
+broader research in the domain of consistency checking and conﬂict 
+detection across textual content. One prominent approach involves the 
+use of formal logic systems to model and analyze regulatory texts (Chitti-
+malli & Anand, 2016; Chittimalli et al., 2019; Mitra et al., 2018). By rep-
+resenting regulations through logical expressions, conﬂicts can be iden-
+tiﬁed by detecting logical inconsistencies. Deontic logic, which deals 
+with obligation, permission, and prohibition, has been particularly use-
+ful in this context. This method allows for the formalization of norms 
+and the automated detection of normative conﬂicts within and between 
+regulations.
+NLP techniques have also garnered signiﬁcant attention, and one of 
+the most prevalent approaches involves training classiﬁers in a super-
+vised fashion. Convolutional Neural Networks have been widely used 
+for this task, as seen in studies such as Aires et al. (2019c), Aires and 
+Meneguzzi (2021, 2017). Other architectures, such as Long Short-Term 
+Memory (LSTM) networks, have also been applied to norm conﬂict 
+detection. For example, studies like Alshamsan and Chaudhry (2022), 
+Huang et al. (2024b) utilized LSTMs for this purpose. Similarly, Sup-
+port Vector Machines have been leveraged in various works, includ-
+ing Aires et al. (2019b,d), highlighting their eﬀectiveness in classi-
+ﬁcation tasks related to norm conﬂicts. Moreover, transformer-based 
+models have gained attention in recent works, including Ichida and 
+Meneguzzi (2021), van Leijenhorst et al. (2023).
+In order to train such supervised solutions, several methodologies 
+have been explored to construct pairs of conﬂicting texts. One preva-
+lent approach focuses on sentence pairing based on similarity metrics. 
+Tools employing sentence embeddings or n-gram-based cosine similarity 
+have been utilized in Hematialam (2021), van Leijenhorst et al. (2023), 
+Sai et al. (2023). These methods involve linking sentences into candidate 
+pairs once a similarity threshold is met. For example, in Sai et al. (2023), 
+a two-step pairing process was applied to align sentences from hospi-
+tal’s standard operating procedures (SOPs) with recommendations from 
+medical guidelines. Similarly, term-based or entity-based pairing ap-
+proaches were employed in Aires et al. (2018, 2017), Araszkiewicz et al. 
+(2023), where only provisions concerning the same parties were com-
+pared. Additionally, techniques like TextDiﬀ functions, as used in Abual-
+haija et al. (2024), enabled pair creation by identifying diﬀerences or ab-
+sence between provisions in separate lists. Semi-synthetic datasets have 
+also been a signiﬁcant focus in conﬂict detection research, with studies 
+such as Aires et al. (2019b,d), Aires and Meneguzzi (2021), Huang et al. 
+(2024b) that generated semi-synthetic evaluation datasets by inserting 
+contradictions into conﬂict-free texts. This was achieved by manually or 
+semi-automatically altering random normative sentences to create anno-
+tated sentence pairs for model training. Other studies, such as Alsham-
+san and Chaudhry (2022), Koreeda and Manning (2021), constructed 
+a Cartesian product of all relevant text components and subsequently 
+performed their analysis on the resulting pairs.
+While the aforementioned studies primarily compare information 
+within similar document types, some have extended this to cross-type 
+document comparisons. Examples include the alignment of SOPs with 
+medical guidelines (van Leijenhorst et al., 2023), EU Directives with 
+Member State laws (Araszkiewicz et al., 2021), and Data Protection 
+Guidelines with the GDPR (Alshamsan & Chaudhry, 2022). These inter-
+document comparisons illustrate the potential for identifying conﬂicts 
+across heterogeneous legal sources.
+3.  Clash-of-Leges
+The dataset is constructed from rulings issued by the Italian Consti-
+tutional Court, focusing on cases where the constitutional legitimacy of 
+speciﬁc articles was evaluated (see Fig. 3 for the annual distribution of 
+Table 2 
+Text statistics for all samples generated using NLTK (Bird & 
+Loper, 2004), reporting the average number of words (w) and 
+sentences (s) across potentially conﬂicting article pairs (Art. 
+Pair), conﬂict explanations (Explan.), and articles employed in 
+the retrieval task (Retr.).
+ Art. Pair
+ Explan.
+ Retr. Art.
+ w
+ s
+ w
+ s
+ w
+ s
+ Italian
+ 325.68
+ 8.73
+ 48.10
+ 1.53
+ 163.25
+ 4.15
+ English
+ 338.00
+ 9.26
+ 48.54
+ 1.54
+ 173.35
+ 4.63
+Expert Systems With Applications 300 (2026) 130182 
+3 
+P. Italiani et al.
+Fig. 2. Two examples of conﬂicting article pairs, along with their explanations. The portions of the articles declared unconstitutional are highlighted in yellow, 
+indicating their conﬂict with corresponding text portions of an existing law, which are highlighted in red. Additionally, the key elements of the explanations are 
+emphasized in blue.
+Fig. 3. Annual distribution of potentially unconstitutional articles.
+instances). These rulings often involve a detailed analysis of legal con-
+ﬂicts, where one or more articles are found to contradict or challenge the 
+principles set out in the Italian Constitution (see Fig. 4 for the instances’ 
+topic distribution). Table 2 reports the document statistics.
+3.1.  Dataset construction
+Conﬂict Detection. The ﬁrst step in constructing the dataset was identi-
+fying rulings where the CCIR assessed the constitutional legitimacy of 
+one or more legal articles. In these cases, the Court determines whether 
+the contested legal provisions align with the Italian Constitution, and if 
+not, the Court declares the provisions unconstitutional. We manually re-
+viewed these rulings to extract instances where such constitutional con-
+ﬂicts were explicitly identiﬁed, forming the foundation of our dataset. 
+All rulings were reviewed by a single legal expert and not by multiple 
+annotators, since identifying conﬂicting provisions is largely objective. 
+In fact, pairs of conﬂicting articles are immediately recognizable within 
+each ruling due to the standardized language used to signal an antinomy. 
+In addition, we also annotated cases where conﬂicts arose between two 
+articles belonging to diﬀerent laws. These conﬂicts often stem from sit-
+uations where one legal provision challenges the validity or application 
+of another, potentially creating indirect constitutional issues (see Fig. 2 
+Expert Systems With Applications 300 (2026) 130182 
+4 
+P. Italiani et al.
+Fig. 4. Distribution of (a) potentially unconstitutional articles categorized by the authority that issued the law. The abbreviations represent regional classiﬁcations:
+SR (Southern Region), NR (Northern Region), and CR (Central Region); (b) legal instruments to which the articles potentially causing conﬂicts belong; (c) topics of 
+potentially unconstitutional articles. G&J represents Governance and Justice, UP&E stands for Urban Planning and Environment, and PS refers to Public Services.
+for two examples). By including both types of conﬂicts, our dataset cap-
+tures a broader spectrum of legal discrepancies, encompassing not only 
+direct constitutional disputes but also the interplay between diﬀerent 
+levels of statutory law. Fig. 4b illustrates the distribution of the vari-
+ous types of legal instruments involved in conﬂicts with the articles of 
+law reviewed by the CCIR. Once rulings with constitutional conﬂicts 
+were identiﬁed, the next step involved annotating the conﬂicts. In each 
+ruling, legal articles identiﬁed as conﬂicting were meticulously anno-
+tated with their corresponding law number, year, article, and comma 
+when referenced (see Fig. 1 step .(a) for the graphical breakthrough 
+of our annotation approach). Then, to construct negative examples for 
+the classiﬁcation task—instances where two articles are determined not 
+to be in conﬂict—we adopted a systematic approach instead of relying 
+on simple random pairing. Speciﬁcally, we utilized CCIR rulings where 
+constitutional illegitimacy claims were deemed unfounded. This method 
+increases the task’s complexity, presenting the model with pairs of arti-
+cles that exhibit a plausible, albeit non-conﬂicting, relationship, rather 
+than unrelated or at best loosely associated articles.
+Conﬂict Explanation. The annotations focused also on the reasoning pro-
+vided by the Court in its verdict. When available, this was extracted 
+using regex rules; in cases where these rules proved insuﬃcient, Chat-
+GPT was employed to assist in the extraction operation (see Fig. 1 step 
+.(b)). This process ensures that the dataset includes not only the con-
+ﬂicting articles but also provides valuable context about the nature of 
+the conﬂict, which is critical for facilitating more accurate analysis of 
+legal precedents and patterns across similar cases.
+Reference Retrieval. The text of the articles may contain references to 
+others, and in some cases, this contextual information is essential for 
+accurate interpretation. The meaning of an article can easily be misin-
+terpreted, as its implications often depend on its connections to related 
+texts (Tiersma, 2000). Therefore, we automatically identify these ref-
+erences by leveraging the Akoma Ntoso standard,3 which provides a 
+structured, domain-speciﬁc XML vocabulary for representing executive, 
+legislative, and judicial documents in a standardized legal format. We 
+deﬁne a retrieval task where textual references within the article text 
+are removed, requiring the retriever model to accurately identify and 
+return the correct referenced document from a database of 20,000 Ital-
+ian legal articles sourced from Normattiva,4 a comprehensive repository 
+of Italian legal texts (see Fig. 1 step ).
+3 https://unsceb-hlcm.github.io/
+4 The texts were freely obtained from https://www.normattiva.it/ and are not 
+considered authentic.
+Table 3 
+The number of instances for each task organized 
+into three splits. For the reference retrieval task, 
+only a test set is provided, as no training is required 
+for the experiments.
+ Task
+ Train
+ Validation
+ Test
+ Conﬂict Detection
+ 1010
+ 126
+ 127
+ Conﬂict Explanation
+ 201
+ 25
+ 26
+ Reference Retrieval
+ -
+ -
+ 275
+To complement the annotations with the full text of the conﬂicting 
+articles and references, we collected the corresponding legal provisions 
+from authoritative legal databases. For national laws, the articles were 
+scraped from Normattiva. In cases where regional laws were involved, 
+the relevant articles were retrieved from the regional legal websites, 
+ensuring that the dataset includes a wide range of legal texts across 
+diﬀerent legislative levels (see Fig. 1 step ). This multi-source approach 
+ensures that the dataset is both broad and representative, covering a 
+variety of conﬂicts between national and regional legal frameworks and 
+the Constitution.
+Table 3 presents the number of instances for each task, organized 
+into training, validation, and test sets.
+3.2.  Language translation
+We perform automatic translation of articles, references, and expla-
+nations from Italian to English by evaluating various machine transla-
+tion models and services: GPT-4o, Google Translate, and LLaMA-
+3-8B. To assess translation quality, we employ two quality control
+methods and measure the eﬀectiveness of the translations using a sam-
+ple of 102 instances, evenly distributed across the training, validation, 
+and test sets. In line with recent studies that circumvent human analysis 
+due to its high cost (Feng et al., 2022; Scao et al., 2022), particularly 
+when translating lengthy legal texts, we adopt a standard approach to 
+assess translation eﬀectiveness through Round-Trip Translation (or Back 
+Translation). Technically, it involves translating a text into a diﬀerent 
+language and re-translating it to the original one. We implement the 
+same approach as Feng et al. (2022) and Zhu et al. (2019) and employ 
+two evaluation criteria. First, to assess syntactic accuracy, we compute 
+ROUGE scores (Lin, 2004) by comparing the original text with its back-
+translated counterpart. Second, to evaluate beyond syntactic aspects, 
+we measure sentence-level semantic similarity using an Italian cross-
+encoder.5
+5 https://huggingface.co/nickprock/cross-encoder-italian-bert-stsb
+Expert Systems With Applications 300 (2026) 130182 
+5 
+P. Italiani et al.
+Fig. 5. Google Translate’s back-translation performance evaluation on the diﬀerent texts that compose the dataset.
+Table 4 
+Average ROUGE and semantic similarity (SS) % scores on 
+back-translation (full-text rulings) across all languages. The 
+best results are in bold.
+ System
+ ROUGE-1
+ ROUGE-2
+ ROUGE-L
+ SS
+ GPT-4o
+ 76.83
+ 58.30
+ 75.91
+ 86.90
+ LLaMA-3-8B
+ 66.80
+ 44.81
+ 66.36
+ 83.01
+ Google Tr.
+ 82.68
+ 68.62
+ 83.18
+ 88.17
+The results depicted in Table 4 indicate that Google Trans-
+late oﬀers the best overall performance in both syntactic and
+semantic dimensions, surpassing GPT-4o and LLaMA-3-8B. While GPT-
+4o provides strong results, particularly in terms of semantic similar-
+ity, LLaMA-3-8B lags behind in both ROUGE and semantic similar-
+ity scores. Google Translate is grounded in linguistic rules, making 
+its translation more reliable. GPT-4o, on the other hand, while capa-
+ble of producing ﬂuent text, might prioritize coherence and context 
+over preserving the original sentence structure, which could lead to 
+discrepancies when the text is translated. For these reasons, Google 
+Translate has been also the preferred choice in previous studies, 
+which have successfully utilized it for multilingual content genera-
+tion (e.g., Bloomz, T0) (Muennighoﬀ et al., 2022) as well as for
+legal translations (Alkatheery, 2023; Galassi et al., 2020; Ubayawar-
+dena & Hansani, 2023; WIESMANN, 2019). Fig. 5 presents the dis-
+tribution of ROUGE-1 back-translation scores for Google Translate
+across the translated elements of the dataset, such as conﬂict pairs, 
+explanations, referenced articles, and the articles used in the retrieval
+task.
+To validate the reliability of the automatically translated dataset, 
+we also conducted a human evaluation on a subset of instances. 
+Speciﬁcally, we selected 127 translated article pairs from the test 
+set of the conﬂict detection task and 26 translated explanations 
+from the test set of the conﬂict explanation task. Each translation 
+was independently assessed by two bilingual (Italian-English) anno-
+tators with legal expertise. Annotators rated each translation on a 
+scale from 1 (poor) to 5 (excellent) according to the three dimen-
+sions deﬁned in Table 5. The resulting inter-annotator agreement, 
+measured by Cohens kappa, was 0.38. Table 6 reports the aver-
+age scores across both annotators for the entire evaluated subset. 
+Overall, the automatic translations achieved satisfactory performance 
+across all three dimensions, with an average score across categories of 
+3.69 and 3.79 for article pairs and explanation, respectively. Impor-
+tantly, the semantic-ﬁdelity scores conﬁrm that the original meaning is
+preserved.
+Table 5 
+Evaluation dimensions for translated legal articles.
+ Dimension
+Description
+ Semantic Fidelity
+Does the translation accurately 
+preserve the legal intent, obliga-
+tions, rights and conditions of the 
+original text?
+ Legal Precision
+Are legal terms accurately trans-
+lated and are article references 
+and legal constructs well pre-
+served?
+ Clarity & Fluency
+Does the translation reﬂect the 
+formal register and structured 
+style typical of legal texts while re-
+maining syntactically clear, natu-
+ral, and easy to read in the target 
+language?
+Table 6 
+Human evaluation results on the article pairs and explanations belonging to the 
+test set of the conﬂict classiﬁcation and explanation tasks, respectively.
+ Data
+ Semantic Fidelity
+ Legal Precision
+ Clarity & Fluency
+ Avg.
+ Article Pairs
+ 4.24
+ 3.49
+ 3.35
+ 3.69
+ Explanations
+ 4.31
+ 3.63
+ 3.44
+ 3.79
+4.  Experiments
+4.1.  Experimental setup
+Hardware Environment. All runs are tracked with Weights & Biases6 and 
+executed on a workstation with a single Nvidia GeForce RTX3090 GPU 
+of 24 GB of dedicated memory, 64 GB of VRAM, and an Intel® Core™i9-
+10900X1080 CPU @ 3.70GHz. The operating system is Ubuntu 20.04.3 
+LTS. To enhance consistency and portability, our development environ-
+ment is built on top of a docker container with a NVIDIA image.7 All 
+open-source models were ﬁne-tuned on the training set of our dataset for 
+3 epochs using the Unsloth library (Daniel Han & team, 2023) to reduce 
+VRAM consumption and enable faster ﬁne-tuning, with the AdamW op-
+timizer (learning rate 5e-6), a linear scheduler, and a ﬁxed random seed 
+of 42 for reproducibility; no preprocessing was performed.
+Evaluation. We quantify classiﬁcation eﬀectiveness with recall, pre-
+cision, F1-score, and accuracy. We evaluate conﬂict explanation
+6 https://wandb.ai
+7 https://nvidia/cuda:12.3.2-devel-ubuntu22.04
+Expert Systems With Applications 300 (2026) 130182 
+6 
+P. Italiani et al.
+Table 7 
+Models source. Repository identiﬁers and access URLs for all models used in our experiments, covering both 
+API-based and open-source releases.
+ Model
+ Snapshot / Repository
+ URL
+ API Models
+ DeepSeek-R1
+ deepseek-reasoner
+https://api-docs.deepseek.com/guides/reasoning_model
+ GPT-4o
+ gpt-4o-2024-11-20
+https://platform.openai.com/docs/models/gpt-4o
+ Hugging Face Models
+ Gemma-2-9B
+ unsloth/gemma-2-9b-bnb-4bit
+https://huggingface.co/unsloth/gemma-2-9b-bnb-4bit
+ Mistral-7B
+ unsloth/mistral-7b-v0.3-bnb-4bit
+https://huggingface.co/unsloth/mistral-7b-v0.3-bnb-4bit
+ LLaMA-3-8B
+ unsloth/Meta-Llama-3.1-8B
+https://huggingface.co/unsloth/Meta-Llama-3.1-8B
+ SaulLM-7B
+ Equall/Saul-7B-Base
+https://huggingface.co/Equall/Saul-7B-Base
+generation across several key dimensions. First, we report F1 scores 
+for syntactic metrics, including ROUGE-{1,2,L} (Lin, 2004), and the 
+variance-aware aggregated score  (Moro et al., 2023b). Second, for se-
+mantic coverage, we employ the model-based metric BARTScore (Yuan 
+et al., 2021), reporting precision, recall, and F1 values to capture nu-
+anced performance. Finally, we report the Rank@𝑘 metric, with 𝑘∈
+{1, 5, 10} for the retrieval task. Technically, given an input article, we 
+assess how frequently the corresponding references are correctly found 
+within the top-𝑘 items retrieved.
+Baselines. For the conﬂict classiﬁcation and explanation tasks we con-
+sider LLaMA-3-8B,8 which represents a signiﬁcant improvement over 
+its predecessor, LLaMA-2, setting a new standard for LLMs of this 
+scale through enhanced architecture and training techniques. Gemma-2-
+9B (Team et al., 2024) delivers one of the best-in-class performances for 
+its size, competing eﬀectively with models 2-3× larger, while remain-
+ing open and accessible to the community. Mistral-7B (Jiang et al., 
+2023) comprises grouped-query attention (Ainslie et al., 2023) and slid-
+ing window attention (Beltagy et al., 2020) to achieve a harmonious 
+equilibrium between the pursuit of high performance and eﬃciency.
+SaulLM-7B (Colombo et al., 2024) builds upon the Mistral-7B archi-
+tecture and is trained on a specialized English legal corpus comprising 
+over 30 billion tokens. This tailored design achieves state-of-the-art per-
+formance in legal text comprehension and generation tasks. Addition-
+ally, we consider recent closed-source LLMs. Speciﬁcally, we employ
+GPT-4o (Hurst et al., 2024), which oﬀers substantial improvements on 
+text in non-English languages, while also delivering signiﬁcantly faster 
+inference and a 50 % reduction in API cost. DeepSeek-R1 (DeepSeek-AI, 
+2025) is a Mixture-of-Experts language model optimized for reasoning 
+tasks, combining supervised ﬁne-tuning with large-scale reinforcement 
+learning to achieve GPT-4-level performance with improved eﬃciency. 
+The prompts that proved most eﬀective for the conﬂict classiﬁcation and 
+explanation tasks are listed in Table 8. We deliberately omitted few-shot 
+prompting because including even a minimal set of positive and nega-
+tive examples would have made the input excessively long. Moreover, 
+the diversity of conﬂict cases in our dataset is so varied that a single 
+illustrative example would be insuﬃcient to guide the model toward 
+robust generalization. Table 7 provides the sources of all models used.
+For the article retrieval task, we evaluate BM25Okapi (Robertson 
+et al., 1995), a probabilistic model that estimates document relevance 
+with respect to a query as follows:
+BM25 =
+∑
+𝑡∈𝑞
+log
+(𝑛−𝑓𝑡+ 0.5
+𝑓𝑡+ 0.5
+)
+⋅TFBM25
+(1)
+TF =
+𝑓𝑡,𝐝⋅(𝑘1 + 1)
+𝑓𝑡,𝐝+ 𝑘1 ⋅((1 −𝑏) + (𝑏⋅𝓁𝐝∕𝓁avg
+))
+(2)
+8 https://ai.meta.com/blog/meta-llama-3/
+Table 8 
+Prompts employed for evaluating closed-source LLMs.
+ Task
+System Prompt
+ Classification
+You are an expert judge of the Italian Constitutional 
+Court, charged with determining whether two legal 
+articles conﬂict. You will receive input in this exact 
+format: <full text of  in language> [𝐶𝑂𝑁𝐹𝐿_𝐴𝑅𝑇]
+<full text of  in language>. If the two articles con-
+ﬂict, respond exactly with YES. If they do not con-
+ﬂict, respond exactly with NO. Do not include any 
+additional text, commentary, or explanation.
+ Explanation
+You are an expert judge of the Italian Constitu-
+tional Court, charged with writing an explanation 
+of why two articles conﬂict. You will receive in-
+put in this exact format: <full text of  in language>
+[𝐶𝑂𝑁𝐹𝐿_𝐴𝑅𝑇] <full text of  in language>. Write 
+an explanation in language of maximum two sen-
+tences.
+where 𝑛 is the number of documents in the corpus, 𝑓𝑡 is the number 
+of documents containing the query term 𝑡, 𝑓𝑡,𝐝 is the number of occur-
+rences of 𝑡 in the document 𝐝, 𝓁𝐝 is the number of terms in 𝐝, and 𝓁avg
+is the average of 𝓁𝐝 over the corpus. We use the standard parameters: 
+𝑘1 = 1.2 and 𝑏= 0.75. predict relevance between queries and passages. 
+Furthermore, we benchmark ColBERT-XM ()Louis, Saxena), which ef-
+fectively predicts relevance between queries and passages using only 
+a limited set of English examples, leveraging the late interaction ap-
+proach introduced in ColBERT (Khattab & Zaharia, 2020). Additionally, 
+the model achieves eﬀective zero-shot transfer across a diverse array 
+of languages without requiring any further training. We also evaluate 
+the bi-encoder (BiE) architecture (Reimers & Gurevych, 2019a), which 
+employs a siamese BERT network to generate semantically meaningful 
+sentence embeddings. In this framework, the query 𝐪 and document 𝐝𝑖
+are independently processed through an encoder-only transformer, pro-
+ducing two distinct sentence embeddings that are subsequently com-
+pared using cosine similarity. To improve computational eﬃciency, we 
+utilize FAISS (Johnson et al., 2019) for indexing, addressing the chal-
+lenge of eﬃciently comparing high-dimensional vectors. As bi-encoder 
+multilingual models, we operate with MPNet (Song et al., 2020), Dis-
+tiluse (Reimers & Gurevych, 2019b), and MiniLM (Wang et al., 2020). 
+Finally, we explore a hybrid solution, denoted as Hybrid that fuses
+BM25Okapi and MPNet scoring.
+4.2.  Results
+Conﬂict Detection. The results presented in Table 9 show how, in the 
+Italian setting, LLaMA-3-8B achieves the highest F1 score of 73.24, 
+which suggests that it has a more eﬀective understanding of the nu-
+ances and complexities inherent in Italian legal language. In the En-
+glish dataset, LLaMA-3-8B continues to perform robustly, however
+Expert Systems With Applications 300 (2026) 130182 
+7 
+P. Italiani et al.
+Table 9 
+Performance of baseline models on the con-
+ﬂict detection task. Bold denotes the best re-
+sults.
+ Model
+ P
+ R
+ F1
+ IT
+ Fire Gemma-2-9B
+ 85.71
+ 52.50
+ 65.12
+ Fire Mistral-7B
+ 76.47
+ 32.50
+ 45.61
+ Fire LLaMA-3-8B
+ 83.87
+ 65.00
+ 73.24
+ SNOWFLAKE GPT-4o
+ 89.19
+ 41.20
+ 56.41
+ SNOWFLAKE DeepSeek-R1
+ 93.75
+ 37.50
+ 53.57
+ EN
+ Fire SaulLM-7B
+ 84.21
+ 40.00
+ 54.24
+ Fire Gemma-2-9B
+ 85.51
+ 73.75
+ 79.19
+ Fire Mistral-7B
+ 90.24
+ 46.25
+ 61.16
+ Fire LLaMA-3-8B
+ 87.50
+ 70.00
+ 77.78
+ SNOWFLAKE GPT-4o
+ 86.67
+ 32.50
+ 47.27
+ SNOWFLAKE DeepSeek-R1
+ 86.96
+ 50.00
+ 63.49
+Fire = ﬁne-tuned; SNOWFLAKE = frozen
+Table 10 
+Performance of baseline models on the ar-
+ticle retrieval task. Bold denotes the best 
+results.
+ Model
+ R@1
+ R@5
+ R@10
+ IT
+ BM25Okapi
+ 8.99
+ 19.33
+ 22.06
+ Distiluse
+ 5.69
+ 13.30
+ 16.71
+ MiniLM
+ 6.93
+ 11.94
+ 15.63
+ MPNet
+ 5.69
+ 16.63
+ 22.01
+ ColBERT-XM
+ 2.98
+ 13.41
+ 14.46
+ Hybrid
+ 9.59
+ 20.96
+ 25.91
+ EN
+ BM25Okapi
+ 6.72
+ 18.14
+ 20.79
+ Distiluse
+ 6.57
+ 14.57
+ 17.89
+ MiniLM
+ 6.92
+ 16.82
+ 20.52
+ MPNet
+ 6.56
+ 18.32
+ 21.73
+ ColBERT-XM
+ 3.46
+ 10.76
+ 13.77
+ Hybrid
+ 6.93
+ 22.26
+ 27.05
+Table 11 
+Performance of baseline models on the conﬂict explanation gen-
+eration task. Bold denotes the best results.
+ Model
+ R-1
+ R-2
+ R-L
+
+ BaS-R  BaS-P  BaS-F1
+ IT
+ Fire Gemma-2-9B  20.21  4.95
+ 22.30  15.73 -5.113 -5.476 -5.294
+ Fire Mistral-7B
+ 14.59  4.32
+ 16.39  11.73 -6.744 -5.018 -5.881
+ Fire LLaMA-3-8B  17.52  3.39
+ 19.39  13.37 -5.646 -4.909 -5.278
+ SNOWFLAKE GPT-4o
+ 21.45  5.47  22.68  16.43 -4.379 -5.314 -4.846
+ SNOWFLAKE DeepSeek-R1  20.30  4.41
+ 21.10  15.18 -4.525 -5.236 -4.881
+ EN
+ Fire SaulLM-7B
+ 22.01  3.57
+ 22.56  15.92 -4.714 -8.139 -6.427
+ Fire Gemma-2-9B  32.80  8.75
+ 28.71  23.16 -5.412 -4.871 -5.142
+ Fire Mistral-7B
+ 31.95  11.35  29.86  24.18 -5.909 -5.731 -5.820
+ Fire LLaMA-3-8B  31.99  8.57
+ 30.06  23.28 -5.459 -4.800 -5.129
+ SNOWFLAKE GPT-4o
+ 25.62  4.40
+ 22.70  17.42 -6.629 -6.298 -6.463
+ SNOWFLAKE DeepSeek-R1  22.57  3.35
+ 21.20  15.59 -5.633 -5.996 -5.815
+Fire = ﬁne-tuned; SNOWFLAKE = frozen
+Gemma-2-9B slightly surpasses it. Furthermore, a clear trend emerges, 
+all source models, except for GPT-4o, perform better on the English 
+dataset than on the Italian one, as shown in Fig. 8. For instance, Gemma-
+2-9B’s F1 score increases from 65.12 in Italian to 79.19 in English, and
+LLaMA-3-8B shows a similar improvement from 73.24 % to 77.78 %. 
+This enhancement underscores the challenges posed by less-resourced 
+languages like Italian in NLP tasks, particularly in specialized domains 
+such as the legal one. The models generally exhibit higher Precision 
+than Recall across both languages, implying they are more precise in 
+Table 12 
+LLM factuality evaluation prompt.
+System Prompt
+You are a legal expert evaluating the factual accuracy of a model’s explanation of 
+a conﬂict between two statutory articles in {language}.
+Given:
+•Article A: {article_a} Article B: {article_b}
+•Model Explanation: {model_expl} Reference Explanation: {ref_expl}
+Rate how factually correct the Model Explanation is compared to the Articles and 
+the Reference Explanation, ignoring style or ﬂuency.
+Scoring: 5 Fully factual and legally accurate; 4 Mostly factual, minor omissions;
+3 Partially correct, some inaccuracies; 2 Major factual or legal errors; 1 Mostly 
+incorrect or irrelevant; 0 Completely wrong or hallucinated.
+JSON only: {"score": <0-5>}
+their conﬂict predictions but may not identify all instances of conﬂict-
+ing articles. This pattern is critical in legal contexts, where missing a 
+conﬂict can have serious consequences. LLaMA-3-8B’s and Gemma-2-
+9B’s relatively higher Recall suggests they are more reliable in capturing 
+potential conﬂicts, which is advantageous for comprehensive legal anal-
+ysis. Surprisingly, SaulLM-7B achieves the lowest F1 scores, indicating 
+that its advanced understanding of legal language does not contribute 
+in this task. Without task-speciﬁc adaptation, closed-source LLMs gener-
+ate a high number of false negatives and fail to capture key distinctions 
+that our benchmark emphasizes. In contrast, open-source LLMs that we 
+ﬁne-tune directly on our training set internalize the subtle patterns and 
+edge cases that are encoded. With a more ﬁne-grained analysis, Fig. 6 il-
+lustrates that the models generally perform better on the G&J and Work 
+topics. Regarding legal instruments, the models demonstrate stronger 
+performance in cases where the conﬂict is caused by state laws. This 
+preference likely stems from the fact that identifying conﬂicts with con-
+stitutional articles demands a higher level of reasoning, as the cause 
+of the conﬂict is often not explicitly stated in the text of the potentially 
+conﬂicting pair. Furthermore, the improved performance in cases where 
+the potentially unconstitutional article is issued by a regional author-
+ity may be attributed to the frequent involvement of state laws in such 
+cases. Speciﬁcally, in 53.85 % of cases where the issuing authority is a 
+region, the potential conﬂict is caused by a state law.
+Conﬂict Explanation. As showcased in Table 11, in both the Italian 
+and English languages, Gemma-2-9B consistently ranks among the top 
+performers in R-1, R-2, and R-L scores. Notably, in the Italian task,
+Gemma-2-9B achieved an R-1 score of 20.21, outperforming Mistral-
+7B, LLaMA-3-8B and SaulLM-7B. In the English task, the diﬀerence in 
+ROUGE scores between the open-source models narrows, suggesting that
+Mistral-7B and LLaMA-3-8B may handle English explanations nearly 
+as well as Gemma-2-9B, particularly in R-L scores, which measure longer 
+phrase matching. Across all models, English settings outperform Italian 
+ones consistently in both ROUGE and BartScore metrics. For instance,
+Gemma-2-9B’s English R-1 score is 32.80, signiﬁcantly higher than its 
+Italian R-1 score of 20.21. This pattern conﬁrm that the evaluated mod-
+els, even if multilingual, are better optimized for English language tasks 
+than Italian ones. Again, in line with the results observed in the clas-
+siﬁcation task, we ﬁnd a consistent performance gap between closed- 
+and open-source models; however, on the Italian subset they converge 
+to similar scores, with GPT-4o achieving the highest performance. The 
+generally low ROUGE and BartScore metrics imply that generating co-
+herent and accurate explanations about legal conﬂicts is complex and 
+possibly still an open challenge for these models, especially in multilin-
+gual contexts. For a legal system, where detail accuracy is essential to 
+explain conﬂicts between articles of law, these ﬁndings underscore the 
+importance of continued ﬁne-tuning, particularly for non-English lan-
+guage support. The diﬀerences in model performance across languages 
+also highlight the need to assess model capabilities within the speciﬁc 
+linguistic nuances and complexities of legal language, suggesting po-
+tential improvements in dataset balancing and model adjustments. To
+Expert Systems With Applications 300 (2026) 130182 
+8 
+P. Italiani et al.
+Fig. 6. Conﬂict detection F1 scores categorized by left topics of potentially unconstitutional articles. UP&E represents Urban Planning and Environment, G&J denotes 
+Governance and Justice and PS refers to Public Services; center the legal instruments to which the articles potentially causing conﬂicts belong; right the authority 
+that issued the potentially unconstitutional article. The number displayed beneath each label (n) indicates the count of instances associated with the corresponding 
+label.
+Fig. 7. Performance comparison across models in ﬁne-tuning, zero-shot and few-shot settings. Left  score on explanation; Right: F1 score on classiﬁcation.
+Fig. 8. Average metric scores by language for the (a) classiﬁcation, (b) retrieval, and (c) explanation tasks. For the explanation task, only ROUGE-1/2/L scores are 
+considered.
+better understand the underlying causes of model failures, we conducted 
+a detailed error analysis. A legal expert examined 10 randomly sam-
+pled examples for each of the three best-performing LLMs. Table 13 
+summarizes the most frequent types of errors identiﬁed in this eval-
+uation. While the models generally succeed in identifying the broad 
+source of the legal conﬂict, they exhibit critical ﬂaws that undermine the
+reliability of their explanations. A recurring issue is the lack of ter-
+minological precision, which is especially problematic in the legal do-
+main where accurate, context-speciﬁc language is essential and requires 
+domain-speciﬁc knowledge. Another frequent error involves the appli-
+cation of a wrong legal principle. This misapplication reveals gaps in the 
+models’ understanding of foundational legal doctrines. We also observe 
+instances of missing conditions, where essential legal qualiﬁers are omit-
+ted, resulting in incomplete or misleading reasoning. Finally, models 
+exhibit errors related to the subject matter, either by referring to an en-
+tirely incorrect domain or by partially narrowing the scope of the legal 
+issue at hand.
+Zero and Few-Shot Analysis. To demonstrate the importance of task-
+speciﬁc adaptation, we compare the performance of open-source mod-
+els in zero-shot and few-shot settings. The zero-shot experiments were 
+conducted by prompting the models with the same instructions used 
+for the closed-source LLMs, as shown in Table 8. In the few-shot set-
+ting, two examples with their corresponding labels were added to the 
+prompt. Fig. 7 illustrates that ﬁne-tuning consistently outperforms both 
+zero- and few-shot settings across tasks and languages, with the only 
+exception being the conﬂict explanation task on the Italian split, where 
+diﬀerences are minor and overall performance remains poor. This ﬁnd-
+ing further highlights the originality of our dataset. The knowledge ac-
+quired during pre-training alone is insuﬃcient to achieve satisfactory 
+performance, clearly indicating that our data lies outside the domain 
+of the pre-training corpora. Moreover, the zero-shot setting consistently 
+outperforms the few-shot setting, likely because two examples are in-
+suﬃcient to capture the overall data distribution and instead introduce 
+additional noise into the prompt.
+Expert Systems With Applications 300 (2026) 130182 
+9 
+P. Italiani et al.
+Table 13 
+Error analysis of the conﬂict explanation task, with highlighted text indicating the source of each identiﬁed error.
+Model
+Error Type
+Prediction
+Target
+Details
+Gemma-2-9B
+Wrong Legal Princi-
+ple
+that the contested provision provides for a 
+discount on the fees for maritime state con-
+cessions, which are not owed by the sub-
+jects who have already regularized their 
+situation, creating a disparity compared to 
+those who have regularized the concession 
+contract in another way, violating the prin-
+ciple of reasonableness and proportional-
+ity.
+The contested provision provides for the 
+facilitated settlement of pending proceed-
+ings only in favor of the State, excluding 
+public bodies holding fees for the use of 
+state-owned maritime assets, violating the 
+principle of equality.
+Prediction chose “reasonableness and 
+proportionality” rather than the correct 
+“equality” principle.
+Gemma-2-9B
+Terminology Preci-
+sion
+which the fee is calculated on the basis of 
+the eﬃcient power rather than the nomi-
+nal power of the plants, resulting in a more 
+accurate and fair adjustment of the costs of 
+the service, which are borne according to 
+actual use rather than according to a stan-
+dard parameter, which could also be dif-
+ferent from the eﬀective use.
+the regional legislator - in the exercise of its 
+competence, attributable to the concurrent 
+power in the matter of "production, trans-
+port and distribution of energy" (art. 117, 
+third paragraph, Cost), to determine the 
+unit cost of the hydroelectric fee of users 
+with nominal power exceeding 220 kW - 
+has adopted a parameter, for the calcula-
+tion of the overall fee due from the conces-
+sionaires, diﬀerent from that of the "aver-
+age nominal power".
+Prediction uses “eﬃcient power” vs “nom-
+inal power,” but does not reference “av-
+erage nominal power”, nor the threshold 
+(220 kW).
+Llama-3-8B
+Terminology Preci-
+sion
+does not provide that the voluntary ﬁsh se-
+curity guard qualiﬁcation is not granted to 
+those who have been convicted of a crime 
+that entails the application of a prison sen-
+tence, even if suspended.
+…which provides that the issuance and re-
+newal of the qualiﬁcation of voluntary ﬁsh 
+protection guard is not granted to people 
+sentenced to a prison sentence of no less 
+than three years, when the sentence has be-
+come deﬁnitive or when it has been condi-
+tionally pardoned.
+Unlike the target, which requires a min-
+imum three-year sentence, the prediction 
+imposes no minimum sentence length.
+Llama-3-8B
+Missing Condition
+conﬂicts with the fundamental principles 
+of the art. 1 of the Constitution, since it 
+does not exclude from the possibility of 
+beneﬁting from the procedure of collective 
+land alienation, as a general rule, the own-
+ers of the land who are not in possession of 
+it.
+regulating the alienation of collectively 
+owned land for civic use (so-called de-
+statementisation, or declassiﬁcation of 
+civic assets), provides for the possibility 
+of alienation to the occupiers of land al-
+ready built on condition that the construc-
+tions are legitimately carried out or are 
+condoned pursuant to the regulations must 
+be in force regarding the amnesty of build-
+ing violations.
+The requirement that constructions be “le-
+gitimately carried out or condoned” under 
+amnesty rules is dropped.
+Mistral-7B
+Subject Matter
+the contested provisions violate the exclu-
+sive state competence in matters of envi-
+ronmental protection, since they authorize 
+and regulate the construction of hotel and 
+tourist structures in the state maritime ter-
+ritory, which is a limited resource and sub-
+ject to particular environmental protection 
+needs.
+in allowing, at the same time, the construc-
+tion of works that can lead to the consol-
+idation of situations such as to hinder the 
+complete development of landscape plan-
+ning as well as the consumption of the 
+coastal strips, landscape-bound, with frag-
+mented interventions - violates the princi-
+ple of the necessary planning of the assets 
+subjected to landscape restrictions
+Restricts any coastal works with tourism 
+development, ignoring other types of 
+works and the broader landscape planning 
+context at issue in the target.
+Mistral-7B
+Terminology Preci-
+sion
+The contested provision provides for a 
+"one-oﬀ" contribution for ASP workers 
+without collective bargaining, in violation 
+of the exclusive state competence in mat-
+ters of civil law and the fundamental prin-
+ciples of coordination of public ﬁnance.
+The regional law recognizes an economic 
+emolument to ASP employees without 
+agreement or consultation, violating the 
+exclusive competence in civil law matters 
+and replacing collective bargaining.
+Alters the perceived nature of the beneﬁt–
+”emolument” suggests ongoing pay-related 
+entitlement, whereas “one-oﬀ contribu-
+tion” reads as a discretionary grant.
+LLM-as-a-Judge Factuality Evaluation. Given the high number of combi-
+nations of models and languages, we opt for an LLM-based evaluation 
+protocol to evaluate the factual consistency of the generated explanation 
+with respect to the target one. In particular, we drew on the method-
+ological frameworks of G-Eval (Liu et al., 2023), Prometheus (Kim et al., 
+2024), and recent analyses of LLM-as-a-Judge reliability (Huang et al., 
+2024a), which collectively show that LLM evaluators, when properly 
+constrained, correlate strongly with expert assessments on factuality and 
+faithfulness tasks. All factuality scores for the conﬂict explanation task 
+were produced using GPT-5-mini (OpenAI, 2025) under human supervi-
+sion. Two authors manually inspected random subsets of the generated 
+scores to verify alignment with human expectations and to correct cases 
+where the evaluator’s reasoning was inconsistent with the articles’ legal 
+meaning. The evaluator prompt was designed following the structured 
+rubric paradigm of G-Eval, assigning an integer factuality score from 0 
+to 5 based solely on factual and legal correctness. Table 12 showcases 
+the prompt used to evaluate all models.
+Each evaluation was repeated across three independent passes, 
+with scores averaged to reduce stochastic variation as recommended 
+by Huang et al. (2024a). This setup allowed us to obtain reproducible, 
+ﬁne-grained factuality judgments at scale while maintaining the inter-
+pretability and reliability standards advocated in recent LLM-as-a-Judge 
+research. The results in Fig. 9 illustrate how this factuality-oriented 
+analysis reshapes the interpretation of explanation quality. Notably, 
+closed-source models achieve markedly higher factuality scores, sug-
+gesting that their lower syntactic and semantic overlap with reference 
+explanations primarily reﬂects stylistic diﬀerences rather than deﬁcien-
+cies in content preservation. Conversely, open-source models, even after 
+ﬁne-tuning, exhibit substantially lower factuality scores and frequent in-
+stances of hallucinated facts or legal inaccuracies.
+Reference Retrieval. The results presented in Table 10 show a clear dis-
+tinction between the performance of traditional models like BM25Okapi
+and neural models across both Italian and English. BM25Okapi
+Expert Systems With Applications 300 (2026) 130182 
+10 
+P. Italiani et al.
+Fig. 9. Factuality score comparison across models for English and Italian splits.
+demonstrates robust performance in Italian, likely due to its re-
+liance on term matching rather than the linguistic nuances captured 
+by neural models, which are often trained on English-dominated 
+datasets. Neural models such as Distiluse, MiniLM, and MPNet
+exhibit more competitive performance in English, where their train-
+ing on rich and large-scale English corpora allows them to leverage se-
+mantic understanding eﬀectively. This highlights the trade-oﬀ between
+traditional models’ language-agnostic approach and neural models’ re-
+liance on high-quality training data in speciﬁc languages. However, 
+when integrated into the Hybrid solution, they achieve the highest per-
+formance across both language subsets and all evaluation metrics.
+5.  Conclusion
+This paper introduced Clash-of-Leges, a novel bilingual dataset de-
+rived from real-world constitutional court rulings in Italy, speciﬁcally 
+designed to address the challenges of legal conﬂict detection and expla-
+nation. We deﬁned three core tasks–Conﬂict Detection, Conﬂict Expla-
+nation Generation, and Reference Retrieval–emphasizing their poten-
+tial to advance AI applications in legal drafting, statutory analysis, and 
+judicial review. The dataset bridges signiﬁcant gaps in prior research 
+by focusing on authentic conﬂicts between provisions in diﬀerent legal 
+documents rather than synthetically generated ones and incorporating 
+bilingual support to broaden accessibility and research utility. Our ex-
+perimental results highlight the performance of state-of-the-art multilin-
+gual and domain-speciﬁc LLMs across the proposed tasks. While these 
+models achieved promising results, the ﬁndings also revealed persistent 
+challenges, particularly in handling the nuanced language of legal texts 
+and achieving robust performance in less-resourced languages like Ital-
+ian. Our results underscore the unique challenges posed by our Clash-
+of-Leges benchmark and the new capabilities that can be learned from 
+it. Open-source models, having been exposed to the task through tar-
+geted ﬁne-tuning, captured the nuanced linguistic and structural cues 
+that diﬀerentiate conﬂictual from non-conﬂictual articles. In contrast, 
+the closed-source models, evaluated without any in-task examples, con-
+sistently underperformed in conﬂict detection and explanation, indicat-
+ing that their pre-training alone was insuﬃcient to internalize these
+specialized patterns. This disparity persists despite the closed-source 
+models’ greater size and larger pre-training corpora, illustrating that 
+sheer scale cannot substitute for task-speciﬁc adaptation. However, 
+when explanations were assessed through an LLM factuality evaluation 
+framework, a more nuanced picture was revealed. Closed-source models 
+exhibited higher factual consistency and fewer hallucinated statements. 
+This suggests that their lower lexical overlap and less elaborate argu-
+mentative structure stem more from stylistic divergence than from deﬁ-
+ciencies in factual grounding. Taken together, these results show that 
+scale and ﬁne-tuning play complementary roles. Closed-source mod-
+els provide stronger factual grounding, whereas ﬁne-tuned open-source 
+models excel at legal reasoning and interpretive explanation. The de-
+velopment and evaluation of Clash-of-Leges mark a signiﬁcant step 
+toward automating the identiﬁcation and resolution of legal conﬂicts. 
+However, future work must focus on enhancing the reasoning capabili-
+ties and interpretability of AI models (Moro et al., 2024)–also with the 
+aid of knowledge graph learning techniques (Frisoni et al., 2020)–and 
+expanding datasets to include diverse jurisdictions and legal systems 
+to test cross-domain performance (Domeniconi et al., 2015; Lodi et al., 
+2010; Moro & Monti, 2012).
+CRediT authorship contribution statement
+Paolo Italiani: Conceptualization, Methodology, Software, Valida-
+tion, Formal analysis, Investigation, Data curation, Writing – original 
+draft, Writing – review & editing; Gianluca Moro: Conceptualization, 
+Methodology, Investigation, Resources, Writing – review & editing, Su-
+pervision, Project administration; Luca Ragazzi: Conceptualization, In-
+vestigation, Writing – original draft, Writing – review & editing, Visual-
+ization.
+Declaration of competing interest
+The authors declare that they have no known competing ﬁnancial 
+interests or personal relationships that could have appeared to inﬂuence 
+the work reported in this paper. 
+Acknowledgements
+Research partially supported by: AI-PACT (CUP B47H22004450008, 
+B47H22004460001); 
+National 
+Plan 
+PNC-I.1 
+DARE 
+initiative 
+(PNC0000002, CUP B53C22006450001); PNRR Extended Part-
+nership FAIR (PE00000013, Spoke 8); 2024 Scientiﬁc Research and 
+High Technology Program, project “AI analysis for risk assessment of 
+empty lymph nodes in endometrial cancer surgery”, the Fondazione 
+Cassa di Risparmio in Bologna; Chips JU TRISTAN (G.A. 101095947). 
+We thank Maggioli Group for co-funding the Ph.D. scholarship to P. 
+Italiani. 
+Supplementary material
+Supplementary material associated with this article can be found, in 
+the online version, at 10.1016/j.eswa.2025.130182. 
+References
+Abualhaija, S., Ceci, M., Sannier, N., Bianculli, D., Briand, L. C., Zetzsche, D., & Bodellini, 
+M. (2024). Ai-enabled regulatory change analysis of legal requirements. In 2024 IEEE 
+32Nd international requirements engineering conference (RE) (pp. 5–17). IEEE.
+Ainslie, J., Lee-Thorp, J., de Jong, M., Zemlyanskiy, Y., Lebrón, F., & Sanghai, S. (2023). 
+Gqa: Training generalized multi-query transformer models from multi-head check-
+points. arXiv preprint arXiv:2305.13245.
+Aires, J. P., Granada, R., Monteiro, J., Barros, R. C., & Meneguzzi, F. (2019a). Classifying 
+norm conﬂicts using learned semantic representations. CoRR. http://arxiv.org/abs/
+1906.02121.
+Aires, J. P., Granada, R., Monteiro, J., Barros, R. C., & Meneguzzi, F. (2019b). 
+Classifying norm conﬂicts using learned semantic representations. arXiv preprint 
+arXiv:1906.02121.
+Aires, J. P., Granada, R. L., & Meneguzzi, F. R. (2019c). Concon: A contract conﬂict iden-
+tiﬁer. In Proceedings of the 18th international conference on autonomous agents and mul-
+tiagent systems, 2019, canadá.
+Aires, J. P., Granada, R. L., Monteiro, J., Barros, R. C., & Meneguzzi, F. R. (2019d). Classiﬁ-
+cation of contractual conﬂicts via learning of semantic representations. In Proceedings 
+of the 18th international conference on autonomous agents and multiagent systems (AA-
+MAS), 2019, canadá.
+Aires, J. P., & Meneguzzi, F. (2021). Norm conﬂict identiﬁcation using a convolutional 
+neural network. In Coordination, organizations, institutions, norms, and ethics for gover-
+nance of multi-agent systems XIII: International workshops COIN 2017 and COINE 2020, 
+sao paulo, brazil, may 8–9, 2017 and virtual event, may 9, 2020, revised selected papers 
+(pp. 3–19). Springer.
+Expert Systems With Applications 300 (2026) 130182 
+11 
+P. Italiani et al.
+Aires, J. P., & Meneguzzi, F. R. (2017). A deep learning approach for norm conﬂict iden-
+tiﬁcation. In Proceedings of the 16th international conference on autonomous agents and 
+multiagent systems (AAMAS), 2017, brasil.
+Aires, J. P., Monteiro, J., Granada, R., & Meneguzzi, F. (2018). Norm conﬂict identiﬁca-
+tion using vector space oﬀsets. In 2018 International joint conference on neural networks 
+(IJCNN) (pp. 1–8). IEEE.
+Aires, J. P., Pinheiro, D., Lima, V. S. d., & Meneguzzi, F. (2017). Norm conﬂict identiﬁca-
+tion in contracts. Artiﬁcial Intelligence and Law, 25(4), 397–428.
+Aletras, N., Tsarapatsanis, D., Preo¸tiuc-Pietro, D., & Lampos, V. (2016). Predicting judi-
+cial decisions of the european court of human rights: A natural language processing 
+perspective. PeerJ Computer Science, 2, e93.
+Alkatheery, E. R. (2023). Google translate errors in legal texts: Machine translation quality 
+assessment. SocArXiv. March, 15.
+Alshamsan, A. R., & Chaudhry, S. A. (2022). Detecting privacy policies violations using 
+natural language inference (NLI). In 2022 IEEE Asia-paciﬁc conference on computer sci-
+ence and data engineering (CSDE) (pp. 1–6). IEEE.
+Araszkiewicz, M., Francesconi, E., & Zurek, T. (2021). Identiﬁcation of contradictions in 
+regulation. In Legal knowledge and information systems (pp. 151–160). IOS Press.
+Araszkiewicz, M., Francesconi, E., & Zurek, T. (2023). Identiﬁcation of legislative errors. 
+In Proceedings of the nineteenth international conference on artiﬁcial intelligence and law 
+(pp. 2–11).
+Ashley, K. D. (2017). Artiﬁcial intelligence and legal analytics: new tools for law practice 
+in the digital age. Cambridge University Press.
+Beltagy, I., Peters, M. E., & Cohan, A. (2020). Longformer: The long-document transformer. 
+arXiv preprint arXiv:2004.05150.
+Bird, S., & Loper, E. (2004). NLTK: The natural language toolkit. In ACL (pp. 214–217). 
+Barcelona, Spain: ACL. https://aclanthology.org/P04-3031.
+Chalkidis, I., Fergadiotis, M., Tsarapatsanis, D., Aletras, N., Androutsopoulos, I., & Malaka-
+siotis, P. (2021a). Paragraph-level rationale extraction through regularization: A case 
+study on european court of human rights cases. In K. Toutanova, A. Rumshisky, 
+L. Zettlemoyer, D. Hakkani-Tür, I. Beltagy, S. Bethard, R. Cotterell, T. Chakraborty, 
+& Y. Zhou (Eds.), Proceedings of the 2021 conference of the north american chapter of 
+the association for computational linguistics: Human language technologies, NAACL-HLT 
+2021, online, june 6–11, 2021 (pp. 226–241). Association for Computational Linguis-
+tics. https://doi.org/10.18653/V1/2021.NAACL-MAIN.22
+Chalkidis, I., Jana, A., Hartung, D., Bommarito, M., Androutsopoulos, I., Katz, D. M., & 
+Aletras, N. (2021b). LexGLUE: A benchmark dataset for legal language understanding 
+in english. arXiv preprint arXiv:2110.00976.
+Chittimalli, P. K., & Anand, K. (2016). Domain-independent method of detecting incon-
+sistencies in sbvr-based business rules. In Proceedings of the international workshop on 
+formal methods for analysis of business systems (pp. 9–16).
+Chittimalli, P. K., Anand, K., Pradhan, S., Mitra, S., Prakash, C., Shere, R., & Naik, R. 
+(2019). BuRRito: A framework to extract, specify, verify and analyze business rules. In 
+2019 34Th IEEE/ACM international conference on automated software engineering (ASE) 
+(pp. 1190–1193). IEEE.
+Colombo, P., Pires, T. P., Boudiaf, M., Culver, D., Melo, R., Corro, C., Martins, A. F. T., 
+Esposito, F., Raposo, V. L., Morgado, S. et al. (2024). Saullm-7b: A pioneering large 
+language model for law. arXiv preprint arXiv:2403.03883.
+Daniel Han, M. H., & team, U. (2023). Unsloth. http://github.com/unslothai/unsloth.
+DeepSeek-AI (2025). Deepseek-r1: Incentivizing reasoning capability in LLMs via rein-
+forcement learning. https://arxiv.org/abs/2501.12948.
+Domeniconi, G., Moro, G., Pagliarani, A., & Pasolini, R. (2015). Markov chain based 
+method for in-domain and cross-domain sentiment classiﬁcation. In A. L. N. Fred, 
+J. L. G. Dietz, D. Aveiro, K. Liu, & J. Filipe (Eds.), KDIR 2015 - Proceedings of the 
+international conference on knowledge discovery and information retrieval, part of the 7th 
+international joint conference on knowledge discovery, knowledge engineering and knowl-
+edge management (IC3k 2015), volume 1, lisbon, portugal, november 12–14, 2015 (pp. 
+127–137). SciTePress. https://doi.org/10.5220/0005636001270137
+Feng, X., Feng, X., & Qin, B. (2022). Msamsum: Towards benchmarking multi-lingual 
+dialogue summarization. In S. Feng, H. Wan, C. Yuan, & H. Yu (Eds.), Dialdoc@ACL 
+2022 (pp. 1–12). ACL. https://doi.org/10.18653/v1/2022.dialdoc-1.1
+Frisoni, G., Moro, G., & Carbonaro, A. (2020). Learning interpretable and statistically sig-
+niﬁcant
+knowledge from unlabeled corpora of social text messages: A novel methodology 
+of descriptive text mining. In S. Hammoudi, C. Quix, & J. Bernardino (Eds.), Pro-
+ceedings of the 9th international conference on data science, technology and applications,
+DATA 2020, lieusaint, paris, france, july 7–9, 2020 (pp. 121–132). SciTePress. 
+https://doi.org/10.5220/0009892001210132
+Galassi, A., Drazewski, K., Lippi, M., & Torroni, P. (2020). Cross-lingual annotation pro-
+jection in legal texts. In Proceedings of the 28th international conference on computational 
+linguistics (pp. 915–926).
+He, C., Tan, T., Xue, S., & Tan, Y. (2023). Explaining legal judgments: A multitask learning 
+framework for enhancing factual consistency in rationale generation. Journal of King 
+Saud University Computer and Information Sciences, 35(10), 101868. https://doi.org/10.
+1016/J.JKSUCI.2023.101868
+He, C., Tan, T., Xue, S., & Tan, Y. (2025). Simulating judicial trial logic: Dual residual cross-
+attention learning for predicting legal judgment in long documents. Expert Systems with 
+Applications, 261, 125462. https://doi.org/10.1016/j.eswa.2024.125462.
+Hematialam, H. (2021). Knowledge Extraction and Analysis of Medical Text with Partic-
+ular Emphasis on Medical Guidelines. Ph.D. thesis. The University of North Carolina 
+at Charlotte.
+Huang, H., Qu, Y., Liu, J., Yang, M., & Zhao, T. (2024a). An empirical study of llm-as-a-
+judge for LLM evaluation: Fine-tuned judge models are task-speciﬁc classiﬁers. CoRR. 
+https://doi.org/10.48550/ARXIV.2403.02839
+Huang, S., Sun, J., & Li, R. (2024b). Neuralconﬂict: Using neural networks to identify 
+norm conﬂicts in normative documents. Expert Systems, 41(6), e13035.
+Hurst, A., Lerer, A., Goucher, A. P. et al. (2024). Gpt-4o system card. CoRR. https://doi.
+org/10.48550/ARXIV.2410.21276
+Ichida, A. Y., & Meneguzzi, F. (2021). Detecting logical relation in contract clauses. arXiv 
+preprint arXiv:2111.01856.
+Italiani, P., Moro, G., & Ragazzi, L. (2025). Enhancing legal question answering with data 
+generation and knowledge distillation from large language models. Artiﬁcial Intelligence 
+and Law. https://doi.org/10.1007/s10506-025-09463-9
+Jiang, A. Q., Sablayrolles, A., Mensch, A., Bamford, C., Chaplot, D. S., de las, C. D., Bres-
+sand, F., Lengyel, G., Lample, G., Saulnier, L. et al. (2023). Mistral 7b. arXiv preprint 
+arXiv:2310.06825.
+Johnson, J., Douze, M., & Jégou, H. (2019). Billion-scale similarity search with gpus. IEEE 
+Transactions on Big Data, 7(3), 535–547.
+Khattab, O., & Zaharia, M. (2020). Colbert: Eﬃcient and eﬀective passage search via con-
+textualized late interaction over bert. In Proceedings of the 43rd international ACM SIGIR 
+conference on research and development in information retrieval (pp. 39–48).
+Kim, S., Shin, J., Choi, Y., Jang, J., Longpre, S., Lee, H., Yun, S., Shin, S., Kim, S., Thorne, J., 
+& Seo, M. (2024). Prometheus: Inducing ﬁne-grained evaluation capability in language 
+models. In The twelfth international conference on learning representations, ICLR 2024, 
+vienna, austria, may 7–11, 2024. OpenReview.net. https://openreview.net/forum?id=
+8euJaTveKw.
+Koreeda, Y., & Manning, C. D. (2021). ContractNLI: A dataset for document-level natural 
+language inference for contracts. arXiv preprint arXiv:2110.01799.
+van Leijenhorst, L., de Vries, A. P., Habben Jansen, T., & Wertheim, H. (2023). Sopalign: 
+A tool for automatic estimation of compliance with medical guidelines. In European 
+conference on information retrieval (pp. 307–312). Springer.
+Lin, C.-Y. (2004). ROUGE: A package for automatic evaluation of summaries. In Text sum-
+marization branches out (pp. 74–81). Barcelona, Spain: ACL. https://aclanthology.org/
+W04-1013.
+Liu, Y., Iter, D., Xu, Y., Wang, S., Xu, R., & Zhu, C. (2023). G-Eval: NLG evaluation using 
+gpt-4 with better human alignment. In H. Bouamor, J. Pino, & K. Bali (Eds.), Proceed-
+ings of the 2023 conference on empirical methods in natural language processing, EMNLP 
+2023, singapore, december 6–10, 2023 (pp. 2511–2522). Association for Computational 
+Linguistics. https://doi.org/10.18653/V1/2023.EMNLP-MAIN.153
+Lodi, S., Moro, G., & Sartori, C. (2010). Distributed data clustering in multi-dimensional 
+peer-to-peer networks. In H. T. Shen, & A. Bouguettaya (Eds.), Database tech-
+nologies 2010, twenty-ﬁrst australasian database conference (ADC 2010), brisbane, 
+australia, 18–22 january, 2010, proceedings (pp. 171–178). Australian Computer 
+Society (vol. 104). CRPIT. http://portal.acm.org/citation.cfm?id=1862264&CFID=
+17470975&CFTOKEN=71845406.
+Louis, A., Saxena, V., van Dijck, G., & Spanakis, G. (). Colbert-XM: A modular multi-
+vector representation model for zero-shot multilingual information retrieval. coRR 
+abs/2402.15059 (2024). https://arxiv.org/abs/2402.15059.
+Ma, Y., Shao, Y., Wu, Y., Liu, Y., Zhang, R., Zhang, M., & Ma, S. (2021). LecaRD: A legal 
+case retrieval dataset for chinese law system. In F. Diaz, C. Shah, T. Suel, P. Castells, 
+R. Jones, & T. Sakai (Eds.), SIGIR ’21: The 44th international ACM SIGIR conference on 
+research and development in information retrieval, virtual event, canada, july 11–15, 2021 
+(pp. 2342–2348). ACM. https://doi.org/10.1145/3404835.3463250
+Mitra, S., Anand, K., & Chittimalli, P. K. (2018). Identifying anomalies in SBVR-based 
+business rules using directed graphs and SMT-LIBv2. In Iceis (2) (pp. 215–222).
+Moro, G., & Monti, G. (2012). W-Grid: A scalable and eﬃcient self-organizing infras-
+tructure for multi-dimensional data management, querying and routing in wireless 
+data-centric sensor networks. Journal of Network and Computer Applications, 35(4), 
+1218–1234. https://doi.org/10.1016/J.JNCA.2011.05.002
+Moro, G., Piscaglia, N., Ragazzi, L., & Italiani, P. (2023a). Multi-language transfer learning 
+for low-resource legal case summarization. Artiﬁcial Intelligence and Law, (pp. 1–29). 
+https://doi.org/10.1007/s10506-023-09373-8
+Moro, G., & Ragazzi, L. (2022). Semantic self-segmentation for abstractive summarization 
+of long documents in low-resource regimes. In Thirty-sixth AAAI conference on artiﬁ-
+cial intelligence, AAAI 2022, thirty-fourth conference on innovative applications of artiﬁcial 
+intelligence, IAAI 2022, the twelveth symposium on educational advances in artiﬁcial intel-
+ligence, EAAI 2022 virtual event, february 22, - march 1, 2022 (pp. 11085–11093). AAAI 
+Press. https://doi.org/10.1609/AAAI.V36I10.21357
+Moro, G., & Ragazzi, L. (2023). Align-then-abstract representation learning for low-
+resource summarization. Neurocomputing, 548, 126356. https://doi.org/10.1016/J.
+NEUCOM.2023.126356
+Moro, G., Ragazzi, L., & Valgimigli, L. (2023b). Carburacy: Summarization models tuning 
+and comparison in eco-sustainable regimes with a novel carbon-aware accuracy. In 
+B. Williams, Y. Chen, & J. Neville (Eds.), Thirty-seventh AAAI conference on artiﬁcial 
+intelligence, AAAI 2023, thirty-ﬁfth conference on innovative applications of artiﬁcial intel-
+ligence, IAAI 2023, thirteenth symposium on educational advances in artiﬁcial intelligence, 
+EAAI 2023, washington, dc, usa, february 7–14, 2023 (pp. 14417–14425). AAAI Press. 
+https://doi.org/10.1609/AAAI.V37I12.26686
+Moro, G., Ragazzi, L., & Valgimigli, L. (2023c). Graph-based abstractive summarization 
+of extracted essential knowledge for low-resource scenarios. In K. Gal, A. Nowé, G. J. 
+Nalepa, R. Fairstein, & R. Radulescu (Eds.), ECAI 2023 - 26Th european conference on 
+artiﬁcial intelligence, september 30, - october 4, 2023, kraków, poland - including 12th 
+conference on prestigious applications of intelligent systems (PAIS 2023) (pp. 1747–1754). 
+IOS Press (vol. 372). Frontiers in Artiﬁcial Intelligence and Applications. https://doi.
+org/10.3233/FAIA230460
+Moro, G., Ragazzi, L., Valgimigli, L., Vincenzi, F., & Freddi, D. (2024). Revelio: In-
+terpretable long-form question answering. In The second tiny papers track at ICLR 
+2024, tiny papers @ ICLR 2024, vienna, austria, may 11, 2024. OpenReview.net. https:
+//openreview.net/forum?id=fyvEJXsaQf.
+Muennighoﬀ, N., Wang, T., Sutawika, L., Roberts, A., Biderman, S., Scao, T. L., Bari, M. S., 
+Shen, S., Yong, Z. X., Schoelkopf, H., Tang, X., Radev, D., Aji, A. F., Almubarak, K., 
+Albanie, S., Alyafeai, Z., Webson, A., Raﬀ, E., & Raﬀel, C. (2022). Crosslingual gener-
+Expert Systems With Applications 300 (2026) 130182 
+12 
+P. Italiani et al.
+alization through multitask ﬁnetuning. CoRR. https://doi.org/10.48550/ARXIV.2211.
+01786
+OpenAI (2025). Gpt-5 system card. https://cdn.openai.com/gpt-5-system-card.pdf.
+Rabelo, J., Kim, M.-Y., Goebel, R., Yoshioka, M., Kano, Y., & Satoh, K. (2021). Coliee 
+2020: Methods for legal document retrieval and entailment. In New frontiers in artiﬁcial 
+intelligence: JSAI-isAI 2020 workshops, JURISIN, LENLS 2020 workshops, virtual event, 
+november 15–17, 2020, revised selected papers 12 (pp. 196–210). Springer.
+Ragazzi, L., Moro, G., Guidi, S., & Frisoni, G. (2024). Lawsuit: A large expert-written 
+summarization dataset of italian constitutional court verdicts. Artiﬁcial Intelligence and 
+Law. https://api.semanticscholar.org/CorpusID:272530787.
+Ragazzi, L., Moro, G., Valgimigli, L., & Fiorani, R. (2025). Cross-document distillation 
+via graph-based summarization of extracted essential knowledge. IEEE Transactions on 
+Audio, Speech and Language Processing, 33, 518–527. https://doi.org/10.1109/TASLP.
+2024.3490375
+Reimers, N., & Gurevych, I. (2019a). Sentence-bert: Sentence embeddings using siamese 
+bert-networks. arXiv preprint arXiv:1908.10084.
+Reimers, N., & Gurevych, I. (2019b). Sentence-BERT: Sentence embeddings using siamese 
+BERT-networks. In Proceedings of the 2019 conference on empirical methods in natural 
+language processing. Association for Computational Linguistics. http://arxiv.org/abs/
+1908.10084.
+Rissland, E. L., & Ashley, K. D. (1987). A case-based system for trade secrets law. In Pro-
+ceedings of the 1st international conference on artiﬁcial intelligence and law (pp. 60–66).
+Robertson, S. E., Walker, S., Jones, S., Hancock-Beaulieu, M. M., Gatford, M. et al. (1995). 
+Okapi at TREC-3. Nist Special Publication Sp, 109, 109.
+Sai, C., Winter, K., Fernanda, E., & Rinderle-Ma, S. (2023). Detecting deviations between 
+external and internal regulatory requirements for improved process compliance as-
+sessment. In International conference on advanced information systems engineering (pp. 
+401–416). Springer.
+Scao, T. L., Fan, A., Akiki, C., Pavlick, E., Ilic, S., Hesslow, D., Castagné, R., Luccioni, A. S., 
+Yvon, F., Gallé, M., Tow, J., Rush, A. M., Biderman, S., Webson, A., Ammanamanchi, 
+P. S., Wang, T., Sagot, B., Muennighoﬀ, N., del Moral, A. V., Ruwase, O., Bawden, R., 
+Bekman, S., McMillan-Major, A., Beltagy, I., Nguyen, H., Saulnier, L., Tan, S., Suarez, 
+P. O., Sanh, V., Laurençon, H., Jernite, Y., Launay, J., Mitchell, M., Raﬀel, C., Gokaslan, 
+A., Simhi, A., Soroa, A., Aji, A. F., Alfassy, A., Rogers, A., Nitzav, A. K., Xu, C., Mou, 
+C., Emezue, C., Klamm, C., Leong, C., van Strien, D., & Adelani, D. I., et al. (2022). 
+BLOOM: A 176b-parameter open-access multilingual language model. CoRR. https:
+//doi.org/10.48550/ARXIV.2211.05100
+Schumann, G., & Gómex, J. M. (2024). Detection of conﬂicts, contradictions and inconsis-
+tencies in regulatory documents: A literature review. In 2024 Fifth international confer-
+ence on intelligent data science technologies and applications (IDSTA) (pp. 81–88). IEEE.
+Song, K., Tan, X., Qin, T., Lu, J., & Liu, T. (2020). Mpnet: Masked and permuted pre-
+training for language understanding. In H. Larochelle, M. Ranzato, R. Hadsell, M. Bal-
+can, & H. Lin (Eds.), Advances in neural information processing systems 33: Annual confer-
+ence on neural information processing systems 2020, neurIPS 2020, december 6–12, 2020, 
+virtual.
+Team, G., Riviere, M., Pathak, S., Sessa, P. G., Hardin, C., Bhupatiraju, S., Hussenot, L., 
+Mesnard, T., Shahriari, B., Ramé, A. et al. (2024). Gemma 2: Improving open language 
+models at a practical size. arXiv preprint arXiv:2408.00118.
+Tiersma, P. (2000). Legal language. Bibliovault OAI Repository, the University of Chicago 
+Press, 27. https://doi.org/10.1016/S1352-0237(00)00210-0
+Tuggener, D., von Däniken, P., Peetz, T., & Cieliebak, M. (2020). LEDGAR: A large-scale 
+multi-label corpus for text classiﬁcation of legal provisions in contracts. In N. Cal-
+zolari, F. Béchet, P. Blache, K. Choukri, C. Cieri, T. Declerck, S. Goggi, H. Isahara, 
+B. Maegaard, J. Mariani, H. Mazo, A. Moreno, J. Odijk, & S. Piperidis (Eds.), Pro-
+ceedings of the 12th language resources and evaluation conference, LREC 2020, marseille, 
+france, may 11–16, 2020 (pp. 1235–1241). European Language Resources Association. 
+https://aclanthology.org/2020.lrec-1.155/.
+Ubayawardena, N., & Hansani, M. (2023). A study on the eﬀectiveness of using google 
+translate in legal translation: With special reference to selected legal documents of the 
+registrar general’s department, 1.
+Wang, W., Wei, F., Dong, L., Bao, H., Yang, N., & Zhou, M. (2020). Minilm: Deep self-
+attention distillation for task-agnostic compression of pre-trained transformers. Ad-
+vances in Neural Information Processing Systems, 33, 5776–5788.
+WIESMANN, E. (2019). Machine translation in the ﬁeld of law: A study of the 
+translation of italian legal texts into german. Comparative Legilinguistics, 37, 
+117–153. https://pressto.amu.edu.pl/index.php/cl/article/view/18273. https://doi.
+org/10.14746/cl.2019.37.4
+Yuan, W., Neubig, G., & Liu, P. (2021). Bartscore: Evaluating generated text as text 
+generation. In M. Ranzato, A. Beygelzimer, Y. N. Dauphin, P. Liang, & J. W. 
+Vaughan (Eds.), Advances in neural information processing systems 34: annual con-
+ference on neural information processing systems 2021, neurIPS 2021, december 6–14, 
+2021, virtual (pp. 27263–27277). https://proceedings.neurips.cc/paper/2021/hash/
+e4d2b6e6fdeca3e60e0f1a62fee3d9dd-Abstract.html.
+Zadrozny, W., Hematialam, H., & Garbayo, L. (2017). Towards semantic modeling of con-
+tradictions and disagreements: A case study of medical guidelines. In C. Gardent, & 
+C. Retoré (Eds.), IWCS 2017 - 12Th international conference on computational semantics 
+- short papers, montpellier, france, september 19, - 22, 2017. The Association for Com-
+puter Linguistics. https://aclanthology.org/W17-6943/.
+Zheng, L., Guha, N., Anderson, B. R., Henderson, P., & Ho, D. E. (2021). When does pre-
+training help?: Assessing self-supervised learning for law and the caseHOLD dataset of 
+53, 000+ legal holdings. In J. Maranhão, & A. Z. Wyner (Eds.), ICAIL ’21: Eighteenth 
+international conference for artiﬁcial intelligence and law, são paulo brazil, june 21, - 25, 
+2021 (pp. 159–168). ACM. https://doi.org/10.1145/3462757.3466088
+Zhong, H., Xiao, C., Tu, C., Zhang, T., Liu, Z., & Sun, M. (2020). JEC-QA: A legal-domain 
+question answering dataset. In The thirty-fourth AAAI conference on artiﬁcial intelligence, 
+AAAI 2020, the thirty-second innovative applications of artiﬁcial intelligence conference, 
+IAAI 2020, the tenth AAAI symposium on educational advances in artiﬁcial intelligence, 
+EAAI 2020, new york, ny, usa, february 7–12, 2020 (pp. 9701–9708). AAAI Press. https:
+//doi.org/10.1609/AAAI.V34I05.6519
+Zhu, J., Wang, Q., Wang, Y., Zhou, Y. et al. (2019). NCLS: Neural cross-lingual summariza-
+tion. In EMNLP-IJCNLP (pp. 3054–3064). Hong Kong, China: ACL. https://doi.org/10.
+18653/v1/D19-1302
+Expert Systems With Applications 300 (2026) 130182 
+13 

@@ -43,11 +43,45 @@ STALE_COUNTS = {
     "27,357": "stale enactment count (canonical 27,248)",
     "1,925": "stale local ordinance count (canonical 1,816)",
     "1,660": "approximate/stale local archive count (canonical 1,816) - review context",
-    "176,421": "serialized demo index size, not canonical corpus size (177,423) - review context",
+    "176,421": "stale demo index size (live index is 176,441; canonical 177,423)",
     "176,423": "stale provision count (canonical 177,423)",
     "178,494": "stale provision count (canonical 177,423)",
-    "164,621": "demo index offset - review context",
+    "164,621": "stale demo index offset (updated to 164,640 after PD 1869) - review context",
 }
+
+SEMICOLON_RATHER_RE = re.compile(
+    r";\s*(?:rather|instead)\b|,\s*rather,\s+|(?:^|[.!?]\s+)\s*Rather,\s+"
+    r"|\b(?:far\s+)?more\s+than\b[^.\n]{0,90};\s*(?:it|they|this|these)\b",
+    re.I | re.M,
+)
+CONCESSIVE_OPENER_RE = re.compile(r"(?:^\s*|[.!?]\s+)(?:While|Although)\b[^.\n]{8,260},", re.M)
+ADJ_DOUBLING_RE = re.compile(
+    r"\b(?:a|an|the|to|of|in|as|from|with|into|for|through|by|across|such|its|their|these|those|this|that)"
+    r"\s+([a-z]+(?:-[a-z]+)?),\s+([a-z]+(?:-[a-z]+)?)\s+([a-z]+(?:-[a-z]+)?)\b",
+    re.I,
+)
+TRIAD_AND_OR_RE = re.compile(
+    r"\b(?!who\b|which\b|that\b|when\b)(\w+(?:\s+\w+){0,2}),\s+"
+    r"(?!who\b|which\b|that\b|when\b|however\b|therefore\b|thus\b)(\w+(?:\s+\w+){0,2}),\s+"
+    r"(?:and|or)\s+(?!who\b|which\b|that\b|when\b)(\w+(?:\s+\w+){0,2})\b",
+    re.I,
+)
+ACR_DEF_RE = re.compile(r"([A-Z][a-zA-Z\-]+(?:\s+[A-Za-z\-]+){1,5})\s+\(([A-Z]{2,8})\)")
+ADJ_SKIP_W2 = {
+    "and", "or", "but", "the", "a", "an", "in", "of", "to", "for", "with", "that", "which", "where", "who",
+    "while", "when", "if", "as", "by", "on", "at", "from", "not", "such", "including", "especially",
+    "respectively", "however", "therefore", "thus", "namely", "particularly", "primarily", "specifically",
+    "rather", "instead", "whereas", "although", "though", "unless", "until", "since", "because", "after",
+    "before", "during", "under", "over", "between", "among", "within", "without", "through", "across",
+    "into", "onto", "upon", "about", "against", "toward", "towards", "alongside", "beyond", "despite",
+    "via", "per", "vs", "et", "e", "i",
+}
+ADJ_SKIP_W3 = {
+    "and", "or", "of", "in", "to", "for", "with", "is", "are", "was", "were", "be", "has", "have", "had",
+    "that", "which", "as", "by", "on", "at", "from", "not", "but", "can", "will", "would", "should",
+    "could", "may", "might", "must", "shall", "do", "does", "did", "the", "a", "an",
+}
+ACR_SKIP = {"II", "III", "IV", "VI", "VII", "VIII", "IX", "XI", "XII", "RA", "PD", "EO", "BP", "CA", "GR", "NO", "SEC", "ART"}
 
 BANNED_WORDS = [
     "tapestry", "delve", "underscore", "underscores", "underscored", "testament to", "beacon",
@@ -174,10 +208,15 @@ def hit(line, category, note, match="", severity="warn"):
 
 # --------------------------------------------------------------------------- per-file checks
 
-def check_prose(rel: str, src: str, prose: str, declaude) -> list[dict]:
+def check_prose(rel: str, src: str, prose: str, declaude, acronym_seen: dict | None = None) -> list[dict]:
     hits: list[dict] = []
     plines = prose.split("\n")
+    in_def_terms = False
     for i, ln in enumerate(plines, 1):
+        if rel.endswith("introduction.tex") and i <= len(src.splitlines()):
+            raw_ln = src.splitlines()[i - 1]
+            if r"\section{Definition of Terms}" in raw_ln:
+                in_def_terms = True
         low = ln.lower()
         for w in BANNED_WORDS:
             for m in re.finditer(r"\b" + re.escape(w) + r"\b", low):
@@ -191,6 +230,32 @@ def check_prose(rel: str, src: str, prose: str, declaude) -> list[dict]:
             hits.append(hit(i, "flat-certainty-adverb", "adverb standing in for evidence", ln[max(0, m.start() - 30):m.end() + 30]))
         for m in re.finditer(r"\bnot only\b.{0,90}\bbut\b|\bnot just\b.{0,60}\bbut\b|\bis not just\b", low):
             hits.append(hit(i, "not-just-x-but-y", "'not just X but Y' construction", ln[max(0, m.start() - 10):m.end() + 20]))
+        for m in SEMICOLON_RATHER_RE.finditer(ln):
+            hits.append(hit(i, "semicolon-rather", "semicolon-rather / negation-reframe pivot", ln[max(0, m.start() - 35):m.end() + 45]))
+        for m in CONCESSIVE_OPENER_RE.finditer(ln):
+            hits.append(hit(i, "concessive-opener", "formulaic While/Although X, Y sentence opener", m.group(0).strip()[:140]))
+        for m in ADJ_DOUBLING_RE.finditer(ln):
+            w1, w2, w3 = m.group(1).lower(), m.group(2).lower(), m.group(3).lower()
+            if w2 in ADJ_SKIP_W2 or w3 in ADJ_SKIP_W3 or w1 in ADJ_SKIP_W2:
+                continue
+            if w1.isdigit() or w2.isdigit() or len(w1) < 3 or len(w2) < 3:
+                continue
+            hits.append(hit(i, "adj-doubling", "comma-separated pre-nominal adjective doubling", m.group(0)))
+        for m in TRIAD_AND_OR_RE.finditer(ln):
+            hits.append(hit(i, "triad-and-or", "three-item triplet (and/or)", ln[max(0, m.start() - 15):m.end() + 25]))
+        for m in re.finditer(r"\bsevere(?:ly)?\b", ln, re.I):
+            hits.append(hit(i, "reflexive-severe", "reflexive 'severe' intensifier (keep only for measured physical damage)", ln[max(0, m.start() - 25):m.end() + 30]))
+        for m in re.finditer(r"\brather than\b", ln, re.I):
+            hits.append(hit(i, "rather-than-overuse", "prefer 'instead of' or direct contrast where natural", ln[max(0, m.start() - 25):m.end() + 35], "info"))
+        if acronym_seen is not None and not rel.endswith("abstract.tex") and not in_def_terms:
+            for m in ACR_DEF_RE.finditer(ln):
+                acr, full = m.group(2), m.group(1).strip()
+                if acr in ACR_SKIP:
+                    continue
+                if acr in acronym_seen:
+                    hits.append(hit(i, "acronym-reexpansion", f"redundant acronym expansion '{full} ({acr})' (first at {acronym_seen[acr]})", m.group(0)))
+                else:
+                    acronym_seen[acr] = f"{rel}:{i}"
         for m in re.finditer(r",\s+(?:\w+ly\s+)?(?:achieving|ensuring|highlighting|enabling|preventing|demonstrating|reflecting|"
                              r"underscoring|allowing|providing|resulting|confirming|establishing|illustrating|reducing|"
                              r"increasing|maintaining|offering|yielding|exposing|revealing)\b[^.;:]{3,140}[.;]", ln):
@@ -329,10 +394,11 @@ def check_latex(rel: str, src: str) -> list[dict]:
 
 
 def abstract_check(src: str) -> list[dict]:
-    body = to_prose(src)
+    body_src = re.split(r"\\noindent\\textbf\{Keywords:\}|^Keywords:", src, maxsplit=1)[0]
+    body = to_prose(body_src)
     words = len(re.findall(r"[A-Za-z0-9][A-Za-z0-9'%.,\-]*", body))
-    sev = "error" if words > 250 else "info"
-    return [hit(0, "abstract-words", f"abstract has ~{words} words (limit 250)", "", sev)]
+    sev = "error" if words > 285 else ("warn" if words > 250 else "info")
+    return [hit(0, "abstract-words", f"abstract body has ~{words} words (guide ~250, cap 285)", "", sev)]
 
 
 def check_stale(rel: str, src: str) -> list[dict]:
@@ -465,14 +531,18 @@ def run_audit(only: list[str] | None, lint: bool) -> dict:
     report: dict = {"generated": datetime.now().isoformat(timespec="seconds"), "canonical": CANON,
                     "active_files": rels, "files": {}}
     totals: Counter = Counter()
-    for rel in rels:
+    acronym_seen: dict[str, str] = {}
+    # Order body chapters so first-use acronym tracking ignores Abstract and starts at Ch. 1
+    body_order = [r for r in rels if r.startswith(PROSE_PREFIXES) and not r.endswith("abstract.tex")]
+    ordered_rels = body_order + [r for r in rels if r not in body_order]
+    for rel in ordered_rels:
         if only and rel not in only:
             continue
         src = sources[rel]
         prose = to_prose(src)
         hits = check_latex(rel, src) + check_stale(rel, src)
         if rel.startswith(PROSE_PREFIXES):
-            hits += check_prose(rel, src, prose, declaude)
+            hits += check_prose(rel, src, prose, declaude, acronym_seen=acronym_seen)
             if rel.endswith("abstract.tex"):
                 hits += abstract_check(src)
         hits.sort(key=lambda h: (h["line"], h["category"]))

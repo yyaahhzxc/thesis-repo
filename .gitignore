@@ -31,6 +31,8 @@ output/embedding_progress.json
 output/gt350_retrieval_cache.json
 transcript_quality_report.csv
 Thesis draft feedback *.pdf
+docs/draft_feedback/
+main(*).pdf
 
 # Presentation slides excluded
 presentation slide/

@@ -687,6 +687,18 @@ This glossary provides plain-language definitions, mathematical intuition, and p
 * **Plain Meaning:** Individual `(ordinance_section, candidate_statute)` evaluation cards surfaced whenever Stage 2 neural contradiction confidence exceeds the dynamic cutoff $\tau^*(u, v)$, replacing earlier ambiguous "triage alert" phrasing.
 * **In This Thesis:** Distinguishes raw computational system alerts rendered on the prototype web dashboard (e.g., 10 flags across 2 sections in *Mosqueda*, 66 flags across 22 sections in *Evasco*) from substantive judicial findings of unconstitutionality. Because an automated NLI screen cannot weigh constitutional reasonableness or implied repeal, every System Conflict Flag functions strictly as an inspectable decision-support prompt for Sangguniang Panlungsod legal researchers.
 
+### **Dynamic Numeric-Bound Verifier**
+* **Plain Meaning:** A deterministic comparison check that extracts explicit monetary fines and percentage limits from draft ordinance provisions and tests them against statutory caps.
+* **In This Thesis:** Implements the symbolic fine-ceiling check permitted under Section 458(a)(1)(iii) of Republic Act No. 7160 (e.g., catching ₱50,000 fines exceeding the ₱5,000 municipal limit in Tier 2 `DRAFT-01` Section 13 and comparing percentage ceilings in *ARC Investors*).
+
+### **Topologically Calibrated Dynamic Thresholding ($\tau^*(u, v)$)**
+* **Plain Meaning:** Adjusting the Stage 2 contradiction threshold downward when a candidate statute and draft ordinance sit close together in the citation graph.
+* **In This Thesis:** Sets $\tau^*(u, v) = \max(0.30, 0.45 - 0.15 \cdot \gamma(u, v))$ where $\gamma(u, v) = 1 / d_G(u, v)$, shifting cutoff boundaries smoothly between direct authority links ($d_G = 1 \rightarrow 30.0\%$), shared domain links ($d_G = 2 \rightarrow 37.5\%$), and unlinked provisions ($45.0\%$).
+
+### **Premise-Grouped Cross-Validation (`GroupKFold`)**
+* **Plain Meaning:** A cross-validation split that keeps every hypothesis variant derived from the same statutory premise inside a single fold.
+* **In This Thesis:** Prevents neural encoders from memorizing premise wording across the 22 national statutory acts on the 350-pair ground truth benchmark ($198$ unique instances), yielding the zero-leakage DeBERTa-v3-base-NLI benchmark of $86.44\% \pm 6.05\%$ accuracy and $0.8945$ Conflict $F_1$.
+
 ---
 
 *This glossary is maintained as a living reference. Whenever new models, metrics, or legal doctrines are introduced to the thesis manuscript, they are immediately added here.*

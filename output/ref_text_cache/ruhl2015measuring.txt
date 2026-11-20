@@ -1,0 +1,2756 @@
+ 
+191 
+Measuring, Monitoring, and Managing 
+Legal Complexity 
+J.B. Ruhl & Daniel Martin Katz 
+ABSTRACT: The American legal system is often accused of being “too 
+complex.” For example, most Americans believe the Tax Code is too complex. 
+But what does that mean, and how would one prove the Tax Code is too 
+complex? Both the descriptive claim that an element of law is complex and the 
+normative claim that it is too complex should be empirically testable 
+hypotheses. Yet, in fact, very little is known about how to measure legal 
+complexity, much less how to monitor and manage it. 
+Legal scholars have begun to employ the science of complex adaptive systems, 
+also known as complexity science, to probe these kinds of descriptive and 
+normative questions about the legal system. This body of work has focused 
+primarily on developing theories of legal complexity and positing reasons for, 
+and ways of, managing it. Legal scholars thus have skipped the hard part—
+developing quantitative metrics and methods for measuring and monitoring 
+law’s complexity. But the theory of legal complexity will remain stuck in theory 
+until it moves to the empirical phase of study. Thinking about ways of 
+managing legal complexity is pointless if there is no yardstick for deciding 
+how complex the law should be. In short, the theory of legal complexity cannot 
+be put to work without more robust empirical tools for identifying and 
+tracking complexity in legal systems. 
+This Article explores legal complexity at a depth not previously undertaken in 
+legal scholarship. First, the Article orients the discussion by briefly reviewing 
+complexity science scholarship to develop descriptive, prescriptive, and ethical 
+theories of legal complexity. The Article then shifts to the empirical front, 
+identifying potentially useful metrics and methods for studying legal 
+complexity. It draws from complexity science to develop methods that have 
+ 
+             David Daniels Allen Distinguished Chair of Law, Vanderbilt University Law School. 
+          Associate Professor of Law, Chicago-Kent College of Law; External Affiliated Faculty, 
+CodeX: The Stanford Center for Legal Informatics.  
+We are thankful for comments from participants in workshops conducted by Lancaster 
+University, the University of San Diego’s Center for Computation, Mathematics, and Law; the 
+Society for Evolutionary Analysis in Law; and the German Law and Society Association. We also 
+are grateful to our respective institutions for research support. Please direct comments or 
+questions to jb.ruhl@vanderbilt.com and dkatz3@kentlaw.iit.edu. 
+192 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+been or might be applied to measure different features of legal complexity. 
+Next, the Article proposes methods for monitoring legal complexity over time, 
+in particular by conceptualizing what we call Legal Maps—a multi-layered, 
+active representation of the legal system network at work. Finally, the Article 
+concludes with a preliminary examination of how the measurement and 
+monitoring techniques could inform interventions designed to manage legal 
+complexity by using currently available machine learning and user interface 
+design technologies. 
+ 
+ 
+ 
+I. INTRODUCTION ............................................................................. 193 
+ 
+II. THE COMPLEXITY SCIENCE THEORY OF LEGAL COMPLEXITY ....... 201 
+A. DESCRIPTIVE THEORIES ........................................................... 203 
+B. 
+PRESCRIPTIVE THEORIES .......................................................... 207 
+C. 
+ETHICAL THEORIES ................................................................. 210 
+ III. MEASURING LEGAL COMPLEXITY .................................................. 211 
+A. COMPLEXITY AND SYSTEM STRUCTURE ..................................... 212 
+1. Agents and Agent Sets: Composition, Classification, and 
+Diversity .......................................................................... 212 
+2. Formal Architecture: Trees and Other Formal 
+Hierarchies .................................................................... 213 
+3. Network Architecture: Emergent Hierarchies ............ 216 
+4. Information Storage and Computation ....................... 222 
+B. 
+COMPLEXITY AND SYSTEM BEHAVIOR ....................................... 224 
+1. Networks, Trees, Diffusion, and System Behavior ...... 226 
+2. Emergence, Feedback, Laplace’s Demon, and System 
+Prediction ...................................................................... 228 
+i. 
+Feedback .................................................................... 229 
+ii. Emergence .................................................................. 229 
+ IV. MONITORING LEGAL COMPLEXITY ............................................... 231 
+A. DESIGNING “LEGAL MAPS” FOR NETWORK BEHAVIOR 
+MONITORING .......................................................................... 232 
+B. 
+TESTING SYSTEM PERFORMANCE .............................................. 234 
+1. Synchronization Monitoring ........................................ 234 
+2. Stress Tests ..................................................................... 237 
+3. Interdependent Systems Analysis ................................. 237 
+C. 
+COMPARATIVE DESIGN STUDIES ................................................ 238 
+ 
+V. MANAGING LEGAL COMPLEXITY ................................................... 238 
+A. DEFINING TOO MUCH COMPLEXITY ......................................... 238 
+2015] 
+LEGAL COMPLEXITY 
+193 
+B. 
+MANAGING TOO MUCH COMPLEXITY ....................................... 240 
+1. Real-Time Monitoring Leveraging Learning 
+Algorithms ..................................................................... 240 
+2. Designing Legal User Interfaces .................................. 242 
+ VI. CONCLUSION ................................................................................ 243 
+ 
+I. 
+INTRODUCTION 
+Do you believe the U.S. Tax Code is too complex? If so, you are in good 
+company—most Americans believe the Tax Code is too complex.1 Many legal 
+scholars believe the Tax Code is too complex.2 Even the Internal Revenue 
+Service’s own National Taxpayer Advocate Service believes the Tax Code is 
+too complex.3 And this is not a new sentiment in society—“[s]ince the 
+inception of the federal income tax, commentators have viewed complexity 
+as virtually inevitable.”4 But prove it! That’s right, prove the Tax Code is too 
+complex. 
+How would you do that? How would you prove the Tax Code—or any 
+other statute or regulation—is too complex? Making such a claim about some 
+element of law requires proof of two related hypotheses. The first is 
+descriptive: the law is complex. The second is normative: the law is too complex. 
+Both are, in theory, empirically testable hypotheses. The claim that a body of 
+law is complex requires some convention for defining legal complexity and 
+ 
+ 
+1. 
+Surveys routinely find the vast majority of American taxpayers believe the Code is too 
+complex. See, e.g., Courtney Coren, Tax Poll: Most Americans Say Tax Code Is Too Complicated, 
+NEWSMAX (Apr. 11, 2013, 9:27 AM), http://www.newsmax.com/Newsfront/quinnipiac-poll-irs-
+tax/2013/04/11/id/498974. Google searches for “U.S. tax code too complex” and “tax code is 
+too complex” yield millions of sites. 
+ 
+2. 
+For a small slice, see Michelle Arnopol Cecil, Toward Adding Further Complexity to the 
+Internal Revenue Code: A New Paradigm for the Deductibility of Capital Losses, 99 U. ILL. L. REV. 1083 
+(1999); Steven A. Dean, Attractive Complexity: Tax Deregulation, the Check-the-Box Election, and the 
+Future of Tax Simplification, 34 HOFSTRA L. REV. 405 (2005); Samuel A. Donaldson, The Easy Case 
+Against Tax Simplification, 22 VA. TAX REV. 645 (2003); James S. Eustice, Tax Complexity and the 
+Tax Practitioner, 45 TAX L. REV. 7 (1989); Stanley A. Koppelman, At-Risk and Passive Activity 
+Limitations: Can Complexity Be Reduced?, 45 TAX L. REV. 97 (1989); Susan B. Long & Judyth A. 
+Swingen, An Approach to the Measurement of Tax Law Complexity, 8 J. AM. TAX ASS’N 22 (1987); 
+Edward J. McCaffery, The Holy Grail of Tax Simplification, 1990 WIS. L. REV. 1267; John A. Miller, 
+Indeterminacy, Complexity, and Fairness: Justifying Rule Simplification in the Law of Taxation, 68 WASH. 
+L. REV. 1 (1993); and Deborah L. Paul, The Sources of Tax Complexity: How Much Simplicity Can 
+Fundamental Tax Reform Achieve?, 76 N.C. L. REV. 151 (1997). 
+ 
+3. 
+1 TAXPAYER ADVOCATE SERV., INTERNAL REVENUE SERV., NATIONAL TAXPAYER ADVOCATE 
+2012 ANNUAL REPORT TO CONGRESS 3 (2012), http://www.taxpayeradvocate.irs.gov/2012-Annual-
+Report/downloads/Most-Serious-Problems-Tax-Code-Complexity.pdf (“The most serious problem 
+facing taxpayers—and the IRS—is the complexity of the Internal Revenue Code (the ‘tax code’).”). 
+ 
+4. 
+Eric Kades, The Laws of Complexity and the Complexity of Laws: The Implications of 
+Computational Complexity Theory for the Law, 49 RUTGERS L. REV. 403, 408 (1997) (citing 
+commentary from the early 1900s). 
+194 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+then some way of measuring whatever that is. Further, the claim that a body 
+of law is too complex requires identifying an optimal legal complexity and 
+some way of comparing a particular law’s complexity to that standard. With 
+all the arm-waving about the excessive complexity of the Tax Code, one would 
+think these two sets of metrics are well established and routinely applied 
+across a wide berth of the legal domain. That would be a mistake. Law’s 
+complexity, while often invoked in rhetorical policy debates, is in fact one of 
+the least understood and measured features of law. Thus, making the legal 
+system less complex, or “simpler,” remains a popular but elusive remedy for 
+“too much complexity,” with prescriptions often appearing more complex 
+than the problem.5 
+As intuitive as it is to any lawyer that the law is complex, getting a handle 
+on exactly what that means and what to do about it is no simple matter. First, 
+one needs a theoretical foundation to describe complexity in terms relevant 
+to legal systems. What is legal complexity, and what attributes and variables 
+go into making legal systems complex? Then one must develop metrics and 
+methods to measure and monitor those attributes in the legal system. Armed 
+with such data, legal theorists, politicians, and citizens can begin an evidence-
+based debate regarding how complex the law should be. And, if it were 
+determined that the law is too complex or not complex enough, it would be 
+useful to have the means to adjust and manage the law’s complexity. Of 
+course, none of these is a small task. 
+Legal scholars have begun to employ complexity science (also known as 
+complexity theory) as one lens through which to probe these descriptive and 
+normative questions about law’s complexity.6 The focus of complexity science 
+ 
+ 
+5. 
+See, e.g., CASS R. SUNSTEIN, SIMPLER: THE FUTURE OF GOVERNMENT (2013) (arguing that 
+the regulatory state can be made more simple through cost-benefit analysis, regulatory “nudges” 
+of behavior, information disclosure, eliminating red tape, and other measures). 
+ 
+6. 
+For an overview of complexity science and how scholars in the social sciences, including 
+law, have integrated it, see generally J.B. Ruhl, Law’s Complexity: A Primer, 24 GA. ST. L. REV. 885 
+(2008). Further details on complexity in the legal system are provided infra Parts II–III. We need 
+to stress at the outset that the use of complexity science in legal systems theory is distinct from 
+other systems models that have been used in legal applications. In particular, the famous German 
+sociologist Niklas Luhmann developed an “autopoiesis” systems model that has had tremendous 
+influence in European legal theory. See generally Jakob Arnoldi, Niklas Luhmann: An Introduction, 
+18 THEORY, CULTURE & SOC’Y, Feb. 2001 (introducing a special issue devoted to Luhmann); 
+Niklas Luhmann, Law as a Social System, 83 NW. U. L. REV. 136 (1989) (outlining the model). 
+There is some disagreement over the distinctions between the complexity science and autopoiesis 
+models, however, as the two bear similarities and distinctions. Most legal scholars who have 
+explored the two models consider them related but distinct forms of systems theory. See Lynn M. 
+LoPucki, The Systems Approach to Law, 82 CORNELL L. REV. 479, 483–84 nn.13–17 (1997); Thomas 
+E. Webb, Exploring System Boundaries, 24 L. CRITIQUE 131, 131–32 (2013) [hereinafter Webb, 
+Exploring System Boundaries]. Others describe autopoiesis as “a significant branch of complexity 
+theory.” See, e.g., Julian Webb, Law, Ethics, and Complexity: Complexity Theory & the Normative 
+Reconstruction of Law, 52 CLEV. ST. L. REV. 227, 227 n.3 (2005) [hereinafter Webb, Law, Ethics, 
+and Complexity]. Going further, some legal scholars have employed systems models purportedly 
+or impliedly different from both the autopoiesis and complexity science models, see, e.g., LoPucki, 
+2015] 
+LEGAL COMPLEXITY 
+195 
+is complex adaptive systems, systems “in which large networks of components 
+with no central control and simple rules of operation give rise to complex 
+collective behavior, sophisticated information processing, and adaptation via 
+learning or evolution.”7 Thus far, legal scholars using this discipline to study 
+law’s complexity focus primarily on describing legal systems as complex 
+adaptive systems to understand the origins of legal complexity and on 
+exploring theoretical ways of managing it. In other words, legal scholars have 
+largely skipped the hard part—developing quantitative metrics and methods 
+for measuring and monitoring law’s complexity.8 But the theory of legal 
+complexity will remain stuck in theory until it moves to the empirical phase 
+of study; thinking about how to manage legal complexity is pointless if there 
+is no yardstick for deciding how complex the law should be. In short, we 
+cannot put the theory of legal complexity to work without robust empirical 
+tools. 
+To put this problem in practical terms, consider again the Tax Code. 
+Exactly how complex is the Tax Code, and how complex should it be 
+compared to, say, securities laws or environmental protection laws? American 
+individuals and businesses in 2012 spent 6.1 billion hours and $168 billion 
+complying with the Tax Code’s nearly 4 million words of text, a text which 
+Congress has changed over 5000 times between 2001 and 2012.9 Are those 
+figures proof of the Tax Code’s excess complexity? Tax Code “simplification” 
+is often associated with reducing these compliance costs.10 But is the best 
+measure of Tax Code complexity the hours and dollars spent complying with 
+it? After all, knowing how much time and money is spent on tax compliance 
+might tell us more about “tax morality” than about the Tax Code’s 
+ 
+supra, at 488–509 (sketching out what is described as a distinct, empirically oriented “systems 
+approach” for legal design), while others have cherry-picked concepts from complexity science 
+to construct a legal systems model without explicitly calling it a complexity science model. See, 
+e.g., ADRIAN VERMEULE, THE SYSTEM OF THE CONSTITUTION (2011) (developing a “systems theory” 
+model of constitutional dynamics using many concepts from complexity science); Thomas E. 
+Webb, Book Note, 75 MOD. L. REV. 1182, 1182–83 (2012) [hereinafter Webb, Book Note] 
+(reviewing VERMEULE, supra) (showing that the concepts Vermeule uses, “taken collectively, 
+indicate that the theory under discussion is complexity theory, although this is not clearly 
+stated”). We are not making any claims in this Article about these or any other legal systems 
+models and do not cover them in any further detail. Our interest is in how the concept of 
+complexity as developed specifically in complexity science can be applied and tested in legal 
+systems. 
+ 
+7. 
+MELANIE MITCHELL, COMPLEXITY: A GUIDED TOUR 13 (2009). The term “complex 
+adaptive system” is often used to distinguish between complex systems that that are highly 
+adaptive (such as an ecosystem) versus nonadaptive (such as a hurricane). 
+ 
+8. 
+Significant exceptions are discussed in more detail in Part III infra. 
+ 
+9. 
+1 TAXPAYER ADVOCATE SERV., supra note 3, at 5–6. 
+ 
+10. 
+See Joel Slemrod & Nikki Sorum, The Compliance Cost of the U.S. Individual Income Tax 
+System 1 (Nat’l Bureau of Econ. Research, Working Paper No. 1401, 1984), http://www.nber. 
+org/papers/w1401.pdf (noting that at the time of the study in 1984 there was “an almost 
+complete absence of quantitative information about the magnitude and characteristics of the cost 
+of the current system”). 
+196 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+complexity. People and businesses in Greece reportedly devote little time and 
+money to tax compliance,11 but that does not prove that their tax laws are less 
+complex than our Tax Code. 
+A less obvious measure of Tax Code complexity could be the complexity 
+of popular tax compliance software programs such as TurboTax. Tax software 
+companies are essentially selling the simplification of the Tax Code for the 
+user, yet they must provide a product that accurately calculates the user’s tax 
+liability under any scenario and thus must somehow pack all of the Tax Code’s 
+substance into the software program. The program itself, however, has its own 
+internal coding complexity, which software developers measure through 
+various technical metrics and which software companies seek to control for 
+business-cost purposes.12 If the software is too complex, for example, it may 
+be very difficult to update the program as Congress changes the Tax Code, as 
+a change in one provision cascades in effect to other provisions.13 It would be 
+in a tax software company’s interests, therefore, to develop a program that is 
+no more complex than needed to produce accurate user tax liability 
+calculations. Perhaps a good measure of Tax Code complexity would then be 
+the complexity of reliable tax compliance software. 
+These are just two of the many possible ways of measuring Tax Code 
+complexity; others that have been proposed focus on attributes such as the 
+text’s “readability”14 or the number of tax rates and special provisions.15 The 
+point is that people speak freely and passionately about the Tax Code’s 
+complexity, yet there is no standard set of metrics for measuring Tax Code 
+complexity, no agreement on precisely how complex the Tax Code should be 
+(other than less complex than it is now), and little agreement on how to 
+achieve such a target if there were one. If everyone agreed that the Tax Code 
+should be no more complex than to require 2.7 billion hours and $45 billion 
+in compliance efforts; no more complex than to require half the software 
+complexity needed to code today’s tax compliance software; or no more 
+complex than to require a fifth-grade reading level, how would Congress 
+know what to do to the Tax Code? Which provisions should Congress tweak 
+to weed out the complexity? And what possible costs could reducing 
+complexity have on the Tax Code’s effectiveness in meeting tax policy goals? 
+ 
+ 
+11. 
+Tax Evasion in Greece: In Flagrante, ECONOMIST (Sept. 4, 2012, 4:13 PM), http://www. 
+economist.com/blogs/freeexchange/2012/09/tax-evasion-greece. 
+ 
+12. 
+For an article that is considered one of the classic early reviews of software complexity 
+measurement, see Joseph K. Kearney et al., Software Complexity Measurement, 29 COMM. ACM 1044 
+(1986). 
+ 
+13. 
+See Rajiv D. Banker et al., Software Complexity and Maintenance Costs, 36 COMM. ACM 81 
+(1993) (confirming that software maintenance is significantly affected by software complexity). 
+ 
+14. 
+See, e.g., Andrew Stumpff Morrison, Case Law, Systematic Law, and a Very Modest Suggestion, 
+35 STATUTE L. REV. 149, 163 (2014). 
+ 
+15. 
+See George Warskett et al., The Complexity of Tax Structure in Competitive Political Systems, 5 
+INT’L TAX & PUB. FIN. 123, 123 (1998) (“The complexity of a tax system is usually associated with 
+the numbers of tax rates, tax bases and special provisions it includes.”). 
+2015] 
+LEGAL COMPLEXITY 
+197 
+One reason it is difficult to approach these questions is that the metrics 
+currently proposed for measuring Tax Code complexity turn the problem on 
+its head. The Tax Code is not complex because of its costs of compliance, 
+difficult readability, number of rates and special provisions, or the complexity 
+of tax compliance software. Rather, the Tax Code imposes costly compliance 
+burdens, is difficult to read, has lots of rates and special provisions, and poses 
+a challenge to software developers because it is complex. These attributes are 
+consequences of Tax Code complexity, not its causes. They do not get at the 
+heart of why the Tax Code is complex and what makes it, allegedly, too much 
+so. And while these attributes undoubtedly are useful metrics for evaluating 
+whether the Tax Code is complex, they are of little help in determining how 
+to solve the Tax Code’s complexity problem (if it has one). Taking the 
+temperature of an ill patient may show how ill the patient is but not why the 
+patient is ill or what to do about it. 
+The Tax Code in this respect is a microcosm of legal complexity in 
+general and an example of how little we understand its causes, consequences, 
+and cures. The same questions could be asked of environmental law, 
+securities law, health law, and dozens of other legal fields; answers would be 
+wanting in those fields, too.16 In short, there is very little empirically robust 
+understanding of the causes of legal complexity,17 which reduces the 
+normative debate over legal complexity and how to “simplify” law largely to 
+scholarly theory and political rhetoric.18 
+One might argue that, even accepting the foregoing, the complexity of 
+law is extraneous to the challenge of designing legal measures to achieve 
+policy goals.19 So long as a law or doctrine is performing effectively in meeting 
+its intended purposes, the argument would go, it must be “just right” in terms 
+of complexity.20 But this argument would rely on the assumption that for each 
+ 
+ 
+16. 
+See, e.g., Thomas O. McGarity, When Strong Enforcement Works Better Than Weak Regulation: 
+The EPA/DOJ New Source Review Enforcement Initiative, 72 MD. L. REV. 1204, 1205–06 (2013). 
+Environmental law is an example of “mature regulatory environments where the underlying 
+statutes remain static and complexity increases over time.” Id. 
+ 
+17. 
+See Daniel Martin Katz & M.J. Bommarito II, Measuring the Complexity of the Law: The 
+United States Code, 22 ARTIFICIAL INTELLIGENCE & L. 337, 338–41 (2014) (reviewing legal 
+scholarship on measurement of legal complexity). 
+ 
+18. 
+See, e.g., RICHARD A. EPSTEIN, SIMPLE RULES FOR A COMPLEX WORLD (1995) (proposing 
+measures to simplify legal systems without defining empirical metrics for measuring legal 
+complexity); SUNSTEIN, supra note 5 (outlining reforms claimed to simplify and thus improve 
+governance). 
+ 
+19. 
+Generally, “[a]n effective regulatory design is one that achieves the identified regulatory 
+goals.” Alejandro E. Camacho & Robert L. Glicksman, Functional Government in 3-D: A Framework 
+for Evaluating Allocations of Government Authority, 51 HARV. J. LEGIS. 19, 27 (2014). 
+ 
+20. 
+According to law and economics theory: 
+Once lawmakers list all the relevant costs and benefits of complexity, optimizing the 
+amount of complexity in the law becomes a straightforward exercise in economic 
+marginalism. One continues to add incremental precision to a rule as long as the 
+sum of the benefits of the new twist exceed the sum of its costs. 
+198 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+policy goal there is a fixed amount of legal complexity required to fulfill it—
+any more or less would throw the law or doctrine off its optimal performance 
+in achieving its goals. Yet there is no a priori reason to believe this is true. 
+There could be multiple alternative legal designs, each with different levels of 
+legal complexity (however measured) but all equally effective at fulfilling a 
+prescribed policy goal. 
+Still, when choosing between such alternative legal constructions, one 
+could argue that complexity should only matter in the design phase if there 
+is reason to believe complexity matters in the performance phase as a factor 
+influencing not only efficiency and effectiveness, but also equity, legitimacy, 
+transparency, and other important normative features of legal systems.21 But 
+if the Tax Code debate is any indication, many observers firmly believe that 
+legal complexity has important practical policy implications. The Tax Code 
+complexity debate also suggests that legal complexity is not a novel or 
+controversial claim—it is a mainstream concern about the legal system. Legal 
+complexity matters. 
+What is more likely to strike readers as “out there” is our claim that 
+complexity science, with its origins in physics and ecology, provides a useful 
+framework for studying legal complexity. Most lawyers are likely unfamiliar 
+with complexity science, and some legal scholars have even expressed 
+skepticism that it has much to offer the study of law.22 Legal scholarship, 
+however, is seldom at the forefront of innovation in the social sciences. 
+Complexity science has had tremendous influence already in other social 
+science disciplines, including most prominently economics,23 political 
+ 
+Kades, supra note 4, at 419 (offering an alternative using computational theory). 
+ 
+21. 
+See Camacho & Glicksman, supra note 19, at 27–31 (identifying these other factors as 
+important normative considerations in regulatory design). 
+ 
+22. 
+See VERMEULE, supra note 6, at 8 (claiming that some applications of systems theory in 
+law “reek of pseudoscience, as practitioners offer mysterious utterances about ‘complexity’ and 
+‘chaos’” and that “there is a core of genuine insight to systems theory that is not at all obscurantist 
+or bogus”); LoPucki, supra note 6, at 483–84 (claiming that complexity science is unlikely to help 
+advance understanding of legal systems beyond “levels of broad generality”); John Martinez, The 
+Dynamic Cycle of Legal Change, 9 TENN. J.L. & POL’Y (SPECIAL EDITION) 10, 13–14 (2013) (claiming 
+that “scholars have applied variants of complex adaptive systems theory—such as game theory 
+and chaos theory—to the study of the legal system, but such efforts have foundered on the shoals 
+of indeterminacy that such variants produce”). 
+ 
+23. 
+See, e.g., ERIC D. BEINHOCKER, THE ORIGIN OF WEALTH: EVOLUTION, COMPLEXITY, AND 
+THE RADICAL REMAKING OF ECONOMICS (2006); PAUL KRUGMAN, THE SELF-ORGANIZING ECONOMY 
+(1996); Brian Arthur, Competing Technologies, Increasing Returns, and Lock-In by Historical Events, 99 
+ECON. J. 116 (1989); Neil Johnson & Thomas Lux, Financial Systems: Ecology and Economics, 469 
+NATURE 302 (2011); Robert M. May et al., Complex Systems: Ecology for Bankers, 451 NATURE 893 
+(2008); Didier Sornette & Ryan Woodard, Financial Bubbles, Real Estate Bubbles, Derivative Bubbles, 
+and the Financial and Economic Crisis, in ECONOPHYSICS APPROACHES TO LARGE-SCALE BUSINESS 
+DATA AND FINANCIAL CRISIS 101 (Misako Takayasu et al. eds., 2010). 
+2015] 
+LEGAL COMPLEXITY 
+199 
+science,24 sociology,25 and international affairs,26 and it has been applied in 
+the study of a wide variety of policy challenges such as terrorist networks,27 
+healthcare,28 organized crime,29 transportation systems,30 urban growth,31 and 
+national security.32 This does not mean complexity science will necessarily 
+have the same utility when applied to legal systems, but if one believes legal 
+complexity is a concern, it is probably worth exploring whether anything can 
+be gained from applying a scientific discipline singularly devoted to the study 
+of complexity in social and physical systems. 
+Building on that theme, this Article explores the theoretical and 
+empirical dimensions of legal complexity at a depth not previously 
+undertaken in legal scholarship, but in terms we hope are accessible and of 
+practical value to lawyers and legal scholars not already familiar with 
+complexity science. Part II orients the discussion by briefly reviewing the core 
+concepts of complexity science and legal scholars’ application of these 
+theories to the law. There have been three major themes in this body of 
+ 
+ 
+24. 
+See generally ROBERT AXELROD, THE COMPLEXITY OF COOPERATION: AGENT-BASED MODELS 
+OF COMPETITION AND COLLABORATION (1997); SCOTT DE MARCHI, COMPUTATIONAL AND 
+MATHEMATICAL MODELING IN THE SOCIAL SCIENCES (2005); ROBERT JERVIS, SYSTEM EFFECTS: 
+COMPLEXITY IN POLITICAL AND SOCIAL LIFE (1997); HERBERT SIMON, THE SCIENCES OF THE 
+ARTIFICIAL (1969); Michael J. Ensley et al., District Complexity as an Advantage in Congressional 
+Elections, 53 AM. J. POL. SCI. 990 (2009); Ken Kollman et al., Political Parties and Electoral Landscapes, 
+28 BRIT. J. POL. SCI. 139 (1998); Scott E. Page, Path Dependence, 1 Q.J. POL. SCI. 87 (2006). 
+ 
+25. 
+See, e.g., R. KEITH SAWYER, SOCIAL EMERGENCE: SOCIETIES AS COMPLEX SYSTEMS (2005); 
+Elizabeth E. Bruch & Robert D. Mare, Neighborhood Choice and Neighborhood Change, 112 AM. J. SOC. 
+667 (2006); Elinor Ostrom, Collective Action and the Evolution of Social Norms, 14 J. ECON. PERSP. 
+137 (2000). 
+ 
+26. 
+See, e.g., WALTER C. CLEMENS, COMPLEXITY SCIENCE AND WORLD AFFAIRS (2013); Robert 
+Axelrod, The Dissemination of Culture: A Model with Local Convergence and Global Polarization, 41 J. 
+CONFLICT RESOL. 203 (1997); Lars-Erik Cederman, Modeling the Size of Wars: From Billiard Balls to 
+Sandpiles, 97 AM. POL. SCI. REV. 135 (2003). 
+ 
+27. 
+See, e.g., E. Ahmed et al., On Complex Adaptive Systems and Terrorism, 337 PHYSICS LETTERS 
+A 127 (2005); Antoine Bousquet, Complexity Theory and the War on Terror: Understanding the Self-
+Organising Dynamics of Leaderless Jihad, 15 J. INT’L REL. & DEV. 345 (2012); Vito Latora & Massimo 
+Marchiori, How the Science of Complex Networks Can Help Developing Strategies Against Terrorism, 20 
+CHAOS, SOLITONS & FRACTALS 69 (2004). 
+ 
+28. 
+See, e.g., YANEER BAR-YAM ET AL., NEW ENG. COMPLEX SYS. INST., A COMPLEX SYSTEMS 
+SCIENCE APPROACH TO HEALTHCARE COSTS AND QUALITY (2012). 
+ 
+29. 
+See, e.g., Paul A.C. Duijn et al., The Relative Ineffectiveness of Criminal Network Disruption, 4 
+SCI. REP. 4238 (2014). 
+ 
+30. 
+See, e.g., A. Aw & M. Rascle, Resurrection of ‘Second Order’ Models of Traffic Flow, 60 SIAM J. 
+APPLIED MATHEMATICS 916 (2000); Debashish Chowdhury, Statistical Physics of Vehicular Traffic 
+and Some Related Systems, 329 PHYSICS REP. 199 (2000); Petter Holme, Congestion and Centrality in 
+Traffic Flow on Complex Networks, 6 ADVANCES COMPLEX SYSTEMS 163 (2003); Bosiljka Tadić et al., 
+Traffic on Complex Networks: Towards Understanding Global Statistical Properties from Microscopic Density 
+Fluctuations, 69 PHYSICAL REV. E 036102 (2004); Bosiljka Tadić et al., Transport on Complex 
+Networks: Flow, Jamming and Optimization, 17 INT’L J. BIFURCATION & CHAOS 2363 (2007). 
+ 
+31. 
+See, e.g., Robert H. Samet et al., Complexity, the Science of Cities and Long-Range Futures, 47 
+FUTURES 49 (2013). 
+ 
+32. 
+See, e.g., Jürgen Scheffran, The Complexity of Security, 14 COMPLEXITY 13 (2008). 
+200 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+scholarship. First, a descriptive body of work has focused on mapping 
+complexity science concepts onto legal systems to enable explanation of legal 
+systems as complex adaptive systems. Second, a prescriptive thrust has moved 
+from mapping concepts towards developing principles for structural design 
+and normatively acceptable operation of legal systems given their complex 
+adaptive system properties. Finally, an ethical focus in the literature explores 
+what it means to be an actor in a complex legal system. 
+Parts III–V then shift to the empirical front, identifying potentially useful 
+metrics and methods for studying legal complexity. Part III draws from 
+complexity science to develop methods that have or might be applied to 
+measure aspects of legal complexity, including metrics for agents, trees, 
+networks, computation, feedback, and emergence. Part IV proposes methods 
+for monitoring legal complexity over time by conceptualizing what we call 
+Legal Maps—a multi-layered, Google Maps-style active representation of the 
+legal system network at work. Part V concludes with a preliminary 
+examination of how these measurement and monitoring techniques could 
+inform interventions by applying currently available machine learning and 
+user interface design technologies. While there is no possibility of attaining 
+full (or even near full) management control of a complex social system such 
+as law, techniques used in other complex adaptive system environments—
+such as financial- and transportation-systems management and software 
+development—could prove adaptable to and useful in the long-term design, 
+evaluation, and operation of legal systems. 
+To be clear, we are not claiming that we can finely measure and tune 
+legal complexity using current data management and computational 
+capacities. Rather, this Article establishes an agenda for identifying the 
+empirical questions and methodological approaches ripe for study. From 
+there, we plan in future work to test our proposed approaches through 
+applied empirical studies. We recognize that existing technology will support 
+only relatively crude metrics and computational methods for exploring legal 
+complexity, and we suffer from no delusion that we can fully describe and 
+regulate legal complexity today, if ever. We and other researchers must study 
+legal complexity in small increments to begin with, hoping over time to build 
+improved theoretical foundations that will lead to refined and expanded 
+research agendas designed to advance our practical understanding of legal 
+complexity. This Article is our opening contribution to that research agenda. 
+Law would not be the first domain to ask these questions about itself—it 
+is a latecomer to complexity science, network analysis, machine learning, and 
+other highly computational approaches to system assessment and 
+management. Indeed, as important as the legal system is to social 
+sustainability, it is a mystery to us why so much data and computational 
+capacity is devoted in the business and finance sectors to monitoring financial 
+system structure (not always successfully!) while legal scholars seldom use 
+2015] 
+LEGAL COMPLEXITY 
+201 
+these computational techniques to understand and evaluate the legal system 
+as a system. This is what we hope to change. 
+II. THE COMPLEXITY SCIENCE THEORY OF LEGAL COMPLEXITY 
+The key premise in applying complexity science to legal systems is that 
+there is a difference between complexity in the sense of “complicatedness” 
+and complexity in the sense of system structure and behavior. That 
+distinction, which goes to the essence of complexity science theory, is aptly 
+described as follows: 
+In a complicated world, the various elements that make up the 
+system maintain a degree of independence from one another. Thus, 
+removing one such element (which reduces the level of 
+complication) does not fundamentally alter the system’s behavior 
+apart from that which directly resulted from the piece that was 
+removed. Complexity arises when the dependencies among the 
+elements become important. In such a system, removing one such 
+element destroys system behavior to an extent that goes well beyond 
+what is embodied by the particular element that is removed.33 
+Few dispute that law is complicated; whether it is complex in the systems 
+context is another matter. 
+To be sure, the complicatedness of law should not be discounted. Law 
+can be vast, dense, vague, and intricate, making compliance a daunting 
+undertaking. Complexity as used in our project, however, is getting at 
+something different. Even in a world where all individual rules are perfectly 
+clear and cost-efficient, knowing how to comply could still be burdensome. 
+An effort burden would be associated with learning all the rules, and an 
+information burden would be associated with compiling the evidence needed to 
+test for and comply with the rules.34 But beyond that, the system of rules could 
+be difficult to navigate and predict because of the interactions between the 
+multitude of rules and institutions administering them.35 Complying with one 
+rule could require actions that make complying with another rule more 
+difficult.36 Similarly, because legal rules often are interrelated through 
+techniques such as cross-referencing and stare decisis, how one rule is 
+interpreted and applied could affect the meaning or operation of other 
+ 
+ 
+33. 
+JOHN H. MILLER & SCOTT E. PAGE, COMPLEX ADAPTIVE SYSTEMS: AN INTRODUCTION TO 
+COMPUTATIONAL MODELS OF SOCIAL LIFE 9 (2007). Thus, “work is needed on distinguishing the 
+complex . . . from the just complicated in the presence of many possible explanatory models and 
+imperfect data.” Nicholas W. Watkins & Mervyn P. Freeman, Natural Complexity, 320 SCI. 323, 324 
+(2008). 
+ 
+34. 
+See J.B. Ruhl & James Salzman, Mozart and the Red Queen: The Problem of Regulatory Accretion 
+in the Administrative State, 91 GEO. L.J. 757, 798–800 (2003) (developing the concepts of effort 
+and information burdens). 
+ 
+35. 
+See id. at 800–23 (developing the concept of system burdens). 
+ 
+36. 
+See id. (providing examples). 
+202 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+rules.37 These kinds of system burdens are usually overlooked in legal 
+scholarship that addresses ways of measuring and managing legal 
+complicatedness—even when referred to as “complexity”—where the focus is 
+primarily or exclusively on effort and information burdens.38 
+Complexity science emphasizes these systems effects, studying inter-
+agent connections and the system-wide effects they produce. In the context 
+of social systems, complexity science offers a different approach from that 
+taken in small-number agent models (such as in bilateral game theory) and 
+large-number agent models (such as the rational actor in law and economics). 
+The problem with these inter-agent modeling approaches is that “most 
+economic, political, and social interactions involve moderate numbers of 
+people.”39 To elaborate: 
+ 
+Most social science models require either very few (typically two) 
+or very many (often an infinity) agents to be tractable. When an 
+agent interacts with only a few other agents, we can usually trace all 
+of the potential actions and reactions. When an agent faces an 
+infinity of other agents, we can average out . . . the behavior of the 
+masses and again find ourselves back in a world that can be easily 
+traced. It is in between these two extremes—when an agent interacts 
+with a moderate number of others—that our traditional analytic 
+tools break down.40 
+In other words, traditional models of inter-agent behavior do not work well 
+when there are too many interacting agents to fit neatly into bilateral models, 
+but not enough agents to ignore idiosyncratic behavior by averaging-out to an 
+infinite-numbers “rational actor” model. Throughout the legal system, agents 
+in legal institutions and instruments interact in ways suggesting that the 
+differences between agents matter. Thus, mean-field approximations do not 
+always capture useful or relevant dynamics. The number of judges, lawyers, 
+agencies, laws, or regulations is neither small nor infinite, and we can find no 
+legal scholarship claiming that the differences between, say, judges or 
+regulations, do not matter. 
+ 
+ 
+37. 
+See J.B. Ruhl, Managing Systemic Risk in Legal Systems, 89 IND. L.J. 559, 587–88 (2014) 
+(examining cascade effects in legal rule systems). 
+ 
+38. 
+See Kades, supra note 4, at 416–21 (examining several different proposed metrics of 
+legal complexity); see also Louis Kaplow, A Model of the Optimal Complexity of Legal Rules, 11 J.L. 
+ECON. & ORG. 150, 150–51 (1995) (defining legal complexity as “the number and difficulty of 
+distinctions the rules make” and arguing that “[a]ctors seeking to comply with more complex 
+rules may need to expend resources to learn how the rules apply to their contemplated acts”); 
+Morrison, supra note 14 (proposing a linguistic “readability” metric, acknowledging that it will 
+register more complexity the more “systematic” the regime of legal rules); Peter H. Schuck, Legal 
+Complexity: Some Causes, Consequences, and Cures, 42 DUKE L.J. 1, 3 (1992) (“[A] legal system [i]s 
+complex to the extent that its rules, processes, institutions, and supporting culture possess four 
+features: density, technicality, differentiation, and indeterminacy or uncertainty.”). 
+ 
+39. 
+MILLER & PAGE, supra note 33, at 221. 
+ 
+40. 
+Id. 
+2015] 
+LEGAL COMPLEXITY 
+203 
+Complexity science is about building models for contexts in which agent 
+heterogeneity and interrelatedness can and usually do influence outcomes. 
+Legal scholars have developed descriptive, prescriptive, and ethical models of 
+what this approach means for law. 
+A. DESCRIPTIVE THEORIES 
+Thus far, applying complexity science to legal systems has focused on 
+mapping key concepts of complexity science onto legal systems.41 Consider 
+the general definition of a complex adaptive system mentioned above: a large 
+network of components, with no central control and simple rules of 
+operation, giving rise to complex collective behavior, sophisticated 
+information processing, and adaptation via learning or evolution. Anyone 
+with training in law can easily map this framework onto the legal system. The 
+legal system’s components comprise a broad diversity of institutions—the 
+organizations of people who make, interpret, and enforce laws—and of 
+instruments—the laws, regulations, cases, and related legal content the 
+institutions produce.42 These components are interconnected and 
+interactive. Institutions are interconnected through structures and rules such 
+as hierarchies of courts and legislative creation and oversight of agencies; 
+institutions interact in forums such as judicial trials, legislative hearings and 
+debates, and agency rulemakings. The instruments also are interconnected 
+through mechanisms such as code structures, and they interact through cross-
+references and other devices. 
+The highly interconnected architecture of such a system drives the way it 
+behaves over time. An agency adopts a rule, which prompts another agency 
+to enforce a different rule, which leads to litigation before a judge, who issues 
+an opinion overruled by a higher court, which prompts a legislature to enact 
+a new statute, and so on. The institutional agents follow procedural rules (e.g., 
+notice and comment), and even the instrumental agents have rules for rules 
+(e.g., canons of statutory construction), but there is no central controller 
+pulling all the strings. There are hierarchies for various institutions (e.g., 
+courts) and instruments (e.g., federal preemption). Yet there is no master 
+agent controlling the system. 
+ 
+ 
+41. 
+The discussion and examples of legal complexity in this Subpart draw from Ruhl, supra 
+note 37, at 565–69. 
+ 
+42. 
+There are, of course, many different ways and terms used to describe the legal system, 
+but for our purposes, what matters is the components, and it is quite common for legal scholars 
+to speak of legal institutions and instruments in the way we use the terms to describe and discuss 
+the legal system. Searches for the two terms in Westlaw’s Law Review and Journals library turn up 
+thousands of documents. For our purposes, we can put aside the question of what institutions and 
+instruments are in or out of the legal system; what is important for now is that there is a collection 
+of such components society calls “the legal system.” See LoPucki, supra note 6, at 488–92, 497–502 
+(describing a systems analysis method for defining legal system boundaries); Webb, Exploring System 
+Boundaries, supra note 6, at 133–35 (comparing complexity science and autopoiesis models of legal 
+system boundaries). 
+204 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+The descriptive branch of legal complexity theory has focused on this 
+kind of mapping exercise to demonstrate the legal system’s complexity by 
+examining how each attribute of complex adaptive systems described in 
+complexity science research finds close parallels in legal system structure and 
+behavior.43 One dominant attribute of a complex adaptive system is feedback 
+between the system components—the connections among which information 
+flows to trigger responses.44 Another important property, driven largely by 
+intercomponent feedback, is emergence, the core idea of which is that the 
+system exhibits macroscopic behavior that could not be predicted by 
+examining the system components, interconnections, and interactions at 
+microscopic scales.45 In more technical terms, emergence is defined as 
+“complicated global patterns emerging from local or individual interaction 
+rules between parts of a system.”46 A third central property of complex 
+adaptive systems is self-organized structure, such that, as system scale grows, 
+the system organizes spontaneously (with no central controller or plan) 
+around a set of deep structural rules that lend stability to the system 
+behavior.47 These three key system attributes produce complex systems’ 
+adaptive capacity and promote their evolution over time,48 which is at least in 
+ 
+ 
+43. 
+See, e.g., Ruhl, supra note 6, at 898–901 (depicting a chart showing general features of 
+complex adaptive systems and how each is found in legal systems); see also PAUL CILLIERS, 
+COMPLEXITY AND POSTMODERNISM: UNDERSTANDING COMPLEX SYSTEMS 119–23 (1998) (listing 
+complex adaptive system attributes found in social systems generally); Webb, Law, Ethics, and 
+Complexity, supra note 6, at 232–38 (mapping six features of complex adaptive systems onto legal 
+systems). See generally Thomas E. Webb, Tracing an Outline of Legal Complexity, 27 RATIO JURIS 477 
+(2014) [hereinafter Webb, Tracing an Outline of Legal Complexity] (relating complexity science 
+principles to legal systems from the perspectives of inside the system, the boundary with the 
+external environment, the external environment, and the coevolving system of systems as a whole). 
+ 
+44. 
+Feedback loops allow the system to “restructure, or at least modify, the interaction 
+pattern among its variables.” JOHN L. CASTI, COMPLEXIFICATION: EXPLAINING THE PARADOXICAL 
+WORLD THROUGH THE SCIENCE OF SURPRISE 271 (1994). Such feedback loops can become 
+exponential in effect and thus dominate the system in which they operate. See Douglas S. Robertson 
+& Michael C. Grant, Feedback and Chaos in Darwinian Evolution, 2 COMPLEXITY 10, 12–14 (1996). 
+For more on feedback as a complexity metric, see infra Part III.B. 
+ 
+45. 
+MITCHELL, supra note 7, at 12–13. 
+ 
+46. 
+P.-M. Binder, Frustration in Complexity, 320 SCI. 322, 322 (2008). For more on 
+emergence as a complexity metric, see infra Part III.B. 
+ 
+47. 
+Self-organized structure is “a generic pattern of self-organized nonequilibrium behavior 
+in which there are characteristic long-range temporal and spatial regularities.” PETER COVENEY & 
+ROGER HIGHFIELD, FRONTIERS OF COMPLEXITY: THE SEARCH FOR ORDER IN A CHAOTIC WORLD 432 
+(1995). For some of the foundational work on self-organization properties in physical, biological, 
+and social complex adaptive systems, see generally PER BAK, HOW NATURE WORKS: THE SCIENCE 
+OF SELF-ORGANIZED CRITICALITY (1996); STUART KAUFFMAN, AT HOME IN THE UNIVERSE: THE 
+SEARCH FOR THE LAWS OF SELF-ORGANIZATION AND COMPLEXITY (1995); and KRUGMAN, supra 
+note 23. For more on self-organization as a complexity metric, see infra Part III.B. 
+ 
+48. 
+Adaptation is associated with the feedback and feedforward loops made possible by 
+multiple paths of interactions between system components and thus “is an emergent property 
+which spontaneously arises through the interaction of simple components.” JAMES GLEICK, 
+CHAOS: MAKING A NEW SCIENCE 339 n.314 (1987). 
+2015] 
+LEGAL COMPLEXITY 
+205 
+part a product of coevolution with other complex adaptive systems in its 
+environment.49 The legal system, for example, does not operate in a 
+vacuum—it influences, and is influenced by, other social, technological, 
+physical, and biological systems. 
+Legal complexity scholars have argued that these properties can be 
+found throughout legal systems, such as in the common law’s development of 
+foundational doctrinal rules over time.50 Indeed, Stuart Kauffman, one of the 
+leading thinkers in complexity science since its early development in the 
+1990s, used the common law as an example of complex adaptive system 
+behavior.51 The judiciary’s hierarchical structure and practice of stare decisis 
+link courts with courts and opinions with opinions in ways that produce 
+complicated and complex (as we define it) feedback connections.52 The 
+“substantive jurisprudence” emerges from this system through a process of 
+gradual development and evolution of doctrine based on bedrock principles, 
+some of which were set down centuries ago. Although one must read the cases 
+to know the common law of, say, property, the common law of property is 
+something more than just the sum of the cases. The Restatement of Property, for 
+example, is more than a case reporter—it is the product of tremendous effort 
+by property law experts working over many decades to synthesize and 
+compress case law into emergent, macro-scale doctrinal themes and 
+structures, as well specific micro-scale rules and principles. 
+Notwithstanding claims to the contrary,53 there have been numerous 
+accounts of complex adaptive system attributes in a broad range of legal 
+systems including administrative law,54 mediation and alternative dispute 
+ 
+ 
+49. 
+See Mikhail Prokopenko et al., An Information-Theoretic Primer on Complexity, Self-
+Organization, and Emergence, 15 COMPLEXITY 11, 23–24 (2008) (describing adaptation and 
+evolution in complex adaptive systems). See generally KAUFFMAN, supra note 47 (outlining a theory 
+of coevolution of complex adaptive systems). 
+ 
+50. 
+See Daniel Martin Katz et al., Reproduction of Hierarchy? A Social Network Analysis of the 
+American Law Professoriate, 61 J. LEGAL EDUC. 76, 97 (2011); J.B. Ruhl, The Fitness of Law: Using 
+Complexity Theory to Describe the Evolution of Law and Society and Its Practical Meaning for Democracy, 
+49 VAND. L. REV. 1407, 1469–72 (1996). 
+ 
+51. 
+KAUFFMAN, supra note 47, at 169. 
+ 
+52. 
+See generally Jonathan F. Mitchell, Stare Decisis and Constitutional Text, 110 MICH. L. REV. 
+1 (2011). 
+ 
+53. 
+See VERMEULE, supra note 6, at 8 (“Political scientists have made some use of systems 
+theory, but legal applications are few and far between.”); Joost Pauwelyn, At the Edge of Chaos? 
+Foreign Investment Law as a Complex Adaptive System, How It Emerged and How It Can Be Reformed, 29 
+ICSID REV. 372, 375 n.27 (2014) (“Few studies have applied complexity theory to law.”). 
+ 
+54. 
+See, e.g., Donald T. Hornstein, Complexity Theory, Adaptation, and Administrative Law, 54 
+DUKE L.J. 913 (2005). 
+206 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+resolution,55 bankruptcy law,56 environmental law,57 business law,58 
+international law,59 land-use regulation law,60 intellectual property law,61 
+international development law,62 regulation of the internet,63 the law of war,64 
+health law,65 and telecommunications regulation,66 as well as in more general 
+accounts of legal systems.67 It is beyond this Article’s scope to articulate all 
+such examples—the point is that these scholarly contributions have 
+established a robust descriptive model of legal systems as complex adaptive 
+systems. 
+It is appropriate to pause here and ask the critic’s question: So what? 
+Accepting for now that the attributes of complex adaptive systems map well 
+onto legal systems, what is the value of having a robust descriptive model of 
+ 
+ 
+55. 
+See, e.g., Robert A. Creo, Mediation 2004: The Art and the Artist, 108 PENN. ST. L. REV. 
+1017 (2004). 
+ 
+56. 
+See, e.g., Bernard Trujillo, Patterns in a Complex System: An Empirical Study of Valuation in 
+Business Bankruptcy Cases, 53 UCLA L. REV. 357 (2005); Bernard Trujillo, Self-Organizing Legal 
+Systems: Precedent and Variation in Bankruptcy, 2004 UTAH L. REV. 483. 
+ 
+57. 
+See, e.g., Gerald Andrews Emison, The Potential for Unconventional Progress: Complex 
+Adaptive Systems and Environmental Quality Policy, 7 DUKE ENVTL. L. & POL’Y F. 167 (1996). 
+ 
+58. 
+See, e.g., Thomas Earl Geu, Chaos, Complexity, and Coevolution: The Web of Law, Management 
+Theory, and Law Related Services at the Millennium, 65 TENN. L. REV. 925 (1998). 
+ 
+59. 
+See, e.g., Mark D. Belcher & James W. Newton, International Legal Development: A Complex 
+Problem Deserving of a “Complex” Solution and Implications for the CAFTA Region, 12 SW. J.L. & TRADE 
+AM. 189 (2006); Rakhyun E. Kim & Brendan Mackey, International Environmental Law as a Complex 
+Adaptive System, 14 INT’L ENVTL. AGREEMENTS 5 (2014); Pauwelyn, supra note 53. 
+ 
+60. 
+See, e.g., John R. Nolon, Champions of Change: Reinventing Democracy Through Land Law 
+Reform, 30 HARV. ENVTL. L. REV. 1 (2006). 
+ 
+61. 
+See, e.g., Andrea M. Matwyshyn, Organizational Code: A Complexity Theory Perspective on 
+Technology and Intellectual Property Regulation, 11 J. TECH. L. & POL’Y, at xiii (2006); Deborah 
+Tussey, Music at the Edge of Chaos: A Complex Systems Perspective on File Sharing, 37 LOY. U. CHI. L.J. 
+147 (2005). 
+ 
+62. 
+See, e.g., Belcher & Newton, supra note 59. 
+ 
+63. 
+See, e.g., Susan P. Crawford, Shortness of Vision: Regulatory Ambition in the Digital Age, 74 
+FORDHAM L. REV. 695 (2005); David G. Post & David R. Johnson, “Chaos Prevailing on Every 
+Continent”: Towards a New Theory of Decentralized Decision-Making in Complex Systems, 73 CHI.-KENT 
+L. REV. 1055 (1998). 
+ 
+64. 
+See, e.g., Carla Crandall, If You Can’t Beat Them, Kill Them: Complex Adaptive Systems Theory 
+and the Rise in Targeted Killing, 43 SETON HALL L. REV. 595 (2013). 
+ 
+65. 
+See, e.g., M. Gregg Bloche, The Emergent Logic of Health Law, 82 S. CAL. L. REV. 389 (2009). 
+ 
+66. 
+See, e.g., Barbara A. Cherry, The Telecommunications Economy and Regulation as Coevolving 
+Complex Adaptive Systems: Implications for Federalism, 59 FED. COMM. L.J. 369 (2007); Susan P. 
+Crawford, The Biology of the Broadcast Flag, 25 HASTINGS COMM. & ENT. L.J. 603 (2003). 
+ 
+67. 
+See, e.g., Thomas Earl Geu, The Tao of Jurisprudence: Chaos, Brain Science, Synchronicity, and 
+the Law, 61 TENN. L. REV. 933, 942–75 (1994); David G. Post & Michael B. Eisen, How Long Is the 
+Coastline of the Law? Thoughts on the Fractal Nature of Legal Systems, 29 J. LEGAL STUD. 545 (2000) 
+(discussing complexity theory); Mark J. Roe, Chaos and Evolution in Law and Economics, 109 HARV. 
+L. REV. 641 (1996) (discussing chaos theory, path dependence, and modern evolution theory as 
+applied to law and economics); J.B. Ruhl, Complexity Theory as a Paradigm for the Dynamical Law-
+and-Society System: A Wake-Up Call for Legal Reductionism and the Modern Administrative State, 45 DUKE 
+L.J. 849 (1996); Ruhl, supra note 6; Webb, Law, Ethics, and Complexity, supra note 6, at 227–38; 
+Webb, Tracing an Outline of Legal Complexity, supra note 43. 
+2015] 
+LEGAL COMPLEXITY 
+207 
+legal systems as complex adaptive systems? The value of such a model is that 
+it changes perspective and leads to new questions. To paraphrase how Brian 
+Arthur, a leading thinker in applying complexity science to economics, 
+described the impact of complexity science in economics: 
+[T]his new approach is not just an extension of standard [legal 
+theory], nor does it consist of adding agent-based behavior to 
+standard models. It is a different way of seeing the [legal system]. It 
+gives a different view, one where actions and strategies constantly 
+evolve, where time becomes important, where structures constantly 
+form and re-form, where phenomena appear that are not visible to 
+standard equilibrium analysis, and where a meso-layer between the 
+micro and the macro becomes important.68 
+In other words, the descriptive model of legal systems as complex adaptive 
+systems provides a different perspective on legal systems. Admittedly, thus far 
+the model has been constructed based on intuition, analogy, and example, 
+but that by no means makes it unusual in the world of legal theory. Either you 
+are persuaded on that basis or not, but we will proceed for now on the 
+assumption that there is theoretical coherence to the model. The obvious 
+next question is what to do with it. 
+B. PRESCRIPTIVE THEORIES 
+If the legal system is a complex adaptive system, how should legal agents 
+and society at large act in such a system? An important point—one that cannot 
+be overemphasized—is that describing the legal system as a complex adaptive 
+system assumes no normative position about complex adaptive systems or 
+legal systems. Instead, describing the legal system as a complex adaptive 
+system is merely an observation about the way the legal system is constructed 
+and behaves. Assuming that as a given, however, the nature of the legal system 
+as a social system means that, unlike complex physical and biological systems, 
+humans have a say in how it is designed and operated. Hence, as legal 
+theorists constructed the descriptive model of legal complexity, they also 
+turned to normative questions about the model’s implications for legal system 
+structure and performance. 
+This inquiry is distinct from the separate but related question of how to 
+design legal systems given that their target regulatory subject is often a 
+complex adaptive system. Ecosystems, for example, are classic examples of a 
+ 
+ 
+68. 
+W. BRIAN ARTHUR, Complexity Economics: A Different Framework for Economic Thought, in 
+COMPLEXITY AND THE ECONOMY 1, 2 (2015) (explaining the significance of the development of 
+what he calls the “complexity economics” model). We have replaced his references to economic 
+terms with the analogous legal terms. Cf. id. 
+208 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+complex adaptive system.69 Therefore, it makes sense to think that the design 
+of legal regimes intended to manage human interaction with ecosystems 
+should consider that property.70 This may counsel in favor of certain kinds of 
+legal regimes, such as market-based instruments or adaptive management 
+procedures, which may mesh better with the dynamic properties of 
+ecosystems.71 Similar prescriptive accounts have been made in a wide variety 
+of legal fields.72 But both sides of the equation must be taken into account. 
+Law itself is a complex adaptive system, and it necessarily influences and is 
+influenced by the systems it is intended to regulate or manage.73 Hence, a 
+principal concern of legal theorists interested in legal complexity has been to 
+develop some sense of how best to respond to the legal system’s complexity, 
+considering that the legal system is just one member of a “system of systems.”74 
+One consequence of understanding the “system of systems” nature of 
+legal regimes is the appreciation that tinkering may open up a huge can of 
+worms. Thinking by analogy, consider what can happen in a biological 
+ecosystem if a nonnative species is introduced, as humans have often done for 
+what were believed to be good reasons. Often the species does not survive. 
+Sometimes, though, the introduced species takes hold in its new environment 
+and all chaos breaks loose.75 The lesson is that intervening in a complex 
+adaptive system is a risky venture. Yet, with the legal system, sometimes there 
+ 
+ 
+69. 
+See J.B. Ruhl, Thinking of Environmental Law as a Complex Adaptive System: How to Clean Up 
+the Environment by Making a Mess of Environmental Law, 34 HOUS. L. REV. 933, 953–58 (1997) 
+(surveying the science of ecosystem complexity). 
+ 
+70. 
+See id. at 967–79. 
+ 
+71. 
+See id. at 980–1000. For a sweeping history of legal scholarship on why and how 
+environmental law must account for the complex adaptive system properties of the environment, 
+see generally Robin Kundis Craig, Learning to Think About Complex Environmental Systems in 
+Environmental and Natural Resource Law and Legal Scholarship: A Twenty-Year Retrospective, 24 
+FORDHAM ENVTL. L. REV. 87 (2013). For similar treatments in general and applied contexts, see 
+Alejandro E. Camacho, Transforming the Means and Ends of Natural Resources Management, 89 N.C. 
+L. REV. 1405 (2011); and Barbara Cosens, Resilience and Law as a Theoretical Backdrop for Natural 
+Resource Management: Flood Management in the Columbia River Basin, 42 ENVTL. L. 241 (2012). 
+ 
+72. 
+See, e.g., Lawrence G. Baxter, Capture Nuances in Financial Regulation, 47 WAKE FOREST L. 
+REV. 537 (2012) (discussing how finance law regulates complex financial markets); Debra 
+Gerardi, The Culture of Health Care: How Professional and Organizational Cultures Impact Conflict 
+Management, 21 GA. ST. U. L. REV. 857 (2005) (discussing how health care law regulates complex 
+health care organizations); Richard E. Myers II, Complex Times Don’t Call for Complex Crimes, 89 
+N.C. L. REV. 1849 (2011) (discussing how criminal law regulates complex behaviors). 
+ 
+73. 
+See, e.g., Cherry, supra note 66, at 371 (arguing “that if the telecommunications sector 
+and the legal/policymaking institutions are viewed as coevolving and complex adaptive systems, 
+then there are important implications for regulatory policy”); Crandall, supra note 64, at 608–14, 
+639–41 (arguing that war and the law are interdependent complex adaptive systems). 
+ 
+74. 
+For a summary of systems theory study of systems of systems, see Mary Ann Allison et al., 
+The Characteristics and Emerging Behaviors of System of Systems, NEW ENG. COMPLEX SYS. INST., 
+http://necsi.edu/education/oneweek/winter05/NECSISoS.pdf. 
+ 
+75. 
+So much so that an extensive legal regime has arisen devoted to the invasive species 
+problem. See JOHN COPELAND NAGLE, J.B. RUHL & KALYANI ROBBINS, THE LAW OF BIODIVERSITY AND 
+ECOSYSTEM MANAGEMENT 1197–284 (3d ed. 2013) (devoting full chapter to invasive species law). 
+2015] 
+LEGAL COMPLEXITY 
+209 
+is no choice given the external set of social norms the legal system should 
+fulfill. If the legal system is producing normatively poor results, something 
+should be done. 
+Hence, legal complexity theory has worked on designing legal 
+institutions and instruments that seem to fit well with complex adaptive system 
+attributes. The theoretical premise is not that complexity is necessarily 
+normatively good and should be promoted, but that some structural designs 
+are less likely to disrupt the complexity dynamics of the system and are more 
+likely to work well within the system as a whole and, perhaps as important, to 
+facilitate the legal system’s interaction with other complex social systems. The 
+operative principle is that the legal system should be designed with its 
+complexity in mind. 
+The main thrust of this prescriptive branch of legal complexity theory is 
+a deep skepticism that top-down, centralized regulation can avoid unintended 
+consequences or keep up with the co-evolving systems, and that more flexible, 
+decentralized forms of governance fit better with the legal complexity model. 
+For example, administrative law expert Donald Hornstein argues that 
+understanding regulatory law as a complex adaptive system counsels in favor 
+of relying more on the distributed power of states for policy formulation and 
+for making federal administrative agency governance more experimental, 
+adaptive, and collaborative.76 Similarly, telecommunications law expert 
+Barbara Cherry argues that rapid technological, social, and economic 
+change—systems co-evolving with law—demand a more adaptive governance 
+structure.77 Cherry also argues that wholesale deregulation as a means of 
+“simplifying” legal regimes can lead to disastrous results due to complex 
+system cascade effects. Instead, building regulatory resilience—the capacity 
+to withstand shocks from technology and other systems—should be the 
+priority.78 
+The answer to legal complexity, in other words, is not to hack away at the 
+legal system and declare victory in the campaign for legal simplification. 
+Rather, these scholars and other legal complexity theorists focus on offering 
+prescriptive advice to build adaptability and resilience into legal systems to 
+keep pace with co-evolving social, technological, physical, and biological 
+systems. The predominant view among legal complexity theorists is that law 
+cannot deregulate its way there, nor can it command-and-control its way 
+there.79 There are no easy answers—how to put law’s complexity to work will 
+ 
+ 
+76. 
+Hornstein, supra note 54, at 915–16, 934–60. 
+ 
+77. 
+See Barbara A. Cherry, Institutional Governance for Essential Industries Under Complexity: Providing 
+Resilience Within the Rule of Law, 17 COMMLAW CONSPECTUS J. COMM. L. & POL’Y 1, 19–31 (2008). 
+ 
+78. 
+See id. at 3–18. For an overview of resilience theory as applied in legal systems, see 
+generally J.B. Ruhl, General Design Principles for Resilience and Adaptive Capacity in Legal Systems—
+with Applications to Climate Change Adaptation, 89 N.C. L. REV. 1373 (2011). 
+ 
+79. 
+See, e.g., Jonathan H. Adler, Water Rights, Markets, and Changing Ecological Conditions, 42 
+ENVTL. L. 93, 108–09 (2012) (arguing that climate change requires the adoption of complex 
+210 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+be quite the challenge for legal design, particularly if there are no reliable 
+metrics for assessing how the legal system performs as a complex adaptive 
+system. 
+C. ETHICAL THEORIES 
+Some legal complexity theorists have gone beyond descriptive and 
+prescriptive accounts of legal system design to examine the ethical 
+implications of viewing law as a complex adaptive system. As Julian Webb 
+suggests, one might conclude from the descriptive and prescriptive theories 
+that “we have little choice but to accept that the system will organize and adapt 
+itself in the manner most likely to ensure its survival,” and thus “resistance to 
+law is likely to achieve little or no immediate gain.” But Webb offers an 
+alternative to this pessimistic view, arguing that “[c]omplexity . . . emphasizes 
+the distributed nature of power; the inability of any person (or institution) to 
+claim that it exerts control over society.” The upshot of this is that “we have 
+to take responsibility for the effects of all our decisions.”80 
+Exercising that responsibility, argues Webb, implicates three overarching 
+principles. First, an appreciation of legal complexity confirms why “the law 
+delivers justice as much by accident as by design,” but also “encourage[s] 
+emancipatory movements to embrace the uncertainty this provides.”81 
+Second, complexity science reveals the interconnectedness of seemingly self-
+referentially closed social systems, meaning that “a failure to achieve 
+normative consistency between systems will generate system-conflicts.”82 
+Lastly, Webb argues that activating certain ethical values consistent with 
+complex adaptive system behavior, such as altruism, pluralism, and 
+interdependence, will support the maintenance and development of the legal 
+system.83 In short, Webb’s take on the ethical implications of legal complexity 
+calls for polity-wide responsibility and participation in the legal system and a 
+deep reexamination of fundamental ethical notions of power, rights, and 
+rules.84 But the question remains: How, exactly, should such ethical principles 
+ 
+adaptive governance systems and that market-based, rather than centrally controlled regulation, 
+will be more adaptive); Cherry, supra note 66, at 372 (“An important implication of the 
+complexity theory perspective is that policies of complete federal preemption, and particularly 
+full deregulation, must be approached with great caution.”). 
+ 
+80. 
+Webb, Law, Ethics, and Complexity, supra note 6, at 238, 241; see also Palma Joy Strand, 
+Law as Story: A Civic Concept of Law (with Constitutional Illustrations), 18 S. CAL. INTERDISC. L.J. 603, 
+627 (2009) (noting legal complexity means “all the individuals in the society are responsible for 
+the content of law”). 
+ 
+81. 
+Webb, Law, Ethics, and Complexity, supra note 6, at 239. 
+ 
+82. 
+Id. 
+ 
+83. 
+Id. at 240; see also CILLIERS, supra note 43, at 111 (noting legal complexity requires 
+altruistic and decentralized governance). 
+ 
+84. 
+Webb, Law, Ethics, and Complexity, supra note 6, at 242 (“Complexity also begs a re-
+analysis of meta-concepts like ‘rights’ . . . . How do we regard (legal) rules that breach our 
+expectations of moral legitimacy?”); see also CILLIERS, supra note 43, at 139 (noting in a complex 
+2015] 
+LEGAL COMPLEXITY 
+211 
+be operationalized in concert with legal complexity if there is no reliable way 
+of measuring legal complexity? 
+III. MEASURING LEGAL COMPLEXITY 
+The descriptive, prescriptive, and ethical theories of legal complexity rely 
+largely on intuition, analogy, and example for their persuasion. This 
+approach has taken the legal complexity project far, but the path has come to 
+an end. What else is there to say about legal complexity that derives from 
+intuition, analogy, and example? Not much. Now that it is developed, the core 
+theory of legal complexity can be used as a lens to examine different fields of 
+law or legal problems, but this leads to little theoretical advancement. Rather, 
+this technique maps the theory onto author-selected contexts and elaborates 
+on why legal complexity is a useful model for understanding how the discrete 
+legal context is operating. To be sure, it is essential when working out a theory 
+to compare hypotheses to the real world by intuition, analogy, and example. 
+If a theory does not cohere at that level, it is probably not worth pursuing. But 
+we believe it is fair to conclude that the theory of legal complexity has been 
+sufficiently tested at this level to confirm it is worth pursuing further. So, what 
+is the next step in that cause? 
+As with any posited theory, the next step for legal-complexity theory is to 
+respond to the critic’s demand for empirical proof (e.g., prove the Tax Code 
+is too complex). Asking that a theory withstand empirical testing is not an idle 
+or obstructionist demand. Particularly when normative claims are based on a 
+theory, those making the claims should be expected to offer support beyond 
+mere elegance or intuitive appeal. If one believes legal complexity imposes 
+constraints on the legal system or, conversely, that it opens up tremendous 
+opportunities, one should want to know when, where, and by how much 
+complexity activates those conditions. And if one believes legal complexity 
+justifies using adaptive approaches to respond to those constraints, when, 
+where, and through what means should the law be adaptive? If the quality and 
+quantity of legal complexity matters for either of those questions, how are the 
+quality and quantity of legal complexity measured and described? These are 
+questions one should naturally ask of legal-complexity theorists making 
+normative claims about what the theory means for legal-system design and 
+behavior. If the theory is to produce answers to such questions, legal-
+complexity theorists must initiate an empirical phase of study. 
+The first step in such an undertaking is to design and field test a set of 
+relevant system metrics and methods to measure legal complexity. 
+Unfortunately, complexity science has arrived at no standard kit of metrics or 
+ 
+legal system, “[t]o behave ethically means not to follow rules blindly—to merely calculate—but 
+to follow them responsibly, which may imply that the rules must be broken”). 
+212 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+methods, but a synthesis of various accounts by complexity scientists,85 and by 
+the few legal scholars (including one of us) that have explored legal 
+complexity empirics,86 suggests several dominant themes we believe will be 
+most useful for studying legal complexity. We divide these into a system-
+structure set and a system-behavior set. 
+A. COMPLEXITY AND SYSTEM STRUCTURE 
+1. Agents and Agent Sets: Composition, Classification, and Diversity 
+Complex systems’ development and evolution can be described as an 
+“ecosystem.”87 This archetype is a useful descriptor of the rich and complex 
+dynamics underlying law’s evolution. However, in order to advance such 
+statements beyond mere metaphor, it is necessary to retrofit and apply 
+rigorous tools from appropriate intellectual domains such as systems ecology, 
+physics, biology, and complex systems. One threshold step in the process of 
+characterizing the broader landscape is to identify all potential agents whose 
+individual behavior might impact the collective behavior of the broader 
+system. 
+The law, like other complex adaptive systems, exhibits a diversity of 
+agents and agent sets.88 The set of all potential agents is vast and includes 
+institutions (i.e., courts, legislatures, administrative agencies, corporations, 
+public interest organizations, etc.); individual actors (i.e., judges, legislators, 
+lobbyist, bureaucrats, etc.); and the law itself (i.e., rules, adjudications, 
+decisions, etc.). 
+Individual agents often belong to agent sets and those agent sets can 
+themselves be nested within broader agent sets. The nested nature of agent 
+sets is an important complication that must be confronted in the process of 
+deconstructing and measuring legal complexity. At the same time, such 
+theoretic representations of the respective agent sets can be a useful manner 
+through which to begin exploring the operation and dynamics of the 
+respective complex adaptive system. 
+ 
+ 
+85. 
+In addition to the numerous references cited in following footnotes, see generally 
+MITCHELL, supra note 7, at 94–111; and Carlos Gershenson & Nelson Fernández, Complexity and 
+Information: Measuring Emergence, Self-Organization, and Homeostasis at Multiple Scales, 18 
+COMPLEXITY 29 (2012). 
+ 
+86. 
+See, e.g., Michael J. Bommarito & Daniel M. Katz, A Mathematical Approach to the Study of 
+the United States Code, 389 PHYSICA A 4195 (2010); Katz & Bommarito, supra note 17; Daniel M. 
+Katz & Derek K. Stafford, Hustle and Flow: A Social Network Analysis of the American Federal Judiciary, 
+71 OHIO ST. L.J. 457 (2010); see also Romain Boulet et al., Network Analysis of the French 
+Environmental Code, in AI APPROACHES TO THE COMPLEXITY OF LEGAL SYSTEMS 39 (Pompeu 
+Casanovas et al. eds., 2010). 
+ 
+87. 
+See, e.g., Peter K. Yu, Intellectual Property and the Information Ecosystem, MICH. ST. L. REV. 1 
+(2005). 
+ 
+88. 
+See supra Part II.A. 
+2015] 
+LEGAL COMPLEXITY 
+213 
+With the basic identification step in place, an agent-centric metric thus 
+would classify the respective legal agent sets by segmenting them and placing 
+them in a broader taxonomy of agents and agent sets. This classification step 
+is itself complex because it requires the development of categories whose 
+boundaries are typically difficult to cleanly segment. Additionally, the 
+categories themselves usually require a researcher or other interested party to 
+engage in some form of dimension reduction.89 
+The set of agents may be (and often is) quite diverse. There is a variety 
+of measures to assess the diversity of a particular set of agents and agent sets. 
+Both an absolute and comparative question, an agent-centric diversity 
+measure could illuminate a variety of interesting research questions. In 
+addition to evaluating individual time slices, an agent diversity measure which 
+identifies temporal changes in the diversity of the respective agent set could 
+actually highlight other important changes in the evolution of the broader 
+law or law-generating process. 
+2. Formal Architecture: Trees and Other Formal Hierarchies 
+The sheer number of agents offers just a partial characterization of the 
+overall complexity of a given complex adaptive system. Agents are connected 
+in a variety of ways, including by formal architectures that serve specific 
+purposes and functions. Formal architecture is an important default 
+proposition for any complex system, helping set some contours of its 
+performance and offering a partial description of its behavior and topology. 
+Formal hierarchical architecture is typically represented in a structure 
+known as a tree. Trees are a well-studied mathematical structure that can be 
+“widely used as [graphs or] data structures in computer science.”90 Trees are 
+comprised of nodes which are connected by branches. Conceptualized as a 
+graph, a tree is a connected, undirected graph with no simple circuits. 
+Direction only flows one way; each node and branch is associated with a level, 
+with levels starting at the root node and terminating at the leaf nodes. These 
+are important features that distinguish a tree from other graphs (such as those 
+typically studied in network science). 
+Typically the byproduct of system designers or instantiated by formal 
+rules, tree-based architecture is designed to serve important functions. Those 
+functions might be institutional or they might serve as a means to help make 
+sense of a given system’s complexity. 
+ 
+ 
+89. 
+For anything other than a trivial problem, the mapping from n dimensional space to a 
+smaller dimensional space (typically 2D or 3D space) represents some loss of information. The 
+question is, how much? This depends upon how much loading there is on the initial dimensions. 
+ 
+90. 
+See Joe Malkevitch, Trees: A Mathematical Tool for All Seasons, AM. MATHEMATICAL SOC’Y: 
+FEATURE COLUMN, http://www.ams.org/samplings/feature-column/fcarc-trees (last visited Sept. 
+14, 2015); see also Eric W. Weisstein, Tree, WOLFRAM MATHWORLD, http://mathworld.wolfram. 
+com/Tree.html (last visited Sept. 14, 2015). 
+214 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+For an institutional example, consider the American federal judiciary. 
+The federal judiciary features a formal hierarchy of judges and judicial staff 
+whose collective behavior help shape “the path of the law.”91 The basic formal 
+hierarchy is memorialized in the formal multi-tier structure that begins with 
+federal magistrate judges and terminates with the United States Supreme 
+Court. Figure 1 offers a simple version of this formal tree-based hierarchy. 
+ 
+Figure 1. The Federal Judicial Hierarchy 
+ 
+For a similar case, consider the well-known West Key Number System. As 
+displayed in Figure 2, the West Key Number System is a tree-based 
+architecture designed to categorize the space of legal concepts. This is a 
+hierarchical method of organizing the law into categories that make it easier 
+for actors inside the legal system to understand and navigate it. In Figure 2, 
+higher-order legal concepts are located above lower level concepts. Those 
+seeking to learn about a narrow question can both identify directly relevant 
+information as well as learn about surrounding higher level ideas under which 
+their discrete question is located. Like all taxonomies, these categories are 
+obviously not hermetic, and an alternative structure could potentially be 
+developed. However, the existing divisions in a taxonomy such as the West 
+Key Number System point to the sort of latent organizational structure that 
+many hold in their minds (even if it is never formalized). Although it is a 
+proxy to the question, the complexity of this structure illustrates the 
+ 
+ 
+91. 
+See generally Oliver Wendell Holmes, Jr., The Path of the Law, 10 HARV. L. REV. 457 (1897). 
+2015] 
+LEGAL COMPLEXITY 
+215 
+complexity of the conceptual space being modeled as more distinctions in the 
+law generate greater and greater numbers of potential category distinctions. 
+ 
+Figure 2. West Key Number System 
+ 
+For both of these examples, as well as for other tree-based hierarchies, 
+the goal is to develop appropriate measures that allow a researcher to 
+characterize the complexity of the respective space.92 In terms of metrics, 
+simple measures such as tree depth can highlight the level of intricacy present 
+in a given architecture.93 The ratio between the breadth (i.e., width) and 
+depth (i.e., flatness) of a tree can illuminate the extent of hierarchy present 
+in a given context. For example, the width of a tree might indicate the 
+grouping of a highly diverse set of objects that cannot otherwise be combined 
+in the nested categories. One potentially interesting set of measures would 
+center upon the inequality and stratification within and across various agent 
+sets. What is the average distance between each leaf node and the root node 
+of the tree? One could also consider other moments (e.g., variance, skewness, 
+and kurtosis) of that distribution as it would illuminate other properties of 
+the nature of authority in the broader complex system. 
+ 
+ 
+92. 
+In a real sense, taxonomies such as the West Key Number System help partially represent 
+the law’s phylogenetic structure. The complexity of such trees can also be leveraged in a variety 
+of scientific inquiries. See, e.g., Louis J. Billera et al., Geometry of the Space of Phylogenetic Trees, 27 
+ADVANCES APPLIED MATHEMATICS 733 (2001); John P. Huelsenbeck & Fredrik Ronquist, 
+MRBAYES: Bayesian Inference of Phylogenetic Trees, 17 BIOINFORMATICS 754 (2001); Hasan H. Otu 
+& Khalid Sayood, A New Sequence Distance Measure for Phylogenetic Tree Construction, 19 
+BIOINFORMATICS 2122 (2003). 
+ 
+93. 
+In principle, it could cut either way. However, in general, the distinctions might be 
+helpful in understanding, or they may make it harder to understand the overall complex system. 
+216 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+3. Network Architecture: Emergent Hierarchies 
+Complex system architectures take on a variety of flavors and complex 
+adaptive systems exhibit multi-scalar hierarchies, organizations, and other 
+structural forms within which the agents are distributed.94 As a matter of 
+system evolution, there are two forces typically in constant operation—forces 
+building up hierarchies and forces operating to tear those very hierarchies 
+down. At any given moment, these countervailing dynamics operate to yield 
+different kinds of observed structures. 
+The tree conception has some important limitations, but many 
+limitations are overcome by considering the interconnectedness (network) 
+that exists between respective objects. As recently noted, “hierarchies emerge 
+and occur widely in self-organizing and evolutionary systems, such as food 
+webs (ecological), neural networks (biological), open-source software 
+(technological), and industrial production networks (economic).”95 This is 
+equally applicable to describing legal systems.96 Hierarchy is a fundamental 
+feature of legal systems, but the nature of that hierarchy is likely to vary across 
+particular agents and agent sets. 
+Hierarchies are typically not the byproduct of a random process. Quite 
+the opposite, their forms are the consequence of specific underlying 
+generating dynamics. While hierarchies can be the byproduct of choices by 
+system designers, they more commonly emerge as a result of actions 
+undertaken by agents. Thus, observed system architecture is usually not the 
+function of top-down choices made by a system designer, but rather the 
+aggregate byproduct of bottom-up decisions offered by various agents and 
+agent sets. Thus, in addition to the formal hierarchies discussed above, there 
+are emergent hierarchies that develop through a series of micro-choices made 
+by the respective actors. Such emergent hierarchies operate alongside any 
+nominal hierarchy that might also exist, thereby confounding one’s ability to 
+understand the dynamics and predict the behavior of a given system. 
+Consider again the federal judiciary. The formal tree-based hierarchy 
+displayed in Figure 1 does not fully capture the true state of social and 
+professional authority carried by the respective agents. Although judges at 
+each level of the federal judiciary hierarchy would appear to possess equal 
+ 
+ 
+94. 
+For various examples, see generally Stefano Boccaletti et al., Complex Networks: Structure 
+and Dynamics, 424 PHYSICS REP. 175 (2006); Phillip Bonacich, Power and Centrality: A Family of 
+Measures, 92 AM. J. SOC. 1170 (1987); David A. Lake, Escape from the State of Nature: Authority and 
+Hierarchy in World Politics, 32 INT’L SECURITY 47 (2007); Joel M. Podolny & Karen L. Page, Network 
+Forms of Organization, 24 ANN. REV. SOC. 57 (1998); and M. Puck Rombach et al., 74 SIAM J. ON 
+APPLIED MATHEMATICS 167 (2014). 
+ 
+95. 
+Jianxi Luo & Christopher L. Magee, Detecting Evolving Patterns of Self‐Organizing Networks 
+by Flow Hierarchy Measurement, 16 COMPLEXITY 53, 53 (2011). 
+ 
+96. 
+See supra text accompanying note 91. 
+2015] 
+LEGAL COMPLEXITY 
+217 
+levels of authority, the social authority of these jurists is far from equal.97 
+While each jurist’s decisions are important to the individual litigators that 
+appear before the judge, most judges cannot be said to have a lasting and 
+prolonged effect on the development of the law. Indeed, “[e]ven a casual 
+observer would recognize that although many jurists’ views are quickly 
+forgotten, the views of a selected few persist.”98 Whether one agrees with their 
+particular decisions, it is difficult to deny the distinct and lasting legacies of 
+federal judges such as Learned Hand, Jerome Frank, Henry Friendly, Richard 
+Posner, Abner Mikva, and J. Skelly Wright as well as Supreme Court Justices 
+such as Oliver Wendell Holmes, John Marshall, Earl Warren, Roger Taney, 
+Louis Brandeis, and Joseph Story. 
+Figure 3 offers a partial picture of the informal, network-based hierarchy 
+present in the federal judiciary. Consistent with the coloring offered in Figure 
+1 above, yellow nodes are members of the Supreme Court of the United 
+States, green nodes are members of the United States Court of Appeals, and 
+blue nodes are United States District Court judges. Edges are built from the 
+flow of law clerks from one jurist to another.99 A simple ocular review reveals 
+a structure that is far from a random graph. This is a portrait of inequality, 
+and that inequality is a function of several micro-level choices made by 
+individual jurists. These choices yield a social structure where some jurists’ 
+social authority far outstrips their formal rank. As such, they may exert more 
+social control than a jurist who is normally ranked above them. In other 
+words, there are certain district court judges whose social authority appears 
+to outstrip at least some of their circuit court counterparts. It also leads one 
+to consider provocative questions such as whether well-known circuit court 
+judges such as Richard Posner have more authority over the long term 
+development of the law than some justices on the United States Supreme 
+Court. Of course, Figure 3 offers only a snapshot of the social structure of the 
+American federal judiciary at a given moment in time. The landscape is 
+dynamic and the prestige hierarchy shifts. “[R]eputation effects, esteem, 
+prestige, and influence are undoubtedly generated through dynamic 
+processes that include negative and positive feedback.”100 
+ 
+ 
+ 
+97. 
+Our best understanding is that the authority follows some form of extremely skewed 
+distribution (i.e., power, law, etc.). 
+ 
+98. 
+See Katz & Stafford, supra note 86, at 461–62 n.10. 
+ 
+99. 
+Id. at 461. 
+ 100. 
+Id. 
+218 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+Figure 3. The Emergent Federal Judicial Social Structure 
+ 
+One way to formalize this emergent architecture is through the tools of 
+network science (applied graph theory).101 Networks consist of nodes that 
+can, for example, in the simple case represent actors, institutions, and 
+documents. The connections between these nodes are represented by edges 
+(bidirectional) or arcs (unidirectional). Such connections can memorialize 
+simple binary {0, 1} connections or can be weighted to represent far more 
+sophisticated types of relationships. Network science is among the fastest 
+growing fields in all of science and includes scholarship in wide-ranging 
+ 
+ 101. 
+See generally ALBERT-LÁSZLÓ BARABÁSI, LINKED: HOW EVERYTHING IS CONNECTED TO 
+EVERYTHING ELSE AND WHAT IT MEANS FOR BUSINESS, SCIENCE, AND EVERYDAY LIFE (2003); 
+DUNCAN J. WATTS, SIX DEGREES: THE SCIENCE OF A CONNECTED AGE (2003); David Lazer et al., 
+Life Computational Social Science, 323 SCI. 721 (2009). 
+2015] 
+LEGAL COMPLEXITY 
+219 
+disciplines such as physics,102 sociology,103 political science,104 public health,105 
+economics,106 and law.107 
+The application of network-science tools to legal systems has revealed 
+some interesting and illuminating patterns. The law’s most well-studied form 
+of emergent architecture is a documented tendency of legal systems and 
+agents to display self-similar, or fractal, properties.108 This tendency extends 
+ 
+ 102. 
+See, e.g., Albert-László Barabási, Network Science, 371 PHIL. TRANSACTIONS ROYAL SOC. 1 
+(2013); Albert-László Barabási & Reka Albert, Emergence of Scaling in Random Networks, 286 SCI. 
+509 (1999); Michael J. Bommarito, Daniel Martin Katz, Jonathan Zelner & James Fowler, Distance 
+Measures for Dynamic Citation Networks, 389 PHYSICA A 4201 (2010); M. Girvan & M.E.J. Newman, 
+Community Structure in Social and Biological Networks, 99 PROC. NAT’L ACAD. SCI. 7821 (2002); 
+Duncan J. Watts & Stephen H. Strogatz, Letter, Collective Dynamics of ‘Small-World’ Networks, 393 
+NATURE 440 (1998). 
+ 103. 
+See, e.g., RONALD S. BURT, STRUCTURAL HOLES: THE SOCIAL STRUCTURE OF COMPETITION 
+(1995); Mark Granovetter, The Strength of Weak Ties, 78 AM. J. SOC. 1360 (1973); Stanley Milgram, 
+The Small-World Problem, 1 PSYCHOL. TODAY 61 (1967); John Padgett & Christopher K. Ansell, 
+Robust Action and the Rise of the Medici, 1400–1434, 98 AM. J. SOC. 1259 (1993). 
+ 104. 
+See, e.g., Lada A. Adamic & Natalie Glance, The Political Blogosphere and the 2004 U.S. 
+Election: Divided They Blog, 3 INT’L WORKSHOP ON LINK DISCOVERY 36 (2005); James H. Fowler, 
+Connecting the Congress: A Study of Cosponsorship Networks, 14 POL. ANALYSIS 456 (2006). 
+ 105. 
+See, e.g., Lisa F. Berkman & Thomas Glass, Social Integration, Social Networks, Social Support, 
+and Health, in SOCIAL EPIDEMIOLOGY 137 (Lisa F. Berkman & Ichiro Kawachi eds., 2000); 
+Nicholas A. Christakis & James H. Fowler, The Collective Dynamics of Smoking in a Large Social 
+Network, 358 NEW ENG. J. MED. 2249 (2008); Jonathan L. Zelner et al., Social Connectedness and 
+Disease Transmission: Social Organization, Cohesion, Village Context, and Infection Risk in Rural Ecuador, 
+102 AM. J. PUB. HEALTH 2233 (2012). 
+ 106. 
+See, e.g., Daron Acemoglu et al., Bayesian Learning in Social Networks, 78 REV. ECON. STUD. 
+1201 (2011); Antoni Calvo-Armengol & Matthew O. Jackson, The Effects of Social Networks on 
+Employment and Inequality, 94 AM. ECON. REV. 426 (2004); Benjamin Golub & Matthew O. Jackson, 
+How Homophily Affects the Speed of Learning and Best-Response Dynamics, 127 Q.J. ECON. 1287 (2012); 
+Sanjeev Goyal et al., Economics: An Emerging Small World, 114 J. POL. ECON. 403 (2006); Sanjeev 
+Goyal & Fernando Vega-Redondo, Structural Holes in Social Networks, 137 J. ECON. THEORY 460 
+(2007); Dunia López-Pintado, Diffusion in Complex Social Networks, 62 GAMES & ECON. BEHAV. 573 
+(2008); Adalbert Mayer & Steven L. Puller, The Old Boy (and Girl) Network: Social Network Formation 
+on University Campuses, 92 J. PUB. ECON. 329 (2008). 
+ 107. 
+See, e.g., James Fowler et al., Network Analysis and the Law: Measuring the Legal Importance 
+of Precedents at the U.S. Supreme Court, 15 POL. ANALYSIS 324 (2007); Katz & Stafford, supra note 
+86; Katz et al., supra note 50; Post & Eisen, supra note 67; Thomas A. Smith, The Web of the Law, 
+44 SAN DIEGO L. REV. 309 (2007); Katherine J. Strandburg et al., Law and the Science of Networks: 
+An Overview and an Application to the ‘Patent Explosion,’ 21 BERKELEY TECH. L.J. 1293 (2007); 
+Katherine J. Strandburg et al., Patent Citation Networks Revisited: Signs of a Twenty-First Century 
+Change?, 87 N.C. L. REV. 1657 (2009). 
+ 108. 
+See Daniel Martin Katz, How Long is the Coastline of the Law: Additional Thoughts on the 
+Fractal Nature of Legal Systems [Repost], COMPUTATIONAL LEGAL STUD. (May 13, 2011), http:// 
+computationallegalstudies.com/2011/05/13/how-long-is-the-coastline-of-the-law-additional-
+thoughts-on-the-fractal-nature-of-legal-systems-repost. 
+Fractal geometry was developed in a set of classic papers by the late mathematician 
+Benoît Mandelbrot. The original paper in the field How Long is the Coastline of Britain 
+describes the coastline measurement problem. In short form, the length of the coast 
+line is a function of the size of measurement one employs. . . . As a first-order 
+description of one important dynamic of the common law, we believe significant 
+220 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+to a wide variety of contexts, including cases, judges, law schools, and law 
+review articles. The implications for legal theory are significant. One 
+important implication is that distance between those cases, judges, law 
+schools, and law review articles are highly nonlinear. Focusing upon the cases 
+and judges, the distance between an emergent case or judge and the average 
+case or judge is extremely large. Indeed, as documented in the literature, the 
+social distance is actually exponential.109 
+Consider the judicial decision-making and opinion-authorship process. 
+Although formal hierarchies exist in the law such as the state or federal 
+judicial hierarchy, day-to-day decision-making in legal systems is actually fairly 
+decentralized. Individual actors can, in principle, reference whatever relevant 
+cases and other sources they choose. Despite such broad discretion, actors 
+tend to disproportionately gravitate to small numbers of cases that are 
+consistently cited. This micro-tendency toward the familiar and the already 
+well regarded yields a macro-prestige hierarchy that is extremely skewed (i.e., 
+its degree distribution roughly follows a power law). Sometimes called the 
+“Mathew effect,” the “80/20 rule,” or the “rich-get-richer phenomenon,” 
+power laws as well as other related skewed distributions are indicative of highly 
+uneven social processes. Those with initial resources are able to rapidly 
+extend that advantage. As displayed in Figure 4, complex systems scholars 
+have documented this trend across a variety of legal systems and associated 
+legal institutions. Consider the case of judicial citations. While a small number 
+of cases are consistently cited, roughly half of the written decisions in 
+American law have never been cited more than once.110 Figure 4 offers 
+evidence of a similar phenomenon across a variety of contexts.111 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+progress can be made by considering the conditions under which legal systems 
+behave in a manner similar to fractals. [Indeed,] a number of important papers have 
+discussed the fractal nature of legal systems. 
+Id. 
+ 109. 
+See Katz & Stafford, supra note 86; Post & Eisen, supra note 67; Smith, supra note 107; 
+see also supra note 108 and accompanying text. 
+ 110. 
+See Smith, supra note 107. 
+ 111. 
+In each of the plots in Figure 4, the x-axis plots the quantity (i.e., number of times cited) 
+and the y-axis plots the frequency of that particular quantity throughout the data. 
+2015] 
+LEGAL COMPLEXITY 
+221 
+Figure 4. Skewed Distribution of Social Authority in Legal Systems112 
+ 
+Beyond the degree distribution, there are a large number of commonly 
+used statistics used to characterize the properties of a given network 
+(graph).113 These statistics include macro-level statistics, such as average path 
+length, clustering coefficients, and density, as well as micro-level statistics such 
+as degree, closeness, betweenness, and other related authority measures. Also 
+interesting are the mesoscopic graph measures that allow for the 
+identification and tracking of particular subgroups and subgraphs (loosely 
+called communities). These measures, along with others, can help form the 
+basis for more sophisticated composite measures of overall system complexity. 
+Legal-complexity theorists need more documentation and a far more 
+extensive scientific exploration of these questions. The age of armchair 
+theorizing must give way to a new reality with legal theorists applying 
+appropriate metrics to help better substantiate their respective claims. The 
+good news is that, with respect to measuring legal systems as complex systems, 
+legal theorists do not have to go it alone. Scholars in the social, biological, 
+and physical sciences have developed methods designed to measure the 
+ 
+ 112. 
+Katz et al., supra note 50, at 95 fig.5; Katz & Stafford, supra note 86, at 498 fig.5; Post & 
+Eisen, supra note 67, at 574 fig.11; Smith, supra note 107, at 329 fig.8, 335 fig.12; Anton Geist, 
+Using Citation Analysis Techniques for Computer-Assisted Legal Research in Continental 
+Jurisdictions 82 fig.4 (Sept. 2009) (unpublished LLM thesis, University of Edinburgh), https:// 
+www.era.lib.ed.ac.uk/bitstream/handle/1842/3511/GeistLLM2009.pdf?sequence=2. 
+ 113. 
+See generally MATTHEW O. JACKSON, SOCIAL AND ECONOMIC NETWORKS (2008); M.E.J. 
+NEWMAN, NETWORKS: AN INTRODUCTION (2010); THE STRUCTURE AND DYNAMICS OF NETWORKS 
+(Mark Newman et al. eds., 2006). 
+222 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+extent of hierarchy present in a given context.114 The question properly posed 
+is how one might retrofit these existing approaches to identify and measure 
+the persistent and differentiable features present in legal systems. In that vein, 
+there are a variety of potential measurement strategies or metrics one might 
+employ depending upon the specific component or components of the legal 
+system one is interested in studying. 
+4. Information Storage and Computation 
+Complex adaptive systems store and process information.115 The agents 
+and architecture described above play an important role in characterizing the 
+operation and flow of information undertaken therein. If trees and networks 
+represent the architecture and agents are the nodes, then information would 
+be the “electrical current” that flows across the respective institutional 
+circuitry. The act of processing the information is computation (broadly 
+construed). This is true whether the complex system is one’s cognitive 
+architecture or the operation of a biological or physical system. 
+The strongest version of these ideas leads to a claim of universality (i.e., 
+universal computation) whereby every cell, every brain, every person, every 
+society, and even the universe itself can be conceptualized as engaging in 
+computation. In one sense, this is a trivially true statement—every system is 
+engaging in something that might be called computation. However, the 
+nontrivial version of the idea is controversial. What is important to remember 
+is that one need not assent to the concept of universal computation in order 
+to observe the theoretical value of computation as a first-order descriptor of 
+a complex system’s behavior. 
+In application, legal systems can be conceptualized as computational 
+complex systems—systems that store and process information. As it concerns 
+this storage and processing task, not all computational complex systems are 
+equally complex. Even among otherwise complex systems, there is a spectrum. 
+From the characterization above, two classes of information-centric metrics 
+present themselves: (1) content measures; and (2) computation measures. 
+A content-centric information measure could consider the amount of 
+information necessary to fully characterize the content stored in the legal 
+ 
+ 114. 
+See, e.g., Andrea Lancichinetti et al., Detecting the Overlapping and Hierarchical Community 
+Structure in Complex Networks, 11 NEW J. PHYSICS 033015 (2009); Enys Mones et al., Hierarchy 
+Measure for Complex Networks, 7 PLOS ONE e33799 (2012); Marta Sales-Pardo et al., Extracting the 
+Hierarchical Organization of Complex Systems, 104 PROC. NAT’L ACAD. SCI. U.S. 15224 (2007); 
+Huawei Shen et al., Detect Overlapping and Hierarchical Community Structure in Networks, 388 PHYSICA 
+A 1706 (2009). 
+ 115. 
+See, e.g., HERMANN HAKEN, INFORMATION AND SELF-ORGANIZATION: A MACROSCOPIC 
+APPROACH TO COMPLEX SYSTEMS (3d ed. 2010); DIRK HELBING, QUANTITATIVE SOCIODYNAMICS: 
+STOCHASTIC METHODS AND MODELS OF SOCIAL INTERACTION PROCESSES (2d ed. 2010); GREGOIRE 
+NICOLIS & CATHERINE NICOLIS, FOUNDATIONS OF COMPLEX SYSTEMS: EMERGENCE, INFORMATION 
+AND PREDICTION (2d ed. 2012); Guido Nolte et al., Robustly Estimating the Flow Direction of 
+Information in Complex Physical Systems, 100 PHYSICAL REV. LETTERS 234101 (2008). 
+2015] 
+LEGAL COMPLEXITY 
+223 
+system. What is the information content contained in a particular body of 
+legal rules? How complex is the resulting rules set? 
+Law’s complexity is a long-standing social and political issue, and various 
+technologies help lawyers and lay persons confront the sheer volume of 
+information and overall attendant complexity of legal systems. As the saying 
+goes, necessity is the mother of all invention, and the complexity of law has 
+necessitated the development of legal information technology as a rational 
+and necessary response to law’s complexity. Even in a pre-computing era, the 
+hornbooks, digests, restatements, and other related legal treatises can be 
+thought of as an early form of legal information technology allowing various 
+end users to better understand the law in a given area. In addition, various 
+indexing systems and other legal taxonomies—such as the West Key Number 
+System discussed above—also represent early forms of legal technology. 
+Again, their use allowed an end user to more quickly assemble the relevant 
+information content contained therein. 
+A related, but distinct, information measure is a computational measure. 
+Again, the linkage between information technology and the complexity of the 
+law stands ever present. Consider again TurboTax—the popular, consumer-
+facing tax preparation software mentioned in Part I. From a complexity 
+perspective, TurboTax offers taxpayers a layer between the underlying legal 
+rules and the lived experience on behalf of its users. 
+More recent developments in legal technology have a similar purpose—
+reverse-engineering complex legal processes. Consider, for example, the 
+United States Tax Code (Title 26 and its surrounding regulations). As we 
+suggested in Part I, to call the Tax Code “complex” is straightforward and 
+hardly represents some sort of revelation. Indeed, there exists a cottage 
+industry of commentary highlighting this point.116 However, the question is: 
+how do its end users experience that complexity? For many end users, legal 
+technology and its ability to mediate complexity further complicates the 
+picture. 
+Complexity in the underlying object may or may not project into 
+complexity as experienced by the relevant end user. TurboTax and other 
+competing products offer a technology layer sandwiched between the Code 
+and the experience of the end user. In a very serious sense, this software is a 
+legal user interface. Much like internet browsers shield users from the 
+underlying coding language (e.g., HTML and Java) and processes, tax 
+preparation software shields users from the underlying complexity in the Tax 
+Code. Given this complication, what is the best metric for measuring 
+complexity? 
+One measure would be of the underlying object—the Tax Code—
+through methods discussed above. Another metric could evaluate the average 
+experience of an end-user of the Code, such as time to complete, accuracy, 
+ 
+ 116. 
+See sources cited supra note 2. 
+224 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+or satisfaction. Or, as suggested in Part I, one could measure the complexity 
+of the rules and user interface that converts existing legal rules into some sort 
+of an executable program used to perform meaningful functions. In other 
+words, how complex is the software necessary to represent TurboTax? How 
+does this compare to other forms of software that help automate legal 
+knowledge? There exists a series of well-regarded software-complexity 
+measures, including simple measures such as program size, computational 
+complexity, and run-time measures, as well as more complicated measures 
+such as Halstead’s complexity measures or McCabe’s cyclomatic complexity 
+measures.117 A related measure might consider how much information one 
+needs in order to execute the average task and whether that average 
+characterization is informative (i.e., what are statistical properties of that 
+distribution including its variance, skewness, and kurtosis)? 
+B. COMPLEXITY AND SYSTEM BEHAVIOR 
+Our interest in legal complexity is in part motivated by our interest in the 
+behavior of the legal system and its predictability. Some basic level of 
+predictability is an obvious and straightforward normative goal for any legal 
+system. The difficulty arises in instances where predictability conflicts with 
+other normative goals, such as fairness and various efforts to ensure that the 
+law evolves to take account of changes in broader society. In the aggregate, 
+various efforts to particularize the law to better distinguish various classes of 
+conduct are one important source of legal complexity. In this context, 
+complexity arguably serves a positive normative purpose. However, each 
+increase in complexity can have unintended consequences including making 
+the overall legal system less transparent and less understandable to lay 
+persons.118 
+As highlighted herein and across the literature, legal systems are complex 
+adaptive systems. Our desire to predict system-level behavior must be 
+tempered by the realities that are attendant in working with complex adaptive 
+systems. There are real limits in our ability to make forecasts. In the general 
+case discussing the relationship between system complexity and prediction, 
+scholars highlight the distinction between two famous complex systems—
+tides and weather. Both feature fairly complex dynamics, but from a 
+prediction standpoint, one is easy and the other is hard (in some cases, 
+perhaps, impossible). 
+For predicting tides, relevant variables include “the Earth’s rotation, the 
+topography of the ocean, and the position of the Moon and the Sun relative 
+ 
+ 117. 
+See generally Bill Curtis et al., Measuring the Psychological Complexity of Software Maintenance 
+Tasks with the Halstead and McCabe Metrics, SE-5 IEEE TRANSACTIONS ON SOFTWARE ENGINEERING 
+96 (1979); Kearney et al., supra note 12. 
+ 118. 
+See Katz & Bommarito, supra note 17. 
+2015] 
+LEGAL COMPLEXITY 
+225 
+to Earth.”119 Significant work by well-regarded mathematicians such as Kelvin, 
+Poincare, and LaPlace yielded a set of rigorous predictions that have been 
+shown to be highly accurate.120 In addition, in many instances, tides patterns 
+can be determined well in advance, such that they are printed and distributed 
+in books such as tide tables and used by a variety of end users. 
+While tides are complex yet predictable, weather systems are complex 
+and often unpredictable.121 The specific level of predictability depends the 
+dynamics present at a given moment in time. For example, consider 
+forecasting the temperature during the summer months in a desert climate. 
+From a day-over-day perspective, the expected temperature is fairly stable. By 
+contrast, temperate climates are typically more difficult to predict 
+(particularly during seasonal transition periods). During the shift from winter 
+to spring, such temperate climates can experience wide variations in 
+temperature from 25 degrees one day to 75 degrees just a few days later. 
+The challenge of weather prediction extends beyond just temperature 
+and includes predicting rainstorms and wind patterns. Many scientists have 
+studied weather patterns in the hopes of trying to develop more accurate 
+forecasts. The pioneering work of Edward Lorenz, however, offers a useful 
+caution. Among other things, Lorenz identified how the complex dynamics 
+underlying weather systems made longer term forecasting difficult or 
+impossible.122 Indeed, outside a 7- to 14-day window, most weather 
+predictions do not perform much better than an almanac. 
+Taken as a whole, and in many specific instances, legal systems exhibit 
+properties that make them behave more like weather and less like tides. 
+However, this is merely conjecture (albeit, perhaps, well founded and 
+intuitive conjecture). To better evaluate that proposition requires greater 
+scientific exploration, characterization, and measurement of legal systems 
+and their complexity using appropriate tools. 
+Despite these real limitations along a variety of dimensions, it is possible 
+to make forecasts about the future behavior of complex systems. Indeed, a 
+core portion of lawyers’ professional judgment includes forecasting uncertain 
+legal environments. In certain instances, complexity makes this task more 
+challenging. The tools used by complex-systems scholars such as networks, 
+trees, and computation, and terms such as emergence, path dependence, 
+feedback, and diffusion can help those embedded in an environment better 
+understand (and hopefully predict) relevant behavior. 
+ 
+ 119. 
+See Daniel Martin Katz, Quantitative Legal Prediction—or—How I Learned to Stop Worrying and 
+Start Preparing for the Data Driven Future of the Legal Services Industry, 62 EMORY L.J. 909, 961 (2013). 
+ 120. 
+Id.; see also Duncan Watts, The Dream of Prediction: Why You Should Be Skeptical, 2011 YEAR 
+REV. BLOG (Dec. 27, 2011, 9:00 PM), http://2011.yearinreview.yahoo.com/2011/blog/8569/ 
+predictions-why-you-should-be-skeptical. 
+ 121. 
+See NATE SILVER, THE SIGNAL AND THE NOISE: WHY SO MANY PREDICTIONS FAIL—BUT 
+SOME DON’T (2012); Watts, supra note 120. 
+ 122. 
+See generally EDWARD N. LORENZ, THE ESSENCE OF CHAOS (1995). 
+226 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+1. Networks, Trees, Diffusion, and System Behavior 
+Complex adaptive systems exhibit information processing, feedback, and 
+feedforward mechanisms producing structural interconnectedness and 
+interdependence between agents throughout the system itself. As discussed 
+earlier, a structural metric would construct a model of the legal system’s 
+networked agents and structure, showing all interconnections and 
+interdependencies, and measure the strengths and directions of information 
+feedback and feedforward channels. 
+From a behavioral standpoint, the structural properties of a given 
+complex system aid in various forms of system prediction. Obviously, there 
+are many scopes at which such a forecast might be offered with the high level 
+(or coarse grained) properties being far easier than lower level (or fine 
+grained) properties. Initially, one can examine the structural properties 
+(trees, networks, information, etc.) and then offer an account of the 
+evolutionary conditions giving rise to the system as observed at time t. Further, 
+it is possible to offer a reasonable forecast of its future behavioral properties, 
+as in many instances we care less about the structure of system than the 
+information, signal, or pathogen being distributed across its architecture. 
+In the context of law, we are interested in the social spread of ideas and 
+paradigms. The development of the common law, for example, is a 
+distributed process. No individual jurist, academic, or lawyer is able to 
+unilaterally impose his or her specific vision of what the law is or what the law 
+ought to be. It is a process of prestige and persuasion—where prestige is a 
+function of one’s structural position within a network, and persuasion is about 
+one’s ability to use legal argumentation to convince his or her colleagues of 
+the merit of their argument.123 We are interested in the origin, persistence, 
+and ultimate success of various legal ideas, doctrines, and paradigms. In law, 
+as in many other pursuits, there exists a marketplace for ideas where most 
+ideas do not persist. However, some do. An important question is why do some 
+persist and others fade?124 
+With a reasonable understanding of the current and future structure in 
+place, it is possible to study the flow and spread of ideas and paradigms using 
+the tools of social epidemiology.125 Among other things, social epidemiology 
+and social physics is the study of how various social structures impact the 
+spread or persistence of various ideas.126 Like very contagious pathogens, 
+ 
+ 123. 
+These themes are explored in some recent work in political science. See, e.g., LAWRENCE 
+BAUM, JUDGES AND THEIR AUDIENCES: A PERSPECTIVE ON JUDICIAL BEHAVIOR (2006). 
+ 124. 
+For an exploration of these questions, see Katz et al., supra note 50. 
+ 125. 
+Obviously one must remain mindful of Laplace’s Demon as described infra Part III.B.2. 
+ 126. 
+See generally ALEX PENTLAND, SOCIAL PHYSICS: HOW GOOD IDEAS SPREAD—THE LESSONS 
+FROM A NEW SCIENCE (2014); Luís M.A. Bettencourt et al., The Power of a Good Idea: Quantitative 
+Modeling of the Spread of Ideas from Epidemiological Models, 364 PHYSICA A 513 (2006). 
+2015] 
+LEGAL COMPLEXITY 
+227 
+transformative ideas tend to win out while poor ideas rarely catch fire.127 
+However, there is a large intermediate class of ideas whose fate can be said to 
+be contingent. If those without social authority do not embrace the idea, it 
+will not persist (even if it is superior to its alternatives). For those classes of 
+ideas, structure matters. Structure drives system behavior in a way yet to be 
+fully appreciated by legal theorists.128 
+ 
+Figure 5. Diffusion of Paradigms on the American Law Professoriate 
+ 
+In order to offer a concrete implementation of these ideas, Figure 5 
+offers a hypothetical diffusion simulation across the American law 
+professoriate where the displayed structure maps the relationship between 
+where an individual professor attended law school and the institution where 
+that individual now teaches.129 Tracing across that structure is a hypothetical 
+idea (pathogen) with some underlying level of infectiousness. High-
+infectiousness ideas always spread and low-infectiousness ideas do not spread, 
+but the intermediate class of ideas are far more likely to succeed if they 
+emanate or are quickly adopted by institutions with high social standing. 
+ 
+ 127. 
+See generally ANDREW CHESTERMAN, MEMES OF TRANSLATION: THE SPREAD OF IDEAS IN 
+TRANSLATION THEORY (1997); Susan Blackmore, The Power of Memes, 283 SCI. AM. 64 (2000). For 
+application in law, see generally Thomas F. Cotter, Memes and Copyright, 80 TUL. L. REV. 331 
+(2005); Simon Deakin, Evolution for our Time: A Theory of Legal Memetics, 55 CURRENT LEG. PROBS. 
+1 (2003); Michael S. Fried, The Evolution of Legal Concepts: The Memetic Perspective, 39 JURIMETRICS 
+291 (1999); and Daniel Martin Katz et al., Legal N-Grams? A Simple Approach to Track the ‘Evolution’ 
+of Legal Language, JURIX PROC. (2011). 
+ 128. 
+There have been some case studies of this phenomenon documented by the “historical 
+institutionalists.” They highlight various sociopolitical mechanisms responsible for the lock-in of 
+historically 
+questionable 
+narratives. 
+See, 
+e.g., 
+PAMELA BRANDWEIN, RECONSTRUCTING 
+RECONSTRUCTION: THE SUPREME COURT AND THE PRODUCTION OF HISTORICAL TRUTH (1999); 
+BARRY CUSHMAN, RETHINKING THE NEW DEAL COURT: THE STRUCTURE OF A CONSTITUTIONAL 
+REVOLUTION (1998); HOWARD GILLMAN, THE CONSTITUTION BESIEGED: THE RISE AND DEMISE OF 
+LOCHNER ERA POLICE POWERS JURISPRUDENCE (1993); MARK A. GRABER, TRANSFORMING FREE 
+SPEECH: THE AMBIGUOUS LEGACY OF CIVIL LIBERTARIANISM (1991); Pamela Brandwein, A Judicial 
+Abandonment of Blacks? Rethinking the “State Action” Cases of the Waite Court, 41 L. & SOC’Y REV. 343, 
+374–75 (2007). However, none of this work offers a rigorous and generalizable model for the 
+underlying phenomenon. 
+ 129. 
+This structure is an empirically derived snapshot drawn from Katz et al., supra note 50. 
+228 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+Similar approaches attempting to marry empirical phenomena to 
+theoretical models would significantly advance our understanding of the 
+complex socio-political ecosystem driving the development of the law. These 
+would include the social spread of various legal ideas across the judiciary, the 
+diffusion of policies in a legislative and executive context, and further work 
+on the impact of law school socialization on the long-term development of 
+the law. 
+2. Emergence, Feedback, Laplace’s Demon, and System Prediction 
+With all we currently know and all we might know about the operation 
+of any given system, it is all too tempting to overstate our ability to forecast its 
+behavior. In his book, A Philosophical Essay on Probabilities, the renowned 
+French mathematician Pierre-Simon Laplace fell victim to the trap of 
+determinism, or what has been called by many “Laplace’s Demon.”130 Loosely 
+speaking, Laplace argued that, if someone knew the precise location and 
+momentum of every atom in the universe, their past and future values for any 
+given time could be precisely calculated using the laws of classical 
+mechanics.131 In a sense, Laplace was offering a strong case of modernist 
+thinking. 
+Of course, this specific line of thinking has been thoroughly discredited 
+through the work of Heisenberg, Mandelbrot, Lorenz, and many others.132 As 
+discussed earlier, what Lorenz demonstrated about weather is more broadly 
+applicable to the behavior of other complex adaptive systems (including the 
+law). In a real sense, complex systems is a discipline anchored to postmodern 
+thinking. However, unlike much of the work done under the umbrella of 
+postmodernism, it is actually rigorous. The discipline also has the benefit of 
+actually building positive knowledge (as opposed to merely demonstrating 
+what we do not know). Among other things, complex-systems scholars have 
+ 
+ 130. 
+For a discussion of Laplace’s Demon, see generally Michael Shermer, Exorcising Laplace’s 
+Demon: Chaos and Antichaos, History and Metahistory, 34 HIST. & THEORY 59 (1995); and Marcel 
+Weber, Determinism, Realism, and Probability in Evolutionary Theory, 68 PHIL. SCI. 213 (2001). 
+ 131. 
+See PIERRE-SIMON LAPLACE, A PHILOSOPHICAL ESSAY ON PROBABILITIES 4 (photo. reprt. 
+2007) (F.W. Truscott & F.L. Emory trans., 1901). 
+We ought then to regard the present state of the universe as the effect of its anterior 
+state and as the cause of the one which is to follow. Given for one instant an 
+intelligence which could comprehend all the forces by which nature is animated 
+and the respective situation of the beings who compose it—an intelligence 
+sufficiently vast to submit these data to analysis—it would embrace in the same 
+formula the movements of the greatest bodies of the universe and those of the 
+lightest atom; for it, nothing would be uncertain and the future, as the past, would 
+be present to its eyes. 
+Id. 
+ 132. 
+See generally LORENZ, supra note 122; BENOIT B. MANDELBROT & RICHARD L. HUDSON, 
+THE (MIS)BEHAVIOR OF MARKETS: A FRACTAL VIEW OF RISK, RUIN, AND REWARD (2006). 
+2015] 
+LEGAL COMPLEXITY 
+229 
+identified two major dynamics that frustrate our ability to predict system 
+behavior: (1) feedback; and (2) emergence. 
+i. 
+Feedback 
+There are two basic forms of feedback every system generates. Negative 
+feedback systems tend toward stability over time as a change in the variable 
+being considered brings about some sort of contrary response that moves that 
+variable in the opposing direction.133 For example, heat applied to a cup of 
+coffee is not stable because it will slowly cool through a process of negative 
+feedback until it reaches equilibrium at room temperature. Standard models 
+of social, economic, and political sciences tend to emphasize the equilibrium 
+properties of a given phenomenon. As a first-order description of the relevant 
+dynamics, such characterizations tend to perform fairly well. However, they 
+are missing an important source of system behavior—positive feedback. 
+In systems that display positive feedback, small changes get amplified 
+because they run in the direction that the systems are already moving (or they 
+are able to permanently push the system in that direction).134 Positive 
+feedback systems are sensitive to initial conditions where small changes get 
+amplified. Herds, bubbles, avalanches, cascades, and network effects are 
+empirically observable phenomena whose theoretical origins are linked to 
+various forms of positive feedback. The skewed distribution of social authority 
+displayed earlier in Figure 4 is the byproduct of positive feedback. 
+Understanding this dynamic informs future predictions of system 
+behavior. On average, across all of its respective agents, the law is a system 
+rapidly moving in the direction of social-authority inequality. Without a 
+significant change in the underlying dynamics, law is a complex system that 
+currently features (and will continue to feature) positive feedback and large 
+amounts of social-authority inequality among cases,135 judges,136 law 
+reviews,137 law schools,138 and other related social institutions. 
+ii. Emergence 
+Another important source of frustration is the tendency of complex 
+systems to display emergent behavior. Complex adaptive systems produce 
+emergent-scale behavior that is sometimes incapable of being understood 
+ 
+ 133. 
+See Feedback Loops, STARTING POINT: TEACHING ENTRY LEVEL GEOSCIENCE, http://serc. 
+carleton.edu/introgeo/models/loops.html (last visited Sept. 15, 2015). 
+ 134. 
+Id. 
+ 135. 
+See Smith, supra note 107, at 325–34. See generally Post & Eisen, supra note 67. 
+ 136. 
+See Katz & Stafford, supra note 86. 
+ 137. 
+See Smith, supra note 107, at 355. 
+ 138. 
+See Katz et al., supra note 50. 
+230 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+except through system-wide study.139 There is not complete agreement about 
+the conditions giving rise to emergent phenomena. In general, however, 
+systems display emergence when the micro-study of individual actors in a 
+given system yields incomplete information about the entirety of the 
+organization.140 Instead, interactions between the components help structure 
+the outputs of the given system. These themes are well articulated in classic 
+treatments such as Micromotives and Macrobehavior by Thomas Schelling,141 and 
+Emergence: From Chaos to Order by John Holland.142 As Peter Corning describes, 
+“[a]mong other things, complexity theory gave mathematical legitimacy to 
+the idea that processes involving the interactions among many parts may be 
+at once deterministic yet for various reasons unpredictable.”143 
+There is a variety of examples of emergent behavior in social and physical 
+systems, including ecosystems, where order emerges from the interspecies 
+interactions, the phase transition of various chemicals, and the rise of fads 
+and other cultural cascades. Some such systems seem mundane but are 
+nonetheless emergent: 
+ 
+Automobile traffic is another example of a complex system. To 
+characterize the global properties of a traffic system, one could code 
+a set of individual-level variables, including the horsepower of the 
+respective vehicles, the disposition of the drivers, and a host of 
+decisional rules employed by the driver, including the leave space 
+and a driver’s ideal speed and lane. Even with an understanding of 
+all of these properties, it is ultimately the interactions between actors 
+that structure outputs for the overall system. Whether flow or 
+bottleneck will emerge is a function of the intermingling of 
+individuals, each of whom possesses a host of these attributes and 
+decisional rules. Thus, it depends upon the precise spatial 
+distribution of agents and the nature of their local interactions.144 
+ 
+ 139. 
+See, e.g., JOSHUA M. EPSTEIN & ROBERT AXTELL, GROWING ARTIFICIAL SOCIETIES: SOCIAL 
+SCIENCE FROM THE BOTTOM UP 1–2 (1996). See generally STEVEN JOHNSON, EMERGENCE: THE 
+CONNECTED LIVES OF ANTS, BRAINS, CITIES, AND SOFTWARE (2002). 
+ 140. 
+See Tom De Wolf & Tom Holvoet, Emergence Versus Self-Organisation: Different Concepts but 
+Promising When Combined, in ENGINEERING SELF-ORGANIZING SYSTEMS: METHODOLOGIES AND 
+APPLICATIONS 3 (Sven A. Brueckner et al. eds., 2005) (“A system exhibits emergence when there 
+are coherent emergents at the macro-level that dynamically arise from the interactions between 
+the parts at the micro-level. Such emergents are novel [with respect to] the individual parts of 
+the system.”); see also David J. Chalmers, Strong and Weak Emergence, in THE RE-EMERGENCE OF 
+EMERGENCE: THE EMERGENTIST HYPOTHESIS FROM SCIENCE TO RELIGION 245 (Philip Clayton & 
+Paul Davies eds., 2006). 
+ 141. 
+See generally THOMAS C. SCHELLING, MICROMOTIVES AND MACROBEHAVIOR (1978). 
+ 142. 
+See generally JOHN H. HOLLAND, EMERGENCE: FROM CHAOS TO ORDER (1998). 
+ 143. 
+Peter A. Corning, The Re-Emergence of “Emergence”: A Venerable Concept in Search of a Theory, 
+7 COMPLEXITY 18, 21 (2002). 
+ 144. 
+See Katz & Stafford, supra note 86, at 466 (footnote omitted). 
+2015] 
+LEGAL COMPLEXITY 
+231 
+Notwithstanding the difficult—and often emergent—flavor of traffic systems, 
+there is actually a robust literature where scholars help provide insight 
+regarding how to most robustly and safely manage traffic throughput.145 In 
+other words, even though the underlying system is a complex adaptive system, 
+it is still quite possible to engage in appropriately applying scientific methods 
+to the question. 
+As is the case with traffic systems, so too it is also the case for legal systems. 
+The study of emergence in legal systems would help us better quantify the 
+magnitude of the legal system’s irreducibility and incompressibility. This 
+would, in part, provide a representation of how much we are unable to know 
+and predict about the system through the construction of theoretical and 
+empirical models that might include various structural and performance 
+metrics. To borrow from the framework articulated by former Secretary of 
+Defense Donald Rumsfeld, our effort is in part focused upon converting the 
+“unknown unknowns” into “known unknowns.”146 
+IV. MONITORING LEGAL COMPLEXITY 
+Applying the measurement metrics outlined in Part III to a legal system 
+or subsystem would provide a snapshot of the system’s complexity. But 
+important questions would remain: Compared to what? How much is too 
+much? In which direction is the system moving? One way of enriching 
+knowledge in this regard would be by repeating the measurements over time 
+and over many subsystems to gain a deeper understanding of comparative 
+complexity (e.g., tax versus environmental law) and complexity trends. But 
+still, such exercises would provide a sense only of how the different metrics 
+behave over time, not of how the system as a whole behaves over time. 
+Monitoring legal system complexity thus should operate at two levels. On 
+the surface, comparative and trend analyses like those just described, 
+including of user features such as compliance burdens, provide real-time 
+assessments of how complex a legal system is and whether relative complexity 
+ 
+ 145. 
+See, e.g., G.A. Mendes et al., Traffic Gridlock on Complex Networks, 391 PHYSICA A 362 (2012); 
+Kai Nagel et al., Still Flowing: Approaches to Traffic Flow and Traffic Jam Modeling, 51 OPERATIONS RES. 
+681 (2003); Jason Sewall et al., Virtualized Traffic: Reconstructing Traffic Flows from Discrete Spatiotemporal 
+Data, 17 IEEE TRANSACTIONS ON VISUALIZATION & COMPUTER GRAPHICS 26 (2011). 
+ 146. 
+The full quote is as follows: 
+Reports that say there’s—that something hasn’t happened are always interesting to 
+me, because as we know, there are known knowns; there are things that we know 
+that we know. We also know there are known unknowns; that is to say we know there 
+are some things we do not know. But there are also unknown unknowns, the ones 
+we don’t know we don’t know. 
+Defense Department Briefing, at 37:40 (C-SPAN television broadcast Feb. 12, 2002), http://www.c-
+span.org/video/?168646-1/defense-department-briefing. The quote is actually linked to the 
+longstanding problem of induction and more recently has been popularized in research about 
+so-called “black swan events.” See generally NASSIM NICHOLAS TALEB, THE BLACK SWAN: THE IMPACT 
+OF THE HIGHLY IMPROBABLE FRAGILITY (2007). 
+232 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+is increasing or decreasing.147 Extreme shifts in these metrics could raise red 
+flags as to system performance. At a deeper level, however, monitoring 
+changes in network interconnection and synchronization would allow more 
+direct evaluation of system-wide behavior and a platform for testing system 
+performance. This Part outlines a platform and methods for doing so. 
+A. DESIGNING “LEGAL MAPS” FOR NETWORK BEHAVIOR MONITORING 
+Measuring system content, structure, information, and computation is 
+necessary to construct a network model of the system, but once that model is 
+constructed, another set of metrics is necessary to assess what is happening 
+inside the system. For example, a metric of network growth would measure 
+how the network expands or contracts, and a metric of system intensity could 
+measure the rate of information flow and orientation along different 
+feedback and feedforward channels. To make such evaluations requires a 
+platform representing the networked system in real time—what we call Legal 
+Maps. 
+Legal Maps is the legal system equivalent of more familiar applications 
+for geographic navigation, such as Google Maps. The building block of 
+Google Maps is Geographic Information Systems (“GIS”) technology, which 
+is a computer system for capturing, storing, checking, and displaying data 
+related to positions on Earth’s surface.148 By integrating many “layers” of data, 
+such as rainfall, vegetation, roads, and so on, GIS can show many different 
+kinds of data on one map, thus enabling people to more easily see, analyze, 
+and understand patterns and relationships.149 Assembling GIS maps requires 
+data capture, conversion, and digitization of data from many sources into 
+compatible formats, metrics, and scales; integration of the multi-sourced data 
+into one projection; and manipulation of the data structures to allow 
+mapping, modeling, and other methods to extract information about 
+patterns and relationships, such as the effect of rainfall levels on vegetation 
+near roadways.150 
+Google Maps combines a highly layered GIS map of geographic and 
+other details with sophisticated algorithms, allowing the user to search the 
+map for directions, distances, points of interest, and so on. In addition, 
+Google Maps feeds data from smartphones and other sources into the map 
+on a continuous basis to provide a dynamic, real-time user interface to 
+ 
+ 147. 
+See, e.g., Rakhyun E. Kim, The Emergent Network Structure of the Multilateral Environmental 
+Agreement System, 23 GLOBAL ENVTL. CHANGE 980 (2013) (tracing the network structure of the 
+world’s multilateral environmental agreements from 1857 to 2012). 
+ 148. 
+See GIS (Geographic Information System), NAT’L GEOGRAPHIC ENCYCLOPEDIA, http:// 
+education.nationalgeographic.com/encyclopedia/geographic-information-system-gis (last visited 
+Sept. 15, 2015). 
+ 149. 
+Id. 
+ 150. 
+See What Is GIS?, U.S. GEOLOGICAL SURVEY, http://webgis.wr.usgs.gov/globalgis/ 
+tutorials/what_is_gis.htm (last visited Sept. 15, 2015). 
+2015] 
+LEGAL COMPLEXITY 
+233 
+communicate useful information, such as traffic density. For example, if a 
+highway is closed due to an accident, drivers can use Google Maps to identify 
+where traffic is at its worst and alternate routes carrying less traffic.151 
+Legal Maps would be built on the same kind of platform as Google Maps, 
+starting with layers of data relevant to the legal system network. For example, 
+the hierarchy network of the United States Code, as described above in Part 
+III, would be represented as a discrete layer, as would the hierarchies of the 
+Code of Federal Regulations, the federal courts, and the corollaries for states. 
+Then the network’s architecture would be represented. Cross-references 
+within each layer, such as between sections of the Tax Code (nodes), would 
+be represented as connections (edges) representing directionality and 
+strength (e.g., one provision references another provision three times). 
+Citation network visualizations like this already exist for judicial opinions in 
+search engines, such as Ravel Law.152 Then references between layers, such as 
+a regulation referencing a statutory provision and a court referencing the 
+regulation, would also be mapped. Additional layers relevant to the system 
+behavior could be added—such as provisions of the Constitution, citations in 
+attorney briefs, administrative rulings, and so on—and the interconnections 
+within and between each layer could be mapped. Search algorithms can then 
+be devised to identify patterns such as clusters of tightly connected statutory 
+and regulatory provisions, particular courts’ and agencies’ decisions, and so 
+on.153 
+Legal Maps, like Google Maps, would also operate as a real-time (or 
+nearly real-time) representation of the legal system’s dynamics. Events such 
+as promulgation or repeal of a regulation or a new judicial opinion can be 
+streamed into the map system with appropriate representations of cross-
+references and citations, and the system’s information flow paths and rates 
+could be observed (e.g., are certain regulations strong gatekeeper nodes 
+between the statutory provisions they reference and judicial opinions 
+referencing the regulation?). Streams from news and social media could also 
+be fed into Legal Maps to observe how the legal system responds to rising 
+social interest in a policy topic (e.g., how long before courts mention the 
+trend and new regulations are promulgated around the trend?). Like Google 
+Maps, layers could be selected or excluded to allow analysis of paired layers, 
+and over time, a user’s search history could be tracked to provide tailored 
+maps, such that a practitioner of tax or environmental law could work within 
+the sector and layers of the system most relevant to his or her practice. The 
+ 
+ 151. 
+See Google Maps, GOOGLE+ (Feb. 4, 2014, 9:31 AM), https://plus.google.com/+Google 
+Maps/posts/UpBRC7BhXWj. 
+ 152. 
+RAVEL L., https://www.ravellaw.com (last visited Sept. 15, 2015). 
+ 153. 
+See generally Carlo Garbarino, A Model of Legal Systems as Evolutionary Networks: Normative 
+Complexity and Self-Organization of Clusters of Rules (Bocconi Univ., Legal Studies Research Paper No. 
+1601338, 2010), http://papers.ssrn.com/sol3/papers.cfm?abstract_id=1601338 (describing legal 
+systems as clustered networks of rules). 
+234 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+end result would be as close a representation of a map of the legal-system 
+network as one could attain using current technology. 
+Indeed, what we describe can be achieved today. All of the data described 
+are already available in digital form. Capturing them and converting them 
+into compatible digital representations would be no more complicated that 
+what Google Maps accomplishes for geographic data. Indeed, Koniaris et al. 
+recently constructed a partial representation of such a model for European 
+Union (“E.U.”) legislation, plotting over 250,000 legal documents (nodes) 
+spanning 60 years of E.U. legislation.154 Their model linked three layers—
+treaties, statutes, and judicial opinions—yielding almost one million 
+connections (edges) within the network. Using this network representation, 
+they performed a temporal analysis of the evolution of the legislation 
+network, as well as a robust resilience test to assess its vulnerability under 
+specific cases that may lead to possible breakdowns. Similarly, the search 
+algorithms we anticipate Legal Maps using are no more sophisticated than 
+those used in Google Maps. The only constraints to further development of 
+such models for the legal system are time and money. But, even assuming the 
+time and money were available, why build Legal Maps? 
+B. TESTING SYSTEM PERFORMANCE 
+Google Maps has obvious valuable uses, not the least of which is 
+providing directions between two points. Of even greater value when out on 
+the road are the traffic density and trip rerouting functions. And Google now 
+provides an application program interface—a set of routines, protocols, and 
+tools for building software applications—allowing other application builders 
+to integrate Google Maps into their user interfaces.155 Legal Maps could 
+provide all of these functions as well, several of which would greatly enhance 
+the capacity for monitoring legal system complexity and behavior. We provide 
+a few examples below. 
+1. Synchronization Monitoring 
+The feedback mechanisms characteristic of a complex adaptive system 
+are the source of both system resilience and systemic risk. The term “systemic 
+risk” has become closely associated with the financial system collapse of 
+2008,156 but the concept of systemic risk is not limited to financial systems—
+ 
+ 154. 
+See M. Koniaris et al., Network Analysis in the Legal Domain: A Complex Model for European 
+Union Legal Sources, ARXIV (Jan 21, 2015), http://arxiv.org/pdf/1501.05237.pdf. 
+ 155. 
+Google Maps APIs, GOOGLE DEVELOPERS, https://developers.google.com/maps (last 
+visited Sept. 15, 2015). 
+ 156. 
+The concept of systemic risk has gained prominence in legal scholarship primarily in 
+connection with regulation of financial systems, for which it is widely asserted that “regulation has 
+an important role to play in managing systemic risk.” Iman Anabtawi & Steven L. Schwarcz, 
+Regulating Systemic Risk: Towards an Analytical Framework, 86 NOTRE DAME L. REV. 1349, 1352 
+(2011). This concern has been building since the 1980s. See, e.g., Helen A. Garten, Regulatory 
+2015] 
+LEGAL COMPLEXITY 
+235 
+it applies to all complex systems. Dirk Helbing of the Swiss Federal Institute 
+of Technology defines systemic risk as 
+the risk of having not just statistically independent failures, but 
+interdependent, so-called “cascading” failures in a network of N 
+interconnected system components. That is, systemic risks result 
+from connections between risks (“networked risks”). In such cases, 
+a localized initial failure (“perturbation”) could have disastrous 
+effects and cause, in principle, unbounded damage as N goes to 
+infinity. . . . Even higher risks are implied by networks of networks, 
+that is, by the coupling of different kinds of systems. In fact, new 
+vulnerabilities result from the increasing interdependencies 
+between our energy, food and water systems, global supply chains, 
+communication and financial systems, ecosystems and climate.157 
+As Helbing notes, the World Economic Forum has described this global 
+environment as a “hyper-connected” world exposed to massive systemic 
+risks.158 Helbing identifies the drivers of systemic instability (such as tipping 
+points, positive feedback, and complexity) and explains how they affect 
+various global systems (such as finance, communications, and social 
+conflict).159 The upshot is that catastrophic damage scenarios are increasingly 
+realistic, and that “[s]ome of the worst disasters have happened because of a 
+failure to imagine that they were possible.”160 Yet our political and economic 
+systems simply are not wired with the incentives needed to imagine and guard 
+against these outlier events. 
+Quite simply, we need to build systemic risk into our scenarios of the 
+future, including for the legal system. Helbing suggests the development of a 
+“Global Systems Science” discipline devoted to studying the interactions and 
+interdependencies in the global techno-socio-economic-environmental 
+system leading to systemic risk.161 It would be pointless to exclude the legal 
+system from Helbing’s proposal, and it would be naïve to think that the legal 
+system is exempt from the systemic risk problem. Hence the legal system must 
+ 
+Growing Pains: A Perspective on Bank Regulation in a Regulatory Age, 57 FORDHAM L. REV. 501, 560–61 
+(1989) (“[T]he goal of bank regulation, to prevent losses to the banking system as a result of bank 
+failure, makes the regulatory system overinvested in particular banks whose failure poses systemic 
+risks.”); Michael Gruson, The Global Securities Market: Introductory Remarks, 1987 COLUM. BUS. L. REV. 
+303, 308 (“What we should be concerned about is systemic risk—the risk arising from the systems 
+of the international market as such—not the risk which relates to the individual investor or even 
+an individual institution. Given the size of today’s predominant financial players, the failure of one 
+could affect the whole market.”). 
+ 157. 
+Dirk Helbing, Globally Networked Risks and How to Respond, 497 NATURE 51, 51 (2013) 
+(footnotes omitted). 
+ 158. 
+Id. (citing Hyperconnected World, WORLD ECON. F., http://www.weforum.org/projects/ 
+hyperconnected-world (last visited Sept. 15, 2015)). 
+ 159. 
+See id. 
+ 160. 
+See id. at 57. 
+ 161. 
+See id. at 51, 57–58. 
+236 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+(1) anticipate systemic failures in the systems it is designed to regulate, but 
+also (2) anticipate systemic risk in the legal system as well. 
+Legal Maps could provide a platform for the second type of monitoring. 
+Complexity scientists have identified a strong marker for systemic risk in the 
+form of highly synchronized positive-feedback systems that give rise to the 
+“networked risks” to which Helbing refers. When all feedback in the system 
+has harmonized in the same self-reinforcing direction, a small, seemingly 
+noncausal disruption to the system can lead to massive failure.162 As econo-
+physicist Didier Sornette puts it: “[t]he collapse is fundamentally due to the 
+unstable position; the instantaneous cause of the collapse is secondary.”163 His 
+assessment of the financial crash, for example, is that, like other financial 
+bubbles, over time “the expectation of future earnings rather than present 
+economic reality . . . motivate[d] the average investor.”164 What pops the 
+bubble might seem like an inconsequential event in isolation, but it is enough 
+to set the collapse in motion. “Essentially, anything would work once the 
+system is ripe.”165 
+By tracking information flow and structure in the legal system over time, 
+including the conduits across which it moves and their direction, strength, 
+and timing, Legal Maps could help monitor for the buildup of highly 
+synchronized information pathways that could open the door to cascade 
+failures.166 For example, if financial, environmental, and other regulators 
+receive information along a tightly synchronized set of pathways and then 
+move in the same direction based on information input (e.g., increase 
+monitoring if information indicates a certain trend), interruption in the 
+information flow or a surge in unreliable information can set the legal system 
+up for a cascade of failures. Analyses of both the financial collapse of 2008 
+and the BP Deep Horizon oil spill suggest such forces were at play in the 
+relevant regulatory systems and contributed to the cascade of failures within 
+and outside the legal system.167 
+ 
+ 162. 
+See generally Xiyun Zhang et al., Explosive Synchronization in a General Complex Network, 88 
+PHYSICAL REV. E 010802(R) (2013). 
+ 163. 
+Didier Sornette, Dragon-Kings, Black Swans and the Prediction of Crises, 2 INT’L J. 
+TERRASPACE SCI. & ENGINEERING 1, 13 (2009). 
+ 164. 
+Id. 
+ 165. 
+Id. 
+ 166. 
+The study of change in time of network structure is a focal point of network science. See, 
+e.g., Petter Holme & Jari Saramäki, Temporal Networks, 519 PHYSICS REP. 97 (2012). Koniaris et al. 
+traced the evolution of the European Union’s “Legislation Network” over a 60-year period. 
+Koniaris et al., supra note 154, at 12–13. 
+ 167. 
+See FIN. CRISIS INQUIRY COMM’N, THE FINANCIAL CRISIS INQUIRY REPORT, at xviii (2011) 
+(assessing causes of the financial crisis and concluding that “widespread failures in financial 
+regulation and supervision proved devastating to the stability of the nation’s financial markets”); 
+NAT’L COMM’N ON THE BP DEEPWATER HORIZON OIL SPILL & OFFSHORE DRILLING, DEEP WATER: 
+THE GULF OIL DISASTER AND THE FUTURE OF OFFSHORE DRILLING 122 (2011) (assessing causes 
+of the oil spill including failures in regulation). Groups of legal scholars from the Center for 
+Progressive Reform have also published two studies of the blowout reaching similar conclusions. 
+2015] 
+LEGAL COMPLEXITY 
+237 
+2. Stress Tests 
+Financial system models allow introduction of perturbations to assess 
+what happens when the system is put under stress.168 Similar stress testing 
+could be applied in legal system models. For example, the rate of information 
+flow (e.g., rate of variation in financial instruments or number of pollution 
+violations) could be manipulated in the network Legal Maps model to see 
+how the legal system handles high-flow rates and where flow jams occur under 
+different stress conditions. Or, as Koniaris et al. performed on their E.U. 
+legislation network model, pieces of network structure could be deleted (as 
+in a proposed major deregulatory event) or added (as in a proposed 
+enactment of a major new regulatory regime) to test how network structure 
+and behavior would respond in terms of reconfigured synchronization 
+patterns and information flow jams.169 While there are always unforeseen 
+circumstances (i.e., unknown unknowns) which any legal system must 
+confront on a constantly evolving landscape, it is still possible to stress test a 
+legal system model against a range of known or proposed scenarios in the 
+effort to determine its robustness. 
+3. Interdependent Systems Analysis 
+Transportation disaster planning and assessment is turning to 
+interdependent systems analysis (“ISA”) to move beyond single-disaster 
+assessment (which usually focuses on identifying human error) to understand 
+why disasters happen in general.170 ISA uses network analytics and stress 
+testing to link the system under study to its co-evolving systems over relevant 
+time scales. ISA improves the ability of planners to identify the endogenous 
+and exogenous conditions leading to systemic risk and, ultimately, to failure 
+cascades.171 The legal system, in coevolution with the social systems it is 
+intended to regulate and protect, is a perfect medium for ISA. From the 
+ 
+See generally ALYSON FLOURNOY ET AL., CTR. FOR PROGRESSIVE REFORM, THE BP CATASTROPHE: 
+WHEN HOBBLED LAW AND HOLLOW REGULATION LEAVE AMERICANS UNPROTECTED (2011); 
+ALYSON FLOURNOY ET AL., CTR. FOR PROGRESSIVE REFORM, REGULATORY BLOWOUT: HOW 
+REGULATORY FAILURES MADE THE BP DISASTER POSSIBLE, AND HOW THE SYSTEM CAN BE FIXED TO 
+AVOID A RECURRENCE (2010). For a broad and thoughtful examination of regulatory failure, 
+including whether it is in fact as responsible for the financial crisis, the oil spill, and other social 
+and economic calamities as is often claimed retrospectively, see generally REGULATORY 
+BREAKDOWN: THE CRISIS OF CONFIDENCE IN U.S. REGULATION (Cary Coglianese ed., 2012). 
+ 168. 
+See Robert Weber, A Theory for Deliberation-Oriented Stress Testing Regulation, 98 MINN. L. 
+REV. 2236, 2238–39 (2014). 
+ 169. 
+See Koniaris et al., supra note 154, at 10–11. 
+ 170. 
+See Lloyd Burton & M. Jude Egan, Courting Disaster: Systemic Failures and Reactive Responses 
+in Railway Safety Regulation, 20 CORNELL J.L. & PUB. POL’Y 533, 558–61 (2011). 
+ 171. 
+Cf. Chris Barrett et al., Human Initiated Cascading Failures in Societal Infrastructures, 7 PLoS 
+ONE e45406, at 1–2 (2012) (discussing human-initiated “co-evolving cascades in interdependent 
+infrastructures” such as failures in wireless communication networks and transportation networks 
+during an evacuation). 
+238 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+sectors law regulates and protects, Legal Maps could be built out to include 
+data feeds such as financial, manufacturing, environmental, and 
+demographic data. When one system experiences failure, such as a financial 
+crash, retrospective analysis of how the legal system responded prior to, 
+during, and after the event can help identify where stress and failure were 
+rising or falling in the legal system, such as by excessive synchronization or 
+information flow jams. 
+C. COMPARATIVE DESIGN STUDIES 
+In a world where all of the above could be accomplished, it would then 
+be useful to conduct cross-system comparisons, such as between common law 
+and civil code systems, or across different bodies of law (e.g., tax versus 
+environmental) and national law systems (e.g., U.S. versus China). 
+Particularly as economic and social phenomena occur increasingly at global 
+scales, nations’ legal systems are increasingly interdependent, thus supporting 
+the case for building out and linking Legal Maps for all nations. 
+V. MANAGING LEGAL COMPLEXITY 
+A. DEFINING TOO MUCH COMPLEXITY 
+Going back to the Tax Code example, most assertions regarding its 
+excessive complexity focus on its impact on the taxpayer—it is too hard to 
+comprehend, takes too much time, costs too much, and so on. These are, of 
+course, valid concerns, and at some point, extreme conditions in these 
+respects for a legal system could indicate that something has gone wrong and 
+needs adjusting. But assuming a legal system is fulfilling the purposes it was 
+designed to accomplish (e.g., in the case of the Tax Code, raising necessary 
+revenue in an equitable and efficient manner), the compliance burdens it 
+imposes may simply be an inevitable consequence of some minimum 
+necessary complexity of the system. 
+Of greater concern, therefore, would be the possibility that complexity 
+at some level could undermine the system’s capacity to achieve its purposes. 
+Indeed, as suggested above in connection with the feedback synchronization 
+problem, one of the focal points of complexity science research is how system 
+complexity contributes to both the system’s robustness and its fragility. As 
+complexity scientists David Alderson and John Doyle explain, the adaptive 
+quality of complex adaptive systems contributes to overall system robustness 
+in several senses: 
+Reliability involves robustness to component failures. Efficiency is 
+robustness to resource scarcity. Scalability is robustness to changes to 
+the size and complexity of the system as a whole. Modularity is 
+2015] 
+LEGAL COMPLEXITY 
+239 
+robustness to structured component rearrangements. Evolvability is 
+robustness of lineages to changes on long time scales.172 
+At its core, therefore, “robustness is a measure of feature persistence in 
+systems where the perturbations . . . represent changes in system 
+composition, system topology, or in the fundamental assumptions regarding 
+the environment in which the system operates.”173 Robustness can be thought 
+of as the fitness of the system’s options in two respects—resistance to forces 
+of change, and resilience to those effects not successfully repelled.174 
+Robustness is built from the system’s organized complexity—the networked 
+content and structure that allows information to flow and be processed 
+through the system.175 But even in robust legal systems that satisfy normative 
+preferences, that network structure also exposes the system to fragility, as 
+perturbations can cascade down the system’s feedback and feedforward 
+chains—i.e., the kind of systemic system meltdown discussed above.176 
+The response to such events in many human-controlled systems usually 
+is to build more organized network structure into the system—to beef it up 
+with new legal content and structure—which ironically also adds more risk of 
+fragility.177 This “robust yet fragile” dilemma has been identified in many 
+contexts as the source of systemic risk.178 The financial system crisis of 2008, 
+for example, has been attributed to an overload of systemic risk, including 
+risk generated by the growing complexity of the financial regulatory system 
+itself as it worked to keep up with the regulated industry’s innovations.179 A 
+post-spill task force reached a similar conclusion regarding regulatory agency 
+oversight of drilling in the Gulf of Mexico prior to the BP Deepwater Horizon 
+oil spill. The report concluded that the regulatory complexity, built up by 
+rounds of agency responses to prior spills and environmental injuries, had 
+outstripped agency capacity.180 A major thrust of legal-complexity monitoring 
+and an advantage of having built out Legal Maps, thus, would be to improve 
+ 
+ 172. 
+David L. Alderson & John C. Doyle, Contrasting Views of Complexity and Their Implications 
+For Network-Centric Infrastructures, 40 IEEE TRANSACTIONS ON SYSTEMS, MAN & CYBERNETICS 839, 
+840 (2010). For a comprehensive review of their model and its application to systemic risk in the 
+legal system, see generally Ruhl, supra note 37. 
+ 173. 
+Erica Jen, Stable or Robust? What’s the Difference?, 8 COMPLEXITY 12, 13–14 (2003) 
+(comparing stability and robustness). 
+ 174. 
+Id. at 16–17. 
+ 175. 
+See Alderson & Doyle, supra note 172, at 840–41. 
+ 176. 
+See Ruhl, supra note 37, at 588 (describing failure cascades). 
+ 177. 
+See Alderson & Doyle, supra note 172, at 841–42. 
+ 178. 
+See id. at 839, 842–43. 
+ 179. 
+Lawrence G. Baxter, Betting Big: Value, Caution and Accountability in an Era of Large Banks 
+and Complex Finance, 31 REV. BANKING & FIN. L. 765, 863–64 (2012) 
+ 180. 
+NAT’L COMM’N ON THE BP DEEPWATER HORIZON OIL SPILL & OFFSHORE DRILLING, supra 
+note 167, at 78 (concluding the agency lacked “a formal, bureau-wide compilation of rules, 
+regulations, policies, or practices” and had “no formal process to promote standardization, 
+consistency, and operational efficiency” across its many district offices). 
+240 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+the capacity to monitor for sectors in the system experiencing creep towards 
+greater complexity of structure, in particular the synchronization of 
+networked positive feedback mechanisms. 
+B. MANAGING TOO MUCH COMPLEXITY 
+So, how complex should the legal system be to get its job done without 
+undue risk of systemic failure? Our short answer is: we don’t know. We don’t 
+even know how complex the legal system is, much less how complex it should 
+be. But that, of course, is the point of this Article—to initiate a research 
+agenda that will inform both of those questions. Some work has been done 
+but much more remains ahead. 
+That said, we can offer impressions of how improved empirical 
+understanding of legal complexity can inform its management. We say 
+management rather than reduction because, as explained above, there is no a 
+priori basis for asserting that all legal complexity is structurally or normatively 
+bad. Therefore, this agenda is something of a management problem—i.e., 
+how to get the most “good” out of the legal system while minimizing the “bad.” 
+Any hope of doing so with even limited success will depend on developing 
+and implementing the measurement metrics and monitoring methods 
+outlined in Parts III and IV. From there, we anticipate two technology 
+applications for approaching the management problem: (1) machine 
+learning; and (2) user interface design. 
+1. Real-Time Monitoring Leveraging Learning Algorithms 
+Monitoring for system complexity, focused around the detection and 
+prevention of cascade failures, will require that Legal Maps embed sensors to 
+alert policy makers to the markers of impending system failure from internal 
+complexity and external disturbances.181 Research on power grid networks 
+has shown, for example, that disabling even a small number of network failure 
+sensors can render the grid subject to new types of disturbances even when 
+they remain robust to conventional disturbances.182 
+The legal system already incorporates numerous instrumental sensors 
+such as pre-decisional impact assessments and monitoring, reporting, and 
+disclosure requirements, all of which fall under the theoretical domain of 
+what is known as “reflexive law.”183 The National Environmental Policy Act, 
+ 
+ 181. 
+Alderson & Doyle, supra note 172, at 841–42. 
+ 182. 
+See Yang Yang et al., Network Observability Transitions, 109 PHYSICAL REV. LETTERS, 
+258701, 258701-4 (2012). 
+ 183. 
+See David Hess, Social Reporting: A Reflexive Law Approach to Corporate Social Responsiveness, 
+25 J. CORP. L. 41, 48–51 (1999) (explaining the theory and development of reflexive law); see 
+also Eric W. Orts, Reflexive Environmental Law, 89 NW. U. L. REV. 1227 (1995) (developing and 
+applying theory of reflexive law in environmental field); Richard B. Stewart, A New Generation of 
+Environmental Regulation?, 29 CAP. U. L. REV. 21, 127–51 (2001) (defining reflexive law and 
+reviewing its instruments). 
+2015] 
+LEGAL COMPLEXITY 
+241 
+which requires federal agencies to assess the environmental impact or their 
+proposed actions, is an example of a legal system sensor protocol for pre-
+decisional impact assessment.184 Similar pre-decision assessment measures 
+apply in agency rulemaking as well. For example, the Regulatory Flexibility 
+Act requires agencies to prepare an analysis for any rule that may have an 
+important economic impact on a significant number of small businesses, and 
+similar pre-decision review measures abound in administrative law.185 Of 
+course, whether these kinds of sensors work, and whether they are efficient 
+even if they do work, are important (and currently unanswered) questions. 
+The point made here is that our legal system has implanted many system 
+sensors to evaluate itself internally, to detect changes in its environment, and 
+to measure its interactions with other social systems. 
+Similarly, sensors can be embedded in Legal Maps to leverage learning 
+algorithms that detect conditions found over time to be associated with 
+cascade failure and other undesirable properties. This type of learning 
+algorithm is called “machine learning.” Machine learning is “the systematic 
+study of algorithms and systems that improve their knowledge or performance 
+with experience.”186 It is the technology behind your e-mail spam filter as well 
+as, in a legal application, the electronic discovery process.187 The program 
+“learns” through algorithm-based heuristics designed to detect patterns in 
+data as well as through interaction with the user.188 For example, as an e-mail 
+user repeatedly sends emails with “Earn Cash Fast” as the subject lines to the 
+spam folder, the program begins to associate that subject text and other 
+attributes associated with the e-mails—such as the origin of such e-mails and 
+other text they contain—with junk status. Soon, that class of e-mails goes 
+straight to the junk mail box even if the subject line text changes. At first the 
+ 
+ 184. 
+42 U.S.C. § 4332(2)(C) (2012). This provision also requires assessment of alternative 
+actions, short- and long-term implications, and “any irreversible and irretrievable commitments 
+of resources.” Id. § 4332(2)(C)(iii)–(v). 
+ 185. 
+5 U.S.C. §§ 601–612 (2012). The law was amended by the Small Regulatory 
+Enforcement Fairness Act of 1996, 5 U.S.C. § 611. For thorough descriptions of this and related 
+pre-promulgation review requirements, see Fred Anderson et al., Regulatory Improvement 
+Legislation: Risk Assessment, Cost-Benefit Analysis, and Judicial Review, 11 DUKE ENVTL. L. & POL’Y 
+REV. 89 (2000); Daniel Cohen, S. 981, The Regulatory Improvement Act of 1998: The Most Recent 
+Attempt to Develop a Solution in Search of a Problem, 50 ADMIN. L. REV. 699 (1998). 
+ 186. 
+PETER FLACH, MACHINE LEARNING: THE ART AND SCIENCE OF ALGORITHMS THAT MAKE 
+SENSE OF DATA 3 (2012). For a sweeping overview of the current and potential use of machine 
+learning in legal settings, see Harry Surden, Machine Learning and Law, 89 WASH. L. REV. 87 
+(2014). For an enjoyable survey of machine learning’s increasing application in a variety of 
+settings, see LUKE DORMEHL, THE FORMULA: HOW ALGORITHMS SOLVE ALL OUR PROBLEMS . . . 
+AND CREATE MORE (2014). 
+ 187. 
+See Surden, supra note 186, at 90–91 (spam); id. at 112–13 (e-discovery). 
+ 188. 
+See id. at 91–95. 
+242 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+process may make mistakes, but over time, the user and the algorithms train 
+the program towards increasing accuracy.189 
+Legal Maps could use the same machine-learning technology in the form 
+of embedded algorithms to identify red-flag conditions of excessive legal 
+complexity, such as synchronization and information-flow surges and 
+blockages, the same way Google Maps shows the impacts of an interstate being 
+shut down on surrounding roadway traffic. Had Legal Maps existed at the 
+time of the financial collapse, for example, users could have rerun the 
+historical record following the failure to identify the conditions within and 
+outside the legal system that were experienced in the run-up to the failure.190 
+This would allow Legal Maps to learn those conditions and alert the users 
+when those conditions are detected once again, but this time in advance of 
+an actual collapse. This sensor alert would allow regulators to intervene with 
+measures designed to preempt the failure, and whether those measures are 
+successful or not, Legal Maps could be trained with that information so that 
+it could assist in designing interventions when sensors call the alert again. This 
+technology could also be used to experiment with stress-test scenarios that 
+users of Legal Maps could run to simulate a variety of disturbances, such as a 
+surge in social-media trending, the repeal or promulgation of a major 
+regulatory statute, or flurries of licensing, registrations, or other regulatory 
+approval applications. Over time, regulators could begin to learn from Legal 
+Maps’ learning, the way Google Maps learns about driver responses to traffic 
+situations, gaining important perspectives about when and where legal system 
+complexity appears to be approaching conditions of high systemic risk, as well 
+as lessons about legal institution and instrument design that can reduce such 
+stress.191 For example, the prescriptive legal complexity theory assertion that 
+decentralized regulatory systems are more resilient than centralized top-down 
+structures could be tested by comparing the performance of different regime 
+structures over time. Of course, because the legal system itself is dynamic and 
+adaptive, no lessons could be thought of as permanent—the Legal Maps 
+training process would run indefinitely and human intervention and 
+oversight would remain important. 
+2. Designing Legal User Interfaces 
+Legal complexity is a challenge to the participants in many legal systems. 
+Indeed, as noted above, most of the claims regarding excessive Tax Code 
+complexity point to impacts on taxpayers, with cost and time as the alleged 
+ 
+ 189. 
+Spam filters must be consistently tuned and updated as the techniques used by 
+spammers evolve over time. 
+ 190. 
+Of course, to the extent that a future failure is drawn from the set of “unknown, 
+unknowns,” then Legal Maps or any models or tools would be of limited effectiveness. 
+ 191. 
+For an example drawn from the banking sector, see Paul Lippe, Daniel Martin Katz & 
+Dan Jackson, Legal by Design: A New Paradigm for Handling Complexity in Banking Regulation and 
+Elsewhere in Law, 93 OR. L. REV. 833 (2015). 
+2015] 
+LEGAL COMPLEXITY 
+243 
+proof. While there are occasional efforts toward simplifying the law, one 
+alternative is to build intermediary systems that translate and compile “raw 
+law” into clearer forms. The “law as code” or computational law movement is 
+one which is in part interested in reducing complexity by developing various 
+forms of “legal user interfaces.”192 Much like web browsers such as Firefox or 
+Internet Explorer shield end users from the raw code, such systems could 
+attempt to generalize what TurboTax has done for the Tax Code. Emerging 
+legal technology companies such as Neota Logic are devoted to building such 
+“expert systems” user interfaces for legal compliance problems.193 
+Improving user interfaces can be a second-best alternative to reducing 
+the complexity of the law itself when either reducing complexity is not 
+desirable or no means of reducing legal complexity is apparent. As described 
+above, complexity builds resilience in complex adaptive systems—law being 
+no exception—hence some level of complexity is desirable. However, while 
+the optimal level of legal complexity can be determined once appropriate 
+metrics are identified and studied, it is not clear from any theory of 
+complexity science how to fine tune so that just the right amount of 
+complexity can be added or removed. Given how intertwined systems are, it 
+could be difficult (even with Legal Maps up and running) to remove only 
+some of the cross-references in the Tax Code, or between the Tax Code and 
+other fields, and know how much complexity had been removed and what the 
+effects would be on the still highly cross-referenced components. Rather, it 
+may be an in-for-a-penny-in-for-a-pound proposition, suggesting that a 
+complete rebuild from scratch would be needed instead, which presents its 
+own set of political and design challenges. Until more is known about legal 
+system complexity through initiatives like Legal Maps and measures to seed 
+the system with machine learning sensors, work should continue on 
+simplifying user interfaces for navigating legal systems without having to 
+navigate their complexity. 
+VI. CONCLUSION 
+Much of the foregoing would have seemed like sheer fantasy as recently 
+as just a few years ago. But that was before massive advances in data storage 
+and computational capacity and their use to promote robust complexity and 
+network sciences. These advances challenge traditionalists’ claims that the 
+legal system is so exceptional or impenetrable that it cannot, in some 
+substantial degree, be measured and modeled through computational 
+methods applied in other disciplines. The legal system, a phrase used 
+ 
+ 192. 
+Computational law is “[t]he study of formal representations and automated reasoning with 
+laws (governmental regulations, business rules, and contracts) in electronically-mediated domains.” 
+STANFORD COMPUTATIONAL LAW, http://complaw.stanford.edu (last visited Sept. 15, 2015). 
+ 193. 
+See NEOTA LOGIC, http://www.neotalogic.com (last visited Sept. 15, 2015). 
+244 
+IOWA LAW REVIEW 
+[Vol. 101:191 
+ubiquitously in legal scholarship,194 is just that—a system. As such, its 
+description and assessment are open to the empirical approaches we have 
+suggested. This goes well beyond mere extrapolation from the empirical 
+techniques already in play, such as citation databases and judicial voting 
+studies. This is about building computational models of the legal system, its 
+complexity, and its systemic risks. 
+Early attempts to develop legal complexity metrics, build out a system 
+model through Legal Maps, conduct stress tests, locate systemic risk, seed the 
+system with machine learning sensors, and propose new legal designs will be 
+rudimentary, coarse, and often wrong, and will be criticized for that. But 
+succumbing to such critiques would have kept economists using the abacus 
+and ecologists counting tree rings. It is time for lawyers to move beyond case 
+studies, rhetoric, and conventional statistical methods—it is time to study the 
+deep structure of legal complexity through the empirical and technological 
+methods of complexity science. 
+ 
+ 
+ 194. 
+Searching for the term “legal system” in Westlaw’s Law Reviews and Journals database 
+yields almost 10,000 articles using the term in some way. See supra note 42. 

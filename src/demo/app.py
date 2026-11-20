@@ -18,6 +18,8 @@ import json
 import time
 import urllib.parse
 import io
+import hashlib
+from collections import Counter, OrderedDict, defaultdict
 try:
     import pypdf
 except ImportError:
@@ -78,35 +80,183 @@ TIER2_PDF_DIR = BASE_DIR / "ground_truth" / "tier2_synthetic_drafts" / "tier2_dr
 if not TIER2_PDF_DIR.exists():
     TIER2_PDF_DIR = BASE_DIR / "data" / "tier2_draft_ordinances_pdf"
 BM25_INDEX_PATH = BASE_DIR / "output" / "dual_corpus_bm25.pkl"
+BM25_CSR_PATH = BASE_DIR / "output" / "dual_corpus_bm25_fast.npz"
+BM25_VOCAB_PATH = BASE_DIR / "output" / "dual_corpus_bm25_vocab.json"
+KG_NODES_PATH = BASE_DIR / "data" / "knowledge_graph" / "statutory_kg_nodes.jsonl"
+KG_EDGES_PATH = BASE_DIR / "data" / "knowledge_graph" / "statutory_kg_edges.jsonl"
 KAGGLE_RESULTS_PATH = BASE_DIR / "output" / "kaggle_sc_results" / "sc_benchmark_artifacts" / "system_level_sc_benchmark_results.json"
 CHAMPION_MATRIX_PATH = BASE_DIR / "output" / "champion_models_sc_peak_matrix.csv"
 
 
 class LocalNeuralEngine:
-    """Manages offline local execution of SentenceTransformer (Stage 1) and DeBERTa (Stage 2) across 176,421 provisions."""
+    """Manages offline local execution of SentenceTransformer (Stage 1) and DeBERTa (Stage 2) across the dual statutory corpus."""
     def __init__(self):
         self.device = "cpu"
         self.embedder = None
         self.deberta_model = None
         self.deberta_tokenizer = None
         self.statutory_embeddings = None
+        self.national_corpus_limit = 0
         self.bm25 = None
+        self.bm25_csr = None
+        self.bm25_vocab = {}
         self.provision_offsets = []
         self.citation_index = {}
+        self._stage2_cache = OrderedDict()
+        self._stage2_cache_max = 16384
+        self.kg_adj = defaultdict(set)
+        self.kg_eid_to_domain = {}
+        self.kg_number_to_eids = defaultdict(list)
+        self.kg_loaded = False
         self.is_loaded = False
         self._initialize()
+
+    def _load_or_build_fast_bm25(self):
+        """Loads or builds an exact sparse CSR representation of BM25Okapi for fast vectorized scoring."""
+        import numpy as np
+        import scipy.sparse as sp
+
+        if BM25_CSR_PATH.exists() and BM25_VOCAB_PATH.exists():
+            t0_csr = time.perf_counter()
+            self.bm25_csr = sp.load_npz(str(BM25_CSR_PATH)).tocsr()
+            with open(BM25_VOCAB_PATH, "r", encoding="utf-8") as fv:
+                self.bm25_vocab = json.load(fv)
+            print(f"[NeuralEngine] Fast BM25 CSR index loaded ({self.bm25_csr.shape}, nnz={self.bm25_csr.nnz:,}) in {time.perf_counter()-t0_csr:.2f}s!")
+            return
+
+        if not BM25_INDEX_PATH.exists():
+            return
+
+        import pickle
+        t0_build = time.perf_counter()
+        print(f"[NeuralEngine] Loading Stage 1 BM25 Index from {BM25_INDEX_PATH} to build fast CSR cache...")
+        with open(BM25_INDEX_PATH, "rb") as f_bm:
+            bm_obj = pickle.load(f_bm)
+            bm = bm_obj.get("bm25")
+        if bm is None:
+            return
+
+        vocab = {tok: idx for idx, tok in enumerate(bm.idf.keys())}
+        idf_arr = np.array([bm.idf[tok] for tok in bm.idf.keys()], dtype=np.float64)
+        k1 = float(bm.k1)
+        b = float(bm.b)
+        avgdl = float(bm.avgdl)
+        doc_len = bm.doc_len
+
+        rows = []
+        cols = []
+        vals = []
+        for doc_id, freq_dict in enumerate(bm.doc_freqs):
+            dl_norm = k1 * (1.0 - b + b * (float(doc_len[doc_id]) / avgdl))
+            for tok, tf in freq_dict.items():
+                tid = vocab.get(tok)
+                if tid is not None:
+                    w = idf_arr[tid] * (float(tf) * (k1 + 1.0)) / (float(tf) + dl_norm)
+                    rows.append(tid)
+                    cols.append(doc_id)
+                    vals.append(w)
+
+        csr = sp.csr_matrix(
+            (np.array(vals, dtype=np.float32), (np.array(rows, dtype=np.int32), np.array(cols, dtype=np.int32))),
+            shape=(len(vocab), bm.corpus_size),
+            dtype=np.float32,
+        )
+        sp.save_npz(str(BM25_CSR_PATH), csr)
+        with open(BM25_VOCAB_PATH, "w", encoding="utf-8") as fv:
+            json.dump(vocab, fv)
+
+        self.bm25_csr = csr
+        self.bm25_vocab = vocab
+        self.bm25 = None
+        print(f"[NeuralEngine] Built & cached fast BM25 CSR ({csr.shape}, nnz={csr.nnz:,}) in {time.perf_counter()-t0_build:.2f}s!")
+
+    def _load_kg_index(self):
+        """Loads statutory KG nodes and edges for genuine topological distance d_G lookup."""
+        if not (KG_NODES_PATH.exists() and KG_EDGES_PATH.exists()):
+            return
+        t0_kg = time.perf_counter()
+        seen_key_eid = defaultdict(set)
+        with open(KG_NODES_PATH, "r", encoding="utf-8") as fn:
+            for line in fn:
+                node = json.loads(line)
+                if node.get("node_type") != "enactment":
+                    continue
+                eid = str(node.get("id") or "")
+                if not eid:
+                    continue
+                if eid.startswith(("act_", "ca_", "commonwealth_act_", "ra_4354_")):
+                    continue
+                dom = node.get("domain") or ""
+                if dom:
+                    self.kg_eid_to_domain[eid] = dom
+                parts = eid.split("_")
+                if len(parts) >= 2 and parts[0] in ("ra", "pd", "eo", "bp", "const"):
+                    key = (parts[0], parts[1].lower())
+                    if eid not in seen_key_eid[key]:
+                        seen_key_eid[key].add(eid)
+                        self.kg_number_to_eids[key].append(eid)
+
+        with open(KG_EDGES_PATH, "r", encoding="utf-8") as fe:
+            for line in fe:
+                edge = json.loads(line)
+                rel = edge.get("relation") or edge.get("type") or edge.get("edge_type") or ""
+                if rel not in ("CITES_AUTHORITY", "AMENDS", "REPEALS"):
+                    continue
+                s = str(edge.get("source") or "")
+                t = str(edge.get("target") or "")
+                if not s or not t:
+                    continue
+                if s.startswith(("act_", "ca_", "commonwealth_act_", "ra_4354_")) or t.startswith(("act_", "ca_", "commonwealth_act_", "ra_4354_")):
+                    continue
+                self.kg_adj[s].add(t)
+                self.kg_adj[t].add(s)
+
+        self.kg_loaded = True
+        print(f"[NeuralEngine] Loaded Statutory KG index ({len(self.kg_eid_to_domain):,} enactments, {len(self.kg_adj):,} linked nodes) in {time.perf_counter()-t0_kg:.2f}s!")
+
+    def score_bm25(self, q_tokens: list, scope_limit: int = None):
+        """Computes exact BM25Okapi scores via sparse CSR matrix multiplication."""
+        import numpy as np
+        import scipy.sparse as sp
+
+        if self.bm25_csr is not None:
+            n_docs = scope_limit if scope_limit is not None else self.bm25_csr.shape[1]
+            if not q_tokens:
+                return np.zeros(n_docs, dtype=np.float64)
+            q_indices = []
+            q_data = []
+            for tok, cnt in Counter(q_tokens).items():
+                tid = self.bm25_vocab.get(tok)
+                if tid is not None:
+                    q_indices.append(tid)
+                    q_data.append(float(cnt))
+            if not q_indices:
+                return np.zeros(n_docs, dtype=np.float64)
+            q_mat = sp.csr_matrix(
+                (np.array(q_data, dtype=np.float32), (np.zeros(len(q_indices), dtype=np.int32), np.array(q_indices, dtype=np.int32))),
+                shape=(1, self.bm25_csr.shape[0]),
+                dtype=np.float32,
+            )
+            full_scores = (q_mat @ self.bm25_csr).toarray().ravel().astype(np.float64)
+            return full_scores[:scope_limit] if scope_limit is not None else full_scores
+
+        if self.bm25 is not None:
+            bm_raw = np.array(self.bm25.get_scores(q_tokens), dtype=np.float64)
+            return bm_raw[:scope_limit] if (scope_limit is not None and len(bm_raw) >= scope_limit) else bm_raw
+
+        return None
 
     def _initialize(self):
         try:
             if os.environ.get("ALLOW_GPU") == "1" and torch.cuda.is_available():
                 self.device = "cuda"
             else:
-                # LGU Edge Workstation Emulation Constraint (Host A & Host C)
-                # Enforce 4 CPU worker threads and CPU-only neural evaluation
+                # LGU Edge Workstation Emulation default = 4 threads; allow TORCH_NUM_THREADS override for benchmarks
+                n_threads = max(1, int(os.environ.get("TORCH_NUM_THREADS", "4")))
                 os.environ["CUDA_VISIBLE_DEVICES"] = ""
-                os.environ["OMP_NUM_THREADS"] = "4"
-                os.environ["MKL_NUM_THREADS"] = "4"
-                torch.set_num_threads(4)
+                os.environ["OMP_NUM_THREADS"] = str(n_threads)
+                os.environ["MKL_NUM_THREADS"] = str(n_threads)
+                torch.set_num_threads(n_threads)
                 self.device = "cpu"
             # pyrefly: ignore[missing-import]
             from transformers import AutoTokenizer, AutoModelForSequenceClassification
@@ -133,29 +283,28 @@ class LocalNeuralEngine:
                 self.deberta_model = AutoModelForSequenceClassification.from_pretrained(hf_nli).to(self.device)
                 self.deberta_model.eval()
 
-            # Load genuine 176,421-provision embeddings matrix with mmap if unified provisions exists
+            # Load unified statutory provision embeddings matrix with mmap if unified provisions exists
             if FULL_EMB_PATH.exists() and UNIFIED_PROVISIONS_PATH.exists():
-                print(f"[NeuralEngine] Loading genuine 176,421-provision embeddings from {FULL_EMB_PATH} (mmap)...")
                 self.statutory_embeddings = np.load(str(FULL_EMB_PATH), mmap_mode='r')
+                print(f"[NeuralEngine] Loaded genuine {len(self.statutory_embeddings):,}-provision embeddings from {FULL_EMB_PATH} (mmap)...")
             elif LOCAL_EMB_PATH.exists():
                 print(f"[NeuralEngine] Loading local demo statutory embeddings from {LOCAL_EMB_PATH}...")
                 self.statutory_embeddings = np.load(str(LOCAL_EMB_PATH))
 
-            # Load BM25 index for True Hybrid Retrieval (Chapter 3 §3.7.1)
-            if BM25_INDEX_PATH.exists():
-                print(f"[NeuralEngine] Loading Stage 1 BM25 Index from {BM25_INDEX_PATH}...")
-                import pickle
-                with open(BM25_INDEX_PATH, "rb") as f_bm:
-                    bm_obj = pickle.load(f_bm)
-                    self.bm25 = bm_obj.get("bm25")
-                print(f"[NeuralEngine] BM25 Index ONLINE: Hybrid Stage 1 Retrieval (BM25 + Dense) active!")
+            # Load fast sparse CSR BM25 index (building & caching automatically if absent)
+            self._load_or_build_fast_bm25()
+            # Load Statutory Knowledge Graph for dynamic topological d_G computation
+            self._load_kg_index()
 
-            # Build byte offsets and citation lookup index for rapid provision retrieval
+            # Build byte offsets, dynamic national boundary, and citation lookup index
             self.local_items = []
             if UNIFIED_PROVISIONS_PATH.exists():
                 t0_idx = time.perf_counter()
                 re_eid = re.compile(b'"enactment_id":\\s*"([^"]+)"')
                 re_sec = re.compile(b'"section_number":\\s*"[^"]*?(\\d+)[^"]*"')
+                re_nat = re.compile(rb'"jurisdiction"\s*:\s*"national"')
+                self.national_corpus_limit = 0
+                counting_leading_national = True
                 with open(UNIFIED_PROVISIONS_PATH, "rb") as f:
                     idx = 0
                     while True:
@@ -163,13 +312,20 @@ class LocalNeuralEngine:
                         line = f.readline()
                         if not line:
                             break
+                        if not line.strip():
+                            continue
+                        if counting_leading_national:
+                            if re_nat.search(line):
+                                self.national_corpus_limit += 1
+                            else:
+                                counting_leading_national = False
                         self.provision_offsets.append(pos)
                         m_eid = re_eid.search(line)
                         m_sec = re_sec.search(line)
                         if m_eid and m_sec:
                             self.citation_index[(m_eid.group(1).decode("ascii", "ignore"), int(m_sec.group(1)))] = idx
                         idx += 1
-                print(f"[NeuralEngine] Indexed {len(self.provision_offsets):,} offsets & {len(self.citation_index):,} citations in {(time.perf_counter()-t0_idx):.2f}s!")
+                print(f"[NeuralEngine] Indexed {len(self.provision_offsets):,} offsets ({self.national_corpus_limit:,} national) & {len(self.citation_index):,} citations in {(time.perf_counter()-t0_idx):.2f}s!")
             elif LOCAL_META_PATH.exists():
                 with open(LOCAL_META_PATH, "r", encoding="utf-8") as f_meta:
                     self.local_items = json.load(f_meta)
@@ -177,46 +333,52 @@ class LocalNeuralEngine:
 
             if self.embedder is not None and self.deberta_model is not None and self.statutory_embeddings is not None:
                 self.is_loaded = True
-                print(f"[NeuralEngine] ONLINE: Running 100% Genuine Local Neural Inference on {self.device.upper()} across Knowledge Base!")
+                print(f"[NeuralEngine] ONLINE: Running 100% Genuine Local Neural Inference on {self.device.upper()} (threads={torch.get_num_threads()}) across Knowledge Base!")
             else:
                 print(f"[NeuralEngine] Local models directory not fully populated. Running in fallback mode.")
         except Exception as e:
             print(f"[NeuralEngine] Note: Local PyTorch engine initialization error ({e}). Using fallback mode.")
 
-    def retrieve_top_k(self, query_text: str, k: int = 50, scope: str = "national"):
-        """Retrieves genuine Top-k statutory provisions via Stage 1 Hybrid Retrieval (BM25 + Dense Bi-Encoder)."""
+    def retrieve_top_k(self, query_text: str, k: int = 50, scope: str = "national", retrieval_mode: str = "hybrid"):
+        """Retrieves genuine Top-k statutory provisions via Stage 1 retrieval ('hybrid', 'bm25', or 'dense')."""
         if not self.is_loaded or self.statutory_embeddings is None:
             return []
         if not self.provision_offsets and not self.local_items:
             return []
         import numpy as np
         t0 = time.perf_counter()
-        q_emb = self.embedder.encode([query_text], normalize_embeddings=True)[0]
 
-        # In unified dual corpus: indices 0..164,620 are national positive law (RA, PD, EO, Const, Act)
-        # indices 164,621..176,420 are Davao City local ordinances
-        if scope == "national" and len(self.statutory_embeddings) >= 164620:
-            search_mat = self.statutory_embeddings[:164620]
+        # Dynamically scoped national slice (contiguous leading national rows in unified dual corpus)
+        nat_lim = self.national_corpus_limit
+        scope_limit = nat_lim if (scope == "national" and nat_lim > 0 and len(self.statutory_embeddings) >= nat_lim) else None
+        search_mat = self.statutory_embeddings[:scope_limit] if scope_limit is not None else self.statutory_embeddings
+
+        dense_scores = None
+        if retrieval_mode in ("hybrid", "dense"):
+            q_emb = self.embedder.encode([query_text], normalize_embeddings=True)[0]
+            dense_scores = np.dot(search_mat, q_emb)
+
+        norm_bm = None
+        if retrieval_mode in ("hybrid", "bm25"):
+            clean_q = re.sub(r'[^a-zA-Z0-9\s]', ' ', query_text.lower())
+            q_tokens = [w for w in clean_q.split() if len(w) > 2]
+            if q_tokens:
+                bm_scope = self.score_bm25(q_tokens, scope_limit=scope_limit)
+                if bm_scope is not None:
+                    max_bm = np.max(bm_scope)
+                    norm_bm = (bm_scope / max_bm) if max_bm > 0 else bm_scope
+
+        if retrieval_mode == "bm25":
+            scores = norm_bm if norm_bm is not None else np.zeros(len(search_mat), dtype=np.float64)
+        elif retrieval_mode == "dense":
+            scores = dense_scores if dense_scores is not None else np.zeros(len(search_mat), dtype=np.float64)
         else:
-            search_mat = self.statutory_embeddings
-
-        dense_scores = np.dot(search_mat, q_emb)
-
-        # Hybrid Combination with BM25 (Chapter 3 §3.7.1: alpha = 0.50)
-        clean_q = re.sub(r'[^a-zA-Z0-9\s]', ' ', query_text.lower())
-        q_tokens = [w for w in clean_q.split() if len(w) > 2]
-
-        if self.bm25 is not None and q_tokens:
-            bm_raw = np.array(self.bm25.get_scores(q_tokens))
-            if scope == "national" and len(bm_raw) >= 164620:
-                bm_scope = bm_raw[:164620]
+            if norm_bm is not None and dense_scores is not None:
+                scores = (0.50 * norm_bm) + (0.50 * dense_scores)
+            elif dense_scores is not None:
+                scores = dense_scores
             else:
-                bm_scope = bm_raw
-            max_bm = np.max(bm_scope)
-            norm_bm = (bm_scope / max_bm) if max_bm > 0 else bm_scope
-            scores = (0.50 * norm_bm) + (0.50 * dense_scores)
-        else:
-            scores = dense_scores
+                scores = norm_bm
 
         eff_k = min(k, len(scores))
         top_idx = np.argpartition(scores, -eff_k)[-eff_k:]
@@ -301,40 +463,75 @@ class LocalNeuralEngine:
 
     def evaluate_cross_encoder_batch(self, pairs: list):
         """
-        Executes dynamic-padded, flattened batch Cross-Encoder NLI passes on CPU.
+        Executes dynamic-padded, flattened batch Cross-Encoder NLI passes on CPU
+        with exact (premise, hypothesis) pair deduplication and bounded LRU caching.
         pairs: list of tuples (statute_premise, ordinance_hypothesis)
         """
         if not self.is_loaded or self.deberta_model is None or not pairs:
             return []
         import torch
         t0 = time.perf_counter()
-        statutes = [p[0][:2048] for p in pairs]
-        clauses = [p[1][:1024] for p in pairs]
 
-        # Dynamic token padding: Premise = Statute (text_a), Hypothesis = Ordinance (text_b)
-        inputs = self.deberta_tokenizer(
-            statutes,
-            clauses,
-            padding=True,
-            truncation=True,
-            max_length=512,
-            return_tensors="pt"
-        ).to(self.device)
+        pair_keys = []
+        uncached_keys = []
+        uncached_statutes = []
+        uncached_clauses = []
+        seen_uncached = set()
 
-        with torch.no_grad():
-            logits = self.deberta_model(**inputs).logits
-            probs = torch.softmax(logits, dim=-1).cpu().numpy()
+        for p in pairs:
+            s_txt = p[0][:2048]
+            c_txt = p[1][:1024]
+            pkey = hashlib.blake2b((s_txt + "\x1f" + c_txt).encode("utf-8"), digest_size=16).digest()
+            pair_keys.append(pkey)
+            if pkey in self._stage2_cache:
+                self._stage2_cache.move_to_end(pkey)
+            elif pkey not in seen_uncached:
+                seen_uncached.add(pkey)
+                uncached_keys.append(pkey)
+                uncached_statutes.append(s_txt)
+                uncached_clauses.append(c_txt)
+
+        seq_len = 0
+        if uncached_keys:
+            inputs = self.deberta_tokenizer(
+                uncached_statutes,
+                uncached_clauses,
+                padding=True,
+                truncation=True,
+                max_length=512,
+                return_tensors="pt"
+            ).to(self.device)
+            seq_len = int(inputs["input_ids"].shape[1])
+
+            with torch.no_grad():
+                logits = self.deberta_model(**inputs).logits
+                probs = torch.softmax(logits, dim=-1).cpu().numpy()
+
+            for i, pkey in enumerate(uncached_keys):
+                self._stage2_cache[pkey] = {
+                    "p_contradiction": float(probs[i][0]),
+                    "p_entailment": float(probs[i][1]),
+                    "p_neutral": float(probs[i][2]),
+                }
+                if len(self._stage2_cache) > self._stage2_cache_max:
+                    self._stage2_cache.popitem(last=False)
+
         elapsed_ms = (time.perf_counter() - t0) * 1000
-
+        per_pair_ms = round(elapsed_ms / max(1, len(pairs)), 1)
         results = []
-        for i in range(len(pairs)):
+        for pkey in pair_keys:
+            cached = self._stage2_cache[pkey]
             results.append({
-                "p_contradiction": float(probs[i][0]),
-                "p_entailment": float(probs[i][1]),
-                "p_neutral": float(probs[i][2]),
-                "latency_ms": round(elapsed_ms / max(1, len(pairs)), 1)
+                "p_contradiction": cached["p_contradiction"],
+                "p_entailment": cached["p_entailment"],
+                "p_neutral": cached["p_neutral"],
+                "latency_ms": per_pair_ms,
             })
-        print(f"[NeuralEngine BATCH] Evaluated {len(pairs)} pairs in {elapsed_ms:.1f}ms ({elapsed_ms/max(1, len(pairs)):.1f} ms/pair) | seq_len={inputs['input_ids'].shape[1]}")
+        cache_hits = len(pairs) - len(uncached_keys)
+        if uncached_keys:
+            print(f"[NeuralEngine BATCH] Evaluated {len(uncached_keys)}/{len(pairs)} unique pairs (cache_hits={cache_hits}) in {elapsed_ms:.1f}ms ({elapsed_ms/max(1, len(pairs)):.1f} ms/pair) | seq_len={seq_len}")
+        else:
+            print(f"[NeuralEngine CACHE] Served {len(pairs)}/{len(pairs)} pairs from Stage 2 cache in {elapsed_ms:.1f}ms")
         return results
 
     def run_live_deberta_nli(self, ordinance_clause: str, statute_premise: str):
@@ -1034,42 +1231,261 @@ def render_highlighted_html(text: str, spans: list = None) -> str:
     return html.escape(text or "")
 
 
-def check_statutory_penalty_ceiling(ord_text: str) -> tuple:
-    """
-    Evaluates whether an ordinance clause exceeds the statutory fine ceiling
-    of P5,000 under Republic Act No. 7160 Section 458(a)(1)(iii).
-    This handles integer arithmetic which transformer tokenizers cannot perform.
-    Returns: (has_defect: bool, max_fine: float)
-    """
-    if not ord_text:
-        return False, 0
-    ord_lower = ord_text.lower()
-    if not any(k in ord_lower for k in ["fine", "penalized", "penalty", "punished"]):
-        return False, 0
-    max_fine = 0
-    # Match any currency amounts in a penalty section
-    fine_matches = re.findall(r"(?:p|php|pesos?)\s*([0-9,]+(?:\.[0-9]{2})?)", ord_lower)
-    fine_matches += re.findall(r"([0-9,]+(?:\.[0-9]{2})?)\s*(?:pesos|php)", ord_lower)
-    for fm in fine_matches:
-        cleaned_num = fm.replace(",", "")
+_ONES_MAP = {
+    "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+    "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10,
+    "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+    "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+}
+_TENS_MAP = {
+    "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50,
+    "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90,
+}
+_SCALE_MAP = {"hundred": 100, "thousand": 1000, "million": 1000000}
+
+
+def parse_english_number(phrase: str):
+    """Parses digits or English number words (e.g. 'twenty-five thousand') into a float."""
+    if not phrase:
+        return None
+    s = phrase.strip().lower().replace(",", "")
+    m_dig = re.fullmatch(r"\d+(?:\.\d+)?", s)
+    if m_dig:
+        return float(m_dig.group(0))
+    tokens = [t for t in re.split(r"[\s\-]+", s) if t and t != "and"]
+    if not tokens:
+        return None
+    total = 0
+    current = 0
+    matched_any = False
+    for tok in tokens:
+        if tok in _ONES_MAP:
+            current += _ONES_MAP[tok]
+            matched_any = True
+        elif tok in _TENS_MAP:
+            current += _TENS_MAP[tok]
+            matched_any = True
+        elif tok == "hundred":
+            current = (current if current > 0 else 1) * 100
+            matched_any = True
+        elif tok in ("thousand", "million"):
+            scale = _SCALE_MAP[tok]
+            total += (current if current > 0 else 1) * scale
+            current = 0
+            matched_any = True
+        else:
+            return None
+    return float(total + current) if matched_any else None
+
+
+_CEIL_CUE_RE = re.compile(
+    r"\b(?:not\s+exceed(?:ing)?|shall\s+not\s+exceed|no(?:t)?\s+more\s+than|"
+    r"at\s+most|up\s+to|limited\s+to|ceiling\s+of|capped\s+at|"
+    r"maximum(?:\s+(?:fine|imprisonment|penalty|limit|rate|speed|reclassification|area|term|period))?\s+of)\b",
+    re.IGNORECASE,
+)
+
+_NUM_WORD_SEQ = (
+    r"(?:(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
+    r"thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|"
+    r"twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|"
+    r"hundred|thousand|million|and)(?:[\s\-]+|$)){1,6}"
+)
+
+
+def _extract_peso_amounts(text: str) -> list:
+    vals = []
+    for m in re.finditer(r"(?:^|[\s(])(?:p|php|pesos?)\s*\.?\s*([0-9,]+(?:\.[0-9]{1,2})?)", text, re.IGNORECASE):
         try:
-            val = float(cleaned_num)
-            if val > max_fine:
-                max_fine = val
+            vals.append(float(m.group(1).replace(",", "")))
         except ValueError:
             pass
-    word_fines = [
-        ("one hundred thousand", 100000), ("fifty thousand", 50000), 
-        ("thirty thousand", 30000), ("twenty-five thousand", 25000), 
-        ("twenty thousand", 20000), ("ten thousand", 10000),
-        ("seven thousand", 7000), ("six thousand", 6000)
-    ]
-    for wf, amt in word_fines:
-        if wf in ord_lower:
-            max_fine = max(max_fine, amt)
-    if max_fine > 5000:
-        return True, max_fine
-    return False, max_fine
+    for m in re.finditer(r"([0-9,]+(?:\.[0-9]{1,2})?)\s*(?:pesos?|php)\b", text, re.IGNORECASE):
+        try:
+            vals.append(float(m.group(1).replace(",", "")))
+        except ValueError:
+            pass
+    for m in re.finditer(rf"\b({_NUM_WORD_SEQ})\s*pesos?\b", text, re.IGNORECASE):
+        v = parse_english_number(m.group(1))
+        if v is not None:
+            vals.append(v)
+    return [v for v in vals if v > 0]
+
+
+def _extract_duration_days(text: str) -> list:
+    unit_days = {"year": 365.0, "yr": 365.0, "month": 30.0, "mo": 30.0, "day": 1.0}
+    compound_pat = re.compile(
+        r"(?:(\d+(?:\.\d+)?)|(" + _NUM_WORD_SEQ + r"))\s*"
+        r"(?:\(\s*\d+\s*\)\s*)?"
+        r"(years?|yrs?|months?|mos?|days?)\b"
+        r"(?:\s+and\s+(?:(\d+(?:\.\d+)?)|(" + _NUM_WORD_SEQ + r"))\s*"
+        r"(?:\(\s*\d+\s*\)\s*)?(years?|yrs?|months?|mos?|days?)\b)?",
+        re.IGNORECASE,
+    )
+    vals = []
+    for m in compound_pat.finditer(text):
+        n1 = float(m.group(1)) if m.group(1) else parse_english_number(m.group(2) or "")
+        u1 = (m.group(3) or "").lower().rstrip("s")
+        if n1 is None or u1 not in unit_days:
+            continue
+        days = n1 * unit_days[u1]
+        if m.group(6):
+            n2 = float(m.group(4)) if m.group(4) else parse_english_number(m.group(5) or "")
+            u2 = (m.group(6) or "").lower().rstrip("s")
+            if n2 is not None and u2 in unit_days:
+                days += n2 * unit_days[u2]
+        if days > 0:
+            vals.append(days)
+    return vals
+
+
+def _extract_percentages(text: str) -> list:
+    vals = []
+    for m in re.finditer(r"(\d+(?:\.\d+)?)\s*(?:%|percent\b)", text, re.IGNORECASE):
+        v = float(m.group(1))
+        if 0.0 < v < 100.0:
+            vals.append(v)
+    for m in re.finditer(rf"\b({_NUM_WORD_SEQ})\s*percent\b", text, re.IGNORECASE):
+        v = parse_english_number(m.group(1))
+        if v is not None and 0.0 < v < 100.0:
+            vals.append(v)
+    return vals
+
+
+def _extract_speeds_kmh(text: str) -> list:
+    vals = []
+    for m in re.finditer(r"(\d+(?:\.\d+)?)\s*(?:km/h|kph|kilometers?\s+per\s+hour)\b", text, re.IGNORECASE):
+        v = float(m.group(1))
+        if 0.0 < v <= 300.0:
+            vals.append(v)
+    return vals
+
+
+def verify_dynamic_numeric_bounds(statute_text: str, draft_text: str) -> dict:
+    """
+    Domain-agnostic dynamic numeric upper-bound verifier comparing retrieved statutory
+    ceilings ('not exceeding', 'maximum of', 'limited to', 'at most') against draft provisions
+    across currency fines, imprisonment durations, matched regulatory percentages, and speeds.
+    Zero hardcoded statute numbers or fixed peso thresholds.
+    """
+    none_res = {"breached": False, "unit": None, "draft_value": None, "statute_cap": None, "detail": ""}
+    if not statute_text or not draft_text:
+        return none_res
+
+    st_low = statute_text.lower()
+    dr_low = draft_text.lower()
+    ceil_matches = list(_CEIL_CUE_RE.finditer(st_low))
+    if not ceil_matches:
+        return none_res
+
+    dr_sentences = re.split(r"(?<=[.;\n])\s+", dr_low)
+
+    # 1. Currency Fine Ceiling
+    fine_cues = re.compile(r"\b(fine|fines|penalt(?:y|ies)|penalized|punished|offense)\b", re.IGNORECASE)
+    budget_noise = re.compile(r"\b(appropriat\w*|budget|capital|loan|salary|salaries|trust\s+fund|project\s+cost)\b", re.IGNORECASE)
+    if fine_cues.search(st_low) and fine_cues.search(dr_low):
+        stat_caps = []
+        for m in ceil_matches:
+            ctx = st_low[max(0, m.start() - 70):min(len(st_low), m.end() + 140)]
+            win = st_low[m.start():min(len(st_low), m.end() + 140)]
+            if fine_cues.search(ctx):
+                stat_caps.extend(_extract_peso_amounts(win))
+        if stat_caps:
+            stat_cap = max(stat_caps)
+            draft_fines = []
+            for sent in dr_sentences:
+                if fine_cues.search(sent) and not budget_noise.search(sent):
+                    draft_fines.extend(_extract_peso_amounts(sent))
+            if draft_fines:
+                draft_max = max(draft_fines)
+                if draft_max > stat_cap:
+                    return {
+                        "breached": True,
+                        "unit": "currency_fine",
+                        "draft_value": draft_max,
+                        "statute_cap": stat_cap,
+                        "detail": f"Dynamic Numeric-Bound Verifier: draft fine P{draft_max:,.2f} exceeds retrieved statutory ceiling P{stat_cap:,.2f}.",
+                    }
+
+    # 2. Imprisonment Duration Ceiling
+    imp_cues = re.compile(r"\b(imprisonment|prison|jail|confinement)\b", re.IGNORECASE)
+    if imp_cues.search(st_low) and imp_cues.search(dr_low):
+        stat_caps_days = []
+        for m in ceil_matches:
+            ctx = st_low[max(0, m.start() - 70):min(len(st_low), m.end() + 140)]
+            win = st_low[m.start():min(len(st_low), m.end() + 140)]
+            if imp_cues.search(ctx):
+                stat_caps_days.extend(_extract_duration_days(win))
+        if stat_caps_days:
+            stat_cap_days = max(stat_caps_days)
+            draft_days = []
+            for sent in dr_sentences:
+                if imp_cues.search(sent):
+                    draft_days.extend(_extract_duration_days(sent))
+            if draft_days:
+                draft_max_days = max(draft_days)
+                if draft_max_days > stat_cap_days:
+                    return {
+                        "breached": True,
+                        "unit": "duration_imprisonment",
+                        "draft_value": round(draft_max_days / 365.0, 2),
+                        "statute_cap": round(stat_cap_days / 365.0, 2),
+                        "detail": f"Dynamic Numeric-Bound Verifier: draft imprisonment ({draft_max_days/365.0:.2f} yr) exceeds statutory ceiling ({stat_cap_days/365.0:.2f} yr).",
+                    }
+
+    # 3. Context-Matched Percentage Cap
+    pct_stems = ("agricultur", "reclassif", "zoning", "tax", "levy", "surcharge", "interest", "discount", "royalt", "calamity", "qrf")
+    stat_pct_caps = []
+    shared_stems_found = set()
+    for m in ceil_matches:
+        ctx = st_low[max(0, m.start() - 120):min(len(st_low), m.end() + 260)]
+        win = st_low[m.start():min(len(st_low), m.end() + 260)]
+        pcts = _extract_percentages(win)
+        if not pcts:
+            continue
+        shared = [st for st in pct_stems if st in ctx and st in dr_low]
+        if shared:
+            stat_pct_caps.extend(pcts)
+            shared_stems_found.update(shared)
+    if stat_pct_caps and shared_stems_found:
+        stat_pct_cap = max(stat_pct_caps)
+        draft_pcts = []
+        for sent in dr_sentences:
+            if any(st in sent for st in shared_stems_found):
+                draft_pcts.extend(_extract_percentages(sent))
+        if draft_pcts:
+            draft_max_pct = max(draft_pcts)
+            if draft_max_pct > stat_pct_cap:
+                return {
+                    "breached": True,
+                    "unit": "percentage_cap",
+                    "draft_value": draft_max_pct,
+                    "statute_cap": stat_pct_cap,
+                    "detail": f"Dynamic Numeric-Bound Verifier: draft rate/share {draft_max_pct:.1f}% exceeds statutory limit {stat_pct_cap:.1f}% (context: {', '.join(sorted(shared_stems_found))}).",
+                }
+
+    # 4. Speed Limit Cap
+    spd_cues = re.compile(r"(?:km/h|kph|kilometers?\s+per\s+hour)", re.IGNORECASE)
+    if spd_cues.search(st_low) and spd_cues.search(dr_low):
+        stat_spds = []
+        for m in ceil_matches:
+            win = st_low[m.start():min(len(st_low), m.end() + 140)]
+            stat_spds.extend(_extract_speeds_kmh(win))
+        if not stat_spds and "maximum" in st_low:
+            stat_spds = _extract_speeds_kmh(st_low)
+        if stat_spds:
+            stat_spd_cap = max(stat_spds)
+            draft_spds = _extract_speeds_kmh(dr_low)
+            if draft_spds and max(draft_spds) > stat_spd_cap:
+                return {
+                    "breached": True,
+                    "unit": "speed_limit",
+                    "draft_value": max(draft_spds),
+                    "statute_cap": stat_spd_cap,
+                    "detail": f"Dynamic Numeric-Bound Verifier: draft speed {max(draft_spds):.0f} km/h exceeds statutory limit {stat_spd_cap:.0f} km/h.",
+                }
+
+    return none_res
 
 
 def infer_legal_domain(text: str) -> str:
@@ -1089,50 +1505,109 @@ def infer_legal_domain(text: str) -> str:
     return best_dom if best_cnt > 0 else "General Administrative"
 
 
-def compute_topological_distance(statute_citation: str, draft_text: str, statute_text: str = "") -> tuple:
+_STATUTE_CITE_EXTRACT_RE = re.compile(
+    r"\b(Republic\s+Act(?:\s+No\.?)?|R\.?A\.?(?:\s+No\.?)?|"
+    r"Presidential\s+Decree(?:\s+No\.?)?|P\.?D\.?(?:\s+No\.?)?|"
+    r"Executive\s+Order(?:\s+No\.?)?|E\.?O\.?(?:\s+No\.?)?|"
+    r"Batas\s+Pambansa(?:\s+Blg\.?)?|B\.?P\.?(?:\s+Blg\.?)?)\s*(\d+)\b",
+    re.IGNORECASE,
+)
+
+_KG_DOMAIN_TO_MACRO = {
+    "Public Finance & General Appropriations": "Public Finance, Taxation, Fiscal Policy & Budget",
+    "Taxation, Tariffs & Revenue Administration": "Public Finance, Taxation, Fiscal Policy & Budget",
+    "Public Health, Hospitals & Medical Services": "Public Health, Sanitation & Medical Services",
+    "Public Utilities & Telecommunications Franchises": "Public Works, Transportation, Utilities & Infrastructure",
+    "Local Government & Territorial Boundaries": "Local Governance, Administration & Civil Service",
+}
+
+
+def extract_cited_enactment_ids(text: str) -> set:
+    """Resolves explicit national statutory citations in text to KG enactment IDs via NEURAL_ENGINE's KG index."""
+    if not text or not getattr(NEURAL_ENGINE, "kg_loaded", False):
+        return set()
+    eids = set()
+    for m in _STATUTE_CITE_EXTRACT_RE.finditer(text):
+        p = m.group(1).lower().replace(".", "").strip()
+        num = m.group(2).strip()
+        if p.startswith("r"):
+            kind = "ra"
+        elif p.startswith("p"):
+            kind = "pd"
+        elif p.startswith("e"):
+            kind = "eo"
+        elif p.startswith("b"):
+            kind = "bp"
+        else:
+            continue
+        matched = NEURAL_ENGINE.kg_number_to_eids.get((kind, num), [])
+        if matched:
+            tail = text[m.end():min(len(text), m.end() + 40)]
+            yr_m = re.search(r"\b(19\d{2}|20\d{2})\b", tail)
+            if yr_m:
+                yr = yr_m.group(1)
+                yr_matched = [e for e in matched if f"_{yr}" in e]
+                if yr_matched:
+                    matched = yr_matched
+            eids.update(matched)
+    return eids
+
+
+def compute_topological_distance(
+    statute_citation: str,
+    draft_text: str,
+    statute_text: str = "",
+    draft_cited_eids: set = None,
+) -> tuple:
     """
-    Computes shortest-path topological graph distance d_G(u, v) between a candidate statute and local ordinance.
+    Computes genuine shortest-path topological graph distance d_G(u, v) using the
+    Statutory Knowledge Graph (statutory_kg_nodes.jsonl + statutory_kg_edges.jsonl)
+    and shared regulatory domains. Zero hardcoded statute IDs.
     Returns: (d_g: int, domain: str, relation_type: str)
-      - d_G = 1: Direct statutory citation / governing authority link (tau* = 0.300)
-      - d_G = 2: Shared macro regulatory domain nexus (tau* = 0.375)
-      - d_G = 999: Unrelated / general baseline domain (tau* = 0.450)
+      - d_G = 1: Direct statutory citation in draft (tau* = 0.300)
+      - d_G = 2: 1-hop KG citation/amendment link OR shared macro regulatory domain (tau* = 0.375)
+      - d_G = 3: 2-hop KG citation/amendment path (tau* = 0.400)
+      - d_G = 999: General baseline (tau* = 0.450)
     """
-    cit_lower = (statute_citation or "").lower()
-    txt_lower = (draft_text or "").lower()
+    cand_eids = extract_cited_enactment_ids(statute_citation)
+    seed_eids = set(draft_cited_eids or set()) | extract_cited_enactment_ids(draft_text)
 
-    # 1. Direct Statutory Citation / Delegated Authority Link (1 hop)
-    stat_num_match = re.search(r"\b(\d+)\b", cit_lower)
-    target_num = stat_num_match.group(1) if stat_num_match else ""
-
-    is_direct = False
-    if target_num and len(target_num) >= 3 and target_num in txt_lower:
-        is_direct = True
-    elif "7160" in cit_lower and ("458" in cit_lower or "penalty" in txt_lower or "fine" in txt_lower):
-        is_direct = True
-    elif "1144" in cit_lower and ("spray" in txt_lower or "pesticid" in txt_lower or "fertiliz" in txt_lower):
-        is_direct = True
-    elif ("9700" in cit_lower or "124" in cit_lower or "6657" in cit_lower) and ("conversion" in txt_lower or "reclassification" in txt_lower or "dar" in txt_lower):
-        is_direct = True
-    elif "7942" in cit_lower and ("mining" in txt_lower or "quarry" in txt_lower):
-        is_direct = True
-    elif "4136" in cit_lower and ("speed" in txt_lower or "traffic" in txt_lower or "vehicle" in txt_lower):
-        is_direct_citation = True
-    elif "10121" in cit_lower and ("disaster" in txt_lower or "calamity" in txt_lower or "qrf" in txt_lower):
-        is_direct = True
-    elif "1869" in cit_lower and ("casino" in txt_lower or "gambling" in txt_lower):
-        is_direct = True
-
-    stat_domain = infer_legal_domain(statute_text or statute_citation)
     draft_domain = infer_legal_domain(draft_text)
+    stat_domain = infer_legal_domain(statute_text or statute_citation)
+    if stat_domain == "General Administrative" and getattr(NEURAL_ENGINE, "kg_loaded", False):
+        for ce in cand_eids:
+            mapped = _KG_DOMAIN_TO_MACRO.get(NEURAL_ENGINE.kg_eid_to_domain.get(ce, ""))
+            if mapped:
+                stat_domain = mapped
+                break
 
-    if is_direct:
-        return 1, stat_domain, "Direct Citation / Controlling Authority"
+    # 1. Direct Statutory Citation (d_G = 1)
+    if cand_eids and seed_eids and (cand_eids & seed_eids):
+        return 1, stat_domain, "Direct Statutory Citation"
 
-    # 2. Shared Macro Regulatory Domain Nexus (2 hops via Domain Hub)
+    # 2. 1-Hop KG Citation / Amendment Link (d_G = 2)
+    kg_adj = getattr(NEURAL_ENGINE, "kg_adj", None)
+    if kg_adj and cand_eids and seed_eids:
+        for se in seed_eids:
+            nbs = kg_adj.get(se)
+            if nbs and (cand_eids & nbs):
+                return 2, stat_domain, "1-Hop KG Citation/Amendment Link"
+
+    # 3. Shared Macro Regulatory Domain Nexus (d_G = 2 via Domain Hub)
     if draft_domain == stat_domain and draft_domain != "General Administrative":
         return 2, draft_domain, f"Shared Macro Domain ({draft_domain})"
 
-    # 3. Disconnected / General Baseline
+    # 4. 2-Hop KG Citation / Amendment Path (d_G = 3)
+    if kg_adj and cand_eids and seed_eids:
+        seed_1hop = set()
+        for se in seed_eids:
+            seed_1hop.update(kg_adj.get(se, ()))
+        if seed_1hop:
+            for ce in cand_eids:
+                if kg_adj.get(ce, set()) & seed_1hop:
+                    return 3, stat_domain, "2-Hop KG Citation Path"
+
+    # 5. Disconnected / General Baseline
     return 999, draft_domain, "General Baseline"
 
 
@@ -1156,10 +1631,8 @@ def compute_dynamic_threshold(d_g: int, is_vertical: bool = True, tau_base: floa
 def compute_tuned_champion_inference(case_id: str, ordinance_text: str, statute_text: str, controlling_statute: str = "", statute_title: str = ""):
     """
     Pure Stage 2 Cross-Encoder NLI inference with Topologically Calibrated Dynamic Thresholding
-    under Section 5(a) of RA 7160 and the Magtajas preemption doctrine (Configuration B).
-    
-    100% of semantic reasoning is performed by DeBERTa-v3 cross-attention.
-    Decision Diamond uses topologically calibrated dynamic decision threshold tau*(u, v) (Chapter 3 §3.6.3).
+    under Section 5(a) of RA 7160 and the Magtajas preemption doctrine (Configuration B),
+    paired with dynamic numeric upper-bound verification.
     """
     ordinance_text = ordinance_text or ""
     statute_text = statute_text or ""
@@ -1194,16 +1667,19 @@ def compute_tuned_champion_inference(case_id: str, ordinance_text: str, statute_
 
     d_g, domain, rel_type = compute_topological_distance(controlling_statute or case_id, ordinance_text, statute_text)
     TAU_STAR = compute_dynamic_threshold(d_g, is_vertical=True, tau_base=0.45, delta_tau=0.15)
-    has_fine_defect, fine_val = check_statutory_penalty_ceiling(ordinance_text)
-    is_conflict = (raw_contra >= TAU_STAR) or has_fine_defect
-    conflict_prob = raw_contra if not has_fine_defect else max(raw_contra, 0.95)
+    num_check = verify_dynamic_numeric_bounds(statute_text, ordinance_text)
+    has_num_breach = bool(num_check["breached"])
+    is_conflict = (raw_contra >= TAU_STAR) or has_num_breach
+    conflict_prob = raw_contra if not has_num_breach else max(raw_contra, 0.95)
 
     if is_conflict:
         verdict = "CONTRADICTION"
         verdict_title = "Potential Legal Conflict Detected"
         verdict_badge = "conflict"
-        if has_fine_defect:
-            verdict_desc = f"Imposes a fine of P{fine_val:,.0f} exceeding the statutory P5,000 ceiling prescribed by Republic Act No. 7160 Section 458(a)(1)(iii)."
+        if has_num_breach and raw_contra < TAU_STAR:
+            verdict_desc = num_check["detail"]
+        elif has_num_breach:
+            verdict_desc = f"DeBERTa-v3 Cross-Encoder ({round(raw_contra * 100, 1)}% >= tau* = {TAU_STAR}) + {num_check['detail']}"
         else:
             verdict_desc = f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict under Section 5(a) of RA 7160 and the Magtajas doctrine (neural contradiction confidence {round(conflict_prob * 100, 1)}% exceeding topologically calibrated threshold tau* = {TAU_STAR} [d_G = {d_g}])."
     else:
@@ -1225,7 +1701,12 @@ def compute_tuned_champion_inference(case_id: str, ordinance_text: str, statute_
             c["p_entailment"] = r["p_entailment"]
             c["p_neutral"] = r["p_neutral"]
             c["stage2_confidence"] = round(r["p_contradiction"] * 100, 1)
-            is_c = r["p_contradiction"] >= TAU_STAR
+            c_raw = c.get("raw_text") or c.get("prepended_text", "")
+            c_num = verify_dynamic_numeric_bounds(c_raw, ordinance_text)
+            c["numeric_bound_breach"] = c_num if c_num["breached"] else None
+            is_c = (r["p_contradiction"] >= TAU_STAR) or bool(c_num["breached"])
+            if c_num["breached"]:
+                c["stage2_confidence"] = max(c["stage2_confidence"], 95.0)
             c["stage2_verdict"] = "Contradiction (Preemption Risk)" if is_c else ("Entailment" if r["p_entailment"] >= 0.50 else "Neutral / Harmonious")
             c["status_badge"] = "danger" if is_c else ("success" if r["p_entailment"] >= 0.50 else "info")
 
@@ -1402,7 +1883,7 @@ def get_stats():
         "stage1": {
             "model": "all-MiniLM-L6-v2 (22.7M)",
             "vector_dimension": 384,
-            "indexed_provisions": len(NEURAL_ENGINE.statutory_embeddings) if NEURAL_ENGINE.statutory_embeddings is not None else 176421,
+            "indexed_provisions": len(NEURAL_ENGINE.statutory_embeddings) if NEURAL_ENGINE.statutory_embeddings is not None else 176441,
             "total_enactments": 27248,
             "national_enactments": 25432,
             "local_ordinances": 1816,
@@ -1625,9 +2106,13 @@ def extract_document_payload():
                 return None, None, None, pdf_err or f"Full PDF for {doc_id} has no extractable text."
             filename = pdf_name
         elif doc_id and doc_id in TIER2_DOCS_DICT:
-            gold = TIER2_DOCS_DICT[doc_id]
-            filename = gold.get("title", doc_id)
-            raw_text = "\n\n".join([f"SECTION {s['sec_num']}. {s.get('sec_title', '')} - {s.get('text', '')}" for s in gold.get("sections", [])])
+            pdf_path = TIER2_PDF_DIR / f"{doc_id}.pdf"
+            if not pdf_path.exists():
+                return None, None, None, f"Full PDF document not found for {doc_id}: {pdf_path.name}"
+            raw_text, pdf_err = _extract_pdf_text(str(pdf_path))
+            if pdf_err or not raw_text:
+                return None, None, None, pdf_err or f"Full PDF for {doc_id} has no extractable text."
+            filename = pdf_path.name
         elif "sections" in data:
             raw_text = "\n\n".join([f"SECTION {s['sec_num']}. {s.get('sec_title', '')} - {s.get('text', '')}" for s in data["sections"]])
             filename = data.get("title", filename)
@@ -1640,13 +2125,21 @@ def extract_document_payload():
     return raw_text, filename, doc_id, None
 
 
-def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = None, progress_callback=None):
+def execute_full_ordinance_audit(
+    raw_text: str,
+    filename: str,
+    doc_id: str = None,
+    progress_callback=None,
+    retrieval_mode: str = "hybrid",
+    use_kg_threshold: bool = True,
+    use_numeric_bounds: bool = True,
+):
     """
     Core engine executing:
     1. Section chunking & procedural boilerplate suppression
-    2. Stage 1 hybrid retrieval over 176k provisions
-    3. Stage 2 flattened batch Cross-Encoder NLI on substantive provisions
-    4. Exact ground-truth statutory alignment & authentic provision text extraction
+    2. Stage 1 retrieval ('hybrid', 'bm25', or 'dense') over 164,620 national provisions
+    3. Stage 2 flattened batch Cross-Encoder NLI on substantive provisions (with pair cache)
+    4. Real KG topological distance d_G thresholding + Dynamic Numeric-Bound Verification
     """
     t_start_total = time.perf_counter()
     doc_title, chunks = chunk_ordinance_sections(raw_text, default_title=filename)
@@ -1661,6 +2154,7 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
         }]
 
     substantive_chunks = [ch for ch in chunks if not ch.get("is_boilerplate", False)]
+    doc_cited_eids = extract_cited_enactment_ids(raw_text)
 
     if progress_callback:
         progress_callback("chunking", 20, "Document Ingested", f"Divided into {len(chunks)} sections ({len(substantive_chunks)} operative, {len(chunks)-len(substantive_chunks)} boilerplate).")
@@ -1673,30 +2167,13 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
         sec_badge = f"Section {ch['sec_num']}: {ch['sec_title'][:36]}" if ch.get('sec_title') else f"Section {ch['sec_num']}: Operative Provision"
         if progress_callback:
             pct = 15 + int(20 * (sub_idx / max(1, len(substantive_chunks))))
-            progress_callback("stage1", pct, sec_badge, f"Stage 1: Scanning 164,620 national statutes for Section {ch['sec_num']}...")
+            nat_total = NEURAL_ENGINE.national_corpus_limit or 164640
+            progress_callback("stage1", pct, sec_badge, f"Stage 1 ({retrieval_mode}): Scanning {nat_total:,} national statutes for Section {ch['sec_num']}...")
         if NEURAL_ENGINE.is_loaded:
             query_str = f"[{doc_title} | {header_title}] {ch['text']}"
-            raw_cands = NEURAL_ENGINE.retrieve_top_k(query_str, k=50, scope="national")
+            raw_cands = NEURAL_ENGINE.retrieve_top_k(query_str, k=50, scope="national", retrieval_mode=retrieval_mode)
             # Filter out obsolete colonial enactments (Act No. / act_ and Commonwealth Act) and superseded pre-LGC charter (RA 4354)
             valid_cands = [c for c in raw_cands if not c["citation"].lower().startswith(("act no.", "act_", "commonwealth act", "commonwealth_act")) and "4354" not in c["citation"]]
-            # Stage 1 Knowledge Graph Neighborhood Expansion (CITES_AUTHORITY & CONTAINS):
-            # Check for explicit statutory citations or penalty references and ensure governing authority provisions are in candidate pool
-            has_fine, _ = check_statutory_penalty_ceiling(ch["text"])
-            c_cits = [c["citation"].lower() for c in valid_cands]
-            if has_fine and not any("458" in cit for cit in c_cits):
-                t_title, t_text = resolve_statute_passage("Republic Act No. 7160 §458(a)(1)(iii)")
-                valid_cands.insert(0, {
-                    "rank": 0,
-                    "citation": "Republic Act No. 7160 §458(a)(1)(iii)",
-                    "title": t_title or "Local Government Code of 1991 (Penalty Ceiling)",
-                    "section_title": "Section 458(a)(1)(iii)",
-                    "raw_text": t_text,
-                    "prepended_text": t_text,
-                    "similarity": 0.99,
-                    "kg_expanded": True,
-                    "expansion_type": "CITES_AUTHORITY / SISTER_PROVISION"
-                })
-
             ch["all_candidates"] = valid_cands
             ch["eval_candidates"] = valid_cands[:8]
         else:
@@ -1737,9 +2214,22 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             cand["p_entailment"] = res["p_entailment"]
             cand["p_neutral"] = res["p_neutral"]
             cand["stage2_confidence"] = round(res["p_contradiction"] * 100, 1)
-            # Topologically Calibrated Dynamic Thresholding (Chapter 3 §3.6.3, Equations 3.14 & 3.15)
-            d_g, domain, rel_type = compute_topological_distance(cand.get("citation", ""), ch["text"], cand.get("raw_text", ""))
-            tau_dyn = compute_dynamic_threshold(d_g, is_vertical=True, tau_base=0.45, delta_tau=0.15)
+
+            cand_raw = (cand.get("raw_text") or cand.get("prepended_text", ""))
+            if use_kg_threshold:
+                d_g, domain, rel_type = compute_topological_distance(
+                    cand.get("citation", ""),
+                    ch["text"],
+                    cand_raw,
+                    draft_cited_eids=doc_cited_eids,
+                )
+                tau_dyn = compute_dynamic_threshold(d_g, is_vertical=True, tau_base=0.45, delta_tau=0.15)
+            else:
+                d_g = 999
+                domain = infer_legal_domain(ch["text"])
+                rel_type = "Static Baseline (No KG)"
+                tau_dyn = 0.45
+
             cand["graph_distance_d_g"] = d_g
             cand["domain"] = domain
             cand["relation_type"] = rel_type
@@ -1747,17 +2237,31 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
             cand["dynamic_threshold_pct"] = round(tau_dyn * 100, 1)
             cand["is_dynamic"] = (tau_dyn < 0.45)
 
-            is_cand_conflict = (res["p_contradiction"] >= tau_dyn)
+            num_check = verify_dynamic_numeric_bounds(cand_raw, ch["text"]) if use_numeric_bounds else {"breached": False, "detail": ""}
+            has_num_breach = bool(num_check.get("breached"))
+            cand["numeric_bound_breach"] = num_check if has_num_breach else None
+
+            is_cand_conflict = (res["p_contradiction"] >= tau_dyn) or has_num_breach
+            if has_num_breach:
+                cand["stage2_confidence"] = max(cand["stage2_confidence"], 95.0)
             cand["is_conflict"] = is_cand_conflict
             cand["stage2_verdict"] = "Contradiction (Preemption Risk)" if is_cand_conflict else ("Entailment" if res["p_entailment"] >= 0.45 else "Neutral / Harmonious")
             cand["status_badge"] = "danger" if is_cand_conflict else ("success" if res["p_entailment"] >= 0.45 else "info")
             if is_cand_conflict:
-                cand["summary"] = (
-                    f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {cand.get('citation', '')} "
-                    f"(Contradiction confidence {cand['stage2_confidence']}% exceeding topologically calibrated "
-                    f"decision threshold tau* = {tau_dyn:.3f} at graph distance d_G = {d_g} [{rel_type}] "
-                    f"under Section 5(a) of RA 7160 and the Magtajas doctrine)."
-                )
+                if has_num_breach and res["p_contradiction"] < tau_dyn:
+                    cand["summary"] = f"{num_check['detail']} (Neural P(Contradiction)={round(res['p_contradiction']*100, 1)}%)."
+                elif has_num_breach:
+                    cand["summary"] = (
+                        f"DeBERTa-v3 Cross-Encoder ({round(res['p_contradiction']*100, 1)}% >= tau* = {tau_dyn:.3f} "
+                        f"at d_G = {d_g} [{rel_type}]) + {num_check['detail']}"
+                    )
+                else:
+                    cand["summary"] = (
+                        f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {cand.get('citation', '')} "
+                        f"(Contradiction confidence {cand['stage2_confidence']}% exceeding topologically calibrated "
+                        f"decision threshold tau* = {tau_dyn:.3f} at graph distance d_G = {d_g} [{rel_type}] "
+                        f"under Section 5(a) of RA 7160 and the Magtajas doctrine)."
+                    )
 
         batch_results.extend(sec_results)
     stage2_elapsed_s = time.perf_counter() - t_start_stage2
@@ -1809,115 +2313,43 @@ def execute_full_ordinance_audit(raw_text: str, filename: str, doc_id: str = Non
         eval_cands = ch.get("eval_candidates", [])
 
         best_cand = None
-        highest_conflict_prob = -1.0
-        has_fine_defect, fine_val = check_statutory_penalty_ceiling(ch["text"])
+        highest_conflict_score = -1.0
+        conflict_cands = []
 
         for cand in eval_cands:
             p_c = cand.get("p_contradiction", 0.0)
-            p_e = cand.get("p_entailment", 0.0)
-            p_n = cand.get("p_neutral", 0.90)
             tau_c = cand.get("dynamic_threshold", 0.45)
+            has_num_breach = bool((cand.get("numeric_bound_breach") or {}).get("breached"))
 
-            is_c = (p_c >= tau_c)
+            is_c = (p_c >= tau_c) or has_num_breach
             cand["is_conflict"] = is_c
+            eff_score = max(p_c, 0.95) if has_num_breach else p_c
 
-            if p_c > highest_conflict_prob:
-                highest_conflict_prob = p_c
+            if is_c:
+                conflict_cands.append((eff_score, cand))
+            if eff_score > highest_conflict_score:
+                highest_conflict_score = eff_score
                 best_cand = cand
 
-        if has_fine_defect:
-            target_stat = "Republic Act No. 7160 §458(a)(1)(iii)"
-            t_title, cand_stat_text = resolve_statute_passage(target_stat)
-            target_title = t_title or "Local Government Code of 1991 (Penalty Ceiling)"
-            legal_rationale = f"Imposes a fine of P{fine_val:,.0f} exceeding the statutory P5,000 ceiling prescribed by Republic Act No. 7160 Section 458(a)(1)(iii)."
+        if conflict_cands:
+            conflict_cands.sort(key=lambda x: x[0], reverse=True)
+            eff_top, primary_cand = conflict_cands[0]
+            best_tau = primary_cand.get("dynamic_threshold", 0.45)
             is_conflict = True
             verdict = "CONTRADICTION"
             conflict_count += 1
-            conf_pct = 95.0
-            primary_cand = {
-                "citation": target_stat,
-                "title": target_title,
-                "raw_text": cand_stat_text,
-                "prepended_text": cand_stat_text,
-                "stage2_confidence": 95.0,
-                "stage2_verdict": "Contradiction (Preemption Risk)",
-                "lawphil_url": get_lawphil_url(target_stat, "National Statute")
-            }
-            statute_text = cand_stat_text
-            prepended_text = cand_stat_text
-        elif not NEURAL_ENGINE.is_loaded and ("aerial spray" in ch["text"].lower() or ("spray" in ch["text"].lower() and "ban" in ch["text"].lower())):
-            target_stat = "Presidential Decree No. 1144 §6; Presidential Decree No. 1144 §9"
-            t_title, cand_stat_text = resolve_statute_passage(target_stat)
-            target_title = t_title
-            is_conflict = True
-            verdict = "CONTRADICTION"
-            conflict_count += 1
-            conf_pct = 98.4
-            legal_rationale = f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {target_stat} (Contradiction confidence {conf_pct}% exceeding calibrated decision threshold tau* = 0.45 under Section 5(a) of RA 7160 and the Magtajas doctrine)."
-            primary_cand = {
-                "citation": target_stat,
-                "title": target_title,
-                "raw_text": cand_stat_text,
-                "prepended_text": cand_stat_text,
-                "stage2_confidence": conf_pct,
-                "stage2_verdict": "Contradiction (Preemption Risk)",
-                "lawphil_url": get_lawphil_url(target_stat, "National Statute")
-            }
-            statute_text = cand_stat_text
-            prepended_text = cand_stat_text
-        elif not NEURAL_ENGINE.is_loaded and ("holding compan" in ch["text"].lower() and ("tax" in ch["text"].lower() or "levy" in ch["text"].lower())):
-            target_stat = "Republic Act No. 7160 §133(a); Republic Act No. 7160 §143(f); Republic Act No. 8791 §3"
-            t_title, cand_stat_text = resolve_statute_passage(target_stat)
-            target_title = t_title
-            is_conflict = True
-            verdict = "CONTRADICTION"
-            conflict_count += 1
-            conf_pct = 94.2
-            legal_rationale = f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {target_stat} (Contradiction confidence {conf_pct}% exceeding calibrated decision threshold tau* = 0.45 under Section 5(a) of RA 7160 and the Magtajas doctrine)."
-            primary_cand = {
-                "citation": target_stat,
-                "title": target_title,
-                "raw_text": cand_stat_text,
-                "prepended_text": cand_stat_text,
-                "stage2_confidence": conf_pct,
-                "stage2_verdict": "Contradiction (Preemption Risk)",
-                "lawphil_url": get_lawphil_url(target_stat, "National Statute")
-            }
-            statute_text = cand_stat_text
-            prepended_text = cand_stat_text
-        elif not NEURAL_ENGINE.is_loaded and (("mining" in ch["text"].lower() or "quarry" in ch["text"].lower()) and ("ban" in ch["text"].lower() or "prohibit" in ch["text"].lower())):
-            target_stat = "1987 Constitution Art. XII §2; Republic Act No. 7942 §27; Republic Act No. 8371 §59"
-            t_title, cand_stat_text = resolve_statute_passage(target_stat)
-            target_title = t_title
-            is_conflict = True
-            verdict = "CONTRADICTION"
-            conflict_count += 1
-            conf_pct = 96.5
-            legal_rationale = f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {target_stat} (Contradiction confidence {conf_pct}% exceeding calibrated decision threshold tau* = 0.45 under Section 5(a) of RA 7160 and the Magtajas doctrine)."
-            primary_cand = {
-                "citation": target_stat,
-                "title": target_title,
-                "raw_text": cand_stat_text,
-                "prepended_text": cand_stat_text,
-                "stage2_confidence": conf_pct,
-                "stage2_verdict": "Contradiction (Preemption Risk)",
-                "lawphil_url": get_lawphil_url(target_stat, "National Statute")
-            }
-            statute_text = cand_stat_text
-            prepended_text = cand_stat_text
-        elif best_cand and (highest_conflict_prob >= best_cand.get("dynamic_threshold", 0.45)):
-            best_tau = best_cand.get("dynamic_threshold", 0.45)
-            primary_cand = best_cand
-            is_conflict = True
-            verdict = "CONTRADICTION"
-            conflict_count += 1
-            conf_pct = round(highest_conflict_prob * 100, 1)
+            conf_pct = round(eff_top * 100, 1)
             target_stat = primary_cand["citation"]
             t_title, cand_stat_text = resolve_statute_passage(target_stat, primary_cand.get("raw_text") or primary_cand.get("prepended_text", ""))
             target_title = primary_cand.get("title") or t_title or "National Statutory Authority"
             d_g_prim = primary_cand.get("graph_distance_d_g", 2)
             rel_prim = primary_cand.get("relation_type", "Topological Link")
-            legal_rationale = f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {target_stat} (Contradiction confidence {conf_pct}% exceeding topologically calibrated decision threshold tau* = {best_tau:.3f} at graph distance d_G = {d_g_prim} [{rel_prim}] under Section 5(a) of RA 7160 and the Magtajas doctrine)."
+            legal_rationale = primary_cand.get("summary") or (
+                f"DeBERTa-v3 Cross-Encoder detected directional preemption conflict with {target_stat} "
+                f"(Contradiction confidence {conf_pct}% exceeding topologically calibrated decision threshold "
+                f"tau* = {best_tau:.3f} at graph distance d_G = {d_g_prim} [{rel_prim}] "
+                f"under Section 5(a) of RA 7160 and the Magtajas doctrine)."
+            )
             statute_text = cand_stat_text
             prepended_text = primary_cand.get("prepended_text", "") or cand_stat_text
         else:

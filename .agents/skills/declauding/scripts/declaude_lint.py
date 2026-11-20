@@ -26,6 +26,8 @@ RULES: list[tuple[str, str, str]] = [
     ("negation-first", r"[.!?]\s+Not\s+\w+[^.]{0,60}\.", "trailing 'Not X.' fragment"),
     ("negation-first", r",\s*not\s+[a-z][^.]{0,40}\.\s*$", "X, not Y closer"),
     ("negation-first", r"\b(?:is|are|was|were)\s+[a-z]{3,20},\s*not\s+[a-z]{3,20}\.", "X is A, not B — mid-paragraph, check the reader was holding B"),
+    ("negation-first", r";\s*(?:rather|instead)\b|,\s*rather,\s+", "semicolon-rather / negation-reframe pivot — state the claim directly"),
+    ("negation-first", r"\b(?:far\s+)?more\s+than\b[^.\n]{0,90};\s*(?:it|they|this|these)\b", "more-than-X; it-Y escalation reframe"),
 
     # --- significance designation -------------------------------------------
     ("significance", r"\bthe\s+(?:real|actual|true|useful|interesting|important|key)\s+(?:question|problem|issue|point|reason|answer|finding|story|move|tool|test|variable|number|fix|heuristic|lesson|insight|takeaway|culprit|cause|trap|trick|win)\b", "the real/actual X"),
@@ -79,7 +81,7 @@ RULES: list[tuple[str, str, str]] = [
     ("em-dash", r"—\s*[^—\n]{3,90}[.!?]\s*$", "clause after a dash running to the end of the sentence — dash as drum roll"),
 
     # --- forced triad ---------------------------------------------------------
-    ("triad", r"\b(?!who\b|which\b|that\b|when\b)(\w+(?:\s+\w+){0,2}),\s+(?!who\b|which\b|that\b|when\b|obviously\b|however\b)(\w+(?:\s+\w+){0,2}),\s+and\s+(?!who\b|which\b|that\b|when\b)(\w+(?:\s+\w+){0,2})\b", "three parallel items — check the content has three, not two padded or five truncated"),
+    ("triad", r"\b(?!who\b|which\b|that\b|when\b)(\w+(?:\s+\w+){0,2}),\s+(?!who\b|which\b|that\b|when\b|obviously\b|however\b)(\w+(?:\s+\w+){0,2}),\s+(?:and|or)\s+(?!who\b|which\b|that\b|when\b)(\w+(?:\s+\w+){0,2})\b", "three parallel items — check the content has three, not two padded or five truncated"),
 
     # --- rhetorical question -------------------------------------------------
     ("rhetorical-q", r"^\s*(?:So\s+)?(?:how|why|what|where|when|does|is|can|should)\b[^?\n]{0,70}\?\s*$", "standalone rhetorical question — check if you answer your own question next"),

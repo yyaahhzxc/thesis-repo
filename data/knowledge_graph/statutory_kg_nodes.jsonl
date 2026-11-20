@@ -200301,3 +200301,24 @@
 {"id": "loc_davao_ordinance_no_0556_18_sec_4", "node_type": "provision", "section_number": "SECTION 4", "is_operative": true, "is_boilerplate": false, "est_tokens": 88, "jurisdiction": "municipal"}
 {"id": "loc_davao_ordinance_no_0556_18_sec_5", "node_type": "provision", "section_number": "SECTION 5", "is_operative": true, "is_boilerplate": false, "est_tokens": 325, "jurisdiction": "municipal"}
 {"id": "loc_davao_ordinance_no_0556_18_sec_6", "node_type": "provision", "section_number": "SECTION 6", "is_operative": true, "is_boilerplate": false, "est_tokens": 743, "jurisdiction": "municipal"}
+{"id": "pd_1869_1983", "node_type": "enactment", "jurisdiction": "national", "number": "PRESIDENTIAL DECREE No. 1869 July 11, 1983", "category": "Presidential Decrees", "year": 1983, "title": "CONSOLIDATING AND AMENDING PRESIDENTIAL DECREE NOS. 1067-A, 1067-B, 1067-C, 1399 AND 1632, RELATIVE TO THE FRANCHISE AND POWERS OF THE PHILIPPINE AMUSEMENT AND GAMING CORPORATION (PAGCOR)", "domain": "Executive Issuances & Policy Reorganization", "word_count": 3409}
+{"id": "nat_pd_1869_1983_sec_1", "node_type": "provision", "section_number": "Section 1", "is_operative": true, "is_boilerplate": false, "est_tokens": 259, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_2", "node_type": "provision", "section_number": "Section 2", "is_operative": true, "is_boilerplate": false, "est_tokens": 94, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_3", "node_type": "provision", "section_number": "Section 3", "is_operative": true, "is_boilerplate": false, "est_tokens": 438, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_4", "node_type": "provision", "section_number": "Section 4", "is_operative": true, "is_boilerplate": false, "est_tokens": 192, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_5", "node_type": "provision", "section_number": "Section 5", "is_operative": true, "is_boilerplate": false, "est_tokens": 52, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_6", "node_type": "provision", "section_number": "Section 6", "is_operative": true, "is_boilerplate": false, "est_tokens": 153, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_7", "node_type": "provision", "section_number": "Section 7", "is_operative": true, "is_boilerplate": false, "est_tokens": 281, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_8", "node_type": "provision", "section_number": "Section 8", "is_operative": true, "is_boilerplate": false, "est_tokens": 65, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_9", "node_type": "provision", "section_number": "Section 9", "is_operative": true, "is_boilerplate": false, "est_tokens": 112, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_10", "node_type": "provision", "section_number": "Section 10", "is_operative": true, "is_boilerplate": false, "est_tokens": 92, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_11", "node_type": "provision", "section_number": "Section 11", "is_operative": true, "is_boilerplate": false, "est_tokens": 355, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_12", "node_type": "provision", "section_number": "Section 12", "is_operative": true, "is_boilerplate": false, "est_tokens": 229, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_13", "node_type": "provision", "section_number": "Section 13", "is_operative": true, "is_boilerplate": false, "est_tokens": 1216, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_14", "node_type": "provision", "section_number": "Section 14", "is_operative": true, "is_boilerplate": false, "est_tokens": 446, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_15", "node_type": "provision", "section_number": "Section 15", "is_operative": true, "is_boilerplate": false, "est_tokens": 161, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_16", "node_type": "provision", "section_number": "Section 16", "is_operative": true, "is_boilerplate": false, "est_tokens": 72, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_17", "node_type": "provision", "section_number": "Section 17", "is_operative": true, "is_boilerplate": false, "est_tokens": 186, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_18", "node_type": "provision", "section_number": "Section 18", "is_operative": true, "is_boilerplate": false, "est_tokens": 100, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_19", "node_type": "provision", "section_number": "Section 19", "is_operative": false, "is_boilerplate": true, "est_tokens": 25, "jurisdiction": "national"}
+{"id": "nat_pd_1869_1983_sec_20", "node_type": "provision", "section_number": "Section 20", "is_operative": false, "is_boilerplate": true, "est_tokens": 8, "jurisdiction": "national"}

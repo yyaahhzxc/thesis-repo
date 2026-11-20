@@ -1,0 +1,2471 @@
+{
+ "generated": "2026-11-21T07:30:40",
+ "canonical": {
+  "enactments": "27,248",
+  "national": "25,432",
+  "local": "1,816",
+  "provisions": "177,423"
+ },
+ "active_files": [
+  "main.tex",
+  "chapters/abstract.tex",
+  "chapters/introduction.tex",
+  "chapters/literature_review.tex",
+  "chapters/methodology.tex",
+  "chapters/results_and_discussion.tex",
+  "chapters/conclusions.tex",
+  "appendices/appendix_a.tex",
+  "appendices/appendix_b.tex",
+  "appendices/appendix_c.tex",
+  "appendices/appendix_d.tex",
+  "appendices/appendix_e.tex",
+  "appendices/appendix_f.tex",
+  "appendices/appendix_g.tex",
+  "appendices/appendix_wireframes.tex",
+  "appendices/appendix_h.tex",
+  "appendices/appendix_i.tex",
+  "appendices/appendix_j.tex",
+  "appendices/appendix_k.tex",
+  "appendices/appendix_n.tex",
+  "appendices/appendix_p.tex",
+  "appendices/appendix_q.tex",
+  "appendices/appendix_kg_views.tex",
+  "appendices/appendix_tier2_results.tex",
+  "appendices/appendix_tier3_results.tex",
+  "appendices/appendix_r.tex"
+ ],
+ "files": {
+  "chapters/literature_review.tex": {
+   "lines": 558,
+   "words_prose": 14820,
+   "prose_linted": true,
+   "counts": {
+    "micro-paragraph": 92,
+    "declaude:triad": 38,
+    "triad-and-or": 37,
+    "adj-doubling": 34,
+    "declaude:participle": 34,
+    "participle-tail": 5,
+    "declaude:copula": 4,
+    "rather-than-overuse": 3,
+    "copula-avoidance": 3,
+    "declaude:cadence": 2,
+    "banned-word": 2,
+    "declaude:negation-first": 2,
+    "em-dash": 2,
+    "declaude:density": 1,
+    "declaude:reuse": 1,
+    "list-usage": 1,
+    "reflexive-severe": 1,
+    "semicolon-rather": 1,
+    "concessive-opener": 1,
+    "declaude:editorializing": 1,
+    "declaude:em-dash": 1,
+    "declaude:flat-certainty": 1,
+    "personal-name": 1,
+    "declaude:agency": 1
+   },
+   "hits": [
+    {
+     "line": 0,
+     "category": "declaude:density",
+     "severity": "info",
+     "note": "repeated phrases: 'of thousands of' x9, 'republic act no' x7, 'the second reading' x6 — check each is the deliberate repetition entry 27 protects and not a cadence",
+     "match": "phrase repetition"
+    },
+    {
+     "line": 0,
+     "category": "declaude:reuse",
+     "severity": "info",
+     "note": "[copula] used 2 times (L378, L509) — reuse is the evidence that a construction is a habit, not a choice",
+     "match": "serves as the"
+    },
+    {
+     "line": 0,
+     "category": "list-usage",
+     "severity": "info",
+     "note": "6 \\item entries in file (avoid unnecessary lists / inline headings)",
+     "match": ""
+    },
+    {
+     "line": 7,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "In practice, enacted statutes"
+    },
+    {
+     "line": 7,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", motivating automated screening tools for modern legislatures."
+    },
+    {
+     "line": 7,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "modeling statutory obligations, permissions, and prohibitions from raw"
+    },
+    {
+     "line": 7,
+     "category": "rather-than-overuse",
+     "severity": "info",
+     "note": "prefer 'instead of' or direct contrast where natural",
+     "match": " and implicit exceptions rather than formal symbolic rules . Computatio"
+    },
+    {
+     "line": 7,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "Detection . By modeling statutory obligations, permissions, and prohibitions from raw legislative prose, autom"
+    },
+    {
+     "line": 18,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "a result, latent statutory"
+    },
+    {
+     "line": 38,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "inside local offices, multilingual phrasing, and institutional distrust of"
+    },
+    {
+     "line": 38,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 53-word paragraph (target 4-6 sentences)",
+     "match": "Existing studies confirm that subnational legislation poses distinct challenges compared t"
+    },
+    {
+     "line": 38,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "ation hardware inside local offices, multilingual phrasing, and institutional distrust of opaque neural outputs. A"
+    },
+    {
+     "line": 46,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 75-word paragraph (target 4-6 sentences)",
+     "match": "At the linguistic level, local legislative texts reflect a multilingual environment in whi"
+    },
+    {
+     "line": 47,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three consecutive clauses opening on the same two words — forced triad carried by anaphora",
+     "match": "'it must' x3: It must not be partial or discriminatory"
+    },
+    {
+     "line": 48,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "a result, prior systems"
+    },
+    {
+     "line": 48,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", leaving semantic conflict detection largely unaddressed in local governance ."
+    },
+    {
+     "line": 54,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "alongside international treaties, presidential executive issuances, and local ordinances"
+    },
+    {
+     "line": 54,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "ed by Congress alongside international treaties, presidential executive issuances, and local ordinances. Under this constitution"
+    },
+    {
+     "line": 56,
+     "category": "declaude:cadence",
+     "severity": "info",
+     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
+     "match": "When a local ordinance impermissibly enters an area governed by national legislation, Phil"
+    },
+    {
+     "line": 58,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 38-word paragraph (target 4-6 sentences)",
+     "match": "The definitive judicial test governing the validity of local legislation is established by"
+    },
+    {
+     "line": 60,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 46-word paragraph (target 4-6 sentences)",
+     "match": "It must not contravene the Constitution or any statute; It must not be unfair or oppressiv"
+    },
+    {
+     "line": 67,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 43-word paragraph (target 4-6 sentences)",
+     "match": "Because local legislative bodies possess purely delegated authority, local councils cannot"
+    },
+    {
+     "line": 73,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'revolutionary'",
+     "match": "aw period (1972–1986) and the Revolutionary Government under the Freedom "
+    },
+    {
+     "line": 78,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "emphasized systematic codification, deductive legal reasoning, and broad normative princip"
+    },
+    {
+     "line": 78,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "into structured books, titles, and chapters"
+    },
+    {
+     "line": 78,
+     "category": "rather-than-overuse",
+     "severity": "info",
+     "note": "prefer 'instead of' or direct contrast where natural",
+     "match": "neralized legal mandates rather than granular factual definitions. Furt"
+    },
+    {
+     "line": 78,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "ntal tradition emphasized systematic codification, deductive legal reasoning, and broad normative principles organized into structure"
+    },
+    {
+     "line": 78,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "ples organized into structured books, titles, and chapters. Foundational enactments"
+    },
+    {
+     "line": 80,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "exhaustive definitions sections, severability clauses, and general repealing provisions"
+    },
+    {
+     "line": 80,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "designed to restrict, qualify, or create exceptions to"
+    },
+    {
+     "line": 80,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "tle preambles, exhaustive definitions sections, severability clauses, and general repealing provisions . Significantly, America"
+    },
+    {
+     "line": 80,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "er, that...\"), designed to restrict, qualify, or create exceptions to preceding operative clau"
+    },
+    {
+     "line": 82,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "a result, verbose local"
+    },
+    {
+     "line": 82,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "multiple dependent clauses, qualifying prepositional phrases, and recursive proviso except"
+    },
+    {
+     "line": 82,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "n often places multiple dependent clauses, qualifying prepositional phrases, and recursive proviso exceptions into a solitary grammati"
+    },
+    {
+     "line": 85,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "laws are drafted, debated, and approved determines how"
+    },
+    {
+     "line": 85,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": " through which laws are drafted, debated, and approved determines how statutory text evolves o"
+    },
+    {
+     "line": 87,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "the draft, hold public"
+    },
+    {
+     "line": 87,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", initiating the inter-session committee review phase."
+    },
+    {
+     "line": 87,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", drafting conventions and legal terminology vary widely."
+    },
+    {
+     "line": 87,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "assigned measure number, title, and the name of"
+    },
+    {
+     "line": 87,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "no substantive debate, interpellation, or floor amendment is"
+    },
+    {
+     "line": 87,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "Committee on Rules, Laws, and Ordinances"
+    },
+    {
+     "line": 87,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "technical working groups, legal counsel, and committee researchers examine"
+    },
+    {
+     "line": 87,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "the draft, hold public hearings, and prepare the formal"
+    },
+    {
+     "line": 87,
+     "category": "rather-than-overuse",
+     "severity": "info",
+     "note": "prefer 'instead of' or direct contrast where natural",
+     "match": "oring distinct proposals rather than relying on a centralized drafting "
+    },
+    {
+     "line": 87,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "ead solely the assigned measure number, title, and the name of the author or proponent "
+    },
+    {
+     "line": 87,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "mentary rules, no substantive debate, interpellation, or floor amendment is permitted during First R"
+    },
+    {
+     "line": 87,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "e (such as the Committee on Rules, Laws, and Ordinances), initiating the inter-s"
+    },
+    {
+     "line": 87,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "mmittee stage, technical working groups, legal counsel, and committee researchers examine the draft, hold public h"
+    },
+    {
+     "line": 87,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "rchers examine the draft, hold public hearings, and prepare the formal committee report. Becaus"
+    },
+    {
+     "line": 89,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "this period, colleagues interrogate"
+    },
+    {
+     "line": 89,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "the sponsor, probe statutory"
+    },
+    {
+     "line": 89,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "amendments are presented, debated, and voted upon section"
+    },
+    {
+     "line": 89,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "are actively reshaped, modified, or deleted to align"
+    },
+    {
+     "line": 89,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "dividual floor amendments are presented, debated, and voted upon section by section . This period"
+    },
+    {
+     "line": 89,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "oposed clauses are actively reshaped, modified, or deleted to align with governing law."
+    },
+    {
+     "line": 91,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "of Amendments, rectifying latent"
+    },
+    {
+     "line": 91,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "substantive textual alterations, statutory reconciliations, and corrective rewrites can"
+    },
+    {
+     "line": 91,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "ry floor where substantive textual alterations, statutory reconciliations, and corrective rewrites can be introduced, legal res"
+    },
+    {
+     "line": 93,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "registers an affirmative, negative, or abstaining vote"
+    },
+    {
+     "line": 93,
+     "category": "reflexive-severe",
+     "severity": "warn",
+     "note": "reflexive 'severe' intensifier (keep only for measured physical damage)",
+     "match": "cedural finality creates severe institutional risk: if a stat"
+    },
+    {
+     "line": 93,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "re each member registers an affirmative, negative, or abstaining vote, accompanied by a brief "
+    },
+    {
+     "line": 98,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "the Philippines, ex-ante regulatory"
+    },
+    {
+     "line": 100,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "In contrast, ex-post evaluation"
+    },
+    {
+     "line": 105,
+     "category": "copula-avoidance",
+     "severity": "warn",
+     "note": "use direct is/are/has",
+     "match": "ronment, consistency checking acts as an essential institutional safeguard. C"
+    },
+    {
+     "line": 105,
+     "category": "declaude:copula",
+     "severity": "info",
+     "note": "serves as — use is",
+     "match": "acts as an"
+    },
+    {
+     "line": 107,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "an absolute command, an administrative instruction, or a directory permission"
+    },
+    {
+     "line": 107,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": " it can signal an absolute command, an administrative instruction, or a directory permission depending on context. Co"
+    },
+    {
+     "line": 109,
+     "category": "declaude:negation-first",
+     "severity": "info",
+     "note": "semicolon-rather / negation-reframe pivot — state the claim directly",
+     "match": "; instead"
+    },
+    {
+     "line": 109,
+     "category": "semicolon-rather",
+     "severity": "warn",
+     "note": "semicolon-rather / negation-reframe pivot",
+     "match": "licit intent to contradict Congress; instead, conflicts emerge through implied preemption"
+    },
+    {
+     "line": 111,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 78-word paragraph (target 4-6 sentences)",
+     "match": "In Davao City, the Sangguniang Panlungsod passes nearly 400 ordinances and over 2,000 reso"
+    },
+    {
+     "line": 114,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "the Philippines, digital legislative"
+    },
+    {
+     "line": 117,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", giving retrieval systems a clear view of state mandates."
+    },
+    {
+     "line": 119,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "newly enacted laws, presidential executive orders, and administrative issuances as"
+    },
+    {
+     "line": 119,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": ". It publishes newly enacted laws, presidential executive orders, and administrative issuances as required by Republic Act"
+    },
+    {
+     "line": 123,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 62-word paragraph (target 4-6 sentences)",
+     "match": "Finally, the Lawphil Project is a privately maintained digital repository housing statutor"
+    },
+    {
+     "line": 123,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", allowing language models to learn statutory syntax and deontic phrasing directly ."
+    },
+    {
+     "line": 126,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", archiving formats and search features vary widely across city councils."
+    },
+    {
+     "line": 128,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 55-word paragraph (target 4-6 sentences)",
+     "match": "The local archive in Davao City centers on the Sangguniang Panlungsod portal, the council'"
+    },
+    {
+     "line": 130,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", providing real-time visibility into measure progress ."
+    },
+    {
+     "line": 130,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 51-word paragraph (target 4-6 sentences)",
+     "match": "To manage its growing docket, Davao City introduced LISSP as an administrative tracking pl"
+    },
+    {
+     "line": 130,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", providing real-time visibility into measure progress ."
+    },
+    {
+     "line": 133,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", isolating local records from automated collection."
+    },
+    {
+     "line": 133,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 46-word paragraph (target 4-6 sentences)",
+     "match": "Acquiring statutory text from national and local repositories exposes ingestion pipelines "
+    },
+    {
+     "line": 138,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", preventing parsers from separating independent statutory rules."
+    },
+    {
+     "line": 138,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", preventing parsers from separating independent statutory rules."
+    },
+    {
+     "line": 143,
+     "category": "concessive-opener",
+     "severity": "warn",
+     "note": "formulaic While/Although X, Y sentence opener",
+     "match": ". Although platforms such as LISSP are described as public transparency portals , they operate mainly for individual lookup: users can searc"
+    },
+    {
+     "line": 147,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "to trace, yet they"
+    },
+    {
+     "line": 152,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 38-word paragraph (target 4-6 sentences)",
+     "match": "In operational search engines, BIR retrieval relies on set theory and formal Boolean logic"
+    },
+    {
+     "line": 160,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 42-word paragraph (target 4-6 sentences)",
+     "match": "Where the compound query X joins disjunctive keyword terms with a negated exemption filter"
+    },
+    {
+     "line": 162,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 51-word paragraph (target 4-6 sentences)",
+     "match": "The main weakness of BIR in legal auditing is exact string matching, which creates a \"voca"
+    },
+    {
+     "line": 164,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 63-word paragraph (target 4-6 sentences)",
+     "match": "A classic legal retrieval study measured this mismatch in an active litigation setting. At"
+    },
+    {
+     "line": 166,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 55-word paragraph (target 4-6 sentences)",
+     "match": "Missing a single contradicting ordinance during local legislative review creates legal exp"
+    },
+    {
+     "line": 169,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 48-word paragraph (target 4-6 sentences)",
+     "match": "Because BIR misses semantic equivalence, early artificial intelligence researchers modeled"
+    },
+    {
+     "line": 171,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 30-word paragraph (target 4-6 sentences)",
+     "match": "Symbolic systems combine first-order predicates with deontic modalities governing legal co"
+    },
+    {
+     "line": 179,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 47-word paragraph (target 4-6 sentences)",
+     "match": "Where the universal quantifier (X) assigns prohibition (X) to any business entity (X) oper"
+    },
+    {
+     "line": 181,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "In practice, manual rule"
+    },
+    {
+     "line": 181,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 58-word paragraph (target 4-6 sentences)",
+     "match": "In practice, manual rule encoding stops symbolic systems from scaling across real-world mu"
+    },
+    {
+     "line": 188,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "across statutes, legal informatics"
+    },
+    {
+     "line": 188,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "how laws cite, amend, and supersede one another"
+    },
+    {
+     "line": 188,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 54-word paragraph (target 4-6 sentences)",
+     "match": "Because isolated string matching misses structural ties across statutes, legal informatics"
+    },
+    {
+     "line": 188,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "ation captures how laws cite, amend, and supersede one another across a broader regulat"
+    },
+    {
+     "line": 191,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "an LKG, vertices X"
+    },
+    {
+     "line": 191,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", improving retrieval across related legal texts even without shared keywords ."
+    },
+    {
+     "line": 191,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "represent concrete objects, concepts, or informational resources"
+    },
+    {
+     "line": 191,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "represent statutory enactments, administrative agencies, or operative provisions"
+    },
+    {
+     "line": 191,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "such as delegation, citation, or amendment"
+    },
+    {
+     "line": 191,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "tities X and X represent concrete objects, concepts, or informational resources, while X denotes the dir"
+    },
+    {
+     "line": 191,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "KG, vertices X represent statutory enactments, administrative agencies, or operative provisions, while edges X encode le"
+    },
+    {
+     "line": 191,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "elationships X such as delegation, citation, or amendment. Graph Neural Networks ("
+    },
+    {
+     "line": 196,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 45-word paragraph (target 4-6 sentences)",
+     "match": "Graph representations also encode institutional links absent from isolated sentence inspec"
+    },
+    {
+     "line": 199,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 69-word paragraph (target 4-6 sentences)",
+     "match": "Despite their theoretical appeal, practical deployment of Graph Neural Networks depends st"
+    },
+    {
+     "line": 207,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "depend on obligations, permissions, and prohibitions to assign"
+    },
+    {
+     "line": 207,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "tatutory rules depend on obligations, permissions, and prohibitions to assign civic duties , and seman"
+    },
+    {
+     "line": 210,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", starting with its single-sentence parsing scope ."
+    },
+    {
+     "line": 210,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 67-word paragraph (target 4-6 sentences)",
+     "match": "Operational constraints limit AMR when applied to Philippine local legislation, starting w"
+    },
+    {
+     "line": 215,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 61-word paragraph (target 4-6 sentences)",
+     "match": "Beyond sentence role graphs, legal informatics models positive law through statutory citat"
+    },
+    {
+     "line": 218,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 67-word paragraph (target 4-6 sentences)",
+     "match": "Large-scale legal networks have been built across multiple public jurisdictions. The Europ"
+    },
+    {
+     "line": 220,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", hiding which exact fee schedule or permit clause an ordinance modified."
+    },
+    {
+     "line": 220,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 47-word paragraph (target 4-6 sentences)",
+     "match": "Choosing graph node granularity controls both accuracy and tractability. Document-level gr"
+    },
+    {
+     "line": 222,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", complementing case-level citation networks such as LeCNet ."
+    },
+    {
+     "line": 222,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 53-word paragraph (target 4-6 sentences)",
+     "match": "Legal knowledge engineering commonly resolves this trade-off at the numbered provision or "
+    },
+    {
+     "line": 225,
+     "category": "declaude:editorializing",
+     "severity": "info",
+     "note": "check the number justifies the adjective",
+     "match": "collapse"
+    },
+    {
+     "line": 225,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 59-word paragraph (target 4-6 sentences)",
+     "match": "Constructing a statutory graph from raw legal text relies on staged normalization and cita"
+    },
+    {
+     "line": 227,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", separating active provisions from superseded rules."
+    },
+    {
+     "line": 227,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 54-word paragraph (target 4-6 sentences)",
+     "match": "Amendatory parsing adds horizontal lineage edges governed by lex posterior derogat legi pr"
+    },
+    {
+     "line": 229,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 35-word paragraph (target 4-6 sentences)",
+     "match": "Unlike single-relation graphs, statutory networks act as heterogeneous multi-relational gr"
+    },
+    {
+     "line": 232,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", relying on localized phrasing instead."
+    },
+    {
+     "line": 232,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 52-word paragraph (target 4-6 sentences)",
+     "match": "Topological networks capture formal statutory relationships, yet pure graph representation"
+    },
+    {
+     "line": 234,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "this disconnection, contemporary legal"
+    },
+    {
+     "line": 244,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "to right, one token"
+    },
+    {
+     "line": 246,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "stand in Entailment, Neutrality, or Contradiction instead of"
+    },
+    {
+     "line": 246,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "ory provisions stand in Entailment, Neutrality, or Contradiction instead of probabilistically genera"
+    },
+    {
+     "line": 263,
+     "category": "declaude:copula",
+     "severity": "info",
+     "note": "serves as — use is",
+     "match": "serve as the"
+    },
+    {
+     "line": 270,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "in advance, enabling fast"
+    },
+    {
+     "line": 270,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", enabling fast nearest-neighbor search across large archives ."
+    },
+    {
+     "line": 270,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", enabling fast nearest-neighbor search across large archives ."
+    },
+    {
+     "line": 272,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", exhausting workstation memory and causing high system latency ."
+    },
+    {
+     "line": 286,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "a query, isolating candidate"
+    },
+    {
+     "line": 286,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 43-word paragraph (target 4-6 sentences)",
+     "match": "In the coarse stage of a dual-pipeline system, IR filters relevant documents from large un"
+    },
+    {
+     "line": 294,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "for conflicts, legal researchers"
+    },
+    {
+     "line": 294,
+     "category": "declaude:negation-first",
+     "severity": "info",
+     "note": "is-not / it-is pair",
+     "match": "is not static; it is"
+    },
+    {
+     "line": 300,
+     "category": "declaude:cadence",
+     "severity": "info",
+     "note": "three or more short sentences in a row — fragment cadence, write it as one sentence",
+     "match": "Evaluating deontic relationships across statutory provisions demands specialized inductive"
+    },
+    {
+     "line": 300,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "permits, restricts, or preempts the other"
+    },
+    {
+     "line": 300,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "vely modifies, permits, restricts, or preempts the other . For instance, a retrie"
+    },
+    {
+     "line": 302,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "these limitations, modern computational"
+    },
+    {
+     "line": 302,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", scoring relevance via geometric proximity (such as cosine similarity) ."
+    },
+    {
+     "line": 305,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "this limit, researchers like"
+    },
+    {
+     "line": 305,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", processing long texts requires heavy truncation."
+    },
+    {
+     "line": 307,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "a separate, unconnected processing"
+    },
+    {
+     "line": 313,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 58-word paragraph (target 4-6 sentences)",
+     "match": "In computational legal informatics, isolating candidate enactments from extensive statutor"
+    },
+    {
+     "line": 321,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 40-word paragraph (target 4-6 sentences)",
+     "match": "Where X denotes term frequency of query token X in document X, X normalizes for provision "
+    },
+    {
+     "line": 323,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "to rare, discriminative terms"
+    },
+    {
+     "line": 323,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "specific statutory numbers, formal administrative acronyms, or penal sanctions"
+    },
+    {
+     "line": 323,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "terms (such as specific statutory numbers, formal administrative acronyms, or penal sanctions) while suppressing ubiqu"
+    },
+    {
+     "line": 331,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 38-word paragraph (target 4-6 sentences)",
+     "match": "Where X and X represent pooled contextual embeddings generated by dense bi-encoders such a"
+    },
+    {
+     "line": 333,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "of enactments, researchers frequently"
+    },
+    {
+     "line": 333,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "In contrast, information retrieval"
+    },
+    {
+     "line": 333,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", causing sharp drops in candidate recall."
+    },
+    {
+     "line": 333,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "governing local administration, public safety, and environmental sanitation simultaneously"
+    },
+    {
+     "line": 333,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "us legislation governing local administration, public safety, and environmental sanitation simultaneously. Hard filtering by one p"
+    },
+    {
+     "line": 346,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "this baseline, Xiao et"
+    },
+    {
+     "line": 352,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", supporting 8,192-token contexts alongside dense and multi-vector scoring modes."
+    },
+    {
+     "line": 355,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "In law, NLP shifts"
+    },
+    {
+     "line": 355,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "such as obligations, permissions, and prohibitions"
+    },
+    {
+     "line": 355,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": " deontic terms such as obligations, permissions, and prohibitions."
+    },
+    {
+     "line": 357,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 56-word paragraph (target 4-6 sentences)",
+     "match": "Early Legal NLP relied on Symbolic Artificial Intelligence (AI) , using hand-built ontolog"
+    },
+    {
+     "line": 357,
+     "category": "participle-tail",
+     "severity": "warn",
+     "note": "sentence-final participle tail (candidate)",
+     "match": ", allowing models to evaluate logical relations directly across unstructured enactments."
+    },
+    {
+     "line": 360,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "containing OCR errors, American colonial phrasing, and local code"
+    },
+    {
+     "line": 360,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "e LGU archives containing OCR errors, American colonial phrasing, and local code-switched expressions. Ru"
+    },
+    {
+     "line": 365,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 36-word paragraph (target 4-6 sentences)",
+     "match": "Historically, checking legislative consistency relied on Symbolic rules and Statistical NL"
+    },
+    {
+     "line": 367,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", mapping raw text through hidden layers without manual feature crafting."
+    },
+    {
+     "line": 367,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", making domain pre-training important for rigorous legal classification."
+    },
+    {
+     "line": 367,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 41-word paragraph (target 4-6 sentences)",
+     "match": "The field largely transitioned to Neural NLP models in the mid-2010s . Neural networks ope"
+    },
+    {
+     "line": 369,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "of symmetric, reversing Premise"
+    },
+    {
+     "line": 369,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", reversing Premise and Hypothesis alters the governing legal obligation."
+    },
+    {
+     "line": 369,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "    Within neural NLP, NLI—formalized under the Recognizing Textual Entailment (RTE) challenges by Dagan et al. —provides a standard paradigm for testing algori"
+    },
+    {
+     "line": 371,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "for example, permitting what"
+    },
+    {
+     "line": 374,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 54-word paragraph (target 4-6 sentences)",
+     "match": "Selecting effective Cross-Encoder architectures for inference requires benchmarks evaluati"
+    },
+    {
+     "line": 376,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 42-word paragraph (target 4-6 sentences)",
+     "match": "To evaluate specialized legal logic, Legal NLP relies on LexGLUE , which tests how well en"
+    },
+    {
+     "line": 378,
+     "category": "copula-avoidance",
+     "severity": "warn",
+     "note": "use direct is/are/has",
+     "match": "w specifically, COLIEE Task 4 serves as the primary international statutory ent"
+    },
+    {
+     "line": 378,
+     "category": "declaude:copula",
+     "severity": "info",
+     "note": "serves as — use is",
+     "match": "serves as the"
+    },
+    {
+     "line": 378,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 83-word paragraph (target 4-6 sentences)",
+     "match": "Complementing domain-specific suites, Hugging Face NLI leaderboards test candidate models "
+    },
+    {
+     "line": 384,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", defaulting toward Entailment or Neutral when encountering subtle prohibitions ."
+    },
+    {
+     "line": 384,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 71-word paragraph (target 4-6 sentences)",
+     "match": "A major vulnerability of unadapted sequence encoders on deontic tasks is affirmative entai"
+    },
+    {
+     "line": 386,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "RoPE, GeGLU, and sequence unpadding up"
+    },
+    {
+     "line": 386,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 65-word paragraph (target 4-6 sentences)",
+     "match": "Verbose preambles and nested penal qualifications further test the 512-token limit of stan"
+    },
+    {
+     "line": 386,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "shAttention-2, RoPE, GeGLU, and sequence unpadding up to 8,192 tokens) and Nom"
+    },
+    {
+     "line": 388,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 51-word paragraph (target 4-6 sentences)",
+     "match": "Unlike bi-encoders that pool texts independently, cross-encoders run full bidirectional se"
+    },
+    {
+     "line": 390,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 56-word paragraph (target 4-6 sentences)",
+     "match": "Serving cross-encoders on live documents involves sequence-padding trade-offs. Static padd"
+    },
+    {
+     "line": 392,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 51-word paragraph (target 4-6 sentences)",
+     "match": "Philippine archives also introduce multilingual complexity, mixing legal English with Lati"
+    },
+    {
+     "line": 394,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 52-word paragraph (target 4-6 sentences)",
+     "match": "Edge LGU workstations without GPU clusters also motivate lightweight distilled encoders. D"
+    },
+    {
+     "line": 397,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 37-word paragraph (target 4-6 sentences)",
+     "match": "In supervised machine learning, a Ground Truth dataset provides verified target labels use"
+    },
+    {
+     "line": 399,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "In evaluation, held-out test"
+    },
+    {
+     "line": 399,
+     "category": "declaude:em-dash",
+     "severity": "info",
+     "note": "clause after a dash running to the end of the sentence — dash as drum roll",
+     "match": "—reflect real generalization to unseen drafts ."
+    },
+    {
+     "line": 399,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "including precision, recall, and Macro X"
+    },
+    {
+     "line": 399,
+     "category": "em-dash",
+     "severity": "warn",
+     "note": "2 em-dashes on one line",
+     "match": "In evaluation, held-out test subsets remain strictly unseen during tuning and checkpoint selection so reported metrics—including precision, recall, and Macro X—"
+    },
+    {
+     "line": 399,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 27-word paragraph (target 4-6 sentences)",
+     "match": "In evaluation, held-out test subsets remain strictly unseen during tuning and checkpoint s"
+    },
+    {
+     "line": 399,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "ported metrics—including precision, recall, and Macro X—reflect real generalizat"
+    },
+    {
+     "line": 402,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "In NLI, datasets classify"
+    },
+    {
+     "line": 402,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "Hypothesis as Entailment, Contradiction, or Neutral"
+    },
+    {
+     "line": 402,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 20-word paragraph (target 4-6 sentences)",
+     "match": "In NLI, datasets classify the directional logical relationship between a Premise and a Hyp"
+    },
+    {
+     "line": 402,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": " Premise and a Hypothesis as Entailment, Contradiction, or Neutral ."
+    },
+    {
+     "line": 404,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 45-word paragraph (target 4-6 sentences)",
+     "match": "Large general benchmarks such as Stanford Natural Language Inference (SNLI) rely on crowds"
+    },
+    {
+     "line": 407,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "clauses into obligations, permissions, and prohibitions"
+    },
+    {
+     "line": 407,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 80-word paragraph (target 4-6 sentences)",
+     "match": "Converting statutory text into an NLI dataset requires strict annotation rules rooted in d"
+    },
+    {
+     "line": 407,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "guidelines map clauses into obligations, permissions, and prohibitions: a \"Contradiction\" holds"
+    },
+    {
+     "line": 410,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 48-word paragraph (target 4-6 sentences)",
+     "match": "Evaluating annotation consistency relies on Inter-Rater Reliability (IRR) metrics  instead"
+    },
+    {
+     "line": 418,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 19-word paragraph (target 4-6 sentences)",
+     "match": "Where X represents observed agreement between two raters and X represents chance-expected "
+    },
+    {
+     "line": 426,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 28-word paragraph (target 4-6 sentences)",
+     "match": "Where X denotes mean observed pairwise agreement and X denotes expected chance agreement a"
+    },
+    {
+     "line": 428,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 18-word paragraph (target 4-6 sentences)",
+     "match": "The resulting X score from Equation  is interpreted using Landis and Koch's intervals , su"
+    },
+    {
+     "line": 448,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 45-word paragraph (target 4-6 sentences)",
+     "match": "Table  maps numeric X intervals onto six qualitative reliability bands from Poor to Almost"
+    },
+    {
+     "line": 450,
+     "category": "declaude:flat-certainty",
+     "severity": "info",
+     "note": "flat-certainty adverb on a verb — check it names a contrast the reader can check",
+     "match": "routinely exceed"
+    },
+    {
+     "line": 450,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", making substantial agreement a realistic benchmark ceiling for statutory NLI."
+    },
+    {
+     "line": 450,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 51-word paragraph (target 4-6 sentences)",
+     "match": "Objective tasks routinely exceed X, whereas textual inference tasks show lower ceiling agr"
+    },
+    {
+     "line": 453,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 42-word paragraph (target 4-6 sentences)",
+     "match": "When X falls below X, Klebanov and Beigman  show that split votes often reflect ambiguity "
+    },
+    {
+     "line": 453,
+     "category": "personal-name",
+     "severity": "error",
+     "note": "'Ablazo' not directly followed by a formal \\cite (cite by surname + BibTeX key only)",
+     "match": "sness. In large corpora such as Ablazo's disaster-tweet dataset~\\cite{ablazo2019design"
+    },
+    {
+     "line": 455,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 53-word paragraph (target 4-6 sentences)",
+     "match": "However, omitting disputed items from a small legal dataset sharply shrinks sample size an"
+    },
+    {
+     "line": 458,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 29-word paragraph (target 4-6 sentences)",
+     "match": "In Legal NLI, matching short isolated sentences breaks down because statutory sections emb"
+    },
+    {
+     "line": 460,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 35-word paragraph (target 4-6 sentences)",
+     "match": "Recent legal datasets mirror realistic document structures. COLIEE pairs civil code statut"
+    },
+    {
+     "line": 462,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 31-word paragraph (target 4-6 sentences)",
+     "match": "Legal benchmarks also depend on trained legal annotators instead of general crowdsourcing."
+    },
+    {
+     "line": 464,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 42-word paragraph (target 4-6 sentences)",
+     "match": "These hurdles intensify for local legislation. National codes follow uniform templates, wh"
+    },
+    {
+     "line": 466,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", keeping cross-attention centered on the conflict point."
+    },
+    {
+     "line": 466,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 62-word paragraph (target 4-6 sentences)",
+     "match": "Selecting premise granularity also governs benchmark signal quality. Evaluating the local "
+    },
+    {
+     "line": 468,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 43-word paragraph (target 4-6 sentences)",
+     "match": "Expert scarcity further bounds dataset size because trained lawyers have limited review ca"
+    },
+    {
+     "line": 471,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 24-word paragraph (target 4-6 sentences)",
+     "match": "Traditional NLI compares one sentence against one sentence, which breaks down in law due t"
+    },
+    {
+     "line": 473,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 40-word paragraph (target 4-6 sentences)",
+     "match": "Legal frameworks handle intra-document caveats through Asymmetric Span-Level Pairing. Yin "
+    },
+    {
+     "line": 475,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 46-word paragraph (target 4-6 sentences)",
+     "match": "Cross-document multi-hop reasoning across multiple independent laws remains computationall"
+    },
+    {
+     "line": 478,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", isolating every pair sharing a statutory premise inside a single fold."
+    },
+    {
+     "line": 478,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 48-word paragraph (target 4-6 sentences)",
+     "match": "Evaluating models on datasets under 1,000 pairs with naive random X-fold cross-validation "
+    },
+    {
+     "line": 480,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 35-word paragraph (target 4-6 sentences)",
+     "match": "A separate validation split also prevents memorization on small training sets. Goodfellow "
+    },
+    {
+     "line": 483,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 55-word paragraph (target 4-6 sentences)",
+     "match": "Static splits on smaller benchmarks still hold statistical power depending on effect size."
+    },
+    {
+     "line": 485,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "In CaseHOLD, Zheng et"
+    },
+    {
+     "line": 485,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 36-word paragraph (target 4-6 sentences)",
+     "match": "In CaseHOLD, Zheng et al.  report a 7.2\\% X gain (12\\% relative gain) over unadapted BERT "
+    },
+    {
+     "line": 488,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 47-word paragraph (target 4-6 sentences)",
+     "match": "In legal informatics, opaque \"black box\" predictions cannot support legislative review reg"
+    },
+    {
+     "line": 491,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", adding high latency and approximation errors ."
+    },
+    {
+     "line": 491,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 50-word paragraph (target 4-6 sentences)",
+     "match": "Explainability methods split into Post-Hoc Surrogate Models and Intrinsic Mechanisms. Surr"
+    },
+    {
+     "line": 493,
+     "category": "banned-word",
+     "severity": "warn",
+     "note": "banned/overused AI vocabulary: 'nuanced'",
+     "match": "tion interpretability remains nuanced: Jain and Wallace  noted that"
+    },
+    {
+     "line": 493,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 52-word paragraph (target 4-6 sentences)",
+     "match": "Attention interpretability remains nuanced: Jain and Wallace  noted that raw attention doe"
+    },
+    {
+     "line": 495,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", lowering Expected Calibration Error (ECE) without altering prediction rankings."
+    },
+    {
+     "line": 495,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 36-word paragraph (target 4-6 sentences)",
+     "match": "Confidence calibration complements attention saliency. Unadapted transformers often emit o"
+    },
+    {
+     "line": 498,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 36-word paragraph (target 4-6 sentences)",
+     "match": "Post-hoc Shapley approximations require many perturbed forward passes per pair and strain "
+    },
+    {
+     "line": 501,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", making faithfulness mandatory in statutory screening."
+    },
+    {
+     "line": 501,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 38-word paragraph (target 4-6 sentences)",
+     "match": "Evaluating explanations separates Plausibility (whether rationales sound convincing to rea"
+    },
+    {
+     "line": 503,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", favoring extractive attention heatmaps over verbatim statutory text instead."
+    },
+    {
+     "line": 503,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "3-sentence / 35-word paragraph (target 4-6 sentences)",
+     "match": "This trade-off limits generative LLM explainers. Auto-regressive summaries read smoothly y"
+    },
+    {
+     "line": 506,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 48-word paragraph (target 4-6 sentences)",
+     "match": "Multi-stage legal pipelines place interpretability inside Stage 2 inference instead of Sta"
+    },
+    {
+     "line": 509,
+     "category": "copula-avoidance",
+     "severity": "warn",
+     "note": "use direct is/are/has",
+     "match": "ieve-then-Entail architecture serves as the standard framework for automated st"
+    },
+    {
+     "line": 509,
+     "category": "declaude:copula",
+     "severity": "info",
+     "note": "serves as — use is",
+     "match": "serves as the"
+    },
+    {
+     "line": 509,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", combining scalable retrieval with cross-encoder entailment verification."
+    },
+    {
+     "line": 509,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 49-word paragraph (target 4-6 sentences)",
+     "match": "Across recent COLIEE benchmarks , the Retrieve-then-Entail architecture serves as the stan"
+    },
+    {
+     "line": 512,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "across query augmentation, offline embedding indexing, and cosine matching"
+    },
+    {
+     "line": 512,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 34-word paragraph (target 4-6 sentences)",
+     "match": "Dense bi-encoders adapted through domain data augmentation retrieve relevant provisions ac"
+    },
+    {
+     "line": 512,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": " AIIR workflow across query augmentation, offline embedding indexing, and cosine matching."
+    },
+    {
+     "line": 521,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 30-word paragraph (target 4-6 sentences)",
+     "match": "Figure  separates corpus-wide offline encoding from live query matching. Projecting querie"
+    },
+    {
+     "line": 524,
+     "category": "adj-doubling",
+     "severity": "warn",
+     "note": "comma-separated pre-nominal adjective doubling",
+     "match": "across pruning, neural re-ranking"
+    },
+    {
+     "line": 524,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 21-word paragraph (target 4-6 sentences)",
+     "match": "Multi-stage retrieval pipelines progressively narrow candidate sets across pruning, neural"
+    },
+    {
+     "line": 533,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 19-word paragraph (target 4-6 sentences)",
+     "match": "As shown in Figure , progressive pruning retains both keyword specificity and conceptual s"
+    },
+    {
+     "line": 536,
+     "category": "declaude:participle",
+     "severity": "info",
+     "note": "participle tail at sentence end — cut it, or make the claim its own sentence",
+     "match": ", countering high class imbalance without discarding valid candidate provisions."
+    },
+    {
+     "line": 536,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 25-word paragraph (target 4-6 sentences)",
+     "match": "Pre-retrieval prunes clearly unrelated statutes using distance metrics and gradient-booste"
+    },
+    {
+     "line": 539,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 31-word paragraph (target 4-6 sentences)",
+     "match": "Parameter-Efficient Fine-Tuning (PEFT) methods such as LoRA adapt re-ranking encoders on i"
+    },
+    {
+     "line": 542,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 22-word paragraph (target 4-6 sentences)",
+     "match": "Weighted ensemble aggregation combines calibrated lexical and neural rankings via hyperpar"
+    },
+    {
+     "line": 545,
+     "category": "declaude:agency",
+     "severity": "info",
+     "note": "inanimate subject acting",
+     "match": "Figure  shows"
+    },
+    {
+     "line": 545,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 27-word paragraph (target 4-6 sentences)",
+     "match": "In Stage 2, non-generative cross-encoders adapted from Team KIS evaluate paired statutory "
+    },
+    {
+     "line": 554,
+     "category": "declaude:triad",
+     "severity": "info",
+     "note": "three parallel items — check the content has three, not two padded or five truncated",
+     "match": "deterministically across Entailment, Neutral, and Contradiction classes without"
+    },
+    {
+     "line": 554,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "1-sentence / 27-word paragraph (target 4-6 sentences)",
+     "match": "As depicted in Figure , joint attention across concatenated premise and hypothesis spans i"
+    },
+    {
+     "line": 554,
+     "category": "triad-and-or",
+     "severity": "warn",
+     "note": "three-item triplet (and/or)",
+     "match": "contradictions deterministically across Entailment, Neutral, and Contradiction classes without generative hallucination"
+    },
+    {
+     "line": 557,
+     "category": "micro-paragraph",
+     "severity": "info",
+     "note": "2-sentence / 43-word paragraph (target 4-6 sentences)",
+     "match": "Integrating AIIR retrieval , JNLP multi-stage pruning , and KIS cross-encoding  forms a no"
+    }
+   ]
+  }
+ },
+ "global": {
+  "undefined_refs": [],
+  "undefined_cites": [],
+  "unreferenced_floats": [
+   {
+    "label": "eq:in_degree_centrality",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:knowledge_graph_definition",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:ppv_bayes",
+    "file": "chapters/results_and_discussion.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:relation_vocabulary",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "eq:statutory_pagerank",
+    "file": "chapters/methodology.tex",
+    "severity": "warn"
+   },
+   {
+    "label": "fig:ai_disclosure_attestation_p1",
+    "file": "appendices/appendix_r.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:ai_disclosure_attestation_p2",
+    "file": "appendices/appendix_r.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:annotator_certificate",
+    "file": "appendices/appendix_k.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:kg_appendix_all_5_layouts",
+    "file": "appendices/appendix_kg_views.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:kg_appendix_color_domains_instruments",
+    "file": "appendices/appendix_kg_views.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:kg_appendix_color_eras_typology",
+    "file": "appendices/appendix_kg_views.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_about_view",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_candidate_shortlist",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_conflict_accordion",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_results_summary",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:prototype_scan_landing",
+    "file": "appendices/appendix_h.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:wireframe_audit_page",
+    "file": "appendices/appendix_wireframes.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:wireframe_homepage",
+    "file": "appendices/appendix_wireframes.tex",
+    "severity": "info"
+   },
+   {
+    "label": "fig:wireframe_results_page",
+    "file": "appendices/appendix_wireframes.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_kaggle_vlm",
+    "file": "appendices/appendix_b.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb01_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb02_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb03_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb04_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_nb05_highlights",
+    "file": "appendices/appendix_g.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_ocr_preprocessing",
+    "file": "appendices/appendix_b.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_ordinance_cleaner",
+    "file": "appendices/appendix_c.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_scraper_lawphil",
+    "file": "appendices/appendix_a.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_stage1_retrieval",
+    "file": "appendices/appendix_d.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_stage2_inference",
+    "file": "appendices/appendix_e.tex",
+    "severity": "info"
+   },
+   {
+    "label": "lst:code_vlm_extractor",
+    "file": "appendices/appendix_b.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_deontic_markers",
+    "file": "appendices/appendix_f.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_gt_master_answer_key",
+    "file": "appendices/appendix_n.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_gt_stratification_summary",
+    "file": "appendices/appendix_n.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_guide_ceilings",
+    "file": "appendices/appendix_i.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_hyperparameter_sweep_logs",
+    "file": "appendices/appendix_q.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_legal_stopwords",
+    "file": "appendices/appendix_f.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_macro_domain_keywords",
+    "file": "appendices/appendix_p.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_package_manifest",
+    "file": "appendices/appendix_a.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier2_01",
+    "file": "appendices/appendix_tier2_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier2_02",
+    "file": "appendices/appendix_tier2_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier2_03",
+    "file": "appendices/appendix_tier2_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier2_04",
+    "file": "appendices/appendix_tier2_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier2_05",
+    "file": "appendices/appendix_tier2_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier2_06",
+    "file": "appendices/appendix_tier2_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier2_ablation_full",
+    "file": "appendices/appendix_tier2_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier2_summary",
+    "file": "appendices/appendix_tier2_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier2_v0_pairs",
+    "file": "appendices/appendix_tier2_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_01",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_02",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_03_04",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_05",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_06",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_07",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_08",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_09",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_10",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_ablation_full",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_summary",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   },
+   {
+    "label": "tab:app_tier3_v0_pairs",
+    "file": "appendices/appendix_tier3_results.tex",
+    "severity": "info"
+   }
+  ],
+  "orphan_appendices": [],
+  "bib": {
+   "entries": 299,
+   "issues": [
+    {
+     "line": 328,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Sovrano2021Making: key should be lowercase surnameYearKeyword",
+     "match": "Sovrano2021Making"
+    },
+    {
+     "line": 504,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "cruz2007political: no doi/url (verify against source)",
+     "match": "cruz2007political"
+    },
+    {
+     "line": 793,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Palmirani2018Modelling: key should be lowercase surnameYearKeyword",
+     "match": "Palmirani2018Modelling"
+    },
+    {
+     "line": 1048,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Eleftheriadis2023evaluating: key should be lowercase surnameYearKeyword",
+     "match": "Eleftheriadis2023evaluating"
+    },
+    {
+     "line": 1252,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "zhang-etal-2024-mgte: key should be lowercase surnameYearKeyword",
+     "match": "zhang-etal-2024-mgte"
+    },
+    {
+     "line": 1400,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Greco2023Bringing: key should be lowercase surnameYearKeyword",
+     "match": "Greco2023Bringing"
+    },
+    {
+     "line": 1731,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Westermann2019computer: key should be lowercase surnameYearKeyword",
+     "match": "Westermann2019computer"
+    },
+    {
+     "line": 1745,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Kommers2026Hermeneutics: key should be lowercase surnameYearKeyword",
+     "match": "Kommers2026Hermeneutics"
+    },
+    {
+     "line": 1765,
+     "category": "bib-key-style",
+     "severity": "info",
+     "note": "Guenmayor2018CaseStudyHermeneutics: key should be lowercase surnameYearKeyword",
+     "match": "Guenmayor2018CaseStudyHermeneutics"
+    },
+    {
+     "line": 2497,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "ablazo2019designing: no doi/url (verify against source)",
+     "match": "ablazo2019designing"
+    },
+    {
+     "line": 2788,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "agpalo2009statutory: no doi/url (verify against source)",
+     "match": "agpalo2009statutory"
+    },
+    {
+     "line": 3654,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "levenshtein1966binary: no doi/url (verify against source)",
+     "match": "levenshtein1966binary"
+    },
+    {
+     "line": 3860,
+     "category": "bib-no-doi-url",
+     "severity": "info",
+     "note": "hart1961concept: no doi/url (verify against source)",
+     "match": "hart1961concept"
+    }
+   ],
+   "unused_keys": [
+    "Eleftheriadis2023evaluating",
+    "Guenmayor2018CaseStudyHermeneutics",
+    "Kommers2026Hermeneutics",
+    "Palmirani2018Modelling",
+    "aoki2022data",
+    "baskauf2022using",
+    "belinkov2019analysis",
+    "bhattacharya2019a",
+    "chalkidis2019deep",
+    "chung2022flant5",
+    "cortez2025leadership",
+    "dai2019transformer",
+    "dempsey2016student",
+    "dias2022state",
+    "dilg2022drafting",
+    "fitzgerald2021information",
+    "furnas1987the",
+    "geva2019modeling",
+    "goebeletal2026coliee2025",
+    "hajra2021scraping",
+    "hendrycks2021cuad",
+    "hu2021impact",
+    "largo2020essentials",
+    "lewis2019bart",
+    "lowe2018the",
+    "nguyen2025nowjcoliee2025multistageframework",
+    "nigatu2024the",
+    "niklaus2024lawinstruct",
+    "pedregosa2011scikitlearn",
+    "qwen2025technical",
+    "republic1987executive",
+    "rigano2018using",
+    "scam2012paper",
+    "scp2001pldtvdavao",
+    "scp2004batangascatv",
+    "scp2008smartvdavao",
+    "shao2021bert",
+    "shleifer2020distilbart",
+    "sokolova2009systematic",
+    "spdavao2002ord060",
+    "spdc2025rots",
+    "tsai2025can",
+    "vu2022abstract",
+    "wang2025transferlearningapproachautomatic",
+    "warner2024smarter",
+    "williamsetal2022anlizing",
+    "worldbank2011intgovfr",
+    "yang2023batayan",
+    "zhang-etal-2024-mgte",
+    "zhao2010term",
+    "zheng2021caselaw"
+   ],
+   "cited_keys": 248,
+   "cited_without_local_pdf": [],
+   "local_pdf_count": 305
+  },
+  "log": {
+   "present": true,
+   "overfull_ge_1pt": [
+    {
+     "pt": 7.6663,
+     "where": "Overfull \\hbox (7.6663pt too wide) in paragraph at lines 704--704"
+    },
+    {
+     "pt": 2.2099,
+     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 269--269"
+    },
+    {
+     "pt": 2.2099,
+     "where": "Overfull \\hbox (2.2099pt too wide) in paragraph at lines 304--304"
+    },
+    {
+     "pt": 2.1882,
+     "where": "Overfull \\hbox (2.1882pt too wide) in paragraph at lines 796--796"
+    },
+    {
+     "pt": 2.08394,
+     "where": "Overfull \\hbox (2.08394pt too wide) in paragraph at lines 667--667"
+    },
+    {
+     "pt": 1.25206,
+     "where": "Overfull \\hbox (1.25206pt too wide) in paragraph at lines 704--704"
+    }
+   ],
+   "undefined": [],
+   "overfull_total": 6
+  }
+ },
+ "totals": {
+  "micro-paragraph": 92,
+  "declaude:triad": 38,
+  "triad-and-or": 37,
+  "adj-doubling": 34,
+  "declaude:participle": 34,
+  "participle-tail": 5,
+  "declaude:copula": 4,
+  "rather-than-overuse": 3,
+  "copula-avoidance": 3,
+  "declaude:cadence": 2,
+  "banned-word": 2,
+  "declaude:negation-first": 2,
+  "em-dash": 2,
+  "declaude:density": 1,
+  "declaude:reuse": 1,
+  "list-usage": 1,
+  "reflexive-severe": 1,
+  "semicolon-rather": 1,
+  "concessive-opener": 1,
+  "declaude:editorializing": 1,
+  "declaude:em-dash": 1,
+  "declaude:flat-certainty": 1,
+  "personal-name": 1,
+  "declaude:agency": 1
+ }
+}

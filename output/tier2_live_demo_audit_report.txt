@@ -1,0 +1,419 @@
+================================================================================
+OFFICIAL TIER 2 SYNTHETIC DRAFT AUDIT: FULL-PDF SYNCHRONIZED LOG (DYNAMIC V5)
+Platform: MiniLM-L6-v2 + BM25 CSR + Tuned DeBERTa-v3 + Real KG tau* + Dynamic Numeric Bounds
+================================================================================
+
+SUMMARY | Docs: 6 | Sections: 52 | UI Pairs Flagged: 46 | Exact Gold Statute Matches: 4/7
+BINARY  | TP=7 FP=4 TN=41 FN=0 | Prec=63.64% | Rec=100.00% | Spec=91.11% | F1=0.7778 | F2=0.8974 | BinAcc=92.31%
+3-CLASS | Acc=73.08% (38/52) | Macro-F1=0.7184
+
+################################################################################
+DRAFT: DRAFT-ORD-2026-01 (Substantive Regulatory & Penal) | PDF: DRAFT-ORD-2026-01.pdf | Pages: 6 | Words: 2464
+Total Sections: 16 (10 op.) | Stage1: 1.13s | Stage2: 74.09s | Total: 91.53s
+UI Headline: 16 Conflicts Detected! (3 Problematic Sections: [9, 10, 13])
+################################################################################
+
+--- Conflict #1 --------------------------------------------------------
+Draft Provision : Section 9 (POUND DISPOSAL AND COMMERCIAL UTILIZATION OF UNCLAIMED)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 7
+Confidence      : 99.5% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('authorized', 1.0), ('sell', 0.739), ('electrocution', 0.563), ('meat', 0.442), ('destroyed', 0.439), ('Furthermore', 0.429), ('to', 0.38), ('summarily', 0.347)]
+Top Statute Saliency : [('Prohibit', 1.0), ('electrocution', 0.792), ('meat', 0.251), ('own', 0.228), ('eliminate', 0.201), ('trade', 0.187), ('enforce', 0.17)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 7 (Contradiction confidence 99.5% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #2 --------------------------------------------------------
+Draft Provision : Section 9 (POUND DISPOSAL AND COMMERCIAL UTILIZATION OF UNCLAIMED)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 10
+Confidence      : 85.7% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('summarily', 1.0), ('destroyed', 0.68), ('ANIMAL', 0.341), ('shall', 0.317), ('electrocution', 0.262), ('authorized', 0.261), ('Furthermore', 0.26), ('be', 0.217)]
+Top Statute Saliency : [('only', 1.0), ('spayed', 0.456), ('3', 0.443), ('Owner', 0.404), ('expense', 0.376), ('released', 0.37), ('mandated', 0.326), ('such', 0.317)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 10 (Contradiction confidence 85.7% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #3 --------------------------------------------------------
+Draft Provision : Section 9 (POUND DISPOSAL AND COMMERCIAL UTILIZATION OF UNCLAIMED)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 5
+Confidence      : 82.6% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('destroyed', 1.0), ('ANIMAL', 0.897), ('-', 0.84), ('without', 0.674), ('summarily', 0.606), ('authorized', 0.526), ('shall', 0.334), ('S', 0.33)]
+Top Statute Saliency : [('a', 1.0), ('under', 0.607), ('by', 0.588), ('observation', 0.468), ('Assist', 0.457), ('not', 0.297), ('veterinarian', 0.285), ('control', 0.2)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 5 (Contradiction confidence 82.6% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #4 --------------------------------------------------------
+Draft Provision : Section 9 (POUND DISPOSAL AND COMMERCIAL UTILIZATION OF UNCLAIMED)
+Target Statute  : REPUBLIC ACT NO. 10360 Section 36
+Confidence      : 82.3% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('destroyed', 1.0), ('summarily', 0.729), ('shall', 0.663), ('authorized', 0.558), ('sell', 0.444), ('be', 0.392), (',', 0.323), ('electrocution', 0.31)]
+Top Statute Saliency : [('mandatory', 1.0), ('3', 0.892), ('appointment', 0.531), ('shall', 0.341), ('must', 0.338), ('Advise', 0.336), ('Recommend', 0.334), ('eradicate', 0.324)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT NO. 10360 Section 36 (Contradiction confidence 82.3% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [1-Hop KG Citation/Amendment Link] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #5 --------------------------------------------------------
+Draft Provision : Section 9 (POUND DISPOSAL AND COMMERCIAL UTILIZATION OF UNCLAIMED)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 9
+Confidence      : 79.6% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('destroyed', 1.0), ('summarily', 0.495), ('ANIMAL', 0.384), ('electrocution', 0.312), ('Furthermore', 0.297), ('any', 0.188), ('24', 0.172), ('be', 0.159)]
+Top Statute Saliency : [('adoption', 1.0), ('impounded', 0.907), ('paid', 0.816), ('t', 0.639), ('Pound', 0.627), ('claimed', 0.596), ('persons', 0.579), ('fee', 0.486)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 9 (Contradiction confidence 79.6% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #6 --------------------------------------------------------
+Draft Provision : Section 9 (POUND DISPOSAL AND COMMERCIAL UTILIZATION OF UNCLAIMED)
+Target Statute  : REPUBLIC ACT No. 9408 March 24, 2007 Section 40
+Confidence      : 67.7% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('destroyed', 1.0), ('summarily', 0.697), ('authorized', 0.612), ('shall', 0.514), ('human', 0.499), ('sell', 0.436), ('electrocution', 0.324), ('meat', 0.324)]
+Top Statute Saliency : [('eradicate', 1.0), ('shall', 0.963), ('Advise', 0.96), ('slaughter', 0.794), ('outbreak', 0.668), ('frontline', 0.665), ('Recommend', 0.509), ('three', 0.455)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9408 March 24, 2007 Section 40 (Contradiction confidence 67.7% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [1-Hop KG Citation/Amendment Link] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #7 --------------------------------------------------------
+Draft Provision : Section 9 (POUND DISPOSAL AND COMMERCIAL UTILIZATION OF UNCLAIMED)
+Target Statute  : REPUBLIC ACT NO. 8798, July 15, 2000 Section 39
+Confidence      : 61.8% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('destroyed', 1.0), ('summarily', 0.69), ('authorized', 0.632), ('shall', 0.521), ('human', 0.475), ('sell', 0.388), ('meat', 0.354), ('electrocution', 0.333)]
+Top Statute Saliency : [('3', 1.0), ('eradicate', 0.358), ('B', 0.329), ('C', 0.308), ('a', 0.286), ('shall', 0.28), ('Advise', 0.276), ('outbreak', 0.268)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT NO. 8798, July 15, 2000 Section 39 (Contradiction confidence 61.8% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [1-Hop KG Citation/Amendment Link] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #8 --------------------------------------------------------
+Draft Provision : Section 9 (POUND DISPOSAL AND COMMERCIAL UTILIZATION OF UNCLAIMED)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 11
+Confidence      : 33.0% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('destroyed', 1.0), ('ANIMAL', 0.849), ('Furthermore', 0.525), ('electrocution', 0.508), ('Three', 0.423), ('summarily', 0.414), ('meat', 0.393), ('S', 0.297)]
+Top Statute Saliency : [('Ten', 1.0), ('deported', 0.931), ('Two', 0.665), ('Five', 0.625), ('One', 0.622), ('to', 0.603), ('less', 0.507), ('electrocution', 0.478)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 11 (Contradiction confidence 33.0% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #9 --------------------------------------------------------
+Draft Provision : Section 10 (MANDATORY QUARANTINE AND BITE INCIDENT MANAGEMENT)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 9
+Confidence      : 78.5% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('unlawful', 1.0), ('kill', 0.832), ('surrender', 0.563), ('pay', 0.381), ('fourteen', 0.331), ('be', 0.314), ('conceal', 0.279), ('liable', 0.227)]
+Top Statute Saliency : [('paid', 1.0), ('impounded', 0.842), ('disposed', 0.36), ('t', 0.319), ('Pound', 0.287), ('Dog', 0.285), ('claimed', 0.267), ('1', 0.245)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 9 (Contradiction confidence 78.5% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #10 --------------------------------------------------------
+Draft Provision : Section 10 (MANDATORY QUARANTINE AND BITE INCIDENT MANAGEMENT)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 4
+Confidence      : 76.0% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('unlawful', 1.0), ('kill', 0.999), ('surrender', 0.716), ('pay', 0.359), ('liable', 0.314), ('be', 0.28), ('conceal', 0.208), ('to', 0.18)]
+Top Statute Saliency : [('multi', 1.0), ('impound', 0.974), ('eliminating', 0.717), ('vaccination', 0.559), ('implemented', 0.519), ('program', 0.517), ('The', 0.483), ('responsible', 0.359)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 4 (Contradiction confidence 76.0% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #11 --------------------------------------------------------
+Draft Provision : Section 10 (MANDATORY QUARANTINE AND BITE INCIDENT MANAGEMENT)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 6
+Confidence      : 72.9% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('kill', 1.0), ('unlawful', 0.937), ('surrender', 0.858), ('pay', 0.612), ('liable', 0.406), ('be', 0.268), ('to', 0.256), ('conceal', 0.221)]
+Top Statute Saliency : [('B', 1.0), ('minimum', 0.486), ('Ensure', 0.253), ('1', 0.225), ('initial', 0.176), ('Agriculture', 0.162)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 6 (Contradiction confidence 72.9% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #12 --------------------------------------------------------
+Draft Provision : Section 10 (MANDATORY QUARANTINE AND BITE INCIDENT MANAGEMENT)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 10
+Confidence      : 68.3% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('unlawful', 1.0), ('kill', 0.969), ('surrender', 0.634), ('pay', 0.317), ('be', 0.302), ('liable', 0.301), ('fourteen', 0.173), ('conceal', 0.152)]
+Top Statute Saliency : [('only', 1.0), ('option', 0.943), ('control', 0.867), ('3', 0.845), ('the', 0.801), ('such', 0.798), ('Owner', 0.792), ('2', 0.764)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 10 (Contradiction confidence 68.3% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #13 --------------------------------------------------------
+Draft Provision : Section 10 (MANDATORY QUARANTINE AND BITE INCIDENT MANAGEMENT)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 3
+Confidence      : 65.7% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('unlawful', 1.0), ('kill', 0.611), ('surrender', 0.49), ('be', 0.228), ('conceal', 0.224), ('liable', 0.221), ('fourteen', 0.21), ('pay', 0.176)]
+Top Statute Saliency : [('Owner', 1.0), ('bite', 0.894), ('death', 0.441), ('fatal', 0.437), ('public', 0.425), ('any', 0.389), ('transmission', 0.326), ('person', 0.323)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9482 May 25, 2007 Section 3 (Contradiction confidence 65.7% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #14 --------------------------------------------------------
+Draft Provision : Section 13 (PENAL PROVISIONS)
+Target Statute  : REPUBLIC ACT No. 9482 May 25, 2007 Section 11
+Confidence      : 95.0% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('Twenty', 1.0), ('25', 0.907), ('First', 0.382), ('Five', 0.357), ('graduated', 0.34), ('following', 0.274), ('Thirty', 0.261), ('revocation', 0.252)]
+Top Statute Saliency : [('Ten', 1.0), ('Two', 0.776), ('Five', 0.576), ('Twenty', 0.39), ('2', 0.334), ('less', 0.331), ('8', 0.286), ('leash', 0.27)]
+Legal Rationale : Dynamic Numeric-Bound Verifier: draft fine P50,000.00 exceeds retrieved statutory ceiling P5,000.00. (Neural P(Contradiction)=12.2%).
+
+--- Conflict #15 --------------------------------------------------------
+Draft Provision : Section 13 (PENAL PROVISIONS)
+Target Statute  : Republic Act No. 8293 June 6, 1997 Section 217
+Confidence      : 87.2% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('three', 1.0), ('Twenty', 0.702), ('3', 0.681), ('50', 0.478), ('Fifty', 0.388), ('25', 0.328), ('revocation', 0.294), ('First', 0.251)]
+Top Statute Saliency : [('3', 1.0), ('Fifty', 0.664), ('million', 0.263), ('1', 0.252), ('Five', 0.203), ('first', 0.201), ('one', 0.16)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with Republic Act No. 8293 June 6, 1997 Section 217 (Contradiction confidence 87.2% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Police Power, Public Order, Safety & Penal Law)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #16 --------------------------------------------------------
+Draft Provision : Section 13 (PENAL PROVISIONS)
+Target Statute  : REPUBLIC ACT NO. 10631 Section 4
+Confidence      : 54.9% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('Twenty', 1.0), ('25', 0.907), ('revocation', 0.496), ('50', 0.459), ('First', 0.413), ('schedule', 0.34), ('Thirty', 0.307), ('Ordinance', 0.263)]
+Top Statute Saliency : [('dies', 1.0), ('loss', 0.893), ('deported', 0.708), ('30', 0.507), ('Thirty', 0.482), ('death', 0.468), ('100', 0.444), ('Fifty', 0.384)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT NO. 10631 Section 4 (Contradiction confidence 54.9% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+
+################################################################################
+DRAFT: DRAFT-ORD-2026-02 (Inter-Agency Agreements (MOA/MOU)) | PDF: DRAFT-ORD-2026-02.pdf | Pages: 6 | Words: 1943
+Total Sections: 9 (6 op.) | Stage1: 0.41s | Stage2: 37.54s | Total: 44.97s
+UI Headline: 7 Conflicts Detected! (1 Problematic Sections: [8])
+################################################################################
+
+--- Conflict #1 --------------------------------------------------------
+Draft Provision : Section 8 (MOA ARTICLE III (DATA OWNERSHIP AND COMMERCIAL DISCLOSURE))
+Target Statute  : REPUBLIC ACT NO. 10173 Section 13
+Confidence      : 99.6% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('barred', 1.0), ('from', 0.369), ('authorized', 0.258), ('granted', 0.237), ('to', 0.18)]
+Top Statute Saliency : [('required', 1.0), ('prohibited', 0.918), ('not', 0.901), ('obtained', 0.73), ('given', 0.432), ('be', 0.258), ('was', 0.182), ('necessary', 0.178)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT NO. 10173 Section 13 (Contradiction confidence 99.6% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Health, Sanitation & Medical Services)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #2 --------------------------------------------------------
+Draft Provision : Section 8 (MOA ARTICLE III (DATA OWNERSHIP AND COMMERCIAL DISCLOSURE))
+Target Statute  : Republic Act No. 8504 February 13, 1998 Section 28
+Confidence      : 93.4% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('barred', 1.0), ('from', 0.503), ('publish', 0.305), ('Furthermore', 0.266), ('authorized', 0.229), ('granted', 0.182)]
+Top Statute Saliency : [('confidentiality', 1.0), ('anonymity', 0.906), ('shall', 0.493), ('assuring', 0.356), ('the', 0.208), ('adopt', 0.202)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with Republic Act No. 8504 February 13, 1998 Section 28 (Contradiction confidence 93.4% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Health, Sanitation & Medical Services)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #3 --------------------------------------------------------
+Draft Provision : Section 8 (MOA ARTICLE III (DATA OWNERSHIP AND COMMERCIAL DISCLOSURE))
+Target Statute  : REPUBLIC ACT No. 11463 Section 9
+Confidence      : 93.2% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('barred', 1.0), ('from', 0.451), ('authorized', 0.258), ('granted', 0.183), ('be', 0.163)]
+Top Statute Saliency : [('Nothing', 1.0), ('only', 0.36), ('limit', 0.295), ('may', 0.199)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 11463 Section 9 (Contradiction confidence 93.2% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Health, Sanitation & Medical Services)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #4 --------------------------------------------------------
+Draft Provision : Section 8 (MOA ARTICLE III (DATA OWNERSHIP AND COMMERCIAL DISCLOSURE))
+Target Statute  : REPUBLIC ACT No. 11223 Section 36
+Confidence      : 90.8% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('barred', 1.0), ('from', 0.468), ('authorized', 0.257), ('Furthermore', 0.231)]
+Top Statute Saliency : [('upheld', 1.0), ('confidentiality', 0.621), ('privacy', 0.571), ('be', 0.365), ('patient', 0.354), ('That', 0.19), ('shall', 0.178), ('DOH', 0.16)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 11223 Section 36 (Contradiction confidence 90.8% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Health, Sanitation & Medical Services)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #5 --------------------------------------------------------
+Draft Provision : Section 8 (MOA ARTICLE III (DATA OWNERSHIP AND COMMERCIAL DISCLOSURE))
+Target Statute  : REPUBLIC ACT No. 11166 Section 44
+Confidence      : 85.7% | tau* = 40.0% (d_G = 3)
+Top Draft Saliency   : [('barred', 1.0), ('authorized', 0.523), ('from', 0.466), ('without', 0.341), ('Furthermore', 0.238), ('to', 0.237), ('granted', 0.236), ('be', 0.184)]
+Top Statute Saliency : [('violate', 1.0), ('unlawful', 0.877), ('prohibition', 0.495), ('guaranteed', 0.442), ('waive', 0.318), ('apply', 0.225), ('be', 0.212)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 11166 Section 44 (Contradiction confidence 85.7% exceeding topologically calibrated decision threshold tau* = 0.400 at graph distance d_G = 3 [2-Hop KG Citation Path] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #6 --------------------------------------------------------
+Draft Provision : Section 8 (MOA ARTICLE III (DATA OWNERSHIP AND COMMERCIAL DISCLOSURE))
+Target Statute  : Republic Act No. 8504 February 13, 1998 Section 30
+Confidence      : 79.8% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('barred', 1.0), ('from', 0.446), ('Furthermore', 0.301), ('publish', 0.292), ('authorized', 0.206)]
+Top Statute Saliency : [('confidentiality', 1.0), ('observe', 0.59), ('to', 0.401), ('strictly', 0.378), ('directed', 0.151)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with Republic Act No. 8504 February 13, 1998 Section 30 (Contradiction confidence 79.8% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Health, Sanitation & Medical Services)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #7 --------------------------------------------------------
+Draft Provision : Section 8 (MOA ARTICLE III (DATA OWNERSHIP AND COMMERCIAL DISCLOSURE))
+Target Statute  : REPUBLIC ACT No. 11223 Section 17
+Confidence      : 52.2% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('barred', 1.0), ('from', 0.555), ('authorized', 0.289), ('Furthermore', 0.279), ('granted', 0.24), (',', 0.188)]
+Top Statute Saliency : [('accessible', 1.0), ('.', 0.356), ('minimum', 0.207), ('contract', 0.198), ('the', 0.172)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 11223 Section 17 (Contradiction confidence 52.2% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Health, Sanitation & Medical Services)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+
+################################################################################
+DRAFT: DRAFT-ORD-2026-03 (Disaster Relief & QRF Funds) | PDF: DRAFT-ORD-2026-03.pdf | Pages: 3 | Words: 874
+Total Sections: 6 (4 op.) | Stage1: 0.23s | Stage2: 23.92s | Total: 29.48s
+UI Headline: 7 Conflicts Detected! (2 Problematic Sections: [4, 5])
+################################################################################
+
+--- Conflict #1 --------------------------------------------------------
+Draft Provision : Section 4 (UTILIZATION OF QUICK RESPONSE FUND FOR REGULAR SALARIES)
+Target Statute  : REPUBLIC ACT No. 10121 Section 23
+Confidence      : 97.6% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('Nine', 1.0), ('9', 0.253)]
+Top Statute Saliency : [('One', 1.0), ('1', 0.405), ('billion', 0.189)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 10121 Section 23 (Contradiction confidence 97.6% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #2 --------------------------------------------------------
+Draft Provision : Section 4 (UTILIZATION OF QUICK RESPONSE FUND FOR REGULAR SALARIES)
+Target Statute  : REPUBLIC ACT NO. 10634 Section 1
+Confidence      : 97.1% | tau* = 40.0% (d_G = 3)
+Top Draft Saliency   : [('Nine', 1.0), ('absence', 0.304), ('9', 0.242), ('Notwithstanding', 0.154), ('declared', 0.15)]
+Top Statute Saliency : [('Eleven', 1.0), ('11', 0.71), ('Fourteen', 0.47), ('14', 0.389), ('Three', 0.358), ('augmenting', 0.231), ('Calamity', 0.17)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT NO. 10634 Section 1 (Contradiction confidence 97.1% exceeding topologically calibrated decision threshold tau* = 0.400 at graph distance d_G = 3 [2-Hop KG Citation Path] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #3 --------------------------------------------------------
+Draft Provision : Section 4 (UTILIZATION OF QUICK RESPONSE FUND FOR REGULAR SALARIES)
+Target Statute  : REPUBLIC ACT No. 10121 Section 21
+Confidence      : 95.3% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('60', 1.0), ('sixty', 0.959), ('thirty', 0.349), ('Notwithstanding', 0.343), ('30', 0.257), ('absence', 0.232), ('requiring', 0.15)]
+Top Statute Saliency : [('thirty', 1.0), ('special', 0.578), ('five', 0.556), ('may', 0.498), ('30', 0.362), ('utilized', 0.349), ('revert', 0.342), ('5', 0.341)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 10121 Section 21 (Contradiction confidence 95.3% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #4 --------------------------------------------------------
+Draft Provision : Section 4 (UTILIZATION OF QUICK RESPONSE FUND FOR REGULAR SALARIES)
+Target Statute  : REPUBLIC ACT 9137 Section 1
+Confidence      : 92.0% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('Nine', 1.0), ('absence', 0.36), ('9', 0.297), ('Notwithstanding', 0.208), ('requiring', 0.202), ('declared', 0.166)]
+Top Statute Saliency : [('855', 1.0), ('10', 0.937), ('Ten', 0.825), ('5', 0.725), ('1', 0.517), ('450', 0.516), ('900', 0.407), ('Deficiency', 0.366)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT 9137 Section 1 (Contradiction confidence 92.0% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Local Governance, Administration & Civil Service)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #5 --------------------------------------------------------
+Draft Provision : Section 4 (UTILIZATION OF QUICK RESPONSE FUND FOR REGULAR SALARIES)
+Target Statute  : REPUBLIC ACT No. 10121 Section 22
+Confidence      : 54.6% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('sixty', 1.0), ('60', 0.648), ('thirty', 0.18)]
+Top Statute Saliency : [('thirty', 1.0), ('a', 0.45), ('e', 0.376), ('30', 0.345), ('normalized', 0.237), ('quickly', 0.229), ('percent', 0.221), ('authorized', 0.171)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 10121 Section 22 (Contradiction confidence 54.6% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #6 --------------------------------------------------------
+Draft Provision : Section 5 (ACCOUNTING AND AUDITING RULES)
+Target Statute  : REPUBLIC ACT No. 10121 Section 11
+Confidence      : 93.5% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('existing', 1.0), ('Subject', 0.407), ('be', 0.338), (',', 0.334), ('preceding', 0.322), ('by', 0.276), ('.', 0.253), ('shall', 0.24)]
+Top Statute Saliency : [('cease', 1.0), ('be', 0.789), ('as', 0.612), ('a', 0.226), ('b', 0.216), ('the', 0.197), ('limited', 0.188), ('have', 0.158)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 10121 Section 11 (Contradiction confidence 93.5% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #7 --------------------------------------------------------
+Draft Provision : Section 5 (ACCOUNTING AND AUDITING RULES)
+Target Statute  : REPUBLIC ACT No. 10121 Section 21
+Confidence      : 32.2% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('existing', 1.0), ('be', 0.867), ('preceding', 0.825), (',', 0.69), ('to', 0.643), ('the', 0.567), ('Subject', 0.564), ('by', 0.526)]
+Top Statute Saliency : [('thirty', 1.0), ('five', 0.655), ('30', 0.583), ('special', 0.528), ('5', 0.428), ('general', 0.325), ('solely', 0.262), ('less', 0.26)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 10121 Section 21 (Contradiction confidence 32.2% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+
+################################################################################
+DRAFT: DRAFT-ORD-2026-04 (Deeds of Donation & Usufruct) | PDF: DRAFT-ORD-2026-04.pdf | Pages: 6 | Words: 1858
+Total Sections: 8 (5 op.) | Stage1: 0.34s | Stage2: 31.64s | Total: 37.32s
+UI Headline: 5 Conflicts Detected! (1 Problematic Sections: [8])
+################################################################################
+
+--- Conflict #1 --------------------------------------------------------
+Draft Provision : Section 8 (DEED OF USUFRUCT CLAUSE III (NATIONAL TAX EXEMPTION GRANT))
+Target Statute  : REPUBLIC ACT No. 8071, June 19, 1995 Section 8
+Confidence      : 99.6% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('12', 1.0), ('twelve', 0.756), ('barring', 0.413), ('exemption', 0.361), ('collecting', 0.246), ('from', 0.225), ('assessing', 0.198)]
+Top Statute Saliency : [('liable', 1.0), ('10', 0.703), ('ten', 0.499), ('be', 0.422), ('to', 0.237), ('same', 0.189), ('pay', 0.188)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 8071, June 19, 1995 Section 8 (Contradiction confidence 99.6% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Finance, Taxation, Fiscal Policy & Budget)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #2 --------------------------------------------------------
+Draft Provision : Section 8 (DEED OF USUFRUCT CLAUSE III (NATIONAL TAX EXEMPTION GRANT))
+Target Statute  : REPUBLIC ACT NO. 9054 March 31, 2001 Section 15
+Confidence      : 96.8% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('exemption', 1.0), ('barring', 0.673), ('from', 0.411), ('12', 0.372), ('twelve', 0.327), ('irrevocable', 0.281), ('collecting', 0.276), ('Immunity', 0.264)]
+Top Statute Saliency : [('sixty', 1.0), ('20', 0.843), ('50', 0.819), ('Fifty', 0.64), ('may', 0.579), ('collect', 0.543), ('twenty', 0.481), ('within', 0.407)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT NO. 9054 March 31, 2001 Section 15 (Contradiction confidence 96.8% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [1-Hop KG Citation/Amendment Link] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #3 --------------------------------------------------------
+Draft Provision : Section 8 (DEED OF USUFRUCT CLAUSE III (NATIONAL TAX EXEMPTION GRANT))
+Target Statute  : REPUBLIC ACT NO. 8529, February 14, 1998 Section 9
+Confidence      : 95.5% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('exemption', 1.0), ('barring', 0.859), ('from', 0.471), ('assessing', 0.384), ('Immunity', 0.38), ('grant', 0.315), ('collecting', 0.303), ('12', 0.248)]
+Top Statute Saliency : [('liable', 1.0), ('be', 0.52), ('pay', 0.336), ('to', 0.315), ('for', 0.233), ('same', 0.219)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT NO. 8529, February 14, 1998 Section 9 (Contradiction confidence 95.5% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Finance, Taxation, Fiscal Policy & Budget)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #4 --------------------------------------------------------
+Draft Provision : Section 8 (DEED OF USUFRUCT CLAUSE III (NATIONAL TAX EXEMPTION GRANT))
+Target Statute  : REPUBLIC ACT NO. 11537, May 18, 2021 Section 18
+Confidence      : 95.0% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('exemption', 1.0), ('barring', 0.52), ('from', 0.356), ('grant', 0.289), ('12', 0.227), ('Immunity', 0.207), ('assessing', 0.203), ('irrevocable', 0.188)]
+Top Statute Saliency : [('liable', 1.0), ('be', 0.497), ('a', 0.384), ('to', 0.356), ('for', 0.324), ('pay', 0.322), ('exempted', 0.212), ('shall', 0.198)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT NO. 11537, May 18, 2021 Section 18 (Contradiction confidence 95.0% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Finance, Taxation, Fiscal Policy & Budget)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #5 --------------------------------------------------------
+Draft Provision : Section 8 (DEED OF USUFRUCT CLAUSE III (NATIONAL TAX EXEMPTION GRANT))
+Target Statute  : REPUBLIC ACT No. 8960 September 7, 2000* Section 4
+Confidence      : 75.1% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('barring', 1.0), ('exemption', 0.715), ('Immunity', 0.548), ('from', 0.486), ('irrevocable', 0.397), ('grant', 0.385), ('assessing', 0.381), ('collecting', 0.378)]
+Top Statute Saliency : [('subject', 1.0), ('pay', 0.769), ('to', 0.637), ('repealing', 0.564), ('extended', 0.315), ('rights', 0.154)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 8960 September 7, 2000* Section 4 (Contradiction confidence 75.1% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Finance, Taxation, Fiscal Policy & Budget)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+
+################################################################################
+DRAFT: DRAFT-ORD-2026-05 (Temporary Road Closures) | PDF: DRAFT-ORD-2026-05.pdf | Pages: 3 | Words: 740
+Total Sections: 6 (3 op.) | Stage1: 0.18s | Stage2: 17.94s | Total: 20.95s
+UI Headline: 4 Conflicts Detected! (2 Problematic Sections: [2, 4])
+################################################################################
+
+--- Conflict #1 --------------------------------------------------------
+Draft Provision : Section 2 (DECLARATION OF POLICY)
+Target Statute  : REPUBLIC ACT No. 5185 Section 16
+Confidence      : 76.7% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('may', 1.0), ('closed', 0.451), ('be', 0.324), ('temporarily', 0.275)]
+Top Statute Saliency : [('continue', 1.0), ('national', 0.715), ('not', 0.537), ('be', 0.505), ('prescribe', 0.333), ('local', 0.282), ('other', 0.276), ('no', 0.241)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 5185 Section 16 (Contradiction confidence 76.7% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Works, Transportation, Utilities & Infrastructure)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #2 --------------------------------------------------------
+Draft Provision : Section 4 (PERMANENT HIGHWAY TOLL BARRICADES AND PASSAGE TAX)
+Target Statute  : REPUBLIC ACT NO. 917, June 20, 1953 Section 10
+Confidence      : 96.2% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('pay', 1.0), ('impounded', 0.735), ('refusing', 0.683), ('Five', 0.613), ('compulsory', 0.565), ('collected', 0.484), ('permanent', 0.302), ('To', 0.249)]
+Top Statute Saliency : [('Sixty', 1.0), ('Five', 0.463), ('Twenty', 0.343), ('regular', 0.223), ('Fifteen', 0.197), ('excluded', 0.161)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT NO. 917, June 20, 1953 Section 10 (Contradiction confidence 96.2% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Works, Transportation, Utilities & Infrastructure)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #3 --------------------------------------------------------
+Draft Provision : Section 4 (PERMANENT HIGHWAY TOLL BARRICADES AND PASSAGE TAX)
+Target Statute  : Republic Act No. 7160 October 10, 1991 Section 155
+Confidence      : 92.3% | tau* = 30.0% (d_G = 1)
+Top Draft Saliency   : [('pay', 1.0), ('collected', 0.813), ('refusing', 0.416), ('compulsory', 0.414), ('impounded', 0.24), ('barricades', 0.219), ('To', 0.159), ('permanent', 0.152)]
+Top Statute Saliency : [('discontinue', 1.0), ('no', 0.676), ('collected', 0.328), ('may', 0.212), ('free', 0.197), ('VI', 0.192)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with Republic Act No. 7160 October 10, 1991 Section 155 (Contradiction confidence 92.3% exceeding topologically calibrated decision threshold tau* = 0.300 at graph distance d_G = 1 [Direct Statutory Citation] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #4 --------------------------------------------------------
+Draft Provision : Section 4 (PERMANENT HIGHWAY TOLL BARRICADES AND PASSAGE TAX)
+Target Statute  : REPUBLIC ACT No. 1402 Section 1
+Confidence      : 59.0% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('pay', 1.0), ('impounded', 0.71), ('collected', 0.526), ('refusing', 0.525), ('permanent', 0.391), ('barricades', 0.352), ('compulsory', 0.348), ('To', 0.318)]
+Top Statute Saliency : [('two', 1.0), ('no', 0.917), ('ten', 0.614), ('less', 0.604), ('collected', 0.294), ('not', 0.174)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 1402 Section 1 (Contradiction confidence 59.0% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Public Works, Transportation, Utilities & Infrastructure)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+
+################################################################################
+DRAFT: DRAFT-ORD-2026-06 (Zoning & Subdivision Permits) | PDF: DRAFT-ORD-2026-06.pdf | Pages: 3 | Words: 1050
+Total Sections: 7 (3 op.) | Stage1: 0.19s | Stage2: 16.08s | Total: 20.95s
+UI Headline: 7 Conflicts Detected! (2 Problematic Sections: [4, 5])
+################################################################################
+
+--- Conflict #1 --------------------------------------------------------
+Draft Provision : Section 4 (AGRICULTURAL RECLASSIFICATION CEILING AND CONVERSION)
+Target Statute  : EXECUTIVE ORDER NO. 124 September 8, 1993 Section 1
+Confidence      : 99.6% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('summarily', 1.0), ('without', 0.308), ('45', 0.259), ('forty', 0.248), (',', 0.173)]
+Top Statute Saliency : [('are', 1.0), ('specific', 0.897), ('agri', 0.814), (')', 0.753), ('need', 0.687), ('Priority', 0.674), ('sites', 0.645), ('approval', 0.603)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with EXECUTIVE ORDER NO. 124 September 8, 1993 Section 1 (Contradiction confidence 99.6% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Environmental Protection, Zoning, Land Use & Natural Resources)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #2 --------------------------------------------------------
+Draft Provision : Section 4 (AGRICULTURAL RECLASSIFICATION CEILING AND CONVERSION)
+Target Statute  : REPUBLIC ACT No. 9700 August 7, 2009 Section 22
+Confidence      : 99.3% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('summarily', 1.0), ('45', 0.475), (',', 0.311), ('Furthermore', 0.302), ('authorizes', 0.298), ('irrigated', 0.289), ('superseding', 0.288), ('forty', 0.278)]
+Top Statute Saliency : [('not', 1.0), ('10', 0.397), ('5', 0.379), ('authorize', 0.197), ('ten', 0.196), ('Failure', 0.19), ('may', 0.177), ('ceases', 0.164)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 9700 August 7, 2009 Section 22 (Contradiction confidence 99.3% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Environmental Protection, Zoning, Land Use & Natural Resources)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #3 --------------------------------------------------------
+Draft Provision : Section 4 (AGRICULTURAL RECLASSIFICATION CEILING AND CONVERSION)
+Target Statute  : Republic Act No. 6657 June 10, 1988 Section 65
+Confidence      : 99.0% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('forty', 1.0), ('45', 0.955), ('summarily', 0.95), ('fifteen', 0.462), ('Furthermore', 0.432), ('15', 0.429), (',', 0.363), ('without', 0.362)]
+Top Statute Saliency : [('DAR', 1.0), ('ceases', 0.9), ('application', 0.795), ('beneficiary', 0.735), ('become', 0.575), ('urbanized', 0.545), ('may', 0.512), ('of', 0.397)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with Republic Act No. 6657 June 10, 1988 Section 65 (Contradiction confidence 99.0% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Environmental Protection, Zoning, Land Use & Natural Resources)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #4 --------------------------------------------------------
+Draft Provision : Section 4 (AGRICULTURAL RECLASSIFICATION CEILING AND CONVERSION)
+Target Statute  : Republic Act No. 7160 October 10, 1991 Section 20
+Confidence      : 98.3% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('superseding', 1.0), ('summarily', 0.831), ('fifteen', 0.774), ('15', 0.372), ('Furthermore', 0.342), ('45', 0.263), ('forty', 0.228)]
+Top Statute Saliency : [('limited', 1.0), ('to', 0.961), ('fifteen', 0.33), ('the', 0.223), ('ten', 0.222), ('15', 0.218), ('10', 0.158), ('excess', 0.152)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder (98.3% >= tau* = 0.375 at d_G = 2 [Shared Macro Domain (Environmental Protection, Zoning, Land Use & Natural Resources)]) + Dynamic Numeric-Bound Verifier: draft rate/share 45.0% exceeds statutory limit 15.0% (context: agricultur, reclassif).
+
+--- Conflict #5 --------------------------------------------------------
+Draft Provision : Section 4 (AGRICULTURAL RECLASSIFICATION CEILING AND CONVERSION)
+Target Statute  : EXECUTIVE ORDER NO. 258, June 28, 2000 Section 1
+Confidence      : 93.4% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('fifteen', 1.0), ('summarily', 0.966), ('forty', 0.819), ('15', 0.691), ('superseding', 0.392), ('45', 0.379), (',', 0.352), ('Furthermore', 0.337)]
+Top Statute Saliency : [('10', 1.0), ('five', 0.945), ('standards', 0.864), ('thirty', 0.747), ('forty', 0.703), ('the', 0.633), ('a', 0.632), ('thirteen', 0.616)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with EXECUTIVE ORDER NO. 258, June 28, 2000 Section 1 (Contradiction confidence 93.4% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Environmental Protection, Zoning, Land Use & Natural Resources)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #6 --------------------------------------------------------
+Draft Provision : Section 4 (AGRICULTURAL RECLASSIFICATION CEILING AND CONVERSION)
+Target Statute  : REPUBLIC ACT No. 7916, February 24, 1995 Section 31
+Confidence      : 92.5% | tau* = 37.5% (d_G = 2)
+Top Draft Saliency   : [('summarily', 1.0), ('forty', 0.542), ('45', 0.462), ('Furthermore', 0.359), ('authorizes', 0.358), (',', 0.305), ('fifteen', 0.285), ('15', 0.256)]
+Top Statute Saliency : [('to', 1.0), ('subject', 0.885), ('the', 0.477), ('agricultural', 0.368), ('conditions', 0.231), ('.', 0.184), ('set', 0.158)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with REPUBLIC ACT No. 7916, February 24, 1995 Section 31 (Contradiction confidence 92.5% exceeding topologically calibrated decision threshold tau* = 0.375 at graph distance d_G = 2 [Shared Macro Domain (Environmental Protection, Zoning, Land Use & Natural Resources)] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+--- Conflict #7 --------------------------------------------------------
+Draft Provision : Section 5 (SITE DEVELOPMENT AND DRAINAGE REQUIREMENTS)
+Target Statute  : EXECUTIVE ORDER NO. 32, July 04, 2023 Section 2
+Confidence      : 99.0% | tau* = 45.0% (d_G = 999)
+Top Draft Saliency   : [('10', 1.0), ('submit', 0.432), ('shall', 0.418), ('.', 0.401), ('prevent', 0.395), ('Ordinance', 0.392), ('ten', 0.389), ('90', 0.386)]
+Top Statute Saliency : [('not', 1.0), ('following', 0.169)]
+Legal Rationale : DeBERTa-v3 Cross-Encoder detected directional preemption conflict with EXECUTIVE ORDER NO. 32, July 04, 2023 Section 2 (Contradiction confidence 99.0% exceeding topologically calibrated decision threshold tau* = 0.450 at graph distance d_G = 999 [General Baseline] under Section 5(a) of RA 7160 and the Magtajas doctrine).
+
+

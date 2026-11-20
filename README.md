@@ -1,16 +1,11 @@
 # A Coarse-to-Fine Semantic Conflict Detection System for Ex-Ante Davao City Ordinances
 
-[![Institution: Ateneo de Davao University](https://img.shields.io/badge/Institution-Ateneo%20de%20Davao%20University-003366.svg)](https://www.addu.edu.ph/)
-[![Department: Computer Science](https://img.shields.io/badge/Department-Computer%20Science-blue.svg)]()
-[![Degree: BS Computer Science Thesis](https://img.shields.io/badge/Thesis-Undergraduate%20Research-green.svg)]()
-[![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)]()
-[![LaTeX: TeX Live / MiKTeX](https://img.shields.io/badge/LaTeX-97%20Pages%20%7C%200%20Errors-blue.svg)]()
-[![Benchmark: 350 Pairs](https://img.shields.io/badge/Benchmark-350%20Pairs%20%7C%208%20Domains-orange.svg)]()
+
 
 **Undergraduate Thesis Project**  
 **Authors**: Ralph Paolo Dulce and Yahyah Odin  
 **Adviser**: Mr. Adrian "Ogs" Ablazo  
-**Institution**: Department of Computer Science, School of Arts and Sciences, Ateneo de Davao University, Davao City, Philippines  
+**Institution**: Computer Studies Cluster, School of Arts and Sciences, Ateneo de Davao University, Davao City, Philippines  
 
 ---
 
