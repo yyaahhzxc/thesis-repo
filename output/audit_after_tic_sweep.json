@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21T07:41:01",
+ "generated": "2026-11-21T08:07:16",
  "canonical": {
   "enactments": "27,248",
   "national": "25,432",
@@ -4467,7 +4467,7 @@
     "adj-doubling": 11,
     "declaude:participle": 8,
     "micro-paragraph": 7,
-    "stale-count": 6,
+    "stale-count": 5,
     "reflexive-severe": 5,
     "declaude:cadence": 2,
     "declaude:density": 1,
@@ -4844,13 +4844,6 @@
      "category": "stale-count",
      "severity": "warn",
      "note": "'1,925': stale local ordinance count (canonical 1,816)",
-     "match": "Combining the 25,432 national statutory records with the 1,816 unique Davao City local ordinances (deduplicated from 1,925 source "
-    },
-    {
-     "line": 312,
-     "category": "stale-count",
-     "severity": "warn",
-     "note": "'176,421': stale demo index size (live index is 176,441; canonical 177,423)",
      "match": "Combining the 25,432 national statutory records with the 1,816 unique Davao City local ordinances (deduplicated from 1,925 source "
     },
     {
@@ -6772,7 +6765,7 @@
   "declaude:participle": 60,
   "long-title": 29,
   "float-stack": 15,
-  "stale-count": 13,
+  "stale-count": 12,
   "declaude:cadence": 10,
   "reflexive-severe": 9,
   "declaude:density": 5,

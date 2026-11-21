@@ -6,11 +6,24 @@
 **Course Professor:** Ma'am Grace Tacadao  
 **Institution:** Department of Computer Science, School of Arts and Sciences, Ateneo de Davao University  
 **Repository:** [`https://github.com/yyaahhzxc/thesis-repo`](https://github.com/yyaahhzxc/thesis-repo)  
-**Last Updated:** 2026-11-15  
+**Last Updated:** 2026-11-21  
 
 ---
 
 ## **Chronological Session Progress Journal**
+
+### **November 21, 2026 (Session: `main(13).pdf` 30-Comment Revision, `/learn` Anti-Tic Sweep & Post-Defense Roadmap)**
+- **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant (following Nov 6/7 defense submission and Nov 9 defense; final revision target: January 2027).
+- **Rules & Deterministic Linter Upgrades (`/learn`):**
+  - Updated `.agents/rules/paper-voice-and-style.md`, `paper-structure-and-chapters.md`, `paper-rigor-and-citations.md`, `CS_Undergraduate_Thesis_Template/AGENTS.md`, `.agents/skills/declauding/scripts/declaude_lint.py`, and `scripts/audit/pre_audit_paper.py` to detect `; rather,` / `; instead,` pivots, formulaic `While`/`Although X, Y` openers, pre-nominal `adj-doubling`, `, and`/`, or` prose triplets, reflexive `severe`, cross-chapter `acronym-reexpansion`, and overused `rather than`.
+- **Manuscript Revision & Sweep (`b8de7ab`, `results_and_discussion.tex`, `GLOSSARY.md`):**
+  - Resolved all 30 Adobe Acrobat comments in `main(13).pdf` (moved to gitignored `docs/draft_feedback/main(13).pdf`), integrated both KG stages in `abstract.tex` (~254 body words), expanded Ch. 1 `Definition of Terms` to 40 terms (synced to `docs/GLOSSARY.md`), bulleted the 6 *Magtajas* tests, defined general KG triples `(e_1, r, e_2)` before LKGs in Ch. 2, verified `LISSP` and `li2024construction`, and fixed `176,421 -> 176,441` in Ch. 4 §4.3 (`results_and_discussion.tex:312`).
+  - Swept Ch. 1–5 (`pre_audit_paper.py`: `0` errors across 26 `.tex` files, `acronym-reexpansion` 52 -> 0, `concessive-opener` 79 -> 0, `semicolon-rather` 11 -> 0, `rather-than-overuse` 121 -> 1, `reflexive-severe` 44 -> 9).
+  - Placed `Presidential Decree No.1869 - Amusement and Gaming_11.07.1983.pdf` in `data/corpus/national_statutes_supplements/`.
+- **Active Pending Tasks Toward January Final Submission:**
+  1. **Demo Site End-User Friendliness (`Ralph`):** Redesign/refine `src/demo/` UI/UX so non-technical SP legal researchers can navigate uploads, conflict cards, and XAI highlights more intuitively.
+  2. **External / Stakeholder Validation (`Yah` & `Ralph`):** Decide with adviser on executing the `Option C` external validation pivot (`docs/external_validation_pivot_proposal.md`) vs. SP 15-researcher SUS/TAM human evaluation and integrate results into Ch. 4 & Ch. 5.
+  3. **Pre-Binding Print & Polish (`Yah` & `Ralph`):** Address remaining minor `long-title` / `Overfull \hbox` print tweaks, panelist revision sign-offs, and front-matter/landscape pagination checks.
 
 ### **November 15, 2026 (Session: Reusable Paper-Sweep Workflow & Full-Manuscript Audit)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.

@@ -1,4 +1,4 @@
-# Manuscript Pre-Audit Summary (2026-11-21T07:41:01)
+# Manuscript Pre-Audit Summary (2026-11-21T08:07:16)
 
 Candidates only; every hit still needs reading in context.
 
@@ -9,7 +9,7 @@ Candidates only; every hit still needs reading in context.
 | chapters/introduction.tex | 142 | 2955 | 62 | 0 | micro-paragraph:42, declaude:triad:8, triad-and-or:8, adj-doubling:2, declaude:density:1 |
 | chapters/literature_review.tex | 558 | 14651 | 212 | 0 | micro-paragraph:93, declaude:participle:32, adj-doubling:29, declaude:triad:25, triad-and-or:24 |
 | chapters/methodology.tex | 1493 | 30858 | 349 | 0 | straight-quote:96, declaude:triad:70, triad-and-or:69, micro-paragraph:41, adj-doubling:35 |
-| chapters/results_and_discussion.tex | 1276 | 17561 | 151 | 0 | declaude:triad:55, triad-and-or:54, adj-doubling:11, declaude:participle:8, micro-paragraph:7 |
+| chapters/results_and_discussion.tex | 1276 | 17561 | 150 | 0 | declaude:triad:55, triad-and-or:54, adj-doubling:11, declaude:participle:8, micro-paragraph:7 |
 | chapters/conclusions.tex | 97 | 5641 | 29 | 0 | declaude:triad:8, triad-and-or:8, adj-doubling:7, declaude:participle:3, declaude:density:1 |
 | main.tex | 377 | 817 | 0 | 0 |  |
 | chapters/abstract.tex | 9 | 274 | 5 | 0 | abstract-words:1, declaude:cadence:1, long-paragraph:1, municipal-term:1, micro-paragraph:1 |
