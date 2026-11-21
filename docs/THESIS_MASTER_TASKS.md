@@ -21,9 +21,15 @@
   - Swept Ch. 1–5 (`pre_audit_paper.py`: `0` errors across 26 `.tex` files, `acronym-reexpansion` 52 -> 0, `concessive-opener` 79 -> 0, `semicolon-rather` 11 -> 0, `rather-than-overuse` 121 -> 1, `reflexive-severe` 44 -> 9).
   - Placed `Presidential Decree No.1869 - Amusement and Gaming_11.07.1983.pdf` in `data/corpus/national_statutes_supplements/`.
 - **Active Pending Tasks Toward January Final Submission:**
-  1. **Demo Site End-User Friendliness (`Ralph`):** Redesign/refine `src/demo/` UI/UX so non-technical SP legal researchers can navigate uploads, conflict cards, and XAI highlights more intuitively.
-  2. **External / Stakeholder Validation (`Yah` & `Ralph`):** Decide with adviser on executing the `Option C` external validation pivot (`docs/external_validation_pivot_proposal.md`) vs. SP 15-researcher SUS/TAM human evaluation and integrate results into Ch. 4 & Ch. 5.
-  3. **Pre-Binding Print & Polish (`Yah` & `Ralph`):** Address remaining minor `long-title` / `Overfull \hbox` print tweaks, panelist revision sign-offs, and front-matter/landscape pagination checks.
+  1. **Demo Site End-User Friendliness (`Ralph`):** Redesign/refine `src/demo/` UI/UX so non-technical SP legal researchers can navigate uploads, conflict cards, and XAI highlights more intuitively (and sync refreshed screenshots/descriptions in Ch. 3, Ch. 4, and Appendices afterward).
+  2. **External / Stakeholder Validation (`Yah` & `Ralph`):** Decide with adviser on executing the `Option C` external validation pivot (`docs/annotation/external_validation_pivot_proposal.md`) vs. SP 15-researcher SUS/TAM human evaluation and integrate results into Ch. 4 & Ch. 5.
+  3. **Panelist Feedback & Pre-Binding Print Polish (`Yah` & `Ralph`):** Verify all 10 images in `docs/guidelines/faculty_feedback/` against final revisions, address minor `long-title` / `Overfull \hbox` print tweaks if desired, and complete Approval Sheet / double-sided print checks.
+- **Proposed Technical & Experimental Enhancements (To Be Considered — Surface on Next Session Start):**
+  1. **Sub-Section Clause Splitting Ablation (`>512`-Token Omnibus Statutes):** Split `>512`-token sections (`4.53%` = `7,453 / 164,640` provisions, e.g., `PD 1144 §6`, `RA 7160 §458`) one clause level down with prepended parent headers; benchmark unsplit vs. sub-clause indexing on Stage 1 Recall@50, top-k crowding, and Tier 3 *Mosqueda* / Revenue Code detection.
+  2. **`V7` Ablation (Degree-Penalized KG Rerank + Superseded Charter Filter):** Add inverse-degree hub dampening (for `RA 7160`, degree `1,578`) and pre-1991 city-charter filtering (`RA 170, 409, 537, 3811, 3857`) on Tier 2 and Tier 3 `standard8` to measure false-positive flag reduction while preserving 100% defect recall.
+  3. **Per-Section Candidate Depth Sweep (`k in {8, 15, 25, 50}`):** Benchmark Stage 1 depth trade-offs (Recall vs. Specificity vs. Host A CPU latency) on Tier 2 and Tier 3 `standard8`.
+  4. **Mini Horizontal Consistency Case Study:** Evaluate 5 real amendatory Davao City ordinances (2021–2025) against the `1,816` local corpus to empirically demonstrate horizontal amendment/supersession retrieval.
+  5. **End-to-End OCR-Noise Sensitivity Check:** Pass raw `Qwen2.5-VL-3B-Instruct` transcripts of 2–3 historical ordinances through Stage 1 + Stage 2 vs. clean ground truth to measure how VLM OCR noise affects conflict retrieval and probabilities.
 
 ### **November 15, 2026 (Session: Reusable Paper-Sweep Workflow & Full-Manuscript Audit)**
 - **Author Develops:** Yahyah Odin ("Yah") with Antigravity assistant.
